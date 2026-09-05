@@ -1,0 +1,24 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Secrets & local data — never commit a Playwright profile or token
+.env
+.env.*
+profile/
+*.session
+*.cookies
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
