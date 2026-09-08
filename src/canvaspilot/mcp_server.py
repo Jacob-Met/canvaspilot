@@ -13,9 +13,10 @@ from canvaspilot.client import CanvasClient
 mcp = MCPServer(
     "canvaspilot",
     instructions=(
-        "Canvas LMS tools for courses, assignments, quizzes, pages, modules, files, "
-        "discussions, announcements, planner, inbox, calendar, and submissions via "
-        "session broker or PAT. Prefer these over raw browser clicking when available."
+        "Canvas LMS MCP bundle: curated canvas_* tools for common student/ops workflows, "
+        "plus canvas_api_request / canvas_api_paginated escape hatches for any /api/v1 "
+        "REST path (session broker or PAT). Prefer curated tools first; use the escape "
+        "hatch when a named tool is missing. Prefer these over raw browser clicking."
     ),
 )
 
@@ -48,9 +49,16 @@ async def canvas_get_course(course_id: str) -> str:
     return _dump(_get_api().get_course(course_id))
 
 
-@mcp.tool(description="List assignments for a course (default upcoming bucket).", structured_output=False)
-async def canvas_list_assignments(course_id: str, bucket: str = "upcoming") -> str:
-    return _dump(_get_api().list_assignments(course_id, bucket=bucket or None))
+@mcp.tool(
+    description="List assignments for a course. Default detail=compact (no description bodies). Use detail=full or canvas_assignment_brief for prompts.",
+    structured_output=False,
+)
+async def canvas_list_assignments(
+    course_id: str, bucket: str = "upcoming", detail: str = "compact"
+) -> str:
+    return _dump(
+        _get_api().list_assignments(course_id, bucket=bucket or None, detail=detail)
+    )
 
 
 @mcp.tool(description="Get one assignment with cleaned prompt text.", structured_output=False)
@@ -63,15 +71,21 @@ async def canvas_assignment_brief(course_id: str, assignment_id: str) -> str:
     return _dump(_get_api().assignment_brief(course_id, assignment_id))
 
 
-@mcp.tool(description="List announcements for one or more courses (comma-separated ids).", structured_output=False)
-async def canvas_list_announcements(course_ids: str) -> str:
+@mcp.tool(
+    description="List announcements (compact message_text by default). Pass detail=full for full bodies.",
+    structured_output=False,
+)
+async def canvas_list_announcements(course_ids: str, detail: str = "compact") -> str:
     ids = [c.strip() for c in course_ids.split(",") if c.strip()]
-    return _dump(_get_api().list_announcements(ids))
+    return _dump(_get_api().list_announcements(ids, detail=detail))
 
 
-@mcp.tool(description="List modules (with items) for a course.", structured_output=False)
-async def canvas_list_modules(course_id: str) -> str:
-    return _dump(_get_api().list_modules(course_id))
+@mcp.tool(
+    description="List modules with items (compact item fields by default). Pass detail=full for raw Canvas payloads.",
+    structured_output=False,
+)
+async def canvas_list_modules(course_id: str, detail: str = "compact") -> str:
+    return _dump(_get_api().list_modules(course_id, detail=detail))
 
 
 @mcp.tool(description="List wiki pages for a course.", structured_output=False)
@@ -184,6 +198,16 @@ async def canvas_activity_stream() -> str:
     return _dump(_get_api().activity_stream())
 
 
+@mcp.tool(description="To-do items for the current user.", structured_output=False)
+async def canvas_list_todo_items() -> str:
+    return _dump(_get_api().list_todo_items())
+
+
+@mcp.tool(description="Self enrollments (default state=active).", structured_output=False)
+async def canvas_list_enrollments(state: str = "active") -> str:
+    return _dump(_get_api().list_enrollments(state=state or "active"))
+
+
 @mcp.tool(description="Cross-course sync: courses + upcoming assignments.", structured_output=False)
 async def canvas_sync_summary(limit_courses: int = 10) -> str:
     return _dump(_get_api().sync_summary(limit_courses=limit_courses))
@@ -197,6 +221,53 @@ async def canvas_submission_status(course_id: str, assignment_id: str) -> str:
 @mcp.tool(description="Submit finished online_text_entry work.", structured_output=False)
 async def canvas_submit_assignment_text(course_id: str, assignment_id: str, body: str) -> str:
     return _dump(_get_api().submit_assignment_text(course_id, assignment_id, body))
+
+
+@mcp.tool(description="Reply to an Inbox conversation.", structured_output=False)
+async def canvas_reply_conversation(conversation_id: str, body: str) -> str:
+    return _dump(_get_api().reply_conversation(conversation_id, body))
+
+
+@mcp.tool(
+    description=(
+        "Full Canvas REST escape hatch. method=GET|POST|PUT|DELETE|PATCH; "
+        "path must start with /api/v1 (e.g. /api/v1/users/self). "
+        "params_json / body_json / form_json are optional JSON objects. "
+        "Use curated canvas_* tools when they exist; this covers everything else."
+    ),
+    structured_output=False,
+)
+async def canvas_api_request(
+    method: str,
+    path: str,
+    params_json: str = "",
+    body_json: str = "",
+    form_json: str = "",
+) -> str:
+    params = json.loads(params_json) if params_json.strip() else None
+    body = json.loads(body_json) if body_json.strip() else None
+    form = json.loads(form_json) if form_json.strip() else None
+    return _dump(
+        _get_api().api_request(
+            method,
+            path,
+            params=params,
+            json_body=body,
+            data=form,
+        )
+    )
+
+
+@mcp.tool(
+    description=(
+        "Paginated GET escape hatch for /api/v1 list endpoints. "
+        "path must start with /api/v1; params_json optional JSON object."
+    ),
+    structured_output=False,
+)
+async def canvas_api_paginated(path: str, params_json: str = "") -> str:
+    params = json.loads(params_json) if params_json.strip() else None
+    return _dump(_get_api().api_paginated(path, params=params))
 
 
 def main() -> None:

@@ -1,7 +1,7 @@
 [project]
 name = "canvaspilot"
-version = "0.1.0"
-description = "Agentic Canvas LMS MCP + CLI — stay-open SSO session broker or PAT; full Canvas REST including quizzes"
+version = "0.1.1"
+description = "Agentic Canvas LMS MCP + CLI — curated tools + full /api/v1 escape hatch; session broker or PAT"
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.11"

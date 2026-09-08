@@ -13,7 +13,7 @@ Same architecture as OpenCLI-style web agents (persistent browser session → si
 - **Full REST surface** — courses, assignments, modules, pages, files, discussions, announcements, planner, inbox, calendar, activity stream, submissions, and **quizzes** (list/questions/submissions/start/complete)
 - **Agent-shaped digests** — `assignment_brief` (cleaned prompt + rubric), `sync_summary` (courses + upcoming), `submission_status`
 - **Fixture mode** — offline dict backend for tests and CI; no Canvas required
-- **28 MCP tools**, one stdio server, zero config beyond `CANVAS_BASE_URL`
+- **33 MCP tools**, one stdio server, zero config beyond `CANVAS_BASE_URL`
 
 ## Install
 
@@ -73,12 +73,15 @@ Tools exposed (all prefixed `canvas_`):
 
 | Area | Tools |
 |------|-------|
-| Identity | `whoami`, `sync_summary`, `planner_items`, `activity_stream` |
+| Identity | `whoami`, `sync_summary`, `planner_items`, `activity_stream`, `list_todo_items`, `list_enrollments` |
 | Courses | `list_courses`, `get_course`, `list_modules`, `list_pages`, `get_page`, `list_files`, `list_announcements` |
 | Assignments | `list_assignments`, `get_assignment`, `assignment_brief`, `submission_status`, `submit_assignment_text` |
 | Discussions | `list_discussion_topics`, `get_discussion`, `post_discussion_reply` |
 | Quizzes | `list_quizzes`, `get_quiz`, `list_quiz_questions`, `list_quiz_submissions`, `start_quiz_submission`, `complete_quiz_submission` |
-| Inbox / Calendar | `list_conversations`, `get_conversation`, `list_calendar_events` |
+| Inbox / Calendar | `list_conversations`, `get_conversation`, `reply_conversation`, `list_calendar_events` |
+| **Full REST** | `api_request`, `api_paginated` — any `/api/v1/...` path (escape hatch for everything else) |
+
+Programmatic API bundle: `from canvaspilot.bundle import make_api, tool_inventory`.
 
 ## Auth modes
 

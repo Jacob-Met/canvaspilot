@@ -12,6 +12,16 @@ TAG_RE = re.compile(r"<[^>]+>")
 WS_RE = re.compile(r"\s+")
 
 
+def assert_canvas_api_path(path: str) -> str:
+    """Allow only relative Canvas REST paths under ``/api/v1`` (no absolute URLs)."""
+    p = (path or "").strip()
+    if not p.startswith("/api/v1"):
+        raise ValueError("path must start with /api/v1 (Canvas REST only)")
+    if "://" in p or ".." in p or p.startswith("//"):
+        raise ValueError("absolute URLs and path traversal are not allowed")
+    return p
+
+
 def strip_html(html: str | None) -> str:
     if not html:
         return ""
@@ -68,7 +78,14 @@ class CanvasAPI:
             if isinstance(c, dict) and c.get("id")
         ]
 
-    def list_assignments(self, course_id: int | str, *, bucket: str | None = "upcoming") -> list[dict[str, Any]]:
+    def list_assignments(
+        self,
+        course_id: int | str,
+        *,
+        bucket: str | None = "upcoming",
+        detail: str = "compact",
+    ) -> list[dict[str, Any]]:
+        """List assignments. ``detail=compact`` (default) omits description bodies — use get_assignment for full text."""
         params: list[tuple[str, Any]] = [("order_by", "due_at"), ("include[]", "submission")]
         if bucket:
             params.append(("bucket", bucket))
@@ -77,22 +94,23 @@ class CanvasAPI:
             params=params,
         )
         out = []
+        full = str(detail or "compact").lower() in {"full", "verbose", "all"}
         for a in rows:
             if not isinstance(a, dict):
                 continue
-            out.append(
-                {
-                    "id": a.get("id"),
-                    "course_id": course_id,
-                    "name": a.get("name"),
-                    "due_at": a.get("due_at"),
-                    "points_possible": a.get("points_possible"),
-                    "submission_types": a.get("submission_types"),
-                    "html_url": a.get("html_url"),
-                    "has_submitted_submissions": a.get("has_submitted_submissions"),
-                    "description_text": strip_html(a.get("description")),
-                }
-            )
+            row: dict[str, Any] = {
+                "id": a.get("id"),
+                "course_id": course_id,
+                "name": a.get("name"),
+                "due_at": a.get("due_at"),
+                "points_possible": a.get("points_possible"),
+                "submission_types": a.get("submission_types"),
+                "html_url": a.get("html_url"),
+                "has_submitted_submissions": a.get("has_submitted_submissions"),
+            }
+            if full:
+                row["description_text"] = strip_html(a.get("description"))
+            out.append(row)
         return out
 
     def get_assignment(self, course_id: int | str, assignment_id: int | str) -> dict[str, Any]:
@@ -128,7 +146,13 @@ class CanvasAPI:
             "assignment_id": assignment_id,
         }
 
-    def list_announcements(self, course_ids: list[int | str], *, start_date: str | None = None) -> list[dict[str, Any]]:
+    def list_announcements(
+        self,
+        course_ids: list[int | str],
+        *,
+        start_date: str | None = None,
+        detail: str = "compact",
+    ) -> list[dict[str, Any]]:
         params: list[tuple[str, Any]] = [
             ("active_only", True),
             ("per_page", 50),
@@ -140,24 +164,63 @@ class CanvasAPI:
         rows = self.client.request("GET", "/api/v1/announcements", params=params)
         if not isinstance(rows, list):
             rows = [rows] if rows else []
-        return [
-            {
-                "id": a.get("id"),
-                "title": a.get("title"),
-                "posted_at": a.get("posted_at"),
-                "context_code": a.get("context_code"),
-                "message_text": strip_html(a.get("message")),
-                "html_url": a.get("html_url"),
-            }
-            for a in rows
-            if isinstance(a, dict)
-        ]
+        full = str(detail or "compact").lower() in {"full", "verbose", "all"}
+        out = []
+        for a in rows:
+            if not isinstance(a, dict):
+                continue
+            text = strip_html(a.get("message")) or ""
+            if not full and len(text) > 400:
+                text = text[:400] + "…"
+            out.append(
+                {
+                    "id": a.get("id"),
+                    "title": a.get("title"),
+                    "posted_at": a.get("posted_at"),
+                    "context_code": a.get("context_code"),
+                    "message_text": text,
+                    "html_url": a.get("html_url"),
+                }
+            )
+        return out
 
-    def list_modules(self, course_id: int | str) -> list[dict[str, Any]]:
-        return self.client.get_paginated(
+    def list_modules(self, course_id: int | str, *, detail: str = "compact") -> list[dict[str, Any]]:
+        rows = self.client.get_paginated(
             f"/api/v1/courses/{course_id}/modules",
             params={"include[]": ["items"]},
         )
+        full = str(detail or "compact").lower() in {"full", "verbose", "all"}
+        if full:
+            return rows
+        out = []
+        for m in rows:
+            if not isinstance(m, dict):
+                continue
+            items = []
+            for it in m.get("items") or []:
+                if not isinstance(it, dict):
+                    continue
+                items.append(
+                    {
+                        "id": it.get("id"),
+                        "title": it.get("title"),
+                        "type": it.get("type"),
+                        "html_url": it.get("html_url"),
+                        "content_id": it.get("content_id"),
+                        "external_url": it.get("external_url"),
+                    }
+                )
+            out.append(
+                {
+                    "id": m.get("id"),
+                    "name": m.get("name"),
+                    "position": m.get("position"),
+                    "published": m.get("published"),
+                    "items_count": m.get("items_count"),
+                    "items": items,
+                }
+            )
+        return out
 
     def list_pages(self, course_id: int | str) -> list[dict[str, Any]]:
         rows = self.client.get_paginated(f"/api/v1/courses/{course_id}/pages")
@@ -374,6 +437,49 @@ class CanvasAPI:
 
     def activity_stream(self) -> Any:
         return self.client.request("GET", "/api/v1/users/self/activity_stream")
+
+    def list_todo_items(self) -> list[Any]:
+        return self.client.get_paginated("/api/v1/users/self/todo")
+
+    def list_enrollments(self, *, state: str = "active") -> list[Any]:
+        return self.client.get_paginated(
+            "/api/v1/users/self/enrollments",
+            params={"state[]": state} if state else None,
+        )
+
+    def reply_conversation(self, conversation_id: int | str, body: str) -> Any:
+        return self.client.request(
+            "POST",
+            f"/api/v1/conversations/{conversation_id}/add_message",
+            data={"body": body},
+        )
+
+    def api_request(
+        self,
+        method: str,
+        path: str,
+        *,
+        params: dict[str, Any] | list[tuple[str, Any]] | None = None,
+        json_body: dict[str, Any] | None = None,
+        data: dict[str, Any] | None = None,
+    ) -> Any:
+        """Escape hatch: any Canvas REST call under ``/api/v1`` (session or PAT)."""
+        return self.client.request(
+            method.upper(),
+            assert_canvas_api_path(path),
+            params=params,
+            json_body=json_body,
+            data=data,
+        )
+
+    def api_paginated(
+        self,
+        path: str,
+        *,
+        params: dict[str, Any] | list[tuple[str, Any]] | None = None,
+    ) -> list[Any]:
+        """Escape hatch: paginated GET under ``/api/v1``."""
+        return self.client.get_paginated(assert_canvas_api_path(path), params=params)
 
     def sync_summary(self, *, limit_courses: int = 10) -> dict[str, Any]:
         courses = self.list_courses()[:limit_courses]
