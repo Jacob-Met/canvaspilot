@@ -24,6 +24,27 @@ playwright install chromium
 
 Requires Python 3.11+.
 
+## Try it offline first
+
+From an installed package or an editable source checkout:
+
+```bash
+python -m canvaspilot.offline_demo
+# Optional: save to a NEW path (existing files are protected)
+python -m canvaspilot.offline_demo --out synthetic-review.json
+```
+
+This exercises the high-level course and assignment-brief API on two explicitly
+synthetic courses. It strips prompt markup, preserves a missing due date as
+unknown, and returns readable JSON. No Canvas account, browser, token, session
+broker, model call, submission, or runtime network connection is needed. The
+example rejects writes and missing fixture routes instead of falling back to
+live access. Installing package dependencies requires network access separately.
+
+This is a small, inspectable behavior demonstration, **not** evidence of live
+pagination, working school authentication, or student outcomes. The tests in
+`tests/test_offline_demo.py` protect these boundaries.
+
 ## Quick start
 
 ```bash
@@ -136,3 +157,8 @@ Extracted from the [Suite](https://github.com/Jacob-Met/Suite) monorepo (`packag
 ## License
 
 MIT
+
+## Maintainer
+
+[Jacob Metoyer](https://jacob-met.github.io/) — software and research tooling.
+AI-assisted engineering; upstream and collaborator credit are retained.

@@ -1,0 +1,19 @@
+{
+  "date": "2026-09-09",
+  "base_commit": "00ba078703254a377bf463de7b116f8418384cfd",
+  "python": "3.12",
+  "scope": "Offline fixture demonstration and documentation only; no production accounts, devices or research data",
+  "baseline_tests": 5,
+  "qualified_tests": 16,
+  "test_scope": "Entire existing and new Python suite",
+  "command": "python -m pytest tests -q",
+  "qualified": true,
+  "log_sha256": "0d4e3c5e8d996c39cdbc2d462c8e9e641a1021c832540e095a776ad55e5bef00",
+  "source_sha256": {
+    "src/canvaspilot/offline_demo.py": "2389f3ccc1b6db5995be0d90e014ea9345e3029aa5546a5b2dcf12c1197e6d4d",
+    "tests/test_offline_demo.py": "ddc7a133e76f987decb5774b00e6d6c6b8973d5895d6c4a4ae5ea6d6e6bb1154"
+  },
+  "new_behavior": "Explicit synthetic offline evaluation entry point, no live effects, immutable source and no overwrite",
+  "author": "Jacob Metoyer with AI-assisted implementation",
+  "independent_external_review": false
+}
