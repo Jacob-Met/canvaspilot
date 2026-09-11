@@ -160,5 +160,5 @@ MIT
 
 ## Maintainer
 
-[Jacob Metoyer](https://jacob-met.github.io/) — software and research tooling.
-AI-assisted engineering; upstream and collaborator credit are retained.
+[Jacob Metoyer](https://jacobmetoyer.com/) — software and research tooling.
+Upstream and collaborator credit are retained.
