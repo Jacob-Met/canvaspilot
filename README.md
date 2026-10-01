@@ -8,12 +8,12 @@ Same architecture as OpenCLI-style web agents (persistent browser session → si
 
 ## Features
 
-- **Auth that works at real schools** — session broker (SSO/MFA, no PAT needed) *or* classic `CANVAS_API_TOKEN`
+- **Auth designed for real schools** — session broker (SSO/MFA, no PAT needed) *or* classic `CANVAS_API_TOKEN`
 - **Headless after one headed login** — `session start --headless` reuses the saved profile
 - **Full REST surface** — courses, assignments, modules, pages, files, discussions, announcements, planner, inbox, calendar, activity stream, submissions, and **quizzes** (list/questions/submissions/start/complete)
 - **Agent-shaped digests** — `assignment_brief` (cleaned prompt + rubric), `sync_summary` (courses + upcoming), `submission_status`
 - **Fixture mode** — offline dict backend for tests and CI; no Canvas required
-- **33 MCP tools**, one stdio server, zero config beyond `CANVAS_BASE_URL`
+- **33 MCP tools**, one stdio server, one env var for the host (`CANVAS_BASE_URL`) plus either a PAT or a running session broker
 
 ## Install
 
@@ -41,7 +41,7 @@ broker, model call, submission, or runtime network connection is needed. The
 example rejects writes and missing fixture routes instead of falling back to
 live access. Installing package dependencies requires network access separately.
 
-This is a small, inspectable behavior demonstration, **not** evidence of live
+This is a small, inspectable behavior demonstration, not evidence of live
 pagination, working school authentication, or student outcomes. The tests in
 `tests/test_offline_demo.py` protect these boundaries.
 
@@ -100,7 +100,7 @@ Tools exposed (all prefixed `canvas_`):
 | Discussions | `list_discussion_topics`, `get_discussion`, `post_discussion_reply` |
 | Quizzes | `list_quizzes`, `get_quiz`, `list_quiz_questions`, `list_quiz_submissions`, `start_quiz_submission`, `complete_quiz_submission` |
 | Inbox / Calendar | `list_conversations`, `get_conversation`, `reply_conversation`, `list_calendar_events` |
-| **Full REST** | `api_request`, `api_paginated` — any `/api/v1/...` path (escape hatch for everything else) |
+| **Full REST** | `canvas_api_request`, `canvas_api_paginated` — any `/api/v1/...` path (escape hatch for everything else; in session-broker mode `api_paginated` returns a single page only — see Auth modes) |
 
 Programmatic API bundle: `from canvaspilot.bundle import make_api, tool_inventory`.
 
@@ -111,6 +111,10 @@ Programmatic API bundle: `from canvaspilot.bundle import make_api, tool_inventor
 | **session** (default) | Playwright persistent profile + local broker on `127.0.0.1:18765` | School disables student PATs / SSO+MFA |
 | **token** | `CANVAS_API_TOKEN` → `Authorization: Bearer` | School allows PATs |
 | **fixture** | `CanvasClient(fixture={...})` | Tests, offline demos |
+
+Mode resolution is fixture > token > live broker > session, decided at runtime: `CANVAS_API_TOKEN` always wins and skips the broker; otherwise a live `GET 127.0.0.1:18765/health` probe decides whether the session broker is used. Bare "session" mode with no running broker raises on every request — "session (default)" means "broker if it's up", not "works with no setup".
+
+Pagination follows response `Link` headers only in token mode (up to 40 pages). In session-broker mode the broker returns a single page (`per_page` ≤ 100); paginate by repeated calls.
 
 The broker only listens on loopback. Cookies never leave the Playwright profile directory; the MCP/CLI process never sees them — it asks the broker to make the request.
 
@@ -150,9 +154,11 @@ Tests run entirely in fixture mode.
 
 CanvasPilot gives an agent the same access you have — including submitting assignments and starting quiz attempts. Write tools are clearly named; wire approval gates in your agent if you don't want autonomous submits. Follow your institution's academic integrity policy.
 
+Write caveats: the write path has no CSRF handling and has not been validated against live Canvas session authentication — submitting from session-broker mode may fail or behave unexpectedly. The author has not used the write tools against a live school; they exist as capability, not as a tested workflow.
+
 ## Origin
 
-Extracted from the [Suite](https://github.com/Jacob-Met/Suite) monorepo (`packages/canvaspilot`), where it's synced via `git subtree`.
+Extracted from the Suite monorepo (`packages/canvaspilot`), where it's synced via `git subtree`. (The monorepo is not publicly accessible; the link resolves for authorized collaborators.)
 
 ## License
 
