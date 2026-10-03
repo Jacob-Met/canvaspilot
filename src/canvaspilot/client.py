@@ -225,11 +225,29 @@ class CanvasClient:
             return data if isinstance(data, list) else [data]
 
         if not self.token and broker_health():
+            # The session broker's /fetch returns {status, json, text} with no
+            # response headers, so Link: rel=next following is impossible here.
+            # Use Canvas explicit pagination (?page=N&per_page=M) instead of
+            # silently returning only the first page.
             params = _with_per_page(params)
-            if isinstance(params, dict):
-                params = {**params, "per_page": min(int(params.get("per_page", 50)), 100)}
-            data = broker_fetch("GET", path, params=params, timeout=self.timeout)
-            return data if isinstance(data, list) else [data]
+            if isinstance(params, list):
+                per_page = min(int(dict(params).get("per_page", 50)), 100)
+                params = [(k, v) for k, v in params if k != "per_page"]
+                params.append(("per_page", per_page))
+            else:
+                per_page = min(int(params.get("per_page", 50)), 100)
+                params = {**params, "per_page": per_page}
+            out: list[Any] = []
+            for page in range(1, 41):
+                data = broker_fetch(
+                    "GET", path, params=_with_page(params, page), timeout=self.timeout
+                )
+                if not isinstance(data, list):
+                    return out if out else [data]
+                out.extend(data)
+                if len(data) < per_page:
+                    break
+            return out
 
         http = self._ensure_http()
         params = _with_per_page(params)
@@ -281,6 +299,18 @@ class CanvasClient:
         if path.endswith("/users/self/profile") or path.endswith("/users/self"):
             return self.fixture.get("profile", {"id": 1, "name": "Fixture User"})
         raise KeyError(f"fixture miss: {key}")
+
+
+def _with_page(
+    params: dict[str, Any] | list[tuple[str, Any]] | None,
+    page: int,
+) -> dict[str, Any] | list[tuple[str, Any]]:
+    """Return params with an explicit Canvas ?page=N for explicit pagination."""
+    if isinstance(params, list):
+        return [(k, v) for k, v in params if k != "page"] + [("page", page)]
+    out = dict(params or {})
+    out["page"] = page
+    return out
 
 
 def _link_next(link_header: str) -> str | None:
