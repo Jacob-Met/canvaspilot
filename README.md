@@ -18,7 +18,9 @@ Same architecture as OpenCLI-style web agents (persistent browser session → si
 ## Install
 
 ```bash
-pip install "canvaspilot[browser]"      # or: pip install -e ".[browser]" from a checkout
+git clone https://github.com/Jacob-Met/canvaspilot.git
+cd canvaspilot
+pip install -e ".[browser]"           # canvaspilot is not published on PyPI
 playwright install chromium
 ```
 
@@ -100,7 +102,7 @@ Tools exposed (all prefixed `canvas_`):
 | Discussions | `list_discussion_topics`, `get_discussion`, `post_discussion_reply` |
 | Quizzes | `list_quizzes`, `get_quiz`, `list_quiz_questions`, `list_quiz_submissions`, `start_quiz_submission`, `complete_quiz_submission` |
 | Inbox / Calendar | `list_conversations`, `get_conversation`, `reply_conversation`, `list_calendar_events` |
-| **Full REST** | `canvas_api_request`, `canvas_api_paginated` — any `/api/v1/...` path (escape hatch for everything else; in session-broker mode `api_paginated` returns a single page only — see Auth modes) |
+| **Full REST** | `api_request`, `api_paginated` — any `/api/v1/...` path (escape hatch for everything else; in session-broker mode `api_paginated` returns a single page only — see Auth modes) |
 
 Programmatic API bundle: `from canvaspilot.bundle import make_api, tool_inventory`.
 
