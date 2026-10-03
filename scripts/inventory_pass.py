@@ -7,7 +7,7 @@ import re
 from collections import Counter, defaultdict
 from pathlib import Path
 
-from canvaspilot.api import CanvasAPI, strip_html
+from canvaspilot.api import CanvasAPI
 from canvaspilot.client import CanvasClient, broker_health
 
 THIRD_PARTY = re.compile(
@@ -15,7 +15,7 @@ THIRD_PARTY = re.compile(
     r"webassign|gradescope|packback|perusall|hypothesis|zoom|youtube|khan|aleks|"
     r"mastering|launchpad|achieve|sapling|chegg|courseware|lti|external.?tool|"
     r"day\s*1\s*digital|inclusive\s*access|vitalsource|redshelf",
-    re.I,
+    re.IGNORECASE,
 )
 
 assert broker_health() and broker_health().get("ready"), "broker down"
@@ -42,7 +42,7 @@ inventory = {
 def safe(label, fn):
     try:
         return fn()
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001 — sweep resilience: record the failure and continue
         inventory["errors"].append({"where": label, "error": str(e)})
         return None
 
@@ -66,7 +66,7 @@ for c in targets:
         "third_party_mentions": [],
     }
 
-    tabs = safe(f"{cid}.tabs", lambda: api.client.request("GET", f"/api/v1/courses/{cid}/tabs"))
+    tabs = safe(f"{cid}.tabs", lambda cid=cid: api.client.request("GET", f"/api/v1/courses/{cid}/tabs"))
     if isinstance(tabs, list):
         for t in tabs:
             tid = t.get("id")
@@ -81,7 +81,7 @@ for c in targets:
 
     tools = safe(
         f"{cid}.external_tools",
-        lambda: api.client.request("GET", f"/api/v1/courses/{cid}/external_tools", params={"per_page": 50}),
+        lambda cid=cid: api.client.request("GET", f"/api/v1/courses/{cid}/external_tools", params={"per_page": 50}),
     )
     if isinstance(tools, list):
         for tool in tools:
@@ -94,11 +94,11 @@ for c in targets:
             })
             inventory["tool_counter"][name] += 1
 
-    mods = safe(f"{cid}.modules", lambda: api.list_modules(cid))
+    mods = safe(f"{cid}.modules", lambda cid=cid: api.list_modules(cid))
     if isinstance(mods, list):
         for m in mods[:30]:
             items = m.get("items") or []
-            item_types = Counter((i.get("type") for i in items if isinstance(i, dict)))
+            item_types = Counter(i.get("type") for i in items if isinstance(i, dict))
             entry["modules"].append({
                 "name": m.get("name"),
                 "items": len(items),
@@ -112,7 +112,7 @@ for c in targets:
                     entry["third_party_mentions"].append(hit)
                     inventory["third_party_hits"].append(hit)
 
-    assigns = safe(f"{cid}.assignments", lambda: api.list_assignments(cid, bucket=None))
+    assigns = safe(f"{cid}.assignments", lambda cid=cid: api.list_assignments(cid, bucket=None))
     if isinstance(assigns, list):
         entry["assignment_count"] = len(assigns)
         entry["submission_type_counts"] = dict(
@@ -130,7 +130,7 @@ for c in targets:
                 inventory["third_party_hits"].append(hit)
         entry["submission_types_flat"] = dict(flat)
 
-    discs = safe(f"{cid}.discussions", lambda: api.list_discussion_topics(cid))
+    discs = safe(f"{cid}.discussions", lambda cid=cid: api.list_discussion_topics(cid))
     if isinstance(discs, list):
         entry["discussion_count"] = len(discs)
         for d in discs:
@@ -146,7 +146,7 @@ for c in targets:
                 entry["third_party_mentions"].append(hit)
                 inventory["third_party_hits"].append(hit)
 
-    anns = safe(f"{cid}.announcements", lambda: api.list_announcements([cid]))
+    anns = safe(f"{cid}.announcements", lambda cid=cid: api.list_announcements([cid]))
     if isinstance(anns, list):
         entry["announcement_titles"] = [a.get("title") for a in anns[:10]]
         for a in anns:
@@ -166,7 +166,7 @@ for c in targets:
         files = api.list_files(cid)
         entry["files_ok"] = True
         entry["files_count"] = len(files)
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001 — per-course files probe must not abort the sweep
         entry["files_ok"] = False
         entry["files_error"] = str(e)
 

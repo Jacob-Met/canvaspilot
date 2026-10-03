@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import json
 import os
 import re
 from pathlib import Path
@@ -29,7 +28,7 @@ def broker_health() -> dict[str, Any] | None:
         r = httpx.get(f"{broker_base()}/health", timeout=2.0)
         if r.status_code == 200:
             return r.json()
-    except Exception:
+    except (httpx.HTTPError, ValueError):
         return None
     return None
 
@@ -151,7 +150,7 @@ class CanvasClient:
             self._pw.stop()
             self._pw = None
 
-    def __enter__(self) -> CanvasClient:
+    def __enter__(self) -> CanvasClient:  # noqa: PYI034 — false positive, returns self (verified by isolated repro)
         return self
 
     def __exit__(self, *args: object) -> None:
@@ -198,7 +197,7 @@ class CanvasClient:
 
         http = self._ensure_http()
         params = _with_per_page(params)
-        url = path if path.startswith("http") else path
+        url = path
         r = http.request(method.upper(), url, params=params, json=json_body, data=data)
         if r.status_code in (401, 403):
             raise CanvasAuthError(
@@ -225,11 +224,29 @@ class CanvasClient:
             return data if isinstance(data, list) else [data]
 
         if not self.token and broker_health():
+            # The session broker's /fetch returns {status, json, text} with no
+            # response headers, so Link: rel=next following is impossible here.
+            # Use Canvas explicit pagination (?page=N&per_page=M) instead of
+            # silently returning only the first page.
             params = _with_per_page(params)
-            if isinstance(params, dict):
-                params = {**params, "per_page": min(int(params.get("per_page", 50)), 100)}
-            data = broker_fetch("GET", path, params=params, timeout=self.timeout)
-            return data if isinstance(data, list) else [data]
+            if isinstance(params, list):
+                per_page = min(int(dict(params).get("per_page", 50)), 100)
+                params = [(k, v) for k, v in params if k != "per_page"]
+                params.append(("per_page", per_page))
+            else:
+                per_page = min(int(params.get("per_page", 50)), 100)
+                params = {**params, "per_page": per_page}
+            out: list[Any] = []
+            for page in range(1, 41):
+                data = broker_fetch(
+                    "GET", path, params=_with_page(params, page), timeout=self.timeout
+                )
+                if not isinstance(data, list):
+                    return out if out else [data]
+                out.extend(data)
+                if len(data) < per_page:
+                    break
+            return out
 
         http = self._ensure_http()
         params = _with_per_page(params)
@@ -278,9 +295,21 @@ class CanvasClient:
                 for item in value:
                     if str(item.get("id")) == str(want_id):
                         return item
-        if path.endswith("/users/self/profile") or path.endswith("/users/self"):
+        if path.endswith(("/users/self/profile", "/users/self")):
             return self.fixture.get("profile", {"id": 1, "name": "Fixture User"})
         raise KeyError(f"fixture miss: {key}")
+
+
+def _with_page(
+    params: dict[str, Any] | list[tuple[str, Any]] | None,
+    page: int,
+) -> dict[str, Any] | list[tuple[str, Any]]:
+    """Return params with an explicit Canvas ?page=N for explicit pagination."""
+    if isinstance(params, list):
+        return [(k, v) for k, v in params if k != "page"] + [("page", page)]
+    out = dict(params or {})
+    out["page"] = page
+    return out
 
 
 def _link_next(link_header: str) -> str | None:

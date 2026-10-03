@@ -144,7 +144,7 @@ def _session_cmd(args: argparse.Namespace) -> None:
             sys.exit(1)
         try:
             st = httpx.get(f"{broker_base()}/status", timeout=30.0).json()
-        except Exception as exc:
+        except Exception as exc:  # noqa: BLE001 — report broker comms failures as JSON, never traceback
             st = {"error": str(exc)}
         print(json.dumps({"health": h, "status": st}, indent=2))
         return
@@ -152,7 +152,7 @@ def _session_cmd(args: argparse.Namespace) -> None:
         try:
             r = httpx.post(f"{broker_base()}/shutdown", json={}, timeout=5.0)
             print(r.text)
-        except Exception as exc:
+        except Exception as exc:  # noqa: BLE001 — report shutdown failures as JSON, never traceback
             print(json.dumps({"ok": False, "error": str(exc)}))
             sys.exit(1)
 

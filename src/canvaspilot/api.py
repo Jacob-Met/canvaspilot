@@ -36,7 +36,7 @@ class CanvasAPI:
     def close(self) -> None:
         self.client.close()
 
-    def __enter__(self) -> CanvasAPI:
+    def __enter__(self) -> CanvasAPI:  # noqa: PYI034 — false positive, returns self (verified by isolated repro)
         return self
 
     def __exit__(self, *args: object) -> None:

@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import json
 import traceback
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
 
 from canvaspilot.api import CanvasAPI
 from canvaspilot.client import CanvasClient, broker_health
@@ -33,7 +33,7 @@ def check(name: str, fn):
         results.append(entry)
         print(json.dumps({"PASS": name, **{k: v for k, v in entry.items() if k != "name"}}, default=str), flush=True)
         return data
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001 — sweep records the failure and continues
         results.append({"name": name, "ok": False, "error": str(e), "trace": traceback.format_exc().splitlines()[-3:]})
         print(json.dumps({"FAIL": name, "error": str(e)}, default=str), flush=True)
         return None
@@ -77,8 +77,8 @@ if cid:
             params=[
                 ("type", "event"),
                 ("context_codes[]", f"course_{cid}"),
-                ("start_date", (datetime.now(timezone.utc) - timedelta(days=14)).date().isoformat()),
-                ("end_date", (datetime.now(timezone.utc) + timedelta(days=45)).date().isoformat()),
+                ("start_date", (datetime.now(UTC) - timedelta(days=14)).date().isoformat()),
+                ("end_date", (datetime.now(UTC) + timedelta(days=45)).date().isoformat()),
                 ("per_page", "20"),
             ],
         ),

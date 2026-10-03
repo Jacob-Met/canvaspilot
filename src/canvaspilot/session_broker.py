@@ -65,7 +65,7 @@ def _browser_loop() -> None:
         STATE.page_url = page.url
         try:
             STATE.page_title = page.title()
-        except Exception:
+        except Exception:  # noqa: BLE001 — title probe must not fail broker startup
             STATE.page_title = ""
         STATE.ready.set()
         msg = (
@@ -97,7 +97,7 @@ def _browser_loop() -> None:
                     p = _canvas_page(ctx)
                     STATE.page_url = p.url
                     STATE.page_title = p.title()
-                except Exception:
+                except Exception:  # noqa: BLE001, S110 — status refresh must never kill the broker loop
                     pass
                 continue
 
@@ -165,7 +165,7 @@ def _run_job(ctx, job: dict[str, Any]) -> dict[str, Any]:  # type: ignore[no-unt
 
 
 class Handler(BaseHTTPRequestHandler):
-    def log_message(self, fmt: str, *args: Any) -> None:  # noqa: A003
+    def log_message(self, fmt: str, *args: Any) -> None:
         return
 
     def _json(self, code: int, obj: dict[str, Any]) -> None:
@@ -176,7 +176,7 @@ class Handler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(data)
 
-    def do_GET(self) -> None:  # noqa: N802
+    def do_GET(self) -> None:
         if self.path.startswith("/health"):
             self._json(
                 200,
@@ -196,7 +196,7 @@ class Handler(BaseHTTPRequestHandler):
             return
         self._json(404, {"ok": False, "error": "not found"})
 
-    def do_POST(self) -> None:  # noqa: N802
+    def do_POST(self) -> None:
         length = int(self.headers.get("Content-Length", "0"))
         raw = self.rfile.read(length) if length else b"{}"
         try:

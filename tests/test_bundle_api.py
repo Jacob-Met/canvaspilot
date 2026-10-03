@@ -1,6 +1,7 @@
-from canvaspilot.bundle import CURATED_MCP_TOOLS, make_api, tool_inventory
-from canvaspilot import mcp_server
 import pytest
+
+from canvaspilot import mcp_server
+from canvaspilot.bundle import CURATED_MCP_TOOLS, make_api, tool_inventory
 
 
 def test_assert_canvas_api_path_rejects_unsafe():
