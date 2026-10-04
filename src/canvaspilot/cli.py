@@ -27,8 +27,12 @@ def main(argv: list[str] | None = None) -> None:
         action="store_true",
         help="Headless after a prior headed login into the same profile",
     )
-    sess_sub.add_parser("status", help="Broker health/status")
-    sess_sub.add_parser("stop", help="Shutdown broker")
+    sess_sub.add_parser("status", help="Broker health/status").add_argument(
+        "--profile", default=None, help="Broker profile dir (for the auth token file)"
+    )
+    sess_sub.add_parser("stop", help="Shutdown broker").add_argument(
+        "--profile", default=None, help="Broker profile dir (for the auth token file)"
+    )
 
     def add_common(p: argparse.ArgumentParser) -> None:
         p.add_argument("--base-url", default=None)
@@ -130,6 +134,8 @@ def _session_cmd(args: argparse.Namespace) -> None:
     from canvaspilot.session_broker import main as broker_main
 
     port = getattr(args, "port", None) or BROKER_PORT
+    prof = Path(args.profile) if getattr(args, "profile", None) else None
+    auth_headers = broker_auth_headers(prof)
     if args.scmd == "start":
         # foreground — user leaves this running
         argv = []
@@ -149,7 +155,7 @@ def _session_cmd(args: argparse.Namespace) -> None:
             sys.exit(1)
         try:
             st = httpx.get(
-                f"{broker_base()}/status", headers=broker_auth_headers(), timeout=30.0
+                f"{broker_base()}/status", headers=auth_headers, timeout=30.0
             ).json()
         except Exception as exc:  # noqa: BLE001 — report broker comms failures as JSON, never traceback
             st = {"error": str(exc)}
@@ -158,7 +164,7 @@ def _session_cmd(args: argparse.Namespace) -> None:
     if args.scmd == "stop":
         try:
             r = httpx.post(
-                f"{broker_base()}/shutdown", json={}, headers=broker_auth_headers(), timeout=5.0
+                f"{broker_base()}/shutdown", json={}, headers=auth_headers, timeout=5.0
             )
             print(r.text)
         except Exception as exc:  # noqa: BLE001 — report shutdown failures as JSON, never traceback

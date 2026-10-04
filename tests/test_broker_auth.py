@@ -151,3 +151,53 @@ def test_token_file_permissions_and_reuse(tmp_path):
     assert mode == 0o600
     t2, c2 = issue_broker_token(profile)
     assert (t2, c2) == (t1, False)
+
+
+def test_session_stop_sends_profile_token(tmp_path, monkeypatch):
+    """`session stop --profile DIR` authenticates with that profile's token file."""
+    from canvaspilot import cli as cli_mod
+
+    monkeypatch.delenv(BROKER_TOKEN_ENV, raising=False)
+    profile = tmp_path / "custom"
+    token, _ = issue_broker_token(profile)
+
+    captured: dict = {}
+
+    class FakeResp:
+        text = '{"ok": true}'
+
+    def fake_post(url, **kwargs):
+        captured.update(kwargs)
+        assert url.endswith("/shutdown")
+        return FakeResp()
+
+    monkeypatch.setattr("httpx.post", fake_post)
+    cli_mod.main(["session", "stop", "--profile", str(profile)])
+    assert captured["headers"][BROKER_TOKEN_HEADER] == token
+
+
+def test_session_status_sends_profile_token(tmp_path, monkeypatch, capsys):
+    """`session status --profile DIR` sends the profile token on /status."""
+    from canvaspilot import cli as cli_mod
+    from canvaspilot import client as client_mod
+
+    monkeypatch.delenv(BROKER_TOKEN_ENV, raising=False)
+    profile = tmp_path / "custom"
+    token, _ = issue_broker_token(profile)
+
+    captured: dict = {}
+
+    class FakeResp:
+        def json(self):
+            return {"ok": True}
+
+    def fake_get(url, **kwargs):
+        captured.update(kwargs)
+        assert url.endswith("/status")
+        return FakeResp()
+
+    monkeypatch.setattr(client_mod, "broker_health", lambda: {"ok": True})
+    monkeypatch.setattr("httpx.get", fake_get)
+    cli_mod.main(["session", "status", "--profile", str(profile)])
+    assert captured["headers"][BROKER_TOKEN_HEADER] == token
+    assert '"ok": true' in capsys.readouterr().out
