@@ -7,6 +7,7 @@ localhost HTTP so CLI/MCP calls do not tear down SSO every time.
 from __future__ import annotations
 
 import argparse
+import hmac
 import json
 import os
 import queue
@@ -17,7 +18,14 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import urlparse
 
-from canvaspilot.client import default_base_url, default_profile
+from canvaspilot.client import (
+    BROKER_TOKEN_ENV,
+    BROKER_TOKEN_HEADER,
+    broker_token_file,
+    default_base_url,
+    default_profile,
+    issue_broker_token,
+)
 
 DEFAULT_HOST = "127.0.0.1"
 DEFAULT_PORT = int(os.environ.get("CANVAS_SESSION_PORT", "18765"))
@@ -28,6 +36,7 @@ class _BrokerState:
         self.base_url = default_base_url()
         self.profile = default_profile()
         self.headless = False
+        self.token = ""
         self.jobs: queue.Queue[tuple[dict[str, Any], queue.Queue[dict[str, Any]]]] = queue.Queue()
         self.ready = threading.Event()
         self.page_url = ""
@@ -176,22 +185,38 @@ class Handler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(data)
 
+    def _authorized(self) -> bool:
+        if not STATE.token:
+            return True  # token bootstrap hasn't run (should not happen once serving)
+        presented = self.headers.get(BROKER_TOKEN_HEADER) or ""
+        return hmac.compare_digest(presented, STATE.token)
+
+    def _require_auth(self) -> bool:
+        if self._authorized():
+            return True
+        self._json(
+            401,
+            {
+                "ok": False,
+                "error": (
+                    f"unauthorized: missing or invalid {BROKER_TOKEN_HEADER}. "
+                    f"Set {BROKER_TOKEN_ENV} or reuse the broker's --profile."
+                ),
+            },
+        )
+        return False
+
     def do_GET(self) -> None:
         if self.path.startswith("/health"):
+            # No session state leaks: callers only need liveness.
             self._json(
                 200,
-                {
-                    "ok": True,
-                    "ready": STATE.ready.is_set(),
-                    "url": STATE.page_url,
-                    "title": STATE.page_title,
-                    "headless": STATE.headless,
-                    "error": STATE.error,
-                    "base_url": STATE.base_url,
-                },
+                {"ok": True, "ready": STATE.ready.is_set(), "error": STATE.error},
             )
             return
         if self.path.startswith("/status"):
+            if not self._require_auth():
+                return
             self._json(200, _call({"op": "status"}))
             return
         self._json(404, {"ok": False, "error": "not found"})
@@ -205,10 +230,14 @@ class Handler(BaseHTTPRequestHandler):
             self._json(400, {"ok": False, "error": "bad json"})
             return
         if self.path.startswith("/shutdown"):
+            if not self._require_auth():
+                return
             self._json(200, _call({"op": "shutdown"}))
             threading.Thread(target=lambda: (time.sleep(0.3), os._exit(0)), daemon=True).start()
             return
         if self.path.startswith("/fetch"):
+            if not self._require_auth():
+                return
             self._json(200, _call(job if "op" in job else {"op": "fetch", **job}))
             return
         self._json(404, {"ok": False, "error": "not found"})
@@ -249,13 +278,28 @@ def main(argv: list[str] | None = None) -> None:
         STATE.profile = Path(args.profile)
     STATE.headless = bool(args.headless)
 
+    token, created = issue_broker_token(STATE.profile)
+    STATE.token = token
+
     t = threading.Thread(target=_browser_loop, name="canvas-browser", daemon=True)
     t.start()
     if not STATE.ready.wait(timeout=90):
         raise SystemExit(STATE.error or "browser failed to start")
 
     server = ThreadingHTTPServer((DEFAULT_HOST, args.port), Handler)
-    print(json.dumps({"status": "listening", "url": broker_url(args.port)}), flush=True)
+    listening: dict[str, Any] = {
+        "status": "listening",
+        "url": broker_url(args.port),
+        "token_file": str(broker_token_file(STATE.profile)),
+    }
+    if created:
+        listening["token"] = token
+        listening["note"] = (
+            f"New broker token generated. Other shells need it: export "
+            f"{BROKER_TOKEN_ENV}={token} — or run clients as the same user "
+            "with this --profile."
+        )
+    print(json.dumps(listening), flush=True)
     try:
         server.serve_forever()
     except KeyboardInterrupt:

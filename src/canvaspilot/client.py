@@ -5,6 +5,7 @@ from __future__ import annotations
 import logging
 import os
 import re
+import secrets
 from pathlib import Path
 from typing import Any
 
@@ -34,6 +35,64 @@ def broker_health() -> dict[str, Any] | None:
     except (httpx.HTTPError, ValueError):
         return None
     return None
+
+
+BROKER_TOKEN_ENV = "CANVAS_BROKER_TOKEN"
+BROKER_TOKEN_HEADER = "X-Broker-Token"
+BROKER_TOKEN_FILE = ".broker-token"
+
+
+def broker_token_file(profile: Path | None = None) -> Path:
+    """Path of the persisted broker shared secret for a browser profile."""
+    return (profile or default_profile()) / BROKER_TOKEN_FILE
+
+
+def load_broker_token(profile: Path | None = None) -> str | None:
+    """Shared secret for the session broker: env override, else <profile>/.broker-token."""
+    env = os.environ.get(BROKER_TOKEN_ENV, "").strip()
+    if env:
+        return env
+    try:
+        data = broker_token_file(profile).read_text(encoding="utf-8").strip()
+    except OSError:
+        return None
+    return data or None
+
+
+def issue_broker_token(profile: Path) -> tuple[str, bool]:
+    """Broker-side token bootstrap. Returns (token, created).
+
+    Prefers CANVAS_BROKER_TOKEN; otherwise reuses the persisted token in
+    <profile>/.broker-token, generating and storing (mode 0600) one if absent.
+    """
+    env = os.environ.get(BROKER_TOKEN_ENV, "").strip()
+    if env:
+        return env, False
+    path = broker_token_file(profile)
+    try:
+        existing = path.read_text(encoding="utf-8").strip()
+        if existing:
+            return existing, False
+    except OSError:
+        pass
+    token = secrets.token_hex(32)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        os.chmod(path.parent, 0o700)
+    except OSError:
+        pass
+    fd = os.open(str(path), os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o600)
+    try:
+        os.write(fd, token.encode("utf-8"))
+    finally:
+        os.close(fd)
+    return token, True
+
+
+def broker_auth_headers(profile: Path | None = None) -> dict[str, str]:
+    """Auth header for broker endpoints, resolved env-first then token file."""
+    token = load_broker_token(profile)
+    return {BROKER_TOKEN_HEADER: token} if token else {}
 
 
 def broker_fetch(
@@ -69,8 +128,15 @@ def broker_fetch(
     r = httpx.post(
         f"{broker_base()}/fetch",
         json={"op": "fetch", "method": method, "path": full, "headers": headers, "body": body},
+        headers=broker_auth_headers(),
         timeout=timeout,
     )
+    if r.status_code == 401:
+        raise CanvasAuthError(
+            "Session broker rejected the request (401): missing or invalid "
+            f"{BROKER_TOKEN_HEADER}. Set {BROKER_TOKEN_ENV} or run the broker "
+            "and client under the same --profile."
+        )
     payload = r.json()
     if not payload.get("ok"):
         raise CanvasAuthError(payload.get("error") or "broker fetch failed")

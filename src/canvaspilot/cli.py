@@ -27,8 +27,12 @@ def main(argv: list[str] | None = None) -> None:
         action="store_true",
         help="Headless after a prior headed login into the same profile",
     )
-    sess_sub.add_parser("status", help="Broker health/status")
-    sess_sub.add_parser("stop", help="Shutdown broker")
+    sess_sub.add_parser("status", help="Broker health/status").add_argument(
+        "--profile", default=None, help="Broker profile dir (for the auth token file)"
+    )
+    sess_sub.add_parser("stop", help="Shutdown broker").add_argument(
+        "--profile", default=None, help="Broker profile dir (for the auth token file)"
+    )
 
     def add_common(p: argparse.ArgumentParser) -> None:
         p.add_argument("--base-url", default=None)
@@ -121,10 +125,17 @@ def main(argv: list[str] | None = None) -> None:
 def _session_cmd(args: argparse.Namespace) -> None:
     import httpx
 
-    from canvaspilot.client import BROKER_PORT, broker_base, broker_health
+    from canvaspilot.client import (
+        BROKER_PORT,
+        broker_auth_headers,
+        broker_base,
+        broker_health,
+    )
     from canvaspilot.session_broker import main as broker_main
 
     port = getattr(args, "port", None) or BROKER_PORT
+    prof = Path(args.profile) if getattr(args, "profile", None) else None
+    auth_headers = broker_auth_headers(prof)
     if args.scmd == "start":
         # foreground — user leaves this running
         argv = []
@@ -143,14 +154,18 @@ def _session_cmd(args: argparse.Namespace) -> None:
             print(json.dumps({"ok": False, "error": "broker not running", "url": broker_base()}, indent=2))
             sys.exit(1)
         try:
-            st = httpx.get(f"{broker_base()}/status", timeout=30.0).json()
+            st = httpx.get(
+                f"{broker_base()}/status", headers=auth_headers, timeout=30.0
+            ).json()
         except Exception as exc:  # noqa: BLE001 — report broker comms failures as JSON, never traceback
             st = {"error": str(exc)}
         print(json.dumps({"health": h, "status": st}, indent=2))
         return
     if args.scmd == "stop":
         try:
-            r = httpx.post(f"{broker_base()}/shutdown", json={}, timeout=5.0)
+            r = httpx.post(
+                f"{broker_base()}/shutdown", json={}, headers=auth_headers, timeout=5.0
+            )
             print(r.text)
         except Exception as exc:  # noqa: BLE001 — report shutdown failures as JSON, never traceback
             print(json.dumps({"ok": False, "error": str(exc)}))

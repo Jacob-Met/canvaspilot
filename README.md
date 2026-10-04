@@ -118,6 +118,8 @@ Pagination follows response `Link` headers in token mode (up to 40 pages). In se
 
 The broker only listens on loopback. Cookies never leave the Playwright profile directory; the MCP/CLI process never sees them — it asks the broker to make the request.
 
+**Trust boundary:** the broker's `/fetch`, `/status`, and `/shutdown` endpoints require a shared-secret header (`X-Broker-Token`). The broker uses `CANVAS_BROKER_TOKEN` if set, otherwise it generates a token at startup and stores it in `<profile>/.broker-token` (mode `0600`), printing it once in the `listening` line so other shells can export it. Any program on this computer *without* the token is rejected (401) — so don't run the broker on a shared machine where its stdout/logs are world-readable, and shut it down (`canvaspilot session stop`) when done. Same-user CLI/MCP need no extra configuration: they read the token from the env var or the profile token file automatically.
+
 ## Configuration
 
 | Env | Default | Purpose |
@@ -126,6 +128,7 @@ The broker only listens on loopback. Cookies never leave the Playwright profile 
 | `CANVAS_API_TOKEN` | — | PAT (skips the broker) |
 | `CANVAS_PROFILE` | `~/.canvaspilot/profile` | Playwright persistent profile dir |
 | `CANVAS_SESSION_PORT` | `18765` | Broker port |
+| `CANVAS_BROKER_TOKEN` | generated per profile | Shared secret for broker `/fetch`, `/status`, `/shutdown` |
 | `CANVASPILOT_REPORTS` | `~/.canvaspilot/reports` | Output dir for `scripts/` sweeps |
 
 ## Session broker commands
