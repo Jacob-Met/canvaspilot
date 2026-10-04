@@ -187,6 +187,7 @@ class Handler(BaseHTTPRequestHandler):
                     "url": STATE.page_url,
                     "title": STATE.page_title,
                     "headless": STATE.headless,
+                    "read_only": STATE.read_only,
                     "error": STATE.error,
                     "base_url": STATE.base_url,
                 },
@@ -210,12 +211,13 @@ class Handler(BaseHTTPRequestHandler):
             threading.Thread(target=lambda: (time.sleep(0.3), os._exit(0)), daemon=True).start()
             return
         if self.path.startswith("/fetch"):
-            method = (job.get("method") or "GET").upper()
+            method = str(job.get("method") or "GET").upper()
             if STATE.read_only and method not in ("GET", "HEAD"):
                 self._json(
                     403,
                     {
                         "ok": False,
+                        "read_only": True,
                         "error": (
                             f"read-only broker: {method} rejected; "
                             "restart without --read-only for write access"

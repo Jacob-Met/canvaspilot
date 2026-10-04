@@ -33,7 +33,11 @@ def live_broker_readonly(monkeypatch):
     ):
         monkeypatch.delenv(var, raising=False)
 
-    saved_read_only, saved_ready, saved_error = STATE.read_only, STATE.ready.is_set(), STATE.error
+    saved_read_only, saved_ready, saved_error = (
+        STATE.read_only,
+        STATE.ready.is_set(),
+        STATE.error,
+    )
     STATE.read_only = True
     STATE.ready.set()
 
@@ -128,3 +132,23 @@ def test_default_mode_unchanged_allows_post(live_broker_readonly, monkeypatch):
 
 def test_read_only_defaults_off():
     assert STATE.read_only is False
+
+
+def test_health_advertises_read_only_false_by_default(live_broker_readonly):
+    # Fixture enables read_only; flip off to assert the advertised default.
+    STATE.read_only = False
+    r = httpx.get(f"{live_broker_readonly}/health", timeout=5.0)
+    assert r.status_code == 200
+    assert r.json()["read_only"] is False
+
+
+def test_health_advertises_read_only_true_when_enabled(live_broker_readonly):
+    r = httpx.get(f"{live_broker_readonly}/health", timeout=5.0)
+    assert r.status_code == 200
+    assert r.json()["read_only"] is True
+
+
+def test_403_body_names_read_only(live_broker_readonly):
+    r = _fetch(live_broker_readonly, "POST")
+    assert r.status_code == 403
+    assert r.json()["read_only"] is True
