@@ -2,12 +2,15 @@
 
 from __future__ import annotations
 
+import logging
 import os
 import re
 from pathlib import Path
 from typing import Any
 
 import httpx
+
+log = logging.getLogger(__name__)
 
 # Override with CANVAS_BASE_URL or --base-url (e.g. https://<school>.instructure.com).
 DEFAULT_BASE = "https://canvas.instructure.com"
@@ -237,15 +240,26 @@ class CanvasClient:
                 per_page = min(int(params.get("per_page", 50)), 100)
                 params = {**params, "per_page": per_page}
             out: list[Any] = []
+            truncated = True
             for page in range(1, 41):
                 data = broker_fetch(
                     "GET", path, params=_with_page(params, page), timeout=self.timeout
                 )
                 if not isinstance(data, list):
-                    return out if out else [data]
+                    # Mirror the token path: keep the non-list chunk, then stop.
+                    out.append(data)
+                    truncated = False
+                    break
                 out.extend(data)
                 if len(data) < per_page:
+                    truncated = False
                     break
+            if truncated:
+                log.warning(
+                    "get_paginated(%s): hit 40-page cap with %d rows; result truncated",
+                    path,
+                    len(out),
+                )
             return out
 
         http = self._ensure_http()
