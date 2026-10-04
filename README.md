@@ -100,7 +100,7 @@ Tools exposed (all prefixed `canvas_`):
 | Discussions | `list_discussion_topics`, `get_discussion`, `post_discussion_reply` |
 | Quizzes | `list_quizzes`, `get_quiz`, `list_quiz_questions`, `list_quiz_submissions`, `start_quiz_submission`, `complete_quiz_submission` |
 | Inbox / Calendar | `list_conversations`, `get_conversation`, `reply_conversation`, `list_calendar_events` |
-| **Full REST** | `canvas_api_request`, `canvas_api_paginated` — any `/api/v1/...` path (escape hatch for everything else; paginates up to 40 pages in both auth modes — see Auth modes) |
+| **Full REST** | `canvas_api_request`, `canvas_api_paginated` — any `/api/v1/...` path (escape hatch for everything else; in session-broker mode `api_paginated` returns a single page only — see Auth modes) |
 
 Programmatic API bundle: `from canvaspilot.bundle import make_api, tool_inventory`.
 
@@ -114,7 +114,7 @@ Programmatic API bundle: `from canvaspilot.bundle import make_api, tool_inventor
 
 Mode resolution is fixture > token > live broker > session, decided at runtime: `CANVAS_API_TOKEN` always wins and skips the broker; otherwise a live `GET 127.0.0.1:18765/health` probe decides whether the session broker is used. Bare "session" mode with no running broker raises on every request — "session (default)" means "broker if it's up", not "works with no setup".
 
-Pagination follows response `Link` headers in token mode (up to 40 pages). In session-broker mode the broker strips response headers, so the client paginates explicitly (`?page=N&per_page=M`, `per_page` ≤ 100) instead, up to 40 pages, warning if the cap is hit.
+Pagination follows response `Link` headers only in token mode (up to 40 pages). In session-broker mode the broker returns a single page (`per_page` ≤ 100); paginate by repeated calls.
 
 The broker only listens on loopback. Cookies never leave the Playwright profile directory; the MCP/CLI process never sees them — it asks the broker to make the request.
 
@@ -131,10 +131,15 @@ The broker only listens on loopback. Cookies never leave the Playwright profile 
 ## Session broker commands
 
 ```bash
-canvaspilot session start [--headless] [--base-url URL] [--profile DIR] [--port N]
+canvaspilot session start [--headless] [--base-url URL] [--profile DIR] [--port N] [--read-only]
 canvaspilot session status
 canvaspilot session stop
 ```
+
+`--read-only` is for unattended agent use: the broker rejects non-GET/HEAD
+`/fetch` ops with 403, so a runaway agent cannot mutate Canvas through the
+session. It is orthogonal to broker authentication (see issue #5) — it limits
+*what* the broker can do, not *who* can call it.
 
 ## Scripts
 

@@ -28,6 +28,7 @@ class _BrokerState:
         self.base_url = default_base_url()
         self.profile = default_profile()
         self.headless = False
+        self.read_only = False
         self.jobs: queue.Queue[tuple[dict[str, Any], queue.Queue[dict[str, Any]]]] = queue.Queue()
         self.ready = threading.Event()
         self.page_url = ""
@@ -209,6 +210,19 @@ class Handler(BaseHTTPRequestHandler):
             threading.Thread(target=lambda: (time.sleep(0.3), os._exit(0)), daemon=True).start()
             return
         if self.path.startswith("/fetch"):
+            method = (job.get("method") or "GET").upper()
+            if STATE.read_only and method not in ("GET", "HEAD"):
+                self._json(
+                    403,
+                    {
+                        "ok": False,
+                        "error": (
+                            f"read-only broker: {method} rejected; "
+                            "restart without --read-only for write access"
+                        ),
+                    },
+                )
+                return
             self._json(200, _call(job if "op" in job else {"op": "fetch", **job}))
             return
         self._json(404, {"ok": False, "error": "not found"})
@@ -241,6 +255,11 @@ def main(argv: list[str] | None = None) -> None:
         action="store_true",
         help="Run browser headless (use after a headed login into the same profile)",
     )
+    parser.add_argument(
+        "--read-only",
+        action="store_true",
+        help="Reject non-GET/HEAD /fetch ops (403); for unattended agent use",
+    )
     args = parser.parse_args(argv)
     if args.base_url:
         STATE.base_url = args.base_url.rstrip("/")
@@ -248,6 +267,7 @@ def main(argv: list[str] | None = None) -> None:
     if args.profile:
         STATE.profile = Path(args.profile)
     STATE.headless = bool(args.headless)
+    STATE.read_only = bool(args.read_only)
 
     t = threading.Thread(target=_browser_loop, name="canvas-browser", daemon=True)
     t.start()
