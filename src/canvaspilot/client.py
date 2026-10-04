@@ -14,6 +14,22 @@ DEFAULT_BASE = "https://canvas.instructure.com"
 LEGACY_PROFILE = Path.home() / ".suite" / "forge" / "profiles" / "canvas-sso"
 BROKER_PORT = int(os.environ.get("CANVAS_SESSION_PORT", "18765"))
 
+# Must match canvaspilot.session_broker.BROKER_TOKEN_HEADER (kept literal to avoid a
+# client -> session_broker import; session_broker imports this module).
+BROKER_TOKEN_HEADER = "X-Broker-Token"
+BROKER_TOKEN_ENV = "CANVAS_BROKER_TOKEN"
+
+
+def broker_token() -> str:
+    """Shared secret authorizing CLI/MCP calls to the local session broker."""
+    return os.environ.get(BROKER_TOKEN_ENV, "").strip()
+
+
+def broker_auth_headers() -> dict[str, str]:
+    """Auth headers for broker requests; empty when no token is configured."""
+    token = broker_token()
+    return {BROKER_TOKEN_HEADER: token} if token else {}
+
 
 class CanvasAuthError(RuntimeError):
     pass
@@ -25,7 +41,7 @@ def broker_base() -> str:
 
 def broker_health() -> dict[str, Any] | None:
     try:
-        r = httpx.get(f"{broker_base()}/health", timeout=2.0)
+        r = httpx.get(f"{broker_base()}/health", headers=broker_auth_headers(), timeout=2.0)
         if r.status_code == 200:
             return r.json()
     except (httpx.HTTPError, ValueError):
@@ -55,20 +71,26 @@ def broker_fetch(
         full = f"{full}{sep}{q}"
 
     body: Any = None
-    headers = {"Accept": "application/json"}
+    page_headers = {"Accept": "application/json"}
     if json_body is not None:
         body = json_body
-        headers["Content-Type"] = "application/json"
+        page_headers["Content-Type"] = "application/json"
     elif data is not None:
         body = urlencode({k: str(v) for k, v in data.items()})
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
+        page_headers["Content-Type"] = "application/x-www-form-urlencoded"
 
     r = httpx.post(
         f"{broker_base()}/fetch",
-        json={"op": "fetch", "method": method, "path": full, "headers": headers, "body": body},
+        json={"op": "fetch", "method": method, "path": full, "headers": page_headers, "body": body},
+        headers=broker_auth_headers(),
         timeout=timeout,
     )
     payload = r.json()
+    if r.status_code == 403 and "unauthorized" in str(payload.get("error") or ""):
+        raise CanvasAuthError(
+            "Session broker rejected the request (unauthorized). "
+            f"Set {BROKER_TOKEN_ENV} to the token printed by the broker at startup."
+        )
     if not payload.get("ok"):
         raise CanvasAuthError(payload.get("error") or "broker fetch failed")
     resp = payload.get("response") or {}

@@ -7,9 +7,12 @@ localhost HTTP so CLI/MCP calls do not tear down SSO every time.
 from __future__ import annotations
 
 import argparse
+import hmac
 import json
 import os
 import queue
+import secrets
+import sys
 import threading
 import time
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -21,6 +24,25 @@ from canvaspilot.client import default_base_url, default_profile
 
 DEFAULT_HOST = "127.0.0.1"
 DEFAULT_PORT = int(os.environ.get("CANVAS_SESSION_PORT", "18765"))
+
+# Shared-secret auth for the broker's localhost API (mitigation for the
+# unauthenticated trust boundary: any local process could otherwise drive the
+# user's logged-in Canvas session). The broker resolves the token at startup
+# (CANVAS_BROKER_TOKEN, else a generated secret printed once); CLI/MCP send it
+# as X-Broker-Token. The Handler rejects every request without a match.
+BROKER_TOKEN_ENV = "CANVAS_BROKER_TOKEN"
+BROKER_TOKEN_HEADER = "X-Broker-Token"
+
+# Set by main() before serving; None means "not initialized" -> deny (fail closed).
+_BROKER_TOKEN: str | None = None
+
+
+def _resolve_broker_token() -> tuple[str, bool]:
+    """Return ``(token, generated)``; prefer ``CANVAS_BROKER_TOKEN`` over a fresh secret."""
+    env_token = os.environ.get(BROKER_TOKEN_ENV, "").strip()
+    if env_token:
+        return env_token, False
+    return secrets.token_urlsafe(32), True
 
 
 class _BrokerState:
@@ -176,7 +198,26 @@ class Handler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(data)
 
+    def _authorized(self) -> bool:
+        want = _BROKER_TOKEN
+        got = self.headers.get(BROKER_TOKEN_HEADER)
+        if not want or not got:
+            return False
+        return hmac.compare_digest(got, want)
+
+    def _require_auth(self) -> bool:
+        """Reject unauthenticated requests. Returns True when the request may proceed."""
+        if self._authorized():
+            return True
+        self._json(
+            403,
+            {"ok": False, "error": f"unauthorized: missing or invalid {BROKER_TOKEN_HEADER} header"},
+        )
+        return False
+
     def do_GET(self) -> None:
+        if not self._require_auth():
+            return
         if self.path.startswith("/health"):
             self._json(
                 200,
@@ -197,6 +238,8 @@ class Handler(BaseHTTPRequestHandler):
         self._json(404, {"ok": False, "error": "not found"})
 
     def do_POST(self) -> None:
+        if not self._require_auth():
+            return
         length = int(self.headers.get("Content-Length", "0"))
         raw = self.rfile.read(length) if length else b"{}"
         try:
@@ -248,6 +291,17 @@ def main(argv: list[str] | None = None) -> None:
     if args.profile:
         STATE.profile = Path(args.profile)
     STATE.headless = bool(args.headless)
+
+    global _BROKER_TOKEN
+    _BROKER_TOKEN, generated = _resolve_broker_token()
+    if generated:
+        print(
+            f"Broker auth token (keep secret; export {BROKER_TOKEN_ENV} for CLI/MCP): {_BROKER_TOKEN}",
+            file=sys.stderr,
+            flush=True,
+        )
+    else:
+        print(f"Broker auth enabled (token from {BROKER_TOKEN_ENV}).", file=sys.stderr, flush=True)
 
     t = threading.Thread(target=_browser_loop, name="canvas-browser", daemon=True)
     t.start()
