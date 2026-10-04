@@ -7,9 +7,11 @@ localhost HTTP so CLI/MCP calls do not tear down SSO every time.
 from __future__ import annotations
 
 import argparse
+import ipaddress
 import json
 import os
 import queue
+import socket
 import threading
 import time
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -21,6 +23,40 @@ from canvaspilot.client import default_base_url, default_profile
 
 DEFAULT_HOST = "127.0.0.1"
 DEFAULT_PORT = int(os.environ.get("CANVAS_SESSION_PORT", "18765"))
+
+
+def _assert_loopback_bind(host: str) -> None:
+    """Refuse to start the broker unless `host` is loopback-only.
+
+    The broker has no authentication boundary of its own (see issue #5); its
+    only network defense is binding 127.0.0.1. A future change that relaxes
+    the bind — a ``--host 0.0.0.0`` flag, a constant edit, a hostname that
+    resolves outward — would silently expose the unauthenticated /fetch and
+    /shutdown endpoints to the network. Fail closed at startup instead.
+    """
+    candidates: list[str] = []
+    try:
+        candidates.append(str(ipaddress.ip_address(host.strip())))
+    except ValueError:
+        # Hostname: resolve and require every resolved address to be loopback.
+        try:
+            infos = socket.getaddrinfo(host, None, type=socket.SOCK_STREAM)
+        except socket.gaierror:
+            raise SystemExit(
+                f"broker: cannot resolve bind host {host!r}; refusing to start"
+            )
+        candidates.extend(info[4][0] for info in infos)
+    if not candidates:
+        raise SystemExit(
+            f"broker: bind host {host!r} resolved to nothing; refusing to start"
+        )
+    bad = [c for c in candidates if not ipaddress.ip_address(c).is_loopback]
+    if bad:
+        raise SystemExit(
+            f"broker: refusing to bind non-loopback host {host!r} "
+            f"(resolves to {', '.join(sorted(set(bad)))}); "
+            "the session broker must stay on loopback"
+        )
 
 
 class _BrokerState:
@@ -254,6 +290,10 @@ def main(argv: list[str] | None = None) -> None:
     if not STATE.ready.wait(timeout=90):
         raise SystemExit(STATE.error or "browser failed to start")
 
+    # The broker's only network defense is its loopback bind; fail closed
+    # rather than let a future host change silently expose /fetch and
+    # /shutdown to the network.
+    _assert_loopback_bind(DEFAULT_HOST)
     server = ThreadingHTTPServer((DEFAULT_HOST, args.port), Handler)
     print(json.dumps({"status": "listening", "url": broker_url(args.port)}), flush=True)
     try:
@@ -265,3 +305,4 @@ def main(argv: list[str] | None = None) -> None:
 
 if __name__ == "__main__":
     main()
+
