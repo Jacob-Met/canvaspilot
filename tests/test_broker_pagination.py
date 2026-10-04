@@ -87,3 +87,59 @@ def test_broker_path_non_list_response(broker_mode, monkeypatch):
     assert client.get_paginated("/api/v1/users/self") == [
         {"id": 7, "name": "Single"}
     ]
+
+
+def test_broker_path_non_list_mid_pagination_kept_not_dropped(
+    broker_mode, monkeypatch
+):
+    """A dict arriving on page 3 after two full pages must be appended
+    (mirroring the token path), not silently dropped with a partial return."""
+    calls: list[tuple[int, int]] = []
+
+    def fake(method, path, *, params=None, **kwargs):
+        p = dict(params or [])
+        page = int(p.get("page", 1))
+        per_page = int(p.get("per_page", 50))
+        calls.append((page, per_page))
+        if page <= 2:
+            start = (page - 1) * per_page
+            return [{"id": i} for i in range(start, start + per_page)]
+        return {"id": 999, "name": "Trailing single"}
+
+    monkeypatch.setattr(client_mod, "broker_fetch", fake)
+    client = _broker_client()
+    rows = client.get_paginated("/api/v1/courses")
+    assert len(rows) == 101
+    assert rows[-1] == {"id": 999, "name": "Trailing single"}
+    assert [page for page, _ in calls] == [1, 2, 3]  # stopped at the dict
+
+
+def test_broker_path_40_page_cap_logs_warning(broker_mode, monkeypatch, caplog):
+    """More than 4,000 rows (40 x 100) is truncated, but a warning is logged."""
+    calls: list[tuple[int, int]] = []
+    big = [{"id": i} for i in range(4500)]
+
+    def fake(method, path, *, params=None, **kwargs):
+        p = dict(params or [])
+        page = int(p.get("page", 1))
+        per_page = int(p.get("per_page", 50))
+        calls.append((page, per_page))
+        start = (page - 1) * per_page
+        return big[start : start + per_page]
+
+    monkeypatch.setattr(client_mod, "broker_fetch", fake)
+    client = _broker_client()
+    with caplog.at_level("WARNING", logger="canvaspilot.client"):
+        rows = client.get_paginated("/api/v1/courses", params={"per_page": 100})
+    assert len(rows) == 4000  # 40 full pages; no short page ever arrived
+    assert [page for page, _ in calls] == list(range(1, 41))
+    assert any(
+        "40-page cap" in rec.getMessage() and rec.levelname == "WARNING"
+        for rec in caplog.records
+    )
+    # And a short collection must NOT warn:
+    caplog.clear()
+    monkeypatch.setattr(client_mod, "broker_fetch", make_fake_broker(DATASET, calls))
+    rows = client.get_paginated("/api/v1/courses")
+    assert len(rows) == len(DATASET)
+    assert not any(rec.levelname == "WARNING" for rec in caplog.records)
