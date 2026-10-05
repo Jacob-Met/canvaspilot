@@ -17,8 +17,12 @@ Same architecture as OpenCLI-style web agents (persistent browser session → si
 
 ## Install
 
+Not published to PyPI yet — install from a checkout:
+
 ```bash
-pip install "canvaspilot[browser]"      # or: pip install -e ".[browser]" from a checkout
+git clone https://github.com/Jacob-Met/canvaspilot.git
+cd canvaspilot
+pip install -e ".[browser]"
 playwright install chromium
 ```
 
