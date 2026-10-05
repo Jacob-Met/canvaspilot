@@ -27,6 +27,11 @@ def main(argv: list[str] | None = None) -> None:
         action="store_true",
         help="Headless after a prior headed login into the same profile",
     )
+    s_start.add_argument(
+        "--read-only",
+        action="store_true",
+        help="Broker rejects non-GET/HEAD fetch ops (for unattended agent use)",
+    )
     sess_sub.add_parser("status", help="Broker health/status")
     sess_sub.add_parser("stop", help="Shutdown broker")
 
@@ -135,6 +140,8 @@ def _session_cmd(args: argparse.Namespace) -> None:
         argv += ["--port", str(port)]
         if getattr(args, "headless", False):
             argv.append("--headless")
+        if getattr(args, "read_only", False):
+            argv.append("--read-only")
         broker_main(argv)
         return
     if args.scmd == "status":

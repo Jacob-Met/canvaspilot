@@ -131,10 +131,16 @@ The broker only listens on loopback. Cookies never leave the Playwright profile 
 ## Session broker commands
 
 ```bash
-canvaspilot session start [--headless] [--base-url URL] [--profile DIR] [--port N]
+canvaspilot session start [--headless] [--base-url URL] [--profile DIR] [--port N] [--read-only]
 canvaspilot session status
 canvaspilot session stop
 ```
+
+`--read-only` is for unattended agent use: the broker rejects non-GET/HEAD
+`/fetch` ops with 403, so a runaway agent cannot mutate Canvas through the
+session. `GET /health` advertises the mode (`"read_only": true|false`), so
+clients can discover it. It is orthogonal to broker authentication (see issue
+#5) — it limits *what* the broker can do, not *who* can call it.
 
 ## Scripts
 
