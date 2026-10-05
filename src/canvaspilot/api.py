@@ -25,8 +25,11 @@ def assert_canvas_api_path(path: str) -> str:
 def strip_html(html: str | None) -> str:
     if not html:
         return ""
-    text = TAG_RE.sub(" ", unescape(html))
-    return WS_RE.sub(" ", text).strip()
+    # Remove literal markup tags BEFORE unescaping entities: text that was
+    # escaped (e.g. "&lt;canvas&gt;") must survive as text, not be mistaken
+    # for a tag and deleted.
+    text = TAG_RE.sub(" ", html)
+    return WS_RE.sub(" ", unescape(text)).strip()
 
 
 class CanvasAPI:
