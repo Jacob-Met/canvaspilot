@@ -116,7 +116,7 @@ Mode resolution is fixture > token > live broker > session, decided at runtime: 
 
 Pagination follows response `Link` headers only in token mode (up to 40 pages). In session-broker mode the broker returns a single page (`per_page` ≤ 100); paginate by repeated calls.
 
-The broker only listens on loopback. Cookies never leave the Playwright profile directory; the MCP/CLI process never sees them — it asks the broker to make the request.
+The broker only listens on loopback — and `session_broker.main()` now refuses to start on any non-loopback bind address (fail-closed: a future host change cannot silently expose the unauthenticated `/fetch`/`/shutdown` endpoints to the network). Cookies never leave the Playwright profile directory; the MCP/CLI process never sees them — it asks the broker to make the request.
 
 ## Configuration
 
@@ -174,3 +174,4 @@ MIT
 
 [Jacob Metoyer](https://jacobmetoyer.com/) — software and research tooling.
 Upstream and collaborator credit are retained.
+
