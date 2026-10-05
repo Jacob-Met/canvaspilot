@@ -7,13 +7,27 @@ calls do not re-run SSO every time.
 Base URL: `http://127.0.0.1:<port>` — port is `18765` by default, overridden with
 the `CANVAS_SESSION_PORT` env var. Binds **localhost only** (`127.0.0.1`).
 
-> **Security notice (2026-10-04):** at tip `6f87830` this API has no
+> **Security notice (2026-10-05):** at current tip this API has no token
 > authentication — anything that can reach localhost can drive your logged-in
-> Canvas session. Do not proxy it, bind it elsewhere, or expose it beyond
-> `127.0.0.1`. Shared-secret auth is proposed in canvaspilot issue #5
-> (PRs #7/#8/#9); this document will be updated when a scheme lands.
+> Canvas session. Two mitigations have landed since the original notice: the
+> broker **refuses to start** on any non-loopback bind (fail-closed at
+> startup), and `--read-only` rejects all non-`GET`/`HEAD` operations. Do not
+> proxy it or expose it beyond `127.0.0.1`. Shared-secret auth remains
+> proposed in canvaspilot issue #5 (PRs #7/#8/#9, still open).
 
 All responses are JSON. `GET` paths match by prefix (`/health...`).
+
+## Startup flags
+
+`canvaspilot session start` accepts:
+
+| Flag | Default | Effect |
+|------|---------|--------|
+| `--port` | `18765` (`CANVAS_SESSION_PORT`) | Listen port (localhost only — enforced, see notice) |
+| `--base-url` | — | Canvas base URL (also sets `CANVAS_BASE_URL`) |
+| `--profile` | — | Playwright persistent-profile directory |
+| `--headless` | off | Run browser headless (use after a headed login into the same profile) |
+| `--read-only` | off | Reject non-`GET`/`HEAD` `/fetch` ops with 403; for unattended agent use |
 
 ## Endpoints
 
