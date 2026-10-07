@@ -124,9 +124,12 @@ def main(argv: list[str] | None = None) -> None:
 
 
 def _session_cmd(args: argparse.Namespace) -> None:
-    import httpx
-
-    from canvaspilot.client import BROKER_PORT, _broker_request, broker_base, broker_health
+    from canvaspilot.client import (
+        BROKER_PORT,
+        _broker_request,
+        broker_base,
+        broker_health,
+    )
     from canvaspilot.session_broker import main as broker_main
 
     port = getattr(args, "port", None) or BROKER_PORT
