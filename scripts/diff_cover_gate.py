@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Diff-coverage gate for canvaspilot CI (T164).
 
 Runs diff-cover on the coverage.xml produced by pytest --cov, comparing the
@@ -33,7 +32,8 @@ def main() -> int:
     ap.add_argument("--compare-branch", default="origin/main")
     args = ap.parse_args()
 
-    baseline = json.load(open(args.baseline))
+    with open(args.baseline) as fh:
+        baseline = json.load(fh)
     default_fail_under = baseline.get("default_fail_under", 80)
     file_baselines: dict[str, float] = baseline.get("files", {})
 
@@ -59,7 +59,8 @@ def main() -> int:
     # Parse tolerantly — a missing per-file table never silently passes.
     per_file: dict[str, float] = {}
     try:
-        report = json.load(open(report_path))
+        with open(report_path) as fh:
+            report = json.load(fh)
         stats = report.get("src_stats", {})
         for path, st in stats.items():
             if isinstance(st, dict) and "percent" in st:
