@@ -1,0 +1,125 @@
+{
+  "format": "canvas-planner-cli-candidate-pins-v1",
+  "repository": "Jacob-Met/canvaspilot",
+  "main": "6c4d5d2e7526cddc1aa6c90bfbef2d1188382ad3",
+  "tree": "50b0e4001ccad72078b073e2cc3606b619e064ff",
+  "claim": "https://github.com/Jacob-Met/canvaspilot/issues/68",
+  "coordination": "https://github.com/Jacob-Met/hamon/issues/142#issuecomment-6063713320",
+  "contributions": [
+    {
+      "path": "src/canvaspilot/cli.py",
+      "bytes": 22586,
+      "sha256": "b8145ab7fdfb4f01784a45624d17cb5813b92cff6dc5812ad157a8bd357d97ab",
+      "git_blob": "df01e112b3c7f525e99b3179176d57497391f16b",
+      "mode": "100644"
+    },
+    {
+      "path": "README.md",
+      "bytes": 23924,
+      "sha256": "b031154b28a37c2e18dba98ca583fc795127ce3c409f8787c04780a4ff071e1b",
+      "git_blob": "5a4dff0dfad82c26a94083f544949a582524beb1",
+      "mode": "100644"
+    },
+    {
+      "path": "tests/test_planner_cli.py",
+      "bytes": 8717,
+      "sha256": "ccc61994c0725ab2b7e04c2186c55f0b3eb6f15cda784311fd3ace8712210833",
+      "git_blob": "d78606cdf761578e2d10ed55738a6eddac0b43e9",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/planner-cli.md",
+      "bytes": 4544,
+      "sha256": "bcb651c6a9402957442860ff621fa7ab13a693f8745490c4f271847a2492e9af",
+      "git_blob": "7d1d54d03face5afd51fc4be015ba10a927ad9ef",
+      "mode": "100644"
+    }
+  ],
+  "support": [
+    {
+      "path": "src/canvaspilot/api.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cd17584bed618fb4a42d7128d204b2683b889600",
+      "size": 29481,
+      "url": "https://api.github.com/repos/Jacob-Met/canvaspilot/git/blobs/cd17584bed618fb4a42d7128d204b2683b889600"
+    },
+    {
+      "path": "src/canvaspilot/client.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1db4b1135305f7e410025ae7937f9a6cd349f020",
+      "size": 18934,
+      "url": "https://api.github.com/repos/Jacob-Met/canvaspilot/git/blobs/1db4b1135305f7e410025ae7937f9a6cd349f020"
+    },
+    {
+      "path": "src/canvaspilot/assignment_submission.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "95b1f19927e4eecf99fc852325737c3cfe86cd0d",
+      "size": 1296,
+      "url": "https://api.github.com/repos/Jacob-Met/canvaspilot/git/blobs/95b1f19927e4eecf99fc852325737c3cfe86cd0d"
+    },
+    {
+      "path": "src/canvaspilot/feedback.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ec996f421a851d699a9ac7cb1f2a486f9ff7c4ea",
+      "size": 3900,
+      "url": "https://api.github.com/repos/Jacob-Met/canvaspilot/git/blobs/ec996f421a851d699a9ac7cb1f2a486f9ff7c4ea"
+    },
+    {
+      "path": "src/canvaspilot/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "74a7a6087bf81fd7c75c15769b30408039618e0f",
+      "size": 561,
+      "url": "https://api.github.com/repos/Jacob-Met/canvaspilot/git/blobs/74a7a6087bf81fd7c75c15769b30408039618e0f"
+    },
+    {
+      "path": "src/canvaspilot/bundle.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "293c02dc86520d9d11907d47d014d2f73aa56fc0",
+      "size": 2734,
+      "url": "https://api.github.com/repos/Jacob-Met/canvaspilot/git/blobs/293c02dc86520d9d11907d47d014d2f73aa56fc0"
+    },
+    {
+      "path": "pyproject.toml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "76eba6d30696b4f2733539cd47df6e178bc0f585",
+      "size": 1353,
+      "url": "https://api.github.com/repos/Jacob-Met/canvaspilot/git/blobs/76eba6d30696b4f2733539cd47df6e178bc0f585"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ef7bbebe192c0db55dc4467e064ba44805c13446",
+      "size": 708,
+      "url": "https://api.github.com/repos/Jacob-Met/canvaspilot/git/blobs/ef7bbebe192c0db55dc4467e064ba44805c13446"
+    }
+  ],
+  "before_images": [
+    {
+      "path": "src/canvaspilot/cli.py",
+      "bytes": 21264,
+      "sha256": "c6c93f855584c2e30e8e51cc33e52e7511a851af2d5201be83ee55c1ccee36bb",
+      "git_blob": "226f3f7d502dd61ad03c59cd8212289d133a0190"
+    },
+    {
+      "path": "README.md",
+      "bytes": 23586,
+      "sha256": "1d7c48ee6927ef16019af08f4c129f6041a36a894b065be2a67cc8e04a13f7aa",
+      "git_blob": "ec4830e30ac59b7f0e02cc19e08c14475d32bedf"
+    }
+  ],
+  "new_paths_absent": [
+    "tests/test_planner_cli.py",
+    "docs/planner-cli.md"
+  ],
+  "instructions": [],
+  "complete_tree": true,
+  "local_capture": "Original baseline is a clean local Git capture. New source/evidence is assembled in memory and will be frozen by the GitHub complete-tree commit; local candidate capture was refused before creating a directory when capacity was insufficient."
+}

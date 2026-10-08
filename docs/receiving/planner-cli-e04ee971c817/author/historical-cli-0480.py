@@ -176,15 +176,6 @@ def main(argv: list[str] | None = None) -> None:
     agenda.add_argument("--start", dest="start_date", required=True, help="YYYY-MM-DD")
     agenda.add_argument("--end", dest="end_date", required=True, help="YYYY-MM-DD")
 
-    quizzes = sub.add_parser("quizzes", help="List classic quizzes for a course")
-    add_common(quizzes)
-    quizzes.add_argument("course_id", type=_positive_int, help="Positive numeric Canvas course ID")
-
-    quiz = sub.add_parser("quiz", help="Read one classic quiz without starting an attempt")
-    add_common(quiz)
-    quiz.add_argument("course_id", type=_positive_int, help="Positive numeric Canvas course ID")
-    quiz.add_argument("quiz_id", type=_positive_int, help="Positive numeric Canvas quiz ID")
-
     planner = sub.add_parser(
         "planner", help="Read your planner items without changing completion or visibility",
     )
@@ -278,27 +269,6 @@ def main(argv: list[str] | None = None) -> None:
                     default=str,
                 )
             )
-        elif args.cmd in {"quizzes", "quiz"}:
-            import httpx
-
-            from canvaspilot.client import CanvasAuthError, CanvasPaginationError
-
-            http_log = logging.getLogger("httpx")
-            previous_level = http_log.level
-            http_log.setLevel(max(http_log.getEffectiveLevel(), logging.WARNING))
-            try:
-                if args.cmd == "quizzes":
-                    result = api.list_quizzes(args.course_id)
-                else:
-                    result = api.get_quiz(args.course_id, args.quiz_id)
-            except (CanvasAuthError, CanvasPaginationError, httpx.HTTPError, ValueError) as error:
-                print(json.dumps({
-                    "ok": False, "error": type(error).__name__, "message": str(error),
-                }), file=sys.stderr)
-                raise SystemExit(1) from None
-            finally:
-                http_log.setLevel(previous_level)
-            print(json.dumps(result, indent=2, default=str))
         elif args.cmd == "discussions":
             print(json.dumps(api.list_discussion_topics(args.course_id), indent=2, default=str))
         elif args.cmd == "discussion":

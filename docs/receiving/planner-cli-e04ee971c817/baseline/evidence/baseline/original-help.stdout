@@ -1,0 +1,32 @@
+usage: canvaspilot [-h]
+                   {login,session,whoami,courses,sync,assignments,brief,feedback,inbox,conversation,discussions,discussion,files,browse-files,export-calendar,module-progress,submission-history,agenda,mcp}
+                   ...
+
+positional arguments:
+  {login,session,whoami,courses,sync,assignments,brief,feedback,inbox,conversation,discussions,discussion,files,browse-files,export-calendar,module-progress,submission-history,agenda,mcp}
+    login               Open headed browser for Canvas SSO (one-shot)
+    session             Stay-open session broker
+    whoami              GET /users/self/profile
+    courses             List active courses
+    sync                Courses + upcoming assignments digest
+    assignments         List assignments for a course
+    brief               Assignment brief (cleaned prompt and supplied rubric)
+    feedback            Read self submission comments, rubric feedback, and
+                        grade/attempt metadata
+    inbox               List your inbox without changing conversation state
+    conversation        Read one conversation while preserving unread state
+    discussions         List discussion topics
+    discussion          Read one cached discussion; unread focus retains reply
+                        context
+    files               List course files
+    browse-files        Browse one course folder; metadata only
+    export-calendar     Save selected assignment deadlines to a new .ics file
+    module-progress     Inspect reported module progress and requirements
+    submission-history  Read your returned submission versions and their
+                        submitted content
+    agenda              Read selected course events and assignment deadlines
+                        together
+    mcp                 Run MCP stdio server
+
+options:
+  -h, --help            show this help message and exit
