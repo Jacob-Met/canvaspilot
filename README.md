@@ -13,7 +13,8 @@ Same architecture as OpenCLI-style web agents (persistent browser session → si
 - **Full REST surface** — courses, assignments, modules, pages, files, discussions, announcements, planner, inbox, calendar, activity stream, submissions, and **quizzes** (list/questions/submissions/start/complete)
 - **Agent-shaped digests** — `assignment_brief` (cleaned prompt + rubric), `sync_summary` (courses + upcoming), `submission_status`
 - **Fixture mode** — offline dict backend for tests and CI; no Canvas required
-- **33 MCP tools**, one stdio server, one env var for the host (`CANVAS_BASE_URL`) plus either a PAT or a running session broker
+- **34 MCP tools**, one stdio server, one env var for the host (`CANVAS_BASE_URL`) plus either a PAT or a running session broker
+- **Course folder browsing** — select nested folders and inspect bounded file-metadata pages through CLI, MCP or Python
 
 ## Install
 
@@ -99,7 +100,7 @@ Tools exposed (all prefixed `canvas_`):
 | Area | Tools |
 |------|-------|
 | Identity | `whoami`, `sync_summary`, `planner_items`, `activity_stream`, `list_todo_items`, `list_enrollments` |
-| Courses | `list_courses`, `get_course`, `list_modules`, `list_pages`, `get_page`, `list_files`, `list_announcements` |
+| Courses | `list_courses`, `get_course`, `list_modules`, `list_pages`, `get_page`, `list_files`, `browse_files`, `list_announcements` |
 | Assignments | `list_assignments`, `get_assignment`, `assignment_brief`, `submission_status`, `submit_assignment_text` |
 | Discussions | `list_discussion_topics`, `get_discussion`, `post_discussion_reply` |
 | Quizzes | `list_quizzes`, `get_quiz`, `list_quiz_questions`, `list_quiz_submissions`, `start_quiz_submission`, `complete_quiz_submission` |
@@ -107,6 +108,22 @@ Tools exposed (all prefixed `canvas_`):
 | **Full REST** | `canvas_api_request`, `canvas_api_paginated` — any `/api/v1/...` path (escape hatch for everything else; in session-broker mode `api_paginated` returns a single page only — see Auth modes) |
 
 Programmatic API bundle: `from canvaspilot.bundle import make_api, tool_inventory`.
+
+## Browse course folders
+
+```bash
+canvaspilot browse-files 42
+canvaspilot browse-files 42 --folder-id 110 --files-page 2 --per-page 20
+```
+
+Start at the course root, then choose a returned child folder ID. Each result
+contains the selected folder and one requested page each of direct child folders
+and files. Only metadata is returned; file bodies and download/preview URLs are
+excluded. A foreign folder or permission failure returns an error, not an empty
+listing. `has_more` is unknown because the existing request interface omits
+pagination headers; `next_page_to_try` is an optional probe, not a completeness
+claim. See [folder-browser usage and contract](docs/folder-browser.md) for the
+MCP/Python interfaces, page limits and examples.
 
 ## Auth modes
 

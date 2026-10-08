@@ -26,6 +26,7 @@ CURATED_MCP_TOOLS: tuple[str, ...] = (
     "canvas_get_discussion",
     "canvas_post_discussion_reply",
     "canvas_list_files",
+    "canvas_browse_files",
     "canvas_list_quizzes",
     "canvas_get_quiz",
     "canvas_list_quiz_questions",

@@ -6,6 +6,8 @@ import json
 from typing import Any
 
 from mcp.server.mcpserver import MCPServer
+from mcp.types import ToolAnnotations
+from pydantic import StrictInt
 
 from canvaspilot.api import CanvasAPI
 from canvaspilot.client import CanvasClient
@@ -116,6 +118,29 @@ async def canvas_post_discussion_reply(course_id: str, topic_id: str, message: s
 @mcp.tool(description="List files in a course.", structured_output=False)
 async def canvas_list_files(course_id: str) -> str:
     return _dump(_get_api().list_files(course_id))
+
+
+@mcp.tool(
+    description=(
+        "Browse metadata in one Canvas course folder. Start with folder_id=root, "
+        "then choose a returned child folder ID. Requests one bounded folder page "
+        "and one file page; no downloads or recursive inventory. has_more is unknown; "
+        "next_page_to_try is an optional probe, not a confirmed next page."
+    ),
+    annotations=ToolAnnotations(readOnlyHint=True, destructiveHint=False),
+    structured_output=False,
+)
+async def canvas_browse_files(
+    course_id: str,
+    folder_id: str = "root",
+    folders_page: StrictInt = 1,
+    files_page: StrictInt = 1,
+    per_page: StrictInt = 50,
+) -> str:
+    return _dump(_get_api().browse_files(
+        course_id, folder_id,
+        folders_page=folders_page, files_page=files_page, per_page=per_page,
+    ))
 
 
 @mcp.tool(description="List classic quizzes in a course.", structured_output=False)

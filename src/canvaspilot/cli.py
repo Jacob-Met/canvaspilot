@@ -66,6 +66,14 @@ def main(argv: list[str] | None = None) -> None:
     add_common(files)
     files.add_argument("course_id")
 
+    browse = sub.add_parser("browse-files", help="Browse one course folder; metadata only")
+    add_common(browse)
+    browse.add_argument("course_id", help="Positive numeric Canvas course ID")
+    browse.add_argument("--folder-id", default="root", help="root or a returned numeric folder ID")
+    browse.add_argument("--folders-page", type=int, default=1)
+    browse.add_argument("--files-page", type=int, default=1)
+    browse.add_argument("--per-page", type=int, default=50, help="Requested child-page size, 1–100")
+
     mcp = sub.add_parser("mcp", help="Run MCP stdio server")
     add_common(mcp)
 
@@ -119,6 +127,23 @@ def main(argv: list[str] | None = None) -> None:
             print(json.dumps(api.list_discussion_topics(args.course_id), indent=2, default=str))
         elif args.cmd == "files":
             print(json.dumps(api.list_files(args.course_id), indent=2, default=str))
+        elif args.cmd == "browse-files":
+            import httpx
+
+            from canvaspilot.client import CanvasAuthError
+
+            try:
+                result = api.browse_files(
+                    args.course_id, args.folder_id,
+                    folders_page=args.folders_page, files_page=args.files_page,
+                    per_page=args.per_page,
+                )
+            except (CanvasAuthError, httpx.HTTPError, ValueError) as error:
+                print(json.dumps({
+                    "ok": False, "error": type(error).__name__, "message": str(error),
+                }), file=sys.stderr)
+                raise SystemExit(1) from None
+            print(json.dumps(result, indent=2))
     finally:
         api.close()
 

@@ -1,0 +1,34 @@
+{
+  "schema": "canvaspilot.folder-browser-process-receipt.v1",
+  "source_tree": "fbc99e88b46328072ab8eaab23023b9b17dd1898",
+  "deviceId": "0e3d582f-e25b-44b2-8418-9639fc4e4e33",
+  "native_directory": "/tmp/canvaspilot-folders-cf5799f6d38b-FIWmPE",
+  "tests_pid": 52673,
+  "tests": {
+    "content": [
+      {
+        "type": "text",
+        "text": "[Reading 5 new lines (total: 5 lines)]\n\n........................................................................ [ 78%]\n....................                                                     [100%]\n- generated xml file: /tmp/canvaspilot-folders-cf5799f6d38b-FIWmPE/full-suite-final.xml -\n92 passed in 14.38s\n\n✅ Process completed with exit code 0 (runtime: 14.88s)"
+      },
+      {
+        "type": "text",
+        "text": "\n[executed on device: Mac.lan (0e3d582f-e25b-44b2-8418-9639fc4e4e33)]"
+      }
+    ],
+    "isError": false
+  },
+  "ruff_pid": 52591,
+  "ruff": {
+    "content": [
+      {
+        "type": "text",
+        "text": "[Reading 2 new lines (total: 2 lines)]\n\nAll checks passed!\n\n✅ Process completed with exit code 0 (runtime: 0.14s)"
+      },
+      {
+        "type": "text",
+        "text": "\n[executed on device: Mac.lan (0e3d582f-e25b-44b2-8418-9639fc4e4e33)]"
+      }
+    ],
+    "isError": false
+  }
+}
