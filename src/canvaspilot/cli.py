@@ -272,6 +272,15 @@ def main(argv: list[str] | None = None) -> None:
         "--out", required=True, type=Path, help="New HTML file; every existing destination is protected",
     )
 
+    enrollments = sub.add_parser(
+        "enrollments", help="Read your enrollments and their reported roles, states and grades",
+    )
+    add_common(enrollments)
+    enrollments.add_argument(
+        "--state", default="active",
+        help="Native enrollment state filter (default: active); use --state= to omit the filter",
+    )
+
     mcp = sub.add_parser("mcp", help="Run MCP stdio server")
     add_common(mcp)
 
@@ -527,6 +536,24 @@ def main(argv: list[str] | None = None) -> None:
                 "native_report_sha256": hashlib.sha256(native).hexdigest(),
                 "html_sha256": hashlib.sha256(content).hexdigest(),
             }, indent=2))
+        elif args.cmd == "enrollments":
+            import httpx
+
+            from canvaspilot.client import CanvasAuthError, CanvasPaginationError
+
+            http_log = logging.getLogger("httpx")
+            previous_level = http_log.level
+            http_log.setLevel(max(http_log.getEffectiveLevel(), logging.WARNING))
+            try:
+                result = api.list_enrollments(state=args.state)
+            except (CanvasAuthError, CanvasPaginationError, httpx.HTTPError, ValueError) as error:
+                print(json.dumps({
+                    "ok": False, "error": type(error).__name__, "message": str(error),
+                }), file=sys.stderr)
+                raise SystemExit(1) from None
+            finally:
+                http_log.setLevel(previous_level)
+            print(json.dumps(result, indent=2, default=str))
         elif args.cmd == "agenda":
             import httpx
 
