@@ -1,0 +1,62 @@
+{
+  "schema": "canvaspilot.aster82r.composed-receiving.published.v1",
+  "worker": "HAMON-Aster-82R-20261008",
+  "tested_commit": "730c9d50a46842acd1af7bb12ad938030f8557de",
+  "evidence_only_successor": "6a551a765b538d8aec910c68778fc2cf006c4d70",
+  "baseline_commit": "f618c3ed13f191ea58642283c1f9cd45a0c1ca81",
+  "current_composition_parent": "cf47942b395a6196e6f5dcb02b3865f64aa1c89b",
+  "receiver_original_sha256": "568d518b551e6a34f4bc0e16bd0dccb59976343c09fc6c8abe59579bcb2eac4e",
+  "receiver_freeze_utc": "2026-10-08T19:42:29Z",
+  "first_candidate_run": {"methods": 19, "passed": 14, "assertion_failures": 0, "child_timeouts": 5, "original_run_successful": false},
+  "timeout_only_followup": {"methods": 5, "passed": 5, "only_change": "Child deadline 25 seconds to 120 seconds", "prior_failures_retained": true},
+  "baseline": {"unchanged_reader_controls_passed": 3, "failure_entries": 12, "timeout_entries": 5, "interpretation": "New command absent; original unsuccessful output is preserved."},
+  "additional_maintained_boundary_tests": {
+    "path": "tests/test_announcement_search_page_boundary.py",
+    "bytes": 5780,
+    "sha256": "02a885f32b8f65e61219cceb38d37ab5323fd60d80e803b23cad014f74bfbcee",
+    "git_blob": "8ca797cad97f8a72c8fdccbe7babc4d40e423049",
+    "published_test_commit": "ea98b2311819cb2d6ade48fbbc823e995b29a89a",
+    "published_blob_matches_native_test": true,
+    "candidate_result": "2 passed in 8.77s",
+    "baseline_result": "2 expected missing-command failures in 5.69s",
+    "ruff_exit": 0,
+    "http_requests_per_candidate_case": 40,
+    "authored_after_candidate_inspection": true,
+    "real_cli_entry_function_and_httpx": true,
+    "subprocess_test": false
+  },
+  "source_custody": {"protected_current_parent_leaves_exact": 1431, "all_prior_leaves_retained": true, "cli_additions": 3, "readme_append_only": true, "successor_changes_to_tested_leaves": 0, "successor_evidence_only_additions": 9},
+  "observed_hosted_ci": {
+    "run_id": 37830043573,
+    "job_id": 113492717141,
+    "checkout": "b44606e50b3a607a5e4a7518bf80f2e59f527ab2",
+    "head": "730c9d50a46842acd1af7bb12ad938030f8557de",
+    "main": "92e9f1b500a15dd61d4c74539dedbf880afde30b",
+    "ruff": "passed",
+    "pytest": {"passed": 1097, "skipped": 1, "subtests_passed": 93},
+    "not_a_run_of_new_boundary_tests": true
+  },
+  "archive": {
+    "runtime": "Linux: hamon-thinkpad",
+    "path": "/home/jacob/hamon-aster-82r-20261008/aster82r-native-receiving.tar.gz",
+    "bytes": 28715,
+    "sha256": "859b7724308dd599427f5f8ba64f8026344f7fe6e024ba560686658a1f6340e7",
+    "git_blob": "93fdb07dcda212cc2c798be11b286337e481b814",
+    "members": 25,
+    "all_members_read_back_exact": true,
+    "published_to_github": false,
+    "native_repository": "/home/jacob/hamon-aster-82r-20261008/source",
+    "native_commit": "77ef845d4135f4d66bb642a302cd87b02c7a5a88",
+    "native_commit_path": "docs/receiving/announcement-search-aster82r-20261008/aster82r-native-receiving.tar.gz"
+  },
+  "publication": {"native_git_push_exit": 128, "reason": "No terminal GitHub credential configured", "github_cli_available": false, "credentials_inspected_or_changed": false, "connected_github_test_and_summary": true},
+  "limitations": [
+    "Synthetic private numeric-loopback fixtures; no live Canvas data or deployment.",
+    "Initial timeouts affected baseline and candidate. Original unsuccessful runs are retained; follow-up changed only the child deadline.",
+    "Timed-out subprocesses retain TimeoutExpired tracebacks, not complete request-effect histories.",
+    "Additional boundary tests use the real CLI main in-process and real HTTPX, not subprocess execution or a pre-inspection oracle.",
+    "Earlier native_engine receiving is preserved, not replaced or counted as this worker's execution.",
+    "Raw binary evidence remains at the pinned native filesystem and local Git commit; it is not a GitHub-hosted attachment.",
+    "No author-owned branch, installed service, provider, live account, authentication configuration, or deployment was modified."
+  ]
+}
