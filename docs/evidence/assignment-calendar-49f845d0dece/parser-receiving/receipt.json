@@ -1,0 +1,122 @@
+{
+  "base": "72357053a1629c349f700030013559fa6d8130f2",
+  "parser": "icalendar 7.3.0",
+  "records": [
+    {
+      "label": "baseline",
+      "source": "/Users/me/workspace/estate/production-evidence-49f845d0dece/canvaspilot-calendar-baseline",
+      "command": [
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-venv/bin/python",
+        "-m",
+        "canvaspilot.cli",
+        "export-calendar",
+        "42",
+        "77",
+        "--base-url",
+        "http://127.0.0.1:62416",
+        "--token",
+        "synthetic-receiving-only",
+        "--profile",
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/canvaspilot-calendar/docs/evidence/assignment-calendar-49f845d0dece/parser-receiving/unused-profile",
+        "--out",
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/canvaspilot-calendar/docs/evidence/assignment-calendar-49f845d0dece/parser-receiving/baseline.ics"
+      ],
+      "exit_code": 2,
+      "expected_exit": 2
+    },
+    {
+      "label": "candidate",
+      "source": "/Users/me/workspace/estate/production-evidence-49f845d0dece/canvaspilot-calendar",
+      "command": [
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-venv/bin/python",
+        "-m",
+        "canvaspilot.cli",
+        "export-calendar",
+        "42",
+        "77",
+        "--base-url",
+        "http://127.0.0.1:62416",
+        "--token",
+        "synthetic-receiving-only",
+        "--profile",
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/canvaspilot-calendar/docs/evidence/assignment-calendar-49f845d0dece/parser-receiving/unused-profile",
+        "--out",
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/canvaspilot-calendar/docs/evidence/assignment-calendar-49f845d0dece/parser-receiving/candidate.ics"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0
+    }
+  ],
+  "checks": [
+    {
+      "name": "baseline exit",
+      "pass": true
+    },
+    {
+      "name": "baseline is actual missing command",
+      "pass": true
+    },
+    {
+      "name": "baseline no file or HTTP",
+      "pass": true
+    },
+    {
+      "name": "candidate exit",
+      "pass": true
+    },
+    {
+      "name": "independent parser sees exactly two events",
+      "pass": true
+    },
+    {
+      "name": "independent parser restores escaped Unicode title",
+      "pass": false
+    }
+  ],
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/42/assignments",
+      "query": {
+        "order_by": [
+          "due_at"
+        ],
+        "include[]": [
+          "submission"
+        ],
+        "bucket": [
+          "upcoming"
+        ],
+        "per_page": [
+          "50"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/77/assignments",
+      "query": {
+        "order_by": [
+          "due_at"
+        ],
+        "include[]": [
+          "submission"
+        ],
+        "bucket": [
+          "upcoming"
+        ],
+        "per_page": [
+          "50"
+        ]
+      }
+    }
+  ],
+  "passed": 5,
+  "failed": 1,
+  "source_sha256": {
+    "src/canvaspilot/calendar_export.py": "5e2196dba90b1a787c8b51e84c6d5695f49edff0e47c9f9eb30a8313f442e4aa",
+    "src/canvaspilot/cli.py": "28d278a60ee0b5b036948071c0965f42ea3f36cc1892940406577491e2c3ef38",
+    "tests/test_calendar_export.py": "d239fcb95c05892bc72b8b77d1ae20328436646987a36bd0fa428db05af31635"
+  },
+  "limits": "Author receiving with independent parser; no school account or calendar-app import."
+}

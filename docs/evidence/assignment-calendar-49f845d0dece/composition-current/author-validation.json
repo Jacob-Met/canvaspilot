@@ -1,0 +1,63 @@
+{
+  "base": "e8cd1aecf8e5ca9ede0313b2576ddd71303b82ad",
+  "native_source_commit": "6e2e58f4e28e09749f9f97162a8ce460eccdd4b1",
+  "python": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "packages": {
+    "httpx": "0.28.1",
+    "mcp": "2.3.0",
+    "pytest": "9.1.1",
+    "ruff": "0.16.10",
+    "icalendar": "7.3.0"
+  },
+  "commands": [
+    {
+      "name": "native-suite",
+      "command": [
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "--junitxml=/Users/me/workspace/estate/production-evidence-49f845d0dece/canvaspilot-calendar/docs/evidence/assignment-calendar-49f845d0dece/composition-current/native-suite.xml"
+      ],
+      "exit_code": 0,
+      "stdout": "native-suite.stdout.txt",
+      "stderr": "native-suite.stderr.txt"
+    },
+    {
+      "name": "ruff",
+      "command": [
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-venv/bin/python",
+        "-m",
+        "ruff",
+        "check",
+        "src",
+        "tests",
+        "scripts"
+      ],
+      "exit_code": 0,
+      "stdout": "ruff.stdout.txt",
+      "stderr": "ruff.stderr.txt"
+    },
+    {
+      "name": "diff-check",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout": "diff-check.stdout.txt",
+      "stderr": "diff-check.stderr.txt"
+    }
+  ],
+  "source": {
+    "src/canvaspilot/calendar_export.py": "f3e06eb68d7f74bb757a28f9cdc9a229f2af9476d4a93ba709698b54ffed82a8",
+    "src/canvaspilot/cli.py": "173df7056f7d86084aa2dc00ba129bf8c36aaf109cdbf9497e24ec436d90d47b",
+    "tests/test_calendar_export.py": "0774869f562ab1bdff8d09df38216fab7cc44543ded02be620c2a4e5e3a9e17f",
+    "docs/calendar-export.md": "24035a63438cfdcdbbf71807db24029fc43a40bc8f7b48e652fb9ba2f9e31df7",
+    "README.md": "580b9742b8954854f2fd84e3bea72d26f1d86dbe8baae873a3befa9a544c9a7f"
+  },
+  "disk_free": 1204289536,
+  "development_correction": "First authored run was 34 passed / 1 failed: test incorrectly parsed all stderr as JSON despite inherited HTTP logging. It now parses the final structured error line. Production behavior was already refusal/no output. No baseline feature success is claimed."
+}
