@@ -199,6 +199,17 @@ def main(argv: list[str] | None = None) -> None:
     quiz.add_argument("course_id", type=_positive_int, help="Positive numeric Canvas course ID")
     quiz.add_argument("quiz_id", type=_positive_int, help="Positive numeric Canvas quiz ID")
 
+    agenda_export = sub.add_parser(
+        "export-agenda", help="Save a selected-course agenda as a filterable, printable offline HTML view",
+    )
+    add_common(agenda_export)
+    agenda_export.add_argument("course_ids", nargs="+", help="Positive numeric Canvas course IDs")
+    agenda_export.add_argument("--start", dest="start_date", required=True, help="YYYY-MM-DD")
+    agenda_export.add_argument("--end", dest="end_date", required=True, help="YYYY-MM-DD")
+    agenda_export.add_argument(
+        "--out", required=True, type=Path, help="New HTML file; every existing destination is protected",
+    )
+
     mcp = sub.add_parser("mcp", help="Run MCP stdio server")
     add_common(mcp)
 
@@ -370,6 +381,40 @@ def main(argv: list[str] | None = None) -> None:
                 }), file=sys.stderr)
                 raise SystemExit(1) from None
             print(json.dumps({"ok": True, "output": str(args.out), **report}, indent=2))
+        elif args.cmd == "export-agenda":
+            import hashlib
+            import os
+
+            import httpx
+
+            from canvaspilot.agenda_export import render_agenda_html, write_agenda_html
+            from canvaspilot.client import CanvasAuthError, CanvasPaginationError
+
+            http_log = logging.getLogger("httpx")
+            previous_level = http_log.level
+            http_log.setLevel(max(http_log.getEffectiveLevel(), logging.WARNING))
+            try:
+                if os.path.lexists(args.out):
+                    raise FileExistsError("Output path already exists; choose a new HTML file")
+                result = api.course_agenda(
+                    args.course_ids, start_date=args.start_date, end_date=args.end_date,
+                )
+                content = render_agenda_html(result)
+                native = (json.dumps(result, indent=2) + "\n").encode("utf-8")
+                write_agenda_html(args.out, content)
+            except (CanvasAuthError, CanvasPaginationError, httpx.HTTPError,
+                    ValueError, TypeError, OSError) as error:
+                print(json.dumps({
+                    "ok": False, "error": type(error).__name__, "message": str(error),
+                }), file=sys.stderr)
+                raise SystemExit(1) from None
+            finally:
+                http_log.setLevel(previous_level)
+            print(json.dumps({
+                "ok": True, "output": str(args.out), "counts": result["counts"],
+                "native_report_sha256": hashlib.sha256(native).hexdigest(),
+                "html_sha256": hashlib.sha256(content).hexdigest(),
+            }, indent=2))
         elif args.cmd == "agenda":
             import httpx
 

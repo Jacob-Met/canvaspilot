@@ -94,6 +94,12 @@ Read selected courses' calendar events and assignment deadlines together with
 timing, source identity and read limits. The same report is available through
 `canvas_course_agenda` in MCP.
 
+Save that same selection as an offline view with course/source-date/search controls
+and a printable current view:
+`canvaspilot export-agenda 42 77 --start 2026-10-08 --end 2026-10-15 --out agenda.html`.
+The original native JSON remains available byte-identically.
+[Review and print a saved agenda](docs/agenda-export.md).
+
 To take selected course deadlines into a calendar application, save an explicit
 local snapshot with `canvaspilot export-calendar 42 77 --out deadlines.ics`.
 The [calendar export guide](docs/calendar-export.md) explains selection,

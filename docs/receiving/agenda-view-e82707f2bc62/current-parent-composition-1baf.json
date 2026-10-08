@@ -1,0 +1,37 @@
+{
+  "schema": "canvas-agenda-current-parent-composition/1",
+  "at": "2026-10-08T16:53:26.045415+00:00",
+  "parent": "1bafdaa31f7789d8e561680cb6001bbe38b2da64",
+  "tree": "fc4c5cee949a3a15caf32111af9144cb7eb95b6d",
+  "preserves_current_grade_review_and_module_progress_export": true,
+  "API_added_methods_since6c4d": [
+    "grade_review"
+  ],
+  "API_changed_methods_since6c4d": [],
+  "API_removed_methods_since6c4d": [],
+  "agenda_method_unchanged": true,
+  "CLI_exact_parent_plus_two_received_blocks": true,
+  "README_exact_parent_plus_received_paragraph": true,
+  "local_semantic_replay": false,
+  "required_receiving": "Existing full native CI and new wheel/Chrome gate on actual current composition.",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 25036,
+      "sha256": "3b8de505ea96b43b3f97185a4043a779b901632ec3a792a941e1fc3cac20574a",
+      "git_blob": "a65bafe8d526b9ef3b50b99927477a9ad2b19e35"
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "bytes": 26204,
+      "sha256": "8fafb3d2938100299a2a48a9992d0dddb5bb3663974237b382369ae16e7a0f5f",
+      "git_blob": "29399e00bd95376b1a39098e97a73d7f41b92c7d"
+    }
+  ],
+  "API_entire_other_source_bytes_exact_after_removing_grade_review": true,
+  "API_additive_span": {
+    "start": 6358,
+    "end": 6619,
+    "added_bytes": 261
+  }
+}
