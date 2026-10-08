@@ -1,0 +1,164 @@
+{
+  "repository": "Jacob-Met/canvaspilot",
+  "recommendation": "Use the existing estate-87eaaf0fdf63 broker/token composition with PR29 as the receiving base, then apply this narrow Link metadata supplement. Root and the current integration owner retain publication and adoption decisions.",
+  "records": [
+    {
+      "name": "broker",
+      "base": "9fb52df0fe5a6fc6d87b8f7869fd6e1e9b2e537a",
+      "head": "6c922bd13528d4f5d78072b9d2147358ec652cf6",
+      "selection": "broker",
+      "native": "118 passed in 8.60s",
+      "base_tree": "adf3227a79de4838a7c75a433a55907555973cd2",
+      "head_tree": "3fe0746d50be0b7a7a3bdbe76cafe41c9c724064",
+      "changed_paths": [
+        "src/canvaspilot/pagination.py"
+      ],
+      "pagination_before_sha256": "2655a8f3089e8208add1051cbc3297ba3e8b4e3502bae7882492bfbb9d75397f",
+      "pagination_after_sha256": "2fc078abdb5e6884971ebe4db03f36bcc0b16148d23ba36826b37c57c28f623f",
+      "preserved_pagination_functions": [
+        "with_query",
+        "_origin",
+        "broker_path",
+        "_split_fields"
+      ],
+      "qualified_leaf_count": 40,
+      "unchanged_leaf_count": 39
+    },
+    {
+      "name": "token",
+      "base": "e678faaa4809ac0eddfd17228c1e940d19865217",
+      "head": "1f1188bff21ec194b46944aa1e9c4aab5ebe0a87",
+      "selection": "not broker",
+      "native": "129 passed in 8.12s",
+      "base_tree": "31d90778b0490e72b336c893922022c249382950",
+      "head_tree": "45314bbbc36e5ec893763446a3b1f6e6e1fd96f4",
+      "changed_paths": [
+        "src/canvaspilot/pagination.py"
+      ],
+      "pagination_before_sha256": "9f37282f3a6810c277937183b2ca319e3c19fca958fa306ff83ee9e6dd9583db",
+      "pagination_after_sha256": "0e9c00a2650242bb7984e57684dfedb60cf20eee14f9116e3705102e06101a51",
+      "preserved_pagination_functions": [
+        "with_query",
+        "_origin",
+        "broker_path",
+        "_split_fields"
+      ],
+      "qualified_leaf_count": 56,
+      "unchanged_leaf_count": 55
+    }
+  ],
+  "test_archive": {
+    "path": "test_link_metadata_receiving.py.txt",
+    "cases": 22,
+    "sha256": "82d880533c9b5be288cbc592088229ac5a2fae288c6d5fbbc2994f7bae2e42bb",
+    "note": "Byte-exact independently tested controls archived with a text suffix to avoid accidental collection. The maintained source child removes only one extra final blank line to satisfy git diff --check; its SHA256 is7504ae1555cda7b1a2d86799cff3d97c5f6157931e21228545d4505e5acf4c50 and its complete AST is unchanged."
+  },
+  "patch": {
+    "path": "link-metadata-supplement.patch",
+    "sha256": "88f75568d31c7f243525ba1a630994e77f81449c20e031015a2bcde44530d047",
+    "scope": "One source file; 27 additions and 10 deletions. Applied without modification to both exact bases."
+  },
+  "negative_control_results": {
+    "broker": "8 failed, 3 passed, 27 deselected in 1.42s",
+    "token": "8 failed, 3 passed, 27 deselected in 0.83s",
+    "corrected_broker": "11 passed, 11 deselected in 1.18s",
+    "corrected_token": "11 passed, 11 deselected in 0.78s"
+  },
+  "independent_acceptance": {
+    "review": "independent-review.md",
+    "review_sha256": "bda31babc011b5037318b0522130a62a72565e49a6c160648d025f10fb4321bc",
+    "source_preservation_sha256": "45abee232359fdc04cb1d86c545aa0f38c5facf6ad3a7fa6c238eb15c2576a3e",
+    "broker": "11 passed, 11 deselected in 1.01s",
+    "token": "11 passed, 11 deselected in 0.67s",
+    "preserved_leaves": {
+      "broker": 39,
+      "token": 55
+    },
+    "decision": "Accepted for parser-only transfer; complete integration remains with existing owner/receiver."
+  },
+  "reciprocal_comparison": {
+    "cases": [
+      "foreign initial URL refused before any request",
+      "same-origin absolute initial URL keeps caller parameters",
+      "existing initial query and native scalar/list values are retained",
+      "non-list with next is refused"
+    ],
+    "estate_87ea_token_source": "e678faaa4809ac0eddfd17228c1e940d19865217",
+    "estate_87ea_result": "4 passed, 22 deselected in 0.63s",
+    "estate_86776_source": "1c371c93cb112d2cf96e8770ed1aef7e2710e05c",
+    "estate_86776_result": "4 failed, 22 deselected in 0.72s",
+    "test_adaptation": "Only error import moved from canvaspilot.pagination to canvaspilot.client, where both implementations expose the same class.",
+    "original_test_sha256": "34e6b063048e7231dc1162908a5b00340f1149c4c2824a267cf7b67a2d80c646",
+    "adapted_test_sha256": "f3e6544c744044760d9fff5adebee6c93fe23c6eea6cafe0f419c3650f074295"
+  },
+  "runtime": {
+    "python": "3.12.14",
+    "pytest": "9.1.1",
+    "httpx": "0.28.1",
+    "playwright": "1.63.0",
+    "owner_ruff": "0.13.3",
+    "worker_ruff": "0.16.10"
+  },
+  "native_suite_results": {
+    "broker": "118 passed in 8.60s",
+    "token": "129 passed in 8.12s"
+  },
+  "actual_browser": {
+    "result": "1 passed in 1.76s",
+    "source": "6c922bd13528d4f5d78072b9d2147358ec652cf6",
+    "test_source": "77fca620bf5112c733c97ade9cf58359e0c337d8:tests/test_link_pagination_browser.py",
+    "chromium": "153.0.8010.0",
+    "assignment_ids": [
+      1,
+      2,
+      3
+    ],
+    "unhandled_requests": [],
+    "boundary": "Fresh actual Chromium, native in-page fetch, production Handler/queue, client and CanvasAPI; all routes intercepted with authored content."
+  },
+  "static_gates": {
+    "source_whitespace": "Both one-file source changes pass git diff --check",
+    "changed_source_and_test_ruff_0_16_10": "passed",
+    "whole_owner_suite_ruff_0_13_3": "Passed on both exact source supplements.",
+    "whole_owner_suite_ruff_0_16_10": "Three findings in unchanged baseline files: I001 client import formatting, BLE001 receiving test worker exception, FLY002 static join test header. No unrelated source edit included."
+  },
+  "primary_contracts": [
+    "https://www.rfc-editor.org/rfc/rfc8288.html#section-3",
+    "https://www.rfc-editor.org/rfc/rfc8288.html#section-3.2",
+    "https://www.rfc-editor.org/rfc/rfc8288.html#section-3.3",
+    "https://developerdocs.instructure.com/services/canvas/basics/file.pagination"
+  ],
+  "limits": "Synthetic malformed metadata controls establish parser behavior, not observed malformed Canvas traffic. Full RFC conformance is not claimed. This packet qualifies a common parser supplement on two existing frozen source paths; the owner still needs receiving of their final combined current-main composition.",
+  "artifact_paths": {
+    "link-metadata-supplement.patch": "link-metadata-supplement.patch",
+    "test_link_metadata_receiving.py": "test_link_metadata_receiving.py.txt",
+    "test_reciprocal_token_comparison.py": "test_reciprocal_token_comparison.py.txt",
+    "87ea-broker-independent-challenge.log": "broker-before.log",
+    "87ea-token-independent-challenge.log": "token-before.log",
+    "independent-receiving/broker-independent.log": "broker-after.log",
+    "independent-receiving/token-independent.log": "token-after.log",
+    "independent-receiving/broker-independent-receipt.json": "broker-receipt.json",
+    "independent-receiving/token-independent-receipt.json": "token-receipt.json",
+    "independent-receiving/REVIEW.md": "independent-review.md",
+    "independent-receiving/source-preservation.json": "source-preservation.json",
+    "reciprocal-87ea-controls.log": "reciprocal-owner.log",
+    "reciprocal-86776-controls.log": "reciprocal-prior.log",
+    "87ea-broker-supplemented-native.log": "broker-native.log",
+    "87ea-token-supplemented-native.log": "token-native.log",
+    "87ea-broker-supplemented-browser.log": "browser.log"
+  },
+  "combined_owner_child": {
+    "base": "0330e6176c300e6ddf4ab76a88d5555fce7e4e26",
+    "head": "a2fbc58fd4ff19651184d8d04658ed457d69b4f7",
+    "tree": "abb4123b63206b2032cce36d41e21b18e91b64e5",
+    "changed_paths": [
+      "src/canvaspilot/pagination.py",
+      "tests/test_link_metadata_receiving.py"
+    ],
+    "maintained_test_sha256": "7504ae1555cda7b1a2d86799cff3d97c5f6157931e21228545d4505e5acf4c50",
+    "maintained_test_ast_unchanged": true,
+    "result": "167 passed in 9.78s",
+    "log": "combined-owner-native.log",
+    "current_main_guard": "Contains 3d7a945, not latest 5b1780c/PR31. Existing owner and receiver retain current-main integration."
+  }
+}

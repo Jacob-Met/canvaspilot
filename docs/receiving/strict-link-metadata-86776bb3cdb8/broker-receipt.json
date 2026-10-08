@@ -1,0 +1,24 @@
+{
+  "source": "6c922bd13528d4f5d78072b9d2147358ec652cf6",
+  "base": "9fb52df0fe5a6fc6d87b8f7869fd6e1e9b2e537a",
+  "mode": "broker",
+  "command": [
+    "/workspace/scratch/86776bb3cdb8/product-delivery/venv/bin/python",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "/workspace/scratch/86776bb3cdb8/receiving-canvas/pr29-supplement-review/test_link_metadata_receiving.py",
+    "-k",
+    "broker"
+  ],
+  "sourceEnvironment": "/workspace/scratch/86776bb3cdb8/receiving-canvas/87ea-broker-supplement/src",
+  "testSha256": "82d880533c9b5be288cbc592088229ac5a2fae288c6d5fbbc2994f7bae2e42bb",
+  "status": 0,
+  "signal": null,
+  "error": null,
+  "elapsedMs": 1636,
+  "logSha256": "2f136a0b06d1cc61cf0326326baa5a18f30dfd6505b2daa1c82597f265a381c2"
+}

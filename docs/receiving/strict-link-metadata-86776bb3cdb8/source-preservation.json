@@ -1,0 +1,72 @@
+{
+  "observed_at": "2026-10-08T09:26:30.209680+00:00",
+  "scope": "Independent qualification of parser-only transfer to existing Canvas pagination owners.",
+  "source_cases": [
+    {
+      "mode": "broker",
+      "source": "6c922bd13528d4f5d78072b9d2147358ec652cf6",
+      "parent": "9fb52df0fe5a6fc6d87b8f7869fd6e1e9b2e537a",
+      "tree": "3fe0746d50be0b7a7a3bdbe76cafe41c9c724064",
+      "leaf_count": 40,
+      "changed_paths": [
+        "src/canvaspilot/pagination.py"
+      ],
+      "preserved_other_leaves": 39,
+      "all_source_files_equal_git_blobs_after_independent_tests": true,
+      "worktree_clean": true,
+      "unchanged_named_definitions": [
+        "CanvasPaginationError",
+        "_origin",
+        "_split_fields",
+        "broker_path",
+        "with_query"
+      ],
+      "only_changed_named_definition": "next_link",
+      "other_top_level_delta": "Only import re and four parser regular-expression declarations added.",
+      "supplement_patch_reverse_check": "passed",
+      "pagination_before_blob": "d21dd344d3f0f185e0e3d16f891645235e891bcc",
+      "pagination_after_blob": "c6d36777ab67cbf7a1aa5f1a8fdcdd3c0e01cf3f",
+      "pagination_sha256": "2fc078abdb5e6884971ebe4db03f36bcc0b16148d23ba36826b37c57c28f623f",
+      "test_receipt_file": "broker-independent-receipt.json",
+      "test_receipt_sha256": "b6404af70d15cdfcd9e40d94399964384c7788b413e3639d5f4a8ffdd2cdef2e"
+    },
+    {
+      "mode": "token",
+      "source": "1f1188bff21ec194b46944aa1e9c4aab5ebe0a87",
+      "parent": "e678faaa4809ac0eddfd17228c1e940d19865217",
+      "tree": "45314bbbc36e5ec893763446a3b1f6e6e1fd96f4",
+      "leaf_count": 56,
+      "changed_paths": [
+        "src/canvaspilot/pagination.py"
+      ],
+      "preserved_other_leaves": 55,
+      "all_source_files_equal_git_blobs_after_independent_tests": true,
+      "worktree_clean": true,
+      "unchanged_named_definitions": [
+        "CanvasPaginationError",
+        "_origin",
+        "_split_fields",
+        "broker_path",
+        "with_query"
+      ],
+      "only_changed_named_definition": "next_link",
+      "other_top_level_delta": "Only import re and four parser regular-expression declarations added.",
+      "supplement_patch_reverse_check": "passed",
+      "pagination_before_blob": "010c5c44a8c0604a2c689b2cb60b8cb9dc52c03a",
+      "pagination_after_blob": "e7bb9c0eca3ae1e26efcb526f4a04af7979ddae0",
+      "pagination_sha256": "0e9c00a2650242bb7984e57684dfedb60cf20eee14f9116e3705102e06101a51",
+      "test_receipt_file": "token-independent-receipt.json",
+      "test_receipt_sha256": "5a63e320e45917f0032079aea9d433f7393bd67f20751e9fb3152431ccb2e729"
+    }
+  ],
+  "supplement_parser_and_added_top_level_nodes_identical_in_broker_and_token": true,
+  "no_implementation_defects_found": true,
+  "parser_review": [
+    "Every nonempty Link entry now requires relation metadata, so absent or malformed relations cannot claim collection completion.",
+    "General extension parameters may be bare tokens; relation values must be registered-style names or quoted absolute-URI relation types.",
+    "Quoted parameter delimiters and escaped characters continue through the unchanged field splitter.",
+    "Any anchor context is explicitly refused because this client does not resolve alternate link contexts.",
+    "Target URL admission, initial-origin checks, equivalent-origin cycle identity, query encoding, collection validation and broker envelope handling retain every parent source byte."
+  ],
+  "test_scope": "Eleven selected controls per mode, run in isolated frozen copies with explicit PYTHONPATH. Broker controls traverse local HTTP and the native client decoder; token controls use native httpx with synthetic MockTransport. These receipts are not a browser or live Canvas claim."
+}

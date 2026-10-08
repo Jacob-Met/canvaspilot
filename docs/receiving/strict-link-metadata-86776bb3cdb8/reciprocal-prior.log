@@ -1,0 +1,70 @@
+FFFF                                                                     [100%]
+=================================== FAILURES ===================================
+____________ test_foreign_initial_url_is_refused_before_any_request ____________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f81661e3680>
+
+    def test_foreign_initial_url_is_refused_before_any_request(monkeypatch):
+        client, requests = token_client(monkeypatch, lambda _request, _number: httpx.Response(200, json=[]))
+>       with client, pytest.raises(CanvasPaginationError):
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE CanvasPaginationError
+
+../canvas-pr29-evidence/test_reciprocal_token_comparison.py:86: Failed
+________ test_same_origin_absolute_initial_url_keeps_initial_parameters ________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f81661e38c0>
+
+    def test_same_origin_absolute_initial_url_keeps_initial_parameters(monkeypatch):
+        client, requests = token_client(monkeypatch, lambda _request, _number: httpx.Response(200, json=[]))
+        with client:
+            assert client.get_paginated(f"{BASE}/api/v1/items", params={"include[]": ["one", "two"]}) == []
+>       assert parse_qsl(requests[0].url.query.decode()) == [
+            ("include[]", "one"), ("include[]", "two"), ("per_page", "50")
+        ]
+E       AssertionError: assert [] == [('include[]'..._page', '50')]
+E         
+E         Right contains 3 more items, first extra item: ('include[]', 'one')
+E         Use -v to get more diff
+
+../canvas-pr29-evidence/test_reciprocal_token_comparison.py:95: AssertionError
+____ test_initial_path_query_and_native_httpx_parameter_types_are_preserved ____
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f816625e990>
+
+    def test_initial_path_query_and_native_httpx_parameter_types_are_preserved(monkeypatch):
+        client, requests = token_client(monkeypatch, lambda _request, _number: httpx.Response(200, json=[]))
+        params = {"include[]": ["one", "two"], "published": True, "optional": None}
+        with client:
+            assert client.get_paginated("/api/v1/items?starting_cursor=given%2fopaque", params=params) == []
+>       assert parse_qsl(requests[0].url.query.decode(), keep_blank_values=True) == [
+            ("starting_cursor", "given/opaque"), ("include[]", "one"),
+            ("include[]", "two"), ("published", "true"), ("optional", ""),
+            ("per_page", "50"),
+        ]
+E       AssertionError: assert [('include[]'..._page', '50')] == [('starting_c..._page', '50')]
+E         
+E         At index 0 diff: ('include[]', 'one') != ('starting_cursor', 'given/opaque')
+E         Right contains one more item: ('per_page', '50')
+E         Use -v to get more diff
+
+../canvas-pr29-evidence/test_reciprocal_token_comparison.py:105: AssertionError
+______________ test_non_list_with_next_refuses_partial_collection ______________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f816626f020>
+
+    def test_non_list_with_next_refuses_partial_collection(monkeypatch):
+        client, requests = token_client(monkeypatch, lambda _request, _number: httpx.Response(
+            200, json={"id": 1}, headers={"Link": f'<{BASE}/api/v1/items?cursor=next>; rel="next"'}
+        ))
+>       with client, pytest.raises(CanvasPaginationError, match="non-list"):
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE CanvasPaginationError
+
+../canvas-pr29-evidence/test_reciprocal_token_comparison.py:190: Failed
+=========================== short test summary info ============================
+FAILED ../canvas-pr29-evidence/test_reciprocal_token_comparison.py::test_foreign_initial_url_is_refused_before_any_request
+FAILED ../canvas-pr29-evidence/test_reciprocal_token_comparison.py::test_same_origin_absolute_initial_url_keeps_initial_parameters
+FAILED ../canvas-pr29-evidence/test_reciprocal_token_comparison.py::test_initial_path_query_and_native_httpx_parameter_types_are_preserved
+FAILED ../canvas-pr29-evidence/test_reciprocal_token_comparison.py::test_non_list_with_next_refuses_partial_collection
+4 failed, 22 deselected in 0.72s

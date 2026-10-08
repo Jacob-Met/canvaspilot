@@ -1,0 +1,54 @@
+diff --git a/src/canvaspilot/pagination.py b/src/canvaspilot/pagination.py
+index d21dd34..c6d3677 100644
+--- a/src/canvaspilot/pagination.py
++++ b/src/canvaspilot/pagination.py
+@@ -4,2 +4,3 @@ from __future__ import annotations
+ 
++import re
+ from typing import Any
+@@ -90,2 +91,11 @@ def _split_fields(value: str, separator: str) -> list[str]:
+ 
++_LINK_TOKEN = r"[!#$%&'*+.^_`|~0-9A-Za-z-]+"
++_LINK_VALUE = rf'(?:"(?:[^"\\]|\\.)*"|{_LINK_TOKEN})'
++_PARAMETER = re.compile(rf"({_LINK_TOKEN})(?:\s*=\s*({_LINK_VALUE}))?")
++_RELATION = re.compile(
++    r"(?:[A-Za-z][A-Za-z0-9.-]*|"
++    r"[A-Za-z][A-Za-z0-9+.-]*:(?:[A-Za-z0-9._~:/?#\[\]@!$&'()*+,;=-]|%[0-9A-Fa-f]{2})*)"
++)
++
++
+ def next_link(header: str | None) -> str | None:
+@@ -104,16 +114,23 @@ def next_link(header: str | None) -> str | None:
+         relations: list[str] = []
+-        for parameter in _split_fields(parameters, ";"):
+-            name, separator, value = parameter.partition("=")
+-            if name.strip().lower() != "rel":
++        for parameter in _split_fields(parameters, ";")[1:]:
++            match = _PARAMETER.fullmatch(parameter)
++            if match is None:
++                raise CanvasPaginationError("Malformed Canvas pagination Link parameter.")
++            name, value = match.groups()
++            if name.lower() == "anchor":
++                raise CanvasPaginationError(
++                    "Canvas pagination Link header has an unsupported anchor context."
++                )
++            if name.lower() != "rel":
+                 continue
+-            if not separator or relations:
++            if value is None or relations:
+                 raise CanvasPaginationError("Malformed Canvas pagination Link relation.")
+-            value = value.strip()
+             if value.startswith('"'):
+-                if not value.endswith('"') or len(value) < 2:
+-                    raise CanvasPaginationError("Malformed Canvas pagination Link relation.")
+-                value = value[1:-1]
+-            relations = value.lower().split()
+-            if not relations:
++                value = re.sub(r"\\(.)", r"\1", value[1:-1])
++            words = [word for word in value.split(" ") if word]
++            if not words or any(_RELATION.fullmatch(word) is None for word in words):
+                 raise CanvasPaginationError("Malformed Canvas pagination Link relation.")
++            relations = [word.lower() for word in words]
++        if not relations:
++            raise CanvasPaginationError("Canvas pagination Link header has no relation.")
+         if "next" in relations:

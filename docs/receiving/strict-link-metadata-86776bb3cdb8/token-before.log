@@ -1,0 +1,195 @@
+FFFFF.FFF..                                                              [100%]
+=================================== FAILURES ===================================
+______ test_malformed_relation_metadata_cannot_assert_completion[-token] _______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f73b7190860>
+mode = 'token', suffix = ''
+
+    @pytest.mark.parametrize("mode", ["broker", "token"])
+    @pytest.mark.parametrize("suffix", [
+        "",
+        "; rel=<next>",
+        "; rel=next/prev",
+        '; rel="<next>"',
+        '; rel="next/prev"',
+        '; rel="next\talternate"',
+        '; rel="next"; title=not=a=token',
+    ])
+    def test_malformed_relation_metadata_cannot_assert_completion(monkeypatch, mode, suffix):
+        replies = [{"json": [{"id": 1}], "link": f"<{NEXT}>{suffix}"},
+                   {"json": [{"id": 99}], "link": None}]
+        with collection(monkeypatch, mode, replies) as (client, calls):
+>           with pytest.raises(RuntimeError, match="pagination.*Link"):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           Failed: DID NOT RAISE RuntimeError
+
+../canvaspilot-composition/tests/test_independent_link_receiving.py:109: Failed
+_ test_malformed_relation_metadata_cannot_assert_completion[; rel=<next>-token] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f73b7191ca0>
+mode = 'token', suffix = '; rel=<next>'
+
+    @pytest.mark.parametrize("mode", ["broker", "token"])
+    @pytest.mark.parametrize("suffix", [
+        "",
+        "; rel=<next>",
+        "; rel=next/prev",
+        '; rel="<next>"',
+        '; rel="next/prev"',
+        '; rel="next\talternate"',
+        '; rel="next"; title=not=a=token',
+    ])
+    def test_malformed_relation_metadata_cannot_assert_completion(monkeypatch, mode, suffix):
+        replies = [{"json": [{"id": 1}], "link": f"<{NEXT}>{suffix}"},
+                   {"json": [{"id": 99}], "link": None}]
+        with collection(monkeypatch, mode, replies) as (client, calls):
+>           with pytest.raises(RuntimeError, match="pagination.*Link"):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           Failed: DID NOT RAISE RuntimeError
+
+../canvaspilot-composition/tests/test_independent_link_receiving.py:109: Failed
+_ test_malformed_relation_metadata_cannot_assert_completion[; rel=next/prev-token] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f73b7190e90>
+mode = 'token', suffix = '; rel=next/prev'
+
+    @pytest.mark.parametrize("mode", ["broker", "token"])
+    @pytest.mark.parametrize("suffix", [
+        "",
+        "; rel=<next>",
+        "; rel=next/prev",
+        '; rel="<next>"',
+        '; rel="next/prev"',
+        '; rel="next\talternate"',
+        '; rel="next"; title=not=a=token',
+    ])
+    def test_malformed_relation_metadata_cannot_assert_completion(monkeypatch, mode, suffix):
+        replies = [{"json": [{"id": 1}], "link": f"<{NEXT}>{suffix}"},
+                   {"json": [{"id": 99}], "link": None}]
+        with collection(monkeypatch, mode, replies) as (client, calls):
+>           with pytest.raises(RuntimeError, match="pagination.*Link"):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           Failed: DID NOT RAISE RuntimeError
+
+../canvaspilot-composition/tests/test_independent_link_receiving.py:109: Failed
+_ test_malformed_relation_metadata_cannot_assert_completion[; rel="<next>"-token] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f73b731e6c0>
+mode = 'token', suffix = '; rel="<next>"'
+
+    @pytest.mark.parametrize("mode", ["broker", "token"])
+    @pytest.mark.parametrize("suffix", [
+        "",
+        "; rel=<next>",
+        "; rel=next/prev",
+        '; rel="<next>"',
+        '; rel="next/prev"',
+        '; rel="next\talternate"',
+        '; rel="next"; title=not=a=token',
+    ])
+    def test_malformed_relation_metadata_cannot_assert_completion(monkeypatch, mode, suffix):
+        replies = [{"json": [{"id": 1}], "link": f"<{NEXT}>{suffix}"},
+                   {"json": [{"id": 99}], "link": None}]
+        with collection(monkeypatch, mode, replies) as (client, calls):
+>           with pytest.raises(RuntimeError, match="pagination.*Link"):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           Failed: DID NOT RAISE RuntimeError
+
+../canvaspilot-composition/tests/test_independent_link_receiving.py:109: Failed
+_ test_malformed_relation_metadata_cannot_assert_completion[; rel="next/prev"-token] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f73b7191010>
+mode = 'token', suffix = '; rel="next/prev"'
+
+    @pytest.mark.parametrize("mode", ["broker", "token"])
+    @pytest.mark.parametrize("suffix", [
+        "",
+        "; rel=<next>",
+        "; rel=next/prev",
+        '; rel="<next>"',
+        '; rel="next/prev"',
+        '; rel="next\talternate"',
+        '; rel="next"; title=not=a=token',
+    ])
+    def test_malformed_relation_metadata_cannot_assert_completion(monkeypatch, mode, suffix):
+        replies = [{"json": [{"id": 1}], "link": f"<{NEXT}>{suffix}"},
+                   {"json": [{"id": 99}], "link": None}]
+        with collection(monkeypatch, mode, replies) as (client, calls):
+>           with pytest.raises(RuntimeError, match="pagination.*Link"):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           Failed: DID NOT RAISE RuntimeError
+
+../canvaspilot-composition/tests/test_independent_link_receiving.py:109: Failed
+_ test_malformed_relation_metadata_cannot_assert_completion[; rel="next"; title=not=a=token-token] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f73b7193980>
+mode = 'token', suffix = '; rel="next"; title=not=a=token'
+
+    @pytest.mark.parametrize("mode", ["broker", "token"])
+    @pytest.mark.parametrize("suffix", [
+        "",
+        "; rel=<next>",
+        "; rel=next/prev",
+        '; rel="<next>"',
+        '; rel="next/prev"',
+        '; rel="next\talternate"',
+        '; rel="next"; title=not=a=token',
+    ])
+    def test_malformed_relation_metadata_cannot_assert_completion(monkeypatch, mode, suffix):
+        replies = [{"json": [{"id": 1}], "link": f"<{NEXT}>{suffix}"},
+                   {"json": [{"id": 99}], "link": None}]
+        with collection(monkeypatch, mode, replies) as (client, calls):
+>           with pytest.raises(RuntimeError, match="pagination.*Link"):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           Failed: DID NOT RAISE RuntimeError
+
+../canvaspilot-composition/tests/test_independent_link_receiving.py:109: Failed
+_ test_unsupported_link_context_cannot_supply_next_collection[; rel="next"; anchor="https://elsewhere.example/other"-token] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f73b7193e00>
+mode = 'token'
+suffix = '; rel="next"; anchor="https://elsewhere.example/other"'
+
+    @pytest.mark.parametrize("mode", ["broker", "token"])
+    @pytest.mark.parametrize("suffix", [
+        '; rel="next"; anchor="https://elsewhere.example/other"',
+        '; ANCHOR="/another-collection"; rel="next"',
+    ])
+    def test_unsupported_link_context_cannot_supply_next_collection(monkeypatch, mode, suffix):
+        replies = [{"json": [{"id": 1}], "link": f"<{NEXT}>{suffix}"},
+                   {"json": [{"id": 99}], "link": None}]
+        with collection(monkeypatch, mode, replies) as (client, calls):
+>           with pytest.raises(RuntimeError, match="pagination.*(context|anchor)"):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           Failed: DID NOT RAISE RuntimeError
+
+../canvaspilot-composition/tests/test_independent_link_receiving.py:123: Failed
+_ test_unsupported_link_context_cannot_supply_next_collection[; ANCHOR="/another-collection"; rel="next"-token] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f73b71d1970>
+mode = 'token', suffix = '; ANCHOR="/another-collection"; rel="next"'
+
+    @pytest.mark.parametrize("mode", ["broker", "token"])
+    @pytest.mark.parametrize("suffix", [
+        '; rel="next"; anchor="https://elsewhere.example/other"',
+        '; ANCHOR="/another-collection"; rel="next"',
+    ])
+    def test_unsupported_link_context_cannot_supply_next_collection(monkeypatch, mode, suffix):
+        replies = [{"json": [{"id": 1}], "link": f"<{NEXT}>{suffix}"},
+                   {"json": [{"id": 99}], "link": None}]
+        with collection(monkeypatch, mode, replies) as (client, calls):
+>           with pytest.raises(RuntimeError, match="pagination.*(context|anchor)"):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           Failed: DID NOT RAISE RuntimeError
+
+../canvaspilot-composition/tests/test_independent_link_receiving.py:123: Failed
+=========================== short test summary info ============================
+FAILED ../canvaspilot-composition/tests/test_independent_link_receiving.py::test_malformed_relation_metadata_cannot_assert_completion[-token]
+FAILED ../canvaspilot-composition/tests/test_independent_link_receiving.py::test_malformed_relation_metadata_cannot_assert_completion[; rel=<next>-token]
+FAILED ../canvaspilot-composition/tests/test_independent_link_receiving.py::test_malformed_relation_metadata_cannot_assert_completion[; rel=next/prev-token]
+FAILED ../canvaspilot-composition/tests/test_independent_link_receiving.py::test_malformed_relation_metadata_cannot_assert_completion[; rel="<next>"-token]
+FAILED ../canvaspilot-composition/tests/test_independent_link_receiving.py::test_malformed_relation_metadata_cannot_assert_completion[; rel="next/prev"-token]
+FAILED ../canvaspilot-composition/tests/test_independent_link_receiving.py::test_malformed_relation_metadata_cannot_assert_completion[; rel="next"; title=not=a=token-token]
+FAILED ../canvaspilot-composition/tests/test_independent_link_receiving.py::test_unsupported_link_context_cannot_supply_next_collection[; rel="next"; anchor="https://elsewhere.example/other"-token]
+FAILED ../canvaspilot-composition/tests/test_independent_link_receiving.py::test_unsupported_link_context_cannot_supply_next_collection[; ANCHOR="/another-collection"; rel="next"-token]
+8 failed, 3 passed, 27 deselected in 0.83s

@@ -1,0 +1,97 @@
+[
+  {
+    "file": "README.md",
+    "bytes": 4717,
+    "sha256": "ccb5e43b9df5303a5c052f9d471d9e47d5ba1562f565fef71b6af81d8d66e770"
+  },
+  {
+    "file": "broker-after.log",
+    "bytes": 114,
+    "sha256": "2f136a0b06d1cc61cf0326326baa5a18f30dfd6505b2daa1c82597f265a381c2"
+  },
+  {
+    "file": "broker-before.log",
+    "bytes": 10237,
+    "sha256": "1cbf28fe4ec3d38b48b8da31aa99c97e5013be4a216e2f84124ee3aa0533a693"
+  },
+  {
+    "file": "broker-native.log",
+    "bytes": 180,
+    "sha256": "d8491dbc68f86333d633e0017b73d4b4e37916abf8a17f47b3bd3d490ec67b94"
+  },
+  {
+    "file": "broker-receipt.json",
+    "bytes": 777,
+    "sha256": "b6404af70d15cdfcd9e40d94399964384c7788b413e3639d5f4a8ffdd2cdef2e"
+  },
+  {
+    "file": "browser.log",
+    "bytes": 661,
+    "sha256": "ec8da0a3fae3be66852c469de74cca61eb87c6c4ee70aa0b6ada2fa1e11bf283"
+  },
+  {
+    "file": "combined-owner-native.log",
+    "bytes": 260,
+    "sha256": "7d0d7476351a39009821df85140fff0320f6fd9b92703bc16d73e7e052129636"
+  },
+  {
+    "file": "independent-review.md",
+    "bytes": 4614,
+    "sha256": "bda31babc011b5037318b0522130a62a72565e49a6c160648d025f10fb4321bc"
+  },
+  {
+    "file": "link-metadata-supplement.patch",
+    "bytes": 2581,
+    "sha256": "88f75568d31c7f243525ba1a630994e77f81449c20e031015a2bcde44530d047"
+  },
+  {
+    "file": "reciprocal-owner.log",
+    "bytes": 113,
+    "sha256": "f26b654e6d480161de36aee12f86996d3be69b6638ea0be5a2badaab2001cffd"
+  },
+  {
+    "file": "reciprocal-prior.log",
+    "bytes": 4194,
+    "sha256": "ccd2cf381a23272212104b397a838b732693917e803a8f8ed73a1755be7720bb"
+  },
+  {
+    "file": "source-preservation.json",
+    "bytes": 3764,
+    "sha256": "45abee232359fdc04cb1d86c545aa0f38c5facf6ad3a7fa6c238eb15c2576a3e"
+  },
+  {
+    "file": "source-receipt.json",
+    "bytes": 8144,
+    "sha256": "d096fbfdadfc1bd897298d649060a99c381b8bd47ebec5bfd8f5c424f03b9cde"
+  },
+  {
+    "file": "test_link_metadata_receiving.py.txt",
+    "bytes": 5765,
+    "sha256": "82d880533c9b5be288cbc592088229ac5a2fae288c6d5fbbc2994f7bae2e42bb"
+  },
+  {
+    "file": "test_reciprocal_token_comparison.py.txt",
+    "bytes": 8779,
+    "sha256": "f3e6544c744044760d9fff5adebee6c93fe23c6eea6cafe0f419c3650f074295"
+  },
+  {
+    "file": "token-after.log",
+    "bytes": 114,
+    "sha256": "7d3367dfbcf7f065d127c76504ffb0831d4a1448b2c8f5f157713d05982207e7"
+  },
+  {
+    "file": "token-before.log",
+    "bytes": 10214,
+    "sha256": "9e6bcf37a3d1440204a120142763b50aeb7567c4cbf4447f2d8db46463af71eb"
+  },
+  {
+    "file": "token-native.log",
+    "bytes": 180,
+    "sha256": "ba08d6d12af66bc064ef8d142cc3168a81007a43b9bb218dbd158162aa8839fd"
+  },
+  {
+    "file": "token-receipt.json",
+    "bytes": 779,
+    "sha256": "5a63e320e45917f0032079aea9d433f7393bd67f20751e9fb3152431ccb2e729"
+  }
+]
