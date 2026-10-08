@@ -1,0 +1,125 @@
+{
+  "guard_active": true,
+  "allowed_connections": [
+    {
+      "host": "127.0.0.1",
+      "port": 39457
+    },
+    {
+      "host": "127.0.0.1",
+      "port": 39457
+    },
+    {
+      "host": "127.0.0.1",
+      "port": 39457
+    },
+    {
+      "host": "127.0.0.1",
+      "port": 39457
+    },
+    {
+      "host": "127.0.0.1",
+      "port": 39457
+    },
+    {
+      "host": "127.0.0.1",
+      "port": 39457
+    },
+    {
+      "host": "127.0.0.1",
+      "port": 39457
+    },
+    {
+      "host": "127.0.0.1",
+      "port": 39457
+    },
+    {
+      "host": "127.0.0.1",
+      "port": 39457
+    },
+    {
+      "host": "127.0.0.1",
+      "port": 39457
+    },
+    {
+      "host": "127.0.0.1",
+      "port": 39457
+    },
+    {
+      "host": "127.0.0.1",
+      "port": 39457
+    },
+    {
+      "host": "127.0.0.1",
+      "port": 39457
+    },
+    {
+      "host": "127.0.0.1",
+      "port": 39457
+    },
+    {
+      "host": "127.0.0.1",
+      "port": 39457
+    },
+    {
+      "host": "127.0.0.1",
+      "port": 39457
+    },
+    {
+      "host": "127.0.0.1",
+      "port": 39457
+    },
+    {
+      "host": "127.0.0.1",
+      "port": 39457
+    },
+    {
+      "host": "127.0.0.1",
+      "port": 39457
+    },
+    {
+      "host": "127.0.0.1",
+      "port": 39457
+    }
+  ],
+  "blocked_connections": [],
+  "source_origins": {
+    "__main__": {
+      "path": "src/canvaspilot/cli.py",
+      "sha256": "8c2591862f665a208d21e621f0065b0de9a37ca8b746b89a1f74807b4828d01c"
+    },
+    "canvaspilot.client": {
+      "path": "src/canvaspilot/client.py",
+      "sha256": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797"
+    },
+    "canvaspilot.feedback": {
+      "path": "src/canvaspilot/feedback.py",
+      "sha256": "55454598effea598474a21f67e36d5bc5bea84aaefeefc18e4d8c49804ab9869"
+    },
+    "canvaspilot.api": {
+      "path": "src/canvaspilot/api.py",
+      "sha256": "aac64644842ac893bc2a9ac07774e40cdf17cf58d38a3f63feea8f06efc6d69b"
+    },
+    "__mp_main__": {
+      "path": "src/canvaspilot/cli.py",
+      "sha256": "8c2591862f665a208d21e621f0065b0de9a37ca8b746b89a1f74807b4828d01c"
+    },
+    "canvaspilot.mcp_server": {
+      "path": "src/canvaspilot/mcp_server.py",
+      "sha256": "e17e12afd476e8fe4d0911c5ed06dc78559a5a2ee3ca63a581987014329e15c7"
+    },
+    "canvaspilot.bundle": {
+      "path": "src/canvaspilot/bundle.py",
+      "sha256": "baa38a29b09b126accae908494310a03ae68391e80514b2fb8208124d5ffb22f"
+    },
+    "canvaspilot": {
+      "path": "src/canvaspilot/__init__.py",
+      "sha256": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5"
+    },
+    "canvaspilot.grade_review": {
+      "path": "src/canvaspilot/grade_review.py",
+      "sha256": "e550752a830ca9cf4c2ef5d5b06dbf464abd9dfed3a5252d310a4acf8e2411f5"
+    }
+  },
+  "guard_sha256": "b2f03c4c29cabab0e1a4b031ead256edaf3e9b6aa56f13b56705c8a5c1b73bf3"
+}
