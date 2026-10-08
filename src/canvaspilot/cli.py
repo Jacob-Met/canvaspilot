@@ -150,6 +150,18 @@ def main(argv: list[str] | None = None) -> None:
     history.add_argument("course_id", help="Positive numeric Canvas course ID")
     history.add_argument("assignment_id", help="Positive numeric Canvas assignment ID")
 
+    agenda = sub.add_parser(
+        "agenda", help="Read selected course events and assignment deadlines together",
+        description=(
+            "Read 1-10 course calendars for an explicit inclusive Canvas date range. "
+            "Known timed, declared all-day, and unavailable timing remain separate."
+        ),
+    )
+    add_common(agenda)
+    agenda.add_argument("course_ids", nargs="+", help="Positive numeric Canvas course IDs")
+    agenda.add_argument("--start", dest="start_date", required=True, help="YYYY-MM-DD")
+    agenda.add_argument("--end", dest="end_date", required=True, help="YYYY-MM-DD")
+
     mcp = sub.add_parser("mcp", help="Run MCP stdio server")
     add_common(mcp)
 
@@ -267,6 +279,26 @@ def main(argv: list[str] | None = None) -> None:
                 }), file=sys.stderr)
                 raise SystemExit(1) from None
             print(json.dumps({"ok": True, "output": str(args.out), **report}, indent=2))
+        elif args.cmd == "agenda":
+            import httpx
+
+            from canvaspilot.client import CanvasAuthError, CanvasPaginationError
+
+            http_log = logging.getLogger("httpx")
+            previous_level = http_log.level
+            http_log.setLevel(max(http_log.getEffectiveLevel(), logging.WARNING))
+            try:
+                result = api.course_agenda(
+                    args.course_ids, start_date=args.start_date, end_date=args.end_date,
+                )
+            except (CanvasAuthError, CanvasPaginationError, httpx.HTTPError, ValueError) as error:
+                print(json.dumps({
+                    "ok": False, "error": type(error).__name__, "message": str(error),
+                }), file=sys.stderr)
+                raise SystemExit(1) from None
+            finally:
+                http_log.setLevel(previous_level)
+            print(json.dumps(result, indent=2))
         elif args.cmd == "submission-history":
             import httpx
 

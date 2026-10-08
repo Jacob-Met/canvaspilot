@@ -1,0 +1,253 @@
+{
+  "schema": "canvaspilot-agenda-independent-protocol/1",
+  "native_issue": "https://github.com/Jacob-Met/canvaspilot/issues/55",
+  "receiver": "estate-e82707f2bc62/root",
+  "base_commit": "39d835c8becb04d81b65c90d1491d2d3a2727ffe",
+  "base_tree": "53b67d3f06b4c780e508325ec42b2b435ec57e97",
+  "preparation": "Only original client/API/CLI/MCP, the existing actual HTTP/stdio receiving example, the issue55 author contract and current primary Calendar Events documentation were read. No agenda candidate implementation or author tests have been read.",
+  "primary_reference": "https://developerdocs.instructure.com/services/canvas/resources/calendar_events",
+  "native_runtime": "Actual installed HTTPX/MCP and their declared dependencies in /dev/shm/e827-canvaspilot-agenda-runtime; no browser, remote account, real token or substitute package.",
+  "fixtures": {
+    "selection": {
+      "course_ids": [
+        "00023",
+        "61"
+      ],
+      "canonical_course_ids": [
+        "23",
+        "61"
+      ],
+      "context_codes": [
+        "course_23",
+        "course_61"
+      ],
+      "start_date": "2026-10-08",
+      "end_date": "2026-10-11"
+    },
+    "event_pages": [
+      [
+        {
+          "id": 701,
+          "title": "Offset studio",
+          "context_code": "course_23",
+          "all_day": false,
+          "start_at": "2026-10-09T10:30:00+05:30",
+          "end_at": "2026-10-09T11:00:00+05:30",
+          "description": "<b>Preserve & explain</b>\nsecond line",
+          "hidden": true,
+          "workflow_state": "active"
+        },
+        {
+          "id": 702,
+          "title": "Section observance",
+          "context_code": "course_section_91",
+          "effective_context_code": "course_61",
+          "all_day": true,
+          "all_day_date": "2026-10-08",
+          "start_at": "2026-10-08T00:00:00+02:00",
+          "end_at": null,
+          "child_events": [],
+          "all_context_codes": "course_61,course_section_91"
+        },
+        {
+          "id": 703,
+          "title": "Later fractional event",
+          "context_code": "course_61",
+          "all_day": false,
+          "start_at": "2026-10-09T04:00:00.0000000002Z",
+          "end_at": null
+        }
+      ],
+      [
+        {
+          "id": 704,
+          "title": "Saved time unavailable",
+          "context_code": "course_23",
+          "all_day": false,
+          "start_at": null,
+          "all_day_date": "2026-10-09",
+          "description": "<script>literal only</script>"
+        },
+        {
+          "id": 705,
+          "title": "Flag has wrong type",
+          "context_code": "course_61",
+          "all_day": "false",
+          "start_at": "2026-10-09T05:10:00Z"
+        },
+        {
+          "id": 706,
+          "title": "Negative half-hour offset",
+          "context_code": "course_23",
+          "all_day": false,
+          "start_at": "2026-10-10T00:00:00-03:30"
+        }
+      ]
+    ],
+    "assignment_pages": [
+      [
+        {
+          "id": "assignment_801",
+          "title": "Earlier fractional override",
+          "context_code": "course_61",
+          "all_day": false,
+          "start_at": "2026-10-09T00:00:00.0000000001-04:00",
+          "end_at": "2026-10-09T00:00:00.0000000001-04:00",
+          "assignment": {
+            "id": 801,
+            "course_id": 61,
+            "due_at": "2026-10-11T23:59:00Z",
+            "points_possible": 0
+          },
+          "assignment_overrides": [
+            {
+              "id": 11,
+              "course_section_id": 91,
+              "due_at": "2026-10-09T00:00:00.0000000001-04:00"
+            }
+          ]
+        },
+        {
+          "id": "assignment_802",
+          "title": "Declared all-day assignment",
+          "context_code": "course_23",
+          "all_day": true,
+          "all_day_date": "2026-10-09",
+          "start_at": "2026-10-09T23:59:00-04:00",
+          "assignment": {
+            "id": 802,
+            "course_id": "23",
+            "due_at": null
+          },
+          "assignment_overrides": []
+        }
+      ],
+      [
+        {
+          "id": "assignment_801",
+          "title": "Same ID, separate returned override",
+          "context_code": "course_61",
+          "all_day": false,
+          "start_at": "2026-10-09T04:00:00Z",
+          "assignment": {
+            "id": 801,
+            "course_id": 61
+          },
+          "assignment_overrides": [
+            {
+              "id": 12,
+              "student_ids": [
+                9001,
+                9002
+              ]
+            }
+          ]
+        },
+        {
+          "id": "assignment_804",
+          "title": "No offset supplied",
+          "context_code": "course_23",
+          "all_day": false,
+          "start_at": "2026-10-09T10:00:00",
+          "assignment": {
+            "id": 804,
+            "course_id": 23
+          }
+        }
+      ]
+    ]
+  },
+  "expected": {
+    "schema": "canvaspilot.course-agenda.v1",
+    "collection_counts": {
+      "event": 6,
+      "assignment": 4
+    },
+    "counts": {
+      "total": 10,
+      "timed": 5,
+      "all_day": 2,
+      "timing_unavailable": 3
+    },
+    "timed_sources": [
+      [
+        "assignment",
+        2
+      ],
+      [
+        "assignment",
+        0
+      ],
+      [
+        "event",
+        2
+      ],
+      [
+        "event",
+        0
+      ],
+      [
+        "event",
+        5
+      ]
+    ],
+    "all_day_sources": [
+      [
+        "event",
+        1
+      ],
+      [
+        "assignment",
+        1
+      ]
+    ],
+    "unavailable_sources": [
+      [
+        "event",
+        3
+      ],
+      [
+        "event",
+        4
+      ],
+      [
+        "assignment",
+        3
+      ]
+    ],
+    "record_rule": "Every full record equals its source JSON value, including identities/types, nested overrides, literal text, unknown flags and original timestamps. Course binding resolves section91 to selected course61. Duplicate assignment_801 records stay distinct by source index. No fallback to nested assignment.due_at, midnight, host time zone or local date refiltering.",
+    "page_rule": "Two real HTTP pages per collection. First requests carry exact normalized context filters and inclusive date strings. Next links contain only opaque percent-encoded cursor queries; original filters must not be appended to the continuation. GET only, synthetic bearer only, loopback only."
+  },
+  "cases": [
+    {
+      "name": "actual_cli_complete_agenda",
+      "purpose": "Real native CLI/HTTPX/paginator emits the ten-record agenda, exact fractional UTC order and complete source records; successful empty collections remain distinguishable from refusals."
+    },
+    {
+      "name": "actual_cli_complete_refusal",
+      "variants": [
+        "foreign context on final assignment page",
+        "conflicting nested course identity",
+        "non-object final record",
+        "403 on final assignment page",
+        "repeated event next link",
+        "duplicate canonical course ID",
+        "more than ten contexts",
+        "noncanonical or reversed date"
+      ],
+      "purpose": "No successful partial stdout; structured input/provider error; invalid selection before HTTP; no writes, browser profile or retry of repeated pages."
+    },
+    {
+      "name": "registered_mcp_stdio_and_recovery",
+      "purpose": "Actual installed MCP client initializes the actual server, reads the advertised tool/readonly annotations, calls the agenda, receives an explicit failure after late provider refusal, then successfully calls again with fresh complete records. Original source/fixtures remain unchanged. Tool argument spelling follows the author's declared public signature, not implementation internals."
+    }
+  ],
+  "acceptance_boundaries": [
+    "Baseline missing-route/missing-tool results are expected negative evidence, not Canvas transport failures.",
+    "The inherited paginator admits a terminal single JSON object as one record; this receiver will not call that an agenda-level collection-shape guarantee.",
+    "Known timed ordering uses exact UTC comparison finer than Python datetime microseconds; equal times need only stable source order where specified.",
+    "All-day date and timing-unavailable groups stay separate from instants; output is a sequential read result, not a simultaneous course snapshot.",
+    "No live Canvas account, browser-broker session, attendance/submission interpretation, learner benefit or persistent file export is exercised.",
+    "Source review occurs after frozen receiving. Any test contract correction keeps the original protocol/code/log and exact successor separate."
+  ]
+}

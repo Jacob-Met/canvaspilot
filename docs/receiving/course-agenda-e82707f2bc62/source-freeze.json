@@ -1,0 +1,96 @@
+{
+  "observed_at": "2026-10-08T14:58:38.622817+00:00",
+  "base_commit": "a5ce672e5b3580c1f52e13c49eefee830f11346c",
+  "base_tree": "0661a7005e577864cb87bc41e0e715409c92ee76",
+  "original_receiving_commit": "39d835c8becb04d81b65c90d1491d2d3a2727ffe",
+  "composition": [
+    {
+      "path": "src/canvaspilot/api.py",
+      "parent_blob": "73e47f1354fc5bab44e9f030c5bf5d29c12d065f",
+      "composed_blob": "72bf08b751a466b9e2b32858f901b7fe60995122",
+      "additions_sha256": [
+        "6caece82cfac24a7da98b100f533c2f1a67003e14db43a0a5f7f57192d1091f2"
+      ],
+      "removing_exact_authored_additions_equals_parent": true
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "parent_blob": "545ec52f31b694a351e9a41a68e52a34c49db532",
+      "composed_blob": "d22cba693db9896168efb56b21be32797f4cab3a",
+      "additions_sha256": [
+        "74302e25f962e08c283ba07ea5bde084741e4fd2ce8fc289a59df38eee5872a5",
+        "6f8800107105275709c7ce6a2a251535cae999bd410b3ebf1f9df63a1e6d74f8"
+      ],
+      "removing_exact_authored_additions_equals_parent": true
+    },
+    {
+      "path": "src/canvaspilot/mcp_server.py",
+      "parent_blob": "a35800c496fcab6f28dd11fca0fedfc944be46c7",
+      "composed_blob": "4bbaf0e741abc29a3b973aef8dd633ecdbf4f956",
+      "additions_sha256": [
+        "1e8ab38eb1f2c71d46a89173520afd1ceea571d0091c91ed95217ec08656c0ee"
+      ],
+      "removing_exact_authored_additions_equals_parent": true
+    },
+    {
+      "path": "README.md",
+      "parent_blob": "4a61c3a5c4b219ec3aaa6cf3b64f19338856ca1f",
+      "composed_blob": "24a90ca09f0b53e336a087bf8f0d740886de5e8c",
+      "removing_exact_authored_additions_equals_parent": true
+    }
+  ],
+  "files": {
+    "src/canvaspilot/agenda.py": {
+      "bytes": 8455,
+      "sha256": "cd9d9e027393ce21cff0b4d0a13098dca3a906af3e9803201655bca40d3c3fda",
+      "git_blob": "82ab4fa8f9b92b8d9e5d4c74962d138e1d882ebd"
+    },
+    "src/canvaspilot/api.py": {
+      "git_blob": "72bf08b751a466b9e2b32858f901b7fe60995122",
+      "sha256": "43f8b737855e55b2903973e9b14d4160d71fce27d29b66bc8bf43134fd65f8e6",
+      "bytes": 29110
+    },
+    "src/canvaspilot/cli.py": {
+      "git_blob": "d22cba693db9896168efb56b21be32797f4cab3a",
+      "sha256": "db6e21a1bb4b91a8b4e5f512a7e3f9a5fddd8ca1ef0dd6b27893648e7f0dfdf2",
+      "bytes": 17001
+    },
+    "src/canvaspilot/mcp_server.py": {
+      "git_blob": "4bbaf0e741abc29a3b973aef8dd633ecdbf4f956",
+      "sha256": "446e52c02a6999cfa80fbae0525a1fb26e69c5951f2a24c0f6fb86be0595a755",
+      "bytes": 14945
+    },
+    "src/canvaspilot/bundle.py": {
+      "git_blob": "8f078e4b9cee172249491a4e7c93305ab3b2b166",
+      "sha256": "1eacc1058f12649b7aa8127355f2ce45d0b8617938675479bc45215cb91803dc",
+      "bytes": 2702
+    },
+    "README.md": {
+      "git_blob": "24a90ca09f0b53e336a087bf8f0d740886de5e8c",
+      "sha256": "6f1ae1b5f622d0032b4e265409608c90ee0353854a95187681dd808d09c460ce",
+      "bytes": 20855
+    },
+    "docs/course-agenda.md": {
+      "bytes": 6575,
+      "sha256": "73d328c763bbc990fd21ce841472bc391d5ca8e14f2ed6eabefa9b51ed8f05b4",
+      "git_blob": "622e5799d939370670ba7b18373b3382bc474173"
+    },
+    "tests/course_agenda_fixture.py": {
+      "git_blob": "12827bd8d5272eb332a1b56e1c1abc81c628f86c",
+      "sha256": "ec08ad62bd1a845378514154d2a828e22ee9642bb7af327990e8d3f6899a0d4c",
+      "bytes": 2340
+    },
+    "tests/test_course_agenda.py": {
+      "bytes": 8262,
+      "sha256": "c4352b2765b4b6348836749fc5dae706a3a2cb98fd71205f922535230f4bdff0",
+      "git_blob": "1a39bf4a09e4e761b8f081585a6263ac7d577eea"
+    },
+    "tests/test_course_agenda_process.py": {
+      "git_blob": "c594a284b2a70fb3955a02312b1c31b87a29c541",
+      "sha256": "a3701f5d0751e93659c5469a505a84ae33586cea0e3ee977e1783b41d613bd9e",
+      "bytes": 10858
+    }
+  },
+  "qualification": "Original receiving stays bound to v1. Current inbox composition requires full existing hosted CI; no local replay.",
+  "timestamp_correction": "rfc-correction/successor-freeze.json"
+}

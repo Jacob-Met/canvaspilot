@@ -584,6 +584,16 @@ class CanvasAPI:
             params={"auto_mark_as_read": False},
         )
 
+    def course_agenda(
+        self, course_ids: list[int | str], *, start_date: str, end_date: str,
+    ) -> dict[str, Any]:
+        """Read selected course events and assignment deadlines in one agenda."""
+        from canvaspilot.agenda import read_course_agenda
+
+        return read_course_agenda(
+            self.client, course_ids, start_date=start_date, end_date=end_date,
+        )
+
     def list_calendar_events(
         self,
         *,
