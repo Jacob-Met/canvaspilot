@@ -1,0 +1,133 @@
+{
+  "schema": "canvas-discussion-current39d-composition-v1",
+  "base_commit": "39d835c8becb04d81b65c90d1491d2d3a2727ffe",
+  "base_tree": "53b67d3f06b4c780e508325ec42b2b435ec57e97",
+  "prior_qualified_base": "79a2f2b2cbb7e74128d731cf096c7e86f1942d4b",
+  "source_root": "/dev/shm/c6cc965b64c2-canvas-discussion/candidate-current39d",
+  "current_original_files": 55,
+  "all_unowned_current_inputs_exact": true,
+  "new_module_and_functions_unchanged": true,
+  "owner_functions": {
+    "src/canvaspilot/api.py": {
+      "owner_functions_preserved": 46,
+      "new_function_ast_matches_frozen_79a2": true
+    },
+    "src/canvaspilot/mcp_server.py": {
+      "owner_functions_preserved": 40,
+      "new_function_ast_matches_frozen_79a2": true
+    }
+  },
+  "source_pins": [
+    {
+      "path": "src/canvaspilot/api.py",
+      "bytes": 28669,
+      "sha256": "1760e4ef1060dbf932e1d55d427e8ce57446e24cbebba0760df3fc4b4bf5b055",
+      "git_blob": "55a9b7c9d4d01c8c6a2447ae952b79d8ceed7c0d"
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "bytes": 15261,
+      "sha256": "1787673902c05df2dc826fe937efb956df9342d982f6f54bfaaa0f3144b5625f",
+      "git_blob": "c4189865182af0d923a00166730cee575d541423"
+    },
+    {
+      "path": "src/canvaspilot/mcp_server.py",
+      "bytes": 14104,
+      "sha256": "69437b00220b81e0d933b5bd01e16800c0ad880799dff8104d407031d94b33d1",
+      "git_blob": "51b203262db2d853e185385bb63c05bc484d60c5"
+    },
+    {
+      "path": "src/canvaspilot/bundle.py",
+      "bytes": 2706,
+      "sha256": "43b5eb431f4d785e7e2561310a2f0ef5b8af15edfbd6594136182d54f53d753a",
+      "git_blob": "cebeaa98440d745bb8f6bc3ae3ddf0d6cc1b83a8"
+    },
+    {
+      "path": "src/canvaspilot/discussion_thread.py",
+      "bytes": 8547,
+      "sha256": "11f955f827c29421143782518a1aaf1894d0892739c3b56c4d5e413da74555ff",
+      "git_blob": "2ed658fcf5cee996a02115742935716f1d039e25"
+    },
+    {
+      "path": "tests/test_discussion_thread.py",
+      "bytes": 13887,
+      "sha256": "22274853b6dfa5f377f9d42b7d9da9fabcf42ac2fdb1248285725148f7f84698",
+      "git_blob": "47cc390773c5e1f8a9d8c0297fad1f43cbcc7b7b"
+    },
+    {
+      "path": "tests/test_discussion_thread_native.py",
+      "bytes": 13404,
+      "sha256": "2793e3f3a09c031e99aa735b487f324fb828671691320bca8481465fc7fccc5b",
+      "git_blob": "8dd33f687ead0529d436be371d5d3c5ac446fca3"
+    },
+    {
+      "path": "docs/DISCUSSIONS.md",
+      "bytes": 5645,
+      "sha256": "b1f82d30fd9c275fc73f2dc86298849f881eec7e1d4d510c1d5e80565483490e",
+      "git_blob": "cbeab4607f322872351733639694890768a4521e"
+    },
+    {
+      "path": "README.md",
+      "bytes": 20850,
+      "sha256": "0f22033f2c14c519e45fdb74c9a0894b306a90c0929f78730fca5f05f926bf30",
+      "git_blob": "ad90e2ec17a3d2525f5f8ab89b7179a97d5cc493"
+    }
+  ],
+  "seam_changes": [
+    {
+      "path": "src/canvaspilot/api.py",
+      "kind": "insert",
+      "next_context": "    def post_discussion_reply(\n",
+      "inserted": "    def discussion_thread(\n        self, course_id: int | str, topic_id: int | str, *, unread_only: bool = False\n    ) -> dict[str, Any]:\n        \"\"\"Read the cached discussion tree with explicit read state and reply context.\"\"\"\n        from canvaspilot.discussion_thread import (\n            build_discussion_thread,\n            validate_discussion_selection,\n        )\n\n        course, topic = validate_discussion_selection(course_id, topic_id, unread_only)\n        result = self.get_discussion(course, topic)\n        return build_discussion_thread(result[\"topic\"], result[\"view\"], unread_only=unread_only)\n\n"
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "kind": "insert",
+      "next_context": "        elif args.cmd == \"files\":\n",
+      "inserted": "        elif args.cmd == \"discussion\":\n            import httpx\n\n            from canvaspilot.client import CanvasAuthError\n\n            try:\n                result = api.discussion_thread(\n                    args.course_id, args.topic_id, unread_only=args.unread_only\n                )\n            except (CanvasAuthError, httpx.HTTPError, ValueError) as error:\n                print(json.dumps({\n                    \"ok\": False, \"error\": type(error).__name__, \"message\": str(error),\n                }), file=sys.stderr)\n                raise SystemExit(1) from None\n            print(json.dumps(result, indent=2))\n"
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "kind": "insert",
+      "next_context": "    files = sub.add_parser(\"files\", help=\"List course files\")\n",
+      "inserted": "    discussion = sub.add_parser(\n        \"discussion\", help=\"Read one cached discussion; unread focus retains reply context\"\n    )\n    add_common(discussion)\n    discussion.add_argument(\"course_id\", help=\"Positive numeric Canvas course ID\")\n    discussion.add_argument(\"topic_id\", help=\"Positive numeric Canvas discussion topic ID\")\n    discussion.add_argument(\n        \"--unread-only\", action=\"store_true\", help=\"Keep known unread entries and their ancestors\"\n    )\n\n"
+    },
+    {
+      "path": "src/canvaspilot/mcp_server.py",
+      "kind": "insert",
+      "next_context": "\n\n@mcp.tool(description=\"Post a reply to a discussion topic.\", structured_output=False)\n",
+      "inserted": "\n\n@mcp.tool(\n    description=(\n        \"Read a Canvas cached discussion tree with source entry fields, author attribution \"\n        \"and reported read markers. unread_only retains known unread entries and their \"\n        \"ancestors as context. The cached view is eventually consistent; unknown or \"\n        \"unlocated read markers remain explicit. Does not post or mark entries read.\"\n    ),\n    annotations=ToolAnnotations(readOnlyHint=True, destructiveHint=False),\n    structured_output=False,\n)\nasync def canvas_discussion_thread(\n    course_id: str, topic_id: str, unread_only: StrictBool = False\n) -> str:\n    return _dump(_get_api().discussion_thread(course_id, topic_id, unread_only=unread_only))\n"
+    },
+    {
+      "path": "src/canvaspilot/mcp_server.py",
+      "kind": "replace",
+      "before": "from pydantic import Field, StrictInt\n",
+      "after": "from pydantic import Field, StrictBool, StrictInt\n"
+    },
+    {
+      "path": "src/canvaspilot/bundle.py",
+      "kind": "insert",
+      "next_context": "    \"canvas_post_discussion_reply\",\n",
+      "inserted": "    \"canvas_discussion_thread\",\n"
+    },
+    {
+      "path": "README.md",
+      "kind": "insert",
+      "next_context": "\n### Announcements\n",
+      "inserted": "\n### Read a discussion\n\nAfter choosing a topic with `canvaspilot discussions <course_id>`, open it with\n`canvaspilot discussion <course_id> <topic_id>`. Add `--unread-only` to keep known\nunread replies together with their parent context. The same report is available\nthrough `CanvasAPI.discussion_thread()` and `canvas_discussion_thread` in MCP.\n\nThe report keeps original entry fields and the returned reply structure, alongside\ncleaned text, unambiguous author attribution and reported read markers. Missing\nfacts remain unknown; absent or ambiguous unread metadata does not become a\nfalse empty result. Canvas's cached-view boundary and unmatched unread identifiers\nremain visible. See [the discussion reader guide](docs/DISCUSSIONS.md) for fields,\nselection rules and error behavior.\n"
+    },
+    {
+      "path": "README.md",
+      "kind": "replace",
+      "before": "| Discussions | `list_discussion_topics`, `get_discussion`, `post_discussion_reply` |\n",
+      "after": "| Discussions | `list_discussion_topics`, `get_discussion`, `discussion_thread`, `post_discussion_reply` |\n"
+    },
+    {
+      "path": "README.md",
+      "kind": "current owner count plus one",
+      "before": "37 MCP tools",
+      "after": "38 MCP tools"
+    }
+  ],
+  "classification": "Additive assignment submission metadata and self-submission history. Existing raw discussion/client/session/broker/dependencies/CI unchanged."
+}

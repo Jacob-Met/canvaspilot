@@ -8,7 +8,7 @@ from typing import Annotated, Any
 from mcp.server.mcpserver import MCPServer
 from mcp.server.mcpserver.exceptions import ToolError
 from mcp.types import ToolAnnotations
-from pydantic import Field, StrictInt
+from pydantic import Field, StrictBool, StrictInt
 
 from canvaspilot.api import CanvasAPI, _validate_sync_limits
 from canvaspilot.client import CanvasClient
@@ -138,6 +138,22 @@ async def canvas_get_discussion(course_id: str, topic_id: str) -> str:
     return _dump(_get_api().get_discussion(course_id, topic_id))
 
 
+@mcp.tool(
+    description=(
+        "Read a Canvas cached discussion tree with source entry fields, author attribution "
+        "and reported read markers. unread_only retains known unread entries and their "
+        "ancestors as context. The cached view is eventually consistent; unknown or "
+        "unlocated read markers remain explicit. Does not post or mark entries read."
+    ),
+    annotations=ToolAnnotations(readOnlyHint=True, destructiveHint=False),
+    structured_output=False,
+)
+async def canvas_discussion_thread(
+    course_id: str, topic_id: str, unread_only: StrictBool = False
+) -> str:
+    return _dump(_get_api().discussion_thread(course_id, topic_id, unread_only=unread_only))
+
+
 @mcp.tool(description="Post a reply to a discussion topic.", structured_output=False)
 async def canvas_post_discussion_reply(course_id: str, topic_id: str, message: str) -> str:
     return _dump(_get_api().post_discussion_reply(course_id, topic_id, message))
@@ -219,12 +235,27 @@ async def canvas_complete_quiz_submission(
     )
 
 
-@mcp.tool(description="List Canvas Inbox conversations.", structured_output=False)
+@mcp.tool(
+    description=(
+        "List your Canvas conversations without changing their state. "
+        "Default inbox includes read and unread non-archived conversations; "
+        "other scopes are unread, starred, archived, and sent."
+    ),
+    annotations=ToolAnnotations(readOnlyHint=True, destructiveHint=False, idempotentHint=True),
+    structured_output=False,
+)
 async def canvas_list_conversations(scope: str = "inbox") -> str:
     return _dump(_get_api().list_conversations(scope=scope))
 
 
-@mcp.tool(description="Get one Inbox conversation.", structured_output=False)
+@mcp.tool(
+    description=(
+        "Read one of your Canvas conversations by positive decimal ID, preserving unread state. "
+        "Returns supplied messages, participants and attachment metadata; does not download links."
+    ),
+    annotations=ToolAnnotations(readOnlyHint=True, destructiveHint=False, idempotentHint=True),
+    structured_output=False,
+)
 async def canvas_get_conversation(conversation_id: str) -> str:
     return _dump(_get_api().get_conversation(conversation_id))
 
@@ -237,6 +268,31 @@ async def canvas_list_calendar_events(start_date: str = "", end_date: str = "") 
             end_date=end_date or None,
         )
     )
+
+
+@mcp.tool(
+    description=(
+        "Read events and assignment calendar rows for 1-10 selected course IDs and "
+        "inclusive YYYY-MM-DD start_date/end_date. Known instants are sorted; "
+        "all-day and unavailable timing stay separate. Preserves returned records. "
+        "Reads are sequential; this does not infer learner state or expand recurrence."
+    ),
+    annotations=ToolAnnotations(readOnlyHint=True, destructiveHint=False, idempotentHint=True),
+    structured_output=False,
+)
+async def canvas_course_agenda(
+    course_ids: list[StrictInt | str], start_date: str, end_date: str,
+) -> str:
+    import httpx
+
+    from canvaspilot.client import CanvasAuthError, CanvasPaginationError
+
+    try:
+        return _dump(_get_api().course_agenda(
+            course_ids, start_date=start_date, end_date=end_date,
+        ))
+    except (CanvasAuthError, CanvasPaginationError, httpx.HTTPError, ValueError) as error:
+        raise ToolError(str(error)) from error
 
 
 @mcp.tool(description="Planner items (optional ISO start/end).", structured_output=False)

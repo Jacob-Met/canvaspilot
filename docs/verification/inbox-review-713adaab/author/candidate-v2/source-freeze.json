@@ -1,0 +1,34 @@
+{
+  "schema": "canvaspilot.inbox-source-freeze.v1",
+  "commit": "db32bde55db5080ed7ee856faab5cf1a2b5c949a",
+  "tree": "16e338cbcb783a57dad3357568a9539e1032c3f0",
+  "base": "ca2318fe7c56d2e4ec1b363ff8a945ab78bf4a0c",
+  "previous_candidate": "d1032f1eb44167282ef47803a42a86e25fb69001",
+  "files": {
+    "README.md": {
+      "sha256": "2c21599af415df72018b3c8e72414dcf29372c3735170a793fd7adb73dc1c976",
+      "bytes": 19816
+    },
+    "docs/inbox-review.md": {
+      "sha256": "5aa0bc5ee35dc42237fb9d33c1f2fdc37f233b638518cd0d84773f9ffa0f2081",
+      "bytes": 3805
+    },
+    "src/canvaspilot/api.py": {
+      "sha256": "20a8c1cfc606aad5a289f2def35212296c115e40e83e88d7711f2019cd557bed",
+      "bytes": 28159
+    },
+    "src/canvaspilot/cli.py": {
+      "sha256": "f649ea4f19450221ca99ca5737bdc2f8caceafb26ad788b84117aa5790cf8ea7",
+      "bytes": 13873
+    },
+    "src/canvaspilot/mcp_server.py": {
+      "sha256": "29c875d2ac1d534cca50624d1ee30fb2bc7b697ca34208fafff51b9c32054375",
+      "bytes": 13171
+    },
+    "tests/test_inbox_review.py": {
+      "sha256": "b97139af7b9cc51c2c04238eb89d1059745510daf92d44267117ce3d037ff172",
+      "bytes": 11356
+    }
+  },
+  "changes": "Shared ID admission addresses peer fragment witness; own receiver admits known preexisting HTTPX INFO lines only, guide explicitly distinguishes diagnostics from final error JSON. Wrong Python type raises TypeError; invalid integer spelling/value raises ValueError. Original source and failures retained."
+}

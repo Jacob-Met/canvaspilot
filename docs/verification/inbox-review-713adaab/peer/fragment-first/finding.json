@@ -1,0 +1,20 @@
+{
+  "source_commit": "d1032f1eb44167282ef47803a42a86e25fb69001",
+  "case_source_sha256": "a63c8a87204c7b15e0c130f8bba738fd245719ec998c9e3c596461c0d97265b2",
+  "evidence_sha256": "27fbdda80efa9b85ca12d1e0e89d7286ebf8f00d85168524fff3333e41d813ef",
+  "submitted_argument": "501#peer-fragment",
+  "broker_paths": [
+    "/api/v1/conversations/501#peer-fragment?auto_mark_as_read=false&per_page=50",
+    "/api/v1/conversations/501#peer-fragment?auto_mark_as_read=false&per_page=50"
+  ],
+  "canvas_queries": [
+    {},
+    {}
+  ],
+  "initial_state": "unread",
+  "python_state": "read",
+  "mcp_isError": false,
+  "mcp_returned_state": "read",
+  "final_state": "read",
+  "limit": "Native client/session envelope plus registered MCP stdio to an authored loopback provider; no live browser/Canvas."
+}

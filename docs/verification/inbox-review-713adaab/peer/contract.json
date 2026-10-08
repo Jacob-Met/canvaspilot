@@ -1,0 +1,12 @@
+{
+  "issue": "https://github.com/Jacob-Met/canvaspilot/issues/49",
+  "source_base": "ca2318fe7c56d2e4ec1b363ff8a945ab78bf4a0c",
+  "official_contract": "https://developerdocs.instructure.com/services/canvas/resources/conversations",
+  "retrieved_utc_date": "2026-10-08",
+  "contract_notes": [
+    "The list operation is paginated and ordered with recent conversations first. Its default selects non-archived conversations; documented named scopes are unread, starred, archived and sent.",
+    "The show operation defaults auto_mark_as_read to true. Returned details include message ordering, participants and recursively forwarded content."
+  ],
+  "independent_receiver_scope": "Explicit false propagation, unchanged unread/read/archived state, exact authored nested JSON and Unicode, default scope mapping, complete pagination or errors, real CLI and MCP stdio; synthetic loopback transport only.",
+  "fixture_limit": "Not a Canvas emulator, live school receiving, browser/session-cookie qualification, attachment fetch, or proof of undocumented server semantics."
+}

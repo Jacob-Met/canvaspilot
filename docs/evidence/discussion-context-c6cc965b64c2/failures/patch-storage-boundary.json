@@ -1,0 +1,8 @@
+{
+  "error": "OSError: [Errno 28] No space left on device",
+  "attempted_path": "/dev/shm/c6cc965b64c2-canvas-discussion/qualification/current39d-product.patch",
+  "partial_bytes_observed": 0,
+  "retained_as": "current39d-product.partial-from-enospc.patch",
+  "resolution": "Only five author-owned, byte-verified duplicate SRS data copies were reclaimed; their complete accepted copies, all source, drivers, receipts and failure evidence remain. The next current diff was written and hashed successfully.",
+  "reclamation_receipt_sha256": "a83eb2a849bd6d5393ec355c0d3b990adbedbbd9401b845ed0aac84680a16529"
+}

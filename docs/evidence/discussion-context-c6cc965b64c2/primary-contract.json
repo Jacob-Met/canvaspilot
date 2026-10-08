@@ -1,0 +1,22 @@
+{
+  "schema": "canvas-discussion-primary-contract-v1",
+  "retrieved_date": "2026-10-08",
+  "urls": [
+    "https://developerdocs.instructure.com/services/canvas/resources/discussion_topics",
+    "https://developerdocs.instructure.com/services/canvas/resources/discussion_topics#method.discussion_topics_api.view"
+  ],
+  "source": "Instructure Canvas LMS developer documentation, retrieved directly through the web tool; cached full-topic API section.",
+  "documented_facts": [
+    "The full-topic endpoint returns a cached view containing the discussion tree, entry bodies and participants.",
+    "unread_entries supplies unread IDs; forced_entries supplies manually forced read-state markers.",
+    "The view may refuse access or report unavailable cached content.",
+    "Optional new_entries data is a separate flat stream, and the response has an eventual-consistency boundary."
+  ],
+  "implementation_policy": "Ancestor retention, position paths, exact typed identifier association, duplicate-ID refusal for unread focus, and preservation of unmatched markers are this reader's explicit policies. No claim that Canvas itself specifies those ambiguity decisions.",
+  "requests": "The new API reuses the existing topic and view Canvas GET operations. A configured session broker may carry them in its existing outer transport envelope. No new Canvas write operation is added.",
+  "boundaries": [
+    "No live school/account/browser qualification",
+    "No request of include_new_entries and no merge of a separate stream",
+    "No assertion that the cached tree is the latest server state"
+  ]
+}

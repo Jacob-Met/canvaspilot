@@ -1,0 +1,105 @@
+{
+  "tool_count": 38,
+  "selected": {
+    "canvas_get_discussion": {
+      "name": "canvas_get_discussion",
+      "title": null,
+      "description": "Get a discussion topic + view/entries.",
+      "inputSchema": {
+        "properties": {
+          "course_id": {
+            "title": "Course Id",
+            "type": "string"
+          },
+          "topic_id": {
+            "title": "Topic Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "course_id",
+          "topic_id"
+        ],
+        "type": "object",
+        "title": "canvas_get_discussionArguments"
+      },
+      "execution": null,
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "_meta": null
+    },
+    "canvas_discussion_thread": {
+      "name": "canvas_discussion_thread",
+      "title": null,
+      "description": "Read a Canvas cached discussion tree with source entry fields, author attribution and reported read markers. unread_only retains known unread entries and their ancestors as context. The cached view is eventually consistent; unknown or unlocated read markers remain explicit. Does not post or mark entries read.",
+      "inputSchema": {
+        "properties": {
+          "course_id": {
+            "title": "Course Id",
+            "type": "string"
+          },
+          "topic_id": {
+            "title": "Topic Id",
+            "type": "string"
+          },
+          "unread_only": {
+            "default": false,
+            "title": "Unread Only",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "course_id",
+          "topic_id"
+        ],
+        "type": "object",
+        "title": "canvas_discussion_threadArguments"
+      },
+      "execution": null,
+      "outputSchema": null,
+      "icons": null,
+      "annotations": {
+        "title": null,
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": null,
+        "openWorldHint": null
+      },
+      "_meta": null
+    },
+    "canvas_post_discussion_reply": {
+      "name": "canvas_post_discussion_reply",
+      "title": null,
+      "description": "Post a reply to a discussion topic.",
+      "inputSchema": {
+        "properties": {
+          "course_id": {
+            "title": "Course Id",
+            "type": "string"
+          },
+          "topic_id": {
+            "title": "Topic Id",
+            "type": "string"
+          },
+          "message": {
+            "title": "Message",
+            "type": "string"
+          }
+        },
+        "required": [
+          "course_id",
+          "topic_id",
+          "message"
+        ],
+        "type": "object",
+        "title": "canvas_post_discussion_replyArguments"
+      },
+      "execution": null,
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "_meta": null
+    }
+  }
+}

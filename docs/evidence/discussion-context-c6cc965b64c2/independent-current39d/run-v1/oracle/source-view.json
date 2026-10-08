@@ -1,0 +1,130 @@
+{
+  "participants": [
+    {
+      "id": 5,
+      "display_name": "Numeric author",
+      "opaque": {
+        "tag": "n"
+      }
+    },
+    {
+      "id": "5",
+      "display_name": "String author",
+      "opaque": {
+        "tag": "s"
+      }
+    },
+    {
+      "id": 6,
+      "display_name": "Duplicate one"
+    },
+    {
+      "id": 6,
+      "display_name": "Duplicate two"
+    },
+    {
+      "id": true,
+      "display_name": "Boolean is not an ID"
+    },
+    {
+      "display_name": "Missing ID"
+    }
+  ],
+  "unread_entries": [
+    9007199254741009,
+    "100",
+    404404,
+    404404
+  ],
+  "forced_entries": [
+    100,
+    9007199254741009,
+    201
+  ],
+  "new_entries": [
+    {
+      "id": 9007199254741009,
+      "parent_id": 100,
+      "message": "A newer flat version; do not merge"
+    }
+  ],
+  "opaque_view": {
+    "cached_generation": "independent-v1",
+    "ratings": {
+      "100": 4
+    }
+  },
+  "view": [
+    {
+      "id": 100,
+      "user_id": 5,
+      "message": "<p>Root &amp; anchor</p>",
+      "read_state": "unread",
+      "parent_id": null,
+      "opaque": {
+        "unknown": [
+          1,
+          "2"
+        ]
+      },
+      "replies": [
+        {
+          "id": 101,
+          "deleted": true,
+          "user_id": 6,
+          "message": "Retain this raw deleted field",
+          "replies": [
+            {
+              "id": 9007199254741009,
+              "user_id": "5",
+              "parent_id": 9999,
+              "message": "<p>境界 &amp; résumé</p>",
+              "replies": []
+            },
+            {
+              "id": null,
+              "user_id": 5,
+              "message": {
+                "media": "no invented text"
+              }
+            }
+          ]
+        },
+        {
+          "id": 102,
+          "user_id": 5,
+          "read_state": "unread",
+          "message": "",
+          "replies": []
+        }
+      ]
+    },
+    {
+      "id": "100",
+      "user_id": 6,
+      "message": "Typed root"
+    },
+    {
+      "id": 200,
+      "forced_read_state": false,
+      "message": "Duplicate children",
+      "replies": [
+        {
+          "id": 201,
+          "message": "First occurrence"
+        },
+        {
+          "id": 201,
+          "message": "Second occurrence"
+        }
+      ]
+    },
+    {
+      "user_id": true,
+      "attachment": {
+        "url": "/synthetic/media",
+        "size": 0
+      }
+    }
+  ]
+}

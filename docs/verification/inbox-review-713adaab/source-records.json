@@ -1,0 +1,50 @@
+{
+  "base": "ca2318fe7c56d2e4ec1b363ff8a945ab78bf4a0c",
+  "first_candidate": "d1032f1eb44167282ef47803a42a86e25fb69001",
+  "reviewed_successor": "db32bde55db5080ed7ee856faab5cf1a2b5c949a",
+  "reviewed_tree": "16e338cbcb783a57dad3357568a9539e1032c3f0",
+  "files": [
+    {
+      "path": "README.md",
+      "base_blob": "f06fdc3090679d61953951eac6328b91cb674650",
+      "candidate_blob": "1d4fda64995aac4f48c24057a5bb914dacfc349d",
+      "candidate_bytes": 19816,
+      "candidate_sha256": "2c21599af415df72018b3c8e72414dcf29372c3735170a793fd7adb73dc1c976"
+    },
+    {
+      "path": "docs/inbox-review.md",
+      "base_blob": null,
+      "candidate_blob": "30066a2a3893586ccd228bebb32ab7e1394f745b",
+      "candidate_bytes": 3805,
+      "candidate_sha256": "5aa0bc5ee35dc42237fb9d33c1f2fdc37f233b638518cd0d84773f9ffa0f2081"
+    },
+    {
+      "path": "src/canvaspilot/api.py",
+      "base_blob": "140ced2576481a90b8319272714009d326835bf1",
+      "candidate_blob": "20d82d439e1d3a0b053d292bbfed2254ee5e34e4",
+      "candidate_bytes": 28159,
+      "candidate_sha256": "20a8c1cfc606aad5a289f2def35212296c115e40e83e88d7711f2019cd557bed"
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "base_blob": "8f58cbd70ec70f2b441b3ad8509396d4f2b57608",
+      "candidate_blob": "758cdbae58b714966cebb1d64446eaf0d3769251",
+      "candidate_bytes": 13873,
+      "candidate_sha256": "f649ea4f19450221ca99ca5737bdc2f8caceafb26ad788b84117aa5790cf8ea7"
+    },
+    {
+      "path": "src/canvaspilot/mcp_server.py",
+      "base_blob": "b6c52d710867a8c8cd3058f5476c22803a333501",
+      "candidate_blob": "c259387f611837c2541ed49371a28a29ab04dbc8",
+      "candidate_bytes": 13171,
+      "candidate_sha256": "29c875d2ac1d534cca50624d1ee30fb2bc7b697ca34208fafff51b9c32054375"
+    },
+    {
+      "path": "tests/test_inbox_review.py",
+      "base_blob": null,
+      "candidate_blob": "3f16eddbf62d74ee1432cbbc0ec8a0ef2507a191",
+      "candidate_bytes": 11356,
+      "candidate_sha256": "b97139af7b9cc51c2c04238eb89d1059745510daf92d44267117ce3d037ff172"
+    }
+  ]
+}

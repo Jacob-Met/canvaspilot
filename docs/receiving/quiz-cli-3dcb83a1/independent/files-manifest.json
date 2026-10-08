@@ -1,0 +1,29 @@
+{
+  "files": [
+    {
+      "path": "contract.json",
+      "bytes": 980,
+      "sha256": "f48b818c96a80e7f4b7a2bcb213a7ce4baf28bf8094ead7bb128f89128b922b1",
+      "git_blob": "5245284bf5745615c9a431a4e15267ff09d433ea"
+    },
+    {
+      "path": "receive_broker.py",
+      "bytes": 13889,
+      "sha256": "e0de3f64b33fc4bf8901b16e2b92c3830c328d098f7e4aa834284fc5e151d837",
+      "git_blob": "0b99bda52dc03e8b33b29ee1adf97f39f119903b"
+    },
+    {
+      "path": "broker-results.json",
+      "bytes": 17285,
+      "sha256": "5fb62b2887e9960805854680e07427eb6b9c4394587ccb96e701d7f404bb66af",
+      "git_blob": "0f3bb19fe4f301bf07041e1861d3e6f3725ceb64"
+    },
+    {
+      "path": "REVIEW.md",
+      "bytes": 3537,
+      "sha256": "fb4052bd7b5fff471cedd3cd3276897a6fffd16777e9387040f510cd61236fb2",
+      "git_blob": "29524946633e6e3a0c1d97e817ddc556deef1b73"
+    }
+  ],
+  "totalBytes": 35691
+}

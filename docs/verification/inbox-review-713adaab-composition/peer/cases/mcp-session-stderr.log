@@ -1,0 +1,60 @@
+HTTP Request: GET http://127.0.0.1:42625/health "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:42625/fetch "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:42625/health "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:42625/fetch "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:42625/health "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:42625/fetch "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:42625/fetch "HTTP/1.0 200 OK"
+Tool 'canvas_list_conversations' raised an unexpected exception
+Traceback (most recent call last):
+  File "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/lib/python3.14/site-packages/mcp/server/mcpserver/tools/base.py", line 179, in run
+    result = await self.fn_metadata.call_fn(self.fn, self.is_async, validated, pass_directly)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/lib/python3.14/site-packages/mcp/server/mcpserver/utilities/func_metadata.py", line 163, in call_fn
+    return await fn(**kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/tmp/canvaspilot-inbox-713adaab/src/canvaspilot/mcp_server.py", line 217, in canvas_list_conversations
+    return _dump(_get_api().list_conversations(scope=scope))
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/tmp/canvaspilot-inbox-713adaab/src/canvaspilot/api.py", line 556, in list_conversations
+    return self.client.get_paginated(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        "/api/v1/conversations",
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+        params=None if scope == "inbox" else {"scope": scope},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/tmp/canvaspilot-inbox-713adaab/src/canvaspilot/client.py", line 255, in get_paginated
+    return self._get_broker_link_pages(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        path, params=params, origin=health.get("base_url") or self.base_url,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/tmp/canvaspilot-inbox-713adaab/src/canvaspilot/client.py", line 311, in _get_broker_link_pages
+    response = broker_fetch(
+        "GET", url, params=_with_per_page(params) if page == 0 else None,
+        timeout=self.timeout, with_response=True,
+    )
+  File "/tmp/canvaspilot-inbox-713adaab/src/canvaspilot/client.py", line 92, in broker_fetch
+    raise CanvasAuthError(
+        f"Canvas auth failed ({status}) via session broker. Log in in the broker window."
+    )
+canvaspilot.client.CanvasAuthError: Canvas auth failed (403) via session broker. Log in in the broker window.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/lib/python3.14/site-packages/mcp/server/mcpserver/server.py", line 442, in _handle_call_tool
+    return await self.call_tool(params.name, params.arguments or {}, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/lib/python3.14/site-packages/mcp/server/mcpserver/server.py", line 548, in call_tool
+    return await self._tool_manager.call_tool(name, arguments, context, convert_result=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/lib/python3.14/site-packages/mcp/server/mcpserver/tools/tool_manager.py", line 87, in call_tool
+    return await tool.run(arguments, context, convert_result=convert_result)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/lib/python3.14/site-packages/mcp/server/mcpserver/tools/base.py", line 213, in run
+    raise UnexpectedToolError(f"Error executing tool {self.name}") from exc
+mcp.server.mcpserver.exceptions.UnexpectedToolError: Error executing tool canvas_list_conversations

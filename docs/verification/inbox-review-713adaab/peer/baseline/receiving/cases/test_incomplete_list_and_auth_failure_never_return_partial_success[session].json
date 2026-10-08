@@ -1,0 +1,822 @@
+{
+  "case": "test_incomplete_list_and_auth_failure_never_return_partial_success[session]",
+  "mode": "session",
+  "state_before": [
+    {
+      "id": 501,
+      "subject": "明日の予定 — Åsa 🧭",
+      "workflow_state": "unread",
+      "last_message": "é, שלום; <p>kept</p>",
+      "last_message_at": "2026-10-08T12:00:00Z",
+      "message_count": 2,
+      "subscribed": true,
+      "private": true,
+      "starred": false,
+      "properties": [
+        "attachments"
+      ],
+      "audience": [
+        17,
+        6
+      ],
+      "audience_contexts": {
+        "courses": {
+          "42": [
+            "StudentEnrollment"
+          ]
+        },
+        "groups": {}
+      },
+      "avatar_url": "https://media.example.invalid/avatars/17",
+      "participants": [
+        {
+          "id": 17,
+          "name": "Åsa 🧭",
+          "full_name": "Åsa Example",
+          "uuid": "fixture-17",
+          "extension": {
+            "roles": [
+              null,
+              false
+            ]
+          }
+        },
+        {
+          "id": 6,
+          "name": "李",
+          "full_name": "李 Example",
+          "avatar_url": "https://media.example.invalid/avatars/6"
+        }
+      ],
+      "visible": true,
+      "context_name": "Synthetic seminar",
+      "messages": [
+        {
+          "id": 5019,
+          "created_at": "2026-10-08T12:00:00Z",
+          "body": "<p>明日 09:00 — é / שלום 🧭</p>\n\"quoted\" & unchanged",
+          "author_id": 17,
+          "generated": false,
+          "media_comment": {
+            "display_name": "音声",
+            "content-type": "audio/ogg",
+            "media_id": "m1",
+            "media_type": "audio",
+            "url": "https://media.example.invalid/audio"
+          },
+          "forwarded_messages": [
+            {
+              "id": 4,
+              "body": "forwarded 👩🏽‍💻",
+              "author_id": 6,
+              "generated": false,
+              "forwarded_messages": [
+                {
+                  "id": 2,
+                  "body": "deeply forwarded",
+                  "forwarded_messages": [],
+                  "attachments": []
+                }
+              ],
+              "attachments": [
+                {
+                  "id": 71,
+                  "display_name": "résumé.pdf",
+                  "content-type": "application/pdf",
+                  "filename": "資料.pdf",
+                  "url": "https://files.example.invalid/71?download=1"
+                }
+              ]
+            }
+          ],
+          "attachments": [
+            {
+              "id": 72,
+              "display_name": "notes.txt",
+              "filename": "notes.txt",
+              "url": "https://files.example.invalid/72",
+              "extension": {
+                "retained": [
+                  0,
+                  false,
+                  null
+                ]
+              }
+            }
+          ],
+          "future_field": {
+            "preserve": [
+              "z",
+              "a"
+            ]
+          }
+        },
+        {
+          "id": 5011,
+          "created_at": "2026-10-07T09:00:00Z",
+          "body": "",
+          "author_id": 6,
+          "generated": true,
+          "media_comment": null,
+          "forwarded_messages": [],
+          "attachments": []
+        }
+      ],
+      "submissions": [],
+      "extension": {
+        "opaque": {
+          "b": 2,
+          "a": 1
+        },
+        "missing_is_not_false": null
+      }
+    },
+    {
+      "id": 303,
+      "subject": "明日の予定 — Åsa 🧭",
+      "workflow_state": "read",
+      "last_message": "é, שלום; <p>kept</p>",
+      "last_message_at": "2026-10-08T12:00:00Z",
+      "message_count": 2,
+      "subscribed": true,
+      "private": true,
+      "starred": true,
+      "properties": [
+        "attachments",
+        "last_author"
+      ],
+      "audience": [
+        17,
+        6
+      ],
+      "audience_contexts": {
+        "courses": {
+          "42": [
+            "StudentEnrollment"
+          ]
+        },
+        "groups": {}
+      },
+      "avatar_url": "https://media.example.invalid/avatars/17",
+      "participants": [
+        {
+          "id": 17,
+          "name": "Åsa 🧭",
+          "full_name": "Åsa Example",
+          "uuid": "fixture-17",
+          "extension": {
+            "roles": [
+              null,
+              false
+            ]
+          }
+        },
+        {
+          "id": 6,
+          "name": "李",
+          "full_name": "李 Example",
+          "avatar_url": "https://media.example.invalid/avatars/6"
+        }
+      ],
+      "visible": true,
+      "context_name": "Synthetic seminar",
+      "messages": [
+        {
+          "id": 3039,
+          "created_at": "2026-10-08T12:00:00Z",
+          "body": "<p>明日 09:00 — é / שלום 🧭</p>\n\"quoted\" & unchanged",
+          "author_id": 17,
+          "generated": false,
+          "media_comment": {
+            "display_name": "音声",
+            "content-type": "audio/ogg",
+            "media_id": "m1",
+            "media_type": "audio",
+            "url": "https://media.example.invalid/audio"
+          },
+          "forwarded_messages": [
+            {
+              "id": 4,
+              "body": "forwarded 👩🏽‍💻",
+              "author_id": 6,
+              "generated": false,
+              "forwarded_messages": [
+                {
+                  "id": 2,
+                  "body": "deeply forwarded",
+                  "forwarded_messages": [],
+                  "attachments": []
+                }
+              ],
+              "attachments": [
+                {
+                  "id": 71,
+                  "display_name": "résumé.pdf",
+                  "content-type": "application/pdf",
+                  "filename": "資料.pdf",
+                  "url": "https://files.example.invalid/71?download=1"
+                }
+              ]
+            }
+          ],
+          "attachments": [
+            {
+              "id": 72,
+              "display_name": "notes.txt",
+              "filename": "notes.txt",
+              "url": "https://files.example.invalid/72",
+              "extension": {
+                "retained": [
+                  0,
+                  false,
+                  null
+                ]
+              }
+            }
+          ],
+          "future_field": {
+            "preserve": [
+              "z",
+              "a"
+            ]
+          }
+        },
+        {
+          "id": 3031,
+          "created_at": "2026-10-07T09:00:00Z",
+          "body": "",
+          "author_id": 6,
+          "generated": true,
+          "media_comment": null,
+          "forwarded_messages": [],
+          "attachments": []
+        }
+      ],
+      "submissions": [],
+      "extension": {
+        "opaque": {
+          "b": 2,
+          "a": 1
+        },
+        "missing_is_not_false": null
+      }
+    },
+    {
+      "id": 88,
+      "subject": "明日の予定 — Åsa 🧭",
+      "workflow_state": "archived",
+      "last_message": "é, שלום; <p>kept</p>",
+      "last_message_at": "2026-10-08T12:00:00Z",
+      "message_count": 2,
+      "subscribed": false,
+      "private": true,
+      "starred": false,
+      "properties": [
+        "attachments"
+      ],
+      "audience": [
+        17,
+        6
+      ],
+      "audience_contexts": {
+        "courses": {
+          "42": [
+            "StudentEnrollment"
+          ]
+        },
+        "groups": {}
+      },
+      "avatar_url": "https://media.example.invalid/avatars/17",
+      "participants": [
+        {
+          "id": 17,
+          "name": "Åsa 🧭",
+          "full_name": "Åsa Example",
+          "uuid": "fixture-17",
+          "extension": {
+            "roles": [
+              null,
+              false
+            ]
+          }
+        },
+        {
+          "id": 6,
+          "name": "李",
+          "full_name": "李 Example",
+          "avatar_url": "https://media.example.invalid/avatars/6"
+        }
+      ],
+      "visible": false,
+      "context_name": "Synthetic seminar",
+      "messages": [
+        {
+          "id": 889,
+          "created_at": "2026-10-08T12:00:00Z",
+          "body": "<p>明日 09:00 — é / שלום 🧭</p>\n\"quoted\" & unchanged",
+          "author_id": 17,
+          "generated": false,
+          "media_comment": {
+            "display_name": "音声",
+            "content-type": "audio/ogg",
+            "media_id": "m1",
+            "media_type": "audio",
+            "url": "https://media.example.invalid/audio"
+          },
+          "forwarded_messages": [
+            {
+              "id": 4,
+              "body": "forwarded 👩🏽‍💻",
+              "author_id": 6,
+              "generated": false,
+              "forwarded_messages": [
+                {
+                  "id": 2,
+                  "body": "deeply forwarded",
+                  "forwarded_messages": [],
+                  "attachments": []
+                }
+              ],
+              "attachments": [
+                {
+                  "id": 71,
+                  "display_name": "résumé.pdf",
+                  "content-type": "application/pdf",
+                  "filename": "資料.pdf",
+                  "url": "https://files.example.invalid/71?download=1"
+                }
+              ]
+            }
+          ],
+          "attachments": [
+            {
+              "id": 72,
+              "display_name": "notes.txt",
+              "filename": "notes.txt",
+              "url": "https://files.example.invalid/72",
+              "extension": {
+                "retained": [
+                  0,
+                  false,
+                  null
+                ]
+              }
+            }
+          ],
+          "future_field": {
+            "preserve": [
+              "z",
+              "a"
+            ]
+          }
+        },
+        {
+          "id": 881,
+          "created_at": "2026-10-07T09:00:00Z",
+          "body": "",
+          "author_id": 6,
+          "generated": true,
+          "media_comment": null,
+          "forwarded_messages": [],
+          "attachments": []
+        }
+      ],
+      "submissions": [],
+      "extension": {
+        "opaque": {
+          "b": 2,
+          "a": 1
+        },
+        "missing_is_not_false": null
+      }
+    }
+  ],
+  "state_after": [
+    {
+      "id": 501,
+      "subject": "明日の予定 — Åsa 🧭",
+      "workflow_state": "unread",
+      "last_message": "é, שלום; <p>kept</p>",
+      "last_message_at": "2026-10-08T12:00:00Z",
+      "message_count": 2,
+      "subscribed": true,
+      "private": true,
+      "starred": false,
+      "properties": [
+        "attachments"
+      ],
+      "audience": [
+        17,
+        6
+      ],
+      "audience_contexts": {
+        "courses": {
+          "42": [
+            "StudentEnrollment"
+          ]
+        },
+        "groups": {}
+      },
+      "avatar_url": "https://media.example.invalid/avatars/17",
+      "participants": [
+        {
+          "id": 17,
+          "name": "Åsa 🧭",
+          "full_name": "Åsa Example",
+          "uuid": "fixture-17",
+          "extension": {
+            "roles": [
+              null,
+              false
+            ]
+          }
+        },
+        {
+          "id": 6,
+          "name": "李",
+          "full_name": "李 Example",
+          "avatar_url": "https://media.example.invalid/avatars/6"
+        }
+      ],
+      "visible": true,
+      "context_name": "Synthetic seminar",
+      "messages": [
+        {
+          "id": 5019,
+          "created_at": "2026-10-08T12:00:00Z",
+          "body": "<p>明日 09:00 — é / שלום 🧭</p>\n\"quoted\" & unchanged",
+          "author_id": 17,
+          "generated": false,
+          "media_comment": {
+            "display_name": "音声",
+            "content-type": "audio/ogg",
+            "media_id": "m1",
+            "media_type": "audio",
+            "url": "https://media.example.invalid/audio"
+          },
+          "forwarded_messages": [
+            {
+              "id": 4,
+              "body": "forwarded 👩🏽‍💻",
+              "author_id": 6,
+              "generated": false,
+              "forwarded_messages": [
+                {
+                  "id": 2,
+                  "body": "deeply forwarded",
+                  "forwarded_messages": [],
+                  "attachments": []
+                }
+              ],
+              "attachments": [
+                {
+                  "id": 71,
+                  "display_name": "résumé.pdf",
+                  "content-type": "application/pdf",
+                  "filename": "資料.pdf",
+                  "url": "https://files.example.invalid/71?download=1"
+                }
+              ]
+            }
+          ],
+          "attachments": [
+            {
+              "id": 72,
+              "display_name": "notes.txt",
+              "filename": "notes.txt",
+              "url": "https://files.example.invalid/72",
+              "extension": {
+                "retained": [
+                  0,
+                  false,
+                  null
+                ]
+              }
+            }
+          ],
+          "future_field": {
+            "preserve": [
+              "z",
+              "a"
+            ]
+          }
+        },
+        {
+          "id": 5011,
+          "created_at": "2026-10-07T09:00:00Z",
+          "body": "",
+          "author_id": 6,
+          "generated": true,
+          "media_comment": null,
+          "forwarded_messages": [],
+          "attachments": []
+        }
+      ],
+      "submissions": [],
+      "extension": {
+        "opaque": {
+          "b": 2,
+          "a": 1
+        },
+        "missing_is_not_false": null
+      }
+    },
+    {
+      "id": 303,
+      "subject": "明日の予定 — Åsa 🧭",
+      "workflow_state": "read",
+      "last_message": "é, שלום; <p>kept</p>",
+      "last_message_at": "2026-10-08T12:00:00Z",
+      "message_count": 2,
+      "subscribed": true,
+      "private": true,
+      "starred": true,
+      "properties": [
+        "attachments",
+        "last_author"
+      ],
+      "audience": [
+        17,
+        6
+      ],
+      "audience_contexts": {
+        "courses": {
+          "42": [
+            "StudentEnrollment"
+          ]
+        },
+        "groups": {}
+      },
+      "avatar_url": "https://media.example.invalid/avatars/17",
+      "participants": [
+        {
+          "id": 17,
+          "name": "Åsa 🧭",
+          "full_name": "Åsa Example",
+          "uuid": "fixture-17",
+          "extension": {
+            "roles": [
+              null,
+              false
+            ]
+          }
+        },
+        {
+          "id": 6,
+          "name": "李",
+          "full_name": "李 Example",
+          "avatar_url": "https://media.example.invalid/avatars/6"
+        }
+      ],
+      "visible": true,
+      "context_name": "Synthetic seminar",
+      "messages": [
+        {
+          "id": 3039,
+          "created_at": "2026-10-08T12:00:00Z",
+          "body": "<p>明日 09:00 — é / שלום 🧭</p>\n\"quoted\" & unchanged",
+          "author_id": 17,
+          "generated": false,
+          "media_comment": {
+            "display_name": "音声",
+            "content-type": "audio/ogg",
+            "media_id": "m1",
+            "media_type": "audio",
+            "url": "https://media.example.invalid/audio"
+          },
+          "forwarded_messages": [
+            {
+              "id": 4,
+              "body": "forwarded 👩🏽‍💻",
+              "author_id": 6,
+              "generated": false,
+              "forwarded_messages": [
+                {
+                  "id": 2,
+                  "body": "deeply forwarded",
+                  "forwarded_messages": [],
+                  "attachments": []
+                }
+              ],
+              "attachments": [
+                {
+                  "id": 71,
+                  "display_name": "résumé.pdf",
+                  "content-type": "application/pdf",
+                  "filename": "資料.pdf",
+                  "url": "https://files.example.invalid/71?download=1"
+                }
+              ]
+            }
+          ],
+          "attachments": [
+            {
+              "id": 72,
+              "display_name": "notes.txt",
+              "filename": "notes.txt",
+              "url": "https://files.example.invalid/72",
+              "extension": {
+                "retained": [
+                  0,
+                  false,
+                  null
+                ]
+              }
+            }
+          ],
+          "future_field": {
+            "preserve": [
+              "z",
+              "a"
+            ]
+          }
+        },
+        {
+          "id": 3031,
+          "created_at": "2026-10-07T09:00:00Z",
+          "body": "",
+          "author_id": 6,
+          "generated": true,
+          "media_comment": null,
+          "forwarded_messages": [],
+          "attachments": []
+        }
+      ],
+      "submissions": [],
+      "extension": {
+        "opaque": {
+          "b": 2,
+          "a": 1
+        },
+        "missing_is_not_false": null
+      }
+    },
+    {
+      "id": 88,
+      "subject": "明日の予定 — Åsa 🧭",
+      "workflow_state": "archived",
+      "last_message": "é, שלום; <p>kept</p>",
+      "last_message_at": "2026-10-08T12:00:00Z",
+      "message_count": 2,
+      "subscribed": false,
+      "private": true,
+      "starred": false,
+      "properties": [
+        "attachments"
+      ],
+      "audience": [
+        17,
+        6
+      ],
+      "audience_contexts": {
+        "courses": {
+          "42": [
+            "StudentEnrollment"
+          ]
+        },
+        "groups": {}
+      },
+      "avatar_url": "https://media.example.invalid/avatars/17",
+      "participants": [
+        {
+          "id": 17,
+          "name": "Åsa 🧭",
+          "full_name": "Åsa Example",
+          "uuid": "fixture-17",
+          "extension": {
+            "roles": [
+              null,
+              false
+            ]
+          }
+        },
+        {
+          "id": 6,
+          "name": "李",
+          "full_name": "李 Example",
+          "avatar_url": "https://media.example.invalid/avatars/6"
+        }
+      ],
+      "visible": false,
+      "context_name": "Synthetic seminar",
+      "messages": [
+        {
+          "id": 889,
+          "created_at": "2026-10-08T12:00:00Z",
+          "body": "<p>明日 09:00 — é / שלום 🧭</p>\n\"quoted\" & unchanged",
+          "author_id": 17,
+          "generated": false,
+          "media_comment": {
+            "display_name": "音声",
+            "content-type": "audio/ogg",
+            "media_id": "m1",
+            "media_type": "audio",
+            "url": "https://media.example.invalid/audio"
+          },
+          "forwarded_messages": [
+            {
+              "id": 4,
+              "body": "forwarded 👩🏽‍💻",
+              "author_id": 6,
+              "generated": false,
+              "forwarded_messages": [
+                {
+                  "id": 2,
+                  "body": "deeply forwarded",
+                  "forwarded_messages": [],
+                  "attachments": []
+                }
+              ],
+              "attachments": [
+                {
+                  "id": 71,
+                  "display_name": "résumé.pdf",
+                  "content-type": "application/pdf",
+                  "filename": "資料.pdf",
+                  "url": "https://files.example.invalid/71?download=1"
+                }
+              ]
+            }
+          ],
+          "attachments": [
+            {
+              "id": 72,
+              "display_name": "notes.txt",
+              "filename": "notes.txt",
+              "url": "https://files.example.invalid/72",
+              "extension": {
+                "retained": [
+                  0,
+                  false,
+                  null
+                ]
+              }
+            }
+          ],
+          "future_field": {
+            "preserve": [
+              "z",
+              "a"
+            ]
+          }
+        },
+        {
+          "id": 881,
+          "created_at": "2026-10-07T09:00:00Z",
+          "body": "",
+          "author_id": 6,
+          "generated": true,
+          "media_comment": null,
+          "forwarded_messages": [],
+          "attachments": []
+        }
+      ],
+      "submissions": [],
+      "extension": {
+        "opaque": {
+          "b": 2,
+          "a": 1
+        },
+        "missing_is_not_false": null
+      }
+    }
+  ],
+  "requests": [
+    {
+      "transport": "health",
+      "method": "GET",
+      "path": "/health"
+    },
+    {
+      "transport": "broker-envelope",
+      "method": "POST",
+      "path": "/fetch",
+      "envelope": {
+        "op": "fetch",
+        "method": "GET",
+        "path": "/api/v1/conversations?scope=inbox&per_page=50",
+        "headers": {
+          "Accept": "application/json"
+        },
+        "body": null
+      }
+    },
+    {
+      "transport": "canvas",
+      "mode": "session",
+      "method": "GET",
+      "path": "/api/v1/conversations",
+      "raw_query": "scope=inbox&per_page=50",
+      "query": {
+        "scope": [
+          "inbox"
+        ],
+        "per_page": [
+          "50"
+        ]
+      },
+      "synthetic_auth_ok": true
+    }
+  ],
+  "processes": []
+}

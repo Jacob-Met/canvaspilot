@@ -1,0 +1,15 @@
+{
+  "command": [
+    "git",
+    "-C",
+    "/tmp/canvaspilot-inbox-713adaab",
+    "fetch",
+    "--no-tags",
+    "--no-write-fetch-head",
+    "origin",
+    "ca2318fe7c56d2e4ec1b363ff8a945ab78bf4a0c"
+  ],
+  "exit": 0,
+  "stdout": "",
+  "stderr": ""
+}

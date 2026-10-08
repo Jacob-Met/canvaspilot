@@ -1,0 +1,29 @@
+--- initial test
++++ corrected test
+@@ -70,7 +70,7 @@
+             result = subprocess.run(
+                 [sys.executable, "-B", "-m", "canvaspilot.cli", *args,
+                  "--base-url", base_url, "--profile", str(profile)],
+-                cwd=scratch, env=env, capture_output=True, text=True, timeout=15,
++                cwd=scratch, env=env, capture_output=True, text=True, timeout=15, check=False,
+             )
+             self.assertFalse(profile.exists(), "a token read must not open a browser profile")
+         return result
+@@ -88,7 +88,7 @@
+                     "html_url": "https://canvas.example.test/courses/42/quizzes/102",
+                     "not_in_existing_projection": "retained only by quiz detail",
+                 }], {}
+-            self.assertEqual(parse_qs(route.query), {"per_page": ["100"]})
++            self.assertEqual(parse_qs(route.query), {"per_page": ["50"]})
+             return 200, [{
+                 "id": 101, "title": "Practice <one>", "due_at": "2026-10-30T09:00:00+09:00",
+             }], {"Link": '</api/v1/courses/42/quizzes?page=2&cursor=A%2BB>; rel="next"'}
+@@ -124,7 +124,7 @@
+         self.assertEqual(result.returncode, 0, result.stderr)
+         self.assertEqual(result.stderr, "")
+         self.assertEqual(json.loads(result.stdout), quiz)
+-        self.assertEqual(requests, [{"method": "GET", "path": "/api/v1/courses/42/quizzes/9?per_page=100"}])
++        self.assertEqual(requests, [{"method": "GET", "path": "/api/v1/courses/42/quizzes/9?per_page=50"}])
+ 
+     def test_later_page_failure_never_prints_partial_quizzes(self):
+         def respond(path):

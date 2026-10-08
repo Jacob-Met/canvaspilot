@@ -1,0 +1,218 @@
+.........FF....FFFF                                                      [100%]
+=================================== FAILURES ===================================
+__________ test_cli_inbox_selects_unread_and_preserves_returned_rows ___________
+
+inbox_http = ({'conversations': [{'id': 901, 'subject': 'Synthetic office hours — 火', 'workflow_state': 'unread', 'starred': True, ...s', 'query': {'scope': ['unread'], 'per_page': ['50']}}], 'status': 200, 'fail_next': False}, 'http://127.0.0.1:42635')
+
+    def test_cli_inbox_selects_unread_and_preserves_returned_rows(inbox_http):
+        state, base = inbox_http
+        before = copy.deepcopy(state["conversations"][0])
+        completed = run_cli(base, "inbox", "--scope", "unread")
+        assert completed.returncode == 0, completed.stderr
+>       assert completed.stderr == ""
+E       assert 'HTTP Request...1.0 200 OK"\n' == ''
+E         
+E         + HTTP Request: GET http://127.0.0.1:42635/api/v1/conversations?scope=unread&per_page=50 "HTTP/1.0 200 OK"
+
+tests/test_inbox_review.py:193: AssertionError
+____________ test_cli_conversation_preserves_unread_and_nested_text ____________
+
+inbox_http = ({'conversations': [{'id': 901, 'subject': 'Synthetic office hours — 火', 'workflow_state': 'unread', 'starred': True, ...: {'auto_mark_as_read': ['false'], 'per_page': ['50']}}], 'status': 200, 'fail_next': False}, 'http://127.0.0.1:34863')
+
+    def test_cli_conversation_preserves_unread_and_nested_text(inbox_http):
+        state, base = inbox_http
+        before = copy.deepcopy(state["conversations"][0])
+        completed = run_cli(base, "conversation", "901")
+        assert completed.returncode == 0, completed.stderr
+>       assert completed.stderr == ""
+E       assert 'HTTP Request...1.0 200 OK"\n' == ''
+E         
+E         + HTTP Request: GET http://127.0.0.1:34863/api/v1/conversations/901?auto_mark_as_read=false&per_page=50 "HTTP/1.0 200 OK"
+
+tests/test_inbox_review.py:204: AssertionError
+_____ test_cli_read_errors_are_controlled_and_have_no_success_output[401] ______
+
+inbox_http = ({'conversations': [{'id': 901, 'subject': 'Synthetic office hours — 火', 'workflow_state': 'unread', 'starred': True, ...: {'auto_mark_as_read': ['false'], 'per_page': ['50']}}], 'status': 401, 'fail_next': False}, 'http://127.0.0.1:35081')
+status = 401
+
+    @pytest.mark.parametrize("status", [401, 404, 500])
+    def test_cli_read_errors_are_controlled_and_have_no_success_output(inbox_http, status):
+        state, base = inbox_http
+        state["status"] = status
+        completed = run_cli(base, "conversation", "901")
+        assert completed.returncode == 1
+        assert completed.stdout == ""
+>       failure = json.loads(completed.stderr)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_inbox_review.py:227: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.14/json/__init__.py:352: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.14/json/decoder.py:345: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <json.decoder.JSONDecoder object at 0x71ce4e8df8c0>
+s = 'HTTP Request: GET http://127.0.0.1:35081/api/v1/conversations/901?auto_mark_as_read=false&per_page=50 "HTTP/1.0 401 U...age": "Canvas auth failed (401) for GET /api/v1/conversations/901. Start session broker: canvaspilot session start"}\n'
+idx = 0
+
+    def raw_decode(self, s, idx=0):
+        """Decode a JSON document from ``s`` (a ``str`` beginning with
+        a JSON document) and return a 2-tuple of the Python
+        representation and the index in ``s`` where the document ended.
+    
+        This can be used to decode a JSON document from a string that may
+        have extraneous data at the end.
+    
+        """
+        try:
+            obj, end = self.scan_once(s, idx)
+        except StopIteration as err:
+>           raise JSONDecodeError("Expecting value", s, err.value) from None
+E           json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+/usr/lib/python3.14/json/decoder.py:363: JSONDecodeError
+_____ test_cli_read_errors_are_controlled_and_have_no_success_output[404] ______
+
+inbox_http = ({'conversations': [{'id': 901, 'subject': 'Synthetic office hours — 火', 'workflow_state': 'unread', 'starred': True, ...: {'auto_mark_as_read': ['false'], 'per_page': ['50']}}], 'status': 404, 'fail_next': False}, 'http://127.0.0.1:46825')
+status = 404
+
+    @pytest.mark.parametrize("status", [401, 404, 500])
+    def test_cli_read_errors_are_controlled_and_have_no_success_output(inbox_http, status):
+        state, base = inbox_http
+        state["status"] = status
+        completed = run_cli(base, "conversation", "901")
+        assert completed.returncode == 1
+        assert completed.stdout == ""
+>       failure = json.loads(completed.stderr)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_inbox_review.py:227: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.14/json/__init__.py:352: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.14/json/decoder.py:345: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <json.decoder.JSONDecoder object at 0x71ce4e8df8c0>
+s = 'HTTP Request: GET http://127.0.0.1:46825/api/v1/conversations/901?auto_mark_as_read=false&per_page=50 "HTTP/1.0 404 N...ead=false&per_page=50\'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"}\n'
+idx = 0
+
+    def raw_decode(self, s, idx=0):
+        """Decode a JSON document from ``s`` (a ``str`` beginning with
+        a JSON document) and return a 2-tuple of the Python
+        representation and the index in ``s`` where the document ended.
+    
+        This can be used to decode a JSON document from a string that may
+        have extraneous data at the end.
+    
+        """
+        try:
+            obj, end = self.scan_once(s, idx)
+        except StopIteration as err:
+>           raise JSONDecodeError("Expecting value", s, err.value) from None
+E           json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+/usr/lib/python3.14/json/decoder.py:363: JSONDecodeError
+_____ test_cli_read_errors_are_controlled_and_have_no_success_output[500] ______
+
+inbox_http = ({'conversations': [{'id': 901, 'subject': 'Synthetic office hours — 火', 'workflow_state': 'unread', 'starred': True, ...: {'auto_mark_as_read': ['false'], 'per_page': ['50']}}], 'status': 500, 'fail_next': False}, 'http://127.0.0.1:34215')
+status = 500
+
+    @pytest.mark.parametrize("status", [401, 404, 500])
+    def test_cli_read_errors_are_controlled_and_have_no_success_output(inbox_http, status):
+        state, base = inbox_http
+        state["status"] = status
+        completed = run_cli(base, "conversation", "901")
+        assert completed.returncode == 1
+        assert completed.stdout == ""
+>       failure = json.loads(completed.stderr)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_inbox_review.py:227: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.14/json/__init__.py:352: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.14/json/decoder.py:345: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <json.decoder.JSONDecoder object at 0x71ce4e8df8c0>
+s = 'HTTP Request: GET http://127.0.0.1:34215/api/v1/conversations/901?auto_mark_as_read=false&per_page=50 "HTTP/1.0 500 I...ead=false&per_page=50\'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500"}\n'
+idx = 0
+
+    def raw_decode(self, s, idx=0):
+        """Decode a JSON document from ``s`` (a ``str`` beginning with
+        a JSON document) and return a 2-tuple of the Python
+        representation and the index in ``s`` where the document ended.
+    
+        This can be used to decode a JSON document from a string that may
+        have extraneous data at the end.
+    
+        """
+        try:
+            obj, end = self.scan_once(s, idx)
+        except StopIteration as err:
+>           raise JSONDecodeError("Expecting value", s, err.value) from None
+E           json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+/usr/lib/python3.14/json/decoder.py:363: JSONDecodeError
+_________ test_cli_inbox_later_page_error_never_prints_partial_success _________
+
+inbox_http = ({'conversations': [{'id': 901, 'subject': 'Synthetic office hours — 火', 'workflow_state': 'unread', 'starred': True, ... '/api/v1/conversations', 'query': {'cursor': ['next']}}], 'status': 200, 'fail_next': True}, 'http://127.0.0.1:41365')
+
+    def test_cli_inbox_later_page_error_never_prints_partial_success(inbox_http):
+        state, base = inbox_http
+        state["fail_next"] = True
+        completed = run_cli(base, "inbox")
+        assert completed.returncode == 1
+        assert completed.stdout == ""
+>       assert json.loads(completed.stderr)["ok"] is False
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_inbox_review.py:239: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.14/json/__init__.py:352: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.14/json/decoder.py:345: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <json.decoder.JSONDecoder object at 0x71ce4e8df8c0>
+s = 'HTTP Request: GET http://127.0.0.1:41365/api/v1/conversations?per_page=50 "HTTP/1.0 200 OK"\nHTTP Request: GET http:/...ersations?cursor=next\'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500"}\n'
+idx = 0
+
+    def raw_decode(self, s, idx=0):
+        """Decode a JSON document from ``s`` (a ``str`` beginning with
+        a JSON document) and return a 2-tuple of the Python
+        representation and the index in ``s`` where the document ended.
+    
+        This can be used to decode a JSON document from a string that may
+        have extraneous data at the end.
+    
+        """
+        try:
+            obj, end = self.scan_once(s, idx)
+        except StopIteration as err:
+>           raise JSONDecodeError("Expecting value", s, err.value) from None
+E           json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+/usr/lib/python3.14/json/decoder.py:363: JSONDecodeError
+=========================== short test summary info ============================
+FAILED tests/test_inbox_review.py::test_cli_inbox_selects_unread_and_preserves_returned_rows
+FAILED tests/test_inbox_review.py::test_cli_conversation_preserves_unread_and_nested_text
+FAILED tests/test_inbox_review.py::test_cli_read_errors_are_controlled_and_have_no_success_output[401]
+FAILED tests/test_inbox_review.py::test_cli_read_errors_are_controlled_and_have_no_success_output[404]
+FAILED tests/test_inbox_review.py::test_cli_read_errors_are_controlled_and_have_no_success_output[500]
+FAILED tests/test_inbox_review.py::test_cli_inbox_later_page_error_never_prints_partial_success
+6 failed, 13 passed in 21.53s

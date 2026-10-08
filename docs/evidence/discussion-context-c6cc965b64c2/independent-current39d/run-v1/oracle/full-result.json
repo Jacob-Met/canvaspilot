@@ -1,0 +1,336 @@
+{
+  "topic": {
+    "id": 19,
+    "title": "Independent cached view boundary",
+    "message": "<p>Boundary &amp; context</p>",
+    "discussion_subentry_count": 904,
+    "unread_count": 8,
+    "locked": false,
+    "opaque": {
+      "empty": [],
+      "flag": true,
+      "large": 9007199254741009
+    }
+  },
+  "topic_message_text": "Boundary & context",
+  "source": {
+    "kind": "canvas_cached_discussion_view",
+    "eventually_consistent": true,
+    "new_entries_requested": false
+  },
+  "selection": "all",
+  "view_metadata": {
+    "participants": [
+      {
+        "id": 5,
+        "display_name": "Numeric author",
+        "opaque": {
+          "tag": "n"
+        }
+      },
+      {
+        "id": "5",
+        "display_name": "String author",
+        "opaque": {
+          "tag": "s"
+        }
+      },
+      {
+        "id": 6,
+        "display_name": "Duplicate one"
+      },
+      {
+        "id": 6,
+        "display_name": "Duplicate two"
+      },
+      {
+        "id": true,
+        "display_name": "Boolean is not an ID"
+      },
+      {
+        "display_name": "Missing ID"
+      }
+    ],
+    "unread_entries": [
+      9007199254741009,
+      "100",
+      404404,
+      404404
+    ],
+    "forced_entries": [
+      100,
+      9007199254741009,
+      201
+    ],
+    "new_entries": [
+      {
+        "id": 9007199254741009,
+        "parent_id": 100,
+        "message": "A newer flat version; do not merge"
+      }
+    ],
+    "opaque_view": {
+      "cached_generation": "independent-v1",
+      "ratings": {
+        "100": 4
+      }
+    }
+  },
+  "entries": [
+    {
+      "path": [
+        0
+      ],
+      "parent_path": null,
+      "entry": {
+        "id": 100,
+        "user_id": 5,
+        "message": "<p>Root &amp; anchor</p>",
+        "read_state": "unread",
+        "parent_id": null,
+        "opaque": {
+          "unknown": [
+            1,
+            "2"
+          ]
+        }
+      },
+      "replies_supplied": true,
+      "reply_count": 2,
+      "message_text": "Root & anchor",
+      "author": {
+        "id": 5,
+        "display_name": "Numeric author",
+        "opaque": {
+          "tag": "n"
+        }
+      },
+      "read_state": "read",
+      "forced_read_state": true,
+      "context_only": false
+    },
+    {
+      "path": [
+        0,
+        0
+      ],
+      "parent_path": [
+        0
+      ],
+      "entry": {
+        "id": 101,
+        "deleted": true,
+        "user_id": 6,
+        "message": "Retain this raw deleted field"
+      },
+      "replies_supplied": true,
+      "reply_count": 2,
+      "message_text": null,
+      "author": null,
+      "read_state": "read",
+      "forced_read_state": false,
+      "context_only": false
+    },
+    {
+      "path": [
+        0,
+        0,
+        0
+      ],
+      "parent_path": [
+        0,
+        0
+      ],
+      "entry": {
+        "id": 9007199254741009,
+        "user_id": "5",
+        "parent_id": 9999,
+        "message": "<p>境界 &amp; résumé</p>"
+      },
+      "replies_supplied": true,
+      "reply_count": 0,
+      "message_text": "境界 & résumé",
+      "author": {
+        "id": "5",
+        "display_name": "String author",
+        "opaque": {
+          "tag": "s"
+        }
+      },
+      "read_state": "unread",
+      "forced_read_state": true,
+      "context_only": false
+    },
+    {
+      "path": [
+        0,
+        0,
+        1
+      ],
+      "parent_path": [
+        0,
+        0
+      ],
+      "entry": {
+        "id": null,
+        "user_id": 5,
+        "message": {
+          "media": "no invented text"
+        }
+      },
+      "replies_supplied": false,
+      "reply_count": 0,
+      "message_text": null,
+      "author": {
+        "id": 5,
+        "display_name": "Numeric author",
+        "opaque": {
+          "tag": "n"
+        }
+      },
+      "read_state": "unknown",
+      "forced_read_state": null,
+      "context_only": false
+    },
+    {
+      "path": [
+        0,
+        1
+      ],
+      "parent_path": [
+        0
+      ],
+      "entry": {
+        "id": 102,
+        "user_id": 5,
+        "read_state": "unread",
+        "message": ""
+      },
+      "replies_supplied": true,
+      "reply_count": 0,
+      "message_text": "",
+      "author": {
+        "id": 5,
+        "display_name": "Numeric author",
+        "opaque": {
+          "tag": "n"
+        }
+      },
+      "read_state": "read",
+      "forced_read_state": false,
+      "context_only": false
+    },
+    {
+      "path": [
+        1
+      ],
+      "parent_path": null,
+      "entry": {
+        "id": "100",
+        "user_id": 6,
+        "message": "Typed root"
+      },
+      "replies_supplied": false,
+      "reply_count": 0,
+      "message_text": "Typed root",
+      "author": null,
+      "read_state": "unread",
+      "forced_read_state": false,
+      "context_only": false
+    },
+    {
+      "path": [
+        2
+      ],
+      "parent_path": null,
+      "entry": {
+        "id": 200,
+        "forced_read_state": false,
+        "message": "Duplicate children"
+      },
+      "replies_supplied": true,
+      "reply_count": 2,
+      "message_text": "Duplicate children",
+      "author": null,
+      "read_state": "read",
+      "forced_read_state": false,
+      "context_only": false
+    },
+    {
+      "path": [
+        2,
+        0
+      ],
+      "parent_path": [
+        2
+      ],
+      "entry": {
+        "id": 201,
+        "message": "First occurrence"
+      },
+      "replies_supplied": false,
+      "reply_count": 0,
+      "message_text": "First occurrence",
+      "author": null,
+      "read_state": "unknown",
+      "forced_read_state": null,
+      "context_only": false
+    },
+    {
+      "path": [
+        2,
+        1
+      ],
+      "parent_path": [
+        2
+      ],
+      "entry": {
+        "id": 201,
+        "message": "Second occurrence"
+      },
+      "replies_supplied": false,
+      "reply_count": 0,
+      "message_text": "Second occurrence",
+      "author": null,
+      "read_state": "unknown",
+      "forced_read_state": null,
+      "context_only": false
+    },
+    {
+      "path": [
+        3
+      ],
+      "parent_path": null,
+      "entry": {
+        "user_id": true,
+        "attachment": {
+          "url": "/synthetic/media",
+          "size": 0
+        }
+      },
+      "replies_supplied": false,
+      "reply_count": 0,
+      "message_text": null,
+      "author": null,
+      "read_state": "unknown",
+      "forced_read_state": null,
+      "context_only": false
+    }
+  ],
+  "unmatched_unread_entries": [
+    404404,
+    404404
+  ],
+  "counts": {
+    "observed_entries": 10,
+    "returned_entries": 10,
+    "known_unread_entries": 2,
+    "unknown_read_state_entries": 4
+  },
+  "warnings": [
+    "Some returned entries have an unknown read state; they are not inferred read or unread.",
+    "Some supplied unread identifiers are absent from this cached entry tree.",
+    "Repeated participant identifiers are not used to attribute entries.",
+    "Repeated entry identifiers do not establish a unique read-state association."
+  ]
+}

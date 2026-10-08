@@ -1,0 +1,7 @@
+{
+  "schema": "canvas-discussion-capture-v2-failure",
+  "fact": "The pytest subprocess returned to its launcher, then writing the receipt failed because /dev is recreated per exec invocation and the assumed evidence subdirectory did not exist. No pytest output was printed before this failure; the run is unqualified.",
+  "tool_exit_code": 1,
+  "exception": "FileNotFoundError: [Errno 2] No such file or directory: '/dev/c6cc965b64c2-canvas-discussion-tmp/evidence/candidate-full-v2-receipt.json'",
+  "storage_probe": "A regular-file write and same-invocation read succeeded; a second exec reported second_exec_probe_exists=false."
+}

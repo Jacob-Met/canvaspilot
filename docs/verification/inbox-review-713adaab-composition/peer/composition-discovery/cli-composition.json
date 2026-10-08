@@ -1,0 +1,17 @@
+{
+  "base": "ca2318fe7c56d2e4ec1b363ff8a945ab78bf4a0c",
+  "incoming_main": "79a2f2b2cbb7e74128d731cf096c7e86f1942d4b",
+  "reviewed_candidate": "db32bde55db5080ed7ee856faab5cf1a2b5c949a",
+  "incoming_cli_blob": "9b8eec6ea177d0fe69e3cb7776af185d2e7ad4a5",
+  "input_sha256": {
+    "/tmp/canvaspilot-inbox-independent-713adaab/candidate-v2/src/canvaspilot/cli.py": "f649ea4f19450221ca99ca5737bdc2f8caceafb26ad788b84117aa5790cf8ea7",
+    "/tmp/canvaspilot-inbox-independent-713adaab/baseline/src/canvaspilot/cli.py": "34ca64ec5075a51fe3dfc4de15480fa2daf53c690c5490e01c65322eb809a9c4",
+    "/tmp/canvaspilot-inbox-independent-713adaab/composition-current/current-cli.py": "a6029296bba4e84b3889bd62487b966d7bc1832a8b1b1e0fd928dfb9b9ab68a8"
+  },
+  "input_bytes_unchanged": true,
+  "read_only_merge_preview_exit": 0,
+  "merged_cli_bytes": 13919,
+  "merged_cli_sha256": "e1c98acdbe462ed5db56eecd8ea5f66342ce259cc7243ed32e56224f09dea090",
+  "merged_cli_git_blob": "cac1e88aa5b1e72580578aa0d933cb2c52c22d20",
+  "limits": "git merge-file -p only; no owner source or ref edits, no publication, no preview replay."
+}

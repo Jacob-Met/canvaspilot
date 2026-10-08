@@ -1,0 +1,7 @@
+{
+  "issue": "https://github.com/Jacob-Met/canvaspilot/issues/49",
+  "original_attempt": "/home/jacob destination guard stopped before writes because disk headroom below 40 MiB",
+  "working_filesystem": "native /tmp tmpfs",
+  "durability_gate": "publish qualified Git source/evidence through existing repository; no permanent retention inferred from tmpfs",
+  "base": "ca2318fe7c56d2e4ec1b363ff8a945ab78bf4a0c"
+}

@@ -434,6 +434,19 @@ class CanvasAPI:
         )
         return {"topic": topic, "view": view}
 
+    def discussion_thread(
+        self, course_id: int | str, topic_id: int | str, *, unread_only: bool = False
+    ) -> dict[str, Any]:
+        """Read the cached discussion tree with explicit read state and reply context."""
+        from canvaspilot.discussion_thread import (
+            build_discussion_thread,
+            validate_discussion_selection,
+        )
+
+        course, topic = validate_discussion_selection(course_id, topic_id, unread_only)
+        result = self.get_discussion(course, topic)
+        return build_discussion_thread(result["topic"], result["view"], unread_only=unread_only)
+
     def post_discussion_reply(
         self,
         course_id: int | str,
@@ -558,13 +571,34 @@ class CanvasAPI:
         )
 
     def list_conversations(self, *, scope: str = "inbox") -> list[Any]:
+        """List current-user conversations; inbox means the non-archived default."""
         return self.client.get_paginated(
             "/api/v1/conversations",
-            params={"scope": scope},
+            params=None if scope == "inbox" else {"scope": scope},
         )
 
     def get_conversation(self, conversation_id: int | str) -> Any:
-        return self.client.request("GET", f"/api/v1/conversations/{conversation_id}")
+        """Read a conversation without automatically clearing its unread state."""
+        if isinstance(conversation_id, bool) or not isinstance(conversation_id, (int, str)):
+            raise TypeError("conversation_id must be a positive decimal integer")
+        identifier = str(conversation_id)
+        if not re.fullmatch(r"[0-9]+", identifier) or not identifier.strip("0"):
+            raise ValueError("conversation_id must be a positive decimal integer")
+        return self.client.request(
+            "GET",
+            f"/api/v1/conversations/{identifier}",
+            params={"auto_mark_as_read": False},
+        )
+
+    def course_agenda(
+        self, course_ids: list[int | str], *, start_date: str, end_date: str,
+    ) -> dict[str, Any]:
+        """Read selected course events and assignment deadlines in one agenda."""
+        from canvaspilot.agenda import read_course_agenda
+
+        return read_course_agenda(
+            self.client, course_ids, start_date=start_date, end_date=end_date,
+        )
 
     def list_calendar_events(
         self,

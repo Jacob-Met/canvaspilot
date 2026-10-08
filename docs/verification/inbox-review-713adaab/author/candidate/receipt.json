@@ -1,0 +1,58 @@
+{
+  "schema": "canvaspilot.inbox-author-candidate.v1",
+  "commit": "d1032f1eb44167282ef47803a42a86e25fb69001",
+  "runs": [
+    {
+      "name": "feature",
+      "command": [
+        "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+        "-B",
+        "-m",
+        "pytest",
+        "tests/test_inbox_review.py",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "/tmp/canvaspilot-inbox-evidence-713adaab/candidate/feature-fixtures",
+        "--junitxml",
+        "/tmp/canvaspilot-inbox-evidence-713adaab/candidate/feature.xml"
+      ],
+      "started": "2026-10-08T13:16:40.683518+00:00",
+      "finished": "2026-10-08T13:17:03.124566+00:00",
+      "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+      "exit_code": 1,
+      "summary": {
+        "tests": 19,
+        "failures": 6,
+        "errors": 0,
+        "skipped": 0
+      },
+      "stdout_sha256": "19646a66ab75235580a8b0cacc8f5836cb79e92ecd08b0ba87950a01ed530f1e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "source_before": {
+    "src/canvaspilot/api.py": "f2513fb4e718c5c2b58ce589885650f3e41e7e9487eaa4d3cfc7b2bd3a24ea49",
+    "src/canvaspilot/cli.py": "f649ea4f19450221ca99ca5737bdc2f8caceafb26ad788b84117aa5790cf8ea7",
+    "src/canvaspilot/mcp_server.py": "4a997817e7939f8dd8f0076a60854fc5385b3025406676db7e3bbbee08906682",
+    "src/canvaspilot/client.py": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797",
+    "src/canvaspilot/session_broker.py": "749e11c92d6d56d54ccf208dda6784cb2d43ac3b837188f5d82bfe73c3129e8e",
+    "src/canvaspilot/bundle.py": "7a5600680c22f3cce5d512ed96137de0171bcca7df6a8c46baa8c09143de3168",
+    "pyproject.toml": "555ad3c7e338d38ae5feabc06c0c07503f22d9c732a9af153c7706c63d2b3c63",
+    "tests/test_inbox_review.py": "935f5cc0b82115fa76595ccc4a8d0849e241b8e9845065ecfd209e706850d805"
+  },
+  "source_after": {
+    "src/canvaspilot/api.py": "f2513fb4e718c5c2b58ce589885650f3e41e7e9487eaa4d3cfc7b2bd3a24ea49",
+    "src/canvaspilot/cli.py": "f649ea4f19450221ca99ca5737bdc2f8caceafb26ad788b84117aa5790cf8ea7",
+    "src/canvaspilot/mcp_server.py": "4a997817e7939f8dd8f0076a60854fc5385b3025406676db7e3bbbee08906682",
+    "src/canvaspilot/client.py": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797",
+    "src/canvaspilot/session_broker.py": "749e11c92d6d56d54ccf208dda6784cb2d43ac3b837188f5d82bfe73c3129e8e",
+    "src/canvaspilot/bundle.py": "7a5600680c22f3cce5d512ed96137de0171bcca7df6a8c46baa8c09143de3168",
+    "pyproject.toml": "555ad3c7e338d38ae5feabc06c0c07503f22d9c732a9af153c7706c63d2b3c63",
+    "tests/test_inbox_review.py": "935f5cc0b82115fa76595ccc4a8d0849e241b8e9845065ecfd209e706850d805"
+  },
+  "all_requested_runs_completed": false,
+  "qualified": false,
+  "limit": "Authored loopback and inherited native tests, not actual school receiving."
+}

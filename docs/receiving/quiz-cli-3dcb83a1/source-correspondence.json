@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-08T14:45:07.785204+00:00",
+  "base": "39d835c8becb04d81b65c90d1491d2d3a2727ffe",
+  "tree": "53b67d3f06b4c780e508325ec42b2b435ec57e97",
+  "original_cli": {
+    "bytes": 14176,
+    "sha256": "77afdf37691ea2a74073bb4be2da280c2f4d794bd7d65afba2e6befcadf766aa",
+    "git_blob": "5a3ed7be7a24d6461641192a54c77a04b90cc910"
+  },
+  "candidate_cli_sha256": "102f6ba99c4d65c0741f231420b3b42a7c3c4818fb9546d3947d60a4e969cb79",
+  "cli_only_two_additive_blocks": true,
+  "cli_added_physical_lines": 30,
+  "readme_only_usage_insertion": true,
+  "unchanged_baseline_files": [
+    ".github/workflows/ci.yml",
+    "pyproject.toml",
+    "src/canvaspilot/__init__.py",
+    "src/canvaspilot/api.py",
+    "src/canvaspilot/assignment_submission.py",
+    "src/canvaspilot/bundle.py",
+    "src/canvaspilot/client.py",
+    "src/canvaspilot/feedback.py",
+    "src/canvaspilot/mcp_server.py"
+  ],
+  "new_path": "tests/test_quiz_cli.py",
+  "product_diff": {
+    "bytes": 12670,
+    "sha256": "18f5e82e0a27a6f4852ae0cccc2902c9043323365fb25550a016e2e54e962b34"
+  },
+  "guard_reserve_bytes": 805306368
+}

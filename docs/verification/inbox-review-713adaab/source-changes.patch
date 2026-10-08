@@ -1,0 +1,500 @@
+diff --git a/README.md b/README.md
+index f06fdc3..1d4fda6 100644
+--- a/README.md
++++ b/README.md
+@@ -251,6 +251,19 @@ pagination headers; `next_page_to_try` is an optional probe, not a completeness
+ claim. See [folder-browser usage and contract](docs/folder-browser.md) for the
+ MCP/Python interfaces, page limits and examples.
+ 
++## Review your inbox
++
++```bash
++canvaspilot inbox --scope unread
++canvaspilot conversation 901
++```
++
++List your conversations and select a returned ID to inspect its messages.
++The CLI, Python API and existing MCP conversation reader explicitly preserve
++unread state. Original message, participant and attachment metadata are returned;
++linked content is not downloaded. See [inbox review](docs/inbox-review.md) for
++scope choices, pagination and error behavior.
++
+ ## Auth modes
+ 
+ | Mode | How | When |
+diff --git a/docs/inbox-review.md b/docs/inbox-review.md
+new file mode 100644
+index 0000000..30066a2
+--- /dev/null
++++ b/docs/inbox-review.md
+@@ -0,0 +1,82 @@
++# Review your Canvas inbox
++
++List your conversations, then choose an ID returned by that list:
++
++```bash
++canvaspilot inbox
++canvaspilot inbox --scope unread
++canvaspilot conversation 901
++```
++
++The commands use your selected Canvas client and current-user permissions, just
++like the existing course readers. Common `--base-url`, `--profile`, and `--token`
++options retain their existing meanings.
++
++## Choose a list
++
++| Scope | Canvas selection |
++| --- | --- |
++| `inbox` (default) | Read and unread conversations that are not archived |
++| `unread` | Unread conversations |
++| `starred` | Starred conversations |
++| `archived` | Archived conversations |
++| `sent` | Sent conversations |
++
++The friendly `inbox` value omits the API scope parameter, using Canvas's documented
++default. Other values are passed to Canvas as filters. The existing client follows
++Canvas's validated Link continuations, preserving returned order. A continuation
++failure is reported as an error instead of printing a partial list as success.
++The client's existing 40-page limit and session-broker capability requirements
++still apply.
++
++The JSON list contains the original returned rows. Listing does not load every
++conversation's message bodies. Select one returned conversation ID to read its
++message payload.
++
++## Preserve unread state while reviewing
++
++`conversation` returns the original supplied conversation object, including
++messages, participants, forwarded messages and attachment/media metadata.
++Text, order, zero values, empty values, unknown fields and missing fields retain
++their supplied meanings. Linked content is not fetched or rendered.
++
++The reader explicitly sends `auto_mark_as_read=false`. An unread conversation
++therefore stays unread under Canvas's documented contract, so reviewing it does
++not clear that reminder to follow up. Existing read or archived state is also
++preserved by this request. The response is a point-in-time server result; another
++client or participant can change the conversation separately.
++
++Python and MCP use the same readers:
++
++```python
++api.list_conversations(scope="unread")
++api.get_conversation(901)
++```
++
++The existing `canvas_list_conversations` and `canvas_get_conversation` MCP tools
++advertise read-only behavior. Their names, arguments and returned JSON structures
++are unchanged. This preservation applies to these curated readers; an arbitrary
++REST request through an escape-hatch tool retains Canvas's own endpoint defaults.
++There is no new reply, subscription, archive or mark-read action.
++
++## Errors and qualification
++
++The CLI accepts a positive numeric conversation ID. Invalid IDs or unsupported
++CLI scopes exit 2 before requesting data. The shared Python/MCP reader also
++requires a positive decimal integer or digit string. It rejects route, query and
++fragment syntax before making a request, so URL parsing cannot hide the
++unread-preservation flag.
++
++Authentication, HTTP, malformed JSON or pagination failures append a JSON error
++line to stderr and exit 1, with no success JSON on stdout. Existing HTTP-client
++diagnostics may precede the error line. Successful reads exit 0 and return JSON
++on stdout; an empty list remains `[]`.
++
++Behavior follows the official [Conversations API](https://developerdocs.instructure.com/services/canvas/resources/conversations),
++including its list scopes and single-conversation `auto_mark_as_read` parameter.
++The native fixtures in `tests/test_inbox_review.py` model that documented default
++using disposable loopback HTTP and real CLI subprocesses. They preserve the
++pre-feature failures and challenge state, payload, pagination and error behavior.
++Independent receiving covers the session and registered MCP paths. These are
++software contract checks using authored data; they do not claim a live school,
++browser session, notification or student outcome.
+diff --git a/src/canvaspilot/api.py b/src/canvaspilot/api.py
+index 140ced2..20d82d4 100644
+--- a/src/canvaspilot/api.py
++++ b/src/canvaspilot/api.py
+@@ -548,13 +548,24 @@ class CanvasAPI:
+         )
+ 
+     def list_conversations(self, *, scope: str = "inbox") -> list[Any]:
++        """List current-user conversations; inbox means the non-archived default."""
+         return self.client.get_paginated(
+             "/api/v1/conversations",
+-            params={"scope": scope},
++            params=None if scope == "inbox" else {"scope": scope},
+         )
+ 
+     def get_conversation(self, conversation_id: int | str) -> Any:
+-        return self.client.request("GET", f"/api/v1/conversations/{conversation_id}")
++        """Read a conversation without automatically clearing its unread state."""
++        if isinstance(conversation_id, bool) or not isinstance(conversation_id, (int, str)):
++            raise TypeError("conversation_id must be a positive decimal integer")
++        identifier = str(conversation_id)
++        if not re.fullmatch(r"[0-9]+", identifier) or not identifier.strip("0"):
++            raise ValueError("conversation_id must be a positive decimal integer")
++        return self.client.request(
++            "GET",
++            f"/api/v1/conversations/{identifier}",
++            params={"auto_mark_as_read": False},
++        )
+ 
+     def list_calendar_events(
+         self,
+diff --git a/src/canvaspilot/cli.py b/src/canvaspilot/cli.py
+index 8f58cbd..758cdba 100644
+--- a/src/canvaspilot/cli.py
++++ b/src/canvaspilot/cli.py
+@@ -85,6 +85,19 @@ def main(argv: list[str] | None = None) -> None:
+     feedback.add_argument("course_id")
+     feedback.add_argument("assignment_id")
+ 
++    inbox = sub.add_parser("inbox", help="List your inbox without changing conversation state")
++    add_common(inbox)
++    inbox.add_argument(
++        "--scope", choices=("inbox", "unread", "starred", "archived", "sent"),
++        default="inbox", help="inbox includes read and unread, non-archived conversations",
++    )
++
++    conversation = sub.add_parser(
++        "conversation", help="Read one conversation while preserving unread state",
++    )
++    add_common(conversation)
++    conversation.add_argument("conversation_id", type=_positive_int)
++
+     disc = sub.add_parser("discussions", help="List discussion topics")
+     add_common(disc)
+     disc.add_argument("course_id")
+@@ -177,6 +190,22 @@ def main(argv: list[str] | None = None) -> None:
+             print(json.dumps(api.list_discussion_topics(args.course_id), indent=2, default=str))
+         elif args.cmd == "files":
+             print(json.dumps(api.list_files(args.course_id), indent=2, default=str))
++        elif args.cmd in ("inbox", "conversation"):
++            import httpx
++
++            from canvaspilot.client import CanvasAuthError, CanvasPaginationError
++
++            try:
++                if args.cmd == "inbox":
++                    result = api.list_conversations(scope=args.scope)
++                else:
++                    result = api.get_conversation(args.conversation_id)
++            except (CanvasAuthError, CanvasPaginationError, httpx.HTTPError, ValueError) as error:
++                print(json.dumps({
++                    "ok": False, "error": type(error).__name__, "message": str(error),
++                }), file=sys.stderr)
++                raise SystemExit(1) from None
++            print(json.dumps(result, indent=2, ensure_ascii=False))
+         elif args.cmd == "export-calendar":
+             import os
+ 
+diff --git a/src/canvaspilot/mcp_server.py b/src/canvaspilot/mcp_server.py
+index b6c52d7..c259387 100644
+--- a/src/canvaspilot/mcp_server.py
++++ b/src/canvaspilot/mcp_server.py
+@@ -204,12 +204,27 @@ async def canvas_complete_quiz_submission(
+     )
+ 
+ 
+-@mcp.tool(description="List Canvas Inbox conversations.", structured_output=False)
++@mcp.tool(
++    description=(
++        "List your Canvas conversations without changing their state. "
++        "Default inbox includes read and unread non-archived conversations; "
++        "other scopes are unread, starred, archived, and sent."
++    ),
++    annotations=ToolAnnotations(readOnlyHint=True, destructiveHint=False, idempotentHint=True),
++    structured_output=False,
++)
+ async def canvas_list_conversations(scope: str = "inbox") -> str:
+     return _dump(_get_api().list_conversations(scope=scope))
+ 
+ 
+-@mcp.tool(description="Get one Inbox conversation.", structured_output=False)
++@mcp.tool(
++    description=(
++        "Read one of your Canvas conversations by positive decimal ID, preserving unread state. "
++        "Returns supplied messages, participants and attachment metadata; does not download links."
++    ),
++    annotations=ToolAnnotations(readOnlyHint=True, destructiveHint=False, idempotentHint=True),
++    structured_output=False,
++)
+ async def canvas_get_conversation(conversation_id: str) -> str:
+     return _dump(_get_api().get_conversation(conversation_id))
+ 
+diff --git a/tests/test_inbox_review.py b/tests/test_inbox_review.py
+new file mode 100644
+index 0000000..3f16edd
+--- /dev/null
++++ b/tests/test_inbox_review.py
+@@ -0,0 +1,270 @@
++"""Native contract fixtures for inbox review; never contacts a Canvas account."""
++
++import copy
++import json
++import os
++import re
++import subprocess
++import sys
++import threading
++from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
++from pathlib import Path
++from urllib.parse import parse_qs, urlencode, urlsplit
++
++import pytest
++
++from canvaspilot.api import CanvasAPI
++from canvaspilot.client import CanvasClient
++
++ROOT = Path(__file__).resolve().parents[1]
++TOKEN = "canvaspilot-synthetic-inbox-713adaab"
++CONVERSATION = {
++    "id": 901,
++    "subject": "Synthetic office hours — 火",
++    "workflow_state": "unread",
++    "starred": True,
++    "message_count": 2,
++    "participants": [{"id": 7, "name": "Fictional Student"}, {"id": 9, "name": "Fictional Tutor"}],
++    "messages": [
++        {
++            "id": 51,
++            "author_id": 9,
++            "created_at": "2026-10-08T08:30:00Z",
++            "body": "Révision <em>literal markup</em> & 火\nSecond line",
++            "generated": False,
++            "attachments": [{"id": 72, "filename": "notes.txt", "url": "https://fixture.invalid/notes"}],
++            "media_comment": None,
++            "forwarded_messages": [
++                {"id": 44, "author_id": 7, "body": "Earlier question", "forwarded_messages": []}
++            ],
++        },
++        {"id": 50, "author_id": 7, "body": "", "attachments": [], "generated": False},
++    ],
++}
++
++
++@pytest.fixture
++def inbox_http(monkeypatch, tmp_path):
++    conversations = [
++        copy.deepcopy(CONVERSATION),
++        {**copy.deepcopy(CONVERSATION), "id": 902, "workflow_state": "read", "starred": False},
++        {**copy.deepcopy(CONVERSATION), "id": 903, "workflow_state": "archived", "starred": False},
++    ]
++    state = {"conversations": conversations, "requests": [], "status": 200, "fail_next": False}
++
++    class Handler(BaseHTTPRequestHandler):
++        def do_GET(self):
++            request = urlsplit(self.path)
++            query = parse_qs(request.query)
++            state["requests"].append({"method": self.command, "path": request.path, "query": query})
++            status = state["status"]
++            link = None
++            if self.headers.get("Authorization") != f"Bearer {TOKEN}":
++                status = 401
++            if status != 200:
++                body = {"error": "Synthetic read refusal"}
++            elif request.path == "/api/v1/conversations":
++                scope = query.get("scope", ["inbox"])[0]
++                rows = state["conversations"]
++                if scope == "unread":
++                    rows = [row for row in rows if row["workflow_state"] == "unread"]
++                elif scope == "archived":
++                    rows = [row for row in rows if row["workflow_state"] == "archived"]
++                elif scope == "starred":
++                    rows = [row for row in rows if row["starred"]]
++                elif scope == "sent":
++                    rows = [row for row in rows if row["id"] == 902]
++                else:
++                    rows = [row for row in rows if row["workflow_state"] != "archived"]
++                if query.get("cursor") == ["next"]:
++                    if state["fail_next"]:
++                        status, body = 500, {"error": "Synthetic later-page refusal"}
++                    else:
++                        body = rows[1:]
++                else:
++                    body = rows[:1]
++                    if len(rows) > 1:
++                        following = {"cursor": "next"}
++                        if "scope" in query:
++                            following["scope"] = scope
++                        link = f'<{base}/api/v1/conversations?{urlencode(following)}>; rel="next"'
++            elif request.path.startswith("/api/v1/conversations/"):
++                identifier = request.path.rsplit("/", 1)[1]
++                row = next((row for row in state["conversations"] if str(row["id"]) == identifier), None)
++                if row is None:
++                    status, body = 404, {"error": "Synthetic missing conversation"}
++                else:
++                    # Canvas documents this default side effect. This is a
++                    # contract fixture, not an observation of a live school.
++                    if query.get("auto_mark_as_read") != ["false"] and row["workflow_state"] == "unread":
++                        row["workflow_state"] = "read"
++                    body = row
++            else:
++                status, body = 404, {"error": "Unknown fixture route"}
++            encoded = json.dumps(body, ensure_ascii=False).encode("utf-8")
++            self.send_response(status)
++            self.send_header("Content-Type", "application/json")
++            self.send_header("Content-Length", str(len(encoded)))
++            if link:
++                self.send_header("Link", link)
++            self.end_headers()
++            self.wfile.write(encoded)
++
++        def log_message(self, *args):
++            pass
++
++    server = ThreadingHTTPServer(("127.0.0.1", 0), Handler)
++    base = f"http://127.0.0.1:{server.server_port}"
++    thread = threading.Thread(target=server.serve_forever, daemon=True)
++    thread.start()
++    monkeypatch.setenv("CANVAS_BASE_URL", base)
++    monkeypatch.setenv("CANVAS_API_TOKEN", TOKEN)
++    monkeypatch.setenv("CANVAS_PROFILE", str(tmp_path / "unused-profile"))
++    monkeypatch.setenv("PYTHONDONTWRITEBYTECODE", "1")
++    monkeypatch.setenv("PYTHONPATH", str(ROOT / "src"))
++    monkeypatch.setenv("NO_PROXY", "127.0.0.1")
++    monkeypatch.setenv("no_proxy", "127.0.0.1")
++    for name in ("HTTP_PROXY", "HTTPS_PROXY", "ALL_PROXY", "http_proxy", "https_proxy", "all_proxy"):
++        monkeypatch.delenv(name, raising=False)
++    try:
++        yield state, base
++    finally:
++        server.shutdown()
++        server.server_close()
++        thread.join(timeout=3)
++
++
++def run_cli(base, *arguments):
++    return subprocess.run(
++        [sys.executable, "-B", "-m", "canvaspilot.cli", *arguments,
++         "--base-url", base, "--token", TOKEN],
++        cwd=ROOT, env=os.environ.copy(), capture_output=True, text=True, timeout=15,
++        check=False,
++    )
++
++
++def cli_result_lines(stderr):
++    """Keep errors; admit only the existing loopback HTTPX INFO diagnostic."""
++    diagnostic = re.compile(
++        r'HTTP Request: GET http://127\.0\.0\.1:[0-9]+/api/v1/conversations'
++        r'(?:/[0-9]+)?(?:\?[^"\s]*)? "HTTP/1\.0 [1-5][0-9]{2} [^"]+"'
++    )
++    return [line for line in stderr.splitlines() if not diagnostic.fullmatch(line)]
++
++
++@pytest.mark.parametrize("workflow_state", ["unread", "read", "archived"])
++def test_conversation_preserves_state_and_complete_payload(inbox_http, workflow_state):
++    state, base = inbox_http
++    state["conversations"][0]["workflow_state"] = workflow_state
++    before = copy.deepcopy(state["conversations"][0])
++    with CanvasAPI(CanvasClient(base_url=base, token=TOKEN)) as api:
++        result = api.get_conversation(901)
++    assert result == before
++    assert state["conversations"][0] == before
++    assert state["requests"][0]["query"]["auto_mark_as_read"] == ["false"]
++    assert [request["method"] for request in state["requests"]] == ["GET"]
++
++
++def test_default_inbox_uses_default_scope_and_all_link_pages(inbox_http):
++    state, base = inbox_http
++    before = copy.deepcopy(state["conversations"])
++    with CanvasAPI(CanvasClient(base_url=base, token=TOKEN)) as api:
++        result = api.list_conversations()
++    assert result == before[:2]
++    assert len(state["requests"]) == 2
++    assert "scope" not in state["requests"][0]["query"]
++    assert state["requests"][1]["query"] == {"cursor": ["next"]}
++    assert state["conversations"] == before
++
++
++@pytest.mark.parametrize("scope,identifiers", [
++    ("unread", [901]), ("starred", [901]), ("archived", [903]), ("sent", [902]),
++])
++def test_explicit_inbox_scopes_remain_server_filters(inbox_http, scope, identifiers):
++    state, base = inbox_http
++    with CanvasAPI(CanvasClient(base_url=base, token=TOKEN)) as api:
++        result = api.list_conversations(scope=scope)
++    assert [row["id"] for row in result] == identifiers
++    assert state["requests"][0]["query"]["scope"] == [scope]
++
++
++def test_empty_inbox_remains_empty(inbox_http):
++    state, base = inbox_http
++    state["conversations"] = []
++    with CanvasAPI(CanvasClient(base_url=base, token=TOKEN)) as api:
++        assert api.list_conversations() == []
++
++
++def test_cli_inbox_selects_unread_and_preserves_returned_rows(inbox_http):
++    state, base = inbox_http
++    before = copy.deepcopy(state["conversations"][0])
++    completed = run_cli(base, "inbox", "--scope", "unread")
++    assert completed.returncode == 0, completed.stderr
++    assert cli_result_lines(completed.stderr) == []
++    assert json.loads(completed.stdout) == [before]
++    assert state["conversations"][0] == before
++    assert state["requests"][0]["query"]["scope"] == ["unread"]
++
++
++def test_cli_conversation_preserves_unread_and_nested_text(inbox_http):
++    state, base = inbox_http
++    before = copy.deepcopy(state["conversations"][0])
++    completed = run_cli(base, "conversation", "901")
++    assert completed.returncode == 0, completed.stderr
++    assert cli_result_lines(completed.stderr) == []
++    assert json.loads(completed.stdout) == before
++    assert state["conversations"][0] == before
++    assert state["requests"][0]["query"]["auto_mark_as_read"] == ["false"]
++
++
++@pytest.mark.parametrize("identifier", ["0", "-1", "not-an-id", "1.5"])
++def test_cli_rejects_invalid_conversation_id_before_requests(inbox_http, identifier):
++    state, base = inbox_http
++    completed = run_cli(base, "conversation", identifier)
++    assert completed.returncode == 2
++    assert "must be a positive integer" in completed.stderr
++    assert completed.stdout == ""
++    assert state["requests"] == []
++
++
++@pytest.mark.parametrize("status", [401, 404, 500])
++def test_cli_read_errors_are_controlled_and_have_no_success_output(inbox_http, status):
++    state, base = inbox_http
++    state["status"] = status
++    completed = run_cli(base, "conversation", "901")
++    assert completed.returncode == 1
++    assert completed.stdout == ""
++    lines = cli_result_lines(completed.stderr)
++    assert len(lines) == 1
++    failure = json.loads(lines[0])
++    assert failure["ok"] is False
++    assert failure["error"] in ("CanvasAuthError", "HTTPStatusError")
++    assert state["conversations"][0]["workflow_state"] == "unread"
++
++
++def test_cli_inbox_later_page_error_never_prints_partial_success(inbox_http):
++    state, base = inbox_http
++    state["fail_next"] = True
++    completed = run_cli(base, "inbox")
++    assert completed.returncode == 1
++    assert completed.stdout == ""
++    lines = cli_result_lines(completed.stderr)
++    assert len(lines) == 1
++    assert json.loads(lines[0])["ok"] is False
++    assert len(state["requests"]) == 2
++
++
++@pytest.mark.parametrize("identifier", [
++    "901#fragment", "901?auto_mark_as_read=true", "901/..", "901%23fragment",
++    " 901", "901\n", "+901", "", "000", "not-an-id", 0, -1, True, None, 1.5,
++])
++def test_api_rejects_nonnumeric_ids_before_any_request(inbox_http, identifier):
++    state, base = inbox_http
++    before = copy.deepcopy(state["conversations"])
++    with (
++        CanvasAPI(CanvasClient(base_url=base, token=TOKEN)) as api,
++        pytest.raises((TypeError, ValueError), match="positive decimal integer"),
++    ):
++        api.get_conversation(identifier)
++    assert state["requests"] == []
++    assert state["conversations"] == before

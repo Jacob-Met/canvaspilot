@@ -1,0 +1,85 @@
+{
+  "format": "canvaspilot.announcements-source-overlay.v1",
+  "baseline": {
+    "commit": "c744bb5b79f23457f4dd9070f762100bc6ad91ad",
+    "tree": "abec51ddc40ab44d9e405857469736550d08b4f2",
+    "leaves": 1085
+  },
+  "product": {
+    "src/canvaspilot/cli.py": "cf51b1e3f57f1b821eadbe7416f352a826faeded",
+    "tests/test_announcements_cli.py": "f91468be7dc046d0be5c4c10a285fb806496e0b3",
+    "docs/announcements-cli.md": "9f0c53ff7f53177c198c445634b977efb2c6a492",
+    "README.md": "b8128cb28110636eb02fb6f1770d26e0e00df127"
+  },
+  "authorArtifact": {
+    "path": "docs/receiving/announcements-cli-ae0a1ea0b247/author-packet.tar.gz",
+    "bytes": 170482,
+    "sha256": "c0789b047cc5aa4a2245b6bce7e7055160ddfd213674946542a7dc69a7871ce2",
+    "gitBlob": "a26be29ead9d81b33d5659bf424ef6a89f65103e"
+  },
+  "existingPathsModified": [
+    "src/canvaspilot/cli.py",
+    "README.md"
+  ],
+  "preservation": "Remove exactly the new parser/dispatch spans and README paragraph to recover the existing two before-images. Every other current-parent leaf and mode is inherited unchanged by the Git tree overlay.",
+  "sourceChecks": {
+    "originalAuthorBase": "a5ce672e5b3580c1f52e13c49eefee830f11346c",
+    "focused": "33 passed",
+    "full": "686 passed, 1 existing optional Chromium skip, 6 subtests passed",
+    "ruff": "All checks passed",
+    "currentJoinedBase": "c744bb5b79f23457f4dd9070f762100bc6ad91ad",
+    "currentPairedNative": "2 passed; hosted actual current-head CI follows"
+  },
+  "nativeRuntime": "Existing read-only CanvasPilot Python3.12 environment, httpx0.28.1/mcp2.3.0; no package installation or transport substitution. Earlier dependency-path and real first-candidate logging failures remain in author artifact.",
+  "coordination": {
+    "claim": "https://github.com/Jacob-Met/canvaspilot/issues/58",
+    "centralClaim": "https://github.com/Jacob-Met/hamon/issues/140#issuecomment-6062454596",
+    "openPRs": [
+      61,
+      60,
+      50,
+      28,
+      27,
+      25,
+      24,
+      23,
+      9,
+      8,
+      7
+    ],
+    "additionalCurrentScope": "Module-progress offline report #59 remains with its owner; API/client/broker/authentication, other command spans, dependencies and CI are preserved."
+  },
+  "publication": "Receiving source only. Independent review and hosted head CI are recorded separately; no native goal lease, school access or deployed service is claimed.",
+  "initialPublication": {
+    "head": "61c918ef13b842273fade265ec02e12e4cfb479f",
+    "tree": "508f971fa42fbbfd88119caef1061ddee25087e3",
+    "parent": "a5ce672e5b3580c1f52e13c49eefee830f11346c"
+  },
+  "currentComposition": {
+    "packet": "docs/receiving/announcements-cli-ae0a1ea0b247/current-discussion-join.tar.gz",
+    "bytes": 42271,
+    "sha256": "d89b9680afcf92de39bfb6044dac0cb6d1af85b5e4dfcecfe85fbdd0c3b60324",
+    "gitBlob": "08175ef018bb0dde0a3d079b95a2310623af4396",
+    "existingApiBodiesUnchanged": 46,
+    "addedApiBodies": [
+      "CanvasAPI.discussion_thread"
+    ],
+    "pairedNativeTests": "2 passed in 5.07s; exact original announcement test and incoming owner discussion CLI test"
+  },
+  "independentReview": {
+    "status": "ACCEPT original source; current native source-binding requested",
+    "acceptedPacket": {
+      "path": "docs/receiving/announcements-cli-ae0a1ea0b247/independent-accepted.tar.gz",
+      "bytes": 23900,
+      "sha256": "f6eeb6415e641e03ab636d5c669c4d5f251b835ae25967d00aaaf7d92c814145",
+      "gitBlob": "7fde3565d88212c72ec138671e0861202561dede"
+    },
+    "originalStartupFailure": {
+      "path": "docs/receiving/announcements-cli-ae0a1ea0b247/independent-proxy-startup.tar.gz",
+      "bytes": 19259,
+      "sha256": "a28da70c9880df175a78b6059a88233cc0571a9c9ffb7441202ace1dd7838a6e",
+      "gitBlob": "feec4ed0c03a321496b198f31641f43c05e7bbda"
+    },
+    "scope": "Five distinct native in-process groups / seven authored loopback GETs; no broader suite or browser repeat."
+  }
+}

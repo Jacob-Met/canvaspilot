@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="14" skipped="0" tests="19" time="17.002" timestamp="2026-10-08T13:06:52.909609+00:00" hostname="hamon-thinkpad"><testcase classname="tests.test_inbox_review" name="test_conversation_preserves_state_and_complete_payload[unread]" time="0.507"><failure message="AssertionError: assert {'id': 901, '...d': True, ...} == {'id': 901, '...d': True, ...}&#10;  &#10;  Omitting 6 identical items, use -vv to show&#10;  Differing items:&#10;  {'workflow_state': 'read'} != {'workflow_state': 'unread'}&#10;  Use -v to get more diff">inbox_http = ({'conversations': [{'id': 901, 'subject': 'Synthetic office hours — 火', 'workflow_state': 'read', 'starred': True, .....i/v1/conversations/901', 'query': {'per_page': ['50']}}], 'status': 200, 'fail_next': False}, 'http://127.0.0.1:38123')
+workflow_state = 'unread'
+
+    @pytest.mark.parametrize("workflow_state", ["unread", "read", "archived"])
+    def test_conversation_preserves_state_and_complete_payload(inbox_http, workflow_state):
+        state, base = inbox_http
+        state["conversations"][0]["workflow_state"] = workflow_state
+        before = copy.deepcopy(state["conversations"][0])
+        with CanvasAPI(CanvasClient(base_url=base, token=TOKEN)) as api:
+            result = api.get_conversation(901)
+&gt;       assert result == before
+E       AssertionError: assert {'id': 901, '...d': True, ...} == {'id': 901, '...d': True, ...}
+E         
+E         Omitting 6 identical items, use -vv to show
+E         Differing items:
+E         {'workflow_state': 'read'} != {'workflow_state': 'unread'}
+E         Use -v to get more diff
+
+tests/test_inbox_review.py:152: AssertionError</failure></testcase><testcase classname="tests.test_inbox_review" name="test_conversation_preserves_state_and_complete_payload[read]" time="0.490"><failure message="KeyError: 'auto_mark_as_read'">inbox_http = ({'conversations': [{'id': 901, 'subject': 'Synthetic office hours — 火', 'workflow_state': 'read', 'starred': True, .....i/v1/conversations/901', 'query': {'per_page': ['50']}}], 'status': 200, 'fail_next': False}, 'http://127.0.0.1:37963')
+workflow_state = 'read'
+
+    @pytest.mark.parametrize("workflow_state", ["unread", "read", "archived"])
+    def test_conversation_preserves_state_and_complete_payload(inbox_http, workflow_state):
+        state, base = inbox_http
+        state["conversations"][0]["workflow_state"] = workflow_state
+        before = copy.deepcopy(state["conversations"][0])
+        with CanvasAPI(CanvasClient(base_url=base, token=TOKEN)) as api:
+            result = api.get_conversation(901)
+        assert result == before
+        assert state["conversations"][0] == before
+&gt;       assert state["requests"][0]["query"]["auto_mark_as_read"] == ["false"]
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'auto_mark_as_read'
+
+tests/test_inbox_review.py:154: KeyError</failure></testcase><testcase classname="tests.test_inbox_review" name="test_conversation_preserves_state_and_complete_payload[archived]" time="0.504"><failure message="KeyError: 'auto_mark_as_read'">inbox_http = ({'conversations': [{'id': 901, 'subject': 'Synthetic office hours — 火', 'workflow_state': 'archived', 'starred': True...i/v1/conversations/901', 'query': {'per_page': ['50']}}], 'status': 200, 'fail_next': False}, 'http://127.0.0.1:44147')
+workflow_state = 'archived'
+
+    @pytest.mark.parametrize("workflow_state", ["unread", "read", "archived"])
+    def test_conversation_preserves_state_and_complete_payload(inbox_http, workflow_state):
+        state, base = inbox_http
+        state["conversations"][0]["workflow_state"] = workflow_state
+        before = copy.deepcopy(state["conversations"][0])
+        with CanvasAPI(CanvasClient(base_url=base, token=TOKEN)) as api:
+            result = api.get_conversation(901)
+        assert result == before
+        assert state["conversations"][0] == before
+&gt;       assert state["requests"][0]["query"]["auto_mark_as_read"] == ["false"]
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'auto_mark_as_read'
+
+tests/test_inbox_review.py:154: KeyError</failure></testcase><testcase classname="tests.test_inbox_review" name="test_default_inbox_uses_default_scope_and_all_link_pages" time="0.507"><failure message="AssertionError: assert 'scope' not in {'scope': ['inbox'], 'per_page': ['50']}">inbox_http = ({'conversations': [{'id': 901, 'subject': 'Synthetic office hours — 火', 'workflow_state': 'unread', 'starred': True, ...ns', 'query': {'cursor': ['next'], 'scope': ['inbox']}}], 'status': 200, 'fail_next': False}, 'http://127.0.0.1:45937')
+
+    def test_default_inbox_uses_default_scope_and_all_link_pages(inbox_http):
+        state, base = inbox_http
+        before = copy.deepcopy(state["conversations"])
+        with CanvasAPI(CanvasClient(base_url=base, token=TOKEN)) as api:
+            result = api.list_conversations()
+        assert result == before[:2]
+        assert len(state["requests"]) == 2
+&gt;       assert "scope" not in state["requests"][0]["query"]
+E       AssertionError: assert 'scope' not in {'scope': ['inbox'], 'per_page': ['50']}
+
+tests/test_inbox_review.py:165: AssertionError</failure></testcase><testcase classname="tests.test_inbox_review" name="test_explicit_inbox_scopes_remain_server_filters[unread-identifiers0]" time="0.508" /><testcase classname="tests.test_inbox_review" name="test_explicit_inbox_scopes_remain_server_filters[starred-identifiers1]" time="0.513" /><testcase classname="tests.test_inbox_review" name="test_explicit_inbox_scopes_remain_server_filters[archived-identifiers2]" time="0.508" /><testcase classname="tests.test_inbox_review" name="test_explicit_inbox_scopes_remain_server_filters[sent-identifiers3]" time="0.511" /><testcase classname="tests.test_inbox_review" name="test_empty_inbox_remains_empty" time="0.508" /><testcase classname="tests.test_inbox_review" name="test_cli_inbox_selects_unread_and_preserves_returned_rows" time="0.996"><failure message="AssertionError: usage: canvaspilot [-h]&#10;                     {login,session,whoami,courses,sync,assignments,brief,feedback,discussions,files,browse-files,export-calendar,module-progress,mcp} ...&#10;  canvaspilot: error: argument cmd: invalid choice: 'inbox' (choose from login, session, whoami, courses, sync, assignments, brief, feedback, discussions, files, browse-files, export-calendar, module-progress, mcp)&#10;  &#10;assert 2 == 0&#10; +  where 2 = CompletedProcess(args=['/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python', '-B', '-m', 'canvaspilot.cli...urses, sync, assignments, brief, feedback, discussions, files, browse-files, export-calendar, module-progress, mcp)\n&quot;).returncode">inbox_http = ({'conversations': [{'id': 901, 'subject': 'Synthetic office hours — 火', 'workflow_state': 'unread', 'starred': True, ...te': 'archived', 'starred': False, ...}], 'requests': [], 'status': 200, 'fail_next': False}, 'http://127.0.0.1:39423')
+
+    def test_cli_inbox_selects_unread_and_preserves_returned_rows(inbox_http):
+        state, base = inbox_http
+        before = copy.deepcopy(state["conversations"][0])
+        completed = run_cli(base, "inbox", "--scope", "unread")
+&gt;       assert completed.returncode == 0, completed.stderr
+E       AssertionError: usage: canvaspilot [-h]
+E                            {login,session,whoami,courses,sync,assignments,brief,feedback,discussions,files,browse-files,export-calendar,module-progress,mcp} ...
+E         canvaspilot: error: argument cmd: invalid choice: 'inbox' (choose from login, session, whoami, courses, sync, assignments, brief, feedback, discussions, files, browse-files, export-calendar, module-progress, mcp)
+E         
+E       assert 2 == 0
+E        +  where 2 = CompletedProcess(args=['/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python', '-B', '-m', 'canvaspilot.cli...urses, sync, assignments, brief, feedback, discussions, files, browse-files, export-calendar, module-progress, mcp)\n").returncode
+
+tests/test_inbox_review.py:192: AssertionError</failure></testcase><testcase classname="tests.test_inbox_review" name="test_cli_conversation_preserves_unread_and_nested_text" time="0.992"><failure message="AssertionError: usage: canvaspilot [-h]&#10;                     {login,session,whoami,courses,sync,assignments,brief,feedback,discussions,files,browse-files,export-calendar,module-progress,mcp} ...&#10;  canvaspilot: error: argument cmd: invalid choice: 'conversation' (choose from login, session, whoami, courses, sync, assignments, brief, feedback, discussions, files, browse-files, export-calendar, module-progress, mcp)&#10;  &#10;assert 2 == 0&#10; +  where 2 = CompletedProcess(args=['/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python', '-B', '-m', 'canvaspilot.cli...urses, sync, assignments, brief, feedback, discussions, files, browse-files, export-calendar, module-progress, mcp)\n&quot;).returncode">inbox_http = ({'conversations': [{'id': 901, 'subject': 'Synthetic office hours — 火', 'workflow_state': 'unread', 'starred': True, ...te': 'archived', 'starred': False, ...}], 'requests': [], 'status': 200, 'fail_next': False}, 'http://127.0.0.1:45423')
+
+    def test_cli_conversation_preserves_unread_and_nested_text(inbox_http):
+        state, base = inbox_http
+        before = copy.deepcopy(state["conversations"][0])
+        completed = run_cli(base, "conversation", "901")
+&gt;       assert completed.returncode == 0, completed.stderr
+E       AssertionError: usage: canvaspilot [-h]
+E                            {login,session,whoami,courses,sync,assignments,brief,feedback,discussions,files,browse-files,export-calendar,module-progress,mcp} ...
+E         canvaspilot: error: argument cmd: invalid choice: 'conversation' (choose from login, session, whoami, courses, sync, assignments, brief, feedback, discussions, files, browse-files, export-calendar, module-progress, mcp)
+E         
+E       assert 2 == 0
+E        +  where 2 = CompletedProcess(args=['/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python', '-B', '-m', 'canvaspilot.cli...urses, sync, assignments, brief, feedback, discussions, files, browse-files, export-calendar, module-progress, mcp)\n").returncode
+
+tests/test_inbox_review.py:203: AssertionError</failure></testcase><testcase classname="tests.test_inbox_review" name="test_cli_rejects_invalid_conversation_id_before_requests[0]" time="1.493"><failure message="assert 'must be a positive integer' in 'usage: canvaspilot [-h]\n                   {login,session,whoami,courses,sync,assignments,brief,feedback,discussions...ourses, sync, assignments, brief, feedback, discussions, files, browse-files, export-calendar, module-progress, mcp)\n'&#10; +  where 'usage: canvaspilot [-h]\n                   {login,session,whoami,courses,sync,assignments,brief,feedback,discussions...ourses, sync, assignments, brief, feedback, discussions, files, browse-files, export-calendar, module-progress, mcp)\n' = CompletedProcess(args=['/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python', '-B', '-m', 'canvaspilot.cli...urses, sync, assignments, brief, feedback, discussions, files, browse-files, export-calendar, module-progress, mcp)\n&quot;).stderr">inbox_http = ({'conversations': [{'id': 901, 'subject': 'Synthetic office hours — 火', 'workflow_state': 'unread', 'starred': True, ...te': 'archived', 'starred': False, ...}], 'requests': [], 'status': 200, 'fail_next': False}, 'http://127.0.0.1:41235')
+identifier = '0'
+
+    @pytest.mark.parametrize("identifier", ["0", "-1", "not-an-id", "1.5"])
+    def test_cli_rejects_invalid_conversation_id_before_requests(inbox_http, identifier):
+        state, base = inbox_http
+        completed = run_cli(base, "conversation", identifier)
+        assert completed.returncode == 2
+&gt;       assert "must be a positive integer" in completed.stderr
+E       assert 'must be a positive integer' in 'usage: canvaspilot [-h]\n                   {login,session,whoami,courses,sync,assignments,brief,feedback,discussions...ourses, sync, assignments, brief, feedback, discussions, files, browse-files, export-calendar, module-progress, mcp)\n'
+E        +  where 'usage: canvaspilot [-h]\n                   {login,session,whoami,courses,sync,assignments,brief,feedback,discussions...ourses, sync, assignments, brief, feedback, discussions, files, browse-files, export-calendar, module-progress, mcp)\n' = CompletedProcess(args=['/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python', '-B', '-m', 'canvaspilot.cli...urses, sync, assignments, brief, feedback, discussions, files, browse-files, export-calendar, module-progress, mcp)\n").stderr
+
+tests/test_inbox_review.py:215: AssertionError</failure></testcase><testcase classname="tests.test_inbox_review" name="test_cli_rejects_invalid_conversation_id_before_requests[-1]" time="1.492"><failure message="assert 'must be a positive integer' in 'usage: canvaspilot [-h]\n                   {login,session,whoami,courses,sync,assignments,brief,feedback,discussions...ourses, sync, assignments, brief, feedback, discussions, files, browse-files, export-calendar, module-progress, mcp)\n'&#10; +  where 'usage: canvaspilot [-h]\n                   {login,session,whoami,courses,sync,assignments,brief,feedback,discussions...ourses, sync, assignments, brief, feedback, discussions, files, browse-files, export-calendar, module-progress, mcp)\n' = CompletedProcess(args=['/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python', '-B', '-m', 'canvaspilot.cli...urses, sync, assignments, brief, feedback, discussions, files, browse-files, export-calendar, module-progress, mcp)\n&quot;).stderr">inbox_http = ({'conversations': [{'id': 901, 'subject': 'Synthetic office hours — 火', 'workflow_state': 'unread', 'starred': True, ...te': 'archived', 'starred': False, ...}], 'requests': [], 'status': 200, 'fail_next': False}, 'http://127.0.0.1:42031')
+identifier = '-1'
+
+    @pytest.mark.parametrize("identifier", ["0", "-1", "not-an-id", "1.5"])
+    def test_cli_rejects_invalid_conversation_id_before_requests(inbox_http, identifier):
+        state, base = inbox_http
+        completed = run_cli(base, "conversation", identifier)
+        assert completed.returncode == 2
+&gt;       assert "must be a positive integer" in completed.stderr
+E       assert 'must be a positive integer' in 'usage: canvaspilot [-h]\n                   {login,session,whoami,courses,sync,assignments,brief,feedback,discussions...ourses, sync, assignments, brief, feedback, discussions, files, browse-files, export-calendar, module-progress, mcp)\n'
+E        +  where 'usage: canvaspilot [-h]\n                   {login,session,whoami,courses,sync,assignments,brief,feedback,discussions...ourses, sync, assignments, brief, feedback, discussions, files, browse-files, export-calendar, module-progress, mcp)\n' = CompletedProcess(args=['/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python', '-B', '-m', 'canvaspilot.cli...urses, sync, assignments, brief, feedback, discussions, files, browse-files, export-calendar, module-progress, mcp)\n").stderr
+
+tests/test_inbox_review.py:215: AssertionError</failure></testcase><testcase classname="tests.test_inbox_review" name="test_cli_rejects_invalid_conversation_id_before_requests[not-an-id]" time="1.494"><failure message="assert 'must be a positive integer' in 'usage: canvaspilot [-h]\n                   {login,session,whoami,courses,sync,assignments,brief,feedback,discussions...ourses, sync, assignments, brief, feedback, discussions, files, browse-files, export-calendar, module-progress, mcp)\n'&#10; +  where 'usage: canvaspilot [-h]\n                   {login,session,whoami,courses,sync,assignments,brief,feedback,discussions...ourses, sync, assignments, brief, feedback, discussions, files, browse-files, export-calendar, module-progress, mcp)\n' = CompletedProcess(args=['/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python', '-B', '-m', 'canvaspilot.cli...urses, sync, assignments, brief, feedback, discussions, files, browse-files, export-calendar, module-progress, mcp)\n&quot;).stderr">inbox_http = ({'conversations': [{'id': 901, 'subject': 'Synthetic office hours — 火', 'workflow_state': 'unread', 'starred': True, ...te': 'archived', 'starred': False, ...}], 'requests': [], 'status': 200, 'fail_next': False}, 'http://127.0.0.1:33993')
+identifier = 'not-an-id'
+
+    @pytest.mark.parametrize("identifier", ["0", "-1", "not-an-id", "1.5"])
+    def test_cli_rejects_invalid_conversation_id_before_requests(inbox_http, identifier):
+        state, base = inbox_http
+        completed = run_cli(base, "conversation", identifier)
+        assert completed.returncode == 2
+&gt;       assert "must be a positive integer" in completed.stderr
+E       assert 'must be a positive integer' in 'usage: canvaspilot [-h]\n                   {login,session,whoami,courses,sync,assignments,brief,feedback,discussions...ourses, sync, assignments, brief, feedback, discussions, files, browse-files, export-calendar, module-progress, mcp)\n'
+E        +  where 'usage: canvaspilot [-h]\n                   {login,session,whoami,courses,sync,assignments,brief,feedback,discussions...ourses, sync, assignments, brief, feedback, discussions, files, browse-files, export-calendar, module-progress, mcp)\n' = CompletedProcess(args=['/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python', '-B', '-m', 'canvaspilot.cli...urses, sync, assignments, brief, feedback, discussions, files, browse-files, export-calendar, module-progress, mcp)\n").stderr
+
+tests/test_inbox_review.py:215: AssertionError</failure></testcase><testcase classname="tests.test_inbox_review" name="test_cli_rejects_invalid_conversation_id_before_requests[1.5]" time="0.995"><failure message="assert 'must be a positive integer' in 'usage: canvaspilot [-h]\n                   {login,session,whoami,courses,sync,assignments,brief,feedback,discussions...ourses, sync, assignments, brief, feedback, discussions, files, browse-files, export-calendar, module-progress, mcp)\n'&#10; +  where 'usage: canvaspilot [-h]\n                   {login,session,whoami,courses,sync,assignments,brief,feedback,discussions...ourses, sync, assignments, brief, feedback, discussions, files, browse-files, export-calendar, module-progress, mcp)\n' = CompletedProcess(args=['/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python', '-B', '-m', 'canvaspilot.cli...urses, sync, assignments, brief, feedback, discussions, files, browse-files, export-calendar, module-progress, mcp)\n&quot;).stderr">inbox_http = ({'conversations': [{'id': 901, 'subject': 'Synthetic office hours — 火', 'workflow_state': 'unread', 'starred': True, ...te': 'archived', 'starred': False, ...}], 'requests': [], 'status': 200, 'fail_next': False}, 'http://127.0.0.1:42587')
+identifier = '1.5'
+
+    @pytest.mark.parametrize("identifier", ["0", "-1", "not-an-id", "1.5"])
+    def test_cli_rejects_invalid_conversation_id_before_requests(inbox_http, identifier):
+        state, base = inbox_http
+        completed = run_cli(base, "conversation", identifier)
+        assert completed.returncode == 2
+&gt;       assert "must be a positive integer" in completed.stderr
+E       assert 'must be a positive integer' in 'usage: canvaspilot [-h]\n                   {login,session,whoami,courses,sync,assignments,brief,feedback,discussions...ourses, sync, assignments, brief, feedback, discussions, files, browse-files, export-calendar, module-progress, mcp)\n'
+E        +  where 'usage: canvaspilot [-h]\n                   {login,session,whoami,courses,sync,assignments,brief,feedback,discussions...ourses, sync, assignments, brief, feedback, discussions, files, browse-files, export-calendar, module-progress, mcp)\n' = CompletedProcess(args=['/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python', '-B', '-m', 'canvaspilot.cli...urses, sync, assignments, brief, feedback, discussions, files, browse-files, export-calendar, module-progress, mcp)\n").stderr
+
+tests/test_inbox_review.py:215: AssertionError</failure></testcase><testcase classname="tests.test_inbox_review" name="test_cli_read_errors_are_controlled_and_have_no_success_output[401]" time="0.993"><failure message="assert 2 == 1&#10; +  where 2 = CompletedProcess(args=['/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python', '-B', '-m', 'canvaspilot.cli...urses, sync, assignments, brief, feedback, discussions, files, browse-files, export-calendar, module-progress, mcp)\n&quot;).returncode">inbox_http = ({'conversations': [{'id': 901, 'subject': 'Synthetic office hours — 火', 'workflow_state': 'unread', 'starred': True, ...te': 'archived', 'starred': False, ...}], 'requests': [], 'status': 401, 'fail_next': False}, 'http://127.0.0.1:35067')
+status = 401
+
+    @pytest.mark.parametrize("status", [401, 404, 500])
+    def test_cli_read_errors_are_controlled_and_have_no_success_output(inbox_http, status):
+        state, base = inbox_http
+        state["status"] = status
+        completed = run_cli(base, "conversation", "901")
+&gt;       assert completed.returncode == 1
+E       assert 2 == 1
+E        +  where 2 = CompletedProcess(args=['/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python', '-B', '-m', 'canvaspilot.cli...urses, sync, assignments, brief, feedback, discussions, files, browse-files, export-calendar, module-progress, mcp)\n").returncode
+
+tests/test_inbox_review.py:225: AssertionError</failure></testcase><testcase classname="tests.test_inbox_review" name="test_cli_read_errors_are_controlled_and_have_no_success_output[404]" time="0.998"><failure message="assert 2 == 1&#10; +  where 2 = CompletedProcess(args=['/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python', '-B', '-m', 'canvaspilot.cli...urses, sync, assignments, brief, feedback, discussions, files, browse-files, export-calendar, module-progress, mcp)\n&quot;).returncode">inbox_http = ({'conversations': [{'id': 901, 'subject': 'Synthetic office hours — 火', 'workflow_state': 'unread', 'starred': True, ...te': 'archived', 'starred': False, ...}], 'requests': [], 'status': 404, 'fail_next': False}, 'http://127.0.0.1:39927')
+status = 404
+
+    @pytest.mark.parametrize("status", [401, 404, 500])
+    def test_cli_read_errors_are_controlled_and_have_no_success_output(inbox_http, status):
+        state, base = inbox_http
+        state["status"] = status
+        completed = run_cli(base, "conversation", "901")
+&gt;       assert completed.returncode == 1
+E       assert 2 == 1
+E        +  where 2 = CompletedProcess(args=['/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python', '-B', '-m', 'canvaspilot.cli...urses, sync, assignments, brief, feedback, discussions, files, browse-files, export-calendar, module-progress, mcp)\n").returncode
+
+tests/test_inbox_review.py:225: AssertionError</failure></testcase><testcase classname="tests.test_inbox_review" name="test_cli_read_errors_are_controlled_and_have_no_success_output[500]" time="0.998"><failure message="assert 2 == 1&#10; +  where 2 = CompletedProcess(args=['/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python', '-B', '-m', 'canvaspilot.cli...urses, sync, assignments, brief, feedback, discussions, files, browse-files, export-calendar, module-progress, mcp)\n&quot;).returncode">inbox_http = ({'conversations': [{'id': 901, 'subject': 'Synthetic office hours — 火', 'workflow_state': 'unread', 'starred': True, ...te': 'archived', 'starred': False, ...}], 'requests': [], 'status': 500, 'fail_next': False}, 'http://127.0.0.1:40951')
+status = 500
+
+    @pytest.mark.parametrize("status", [401, 404, 500])
+    def test_cli_read_errors_are_controlled_and_have_no_success_output(inbox_http, status):
+        state, base = inbox_http
+        state["status"] = status
+        completed = run_cli(base, "conversation", "901")
+&gt;       assert completed.returncode == 1
+E       assert 2 == 1
+E        +  where 2 = CompletedProcess(args=['/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python', '-B', '-m', 'canvaspilot.cli...urses, sync, assignments, brief, feedback, discussions, files, browse-files, export-calendar, module-progress, mcp)\n").returncode
+
+tests/test_inbox_review.py:225: AssertionError</failure></testcase><testcase classname="tests.test_inbox_review" name="test_cli_inbox_later_page_error_never_prints_partial_success" time="0.995"><failure message="assert 2 == 1&#10; +  where 2 = CompletedProcess(args=['/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python', '-B', '-m', 'canvaspilot.cli...urses, sync, assignments, brief, feedback, discussions, files, browse-files, export-calendar, module-progress, mcp)\n&quot;).returncode">inbox_http = ({'conversations': [{'id': 901, 'subject': 'Synthetic office hours — 火', 'workflow_state': 'unread', 'starred': True, ...ate': 'archived', 'starred': False, ...}], 'requests': [], 'status': 200, 'fail_next': True}, 'http://127.0.0.1:39285')
+
+    def test_cli_inbox_later_page_error_never_prints_partial_success(inbox_http):
+        state, base = inbox_http
+        state["fail_next"] = True
+        completed = run_cli(base, "inbox")
+&gt;       assert completed.returncode == 1
+E       assert 2 == 1
+E        +  where 2 = CompletedProcess(args=['/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python', '-B', '-m', 'canvaspilot.cli...urses, sync, assignments, brief, feedback, discussions, files, browse-files, export-calendar, module-progress, mcp)\n").returncode
+
+tests/test_inbox_review.py:237: AssertionError</failure></testcase></testsuite></testsuites>

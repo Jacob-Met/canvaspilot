@@ -1,0 +1,85 @@
+{
+  "kind": "current-owner-source-composition",
+  "prior_qualified_head": "6492fa629c64f5afdc2a4956f3894bd63e9bbe67",
+  "prior_qualified_tree": "35f13b8402ffb4a2f19bd69cb8476ce3c39cc901",
+  "prior_ci": {
+    "run": 37801024276,
+    "job": 113392961619,
+    "head": "6492fa629c64f5afdc2a4956f3894bd63e9bbe67",
+    "actual_checkout": "cc14bbd4ddbf0778754c9ded4b218658c5c25071",
+    "actual_checkout_tree": "35f13b8402ffb4a2f19bd69cb8476ce3c39cc901",
+    "result": "Ruff passes; 698 passed, 1 skipped, 54 subtests passed in 104.05 s"
+  },
+  "current_base": "0480cbce421bae532e3e909899fc8fb83789e878",
+  "current_base_tree": "f9ecaa4311d93cfe3a1fd1c9cc140834e2449341",
+  "scope": "Preserve all integrated agenda, announcements, inbox and discussion source. Add only the same accepted quiz parser/dispatch blocks and usage; retain the prior test and every prior evidence file unchanged.",
+  "product_pins": [
+    {
+      "path": "src/canvaspilot/cli.py",
+      "parent_blob": "82f1cdfe7cec50413222b3d4b12a27aea587a4d1",
+      "composed_blob": "226f3f7d502dd61ad03c59cd8212289d133a0190",
+      "bytes": 21264
+    },
+    {
+      "path": "tests/test_quiz_cli.py",
+      "parent_blob": null,
+      "composed_blob": "527c57f3d66e4e167c96bbc51d1fcc8bd7e56fcf",
+      "bytes": 8925
+    },
+    {
+      "path": "README.md",
+      "parent_blob": "d30540e34b17788c88f5fd79c84ef0e0fc507fc5",
+      "composed_blob": "92a5e57ff04c941bfc57e8674324dd811f7c9fcb",
+      "bytes": 22999
+    }
+  ],
+  "current_runtime_pins": [
+    {
+      "path": "src/canvaspilot/api.py",
+      "blob": "a9d16294a673f8f1df7b76b52f4b3ab059f69c64"
+    },
+    {
+      "path": "src/canvaspilot/bundle.py",
+      "blob": "293c02dc86520d9d11907d47d014d2f73aa56fc0"
+    },
+    {
+      "path": "src/canvaspilot/client.py",
+      "blob": "1db4b1135305f7e410025ae7937f9a6cd349f020"
+    },
+    {
+      "path": "src/canvaspilot/mcp_server.py",
+      "blob": "34e9a2fad9d361718f5a9d4f3a89a3a42537b8fc"
+    },
+    {
+      "path": "src/canvaspilot/agenda.py",
+      "blob": "82ab4fa8f9b92b8d9e5d4c74962d138e1d882ebd"
+    },
+    {
+      "path": "src/canvaspilot/discussion_thread.py",
+      "blob": "2ed658fcf5cee996a02115742935716f1d039e25"
+    },
+    {
+      "path": "pyproject.toml",
+      "blob": "76eba6d30696b4f2733539cd47df6e178bc0f585"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "blob": "ef7bbebe192c0db55dc4467e064ba44805c13446"
+    }
+  ],
+  "checks": {
+    "remove_owned_cli_blocks_reconstructs_current_parent_exact": true,
+    "remove_usage_reconstructs_current_parent_exact": true,
+    "owned_parser_dispatch_equal_native_and_first_published": true,
+    "added_cli_lines": 30,
+    "list_quizzes_get_quiz_bodies_exact": true,
+    "quiz_mcp_wrapper_bodies_exact": true,
+    "client_unchanged": true,
+    "previous_test_and_all_fourteen_receiving_files_unchanged": true,
+    "agenda_owner_source_retained": true,
+    "announcements_owner_source_retained": true,
+    "all_original_fifteen_non_cli_readme_payloads_exact": true
+  },
+  "replay": "Use the exact owned_blocks in submission-source-correspondence.json: remove cli_parser and cli_dispatch from this CLI and readme_usage from README, then compare to current_base. Historical native scripts/results retain their original source pins. No additional native execution is claimed for this exact-source composition; the new hosted head must pass its own ordinary CI.",
+  "source_advancement": "Agenda main 17d63dc4 changes only distinct API/MCP methods and two additive CLI blocks. Subsequent announcements main 0480cbce adds separate CLI blocks, usage and its own regression; all API/MCP/client/agenda/discussion/config blobs remain exact to 17d63dc4. Both quiz readers and wrappers remain character-exact to the original native receiving composition."
+}

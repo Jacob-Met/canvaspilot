@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+    "-B",
+    "-m",
+    "ruff",
+    "check",
+    "src",
+    "tests",
+    "scripts"
+  ],
+  "exit": 0,
+  "stdout": "All checks passed!\n",
+  "stderr": ""
+}
