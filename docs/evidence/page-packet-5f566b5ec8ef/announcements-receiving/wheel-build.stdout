@@ -1,0 +1,9 @@
+Processing /Users/me/canvaspilot-page-packet-20261008-5f566b5ec8ef/source
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: canvaspilot
+  Building wheel for canvaspilot (pyproject.toml): started
+  Building wheel for canvaspilot (pyproject.toml): finished with status 'done'
+  Created wheel for canvaspilot: filename=canvaspilot-0.1.1-py3-none-any.whl size=64467 sha256=498b8819c9661bcc5f4f26b9bfb9c9327c632420f80b0489a6dc5920a1e293b8
+  Stored in directory: /Users/me/canvaspilot-page-packet-20261008-5f566b5ec8ef/temp/pip-ephem-wheel-cache-wu8o3o55/wheels/87/73/38/c89361e564c58aac4518c130fa18258be2992dc3e93f0c6703
+Successfully built canvaspilot

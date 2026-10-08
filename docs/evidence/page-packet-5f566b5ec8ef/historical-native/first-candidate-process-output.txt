@@ -1,0 +1,8 @@
+[Reading 3 new lines (total: 3 lines)]
+
+{"name": "focused", "exit_code": 0, "stdout": "...............................................................          [100%]\n63 passed in 3.38s\n", "stderr": ""}
+{"name": "ruff", "exit_code": 1, "stdout": "SIM115 Use a context manager for opening files\n   --> src/canvaspilot/page_export.py:309:18\n    |\n307 |     handle = None\n308 |     try:\n309 |         handle = tempfile.NamedTemporaryFile(prefix=\".canvaspilot-pages-\", suffix=\".tmp\",\n    |                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n310 |                                              dir=path.parent, delete=False)\n311 |         temporary = Path(handle.name)\n    |\n\nDTZ001 `datetime.datetime()` called without a `tzinfo` argument\n   --> tests/test_page_export.py:345:74\n    |\n343 |     client = RecordingClient(data)\n344 |     with pytest.raises(ValueError, match=\"timezone-aware\"):\n345 |         build_page_packet(CanvasAPI(client), 42, [\"intro\"], generated_at=datetime(2026, 10, 8))\n    |                                                                          ^^^^^^^^^^^^^^^^^^^^^\n346 |     assert client.requests == []\n    |\nhelp: Pass a `datetime.timezone` object to the `tzinfo` parameter\n\nFound 2 errors.\n", "stderr": ""}
+
+✅ Process completed with exit code 0 (runtime: 6.36s)
+
+[executed on device: hamon-thinkpad (d55b2499-5e82-4805-819a-d0d7ddea1efe)]

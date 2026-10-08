@@ -1,0 +1,180 @@
+diff --git a/src/canvaspilot/api.py b/src/canvaspilot/api.py
+index 73e47f1..a9d1629 100644
+--- a/src/canvaspilot/api.py
++++ b/src/canvaspilot/api.py
+@@ -428,6 +428,19 @@ class CanvasAPI:
+         )
+         return {"topic": topic, "view": view}
+ 
++    def discussion_thread(
++        self, course_id: int | str, topic_id: int | str, *, unread_only: bool = False
++    ) -> dict[str, Any]:
++        """Read the cached discussion tree with explicit read state and reply context."""
++        from canvaspilot.discussion_thread import (
++            build_discussion_thread,
++            validate_discussion_selection,
++        )
++
++        course, topic = validate_discussion_selection(course_id, topic_id, unread_only)
++        result = self.get_discussion(course, topic)
++        return build_discussion_thread(result["topic"], result["view"], unread_only=unread_only)
++
+     def post_discussion_reply(
+         self,
+         course_id: int | str,
+@@ -571,6 +584,16 @@ class CanvasAPI:
+             params={"auto_mark_as_read": False},
+         )
+ 
++    def course_agenda(
++        self, course_ids: list[int | str], *, start_date: str, end_date: str,
++    ) -> dict[str, Any]:
++        """Read selected course events and assignment deadlines in one agenda."""
++        from canvaspilot.agenda import read_course_agenda
++
++        return read_course_agenda(
++            self.client, course_ids, start_date=start_date, end_date=end_date,
++        )
++
+     def list_calendar_events(
+         self,
+         *,
+diff --git a/src/canvaspilot/cli.py b/src/canvaspilot/cli.py
+index 545ec52..82f1cdf 100644
+--- a/src/canvaspilot/cli.py
++++ b/src/canvaspilot/cli.py
+@@ -64,6 +64,20 @@ def main(argv: list[str] | None = None) -> None:
+             p.add_argument("--limit-assignments-per-course", type=_positive_int, default=5,
+                            help="Maximum assignments to include per course (default: 5)")
+ 
++    announcements = sub.add_parser(
++        "announcements", help="Read active announcements for selected courses",
++    )
++    add_common(announcements)
++    announcements.add_argument("course_ids", nargs="+", type=_positive_int)
++    announcements.add_argument(
++        "--start-date", default=None,
++        help="Canvas start_date filter (YYYY-MM-DD or ISO 8601); omitted uses Canvas defaults",
++    )
++    announcements.add_argument(
++        "--detail", choices=("compact", "full"), default="compact",
++        help="compact limits message text to 400 characters; full keeps the complete stripped text",
++    )
++
+     assigns = sub.add_parser("assignments", help="List assignments for a course")
+     add_common(assigns)
+     assigns.add_argument("course_id")
+@@ -103,6 +117,16 @@ def main(argv: list[str] | None = None) -> None:
+     add_common(disc)
+     disc.add_argument("course_id")
+ 
++    discussion = sub.add_parser(
++        "discussion", help="Read one cached discussion; unread focus retains reply context"
++    )
++    add_common(discussion)
++    discussion.add_argument("course_id", help="Positive numeric Canvas course ID")
++    discussion.add_argument("topic_id", help="Positive numeric Canvas discussion topic ID")
++    discussion.add_argument(
++        "--unread-only", action="store_true", help="Keep known unread entries and their ancestors"
++    )
++
+     files = sub.add_parser("files", help="List course files")
+     add_common(files)
+     files.add_argument("course_id")
+@@ -140,6 +164,18 @@ def main(argv: list[str] | None = None) -> None:
+     history.add_argument("course_id", help="Positive numeric Canvas course ID")
+     history.add_argument("assignment_id", help="Positive numeric Canvas assignment ID")
+ 
++    agenda = sub.add_parser(
++        "agenda", help="Read selected course events and assignment deadlines together",
++        description=(
++            "Read 1-10 course calendars for an explicit inclusive Canvas date range. "
++            "Known timed, declared all-day, and unavailable timing remain separate."
++        ),
++    )
++    add_common(agenda)
++    agenda.add_argument("course_ids", nargs="+", help="Positive numeric Canvas course IDs")
++    agenda.add_argument("--start", dest="start_date", required=True, help="YYYY-MM-DD")
++    agenda.add_argument("--end", dest="end_date", required=True, help="YYYY-MM-DD")
++
+     mcp = sub.add_parser("mcp", help="Run MCP stdio server")
+     add_common(mcp)
+ 
+@@ -176,6 +212,28 @@ def main(argv: list[str] | None = None) -> None:
+                 limit_courses=args.limit_courses,
+                 limit_assignments_per_course=args.limit_assignments_per_course,
+             ), indent=2, default=str))
++        elif args.cmd == "announcements":
++            import httpx
++
++            from canvaspilot.client import CanvasAuthError, CanvasPaginationError
++
++            # Keep the terminal result structured when MCP initialization has
++            # enabled HTTPX request logging; restore the caller's logger level.
++            http_log = logging.getLogger("httpx")
++            previous_level = http_log.level
++            http_log.setLevel(max(http_log.getEffectiveLevel(), logging.WARNING))
++            try:
++                result = api.list_announcements(
++                    args.course_ids, start_date=args.start_date, detail=args.detail,
++                )
++            except (CanvasAuthError, CanvasPaginationError, httpx.HTTPError, ValueError) as error:
++                print(json.dumps({
++                    "ok": False, "error": type(error).__name__, "message": str(error),
++                }), file=sys.stderr)
++                raise SystemExit(1) from None
++            finally:
++                http_log.setLevel(previous_level)
++            print(json.dumps(result, indent=2))
+         elif args.cmd == "assignments":
+             print(
+                 json.dumps(
+@@ -202,6 +260,21 @@ def main(argv: list[str] | None = None) -> None:
+             )
+         elif args.cmd == "discussions":
+             print(json.dumps(api.list_discussion_topics(args.course_id), indent=2, default=str))
++        elif args.cmd == "discussion":
++            import httpx
++
++            from canvaspilot.client import CanvasAuthError
++
++            try:
++                result = api.discussion_thread(
++                    args.course_id, args.topic_id, unread_only=args.unread_only
++                )
++            except (CanvasAuthError, httpx.HTTPError, ValueError) as error:
++                print(json.dumps({
++                    "ok": False, "error": type(error).__name__, "message": str(error),
++                }), file=sys.stderr)
++                raise SystemExit(1) from None
++            print(json.dumps(result, indent=2))
+         elif args.cmd == "files":
+             print(json.dumps(api.list_files(args.course_id), indent=2, default=str))
+         elif args.cmd in ("inbox", "conversation"):
+@@ -242,6 +315,26 @@ def main(argv: list[str] | None = None) -> None:
+                 }), file=sys.stderr)
+                 raise SystemExit(1) from None
+             print(json.dumps({"ok": True, "output": str(args.out), **report}, indent=2))
++        elif args.cmd == "agenda":
++            import httpx
++
++            from canvaspilot.client import CanvasAuthError, CanvasPaginationError
++
++            http_log = logging.getLogger("httpx")
++            previous_level = http_log.level
++            http_log.setLevel(max(http_log.getEffectiveLevel(), logging.WARNING))
++            try:
++                result = api.course_agenda(
++                    args.course_ids, start_date=args.start_date, end_date=args.end_date,
++                )
++            except (CanvasAuthError, CanvasPaginationError, httpx.HTTPError, ValueError) as error:
++                print(json.dumps({
++                    "ok": False, "error": type(error).__name__, "message": str(error),
++                }), file=sys.stderr)
++                raise SystemExit(1) from None
++            finally:
++                http_log.setLevel(previous_level)
++            print(json.dumps(result, indent=2))
+         elif args.cmd == "submission-history":
+             import httpx
+ 

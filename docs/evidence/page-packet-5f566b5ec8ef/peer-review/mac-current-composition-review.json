@@ -1,0 +1,67 @@
+{
+  "schema": 1,
+  "reviewer": "chatgpt:5f566b5ec8ef:mac_continuity",
+  "decision": "Accepted the current source composition; no blocker found within the selected-page export boundary.",
+  "previous_source_review": {
+    "path": "/Users/me/canvaspilot-page-packet-peer-review-20261008-5f566b5ec8ef/mac-source-review.json",
+    "sha256": "4f979fbdfb676b2a70590595f2c9af9ad6a84add5d9a8037313648c08786e6df"
+  },
+  "native_source": "/Users/me/canvaspilot-page-packet-20261008-5f566b5ec8ef/source",
+  "checks": {
+    "base": "a5ce672e5b3580c1f52e13c49eefee830f11346c",
+    "pins": [
+      {
+        "path": "src/canvaspilot/page_export.py",
+        "sha256": "8800e959ee620438273c3291fd24c51b9ed567430b28093cd3f8bef52bff5015"
+      },
+      {
+        "path": "src/canvaspilot/cli.py",
+        "sha256": "361b1dafb3c264900b393b2367a71b66fc8a6f2d8e78921372e87650bbbd6330"
+      },
+      {
+        "path": "README.md",
+        "sha256": "86174db3566461df2af68bb39a742d4d568730bbdda5b96563dbfd3367d0493e"
+      },
+      {
+        "path": "docs/page-export.md",
+        "sha256": "3976c1b5bfb80d1d196b0fa4ab0ba655a6193e2b15b1a8145e7ba197a44f23b8"
+      }
+    ],
+    "insertions": {
+      "src/canvaspilot/cli.py": {
+        "block_lines": [
+          8,
+          21
+        ],
+        "current_base_bytes_restored_exactly": true
+      },
+      "README.md": {
+        "block_lines": [
+          5
+        ],
+        "current_base_bytes_restored_exactly": true
+      }
+    },
+    "unchanged_current_boundaries": [
+      "src/canvaspilot/client.py",
+      "src/canvaspilot/calendar_export.py",
+      "pyproject.toml",
+      ".github/workflows/ci.yml"
+    ],
+    "status": "M  README.md\nA  docs/page-export.md\nM  src/canvaspilot/cli.py\nA  src/canvaspilot/page_export.py\nA  tests/fixtures/page_packet.json\nA  tests/test_page_export.py\nA  tests/test_page_export_process.py\n"
+  },
+  "guide_review": [
+    "Read the complete pinned guide3976c1b5; its numeric URL-versus-ID selection matches the independently checked official Pages API.",
+    "The guide distinguishes exact decoded body retention from the simplified reading projection and original HTTP bytes.",
+    "Sequential reads, post-decode resource bounds, strict new-output publication, loader/auth reuse and post-commit cleanup warnings are described without an atomic-provider or directory-durability claim."
+  ],
+  "scope": [
+    "Exact page module8800 is unchanged from prior independent review.",
+    "Removed only the actual8-line parser and21-line dispatch additions and independently recovered canonical a5ce672e CLI bytes exactly.",
+    "Removed the5-line README insertion and independently recovered current README bytes exactly, preserving current inbox/submission text.",
+    "Client, calendar source guard, project metadata and current CI workflow were independently compared byte-for-byte with current base.",
+    "No product/source edits, provider calls, suite, wheel, browser or CLI process replay were performed."
+  ],
+  "receiving_limits": "This is source/composition acceptance. The author's installed-wheel, actual CLI process and browser receiving gates remain separate; this review does not claim those executions.",
+  "recorded_utc": "2026-10-08T15:32:37.441285+00:00"
+}

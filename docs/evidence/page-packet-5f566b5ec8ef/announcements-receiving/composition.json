@@ -1,0 +1,39 @@
+{
+  "utc": "2026-10-08T15:53:39.799782+00:00",
+  "base": "0480cbce421bae532e3e909899fc8fb83789e878",
+  "base_tree": "f9ecaa4311d93cfe3a1fd1c9cc140834e2449341",
+  "base_leaves": 1107,
+  "candidate_leaves": 1112,
+  "candidate_tree": "d484b6d204a4c90f62457f093d523155a921b8b2",
+  "native_commit": "b881d4acfb2a80f05842e86b25fdb499e576b745",
+  "all_unowned_leaf_modes_and_objects_preserved": true,
+  "unowned_leaves": 1105,
+  "owned_paths": [
+    "README.md",
+    "docs/page-export.md",
+    "src/canvaspilot/cli.py",
+    "src/canvaspilot/page_export.py",
+    "tests/fixtures/page_packet.json",
+    "tests/test_page_export.py",
+    "tests/test_page_export_process.py"
+  ],
+  "source_sha256": {
+    "README.md": "db724d01370a7615594ad09513f49d7fc8d00c74e7c5c657f72217b1494a6ad8",
+    "docs/page-export.md": "3976c1b5bfb80d1d196b0fa4ab0ba655a6193e2b15b1a8145e7ba197a44f23b8",
+    "src/canvaspilot/cli.py": "811d141084dadde567b775c0bd75914e33ff7408c2fe8555c82829c16daee5a6",
+    "src/canvaspilot/page_export.py": "8800e959ee620438273c3291fd24c51b9ed567430b28093cd3f8bef52bff5015",
+    "tests/fixtures/page_packet.json": "c5d348db60489544c4c2291170d18528f617981a374326c6d3c9059e490fd82b",
+    "tests/test_page_export.py": "8b17008213e04441cbd97a5bd295c55c65edcc4f28bfc55cb5299fc633265d09",
+    "tests/test_page_export_process.py": "2d406b0a4dc1dc711dffd00094baa3fd574789263f8cc39dae82dc18fbf6b478"
+  },
+  "unchanged_transport_blobs": {
+    "src/canvaspilot/client.py": "1db4b1135305f7e410025ae7937f9a6cd349f020",
+    "src/canvaspilot/calendar_export.py": "ef74cfdf50fd894327dbe45a9a9d43042953bc31",
+    "pyproject.toml": "76eba6d30696b4f2733539cd47df6e178bc0f585",
+    ".github/workflows/ci.yml": "ef7bbebe192c0db55dc4467e064ba44805c13446"
+  },
+  "original_merge_exit_code": 0,
+  "resolved_conflicts": [],
+  "cli_pure_insertions_preserve_every_current_byte": true,
+  "readme_pure_insertion_preserves_every_current_byte": true
+}

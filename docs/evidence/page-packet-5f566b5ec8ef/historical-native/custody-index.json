@@ -1,0 +1,51 @@
+{
+  "scope": "Historical native source and observations; these phases are not relabeled as current qualification.",
+  "native_source": "/home/jacob/canvaspilot-page-packet-5f566b5ec8ef",
+  "native_evidence": "/home/jacob/canvaspilot-page-packet-5f566b5ec8ef/docs/evidence/page-packet-5f566b5ec8ef",
+  "source_base": "79a2f2b2cbb7e74128d731cf096c7e86f1942d4b",
+  "source_commit": "48c8424755fce9c389fcfa6e79c9c125afff8edc",
+  "baseline": {
+    "unknown_command_exit": 2,
+    "provider_requests": 0,
+    "output_created": false,
+    "suite": "536 passed, 1 skipped, 6 subtests passed",
+    "receipt_sha256": "11094906cb9e90c3fcf6460386966c0fce5c0cefe082c2119171e2f0f8b1bf88"
+  },
+  "first_candidate": {
+    "focused_passed": 63,
+    "ruff_findings": [
+      "SIM115 explicit-close design needed a narrow documented exemption",
+      "DTZ001 naive datetime was intentional negative fixture; expressed using aware fixture.replace(tzinfo=None)"
+    ],
+    "source_sha256": {
+      "src/canvaspilot/page_export.py": "00e97527f7e395a19d2b1938e4985bbe54d6413e2dae71b3a5799931af6b7e2f",
+      "src/canvaspilot/cli.py": "0a6061396f6043960971dd0db8fef372710bbd9b6f77a63c474f3714dbfa0238",
+      "tests/test_page_export.py": "0dfd22e31c6fb4c350855e13aa4d6bd2f3f983c2b59e5cdb9c3c8936261263ac",
+      "tests/fixtures/page_packet.json": "c5d348db60489544c4c2291170d18528f617981a374326c6d3c9059e490fd82b"
+    }
+  },
+  "second_candidate": {
+    "module_controls_passed": 67,
+    "process_controls_passed": 8,
+    "process_controls_failed": 10,
+    "combined": "75 passed, 10 failed",
+    "ruff_exit": 0,
+    "correction": "Harness expectations were corrected for existing HTTP stderr diagnostics, actual per_page=50, and read-induced atime changes. Publication/source behavior was unchanged by that harness correction."
+  },
+  "process_replay": {
+    "passed": 18,
+    "ruff_exit": 0,
+    "receipt_sha256": "2524e8073994d8080670a4bd548c4cbeb7ed8a834960712993cb31f6538b2523"
+  },
+  "later_test_delta": "One actual child-only RLIMIT_FSIZE process control was added on Mac; current maintained process file has 19 controls.",
+  "native_capacity": "An Errno122 quota failure in the owned /tmp checkout was retained. The isolated source was moved to /home only after a complete 760-leaf byte/mode/symlink comparison.",
+  "transport_boundary": "ThinkPad RDC and Mac-to-ThinkPad SSH became unavailable during the first a5ce current-source composition. Raw earlier baseline, first-candidate, second-candidate, replay and relocation logs remain at the native evidence path. They were not re-read during the outage. Included tool transcripts are exact previously observed responses, not substitutes claimed to be freshly verified full raw logs.",
+  "native_claim": {
+    "actor": "chatgpt:5f566b5ec8ef:production",
+    "sequence": 4170,
+    "event_id": "cev_302057faa69a4deda91e3e83",
+    "hash": "981af7a43d8f66fb431d7ec2ebbdb8c0d5285823c0b7147948992918c593dc96",
+    "key": "claim:canvaspilot-page-packet-5f566b5ec8ef"
+  },
+  "central_issue": "https://github.com/Jacob-Met/hamon/issues/140#issuecomment-6061618726"
+}
