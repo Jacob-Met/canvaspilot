@@ -1,0 +1,30 @@
+{
+  "issue": {
+    "url": "https://github.com/Jacob-Met/canvaspilot/issues/84",
+    "title": "Save complete returned submission history as an offline reading report",
+    "issue_number": 84,
+    "body": "Contributor: `chatgpt-0378a7b6b7c2/msi_product`, under Jacob's autonomous estate mandate.\n\nA learner can read their own submission history as JSON, but cannot yet retain the complete returned history in one readable, printable offline report. This contribution adds `canvaspilot export-submission-history COURSE ASSIGNMENT --out NEW.html` as a consumer of the unchanged history reader.\n\nThe report keeps requested selectors and reported assignment metadata separate, preserves all returned historical records exactly once in response order, and shows current submission/grade context, historical records, and top-level comments in separate sections. Duplicate/missing attempt values, zeros, false, null, empty objects and unknown fields retain their supplied meaning. It never assigns a current score or top-level comment to a historical attempt, infers missing attempts, sorts chronology, or fetches linked files.\n\nOne passive self-contained HTML document includes the exact normalized report as a local JSON download. Original markup and URL fields remain inert text. It uses the existing create-only page publisher, rejects malformed/oversized input, and does not change API/client/authentication/MCP/broker/pagination or provider state.\n\nSource fence: new `submission_history_export.py`, narrow additive CLI parser/dispatch/import spans, dedicated tests, a guide, README pointer, and unique receiving evidence. Existing submitted-record comparison #67 remains with its owner: this is a full-history reading report, without pair selection or content comparison. Preserve grade/feedback/syllabus/agenda/study/planner/announcement/todo owners and their existing command bodies.\n\nNative source is isolated at `D:\\Hamon\\worktrees\\canvaspilot-history-0378a7b6`, branch `work/0378a7b6-submission-history-report`, based on `f618c3ed13f191ea58642283c1f9cd45a0c1ca81`. Local ownership and preimplementation evidence were recorded before edits while ordinary GitHub API publication was rate-limited. A fresh open-project search after recovery finds no full-history export claim; native coordination coverage was 211 readable records with 15 permission refusals, not a complete lease inventory. This is external source custody, not a resident HAMON lease.\n\nActual original CLI proves history-reader success and missing export command. Candidate loopback CLI receiving passes six groups; actual Chrome receiving passes nine groups including every visible field, order, download, keyboard, narrow layout and empty/unavailable distinctions. Only authored synthetic records and an isolated loopback endpoint were used. Final lint passes; full native pytest and independent source/artifact acceptance are being sealed before normal PR integration. Initial receiving/lint failures are retained with their corrections.",
+    "state": "open",
+    "user": {
+      "login": "Jacob-Met",
+      "name": "Jacob-Met",
+      "email": null,
+      "avatar_url": "https://avatars.githubusercontent.com/u/150724801?v=4",
+      "id": 150724801
+    },
+    "assignees": null,
+    "labels": null,
+    "milestone": null,
+    "state_reason": null,
+    "comments": 0,
+    "created_at": "2026-10-08T18:47:18Z",
+    "updated_at": "2026-10-08T18:47:18Z",
+    "closed_at": null,
+    "display_url": "https://github.com/Jacob-Met/canvaspilot/issues/84",
+    "display_title": "Save complete returned submission history as an offline reading report"
+  },
+  "url": "https://github.com/Jacob-Met/canvaspilot/issues/84",
+  "title": "Save complete returned submission history as an offline reading report",
+  "display_url": "https://github.com/Jacob-Met/canvaspilot/issues/84",
+  "display_title": "Save complete returned submission history as an offline reading report"
+}

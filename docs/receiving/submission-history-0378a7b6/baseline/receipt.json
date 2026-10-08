@@ -1,0 +1,48 @@
+{
+  "started": "2026-10-08T17:51:35.481099+00:00",
+  "mode": "baseline",
+  "source": "D:\\Hamon\\worktrees\\canvaspilot-discovery-0378a7b6",
+  "head": "f618c3ed13f191ea58642283c1f9cd45a0c1ca81",
+  "source_status": "",
+  "driver_sha256": "ea1df4e3d3ad9f4d535efd7c9fa881fa89fb6da7de8333f90a0f4dabcdc33699",
+  "fixtures_before": {
+    "fixture-assignment.json": "c4ad22ec32371d28a91557ceb18a8b435cdf23759c83bd512334fd441227f9b6",
+    "fixture-submission.json": "b76cdfb4c72aa1f9e3f9f3ecd399ca1f63c45b0633470b074f83c5ccdf0b0c79"
+  },
+  "runs": [
+    {
+      "label": "original-history",
+      "returncode": 0,
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/71/assignments/902",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/71/assignments/902/submissions/self",
+          "query": {
+            "include[]": [
+              "submission_history",
+              "submission_comments"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        }
+      ],
+      "stdout_sha256": "ac3419f911b5a3198097a81c416fef6ad18d772d65866de6e72ae202b9fafbd0",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "checks": [],
+  "finished": "2026-10-08T17:51:37.712392+00:00",
+  "passed": false,
+  "error": "Traceback (most recent call last):\n  File \"D:\\Hamon\\worktrees\\canvaspilot-history-0378a7b6-proof\\receive_cli.py\", line 91, in <module>\n    assert_reads(item)\n  File \"D:\\Hamon\\worktrees\\canvaspilot-history-0378a7b6-proof\\receive_cli.py\", line 68, in assert_reads\n    assert item[\"requests\"]==[\n           ^^^^^^^^^^^^^^^^^^^\nAssertionError: {'label': 'original-history', 'returncode': 0, 'requests': [{'method': 'GET', 'path': '/api/v1/courses/71/assignments/902', 'query': {'per_page': ['50']}}, {'method': 'GET', 'path': '/api/v1/courses/71/assignments/902/submissions/self', 'query': {'include[]': ['submission_history', 'submission_comments'], 'per_page': ['50']}}], 'stdout_sha256': 'ac3419f911b5a3198097a81c416fef6ad18d772d65866de6e72ae202b9fafbd0', 'stderr_sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'}\n"
+}

@@ -129,6 +129,21 @@ Save that same grade review for offline reading or printing with
 assignment context, withheld/unknown values, the complete JSON download and
 new-file protection.
 
+## Save submission attempts for offline review
+
+Save the existing self-history report as a readable standalone HTML file:
+
+```bash
+canvaspilot export-submission-history 71 902 --out submission-history.html
+```
+
+The report keeps the current submission, every returned historical record, and
+top-level comments separate. Returned order and missing/empty distinctions stay
+visible; current grades are never assigned to earlier attempts. It includes the
+complete normalized JSON and works with the browser's Print command. Existing
+files are protected. See [offline submission history](docs/submission-history-export.md)
+for scope, provenance, limits and CLI/Python usage.
+
 ## Assignment briefs
 
 `canvaspilot brief <course_id> <assignment_id>`, the Python

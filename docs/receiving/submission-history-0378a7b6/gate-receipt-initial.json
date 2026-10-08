@@ -1,0 +1,12 @@
+{
+  "started": "2026-10-08T18:02:37.293Z",
+  "root": "D:\\Hamon\\worktrees\\canvaspilot-history-0378a7b6",
+  "steps": [
+    {
+      "name": "lint",
+      "status": 1,
+      "signal": null,
+      "error": null
+    }
+  ]
+}

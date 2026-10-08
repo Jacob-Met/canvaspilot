@@ -1,0 +1,26 @@
+{
+  "at": "2026-10-08T18:51:21.369Z",
+  "original": "f618c3ed13f191ea58642283c1f9cd45a0c1ca81",
+  "status": 1,
+  "error": null,
+  "nodes": [
+    "tests/test_assignment_submission_process.py::test_registered_mcp_assignment_and_sync_tools_propagate_the_same_facts",
+    "tests/test_assignment_submission_process.py::test_mcp_later_page_refusal_remains_a_tool_error[403]",
+    "tests/test_assignment_submission_process.py::test_mcp_later_page_refusal_remains_a_tool_error[500]",
+    "tests/test_calendar_export.py::test_new_file_publication_preserves_existing_file_and_dangling_symlink",
+    "tests/test_discussion_thread_native.py::DiscussionThreadNativeTests::test_cli_all_and_unread_focus_use_exact_two_read_requests_each",
+    "tests/test_discussion_thread_native.py::DiscussionThreadNativeTests::test_cli_http_refusals_are_errors_without_partial_success_or_retry",
+    "tests/test_discussion_thread_native.py::DiscussionThreadNativeTests::test_cli_malformed_or_unavailable_view_is_not_an_empty_discussion",
+    "tests/test_discussion_thread_native.py::DiscussionThreadNativeTests::test_cli_second_read_reflects_supplied_changes_without_retaining_old_unread_rows",
+    "tests/test_grade_review_process.py::test_native_http_pagination_and_cli_changed_grade_then_denial",
+    "tests/test_module_progress_export_cli.py::test_existing_output_entries_are_refused_before_any_canvas_read[directory]",
+    "tests/test_module_progress_export_cli.py::test_existing_output_entries_are_refused_before_any_canvas_read[symlink]",
+    "tests/test_module_progress_export_cli.py::test_existing_output_entries_are_refused_before_any_canvas_read[dangling]",
+    "tests/test_page_export.py::test_output_has_complete_exact_bytes_and_private_permissions",
+    "tests/test_page_export.py::test_every_existing_output_entry_is_protected[symlink]",
+    "tests/test_page_export.py::test_every_existing_output_entry_is_protected[dangling-symlink]",
+    "tests/test_page_export_process.py::test_existing_entries_refuse_before_requests_and_preserve_inputs[symlink]",
+    "tests/test_page_export_process.py::test_existing_entries_refuse_before_requests_and_preserve_inputs[dangling]"
+  ],
+  "clean": true
+}

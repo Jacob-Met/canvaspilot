@@ -1,0 +1,37 @@
+{
+  "started": "2026-10-08T18:02:01.552Z",
+  "driver_sha256": "b4d642b115a982045001fd6b9adb2aa351cf41f31c1cf90e93fc16b315ebd7e7",
+  "checks": [
+    "Current submission and assignment retain exact fields; false current-grade match is visibly qualified",
+    "All returned records appear once in original 2,1,2,missing-attempt order; zero, null, false, missing fields and nested comments remain original",
+    "Top-level comments remain in their own ordered section, separate from nested and current record data",
+    "Provider markup and URL metadata stay literal; no active embedded content or external link is created",
+    "Native keyboard anchor reaches the fourth record and the390px report has no horizontal overflow",
+    "Actual keyboard download preserves the complete original normalized JSON and its displayed checksum",
+    "Native print pipeline generates a PDF; visual/text interpretation is recorded separately",
+    "Unavailable history/comments and returned empty history/comments have distinct visible messages",
+    "Zero observed runtime or console errors and zero observed external requests"
+  ],
+  "errors": [],
+  "externalRequests": [],
+  "artifacts": {
+    "desktop.png": {
+      "bytes": 250313,
+      "sha256": "41bfc901b957b1a0e51384f16635449ed097df08403c7391ce85a038f74e756a"
+    },
+    "mobile.png": {
+      "bytes": 227805,
+      "sha256": "e02c3eb2a52b7cf4b053b2cf5d0f56b6596abb7bd4b61f9659272010ae8a734e"
+    },
+    "downloaded-history.json": {
+      "bytes": 2407,
+      "sha256": "24ab1e8a96ec996786cca58d3dd63ac21fc3646f4ed11b6d4149ac4bbc626d9d"
+    },
+    "submission-history.pdf": {
+      "bytes": 69706,
+      "sha256": "021210d69d08db1eea4e4dff6c69d8a5120d2109032ec090588a32f2002c3278"
+    }
+  },
+  "passed": true,
+  "finished": "2026-10-08T18:02:15.031Z"
+}

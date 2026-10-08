@@ -1,0 +1,24 @@
+{
+  "status": "pass",
+  "recorded_at": "2026-10-08T18:46:12.483429+00:00",
+  "reviewer": "chatgpt-0378a7b6b7c2/root",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "source_sha256": "b574c8e81f3f48753723416645c252a23a77368c1812fe7334c69d51cd86d17f",
+  "html_sha256": "93b6215fad1cb494cbee1ee2f1c21005f80c99cc27077e788820431430fca2c1",
+  "expected_normalized_report_sha256": "ac3419f911b5a3198097a81c416fef6ad18d772d65866de6e72ae202b9fafbd0",
+  "downloaded_json_sha256": "24ab1e8a96ec996786cca58d3dd63ac21fc3646f4ed11b6d4149ac4bbc626d9d",
+  "visible_fields_read_back": 45,
+  "history_records_in_returned_order": 4,
+  "top_level_comments": 2,
+  "current_attempt": 4,
+  "checks": [
+    "Embedded downloadable JSON equals the complete independent normalized reader fixture",
+    "Digest matches the exact decoded JSON bytes",
+    "Every visible assignment, current, history and top-level comment field re-admits to its original JSON value in order",
+    "Duplicate attempt 2, out-of-order attempt 1, absent attempt, zero, null, missing score and empty record remain distinct",
+    "Literal HTML, URLs, control characters and Unicode remain data",
+    "Current mismatched-grade context makes no historical-attempt assignment",
+    "No active HTML, network resource or event handler is present"
+  ],
+  "scope": "Independent bounded readback of the actual CLI-produced artifact; native browser and complete project gates are recorded separately by its implementation worker."
+}

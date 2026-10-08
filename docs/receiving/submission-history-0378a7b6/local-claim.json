@@ -1,0 +1,36 @@
+{
+  "schema": "hamon.external_contribution.v1",
+  "worker_id": "chatgpt-0378a7b6b7c2/msi_product",
+  "authority": "Jacob's current HAMON autonomous mandate, delegated by root",
+  "identity_kind": "external source contributor, not a native lease",
+  "repository": "Jacob-Met/canvaspilot",
+  "area": "Readable offline submission-attempt history through the unchanged self-history reader",
+  "base": "f618c3ed13f191ea58642283c1f9cd45a0c1ca81",
+  "branch": "work/0378a7b6-submission-history-report",
+  "path": "D:\\Hamon\\worktrees\\canvaspilot-history-0378a7b6",
+  "state": "Local claim and original actual-CLI witness frozen; implementation pending",
+  "ownership_coverage": {
+    "readable": 211,
+    "unreadable": 15,
+    "receipt": "ThinkPad:/home/jacob/msi-discovery-0378a7b6/canvaspilot-coordination.json",
+    "github": "Deferred until normal primary reset at18:06UTC; no alternate route"
+  },
+  "paths": [
+    "src/canvaspilot/submission_history_export.py",
+    "src/canvaspilot/cli.py additive parser and dispatch only",
+    "tests/test_submission_history_export.py",
+    "docs/submission-history-export.md",
+    "README.md narrow usage",
+    "unique receiving artifacts"
+  ],
+  "excluded": [
+    "feedback/grade export",
+    "groups",
+    "history reader/API/MCP",
+    "auth/pagination",
+    "source writes/read-status marking",
+    "attachment fetch",
+    "existing exports/writer implementation"
+  ],
+  "recorded_at": "2026-10-08T17:54:54.393Z"
+}
