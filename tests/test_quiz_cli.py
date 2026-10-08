@@ -1,0 +1,192 @@
+"""Actual terminal receiving for the two existing classic-quiz readers."""
+
+from __future__ import annotations
+
+import json
+import os
+import subprocess
+import sys
+import tempfile
+import threading
+import unittest
+from contextlib import contextmanager
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+from pathlib import Path
+from urllib.parse import parse_qs, urlsplit
+
+from canvaspilot import cli
+
+
+@contextmanager
+def endpoint(respond):
+    requests = []
+
+    class Handler(BaseHTTPRequestHandler):
+        def do_GET(self):
+            requests.append({"method": "GET", "path": self.path})
+            status, body, headers = respond(self.path)
+            data = body if isinstance(body, bytes) else json.dumps(body).encode()
+            self.send_response(status)
+            self.send_header("Content-Type", "application/json")
+            self.send_header("Content-Length", str(len(data)))
+            for key, value in headers.items():
+                self.send_header(key, value)
+            self.end_headers()
+            self.wfile.write(data)
+
+        def do_POST(self):
+            requests.append({"method": "POST", "path": self.path})
+            self.send_error(405)
+
+        def log_message(self, *_args):
+            pass
+
+    server = ThreadingHTTPServer(("127.0.0.1", 0), Handler)
+    thread = threading.Thread(target=server.serve_forever, daemon=True)
+    thread.start()
+    try:
+        yield f"http://127.0.0.1:{server.server_port}", requests
+    finally:
+        server.shutdown()
+        server.server_close()
+        thread.join(timeout=2)
+
+
+class QuizCliTests(unittest.TestCase):
+    def run_cli(self, base_url, *args):
+        env = {
+            key: value for key, value in os.environ.items()
+            if not key.startswith("CANVAS_")
+            and key.lower() not in {"http_proxy", "https_proxy", "all_proxy"}
+        }
+        env.update({
+            "PYTHONPATH": str(Path(cli.__file__).resolve().parents[1]),
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "CANVAS_API_TOKEN": "synthetic-loopback-only",
+            "NO_PROXY": "127.0.0.1,localhost",
+        })
+        with tempfile.TemporaryDirectory(prefix="canvas-quiz-cli-") as scratch:
+            profile = Path(scratch) / "unused-profile"
+            result = subprocess.run(
+                [sys.executable, "-B", "-m", "canvaspilot.cli", *args,
+                 "--base-url", base_url, "--profile", str(profile)],
+                cwd=scratch, env=env, capture_output=True, text=True, timeout=15, check=False,
+            )
+            self.assertFalse(profile.exists(), "a token read must not open a browser profile")
+        return result
+
+    def test_list_receives_every_page_and_keeps_existing_projection(self):
+        def respond(path):
+            route = urlsplit(path)
+            self.assertEqual(route.path, "/api/v1/courses/42/quizzes")
+            if parse_qs(route.query).get("page") == ["2"]:
+                self.assertEqual(route.query, "page=2&cursor=A%2BB")
+                return 200, [{
+                    "id": 102, "title": "Essay — café", "due_at": None,
+                    "lock_at": "2026-10-31T23:59:00-05:00", "question_count": 0,
+                    "points_possible": 0, "published": False, "quiz_type": "survey",
+                    "html_url": "https://canvas.example.test/courses/42/quizzes/102",
+                    "not_in_existing_projection": "retained only by quiz detail",
+                }], {}
+            self.assertEqual(parse_qs(route.query), {"per_page": ["50"]})
+            return 200, [{
+                "id": 101, "title": "Practice <one>", "due_at": "2026-10-30T09:00:00+09:00",
+            }], {"Link": '</api/v1/courses/42/quizzes?page=2&cursor=A%2BB>; rel="next"'}
+
+        with endpoint(respond) as (base, requests):
+            result = self.run_cli(base, "quizzes", "42")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(result.stderr, "")
+        self.assertEqual(json.loads(result.stdout), [
+            {"id": 101, "title": "Practice <one>", "due_at": "2026-10-30T09:00:00+09:00",
+             "lock_at": None, "question_count": None, "points_possible": None,
+             "published": None, "quiz_type": None, "html_url": None},
+            {"id": 102, "title": "Essay — café", "due_at": None,
+             "lock_at": "2026-10-31T23:59:00-05:00", "question_count": 0,
+             "points_possible": 0, "published": False, "quiz_type": "survey",
+             "html_url": "https://canvas.example.test/courses/42/quizzes/102"},
+        ])
+        self.assertEqual([item["method"] for item in requests], ["GET", "GET"])
+
+    def test_quiz_preserves_supplied_policy_dates_and_unknown_fields(self):
+        quiz = {
+            "id": 9, "title": "Revision \"A\" — 日本語", "description": "<p>Read first.</p>",
+            "time_limit": None, "allowed_attempts": -1, "published": False,
+            "locked_for_user": True, "lock_explanation": "Opens after the module.",
+            "due_at": None, "unlock_at": "2026-11-01T01:30:00-04:00",
+            "lock_at": "2026-11-01T01:30:00-05:00",
+            "all_dates": [{"due_at": None, "base": True}],
+            "permissions": {"read": True, "submit": False},
+            "future_metadata": {"literal": "<canvas> & ```", "score": 0},
+        }
+        with endpoint(lambda _path: (200, quiz, {})) as (base, requests):
+            result = self.run_cli(base, "quiz", "42", "9")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(result.stderr, "")
+        self.assertEqual(json.loads(result.stdout), quiz)
+        self.assertEqual(requests, [{"method": "GET", "path": "/api/v1/courses/42/quizzes/9?per_page=50"}])
+
+    def test_later_page_failure_never_prints_partial_quizzes(self):
+        def respond(path):
+            if parse_qs(urlsplit(path).query).get("page") == ["2"]:
+                return 200, {"error": "a continuing page must be a list"}, {}
+            return 200, [{"id": 101, "title": "Already read"}], {
+                "Link": '</api/v1/courses/42/quizzes?page=2>; rel="next"',
+            }
+
+        with endpoint(respond) as (base, requests):
+            result = self.run_cli(base, "quizzes", "42")
+        self.assertEqual(result.returncode, 1, result.stderr)
+        self.assertEqual(result.stdout, "")
+        error = json.loads(result.stderr)
+        self.assertEqual(error["error"], "CanvasPaginationError")
+        self.assertFalse(error["ok"])
+        self.assertEqual(len(requests), 2)
+
+    def test_read_failures_are_machine_readable_without_success_output(self):
+        cases = [
+            (["quizzes", "42"], 403, {"error": "forbidden"}, "CanvasAuthError"),
+            (["quiz", "42", "9"], 404, {"error": "not found"}, "HTTPStatusError"),
+            (["quiz", "42", "9"], 200, b'{"not":', "JSONDecodeError"),
+        ]
+        for args, status, body, error_name in cases:
+            with self.subTest(args=args, status=status, error=error_name):
+                with endpoint(lambda _path, s=status, b=body: (s, b, {})) as (base, requests):
+                    result = self.run_cli(base, *args)
+                self.assertEqual(result.returncode, 1, result.stderr)
+                self.assertEqual(result.stdout, "")
+                error = json.loads(result.stderr)
+                self.assertFalse(error["ok"])
+                self.assertEqual(error["error"], error_name)
+                self.assertEqual(len(requests), 1)
+                self.assertEqual(requests[0]["method"], "GET")
+
+    def test_invalid_and_missing_ids_refuse_before_http(self):
+        cases = [
+            ["quizzes", "0"], ["quizzes", "-4"], ["quizzes", "not-an-id"],
+            ["quiz", "42", "0"], ["quiz", "42", "../9"], ["quiz", "42"],
+        ]
+        with endpoint(lambda _path: (500, {"unexpected": True}, {})) as (base, requests):
+            for args in cases:
+                with self.subTest(args=args):
+                    result = self.run_cli(base, *args)
+                    self.assertEqual(result.returncode, 2, result.stderr)
+                    self.assertEqual(result.stdout, "")
+                    self.assertNotIn("Traceback", result.stderr)
+                    if len(args) == 2 and args[0] == "quiz":
+                        self.assertIn("required: quiz_id", result.stderr)
+                    else:
+                        self.assertIn("must be a positive integer", result.stderr)
+            self.assertEqual(requests, [])
+
+    def test_empty_course_is_an_empty_list(self):
+        with endpoint(lambda _path: (200, [], {})) as (base, requests):
+            result = self.run_cli(base, "quizzes", "42")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(result.stderr, "")
+        self.assertEqual(json.loads(result.stdout), [])
+        self.assertEqual(len(requests), 1)
+
+
+if __name__ == "__main__":
+    unittest.main()

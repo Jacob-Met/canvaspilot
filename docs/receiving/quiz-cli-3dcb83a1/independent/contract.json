@@ -1,0 +1,21 @@
+{
+  "format": "hamon-canvas-quiz-broker-contract/1",
+  "reviewer": "estate-3dcb83a1/root",
+  "currentBase": "a5ce672e5b3580c1f52e13c49eefee830f11346c",
+  "routeMode": "existing session-broker transport, synthetic loopback HTTP",
+  "frozenBeforeExecution": true,
+  "cases": [
+    "Current unchanged CLI refuses both missing routes before broker I/O",
+    "Candidate lists two pages with an opaque absolute continuation and existing projection",
+    "Actual list output chooses distinct quiz ID for supplied timing/attempt/lock metadata",
+    "Broker status403 produces a structured failure with empty stdout",
+    "Normal retry recovers exact metadata; only Canvas GET metadata operations occur"
+  ],
+  "resources": {
+    "minimumDiskBytes": 805306368,
+    "minimumAvailableMemoryBytes": 1610612736,
+    "maxSourceBytesPerVariant": 1048576,
+    "maxReportBytes": 131072
+  },
+  "sourceScope": "Read baseline and current candidate only; no API/client/MCP/source/profile mutation."
+}
