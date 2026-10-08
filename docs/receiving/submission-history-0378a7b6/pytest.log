@@ -1,0 +1,902 @@
+........................................................................ [  7%]
+.......................................................F.FF............. [ 14%]
+........................................................................ [ 22%]
+.........................s.........................................F.... [ 29%]
+........................................................................ [ 36%]
+...................F...F......... [ 40%]
+........................................................................ [ 47%]
+.............F....................................................... [ 54%]
+........................................................................ [ 61%]
+.........................................FFF............................ [ 69%]
+...................................................F.FF................. [ 76%]
+..FF........s.................................................. [ 82%]
+........................................................................ [ 90%]
+..................................................................... [ 97%]
+...........................                                              [100%]
+================================== FAILURES ===================================
+___ test_registered_mcp_assignment_and_sync_tools_propagate_the_same_facts ____
+
+loopback = ({'requests': [], 'rows': [{'id': 901, 'name': 'Synthetic assignment 901', 'due_at': '2026-10-10T12:00:00+02:00', 'poi...2026-10-11T00:00:00Z', 'points_possible': 0, ...}], 'later_status': 200, 'outputs': [], ...}, 'http://127.0.0.1:62683')
+
+    def test_registered_mcp_assignment_and_sync_tools_propagate_the_same_facts(loopback):
+        state, _ = loopback
+>       results = asyncio.run(asyncio.wait_for(run_mcp(state, [
+            ("canvas_list_assignments", {"course_id": "41", "bucket": ""}),
+            ("canvas_sync_summary", {"limit_courses": 2, "limit_assignments_per_course": 10}),
+        ]), timeout=25))
+
+tests\test_assignment_submission_process.py:306: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py:189: in run
+    with Runner(debug=debug) as runner:
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py:59: in __enter__
+    self._lazy_init()
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py:137: in _lazy_init
+    self._loop = events.new_event_loop()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\asyncio\events.py:810: in new_event_loop
+    return get_event_loop_policy().new_event_loop()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\asyncio\events.py:699: in new_event_loop
+    return self._loop_factory()
+           ^^^^^^^^^^^^^^^^^^^^
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py:315: in __init__
+    super().__init__(proactor)
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py:639: in __init__
+    self._make_self_pipe()
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py:784: in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ^^^^^^^^^^^^^^^^^^^
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\socket.py:641: in socketpair
+    csock.connect((addr, port))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+connection = <socket.socket [closed] fd=-1, family=2, type=1, proto=0>
+address = ('127.0.0.1', 62684)
+
+    def guarded_connect(connection, address):
+        if isinstance(address, tuple) and address != ("127.0.0.1", server.server_port):
+>           raise AssertionError("Only the disposable Canvas fixture is allowed")
+E           AssertionError: Only the disposable Canvas fixture is allowed
+
+tests\test_assignment_submission_process.py:158: AssertionError
+____________ test_mcp_later_page_refusal_remains_a_tool_error[403] ____________
+
+loopback = ({'requests': [], 'rows': [{'id': 901, 'name': 'Synthetic assignment 901', 'due_at': '2026-10-10T12:00:00+02:00', 'poi...2026-10-11T00:00:00Z', 'points_possible': 0, ...}], 'later_status': 403, 'outputs': [], ...}, 'http://127.0.0.1:62689')
+status = 403
+
+    @pytest.mark.parametrize("status", [403, 500])
+    def test_mcp_later_page_refusal_remains_a_tool_error(loopback, status):
+        state, _ = loopback
+        state["later_status"] = status
+>       result, = asyncio.run(asyncio.wait_for(run_mcp(state, [
+            ("canvas_list_assignments", {"course_id": "41", "bucket": ""}),
+        ]), timeout=25))
+
+tests\test_assignment_submission_process.py:329: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py:189: in run
+    with Runner(debug=debug) as runner:
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py:59: in __enter__
+    self._lazy_init()
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py:137: in _lazy_init
+    self._loop = events.new_event_loop()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\asyncio\events.py:810: in new_event_loop
+    return get_event_loop_policy().new_event_loop()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\asyncio\events.py:699: in new_event_loop
+    return self._loop_factory()
+           ^^^^^^^^^^^^^^^^^^^^
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py:315: in __init__
+    super().__init__(proactor)
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py:639: in __init__
+    self._make_self_pipe()
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py:784: in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ^^^^^^^^^^^^^^^^^^^
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\socket.py:641: in socketpair
+    csock.connect((addr, port))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+connection = <socket.socket [closed] fd=-1, family=2, type=1, proto=0>
+address = ('127.0.0.1', 62690)
+
+    def guarded_connect(connection, address):
+        if isinstance(address, tuple) and address != ("127.0.0.1", server.server_port):
+>           raise AssertionError("Only the disposable Canvas fixture is allowed")
+E           AssertionError: Only the disposable Canvas fixture is allowed
+
+tests\test_assignment_submission_process.py:158: AssertionError
+____________ test_mcp_later_page_refusal_remains_a_tool_error[500] ____________
+
+loopback = ({'requests': [], 'rows': [{'id': 901, 'name': 'Synthetic assignment 901', 'due_at': '2026-10-10T12:00:00+02:00', 'poi...2026-10-11T00:00:00Z', 'points_possible': 0, ...}], 'later_status': 500, 'outputs': [], ...}, 'http://127.0.0.1:62691')
+status = 500
+
+    @pytest.mark.parametrize("status", [403, 500])
+    def test_mcp_later_page_refusal_remains_a_tool_error(loopback, status):
+        state, _ = loopback
+        state["later_status"] = status
+>       result, = asyncio.run(asyncio.wait_for(run_mcp(state, [
+            ("canvas_list_assignments", {"course_id": "41", "bucket": ""}),
+        ]), timeout=25))
+
+tests\test_assignment_submission_process.py:329: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py:189: in run
+    with Runner(debug=debug) as runner:
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py:59: in __enter__
+    self._lazy_init()
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py:137: in _lazy_init
+    self._loop = events.new_event_loop()
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\asyncio\events.py:810: in new_event_loop
+    return get_event_loop_policy().new_event_loop()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\asyncio\events.py:699: in new_event_loop
+    return self._loop_factory()
+           ^^^^^^^^^^^^^^^^^^^^
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py:315: in __init__
+    super().__init__(proactor)
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py:639: in __init__
+    self._make_self_pipe()
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py:784: in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ^^^^^^^^^^^^^^^^^^^
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\socket.py:641: in socketpair
+    csock.connect((addr, port))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+connection = <socket.socket [closed] fd=-1, family=2, type=1, proto=0>
+address = ('127.0.0.1', 62692)
+
+    def guarded_connect(connection, address):
+        if isinstance(address, tuple) and address != ("127.0.0.1", server.server_port):
+>           raise AssertionError("Only the disposable Canvas fixture is allowed")
+E           AssertionError: Only the disposable Canvas fixture is allowed
+
+tests\test_assignment_submission_process.py:158: AssertionError
+___ test_new_file_publication_preserves_existing_file_and_dangling_symlink ____
+
+tmp_path = WindowsPath('D:/Hamon/worktrees/canvaspilot-history-0378a7b6-proof/tmp/pytest-of-Veria/pytest-0/test_new_file_publication_pres0')
+
+    def test_new_file_publication_preserves_existing_file_and_dangling_symlink(tmp_path):
+        content, _, _ = render({42: [assignment()]})
+        path = tmp_path / "deadlines.ics"
+        write_calendar(path, content)
+        with pytest.raises(FileExistsError):
+            write_calendar(path, b"changed")
+        assert path.read_bytes() == content
+        dangling = tmp_path / "dangling.ics"
+>       dangling.symlink_to(tmp_path / "missing")
+
+tests\test_calendar_export.py:169: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('D:/Hamon/worktrees/canvaspilot-history-0378a7b6-proof/tmp/pytest-of-Veria/pytest-0/test_new_file_publication_pres0/dangling.ics')
+target = WindowsPath('D:/Hamon/worktrees/canvaspilot-history-0378a7b6-proof/tmp/pytest-of-Veria/pytest-0/test_new_file_publication_pres0/missing')
+target_is_directory = False
+
+    def symlink_to(self, target, target_is_directory=False):
+        """
+        Make this path a symlink pointing to the target path.
+        Note the order of arguments (link, target) is the reverse of os.symlink.
+        """
+        if not hasattr(os, "symlink"):
+            raise NotImplementedError("os.symlink() not available on this system")
+>       os.symlink(target, self, target_is_directory)
+E       OSError: [WinError 1314] A required privilege is not held by the client: 'D:\\Hamon\\worktrees\\canvaspilot-history-0378a7b6-proof\\tmp\\pytest-of-Veria\\pytest-0\\test_new_file_publication_pres0\\missing' -> 'D:\\Hamon\\worktrees\\canvaspilot-history-0378a7b6-proof\\tmp\\pytest-of-Veria\\pytest-0\\test_new_file_publication_pres0\\dangling.ics'
+
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\pathlib.py:1198: OSError
+_ DiscussionThreadNativeTests.test_cli_all_and_unread_focus_use_exact_two_read_requests_each _
+
+self = <test_discussion_thread_native.DiscussionThreadNativeTests testMethod=test_cli_all_and_unread_focus_use_exact_two_read_requests_each>
+
+    def test_cli_all_and_unread_focus_use_exact_two_read_requests_each(self):
+        for focused in (False, True):
+            result = self.cli(*(["--unread-only"] if focused else []))
+>           self.assertEqual(result.returncode, 0, result.stderr)
+E           AssertionError: 1 != 0 : Traceback (most recent call last):
+E             File "<frozen runpy>", line 189, in _run_module_as_main
+E             File "<frozen runpy>", line 112, in _get_module_details
+E             File "D:\Hamon\worktrees\canvaspilot-history-0378a7b6\src\canvaspilot\__init__.py", line 3, in <module>
+E               from canvaspilot.api import CanvasAPI, assert_canvas_api_path, strip_html
+E             File "D:\Hamon\worktrees\canvaspilot-history-0378a7b6\src\canvaspilot\api.py", line 13, in <module>
+E               from canvaspilot.client import CanvasClient
+E             File "D:\Hamon\worktrees\canvaspilot-history-0378a7b6\src\canvaspilot\client.py", line 15, in <module>
+E               LEGACY_PROFILE = Path.home() / ".suite" / "forge" / "profiles" / "canvas-sso"
+E                                ^^^^^^^^^^^
+E             File "C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\pathlib.py", line 914, in home
+E               return cls("~").expanduser()
+E                      ^^^^^^^^^^^^^^^^^^^^^
+E             File "C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\pathlib.py", line 1385, in expanduser
+E               raise RuntimeError("Could not determine home directory.")
+E           RuntimeError: Could not determine home directory.
+
+tests\test_discussion_thread_native.py:154: AssertionError
+_ DiscussionThreadNativeTests.test_cli_http_refusals_are_errors_without_partial_success_or_retry (status=403) _
+
+self = <test_discussion_thread_native.DiscussionThreadNativeTests testMethod=test_cli_http_refusals_are_errors_without_partial_success_or_retry>
+
+    def test_cli_http_refusals_are_errors_without_partial_success_or_retry(self):
+        for status in (403, 404, 503):
+            with self.subTest(status=status):
+                self.requests.clear()
+                self.view_status = status
+                result = self.cli("--unread-only")
+                self.assertEqual(result.returncode, 1, result.stderr)
+                self.assertEqual(result.stdout, "")
+>               error = self.assert_cli_stderr(result, error=True)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_discussion_thread_native.py:168: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_discussion_thread_native.py:124: in assert_cli_stderr
+    message = json.loads(lines.pop())
+              ^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\json\__init__.py:346: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\json\decoder.py:337: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <json.decoder.JSONDecoder object at 0x00000224634DAF90>
+s = 'RuntimeError: Could not determine home directory.', idx = 0
+
+    def raw_decode(self, s, idx=0):
+        """Decode a JSON document from ``s`` (a ``str`` beginning with
+        a JSON document) and return a 2-tuple of the Python
+        representation and the index in ``s`` where the document ended.
+    
+        This can be used to decode a JSON document from a string that may
+        have extraneous data at the end.
+    
+        """
+        try:
+            obj, end = self.scan_once(s, idx)
+        except StopIteration as err:
+>           raise JSONDecodeError("Expecting value", s, err.value) from None
+E           json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\json\decoder.py:355: JSONDecodeError
+_ DiscussionThreadNativeTests.test_cli_http_refusals_are_errors_without_partial_success_or_retry (status=404) _
+
+self = <test_discussion_thread_native.DiscussionThreadNativeTests testMethod=test_cli_http_refusals_are_errors_without_partial_success_or_retry>
+
+    def test_cli_http_refusals_are_errors_without_partial_success_or_retry(self):
+        for status in (403, 404, 503):
+            with self.subTest(status=status):
+                self.requests.clear()
+                self.view_status = status
+                result = self.cli("--unread-only")
+                self.assertEqual(result.returncode, 1, result.stderr)
+                self.assertEqual(result.stdout, "")
+>               error = self.assert_cli_stderr(result, error=True)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_discussion_thread_native.py:168: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_discussion_thread_native.py:124: in assert_cli_stderr
+    message = json.loads(lines.pop())
+              ^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\json\__init__.py:346: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\json\decoder.py:337: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <json.decoder.JSONDecoder object at 0x00000224634DAF90>
+s = 'RuntimeError: Could not determine home directory.', idx = 0
+
+    def raw_decode(self, s, idx=0):
+        """Decode a JSON document from ``s`` (a ``str`` beginning with
+        a JSON document) and return a 2-tuple of the Python
+        representation and the index in ``s`` where the document ended.
+    
+        This can be used to decode a JSON document from a string that may
+        have extraneous data at the end.
+    
+        """
+        try:
+            obj, end = self.scan_once(s, idx)
+        except StopIteration as err:
+>           raise JSONDecodeError("Expecting value", s, err.value) from None
+E           json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\json\decoder.py:355: JSONDecodeError
+_ DiscussionThreadNativeTests.test_cli_http_refusals_are_errors_without_partial_success_or_retry (status=503) _
+
+self = <test_discussion_thread_native.DiscussionThreadNativeTests testMethod=test_cli_http_refusals_are_errors_without_partial_success_or_retry>
+
+    def test_cli_http_refusals_are_errors_without_partial_success_or_retry(self):
+        for status in (403, 404, 503):
+            with self.subTest(status=status):
+                self.requests.clear()
+                self.view_status = status
+                result = self.cli("--unread-only")
+                self.assertEqual(result.returncode, 1, result.stderr)
+                self.assertEqual(result.stdout, "")
+>               error = self.assert_cli_stderr(result, error=True)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_discussion_thread_native.py:168: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_discussion_thread_native.py:124: in assert_cli_stderr
+    message = json.loads(lines.pop())
+              ^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\json\__init__.py:346: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\json\decoder.py:337: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <json.decoder.JSONDecoder object at 0x00000224634DAF90>
+s = 'RuntimeError: Could not determine home directory.', idx = 0
+
+    def raw_decode(self, s, idx=0):
+        """Decode a JSON document from ``s`` (a ``str`` beginning with
+        a JSON document) and return a 2-tuple of the Python
+        representation and the index in ``s`` where the document ended.
+    
+        This can be used to decode a JSON document from a string that may
+        have extraneous data at the end.
+    
+        """
+        try:
+            obj, end = self.scan_once(s, idx)
+        except StopIteration as err:
+>           raise JSONDecodeError("Expecting value", s, err.value) from None
+E           json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\json\decoder.py:355: JSONDecodeError
+_ DiscussionThreadNativeTests.test_cli_malformed_or_unavailable_view_is_not_an_empty_discussion (raw=b'{broken') _
+
+self = <test_discussion_thread_native.DiscussionThreadNativeTests testMethod=test_cli_malformed_or_unavailable_view_is_not_an_empty_discussion>
+
+    def test_cli_malformed_or_unavailable_view_is_not_an_empty_discussion(self):
+        for raw in (b"{broken", b"null", b'{"view": null}', b'{"view": [], "unread_entries": null}'):
+            with self.subTest(raw=raw):
+                self.requests.clear()
+                self.view_raw = raw
+                result = self.cli("--unread-only")
+                self.assertEqual(result.returncode, 1)
+                self.assertEqual(result.stdout, "")
+>               self.assertIs(self.assert_cli_stderr(result, error=True)["ok"], False)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_discussion_thread_native.py:182: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_discussion_thread_native.py:124: in assert_cli_stderr
+    message = json.loads(lines.pop())
+              ^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\json\__init__.py:346: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\json\decoder.py:337: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <json.decoder.JSONDecoder object at 0x00000224634DAF90>
+s = 'RuntimeError: Could not determine home directory.', idx = 0
+
+    def raw_decode(self, s, idx=0):
+        """Decode a JSON document from ``s`` (a ``str`` beginning with
+        a JSON document) and return a 2-tuple of the Python
+        representation and the index in ``s`` where the document ended.
+    
+        This can be used to decode a JSON document from a string that may
+        have extraneous data at the end.
+    
+        """
+        try:
+            obj, end = self.scan_once(s, idx)
+        except StopIteration as err:
+>           raise JSONDecodeError("Expecting value", s, err.value) from None
+E           json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\json\decoder.py:355: JSONDecodeError
+_ DiscussionThreadNativeTests.test_cli_malformed_or_unavailable_view_is_not_an_empty_discussion (raw=b'null') _
+
+self = <test_discussion_thread_native.DiscussionThreadNativeTests testMethod=test_cli_malformed_or_unavailable_view_is_not_an_empty_discussion>
+
+    def test_cli_malformed_or_unavailable_view_is_not_an_empty_discussion(self):
+        for raw in (b"{broken", b"null", b'{"view": null}', b'{"view": [], "unread_entries": null}'):
+            with self.subTest(raw=raw):
+                self.requests.clear()
+                self.view_raw = raw
+                result = self.cli("--unread-only")
+                self.assertEqual(result.returncode, 1)
+                self.assertEqual(result.stdout, "")
+>               self.assertIs(self.assert_cli_stderr(result, error=True)["ok"], False)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_discussion_thread_native.py:182: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_discussion_thread_native.py:124: in assert_cli_stderr
+    message = json.loads(lines.pop())
+              ^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\json\__init__.py:346: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\json\decoder.py:337: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <json.decoder.JSONDecoder object at 0x00000224634DAF90>
+s = 'RuntimeError: Could not determine home directory.', idx = 0
+
+    def raw_decode(self, s, idx=0):
+        """Decode a JSON document from ``s`` (a ``str`` beginning with
+        a JSON document) and return a 2-tuple of the Python
+        representation and the index in ``s`` where the document ended.
+    
+        This can be used to decode a JSON document from a string that may
+        have extraneous data at the end.
+    
+        """
+        try:
+            obj, end = self.scan_once(s, idx)
+        except StopIteration as err:
+>           raise JSONDecodeError("Expecting value", s, err.value) from None
+E           json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\json\decoder.py:355: JSONDecodeError
+_ DiscussionThreadNativeTests.test_cli_malformed_or_unavailable_view_is_not_an_empty_discussion (raw=b'{"view": null}') _
+
+self = <test_discussion_thread_native.DiscussionThreadNativeTests testMethod=test_cli_malformed_or_unavailable_view_is_not_an_empty_discussion>
+
+    def test_cli_malformed_or_unavailable_view_is_not_an_empty_discussion(self):
+        for raw in (b"{broken", b"null", b'{"view": null}', b'{"view": [], "unread_entries": null}'):
+            with self.subTest(raw=raw):
+                self.requests.clear()
+                self.view_raw = raw
+                result = self.cli("--unread-only")
+                self.assertEqual(result.returncode, 1)
+                self.assertEqual(result.stdout, "")
+>               self.assertIs(self.assert_cli_stderr(result, error=True)["ok"], False)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_discussion_thread_native.py:182: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_discussion_thread_native.py:124: in assert_cli_stderr
+    message = json.loads(lines.pop())
+              ^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\json\__init__.py:346: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\json\decoder.py:337: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <json.decoder.JSONDecoder object at 0x00000224634DAF90>
+s = 'RuntimeError: Could not determine home directory.', idx = 0
+
+    def raw_decode(self, s, idx=0):
+        """Decode a JSON document from ``s`` (a ``str`` beginning with
+        a JSON document) and return a 2-tuple of the Python
+        representation and the index in ``s`` where the document ended.
+    
+        This can be used to decode a JSON document from a string that may
+        have extraneous data at the end.
+    
+        """
+        try:
+            obj, end = self.scan_once(s, idx)
+        except StopIteration as err:
+>           raise JSONDecodeError("Expecting value", s, err.value) from None
+E           json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\json\decoder.py:355: JSONDecodeError
+_ DiscussionThreadNativeTests.test_cli_malformed_or_unavailable_view_is_not_an_empty_discussion (raw=b'{"view": [], "unread_entries": null}') _
+
+self = <test_discussion_thread_native.DiscussionThreadNativeTests testMethod=test_cli_malformed_or_unavailable_view_is_not_an_empty_discussion>
+
+    def test_cli_malformed_or_unavailable_view_is_not_an_empty_discussion(self):
+        for raw in (b"{broken", b"null", b'{"view": null}', b'{"view": [], "unread_entries": null}'):
+            with self.subTest(raw=raw):
+                self.requests.clear()
+                self.view_raw = raw
+                result = self.cli("--unread-only")
+                self.assertEqual(result.returncode, 1)
+                self.assertEqual(result.stdout, "")
+>               self.assertIs(self.assert_cli_stderr(result, error=True)["ok"], False)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_discussion_thread_native.py:182: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_discussion_thread_native.py:124: in assert_cli_stderr
+    message = json.loads(lines.pop())
+              ^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\json\__init__.py:346: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\json\decoder.py:337: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <json.decoder.JSONDecoder object at 0x00000224634DAF90>
+s = 'RuntimeError: Could not determine home directory.', idx = 0
+
+    def raw_decode(self, s, idx=0):
+        """Decode a JSON document from ``s`` (a ``str`` beginning with
+        a JSON document) and return a 2-tuple of the Python
+        representation and the index in ``s`` where the document ended.
+    
+        This can be used to decode a JSON document from a string that may
+        have extraneous data at the end.
+    
+        """
+        try:
+            obj, end = self.scan_once(s, idx)
+        except StopIteration as err:
+>           raise JSONDecodeError("Expecting value", s, err.value) from None
+E           json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\json\decoder.py:355: JSONDecodeError
+_ DiscussionThreadNativeTests.test_cli_second_read_reflects_supplied_changes_without_retaining_old_unread_rows _
+
+self = <test_discussion_thread_native.DiscussionThreadNativeTests testMethod=test_cli_second_read_reflects_supplied_changes_without_retaining_old_unread_rows>
+
+    def test_cli_second_read_reflects_supplied_changes_without_retaining_old_unread_rows(self):
+        first = self.cli("--unread-only")
+>       self.assertEqual(first.returncode, 0, first.stderr)
+E       AssertionError: 1 != 0 : Traceback (most recent call last):
+E         File "<frozen runpy>", line 189, in _run_module_as_main
+E         File "<frozen runpy>", line 112, in _get_module_details
+E         File "D:\Hamon\worktrees\canvaspilot-history-0378a7b6\src\canvaspilot\__init__.py", line 3, in <module>
+E           from canvaspilot.api import CanvasAPI, assert_canvas_api_path, strip_html
+E         File "D:\Hamon\worktrees\canvaspilot-history-0378a7b6\src\canvaspilot\api.py", line 13, in <module>
+E           from canvaspilot.client import CanvasClient
+E         File "D:\Hamon\worktrees\canvaspilot-history-0378a7b6\src\canvaspilot\client.py", line 15, in <module>
+E           LEGACY_PROFILE = Path.home() / ".suite" / "forge" / "profiles" / "canvas-sso"
+E                            ^^^^^^^^^^^
+E         File "C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\pathlib.py", line 914, in home
+E           return cls("~").expanduser()
+E                  ^^^^^^^^^^^^^^^^^^^^^
+E         File "C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\pathlib.py", line 1385, in expanduser
+E           raise RuntimeError("Could not determine home directory.")
+E       RuntimeError: Could not determine home directory.
+
+tests\test_discussion_thread_native.py:197: AssertionError
+________ test_native_http_pagination_and_cli_changed_grade_then_denial ________
+
+receiving = (<grade_review_fixture.GradeReviewHTTPFixture object at 0x00000224686060D0>, {'PATH': 'C:\\Program Files\\Common Files...('D:/Hamon/worktrees/canvaspilot-history-0378a7b6-proof/tmp/pytest-of-Veria/pytest-0/test_native_http_pagination_an0'))
+
+    def test_native_http_pagination_and_cli_changed_grade_then_denial(receiving):
+        fixture, env, directory = receiving
+        records = []
+    
+        def cli(value="42"):
+            process = subprocess.run(
+                [sys.executable, "-B", "-m", "canvaspilot.cli", "grade-review", value],
+                env=env, capture_output=True, text=True, timeout=15, check=False,
+            )
+            records.append({"exit": process.returncode, "stdout": process.stdout, "stderr": process.stderr})
+            (directory / "cli-observations.json").write_text(json.dumps({
+                "records": records, "requests": fixture.requests,
+            }, indent=2))
+            return process
+    
+        with CanvasAPI(CanvasClient(base_url=fixture.base_url, token="grade-review-synthetic-token")) as api:
+            direct = api.grade_review(42)
+        first = cli()
+>       assert first.returncode == 0 and "Traceback" not in first.stderr
+E       assert (1 == 0)
+E        +  where 1 = CompletedProcess(args=['D:\\Hamon\\worktrees\\canvaspilot-history-0378a7b6-proof\\venv\\Scripts\\python.exe', '-B', '-...r\n    raise RuntimeError("Could not determine home directory.")\nRuntimeError: Could not determine home directory.\n').returncode
+
+tests\test_grade_review_process.py:57: AssertionError
+_ test_existing_output_entries_are_refused_before_any_canvas_read[directory] __
+
+server = <module_progress_fixture.ModuleProgressHTTPFixture object at 0x0000022468C31B50>
+tmp_path = WindowsPath('D:/Hamon/worktrees/canvaspilot-history-0378a7b6-proof/tmp/pytest-of-Veria/pytest-0/test_existing_output_entries_a1')
+kind = 'directory'
+
+    @pytest.mark.parametrize("kind", ["file", "directory", "symlink", "dangling"])
+    def test_existing_output_entries_are_refused_before_any_canvas_read(server, tmp_path, kind):
+        output = tmp_path / "progress.html"
+        target = tmp_path / "protected"
+        if kind == "file":
+            output.write_bytes(b"kept original")
+        elif kind == "directory":
+            output.mkdir()
+        else:
+            if kind == "symlink":
+                target.write_bytes(b"kept linked original")
+            output.symlink_to(target)
+        original_stat = output.lstat()
+        original_names = sorted(path.name for path in tmp_path.iterdir())
+        result = command(server, tmp_path, "42")
+        assert result.returncode == 1 and result.stdout == ""
+        assert json.loads(result.stderr)["error"] == "FileExistsError"
+        assert server.requests == []
+>       assert output.lstat() == original_stat
+E       assert os.stat_resul...me=1791485188) == os.stat_resul...me=1791485188)
+E         
+E         At index 7 diff: 1791485189 != 1791485188
+E         Use -v to get more diff
+
+tests\test_module_progress_export_cli.py:110: AssertionError
+__ test_existing_output_entries_are_refused_before_any_canvas_read[symlink] ___
+
+server = <module_progress_fixture.ModuleProgressHTTPFixture object at 0x0000022468379810>
+tmp_path = WindowsPath('D:/Hamon/worktrees/canvaspilot-history-0378a7b6-proof/tmp/pytest-of-Veria/pytest-0/test_existing_output_entries_a2')
+kind = 'symlink'
+
+    @pytest.mark.parametrize("kind", ["file", "directory", "symlink", "dangling"])
+    def test_existing_output_entries_are_refused_before_any_canvas_read(server, tmp_path, kind):
+        output = tmp_path / "progress.html"
+        target = tmp_path / "protected"
+        if kind == "file":
+            output.write_bytes(b"kept original")
+        elif kind == "directory":
+            output.mkdir()
+        else:
+            if kind == "symlink":
+                target.write_bytes(b"kept linked original")
+>           output.symlink_to(target)
+
+tests\test_module_progress_export_cli.py:103: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('D:/Hamon/worktrees/canvaspilot-history-0378a7b6-proof/tmp/pytest-of-Veria/pytest-0/test_existing_output_entries_a2/progress.html')
+target = WindowsPath('D:/Hamon/worktrees/canvaspilot-history-0378a7b6-proof/tmp/pytest-of-Veria/pytest-0/test_existing_output_entries_a2/protected')
+target_is_directory = False
+
+    def symlink_to(self, target, target_is_directory=False):
+        """
+        Make this path a symlink pointing to the target path.
+        Note the order of arguments (link, target) is the reverse of os.symlink.
+        """
+        if not hasattr(os, "symlink"):
+            raise NotImplementedError("os.symlink() not available on this system")
+>       os.symlink(target, self, target_is_directory)
+E       OSError: [WinError 1314] A required privilege is not held by the client: 'D:\\Hamon\\worktrees\\canvaspilot-history-0378a7b6-proof\\tmp\\pytest-of-Veria\\pytest-0\\test_existing_output_entries_a2\\protected' -> 'D:\\Hamon\\worktrees\\canvaspilot-history-0378a7b6-proof\\tmp\\pytest-of-Veria\\pytest-0\\test_existing_output_entries_a2\\progress.html'
+
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\pathlib.py:1198: OSError
+__ test_existing_output_entries_are_refused_before_any_canvas_read[dangling] __
+
+server = <module_progress_fixture.ModuleProgressHTTPFixture object at 0x0000022468AC3750>
+tmp_path = WindowsPath('D:/Hamon/worktrees/canvaspilot-history-0378a7b6-proof/tmp/pytest-of-Veria/pytest-0/test_existing_output_entries_a3')
+kind = 'dangling'
+
+    @pytest.mark.parametrize("kind", ["file", "directory", "symlink", "dangling"])
+    def test_existing_output_entries_are_refused_before_any_canvas_read(server, tmp_path, kind):
+        output = tmp_path / "progress.html"
+        target = tmp_path / "protected"
+        if kind == "file":
+            output.write_bytes(b"kept original")
+        elif kind == "directory":
+            output.mkdir()
+        else:
+            if kind == "symlink":
+                target.write_bytes(b"kept linked original")
+>           output.symlink_to(target)
+
+tests\test_module_progress_export_cli.py:103: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('D:/Hamon/worktrees/canvaspilot-history-0378a7b6-proof/tmp/pytest-of-Veria/pytest-0/test_existing_output_entries_a3/progress.html')
+target = WindowsPath('D:/Hamon/worktrees/canvaspilot-history-0378a7b6-proof/tmp/pytest-of-Veria/pytest-0/test_existing_output_entries_a3/protected')
+target_is_directory = False
+
+    def symlink_to(self, target, target_is_directory=False):
+        """
+        Make this path a symlink pointing to the target path.
+        Note the order of arguments (link, target) is the reverse of os.symlink.
+        """
+        if not hasattr(os, "symlink"):
+            raise NotImplementedError("os.symlink() not available on this system")
+>       os.symlink(target, self, target_is_directory)
+E       OSError: [WinError 1314] A required privilege is not held by the client: 'D:\\Hamon\\worktrees\\canvaspilot-history-0378a7b6-proof\\tmp\\pytest-of-Veria\\pytest-0\\test_existing_output_entries_a3\\protected' -> 'D:\\Hamon\\worktrees\\canvaspilot-history-0378a7b6-proof\\tmp\\pytest-of-Veria\\pytest-0\\test_existing_output_entries_a3\\progress.html'
+
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\pathlib.py:1198: OSError
+________ test_output_has_complete_exact_bytes_and_private_permissions _________
+
+tmp_path = WindowsPath('D:/Hamon/worktrees/canvaspilot-history-0378a7b6-proof/tmp/pytest-of-Veria/pytest-0/test_output_has_complete_exact0')
+data = {'description': 'Authored fictional Canvas pages for offline reading-packet receiving; no school data.', 'course': {'i...False, ...}, 'page_id:7': {'page_id': 7, 'url': 'notes-雪', 'title': 'Explicit page ID seven', 'published': True, ...}}}
+
+    def test_output_has_complete_exact_bytes_and_private_permissions(tmp_path, data):
+        content, _, _ = build(data)
+        path = tmp_path / "reading.html"
+        assert write_page_packet(path, content) is None
+        assert path.read_bytes() == content
+>       assert path.stat().st_mode & 0o777 == 0o600
+E       AssertionError: assert (33206 & 511) == 384
+E        +  where 33206 = os.stat_result(st_mode=33206, st_ino=844424930402687, st_dev=3131638379, st_nlink=1, st_uid=0, st_gid=0, st_size=7909, st_atime=1791485237, st_mtime=1791485237, st_ctime=1791485237).st_mode
+E        +    where os.stat_result(st_mode=33206, st_ino=844424930402687, st_dev=3131638379, st_nlink=1, st_uid=0, st_gid=0, st_size=7909, st_atime=1791485237, st_mtime=1791485237, st_ctime=1791485237) = stat()
+E        +      where stat = WindowsPath('D:/Hamon/worktrees/canvaspilot-history-0378a7b6-proof/tmp/pytest-of-Veria/pytest-0/test_output_has_complete_exact0/reading.html').stat
+
+tests\test_page_export.py:284: AssertionError
+___________ test_every_existing_output_entry_is_protected[symlink] ____________
+
+tmp_path = WindowsPath('D:/Hamon/worktrees/canvaspilot-history-0378a7b6-proof/tmp/pytest-of-Veria/pytest-0/test_every_existing_output_ent1')
+kind = 'symlink'
+
+    @pytest.mark.parametrize("kind", ["file", "symlink", "dangling-symlink", "hardlink", "directory"])
+    def test_every_existing_output_entry_is_protected(tmp_path, kind):
+        original = tmp_path / "original"
+        original.write_bytes(b"KEEP ORIGINAL\r\n")
+        target = tmp_path / "reading.html"
+        if kind == "file":
+            target.write_bytes(b"KEEP TARGET")
+        elif kind == "symlink":
+>           target.symlink_to(original)
+
+tests\test_page_export.py:296: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('D:/Hamon/worktrees/canvaspilot-history-0378a7b6-proof/tmp/pytest-of-Veria/pytest-0/test_every_existing_output_ent1/reading.html')
+target = WindowsPath('D:/Hamon/worktrees/canvaspilot-history-0378a7b6-proof/tmp/pytest-of-Veria/pytest-0/test_every_existing_output_ent1/original')
+target_is_directory = False
+
+    def symlink_to(self, target, target_is_directory=False):
+        """
+        Make this path a symlink pointing to the target path.
+        Note the order of arguments (link, target) is the reverse of os.symlink.
+        """
+        if not hasattr(os, "symlink"):
+            raise NotImplementedError("os.symlink() not available on this system")
+>       os.symlink(target, self, target_is_directory)
+E       OSError: [WinError 1314] A required privilege is not held by the client: 'D:\\Hamon\\worktrees\\canvaspilot-history-0378a7b6-proof\\tmp\\pytest-of-Veria\\pytest-0\\test_every_existing_output_ent1\\original' -> 'D:\\Hamon\\worktrees\\canvaspilot-history-0378a7b6-proof\\tmp\\pytest-of-Veria\\pytest-0\\test_every_existing_output_ent1\\reading.html'
+
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\pathlib.py:1198: OSError
+_______ test_every_existing_output_entry_is_protected[dangling-symlink] _______
+
+tmp_path = WindowsPath('D:/Hamon/worktrees/canvaspilot-history-0378a7b6-proof/tmp/pytest-of-Veria/pytest-0/test_every_existing_output_ent2')
+kind = 'dangling-symlink'
+
+    @pytest.mark.parametrize("kind", ["file", "symlink", "dangling-symlink", "hardlink", "directory"])
+    def test_every_existing_output_entry_is_protected(tmp_path, kind):
+        original = tmp_path / "original"
+        original.write_bytes(b"KEEP ORIGINAL\r\n")
+        target = tmp_path / "reading.html"
+        if kind == "file":
+            target.write_bytes(b"KEEP TARGET")
+        elif kind == "symlink":
+            target.symlink_to(original)
+        elif kind == "dangling-symlink":
+>           target.symlink_to(tmp_path / "absent")
+
+tests\test_page_export.py:298: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('D:/Hamon/worktrees/canvaspilot-history-0378a7b6-proof/tmp/pytest-of-Veria/pytest-0/test_every_existing_output_ent2/reading.html')
+target = WindowsPath('D:/Hamon/worktrees/canvaspilot-history-0378a7b6-proof/tmp/pytest-of-Veria/pytest-0/test_every_existing_output_ent2/absent')
+target_is_directory = False
+
+    def symlink_to(self, target, target_is_directory=False):
+        """
+        Make this path a symlink pointing to the target path.
+        Note the order of arguments (link, target) is the reverse of os.symlink.
+        """
+        if not hasattr(os, "symlink"):
+            raise NotImplementedError("os.symlink() not available on this system")
+>       os.symlink(target, self, target_is_directory)
+E       OSError: [WinError 1314] A required privilege is not held by the client: 'D:\\Hamon\\worktrees\\canvaspilot-history-0378a7b6-proof\\tmp\\pytest-of-Veria\\pytest-0\\test_every_existing_output_ent2\\absent' -> 'D:\\Hamon\\worktrees\\canvaspilot-history-0378a7b6-proof\\tmp\\pytest-of-Veria\\pytest-0\\test_every_existing_output_ent2\\reading.html'
+
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\pathlib.py:1198: OSError
+__ test_existing_entries_refuse_before_requests_and_preserve_inputs[symlink] __
+
+loopback = {'routes': {'/api/v1/courses/42': {'id': 42, 'name': 'Field notes & observations — <img src=x onerror=alert(1)>', 'cou...title': 'Explicit page ID seven', 'published': True, ...}}, 'overrides': {}, 'requests': [], 'before_reply': None, ...}
+tmp_path = WindowsPath('D:/Hamon/worktrees/canvaspilot-history-0378a7b6-proof/tmp/pytest-of-Veria/pytest-0/test_existing_entries_refuse_b1')
+kind = 'symlink'
+
+    @pytest.mark.parametrize("kind", ["file", "symlink", "dangling", "hardlink", "directory"])
+    def test_existing_entries_refuse_before_requests_and_preserve_inputs(loopback, tmp_path, kind):
+        source = tmp_path / "authored-source.json"
+        source.write_bytes(FIXTURE.read_bytes())
+        original = source.read_bytes()
+        target = tmp_path / "reading.html"
+        if kind == "file":
+            target.write_bytes(b"existing packet")
+        elif kind == "symlink":
+>           target.symlink_to(source)
+
+tests\test_page_export_process.py:164: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('D:/Hamon/worktrees/canvaspilot-history-0378a7b6-proof/tmp/pytest-of-Veria/pytest-0/test_existing_entries_refuse_b1/reading.html')
+target = WindowsPath('D:/Hamon/worktrees/canvaspilot-history-0378a7b6-proof/tmp/pytest-of-Veria/pytest-0/test_existing_entries_refuse_b1/authored-source.json')
+target_is_directory = False
+
+    def symlink_to(self, target, target_is_directory=False):
+        """
+        Make this path a symlink pointing to the target path.
+        Note the order of arguments (link, target) is the reverse of os.symlink.
+        """
+        if not hasattr(os, "symlink"):
+            raise NotImplementedError("os.symlink() not available on this system")
+>       os.symlink(target, self, target_is_directory)
+E       OSError: [WinError 1314] A required privilege is not held by the client: 'D:\\Hamon\\worktrees\\canvaspilot-history-0378a7b6-proof\\tmp\\pytest-of-Veria\\pytest-0\\test_existing_entries_refuse_b1\\authored-source.json' -> 'D:\\Hamon\\worktrees\\canvaspilot-history-0378a7b6-proof\\tmp\\pytest-of-Veria\\pytest-0\\test_existing_entries_refuse_b1\\reading.html'
+
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\pathlib.py:1198: OSError
+_ test_existing_entries_refuse_before_requests_and_preserve_inputs[dangling] __
+
+loopback = {'routes': {'/api/v1/courses/42': {'id': 42, 'name': 'Field notes & observations — <img src=x onerror=alert(1)>', 'cou...title': 'Explicit page ID seven', 'published': True, ...}}, 'overrides': {}, 'requests': [], 'before_reply': None, ...}
+tmp_path = WindowsPath('D:/Hamon/worktrees/canvaspilot-history-0378a7b6-proof/tmp/pytest-of-Veria/pytest-0/test_existing_entries_refuse_b2')
+kind = 'dangling'
+
+    @pytest.mark.parametrize("kind", ["file", "symlink", "dangling", "hardlink", "directory"])
+    def test_existing_entries_refuse_before_requests_and_preserve_inputs(loopback, tmp_path, kind):
+        source = tmp_path / "authored-source.json"
+        source.write_bytes(FIXTURE.read_bytes())
+        original = source.read_bytes()
+        target = tmp_path / "reading.html"
+        if kind == "file":
+            target.write_bytes(b"existing packet")
+        elif kind == "symlink":
+            target.symlink_to(source)
+        elif kind == "dangling":
+>           target.symlink_to(tmp_path / "missing")
+
+tests\test_page_export_process.py:166: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('D:/Hamon/worktrees/canvaspilot-history-0378a7b6-proof/tmp/pytest-of-Veria/pytest-0/test_existing_entries_refuse_b2/reading.html')
+target = WindowsPath('D:/Hamon/worktrees/canvaspilot-history-0378a7b6-proof/tmp/pytest-of-Veria/pytest-0/test_existing_entries_refuse_b2/missing')
+target_is_directory = False
+
+    def symlink_to(self, target, target_is_directory=False):
+        """
+        Make this path a symlink pointing to the target path.
+        Note the order of arguments (link, target) is the reverse of os.symlink.
+        """
+        if not hasattr(os, "symlink"):
+            raise NotImplementedError("os.symlink() not available on this system")
+>       os.symlink(target, self, target_is_directory)
+E       OSError: [WinError 1314] A required privilege is not held by the client: 'D:\\Hamon\\worktrees\\canvaspilot-history-0378a7b6-proof\\tmp\\pytest-of-Veria\\pytest-0\\test_existing_entries_refuse_b2\\missing' -> 'D:\\Hamon\\worktrees\\canvaspilot-history-0378a7b6-proof\\tmp\\pytest-of-Veria\\pytest-0\\test_existing_entries_refuse_b2\\reading.html'
+
+C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\pathlib.py:1198: OSError
+============================== warnings summary ===============================
+tests/test_calendar_export.py::test_new_file_publication_preserves_existing_file_and_dangling_symlink
+  D:\Hamon\worktrees\canvaspilot-history-0378a7b6-proof\venv\Lib\site-packages\_pytest\unraisableexception.py:67: PytestUnraisableExceptionWarning: Exception ignored in: <function BaseEventLoop.__del__ at 0x000002246456A160>
+  
+  Traceback (most recent call last):
+    File "C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 695, in __del__
+      self.close()
+    File "C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 696, in close
+      self._close_self_pipe()
+    File "C:\Users\Veria\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 776, in _close_self_pipe
+      self._ssock.close()
+      ^^^^^^^^^^^
+  AttributeError: 'ProactorEventLoop' object has no attribute '_ssock'
+  
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+    warnings.warn(pytest.PytestUnraisableExceptionWarning(msg))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_assignment_submission_process.py::test_registered_mcp_assignment_and_sync_tools_propagate_the_same_facts
+FAILED tests/test_assignment_submission_process.py::test_mcp_later_page_refusal_remains_a_tool_error[403]
+FAILED tests/test_assignment_submission_process.py::test_mcp_later_page_refusal_remains_a_tool_error[500]
+FAILED tests/test_calendar_export.py::test_new_file_publication_preserves_existing_file_and_dangling_symlink
+FAILED tests/test_discussion_thread_native.py::DiscussionThreadNativeTests::test_cli_all_and_unread_focus_use_exact_two_read_requests_each
+SUBFAILED(status=403) tests/test_discussion_thread_native.py::DiscussionThreadNativeTests::test_cli_http_refusals_are_errors_without_partial_success_or_retry
+SUBFAILED(status=404) tests/test_discussion_thread_native.py::DiscussionThreadNativeTests::test_cli_http_refusals_are_errors_without_partial_success_or_retry
+SUBFAILED(status=503) tests/test_discussion_thread_native.py::DiscussionThreadNativeTests::test_cli_http_refusals_are_errors_without_partial_success_or_retry
+SUBFAILED(raw=b'{broken') tests/test_discussion_thread_native.py::DiscussionThreadNativeTests::test_cli_malformed_or_unavailable_view_is_not_an_empty_discussion
+SUBFAILED(raw=b'null') tests/test_discussion_thread_native.py::DiscussionThreadNativeTests::test_cli_malformed_or_unavailable_view_is_not_an_empty_discussion
+SUBFAILED(raw=b'{"view": null}') tests/test_discussion_thread_native.py::DiscussionThreadNativeTests::test_cli_malformed_or_unavailable_view_is_not_an_empty_discussion
+SUBFAILED(raw=b'{"view": [], "unread_entries": null}') tests/test_discussion_thread_native.py::DiscussionThreadNativeTests::test_cli_malformed_or_unavailable_view_is_not_an_empty_discussion
+FAILED tests/test_discussion_thread_native.py::DiscussionThreadNativeTests::test_cli_second_read_reflects_supplied_changes_without_retaining_old_unread_rows
+FAILED tests/test_grade_review_process.py::test_native_http_pagination_and_cli_changed_grade_then_denial
+FAILED tests/test_module_progress_export_cli.py::test_existing_output_entries_are_refused_before_any_canvas_read[directory]
+FAILED tests/test_module_progress_export_cli.py::test_existing_output_entries_are_refused_before_any_canvas_read[symlink]
+FAILED tests/test_module_progress_export_cli.py::test_existing_output_entries_are_refused_before_any_canvas_read[dangling]
+FAILED tests/test_page_export.py::test_output_has_complete_exact_bytes_and_private_permissions
+FAILED tests/test_page_export.py::test_every_existing_output_entry_is_protected[symlink]
+FAILED tests/test_page_export.py::test_every_existing_output_entry_is_protected[dangling-symlink]
+FAILED tests/test_page_export_process.py::test_existing_entries_refuse_before_requests_and_preserve_inputs[symlink]
+FAILED tests/test_page_export_process.py::test_existing_entries_refuse_before_requests_and_preserve_inputs[dangling]
+22 failed, 964 passed, 2 skipped, 1 warning, 47 subtests passed in 413.43s (0:06:53)

@@ -1,0 +1,21 @@
+{
+  "observed_at": "2026-10-08T19:00:52.986Z",
+  "reviewer": "chatgpt-0378a7b6b7c2/msi_product",
+  "desktop": {
+    "path": "browser/desktop.png",
+    "sha256": "41bfc901b957b1a0e51384f16635449ed097df08403c7391ce85a038f74e756a",
+    "observed": "Full report visibly retains assignment/current/history/top-level comment sections, four ordered history cards, empty-record text, literal markup and final download action with readable spacing."
+  },
+  "mobile": {
+    "path": "browser/mobile.png",
+    "sha256": "e02c3eb2a52b7cf4b053b2cf5d0f56b6596abb7bd4b61f9659272010ae8a734e",
+    "observed": "390px layout wraps fields and long literal values within the report; all four cards, two top-level comments and final download remain visible. Focus outline is visible on returned record 4."
+  },
+  "print": {
+    "path": "browser/submission-history.pdf",
+    "sha256": "021210d69d08db1eea4e4dff6c69d8a5120d2109032ec090588a32f2002c3278",
+    "pages": 4,
+    "observed": "Native PDF text extraction read all four pages, retaining the current mismatched-grade qualification, four returned records, zero/null distinctions, empty record, both top-level comments and fixed-copy boundaries.",
+    "limit": "PDF page images were not inspected; this is text retention and generation evidence, separate from screen visual inspection."
+  }
+}

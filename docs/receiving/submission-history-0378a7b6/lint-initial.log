@@ -1,0 +1,203 @@
+I001 [*] Import block is un-sorted or un-formatted
+   --> src\canvaspilot\cli.py:442:13
+    |
+440 |               print(json.dumps({"ok": True, "output": str(args.out), **report}, indent=2))
+441 |           elif args.cmd == "export-submission-history":
+442 | /             import os
+443 | |
+444 | |             import httpx
+445 | |
+446 | |             from canvaspilot.client import CanvasAuthError
+447 | |             from canvaspilot.page_export import write_page_packet
+448 | |             from canvaspilot.submission_history_export import build_submission_history_report
+    | |_____________________________________________________________________________________________^
+449 |
+450 |               http_log = logging.getLogger("httpx")
+    |
+help: Organize imports
+    |
+447 |             from canvaspilot.page_export import write_page_packet
+    -             from canvaspilot.submission_history_export import build_submission_history_report
+448 +             from canvaspilot.submission_history_export import (
+449 +                 build_submission_history_report,
+450 +             )
+451 |
+    |
+
+TRY004 Prefer `TypeError` exception for invalid type
+  --> src\canvaspilot\submission_history_export.py:97:9
+   |
+95 |         raise ValueError("Expected a complete normalized submission-history report")
+96 |     if not isinstance(report["assignment"], dict) or not isinstance(report["current_submission"], dict):
+97 |         raise ValueError("Assignment and current submission must be objects")
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+98 |     history = report["history"]
+99 |     if not isinstance(history, dict) or type(history.get("returned")) is not bool or "records" not in history:
+   |
+
+ISC004 Unparenthesized implicit string concatenation in collection
+   --> src\canvaspilot\submission_history_export.py:187:9
+    |
+185 |           '<meta name="viewport" content="width=device-width, initial-scale=1">',
+186 |           '<meta name="referrer" content="no-referrer">',
+187 | /         '<meta http-equiv="Content-Security-Policy" content="default-src \'none\'; '
+188 | |         'style-src \'unsafe-inline\'; base-uri \'none\'; form-action \'none\'">',
+    | |________________________________________________________________________________^
+189 |           f"<title>{_escape(title)} — CanvasPilot submission history</title>",
+190 |           "<style>", _STYLE, '</style></head><body><main id="top">',
+    |
+help: Did you forget a comma?
+help: Wrap implicitly concatenated strings in parentheses
+
+ISC004 Unparenthesized implicit string concatenation in collection
+   --> src\canvaspilot\submission_history_export.py:195:9
+    |
+193 |           f"<p>Requested course {_escape(course)} · Assignment {_escape(assignment)}</p>",
+194 |           f'<p class="muted">Report created <time datetime="{created}">{created}</time></p>',
+195 | /         '<p class="notice">This is a fixed copy of the self-submission report returned by '
+196 | |         "CanvasPilot. Current data, historical records and top-level comments remain separate. "
+197 | |         "Returned history is not a complete attempt ledger, and no missing version or grade "
+198 | |         "is reconstructed. Creation time is not a Canvas observation or submission time.</p></header>",
+    | |______________________________________________________________________________________________________^
+199 |           '<nav aria-label="Submission report contents"><h2>In this report</h2><ol>',
+200 |           "".join(navigation), "</ol></nav>",
+    |
+help: Did you forget a comma?
+help: Wrap implicitly concatenated strings in parentheses
+
+ISC004 Unparenthesized implicit string concatenation in collection
+   --> src\canvaspilot\submission_history_export.py:203:9
+    |
+201 |           '<section class="panel" id="assignment-record" aria-labelledby="assignment-title">',
+202 |           '<h2 id="assignment-title">Assignment metadata</h2>',
+203 | /         '<p class="muted">These fields are retained as returned, including the reported Canvas '
+204 | |         "link when available. Requested selectors above remain separate from returned identity fields.</p>",
+    | |___________________________________________________________________________________________________________^
+205 |           _fields(view["assignment"]), "</section>",
+206 |           '<section class="panel" id="current-record" aria-labelledby="current-title">',
+    |
+help: Did you forget a comma?
+help: Wrap implicitly concatenated strings in parentheses
+
+ISC004 Unparenthesized implicit string concatenation in collection
+   --> src\canvaspilot\submission_history_export.py:213:9
+    |
+211 |           '<h2 id="history-title">History in returned order</h2>',
+212 |           f'<p id="history-availability">{availability}</p>',
+213 | /         '<p class="muted">Record numbers below are positions in the returned list. Duplicate '
+214 | |         "or absent attempt values remain as supplied. Fields are never copied from the current "
+215 | |         "submission or another record. Submitted HTML, links, attachments and media are shown "
+216 | |         "as literal source text or metadata; their linked content was not downloaded.</p>",
+    | |__________________________________________________________________________________________^
+217 |       ]
+218 |       extra_history = {key: value for key, value in history.items() if key not in {"returned", "records"}}
+    |
+help: Did you forget a comma?
+help: Wrap implicitly concatenated strings in parentheses
+
+ISC004 Unparenthesized implicit string concatenation in collection
+   --> src\canvaspilot\submission_history_export.py:230:9
+    |
+228 |           '</section><section class="panel" id="comments-section" aria-labelledby="comments-title">',
+229 |           '<h2 id="comments-title">Top-level submission comments</h2>',
+230 | /         '<p id="comments-context" class="context">These comments are not assigned to historical '
+231 | |         "records by this report. Their own author, attempt, time and content fields remain "
+232 | |         "as returned. Comments nested inside a record remain on that original record.</p>",
+    | |__________________________________________________________________________________________^
+233 |           f'<p id="comments-availability">{comment_availability}</p>',
+234 |       ])
+    |
+help: Did you forget a comma?
+help: Wrap implicitly concatenated strings in parentheses
+
+ISC004 Unparenthesized implicit string concatenation in collection
+   --> src\canvaspilot\submission_history_export.py:248:9
+    |
+246 |       parts.extend([
+247 |           '<section class="panel" aria-labelledby="source-title"><h2 id="source-title">Complete report data</h2>',
+248 | /         '<p>Values use JSON notation so an absent field, null, false, zero, empty text and an '
+249 | |         "empty collection keep different meanings. Every original field remains on its record. "
+250 | |         "The download contains the complete normalized reader result, not the raw HTTP pages, "
+251 | |         "attached files or a restorable Canvas backup.</p>",
+    | |___________________________________________________________^
+252 |           f'<p><a class="download" id="download-history" download="submission-history.json" '
+253 |           f'href="data:application/json;base64,{encoded}">Download complete report JSON</a></p>',
+    |
+help: Did you forget a comma?
+help: Wrap implicitly concatenated strings in parentheses
+
+ISC004 Unparenthesized implicit string concatenation in collection
+   --> src\canvaspilot\submission_history_export.py:252:9
+    |
+250 |           "The download contains the complete normalized reader result, not the raw HTTP pages, "
+251 |           "attached files or a restorable Canvas backup.</p>",
+252 | /         f'<p><a class="download" id="download-history" download="submission-history.json" '
+253 | |         f'href="data:application/json;base64,{encoded}">Download complete report JSON</a></p>',
+    | |______________________________________________________________________________________________^
+254 |           f'<p class="integrity">JSON SHA-256: <code id="json-sha256">{payload_hash}</code></p></section>',
+255 |           "<footer>Open this file directly in a browser, or use the browser's Print command. "
+    |
+help: Did you forget a comma?
+help: Wrap implicitly concatenated strings in parentheses
+
+ISC004 Unparenthesized implicit string concatenation in collection
+   --> src\canvaspilot\submission_history_export.py:255:9
+    |
+253 |           f'href="data:application/json;base64,{encoded}">Download complete report JSON</a></p>',
+254 |           f'<p class="integrity">JSON SHA-256: <code id="json-sha256">{payload_hash}</code></p></section>',
+255 | /         "<footer>Open this file directly in a browser, or use the browser's Print command. "
+256 | |         "It contains the returned submission content and comments and does not refresh. "
+257 | |         "No submission, grade, comment or read state was changed by this export.</footer>",
+    | |__________________________________________________________________________________________^
+258 |           "</main></body></html>\n",
+259 |       ])
+    |
+help: Did you forget a comma?
+help: Wrap implicitly concatenated strings in parentheses
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> tests\test_submission_history_export.py:3:1
+   |
+ 1 |   """Offline history reports preserve version attribution and the native CLI boundary."""
+ 2 |
+ 3 | / from copy import deepcopy
+ 4 | | from datetime import datetime, timedelta, timezone
+ 5 | | from html.parser import HTMLParser
+ 6 | | import base64
+ 7 | | import json
+ 8 | |
+ 9 | | import pytest
+10 | |
+11 | | from canvaspilot import api as api_module
+12 | | from canvaspilot import cli
+13 | | from canvaspilot import submission_history_export as export
+   | |___________________________________________________________^
+14 |
+15 |   STAMP = datetime(2026, 10, 8, 12, 34, 56, tzinfo=timezone(timedelta(hours=-5)))
+   |
+help: Organize imports
+  |
+2 |
+3 + import base64
+4 + import json
+5 | from copy import deepcopy
+6 | from datetime import datetime, timedelta, timezone
+7 | from html.parser import HTMLParser
+  - import base64
+  - import json
+8 |
+  |
+
+DTZ001 `datetime.datetime()` called without a `tzinfo` argument
+   --> tests\test_submission_history_export.py:200:5
+    |
+199 | @pytest.mark.parametrize("stamp", [
+200 |     datetime(2026, 10, 8), "2026-10-08", datetime(1, 1, 1, tzinfo=timezone(timedelta(hours=14))),
+    |     ^^^^^^^^^^^^^^^^^^^^^
+201 | ])
+202 | def test_invalid_creation_time_refuses_before_read(stamp):
+    |
+help: Pass a `datetime.timezone` object to the `tzinfo` parameter
+
+Found 12 errors.
+[*] 2 fixable with the `--fix` option (8 hidden fixes can be enabled with the `--unsafe-fixes` option).

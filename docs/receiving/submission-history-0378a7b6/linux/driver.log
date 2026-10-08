@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/home/jacob/canvaspilot-history-0378a7b6-linux/run_linux_gates.py", line 21, in <module>
+    result=subprocess.run([python,*args],cwd=root,env=env,stdout=log,stderr=subprocess.STDOUT,timeout=900)
+  File "/usr/lib/python3.14/subprocess.py", line 557, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/subprocess.py", line 1221, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/subprocess.py", line 2179, in _communicate
+    self.wait(timeout=self._remaining_time(endtime))
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/subprocess.py", line 1279, in wait
+    return self._wait(timeout=timeout)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/subprocess.py", line 2076, in _wait
+    raise TimeoutExpired(self.args, timeout)
+subprocess.TimeoutExpired: Command '['/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python', '-m', 'pytest', '-q', '-o', 'cache_dir=/home/jacob/canvaspilot-history-0378a7b6-linux-proof/pytest-cache']' timed out after 900 seconds

@@ -1,0 +1,19 @@
+{
+  "started": "2026-10-08T17:48:10.188Z",
+  "finished": "2026-10-08T17:50:13.013Z",
+  "steps": [
+    {
+      "name": "venv",
+      "status": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "dependencies",
+      "status": 0,
+      "signal": null,
+      "error": null
+    }
+  ],
+  "root": "D:\\Hamon\\worktrees\\canvaspilot-history-0378a7b6"
+}

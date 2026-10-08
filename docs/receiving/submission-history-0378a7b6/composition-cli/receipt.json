@@ -1,0 +1,192 @@
+{
+  "started": "2026-10-08T18:53:39.844049+00:00",
+  "mode": "candidate",
+  "source": "D:\\Hamon\\worktrees\\canvaspilot-history-0378a7b6",
+  "head": "6fdb3dc955426da7667e1f4e3844c6741077369f",
+  "source_status": "",
+  "driver_sha256": "4b1f87c7032d0f2e6fa0102f10bf6225fd20679be7199b55e6e472d325d65069",
+  "fixtures_before": {
+    "fixture-assignment.json": "c4ad22ec32371d28a91557ceb18a8b435cdf23759c83bd512334fd441227f9b6",
+    "fixture-submission.json": "b76cdfb4c72aa1f9e3f9f3ecd399ca1f63c45b0633470b074f83c5ccdf0b0c79"
+  },
+  "runs": [
+    {
+      "label": "full-export",
+      "returncode": 0,
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/71/assignments/902",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/71/assignments/902/submissions/self",
+          "query": {
+            "include[]": [
+              "submission_history",
+              "submission_comments"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        }
+      ],
+      "stdout_sha256": "5c64264f8818b2619e5ca14bdcac1834a74dd8142ec1983947aa7676ffe65d64",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "protected-target",
+      "returncode": 1,
+      "requests": [],
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "fbd489e8a6156674347b3f412cd21532ac531d4b59b5c0691c944e4943c99941"
+    },
+    {
+      "label": "unavailable",
+      "returncode": 0,
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/71/assignments/902",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/71/assignments/902/submissions/self",
+          "query": {
+            "include[]": [
+              "submission_history",
+              "submission_comments"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        }
+      ],
+      "stdout_sha256": "84e30a7b286bceaef7162f7018f83b8db2451a23a362d692af67d18221c7d24a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "empty",
+      "returncode": 0,
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/71/assignments/902",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/71/assignments/902/submissions/self",
+          "query": {
+            "include[]": [
+              "submission_history",
+              "submission_comments"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        }
+      ],
+      "stdout_sha256": "19334bef12b0a9e6c4e83cc3339df11ee93dcae13d54e841ddb63d5ad8b6efe3",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "malformed-history",
+      "returncode": 1,
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/71/assignments/902",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/71/assignments/902/submissions/self",
+          "query": {
+            "include[]": [
+              "submission_history",
+              "submission_comments"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        }
+      ],
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "8f074968245bc3b4e26df2e58a7d98d6a5c0a3f44cee92a7889b03582923b68a"
+    },
+    {
+      "label": "second-read-error",
+      "returncode": 1,
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/71/assignments/902",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/71/assignments/902/submissions/self",
+          "query": {
+            "include[]": [
+              "submission_history",
+              "submission_comments"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        }
+      ],
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "a0ce51b41bd36e2c5c7648227960428d15d1c4e79ee342edc4bbdd48a268e848"
+    },
+    {
+      "label": "invalid-selector",
+      "returncode": 1,
+      "requests": [],
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "b5f5ec0f469973c1ea6e34567d81cd160c134209a16af84ae8bf00f9681be094"
+    }
+  ],
+  "checks": [
+    "Actual candidate CLI publishes exact complete normalized report after two unchanged self GETs",
+    "Existing output is protected before any provider request",
+    "Unavailable associations and explicitly returned empty lists remain different in actual files",
+    "Malformed source history refuses the report instead of displaying an empty history",
+    "A later read failure creates no partial report",
+    "Invalid original numeric selection fails before any request or report"
+  ],
+  "finished": "2026-10-08T18:53:50.046297+00:00",
+  "fixtures_after": {
+    "fixture-assignment.json": "c4ad22ec32371d28a91557ceb18a8b435cdf23759c83bd512334fd441227f9b6",
+    "fixture-submission.json": "b76cdfb4c72aa1f9e3f9f3ecd399ca1f63c45b0633470b074f83c5ccdf0b0c79"
+  },
+  "passed": true
+}

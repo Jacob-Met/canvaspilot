@@ -1,0 +1,24 @@
+{
+  "source_sha256": "b574c8e81f3f48753723416645c252a23a77368c1812fe7334c69d51cd86d17f",
+  "checks": [
+    {
+      "file": "submission-history.html",
+      "bytes": 17207,
+      "sha256": "93b6215fad1cb494cbee1ee2f1c21005f80c99cc27077e788820431430fca2c1",
+      "byte_identical": true
+    },
+    {
+      "file": "unavailable.html",
+      "bytes": 7572,
+      "sha256": "85699065b9855f0d290b84cc7f5dd95a3c14129bd9e8c7f5befa27c53980472e",
+      "byte_identical": true
+    },
+    {
+      "file": "empty.html",
+      "bytes": 7524,
+      "sha256": "6647f867029eb0129bc0b6b4c84cf428e681da151a48d2bd74daa57156bd8b67",
+      "byte_identical": true
+    }
+  ],
+  "source_changes": "Explicit concatenation parentheses (AST-equal), import wrapping, malformed-object TypeError, and intentional-naive-date test lint annotation. No successful output changed."
+}

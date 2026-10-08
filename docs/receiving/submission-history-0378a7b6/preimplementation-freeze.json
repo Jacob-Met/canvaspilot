@@ -1,0 +1,47 @@
+{
+  "frozen_at": "2026-10-08T17:54:54.446Z",
+  "original_commit": "f618c3ed13f191ea58642283c1f9cd45a0c1ca81",
+  "original_tree": "1bcfff90694cdb8358684ada58ff349562244de7",
+  "original_tracked_leaves": 1333,
+  "original_manifest_sha256": "5101db5e1fd743aab5cef81019a72bf37d134cd4c6a8fc6e67a3c9975d005cf3",
+  "source_status": "",
+  "artifacts": {
+    "contract.md": {
+      "bytes": 5774,
+      "sha256": "b8f55103fff4ebd6fbada7c2d6a649e8a4e95830ca42fc03580b9c21412d7f40"
+    },
+    "local-claim.json": {
+      "bytes": 1456,
+      "sha256": "cd2af093bce82a40233995f1a6b16660767899b8ea0c9578659037271cef0a85"
+    },
+    "receive_cli-v1.py": {
+      "bytes": 9635,
+      "sha256": "ea1df4e3d3ad9f4d535efd7c9fa881fa89fb6da7de8333f90a0f4dabcdc33699"
+    },
+    "receive_cli.py": {
+      "bytes": 9723,
+      "sha256": "4b1f87c7032d0f2e6fa0102f10bf6225fd20679be7199b55e6e472d325d65069"
+    },
+    "receive_browser.mjs": {
+      "bytes": 6735,
+      "sha256": "03ea87bc823b8fde7be1ec179c597fc2993c8bc59f943e4fce99a5f83945b1ae"
+    },
+    "fixture-assignment.json": {
+      "bytes": 199,
+      "sha256": "c4ad22ec32371d28a91557ceb18a8b435cdf23759c83bd512334fd441227f9b6"
+    },
+    "fixture-submission.json": {
+      "bytes": 1966,
+      "sha256": "b76cdfb4c72aa1f9e3f9f3ecd399ca1f63c45b0633470b074f83c5ccdf0b0c79"
+    },
+    "baseline/receipt.json": {
+      "bytes": 2359,
+      "sha256": "3a94c95cb89e786916e3195f8e47c56813697623a270ea24f941150260806d38"
+    },
+    "baseline-v2/receipt.json": {
+      "bytes": 2200,
+      "sha256": "90883954cda3ca980caa2649dc0ca0aef1d919820033d733322d3e99d8034e1b"
+    }
+  },
+  "initial_receiver_failure": "Version1 omitted the existing client default per_page=50 in its expected query. Original actual JSON was correct; version2 adds that exact source convention. Both receivers and the original failure remain preserved before any product edit."
+}
