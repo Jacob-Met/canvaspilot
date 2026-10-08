@@ -1,0 +1,73 @@
+{
+  "schema": "canvaspilot-agenda-view-final-author-freeze/1",
+  "at": "2026-10-08T16:23:11.726613+00:00",
+  "base": "0480cbce421bae532e3e909899fc8fb83789e878",
+  "paths": [
+    {
+      "path": "src/canvaspilot/agenda_export.py",
+      "bytes": 15270,
+      "sha256": "4e55a0c16e76286130f01e81f04685da1a3ecd9bb5a7a0493ccbfe97c0fcd3ce",
+      "git_blob": "af25e95a1c9bf4a20784617e5c867d18584ac49a"
+    },
+    {
+      "path": "src/canvaspilot/agenda_view/style.css",
+      "bytes": 7402,
+      "sha256": "12f3bf80b16ff74eb93b9244a2d6c28996449203f8fcd219745c38111df552c2",
+      "git_blob": "30ee1d7b27445b88a4ef32bae7411865b3c2a374"
+    },
+    {
+      "path": "src/canvaspilot/agenda_view/controls.js",
+      "bytes": 2824,
+      "sha256": "7e62636fe393e957717b885ed1e02e29b76c855b336a423f08685a22e1b94e72",
+      "git_blob": "f90040d5a13080ee8050fbf31ea5b3b94675c070"
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "bytes": 22038,
+      "sha256": "991cb17f6b9a4cb8b6a2d0101af18b1c468ae6d98f884c680e5632eadb2455c8",
+      "git_blob": "d11809191ac805a9bdfd628b5881b8ce968a362f"
+    },
+    {
+      "path": "README.md",
+      "bytes": 22362,
+      "sha256": "597091d8ebf86e7801c555a7a5f7423019adecc2623a72554abc2ae5e8d04d78",
+      "git_blob": "3536bd35c847964115db6b97de53d16d07184310"
+    },
+    {
+      "path": "docs/agenda-export.md",
+      "bytes": 4694,
+      "sha256": "08b2953bfaaccaa4d2c99f5490101230b941ad680cfbec0db7a589524756422a",
+      "git_blob": "bebc5fb40a59f1fff4d168e066d5a4830c28ad2c"
+    },
+    {
+      "path": "tests/test_agenda_export.py",
+      "bytes": 13357,
+      "sha256": "6e5a9c75748f082413d34a70af3d1272b763c2df860c0942aeaaca723c8b6830",
+      "git_blob": "ceefa0150136dc7b76edd6c17eb9c5befedcdbb7"
+    },
+    {
+      "path": "tests/fixtures/agenda_view_calendar.json",
+      "bytes": 1195,
+      "sha256": "0a72127b1de5f4f9836c30fd8dd5bbd762e63e5805111e64db8a918c7ee14f19",
+      "git_blob": "3483a2f0a1c8b98ad96a2382c72af1bf7c323652"
+    },
+    {
+      "path": "scripts/receive_agenda_view.mjs",
+      "bytes": 24908,
+      "sha256": "05fe206afd47744a44fc2a072fb3e64039e664a2885edbce68296d33e4d47f91",
+      "git_blob": "5779f13b3efd7c7a94b4e88a76a66837465db910"
+    },
+    {
+      "path": ".github/workflows/agenda-view-browser.yml",
+      "bytes": 3575,
+      "sha256": "b37a58b588d50da8a32699696398cb16c32e58b29600b43236d7cc6fe1291e40",
+      "git_blob": "a06b862c23dccc61d5da9eea99d82b76668f78c8"
+    }
+  ],
+  "production_unchanged_from_author_freeze_v1": true,
+  "native_receiving": "13 original candidate passes plus3 affected helper-successor passes;13 unchanged test-method ASTs produce16 pytest cases; full hosted final gate required",
+  "browser": "Node syntax only; real installed Chrome gate prepared, no local execution or visual claim",
+  "native_preservation": "18 other hydrated source files and complete original baseline unchanged",
+  "readme_only_successor": "readme-placement-successor.json",
+  "required_wheel_gate": "wheel-gate-addition.json"
+}

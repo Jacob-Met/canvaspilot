@@ -1,0 +1,28 @@
+{
+  "parent": "728d2d8b67b6f0812956fecdeeb50e25ee32e979",
+  "parent_tree": "7a659089347c983e79106b505e63981f91986507",
+  "cli_parent": {
+    "bytes": 21264,
+    "sha256": "c6c93f855584c2e30e8e51cc33e52e7511a851af2d5201be83ee55c1ccee36bb",
+    "git_blob": "226f3f7d502dd61ad03c59cd8212289d133a0190"
+  },
+  "cli_composed": {
+    "bytes": 23531,
+    "sha256": "dcd3347c1fde54e3ff9e32bdea27a4f8a28ea98a19499decaf9c30e068d0df4e",
+    "git_blob": "bc71bd129a71e00389bee54bf353f2d71ff6f633"
+  },
+  "readme_parent": {
+    "bytes": 22999,
+    "sha256": "5429aa112913cbc5fef2f1632a17b7195a812f5d793c07e51fc8366ccab8cd49",
+    "git_blob": "92a5e57ff04c941bfc57e8674324dd811f7c9fcb"
+  },
+  "readme_composed": {
+    "bytes": 23322,
+    "sha256": "25cc5ed427d114f7817618c61fcd970794fea7850287c45790eb9acd5d32a70a",
+    "git_blob": "12501a9736632fb8eaf3dc38562ad8cb244a35f2"
+  },
+  "removing_exact_authored_additions_restores_current_parent": true,
+  "native_core_and_18_unrelated_selected_leaves": "unchanged since original baseline; exact final full-tree verification remains publication gate",
+  "receiving": "Original native evidence remains0480-bound; final hosted current-parent source qualification required",
+  "readme_placement_successor": "readme-placement-successor.json"
+}

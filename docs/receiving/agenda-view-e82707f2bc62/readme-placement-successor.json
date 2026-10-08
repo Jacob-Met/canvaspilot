@@ -1,0 +1,24 @@
+{
+  "schema": "agenda-view-readme-placement-successor/1",
+  "at": "2026-10-08T16:18:54.884987+00:00",
+  "reason": "The first pointer appended under the Maintainer heading. Move the useful command/guide pointer beside the existing agenda command, preserving every parent byte.",
+  "production_and_tests_unchanged": true,
+  "earlier_archive_preserved": "author-receiving.zip SHA83a434bc90194d83413cb0b229ddd8c0ca2d834d20a9196e83c523d8f872cce8",
+  "changes": [
+    {
+      "path": "candidate/README.md",
+      "previous_sha256": "1fdbc7ee19e060561e2be4482b16a79f522f8c890bd5a4b5d0c1475caf45b4e2",
+      "new_sha256": "597091d8ebf86e7801c555a7a5f7423019adecc2623a72554abc2ae5e8d04d78",
+      "new_git_blob": "3536bd35c847964115db6b97de53d16d07184310",
+      "removing_only_addition_restores_parent": true
+    },
+    {
+      "path": "composition-728d/README.md",
+      "previous_sha256": "8da23dbde01603782b5c750c0e8cf04a2d2bd425751dd3876823c8b3a4499c7d",
+      "new_sha256": "25cc5ed427d114f7817618c61fcd970794fea7850287c45790eb9acd5d32a70a",
+      "new_git_blob": "12501a9736632fb8eaf3dc38562ad8cb244a35f2",
+      "removing_only_addition_restores_parent": true
+    }
+  ],
+  "section": "\nSave that same selection as an offline view with course/source-date/search controls\nand a printable current view:\n`canvaspilot export-agenda 42 77 --start 2026-10-08 --end 2026-10-15 --out agenda.html`.\nThe original native JSON remains available byte-identically.\n[Review and print a saved agenda](docs/agenda-export.md).\n"
+}

@@ -1,0 +1,32 @@
+{
+  "schema": "canvas-agenda-current-parent-composition/1",
+  "at": "2026-10-08T16:31:13.467168+00:00",
+  "parent": "6c4d5d2e7526cddc1aa6c90bfbef2d1188382ad3",
+  "tree": "50b0e4001ccad72078b073e2cc3606b619e064ff",
+  "current_parent_changes_since_received728d": [
+    "README.md",
+    "src/canvaspilot/api.py",
+    "files-completeness test and evidence"
+  ],
+  "api_changed_function_ASTs_vs_original": [
+    "list_files"
+  ],
+  "agenda_function_unchanged": true,
+  "README_exact_parent_plus_received_section": true,
+  "CLI_unchanged_since_received728d": true,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 23909,
+      "sha256": "7fdd3a09d10861f1e952e1647c92f5b9fc63ea9bbdad8b36de98e853dd42dbb0",
+      "git_blob": "9708cf80ac230054f4ea497e3553bb84624335d6"
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "bytes": 23531,
+      "sha256": "dcd3347c1fde54e3ff9e32bdea27a4f8a28ea98a19499decaf9c30e068d0df4e",
+      "git_blob": "bc71bd129a71e00389bee54bf353f2d71ff6f633"
+    }
+  ],
+  "api_entire_other_source_bytes_exact_after_restoring_list_files": true
+}

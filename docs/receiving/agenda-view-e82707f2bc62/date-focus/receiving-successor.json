@@ -1,0 +1,643 @@
+{
+  "schema": "canvas-agenda-date-focus-successor/1",
+  "prior_branch_head": "4c1233b5083ad507586698621e6209dd7566f9e4",
+  "prior_branch_tree": "cbbb18f4e8b8340c5a3d7d61179c3077bb4ace56",
+  "actual_tested_checkout": "bb1e7e02904d20162f094fa79a35403f26c767de",
+  "actual_tested_tree": "f9b5a1554bdf8c7e8157632eb790b913bd2b55e7",
+  "actual_current_parent": "a5e7bec9f93132341e4031de184487310a51daae",
+  "metadata_boundary": "PR metadata still reported cf47942b; actual checkout/true parents control acceptance.",
+  "native": {
+    "run": 37828122520,
+    "job": 113486144485,
+    "result": "success",
+    "pytest": {
+      "passed": 1045,
+      "skipped": 1,
+      "subtests_passed": 57
+    },
+    "ruff": "pass",
+    "skip_reason": "not printed by pytest -q"
+  },
+  "browser": {
+    "run": 37828122491,
+    "job": 113486144587,
+    "result": "failure",
+    "full_final_receipt": {
+      "schema": "canvaspilot-agenda-view-browser/1",
+      "accepted": false,
+      "artifacts": [
+        {
+          "name": "source-before.json",
+          "bytes": 226778,
+          "sha256": "a92abcee884ed584077fdef756f62ecd880ce0f885220ff3724932ad0962cecd"
+        },
+        {
+          "name": "baseline-source-before.json",
+          "bytes": 173232,
+          "sha256": "aefdd90fa152c0aa344f3b71656404591dc1af21db753ee8775b4e0847cfd1e3"
+        },
+        {
+          "name": "original-native.stdout",
+          "bytes": 2828,
+          "sha256": "1d47bb539939336ab70bea45068635d57196a5e45d1660abddd5bcfcc17811ce"
+        },
+        {
+          "name": "original-native.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "name": "original-missing-view.stdout",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "name": "original-missing-view.stderr",
+          "bytes": 563,
+          "sha256": "b66f7edd240b925d4f031d4a30b165f19e1d34c49a3adee12ec856dbc0cbb9ed"
+        },
+        {
+          "name": "current-native.stdout",
+          "bytes": 2828,
+          "sha256": "1d47bb539939336ab70bea45068635d57196a5e45d1660abddd5bcfcc17811ce"
+        },
+        {
+          "name": "current-native.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "name": "current-export.stdout",
+          "bytes": 366,
+          "sha256": "29168af5c17a0cdc60242ae85e19dcd599cd87f956326b4a546b994a100f67ec"
+        },
+        {
+          "name": "current-export.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "name": "receiving-before-cleanup.json",
+          "bytes": 17134,
+          "sha256": "ad53c25d4dc0fa69c5fd86ef77a8b13424d89cf66e115190fcf7463f3d214bdd"
+        },
+        {
+          "name": "chrome-stderr.log",
+          "bytes": 4077,
+          "sha256": "318e434d85838a4ca298bbd0de33cf54ed75fa5ecdc00404dc048d37d8d6a8eb"
+        },
+        {
+          "name": "receiving.json",
+          "bytes": 17451,
+          "sha256": "198aea5d52b19de5b0a7ce67e291c1558e437ceff8d4ada5da5dc49fc2b2973c"
+        }
+      ],
+      "native": [
+        {
+          "name": "original-native",
+          "command": "agenda",
+          "exit": 0,
+          "stdoutSHA256": "1d47bb539939336ab70bea45068635d57196a5e45d1660abddd5bcfcc17811ce",
+          "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "name": "original-missing-view",
+          "command": "export-agenda",
+          "exit": 2,
+          "stdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderrSHA256": "b66f7edd240b925d4f031d4a30b165f19e1d34c49a3adee12ec856dbc0cbb9ed"
+        },
+        {
+          "name": "current-native",
+          "command": "agenda",
+          "exit": 0,
+          "stdoutSHA256": "1d47bb539939336ab70bea45068635d57196a5e45d1660abddd5bcfcc17811ce",
+          "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "name": "current-export",
+          "command": "export-agenda",
+          "exit": 0,
+          "stdoutSHA256": "29168af5c17a0cdc60242ae85e19dcd599cd87f956326b4a546b994a100f67ec",
+          "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "browser": [
+        {
+          "label": "complete offline saved agenda",
+          "count": "Showing 4 of 4 saved entries",
+          "context": "All selected courses \u00b7 All source dates \u00b7 No text filter",
+          "entries": [
+            {
+              "course": "77",
+              "group": "timed",
+              "date": "2026-10-08",
+              "title": "Draft submission",
+              "source": {
+                "kind": "assignment",
+                "course_id": "77",
+                "source": {
+                  "collection": "assignment",
+                  "index": 0
+                },
+                "record": {
+                  "id": 901,
+                  "context_code": "course_section_5",
+                  "effective_context_code": "course_77",
+                  "title": "Draft submission",
+                  "all_day": false,
+                  "start_at": "2026-10-08T10:00:00-05:00",
+                  "end_at": null,
+                  "assignment": {
+                    "id": "23",
+                    "course_id": 77,
+                    "due_at": "2026-10-08T10:00:00-05:00",
+                    "points_possible": 0,
+                    "overrides": [
+                      {
+                        "id": "override-0",
+                        "title": "Section A",
+                        "due_at": null
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "course": "42",
+              "group": "timed",
+              "date": "2026-10-08",
+              "title": "Studio critique \u2014 bring <poster> & notes",
+              "source": {
+                "kind": "event",
+                "course_id": "42",
+                "source": {
+                  "collection": "event",
+                  "index": 0
+                },
+                "record": {
+                  "id": "evt-07",
+                  "context_code": "course_42",
+                  "title": "Studio critique \u2014 bring <poster> & notes",
+                  "all_day": false,
+                  "start_at": "2026-10-08T15:00:00.0000000002+00:00",
+                  "end_at": "2026-10-08T16:00:00Z",
+                  "description": "<p>Discuss the draft &amp; its sources.</p>",
+                  "location_name": "Room 0",
+                  "html_url": "https://school.example.invalid/calendar?event=evt-07"
+                }
+              }
+            },
+            {
+              "course": "77",
+              "group": "all_day",
+              "date": "2026-10-09",
+              "title": "Reading day",
+              "source": {
+                "kind": "event",
+                "course_id": "77",
+                "source": {
+                  "collection": "event",
+                  "index": 1
+                },
+                "record": {
+                  "id": 0,
+                  "context_code": "course_77",
+                  "title": "Reading day",
+                  "all_day": true,
+                  "all_day_date": "2026-10-09",
+                  "start_at": null,
+                  "end_at": null,
+                  "description": "",
+                  "cancelled": false
+                }
+              }
+            },
+            {
+              "course": "42",
+              "group": "timing_unavailable",
+              "date": "",
+              "title": "Room and time pending",
+              "source": {
+                "kind": "event",
+                "course_id": "42",
+                "source": {
+                  "collection": "event",
+                  "index": 2
+                },
+                "record": {
+                  "id": "pending",
+                  "context_code": "course_42",
+                  "title": "Room and time pending",
+                  "all_day": false,
+                  "start_at": null,
+                  "description": "</script><img src=x onerror=alert(1)> remains supplied source",
+                  "cancelled": true
+                },
+                "timing_issue": {
+                  "field": "start_at",
+                  "reason": "expected a valid timestamp with a known UTC offset; no instant inferred"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "label": "Course 42",
+          "count": "Showing 2 of 4 saved entries",
+          "context": "Course 42 \u00b7 All source dates \u00b7 No text filter",
+          "entries": [
+            {
+              "course": "42",
+              "group": "timed",
+              "date": "2026-10-08",
+              "title": "Studio critique \u2014 bring <poster> & notes",
+              "source": {
+                "kind": "event",
+                "course_id": "42",
+                "source": {
+                  "collection": "event",
+                  "index": 0
+                },
+                "record": {
+                  "id": "evt-07",
+                  "context_code": "course_42",
+                  "title": "Studio critique \u2014 bring <poster> & notes",
+                  "all_day": false,
+                  "start_at": "2026-10-08T15:00:00.0000000002+00:00",
+                  "end_at": "2026-10-08T16:00:00Z",
+                  "description": "<p>Discuss the draft &amp; its sources.</p>",
+                  "location_name": "Room 0",
+                  "html_url": "https://school.example.invalid/calendar?event=evt-07"
+                }
+              }
+            },
+            {
+              "course": "42",
+              "group": "timing_unavailable",
+              "date": "",
+              "title": "Room and time pending",
+              "source": {
+                "kind": "event",
+                "course_id": "42",
+                "source": {
+                  "collection": "event",
+                  "index": 2
+                },
+                "record": {
+                  "id": "pending",
+                  "context_code": "course_42",
+                  "title": "Room and time pending",
+                  "all_day": false,
+                  "start_at": null,
+                  "description": "</script><img src=x onerror=alert(1)> remains supplied source",
+                  "cancelled": true
+                },
+                "timing_issue": {
+                  "field": "start_at",
+                  "reason": "expected a valid timestamp with a known UTC offset; no instant inferred"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "label": "Course 42 unknown timing retained through date",
+          "count": "Showing 1 of 4 saved entries",
+          "context": "Course 42 \u00b7 Source date 2026-10-09; unavailable timing retained \u00b7 No text filter",
+          "entries": [
+            {
+              "course": "42",
+              "group": "timing_unavailable",
+              "date": "",
+              "title": "Room and time pending",
+              "source": {
+                "kind": "event",
+                "course_id": "42",
+                "source": {
+                  "collection": "event",
+                  "index": 2
+                },
+                "record": {
+                  "id": "pending",
+                  "context_code": "course_42",
+                  "title": "Room and time pending",
+                  "all_day": false,
+                  "start_at": null,
+                  "description": "</script><img src=x onerror=alert(1)> remains supplied source",
+                  "cancelled": true
+                },
+                "timing_issue": {
+                  "field": "start_at",
+                  "reason": "expected a valid timestamp with a known UTC offset; no instant inferred"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "label": "Course 77 all-day source date",
+          "count": "Showing 1 of 4 saved entries",
+          "context": "Course 77 \u00b7 Source date 2026-10-09; unavailable timing retained \u00b7 No text filter",
+          "entries": [
+            {
+              "course": "77",
+              "group": "all_day",
+              "date": "2026-10-09",
+              "title": "Reading day",
+              "source": {
+                "kind": "event",
+                "course_id": "77",
+                "source": {
+                  "collection": "event",
+                  "index": 1
+                },
+                "record": {
+                  "id": 0,
+                  "context_code": "course_77",
+                  "title": "Reading day",
+                  "all_day": true,
+                  "all_day_date": "2026-10-09",
+                  "start_at": null,
+                  "end_at": null,
+                  "description": "",
+                  "cancelled": false
+                }
+              }
+            }
+          ]
+        },
+        {
+          "label": "Course 77 timed source date",
+          "count": "Showing 1 of 4 saved entries",
+          "context": "Course 77 \u00b7 Source date 2026-10-08; unavailable timing retained \u00b7 No text filter",
+          "entries": [
+            {
+              "course": "77",
+              "group": "timed",
+              "date": "2026-10-08",
+              "title": "Draft submission",
+              "source": {
+                "kind": "assignment",
+                "course_id": "77",
+                "source": {
+                  "collection": "assignment",
+                  "index": 0
+                },
+                "record": {
+                  "id": 901,
+                  "context_code": "course_section_5",
+                  "effective_context_code": "course_77",
+                  "title": "Draft submission",
+                  "all_day": false,
+                  "start_at": "2026-10-08T10:00:00-05:00",
+                  "end_at": null,
+                  "assignment": {
+                    "id": "23",
+                    "course_id": 77,
+                    "due_at": "2026-10-08T10:00:00-05:00",
+                    "points_possible": 0,
+                    "overrides": [
+                      {
+                        "id": "override-0",
+                        "title": "Section A",
+                        "due_at": null
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "label": "explicit empty matching view",
+          "count": "Showing 0 of 4 saved entries",
+          "context": "Course 77 \u00b7 Source date 2026-10-15; unavailable timing retained \u00b7 No text filter",
+          "entries": []
+        },
+        {
+          "label": "literal text search",
+          "count": "Showing 1 of 4 saved entries",
+          "context": "All selected courses \u00b7 All source dates \u00b7 Text: <poster>",
+          "entries": [
+            {
+              "course": "42",
+              "group": "timed",
+              "date": "2026-10-08",
+              "title": "Studio critique \u2014 bring <poster> & notes",
+              "source": {
+                "kind": "event",
+                "course_id": "42",
+                "source": {
+                  "collection": "event",
+                  "index": 0
+                },
+                "record": {
+                  "id": "evt-07",
+                  "context_code": "course_42",
+                  "title": "Studio critique \u2014 bring <poster> & notes",
+                  "all_day": false,
+                  "start_at": "2026-10-08T15:00:00.0000000002+00:00",
+                  "end_at": "2026-10-08T16:00:00Z",
+                  "description": "<p>Discuss the draft &amp; its sources.</p>",
+                  "location_name": "Room 0",
+                  "html_url": "https://school.example.invalid/calendar?event=evt-07"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "label": "intersecting course and search",
+          "count": "Showing 0 of 4 saved entries",
+          "context": "Course 77 \u00b7 All source dates \u00b7 Text: <poster>",
+          "entries": []
+        }
+      ],
+      "pageErrors": [],
+      "externalRequests": [],
+      "source": {
+        "head": "bb1e7e02904d20162f094fa79a35403f26c767de",
+        "tree": "f9b5a1554bdf8c7e8157632eb790b913bd2b55e7",
+        "parents": [
+          "a5e7bec9f93132341e4031de184487310a51daae",
+          "4c1233b5083ad507586698621e6209dd7566f9e4"
+        ],
+        "githubSHA": "bb1e7e02904d20162f094fa79a35403f26c767de"
+      },
+      "nativeRequests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/calendar_events",
+          "query": [
+            [
+              "type",
+              "event"
+            ],
+            [
+              "start_date",
+              "2026-10-08"
+            ],
+            [
+              "end_date",
+              "2026-10-15"
+            ],
+            [
+              "context_codes[]",
+              "course_42"
+            ],
+            [
+              "context_codes[]",
+              "course_77"
+            ],
+            [
+              "per_page",
+              "50"
+            ]
+          ]
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/calendar_events",
+          "query": [
+            [
+              "type",
+              "assignment"
+            ],
+            [
+              "start_date",
+              "2026-10-08"
+            ],
+            [
+              "end_date",
+              "2026-10-15"
+            ],
+            [
+              "context_codes[]",
+              "course_42"
+            ],
+            [
+              "context_codes[]",
+              "course_77"
+            ],
+            [
+              "per_page",
+              "50"
+            ]
+          ]
+        }
+      ],
+      "savedFile": {
+        "bytes": 31674,
+        "sha256": "8d90ffe818ccace986b53dff8082632fedce097d3c581d9b120e9d19dd99323b",
+        "nativeBytes": 2828,
+        "nativeSHA256": "1d47bb539939336ab70bea45068635d57196a5e45d1660abddd5bcfcc17811ce"
+      },
+      "runtime": {
+        "node": "v22.23.3",
+        "chrome": "Google Chrome 154.0.8037.97",
+        "executable": "/usr/bin/google-chrome"
+      },
+      "download": {
+        "actualFile": "downloads/course-agenda.json",
+        "bytes": 2828,
+        "sha256": "1d47bb539939336ab70bea45068635d57196a5e45d1660abddd5bcfcc17811ce"
+      },
+      "keyboard": [
+        {
+          "tag": "A",
+          "id": "",
+          "text": "Skip to agenda",
+          "outline": "solid",
+          "width": 3
+        },
+        {
+          "tag": "A",
+          "id": "download-native",
+          "text": "Download original agenda JSON",
+          "outline": "solid",
+          "width": 3
+        },
+        {
+          "tag": "BUTTON",
+          "id": "print-agenda",
+          "text": "Print this view",
+          "outline": "solid",
+          "width": 3
+        },
+        {
+          "tag": "SELECT",
+          "id": "course-filter",
+          "text": "All selected coursesCourse 42Course 77",
+          "outline": "solid",
+          "width": 3
+        },
+        {
+          "tag": "INPUT",
+          "id": "date-filter",
+          "text": "",
+          "outline": "solid",
+          "width": 3
+        },
+        {
+          "tag": "INPUT",
+          "id": "date-filter",
+          "text": "",
+          "outline": "solid",
+          "width": 3
+        },
+        {
+          "tag": "INPUT",
+          "id": "date-filter",
+          "text": "",
+          "outline": "solid",
+          "width": 3
+        },
+        {
+          "tag": "INPUT",
+          "id": "date-filter",
+          "text": "",
+          "outline": "none",
+          "width": 3
+        },
+        {
+          "tag": "INPUT",
+          "id": "search-filter",
+          "text": "",
+          "outline": "solid",
+          "width": 3
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "text": "Reset view",
+          "outline": "solid",
+          "width": 3
+        }
+      ],
+      "error": {
+        "name": "AssertionError",
+        "message": "The expression evaluated to a falsy value:\n\n  assert.ok(focus.every(e => e.width >= 2 && e.outline !== 'none'))\n",
+        "stack": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(focus.every(e => e.width >= 2 && e.outline !== 'none'))\n\n    at main (file:///home/runner/work/canvaspilot/canvaspilot/scripts/receive_agenda_view.mjs:245:10)"
+      },
+      "protocolCommands": 106,
+      "cleanupErrors": []
+    }
+  },
+  "change": {
+    "old_css": "30ee1d7b27445b88a4ef32bae7411865b3c2a374",
+    "new_css": "86ad5459a44c91d0fb448e77dcda78cf1d39642b",
+    "only_change": "Add input[type=date]:focus-within to the existing 3px focus outline selector.",
+    "driver": "4af4230560adf0d035f168a46855e8c54c613164",
+    "driver_assertions": "unchanged",
+    "workflow": "a06b862c23dccc61d5da9eea99d82b76668f78c8",
+    "source_review": "root and source_discovery accepted narrow selector; actual new browser run remains required"
+  },
+  "limits": [
+    "No visual inspection or browser success inferred from source review.",
+    "No artifact download attempted for these runs.",
+    "All original v1 and v2 failures and v3 complete logs retained."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "schema": "canvaspilot-agenda-current-composition/2",
+  "parent": "cf47942b395a6196e6f5dcb02b3865f64aa1c89b",
+  "parent_tree": "0cd66bc6823a0dbdb98c3d88a3ab4677c6981e55",
+  "branch_parent": "b3d9646472c6dbb60d82bccebd41f3cd3521133e",
+  "shared_file_composition": [
+    {
+      "path": "src/canvaspilot/cli.py",
+      "parent_git_blob": "14d7edde66a0c1979bf79d9544d075b65c98d1f4",
+      "composed_git_blob": "3cf6a087334d7dc4913444f496e2e01306b12762",
+      "sha256": "6c8db82b29cf8275f1c8b6500e160d8d26d6f5f629a1e9154b30551a7c859178",
+      "bytes": 30581,
+      "insert_blocks": 2,
+      "insert_bytes": 2267,
+      "inverse_exact_parent": true
+    },
+    {
+      "path": "README.md",
+      "parent_git_blob": "21b50a527973946bd77e3e883b4366798a922309",
+      "composed_git_blob": "cf7a9df370e67635ed0a6cfa74358050e25f3b68",
+      "sha256": "90256d055539449a75cedce15793dc3c11357b93a5039235dfbaa89eb179a1ef",
+      "bytes": 25986,
+      "insert_blocks": 1,
+      "insert_bytes": 323,
+      "inverse_exact_parent": true
+    }
+  ],
+  "parent_leaves": 1433,
+  "current_integrations": [
+    "PR71 offline page packet",
+    "PR79 grade-review export",
+    "PR72 current-user planner CLI"
+  ],
+  "source_delta": "These current integrations add separate exporter modules/tests/evidence and additive CLI/README spans. Existing agenda/API/client/dependency/workflow source is unchanged from the original hosted receiving parent.",
+  "composition": "An ordinary three-way textual merge reported adjacent parser/dispatch insert conflicts because the planner and agenda exporter use the same seams. The current planner blocks remain untouched; the original exact agenda blocks were inserted at unique four-line following anchors. Removing only those blocks recovers every current parent byte.",
+  "reset_successor": "Only controls.js queueMicrotask(update) becomes setTimeout(update, 0); original run/archive and unchanged driver/workflow pinned in reset-successor/receiving-successor.json.",
+  "peer_reset_review": "Source peer independently accepted exact 107097a5 scheduling change after reading WHATWG reset and empty-stack microtask sequence; no browser success inferred.",
+  "local_validation": "Exact inverse source proof and Python ast.parse; no additional local behavioral replay.",
+  "required_gate": "Existing full native CI and unchanged actual wheel/Chrome receiver on this current source."
+}

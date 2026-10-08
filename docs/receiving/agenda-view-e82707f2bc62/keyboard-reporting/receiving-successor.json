@@ -1,0 +1,66 @@
+{
+  "schema": "canvaspilot-agenda-keyboard-reporting-successor/1",
+  "prior_head": "80086e1762c778d8ced5beded80e30e7db61d78e",
+  "prior_tested_synthetic": "0e764f0872c5363ceffc82772a1d9558a61efd1e",
+  "prior_tested_tree": "268f143de4a5413bf0e6a670ba4b5638e26f4a31",
+  "native": {
+    "run": 37826248149,
+    "job": 113479752122,
+    "ruff": "passed",
+    "pytest_passed": 987,
+    "pytest_skipped": 1,
+    "pytest_subtests_passed": 57,
+    "seconds": 279.23,
+    "skip_reason": "Not reported by unchanged quiet test command; no inferred coverage."
+  },
+  "browser": {
+    "run": 37826248162,
+    "job": 113479748677,
+    "chrome": "154.0.8037.97",
+    "node": "22.23.3",
+    "accepted": false,
+    "completed_states": 8,
+    "reset_both_assertions": "passed",
+    "native_download": "actual file bytes equal original native report",
+    "error": "assert.ok(focus.every(e => e.width >= 2 && e.outline !== 'none'))",
+    "page_errors": [],
+    "external_requests": [],
+    "cleanup_errors": [],
+    "keyboard_values": "The prior driver assigns the focus array after the failing predicate, so individual values were not preserved. No specific control or CSS cause is claimed.",
+    "wheel": "Passed exact packaged renderer/CSS/corrected controls identity; see complete browser log."
+  },
+  "archive": {
+    "path": "hosted-v2-original.zip",
+    "bytes": 47552,
+    "sha256": "084e4fad2eb6ad2b2ff6881d6683c0b0e6c67705e9853b0c271fd4faa4b83770",
+    "git_blob": "39ab4782185d69dc05b76cecf134d7e02f05884f",
+    "members": [
+      "browser.log",
+      "native.log",
+      "original-browser-archive.zip"
+    ],
+    "full_logs": true,
+    "readback_exact": true
+  },
+  "change": {
+    "path": "scripts/receive_agenda_view.mjs",
+    "original_git_blob": "5779f13b3efd7c7a94b4e88a76a66837465db910",
+    "successor_git_blob": "4af4230560adf0d035f168a46855e8c54c613164",
+    "successor_sha256": "382ff0f7268fd8b38f52314f5c4845b40c18083d915f2f5edf205752cb6200d0",
+    "bytes": 24908,
+    "description": "Move existing receipt.keyboard = focus assignment before the unchanged native keyboard assertions. This records the actual focus values even if an assertion fails.",
+    "inverse_proof": "Removing the single assignment line from original and successor yields byte-identical source.",
+    "all_assertions_inputs_timeouts_unchanged": true,
+    "production_css_and_controls_unchanged": true,
+    "workflow_unchanged": true,
+    "node_syntax": "passed"
+  },
+  "required_gate": "A new actual installed-Chrome run must report the missing native focus state; no browser acceptance is inferred.",
+  "boundaries": [
+    "No local Chrome execution.",
+    "No screenshot or PDF visual inspection.",
+    "No artifact download attempt for either original Canvas browser run.",
+    "No guessed CSS correction or relaxed predicate.",
+    "No live Canvas account."
+  ]
+}

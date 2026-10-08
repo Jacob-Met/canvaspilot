@@ -1,0 +1,10 @@
+{
+  "event": [
+    {"id": "evt-07", "context_code": "course_42", "title": "Studio critique — bring <poster> & notes", "all_day": false, "start_at": "2026-10-08T15:00:00.0000000002+00:00", "end_at": "2026-10-08T16:00:00Z", "description": "<p>Discuss the draft &amp; its sources.</p>", "location_name": "Room 0", "html_url": "https://school.example.invalid/calendar?event=evt-07"},
+    {"id": 0, "context_code": "course_77", "title": "Reading day", "all_day": true, "all_day_date": "2026-10-09", "start_at": null, "end_at": null, "description": "", "cancelled": false},
+    {"id": "pending", "context_code": "course_42", "title": "Room and time pending", "all_day": false, "start_at": null, "description": "</script><img src=x onerror=alert(1)> remains supplied source", "cancelled": true}
+  ],
+  "assignment": [
+    {"id": 901, "context_code": "course_section_5", "effective_context_code": "course_77", "title": "Draft submission", "all_day": false, "start_at": "2026-10-08T10:00:00-05:00", "end_at": null, "assignment": {"id": "23", "course_id": 77, "due_at": "2026-10-08T10:00:00-05:00", "points_possible": 0, "overrides": [{"id": "override-0", "title": "Section A", "due_at": null}]}}
+  ]
+}

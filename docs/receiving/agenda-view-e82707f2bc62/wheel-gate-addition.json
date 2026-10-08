@@ -1,0 +1,11 @@
+{
+  "schema": "agenda-view-wheel-gate-addition/1",
+  "at": "2026-10-08T16:23:11.726613+00:00",
+  "reason": "Independent root source review requires actual wheel build and exact packaged renderer/CSS/JS evidence; existing editable browser source alone cannot establish asset inclusion.",
+  "original_workflow_sha256": "6d33baec3395bbaf4be80d4d1ea13a4e333d4ab2b54f9cec4f3ba17743c9b4a4",
+  "new_workflow_sha256": "b37a58b588d50da8a32699696398cb16c32e58b29600b43236d7cc6fe1291e40",
+  "new_workflow_git_blob": "a06b862c23dccc61d5da9eea99d82b76668f78c8",
+  "production_dependencies_and_behavior_tests_unchanged": true,
+  "local_wheel_or_browser_execution": false,
+  "required_hosted_gate": "pip wheel using declared build system; ZIP integrity and all three runtime asset bytes equal actual checkout; wheel/asset hashes and receipt retained in ordinary logs and artifact."
+}
