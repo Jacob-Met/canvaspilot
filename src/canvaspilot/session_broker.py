@@ -192,7 +192,8 @@ def _run_job(ctx, job: dict[str, Any]) -> dict[str, Any]:  # type: ignore[no-unt
               const text = await r.text();
               let json = null;
               try { json = JSON.parse(text); } catch (e) {}
-              return {status: r.status, json, text: json ? null : text.slice(0, 4000)};
+              return {status: r.status, json, text: json ? null : text.slice(0, 4000),
+                      headers: {link: r.headers.get('link') || ''}};
             }""",
             {"method": method, "path": path, "headers": headers, "body": body},
         )
@@ -226,6 +227,7 @@ class Handler(BaseHTTPRequestHandler):
                     "read_only": STATE.read_only,
                     "error": STATE.error,
                     "base_url": STATE.base_url,
+                    "link_pagination": True,
                 },
             )
             return

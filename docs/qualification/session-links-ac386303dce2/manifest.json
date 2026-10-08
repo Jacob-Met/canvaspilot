@@ -1,0 +1,18 @@
+{
+  "README.md": "a476ae21b2c1273b37e229fce871c650f08e58bba371c3423e5904f7f2fb5a9e",
+  "docs/qualification/session-links-ac386303dce2/QUALIFICATION.md": "2d131de195f19f8baa991ad53e19852568312a51a2d5202e4d6ccc7ee9aeaf9e",
+  "docs/qualification/session-links-ac386303dce2/baseline-probe.txt": "aa478a8fe6531a6841ae27c621e02443ffd92b08f39147c1a339e716a13a767b",
+  "docs/qualification/session-links-ac386303dce2/candidate-pytest.txt": "8fb38486fabf09db3a65119ee7df0ed0df933c8b1adf4dce9253ae0c7382b77f",
+  "docs/qualification/session-links-ac386303dce2/candidate-ruff.txt": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+  "docs/qualification/session-links-ac386303dce2/composition-pytest.txt": "f125bc00fdcc99fe052127c6d93e764329cdb2f6c9f92a0559b552850c75b4f5",
+  "docs/qualification/session-links-ac386303dce2/composition-ruff.txt": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+  "docs/qualification/session-links-ac386303dce2/native-candidate-browser.txt": "c80e66e33e2978ba1f80cf7cadf6fef5454e9d29752a803f7eda013b3cf8f745",
+  "docs/qualification/session-links-ac386303dce2/native-legacy-browser.txt": "06e8d84e1b0f2a2ce844a948a53893b00a931d6d8a637dd5dcfb1c7d37d58b81",
+  "docs/qualification/session-links-ac386303dce2/provenance.json": "d385c767558edeafaab1c07f5006ca2d123d8bebc36d515199594c6664723264",
+  "docs/qualification/session-links-ac386303dce2/python-environment.txt": "60d5af926f56140f228b4283f8e8752429849d8d318610922fc234d02c987984",
+  "src/canvaspilot/client.py": "45a60b2c31a3c95914dca9d563958422bc346478a9d70f0058f9c5c623f20ada",
+  "src/canvaspilot/session_broker.py": "749e11c92d6d56d54ccf208dda6784cb2d43ac3b837188f5d82bfe73c3129e8e",
+  "tests/test_broker_encoding.py": "1fd19dd35025c9201b2349f565c25932b7f3cd6cc0eff8259eddb0fdc2046b09",
+  "tests/test_broker_links.py": "f43c485a79c7d28559980e6ab3ff2b570a5832f194d49e28b736e35c63c3dd13",
+  "tests/test_browser_link_metadata.py": "e7bb134adebdaaf9fda596f79b853d0c42bd42ff9aafb4958c1e07a6a0de90d3"
+}

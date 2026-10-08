@@ -1,0 +1,17 @@
+Exit code: 1
+test_real_browser_returns_link_only_and_keeps_session_fetch (__main__.BrowserLinkMetadata.test_real_browser_returns_link_only_and_keeps_session_fetch) ... FAIL
+
+======================================================================
+FAIL: test_real_browser_returns_link_only_and_keeps_session_fetch (__main__.BrowserLinkMetadata.test_real_browser_returns_link_only_and_keeps_session_fetch)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/hamon-canvas-links-ac386303dce2/test_browser_link_metadata.py", line 134, in test_real_browser_returns_link_only_and_keeps_session_fetch
+    self.assertEqual({'link': server.next_link}, result.get('headers'))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'link': '<http://127.0.0.1:46125/api/v1/courses?opaque=a%2Bb%3D>; rel="next"'} != None
+
+----------------------------------------------------------------------
+Ran 1 test in 5.320s
+
+FAILED (failures=1)
+

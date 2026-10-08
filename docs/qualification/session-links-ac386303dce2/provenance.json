@@ -1,0 +1,40 @@
+{
+  "date_utc": "2026-10-08",
+  "repository": "https://github.com/Jacob-Met/canvaspilot",
+  "claim": "https://github.com/Jacob-Met/canvaspilot/issues/33",
+  "baseline_commit": "3d7a9453fb0cbdf08312320d71c648462592b217",
+  "baseline_tree": "2b38a186887b7ed5dc5a4020dc26e51636a6ab1f",
+  "source_files_sha256": {
+    "src/canvaspilot/client.py": "45a60b2c31a3c95914dca9d563958422bc346478a9d70f0058f9c5c623f20ada",
+    "src/canvaspilot/session_broker.py": "749e11c92d6d56d54ccf208dda6784cb2d43ac3b837188f5d82bfe73c3129e8e",
+    "tests/test_broker_links.py": "f43c485a79c7d28559980e6ab3ff2b570a5832f194d49e28b736e35c63c3dd13",
+    "tests/test_browser_link_metadata.py": "e7bb134adebdaaf9fda596f79b853d0c42bd42ff9aafb4958c1e07a6a0de90d3"
+  },
+  "local_python": "Python 3.12.14",
+  "native_browser": {
+    "device": "hamon-thinkpad",
+    "device_id": "cadafaf3-4d0b-4c4f-a0d3-34a95d2cec90",
+    "version": "Chromium 153.0.8010.47 snap",
+    "binary": "/usr/bin/chromium-browser",
+    "python": "3.14.4",
+    "test_directory": "/dev/shm/hamon-canvas-links-ac386303dce2",
+    "profile_parent": "/home/jacob/snap/chromium/common",
+    "profile_kind": "fresh TemporaryDirectory, removed after each test",
+    "candidate_broker_sha256": "749e11c92d6d56d54ccf208dda6784cb2d43ac3b837188f5d82bfe73c3129e8e",
+    "legacy_broker_sha256": "2a106130c344aefebb23b078cd93b5d3ca3afd7f5325ae5fac2fb8a7251780cc",
+    "test_sha256": "e7bb134adebdaaf9fda596f79b853d0c42bd42ff9aafb4958c1e07a6a0de90d3"
+  },
+  "receiving_state": "Source candidate qualified; no real Canvas session, deployment or benefit measurement claimed.",
+  "publication_parent": "5b1780ca4fcdce3d5f997cee401c86806ece822a",
+  "publication_parent_tree": "5d3b9b7b8f3cca5f3940f31e020ad4310078dd70",
+  "initial_contract_test_sha256": "97ea0bfa5dcdbf2e30257f02718bb92eac856675b85d244373b3eef489d66ee2",
+  "composition_results": {
+    "pytest": {
+      "passed": 152,
+      "skipped": 1,
+      "seconds": 9.59
+    },
+    "ruff": "passed",
+    "http_contract_cases": 40
+  }
+}

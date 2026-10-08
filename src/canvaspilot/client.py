@@ -7,6 +7,7 @@ import os
 import re
 from pathlib import Path
 from typing import Any
+from urllib.parse import urlsplit
 
 import httpx
 
@@ -20,6 +21,10 @@ BROKER_PORT = int(os.environ.get("CANVAS_SESSION_PORT", "18765"))
 
 class CanvasAuthError(RuntimeError):
     pass
+
+
+class CanvasPaginationError(RuntimeError):
+    """A session traversal could not establish a complete, valid continuation."""
 
 
 def broker_base() -> str:
@@ -55,6 +60,7 @@ def broker_fetch(
     json_body: dict[str, Any] | None = None,
     data: dict[str, Any] | None = None,
     timeout: float = 120.0,
+    with_response: bool = False,
 ) -> Any:
     """Call Canvas via the stay-open session broker (in-page fetch)."""
     full = path
@@ -95,6 +101,8 @@ def broker_fetch(
             request=httpx.Request(method, full),
             response=httpx.Response(int(status), text=str(resp.get("text") or resp.get("json"))),
         )
+    if with_response:
+        return resp
     if resp.get("json") is not None:
         return resp["json"]
     return resp.get("text")
@@ -235,11 +243,15 @@ class CanvasClient:
             data = self.request("GET", path, params=params)
             return data if isinstance(data, list) else [data]
 
-        if not self.token and broker_health():
+        health = broker_health() if not self.token else None
+        if health:
+            if health.get("link_pagination") is True:
+                return self._get_broker_link_pages(
+                    path, params=params, origin=health.get("base_url") or self.base_url,
+                )
             # The session broker's /fetch returns {status, json, text} with no
-            # response headers, so Link: rel=next following is impossible here.
-            # Use Canvas explicit pagination (?page=N&per_page=M) instead of
-            # silently returning only the first page.
+            # response headers on older broker versions. Keep their existing
+            # numeric compatibility path until the broker is restarted/upgraded.
             params = _with_per_page(params)
             if isinstance(params, list):
                 per_page = min(int(dict(params).get("per_page", 50)), 100)
@@ -293,6 +305,47 @@ class CanvasClient:
             params = None
         return out
 
+    def _get_broker_link_pages(
+        self,
+        path: str,
+        *,
+        params: dict[str, Any] | list[tuple[str, Any]] | None,
+        origin: str,
+    ) -> list[Any]:
+        out: list[Any] = []
+        seen: set[str] = set()
+        url = path
+        for page in range(40):
+            if url in seen:
+                raise CanvasPaginationError("session pagination repeated a continuation URL")
+            seen.add(url)
+            response = broker_fetch(
+                "GET", url, params=_with_per_page(params) if page == 0 else None,
+                timeout=self.timeout, with_response=True,
+            )
+            headers = response.get("headers")
+            if not isinstance(headers, dict):
+                raise CanvasPaginationError("session pagination response has no Link metadata")
+            links = [value for key, value in headers.items()
+                     if isinstance(key, str) and key.lower() == "link"]
+            if len(links) != 1 or not isinstance(links[0], str):
+                raise CanvasPaginationError("session pagination Link metadata is invalid")
+            next_url = _session_link_next(links[0])
+            chunk = response["json"] if response.get("json") is not None else response.get("text")
+            if not isinstance(chunk, list):
+                if next_url:
+                    raise CanvasPaginationError("session pagination returned a non-list continuing page")
+                out.append(chunk)
+                return out
+            out.extend(chunk)
+            if not next_url:
+                return out
+            _assert_pagination_origin(next_url, origin)
+            # Canvas supplies every parameter in the opaque absolute URL. Do
+            # not append the first page's filters or invent another page number.
+            url = next_url
+        raise CanvasPaginationError("session pagination has more results after the 40-page cap")
+
     def _fixture_request(
         self,
         method: str,
@@ -333,6 +386,62 @@ def _with_page(
     out = dict(params or {})
     out["page"] = page
     return out
+
+
+def _assert_pagination_origin(url: str, base: str) -> None:
+    try:
+        if not isinstance(base, str):
+            raise TypeError("invalid broker origin")
+        target, origin = urlsplit(url), urlsplit(base)
+        target_port = target.port if target.port is not None else (443 if target.scheme == "https" else 80)
+        origin_port = origin.port if origin.port is not None else (443 if origin.scheme == "https" else 80)
+        valid = (
+            target.scheme in ("http", "https")
+            and target.hostname is not None
+            and target.username is None and target.password is None
+            and not target.fragment and "\\" not in url
+            and not any(char.isspace() for char in url)
+            and (target.scheme, target.hostname, target_port)
+            == (origin.scheme, origin.hostname, origin_port)
+        )
+    except (ValueError, TypeError):
+        valid = False
+    if not valid:
+        raise CanvasPaginationError("session pagination continuation must use the configured Canvas origin")
+
+
+_LINK_PARAM_NAME = r"[!#$%&'*+\-.^_`|~0-9A-Za-z]+"
+_LINK_PARAM_VALUE = r'"(?:[^"\\]|\\.)*"|[^\s;,"\\]+'
+_LINK_PARAM_TEXT = rf";\s*{_LINK_PARAM_NAME}(?:\s*=\s*(?:{_LINK_PARAM_VALUE}))?\s*"
+_SESSION_LINK = re.compile(rf"\s*<([^>]*)>\s*((?:{_LINK_PARAM_TEXT})*)(?:,|$)")
+_SESSION_LINK_PARAM = re.compile(rf";\s*({_LINK_PARAM_NAME})(?:\s*=\s*({_LINK_PARAM_VALUE}))?\s*")
+
+
+def _session_link_next(header: str) -> str | None:
+    """Read Link values without splitting opaque URLs or quoted parameters."""
+    if not header.strip():
+        return None
+    if header.rstrip().endswith(","):
+        raise CanvasPaginationError("session pagination Link header is malformed")
+    offset, next_url = 0, None
+    while offset < len(header):
+        link = _SESSION_LINK.match(header, offset)
+        if link is None or not link[1]:
+            raise CanvasPaginationError("session pagination Link header is malformed")
+        relations = [param[2] for param in _SESSION_LINK_PARAM.finditer(link[2])
+                     if param[1].lower() == "rel"]
+        if len(relations) > 1 or (relations and relations[0] is None):
+            raise CanvasPaginationError("session pagination Link relation is ambiguous")
+        if relations:
+            value = relations[0]
+            if value.startswith('"'):
+                value = re.sub(r"\\(.)", r"\1", value[1:-1])
+            if "next" in value.split():
+                if next_url is not None:
+                    raise CanvasPaginationError("session pagination has multiple next links")
+                next_url = link[1]
+        offset = link.end()
+    return next_url
 
 
 def _link_next(link_header: str) -> str | None:

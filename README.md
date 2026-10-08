@@ -104,7 +104,7 @@ Tools exposed (all prefixed `canvas_`):
 | Discussions | `list_discussion_topics`, `get_discussion`, `post_discussion_reply` |
 | Quizzes | `list_quizzes`, `get_quiz`, `list_quiz_questions`, `list_quiz_submissions`, `start_quiz_submission`, `complete_quiz_submission` |
 | Inbox / Calendar | `list_conversations`, `get_conversation`, `reply_conversation`, `list_calendar_events` |
-| **Full REST** | `canvas_api_request`, `canvas_api_paginated` — any `/api/v1/...` path (escape hatch for everything else; in session-broker mode `api_paginated` returns a single page only — see Auth modes) |
+| **Full REST** | `canvas_api_request`, `canvas_api_paginated` — any `/api/v1/...` path, including paginated reads through the session broker (see Auth modes for older-broker compatibility) |
 
 Programmatic API bundle: `from canvaspilot.bundle import make_api, tool_inventory`.
 
@@ -134,7 +134,29 @@ or complete.
 
 Mode resolution is fixture > token > live broker > session, decided at runtime: `CANVAS_API_TOKEN` always wins and skips the broker; otherwise a live `GET 127.0.0.1:18765/health` probe decides whether the session broker is used. Bare "session" mode with no running broker raises on every request — "session (default)" means "broker if it's up", not "works with no setup".
 
-Pagination follows response `Link` headers only in token mode (up to 40 pages). In session-broker mode the broker returns a single page (`per_page` ≤ 100); paginate by repeated calls.
+Pagination follows Canvas's response `Link` headers in token mode and in current
+session brokers. A session broker advertises `"link_pagination": true` in
+`GET /health` and forwards only the `Link` response header alongside each fetch
+result. The client follows an opaque `rel=next` URL even when a page is shorter
+than the requested `per_page`; it stops when no next link remains, without
+inventing a numeric page or requesting an extra empty page. Initial filters and
+repeated `include[]` values apply only to the first request; subsequent URLs
+retain the server's exact parameters. Ordinary single-request results keep their
+existing decoded JSON/text shape.
+
+Session continuation must stay on the broker's configured Canvas origin. Invalid
+or ambiguous Link metadata, repeated continuation URLs, a later-page error, or a
+known continuation beyond the 40-page limit raises an error instead of returning
+the accumulated pages as a complete result. `CanvasPaginationError` is available
+from `canvaspilot.client`. This does not change the existing token-mode page cap.
+
+An older running broker without the capability flag keeps the previous numeric
+`page=1..40` compatibility behavior, including its truncation warning. That
+fallback still infers completion from page length and cannot handle opaque
+server cursors reliably. Restart the broker with the current source to enable
+Link following; no browser profile or Canvas login is replaced by this update.
+The [Canvas pagination contract](https://developerdocs.instructure.com/services/canvas/basics/file.pagination)
+explains why clients must check Link even when they request a page size.
 
 The broker only listens on loopback — and `session_broker.main()` now refuses to start on any non-loopback bind address (fail-closed: a future host change cannot silently expose the unauthenticated `/fetch`/`/shutdown` endpoints to the network). Cookies never leave the Playwright profile directory; the MCP/CLI process never sees them — it asks the broker to make the request.
 
@@ -174,7 +196,21 @@ pip install -e ".[dev]"
 pytest
 ```
 
-Tests run entirely in fixture mode.
+Tests use authored fixtures and loopback HTTP servers without Canvas access.
+
+The optional native-browser check executes the production in-page fetch against
+an authored loopback response in a fresh Chromium profile. It uses no school
+session and verifies that the fixture cookie remains in the browser while only
+Link metadata reaches the caller:
+
+```bash
+CANVASPILOT_CHROMIUM_BIN=/path/to/chromium python -m pytest -q tests/test_browser_link_metadata.py
+```
+
+`CANVASPILOT_CHROMIUM_PROFILE_ROOT` can select a writable parent for temporary
+profiles (useful for a confined browser package). The browser test skips only
+when `CANVASPILOT_CHROMIUM_BIN` is unset; an invalid configured executable fails.
+All regular HTTP/client tests run offline without a browser binary.
 
 ## Responsible use
 
