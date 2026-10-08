@@ -1,0 +1,843 @@
+{
+  "source_head": "6e2e58f4e28e09749f9f97162a8ce460eccdd4b1",
+  "source_before": {
+    "src/canvaspilot/calendar_export.py": "f3e06eb68d7f74bb757a28f9cdc9a229f2af9476d4a93ba709698b54ffed82a8",
+    "src/canvaspilot/cli.py": "173df7056f7d86084aa2dc00ba129bf8c36aaf109cdbf9497e24ec436d90d47b",
+    "tests/test_calendar_export.py": "0774869f562ab1bdff8d09df38216fab7cc44543ded02be620c2a4e5e3a9e17f"
+  },
+  "source_after": {
+    "src/canvaspilot/calendar_export.py": "f3e06eb68d7f74bb757a28f9cdc9a229f2af9476d4a93ba709698b54ffed82a8",
+    "src/canvaspilot/cli.py": "173df7056f7d86084aa2dc00ba129bf8c36aaf109cdbf9497e24ec436d90d47b",
+    "tests/test_calendar_export.py": "0774869f562ab1bdff8d09df38216fab7cc44543ded02be620c2a4e5e3a9e17f"
+  },
+  "receiver_sha256": "f29728013fa49e3923a3d7317b0f722d4a393dc4fd902ed2dcad60327875044b",
+  "python": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "parser": {
+    "name": "icalendar",
+    "version": "7.3.0"
+  },
+  "boundary": "Independent native subprocess CLI with authored loopback HTTP fixture; no real account or calendar import.",
+  "checks": [
+    {
+      "check": "Source hashes match frozen implementation",
+      "pass": true,
+      "details": {
+        "src/canvaspilot/calendar_export.py": "f3e06eb68d7f74bb757a28f9cdc9a229f2af9476d4a93ba709698b54ffed82a8",
+        "src/canvaspilot/cli.py": "173df7056f7d86084aa2dc00ba129bf8c36aaf109cdbf9497e24ec436d90d47b",
+        "tests/test_calendar_export.py": "0774869f562ab1bdff8d09df38216fab7cc44543ded02be620c2a4e5e3a9e17f"
+      }
+    },
+    {
+      "check": "Native CLI produces complete new calendar",
+      "pass": true,
+      "details": {
+        "exit": 0
+      }
+    },
+    {
+      "check": "Independent parser accepts exactly three deadline events",
+      "pass": true,
+      "details": {
+        "parser": "7.3.0",
+        "event_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "check": "Unicode, delimiters and literal content lines round-trip",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "UTF-8 physical lines are intact and at most 75 octets",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "Aware offsets convert exactly and sort by UTC instant",
+      "pass": true,
+      "details": [
+        "2026-11-01T08:50:00+00:00",
+        "2026-11-01T09:10:00+00:00",
+        "2026-12-31T17:55:00+00:00"
+      ]
+    },
+    {
+      "check": "Unknown date is explicitly omitted",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "Duplicate selected course is read once and upcoming bucket retained",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "Same assignment ID in different courses remains distinct",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "No duration, invitation, busy block or alarm is invented",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "URL punctuation and reported bytes remain exact",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "Name and deadline edit plus normalized source retain UIDs",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "Changed deadline reaches parser without changing identity",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "Same course and assignment IDs from a different source do not collide",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "Naive date in later course: whole output refused",
+      "pass": true,
+      "details": {
+        "exit": 1,
+        "error": {
+          "ok": false,
+          "error": "ValueError",
+          "message": "Assignment 77/901 due_at must be an ISO whole-second timestamp with a timezone"
+        }
+      }
+    },
+    {
+      "check": "Malformed timezone minute in later course: whole output refused",
+      "pass": true,
+      "details": {
+        "exit": 1,
+        "error": {
+          "ok": false,
+          "error": "ValueError",
+          "message": "Assignment 77/901 due_at must be an ISO whole-second timestamp with a timezone"
+        }
+      }
+    },
+    {
+      "check": "Later course read failure: whole output refused",
+      "pass": true,
+      "details": {
+        "exit": 1,
+        "error": {
+          "ok": false,
+          "error": "HTTPStatusError",
+          "message": "Server error '503 Service Unavailable' for url 'http://localhost:50201/api/v1/courses/77/assignments?order_by=due_at&include%5B%5D=submission&bucket=upcoming&per_page=50'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+        }
+      }
+    },
+    {
+      "check": "Late failure occurs after one good course",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "Existing calendar bytes protected without further reads",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "Dangling destination symlink preserved without creating its target",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "All dates unknown: whole output refused",
+      "pass": true,
+      "details": {
+        "exit": 1,
+        "error": {
+          "ok": false,
+          "error": "ValueError",
+          "message": "No dated assignments to export (1 without a due date); no file created"
+        }
+      }
+    },
+    {
+      "check": "All bucket omits transport bucket parameter",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "Only selected loopback GET reads occurred",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "No profile or temporary publication residue",
+      "pass": true,
+      "details": null
+    },
+    {
+      "check": "All three handed-off source hashes remain unchanged",
+      "pass": true,
+      "details": {
+        "src/canvaspilot/calendar_export.py": "f3e06eb68d7f74bb757a28f9cdc9a229f2af9476d4a93ba709698b54ffed82a8",
+        "src/canvaspilot/cli.py": "173df7056f7d86084aa2dc00ba129bf8c36aaf109cdbf9497e24ec436d90d47b",
+        "tests/test_calendar_export.py": "0774869f562ab1bdff8d09df38216fab7cc44543ded02be620c2a4e5e3a9e17f"
+      }
+    }
+  ],
+  "processes": [
+    {
+      "name": "unicode-and-offsets",
+      "argv": [
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-venv/bin/python",
+        "-B",
+        "-m",
+        "canvaspilot.cli",
+        "export-calendar",
+        "042",
+        "77",
+        "42",
+        "--base-url",
+        "HTTP://LOCALHOST:50201/",
+        "--profile",
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-independent/run-composed-frozen/unused-profile",
+        "--token",
+        "synthetic-loopback-fixture",
+        "--out",
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-independent/run-composed-frozen/unicode-and-offsets.ics"
+      ],
+      "exit": 0,
+      "output": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-independent/run-composed-frozen/unicode-and-offsets.ics",
+      "request_count": 2,
+      "receipt": {
+        "ok": true,
+        "output": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-independent/run-composed-frozen/unicode-and-offsets.ics",
+        "source": "http://localhost:50201",
+        "bucket": "upcoming",
+        "generated_at": "2026-10-08T11:17:35.795611+00:00",
+        "course_ids": [
+          "42",
+          "77"
+        ],
+        "course_summaries": [
+          {
+            "course_id": "42",
+            "assignments_returned": 2,
+            "events_exported": 1
+          },
+          {
+            "course_id": "77",
+            "assignments_returned": 2,
+            "events_exported": 2
+          }
+        ],
+        "events_exported": 3,
+        "assignments_omitted": [
+          {
+            "course_id": "42",
+            "assignment_id": "902",
+            "reason": "no_due_date"
+          }
+        ],
+        "coverage": "Returned assignment rows only; existing transport pagination limits apply.",
+        "sha256": "ec9cc199f3fb5596414965e9cd746ebc9ce51e5a3dff6bf907ea384bbebf0248"
+      },
+      "error": null
+    },
+    {
+      "name": "revised-normalized-source",
+      "argv": [
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-venv/bin/python",
+        "-B",
+        "-m",
+        "canvaspilot.cli",
+        "export-calendar",
+        "042",
+        "77",
+        "42",
+        "--base-url",
+        "http://localhost:50201",
+        "--profile",
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-independent/run-composed-frozen/unused-profile",
+        "--token",
+        "synthetic-loopback-fixture",
+        "--out",
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-independent/run-composed-frozen/revised-normalized-source.ics"
+      ],
+      "exit": 0,
+      "output": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-independent/run-composed-frozen/revised-normalized-source.ics",
+      "request_count": 2,
+      "receipt": {
+        "ok": true,
+        "output": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-independent/run-composed-frozen/revised-normalized-source.ics",
+        "source": "http://localhost:50201",
+        "bucket": "upcoming",
+        "generated_at": "2026-10-08T11:17:36.516728+00:00",
+        "course_ids": [
+          "42",
+          "77"
+        ],
+        "course_summaries": [
+          {
+            "course_id": "42",
+            "assignments_returned": 2,
+            "events_exported": 1
+          },
+          {
+            "course_id": "77",
+            "assignments_returned": 2,
+            "events_exported": 2
+          }
+        ],
+        "events_exported": 3,
+        "assignments_omitted": [
+          {
+            "course_id": "42",
+            "assignment_id": "902",
+            "reason": "no_due_date"
+          }
+        ],
+        "coverage": "Returned assignment rows only; existing transport pagination limits apply.",
+        "sha256": "c235663f40d271514ce34213019e0c5e47452242ffd8754e1a07df334e26c364"
+      },
+      "error": null
+    },
+    {
+      "name": "different-source",
+      "argv": [
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-venv/bin/python",
+        "-B",
+        "-m",
+        "canvaspilot.cli",
+        "export-calendar",
+        "042",
+        "77",
+        "42",
+        "--base-url",
+        "http://localhost:50202",
+        "--profile",
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-independent/run-composed-frozen/unused-profile",
+        "--token",
+        "synthetic-loopback-fixture",
+        "--out",
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-independent/run-composed-frozen/different-source.ics"
+      ],
+      "exit": 0,
+      "output": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-independent/run-composed-frozen/different-source.ics",
+      "request_count": 2,
+      "receipt": {
+        "ok": true,
+        "output": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-independent/run-composed-frozen/different-source.ics",
+        "source": "http://localhost:50202",
+        "bucket": "upcoming",
+        "generated_at": "2026-10-08T11:17:37.107982+00:00",
+        "course_ids": [
+          "42",
+          "77"
+        ],
+        "course_summaries": [
+          {
+            "course_id": "42",
+            "assignments_returned": 2,
+            "events_exported": 1
+          },
+          {
+            "course_id": "77",
+            "assignments_returned": 2,
+            "events_exported": 2
+          }
+        ],
+        "events_exported": 3,
+        "assignments_omitted": [
+          {
+            "course_id": "42",
+            "assignment_id": "902",
+            "reason": "no_due_date"
+          }
+        ],
+        "coverage": "Returned assignment rows only; existing transport pagination limits apply.",
+        "sha256": "d73ef3ab714e68f063653fba63a222c1717fb0314b40ce0c87f0af737154e6f5"
+      },
+      "error": null
+    },
+    {
+      "name": "naive-later-course",
+      "argv": [
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-venv/bin/python",
+        "-B",
+        "-m",
+        "canvaspilot.cli",
+        "export-calendar",
+        "042",
+        "77",
+        "42",
+        "--base-url",
+        "http://localhost:50201",
+        "--profile",
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-independent/run-composed-frozen/unused-profile",
+        "--token",
+        "synthetic-loopback-fixture",
+        "--out",
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-independent/run-composed-frozen/naive-later-course.ics"
+      ],
+      "exit": 1,
+      "output": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-independent/run-composed-frozen/naive-later-course.ics",
+      "request_count": 2,
+      "receipt": null,
+      "error": {
+        "ok": false,
+        "error": "ValueError",
+        "message": "Assignment 77/901 due_at must be an ISO whole-second timestamp with a timezone"
+      }
+    },
+    {
+      "name": "invalid-offset-later-course",
+      "argv": [
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-venv/bin/python",
+        "-B",
+        "-m",
+        "canvaspilot.cli",
+        "export-calendar",
+        "042",
+        "77",
+        "42",
+        "--base-url",
+        "http://localhost:50201",
+        "--profile",
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-independent/run-composed-frozen/unused-profile",
+        "--token",
+        "synthetic-loopback-fixture",
+        "--out",
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-independent/run-composed-frozen/invalid-offset-later-course.ics"
+      ],
+      "exit": 1,
+      "output": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-independent/run-composed-frozen/invalid-offset-later-course.ics",
+      "request_count": 2,
+      "receipt": null,
+      "error": {
+        "ok": false,
+        "error": "ValueError",
+        "message": "Assignment 77/901 due_at must be an ISO whole-second timestamp with a timezone"
+      }
+    },
+    {
+      "name": "late-course-failure",
+      "argv": [
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-venv/bin/python",
+        "-B",
+        "-m",
+        "canvaspilot.cli",
+        "export-calendar",
+        "042",
+        "77",
+        "42",
+        "--base-url",
+        "http://localhost:50201",
+        "--profile",
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-independent/run-composed-frozen/unused-profile",
+        "--token",
+        "synthetic-loopback-fixture",
+        "--out",
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-independent/run-composed-frozen/late-course-failure.ics"
+      ],
+      "exit": 1,
+      "output": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-independent/run-composed-frozen/late-course-failure.ics",
+      "request_count": 2,
+      "receipt": null,
+      "error": {
+        "ok": false,
+        "error": "HTTPStatusError",
+        "message": "Server error '503 Service Unavailable' for url 'http://localhost:50201/api/v1/courses/77/assignments?order_by=due_at&include%5B%5D=submission&bucket=upcoming&per_page=50'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"
+      }
+    },
+    {
+      "name": "existing-file",
+      "argv": [
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-venv/bin/python",
+        "-B",
+        "-m",
+        "canvaspilot.cli",
+        "export-calendar",
+        "042",
+        "77",
+        "42",
+        "--base-url",
+        "http://localhost:50201",
+        "--profile",
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-independent/run-composed-frozen/unused-profile",
+        "--token",
+        "synthetic-loopback-fixture",
+        "--out",
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-independent/run-composed-frozen/unicode-and-offsets.ics"
+      ],
+      "exit": 1,
+      "output": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-independent/run-composed-frozen/unicode-and-offsets.ics",
+      "request_count": 0,
+      "receipt": null,
+      "error": {
+        "ok": false,
+        "error": "FileExistsError",
+        "message": "Output path already exists; choose a new .ics file"
+      }
+    },
+    {
+      "name": "existing-dangling-symlink",
+      "argv": [
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-venv/bin/python",
+        "-B",
+        "-m",
+        "canvaspilot.cli",
+        "export-calendar",
+        "042",
+        "77",
+        "42",
+        "--base-url",
+        "http://localhost:50201",
+        "--profile",
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-independent/run-composed-frozen/unused-profile",
+        "--token",
+        "synthetic-loopback-fixture",
+        "--out",
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-independent/run-composed-frozen/dangling.ics"
+      ],
+      "exit": 1,
+      "output": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-independent/run-composed-frozen/dangling.ics",
+      "request_count": 0,
+      "receipt": null,
+      "error": {
+        "ok": false,
+        "error": "FileExistsError",
+        "message": "Output path already exists; choose a new .ics file"
+      }
+    },
+    {
+      "name": "all-undated",
+      "argv": [
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-venv/bin/python",
+        "-B",
+        "-m",
+        "canvaspilot.cli",
+        "export-calendar",
+        "042",
+        "77",
+        "42",
+        "--base-url",
+        "http://localhost:50201",
+        "--profile",
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-independent/run-composed-frozen/unused-profile",
+        "--token",
+        "synthetic-loopback-fixture",
+        "--out",
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-independent/run-composed-frozen/all-undated.ics",
+        "--bucket",
+        "all"
+      ],
+      "exit": 1,
+      "output": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-independent/run-composed-frozen/all-undated.ics",
+      "request_count": 2,
+      "receipt": null,
+      "error": {
+        "ok": false,
+        "error": "ValueError",
+        "message": "No dated assignments to export (1 without a due date); no file created"
+      }
+    }
+  ],
+  "requests": [
+    {
+      "server": "source-a",
+      "phase": "unicode-and-offsets",
+      "method": "GET",
+      "path": "/api/v1/courses/42/assignments",
+      "query": {
+        "order_by": [
+          "due_at"
+        ],
+        "include[]": [
+          "submission"
+        ],
+        "bucket": [
+          "upcoming"
+        ],
+        "per_page": [
+          "50"
+        ]
+      },
+      "status": 200
+    },
+    {
+      "server": "source-a",
+      "phase": "unicode-and-offsets",
+      "method": "GET",
+      "path": "/api/v1/courses/77/assignments",
+      "query": {
+        "order_by": [
+          "due_at"
+        ],
+        "include[]": [
+          "submission"
+        ],
+        "bucket": [
+          "upcoming"
+        ],
+        "per_page": [
+          "50"
+        ]
+      },
+      "status": 200
+    },
+    {
+      "server": "source-a",
+      "phase": "revised-normalized-source",
+      "method": "GET",
+      "path": "/api/v1/courses/42/assignments",
+      "query": {
+        "order_by": [
+          "due_at"
+        ],
+        "include[]": [
+          "submission"
+        ],
+        "bucket": [
+          "upcoming"
+        ],
+        "per_page": [
+          "50"
+        ]
+      },
+      "status": 200
+    },
+    {
+      "server": "source-a",
+      "phase": "revised-normalized-source",
+      "method": "GET",
+      "path": "/api/v1/courses/77/assignments",
+      "query": {
+        "order_by": [
+          "due_at"
+        ],
+        "include[]": [
+          "submission"
+        ],
+        "bucket": [
+          "upcoming"
+        ],
+        "per_page": [
+          "50"
+        ]
+      },
+      "status": 200
+    },
+    {
+      "server": "source-b",
+      "phase": "different-source",
+      "method": "GET",
+      "path": "/api/v1/courses/42/assignments",
+      "query": {
+        "order_by": [
+          "due_at"
+        ],
+        "include[]": [
+          "submission"
+        ],
+        "bucket": [
+          "upcoming"
+        ],
+        "per_page": [
+          "50"
+        ]
+      },
+      "status": 200
+    },
+    {
+      "server": "source-b",
+      "phase": "different-source",
+      "method": "GET",
+      "path": "/api/v1/courses/77/assignments",
+      "query": {
+        "order_by": [
+          "due_at"
+        ],
+        "include[]": [
+          "submission"
+        ],
+        "bucket": [
+          "upcoming"
+        ],
+        "per_page": [
+          "50"
+        ]
+      },
+      "status": 200
+    },
+    {
+      "server": "source-a",
+      "phase": "naive-later-course",
+      "method": "GET",
+      "path": "/api/v1/courses/42/assignments",
+      "query": {
+        "order_by": [
+          "due_at"
+        ],
+        "include[]": [
+          "submission"
+        ],
+        "bucket": [
+          "upcoming"
+        ],
+        "per_page": [
+          "50"
+        ]
+      },
+      "status": 200
+    },
+    {
+      "server": "source-a",
+      "phase": "naive-later-course",
+      "method": "GET",
+      "path": "/api/v1/courses/77/assignments",
+      "query": {
+        "order_by": [
+          "due_at"
+        ],
+        "include[]": [
+          "submission"
+        ],
+        "bucket": [
+          "upcoming"
+        ],
+        "per_page": [
+          "50"
+        ]
+      },
+      "status": 200
+    },
+    {
+      "server": "source-a",
+      "phase": "invalid-offset-later-course",
+      "method": "GET",
+      "path": "/api/v1/courses/42/assignments",
+      "query": {
+        "order_by": [
+          "due_at"
+        ],
+        "include[]": [
+          "submission"
+        ],
+        "bucket": [
+          "upcoming"
+        ],
+        "per_page": [
+          "50"
+        ]
+      },
+      "status": 200
+    },
+    {
+      "server": "source-a",
+      "phase": "invalid-offset-later-course",
+      "method": "GET",
+      "path": "/api/v1/courses/77/assignments",
+      "query": {
+        "order_by": [
+          "due_at"
+        ],
+        "include[]": [
+          "submission"
+        ],
+        "bucket": [
+          "upcoming"
+        ],
+        "per_page": [
+          "50"
+        ]
+      },
+      "status": 200
+    },
+    {
+      "server": "source-a",
+      "phase": "late-course-failure",
+      "method": "GET",
+      "path": "/api/v1/courses/42/assignments",
+      "query": {
+        "order_by": [
+          "due_at"
+        ],
+        "include[]": [
+          "submission"
+        ],
+        "bucket": [
+          "upcoming"
+        ],
+        "per_page": [
+          "50"
+        ]
+      },
+      "status": 200
+    },
+    {
+      "server": "source-a",
+      "phase": "late-course-failure",
+      "method": "GET",
+      "path": "/api/v1/courses/77/assignments",
+      "query": {
+        "order_by": [
+          "due_at"
+        ],
+        "include[]": [
+          "submission"
+        ],
+        "bucket": [
+          "upcoming"
+        ],
+        "per_page": [
+          "50"
+        ]
+      },
+      "status": 503
+    },
+    {
+      "server": "source-a",
+      "phase": "all-undated",
+      "method": "GET",
+      "path": "/api/v1/courses/42/assignments",
+      "query": {
+        "order_by": [
+          "due_at"
+        ],
+        "include[]": [
+          "submission"
+        ],
+        "per_page": [
+          "50"
+        ]
+      },
+      "status": 200
+    },
+    {
+      "server": "source-a",
+      "phase": "all-undated",
+      "method": "GET",
+      "path": "/api/v1/courses/77/assignments",
+      "query": {
+        "order_by": [
+          "due_at"
+        ],
+        "include[]": [
+          "submission"
+        ],
+        "per_page": [
+          "50"
+        ]
+      },
+      "status": 200
+    }
+  ],
+  "passed": 25,
+  "failed": 0
+}

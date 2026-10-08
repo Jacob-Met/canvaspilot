@@ -1,0 +1,30 @@
+--- initial receiver
++++ parameterized receiver
+@@ -15,14 +15,11 @@
+ from icalendar import Calendar
+ 
+ ROOT = Path("/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-independent")
+-REPO = ROOT.parent / "canvaspilot-calendar"
++REPO = Path(sys.argv[2])
+ FILES = ("src/canvaspilot/calendar_export.py", "src/canvaspilot/cli.py", "tests/test_calendar_export.py")
+-EXPECTED = {
+-    FILES[0]: "5e2196dba90b1a787c8b51e84c6d5695f49edff0e47c9f9eb30a8313f442e4aa",
+-    FILES[1]: "28d278a60ee0b5b036948071c0965f42ea3f36cc1892940406577491e2c3ef38",
+-    FILES[2]: "d239fcb95c05892bc72b8b77d1ae20328436646987a36bd0fa428db05af31635",
+-}
+-RUN = ROOT / "run-initial"
++REFERENCE = json.loads(Path(sys.argv[3]).read_text())
++EXPECTED = REFERENCE["hashes"]
++RUN = ROOT / sys.argv[1]
+ RUN.mkdir(exist_ok=False)
+ checks, processes, requests = [], [], []
+ 
+@@ -212,7 +209,7 @@
+     other.close()
+     after = fingerprint()
+     check("All three handed-off source hashes remain unchanged", after == EXPECTED, after)
+-    receipt = {"source_head": "7ff3518e9025c6d54899b01da21b378aebd01f3d",
++    receipt = {"source_head": REFERENCE["head"],
+                "source_before": EXPECTED, "source_after": after,
+                "receiver_sha256": sha(Path(__file__)), "python": sys.version,
+                "parser": {"name": "icalendar", "version": importlib.metadata.version("icalendar")},

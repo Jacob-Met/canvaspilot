@@ -1,0 +1,39 @@
+diff --git a/src/canvaspilot/calendar_export.py b/src/canvaspilot/calendar_export.py
+index d69dd88..0b3b59e 100644
+--- a/src/canvaspilot/calendar_export.py
++++ b/src/canvaspilot/calendar_export.py
+@@ -86,7 +86,7 @@ def _source_identity(value: str) -> str:
+ 
+ def _instant(value: Any, label: str) -> datetime:
+     if not isinstance(value, str) or not re.fullmatch(
+-        r"[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(?:\.0+)?(?:Z|[+-][0-9]{2}:[0-9]{2})", value
++        r"[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(?:\.0+)?(?:Z|[+-](?:[01][0-9]|2[0-3]):[0-5][0-9])", value
+     ):
+         raise ValueError(f"{label} must be an ISO whole-second timestamp with a timezone")
+     try:
+diff --git a/tests/test_calendar_export.py b/tests/test_calendar_export.py
+index f1613db..b6e926a 100644
+--- a/tests/test_calendar_export.py
++++ b/tests/test_calendar_export.py
+@@ -108,13 +108,20 @@ def test_crlf_utf8_folding_text_escaping_and_url_punctuation():
+ @pytest.mark.parametrize("due", [
+     "", "not-a-date", "2026-11-01", "2026-11-01T12:00:00", "2026-11-01T12:00:00.1Z",
+     "2026-11-01T12:00:00.0000001Z", "0001-01-01T00:00:00+14:00",
+-    "9999-12-31T23:59:59-12:00", 0, {}, False,
++    "9999-12-31T23:59:59-12:00", "2026-11-01T01:10:00+00:60",
++    "2026-11-01T01:10:00-00:60", "2026-11-01T01:10:00+12:99",
++    "2026-11-01T01:10:00+24:00", 0, {}, False,
+ ])
+ def test_invalid_or_unrepresentable_deadline_refuses_export(due):
+     with pytest.raises(ValueError, match="timestamp"):
+         render({42: [assignment(), assignment(2, due)]})
+ 
+ 
++def test_valid_extreme_offset_preserves_its_exact_instant():
++    content, _, _ = render({42: [assignment(due="2026-11-01T00:00:00+23:59")]})
++    assert property_values(content, "DTSTART") == ["20261031T000100Z"]
++
++
+ def test_zero_fraction_is_exact_and_early_year_keeps_four_digits():
+     content, _, _ = render({42: [assignment(due="0001-01-01T00:00:00.000Z")]})
+     assert property_values(content, "DTSTART") == ["00010101T000000Z"]
