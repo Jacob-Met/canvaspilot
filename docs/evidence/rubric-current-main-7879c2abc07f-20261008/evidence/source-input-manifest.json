@@ -1,0 +1,587 @@
+{
+  "schema": "canvas.current.rubric.receiving.inputs.v1",
+  "time_utc": "2026-10-08T11:51:15.396214+00:00",
+  "current_main": "a03a8637efad8ff22103a0c5018c93f7ecbb7d8d",
+  "owner_head": "683bc43de81661f52d9c64f3db00954b52da1205",
+  "source_only_tree": "718e9d88c9ed56ec257bc274774d0e8e4949eb6d",
+  "baseline_files": 35,
+  "candidate_files": 37,
+  "files": [
+    {
+      "path": "baseline/.github/dependabot.yml",
+      "repository_path": ".github/dependabot.yml",
+      "generation": "baseline",
+      "bytes": 118,
+      "sha256": "883b95e3be554fbadd92b315e4a8c6ea6ca688b64924e22dd61222b07f683507",
+      "git_blob": "5ace4600a1f26e6892982f3e2f069ebfab108d87"
+    },
+    {
+      "path": "baseline/.github/workflows/ci.yml",
+      "repository_path": ".github/workflows/ci.yml",
+      "generation": "baseline",
+      "bytes": 708,
+      "sha256": "62f17b95af03d1ff8a172f168282b405fefcab3a5f1094c70e618b44920bd0ff",
+      "git_blob": "ef7bbebe192c0db55dc4467e064ba44805c13446"
+    },
+    {
+      "path": "baseline/.gitignore",
+      "repository_path": ".gitignore",
+      "generation": "baseline",
+      "bytes": 271,
+      "sha256": "8acd3d428eb526e6dab777cb8911614c85a5d05a13c5e60066c6f61e0e24e0c2",
+      "git_blob": "22c76241a0bda223ac64d3c9e25f0ed5c08594ca"
+    },
+    {
+      "path": "baseline/LICENSE",
+      "repository_path": "LICENSE",
+      "generation": "baseline",
+      "bytes": 1075,
+      "sha256": "85144488dcaf127ecd6842af9b19a72a2448c7b48ab831140ace32dac8090314",
+      "git_blob": "49422571fde440401be167dfec1cdc46a89f62d2"
+    },
+    {
+      "path": "baseline/README.md",
+      "repository_path": "README.md",
+      "generation": "baseline",
+      "bytes": 13434,
+      "sha256": "580b9742b8954854f2fd84e3bea72d26f1d86dbe8baae873a3befa9a544c9a7f",
+      "git_blob": "967e995a37f7a0d01144477c733327bbe6e75db8"
+    },
+    {
+      "path": "baseline/pyproject.toml",
+      "repository_path": "pyproject.toml",
+      "generation": "baseline",
+      "bytes": 1353,
+      "sha256": "555ad3c7e338d38ae5feabc06c0c07503f22d9c732a9af153c7706c63d2b3c63",
+      "git_blob": "76eba6d30696b4f2733539cd47df6e178bc0f585"
+    },
+    {
+      "path": "baseline/scripts/inventory_pass.py",
+      "repository_path": "scripts/inventory_pass.py",
+      "generation": "baseline",
+      "bytes": 10515,
+      "sha256": "b2669747165f47b023f666bbb01657f47427d680ea8ff8cbf35203353ba05d06",
+      "git_blob": "dda42bf3ac3679bc1936917ab1f981a8c6849811"
+    },
+    {
+      "path": "baseline/scripts/readonly_sweep.py",
+      "repository_path": "scripts/readonly_sweep.py",
+      "generation": "baseline",
+      "bytes": 5828,
+      "sha256": "30667032bc21a62db780d07bfbf0b48cc6c4aca63e9ea30a3953b78749603b06",
+      "git_blob": "c273fdbcc495c5283422bcb7ee94664eb9a32230"
+    },
+    {
+      "path": "baseline/src/canvaspilot/__init__.py",
+      "repository_path": "src/canvaspilot/__init__.py",
+      "generation": "baseline",
+      "bytes": 561,
+      "sha256": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5",
+      "git_blob": "74a7a6087bf81fd7c75c15769b30408039618e0f"
+    },
+    {
+      "path": "baseline/src/canvaspilot/api.py",
+      "repository_path": "src/canvaspilot/api.py",
+      "generation": "baseline",
+      "bytes": 23609,
+      "sha256": "546fd973330ffb3c95c81ba670b5ae2add751a23362c83a370254ea702eee1a0",
+      "git_blob": "f66a0916554361c075f82bf0bcf3b8e49aa272d8"
+    },
+    {
+      "path": "baseline/src/canvaspilot/bundle.py",
+      "repository_path": "src/canvaspilot/bundle.py",
+      "generation": "baseline",
+      "bytes": 2611,
+      "sha256": "83f6d27e9587cd234a2d18f32e5807ca4cd8ca99e8aa295e246d6927f7c9eaf4",
+      "git_blob": "ab17a3ded1f80860bc9818ca90cd4a65f397f9b9"
+    },
+    {
+      "path": "baseline/src/canvaspilot/calendar_export.py",
+      "repository_path": "src/canvaspilot/calendar_export.py",
+      "generation": "baseline",
+      "bytes": 9050,
+      "sha256": "f3e06eb68d7f74bb757a28f9cdc9a229f2af9476d4a93ba709698b54ffed82a8",
+      "git_blob": "0b3b59edcefb0dda52f0de41252c1b7486201ffc"
+    },
+    {
+      "path": "baseline/src/canvaspilot/cli.py",
+      "repository_path": "src/canvaspilot/cli.py",
+      "generation": "baseline",
+      "bytes": 11684,
+      "sha256": "173df7056f7d86084aa2dc00ba129bf8c36aaf109cdbf9497e24ec436d90d47b",
+      "git_blob": "f20f947bf80e0f06c4271985153b3aa8540ddb8f"
+    },
+    {
+      "path": "baseline/src/canvaspilot/client.py",
+      "repository_path": "src/canvaspilot/client.py",
+      "generation": "baseline",
+      "bytes": 12381,
+      "sha256": "6368329745216f473204995c101c912d9070fdd310def150bdbee927f9872de4",
+      "git_blob": "c06d24fa3d6ce9466caa633aff71207f59833bf4"
+    },
+    {
+      "path": "baseline/src/canvaspilot/feedback.py",
+      "repository_path": "src/canvaspilot/feedback.py",
+      "generation": "baseline",
+      "bytes": 3900,
+      "sha256": "55454598effea598474a21f67e36d5bc5bea84aaefeefc18e4d8c49804ab9869",
+      "git_blob": "ec996f421a851d699a9ac7cb1f2a486f9ff7c4ea"
+    },
+    {
+      "path": "baseline/src/canvaspilot/folder_browser.py",
+      "repository_path": "src/canvaspilot/folder_browser.py",
+      "generation": "baseline",
+      "bytes": 6293,
+      "sha256": "c6a67229b268c539e5edb581e3320b06229460adc3fbc01d72e4964e31c0348a",
+      "git_blob": "4b3078ddb00a4a34015710e49fa7b7806adebd23"
+    },
+    {
+      "path": "baseline/src/canvaspilot/mcp_server.py",
+      "repository_path": "src/canvaspilot/mcp_server.py",
+      "generation": "baseline",
+      "bytes": 11855,
+      "sha256": "311d920918ef8731865e6f865674979857e8cf7b63aaa2317570ef37e617ae96",
+      "git_blob": "7bd34dea25913288d9d4e1cef4152e18ccd76628"
+    },
+    {
+      "path": "baseline/src/canvaspilot/offline_demo.py",
+      "repository_path": "src/canvaspilot/offline_demo.py",
+      "generation": "baseline",
+      "bytes": 4124,
+      "sha256": "2389f3ccc1b6db5995be0d90e014ea9345e3029aa5546a5b2dcf12c1197e6d4d",
+      "git_blob": "9d2cfd260d8db052b8183e3ec4fc9626a5bb2b9a"
+    },
+    {
+      "path": "baseline/src/canvaspilot/session_broker.py",
+      "repository_path": "src/canvaspilot/session_broker.py",
+      "generation": "baseline",
+      "bytes": 12151,
+      "sha256": "2a106130c344aefebb23b078cd93b5d3ca3afd7f5325ae5fac2fb8a7251780cc",
+      "git_blob": "ba23543f62e6be9f611ae06260b91f239206cb23"
+    },
+    {
+      "path": "baseline/tests/fixtures/submission_feedback.json",
+      "repository_path": "tests/fixtures/submission_feedback.json",
+      "generation": "baseline",
+      "bytes": 2380,
+      "sha256": "435038bef1e6147eb60f60a2269de49df8bfa2fea31736694a7ada4cddfeb95a",
+      "git_blob": "445d73ea1bf1db0b8bbbaeceaa3fb0b675f1ecdd"
+    },
+    {
+      "path": "baseline/tests/folder_http_fixture.py",
+      "repository_path": "tests/folder_http_fixture.py",
+      "generation": "baseline",
+      "bytes": 7440,
+      "sha256": "c7e29a633e66020b9440bbff54ee636889a022fc5a92d4ee2dae193314d72944",
+      "git_blob": "454a761a6557daad73234b2f5801839a7db460a2"
+    },
+    {
+      "path": "baseline/tests/test_broker_encoding.py",
+      "repository_path": "tests/test_broker_encoding.py",
+      "generation": "baseline",
+      "bytes": 7100,
+      "sha256": "00aa672c31fe1985fe6a2ce43d3001879376b1ef2af1a7f18675c7fb27275255",
+      "git_blob": "767484e032273b094fb620a61eb5ed49c9a23af1"
+    },
+    {
+      "path": "baseline/tests/test_broker_loopback_bind.py",
+      "repository_path": "tests/test_broker_loopback_bind.py",
+      "generation": "baseline",
+      "bytes": 3327,
+      "sha256": "c889696ea86f73f0aa00b1b86f623855c92cd6eccef6b7764910e0df99b5c9e5",
+      "git_blob": "fd8971cefe9da9bb8f7832d81c9a26c5725eda86"
+    },
+    {
+      "path": "baseline/tests/test_broker_pagination.py",
+      "repository_path": "tests/test_broker_pagination.py",
+      "generation": "baseline",
+      "bytes": 5217,
+      "sha256": "da1824334f12fe1661e7c33404eef550642f366239ff1e6016b6868c38eabf7b",
+      "git_blob": "131bc28eaaee50e931d87bee08554bd1287fbe44"
+    },
+    {
+      "path": "baseline/tests/test_broker_readonly.py",
+      "repository_path": "tests/test_broker_readonly.py",
+      "generation": "baseline",
+      "bytes": 4746,
+      "sha256": "fd9baae5e8f176636eb5377fee753facd87c136416dcc2e3ec252090aad9d6c5",
+      "git_blob": "fa609760903148b6d55623e6e3b79f6ffd3395b0"
+    },
+    {
+      "path": "baseline/tests/test_bundle_api.py",
+      "repository_path": "tests/test_bundle_api.py",
+      "generation": "baseline",
+      "bytes": 1657,
+      "sha256": "a3c200027083582815bcdacf8b19f68a2a7f2b10597e4ae3270c819c54639615",
+      "git_blob": "d42f4cca2f1f08203d831f098aa1d9f82d3d9f78"
+    },
+    {
+      "path": "baseline/tests/test_calendar_export.py",
+      "repository_path": "tests/test_calendar_export.py",
+      "generation": "baseline",
+      "bytes": 11534,
+      "sha256": "0774869f562ab1bdff8d09df38216fab7cc44543ded02be620c2a4e5e3a9e17f",
+      "git_blob": "b6e926ab14ef4320ceeb23d174fc62399e2356a7"
+    },
+    {
+      "path": "baseline/tests/test_fixture.py",
+      "repository_path": "tests/test_fixture.py",
+      "generation": "baseline",
+      "bytes": 1497,
+      "sha256": "3f53176abf7ee425b1ff8d62a0e4b7f84d2e47e0b0ff9f03adae152301bc23be",
+      "git_blob": "fbee86133431fbe2b1eabaa598f8de094fc18b0c"
+    },
+    {
+      "path": "baseline/tests/test_folder_browser.py",
+      "repository_path": "tests/test_folder_browser.py",
+      "generation": "baseline",
+      "bytes": 12027,
+      "sha256": "4068912fe7d32953c576b1278c28c47c3697592e6a194a230400be13b9cae95c",
+      "git_blob": "f2aacab375da0976bcbbb3d50f0231a1db54eeb7"
+    },
+    {
+      "path": "baseline/tests/test_module_items.py",
+      "repository_path": "tests/test_module_items.py",
+      "generation": "baseline",
+      "bytes": 9848,
+      "sha256": "c66fa26999b5c75a6628eb373985f619486c15f9ea2ee2b2885d133877b32239",
+      "git_blob": "f41fea3b6697a994225c1ecd4a84869951c00779"
+    },
+    {
+      "path": "baseline/tests/test_offline_demo.py",
+      "repository_path": "tests/test_offline_demo.py",
+      "generation": "baseline",
+      "bytes": 2226,
+      "sha256": "ddc7a133e76f987decb5774b00e6d6c6b8973d5895d6c4a4ae5ea6d6e6bb1154",
+      "git_blob": "96b0f352f9c8dfe4c268c32ddbf0027506a010e2"
+    },
+    {
+      "path": "baseline/tests/test_strip_html.py",
+      "repository_path": "tests/test_strip_html.py",
+      "generation": "baseline",
+      "bytes": 1493,
+      "sha256": "3445579d5d8e0863e3331fd8fe54de7a45bc88db5546186eb60dc70865dce915",
+      "git_blob": "9cac253f89820d36375b364daec9b34bb2d78e25"
+    },
+    {
+      "path": "baseline/tests/test_submission_feedback.py",
+      "repository_path": "tests/test_submission_feedback.py",
+      "generation": "baseline",
+      "bytes": 6891,
+      "sha256": "d6669be101562d6d2c88e5e0a6a468f6c82d614960bee65cb294243ebf136be7",
+      "git_blob": "0d747c4866ddc87e77ed84caad877414c7be329b"
+    },
+    {
+      "path": "baseline/tests/test_submission_feedback_native.py",
+      "repository_path": "tests/test_submission_feedback_native.py",
+      "generation": "baseline",
+      "bytes": 9410,
+      "sha256": "8ad68b80e63d2d448c2b1b9e8821bb6ebf47adc0b5e1ccc9379633bb9495d5fb",
+      "git_blob": "bb5bce648386995732b08c098fb5d4249f6bc0c8"
+    },
+    {
+      "path": "baseline/tests/test_sync_summary.py",
+      "repository_path": "tests/test_sync_summary.py",
+      "generation": "baseline",
+      "bytes": 10415,
+      "sha256": "5e40e9207a53d423a139db7de9d43898cf95e26877f351baf15bdc129206a424",
+      "git_blob": "f15e781cd0580324c668bec4181ed238b9cacb29"
+    },
+    {
+      "path": "candidate/.github/dependabot.yml",
+      "repository_path": ".github/dependabot.yml",
+      "generation": "candidate",
+      "bytes": 118,
+      "sha256": "883b95e3be554fbadd92b315e4a8c6ea6ca688b64924e22dd61222b07f683507",
+      "git_blob": "5ace4600a1f26e6892982f3e2f069ebfab108d87"
+    },
+    {
+      "path": "candidate/.github/workflows/ci.yml",
+      "repository_path": ".github/workflows/ci.yml",
+      "generation": "candidate",
+      "bytes": 708,
+      "sha256": "62f17b95af03d1ff8a172f168282b405fefcab3a5f1094c70e618b44920bd0ff",
+      "git_blob": "ef7bbebe192c0db55dc4467e064ba44805c13446"
+    },
+    {
+      "path": "candidate/.gitignore",
+      "repository_path": ".gitignore",
+      "generation": "candidate",
+      "bytes": 271,
+      "sha256": "8acd3d428eb526e6dab777cb8911614c85a5d05a13c5e60066c6f61e0e24e0c2",
+      "git_blob": "22c76241a0bda223ac64d3c9e25f0ed5c08594ca"
+    },
+    {
+      "path": "candidate/LICENSE",
+      "repository_path": "LICENSE",
+      "generation": "candidate",
+      "bytes": 1075,
+      "sha256": "85144488dcaf127ecd6842af9b19a72a2448c7b48ab831140ace32dac8090314",
+      "git_blob": "49422571fde440401be167dfec1cdc46a89f62d2"
+    },
+    {
+      "path": "candidate/README.md",
+      "repository_path": "README.md",
+      "generation": "candidate",
+      "bytes": 15573,
+      "sha256": "0022a5588175b31cf47d2fd150f52e1cc5175879831ba060d2e2012442682b22",
+      "git_blob": "52590a2435e62c795d377afd0478dbd16fed82e8"
+    },
+    {
+      "path": "candidate/pyproject.toml",
+      "repository_path": "pyproject.toml",
+      "generation": "candidate",
+      "bytes": 1353,
+      "sha256": "555ad3c7e338d38ae5feabc06c0c07503f22d9c732a9af153c7706c63d2b3c63",
+      "git_blob": "76eba6d30696b4f2733539cd47df6e178bc0f585"
+    },
+    {
+      "path": "candidate/scripts/inventory_pass.py",
+      "repository_path": "scripts/inventory_pass.py",
+      "generation": "candidate",
+      "bytes": 10515,
+      "sha256": "b2669747165f47b023f666bbb01657f47427d680ea8ff8cbf35203353ba05d06",
+      "git_blob": "dda42bf3ac3679bc1936917ab1f981a8c6849811"
+    },
+    {
+      "path": "candidate/scripts/readonly_sweep.py",
+      "repository_path": "scripts/readonly_sweep.py",
+      "generation": "candidate",
+      "bytes": 5828,
+      "sha256": "30667032bc21a62db780d07bfbf0b48cc6c4aca63e9ea30a3953b78749603b06",
+      "git_blob": "c273fdbcc495c5283422bcb7ee94664eb9a32230"
+    },
+    {
+      "path": "candidate/src/canvaspilot/__init__.py",
+      "repository_path": "src/canvaspilot/__init__.py",
+      "generation": "candidate",
+      "bytes": 561,
+      "sha256": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5",
+      "git_blob": "74a7a6087bf81fd7c75c15769b30408039618e0f"
+    },
+    {
+      "path": "candidate/src/canvaspilot/api.py",
+      "repository_path": "src/canvaspilot/api.py",
+      "generation": "candidate",
+      "bytes": 27161,
+      "sha256": "2bb686287e2dc030b8f816571000ebbbfd87a4ef14ae97210382da2215cabfe8",
+      "git_blob": "622493c7acfaeb0323424cd5df59489ef392009f"
+    },
+    {
+      "path": "candidate/src/canvaspilot/bundle.py",
+      "repository_path": "src/canvaspilot/bundle.py",
+      "generation": "candidate",
+      "bytes": 2611,
+      "sha256": "83f6d27e9587cd234a2d18f32e5807ca4cd8ca99e8aa295e246d6927f7c9eaf4",
+      "git_blob": "ab17a3ded1f80860bc9818ca90cd4a65f397f9b9"
+    },
+    {
+      "path": "candidate/src/canvaspilot/calendar_export.py",
+      "repository_path": "src/canvaspilot/calendar_export.py",
+      "generation": "candidate",
+      "bytes": 9050,
+      "sha256": "f3e06eb68d7f74bb757a28f9cdc9a229f2af9476d4a93ba709698b54ffed82a8",
+      "git_blob": "0b3b59edcefb0dda52f0de41252c1b7486201ffc"
+    },
+    {
+      "path": "candidate/src/canvaspilot/cli.py",
+      "repository_path": "src/canvaspilot/cli.py",
+      "generation": "candidate",
+      "bytes": 11704,
+      "sha256": "6587606127926f8cd37ee0681c37547d352303479e017d406a44d76d7a927e29",
+      "git_blob": "d42f2e8a9083bec6c6dc75fab2422401f2b8c952"
+    },
+    {
+      "path": "candidate/src/canvaspilot/client.py",
+      "repository_path": "src/canvaspilot/client.py",
+      "generation": "candidate",
+      "bytes": 12381,
+      "sha256": "6368329745216f473204995c101c912d9070fdd310def150bdbee927f9872de4",
+      "git_blob": "c06d24fa3d6ce9466caa633aff71207f59833bf4"
+    },
+    {
+      "path": "candidate/src/canvaspilot/feedback.py",
+      "repository_path": "src/canvaspilot/feedback.py",
+      "generation": "candidate",
+      "bytes": 3900,
+      "sha256": "55454598effea598474a21f67e36d5bc5bea84aaefeefc18e4d8c49804ab9869",
+      "git_blob": "ec996f421a851d699a9ac7cb1f2a486f9ff7c4ea"
+    },
+    {
+      "path": "candidate/src/canvaspilot/folder_browser.py",
+      "repository_path": "src/canvaspilot/folder_browser.py",
+      "generation": "candidate",
+      "bytes": 6293,
+      "sha256": "c6a67229b268c539e5edb581e3320b06229460adc3fbc01d72e4964e31c0348a",
+      "git_blob": "4b3078ddb00a4a34015710e49fa7b7806adebd23"
+    },
+    {
+      "path": "candidate/src/canvaspilot/mcp_server.py",
+      "repository_path": "src/canvaspilot/mcp_server.py",
+      "generation": "candidate",
+      "bytes": 11993,
+      "sha256": "6a4a730ec3483845fb34e4a5249a6bd9b65b85ede4e6df56029745b6483f135c",
+      "git_blob": "52294648c2da5b06b8fe5ed05c029daea8816ebb"
+    },
+    {
+      "path": "candidate/src/canvaspilot/offline_demo.py",
+      "repository_path": "src/canvaspilot/offline_demo.py",
+      "generation": "candidate",
+      "bytes": 4124,
+      "sha256": "2389f3ccc1b6db5995be0d90e014ea9345e3029aa5546a5b2dcf12c1197e6d4d",
+      "git_blob": "9d2cfd260d8db052b8183e3ec4fc9626a5bb2b9a"
+    },
+    {
+      "path": "candidate/src/canvaspilot/session_broker.py",
+      "repository_path": "src/canvaspilot/session_broker.py",
+      "generation": "candidate",
+      "bytes": 12151,
+      "sha256": "2a106130c344aefebb23b078cd93b5d3ca3afd7f5325ae5fac2fb8a7251780cc",
+      "git_blob": "ba23543f62e6be9f611ae06260b91f239206cb23"
+    },
+    {
+      "path": "candidate/tests/fixtures/assignment_rubric.json",
+      "repository_path": "tests/fixtures/assignment_rubric.json",
+      "generation": "candidate",
+      "bytes": 2057,
+      "sha256": "1c7eebf96e3a09b40b934fab219e9c8b7a6258fe881560f53a1c38a8e1b4bc4b",
+      "git_blob": "8298dc92458b2f4c0f5c2b6845e32c52395d9d46"
+    },
+    {
+      "path": "candidate/tests/fixtures/submission_feedback.json",
+      "repository_path": "tests/fixtures/submission_feedback.json",
+      "generation": "candidate",
+      "bytes": 2380,
+      "sha256": "435038bef1e6147eb60f60a2269de49df8bfa2fea31736694a7ada4cddfeb95a",
+      "git_blob": "445d73ea1bf1db0b8bbbaeceaa3fb0b675f1ecdd"
+    },
+    {
+      "path": "candidate/tests/folder_http_fixture.py",
+      "repository_path": "tests/folder_http_fixture.py",
+      "generation": "candidate",
+      "bytes": 7440,
+      "sha256": "c7e29a633e66020b9440bbff54ee636889a022fc5a92d4ee2dae193314d72944",
+      "git_blob": "454a761a6557daad73234b2f5801839a7db460a2"
+    },
+    {
+      "path": "candidate/tests/test_assignment_brief_rubric.py",
+      "repository_path": "tests/test_assignment_brief_rubric.py",
+      "generation": "candidate",
+      "bytes": 9514,
+      "sha256": "cc4bdb56034b32e08a63d4b1ae193e364bfc9b9b4b2a506cf2ef08f43000158c",
+      "git_blob": "1881a19e593c4fb095d1a4dc97fce53a8c13f02e"
+    },
+    {
+      "path": "candidate/tests/test_broker_encoding.py",
+      "repository_path": "tests/test_broker_encoding.py",
+      "generation": "candidate",
+      "bytes": 7100,
+      "sha256": "00aa672c31fe1985fe6a2ce43d3001879376b1ef2af1a7f18675c7fb27275255",
+      "git_blob": "767484e032273b094fb620a61eb5ed49c9a23af1"
+    },
+    {
+      "path": "candidate/tests/test_broker_loopback_bind.py",
+      "repository_path": "tests/test_broker_loopback_bind.py",
+      "generation": "candidate",
+      "bytes": 3327,
+      "sha256": "c889696ea86f73f0aa00b1b86f623855c92cd6eccef6b7764910e0df99b5c9e5",
+      "git_blob": "fd8971cefe9da9bb8f7832d81c9a26c5725eda86"
+    },
+    {
+      "path": "candidate/tests/test_broker_pagination.py",
+      "repository_path": "tests/test_broker_pagination.py",
+      "generation": "candidate",
+      "bytes": 5217,
+      "sha256": "da1824334f12fe1661e7c33404eef550642f366239ff1e6016b6868c38eabf7b",
+      "git_blob": "131bc28eaaee50e931d87bee08554bd1287fbe44"
+    },
+    {
+      "path": "candidate/tests/test_broker_readonly.py",
+      "repository_path": "tests/test_broker_readonly.py",
+      "generation": "candidate",
+      "bytes": 4746,
+      "sha256": "fd9baae5e8f176636eb5377fee753facd87c136416dcc2e3ec252090aad9d6c5",
+      "git_blob": "fa609760903148b6d55623e6e3b79f6ffd3395b0"
+    },
+    {
+      "path": "candidate/tests/test_bundle_api.py",
+      "repository_path": "tests/test_bundle_api.py",
+      "generation": "candidate",
+      "bytes": 1657,
+      "sha256": "a3c200027083582815bcdacf8b19f68a2a7f2b10597e4ae3270c819c54639615",
+      "git_blob": "d42f4cca2f1f08203d831f098aa1d9f82d3d9f78"
+    },
+    {
+      "path": "candidate/tests/test_calendar_export.py",
+      "repository_path": "tests/test_calendar_export.py",
+      "generation": "candidate",
+      "bytes": 11534,
+      "sha256": "0774869f562ab1bdff8d09df38216fab7cc44543ded02be620c2a4e5e3a9e17f",
+      "git_blob": "b6e926ab14ef4320ceeb23d174fc62399e2356a7"
+    },
+    {
+      "path": "candidate/tests/test_fixture.py",
+      "repository_path": "tests/test_fixture.py",
+      "generation": "candidate",
+      "bytes": 1497,
+      "sha256": "3f53176abf7ee425b1ff8d62a0e4b7f84d2e47e0b0ff9f03adae152301bc23be",
+      "git_blob": "fbee86133431fbe2b1eabaa598f8de094fc18b0c"
+    },
+    {
+      "path": "candidate/tests/test_folder_browser.py",
+      "repository_path": "tests/test_folder_browser.py",
+      "generation": "candidate",
+      "bytes": 12027,
+      "sha256": "4068912fe7d32953c576b1278c28c47c3697592e6a194a230400be13b9cae95c",
+      "git_blob": "f2aacab375da0976bcbbb3d50f0231a1db54eeb7"
+    },
+    {
+      "path": "candidate/tests/test_module_items.py",
+      "repository_path": "tests/test_module_items.py",
+      "generation": "candidate",
+      "bytes": 9848,
+      "sha256": "c66fa26999b5c75a6628eb373985f619486c15f9ea2ee2b2885d133877b32239",
+      "git_blob": "f41fea3b6697a994225c1ecd4a84869951c00779"
+    },
+    {
+      "path": "candidate/tests/test_offline_demo.py",
+      "repository_path": "tests/test_offline_demo.py",
+      "generation": "candidate",
+      "bytes": 2226,
+      "sha256": "ddc7a133e76f987decb5774b00e6d6c6b8973d5895d6c4a4ae5ea6d6e6bb1154",
+      "git_blob": "96b0f352f9c8dfe4c268c32ddbf0027506a010e2"
+    },
+    {
+      "path": "candidate/tests/test_strip_html.py",
+      "repository_path": "tests/test_strip_html.py",
+      "generation": "candidate",
+      "bytes": 1493,
+      "sha256": "3445579d5d8e0863e3331fd8fe54de7a45bc88db5546186eb60dc70865dce915",
+      "git_blob": "9cac253f89820d36375b364daec9b34bb2d78e25"
+    },
+    {
+      "path": "candidate/tests/test_submission_feedback.py",
+      "repository_path": "tests/test_submission_feedback.py",
+      "generation": "candidate",
+      "bytes": 6891,
+      "sha256": "d6669be101562d6d2c88e5e0a6a468f6c82d614960bee65cb294243ebf136be7",
+      "git_blob": "0d747c4866ddc87e77ed84caad877414c7be329b"
+    },
+    {
+      "path": "candidate/tests/test_submission_feedback_native.py",
+      "repository_path": "tests/test_submission_feedback_native.py",
+      "generation": "candidate",
+      "bytes": 9410,
+      "sha256": "8ad68b80e63d2d448c2b1b9e8821bb6ebf47adc0b5e1ccc9379633bb9495d5fb",
+      "git_blob": "bb5bce648386995732b08c098fb5d4249f6bc0c8"
+    },
+    {
+      "path": "candidate/tests/test_sync_summary.py",
+      "repository_path": "tests/test_sync_summary.py",
+      "generation": "candidate",
+      "bytes": 10415,
+      "sha256": "5e40e9207a53d423a139db7de9d43898cf95e26877f351baf15bdc129206a424",
+      "git_blob": "f15e781cd0580324c668bec4181ed238b9cacb29"
+    }
+  ]
+}

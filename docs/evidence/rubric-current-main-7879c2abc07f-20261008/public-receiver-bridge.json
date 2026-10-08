@@ -1,0 +1,19 @@
+{
+  "schema": "canvas.current.rubric.public.closure.bridge.v1",
+  "time_utc": "2026-10-08T12:01:15.593639+00:00",
+  "owner_head": "5930d6fa58bf3262033dcdb00ff8580a87d61860",
+  "actual_ci_checkout": "ef0ebc73614c9ae52d0aa1da4acd33121ae6a3de",
+  "owner_receipt_candidate_sha256_matches": 33,
+  "CLI_AST_exact_after_removing_only_calendar_parser_and_branch": true,
+  "CLI_removed_parser_nodes": 5,
+  "CLI_removed_dispatch_branches": 1,
+  "prior_independent_normal_and_optimized": {
+    "candidate_methods_each": 20,
+    "public_invocations_each": 111,
+    "fixture_and_test_exact": true,
+    "public_outputs_sha256": "f67c8d79a8080e203769ebc04c46afe7890a304670517534ba12d3f15254ceac",
+    "new_execution_claimed": false
+  },
+  "read_only_verification": true,
+  "source_branch_writes": false
+}

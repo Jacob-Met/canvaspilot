@@ -1,0 +1,132 @@
+{
+  "schema": "canvas.rubric.receiving.publication-index.v1",
+  "original_merge": "5eb681b1714a64a273fc273ffe9985426474f52c",
+  "original_tree": "48fbcdc168ea0f25995f0bdcc1de47162abbf386",
+  "local_attempt_classification": "256 passes and one private guard failure; no candidate local run",
+  "maintained_PR_and_push_CI_each_tests_passed": 323,
+  "owner_source_branch_changed": false,
+  "files": [
+    {
+      "path": "evidence/baseline-run.log",
+      "bytes": 3773,
+      "sha256": "93a30a129c932e127528aa25afc1b5ecd8962072cc61edf9152bd58827d22da5",
+      "git_blob": "619e687857d85704147a925f4a5586cc1b52a662",
+      "kind": "unchanged original local receiving file"
+    },
+    {
+      "path": "evidence/baseline-run.json",
+      "bytes": 27141,
+      "sha256": "39109e7f9dd4f65eef78482050008fe0465f9181e2c98aee7224cc7643f85b69",
+      "git_blob": "e334760cd35fb0d91a55c34f602b1288643fb132",
+      "kind": "unchanged original local receiving file"
+    },
+    {
+      "path": "evidence/baseline.xml",
+      "bytes": 37409,
+      "sha256": "48738ef63296d139766f36880e0ca79d526cd54f041c6898159cbc01c19d749d",
+      "git_blob": "d00794b608aea92d4c98a4b6d8ec7cb728f66f5b",
+      "kind": "unchanged original local receiving file"
+    },
+    {
+      "path": "evidence/runtime-guard.jsonl",
+      "bytes": 34187,
+      "sha256": "ce400efd852bf64efbb2067de113e6eea0014af0038697d8b91e2d93f84a2db4",
+      "git_blob": "e2b8f4462a6e34b39e0595228bb8264ec6f9d639",
+      "kind": "unchanged original local receiving file"
+    },
+    {
+      "path": "guard/sitecustomize.py",
+      "bytes": 3642,
+      "sha256": "5ebd74bc5ec19db0e1560311d402931dd252f4785f34d2a6daae83727096edd4",
+      "git_blob": "b98f63a7eb74d4accdda62e5d6c9e15e57b5b7a8",
+      "kind": "unchanged original local receiving file"
+    },
+    {
+      "path": "run_receiving.py",
+      "bytes": 8551,
+      "sha256": "76a30f700c10139eb74ad238267c266a00f44276336d179abeb8927ba32a513e",
+      "git_blob": "51ade941079460fd347e74d6cb9c58a708d51bff",
+      "kind": "unchanged original local receiving file"
+    },
+    {
+      "path": "evidence/source-input-manifest.json",
+      "bytes": 23466,
+      "sha256": "8efa331dc70ee2eb66b8394303c9f49ca5ca02a82125e409765d4c2b7a2d48b1",
+      "git_blob": "860626ef3f81425906400c8d87668a5d9f3323a6",
+      "kind": "unchanged original local receiving file"
+    },
+    {
+      "path": "evidence/source-review.json",
+      "bytes": 1235,
+      "sha256": "e886b6e2450e1f71bdd5f43f276669346aa31cf59d21d32ecdc3d9e3167de99a",
+      "git_blob": "cb4b3ef2d986cca5365e0dad7e43d34e243035c2",
+      "kind": "unchanged original local receiving file"
+    },
+    {
+      "path": "SOURCE-PROPOSAL.json",
+      "bytes": 80626,
+      "sha256": "3171a416c046633c3d3b0e041558a1ac2d588744f0fd2635696d8d4fedf68776",
+      "git_blob": "4dc320568822d5031d9bd663c42f29d8d376a22f",
+      "kind": "unchanged original local receiving file"
+    },
+    {
+      "path": "freeze_sources.py",
+      "bytes": 7305,
+      "sha256": "4886f443f2ef98ccb364e820ea2902e6f979e7c520db0c74c9d8e8ec8a463bc5",
+      "git_blob": "81091cbf21fba45f58bea6e5cbc8ea9d0a3b30ab",
+      "kind": "unchanged original local receiving file"
+    },
+    {
+      "path": "evidence/ownership-claim.md",
+      "bytes": 1394,
+      "sha256": "c8bc7807dd2ac0f9a2f436912d06aee40a981a3ecd5d0292a45c5cae1f2c4f54",
+      "git_blob": "a734766171cfdb42e08957d80b5d17d9a774f161",
+      "kind": "unchanged original local receiving file"
+    },
+    {
+      "path": "evidence/ownership-claim-readback.json",
+      "bytes": 170,
+      "sha256": "c8c76a21c84d88a92963fa31f206406bb7ecbf084c46e30d19d64b26c6299866",
+      "git_blob": "aabe62dfe44ddb08c7b65287540f54181bbdf60e",
+      "kind": "unchanged original local receiving file"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5256,
+      "sha256": "cf796ec995a2a8e2d7a20c93ddddbc301744cb9b4271c9d53fea16277c3395a7",
+      "git_blob": "3c38e03a64d9673b93dd415d56f06cb41e44f5f6",
+      "kind": "publication review"
+    },
+    {
+      "path": "source-bridge.json",
+      "bytes": 3080,
+      "sha256": "3212867ebcb6a6f506e2b7c1d9d490896f0ea160f5e308f8830cd51233b662c1",
+      "git_blob": "77757cbeb967b028ed9e31878533d3fa60959981",
+      "kind": "parent direct tree and CI verification"
+    },
+    {
+      "path": "public-receiver-bridge.json",
+      "bytes": 790,
+      "sha256": "4e9e73161fe7203e41580398bc27f86631298c563b777dffa0b9acdbd291821b",
+      "git_blob": "8eb3239dd3f618294ea14e33901394a795f495c6",
+      "kind": "independent receiver closure record"
+    },
+    {
+      "path": "evidence/ci-pr-job-113293389510.log",
+      "bytes": 34028,
+      "sha256": "cd4505a9010b799ef29752f6b0a40b786cde455e1d4f6cdad3a0a84e35460f38",
+      "git_blob": "3fc4b7ec9c3b6f5f08c0b47f0940ef40aa11d233",
+      "kind": "decoded actual PR job log"
+    },
+    {
+      "path": "evidence/ci-push-job-113298324457.log",
+      "bytes": 33212,
+      "sha256": "c462d6fcdf7a9deb78ccc1dc0791c0f89e512aeea5ca57ccd89b46e3832be5c0",
+      "git_blob": "b00d63f69221095b0dcaf85fcfce6ebc584ebd3b",
+      "kind": "decoded actual main-push job log"
+    }
+  ],
+  "file_count": 17,
+  "total_bytes": 305265,
+  "self_included": false
+}

@@ -1,0 +1,91 @@
+{
+  "schema": "canvas.rubric.published-source-bridge.v1",
+  "private_composition_tree": "718e9d88c9ed56ec257bc274774d0e8e4949eb6d",
+  "private_leaves": 347,
+  "actual_merge": "5eb681b1714a64a273fc273ffe9985426474f52c",
+  "actual_merge_parents": [
+    "a03a8637efad8ff22103a0c5018c93f7ecbb7d8d",
+    "5930d6fa58bf3262033dcdb00ff8580a87d61860"
+  ],
+  "actual_tree": "48fbcdc168ea0f25995f0bdcc1de47162abbf386",
+  "actual_leaves": 353,
+  "all_private_leaves_and_modes_preserved": true,
+  "changed_private_leaves": [],
+  "additional_owner_evidence_leaves": [
+    {
+      "path": "docs/evidence/assignment-brief-rubric-ultra-20b27c2e-20261008/receiving-e8cd1aec/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b1fe02127a5c7b2ad7716387048c62c8d6f2c9a1",
+      "size": 4416
+    },
+    {
+      "path": "docs/evidence/assignment-brief-rubric-ultra-20b27c2e-20261008/receiving-e8cd1aec/compose_and_verify.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "90113ea43bc0cdf505b185af2756e1a085bb4286",
+      "size": 8867
+    },
+    {
+      "path": "docs/evidence/assignment-brief-rubric-ultra-20b27c2e-20261008/receiving-e8cd1aec/full-baseline.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8710a58f0f257dbda2aa31fe3e3539761057bf33",
+      "size": 28739
+    },
+    {
+      "path": "docs/evidence/assignment-brief-rubric-ultra-20b27c2e-20261008/receiving-e8cd1aec/full-candidate.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c4cb03678f43156f7e5952b445971500f5d7100f",
+      "size": 37925
+    },
+    {
+      "path": "docs/evidence/assignment-brief-rubric-ultra-20b27c2e-20261008/receiving-e8cd1aec/run_receiving.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "56b64c2fb17e7bf383b9d2837132fe10025f4f64",
+      "size": 5474
+    },
+    {
+      "path": "docs/evidence/assignment-brief-rubric-ultra-20b27c2e-20261008/receiving-e8cd1aec/verification.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "164b15913a03da1a0a4ba45d6ab93044f9d28e64",
+      "size": 473285
+    }
+  ],
+  "ci": {
+    "run": 37771938513,
+    "job": 113293389510,
+    "checkout": "ef0ebc73614c9ae52d0aa1da4acd33121ae6a3de",
+    "tree": "48fbcdc168ea0f25995f0bdcc1de47162abbf386",
+    "ruff": "All checks passed!",
+    "pytest": "323 passed in 24.94s"
+  },
+  "local_baseline": {
+    "pytest_tests": 257,
+    "passed": 256,
+    "failed": 1,
+    "classification": "private receiving DNS guard exception changed expected empty-host refusal",
+    "product_finding": false,
+    "source_files_unchanged": 72,
+    "local_attempts": 1,
+    "candidate_executed": false
+  },
+  "integration_performed_by_original_owner": true,
+  "guard_events": {
+    "startup": 22,
+    "loopback_connect": 143,
+    "denied_resolution": 1
+  },
+  "guard_startup_source_origins_verified": true,
+  "push_ci": {
+    "run": 37773429382,
+    "job": 113298324457,
+    "checkout": "5eb681b1714a64a273fc273ffe9985426474f52c",
+    "tree": "48fbcdc168ea0f25995f0bdcc1de47162abbf386",
+    "ruff": "All checks passed!",
+    "pytest": "323 passed in 32.48s"
+  }
+}

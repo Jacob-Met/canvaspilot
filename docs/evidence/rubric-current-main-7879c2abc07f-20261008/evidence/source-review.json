@@ -1,0 +1,34 @@
+{
+  "schema": "canvas.current.rubric.independent.source.review.v1",
+  "time_utc": "2026-10-08T11:51:15.397481+00:00",
+  "public_trees_reconstructed": {
+    "current": "03ae53c12f7c2d7335a8d4ee9392449a6d6a230f",
+    "owner": "2dfca18e0152c2c7a43d6eecce2993bc01282fab",
+    "common": "919634af69c067e04f391fca84b3071ab8da9159"
+  },
+  "source_only_tree": "718e9d88c9ed56ec257bc274774d0e8e4949eb6d",
+  "prospective_source_leaves": 347,
+  "current_preserved_leaves": 285,
+  "changed_current_paths": [
+    "README.md",
+    "src/canvaspilot/api.py",
+    "src/canvaspilot/cli.py",
+    "src/canvaspilot/mcp_server.py"
+  ],
+  "original_additive_paths_preserved": 58,
+  "removed": 0,
+  "all_four_deltas_reverse_to_current_exact": true,
+  "API_methods": 39,
+  "unchanged_API_methods": 37,
+  "unchanged_entire_API_structure_outside_reviewed_additions": true,
+  "helper_getter_brief_identical_to_published_owner": true,
+  "feedback_method_exact_current": true,
+  "private_guard": {
+    "path": "guard/sitecustomize.py",
+    "sha256": "5ebd74bc5ec19db0e1560311d402931dd252f4785f34d2a6daae83727096edd4",
+    "part_of_source_proposal": false
+  },
+  "source_files_verified": 72,
+  "native_receiving_status": "pending",
+  "source_branch_writes": false
+}

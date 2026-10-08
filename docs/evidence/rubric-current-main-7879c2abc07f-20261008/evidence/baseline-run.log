@@ -1,0 +1,90 @@
+...........................F............................................ [ 28%]
+........................................................................ [ 56%]
+........................................................................ [ 84%]
+.........................................                                [100%]
+=================================== FAILURES ===================================
+______________________ test_non_loopback_hosts_refused[] _______________________
+
+host = ''
+
+    def _assert_loopback_bind(host: str) -> None:
+        """Refuse to start the broker unless `host` is loopback-only.
+    
+        The broker has no authentication boundary of its own (see issue #5); its
+        only network defense is binding 127.0.0.1. A future change that relaxes
+        the bind — a ``--host 0.0.0.0`` flag, a constant edit, a hostname that
+        resolves outward — would silently expose the unauthenticated /fetch and
+        /shutdown endpoints to the network. Fail closed at startup instead.
+        """
+        candidates: list[str] = []
+        try:
+>           candidates.append(str(ipaddress.ip_address(host.strip())))
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+src/canvaspilot/session_broker.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+address = ''
+
+    def ip_address(address):
+        """Take an IP string/int and return an object of the correct type.
+    
+        Args:
+            address: A string or integer, the IP address.  Either IPv4 or
+              IPv6 addresses may be supplied; integers less than 2**32 will
+              be considered to be IPv4 by default.
+    
+        Returns:
+            An IPv4Address or IPv6Address object.
+    
+        Raises:
+            ValueError: if the *address* passed isn't either a v4 or a v6
+              address
+    
+        """
+        try:
+            return IPv4Address(address)
+        except (AddressValueError, NetmaskValueError):
+            pass
+    
+        try:
+            return IPv6Address(address)
+        except (AddressValueError, NetmaskValueError):
+            pass
+    
+>       raise ValueError(f'{address!r} does not appear to be an IPv4 or IPv6 address')
+E       ValueError: '' does not appear to be an IPv4 or IPv6 address
+
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/ipaddress.py:54: ValueError
+
+During handling of the above exception, another exception occurred:
+
+host = ''
+
+    @pytest.mark.parametrize(
+        "host", ["0.0.0.0", "::", "192.168.1.10", "10.0.0.5", "8.8.8.8", ""]
+    )
+    def test_non_loopback_hosts_refused(host):
+        with pytest.raises(SystemExit):
+>           sb._assert_loopback_bind(host)
+
+tests/test_broker_loopback_bind.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/canvaspilot/session_broker.py:43: in _assert_loopback_bind
+    infos = socket.getaddrinfo(host, None, type=socket.SOCK_STREAM)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+host = '', port = None, args = ()
+kwargs = {'type': <SocketKind.SOCK_STREAM: 1>}
+
+    def _getaddrinfo(host, port, *args, **kwargs):
+        if not _loopback(host):
+            _record("denied_resolution", host=str(host), port=port)
+>           raise PermissionError("Receiving permits synthetic loopback addresses only")
+E           PermissionError: Receiving permits synthetic loopback addresses only
+
+../guard/sitecustomize.py:42: PermissionError
+=========================== short test summary info ============================
+FAILED tests/test_broker_loopback_bind.py::test_non_loopback_hosts_refused[]
+1 failed, 256 passed in 33.60s
