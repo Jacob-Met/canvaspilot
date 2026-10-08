@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-__SCRIPT_HASH__'; style-src 'sha256-__STYLE_HASH__'; connect-src 'none'; img-src 'none'; font-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Assignment study workspace · CanvasPilot</title>
+<style>__STYLE__</style>
+</head>
+<body>
+<a class="skip-link" href="#assignments">Skip to assignments</a>
+<header class="masthead">
+  <div class="brand">CanvasPilot <span>OFFLINE STUDY</span></div>
+  <div class="heading-row">
+    <div><h1>Assignment study workspace</h1><p class="intro">Read the prompt, check the rubric, and keep your own notes.</p></div>
+    <div class="actions"><button id="save-copy" type="button" disabled>Save working copy</button><button id="print-copy" class="secondary" type="button" disabled>Print</button></div>
+  </div>
+  <div class="snapshot-line"><span id="selection-summary">Opening snapshot…</span><span id="review-progress"></span></div>
+  <p id="save-status" role="status" aria-live="polite">Edits stay in this tab until you save a working copy.</p>
+</header>
+<div id="error" class="error" role="alert" hidden></div>
+<noscript><p class="error">This study workspace needs JavaScript to open its snapshot and notes. Enable JavaScript in a modern browser and reopen this file.</p></noscript>
+<div class="workspace" id="workspace" hidden>
+  <aside aria-label="Selected assignments"><h2>Your selection</h2><nav aria-label="Assignment navigation"><ol id="assignment-nav"></ol></nav><p class="sidebar-note">Review checks are your own study markers. They do not change Canvas.</p></aside>
+  <main id="assignments" tabindex="-1"></main>
+</div>
+<footer>
+  <p>This is a snapshot. Updates made in Canvas after export are not included.</p>
+  <p>The selected numbers are the ones requested. Prompts use CanvasPilot’s cleaned text; open Canvas for original formatting, rich media, and current requirements. Submission, grading and access are not inferred here.</p>
+  <p id="snapshot-provenance"></p>
+</footer>
+<script id="workspace-data" type="application/json">__DATA__</script>
+<script>__SCRIPT__</script>
+</body>
+</html>

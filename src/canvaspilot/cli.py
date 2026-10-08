@@ -167,6 +167,14 @@ def main(argv: list[str] | None = None) -> None:
     page_export.add_argument("course_id", help="Positive numeric Canvas course ID")
     page_export.add_argument("pages", nargs="+", help="Page URL locators, or page_id:ID for an explicit numeric ID")
     page_export.add_argument("--out", required=True, type=Path, help="New HTML file; existing paths are protected")
+    study = sub.add_parser(
+        "export-study", help="Save selected assignment briefs as an offline study workspace",
+    )
+    add_common(study)
+    study.add_argument("course_id", help="Positive decimal Canvas course ID")
+    study.add_argument("assignment_ids", nargs="+", help="1–25 explicit assignment IDs")
+    study.add_argument("--out", required=True, type=Path, help="New .html file; existing paths are protected")
+
     progress = sub.add_parser("module-progress", help="Inspect reported module progress and requirements")
     add_common(progress)
     progress.add_argument("course_id", help="Positive numeric Canvas course ID")
@@ -257,6 +265,12 @@ def main(argv: list[str] | None = None) -> None:
         from canvaspilot.mcp_server import main as mcp_main
 
         mcp_main()
+        return
+
+    if args.cmd == "export-study":
+        from canvaspilot.study_workspace import run_export_study
+
+        run_export_study(args)
         return
 
     from canvaspilot.api import CanvasAPI
