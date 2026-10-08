@@ -1,0 +1,473 @@
+{
+  "status": "fail",
+  "playwright": "1.64.0",
+  "sandbox": true,
+  "groups": [
+    {
+      "name": "ordinary: exact producer HTML",
+      "pass": true
+    },
+    {
+      "name": "ordinary: original visible identity and literal feedback",
+      "pass": true
+    },
+    {
+      "name": "ordinary: zero unknown empty and attempt context",
+      "pass": true
+    },
+    {
+      "name": "ordinary: independent rubric visibility",
+      "pass": true
+    },
+    {
+      "name": "ordinary: literal DOM and explicit link",
+      "pass": true
+    },
+    {
+      "name": "ordinary: 1200px readable width",
+      "pass": true,
+      "layout": {
+        "width": 1200,
+        "client": 1200,
+        "scroll": 1200,
+        "height": 4067,
+        "overflow": []
+      }
+    },
+    {
+      "name": "ordinary: 390px readable width",
+      "pass": true,
+      "layout": {
+        "width": 390,
+        "client": 390,
+        "scroll": 390,
+        "height": 8436,
+        "overflow": []
+      }
+    },
+    {
+      "name": "ordinary: keyboard assignment link focus",
+      "pass": true,
+      "focus": {
+        "tag": "A",
+        "href": "https://receiving.invalid/courses/61/assignments/902?view=feedback&literal=%3Cvalue%3E",
+        "outline": "solid"
+      }
+    },
+    {
+      "name": "ordinary: complete printed feedback and headings",
+      "pass": true,
+      "pdftotext_exit": 0,
+      "pdf_sha256": "59aa7d508ae775bc7ecaf59f8cbc742301ec191a6342c69ac681bdbe3841f77b",
+      "print_text_sha256": "6159c2ced8fc4bf0191f6448e6f3c6c8e2859139d85ac853dabe615c46393b16",
+      "printed_characters": 8634,
+      "pages": 6
+    },
+    {
+      "name": "ordinary: original file unchanged",
+      "pass": true
+    },
+    {
+      "name": "long-headings: exact producer HTML",
+      "pass": true
+    },
+    {
+      "name": "long-headings: original visible identity and literal feedback",
+      "pass": true
+    },
+    {
+      "name": "long-headings: zero unknown empty and attempt context",
+      "pass": true
+    },
+    {
+      "name": "long-headings: independent rubric visibility",
+      "pass": true
+    },
+    {
+      "name": "long-headings: literal DOM and explicit link",
+      "pass": true
+    },
+    {
+      "name": "long-headings: 1200px readable width",
+      "pass": false,
+      "layout": {
+        "width": 1200,
+        "client": 1200,
+        "scroll": 3417,
+        "height": 4119,
+        "overflow": [
+          {
+            "tag": "H3",
+            "field": null,
+            "text": "1. CRITERION_QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ",
+            "client": 1060,
+            "scroll": 3347
+          },
+          {
+            "tag": "H3",
+            "field": null,
+            "text": "Unmatched assessment: UNMATCHED_RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR",
+            "client": 1060,
+            "scroll": 2150
+          }
+        ]
+      }
+    },
+    {
+      "name": "long-headings: 390px readable width",
+      "pass": false,
+      "layout": {
+        "width": 390,
+        "client": 390,
+        "scroll": 3380,
+        "height": 8488,
+        "overflow": [
+          {
+            "tag": "H3",
+            "field": null,
+            "text": "1. CRITERION_QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ",
+            "client": 324,
+            "scroll": 3347
+          },
+          {
+            "tag": "H3",
+            "field": null,
+            "text": "Unmatched assessment: UNMATCHED_RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR",
+            "client": 324,
+            "scroll": 2150
+          }
+        ]
+      }
+    },
+    {
+      "name": "long-headings: keyboard assignment link focus",
+      "pass": true,
+      "focus": {
+        "tag": "A",
+        "href": "https://receiving.invalid/courses/61/assignments/902?view=feedback&literal=%3Cvalue%3E",
+        "outline": "solid"
+      }
+    },
+    {
+      "name": "long-headings: complete printed feedback and headings",
+      "pass": false,
+      "pdftotext_exit": 0,
+      "pdf_sha256": "80558d5aa11f85e26fabe7c1579e8449eabba3a78faed969d784ab5dae7f971a",
+      "print_text_sha256": "1a7922502eeb94f5252016cdde91112e3edf46f392564e3ff6518b6d4ec8493b",
+      "printed_characters": 9199,
+      "pages": 3
+    },
+    {
+      "name": "long-headings: original file unchanged",
+      "pass": true
+    },
+    {
+      "name": "points-hidden: exact producer HTML",
+      "pass": true
+    },
+    {
+      "name": "points-hidden: original visible identity and literal feedback",
+      "pass": true
+    },
+    {
+      "name": "points-hidden: zero unknown empty and attempt context",
+      "pass": true
+    },
+    {
+      "name": "points-hidden: independent rubric visibility",
+      "pass": true
+    },
+    {
+      "name": "points-hidden: literal DOM and explicit link",
+      "pass": true
+    },
+    {
+      "name": "points-hidden: 1200px readable width",
+      "pass": true,
+      "layout": {
+        "width": 1200,
+        "client": 1200,
+        "scroll": 1200,
+        "height": 4082,
+        "overflow": []
+      }
+    },
+    {
+      "name": "points-hidden: 390px readable width",
+      "pass": true,
+      "layout": {
+        "width": 390,
+        "client": 390,
+        "scroll": 390,
+        "height": 8132,
+        "overflow": []
+      }
+    },
+    {
+      "name": "points-hidden: original file unchanged",
+      "pass": true
+    },
+    {
+      "name": "total-hidden: exact producer HTML",
+      "pass": true
+    },
+    {
+      "name": "total-hidden: original visible identity and literal feedback",
+      "pass": true
+    },
+    {
+      "name": "total-hidden: zero unknown empty and attempt context",
+      "pass": true
+    },
+    {
+      "name": "total-hidden: independent rubric visibility",
+      "pass": true
+    },
+    {
+      "name": "total-hidden: literal DOM and explicit link",
+      "pass": true
+    },
+    {
+      "name": "total-hidden: 1200px readable width",
+      "pass": true,
+      "layout": {
+        "width": 1200,
+        "client": 1200,
+        "scroll": 1200,
+        "height": 4082,
+        "overflow": []
+      }
+    },
+    {
+      "name": "total-hidden: 390px readable width",
+      "pass": true,
+      "layout": {
+        "width": 390,
+        "client": 390,
+        "scroll": 390,
+        "height": 8435,
+        "overflow": []
+      }
+    },
+    {
+      "name": "total-hidden: original file unchanged",
+      "pass": true
+    },
+    {
+      "name": "both-hidden: exact producer HTML",
+      "pass": true
+    },
+    {
+      "name": "both-hidden: original visible identity and literal feedback",
+      "pass": true
+    },
+    {
+      "name": "both-hidden: zero unknown empty and attempt context",
+      "pass": true
+    },
+    {
+      "name": "both-hidden: independent rubric visibility",
+      "pass": true
+    },
+    {
+      "name": "both-hidden: literal DOM and explicit link",
+      "pass": true
+    },
+    {
+      "name": "both-hidden: 1200px readable width",
+      "pass": true,
+      "layout": {
+        "width": 1200,
+        "client": 1200,
+        "scroll": 1200,
+        "height": 4116,
+        "overflow": []
+      }
+    },
+    {
+      "name": "both-hidden: 390px readable width",
+      "pass": true,
+      "layout": {
+        "width": 390,
+        "client": 390,
+        "scroll": 390,
+        "height": 8191,
+        "overflow": []
+      }
+    },
+    {
+      "name": "both-hidden: original file unchanged",
+      "pass": true
+    },
+    {
+      "name": "offline local resources only",
+      "pass": true,
+      "requests": [
+        {
+          "url": "file:///home/jacob/hamon-b890f0b1bfcd/integration/original-producer-v2/ordinary.html",
+          "type": "document"
+        },
+        {
+          "url": "file:///home/jacob/hamon-b890f0b1bfcd/integration/original-producer-v2/long-headings.html",
+          "type": "document"
+        },
+        {
+          "url": "file:///home/jacob/hamon-b890f0b1bfcd/integration/original-producer-v2/points-hidden.html",
+          "type": "document"
+        },
+        {
+          "url": "file:///home/jacob/hamon-b890f0b1bfcd/integration/original-producer-v2/total-hidden.html",
+          "type": "document"
+        },
+        {
+          "url": "file:///home/jacob/hamon-b890f0b1bfcd/integration/original-producer-v2/both-hidden.html",
+          "type": "document"
+        }
+      ]
+    },
+    {
+      "name": "no page exceptions",
+      "pass": true,
+      "exceptions": []
+    }
+  ],
+  "requests": [
+    {
+      "url": "file:///home/jacob/hamon-b890f0b1bfcd/integration/original-producer-v2/ordinary.html",
+      "type": "document"
+    },
+    {
+      "url": "file:///home/jacob/hamon-b890f0b1bfcd/integration/original-producer-v2/long-headings.html",
+      "type": "document"
+    },
+    {
+      "url": "file:///home/jacob/hamon-b890f0b1bfcd/integration/original-producer-v2/points-hidden.html",
+      "type": "document"
+    },
+    {
+      "url": "file:///home/jacob/hamon-b890f0b1bfcd/integration/original-producer-v2/total-hidden.html",
+      "type": "document"
+    },
+    {
+      "url": "file:///home/jacob/hamon-b890f0b1bfcd/integration/original-producer-v2/both-hidden.html",
+      "type": "document"
+    }
+  ],
+  "exceptions": [],
+  "layouts": [
+    {
+      "case": "ordinary",
+      "width": 1200,
+      "client": 1200,
+      "scroll": 1200,
+      "height": 4067,
+      "overflow": []
+    },
+    {
+      "case": "ordinary",
+      "width": 390,
+      "client": 390,
+      "scroll": 390,
+      "height": 8436,
+      "overflow": []
+    },
+    {
+      "case": "long-headings",
+      "width": 1200,
+      "client": 1200,
+      "scroll": 3417,
+      "height": 4119,
+      "overflow": [
+        {
+          "tag": "H3",
+          "field": null,
+          "text": "1. CRITERION_QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ",
+          "client": 1060,
+          "scroll": 3347
+        },
+        {
+          "tag": "H3",
+          "field": null,
+          "text": "Unmatched assessment: UNMATCHED_RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR",
+          "client": 1060,
+          "scroll": 2150
+        }
+      ]
+    },
+    {
+      "case": "long-headings",
+      "width": 390,
+      "client": 390,
+      "scroll": 3380,
+      "height": 8488,
+      "overflow": [
+        {
+          "tag": "H3",
+          "field": null,
+          "text": "1. CRITERION_QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ",
+          "client": 324,
+          "scroll": 3347
+        },
+        {
+          "tag": "H3",
+          "field": null,
+          "text": "Unmatched assessment: UNMATCHED_RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR",
+          "client": 324,
+          "scroll": 2150
+        }
+      ]
+    },
+    {
+      "case": "points-hidden",
+      "width": 1200,
+      "client": 1200,
+      "scroll": 1200,
+      "height": 4082,
+      "overflow": []
+    },
+    {
+      "case": "points-hidden",
+      "width": 390,
+      "client": 390,
+      "scroll": 390,
+      "height": 8132,
+      "overflow": []
+    },
+    {
+      "case": "total-hidden",
+      "width": 1200,
+      "client": 1200,
+      "scroll": 1200,
+      "height": 4082,
+      "overflow": []
+    },
+    {
+      "case": "total-hidden",
+      "width": 390,
+      "client": 390,
+      "scroll": 390,
+      "height": 8435,
+      "overflow": []
+    },
+    {
+      "case": "both-hidden",
+      "width": 1200,
+      "client": 1200,
+      "scroll": 1200,
+      "height": 4116,
+      "overflow": []
+    },
+    {
+      "case": "both-hidden",
+      "width": 390,
+      "client": 390,
+      "scroll": 390,
+      "height": 8191,
+      "overflow": []
+    }
+  ],
+  "files": [],
+  "receiver_sha256": "e16d2f4d542bb15c6b1f7ffddad301882a4cb4b1151c9124c3c3c0b94cedb7dc",
+  "chromium": "153.0.8010.47",
+  "browser_closed": true
+}

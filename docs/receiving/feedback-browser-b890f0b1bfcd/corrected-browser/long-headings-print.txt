@@ -1,0 +1,265 @@
+C A N VA S P I LOT · S AV E D F E E D B AC K
+
+
+Independent feedback: café & <Research>
+Submission comments, rubric feedback and the attempt context returned by Canvas.
+
+Requested course ID                       Requested assignment ID      Returned course ID
+
+61                                        902                          61
+
+Returned assignment ID                    Assignment due               Saved at (UTC)
+
+902                                       2026-10-04T16:00:00-07:00    2026-10-
+                                                                       08T17:37:18.866746Z
+
+Assignment link returned by Canvas:
+https://receiving.invalid/courses/61/assignments/902?
+view=feedback&literal=%3Cvalue%3E
+
+
+
+
+Submission and grading
+
+     Canvas reports that grading preceded the latest resubmission. The displayed grade
+     must not be treated as a grade for the current attempt.
+
+
+
+
+     Current submission attempt            Submission state           Reported submission score
+
+     3                                     submitted                  0
+
+     Reported submission grade             Submitted                  Graded
+
+     Returned empty text                   2026-10-05T01:00:00Z       2026-10-04T23:30:00Z
+
+     Grade posted                          Submission type            Submitting user ID
+
+     Not returned                          online_text_entry          17
+
+     Reported grader ID                    Excused                    Late
+
+     -7                                    false                      true
+
+     Missing                               Revision requested         Assignment possible points
+
+     false                                 true                       100
+Rubric feedback
+
+ Advisory rubric: Canvas says it is not used for grading.
+
+
+
+
+ Rubric title                 Rubric possible points (as         Free-form criterion comments
+                              supplied)
+ Original analytic rubric                                        Not returned
+                              15
+
+ Assessment object returned   Withhold outcome results
+                              from Learning Mastery
+ true
+                              Gradebook
+
+                              true
+
+ No rubric score is summed or used to calculate a grade in this sheet.
+
+
+
+
+ 1.
+ CRITERION_QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+ QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+ QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+ QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+ QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ
+ QQQQQQQQQQQQQ_END
+
+ Criterion ID                 Criterion possible points          Range-based ratings
+
+ criterion-A                  10                                 false
+
+ Excluded from scoring
+
+ false
+
+ Criterion detail
+
+ Receiving only: <img src="https://receiving.invalid/image"
+ onerror="window.injected=true"> <script>window.injected=true</script> & "quotes"
+ — Δ café    東京
+             .
+
+ Returned rating scale
+
+      Develop the evidence
+      Rating ID                                  Rating points
+
+      rating-1                                   0
+      Rating detail
+
+      Zero is a supplied value.
+
+  Returned assessment
+
+  Reported assessment points      Reported rating ID
+
+  0                               rating-1
+
+  Criterion feedback
+
+  Keep the exact zero and clarify the evidence.
+
+
+
+
+  2. Connection to sources
+
+  Criterion ID                    Criterion possible points   Range-based ratings
+
+  criterion-B                     5                           Not returned
+
+  Excluded from scoring
+
+  Not returned
+
+  Returned rating scale
+
+  Canvas returned an empty rating scale.
+
+  Returned assessment
+
+  No assessment was returned for this criterion.
+
+
+
+Unmatched assessments
+
+These entries have no unique matching rubric criterion. They remain separate.
+
+
+  Unmatched assessment:
+  UNMATCHED_RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
+  RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
+  RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
+  RRRRRRRRRRRRRRRRRRRRRR_END
+
+  Reported assessment points      Reported rating ID
+
+  2                               Not returned
+
+  Criterion feedback
+  Unmatched feedback remains separate.
+
+
+
+
+Submission comments
+Authors are shown as returned; comments are not assumed to come from an instructor.
+
+2 returned comments, in Canvas response order.
+
+
+  Comment 1
+  Comment ID                   Reported author name            Author ID
+
+  91                           Peer <reviewer>                 27
+
+  Created                      Edited                          Author record display name
+
+  2026-10-04T23:35:00Z         Not returned                    Different recorded
+                                                               display
+
+  Author record ID
+
+  28
+
+  Comment
+
+  Receiving only: <img src="https://receiving.invalid/image"
+  onerror="window.injected=true"> <script>window.injected=true</script> & "quotes"
+  — Δ café   東京.
+  Printed review body: preserve this exact comment and its original author. Printed
+  review body: preserve this exact comment and its original author. Printed review
+  body: preserve this exact comment and its original author. Printed review body:
+  preserve this exact comment and its original author. Printed review body: preserve
+  this exact comment and its original author. Printed review body: preserve this exact
+  comment and its original author. Printed review body: preserve this exact comment
+  and its original author. Printed review body: preserve this exact comment and its
+  original author. Printed review body: preserve this exact comment and its original
+  author. Printed review body: preserve this exact comment and its original author.
+  Printed review body: preserve this exact comment and its original author. Printed
+  review body: preserve this exact comment and its original author. Printed review
+  body: preserve this exact comment and its original author. Printed review body:
+  preserve this exact comment and its original author. Printed review body: preserve
+  this exact comment and its original author. Printed review body: preserve this exact
+  comment and its original author. Printed review body: preserve this exact comment
+  and its original author. Printed review body: preserve this exact comment and its
+  original author. Printed review body: preserve this exact comment and its original
+author. Printed review body: preserve this exact comment and its original author.
+Printed review body: preserve this exact comment and its original author. Printed
+review body: preserve this exact comment and its original author. Printed review
+body: preserve this exact comment and its original author. Printed review body:
+preserve this exact comment and its original author. Printed review body: preserve
+this exact comment and its original author. Printed review body: preserve this exact
+comment and its original author. Printed review body: preserve this exact comment
+and its original author. Printed review body: preserve this exact comment and its
+original author. Printed review body: preserve this exact comment and its original
+author. Printed review body: preserve this exact comment and its original author.
+Printed review body: preserve this exact comment and its original author. Printed
+review body: preserve this exact comment and its original author. Printed review
+body: preserve this exact comment and its original author. Printed review body:
+preserve this exact comment and its original author. Printed review body: preserve
+this exact comment and its original author. Printed review body: preserve this exact
+comment and its original author. Printed review body: preserve this exact comment
+and its original author. Printed review body: preserve this exact comment and its
+original author. Printed review body: preserve this exact comment and its original
+author. Printed review body: preserve this exact comment and its original author.
+PRINTED_COMMENT_END
+
+Attachments (not downloaded):
+
+     Attachment ID                             File name
+
+     121                                       notes<one>.txt
+
+     Content type
+
+     text/plain
+
+
+
+
+Comment 2
+Comment ID                    Reported author name         Author ID
+
+92                            Audio peer                   29
+
+Created                       Edited
+
+Not returned                  Not returned
+
+Comment
+
+Returned empty text
+
+Media type (not downloaded)   Media ID                     Media name
+   audio                              audio-91                           Audio note
+
+   Canvas returned an empty attachment list.
+
+
+
+
+This is a saved copy of the returned feedback. It does not refresh. Source timestamps retain their
+reported timezone notation.
+
+Media and attachments are listed when returned, but their contents are not downloaded. Open the
+assignment in Canvas to review them.
+
+Open this file in a browser to read it, or use the browser’s Print command.
+

@@ -1,0 +1,12 @@
+{
+  "status": "pass",
+  "source_head": "8c8d3b846f3c80f19ae5f37f9f35adf51ec081fc",
+  "source_tree": "c2fc27a47a233725b93880587f4e9551b764cfae",
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "httpx": "0.28.1",
+  "commands": 10,
+  "loopback_gets": 20,
+  "source_pins": 18,
+  "server_closed": true,
+  "receiver_sha256": "1bacd3b87c85e88da5b149b1c56c265f2ce304fb3164367228db81895135bab0"
+}

@@ -25,7 +25,7 @@ header { padding: 0 0 1.8rem; border-bottom: 2px solid #23465c; }
   letter-spacing: .12em; text-transform: uppercase; color: #3e637b; }
 h1 { margin: 0 0 .8rem; font: 700 clamp(2rem, 5vw, 3rem)/1.15 Georgia, serif; }
 h2 { margin: 0 0 1rem; font-size: 1.35rem; }
-h3 { margin: 0 0 .8rem; font-size: 1.05rem; }
+h3 { margin: 0 0 .8rem; font-size: 1.05rem; overflow-wrap: anywhere; }
 p { margin: .6rem 0; }
 section { margin: 1.8rem 0; }
 article, .panel { padding: 1.3rem; margin: 1rem 0; background: white;
