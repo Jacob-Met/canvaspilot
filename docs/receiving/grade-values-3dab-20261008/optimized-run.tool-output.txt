@@ -1,0 +1,29 @@
+test_api_values_and_unknown_containers (__main__.GradeValueReceiving.test_api_values_and_unknown_containers) ... HTTP Request: GET http://127.0.0.1:39457/api/v1/users/self/profile?per_page=50 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:39457/api/v1/courses/42?include%5B%5D=total_scores&include%5B%5D=current_grading_period_scores&include%5B%5D=grading_periods&per_page=50 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:39457/api/v1/courses/42/assignment_groups?include%5B%5D=assignments&include%5B%5D=submission&override_assignment_dates=true&per_page=50 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:39457/api/v1/courses/42/assignment_groups?cursor=last-page "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:39457/api/v1/users/self/profile?per_page=50 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:39457/api/v1/courses/42?include%5B%5D=total_scores&include%5B%5D=current_grading_period_scores&include%5B%5D=grading_periods&per_page=50 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:39457/api/v1/courses/42/assignment_groups?include%5B%5D=assignments&include%5B%5D=submission&override_assignment_dates=true&per_page=50 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:39457/api/v1/courses/42/assignment_groups?cursor=last-page "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:39457/api/v1/users/self/profile?per_page=50 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:39457/api/v1/courses/42?include%5B%5D=total_scores&include%5B%5D=current_grading_period_scores&include%5B%5D=grading_periods&per_page=50 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:39457/api/v1/courses/42/assignment_groups?include%5B%5D=assignments&include%5B%5D=submission&override_assignment_dates=true&per_page=50 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:39457/api/v1/courses/42/assignment_groups?cursor=last-page "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:39457/api/v1/users/self/profile?per_page=50 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:39457/api/v1/courses/42?include%5B%5D=total_scores&include%5B%5D=current_grading_period_scores&include%5B%5D=grading_periods&per_page=50 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:39457/api/v1/courses/42/assignment_groups?include%5B%5D=assignments&include%5B%5D=submission&override_assignment_dates=true&per_page=50 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:39457/api/v1/courses/42/assignment_groups?cursor=last-page "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:39457/api/v1/users/self/profile?per_page=50 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:39457/api/v1/courses/42?include%5B%5D=total_scores&include%5B%5D=current_grading_period_scores&include%5B%5D=grading_periods&per_page=50 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:39457/api/v1/courses/42/assignment_groups?include%5B%5D=assignments&include%5B%5D=submission&override_assignment_dates=true&per_page=50 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:39457/api/v1/courses/42/assignment_groups?cursor=last-page "HTTP/1.0 200 OK"
+ok
+test_cli_values_and_unknown_containers (__main__.GradeValueReceiving.test_cli_values_and_unknown_containers) ... ok
+test_registered_mcp_values_and_unknown_containers (__main__.GradeValueReceiving.test_registered_mcp_values_and_unknown_containers) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 12.269s
+
+OK
+{"ok": true, "methods": 3, "observations": 15, "receipt": "/dev/shm/memory-delivery-canvas-grade-review-3dab/evidence/optimized/receipt.json"}
