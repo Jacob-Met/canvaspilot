@@ -14,6 +14,7 @@ Same architecture as OpenCLI-style web agents (persistent browser session → si
 - **Agent-shaped digests** — `assignment_brief` (cleaned prompt + rubric), `sync_summary` (courses + upcoming), `submission_status`
 - **Submission feedback** — self submission comments and rubric assessments alongside current-attempt and grading metadata
 - **Submission history** — inspect returned attempts and submitted text/file metadata without assigning current grades or comments to earlier versions ([guide](docs/submission-history.md))
+- **Submission comparison** — read two explicitly selected returned records side by side in a new offline HTML report, with exact source JSON ([guide](docs/submission-comparison.md))
 - **Course grade review** — reported totals, assignment-group rules and each returned assignment's own grade/status, with hidden and unknown values kept explicit
 - **Fixture mode** — offline dict backend for tests and CI; no Canvas required
 - **40 MCP tools**, one stdio server, one env var for the host (`CANVAS_BASE_URL`) plus either a PAT or a running session broker
@@ -94,6 +95,11 @@ Read selected courses' calendar events and assignment deadlines together with
 timing, source identity and read limits. The same report is available through
 `canvas_course_agenda` in MCP.
 
+Read your own planner items with `canvaspilot planner --start-date 2026-10-08 --end-date 2026-10-15`.
+The [planner CLI guide](docs/planner-cli.md) explains native date filters,
+personal notes, supplied completion metadata and complete-list error behavior.
+The command uses the existing planner API and does not change any planner state.
+
 To take selected course deadlines into a calendar application, save an explicit
 local snapshot with `canvaspilot export-calendar 42 77 --out deadlines.ics`.
 The [calendar export guide](docs/calendar-export.md) explains selection,
@@ -116,6 +122,12 @@ To inspect Canvas-reported course totals and assignment grades together, run
 The [grade review guide](docs/grade-review.md) explains the original Canvas field
 names, group/drop-rule context, visibility rules and returned-row limits. No
 replacement course grade or missing-work status is inferred.
+
+Save that same grade review for offline reading or printing with
+`canvaspilot export-grade-review 42 --out course-grades.html`. The
+[saved grade-review guide](docs/grade-review-export.md) explains reported totals,
+assignment context, withheld/unknown values, the complete JSON download and
+new-file protection.
 
 ## Save submission attempts for offline review
 

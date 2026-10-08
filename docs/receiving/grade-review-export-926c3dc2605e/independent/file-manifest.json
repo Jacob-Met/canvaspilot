@@ -1,0 +1,220 @@
+{
+  "schema": "hamon.frozen_receiving_manifest.v1",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 3945,
+      "sha256": "0a559859cc8fb3dbea617b0a44d142d8ee3bc6259c967024b4620c9c526c8b7c"
+    },
+    {
+      "path": "observations/enrollment-absent.html",
+      "bytes": 38939,
+      "sha256": "b902b3c738678747b8dc2303bc2eeea8fc122110f115af464f74a329e45fd514"
+    },
+    {
+      "path": "observations/enrollment-absent.json",
+      "bytes": 7017,
+      "sha256": "07c1f7a9b249d8a4c9355b8295c142027477cb0258e3129bdf05f90ce6ed6126"
+    },
+    {
+      "path": "observations/enrollment-empty.html",
+      "bytes": 38932,
+      "sha256": "c3c45b8ebb29938541508a383c543be3675c274c6c369d76b8bcd07ffd691cb9"
+    },
+    {
+      "path": "observations/enrollment-empty.json",
+      "bytes": 7011,
+      "sha256": "32bbd613e79aff94b4e27d77f3fed764b026c21a091c2609f2b245e7173d62be"
+    },
+    {
+      "path": "observations/enrollment-null.html",
+      "bytes": 38921,
+      "sha256": "719781c42124244e48e9fa3916e56aaea2641ea7e342e2df20e888280be9f20d"
+    },
+    {
+      "path": "observations/enrollment-null.json",
+      "bytes": 7009,
+      "sha256": "b0ada9408fefbef63639f9835654508ada6b1f192dfff6ec7a1171dc2fd81bd6"
+    },
+    {
+      "path": "observations/field-order.html",
+      "bytes": 42939,
+      "sha256": "28db1f567033b599374aa0631a2c0fd59d59e3d446e79c1dbf19e6b0ca6e6d34"
+    },
+    {
+      "path": "observations/field-order.json",
+      "bytes": 8014,
+      "sha256": "6c5c5d29f93502254691013d1fc7731b7991655ede980fab96214ea4cc6e685b"
+    },
+    {
+      "path": "observations/hidden-totals.html",
+      "bytes": 40789,
+      "sha256": "9e95f602a3ac2fdba7faf06e1cd3979a9c0d70a0895c9faddec162f7940065a1"
+    },
+    {
+      "path": "observations/hidden-totals.json",
+      "bytes": 7480,
+      "sha256": "2ed575c340183b9401ce83fee977d4de683722fc24826a157a6f9f42c6fe5676"
+    },
+    {
+      "path": "observations/no-groups.html",
+      "bytes": 13496,
+      "sha256": "cf845eab56e688f76b96641b1fb2b04b1c3c6620f9bda68205c301e45f9f8b56"
+    },
+    {
+      "path": "observations/no-groups.json",
+      "bytes": 2153,
+      "sha256": "fc0ee0002608bdbaba295252dd139a5eb07fd48cefb9319f3f91719d2bb7faa9"
+    },
+    {
+      "path": "observations/period-absent.html",
+      "bytes": 42621,
+      "sha256": "a0fd041deeff47018746a4f372450110483b2119d5f3777b5d8adfd6a2347988"
+    },
+    {
+      "path": "observations/period-absent.json",
+      "bytes": 7900,
+      "sha256": "e95e26e66ba0309fac4a52ee8e6392fd02fc193bcae50dc29c91d93c2532b7b3"
+    },
+    {
+      "path": "observations/period-empty.html",
+      "bytes": 42603,
+      "sha256": "4876279031e8ddd4d44ee0ab29c3157b0eeefbdf70c57fbacea17ecf41730c93"
+    },
+    {
+      "path": "observations/period-empty.json",
+      "bytes": 7894,
+      "sha256": "1527cb498dea392d74053522a03ab583b395a68492b4555cba8a2d1a0ce87587"
+    },
+    {
+      "path": "observations/period-null.html",
+      "bytes": 42593,
+      "sha256": "fae7950c645a07cc4f00745742c8a6c73df8e45168842dca4af05bf65c189085"
+    },
+    {
+      "path": "observations/period-null.json",
+      "bytes": 7892,
+      "sha256": "60bf20ff83b46c55ad9dafa195e594c5893ae82a23dfae024d5372523f731d60"
+    },
+    {
+      "path": "observations/receipt.json",
+      "bytes": 43269,
+      "sha256": "53ab22abc070d028fe01600fff740447a0e251ab17e8e3d2f2f05f6415efb3b4"
+    },
+    {
+      "path": "observations/rich.html",
+      "bytes": 42939,
+      "sha256": "28db1f567033b599374aa0631a2c0fd59d59e3d446e79c1dbf19e6b0ca6e6d34"
+    },
+    {
+      "path": "observations/rich.json",
+      "bytes": 8014,
+      "sha256": "6c5c5d29f93502254691013d1fc7731b7991655ede980fab96214ea4cc6e685b"
+    },
+    {
+      "path": "receive_semantics.py",
+      "bytes": 18230,
+      "sha256": "bafaf340e0802b243072ec922431d68b6711890f142b9d0735d0c1c9742f5252"
+    },
+    {
+      "path": "receiving.log",
+      "bytes": 13040,
+      "sha256": "bbebba3e1dcc54e782b820b181bfbeab5ec0a4007bc3d1a34cc1b8f92056c630"
+    },
+    {
+      "path": "source/src/canvaspilot/__init__.py",
+      "bytes": 561,
+      "sha256": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5"
+    },
+    {
+      "path": "source/src/canvaspilot/agenda.py",
+      "bytes": 8455,
+      "sha256": "cd9d9e027393ce21cff0b4d0a13098dca3a906af3e9803201655bca40d3c3fda"
+    },
+    {
+      "path": "source/src/canvaspilot/api.py",
+      "bytes": 29742,
+      "sha256": "b6b770c2cdef9c9ce44a4a6aefd5b6d0876bc09e5aee29a4adb5a7c603b41c24"
+    },
+    {
+      "path": "source/src/canvaspilot/assignment_submission.py",
+      "bytes": 1296,
+      "sha256": "52fc732660b8844a2ee0801931a363f20db15b5309d148d01e3b618be487133d"
+    },
+    {
+      "path": "source/src/canvaspilot/bundle.py",
+      "bytes": 2761,
+      "sha256": "c8a1854b5c04715c1371c05f4c25ba867ec2d2daafc132b7ed8a973d3e55ddcf"
+    },
+    {
+      "path": "source/src/canvaspilot/calendar_export.py",
+      "bytes": 9950,
+      "sha256": "b92948c438063438bf9b8ef01b0b0c067802ddb06354f00e8ee18749f3c5e2fa"
+    },
+    {
+      "path": "source/src/canvaspilot/cli.py",
+      "bytes": 25468,
+      "sha256": "ecf9ba68b45591df9400932e4e982e84f060937c6d7957316de1e0102533d238"
+    },
+    {
+      "path": "source/src/canvaspilot/client.py",
+      "bytes": 18934,
+      "sha256": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797"
+    },
+    {
+      "path": "source/src/canvaspilot/discussion_thread.py",
+      "bytes": 8547,
+      "sha256": "11f955f827c29421143782518a1aaf1894d0892739c3b56c4d5e413da74555ff"
+    },
+    {
+      "path": "source/src/canvaspilot/feedback.py",
+      "bytes": 3900,
+      "sha256": "55454598effea598474a21f67e36d5bc5bea84aaefeefc18e4d8c49804ab9869"
+    },
+    {
+      "path": "source/src/canvaspilot/folder_browser.py",
+      "bytes": 6293,
+      "sha256": "c6a67229b268c539e5edb581e3320b06229460adc3fbc01d72e4964e31c0348a"
+    },
+    {
+      "path": "source/src/canvaspilot/grade_review.py",
+      "bytes": 13247,
+      "sha256": "e550752a830ca9cf4c2ef5d5b06dbf464abd9dfed3a5252d310a4acf8e2411f5"
+    },
+    {
+      "path": "source/src/canvaspilot/grade_review_export.py",
+      "bytes": 18578,
+      "sha256": "7d8df22447642cb5ac2588b144c18b3b2dde14ab7ca4b7fc085b17d60eb874be"
+    },
+    {
+      "path": "source/src/canvaspilot/mcp_server.py",
+      "bytes": 16291,
+      "sha256": "52cfd5cbe167438762049f4c36feec822986f5e5e63aeaf494e07907235e1c98"
+    },
+    {
+      "path": "source/src/canvaspilot/module_progress.py",
+      "bytes": 9615,
+      "sha256": "974ee31925514a2e53b899888302a7fa357e280ab5f2461b754b814473653d99"
+    },
+    {
+      "path": "source/src/canvaspilot/module_progress_export.py",
+      "bytes": 12904,
+      "sha256": "f723c06e551fae2cf50745460f9109867e6e0f9ebc3cc997d49d5e2173aa9f50"
+    },
+    {
+      "path": "source/src/canvaspilot/offline_demo.py",
+      "bytes": 4124,
+      "sha256": "2389f3ccc1b6db5995be0d90e014ea9345e3029aa5546a5b2dcf12c1197e6d4d"
+    },
+    {
+      "path": "source/src/canvaspilot/session_broker.py",
+      "bytes": 13944,
+      "sha256": "a692cd2812cbc09536f1b60c84892bc8e87d2ae984c5a5aa25a13f6537ba6da2"
+    },
+    {
+      "path": "source/src/canvaspilot/submission_history.py",
+      "bytes": 2853,
+      "sha256": "b007234b9861a68504e36f005ae463943b36b5cd50a3d157532c1cab09fcf9da"
+    }
+  ]
+}

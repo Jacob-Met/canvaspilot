@@ -1,0 +1,16 @@
+{
+  "schema": "hamon.independent_evidence_binding.v1",
+  "source_path": "/home/jacob/canvaspilot-grade-export-independent-926c3dc2605e",
+  "source_commit": "d0058740eb582bfe7f6b69952b63fff88570a0ad",
+  "source_tree": "309a183fcc2379c6e6105c79533fd26b448e9080",
+  "source_clean": true,
+  "manifest_sha256": "2ba9815a15e9b6ec69963c97a7477b1604ee4beba6bbb23cc40d50becebe2b67",
+  "all_43_manifest_leaves_verified": true,
+  "archive_bytes": 144040,
+  "archive_sha256": "dd7c461377ccedc0219c1be38cdaec37987f423dd43c8f1e368ff167c53655b2",
+  "manifest_leaf_count": 43,
+  "receipt_sha256": "53ab22abc070d028fe01600fff740447a0e251ab17e8e3d2f2f05f6415efb3b4",
+  "renderer_sha256": "7d8df22447642cb5ac2588b144c18b3b2dde14ab7ca4b7fc085b17d60eb874be",
+  "current_renderer_ast_binding": "../lint-receipt.json",
+  "received_at": "2026-10-08T17:28:02.142525+00:00"
+}

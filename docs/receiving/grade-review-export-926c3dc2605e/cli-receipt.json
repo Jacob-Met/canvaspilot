@@ -1,0 +1,136 @@
+{
+  "runtime": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "records": [
+    {
+      "returncode": 0,
+      "stdout": "{\n  \"ok\": true,\n  \"path\": \"/tmp/pytest-of-jacob/pytest-200/test_actual_cli_pagination_fil0/review.html\",\n  \"course_id\": 42,\n  \"generated_at\": \"2026-10-08T17:16:52Z\",\n  \"groups_returned\": 2,\n  \"assignments_returned\": 4,\n  \"html_bytes\": 26586,\n  \"sha256\": \"8bc68c0e8db335a069afdeb29c8efbd00baa7d5d1ef583ceebede0a8f0927f11\",\n  \"json_bytes\": 4881,\n  \"json_sha256\": \"e55182d1fc34bf366ec4800dda85f128c616cfd28372360a5bdbd1093d71fe51\"\n}\n",
+      "stderr": "",
+      "output_name": "review.html"
+    },
+    {
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "{\"ok\": false, \"error\": \"FileExistsError\", \"message\": \"Output path already exists; choose a new HTML file\"}\n",
+      "output_name": "review.html"
+    },
+    {
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "{\"ok\": false, \"error\": \"FileExistsError\", \"message\": \"Output path already exists; choose a new HTML file\"}\n",
+      "output_name": "existing-link.html"
+    },
+    {
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "{\"ok\": false, \"error\": \"CanvasAuthError\", \"message\": \"Canvas auth failed (403)\"}\n",
+      "output_name": "refused.html"
+    },
+    {
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "usage: canvaspilot export-grade-review [-h] [--base-url BASE_URL]\n                                       [--profile PROFILE] [--token TOKEN]\n                                       --out OUT\n                                       course_id\ncanvaspilot export-grade-review: error: argument course_id: must be a positive integer\n",
+      "output_name": "invalid.html"
+    }
+  ],
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/api/v1/users/self/profile",
+      "query": {
+        "per_page": [
+          "50"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/42",
+      "query": {
+        "include[]": [
+          "total_scores",
+          "current_grading_period_scores",
+          "grading_periods"
+        ],
+        "per_page": [
+          "50"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/42/assignment_groups",
+      "query": {
+        "include[]": [
+          "assignments",
+          "submission"
+        ],
+        "override_assignment_dates": [
+          "true"
+        ],
+        "per_page": [
+          "50"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/42/assignment_groups",
+      "query": {
+        "cursor": [
+          "last-page"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/users/self/profile",
+      "query": {
+        "per_page": [
+          "50"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/42",
+      "query": {
+        "include[]": [
+          "total_scores",
+          "current_grading_period_scores",
+          "grading_periods"
+        ],
+        "per_page": [
+          "50"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/42/assignment_groups",
+      "query": {
+        "include[]": [
+          "assignments",
+          "submission"
+        ],
+        "override_assignment_dates": [
+          "true"
+        ],
+        "per_page": [
+          "50"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/42/assignment_groups",
+      "query": {
+        "cursor": [
+          "last-page"
+        ]
+      }
+    }
+  ],
+  "report_sha256": "8bc68c0e8db335a069afdeb29c8efbd00baa7d5d1ef583ceebede0a8f0927f11",
+  "synthetic": true,
+  "all_assertions_passed": true
+}

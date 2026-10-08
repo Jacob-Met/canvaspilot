@@ -1,0 +1,85 @@
+{
+  "repository": "Jacob-Met/canvaspilot",
+  "baseline_main": "17d63dc43fde30efd8d3454ef09b1d1a8c5bcd0d",
+  "baseline_tree": "9818539d6444ef43a72d6540c2ba3817c758d9c8",
+  "leaves": 1099,
+  "instructions": [],
+  "source": [
+    {
+      "path": "src/canvaspilot/cli.py",
+      "git_blob": "b638134ea6b7ecfccaaa6d5cc6834d52b0f0892c",
+      "sha256": "9c6272fdfb4484eafc7a8ef9f35ffcdb9182f12f2a6d857fe2dfb420ce24870c",
+      "bytes": 18086
+    },
+    {
+      "path": "src/canvaspilot/api.py",
+      "git_blob": "a9d16294a673f8f1df7b76b52f4b3ab059f69c64",
+      "sha256": "784dd771c89b6cdac7005b1b7f6ebe00bdc47a39d2a9f022cac75f3b3b80e5b9",
+      "bytes": 29719
+    },
+    {
+      "path": "src/canvaspilot/client.py",
+      "git_blob": "1db4b1135305f7e410025ae7937f9a6cd349f020",
+      "sha256": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797",
+      "bytes": 18934
+    },
+    {
+      "path": "src/canvaspilot/assignment_submission.py",
+      "git_blob": "95b1f19927e4eecf99fc852325737c3cfe86cd0d",
+      "sha256": "52fc732660b8844a2ee0801931a363f20db15b5309d148d01e3b618be487133d",
+      "bytes": 1296
+    },
+    {
+      "path": "src/canvaspilot/feedback.py",
+      "git_blob": "ec996f421a851d699a9ac7cb1f2a486f9ff7c4ea",
+      "sha256": "55454598effea598474a21f67e36d5bc5bea84aaefeefc18e4d8c49804ab9869",
+      "bytes": 3900
+    },
+    {
+      "path": "src/canvaspilot/__init__.py",
+      "git_blob": "74a7a6087bf81fd7c75c15769b30408039618e0f",
+      "sha256": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5",
+      "bytes": 561
+    },
+    {
+      "path": "src/canvaspilot/bundle.py",
+      "git_blob": "293c02dc86520d9d11907d47d014d2f73aa56fc0",
+      "sha256": "a0fa14d84a65693d5e5122964da3325e801c2eb1a245924d68b0dc87a46013ac",
+      "bytes": 2734
+    },
+    {
+      "path": "pyproject.toml",
+      "git_blob": "76eba6d30696b4f2733539cd47df6e178bc0f585",
+      "sha256": "555ad3c7e338d38ae5feabc06c0c07503f22d9c732a9af153c7706c63d2b3c63",
+      "bytes": 1353
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "git_blob": "ef7bbebe192c0db55dc4467e064ba44805c13446",
+      "sha256": "62f17b95af03d1ff8a172f168282b405fefcab3a5f1094c70e618b44920bd0ff",
+      "bytes": 708
+    },
+    {
+      "path": "README.md",
+      "git_blob": "0917519e0302a4fca25e44fe9e104c3ca398d9c8",
+      "sha256": "d956c47bc8446dd44d4fb704d31290e650f31d5b63d01db8704b0d4b024c2e37",
+      "bytes": 21664
+    }
+  ],
+  "primary_contract": "https://developerdocs.instructure.com/services/canvas/resources/planner",
+  "primary_contract_retrieved": "2026-10-08",
+  "scope": {
+    "change": "Add planner parser/dispatch only in src/canvaspilot/cli.py, focused test, guide and additive README paragraph.",
+    "preserve": "Native planner_items, API/client/broker/MCP/package initialization, existing commands, date and field handling, dependency/workflow/owner source."
+  },
+  "qualification": {
+    "baseline_conditions": 11,
+    "actual_cli_file_children": 2,
+    "native_api_fixture_children": 1,
+    "limits": [
+      "CLI main file is run directly; installed package bootstrap is not exercised.",
+      "Native API/client fixture path uses a namespace-package bootstrap and import-only HTTPX tripwire.",
+      "No HTTPX, token/session transport, hosted CI, MCP, browser or live Canvas execution is claimed."
+    ]
+  }
+}

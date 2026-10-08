@@ -1,0 +1,51 @@
+{
+  "format": "canvas-comparison-hosted-full-ci-v1",
+  "repository": "Jacob-Met/canvaspilot",
+  "pr": 77,
+  "run_id": 37818235041,
+  "job_id": 113452288789,
+  "run_url": "https://github.com/Jacob-Met/canvaspilot/actions/runs/37818235041",
+  "source_head": "e059cf8a8aa42dfc4b98f353bbfbbb79661ad7f0",
+  "actual_checkout": "6c3f5f1b7b85594aa08ad39b133ee1bf2d7162ba",
+  "tree": "f27133206e362b677e4ae8c664aafcc0810b6b75",
+  "parents": [
+    "1bafdaa31f7789d8e561680cb6001bbe38b2da64",
+    "e059cf8a8aa42dfc4b98f353bbfbbb79661ad7f0"
+  ],
+  "all_leaves_exact": 1216,
+  "canonical_leaf_list_sha256": "67f522931f5fa4181572c7054eda06271d4b409738ec371d7898d517e04d6095",
+  "workflow_path": ".github/workflows/ci.yml",
+  "workflow_blob": "ef7bbebe192c0db55dc4467e064ba44805c13446",
+  "result": {
+    "conclusion": "success",
+    "ruff": "All checks passed",
+    "pytest": "923 passed, 1 skipped, 54 subtests passed in 228.18s (0:03:48)"
+  },
+  "log": {
+    "path": "hosted-ci-r1.log",
+    "bytes": 35002,
+    "sha256": "093c91680d6c63215735beebf8a15907407d3fdef3a30e445ec0aac4b9e46d7a"
+  },
+  "python_log_lines": [
+    "2026-10-08T17:39:25.5850734Z Successfully set up CPython (3.12.15)",
+    "2026-10-08T17:39:25.6443740Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64",
+    "2026-10-08T17:39:25.6445649Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig",
+    "2026-10-08T17:39:25.6447580Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64",
+    "2026-10-08T17:39:25.6449517Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64",
+    "2026-10-08T17:39:25.6451245Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64",
+    "2026-10-08T17:39:25.6453009Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib",
+    "2026-10-08T17:39:38.2392882Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64",
+    "2026-10-08T17:39:38.2393340Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig",
+    "2026-10-08T17:39:38.2393788Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64",
+    "2026-10-08T17:39:38.2394181Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64",
+    "2026-10-08T17:39:38.2394567Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64",
+    "2026-10-08T17:39:38.2394967Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib",
+    "2026-10-08T17:39:38.2823988Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64",
+    "2026-10-08T17:39:38.2824439Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig",
+    "2026-10-08T17:39:38.2824880Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64",
+    "2026-10-08T17:39:38.2825268Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64",
+    "2026-10-08T17:39:38.2825667Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64",
+    "2026-10-08T17:39:38.2826045Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib"
+  ],
+  "boundary": "This successful hosted full-project run qualifies the publication over actual main 1bafdaa3. Earlier native whole-suite ENOSPC remains a failed/incomplete native attempt. Author and independent-root native receiving remain bound to their exact frozen 6c4d composition; the current disjoint grade-review/module-progress inheritance is separately proven."
+}

@@ -1,0 +1,17 @@
+{
+  "format": "canvas-root-packet-independent-custody-v1",
+  "root_packet_source": "/home/jacob/snap/chromium/common/hamon-canvas-comparison-root-db371a37f4c8",
+  "archive_bytes": 476609,
+  "archive_sha256": "49dab56fda4ef75d6ebffa5789148606dc298485974e7c4ed0fb975baf937f42",
+  "archive_git_blob": "550dd5246c9a712f169ec01f820228f1e0788047",
+  "manifest_sha256": "839ca871a8645b81c43bbfe10323762193dc1b397eda2723b74ce5e907959b6d",
+  "manifest_member": "MANIFEST.json",
+  "payload_files": 25,
+  "archive_members": 26,
+  "all_members_roundtrip_exact": true,
+  "all_25_source_files_exact_before_after": true,
+  "copied_files_unchanged": true,
+  "root_note_sha256": "94ab4c7b6ad552882aa213b2e97f914c51a325635857e6ac8a39e544e34e6ef3",
+  "free_before": 12500324352,
+  "scope": "Copy and byte/member verification only; no product execution or extension of native receiving scope. Original ROOT.md exclusions preserved."
+}

@@ -1,0 +1,35 @@
+{
+  "schema": "hamon.external_contribution.v1",
+  "worker_id": "estate-926c3dc2605e-production",
+  "source_route": "chatgpt-workspace:/workspace/scratch/926c3dc2605e",
+  "identity_kind": "external ChatGPT contributor; not a resident Za or native task lease",
+  "state": "claimed_before_source_edits",
+  "updated_at": "2026-10-08T17:12:00Z",
+  "scopes": [
+    {
+      "owner": "estate-926c3dc2605e/production_execution",
+      "repository": "Jacob-Met/canvaspilot",
+      "area": "Save a readable offline review of Canvas-reported course grades using unchanged grade_review reader exactly once",
+      "paths": [
+        "src/canvaspilot/grade_review_export.py",
+        "src/canvaspilot/cli.py: additive export-grade-review parser/dispatch only",
+        "tests/test_grade_review_export.py",
+        "tests/grade_review_export_native.py",
+        "docs/grade-review-export.md",
+        "docs/receiving/grade-review-export-926c3dc2605e/",
+        "README.md: additive grade export usage"
+      ],
+      "state": "claimed_before_source_edits",
+      "source_commit": "1bafdaa31f7789d8e561680cb6001bbe38b2da64",
+      "source_tree": "fc4c5cee949a3a15caf32111af9144cb7eb95b6d",
+      "native_workspace": "/home/jacob/canvaspilot-grade-review-export-926c3dc2605e",
+      "branch": "work/926c3dc2605e-grade-review-export",
+      "preserved": "Existing API/client/broker/authentication, grade/feedback projections, MCP/bundle, dependencies/workflows and all other export/group/planner owners.",
+      "ownership_basis": "Full current source tree and README; GitHub current project issues/PRs and #47 source-complete discussion; #34 hidden feedback-export claim preserved; native external scope registry scanned. No grade-export claim found; advisory coverage is not a lease.",
+      "github_claim": "Attempted issue creation at2026-10-08T17:11:36UTC refused403 secondary rate limit; no hosted issue or alternate transport attempted.",
+      "acceptance": "Actual original CLI absence; fixture API/CLI and normalized JSON roundtrip; hidden/unposted/unknown/zero, enrollment roles, exact supplied context, literal markup/Unicode, course failure/no-overwrite; standalone desktop/phone/print reading without network; current source tests; independent receiving before integration.",
+      "limitations": "No real school/session/grade data, inferred arithmetic, grade applicability, dropped assignments, missing-work status, completeness, deployment or academic outcome."
+    }
+  ],
+  "native_goal_or_lease_claimed": false
+}
