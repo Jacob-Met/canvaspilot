@@ -1,0 +1,68 @@
+{
+  "schema": "canvaspilot-files-completeness-receiving-v1",
+  "contributor": "estate-f5611f6dc10a/production_frontier",
+  "source_base": "0480cbce421bae532e3e909899fc8fb83789e878",
+  "source_tree": "f9ecaa4311d93cfe3a1fd1c9cc140834e2449341",
+  "source_issue": "https://github.com/Jacob-Met/canvaspilot/issues/69",
+  "source_claim": "https://github.com/Jacob-Met/hamon/issues/140#issuecomment-6063742783",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "libraries": {
+    "httpx": "0.28.1",
+    "mcp": "2.3.0",
+    "pytest": "8.3.5",
+    "ruff": "0.16.10"
+  },
+  "product_blobs": {
+    "src/canvaspilot/api.py": "cd17584bed618fb4a42d7128d204b2683b889600",
+    "tests/test_files_completeness.py": "96e25ab6082a06ec18d1ff56dbb6ab5f954445be",
+    "README.md": "dbc0ddccaa80aa8a8ea64327da80e810f548a430"
+  },
+  "observed_native_source_blobs": {
+    "src/canvaspilot/api.py": "cd17584bed618fb4a42d7128d204b2683b889600",
+    "src/canvaspilot/client.py": "1db4b1135305f7e410025ae7937f9a6cd349f020",
+    "src/canvaspilot/__init__.py": "74a7a6087bf81fd7c75c15769b30408039618e0f",
+    "src/canvaspilot/assignment_submission.py": "95b1f19927e4eecf99fc852325737c3cfe86cd0d",
+    "src/canvaspilot/feedback.py": "ec996f421a851d699a9ac7cb1f2a486f9ff7c4ea",
+    "src/canvaspilot/agenda.py": "82ab4fa8f9b92b8d9e5d4c74962d138e1d882ebd",
+    "src/canvaspilot/bundle.py": "293c02dc86520d9d11907d47d014d2f73aa56fc0",
+    "src/canvaspilot/calendar_export.py": "ef74cfdf50fd894327dbe45a9a9d43042953bc31",
+    "src/canvaspilot/cli.py": "82f1cdfe7cec50413222b3d4b12a27aea587a4d1",
+    "src/canvaspilot/discussion_thread.py": "2ed658fcf5cee996a02115742935716f1d039e25",
+    "src/canvaspilot/folder_browser.py": "4b3078ddb00a4a34015710e49fa7b7806adebd23",
+    "src/canvaspilot/mcp_server.py": "34e9a2fad9d361718f5a9d4f3a89a3a42537b8fc",
+    "src/canvaspilot/module_progress.py": "a9d3e4bbea22067f76110f03a5f31a5bc9d8de05",
+    "src/canvaspilot/offline_demo.py": "9d2cfd260d8db052b8183e3ec4fc9626a5bb2b9a",
+    "src/canvaspilot/session_broker.py": "cc706d5860489ec37cb2cf7f0b1cb4eee33b664f",
+    "src/canvaspilot/submission_history.py": "9e71a0dc944bee71b0b5c61d7ff84cbb59119e1a"
+  },
+  "original_cli": {
+    "cases": 5,
+    "healthy": 1,
+    "unexpected_success_after_failure": 4,
+    "receipt": "baseline-cli.json"
+  },
+  "original_focused_tests": {
+    "passed": 3,
+    "failed": 12,
+    "errors": 0,
+    "receipt": "baseline-pytest.log"
+  },
+  "candidate_tests": {
+    "passed": 18,
+    "failed": 0,
+    "errors": 0,
+    "composition": "15 new regression cases plus test_fixture and two existing folder-navigation cases",
+    "receipt": "candidate-pytest.log"
+  },
+  "candidate_cli": {
+    "cases": 5,
+    "healthy_unchanged": 1,
+    "errors_propagated_without_stdout_or_folder_lookup": 4,
+    "receipt": "candidate-cli.json"
+  },
+  "setup": {
+    "description": "The first CLI attempt ran before declared MCP dependency installation completed; each of five processes failed imports before any HTTP request. Not product evidence. Initial dependency discovery/import probes likewise reported missing packages. One ordinary isolated no-cache install per dependency group completed; the MCP install retained an internal metadata-read retry.",
+    "receipt": "setup-cli.json"
+  },
+  "boundary": "Synthetic loopback HTTP and HTTPX MockTransport. Direct registered MCP function tests are not MCP stdio-wire qualification. No school account, live Canvas, saved profile, installed runtime or deployment operation."
+}

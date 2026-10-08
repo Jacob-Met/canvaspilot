@@ -1,0 +1,60 @@
+[
+  {
+    "case": "healthy",
+    "returncode": 0,
+    "stdout": "[\n  {\n    \"id\": 1,\n    \"display_name\": \"First course file\",\n    \"filename\": null,\n    \"size\": 0,\n    \"updated_at\": null,\n    \"url\": null,\n    \"content_type\": null\n  },\n  {\n    \"id\": 2,\n    \"display_name\": \"Nested course file\",\n    \"filename\": null,\n    \"size\": null,\n    \"updated_at\": null,\n    \"url\": null,\n    \"content_type\": null\n  }\n]\n",
+    "stderr": "HTTP Request: GET http://127.0.0.1:41657/api/v1/courses/7/files?per_page=50 \"HTTP/1.0 200 OK\"\nHTTP Request: GET http://127.0.0.1:41657/api/v1/courses/7/files?cursor=next \"HTTP/1.0 200 OK\"\n",
+    "requests": [
+      "/api/v1/courses/7/files?per_page=50",
+      "/api/v1/courses/7/files?cursor=next"
+    ]
+  },
+  {
+    "case": "403",
+    "returncode": 0,
+    "stdout": "[\n  {\n    \"id\": 99,\n    \"display_name\": \"Root-only decoy\",\n    \"filename\": null,\n    \"size\": 3,\n    \"updated_at\": null,\n    \"url\": null,\n    \"content_type\": null\n  }\n]\n",
+    "stderr": "HTTP Request: GET http://127.0.0.1:41657/api/v1/courses/7/files?per_page=50 \"HTTP/1.0 200 OK\"\nHTTP Request: GET http://127.0.0.1:41657/api/v1/courses/7/files?cursor=next \"HTTP/1.0 403 Forbidden\"\nHTTP Request: GET http://127.0.0.1:41657/api/v1/courses/7/folders/by_path?per_page=50 \"HTTP/1.0 200 OK\"\nHTTP Request: GET http://127.0.0.1:41657/api/v1/folders/80/files?per_page=50 \"HTTP/1.0 200 OK\"\n",
+    "requests": [
+      "/api/v1/courses/7/files?per_page=50",
+      "/api/v1/courses/7/files?cursor=next",
+      "/api/v1/courses/7/folders/by_path?per_page=50",
+      "/api/v1/folders/80/files?per_page=50"
+    ]
+  },
+  {
+    "case": "404",
+    "returncode": 0,
+    "stdout": "[\n  {\n    \"id\": 99,\n    \"display_name\": \"Root-only decoy\",\n    \"filename\": null,\n    \"size\": 3,\n    \"updated_at\": null,\n    \"url\": null,\n    \"content_type\": null\n  }\n]\n",
+    "stderr": "HTTP Request: GET http://127.0.0.1:41657/api/v1/courses/7/files?per_page=50 \"HTTP/1.0 200 OK\"\nHTTP Request: GET http://127.0.0.1:41657/api/v1/courses/7/files?cursor=next \"HTTP/1.0 404 Not Found\"\nHTTP Request: GET http://127.0.0.1:41657/api/v1/courses/7/folders/by_path?per_page=50 \"HTTP/1.0 200 OK\"\nHTTP Request: GET http://127.0.0.1:41657/api/v1/folders/80/files?per_page=50 \"HTTP/1.0 200 OK\"\n",
+    "requests": [
+      "/api/v1/courses/7/files?per_page=50",
+      "/api/v1/courses/7/files?cursor=next",
+      "/api/v1/courses/7/folders/by_path?per_page=50",
+      "/api/v1/folders/80/files?per_page=50"
+    ]
+  },
+  {
+    "case": "500",
+    "returncode": 0,
+    "stdout": "[\n  {\n    \"id\": 99,\n    \"display_name\": \"Root-only decoy\",\n    \"filename\": null,\n    \"size\": 3,\n    \"updated_at\": null,\n    \"url\": null,\n    \"content_type\": null\n  }\n]\n",
+    "stderr": "HTTP Request: GET http://127.0.0.1:41657/api/v1/courses/7/files?per_page=50 \"HTTP/1.0 200 OK\"\nHTTP Request: GET http://127.0.0.1:41657/api/v1/courses/7/files?cursor=next \"HTTP/1.0 500 Internal Server Error\"\nHTTP Request: GET http://127.0.0.1:41657/api/v1/courses/7/folders/by_path?per_page=50 \"HTTP/1.0 200 OK\"\nHTTP Request: GET http://127.0.0.1:41657/api/v1/folders/80/files?per_page=50 \"HTTP/1.0 200 OK\"\n",
+    "requests": [
+      "/api/v1/courses/7/files?per_page=50",
+      "/api/v1/courses/7/files?cursor=next",
+      "/api/v1/courses/7/folders/by_path?per_page=50",
+      "/api/v1/folders/80/files?per_page=50"
+    ]
+  },
+  {
+    "case": "malformed",
+    "returncode": 0,
+    "stdout": "[\n  {\n    \"id\": 99,\n    \"display_name\": \"Root-only decoy\",\n    \"filename\": null,\n    \"size\": 3,\n    \"updated_at\": null,\n    \"url\": null,\n    \"content_type\": null\n  }\n]\n",
+    "stderr": "HTTP Request: GET http://127.0.0.1:41657/api/v1/courses/7/files?per_page=50 \"HTTP/1.0 200 OK\"\nHTTP Request: GET http://127.0.0.1:41657/api/v1/courses/7/files?cursor=next \"HTTP/1.0 200 OK\"\nHTTP Request: GET http://127.0.0.1:41657/api/v1/courses/7/folders/by_path?per_page=50 \"HTTP/1.0 200 OK\"\nHTTP Request: GET http://127.0.0.1:41657/api/v1/folders/80/files?per_page=50 \"HTTP/1.0 200 OK\"\n",
+    "requests": [
+      "/api/v1/courses/7/files?per_page=50",
+      "/api/v1/courses/7/files?cursor=next",
+      "/api/v1/courses/7/folders/by_path?per_page=50",
+      "/api/v1/folders/80/files?per_page=50"
+    ]
+  }
+]

@@ -270,6 +270,17 @@ returned rows. This read-only workflow never marks items read or complete. See
 [the module-progress guide](docs/module-progress.md) for Python/MCP examples and
 coverage meanings.
 
+## Course files
+
+`canvaspilot files COURSE_ID`, `CanvasAPI.list_files(COURSE_ID)`, and
+`canvas_list_files` read the existing paginated course file collection.
+Authentication, request, and pagination errors propagate without a successful
+partial result or an automatic change to a root-folder listing. This includes
+errors on the first page. An empty successful collection remains an empty list;
+the existing field projection and returned page order are unchanged.
+Use the explicit folder browser below when you want a selected folder's direct
+children instead of the course collection.
+
 ## Browse course folders
 
 ```bash

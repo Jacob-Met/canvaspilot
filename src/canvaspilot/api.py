@@ -454,17 +454,9 @@ class CanvasAPI:
         )
 
     def list_files(self, course_id: int | str) -> list[dict[str, Any]]:
-        try:
-            rows = self.client.get_paginated(f"/api/v1/courses/{course_id}/files")
-        except Exception:
-            folders = self.client.request(
-                "GET",
-                f"/api/v1/courses/{course_id}/folders/by_path",
-            )
-            root = folders[0] if isinstance(folders, list) and folders else None
-            if not root:
-                raise
-            rows = self.client.get_paginated(f"/api/v1/folders/{root['id']}/files")
+        """List the course collection or propagate its read/pagination error."""
+        # A folder's direct children cannot stand in for the course collection.
+        rows = self.client.get_paginated(f"/api/v1/courses/{course_id}/files")
         return [
             {
                 "id": f.get("id"),
