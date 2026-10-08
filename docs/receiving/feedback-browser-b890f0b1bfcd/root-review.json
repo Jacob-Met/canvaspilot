@@ -1,0 +1,9 @@
+{
+  "reviewer": "chatgpt:b890f0b1bfcd:root",
+  "parent": "8c8d3b846f3c80f19ae5f37f9f35adf51ec081fc",
+  "path": "src/canvaspilot/feedback_export.py",
+  "received_sha256": "fb5bff28dbede008512f0738e15c2af56fde5a115e5c66ddb72a2fb05d962bf5",
+  "exact_single_declaration_substitution": true,
+  "review": "The existing h3 rule alone gains overflow-wrap:anywhere. It allows the original long unbroken heading text to wrap within the existing article and print width. All remaining source bytes are identical; the change does not alter returned data or HTML structure. Original and corrected source-proof and actual browser/print results were inspected. The corrected phone capture was also inspected.",
+  "decision": "Accept this exact product change for isolated child publication and normal owner integration; hosted gates and final parent composition remain separate."
+}

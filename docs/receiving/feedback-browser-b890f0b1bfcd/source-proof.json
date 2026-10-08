@@ -1,0 +1,47 @@
+{
+  "parent": "8c8d3b846f3c80f19ae5f37f9f35adf51ec081fc",
+  "parent_tree": "c2fc27a47a233725b93880587f4e9551b764cfae",
+  "path": "src/canvaspilot/feedback_export.py",
+  "old_git_blob": "9cab55d141484309f5511b857957888d7b040dda",
+  "new_git_blob": "b6fd566d132aedc30f1e754dfee4c74e533d910e",
+  "old_sha256": "3b0d685031ec6d9a364200c11bd265fb642e686c5de4d0cb249c041c5a6b177f",
+  "new_sha256": "fb5bff28dbede008512f0738e15c2af56fde5a115e5c66ddb72a2fb05d962bf5",
+  "source_change": "one overflow-wrap:anywhere declaration on existing h3 rule",
+  "semantic_ast_equal_excluding_exact_checked_style": true,
+  "source_inputs": 18,
+  "unchanged_other_source_inputs": 17,
+  "native_source_after_execution_exact": true,
+  "comparisons": [
+    {
+      "case": "ordinary",
+      "authored_input_exact": true,
+      "native_feedback_json_exact": true,
+      "html_delta_only_css_and_single_capture_timestamp": true
+    },
+    {
+      "case": "long-headings",
+      "authored_input_exact": true,
+      "native_feedback_json_exact": true,
+      "html_delta_only_css_and_single_capture_timestamp": true
+    },
+    {
+      "case": "points-hidden",
+      "authored_input_exact": true,
+      "native_feedback_json_exact": true,
+      "html_delta_only_css_and_single_capture_timestamp": true
+    },
+    {
+      "case": "total-hidden",
+      "authored_input_exact": true,
+      "native_feedback_json_exact": true,
+      "html_delta_only_css_and_single_capture_timestamp": true
+    },
+    {
+      "case": "both-hidden",
+      "authored_input_exact": true,
+      "native_feedback_json_exact": true,
+      "html_delta_only_css_and_single_capture_timestamp": true
+    }
+  ],
+  "note": "Native corrected runs were executed on this exact working-tree source derived from the pinned parent; producer-result HEAD identifies that parent and source-before/source-after identify the corrected bytes. No receiving result is relabeled as a later commit execution."
+}
