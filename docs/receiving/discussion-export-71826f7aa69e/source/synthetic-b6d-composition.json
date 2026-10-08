@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "repository": "Jacob-Met/canvaspilot",
+  "pr": 91,
+  "sourceHead": "8548037fe4f6b9e1a640cdabdd288a0c3f8751b1",
+  "sourceTree": "d0c260ff7d1ba0728f3db13a94fe5ccdf3b6c785",
+  "target": "b6d73588887ce57a2637ab72ee424a5eb29e543f",
+  "targetTree": "c6fd4275a75e49847f76849b73f72a1c1d359c15",
+  "syntheticMerge": "17a368885b7c4d579ecd9b80dda5afe560091cf2",
+  "syntheticTree": "73c7373186df76e1b26be5a3c0a492889b61e938",
+  "targetLeaves": 1583,
+  "unrelatedTargetLeavesPreserved": 1581,
+  "contributionPaths": 11,
+  "syntheticLeaves": 1592,
+  "sharedFiles": [
+    {
+      "path": "src/canvaspilot/cli.py",
+      "bytes": 39295,
+      "git": "eb123a8b05160bd52f45931e4345898d3acbb78b",
+      "sha256": "b66674f7c93125dac0d38a13268fe4a19867bd725bd1ac7b24fcaa04dfb822fa"
+    },
+    {
+      "path": "README.md",
+      "bytes": 27989,
+      "git": "d97e2647390e87db120fc6f37c3bf2f77e486e3a",
+      "sha256": "3ebbd4d2a35980aa60d6163008925a78a277e2c81c16a10bdefc4340102cfc73"
+    }
+  ],
+  "allOtherContributionPinsExact": true,
+  "ownAdditionsExactlyReversibleToCurrentTarget": true,
+  "hostedRun": 37838072533,
+  "hostedJob": 113520138551,
+  "hostedCheckoutNotYetRead": true
+}

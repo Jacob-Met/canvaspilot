@@ -1,0 +1,261 @@
+{
+  "started": "2026-10-08T20:04:17.589Z",
+  "phase": "complete",
+  "success": true,
+  "manifest": {
+    "path": "/home/jacob/hamon-canvas-discussion-browser-71826f7aa69e/full-inputs.json",
+    "sha256": "94cc4e3cb1d14f776a5ee18a3cea4bdf07f785e45cf1c622930ff770c5bd97ce"
+  },
+  "receiver": {
+    "path": "/home/jacob/hamon-canvas-discussion-browser-71826f7aa69e/receive-discussion.mjs",
+    "sha256": "6e4a309246e4001ef1f0cd5b07a860d3d9520441de60b766df07ced8a831a521"
+  },
+  "runtime": {
+    "node": "v22.22.1",
+    "playwright": "1.64.0",
+    "chromium": "/snap/bin/chromium",
+    "browser": "153.0.8010.47"
+  },
+  "preflight": [
+    {
+      "path": "/home/jacob/hamon-canvas-discussion-browser-71826f7aa69e/receive-discussion.mjs",
+      "sha256": "6e4a309246e4001ef1f0cd5b07a860d3d9520441de60b766df07ced8a831a521",
+      "bytes": 14316
+    },
+    {
+      "path": "/home/jacob/hamon-canvas-discussion-browser-71826f7aa69e/full-inputs.json",
+      "sha256": "94cc4e3cb1d14f776a5ee18a3cea4bdf07f785e45cf1c622930ff770c5bd97ce",
+      "bytes": 1810
+    },
+    {
+      "path": "/home/jacob/hamon-canvas-discussion-export-71826f7aa69e/source/src/canvaspilot/discussion_export.py",
+      "sha256": "95e8d7078462a60d4d3f1c4bd46b302bb69598563675f44d5d0326edf69d8cde",
+      "bytes": 12890
+    },
+    {
+      "path": "/home/jacob/hamon-canvas-discussion-export-71826f7aa69e/source/src/canvaspilot/cli.py",
+      "sha256": "11215a327e206cef6326c2cfa06feb8e68107dafda0aa835618d83dceac5563f",
+      "bytes": 32910
+    },
+    {
+      "path": "/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/fixtures-v1.json",
+      "sha256": "458f8d8b3a6fae5da5358fa1f83ed8c3c9b095abb2781e103260082197dbb435",
+      "bytes": 3513
+    },
+    {
+      "path": "/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/cli-cut2/receiving.json",
+      "sha256": "8a6acd6a0ad4a9360e4a4ff410d913a18aad5272df543d071760c72a997c847a",
+      "overallState": "failed",
+      "acceptedCase": "full",
+      "laterUnreadTimeoutPreserved": true,
+      "bytes": 4920
+    },
+    {
+      "path": "/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/cli-cut2/full.html",
+      "sha256": "5255e430919e65eb33c4114a27e4bd7702e961c10c5e6d159ed58dc81465f084",
+      "bytes": 27790
+    },
+    {
+      "path": "/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/cli-cut2/oracle-full.json",
+      "sha256": "0fb98cac015d190ff3a10eea7e3643c2d981234cc58bb7ffc8921e2d40d8d638",
+      "bytes": 5606
+    }
+  ],
+  "reports": [
+    {
+      "name": "full",
+      "html": {
+        "path": "/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/cli-cut2/full.html",
+        "sha256": "5255e430919e65eb33c4114a27e4bd7702e961c10c5e6d159ed58dc81465f084"
+      },
+      "oracle": {
+        "path": "/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/cli-cut2/oracle-full.json",
+        "sha256": "0fb98cac015d190ff3a10eea7e3643c2d981234cc58bb7ffc8921e2d40d8d638"
+      },
+      "rows": [
+        {
+          "ordinal": 0,
+          "path": [
+            0
+          ],
+          "parent_path": null,
+          "context_only": false,
+          "read_state": "read",
+          "bodyKind": "text",
+          "parentHref": null
+        },
+        {
+          "ordinal": 1,
+          "path": [
+            0,
+            0
+          ],
+          "parent_path": [
+            0
+          ],
+          "context_only": false,
+          "read_state": "read",
+          "bodyKind": "deleted",
+          "parentHref": "#entry-0"
+        },
+        {
+          "ordinal": 2,
+          "path": [
+            0,
+            1
+          ],
+          "parent_path": [
+            0
+          ],
+          "context_only": false,
+          "read_state": "unread",
+          "bodyKind": "text",
+          "parentHref": "#entry-0"
+        },
+        {
+          "ordinal": 3,
+          "path": [
+            1
+          ],
+          "parent_path": null,
+          "context_only": false,
+          "read_state": "unread",
+          "bodyKind": "empty",
+          "parentHref": null
+        },
+        {
+          "ordinal": 4,
+          "path": [
+            2
+          ],
+          "parent_path": null,
+          "context_only": false,
+          "read_state": "read",
+          "bodyKind": "empty",
+          "parentHref": null
+        },
+        {
+          "ordinal": 5,
+          "path": [
+            3
+          ],
+          "parent_path": null,
+          "context_only": false,
+          "read_state": "unknown",
+          "bodyKind": "text",
+          "parentHref": null
+        },
+        {
+          "ordinal": 6,
+          "path": [
+            4
+          ],
+          "parent_path": null,
+          "context_only": false,
+          "read_state": "unknown",
+          "bodyKind": "text",
+          "parentHref": null
+        },
+        {
+          "ordinal": 7,
+          "path": [
+            5
+          ],
+          "parent_path": null,
+          "context_only": false,
+          "read_state": "read",
+          "bodyKind": "missing",
+          "parentHref": null
+        }
+      ],
+      "widths": [
+        {
+          "width": 390,
+          "detailsOpen": false,
+          "viewport": 390,
+          "htmlWidth": 390,
+          "bodyWidth": 390,
+          "noHorizontalOverflow": true
+        },
+        {
+          "width": 390,
+          "detailsOpen": true,
+          "viewport": 390,
+          "htmlWidth": 390,
+          "bodyWidth": 390,
+          "noHorizontalOverflow": true
+        },
+        {
+          "width": 320,
+          "detailsOpen": false,
+          "viewport": 320,
+          "htmlWidth": 320,
+          "bodyWidth": 320,
+          "noHorizontalOverflow": true
+        },
+        {
+          "width": 320,
+          "detailsOpen": true,
+          "viewport": 320,
+          "htmlWidth": 320,
+          "bodyWidth": 320,
+          "noHorizontalOverflow": true
+        }
+      ],
+      "downloads": {
+        "path": "/home/jacob/hamon-canvas-discussion-browser-71826f7aa69e/full-receiving-95e8/full-discussion-thread.json",
+        "suggestedFilename": "discussion-thread.json",
+        "bytes": 5606,
+        "sha256": "0fb98cac015d190ff3a10eea7e3643c2d981234cc58bb7ffc8921e2d40d8d638",
+        "equalsNormalizedOracle": true
+      },
+      "print": {
+        "pdf": "/home/jacob/hamon-canvas-discussion-browser-71826f7aa69e/full-receiving-95e8/full.pdf",
+        "bytes": 62230,
+        "sha256": "49c8a415320d56def1a4cb53c4e1e6960acbbc310608745c8200d0cd3565cdc3",
+        "readableEntries": 8,
+        "metadataDetailsClosed": true,
+        "navigationAndDownloadHidden": true,
+        "pdfInfo": "Title:           Discussion snapshot — CanvasPilot\nCreator:         Mozilla/5.0 (X11; Ubuntu; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36\nProducer:        Skia/PDF m153\nCreationDate:    Thu Oct  8 20:04:59 2026 UTC\nModDate:         Thu Oct  8 20:04:59 2026 UTC\nCustom Metadata: no\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           6\nEncrypted:       no\nPage size:       595.92 x 842.88 pts (A4)\nPage rot:        0\nFile size:       62230 bytes\nOptimized:       no\nPDF version:     1.4\n"
+      },
+      "parentNavigation": {
+        "clicked": "#entry-0",
+        "reached": "#entry-0"
+      },
+      "keyboardDisclosure": {
+        "openedWithEnter": true,
+        "closedWithEnter": true
+      },
+      "desktopScreenshot": {
+        "path": "/home/jacob/hamon-canvas-discussion-browser-71826f7aa69e/full-receiving-95e8/full-desktop.png",
+        "sha256": "760db5527472d4c0a6a418a2ba3d2668c32a38f466d418f2b86dbe2cca484487"
+      },
+      "narrowScreenshot": {
+        "path": "/home/jacob/hamon-canvas-discussion-browser-71826f7aa69e/full-receiving-95e8/full-narrow.png",
+        "sha256": "e1f760e63e4078d0be97b9e962419c11b9d65c7c1bf3315b6b500bfcc0456529"
+      }
+    }
+  ],
+  "requests": [
+    {
+      "url": "file:///home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/cli-cut2/full.html",
+      "resourceType": "document"
+    }
+  ],
+  "externalRequests": [],
+  "pageErrors": [],
+  "consoleErrors": [],
+  "limitations": [
+    "Synthetic fixture documents only; no live Canvas credentials, session, or source requests.",
+    "Browser receiving consumes the independent CLI-produced full/unread HTML and exact normalized oracles.",
+    "Print qualification covers readable thread and scope with metadata details closed; complete normalized data is qualified by actual download.",
+    "Network observation covers page-context resource attempts, not operating-system Chromium background telemetry."
+  ],
+  "capacityBefore": {
+    "availableBytes": 2146779136
+  },
+  "freshProfile": "/home/jacob/hamon-canvas-discussion-browser-71826f7aa69e/full-receiving-95e8/browser-profile",
+  "inputsUnchanged": true,
+  "contextClosed": true,
+  "finished": "2026-10-08T20:05:03.279Z"
+}

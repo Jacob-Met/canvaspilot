@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "repository": "Jacob-Met/canvaspilot",
+  "pr": 91,
+  "run": 37838072533,
+  "job": 113520138551,
+  "event": "pull_request",
+  "runAttempt": 1,
+  "conclusion": "success",
+  "head": "8548037fe4f6b9e1a640cdabdd288a0c3f8751b1",
+  "observedSyntheticCheckout": "17a368885b7c4d579ecd9b80dda5afe560091cf2",
+  "syntheticTree": "73c7373186df76e1b26be5a3c0a492889b61e938",
+  "log": {
+    "bytes": 35320,
+    "sha256": "e3efaa757832dce87896a8728c95b2a7b37a0f30f8d0f7e7d2523945e4cd0328",
+    "git": "d19c4635a0203084e5205100173972b08db6595f",
+    "utf8Bom": true
+  },
+  "evidenceLines": [
+    "2026-10-08T20:15:30.0055113Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +17a368885b7c4d579ecd9b80dda5afe560091cf2:refs/remotes/pull/91/merge",
+    "2026-10-08T20:15:30.4689804Z  * [new ref]         17a368885b7c4d579ecd9b80dda5afe560091cf2 -> pull/91/merge",
+    "2026-10-08T20:15:30.6185979Z HEAD is now at 17a3688 Merge 8548037fe4f6b9e1a640cdabdd288a0c3f8751b1 into b6d73588887ce57a2637ab72ee424a5eb29e543f",
+    "2026-10-08T20:15:30.6277274Z 17a368885b7c4d579ecd9b80dda5afe560091cf2",
+    "2026-10-08T20:15:30.7879174Z Successfully set up CPython (3.12.15)",
+    "2026-10-08T20:15:42.1656282Z All checks passed!",
+    "2026-10-08T20:21:20.2181084Z 1167 passed, 1 skipped, 93 subtests passed in 337.36s (0:05:37)"
+  ],
+  "rerunsRequested": 0,
+  "syntheticCompositionProofBlob": "af42673794da65920c126209613d27a1ae45be92"
+}

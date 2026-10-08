@@ -1,0 +1,163 @@
+{
+  "schema": "canvaspilot.discussion-export.full-browser-archive.v1",
+  "status": "accepted-full-only-unread-pending",
+  "originalPacket": {
+    "path": "full-packet.json",
+    "sha256": "b1c9631710c2f1406d81d3ef8e6781e2c61e58166dd41c5b59c2bd898acb5244"
+  },
+  "archive": {
+    "path": "full-browser-95e8.tar.gz",
+    "bytes": 1272573,
+    "sha256": "01faaa9342f016ee6ab92df75cfabe7945dd40a4bb6f46de7760f0da661991dc",
+    "gitBlob": "1882af91d2eabae515a0af93ae8f9b27c0bf061d"
+  },
+  "memberCount": 20,
+  "allMembersReadBackExact": true,
+  "excluded": [
+    "browser-profile",
+    "tmp"
+  ],
+  "boundary": "One accepted full browser invocation; the independent CLI receipt preserves its later unread timeout. Unread-only browser receiving is not included.",
+  "members": [
+    {
+      "path": "receive-discussion.mjs",
+      "nativeSource": "/home/jacob/hamon-canvas-discussion-browser-71826f7aa69e/receive-discussion.mjs",
+      "bytes": 14316,
+      "sha256": "6e4a309246e4001ef1f0cd5b07a860d3d9520441de60b766df07ced8a831a521",
+      "gitBlob": "d9abd537b2a330ec305b5cdd835046366a98c91c"
+    },
+    {
+      "path": "full-inputs.json",
+      "nativeSource": "/home/jacob/hamon-canvas-discussion-browser-71826f7aa69e/full-inputs.json",
+      "bytes": 1810,
+      "sha256": "94cc4e3cb1d14f776a5ee18a3cea4bdf07f785e45cf1c622930ff770c5bd97ce",
+      "gitBlob": "45efeea7259365adf4597fd6589aaec02ee62001"
+    },
+    {
+      "path": "full-run.json",
+      "nativeSource": "/home/jacob/hamon-canvas-discussion-browser-71826f7aa69e/full-run.json",
+      "bytes": 761,
+      "sha256": "9056e63bf10b2c24a57395df62f14012760d18c1152847ff0fea761cc1db4f19",
+      "gitBlob": "01202c26a384e95e52f485fdc1325dfe56a4d33c"
+    },
+    {
+      "path": "full.stdout.log",
+      "nativeSource": "/home/jacob/hamon-canvas-discussion-browser-71826f7aa69e/full.stdout.log",
+      "bytes": 140,
+      "sha256": "6e491ebf10e34b3c6505a5503598708d203de65b2e1eec89377b9c1b3892648f",
+      "gitBlob": "654239cc2745cbd735b5bacfa8c9239d0a2122ff"
+    },
+    {
+      "path": "full.stderr.log",
+      "nativeSource": "/home/jacob/hamon-canvas-discussion-browser-71826f7aa69e/full.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "full-receiving-95e8/receiving.json",
+      "nativeSource": "/home/jacob/hamon-canvas-discussion-browser-71826f7aa69e/full-receiving-95e8/receiving.json",
+      "bytes": 8943,
+      "sha256": "3e2a2c5ef1910003bbe0a83939a1625018d17ebc5483704c200a8c2afe3a1b3d",
+      "gitBlob": "b618c4f00d04380965581220486682064f61e702"
+    },
+    {
+      "path": "full-receiving-95e8/full-discussion-thread.json",
+      "nativeSource": "/home/jacob/hamon-canvas-discussion-browser-71826f7aa69e/full-receiving-95e8/full-discussion-thread.json",
+      "bytes": 5606,
+      "sha256": "0fb98cac015d190ff3a10eea7e3643c2d981234cc58bb7ffc8921e2d40d8d638",
+      "gitBlob": "710910f948fc31b2dc9a68c0ace129d691d2a5fb"
+    },
+    {
+      "path": "full-receiving-95e8/full-desktop.png",
+      "nativeSource": "/home/jacob/hamon-canvas-discussion-browser-71826f7aa69e/full-receiving-95e8/full-desktop.png",
+      "bytes": 594978,
+      "sha256": "760db5527472d4c0a6a418a2ba3d2668c32a38f466d418f2b86dbe2cca484487",
+      "gitBlob": "88407c6d4c2bbe3ddce9e1d89d0a63d4e1ddc6d5"
+    },
+    {
+      "path": "full-receiving-95e8/full-narrow.png",
+      "nativeSource": "/home/jacob/hamon-canvas-discussion-browser-71826f7aa69e/full-receiving-95e8/full-narrow.png",
+      "bytes": 547273,
+      "sha256": "e1f760e63e4078d0be97b9e962419c11b9d65c7c1bf3315b6b500bfcc0456529",
+      "gitBlob": "1ba79e680ad87e2ab471a374850a7223fea9b3c8"
+    },
+    {
+      "path": "full-receiving-95e8/full.pdf",
+      "nativeSource": "/home/jacob/hamon-canvas-discussion-browser-71826f7aa69e/full-receiving-95e8/full.pdf",
+      "bytes": 62230,
+      "sha256": "49c8a415320d56def1a4cb53c4e1e6960acbbc310608745c8200d0cd3565cdc3",
+      "gitBlob": "8011978d961e479e7df4697549d3770a374f555d"
+    },
+    {
+      "path": "full-receiving-95e8/full-print.txt",
+      "nativeSource": "/home/jacob/hamon-canvas-discussion-browser-71826f7aa69e/full-receiving-95e8/full-print.txt",
+      "bytes": 6967,
+      "sha256": "36ea67867a7dc849965433989ffcdbbc0d591e704e0a3986bc5b589144b27d09",
+      "gitBlob": "d108c3c1249622ece467a9b958887c0c5a4d30c3"
+    },
+    {
+      "path": "full-receiving-95e8/full-pdfinfo.txt",
+      "nativeSource": "/home/jacob/hamon-canvas-discussion-browser-71826f7aa69e/full-receiving-95e8/full-pdfinfo.txt",
+      "bytes": 623,
+      "sha256": "e69b0fecb642e0db7e831309eff3060a401044bc9cc5d755309ce33045befc3e",
+      "gitBlob": "4feb298fb059d5f32d7ccb431013c13d69819113"
+    },
+    {
+      "path": "full-receiving-95e8/full-print-page1.png",
+      "nativeSource": "/home/jacob/hamon-canvas-discussion-browser-71826f7aa69e/full-receiving-95e8/full-print-page1.png",
+      "bytes": 140565,
+      "sha256": "e2688da97bf794bd2aafef29a5078c95df9fdb7ba71071bccdb16586184fc62c",
+      "gitBlob": "b25f315d43acdefada00bc004cd6626c668eb841"
+    },
+    {
+      "path": "full-packet.json",
+      "nativeSource": "/home/jacob/hamon-canvas-discussion-browser-71826f7aa69e/full-packet.json",
+      "bytes": 4102,
+      "sha256": "b1c9631710c2f1406d81d3ef8e6781e2c61e58166dd41c5b59c2bd898acb5244",
+      "gitBlob": "4aa7fd614b61378ed05101e5fe4f5f2e1c52a652"
+    },
+    {
+      "path": "inputs/full.html",
+      "nativeSource": "/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/cli-cut2/full.html",
+      "bytes": 27790,
+      "sha256": "5255e430919e65eb33c4114a27e4bd7702e961c10c5e6d159ed58dc81465f084",
+      "gitBlob": "658eeb6209738b962c4ef2732aff47f5c2f51b9e"
+    },
+    {
+      "path": "inputs/oracle-full.json",
+      "nativeSource": "/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/cli-cut2/oracle-full.json",
+      "bytes": 5606,
+      "sha256": "0fb98cac015d190ff3a10eea7e3643c2d981234cc58bb7ffc8921e2d40d8d638",
+      "gitBlob": "710910f948fc31b2dc9a68c0ace129d691d2a5fb"
+    },
+    {
+      "path": "inputs/source/discussion_export.py",
+      "nativeSource": "/home/jacob/hamon-canvas-discussion-export-71826f7aa69e/source/src/canvaspilot/discussion_export.py",
+      "bytes": 12890,
+      "sha256": "95e8d7078462a60d4d3f1c4bd46b302bb69598563675f44d5d0326edf69d8cde",
+      "gitBlob": "3e6ab7731ce72cdedaef084d3cee6e3f5f539133"
+    },
+    {
+      "path": "inputs/source/cli.py",
+      "nativeSource": "/home/jacob/hamon-canvas-discussion-export-71826f7aa69e/source/src/canvaspilot/cli.py",
+      "bytes": 32910,
+      "sha256": "11215a327e206cef6326c2cfa06feb8e68107dafda0aa835618d83dceac5563f",
+      "gitBlob": "22c5fedb5a5aad714400f159f32dc86ec7ef9711"
+    },
+    {
+      "path": "inputs/fixtures-v1.json",
+      "nativeSource": "/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/fixtures-v1.json",
+      "bytes": 3513,
+      "sha256": "458f8d8b3a6fae5da5358fa1f83ed8c3c9b095abb2781e103260082197dbb435",
+      "gitBlob": "696cc45e48c5466d94fcfa18b1c341ef9a630634"
+    },
+    {
+      "path": "inputs/independent-cli-receiving.json",
+      "nativeSource": "/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/cli-cut2/receiving.json",
+      "bytes": 4920,
+      "sha256": "8a6acd6a0ad4a9360e4a4ff410d913a18aad5272df543d071760c72a997c847a",
+      "gitBlob": "bdf6ff2cc25462c34eb24d31cec5e6ae7af05f6c"
+    }
+  ]
+}
