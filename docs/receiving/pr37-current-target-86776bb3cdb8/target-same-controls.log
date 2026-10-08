@@ -1,0 +1,172 @@
+FFFFFFF.                                                                 [100%]
+=================================== FAILURES ===================================
+_________ test_malformed_relation_metadata_cannot_assert_completion[] __________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f5128762450>
+suffix = ''
+
+    @pytest.mark.parametrize("suffix", [
+        "",
+        "; rel=<next>",
+        "; rel=next/prev",
+        '; rel="<next>"',
+        '; rel="next/prev"',
+        '; rel="next\talternate"',
+        '; rel="next"; title=not=a=token',
+    ])
+    def test_malformed_relation_metadata_cannot_assert_completion(monkeypatch, suffix):
+        replies = [{"json": [{"id": 1}], "link": f"<{NEXT}>{suffix}"},
+                   {"json": [{"id": 99}], "link": None}]
+        with collection(monkeypatch, replies) as (client, calls):
+>           with pytest.raises(RuntimeError, match="pagination.*Link"):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           Failed: DID NOT RAISE RuntimeError
+
+../86776bb3cdb8-product-pr37-current-target/tests/test_broker_link_metadata_receiving.py:95: Failed
+___ test_malformed_relation_metadata_cannot_assert_completion[; rel=<next>] ____
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f51287c0230>
+suffix = '; rel=<next>'
+
+    @pytest.mark.parametrize("suffix", [
+        "",
+        "; rel=<next>",
+        "; rel=next/prev",
+        '; rel="<next>"',
+        '; rel="next/prev"',
+        '; rel="next\talternate"',
+        '; rel="next"; title=not=a=token',
+    ])
+    def test_malformed_relation_metadata_cannot_assert_completion(monkeypatch, suffix):
+        replies = [{"json": [{"id": 1}], "link": f"<{NEXT}>{suffix}"},
+                   {"json": [{"id": 99}], "link": None}]
+        with collection(monkeypatch, replies) as (client, calls):
+>           with pytest.raises(RuntimeError, match="pagination.*Link"):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           Failed: DID NOT RAISE RuntimeError
+
+../86776bb3cdb8-product-pr37-current-target/tests/test_broker_link_metadata_receiving.py:95: Failed
+__ test_malformed_relation_metadata_cannot_assert_completion[; rel=next/prev] __
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f5127e76840>
+suffix = '; rel=next/prev'
+
+    @pytest.mark.parametrize("suffix", [
+        "",
+        "; rel=<next>",
+        "; rel=next/prev",
+        '; rel="<next>"',
+        '; rel="next/prev"',
+        '; rel="next\talternate"',
+        '; rel="next"; title=not=a=token',
+    ])
+    def test_malformed_relation_metadata_cannot_assert_completion(monkeypatch, suffix):
+        replies = [{"json": [{"id": 1}], "link": f"<{NEXT}>{suffix}"},
+                   {"json": [{"id": 99}], "link": None}]
+        with collection(monkeypatch, replies) as (client, calls):
+>           with pytest.raises(RuntimeError, match="pagination.*Link"):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           Failed: DID NOT RAISE RuntimeError
+
+../86776bb3cdb8-product-pr37-current-target/tests/test_broker_link_metadata_receiving.py:95: Failed
+__ test_malformed_relation_metadata_cannot_assert_completion[; rel="<next>"] ___
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f5127e43ef0>
+suffix = '; rel="<next>"'
+
+    @pytest.mark.parametrize("suffix", [
+        "",
+        "; rel=<next>",
+        "; rel=next/prev",
+        '; rel="<next>"',
+        '; rel="next/prev"',
+        '; rel="next\talternate"',
+        '; rel="next"; title=not=a=token',
+    ])
+    def test_malformed_relation_metadata_cannot_assert_completion(monkeypatch, suffix):
+        replies = [{"json": [{"id": 1}], "link": f"<{NEXT}>{suffix}"},
+                   {"json": [{"id": 99}], "link": None}]
+        with collection(monkeypatch, replies) as (client, calls):
+>           with pytest.raises(RuntimeError, match="pagination.*Link"):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           Failed: DID NOT RAISE RuntimeError
+
+../86776bb3cdb8-product-pr37-current-target/tests/test_broker_link_metadata_receiving.py:95: Failed
+_ test_malformed_relation_metadata_cannot_assert_completion[; rel="next/prev"] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f5127e43d10>
+suffix = '; rel="next/prev"'
+
+    @pytest.mark.parametrize("suffix", [
+        "",
+        "; rel=<next>",
+        "; rel=next/prev",
+        '; rel="<next>"',
+        '; rel="next/prev"',
+        '; rel="next\talternate"',
+        '; rel="next"; title=not=a=token',
+    ])
+    def test_malformed_relation_metadata_cannot_assert_completion(monkeypatch, suffix):
+        replies = [{"json": [{"id": 1}], "link": f"<{NEXT}>{suffix}"},
+                   {"json": [{"id": 99}], "link": None}]
+        with collection(monkeypatch, replies) as (client, calls):
+>           with pytest.raises(RuntimeError, match="pagination.*Link"):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           Failed: DID NOT RAISE RuntimeError
+
+../86776bb3cdb8-product-pr37-current-target/tests/test_broker_link_metadata_receiving.py:95: Failed
+_ test_malformed_relation_metadata_cannot_assert_completion[; rel="next\talternate"] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f5127e74140>
+suffix = '; rel="next\talternate"'
+
+    @pytest.mark.parametrize("suffix", [
+        "",
+        "; rel=<next>",
+        "; rel=next/prev",
+        '; rel="<next>"',
+        '; rel="next/prev"',
+        '; rel="next\talternate"',
+        '; rel="next"; title=not=a=token',
+    ])
+    def test_malformed_relation_metadata_cannot_assert_completion(monkeypatch, suffix):
+        replies = [{"json": [{"id": 1}], "link": f"<{NEXT}>{suffix}"},
+                   {"json": [{"id": 99}], "link": None}]
+        with collection(monkeypatch, replies) as (client, calls):
+>           with pytest.raises(RuntimeError, match="pagination.*Link"):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           Failed: DID NOT RAISE RuntimeError
+
+../86776bb3cdb8-product-pr37-current-target/tests/test_broker_link_metadata_receiving.py:95: Failed
+_ test_malformed_relation_metadata_cannot_assert_completion[; rel="next"; title=not=a=token] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f5127e77c50>
+suffix = '; rel="next"; title=not=a=token'
+
+    @pytest.mark.parametrize("suffix", [
+        "",
+        "; rel=<next>",
+        "; rel=next/prev",
+        '; rel="<next>"',
+        '; rel="next/prev"',
+        '; rel="next\talternate"',
+        '; rel="next"; title=not=a=token',
+    ])
+    def test_malformed_relation_metadata_cannot_assert_completion(monkeypatch, suffix):
+        replies = [{"json": [{"id": 1}], "link": f"<{NEXT}>{suffix}"},
+                   {"json": [{"id": 99}], "link": None}]
+        with collection(monkeypatch, replies) as (client, calls):
+>           with pytest.raises(RuntimeError, match="pagination.*Link"):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           Failed: DID NOT RAISE RuntimeError
+
+../86776bb3cdb8-product-pr37-current-target/tests/test_broker_link_metadata_receiving.py:95: Failed
+=========================== short test summary info ============================
+FAILED ../86776bb3cdb8-product-pr37-current-target/tests/test_broker_link_metadata_receiving.py::test_malformed_relation_metadata_cannot_assert_completion[]
+FAILED ../86776bb3cdb8-product-pr37-current-target/tests/test_broker_link_metadata_receiving.py::test_malformed_relation_metadata_cannot_assert_completion[; rel=<next>]
+FAILED ../86776bb3cdb8-product-pr37-current-target/tests/test_broker_link_metadata_receiving.py::test_malformed_relation_metadata_cannot_assert_completion[; rel=next/prev]
+FAILED ../86776bb3cdb8-product-pr37-current-target/tests/test_broker_link_metadata_receiving.py::test_malformed_relation_metadata_cannot_assert_completion[; rel="<next>"]
+FAILED ../86776bb3cdb8-product-pr37-current-target/tests/test_broker_link_metadata_receiving.py::test_malformed_relation_metadata_cannot_assert_completion[; rel="next/prev"]
+FAILED ../86776bb3cdb8-product-pr37-current-target/tests/test_broker_link_metadata_receiving.py::test_malformed_relation_metadata_cannot_assert_completion[; rel="next\talternate"]
+FAILED ../86776bb3cdb8-product-pr37-current-target/tests/test_broker_link_metadata_receiving.py::test_malformed_relation_metadata_cannot_assert_completion[; rel="next"; title=not=a=token]
+7 failed, 1 passed in 1.11s

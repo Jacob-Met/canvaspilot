@@ -1,0 +1,26 @@
+{
+  "current-target-preservation.json": {
+    "bytes": 13174,
+    "sha256": "044479831a9ad9f85aeb77b94849f3f45ebb0dc1330dfb6a02d5f07930dd8c5b"
+  },
+  "current-target-native-receipt.json": {
+    "bytes": 1807,
+    "sha256": "dd178bd53dd2c5edce2fd501d9e42bc2093e279409261dea2a2a52ef60cbbccc"
+  },
+  "current-target-native.log": {
+    "bytes": 112,
+    "sha256": "610e92cde5eb0504d1f4cffbd1ef5e1d00e1c11e0cc2242d9451a5e54100ff0c"
+  },
+  "current-target-loaded-source.json": {
+    "bytes": 652,
+    "sha256": "84b11aab52adde2b7b3d5b76d2a0976994686ed75ac647711a171af226f1f9bb"
+  },
+  "current-target-parser-receipt.json": {
+    "bytes": 863,
+    "sha256": "93e1e517a096755648de1afed7c199f9b233ed27b4a415f015bbab8abc8371bd"
+  },
+  "run-current-target-receiving.py": {
+    "bytes": 3540,
+    "sha256": "3249be64ac3e200421eda9eacc75153b58fde2caa954dfca46b1eec8645bbf27"
+  }
+}

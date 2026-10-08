@@ -1,0 +1,33 @@
+{
+  "observed_at": "2026-10-08T10:34:22.759072+00:00",
+  "source_commit": "348a42b88c1fcd329be0132519a20d27e933900d",
+  "source_tree": "31fcf6b295a917a7e6854b6bb8d14fa3759c2bc5",
+  "command": [
+    "/workspace/scratch/86776bb3cdb8/product-delivery/venv/bin/python",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "--basetemp",
+    "/dev/shm/86776bb3cdb8-product-pr37-target-evidence/tmp-candidate-affected-controls/pytest",
+    "tests/test_broker_link_metadata_receiving.py",
+    "tests/test_broker_links.py",
+    "tests/test_link_context_receiving.py",
+    "tests/test_terminal_page_shape_receiving.py"
+  ],
+  "cwd": "/dev/shm/86776bb3cdb8-product-pr37-current-target",
+  "source_env": "/dev/shm/86776bb3cdb8-product-pr37-current-target/src",
+  "loaded_client_file": "/dev/shm/86776bb3cdb8-product-pr37-current-target/src/canvaspilot/client.py",
+  "loaded_client_sha256": "5ab0c0cd579f82b89ace05be6e15b6d38844abe1d8bf6df5b0c35b906d09a1c8",
+  "test_sha256": "5b92def5254d9a00a73f6e268903b367664763d440bbfafd3861a570ce2c3ace",
+  "exit_code": 0,
+  "elapsed_seconds": 5.507,
+  "log_sha256": "cab4151a917dde7db84135610561010f4e6bd99c9fb2d37e7bc0c9c628016dfc",
+  "result_tail": [
+    "........................................................           [100%]",
+    "56 passed, 6 subtests passed in 3.63s"
+  ],
+  "scope": "Synthetic broker HTTP parser and preserved owner context/shape controls; no browser or token traversal claim."
+}

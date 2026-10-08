@@ -1,0 +1,91 @@
+{
+  "observed_at": "2026-10-08T10:35:14.165620+00:00",
+  "qualified_source_head": "348a42b88c1fcd329be0132519a20d27e933900d",
+  "qualified_source_tree": "31fcf6b295a917a7e6854b6bb8d14fa3759c2bc5",
+  "parents": [
+    "dcf1bc02aa490c5e9ac79e3f486d9e2f2e34c2db",
+    "e20890089f6338de655a7c6ea7f0ada6d5c8fe6b"
+  ],
+  "owner_target": "e20890089f6338de655a7c6ea7f0ada6d5c8fe6b",
+  "prior_pr37_head": "dcf1bc02aa490c5e9ac79e3f486d9e2f2e34c2db",
+  "owner_leaves": 88,
+  "candidate_leaves": 103,
+  "unchanged_owner_leaves": 85,
+  "changed_owner_paths": [
+    "README.md",
+    "src/canvaspilot/client.py",
+    "tests/test_broker_links.py"
+  ],
+  "added_paths": [
+    "docs/receiving/pr35-link-metadata-86776bb3cdb8/README.md",
+    "docs/receiving/pr35-link-metadata-86776bb3cdb8/baseline-same-controls-receipt.json",
+    "docs/receiving/pr35-link-metadata-86776bb3cdb8/baseline-same-controls.log",
+    "docs/receiving/pr35-link-metadata-86776bb3cdb8/browser-startup-failure-receipt.json",
+    "docs/receiving/pr35-link-metadata-86776bb3cdb8/browser-startup-failure.log",
+    "docs/receiving/pr35-link-metadata-86776bb3cdb8/candidate-native-receipt.json",
+    "docs/receiving/pr35-link-metadata-86776bb3cdb8/candidate-native.log",
+    "docs/receiving/pr35-link-metadata-86776bb3cdb8/file-hashes.json",
+    "docs/receiving/pr35-link-metadata-86776bb3cdb8/independent/REVIEW.md",
+    "docs/receiving/pr35-link-metadata-86776bb3cdb8/independent/file-hashes.json",
+    "docs/receiving/pr35-link-metadata-86776bb3cdb8/independent/independent-broker-controls-receipt.json",
+    "docs/receiving/pr35-link-metadata-86776bb3cdb8/independent/independent-broker-controls.log",
+    "docs/receiving/pr35-link-metadata-86776bb3cdb8/independent/source-preservation.json",
+    "docs/receiving/pr35-link-metadata-86776bb3cdb8/source-preservation.json",
+    "tests/test_broker_link_metadata_receiving.py"
+  ],
+  "historical_evidence_leaves_byte_exact": 14,
+  "client": {
+    "owner_sha256": "21aec589fc27f3a664dd6f844ac0762c496d2e68fa94b3052172f80b046c0d1b",
+    "candidate_sha256": "5ab0c0cd579f82b89ace05be6e15b6d38844abe1d8bf6df5b0c35b906d09a1c8",
+    "changed_definition": "_session_link_next",
+    "unchanged_named_definitions": [
+      "CanvasAuthError",
+      "CanvasClient",
+      "CanvasPaginationError",
+      "_assert_pagination_origin",
+      "_broker_request",
+      "_link_next",
+      "_with_page",
+      "_with_per_page",
+      "broker_base",
+      "broker_fetch",
+      "broker_health",
+      "default_base_url",
+      "default_profile"
+    ],
+    "all_source_outside_parser_and_two_grammar_declarations_exact": true,
+    "exact_owner_anchor_block_sha256": "4161e7130e203861feacb4ac5cbb90132d2036262bb9e0f874bc7c91e4350dab",
+    "complete_CanvasClient_class_exact": true
+  },
+  "retained_owner_tests": {
+    "tests/test_link_context_receiving.py": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1b1a19660bd0aa172702be6ab68173330359f677"
+    },
+    "tests/test_terminal_page_shape_receiving.py": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f4b3ddae987eb1db7894a4d17e8aa00234628937"
+    },
+    "tests/test_sync_summary.py": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f15e781cd0580324c668bec4181ed238b9cacb29"
+    }
+  },
+  "existing_broker_fixture": "exact owner file except quote one application/json media type",
+  "maintained_controls": {
+    "path": "tests/test_broker_link_metadata_receiving.py",
+    "sha256": "5b92def5254d9a00a73f6e268903b367664763d440bbfafd3861a570ce2c3ace",
+    "removed_only_definition": [
+      "test_unsupported_link_context_cannot_supply_next_collection"
+    ],
+    "remaining_named_definitions_exact": true,
+    "remaining_top_level_AST_and_decorators_exact": true,
+    "remaining_cases": 8
+  },
+  "readme": "Exactly four policy lines added to owner README",
+  "all_worktree_blobs_match_frozen_tree": true,
+  "clean_checkout": true
+}

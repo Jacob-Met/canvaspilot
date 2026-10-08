@@ -1,0 +1,37 @@
+{
+  "observed_at": "2026-10-08T10:34:19.470708+00:00",
+  "source_commit": "348a42b88c1fcd329be0132519a20d27e933900d",
+  "source_tree": "31fcf6b295a917a7e6854b6bb8d14fa3759c2bc5",
+  "parents": [
+    "dcf1bc02aa490c5e9ac79e3f486d9e2f2e34c2db",
+    "e20890089f6338de655a7c6ea7f0ada6d5c8fe6b"
+  ],
+  "command": [
+    "/workspace/scratch/86776bb3cdb8/product-delivery/venv/bin/python",
+    "-B",
+    "-c",
+    "<child driver embedded in run-current-target-receiving.py>",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "--basetemp",
+    "/dev/shm/86776bb3cdb8-receiving-pr35/current-target-tmp/pytest",
+    "tests/test_broker_link_metadata_receiving.py",
+    "tests/test_link_context_receiving.py",
+    "tests/test_terminal_page_shape_receiving.py"
+  ],
+  "driver_sha256": "3249be64ac3e200421eda9eacc75153b58fde2caa954dfca46b1eec8645bbf27",
+  "cwd": "/dev/shm/86776bb3cdb8-receiving-pr35/current-target-repo",
+  "pythonpath": "/dev/shm/86776bb3cdb8-receiving-pr35/current-target-repo/src",
+  "exit_code": 0,
+  "elapsed_ms": 2007,
+  "log_sha256": "610e92cde5eb0504d1f4cffbd1ef5e1d00e1c11e0cc2242d9451a5e54100ff0c",
+  "test_file_hashes": {
+    "tests/test_broker_link_metadata_receiving.py": "5b92def5254d9a00a73f6e268903b367664763d440bbfafd3861a570ce2c3ace",
+    "tests/test_link_context_receiving.py": "90f974937666e2d347f1cb7a6351e319ac6965aadc9ded6ec7f4287ed0aff4ad",
+    "tests/test_terminal_page_shape_receiving.py": "86d8d4e3556aa436b2eaf8021e67073bdfc44cac4c202791a1bb8608ff53280e"
+  },
+  "loaded_source_receipt_sha256": "84b11aab52adde2b7b3d5b76d2a0976994686ed75ac647711a171af226f1f9bb",
+  "source_status_after": "",
+  "scope": "Eight transferred parser cases plus the owner's six context and two terminal-shape methods. Native local broker HTTP only; no repeated complete suite or new browser claim."
+}

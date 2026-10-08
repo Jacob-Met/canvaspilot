@@ -59,8 +59,8 @@ and rejection before a foreign or malformed URL reaches the browser worker.
 
 Completeness is explicit: exactly 40 terminal pages succeed; a known next after
 page 40 raises `CanvasPaginationError`. A later HTTP 401 or 503 raises rather
-than returning accumulated pages. A terminal object remains a one-element list;
-a continuing non-list page is refused. Brokers without the capability flag keep
+than returning accumulated pages. A first terminal object remains a one-element
+list; a continuing or later non-list page is refused. Brokers without the capability flag keep
 the existing numeric fallback and its warning; inherited fallback tests remain
 in the suite. The existing encoding test fixture now models the advertised Link
 protocol while preserving its repeated-parameter assertions.
@@ -96,6 +96,62 @@ The complete combined suite passed **152 tests with one optional local browser
 skip in 9.59 seconds**; Ruff passed. Exact outputs are `composition-pytest.txt`
 and `composition-ruff.txt`. The publication parent and final test hashes are
 recorded in `provenance.json`; the earlier 114-pass receipt is retained above.
+
+### Independent receiving and the narrow successor
+
+Independent receiving reviewed the published head
+`89fa86d20e4eff47ce42e18afd8cd8e75ab376c3`, whose client SHA-256 was
+`45a60b2c31a3c95914dca9d563958422bc346478a9d70f0058f9c5c623f20ada`.
+The original immutable probes and output are under `independent/`; the
+[review at that exact head](https://github.com/Jacob-Met/canvaspilot/pull/35#pullrequestreview-5454974316)
+identified three receiving defects:
+
+| Boundary | Result on the first published candidate | Successor behavior |
+| --- | --- | --- |
+| Registered `next` relation written as `NEXT`, `NeXt`, or `prev NEXT` | Silently stopped after the first page | Compare decoded relation tokens case-insensitively |
+| A Link value with an `anchor` for another resource | Followed the other course, or treated its next as ambiguous with the applicable next | Ignore the entire anchored Link value before choosing the current collection's continuation |
+| A terminal second page containing an object, HTML, or empty text | Appended that value to the collected rows and reported success | Refuse non-list values after collection traversal has begun |
+
+The first two decisions follow the registered-relation and alternate-context
+rules in [RFC 8288, sections 2.1.1 and 3.2](https://www.rfc-editor.org/rfc/rfc8288.html).
+This application does not implement alternate anchor contexts. It retains its
+existing stricter ambiguity and Canvas-origin checks; this packet does not claim
+a general-purpose implementation of every Link-header feature.
+
+The client-only correction is frozen at SHA-256
+`21aec589fc27f3a664dd6f844ac0762c496d2e68fa94b3052172f80b046c0d1b`.
+The production broker and native browser probe are byte-identical to the
+previously qualified versions. The independent first-terminal-object control
+continues to pass, preserving single-resource compatibility.
+
+Before the successor freeze, main advanced to
+`1393f40047297147029d8571bfd824f74e58e1dc` with the independently received
+sync deadline overview. Its API, CLI, MCP, documentation and tests were merged
+without a conflict; it did not change either pagination production file.
+The complete composed suite passes **207 tests and 6 subtests**, with one
+optional local Chromium skip. Ruff passes. Exact final output is retained in
+`successor-pytest.txt` and `successor-ruff.txt`.
+
+Both independent probes remain byte-for-byte under `independent/`, together
+with their negative logs and original source pins. Their eight methods are also
+collected in the ordinary test suite. Those two CI copies differ only in import
+ordering, an equivalent combined context-manager statement, and explicit default
+bindings for loop values captured by a synchronous test callback. The original
+copies ran successfully before this lint normalization; that full-suite output
+and the initial lint refusal are retained as `successor-prelint-pytest.txt` and
+`receiving-probe-lint-before.txt`. The normalized copies were then replayed in
+the final complete suite. `provenance.json` distinguishes both sets of hashes.
+
+The independent probe can be replayed without modifying its bytes:
+
+```bash
+PYTHONPATH=src python -B -m unittest discover \
+  -s docs/qualification/session-links-ac386303dce2/independent \
+  -p 'test_*_receiving.py' -v
+```
+
+The immutable eight-method receiving replay and hosted checks on the final
+published successor remain the independent integration gate.
 
 ## Real browser boundary
 

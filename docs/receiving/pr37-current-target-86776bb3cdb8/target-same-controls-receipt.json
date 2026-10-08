@@ -1,0 +1,34 @@
+{
+  "observed_at": "2026-10-08T10:34:19.974462+00:00",
+  "source_commit": "e20890089f6338de655a7c6ea7f0ada6d5c8fe6b",
+  "source_tree": "99814b52eab606219931f504a677246ed1e62eb3",
+  "command": [
+    "/workspace/scratch/86776bb3cdb8/product-delivery/venv/bin/python",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "--basetemp",
+    "/dev/shm/86776bb3cdb8-product-pr37-target-evidence/tmp-target-same-controls/pytest",
+    "/dev/shm/86776bb3cdb8-product-pr37-current-target/tests/test_broker_link_metadata_receiving.py"
+  ],
+  "cwd": "/dev/shm/86776bb3cdb8-product-pr37-target-baseline",
+  "source_env": "/dev/shm/86776bb3cdb8-product-pr37-target-baseline/src",
+  "loaded_client_file": "/dev/shm/86776bb3cdb8-product-pr37-target-baseline/src/canvaspilot/client.py",
+  "loaded_client_sha256": "21aec589fc27f3a664dd6f844ac0762c496d2e68fa94b3052172f80b046c0d1b",
+  "test_sha256": "5b92def5254d9a00a73f6e268903b367664763d440bbfafd3861a570ce2c3ace",
+  "exit_code": 1,
+  "elapsed_seconds": 2.708,
+  "log_sha256": "8dc310cde08329d52792a8baba22f99362dc05692f1f4dfab665577d4d744a3b",
+  "result_tail": [
+    "FAILED ../86776bb3cdb8-product-pr37-current-target/tests/test_broker_link_metadata_receiving.py::test_malformed_relation_metadata_cannot_assert_completion[; rel=\"<next>\"]",
+    "FAILED ../86776bb3cdb8-product-pr37-current-target/tests/test_broker_link_metadata_receiving.py::test_malformed_relation_metadata_cannot_assert_completion[; rel=\"next/prev\"]",
+    "FAILED ../86776bb3cdb8-product-pr37-current-target/tests/test_broker_link_metadata_receiving.py::test_malformed_relation_metadata_cannot_assert_completion[; rel=\"next\\talternate\"]",
+    "FAILED ../86776bb3cdb8-product-pr37-current-target/tests/test_broker_link_metadata_receiving.py::test_malformed_relation_metadata_cannot_assert_completion[; rel=\"next\"; title=not=a=token]",
+    "7 failed, 1 passed in 1.11s"
+  ],
+  "scope": "The same eight maintained broker HTTP relation controls executed against exact current target e208 source; no browser or token traversal claim.",
+  "temporary_checkout_status": "Clean detached baseline checkout was removed after the run to reclaim owned RAM; exact source remains in the local shared Git object store and the published target commit."
+}

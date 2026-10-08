@@ -1,0 +1,81 @@
+from __future__ import annotations
+import hashlib
+import json
+import os
+import subprocess
+import sys
+import time
+from datetime import datetime, timezone
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+REPO = ROOT / "current-target-repo"
+SOURCE = "348a42b88c1fcd329be0132519a20d27e933900d"
+TREE = "31fcf6b295a917a7e6854b6bb8d14fa3759c2bc5"
+TESTS = [
+    "tests/test_broker_link_metadata_receiving.py",
+    "tests/test_link_context_receiving.py",
+    "tests/test_terminal_page_shape_receiving.py",
+]
+def git(*args):
+    return subprocess.check_output(["git", "-C", str(REPO), *args]).decode().strip()
+def sha(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+assert git("rev-parse", "HEAD") == SOURCE
+assert git("rev-parse", "HEAD^{tree}") == TREE
+assert not git("status", "--porcelain", "--untracked-files=no")
+assert sha(REPO / "src/canvaspilot/client.py") == "5ab0c0cd579f82b89ace05be6e15b6d38844abe1d8bf6df5b0c35b906d09a1c8"
+assert sha(REPO / TESTS[0]) == "5b92def5254d9a00a73f6e268903b367664763d440bbfafd3861a570ce2c3ace"
+runtime_path = ROOT / "current-target-loaded-source.json"
+child = """
+import hashlib, importlib.metadata, json, os, sys
+from pathlib import Path
+import pytest
+code = pytest.main(sys.argv[1:])
+rows = []
+for name in ("canvaspilot.client", "canvaspilot.session_broker"):
+    module = sys.modules[name]
+    path = Path(module.__file__).resolve()
+    rows.append({"module": name, "path": str(path), "sha256": hashlib.sha256(path.read_bytes()).hexdigest()})
+Path(os.environ["RECEIVING_RUNTIME_PROOF"]).write_text(json.dumps({
+    "python": sys.version,
+    "dependencies": {key: importlib.metadata.version(key) for key in ("pytest", "httpx")},
+    "loaded_modules": rows,
+}, indent=2) + "\\n")
+raise SystemExit(code)
+"""
+(ROOT / "current-target-tmp").mkdir(exist_ok=True)
+args = [sys.executable, "-B", "-c", child, "-q", "-p", "no:cacheprovider", "--basetemp", str(ROOT / "current-target-tmp/pytest"), *TESTS]
+task_env = dict(os.environ)
+task_env.update({
+    "PYTHONPATH": str(REPO / "src"),
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "TMPDIR": str(ROOT / "current-target-tmp"),
+    "RECEIVING_RUNTIME_PROOF": str(runtime_path),
+})
+start = time.monotonic()
+result = subprocess.run(args, cwd=REPO, env=task_env, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+log_path = ROOT / "current-target-native.log"
+log_path.write_bytes(result.stdout + result.stderr)
+receipt = {
+    "observed_at": datetime.now(timezone.utc).isoformat(),
+    "source_commit": SOURCE,
+    "source_tree": TREE,
+    "parents": git("show", "-s", "--format=%P", SOURCE).split(),
+    "command": args[:3] + ["<child driver embedded in run-current-target-receiving.py>"] + args[4:],
+    "driver_sha256": sha(Path(__file__)),
+    "cwd": str(REPO),
+    "pythonpath": task_env["PYTHONPATH"],
+    "exit_code": result.returncode,
+    "elapsed_ms": round((time.monotonic() - start) * 1000),
+    "log_sha256": sha(log_path),
+    "test_file_hashes": {p: sha(REPO / p) for p in TESTS},
+    "loaded_source_receipt_sha256": sha(runtime_path),
+    "source_status_after": git("status", "--porcelain", "--untracked-files=no"),
+    "scope": "Eight transferred parser cases plus the owner's six context and two terminal-shape methods. Native local broker HTTP only; no repeated complete suite or new browser claim.",
+}
+(ROOT / "current-target-native-receipt.json").write_text(json.dumps(receipt, indent=2) + "\n")
+print(result.stdout.decode() + result.stderr.decode())
+print(json.dumps(receipt, indent=2))
+raise SystemExit(result.returncode)
+

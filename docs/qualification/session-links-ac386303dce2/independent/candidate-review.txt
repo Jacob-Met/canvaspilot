@@ -1,0 +1,111 @@
+test_anchored_next_does_not_hide_the_applicable_next (__main__.LinkContextReceiving.test_anchored_next_does_not_hide_the_applicable_next) ... HTTP Request: GET http://127.0.0.1:34955/health "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:34955/fetch "HTTP/1.0 200 OK"
+ERROR
+test_older_broker_terminal_short_page_still_works (__main__.LinkContextReceiving.test_older_broker_terminal_short_page_still_works) ... HTTP Request: POST http://127.0.0.1:43609/fetch "HTTP/1.0 200 OK"
+ok
+test_other_origin_is_refused_before_dispatch (__main__.LinkContextReceiving.test_other_origin_is_refused_before_dispatch) ... HTTP Request: GET http://127.0.0.1:45627/health "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:45627/fetch "HTTP/1.0 200 OK"
+ok
+test_other_resource_anchor_is_not_current_pagination (__main__.LinkContextReceiving.test_other_resource_anchor_is_not_current_pagination) ... HTTP Request: GET http://127.0.0.1:41221/health "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:41221/fetch "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:41221/fetch "HTTP/1.0 200 OK"
+FAIL
+test_registered_next_relation_is_case_insensitive (__main__.LinkContextReceiving.test_registered_next_relation_is_case_insensitive) ... HTTP Request: GET http://127.0.0.1:42413/health "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:42413/fetch "HTTP/1.0 200 OK"
+
+  test_registered_next_relation_is_case_insensitive (__main__.LinkContextReceiving.test_registered_next_relation_is_case_insensitive) (relation='NEXT') ... FAIL
+HTTP Request: GET http://127.0.0.1:35449/health "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:35449/fetch "HTTP/1.0 200 OK"
+  test_registered_next_relation_is_case_insensitive (__main__.LinkContextReceiving.test_registered_next_relation_is_case_insensitive) (relation='NeXt') ... FAIL
+HTTP Request: GET http://127.0.0.1:45349/health "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:45349/fetch "HTTP/1.0 200 OK"
+  test_registered_next_relation_is_case_insensitive (__main__.LinkContextReceiving.test_registered_next_relation_is_case_insensitive) (relation='prev NEXT') ... FAIL
+test_standard_opaque_continuation_preserves_punctuation (__main__.LinkContextReceiving.test_standard_opaque_continuation_preserves_punctuation) ... HTTP Request: GET http://127.0.0.1:43377/health "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:43377/fetch "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:43377/fetch "HTTP/1.0 200 OK"
+ok
+
+======================================================================
+ERROR: test_anchored_next_does_not_hide_the_applicable_next (__main__.LinkContextReceiving.test_anchored_next_does_not_hide_the_applicable_next)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/canvas-receiving-ac386303dce2/test_link_context_receiving.py", line 77, in test_anchored_next_does_not_hide_the_applicable_next
+    self.assertEqual([row['id'] for row in self.collect()], [1, 2])
+                                           ^^^^^^^^^^^^^^
+  File "/dev/shm/canvas-receiving-ac386303dce2/test_link_context_receiving.py", line 59, in collect
+    return client.get_paginated(PATH)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dev/shm/canvas-receiving-ac386303dce2/candidate/src/canvaspilot/client.py", line 249, in get_paginated
+    return self._get_broker_link_pages(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dev/shm/canvas-receiving-ac386303dce2/candidate/src/canvaspilot/client.py", line 333, in _get_broker_link_pages
+    next_url = _session_link_next(links[0])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dev/shm/canvas-receiving-ac386303dce2/candidate/src/canvaspilot/client.py", line 441, in _session_link_next
+    raise CanvasPaginationError("session pagination has multiple next links")
+canvaspilot.client.CanvasPaginationError: session pagination has multiple next links
+
+======================================================================
+FAIL: test_other_resource_anchor_is_not_current_pagination (__main__.LinkContextReceiving.test_other_resource_anchor_is_not_current_pagination)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/canvas-receiving-ac386303dce2/test_link_context_receiving.py", line 70, in test_other_resource_anchor_is_not_current_pagination
+    self.assertEqual(self.collect(), [{'id': 1, 'course_id': 42}])
+AssertionError: Lists differ: [{'id': 1, 'course_id': 42}, {'id': 99, 'course_id': 99}] != [{'id': 1, 'course_id': 42}]
+
+First list contains 1 additional elements.
+First extra element 1:
+{'id': 99, 'course_id': 99}
+
+- [{'course_id': 42, 'id': 1}, {'course_id': 99, 'id': 99}]
++ [{'course_id': 42, 'id': 1}]
+
+======================================================================
+FAIL: test_registered_next_relation_is_case_insensitive (__main__.LinkContextReceiving.test_registered_next_relation_is_case_insensitive) (relation='NEXT')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/canvas-receiving-ac386303dce2/test_link_context_receiving.py", line 64, in test_registered_next_relation_is_case_insensitive
+    self.assertEqual([row['id'] for row in self.collect()], [1, 2])
+AssertionError: Lists differ: [1] != [1, 2]
+
+Second list contains 1 additional elements.
+First extra element 1:
+2
+
+- [1]
++ [1, 2]
+
+======================================================================
+FAIL: test_registered_next_relation_is_case_insensitive (__main__.LinkContextReceiving.test_registered_next_relation_is_case_insensitive) (relation='NeXt')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/canvas-receiving-ac386303dce2/test_link_context_receiving.py", line 64, in test_registered_next_relation_is_case_insensitive
+    self.assertEqual([row['id'] for row in self.collect()], [1, 2])
+AssertionError: Lists differ: [1] != [1, 2]
+
+Second list contains 1 additional elements.
+First extra element 1:
+2
+
+- [1]
++ [1, 2]
+
+======================================================================
+FAIL: test_registered_next_relation_is_case_insensitive (__main__.LinkContextReceiving.test_registered_next_relation_is_case_insensitive) (relation='prev NEXT')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/canvas-receiving-ac386303dce2/test_link_context_receiving.py", line 64, in test_registered_next_relation_is_case_insensitive
+    self.assertEqual([row['id'] for row in self.collect()], [1, 2])
+AssertionError: Lists differ: [1] != [1, 2]
+
+Second list contains 1 additional elements.
+First extra element 1:
+2
+
+- [1]
++ [1, 2]
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.234s
+
+FAILED (failures=4, errors=1)

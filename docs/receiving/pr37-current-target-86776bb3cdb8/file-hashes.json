@@ -1,0 +1,87 @@
+[
+  {
+    "file": "README.md",
+    "bytes": 3514,
+    "sha256": "e2b6d34c79372625a8d61b94696d9d9e34df3f8885e3556278a5cd0068969b0b"
+  },
+  {
+    "file": "candidate-affected-controls-receipt.json",
+    "bytes": 1465,
+    "sha256": "c1c0f642d763b38477b24988894e4456069eed24812559237e7b947dcfe6c8d3"
+  },
+  {
+    "file": "candidate-affected-controls.log",
+    "bytes": 112,
+    "sha256": "cab4151a917dde7db84135610561010f4e6bd99c9fb2d37e7bc0c9c628016dfc"
+  },
+  {
+    "file": "current-primary-source.json",
+    "bytes": 2959,
+    "sha256": "3d25f63b0dd5c217f04a1591f2b3d62d675c48cc0357db63edcd63507deee884"
+  },
+  {
+    "file": "independent/artifact-paths.json",
+    "bytes": 715,
+    "sha256": "b5947a167ef2f6d1334c0a27e7e5de74ab0695de63c2093450da0076cb4f7942"
+  },
+  {
+    "file": "independent/current-target-file-hashes.json",
+    "bytes": 868,
+    "sha256": "0f0aed9c3954126d83e15fd28f81f60a8cbc8278d3d54f3df09aa606f4590c58"
+  },
+  {
+    "file": "independent/current-target-loaded-source.json",
+    "bytes": 652,
+    "sha256": "84b11aab52adde2b7b3d5b76d2a0976994686ed75ac647711a171af226f1f9bb"
+  },
+  {
+    "file": "independent/current-target-native-receipt.json",
+    "bytes": 1807,
+    "sha256": "dd178bd53dd2c5edce2fd501d9e42bc2093e279409261dea2a2a52ef60cbbccc"
+  },
+  {
+    "file": "independent/current-target-native.log",
+    "bytes": 112,
+    "sha256": "610e92cde5eb0504d1f4cffbd1ef5e1d00e1c11e0cc2242d9451a5e54100ff0c"
+  },
+  {
+    "file": "independent/current-target-parser-receipt.json",
+    "bytes": 863,
+    "sha256": "93e1e517a096755648de1afed7c199f9b233ed27b4a415f015bbab8abc8371bd"
+  },
+  {
+    "file": "independent/current-target-preservation.json",
+    "bytes": 13174,
+    "sha256": "044479831a9ad9f85aeb77b94849f3f45ebb0dc1330dfb6a02d5f07930dd8c5b"
+  },
+  {
+    "file": "independent/run-current-target-receiving.py.txt",
+    "bytes": 3540,
+    "sha256": "3249be64ac3e200421eda9eacc75153b58fde2caa954dfca46b1eec8645bbf27"
+  },
+  {
+    "file": "merge-attempt.json",
+    "bytes": 492,
+    "sha256": "397afc8c8f1509efc11d8341df7ef6718243c2df54911154d2712407163cfa40"
+  },
+  {
+    "file": "quality-receipt.json",
+    "bytes": 1985,
+    "sha256": "522af51f55adafe23c78fcf282cfdf06fb446d6c6c71d919d96b090f4e47617b"
+  },
+  {
+    "file": "source-preservation.json",
+    "bytes": 3903,
+    "sha256": "cf5685b29d5645ac9296c1954461f6f0896370c30051a71c58152ee6d5a65ae8"
+  },
+  {
+    "file": "target-same-controls-receipt.json",
+    "bytes": 2281,
+    "sha256": "55e6fea621d7feffe17a14041635b745597eaa37e0a45c413bd9f485ad8a4982"
+  },
+  {
+    "file": "target-same-controls.log",
+    "bytes": 8508,
+    "sha256": "8dc310cde08329d52792a8baba22f99362dc05692f1f4dfab665577d4d744a3b"
+  }
+]

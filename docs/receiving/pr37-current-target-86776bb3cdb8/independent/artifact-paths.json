@@ -1,0 +1,12 @@
+{
+  "mapping": {
+    "current-target-preservation.json": "current-target-preservation.json",
+    "current-target-native-receipt.json": "current-target-native-receipt.json",
+    "current-target-native.log": "current-target-native.log",
+    "current-target-loaded-source.json": "current-target-loaded-source.json",
+    "current-target-parser-receipt.json": "current-target-parser-receipt.json",
+    "run-current-target-receiving.py": "run-current-target-receiving.py.txt",
+    "current-target-file-hashes.json": "current-target-file-hashes.json"
+  },
+  "note": "Only the reproducibility runner is archived with .py.txt. Original names and hashes in the unchanged receiving manifest map to these byte-exact copies."
+}

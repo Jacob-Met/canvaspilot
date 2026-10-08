@@ -1,0 +1,25 @@
+{
+  "source": "e20890089f6338de655a7c6ea7f0ada6d5c8fe6b",
+  "source_blob": "60a1de218f65b94442e1f8addd223c5054197e29",
+  "source_sha256_verified_before_execution": true,
+  "scope": "Four direct native parser controls only; no broker, browser, account or full suite claim.",
+  "client_sha256": "21aec589fc27f3a664dd6f844ac0762c496d2e68fa94b3052172f80b046c0d1b",
+  "observations": [
+    {
+      "control": "missing relation",
+      "returned": null
+    },
+    {
+      "control": "quoted malformed relation",
+      "returned": null
+    },
+    {
+      "control": "case already fixed",
+      "returned": "https://review-campus.instructure.com/api/v1/courses/42/assignments?cursor=opaque"
+    },
+    {
+      "control": "anchor ignored before valid next",
+      "returned": "https://review-campus.instructure.com/api/v1/courses/42/assignments?cursor=opaque"
+    }
+  ]
+}

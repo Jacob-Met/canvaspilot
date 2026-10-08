@@ -1,0 +1,70 @@
+{
+  "observed_at": "2026-10-08T10:36:50.860Z",
+  "repository": "Jacob-Met/canvaspilot",
+  "direct_ref_reads": [
+    {
+      "ref": "refs/heads/astra/ac386303dce2-canvas-session-links",
+      "sha": "e20890089f6338de655a7c6ea7f0ada6d5c8fe6b"
+    },
+    {
+      "ref": "refs/heads/estate/86776bb3cdb8-pr35-link-metadata",
+      "sha": "dcf1bc02aa490c5e9ac79e3f486d9e2f2e34c2db"
+    }
+  ],
+  "prs": [
+    {
+      "number": 35,
+      "url": "https://github.com/Jacob-Met/canvaspilot/pull/35",
+      "head": "e20890089f6338de655a7c6ea7f0ada6d5c8fe6b",
+      "base_sha_reported": "1393f40047297147029d8571bfd824f74e58e1dc",
+      "head_ref": "astra/ac386303dce2-canvas-session-links",
+      "base_ref": "main",
+      "updated_at": "2026-10-08T10:17:12Z",
+      "mergeable": true,
+      "mergeable_state": "clean"
+    },
+    {
+      "number": 37,
+      "url": "https://github.com/Jacob-Met/canvaspilot/pull/37",
+      "head": "dcf1bc02aa490c5e9ac79e3f486d9e2f2e34c2db",
+      "base_sha_reported": "89fa86d20e4eff47ce42e18afd8cd8e75ab376c3",
+      "head_ref": "estate/86776bb3cdb8-pr35-link-metadata",
+      "base_ref": "astra/ac386303dce2-canvas-session-links",
+      "updated_at": "2026-10-08T10:04:49Z",
+      "mergeable": false,
+      "mergeable_state": "dirty"
+    }
+  ],
+  "ownership_comments": [
+    {
+      "url": "https://github.com/Jacob-Met/canvaspilot/pull/35#issuecomment-6057338982",
+      "id": 6057338982,
+      "created_at": "2026-10-08T09:56:21Z",
+      "updated_at": "2026-10-08T10:04:30Z",
+      "body_sha256": "4e89e056d91f3ac68e41a363cafd37846de97cd448450bbbf2876ccd622b5d35"
+    },
+    {
+      "url": "https://github.com/Jacob-Met/canvaspilot/pull/35#issuecomment-6057347959",
+      "id": 6057347959,
+      "created_at": "2026-10-08T09:56:55Z",
+      "updated_at": "2026-10-08T09:56:55Z",
+      "body_sha256": "61f169a0b1bdc7b73e0ed51e0863a18ca9a3a938b1b32f87778d42edd83daa7b"
+    },
+    {
+      "url": "https://github.com/Jacob-Met/canvaspilot/pull/35#pullrequestreview-5454974316",
+      "id": 5454974316,
+      "created_at": "2026-10-08T10:08:49Z",
+      "updated_at": null,
+      "body_sha256": "c3d45f0e18762f4e53e98918009728ac66a3083be791ea2140ca01ca54158e3a"
+    },
+    {
+      "url": "https://github.com/Jacob-Met/canvaspilot/pull/35#issuecomment-6057619787",
+      "id": 6057619787,
+      "created_at": "2026-10-08T10:12:41Z",
+      "updated_at": "2026-10-08T10:12:41Z",
+      "body_sha256": "50df4ef6cfd354c9860ff94a347f12b6233223ed869d6372e15abb3a7a87e5bc"
+    }
+  ],
+  "note": "Direct refs fetched in previous tool call and retained here are the source-head guards; PR base SHA fields can lag branch movement. Root retains all remote writes and the expected-source-head lease. No owner branch update is requested.",
+  "owner_policy_received": "Current e208 source implements case-insensitive registered relations, whole-anchor exclusion and later-terminal-shape refusal, matching its retained independent context/shape controls."
+}

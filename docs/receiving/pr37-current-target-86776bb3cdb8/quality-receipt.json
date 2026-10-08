@@ -1,0 +1,63 @@
+{
+  "observed_at": "2026-10-08T10:35:35.187316+00:00",
+  "source_commit": "348a42b88c1fcd329be0132519a20d27e933900d",
+  "results": [
+    {
+      "command": [
+        "/workspace/scratch/86776bb3cdb8/product-delivery/venv/bin/python",
+        "-B",
+        "-m",
+        "ruff",
+        "check",
+        "--no-cache",
+        "src/canvaspilot/client.py",
+        "tests/test_broker_link_metadata_receiving.py",
+        "tests/test_broker_links.py",
+        "tests/test_link_context_receiving.py",
+        "tests/test_terminal_page_shape_receiving.py"
+      ],
+      "exit_code": 0,
+      "output": "All checks passed!\n",
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check",
+        "e20890089f6338de655a7c6ea7f0ada6d5c8fe6b",
+        "HEAD",
+        "--",
+        "README.md",
+        "src/canvaspilot/client.py",
+        "tests/test_broker_link_metadata_receiving.py",
+        "tests/test_broker_links.py",
+        "tests/test_link_context_receiving.py",
+        "tests/test_terminal_page_shape_receiving.py"
+      ],
+      "exit_code": 0,
+      "output": "",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check",
+        "dcf1bc02aa490c5e9ac79e3f486d9e2f2e34c2db",
+        "HEAD",
+        "--",
+        "README.md",
+        "src/canvaspilot/client.py",
+        "tests/test_broker_link_metadata_receiving.py",
+        "tests/test_broker_links.py",
+        "tests/test_link_context_receiving.py",
+        "tests/test_terminal_page_shape_receiving.py"
+      ],
+      "exit_code": 0,
+      "output": "",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "note": "Diff whitespace checks cover maintained code/tests/docs. Raw historical test logs are preserved byte-exact, including their native trailing whitespace."
+}

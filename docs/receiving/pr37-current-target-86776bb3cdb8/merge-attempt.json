@@ -1,0 +1,14 @@
+{
+  "ours": "dcf1bc02aa490c5e9ac79e3f486d9e2f2e34c2db",
+  "current_target": "e20890089f6338de655a7c6ea7f0ada6d5c8fe6b",
+  "command": [
+    "git",
+    "merge",
+    "--no-commit",
+    "--no-ff",
+    "e20890089f6338de655a7c6ea7f0ada6d5c8fe6b"
+  ],
+  "exit_code": 1,
+  "stdout": "Auto-merging README.md\nAuto-merging src/canvaspilot/client.py\nCONFLICT (content): Merge conflict in src/canvaspilot/client.py\nAutomatic merge failed; fix conflicts and then commit the result.\n",
+  "stderr": ""
+}

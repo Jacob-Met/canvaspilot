@@ -97,19 +97,6 @@ def test_malformed_relation_metadata_cannot_assert_completion(monkeypatch, suffi
         assert len(calls) == 1
 
 
-@pytest.mark.parametrize("suffix", [
-    '; rel="next"; anchor="https://elsewhere.example/other"',
-    '; ANCHOR="/another-collection"; rel="next"',
-])
-def test_unsupported_link_context_cannot_supply_next_collection(monkeypatch, suffix):
-    replies = [{"json": [{"id": 1}], "link": f"<{NEXT}>{suffix}"},
-               {"json": [{"id": 99}], "link": None}]
-    with collection(monkeypatch, replies) as (client, calls):
-        with pytest.raises(RuntimeError, match="pagination.*(context|anchor)"):
-            client.get_paginated(PATH)
-        assert len(calls) == 1
-
-
 def test_opaque_query_and_quoted_valid_parameters_survive(monkeypatch):
     cursor = BASE + PATH + "?cursor=%2f%2F,a;b&include%5B%5D=a&include%5B%5D=b&empty=&literal=+"
     header = f'<{cursor}>; title="quoted; words, here"; title*=utf-8\'\'next%20page; rel="alternate NEXT https://relations.example/opaque%2Ftype urn:example:relation"'

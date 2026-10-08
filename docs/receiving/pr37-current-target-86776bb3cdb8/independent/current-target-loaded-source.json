@@ -1,0 +1,19 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "dependencies": {
+    "pytest": "9.1.1",
+    "httpx": "0.28.1"
+  },
+  "loaded_modules": [
+    {
+      "module": "canvaspilot.client",
+      "path": "/dev/shm/86776bb3cdb8-receiving-pr35/current-target-repo/src/canvaspilot/client.py",
+      "sha256": "5ab0c0cd579f82b89ace05be6e15b6d38844abe1d8bf6df5b0c35b906d09a1c8"
+    },
+    {
+      "module": "canvaspilot.session_broker",
+      "path": "/dev/shm/86776bb3cdb8-receiving-pr35/current-target-repo/src/canvaspilot/session_broker.py",
+      "sha256": "749e11c92d6d56d54ccf208dda6784cb2d43ac3b837188f5d82bfe73c3129e8e"
+    }
+  ]
+}
