@@ -17,7 +17,7 @@ body { margin: 0; }
 a { color: #075d57; }
 button, input, select { font: inherit; }
 button, a, input, select, summary, pre { outline-offset: 4px; }
-:focus-visible { outline: 3px solid #a34c09; }
+:focus-visible, input[type="date"]:focus-within { outline: 3px solid #a34c09; }
 .skip-link { position: absolute; left: 16px; top: -100px; padding: 12px; background: white; z-index: 2; }
 .skip-link:focus { top: 8px; }
 h1, h2, h3, h4, p { margin-top: 0; }
