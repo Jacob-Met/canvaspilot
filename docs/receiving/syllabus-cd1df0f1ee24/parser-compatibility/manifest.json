@@ -1,0 +1,169 @@
+{
+  "schema": "canvaspilot-parser-compatibility-archive/1",
+  "baseline_head": "60986834820abbe6b5a51b4d2cc6b6b80559409a",
+  "product_module_unchanged": true,
+  "test_only_replacement": "tests/test_syllabus_packet.py",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 3808,
+      "sha256": "f0fd5ed3672061f3b669b9e3dd7fd34d99165458bd557bd9c8d54c9f8c44d92f",
+      "git_blob": "167387c70a68a9aa2311f8d23a42db72ca153458"
+    },
+    {
+      "path": "baseline/test_syllabus_packet.py",
+      "bytes": 13143,
+      "sha256": "322b5d681b03d2267e0e413e55c394fb1695c6c6cfdd5c144cda32d1d1f494ee",
+      "git_blob": "f9539fdd8ba5d9db5455cb24ce51eb30602c3764"
+    },
+    {
+      "path": "evidence/compatibility-3.12.15.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "evidence/compatibility-3.12.15.stdout.json",
+      "bytes": 2379,
+      "sha256": "ac7055b6f61bb6a901145f7f390a458c5ac7d937c0346d896ae6440f4a778588",
+      "git_blob": "c1364f1f58fa0c5c6a4578b4a8365f1cd00e2e82"
+    },
+    {
+      "path": "evidence/compatibility-3.12.8.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "evidence/compatibility-3.12.8.stdout.json",
+      "bytes": 2163,
+      "sha256": "036cd61177913a3ea433134367384e1592dd354c557f765c1b103e59815fa220",
+      "git_blob": "cba014fc6d9b8f90750991cbce05c5bc44dcbe50"
+    },
+    {
+      "path": "evidence/compatibility-ambient.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "evidence/compatibility-ambient.stdout.json",
+      "bytes": 1817,
+      "sha256": "66442ed8e19809591ab5c7fd26a9d86c07960661689b72a1d43c91723c8e48f9",
+      "git_blob": "acb848344dceccfc6a691578f2aef7c2754cb250"
+    },
+    {
+      "path": "evidence/compatibility-receipt.json",
+      "bytes": 8154,
+      "sha256": "ee35dd67dd2301099189515b7a29e1adf8ca8c70be30f5662f2c6b9f61c93a17",
+      "git_blob": "1ac9b9af25dc93703891e6b314cdca38979e4449"
+    },
+    {
+      "path": "evidence/original-hosted-job-113457378013.log",
+      "bytes": 36265,
+      "sha256": "e7185d32824aff50775b3264da8d499c788764aabcf4dec7c0fe1ecda9682360",
+      "git_blob": "cfe0c810b5b68a299548d938f470b132da4e8c20"
+    },
+    {
+      "path": "evidence/packaging-events.json",
+      "bytes": 412,
+      "sha256": "14ead01cfa3df55bdce2b72a09d6611afbc354d7f22371c87f96972a7abe5bd0",
+      "git_blob": "d235891ed8a913f82d1e9022067c9e11da1969e1"
+    },
+    {
+      "path": "evidence/partial-packaging-parser-3.12.15.bin",
+      "bytes": 8192,
+      "sha256": "d7a5130720cb684a51339da5b44fc940a1693c8ba4003a884faf847dba7dc32c",
+      "git_blob": "526e0ff66899fe0bbade1d342deafaf532838159"
+    },
+    {
+      "path": "evidence/test-only.diff",
+      "bytes": 2320,
+      "sha256": "e646d1f8822237d9f4c142ac70ab6cf59442177fbbb2f012ad6610e718e9e42a",
+      "git_blob": "90aa757b76d186a0c31a71f6557cccc6124aa5ef"
+    },
+    {
+      "path": "inputs/LICENSE-3.12.15",
+      "bytes": 13936,
+      "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf",
+      "git_blob": "f26bcf4d2de6eb136e31006ca3ab447d5e488adf"
+    },
+    {
+      "path": "inputs/LICENSE-3.12.8",
+      "bytes": 13936,
+      "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf",
+      "git_blob": "f26bcf4d2de6eb136e31006ca3ab447d5e488adf"
+    },
+    {
+      "path": "inputs/_markupbase-3.12.15.py",
+      "bytes": 14653,
+      "sha256": "cb14dd6f2e2439eb70b806cd49d19911363d424c2b6b9f4b73c9c08022d47030",
+      "git_blob": "3ad7e279960f7e1f2bf79d89fe9b905e53f6a12b"
+    },
+    {
+      "path": "inputs/_markupbase-3.12.8.py",
+      "bytes": 14653,
+      "sha256": "cb14dd6f2e2439eb70b806cd49d19911363d424c2b6b9f4b73c9c08022d47030",
+      "git_blob": "3ad7e279960f7e1f2bf79d89fe9b905e53f6a12b"
+    },
+    {
+      "path": "inputs/parser-3.12.15.py",
+      "bytes": 22048,
+      "sha256": "a4c5558209ffe6d677dbe18e4a4b2d34672c73aee46e39b1d118846afa62a9ff",
+      "git_blob": "c5d2340b712cd6c33d5c91097f59a007ef756b18"
+    },
+    {
+      "path": "inputs/parser-3.12.8.py",
+      "bytes": 17054,
+      "sha256": "ab5a0a2fce2bec75d969dbe057b490ef574f9ac57cce9e0eaaf7a220b301e838",
+      "git_blob": "13c95c34e505c8958444799fbafa83e774669fb1"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 1353,
+      "sha256": "555ad3c7e338d38ae5feabc06c0c07503f22d9c732a9af153c7706c63d2b3c63",
+      "git_blob": "76eba6d30696b4f2733539cd47df6e178bc0f585"
+    },
+    {
+      "path": "scripts/check_parser_compatibility.py",
+      "bytes": 10694,
+      "sha256": "1930a9cee0919cc28d51edeecf6e8535fb41770f2c3b279bbdad7ba87d8cdf9c",
+      "git_blob": "6eaf65a4a31b19509990a0d032dbc68d9c6327c0"
+    },
+    {
+      "path": "scripts/package_compatibility.py",
+      "bytes": 2298,
+      "sha256": "aa2805407f9c0e00460b595a92081e3bc9bfe090ca48a1c1da6ebc47a2e164a9",
+      "git_blob": "3026159af35cbe2a56fe5af605be35ce61f8d074"
+    },
+    {
+      "path": "src/canvaspilot/syllabus_packet.py",
+      "bytes": 21513,
+      "sha256": "005a837c10bb185edf0bcc75c3ab50609f6afbe49d38161e841380116ab97bd7",
+      "git_blob": "1faf3448c391fdb76b8cf38fe5854906614443b1"
+    },
+    {
+      "path": "tests/test_syllabus_packet.py",
+      "bytes": 14754,
+      "sha256": "fcb487145b860c2cbf6f11430f721e7fd0b11d57f8779a7193381f3cc1ec55f3",
+      "git_blob": "fbd71a3aeb546ae77aad32d8e13e56495b19781e"
+    }
+  ],
+  "primary_sources": [
+    {
+      "tag": "3.12.8",
+      "url": "https://github.com/python/cpython/blob/v3.12.8/Lib/html/parser.py",
+      "archive_path": "inputs/parser-3.12.8.py"
+    },
+    {
+      "tag": "3.12.15",
+      "url": "https://github.com/python/cpython/blob/v3.12.15/Lib/html/parser.py",
+      "archive_path": "inputs/parser-3.12.15.py"
+    }
+  ],
+  "license_files": [
+    "inputs/LICENSE-3.12.8",
+    "inputs/LICENSE-3.12.15"
+  ],
+  "native_scope": "Local Python3.12.14, selected maintained assertion bodies with explicit stdlib adapter; no pytest run, no different interpreter, no product mutation."
+}

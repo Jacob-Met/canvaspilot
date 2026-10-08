@@ -1,0 +1,185 @@
+{
+  "schema": 1,
+  "kind": "independent-lead-source-review",
+  "repository": "Jacob-Met/canvaspilot",
+  "claim": 65,
+  "reviewer": "hamon-universal-cd1df0f1ee24/root",
+  "reviewed_at": "2026-10-08 17:40:56 UTC",
+  "conclusion": "Source and native receiving accepted for publication. Exact published-tree readback and hosted CI remain distinct subsequent gates.",
+  "inspected": [
+    "Complete packet module and CLI additions, guide, maintained tests, frozen independent semantic receiving, author and independent receipts, source and archive manifests.",
+    "Full canonical d15 parent leaf set reconstructed to its published Git tree; every final six-file payload Git blob recomputed in memory.",
+    "Exact v3-to-v4 module correspondence: only the two declared generated-footer print substitutions. Test files unchanged. Instructor footer classes are not copied.",
+    "Latest 1baf README and CLI read directly from their immutable public source, additive upstream patches reviewed, and independent reproduction of the final composed output matched the author's Git blobs."
+  ],
+  "d15_static": {
+    "parent": "d15de13fb6fa39d3cace04bec0e218b4a2ed2ffd",
+    "parent_tree": "a98d1f5ddc7bcd682968bea81f6394cdf8c91a53",
+    "full_parent_leaves_reconstructed": 1165,
+    "payload": [
+      {
+        "path": "docs/syllabus-packet.md",
+        "bytes": 8588,
+        "sha256": "278f65951c5af51601ae627228685bf6b2b715a85305e128fd851d63255674b1",
+        "git_blob": "b116a01fe40af81318acacd299e3ad61314f8ca7",
+        "root_git_blob_verified": true
+      },
+      {
+        "path": "README.md",
+        "bytes": 24664,
+        "sha256": "3e4096792314cf5f361bdbedd3362cc2fbbace1dff802ed1aa8218bb05cdbc03",
+        "git_blob": "13db5128836679711a5e651c4979d0ecf678fe43",
+        "root_git_blob_verified": true
+      },
+      {
+        "path": "src/canvaspilot/syllabus_packet.py",
+        "bytes": 21513,
+        "sha256": "005a837c10bb185edf0bcc75c3ab50609f6afbe49d38161e841380116ab97bd7",
+        "git_blob": "1faf3448c391fdb76b8cf38fe5854906614443b1",
+        "root_git_blob_verified": true
+      },
+      {
+        "path": "src/canvaspilot/cli.py",
+        "bytes": 23534,
+        "sha256": "99e69010829b7338640634380ef9299cadec5ae092804d57b81604d663cc268e",
+        "git_blob": "727e0db7ead273ff434f10572326fdc63983f429",
+        "root_git_blob_verified": true
+      },
+      {
+        "path": "tests/test_syllabus_packet.py",
+        "bytes": 13143,
+        "sha256": "322b5d681b03d2267e0e413e55c394fb1695c6c6cfdd5c144cda32d1d1f494ee",
+        "git_blob": "f9539fdd8ba5d9db5455cb24ce51eb30602c3764",
+        "root_git_blob_verified": true
+      },
+      {
+        "path": "tests/test_syllabus_packet_cli.py",
+        "bytes": 7838,
+        "sha256": "e27070b7e9d89d91ef867ea3ea460fa0b80411bf8eaf353c96cb52308bff25ea",
+        "git_blob": "31b898a4bdedffaed06e0c83656e023640cc1db8",
+        "root_git_blob_verified": true
+      }
+    ],
+    "inverses": [
+      {
+        "path": "src/canvaspilot/cli.py",
+        "spans": 2,
+        "exact_published_beforeimage": true,
+        "insertions_identical_to_qualified_v3": true,
+        "git_blob": "9b9e00dcdb6e768c02a8cf9e23d1a56094970846"
+      },
+      {
+        "path": "README.md",
+        "spans": 1,
+        "exact_published_beforeimage": true,
+        "insertions_identical_to_qualified_v3": true,
+        "git_blob": "c81b52961f634667f52a02d6a597c400919815a4"
+      }
+    ],
+    "exact_print_substitutions": 2,
+    "maintained_test_files_unchanged": 2,
+    "get_course_source_exact": true,
+    "client_blob_unchanged": true,
+    "review_failures_and_corrections": [
+      {
+        "kind": "local transport",
+        "detail": "Local audit command did not start: exec-server transport recovery reported an executor-key change. Complete source/object/inverse checks moved to memory using the already loaded final packet."
+      },
+      {
+        "kind": "root inverse checker",
+        "detail": "The final packet readme_span includes one leading context newline. An initial attempt to remove that context together with the addition mismatched one unchanged newline. Removing the exact qualified479-byte added section reconstructs the canonical published before-image byte for byte. No product/source correction was made."
+      }
+    ]
+  },
+  "publication_parent_static": {
+    "parent": "1bafdaa31f7789d8e561680cb6001bbe38b2da64",
+    "parent_tree": "fc4c5cee949a3a15caf32111af9144cb7eb95b6d",
+    "before_cli": {
+      "bytes": 23937,
+      "git_blob": "8d6644d0e1b916ca38a578147db8392a2e92d226"
+    },
+    "before_readme": {
+      "bytes": 24713,
+      "git_blob": "bd0d16245c59e4a5cf4badee0e7193c0eb09fdfc"
+    },
+    "cli": {
+      "bytes": 25515,
+      "git_blob": "1d64d12d297c40c4d0a64582726f78f402f8004b"
+    },
+    "readme": {
+      "bytes": 25192,
+      "git_blob": "d640c6006e96e6ff3c2b53e7dea3cb5d955187a9"
+    },
+    "cli_two_additions_reverse_exactly": true,
+    "readme_479_byte_addition_reverses_exactly": true,
+    "identical_qualified_insertions": true,
+    "unchanged_v4_product_files": 4,
+    "incoming_delta": "42 files: only README and CLI modified, by additive module-progress export paragraph/parser/dispatch; all other40 files new. API, get_course, client, dependency specification and CI workflow unchanged."
+  },
+  "native_gates": [
+    {
+      "source": "v3 on c744bb5b79f23457f4dd9070f762100bc6ad91ad",
+      "result": "Authored76 tests and Ruff pass; independent29 CLI cases and9 browser groups pass; five byte-exact source downloads; zero automatic page HTTP attempts."
+    },
+    {
+      "source": "6c4d5d2e7526cddc1aa6c90bfbef2d1188382ad3 composition with v3 core",
+      "result": "Ordered two-course success, later503/no-output refusal; all22 inherited command names and six selected help bodies preserved."
+    },
+    {
+      "source": "v4 print-only successor on the complete21-file6c4d closure",
+      "result": "Two ordered fixture GETs; exact HTML changes limited to timestamp and two print substitutions; final264380-byte PDF has three inspected A4 pages; two course pages pixel-identical to v3.",
+      "pdf_sha256": "64228420a59046c6ac7d17b906e73d85281461d3505db8a11a9a6cda0c78fbea"
+    }
+  ],
+  "complete_archives": [
+    {
+      "name": "author-packet-final.tar.gz",
+      "bytes": 378045,
+      "regular_members": 94,
+      "sha256": "286ff6ae97a9fbfd5b2a3ea7c93a9cde2435cfea32be1196957515d474bae077",
+      "git_blob": "3dd1a8c9ad5134e76725870c41b325e24f7fc3fe"
+    },
+    {
+      "name": "independent-receiving-v4.tar.gz",
+      "bytes": 1312437,
+      "regular_members": 298,
+      "sha256": "20701c9700dba5fb26eeade7dfa23992a41bcaf9ff3520058242d08355438fc2",
+      "git_blob": "12256b090595b3fd3dc8a740d553d314c9536265"
+    }
+  ],
+  "source_findings": [
+    "1–10 unique positive course IDs are admitted before course GETs; requested order, returned identity and absent/null/empty/supplied syllabus distinctions are maintained.",
+    "The passive renderer rebuilds permitted structure, preserves visible link/resource identity, and exposes exact raw UTF-8 source only as inert text/plain downloads.",
+    "Validation and rendering complete before new-name hard-link publication. Existing and racing destination entries are preserved; no overwrite fallback.",
+    "Budgets reject oversized input/output rather than truncating. Sequential observations and configured base URL do not prove an atomic snapshot or actual response origin.",
+    "The two CLI additions and one README insertion are reversible; no reader, client, auth, MCP, broker, dependency or workflow implementation was changed."
+  ],
+  "review_failures_and_limits": [
+    {
+      "kind": "local transport",
+      "detail": "Local audit command did not start: exec-server transport recovery reported an executor-key change. Complete source/object/inverse checks moved to memory using the already loaded final packet."
+    },
+    {
+      "kind": "root inverse checker",
+      "detail": "The final packet readme_span includes one leading context newline. An initial attempt to remove that context together with the addition mismatched one unchanged newline. Removing the exact qualified479-byte added section reconstructs the canonical published before-image byte for byte. No product/source correction was made."
+    },
+    {
+      "kind": "optional native audit transport",
+      "detail": "A subsequent read-only native byte audit timed out at MCP before returning a PID or process result. It is not counted as execution. Previously complete archives and in-memory exact Git-object proofs remain the reviewed evidence."
+    },
+    {
+      "kind": "receiving attribution",
+      "detail": "Native v3/6c4d/v4 runs retain their original source pins. d15 and1baf are static compositions, not re-executed native or hosted suites."
+    },
+    {
+      "kind": "scope",
+      "detail": "Synthetic fixtures only. No live school account, real student data, Canvas mutation, physical printing, deployed or installed service is claimed."
+    }
+  ],
+  "primary_source_references": [
+    "https://developerdocs.instructure.com/services/canvas/resources/courses",
+    "https://html.spec.whatwg.org/multipage/parsing.html",
+    "https://docs.python.org/3/library/html.parser.html",
+    "https://docs.python.org/3/library/os.html#os.link"
+  ]
+}

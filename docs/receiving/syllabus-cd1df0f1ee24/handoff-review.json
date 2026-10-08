@@ -1,0 +1,154 @@
+{
+  "schema": "hamon-canvas-syllabus-handoff-readonly-review/1",
+  "reviewer": "estate-cd1df0f1ee24/native_qualification",
+  "repository": "Jacob-Met/canvaspilot",
+  "reviewed_at": "2026-10-08",
+  "decision": "No concrete source, receiving-contract, or incoming-scope blocker identified for adopting the author-selected receiving head onto PR80. This is not acceptance of an untested future current-main composition.",
+  "credit": {
+    "receiving_worker": "estate-926c3dc2605e / production_execution",
+    "handoff": "https://github.com/Jacob-Met/canvaspilot/pull/87",
+    "coordination": "https://github.com/Jacob-Met/canvaspilot/pull/80#issuecomment-6067801080",
+    "source_owner": "estate-cd1df0f1ee24 / estate_source"
+  },
+  "pins": {
+    "author": "3f6309f273a226453dbf2e39578c582acff3b9d3",
+    "receiving_head": "31d31e22dc333ce44e57e3d165a87798d38d3bed",
+    "receiving_tree": "bbb76f0e7ac0643b4f4ac448b45237b0565db5b5",
+    "receiving_parents": [
+      "92e9f1b500a15dd61d4c74539dedbf880afde30b",
+      "3f6309f273a226453dbf2e39578c582acff3b9d3"
+    ],
+    "tested_merge": "e92c2e14a07d82e683b8c4336ba23cf76cce8611",
+    "tested_tree": "60ec236f7456573088816b4a216f5d9dd0452a9b",
+    "tested_parents": [
+      "4675d3c3467fc210e1340e582b7cfb1b54c2fa4c",
+      "31d31e22dc333ce44e57e3d165a87798d38d3bed"
+    ],
+    "incoming_current": "e46a90ff00f80a128baf842587f08df5862318aa"
+  },
+  "hosted": {
+    "run": 37833101850,
+    "job": 113503197468,
+    "event": "pull_request",
+    "status": "completed",
+    "conclusion": "success",
+    "python": "3.12.15",
+    "runner": "Ubuntu24.04.5",
+    "commands": [
+      "pip install -e \".[dev]\"",
+      "ruff check src tests scripts",
+      "pytest -q"
+    ],
+    "ruff": "All checks passed!",
+    "test_result": "1186 passed, 1 skipped, 57 subtests passed in 300.61s (0:05:00)",
+    "checkout_from_raw_log": "e92c2e14a07d82e683b8c4336ba23cf76cce8611",
+    "raw_log": {
+      "file": "hosted-job-113503197468.log",
+      "bytes": 35430,
+      "sha256": "62794ee80c12219e209e8ed624d055185b90d108e1833aca292b5b5578548743"
+    },
+    "test_discovery": "Actual tested tree contains the exact selected syllabus module and two maintained test files. pyproject.toml76eba6d3 configures testpaths=['tests']; the two parser tests have no skip marker. Quiet aggregate log does not enumerate individual test node IDs."
+  },
+  "source_files": [
+    {
+      "path": "src/canvaspilot/syllabus_packet.py",
+      "git_blob": "1faf3448c391fdb76b8cf38fe5854906614443b1",
+      "bytes": 21513,
+      "sha256": "005a837c10bb185edf0bcc75c3ab50609f6afbe49d38161e841380116ab97bd7"
+    },
+    {
+      "path": "tests/test_syllabus_packet.py",
+      "git_blob": "fbd71a3aeb546ae77aad32d8e13e56495b19781e",
+      "bytes": 14754,
+      "sha256": "fcb487145b860c2cbf6f11430f721e7fd0b11d57f8779a7193381f3cc1ec55f3"
+    },
+    {
+      "path": "tests/test_syllabus_packet_cli.py",
+      "git_blob": "31b898a4bdedffaed06e0c83656e023640cc1db8",
+      "bytes": 7838,
+      "sha256": "e27070b7e9d89d91ef867ea3ea460fa0b80411bf8eaf353c96cb52308bff25ea"
+    },
+    {
+      "path": "docs/syllabus-packet.md",
+      "git_blob": "b116a01fe40af81318acacd299e3ad61314f8ca7",
+      "bytes": 8588,
+      "sha256": "278f65951c5af51601ae627228685bf6b2b715a85305e128fd851d63255674b1"
+    },
+    {
+      "path": "docs/receiving/syllabus-cd1df0f1ee24/parser-compatibility/README.md",
+      "git_blob": "167387c70a68a9aa2311f8d23a42db72ca153458",
+      "bytes": 3808,
+      "sha256": "f0fd5ed3672061f3b669b9e3dd7fd34d99165458bd557bd9c8d54c9f8c44d92f"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "git_blob": "ef7bbebe192c0db55dc4467e064ba44805c13446",
+      "bytes": 708,
+      "sha256": "62f17b95af03d1ff8a172f168282b405fefcab3a5f1094c70e618b44920bd0ff"
+    }
+  ],
+  "exact_source_checks": [
+    "Fetched syllabus module and both test files independently at author3f6309f2,receiving31d31e22 and actual tested mergee92c2e14; all three full bodies and Git blob identities are identical.",
+    "Author3f6309f2 is an immediate parent of receiving31d31e22, so adopting that head from the exact author head can be a fast-forward.",
+    "Removing the exact7-line syllabus parser span and27-line dispatch span from tested CLI8a5d5f1a8bde8694f1a1f02122a6ba7ce4d9c3de reconstructs the entire4675 CLI997005bf291be5c0348762e51a1523adacd9e418 byte-for-byte."
+  ],
+  "contract_review": [
+    "Selection validates1–10 unique positive IDs before course reads; returned course identity/type and per-body/aggregate/tag/depth/output bounds are checked before complete publication.",
+    "Missing/null/empty/supplied syllabus states remain distinct. Exact UTF8 source bytes are separately available as inert text/plain downloads; reading projection is explicitly not a full Canvas visual reproduction.",
+    "Passive renderer emits its own allowlisted tags/attributes, escapes values, suppresses active resource content with omission notices, and uses HTTP(S)-only explicit links. No new client/API/MCP or remote mutation behavior appears.",
+    "Parser AssertionError handling remains the authored production behavior. Deterministic test asserts exact second-course ValueError, cause identity and ordered reads; tolerant-runtime test demands exact projected text, no active element, supplied status and exact original source download. The optional stricter unselected companion3933ab89 is absent and is not an acceptance requirement.",
+    "Existing-output guard precedes reads; complete rendering precedes atomic new-name hard-link publication, with only own staging cleanup and logger level restored. CLI scopes remain command-local."
+  ],
+  "incoming_review": {
+    "comparison": "4675d3c3467fc210e1340e582b7cfb1b54c2fa4c...e46a90ff00f80a128baf842587f08df5862318aa",
+    "commits": [
+      {
+        "sha": "b3d9646472c6dbb60d82bccebd41f3cd3521133e",
+        "message": "Add a readable offline agenda with exact native source context"
+      },
+      {
+        "sha": "80086e1762c778d8ced5beded80e30e7db61d78e",
+        "message": "Update the saved agenda after native form reset"
+      },
+      {
+        "sha": "4c1233b5083ad507586698621e6209dd7566f9e4",
+        "message": "Retain native keyboard focus observations before asserting"
+      },
+      {
+        "sha": "d0db2e5dc1e2a82b5034998584a0eb3f18fb502a",
+        "message": "Keep the agenda date control visibly focused through native segments"
+      },
+      {
+        "sha": "e46a90ff00f80a128baf842587f08df5862318aa",
+        "message": "Merge PR75: review selected-course agendas offline"
+      }
+    ],
+    "changed_paths": 35,
+    "shared_existing_paths": [
+      "src/canvaspilot/cli.py",
+      "README.md"
+    ],
+    "cli": "Only45 additive export-agenda lines: distinct parser name and lazy dispatch to agenda_export. Syllabus insertion anchors remain unique and untouched.",
+    "readme": "Six additive agenda-export lines, separate from syllabus insertion.",
+    "other_production": [
+      "src/canvaspilot/agenda_export.py",
+      "src/canvaspilot/agenda_view/controls.js",
+      "src/canvaspilot/agenda_view/style.css"
+    ],
+    "unchanged_shared_dependencies": "No API/client/auth/manifest changes in the complete incoming file list.",
+    "prospective_cli": {
+      "basis": "current e46 CLI2ce3811bf17ad10c6c02c360259a19cdb5057478 plus exact selected syllabus spans; in-memory source-only composition",
+      "bytes": 36766,
+      "sha256": "d8676a8ad47d4bff733099e82ce53cb4eb0b11c7aab3afe479d7f3d2e1f88a92",
+      "inverse_preserves_all_current_bytes": true
+    },
+    "remaining_gate": "Root owns full Git-tree preservation/current-head guards. Any actual combined source aftere46 requires its appropriate hosted exact-source CI; run37833101850 qualified the earlier4675 composition only."
+  },
+  "limits": [
+    "Read-only Git/source/log review; no native tests, browser runs, live Canvas access, branch updates or PR mutations performed.",
+    "Worker926's separate Python3.14.4 two-test native receipt and LA7 custody are attributed from its public handoff; not independently replayed or downloaded here.",
+    "Earlier author/independent browser evidence retains its original source pins and custody. This review adds no new visual, print or live-account claim.",
+    "Full unrelated-leaf preservation is root's parallel gate; this review independently verifies the bounded source/CLI and actual hosted checkout.",
+    "Probability successful and unresolved feedback packets remain sealed and untouched."
+  ]
+}

@@ -1,0 +1,222 @@
+{
+  "schema": "hamon.read-only-companion-file-inverse-proof.v1",
+  "all20FilesMatch": true,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 2428,
+      "sha256": "42cfde5916346c4d86de94e90ad0d59c3df983ea55a15d58ce368ce32f7822bf",
+      "expected": {
+        "bytes": 2428,
+        "sha256": "42cfde5916346c4d86de94e90ad0d59c3df983ea55a15d58ce368ce32f7822bf"
+      },
+      "matches": true
+    },
+    {
+      "path": "baseline-original-refusal.log",
+      "bytes": 758,
+      "sha256": "cde8a370ecd7ee992d8f52eb96b196d7cb1241d6f69bafba16b9f88a9e08ee55",
+      "expected": {
+        "bytes": 758,
+        "sha256": "cde8a370ecd7ee992d8f52eb96b196d7cb1241d6f69bafba16b9f88a9e08ee55"
+      },
+      "matches": true
+    },
+    {
+      "path": "candidate-focused.log",
+      "bytes": 99,
+      "sha256": "38b8ed077652ad1f61256b2c0b2c499b86e53a85338b9129c7a5a91ec3b07227",
+      "expected": {
+        "bytes": 99,
+        "sha256": "38b8ed077652ad1f61256b2c0b2c499b86e53a85338b9129c7a5a91ec3b07227"
+      },
+      "matches": true
+    },
+    {
+      "path": "canonical-baseline.py",
+      "bytes": 21513,
+      "sha256": "005a837c10bb185edf0bcc75c3ab50609f6afbe49d38161e841380116ab97bd7",
+      "expected": {
+        "bytes": 21513,
+        "sha256": "005a837c10bb185edf0bcc75c3ab50609f6afbe49d38161e841380116ab97bd7"
+      },
+      "matches": true
+    },
+    {
+      "path": "canonical-candidate.py",
+      "bytes": 21942,
+      "sha256": "8325b56d461002d59042bf61cc438b7c73fd14de7ac03332e969df547703b2ba",
+      "expected": {
+        "bytes": 21942,
+        "sha256": "8325b56d461002d59042bf61cc438b7c73fd14de7ac03332e969df547703b2ba"
+      },
+      "matches": true
+    },
+    {
+      "path": "cli-invocations.json",
+      "bytes": 5434,
+      "sha256": "104e8ff2d0b5f6ed62d99202d7a7bdb7e4db5a926f05367e5e82b19ff92d5736",
+      "expected": {
+        "bytes": 5434,
+        "sha256": "104e8ff2d0b5f6ed62d99202d7a7bdb7e4db5a926f05367e5e82b19ff92d5736"
+      },
+      "matches": true
+    },
+    {
+      "path": "compatibility.patch",
+      "bytes": 3981,
+      "sha256": "84d9745e6929a7b2a7e0f88277dcd79dd6b05ecb5559a26055dc05380c518394",
+      "expected": {
+        "bytes": 3981,
+        "sha256": "84d9745e6929a7b2a7e0f88277dcd79dd6b05ecb5559a26055dc05380c518394"
+      },
+      "matches": true
+    },
+    {
+      "path": "generated-packets/baseline-malformed-later--syllabi.html",
+      "bytes": 7566,
+      "sha256": "a030536eb2ed219c127d3573467a7824879dfbc5c8a461436a95ef1b9fbc50e6",
+      "expected": {
+        "bytes": 7566,
+        "sha256": "a030536eb2ed219c127d3573467a7824879dfbc5c8a461436a95ef1b9fbc50e6"
+      },
+      "matches": true
+    },
+    {
+      "path": "generated-packets/candidate-literal-contexts--syllabi.html",
+      "bytes": 7843,
+      "sha256": "e602d427f76c9e8dc5b1aee1659483a44f97dc029ab9f2749b6914c9490ab067",
+      "expected": {
+        "bytes": 7843,
+        "sha256": "e602d427f76c9e8dc5b1aee1659483a44f97dc029ab9f2749b6914c9490ab067"
+      },
+      "matches": true
+    },
+    {
+      "path": "generated-packets/candidate-malformed-later--syllabi.html",
+      "bytes": 7681,
+      "sha256": "0f807e126520c6d2efa3e34b68be481ed2eaee0672952de948cd578cab1a404b",
+      "expected": {
+        "bytes": 7681,
+        "sha256": "0f807e126520c6d2efa3e34b68be481ed2eaee0672952de948cd578cab1a404b"
+      },
+      "matches": true
+    },
+    {
+      "path": "initial-claim.json",
+      "bytes": 1012,
+      "sha256": "460d2e8463c1647f32ddbc17fbb7004e83ea8aef0cee6faae5b1a8dd9eac892f",
+      "expected": {
+        "bytes": 1012,
+        "sha256": "460d2e8463c1647f32ddbc17fbb7004e83ea8aef0cee6faae5b1a8dd9eac892f"
+      },
+      "matches": true
+    },
+    {
+      "path": "owner-full-suite-observation.json",
+      "bytes": 555,
+      "sha256": "f266ed3b7a2936dafaba0853c567f5cde9f12b4bcceb03cb31e3ce1c2eef48e2",
+      "expected": {
+        "bytes": 555,
+        "sha256": "f266ed3b7a2936dafaba0853c567f5cde9f12b4bcceb03cb31e3ce1c2eef48e2"
+      },
+      "matches": true
+    },
+    {
+      "path": "owner-source-freeze.json",
+      "bytes": 968,
+      "sha256": "57ea7dd58a6e2fed222fcd0409579947470a243ca83742277e3796a57ec4fdbc",
+      "expected": {
+        "bytes": 968,
+        "sha256": "57ea7dd58a6e2fed222fcd0409579947470a243ca83742277e3796a57ec4fdbc"
+      },
+      "matches": true
+    },
+    {
+      "path": "receiver.log",
+      "bytes": 1930,
+      "sha256": "7026a4d62c3ca3bdac135dc378da65a32e6588227ba9f1973a1922da41a715b3",
+      "expected": {
+        "bytes": 1930,
+        "sha256": "7026a4d62c3ca3bdac135dc378da65a32e6588227ba9f1973a1922da41a715b3"
+      },
+      "matches": true
+    },
+    {
+      "path": "receiver.py",
+      "bytes": 14720,
+      "sha256": "feee6140304302d26dfbd0b7daafd42e858fed7982d8c7253d5c3ce215efe3e1",
+      "expected": {
+        "bytes": 14720,
+        "sha256": "feee6140304302d26dfbd0b7daafd42e858fed7982d8c7253d5c3ce215efe3e1"
+      },
+      "matches": true
+    },
+    {
+      "path": "receiving.json",
+      "bytes": 7858,
+      "sha256": "8732b3964e399561b5c1f39b791bd3b5af3f8a683f48f03440b727c1a1cacd92",
+      "expected": {
+        "bytes": 7858,
+        "sha256": "8732b3964e399561b5c1f39b791bd3b5af3f8a683f48f03440b727c1a1cacd92"
+      },
+      "matches": true
+    },
+    {
+      "path": "source-hashes.json",
+      "bytes": 222765,
+      "sha256": "76c656534da9fd8293e2909b5bb8128e033598996273e1cbccaf954b66afb406",
+      "expected": {
+        "bytes": 222765,
+        "sha256": "76c656534da9fd8293e2909b5bb8128e033598996273e1cbccaf954b66afb406"
+      },
+      "matches": true
+    },
+    {
+      "path": "test_syllabus_packet.py",
+      "bytes": 13143,
+      "sha256": "322b5d681b03d2267e0e413e55c394fb1695c6c6cfdd5c144cda32d1d1f494ee",
+      "expected": {
+        "bytes": 13143,
+        "sha256": "322b5d681b03d2267e0e413e55c394fb1695c6c6cfdd5c144cda32d1d1f494ee"
+      },
+      "matches": true
+    },
+    {
+      "path": "test_syllabus_packet_cli.py",
+      "bytes": 7918,
+      "sha256": "472f46b3e56d57406d3b4cdd43168351c606e3c92fb6fbd5604d48e97dc55e3b",
+      "expected": {
+        "bytes": 7918,
+        "sha256": "472f46b3e56d57406d3b4cdd43168351c606e3c92fb6fbd5604d48e97dc55e3b"
+      },
+      "matches": true
+    },
+    {
+      "path": "test_syllabus_packet_compatibility.py",
+      "bytes": 1604,
+      "sha256": "999022b30c9731c1ad2f11aef779a903c7beeadacf6788664007c225b1cbdda4",
+      "expected": {
+        "bytes": 1604,
+        "sha256": "999022b30c9731c1ad2f11aef779a903c7beeadacf6788664007c225b1cbdda4"
+      },
+      "matches": true
+    }
+  ],
+  "sourceInverse": {
+    "removedText": "    def parse_html_declaration(self, i: int) -> int:\n        # Newer HTMLParser releases treat unknown marked sections as bogus\n        # comments. Keep the established refusal instead of silently omitting\n        # unsupported source; dispatch in parser context, never scan raw HTML.\n        if self.rawdata.startswith(\"<![\", i):\n            return self.parse_marked_section(i)\n        return super().parse_html_declaration(i)\n\n",
+    "baselineSha256": "005a837c10bb185edf0bcc75c3ab50609f6afbe49d38161e841380116ab97bd7",
+    "inverseSha256": "005a837c10bb185edf0bcc75c3ab50609f6afbe49d38161e841380116ab97bd7",
+    "byteEqual": true
+  },
+  "guideContract": {
+    "path": "published-syllabus-packet.md",
+    "paragraph": "What the reading projection preserves, first paragraph",
+    "shortQuote": "Unsupported or malformed HTML can have a different layout",
+    "interpretation": "The paragraph permits reading-projection differences rather than promising blanket malformed-markup refusal."
+  },
+  "effects": {
+    "productExecutions": 0,
+    "ownerWrites": 0
+  }
+}

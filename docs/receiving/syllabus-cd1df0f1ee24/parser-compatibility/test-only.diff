@@ -1,0 +1,55 @@
+--- a/tests/test_syllabus_packet.py
++++ b/tests/test_syllabus_packet.py
+@@ -275,9 +275,49 @@
+     assert list(tmp_path.iterdir()) == []
+ 
+ 
+-def test_malformed_marked_declaration_has_a_handled_whole_packet_refusal():
+-    with pytest.raises(ValueError, match="unsupported HTML markup"):
+-        build({42: course(syllabus_body="<![unrecognized]>Visible course text")})
++def test_parser_assertion_has_a_handled_whole_packet_refusal(monkeypatch):
++    import canvaspilot.syllabus_packet as packet
++
++    original_feed = packet._ReadingHTML.feed
++    failure = AssertionError("synthetic declaration parser failure")
++
++    def feed(self, body):
++        if body == "Second course":
++            raise failure
++        return original_feed(self, body)
++
++    monkeypatch.setattr(packet._ReadingHTML, "feed", feed)
++    api = API({
++        42: course(syllabus_body="First course"),
++        43: course(43, syllabus_body="Second course"),
++    })
++    with pytest.raises(ValueError, match="^Course 43 contains unsupported HTML markup$") as raised:
++        build_syllabus_packet(api, [42, 43], captured_at=STAMP)
++    assert raised.value.__cause__ is failure
++    assert api.calls == [42, 43]
++
++
++def test_malformed_marked_declaration_matches_supported_parser_behavior():
++    body = "<![unrecognized]>Visible course text"
++    parser = HTMLParser(convert_charrefs=True)
++    try:
++        parser.feed(body)
++        parser.close()
++    except AssertionError:
++        # Older supported parsers reject this declaration; newer ones ignore it.
++        with pytest.raises(ValueError, match="^Course 42 contains unsupported HTML markup$") as raised:
++            build({42: course(syllabus_body=body)})
++        assert isinstance(raised.value.__cause__, AssertionError)
++        return
++
++    data, report = build({42: course(syllabus_body=body)})
++    text = data.decode()
++    view = Elements(text)
++    assert '<div class="syllabus">Visible course text</div>' in text
++    assert "<![unrecognized]>" not in text
++    assert not set(view.tags) & {"script", "iframe", "img", "object", "embed"}
++    assert view.downloads["course-42-syllabus-source.txt"] == body.encode()
++    assert report["syllabus_statuses"] == [{"course_id": 42, "status": "supplied"}]
+ 
+ 
+ def test_malformed_link_stays_readable_inert_source_evidence():

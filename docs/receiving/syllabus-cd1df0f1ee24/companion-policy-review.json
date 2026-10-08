@@ -1,0 +1,50 @@
+{
+  "schema": "hamon.canvaspilot.compatibility-contract-review.v1",
+  "reviewer": "estate-cd1df0f1ee24/estate_coordination",
+  "scope": "Independent read-only source/contract review; no product execution, source modification, GitHub write, or adoption claim.",
+  "sourceOwners": [
+    "estate-cd1df0f1ee24/estate_source",
+    "estate-926c3dc2605e/production_execution",
+    "estate-f3d1a0c556df/source_lane"
+  ],
+  "publishedHead": "3f6309f273a226453dbf2e39578c582acff3b9d3",
+  "publishedProductBlob": "1faf3448c391fdb76b8cf38fe5854906614443b1",
+  "companionCommit": "3933ab896c50fce4a47aaad4de3589d56dfb3e7f",
+  "companionTree": "937844fd915d38babe3a9c7e909b1c36749d0116",
+  "companionParent": "045530ebf3cbfddcc156fc7ff258d3f8a6d56044",
+  "evidenceRoot": "/srv/hamon-estate/coord/estate-f3d1a0c556df/canvaspilot-syllabus-receiving",
+  "all20ManifestFilesExact": true,
+  "onlyProductionDelta": "Eight-line parse_html_declaration override before _destination; removing it makes candidate source byte-identical to baseline.",
+  "findings": [
+    {
+      "kind": "contract",
+      "finding": "Published guide is byte-identical at original609 and test-corrected3f630; it explicitly allows unsupported or malformed HTML layout differences and cites tolerant HTMLParser. Typed, identity, read, rendering and size failures refuse whole packet. No explicit all-malformed-markup or all-unknown-marked-declaration refusal guarantee."
+    },
+    {
+      "kind": "companion-merit",
+      "finding": "Restores legacy parser-context marked-declaration dispatch instead of raw text scanning. Existing AssertionError catch becomes handled ValueError. Their verified receipt records 12 independent cases plus28 focused tests on Python3.14.4, literal contexts/exact-source controls, stop-on-failure and output-existence protection."
+    },
+    {
+      "kind": "behavior",
+      "finding": "On newer runtimes this narrows admission for inputs the tolerant parser can project. Modern accepted baseline preserves exact original raw bytes; unknown declaration omission is a reading-projection behavior, not loss of saved source."
+    },
+    {
+      "kind": "scope-risk",
+      "finding": "The override routes every '<![' form to legacy parse_marked_section, not only unrecognized keywords. Internal parser dependency and known/incomplete marked-section tokenization remain a maintenance boundary. Bounded native evidence is not complete cross-version or repository qualification."
+    },
+    {
+      "kind": "recommendation",
+      "finding": "Current test-only correction is consistent with published tolerant projection contract. Preserve and credit companion as an independently evidenced optional stricter admission policy. If adopted, describe its exact refusal scope and qualify current composition explicitly rather than claiming it was already guaranteed. No blocker found requiring that production patch."
+    }
+  ],
+  "runtimeSourceRead": {
+    "path": "/usr/lib/python3.14/html/parser.py",
+    "sha256": "951b46301862483dbcb3debbbd39b4cef3b85ebe488f86cc2ff667f834dfe523",
+    "observations": "Default _support_cdata=True; modern dispatch recognizes exact CDATA and doctype, otherwise uses parse_bogus_comment. Legacy parse_marked_section accepts temp/cdata/ignore/include/rcdata and if/else/endif, rejects unknown status with AssertionError."
+  },
+  "limits": [
+    "No new product tests or browser runs were performed.",
+    "Other workers' full repository/current-main gates remain outside this review.",
+    "No universal security/safety conclusion; this review concerns promised input/projection behavior and compatibility."
+  ]
+}
