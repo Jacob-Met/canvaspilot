@@ -1,0 +1,48 @@
+{
+  "patch_source_commit": "e678faaa4809ac0eddfd17228c1e940d19865217",
+  "patch_receiving_base": "640bca994bd98f2c4b1759e450ebeda0e0b92dab",
+  "included_paths": [
+    "src/canvaspilot/client.py",
+    "tests/test_token_pagination.py"
+  ],
+  "patch_sha256": "e107c29a04f2e3d7dc966e4f2708df2456478b0a13e2fac81a78d9e5941d124e",
+  "token_controls_sha256": "34e6b063048e7231dc1162908a5b00340f1149c4c2824a267cf7b67a2d80c646",
+  "source_client_sha256": "82ac737ec34259b42a1629ab40bddf5d54aaafe17d178cdcf56983ea5c440395",
+  "held_remote_transfer": {
+    "commit": "7428deadc00a2372f258d48a0bd05e1c83a939ac",
+    "tree": "f547d3e67e2d407ad804e3c799afd71b18988746"
+  },
+  "apply_check": {
+    "command": [
+      "git",
+      "-C",
+      "/workspace/scratch/87eaaf0fdf63/estate-production/canvaspilot",
+      "apply",
+      "--check",
+      "/workspace/scratch/87eaaf0fdf63/estate-production/canvaspilot-pat-exchange/docs/receiving/pat-exchange-20261008-87eaaf0fdf63/token-only.patch"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "target_branch_modified": false,
+  "pr35_receiving_head_agreed": false,
+  "warning": "Exact e678 source exchange; requires shared pagination helpers and is not directly applicable to PR35 client.py. No replay or token qualification against PR35 is claimed.",
+  "pending_comment_sha256": "735f58ce69365d22cbe4d13f6a3d8cfc3d54267172ff616a7b891d4bd99ef9bd",
+  "donor_pr37": {
+    "head": "dcf1bc02aa490c5e9ac79e3f486d9e2f2e34c2db",
+    "receiving_base": "89fa86d20e4eff47ce42e18afd8cd8e75ab376c3",
+    "state_at_read": "open, unmerged"
+  },
+  "patch_container": {
+    "file": "token-only.patch.gz.b64",
+    "sha256": "f05f5b882e631f3d3b341a67d15afdab9e1b6cf41b48e91bff07fa2bbf6d4efb",
+    "uncompressed_sha256": "e107c29a04f2e3d7dc966e4f2708df2456478b0a13e2fac81a78d9e5941d124e",
+    "roundtrip_matches_original_diff": true,
+    "decompressed_apply_check_exit_code": 0,
+    "reason": "Lossless UTF-8 transport preserves the exact unified-diff context whitespace without adding false whitespace defects to the repository.",
+    "previous_file": "token-only.patch.gz",
+    "encoding": "base64 of the original gzip archive",
+    "archive_sha256": "2e6166dcee1a88c222fd72be1800cfdd9c5a27c2cc07b89795b0f72a7e3ab961"
+  }
+}

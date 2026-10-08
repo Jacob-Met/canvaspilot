@@ -1,0 +1,110 @@
+{
+  "label": "candidate-v1",
+  "started_utc": "2026-10-08T08:50:46.783233+00:00",
+  "ended_utc": "2026-10-08T08:50:48.042162+00:00",
+  "source_root": "/workspace/scratch/3dab0b9d2ce9/estate-runtime/canvaspilot-review/candidate-v1",
+  "argv": [
+    "/workspace/scratch/3dab0b9d2ce9/canvaspilot-product/test-env/bin/python",
+    "-B",
+    "/workspace/scratch/3dab0b9d2ce9/estate-runtime/canvaspilot-review/test_independent_sync.py"
+  ],
+  "environment": {
+    "PATH": "/usr/bin:/bin",
+    "PYTHONPATH": "/workspace/scratch/3dab0b9d2ce9/estate-runtime/canvaspilot-review/candidate-v1/src",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONHASHSEED": "0",
+    "LC_ALL": "C.UTF-8"
+  },
+  "exit_code": 0,
+  "probe": {
+    "sha256": "c0d17c34f8d0dcf754885d22a5d958df23d0411ca838fd2d4b8a080848cba7db",
+    "bytes": 14109
+  },
+  "driver": {
+    "sha256": "71255f9369069150d4dde6bb55afdffdd158b177c730f23eaebff5dc9025d07a",
+    "bytes": 2362
+  },
+  "runtime_executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+  "runtime_sha256": {
+    "sha256": "fa67443527ed9647f760d807e2a38f26340757123e643c4639cf273ed15d5ea7",
+    "bytes": 30894944
+  },
+  "source_before": {
+    "src/canvaspilot/__init__.py": {
+      "sha256": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5",
+      "bytes": 561
+    },
+    "src/canvaspilot/api.py": {
+      "sha256": "0446e7ee34942d19cf93461a3f9fa9a43383dce4390b4bd037e94b0f33dff222",
+      "bytes": 20606
+    },
+    "src/canvaspilot/bundle.py": {
+      "sha256": "db1ca6da89ea4f1a07c327f56ab40a39fe89e22c91034ed2be8fb3e497a6e696",
+      "bytes": 2550
+    },
+    "src/canvaspilot/cli.py": {
+      "sha256": "1af004e5d5e3ca4aa23ac1f4e3f49eae7ab9b290c1f250705e040af9d3421897",
+      "bytes": 8198
+    },
+    "src/canvaspilot/client.py": {
+      "sha256": "ff6b68ebee132e2cddb0c588d87927ba68cf158ca97e9074803d9769a5bc19f5",
+      "bytes": 12478
+    },
+    "src/canvaspilot/mcp_server.py": {
+      "sha256": "b765930008d1d1123f351771d6edab182af9228617a3b7a9791103a66ba43452",
+      "bytes": 10506
+    },
+    "src/canvaspilot/offline_demo.py": {
+      "sha256": "2389f3ccc1b6db5995be0d90e014ea9345e3029aa5546a5b2dcf12c1197e6d4d",
+      "bytes": 4124
+    },
+    "src/canvaspilot/session_broker.py": {
+      "sha256": "2a106130c344aefebb23b078cd93b5d3ca3afd7f5325ae5fac2fb8a7251780cc",
+      "bytes": 12151
+    }
+  },
+  "source_after": {
+    "src/canvaspilot/__init__.py": {
+      "sha256": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5",
+      "bytes": 561
+    },
+    "src/canvaspilot/api.py": {
+      "sha256": "0446e7ee34942d19cf93461a3f9fa9a43383dce4390b4bd037e94b0f33dff222",
+      "bytes": 20606
+    },
+    "src/canvaspilot/bundle.py": {
+      "sha256": "db1ca6da89ea4f1a07c327f56ab40a39fe89e22c91034ed2be8fb3e497a6e696",
+      "bytes": 2550
+    },
+    "src/canvaspilot/cli.py": {
+      "sha256": "1af004e5d5e3ca4aa23ac1f4e3f49eae7ab9b290c1f250705e040af9d3421897",
+      "bytes": 8198
+    },
+    "src/canvaspilot/client.py": {
+      "sha256": "ff6b68ebee132e2cddb0c588d87927ba68cf158ca97e9074803d9769a5bc19f5",
+      "bytes": 12478
+    },
+    "src/canvaspilot/mcp_server.py": {
+      "sha256": "b765930008d1d1123f351771d6edab182af9228617a3b7a9791103a66ba43452",
+      "bytes": 10506
+    },
+    "src/canvaspilot/offline_demo.py": {
+      "sha256": "2389f3ccc1b6db5995be0d90e014ea9345e3029aa5546a5b2dcf12c1197e6d4d",
+      "bytes": 4124
+    },
+    "src/canvaspilot/session_broker.py": {
+      "sha256": "2a106130c344aefebb23b078cd93b5d3ca3afd7f5325ae5fac2fb8a7251780cc",
+      "bytes": 12151
+    }
+  },
+  "source_unchanged": true,
+  "stdout": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  "stderr": {
+    "sha256": "b60f79f98221a4811f36af14f648987a7abe8e1c7aac05e8c6d6eccedf230801",
+    "bytes": 1903
+  },
+  "boundary": "Authored CanvasClient fixture data only. Socket connect, broker access, profile/default lookups guarded; no network install or account operations."
+}

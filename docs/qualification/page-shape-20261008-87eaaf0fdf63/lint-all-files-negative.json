@@ -1,0 +1,12 @@
+{
+  "command": [
+    "/workspace/scratch/87eaaf0fdf63/estate-production/venv/bin/ruff",
+    "check",
+    "--no-cache",
+    "."
+  ],
+  "cwd": "/workspace/scratch/87eaaf0fdf63/estate-production/canvaspilot-page-shape",
+  "returncode": 1,
+  "stdout": "E402 Module level import not at top of file\n  --> docs/evidence/broker-proxy-native-20261008/native_broker_fixture.py:22:1\n   |\n20 | args = parser.parse_args()\n21 | sys.path.insert(0, str(args.source / \"src\"))\n22 | from canvaspilot.session_broker import Handler, STATE\n   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n23 |\n24 | lock = threading.Lock()\n   |\n\nE401 [*] Multiple imports on one line\n --> docs/evidence/broker-proxy-native-20261008/verify_receiving.py:1:1\n  |\n1 | import argparse, hashlib, importlib.metadata, json, platform, sys\n  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n2 | from pathlib import Path\n3 | root=Path(__file__).resolve().parent\n  |\nhelp: Split imports\n\nF401 [*] `os` imported but unused\n --> docs/evidence/sync-deadline-overview-20261008/independent/run_review.py:7:8\n  |\n5 | import hashlib\n6 | import json\n7 | import os\n  |        ^^\n8 | import platform\n9 | import subprocess\n  |\nhelp: Remove unused import: `os`\n\nF401 [*] `platform` imported but unused\n  --> docs/evidence/sync-deadline-overview-20261008/independent/run_review.py:8:8\n   |\n 6 | import json\n 7 | import os\n 8 | import platform\n   |        ^^^^^^^^\n 9 | import subprocess\n10 | import sys\n   |\nhelp: Remove unused import: `platform`\n\nFound 4 errors.\n[*] 3 fixable with the `--fix` option.\n",
+  "stderr": ""
+}

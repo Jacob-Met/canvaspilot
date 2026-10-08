@@ -1,0 +1,22 @@
+{
+  "baseline_commit": "9ee9a1687b5962a861e59ad6beb4c92fdcc5c179",
+  "source_sha256": "1e3529ddb55211e3490f5a8b32126c8b12b7d342b9f8cb615248302cd13f2c49",
+  "test_sha256": "77a782e14d76398a07e56694d20199df9d5582486fc6693472e2e19d299a01e7",
+  "command": [
+    "/workspace/scratch/87eaaf0fdf63/estate-production/venv/bin/python",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "tests/test_collection_page_shape.py",
+    "tests/test_broker_http_receiving.py",
+    "tests/test_token_pagination.py"
+  ],
+  "cwd": "/workspace/scratch/87eaaf0fdf63/estate-production/canvaspilot-page-shape",
+  "recorded_at_utc": "2026-10-08T10:50:33.746449+00:00",
+  "returncode": 0,
+  "stdout": "................................................                         [100%]\n48 passed in 2.10s\n",
+  "stderr": ""
+}

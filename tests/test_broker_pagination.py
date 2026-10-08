@@ -81,13 +81,15 @@ def test_broker_path_non_list_response(monkeypatch):
     assert _client().get_paginated("/api/v1/users/self") == [single]
 
 
-def test_broker_path_non_list_mid_pagination_kept_not_dropped(monkeypatch):
+def test_broker_path_non_list_continuation_refuses_collection(monkeypatch):
     first = {"status": 200, "json": DATASET[:100], "link": f'<{BASE}/api/v1/courses?cursor=tail>; rel="next"'}
     single = {"id": 999, "name": "Trailing single"}
-    _mock_broker(monkeypatch, lambda path: (
+    calls = _mock_broker(monkeypatch, lambda path: (
         {"status": 200, "json": single, "link": None} if "cursor=tail" in path else first
     ))
-    assert _client().get_paginated("/api/v1/courses") == DATASET[:100] + [single]
+    with pytest.raises(CanvasPaginationError, match="non-list later page"):
+        _client().get_paginated("/api/v1/courses")
+    assert len(calls) == 2
 
 
 def test_broker_path_40_page_cap_raises_instead_of_returning_partial_collection(monkeypatch):

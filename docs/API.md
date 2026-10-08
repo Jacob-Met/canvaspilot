@@ -133,9 +133,17 @@ The broker process exits ~0.3s after responding. Unknown paths return
   retaining its query and restricting it to the configured Canvas origin.
   Initial filters are sent only on the first request; subsequent URLs already
   contain the continuation parameters. Page length is not a completion signal.
+- Session collection URLs use the running broker's advertised `base_url`, so a
+  default client works with a broker configured for a school's Canvas host.
+  An invalid advertised URL is refused before fetching; if the field is absent,
+  the client's configured base URL is used.
 - Link metadata must contain a valid relation for each link. Missing or malformed
   relations and unsupported `anchor` contexts raise `CanvasPaginationError`;
   they cannot establish completion or supply a continuation for another resource.
+- In both authentication modes, a terminal object is wrapped in a singleton list
+  only when it is the first response. Every continuation response must be a list,
+  including after an empty initial page; a later non-list response raises
+  `CanvasPaginationError` because the collection is incomplete.
 - Session-broker collection reads raise `CanvasPaginationError` for missing or
   malformed pagination metadata, repeated/ambiguous continuation, a foreign
   origin, an unexpected non-JSON response, or a still-incomplete collection after

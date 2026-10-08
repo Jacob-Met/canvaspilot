@@ -239,13 +239,22 @@ class CanvasClient:
             data = self.request("GET", path, params=params)
             return data if isinstance(data, list) else [data]
 
-        if not self.token and broker_health():
+        health = broker_health() if not self.token else None
+        if health:
             # Canvas may cap page sizes and uses opaque continuation URLs:
             # https://developerdocs.instructure.com/services/canvas/basics/file.pagination
-            url = with_query(broker_path(path, self.base_url), _with_per_page(params))
+            # PR35 (estate-ac386303dce2) identifies the running broker's school
+            # as the receiving origin, even when this client uses its default.
+            if not isinstance(health, dict):
+                raise CanvasPaginationError("The session broker provided invalid Canvas origin metadata.")
+            origin = health.get("base_url", self.base_url)
+            if not isinstance(origin, str):
+                raise CanvasPaginationError("The session broker provided invalid Canvas origin metadata.")
+            broker_path(origin, origin)  # Validate advertised URL before any fetch.
+            url = with_query(broker_path(path, origin), _with_per_page(params))
             out: list[Any] = []
             seen: set[str] = set()
-            for _ in range(40):
+            for page_index in range(40):
                 if url in seen:
                     raise CanvasPaginationError("Canvas pagination repeated a page; collection incomplete.")
                 seen.add(url)
@@ -262,15 +271,17 @@ class CanvasClient:
                 if data is None:
                     raise CanvasPaginationError("Canvas pagination expected a JSON response; collection incomplete.")
                 if not isinstance(data, list):
-                    # Preserve the existing single-object response convention.
+                    # Preserve a singleton only when it is the first page.
                     if following:
                         raise CanvasPaginationError("Canvas pagination returned a non-list page with a next link.")
+                    if page_index:
+                        raise CanvasPaginationError("Canvas pagination returned a non-list later page; collection incomplete.")
                     out.append(data)
                     return out
                 out.extend(data)
                 if following is None:
                     return out
-                url = broker_path(following, self.base_url)
+                url = broker_path(following, origin)
             raise CanvasPaginationError("Canvas pagination exceeded the 40-page cap; collection incomplete.")
 
         http = self._ensure_http()
@@ -282,7 +293,7 @@ class CanvasClient:
             url = f"{url}{'&' if '?' in url else '?'}{query}"
         out: list[Any] = []
         seen: set[str] = set()
-        for _ in range(40):
+        for page_index in range(40):
             if url in seen:
                 raise CanvasPaginationError("Canvas pagination repeated a page; collection incomplete.")
             seen.add(url)
@@ -297,6 +308,8 @@ class CanvasClient:
             else:
                 if following:
                     raise CanvasPaginationError("Canvas pagination returned a non-list page with a next link.")
+                if page_index:
+                    raise CanvasPaginationError("Canvas pagination returned a non-list later page; collection incomplete.")
                 out.append(chunk)
                 return out
             if following is None:

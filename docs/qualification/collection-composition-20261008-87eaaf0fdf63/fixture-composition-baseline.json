@@ -1,0 +1,52 @@
+{
+  "head": "f94b9bf892d2469576070c1fe1f86fad30013224",
+  "tree": "80839cbc0056df0dfbf859abca272b0820e887da",
+  "scope": "Source composition and existing installed CLI entrypoint with explicit PYTHONPATH; not a newly built wheel or live account qualification.",
+  "checks": [
+    {
+      "name": "final-tests",
+      "command": [
+        "/workspace/scratch/87eaaf0fdf63/estate-production/venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider"
+      ],
+      "exit_code": 1,
+      "elapsed_seconds": 11.704
+    },
+    {
+      "name": "final-lint",
+      "command": [
+        "/workspace/scratch/87eaaf0fdf63/estate-production/venv/bin/ruff",
+        "check",
+        "--no-cache",
+        "src",
+        "tests",
+        "scripts"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.035
+    },
+    {
+      "name": "final-cli",
+      "command": [
+        "/workspace/scratch/87eaaf0fdf63/estate-production/venv/bin/canvaspilot",
+        "--help"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 1.093
+    },
+    {
+      "name": "final-whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.007
+    }
+  ]
+}

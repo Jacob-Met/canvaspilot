@@ -1,0 +1,9 @@
+{
+  "repository": "Jacob-Met/canvaspilot",
+  "issue": 35,
+  "operation": "github_add_comment_to_issue",
+  "accepted": false,
+  "http_status": 403,
+  "reason": "GitHub secondary rate limit: temporarily blocked from content creation",
+  "retry_or_alternate_route_used": false
+}

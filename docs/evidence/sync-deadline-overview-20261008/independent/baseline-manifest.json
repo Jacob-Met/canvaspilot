@@ -1,0 +1,132 @@
+{
+  "local_git_head": "3fad2392f1283a98ce40e7fc77fb744a3c32b5b1",
+  "upstream_main": "b0655cfc6f298c956fcdd27fbba32e3c5609516f",
+  "upstream_tree": "e343e76039947e15674b098867275ac463ef6a84",
+  "files": [
+    {
+      "path": ".github/dependabot.yml",
+      "sha256": "883b95e3be554fbadd92b315e4a8c6ea6ca688b64924e22dd61222b07f683507",
+      "bytes": 118
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "62f17b95af03d1ff8a172f168282b405fefcab3a5f1094c70e618b44920bd0ff",
+      "bytes": 708
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "8acd3d428eb526e6dab777cb8911614c85a5d05a13c5e60066c6f61e0e24e0c2",
+      "bytes": 271
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "85144488dcaf127ecd6842af9b19a72a2448c7b48ab831140ace32dac8090314",
+      "bytes": 1075
+    },
+    {
+      "path": "README.md",
+      "sha256": "dd0576f3f5d8122b18b4750d7d57ff6ca3ba8501c2be94044665b007913d75c2",
+      "bytes": 8040
+    },
+    {
+      "path": "docs/API.md",
+      "sha256": "c73735169bd03c148e2b1b9d93084c6e8bc1bc9bc7a3f87e39b91dbb34e74512",
+      "bytes": 5089
+    },
+    {
+      "path": "docs/evidence/offline-demo-20260909.json",
+      "sha256": "04fd3c7b83dcace2ebe0436e5acaab3f3a135b690cab4a3e35f3067c75c77c5e",
+      "bytes": 934
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "555ad3c7e338d38ae5feabc06c0c07503f22d9c732a9af153c7706c63d2b3c63",
+      "bytes": 1353
+    },
+    {
+      "path": "scripts/inventory_pass.py",
+      "sha256": "b2669747165f47b023f666bbb01657f47427d680ea8ff8cbf35203353ba05d06",
+      "bytes": 10515
+    },
+    {
+      "path": "scripts/readonly_sweep.py",
+      "sha256": "9176e6da49560ed19d55a454b3d552ca040a15412029b3940886266172fecb22",
+      "bytes": 5828
+    },
+    {
+      "path": "src/canvaspilot/__init__.py",
+      "sha256": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5",
+      "bytes": 561
+    },
+    {
+      "path": "src/canvaspilot/api.py",
+      "sha256": "f3583da81feb695b818b51111dd05f05e3c3eba6cf6aa6439a3a966c3f0d0621",
+      "bytes": 18248
+    },
+    {
+      "path": "src/canvaspilot/bundle.py",
+      "sha256": "db1ca6da89ea4f1a07c327f56ab40a39fe89e22c91034ed2be8fb3e497a6e696",
+      "bytes": 2550
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "sha256": "e52ddca6ae538e2d11482d3be70f3201ad0b14070414c862beca363d50f49228",
+      "bytes": 7330
+    },
+    {
+      "path": "src/canvaspilot/client.py",
+      "sha256": "7cc5f5df0834daf98dd75801b569345acec58fd8c982cbf746af4c6aea367f7d",
+      "bytes": 11939
+    },
+    {
+      "path": "src/canvaspilot/mcp_server.py",
+      "sha256": "3012df86f365d054f92db20b733562bef6871c65ff88d75e0acb893a0414fb4f",
+      "bytes": 10096
+    },
+    {
+      "path": "src/canvaspilot/offline_demo.py",
+      "sha256": "2389f3ccc1b6db5995be0d90e014ea9345e3029aa5546a5b2dcf12c1197e6d4d",
+      "bytes": 4124
+    },
+    {
+      "path": "src/canvaspilot/session_broker.py",
+      "sha256": "2a106130c344aefebb23b078cd93b5d3ca3afd7f5325ae5fac2fb8a7251780cc",
+      "bytes": 12151
+    },
+    {
+      "path": "tests/test_broker_loopback_bind.py",
+      "sha256": "c889696ea86f73f0aa00b1b86f623855c92cd6eccef6b7764910e0df99b5c9e5",
+      "bytes": 3327
+    },
+    {
+      "path": "tests/test_broker_pagination.py",
+      "sha256": "da1824334f12fe1661e7c33404eef550642f366239ff1e6016b6868c38eabf7b",
+      "bytes": 5217
+    },
+    {
+      "path": "tests/test_broker_readonly.py",
+      "sha256": "fd9baae5e8f176636eb5377fee753facd87c136416dcc2e3ec252090aad9d6c5",
+      "bytes": 4746
+    },
+    {
+      "path": "tests/test_bundle_api.py",
+      "sha256": "a3c200027083582815bcdacf8b19f68a2a7f2b10597e4ae3270c819c54639615",
+      "bytes": 1657
+    },
+    {
+      "path": "tests/test_fixture.py",
+      "sha256": "3f53176abf7ee425b1ff8d62a0e4b7f84d2e47e0b0ff9f03adae152301bc23be",
+      "bytes": 1497
+    },
+    {
+      "path": "tests/test_offline_demo.py",
+      "sha256": "ddc7a133e76f987decb5774b00e6d6c6b8973d5895d6c4a4ae5ea6d6e6bb1154",
+      "bytes": 2226
+    },
+    {
+      "path": "tests/test_strip_html.py",
+      "sha256": "3445579d5d8e0863e3331fd8fe54de7a45bc88db5546186eb60dc70865dce915",
+      "bytes": 1493
+    }
+  ]
+}

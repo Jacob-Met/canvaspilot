@@ -1,0 +1,19 @@
+usage: canvaspilot [-h]
+                   {login,session,whoami,courses,sync,assignments,brief,discussions,files,mcp}
+                   ...
+
+positional arguments:
+  {login,session,whoami,courses,sync,assignments,brief,discussions,files,mcp}
+    login               Open headed browser for Canvas SSO (one-shot)
+    session             Stay-open session broker
+    whoami              GET /users/self/profile
+    courses             List active courses
+    sync                Courses + upcoming assignments digest
+    assignments         List assignments for a course
+    brief               Assignment brief (cleaned prompt)
+    discussions         List discussion topics
+    files               List course files
+    mcp                 Run MCP stdio server
+
+options:
+  -h, --help            show this help message and exit

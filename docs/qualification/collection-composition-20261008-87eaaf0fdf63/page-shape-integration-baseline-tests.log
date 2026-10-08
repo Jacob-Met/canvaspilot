@@ -1,0 +1,82 @@
+.................................................................F...... [ 25%]
+........................................................................ [ 51%]
+........................................................................ [ 77%]
+..............................................................           [100%]
+=================================== FAILURES ===================================
+__________ test_broker_path_non_list_mid_pagination_kept_not_dropped ___________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f58c60a9ca0>
+
+    def test_broker_path_non_list_mid_pagination_kept_not_dropped(monkeypatch):
+        first = {"status": 200, "json": DATASET[:100], "link": f'<{BASE}/api/v1/courses?cursor=tail>; rel="next"'}
+        single = {"id": 999, "name": "Trailing single"}
+        _mock_broker(monkeypatch, lambda path: (
+            {"status": 200, "json": single, "link": None} if "cursor=tail" in path else first
+        ))
+>       assert _client().get_paginated("/api/v1/courses") == DATASET[:100] + [single]
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_broker_pagination.py:90: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <canvaspilot.client.CanvasClient object at 0x7f58c60aaba0>
+path = '/api/v1/courses'
+
+    def get_paginated(
+        self,
+        path: str,
+        *,
+        params: dict[str, Any] | list[tuple[str, Any]] | None = None,
+    ) -> list[Any]:
+        """Read a complete collection via same-origin Link URLs, or raise.
+    
+        A next link remaining after 40 pages is incomplete, even if earlier
+        pages succeeded. Initial filters are sent only with the first request.
+        """
+        if self.fixture is not None:
+            data = self.request("GET", path, params=params)
+            return data if isinstance(data, list) else [data]
+    
+        health = broker_health() if not self.token else None
+        if health:
+            # Canvas may cap page sizes and uses opaque continuation URLs:
+            # https://developerdocs.instructure.com/services/canvas/basics/file.pagination
+            # PR35 (estate-ac386303dce2) identifies the running broker's school
+            # as the receiving origin, even when this client uses its default.
+            if not isinstance(health, dict):
+                raise CanvasPaginationError("The session broker provided invalid Canvas origin metadata.")
+            origin = health.get("base_url", self.base_url)
+            if not isinstance(origin, str):
+                raise CanvasPaginationError("The session broker provided invalid Canvas origin metadata.")
+            broker_path(origin, origin)  # Validate advertised URL before any fetch.
+            url = with_query(broker_path(path, origin), _with_per_page(params))
+            out: list[Any] = []
+            seen: set[str] = set()
+            for page_index in range(40):
+                if url in seen:
+                    raise CanvasPaginationError("Canvas pagination repeated a page; collection incomplete.")
+                seen.add(url)
+                response = broker_fetch(
+                    "GET", url, timeout=self.timeout, include_response=True
+                )
+                if not isinstance(response, dict) or "link" not in response:
+                    raise CanvasPaginationError(
+                        "The session broker does not provide pagination metadata. "
+                        "Restart it with the current CanvasPilot version and retry the read."
+                    )
+                following = next_link(response["link"])
+                data = response.get("json")
+                if data is None:
+                    raise CanvasPaginationError("Canvas pagination expected a JSON response; collection incomplete.")
+                if not isinstance(data, list):
+                    # Preserve a singleton only when it is the first page.
+                    if following:
+                        raise CanvasPaginationError("Canvas pagination returned a non-list page with a next link.")
+                    if page_index:
+>                       raise CanvasPaginationError("Canvas pagination returned a non-list later page; collection incomplete.")
+E                       canvaspilot.pagination.CanvasPaginationError: Canvas pagination returned a non-list later page; collection incomplete.
+
+src/canvaspilot/client.py:278: CanvasPaginationError
+=========================== short test summary info ============================
+FAILED tests/test_broker_pagination.py::test_broker_path_non_list_mid_pagination_kept_not_dropped
+1 failed, 277 passed in 10.60s

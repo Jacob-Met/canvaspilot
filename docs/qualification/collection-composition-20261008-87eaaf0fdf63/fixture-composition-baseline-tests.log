@@ -1,0 +1,164 @@
+............F........................................................... [ 26%]
+.......................................................................F [ 53%]
+........................................................................ [ 80%]
+....................................................                     [100%]
+=================================== FAILURES ===================================
+__________________ test_paginated_includes_survive_every_page __________________
+
+broker = [{'body': None, 'headers': {'Accept': 'application/json'}, 'method': 'GET', 'op': 'fetch', ...}]
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fb3db5735f0>
+
+    def test_paginated_includes_survive_every_page(broker, monkeypatch):
+        rows = [{"id": 1}, {"id": 2}, {"id": 3}]
+        params = {"include[]": ["items"], "per_page": 2}
+        base = "https://canvas.example.test"
+        next_path = "/api/v1/courses/1/modules?include%5B%5D=items&cursor=remaining"
+    
+        def page(job):
+            broker.append(job)
+            following = query(job).get("cursor") == ["remaining"]
+            return {"ok": True, "response": {
+                "status": 200,
+                "json": rows[2:] if following else rows[:2],
+                "link": None if following else f'<{base}{next_path}>; rel="next"',
+            }}
+    
+        monkeypatch.setattr(session_broker, "_call", page)
+        with CanvasClient(token="", base_url=base) as client:
+>           result = client.get_paginated("/api/v1/courses/1/modules", params=params)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_broker_encoding.py:163: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/canvaspilot/client.py:282: in get_paginated
+    url = broker_path(following, origin)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+url = 'https://canvas.example.test/api/v1/courses/1/modules?include%5B%5D=items&cursor=remaining'
+base_url = 'https://canvas.instructure.com'
+
+    def broker_path(url: str, base_url: str) -> str:
+        """Keep pagination on the configured Canvas origin without broker navigation.
+    
+        Canvas documents absolute continuation URLs. Root-relative URLs are also
+        accepted, but no continuation may change scheme/host/port or carry userinfo.
+        The query remains opaque: never decode, increment, or rebuild its cursor.
+        """
+        try:
+            if not isinstance(url, str) or not url or any(ord(c) <= 32 for c in url):
+                raise ValueError
+            if "\\" in url or "#" in url:
+                raise ValueError
+            parsed, base = urlsplit(url), urlsplit(base_url)
+            if base.scheme not in ("http", "https") or not base.hostname:
+                raise ValueError
+            if parsed.username is not None or parsed.password is not None:
+                raise ValueError
+            if parsed.scheme or parsed.netloc:
+                if not parsed.scheme or _origin(parsed) != _origin(base):
+                    raise ValueError
+            elif not url.startswith("/") or url.startswith("//"):
+                raise ValueError
+            if parsed.path.startswith("//"):
+                raise ValueError
+            return urlunsplit(("", "", parsed.path or "/", parsed.query, ""))
+        except ValueError:
+            # Do not expose opaque cursors, query tokens, or foreign URLs in errors.
+>           raise CanvasPaginationError(
+                "Canvas pagination requires a valid URL on the configured Canvas origin."
+            ) from None
+E           canvaspilot.pagination.CanvasPaginationError: Canvas pagination requires a valid URL on the configured Canvas origin.
+
+src/canvaspilot/pagination.py:58: CanvasPaginationError
+__ test_broker_module_fallback_receives_multiple_pages_through_actual_client ___
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fb3db616870>
+
+    def test_broker_module_fallback_receives_multiple_pages_through_actual_client(monkeypatch):
+        requests = []
+        items = [{"id": i, "title": f"Synthetic item {i}", "type": "Page"} for i in range(1, 52)]
+    
+        def broker_transport(method, url, **kwargs):
+            if method == "GET":
+                assert url == f"{client_module.broker_base()}/health"
+                return httpx.Response(200, json={"ok": True})
+            assert method == "POST"
+            assert url == f"{client_module.broker_base()}/fetch"
+            envelope = kwargs["json"]
+            assert envelope["method"] == "GET"
+            path = envelope["path"]
+            assert path.startswith("/api/v1/courses/42/modules")
+            parsed = httpx.URL("https://canvas.invalid" + path)
+            requests.append((parsed.path, parsed.params.get("page")))
+            if parsed.path == "/api/v1/courses/42/modules":
+                data = [{"id": 7, "items_count": 51}]
+            else:
+                assert parsed.path == "/api/v1/courses/42/modules/7/items"
+                assert parsed.params.get("per_page") == "50"
+                data = items[50:] if parsed.params.get("page") == "2" else items[:50]
+            return httpx.Response(200, json={"ok": True, "response": {"status": 200, "json": data}})
+    
+        monkeypatch.setattr(client_module, "_broker_request", broker_transport)
+        with CanvasAPI(CanvasClient(token="", base_url="https://canvas.invalid")) as api:
+>           result = api.list_modules(42)
+                     ^^^^^^^^^^^^^^^^^^^^
+
+tests/test_module_items.py:121: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/canvaspilot/api.py:215: in list_modules
+    rows = self.client.get_paginated(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <canvaspilot.client.CanvasClient object at 0x7fb3db6161b0>
+path = '/api/v1/courses/42/modules'
+
+    def get_paginated(
+        self,
+        path: str,
+        *,
+        params: dict[str, Any] | list[tuple[str, Any]] | None = None,
+    ) -> list[Any]:
+        """Read a complete collection via same-origin Link URLs, or raise.
+    
+        A next link remaining after 40 pages is incomplete, even if earlier
+        pages succeeded. Initial filters are sent only with the first request.
+        """
+        if self.fixture is not None:
+            data = self.request("GET", path, params=params)
+            return data if isinstance(data, list) else [data]
+    
+        health = broker_health() if not self.token else None
+        if health:
+            # Canvas may cap page sizes and uses opaque continuation URLs:
+            # https://developerdocs.instructure.com/services/canvas/basics/file.pagination
+            # PR35 (estate-ac386303dce2) identifies the running broker's school
+            # as the receiving origin, even when this client uses its default.
+            if not isinstance(health, dict):
+                raise CanvasPaginationError("The session broker provided invalid Canvas origin metadata.")
+            origin = health.get("base_url", self.base_url)
+            if not isinstance(origin, str):
+                raise CanvasPaginationError("The session broker provided invalid Canvas origin metadata.")
+            broker_path(origin, origin)  # Validate advertised URL before any fetch.
+            url = with_query(broker_path(path, origin), _with_per_page(params))
+            out: list[Any] = []
+            seen: set[str] = set()
+            for _ in range(40):
+                if url in seen:
+                    raise CanvasPaginationError("Canvas pagination repeated a page; collection incomplete.")
+                seen.add(url)
+                response = broker_fetch(
+                    "GET", url, timeout=self.timeout, include_response=True
+                )
+                if not isinstance(response, dict) or "link" not in response:
+>                   raise CanvasPaginationError(
+                        "The session broker does not provide pagination metadata. "
+                        "Restart it with the current CanvasPilot version and retry the read."
+                    )
+E                   canvaspilot.pagination.CanvasPaginationError: The session broker does not provide pagination metadata. Restart it with the current CanvasPilot version and retry the read.
+
+src/canvaspilot/client.py:265: CanvasPaginationError
+=========================== short test summary info ============================
+FAILED tests/test_broker_encoding.py::test_paginated_includes_survive_every_page
+FAILED tests/test_module_items.py::test_broker_module_fallback_receives_multiple_pages_through_actual_client
+2 failed, 266 passed in 10.59s

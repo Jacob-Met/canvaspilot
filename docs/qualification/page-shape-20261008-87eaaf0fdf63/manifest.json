@@ -1,0 +1,27 @@
+{
+  "receiving_baseline": "9ee9a1687b5962a861e59ad6beb4c92fdcc5c179",
+  "finding": "https://github.com/Jacob-Met/canvaspilot/pull/35#pullrequestreview-5454974316",
+  "scope": "Explicit page-position guard in both pagination loops; first-response singleton compatibility retained.",
+  "baseline": {
+    "failed": 4,
+    "passed": 6
+  },
+  "candidate_focused": {
+    "passed": 48,
+    "new_controls": 10,
+    "existing_http_broker_controls": 12,
+    "existing_token_controls": 26
+  },
+  "runtime_source_sha256": "1e3529ddb55211e3490f5a8b32126c8b12b7d342b9f8cb615248302cd13f2c49",
+  "files": {
+    "src/canvaspilot/client.py": "1e3529ddb55211e3490f5a8b32126c8b12b7d342b9f8cb615248302cd13f2c49",
+    "tests/test_collection_page_shape.py": "77a782e14d76398a07e56694d20199df9d5582486fc6693472e2e19d299a01e7",
+    "docs/API.md": "f96d2188b8055263c889dcb6ea90510b8c6c67d01265e8a2a00a3d8c7bcbe9d7"
+  },
+  "original_pat_source": "e678faaa4809ac0eddfd17228c1e940d19865217",
+  "original_pat_exchange": "c75ce7c22f0f82bc809a66c00152b9aa69f7fcf2",
+  "exchange_packet_modified": false,
+  "full_suite_repeated": false,
+  "github_writes": false,
+  "owner_source_branch_modified": false
+}

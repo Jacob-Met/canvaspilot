@@ -1,0 +1,12 @@
+{
+  "command": [
+    "/workspace/scratch/87eaaf0fdf63/estate-production/venv/bin/ruff",
+    "check",
+    "src",
+    "tests",
+    "scripts"
+  ],
+  "exit_code": 0,
+  "stdout": "All checks passed!\n",
+  "stderr": ""
+}

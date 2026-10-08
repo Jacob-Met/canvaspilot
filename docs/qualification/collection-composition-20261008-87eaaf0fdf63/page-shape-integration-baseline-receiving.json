@@ -1,0 +1,85 @@
+{
+  "head": "ddbbb8b32e7e4be51899fd8e639d00b81a479052",
+  "tree": "d870f323530c20bd72eff4f254790b6405bf49f0",
+  "receiving_main": "1393f40047297147029d8571bfd824f74e58e1dc",
+  "started_at_utc": "2026-10-08T11:02:30.267559+00:00",
+  "scope": "Source composition and existing installed CLI entrypoint with explicit PYTHONPATH; not a newly built wheel or live account qualification.",
+  "sha256": {
+    ".github/workflows/ci.yml": "62f17b95af03d1ff8a172f168282b405fefcab3a5f1094c70e618b44920bd0ff",
+    "pyproject.toml": "555ad3c7e338d38ae5feabc06c0c07503f22d9c732a9af153c7706c63d2b3c63",
+    "scripts/inventory_pass.py": "b2669747165f47b023f666bbb01657f47427d680ea8ff8cbf35203353ba05d06",
+    "scripts/readonly_sweep.py": "30667032bc21a62db780d07bfbf0b48cc6c4aca63e9ea30a3953b78749603b06",
+    "src/canvaspilot/__init__.py": "f99834780d0aad65056f76a7071ad3af8c247ee96786b93aee1e7d867f54ead8",
+    "src/canvaspilot/api.py": "925af4a55924e81050ea04c95725705dd7189ac603b8d6824b1253f639226a96",
+    "src/canvaspilot/bundle.py": "db1ca6da89ea4f1a07c327f56ab40a39fe89e22c91034ed2be8fb3e497a6e696",
+    "src/canvaspilot/cli.py": "1af004e5d5e3ca4aa23ac1f4e3f49eae7ab9b290c1f250705e040af9d3421897",
+    "src/canvaspilot/client.py": "1e3529ddb55211e3490f5a8b32126c8b12b7d342b9f8cb615248302cd13f2c49",
+    "src/canvaspilot/mcp_server.py": "b765930008d1d1123f351771d6edab182af9228617a3b7a9791103a66ba43452",
+    "src/canvaspilot/offline_demo.py": "2389f3ccc1b6db5995be0d90e014ea9345e3029aa5546a5b2dcf12c1197e6d4d",
+    "src/canvaspilot/pagination.py": "1bf2ffbeb29408f25561c5f1bece9f3d839978bea3ef84e519d4a4af6ad1a8df",
+    "src/canvaspilot/session_broker.py": "7b2fba0c62532d5022772731707b226269eff091e798487bddc618c1adfc1a4f",
+    "tests/test_broker_encoding.py": "245a83982a497fc8196da41d62f526aa3b689bd57cbda842444da71b072cdcce",
+    "tests/test_broker_http_receiving.py": "876b391cb8db6101ed5dc13d09624271f7961100f06467d3ca06d356c1c0cd61",
+    "tests/test_broker_loopback_bind.py": "c889696ea86f73f0aa00b1b86f623855c92cd6eccef6b7764910e0df99b5c9e5",
+    "tests/test_broker_origin_receiving.py": "611c5bfcfe2d8b3197e0e776cd6c1dfcf434b57e27bd818efb2729acab98a574",
+    "tests/test_broker_pagination.py": "cb7d608d6464c84c0052d5821bc962b9c77dfb63d190322e1f8be6701c042812",
+    "tests/test_broker_readonly.py": "fd9baae5e8f176636eb5377fee753facd87c136416dcc2e3ec252090aad9d6c5",
+    "tests/test_bundle_api.py": "a3c200027083582815bcdacf8b19f68a2a7f2b10597e4ae3270c819c54639615",
+    "tests/test_collection_page_shape.py": "77a782e14d76398a07e56694d20199df9d5582486fc6693472e2e19d299a01e7",
+    "tests/test_fixture.py": "3f53176abf7ee425b1ff8d62a0e4b7f84d2e47e0b0ff9f03adae152301bc23be",
+    "tests/test_link_metadata_receiving.py": "80b9dfc06ffb111abecfd4d03fdf27b96dd2a2c2acbcaa075b7fd1659fa65f9a",
+    "tests/test_module_items.py": "afbf2ee395908c4e0893c4fb602ea02e40e4fb42631b63d666f939bb213a2b23",
+    "tests/test_offline_demo.py": "ddc7a133e76f987decb5774b00e6d6c6b8973d5895d6c4a4ae5ea6d6e6bb1154",
+    "tests/test_pagination_links.py": "dfbe33b75c541a9bd61488a2932f2aef835488e80203f348b21f56c8bb80e2db",
+    "tests/test_strip_html.py": "3445579d5d8e0863e3331fd8fe54de7a45bc88db5546186eb60dc70865dce915",
+    "tests/test_sync_summary.py": "5e40e9207a53d423a139db7de9d43898cf95e26877f351baf15bdc129206a424",
+    "tests/test_token_pagination.py": "34e6b063048e7231dc1162908a5b00340f1149c4c2824a267cf7b67a2d80c646"
+  },
+  "checks": [
+    {
+      "name": "final-tests",
+      "command": [
+        "/workspace/scratch/87eaaf0fdf63/estate-production/venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider"
+      ],
+      "exit_code": 1,
+      "elapsed_seconds": 11.403
+    },
+    {
+      "name": "final-lint",
+      "command": [
+        "/workspace/scratch/87eaaf0fdf63/estate-production/venv/bin/ruff",
+        "check",
+        "--no-cache",
+        "src",
+        "tests",
+        "scripts"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.037
+    },
+    {
+      "name": "final-cli",
+      "command": [
+        "/workspace/scratch/87eaaf0fdf63/estate-production/venv/bin/canvaspilot",
+        "--help"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.898
+    },
+    {
+      "name": "final-whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.004
+    }
+  ]
+}

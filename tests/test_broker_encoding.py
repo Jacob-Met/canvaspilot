@@ -147,6 +147,7 @@ def test_paginated_includes_survive_every_page(broker, monkeypatch):
     rows = [{"id": 1}, {"id": 2}, {"id": 3}]
     params = {"include[]": ["items"], "per_page": 2}
     base = "https://canvas.example.test"
+    monkeypatch.setattr(session_broker.STATE, "base_url", base)
     next_path = "/api/v1/courses/1/modules?include%5B%5D=items&cursor=remaining"
 
     def page(job):

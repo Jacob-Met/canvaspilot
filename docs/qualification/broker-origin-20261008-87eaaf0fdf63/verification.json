@@ -1,0 +1,16 @@
+{
+  "baseline_commit": "d4895a33a5d28e9e81d09deffe744a48462b6930",
+  "insight_source": "PR35 estate-ac386303dce2, 89fa86d20e4eff47ce42e18afd8cd8e75ab376c3",
+  "source_sha256": {
+    "src/canvaspilot/client.py": "c1acf4b83abc54bb92425f0bb282aa44d001c95a4e9f8bce2151d39be77134b0",
+    "src/canvaspilot/pagination.py": "1bf2ffbeb29408f25561c5f1bece9f3d839978bea3ef84e519d4a4af6ad1a8df",
+    "src/canvaspilot/session_broker.py": "7b2fba0c62532d5022772731707b226269eff091e798487bddc618c1adfc1a4f",
+    "tests/test_broker_origin_receiving.py": "611c5bfcfe2d8b3197e0e776cd6c1dfcf434b57e27bd818efb2729acab98a574",
+    "tests/test_broker_http_receiving.py": "876b391cb8db6101ed5dc13d09624271f7961100f06467d3ca06d356c1c0cd61"
+  },
+  "candidate_tests": {
+    "count": 53,
+    "exit_code": 0
+  },
+  "lint_exit_code": 0
+}

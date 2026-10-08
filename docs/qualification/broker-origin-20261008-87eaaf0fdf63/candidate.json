@@ -1,0 +1,18 @@
+{
+  "command": [
+    "/workspace/scratch/87eaaf0fdf63/estate-production/venv/bin/python",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "tests/test_broker_origin_receiving.py",
+    "tests/test_broker_http_receiving.py",
+    "tests/test_token_pagination.py",
+    "--tb=short"
+  ],
+  "exit_code": 0,
+  "stdout": ".....................................................                    [100%]\n53 passed in 2.50s\n",
+  "stderr": ""
+}

@@ -3,11 +3,12 @@
 from __future__ import annotations
 
 import json
-from typing import Any
+from typing import Annotated, Any
 
 from mcp.server.mcpserver import MCPServer
+from pydantic import Field
 
-from canvaspilot.api import CanvasAPI
+from canvaspilot.api import CanvasAPI, _validate_sync_limits
 from canvaspilot.client import CanvasClient
 
 mcp = MCPServer(
@@ -208,9 +209,19 @@ async def canvas_list_enrollments(state: str = "active") -> str:
     return _dump(_get_api().list_enrollments(state=state or "active"))
 
 
-@mcp.tool(description="Cross-course sync: courses + upcoming assignments.", structured_output=False)
-async def canvas_sync_summary(limit_courses: int = 10) -> str:
-    return _dump(_get_api().sync_summary(limit_courses=limit_courses))
+@mcp.tool(
+    description="Read upcoming assignments ordered by deadline across courses, with selection counts and per-course read errors.",
+    structured_output=False,
+)
+async def canvas_sync_summary(
+    limit_courses: Annotated[int, Field(strict=True, gt=0)] = 10,
+    limit_assignments_per_course: Annotated[int, Field(strict=True, gt=0)] = 5,
+) -> str:
+    _validate_sync_limits(limit_courses, limit_assignments_per_course)
+    return _dump(_get_api().sync_summary(
+        limit_courses=limit_courses,
+        limit_assignments_per_course=limit_assignments_per_course,
+    ))
 
 
 @mcp.tool(description="Submission status for an assignment (self).", structured_output=False)

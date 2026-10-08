@@ -1,0 +1,32 @@
+{
+  "command": [
+    "/workspace/scratch/87eaaf0fdf63/estate-production/venv/bin/ruff",
+    "check",
+    "--no-cache",
+    "src",
+    "tests",
+    "scripts"
+  ],
+  "cwd": "/workspace/scratch/87eaaf0fdf63/estate-production/canvaspilot-page-shape",
+  "scope_source": ".github/workflows/ci.yml",
+  "returncode": 0,
+  "stdout": "All checks passed!\n",
+  "stderr": "",
+  "broader_scan_unchanged_evidence_files": [
+    {
+      "path": "docs/evidence/broker-proxy-native-20261008/native_broker_fixture.py",
+      "unchanged_from_baseline": true,
+      "sha256": "745a4b52480d059b5ebf842ead98498fd94e71d8b5e43bb3053de1bda3cf2b52"
+    },
+    {
+      "path": "docs/evidence/broker-proxy-native-20261008/verify_receiving.py",
+      "unchanged_from_baseline": true,
+      "sha256": "c1abb126f159429964cfc963e7c619acd5dfeeca487d52ce2b6901db88b07936"
+    },
+    {
+      "path": "docs/evidence/sync-deadline-overview-20261008/independent/run_review.py",
+      "unchanged_from_baseline": true,
+      "sha256": "71255f9369069150d4dde6bb55afdffdd158b177c730f23eaebff5dc9025d07a"
+    }
+  ]
+}
