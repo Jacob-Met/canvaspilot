@@ -179,26 +179,26 @@ async def mcp_feedback():
             )
         },
     )
-    async with stdio_client(parameters) as (read, write):
-        async with ClientSession(read, write) as session:
-            await session.initialize()
-            inventory = await session.list_tools()
-            tool = next(
-                (t for t in inventory.tools if t.name == "canvas_submission_feedback"),
-                None,
-            )
-            assert tool is not None, (
-                "Feedback tool must be available to actual MCP clients"
-            )
-            assert set(tool.model_dump(by_alias=True)["inputSchema"]["required"]) == {
-                "course_id",
-                "assignment_id",
-            }
-            result = await session.call_tool(
-                "canvas_submission_feedback",
-                {"course_id": "41", "assignment_id": "902"},
-            )
-            return result.model_dump(by_alias=True)
+    async with (
+        stdio_client(parameters) as (read, write),
+        ClientSession(read, write) as session,
+    ):
+        await session.initialize()
+        inventory = await session.list_tools()
+        tool = next(
+            (t for t in inventory.tools if t.name == "canvas_submission_feedback"),
+            None,
+        )
+        assert tool is not None, "Feedback tool must be available to actual MCP clients"
+        assert set(tool.model_dump(by_alias=True)["inputSchema"]["required"]) == {
+            "course_id",
+            "assignment_id",
+        }
+        result = await session.call_tool(
+            "canvas_submission_feedback",
+            {"course_id": "41", "assignment_id": "902"},
+        )
+        return result.model_dump(by_alias=True)
 
 
 def test_mcp_feedback_through_actual_stdio_and_http(loopback):
@@ -236,9 +236,11 @@ def test_api_refusal_is_not_empty_feedback(loopback, status):
     state, base = loopback
     state["submission_status"] = status
     error = CanvasAuthError if status == 403 else httpx.HTTPStatusError
-    with CanvasAPI(CanvasClient(base_url=base, token=TOKEN)) as api:
-        with pytest.raises(error):
-            api.submission_feedback(41, 902)
+    with (
+        CanvasAPI(CanvasClient(base_url=base, token=TOKEN)) as api,
+        pytest.raises(error),
+    ):
+        api.submission_feedback(41, 902)
     assert_wire(state)
 
 

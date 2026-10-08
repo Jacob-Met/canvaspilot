@@ -45,7 +45,10 @@ def build_submission_feedback(
     Missing values stay unknown; an empty assessment/comment list stays empty.
     """
     if not isinstance(assignment, dict) or not isinstance(submission, dict):
-        raise ValueError("Canvas returned malformed assignment or submission feedback")
+        # An invalid response value retains the same error contract as its fields.
+        raise ValueError(  # noqa: TRY004
+            "Canvas returned malformed assignment or submission feedback"
+        )
 
     criteria = assignment.get("rubric")
     assessments = submission.get("rubric_assessment")
