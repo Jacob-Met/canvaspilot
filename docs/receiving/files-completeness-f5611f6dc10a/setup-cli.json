@@ -1,0 +1,37 @@
+[
+  {
+    "case": "healthy",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<frozen runpy>\", line 189, in _run_module_as_main\n  File \"<frozen runpy>\", line 112, in _get_module_details\n  File \"/dev/hamon-f5611f6dc10a/canvas-files/source/src/canvaspilot/__init__.py\", line 4, in <module>\n    from canvaspilot.bundle import (\n  File \"/dev/hamon-f5611f6dc10a/canvas-files/source/src/canvaspilot/bundle.py\", line 11, in <module>\n    from canvaspilot.mcp_server import mcp\n  File \"/dev/hamon-f5611f6dc10a/canvas-files/source/src/canvaspilot/mcp_server.py\", line 8, in <module>\n    from mcp.server.mcpserver import MCPServer\nModuleNotFoundError: No module named 'mcp'\n",
+    "requests": []
+  },
+  {
+    "case": "403",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<frozen runpy>\", line 189, in _run_module_as_main\n  File \"<frozen runpy>\", line 112, in _get_module_details\n  File \"/dev/hamon-f5611f6dc10a/canvas-files/source/src/canvaspilot/__init__.py\", line 4, in <module>\n    from canvaspilot.bundle import (\n  File \"/dev/hamon-f5611f6dc10a/canvas-files/source/src/canvaspilot/bundle.py\", line 11, in <module>\n    from canvaspilot.mcp_server import mcp\n  File \"/dev/hamon-f5611f6dc10a/canvas-files/source/src/canvaspilot/mcp_server.py\", line 8, in <module>\n    from mcp.server.mcpserver import MCPServer\nModuleNotFoundError: No module named 'mcp'\n",
+    "requests": []
+  },
+  {
+    "case": "404",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<frozen runpy>\", line 189, in _run_module_as_main\n  File \"<frozen runpy>\", line 112, in _get_module_details\n  File \"/dev/hamon-f5611f6dc10a/canvas-files/source/src/canvaspilot/__init__.py\", line 4, in <module>\n    from canvaspilot.bundle import (\n  File \"/dev/hamon-f5611f6dc10a/canvas-files/source/src/canvaspilot/bundle.py\", line 11, in <module>\n    from canvaspilot.mcp_server import mcp\n  File \"/dev/hamon-f5611f6dc10a/canvas-files/source/src/canvaspilot/mcp_server.py\", line 8, in <module>\n    from mcp.server.mcpserver import MCPServer\nModuleNotFoundError: No module named 'mcp'\n",
+    "requests": []
+  },
+  {
+    "case": "500",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<frozen runpy>\", line 189, in _run_module_as_main\n  File \"<frozen runpy>\", line 112, in _get_module_details\n  File \"/dev/hamon-f5611f6dc10a/canvas-files/source/src/canvaspilot/__init__.py\", line 4, in <module>\n    from canvaspilot.bundle import (\n  File \"/dev/hamon-f5611f6dc10a/canvas-files/source/src/canvaspilot/bundle.py\", line 11, in <module>\n    from canvaspilot.mcp_server import mcp\n  File \"/dev/hamon-f5611f6dc10a/canvas-files/source/src/canvaspilot/mcp_server.py\", line 8, in <module>\n    from mcp.server.mcpserver import MCPServer\nModuleNotFoundError: No module named 'mcp'\n",
+    "requests": []
+  },
+  {
+    "case": "malformed",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<frozen runpy>\", line 189, in _run_module_as_main\n  File \"<frozen runpy>\", line 112, in _get_module_details\n  File \"/dev/hamon-f5611f6dc10a/canvas-files/source/src/canvaspilot/__init__.py\", line 4, in <module>\n    from canvaspilot.bundle import (\n  File \"/dev/hamon-f5611f6dc10a/canvas-files/source/src/canvaspilot/bundle.py\", line 11, in <module>\n    from canvaspilot.mcp_server import mcp\n  File \"/dev/hamon-f5611f6dc10a/canvas-files/source/src/canvaspilot/mcp_server.py\", line 8, in <module>\n    from mcp.server.mcpserver import MCPServer\nModuleNotFoundError: No module named 'mcp'\n",
+    "requests": []
+  }
+]
