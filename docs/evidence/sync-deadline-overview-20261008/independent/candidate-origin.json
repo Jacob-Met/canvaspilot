@@ -1,0 +1,19 @@
+{
+  "manifest_sha256": "71af66067300197dedda3e9c619c36cdfd94f261e3f58eca175475a98b017cdb",
+  "upstream_base": "874ad9c073fc5bab625e583849dbbe4eaf7fc6af",
+  "upstream_base_tree": "de36f9d9ac3e8d93083b1ca8fba4ebc8b00fb62e",
+  "candidate_local_commit": "770e289be705414ff305d2b99cec3633085e2356",
+  "candidate_tree": "e1ccc4d7a6eb1081092aab59382691a22c090ac5",
+  "verified_paths": 27,
+  "changed_paths": [
+    "README.md",
+    "docs/SYNC.md",
+    "src/canvaspilot/api.py",
+    "src/canvaspilot/cli.py",
+    "src/canvaspilot/mcp_server.py",
+    "tests/test_sync_summary.py"
+  ],
+  "unchanged_upstream_paths": 21,
+  "pr26_client_preserved": true,
+  "pr26_session_command_bytes_preserved": true
+}
