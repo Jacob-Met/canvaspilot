@@ -1,0 +1,489 @@
+{
+  "values": {
+    "profile": {
+      "id": 7,
+      "name": "Authored receiver learner"
+    },
+    "course": {
+      "id": 42,
+      "name": "Authored grade-value matrix",
+      "hide_final_grades": false,
+      "apply_assignment_group_weights": false,
+      "enrollments": [
+        {
+          "type": "teacher",
+          "role": "TeacherEnrollment",
+          "user_id": 7,
+          "enrollment_state": "active",
+          "computed_final_score": null
+        },
+        {
+          "type": "student",
+          "role": "StudentEnrollment",
+          "user_id": 7,
+          "enrollment_state": "active",
+          "computed_current_score": 0,
+          "computed_final_score": 105.25,
+          "computed_current_grade": "0",
+          "computed_final_grade": "A+",
+          "computed_current_letter_grade": "",
+          "current_grading_period_id": 5,
+          "current_grading_period_title": "Autumn",
+          "current_period_computed_current_score": 0,
+          "current_period_computed_final_score": null,
+          "current_period_computed_current_grade": null,
+          "current_period_computed_final_grade": "A",
+          "unposted_current_score": 999,
+          "override_score": 888
+        },
+        {
+          "type": "student",
+          "role": "StudentEnrollment",
+          "user_id": "7",
+          "enrollment_state": "completed",
+          "computed_current_score": null,
+          "computed_final_score": 99.5,
+          "computed_current_grade": "",
+          "computed_final_grade": "Pass",
+          "unposted_final_score": 777
+        }
+      ],
+      "grading_periods": [
+        {
+          "id": 5,
+          "title": "Autumn",
+          "weight": 0
+        }
+      ]
+    },
+    "groups": [
+      {
+        "id": 3,
+        "name": "Zero weight",
+        "group_weight": 0,
+        "rules": {
+          "drop_lowest": 0,
+          "drop_highest": 0,
+          "never_drop": [
+            302
+          ]
+        },
+        "assignments": [
+          {
+            "id": 301,
+            "course_id": 42,
+            "assignment_group_id": 3,
+            "name": "Bonus with zero possible points",
+            "points_possible": 0,
+            "due_at": "2000-01-01T00:00:00Z",
+            "submission": {
+              "assignment_id": 301,
+              "user_id": 7,
+              "score": 7.5,
+              "grade": "7.5",
+              "entered_score": 7.5,
+              "entered_grade": "7.50",
+              "points_deducted": 0,
+              "posted_at": "2026-10-08T09:00:00Z",
+              "assignment_visible": true,
+              "missing": false,
+              "late": false,
+              "excused": false
+            }
+          },
+          {
+            "id": 302,
+            "course_id": 42,
+            "assignment_group_id": 3,
+            "name": "A real zero from an earlier attempt",
+            "points_possible": 10,
+            "due_at": "2000-01-01T00:00:00Z",
+            "submission": {
+              "assignment_id": 302,
+              "user_id": 7,
+              "score": 0,
+              "grade": "0",
+              "posted_at": "2026-10-08T09:00:00Z",
+              "attempt": 2,
+              "grade_matches_current_submission": false,
+              "missing": false
+            }
+          },
+          {
+            "id": 303,
+            "course_id": 42,
+            "assignment_group_id": 3,
+            "name": "Explicit null grades",
+            "points_possible": null,
+            "due_at": "2000-01-01T00:00:00Z",
+            "submission": {
+              "assignment_id": 303,
+              "user_id": 7,
+              "score": null,
+              "grade": null,
+              "entered_score": null,
+              "entered_grade": null,
+              "points_deducted": null,
+              "posted_at": "2026-10-08T09:00:00Z",
+              "assignment_visible": null,
+              "missing": null,
+              "late": null,
+              "excused": null
+            }
+          },
+          {
+            "id": 304,
+            "course_id": 42,
+            "assignment_group_id": 3,
+            "name": "No supplied grade or posting metadata",
+            "points_possible": 10,
+            "due_at": "2000-01-01T00:00:00Z",
+            "submission": {
+              "assignment_id": 304,
+              "user_id": 7,
+              "workflow_state": "unsubmitted",
+              "assignment_visible": null
+            }
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Weight above one hundred",
+        "group_weight": 150,
+        "rules": null,
+        "assignments": [
+          {
+            "id": 401,
+            "course_id": 42,
+            "assignment_group_id": 4,
+            "name": "Withheld despite neighboring values",
+            "points_possible": 100,
+            "due_at": "2000-01-01T00:00:00Z",
+            "submission": {
+              "assignment_id": 401,
+              "user_id": 7,
+              "score": 99,
+              "grade": "A",
+              "entered_score": 100,
+              "entered_grade": "A+",
+              "points_deducted": 1,
+              "posted_at": null,
+              "missing": true,
+              "late": true,
+              "excused": true
+            }
+          },
+          {
+            "id": 402,
+            "course_id": 42,
+            "assignment_group_id": 4,
+            "name": "Invisible despite a supplied zero",
+            "points_possible": 10,
+            "due_at": "2000-01-01T00:00:00Z",
+            "submission": {
+              "assignment_id": 402,
+              "user_id": 7,
+              "score": 0,
+              "grade": "0",
+              "entered_score": 0,
+              "entered_grade": "0",
+              "points_deducted": 0,
+              "posted_at": "2026-10-08T09:00:00Z",
+              "assignment_visible": false,
+              "missing": false
+            }
+          },
+          {
+            "id": 403,
+            "course_id": 42,
+            "assignment_group_id": 4,
+            "name": "No returned submission is not missing work",
+            "points_possible": 10,
+            "due_at": "2000-01-01T00:00:00Z"
+          },
+          {
+            "id": 404,
+            "course_id": 42,
+            "assignment_group_id": 4,
+            "name": "Null submission is not missing work",
+            "points_possible": 10,
+            "due_at": "2000-01-01T00:00:00Z",
+            "submission": null
+          }
+        ]
+      }
+    ]
+  },
+  "hidden": {
+    "profile": {
+      "id": 7,
+      "name": "Authored receiver learner"
+    },
+    "course": {
+      "id": 42,
+      "name": "Authored grade-value matrix",
+      "hide_final_grades": true,
+      "apply_assignment_group_weights": false,
+      "enrollments": [
+        {
+          "type": "teacher",
+          "role": "TeacherEnrollment",
+          "user_id": 7,
+          "enrollment_state": "active",
+          "computed_final_score": null
+        },
+        {
+          "type": "student",
+          "role": "StudentEnrollment",
+          "user_id": 7,
+          "enrollment_state": "active",
+          "computed_current_score": 0,
+          "computed_final_score": 105.25,
+          "computed_current_grade": "0",
+          "computed_final_grade": "A+",
+          "computed_current_letter_grade": "",
+          "current_grading_period_id": 5,
+          "current_grading_period_title": "Autumn",
+          "current_period_computed_current_score": 0,
+          "current_period_computed_final_score": null,
+          "current_period_computed_current_grade": null,
+          "current_period_computed_final_grade": "A",
+          "unposted_current_score": 999,
+          "override_score": 888
+        },
+        {
+          "type": "student",
+          "role": "StudentEnrollment",
+          "user_id": "7",
+          "enrollment_state": "completed",
+          "computed_current_score": null,
+          "computed_final_score": 99.5,
+          "computed_current_grade": "",
+          "computed_final_grade": "Pass",
+          "unposted_final_score": 777
+        }
+      ],
+      "grading_periods": [
+        {
+          "id": 5,
+          "title": "Autumn",
+          "weight": 0
+        }
+      ]
+    },
+    "groups": [
+      {
+        "id": 3,
+        "name": "Zero weight",
+        "group_weight": 0,
+        "rules": {
+          "drop_lowest": 0,
+          "drop_highest": 0,
+          "never_drop": [
+            302
+          ]
+        },
+        "assignments": [
+          {
+            "id": 301,
+            "course_id": 42,
+            "assignment_group_id": 3,
+            "name": "Bonus with zero possible points",
+            "points_possible": 0,
+            "due_at": "2000-01-01T00:00:00Z",
+            "submission": {
+              "assignment_id": 301,
+              "user_id": 7,
+              "score": 7.5,
+              "grade": "7.5",
+              "entered_score": 7.5,
+              "entered_grade": "7.50",
+              "points_deducted": 0,
+              "posted_at": "2026-10-08T09:00:00Z",
+              "assignment_visible": true,
+              "missing": false,
+              "late": false,
+              "excused": false
+            }
+          },
+          {
+            "id": 302,
+            "course_id": 42,
+            "assignment_group_id": 3,
+            "name": "A real zero from an earlier attempt",
+            "points_possible": 10,
+            "due_at": "2000-01-01T00:00:00Z",
+            "submission": {
+              "assignment_id": 302,
+              "user_id": 7,
+              "score": 0,
+              "grade": "0",
+              "posted_at": "2026-10-08T09:00:00Z",
+              "attempt": 2,
+              "grade_matches_current_submission": false,
+              "missing": false
+            }
+          },
+          {
+            "id": 303,
+            "course_id": 42,
+            "assignment_group_id": 3,
+            "name": "Explicit null grades",
+            "points_possible": null,
+            "due_at": "2000-01-01T00:00:00Z",
+            "submission": {
+              "assignment_id": 303,
+              "user_id": 7,
+              "score": null,
+              "grade": null,
+              "entered_score": null,
+              "entered_grade": null,
+              "points_deducted": null,
+              "posted_at": "2026-10-08T09:00:00Z",
+              "assignment_visible": null,
+              "missing": null,
+              "late": null,
+              "excused": null
+            }
+          },
+          {
+            "id": 304,
+            "course_id": 42,
+            "assignment_group_id": 3,
+            "name": "No supplied grade or posting metadata",
+            "points_possible": 10,
+            "due_at": "2000-01-01T00:00:00Z",
+            "submission": {
+              "assignment_id": 304,
+              "user_id": 7,
+              "workflow_state": "unsubmitted",
+              "assignment_visible": null
+            }
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Weight above one hundred",
+        "group_weight": 150,
+        "rules": null,
+        "assignments": [
+          {
+            "id": 401,
+            "course_id": 42,
+            "assignment_group_id": 4,
+            "name": "Withheld despite neighboring values",
+            "points_possible": 100,
+            "due_at": "2000-01-01T00:00:00Z",
+            "submission": {
+              "assignment_id": 401,
+              "user_id": 7,
+              "score": 99,
+              "grade": "A",
+              "entered_score": 100,
+              "entered_grade": "A+",
+              "points_deducted": 1,
+              "posted_at": null,
+              "missing": true,
+              "late": true,
+              "excused": true
+            }
+          },
+          {
+            "id": 402,
+            "course_id": 42,
+            "assignment_group_id": 4,
+            "name": "Invisible despite a supplied zero",
+            "points_possible": 10,
+            "due_at": "2000-01-01T00:00:00Z",
+            "submission": {
+              "assignment_id": 402,
+              "user_id": 7,
+              "score": 0,
+              "grade": "0",
+              "entered_score": 0,
+              "entered_grade": "0",
+              "points_deducted": 0,
+              "posted_at": "2026-10-08T09:00:00Z",
+              "assignment_visible": false,
+              "missing": false
+            }
+          },
+          {
+            "id": 403,
+            "course_id": 42,
+            "assignment_group_id": 4,
+            "name": "No returned submission is not missing work",
+            "points_possible": 10,
+            "due_at": "2000-01-01T00:00:00Z"
+          },
+          {
+            "id": 404,
+            "course_id": 42,
+            "assignment_group_id": 4,
+            "name": "Null submission is not missing work",
+            "points_possible": 10,
+            "due_at": "2000-01-01T00:00:00Z",
+            "submission": null
+          }
+        ]
+      }
+    ]
+  },
+  "containers_absent": {
+    "profile": {
+      "id": 7,
+      "name": "Authored receiver learner"
+    },
+    "course": {
+      "id": 42,
+      "name": "Authored grade-value matrix",
+      "hide_final_grades": false,
+      "apply_assignment_group_weights": false
+    },
+    "groups": [
+      {
+        "id": 3
+      },
+      {
+        "id": 4,
+        "assignments": null
+      },
+      {
+        "id": 5,
+        "assignments": []
+      }
+    ]
+  },
+  "containers_null": {
+    "profile": {
+      "id": 7,
+      "name": "Authored receiver learner"
+    },
+    "course": {
+      "id": 42,
+      "name": "Authored grade-value matrix",
+      "hide_final_grades": false,
+      "apply_assignment_group_weights": false,
+      "enrollments": null,
+      "grading_periods": null
+    },
+    "groups": []
+  },
+  "containers_empty": {
+    "profile": {
+      "id": 7,
+      "name": "Authored receiver learner"
+    },
+    "course": {
+      "id": 42,
+      "name": "Authored grade-value matrix",
+      "hide_final_grades": false,
+      "apply_assignment_group_weights": false,
+      "enrollments": [],
+      "grading_periods": []
+    },
+    "groups": []
+  }
+}

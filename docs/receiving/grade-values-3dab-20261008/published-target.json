@@ -1,0 +1,13 @@
+{
+  "repository": "Jacob-Met/canvaspilot",
+  "pull_request": 50,
+  "head": "0bbb29a9eb04cca3a3a8b362c891ef6db7607d8e",
+  "tree": "4d994e2a71009c1b1c245e92ccb0069c57830830",
+  "parent": "ca2318fe7c56d2e4ec1b363ff8a945ab78bf4a0c",
+  "scope_claim": "https://github.com/Jacob-Met/canvaspilot/issues/47#issuecomment-6059982784",
+  "receiving_started": "https://github.com/Jacob-Met/canvaspilot/issues/47#issuecomment-6061826166",
+  "published_handoff": "https://github.com/Jacob-Met/canvaspilot/issues/47#issuecomment-6060649792",
+  "separate_broker_receiving": "https://github.com/Jacob-Met/canvaspilot/pull/50#issuecomment-6061557312",
+  "final_head_unchanged": true,
+  "production_edits": false
+}

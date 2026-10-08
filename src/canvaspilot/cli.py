@@ -78,6 +78,10 @@ def main(argv: list[str] | None = None) -> None:
         help="compact limits message text to 400 characters; full keeps the complete stripped text",
     )
 
+    grades = sub.add_parser("grade-review", help="Review Canvas-reported grades and assignment groups")
+    add_common(grades)
+    grades.add_argument("course_id", help="Positive numeric Canvas course ID")
+
     assigns = sub.add_parser("assignments", help="List assignments for a course")
     add_common(assigns)
     assigns.add_argument("course_id")
@@ -243,6 +247,17 @@ def main(argv: list[str] | None = None) -> None:
             finally:
                 http_log.setLevel(previous_level)
             print(json.dumps(result, indent=2))
+        elif args.cmd == "grade-review":
+            import httpx
+
+            try:
+                result = api.grade_review(args.course_id)
+            except (RuntimeError, httpx.HTTPError, ValueError) as error:
+                print(json.dumps({
+                    "ok": False, "error": type(error).__name__, "message": str(error),
+                }), file=sys.stderr)
+                raise SystemExit(1) from None
+            print(json.dumps(result, indent=2, allow_nan=False))
         elif args.cmd == "assignments":
             print(
                 json.dumps(
