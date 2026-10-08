@@ -80,6 +80,19 @@ def test_course_keeps_each_requested_include(broker):
     ]
 
 
+def test_session_includes_survive_malformed_proxy_environment(broker, monkeypatch):
+    # The merged proxy correction and list encoder must work in one request.
+    monkeypatch.setenv("HTTP_PROXY", "http://127.0.0.1:1")
+    monkeypatch.setenv("HTTPS_PROXY", "http://127.0.0.1:1")
+    monkeypatch.setenv("NO_PROXY", "[::1]")
+    with CanvasClient(token="") as client:
+        job = client.request(
+            "GET", "/api/v1/courses/1/modules", params={"include[]": ["items"]},
+        )
+
+    assert query(job) == {"include[]": ["items"], "per_page": ["50"]}
+
+
 @pytest.mark.parametrize(
     ("params", "expected"),
     [
