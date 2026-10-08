@@ -1,0 +1,325 @@
+{
+  "base": "d15de13fb6fa39d3cace04bec0e218b4a2ed2ffd",
+  "base_tree": "a98d1f5ddc7bcd682968bea81f6394cdf8c91a53",
+  "previous_base": "6c4d5d2e7526cddc1aa6c90bfbef2d1188382ad3",
+  "cli_before": "9b9e00dcdb6e768c02a8cf9e23d1a56094970846",
+  "readme_before": "c81b52961f634667f52a02d6a597c400919815a4",
+  "api_before": "3ec81dee60bc67d7a80d40b78e85d5c005441b99",
+  "native_cli_reverse_exact": true,
+  "native_readme_reverse_exact": true,
+  "planner_parser_exact": true,
+  "planner_dispatch_exact": true,
+  "planner_readme_paragraph_exact": true,
+  "native_api_only_adds_grade_review": true,
+  "production_scope": "CLI and README receive the exact original planner additions. API, client, bundle, MCP server, grade_review module and every accepted native grade-review path remain from current main.",
+  "execution_scope": "A bounded dated-planner fixture child on this full compiled CLI/API is separate from final hosted package/HTTP CI; namespace fixture imports the unchanged current client and helpers from the original source capsule.",
+  "contribution_pins": [
+    {
+      "path": "src/canvaspilot/cli.py",
+      "bytes": 23278,
+      "git_blob": "9344660cfef4a7e98af68ccc1d0f8ccba3c1bdc2",
+      "sha256": "b6828bd9da783a1f7280c84982d447cb8bc793a682c394429e24a7b9f8bf11cf",
+      "mode": "100644"
+    },
+    {
+      "path": "README.md",
+      "bytes": 24523,
+      "git_blob": "27ee1ad113b3261ec19d5ec2dadd9ac4d476fe36",
+      "sha256": "cb6e18226d3f6c7050f7aa10e33f9ea5e95fe286bec7f9f8bf959f24cf5aa7fd",
+      "mode": "100644"
+    }
+  ],
+  "changed_native_paths": [
+    {
+      "path": "README.md",
+      "before": "ec4830e30ac59b7f0e02cc19e08c14475d32bedf",
+      "after": "c81b52961f634667f52a02d6a597c400919815a4",
+      "mode": "100644"
+    },
+    {
+      "path": "src/canvaspilot/api.py",
+      "before": "cd17584bed618fb4a42d7128d204b2683b889600",
+      "after": "3ec81dee60bc67d7a80d40b78e85d5c005441b99",
+      "mode": "100644"
+    },
+    {
+      "path": "src/canvaspilot/bundle.py",
+      "before": "293c02dc86520d9d11907d47d014d2f73aa56fc0",
+      "after": "c2544032a1cfcdc116725c6403ff09d7b0328f87",
+      "mode": "100644"
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "before": "226f3f7d502dd61ad03c59cd8212289d133a0190",
+      "after": "9b9e00dcdb6e768c02a8cf9e23d1a56094970846",
+      "mode": "100644"
+    },
+    {
+      "path": "src/canvaspilot/mcp_server.py",
+      "before": "34e9a2fad9d361718f5a9d4f3a89a3a42537b8fc",
+      "after": "0f7130673b3a139abdacb588410edb23a01dc56d",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/grade-review.md",
+      "before": null,
+      "after": "fb2947c53df49c8f934a6ea3f62f25030cd18e61",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/REVIEW.md",
+      "before": null,
+      "after": "05ededc574ca76570828f0fc50a02788ca550327",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/execution.json",
+      "before": null,
+      "after": "3fb72c1b6d4247cb85e29e98157af2e63a4fa715",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/guard/sitecustomize.py",
+      "before": null,
+      "after": "5110a2e2033ed3e92e113bdb9a86905baf590752",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/manifest.json",
+      "before": null,
+      "after": "93251926fdb716b94a3286addcc19631bcf20078",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/normal-run.tool-output.txt",
+      "before": null,
+      "after": "45a53dd1d7c902c1f59df65ac279bfcfb75f31ed",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/normal/authored-cases.json",
+      "before": null,
+      "after": "6bc6d07388bf827cb7f3654a00c31ac24b65d690",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/normal/cli-containers_absent-guard.json",
+      "before": null,
+      "after": "87839538870efcbe8af0e5711ddf4d5e6c723411",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/normal/cli-containers_empty-guard.json",
+      "before": null,
+      "after": "87839538870efcbe8af0e5711ddf4d5e6c723411",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/normal/cli-containers_null-guard.json",
+      "before": null,
+      "after": "87839538870efcbe8af0e5711ddf4d5e6c723411",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/normal/cli-hidden-guard.json",
+      "before": null,
+      "after": "87839538870efcbe8af0e5711ddf4d5e6c723411",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/normal/cli-values-guard.json",
+      "before": null,
+      "after": "87839538870efcbe8af0e5711ddf4d5e6c723411",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/normal/mcp-guard.json",
+      "before": null,
+      "after": "dea9604d05073eab4aac6df69bae27ed606f1fd5",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/normal/mcp.stderr",
+      "before": null,
+      "after": "60be0d7675d15b982e4bf9c33ecacf5b912cde4f",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/normal/receipt.json",
+      "before": null,
+      "after": "373674b8ed6a27910a45a1a0872b917bd40f1228",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/optimized-run.tool-output.txt",
+      "before": null,
+      "after": "f817c5291392333f72f6fa8b3b9f9b26566ffcda",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/optimized/authored-cases.json",
+      "before": null,
+      "after": "6bc6d07388bf827cb7f3654a00c31ac24b65d690",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/optimized/cli-containers_absent-guard.json",
+      "before": null,
+      "after": "253e6a12a2f0bf6c52789bd6282923ab5a04f6e0",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/optimized/cli-containers_empty-guard.json",
+      "before": null,
+      "after": "253e6a12a2f0bf6c52789bd6282923ab5a04f6e0",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/optimized/cli-containers_null-guard.json",
+      "before": null,
+      "after": "253e6a12a2f0bf6c52789bd6282923ab5a04f6e0",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/optimized/cli-hidden-guard.json",
+      "before": null,
+      "after": "253e6a12a2f0bf6c52789bd6282923ab5a04f6e0",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/optimized/cli-values-guard.json",
+      "before": null,
+      "after": "253e6a12a2f0bf6c52789bd6282923ab5a04f6e0",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/optimized/mcp-guard.json",
+      "before": null,
+      "after": "cee762ae653c04928349640fb91e61edea2f0a74",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/optimized/mcp.stderr",
+      "before": null,
+      "after": "6739e4cc1d42914aec1d634e9345e58372ef45dd",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/optimized/receipt.json",
+      "before": null,
+      "after": "024a9f5627e72fe6911b612d9410b05578c19a5f",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/published-target.json",
+      "before": null,
+      "after": "44f31f8a6ff1661ca439f330999a93ee6d270ec0",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/source-manifest.json",
+      "before": null,
+      "after": "f48e7a0a8bb9287c63409623b64d3f2fea429987",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/test_grade_value_receiving.py",
+      "before": null,
+      "after": "51e77a9e472f026a306e46c8095b7a72b05edc38",
+      "mode": "100644"
+    },
+    {
+      "path": "src/canvaspilot/grade_review.py",
+      "before": null,
+      "after": "24d93cb693af09cf5123f31fea90e77a589b023c",
+      "mode": "100644"
+    },
+    {
+      "path": "tests/grade_review_fixture.py",
+      "before": null,
+      "after": "556e0df9e64a1cac9c8403e3b3ce648099e1c639",
+      "mode": "100644"
+    },
+    {
+      "path": "tests/test_grade_review.py",
+      "before": null,
+      "after": "272343a2721919d64622fbbb99967f58226c6519",
+      "mode": "100644"
+    },
+    {
+      "path": "tests/test_grade_review_process.py",
+      "before": null,
+      "after": "b699570e59cac8c573a571f1d10da8624266849f",
+      "mode": "100644"
+    }
+  ],
+  "support_pins": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "git_blob": "ef7bbebe192c0db55dc4467e064ba44805c13446",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "pyproject.toml",
+      "git_blob": "76eba6d30696b4f2733539cd47df6e178bc0f585",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "src/canvaspilot/__init__.py",
+      "git_blob": "74a7a6087bf81fd7c75c15769b30408039618e0f",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "src/canvaspilot/api.py",
+      "git_blob": "3ec81dee60bc67d7a80d40b78e85d5c005441b99",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "src/canvaspilot/assignment_submission.py",
+      "git_blob": "95b1f19927e4eecf99fc852325737c3cfe86cd0d",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "src/canvaspilot/bundle.py",
+      "git_blob": "c2544032a1cfcdc116725c6403ff09d7b0328f87",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "src/canvaspilot/client.py",
+      "git_blob": "1db4b1135305f7e410025ae7937f9a6cd349f020",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "src/canvaspilot/feedback.py",
+      "git_blob": "ec996f421a851d699a9ac7cb1f2a486f9ff7c4ea",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "src/canvaspilot/grade_review.py",
+      "git_blob": "24d93cb693af09cf5123f31fea90e77a589b023c",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "src/canvaspilot/mcp_server.py",
+      "git_blob": "0f7130673b3a139abdacb588410edb23a01dc56d",
+      "mode": "100644",
+      "type": "blob"
+    }
+  ],
+  "authored_current_control": {
+    "receiver_blob": "73c701db360a6b8614594e20da190bdbd9abcdc4",
+    "result": "grade-review-composition-results.json",
+    "actual_cli_children": 1,
+    "conditions_passed": 10,
+    "conditions_failed": 0
+  }
+}

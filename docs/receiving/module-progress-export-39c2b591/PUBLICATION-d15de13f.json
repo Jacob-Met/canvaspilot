@@ -1,0 +1,97 @@
+{
+  "schema": 1,
+  "kind": "grade-review-coexistence-source-composition",
+  "repository": "Jacob-Met/canvaspilot",
+  "issue": 59,
+  "pr": 73,
+  "parentHead": "355ce342c2bce403cecb4f651ef2ad20d451e937",
+  "additionalPublicParent": "d15de13fb6fa39d3cace04bec0e218b4a2ed2ffd",
+  "currentBaseTree": "a98d1f5ddc7bcd682968bea81f6394cdf8c91a53",
+  "priorPublicationTree": "426eb4c95d2163b445c60ebdd4e1541eb3db3d27",
+  "currentBaseLeaves": 1165,
+  "unaffectedCurrentLeaves": 1163,
+  "priorContributedPathsUnchanged": 39,
+  "cliInverseExact": true,
+  "readmeInverseExact": true,
+  "cliBlob": "8d6644d0e1b916ca38a578147db8392a2e92d226",
+  "readmeBlob": "bd0d16245c59e4a5cf4badee0e7193c0eb09fdfc",
+  "upstreamSourceChanges": [
+    {
+      "path": "README.md",
+      "old": "ec4830e30ac59b7f0e02cc19e08c14475d32bedf",
+      "new": "c81b52961f634667f52a02d6a597c400919815a4"
+    },
+    {
+      "path": "src/canvaspilot/api.py",
+      "old": "cd17584bed618fb4a42d7128d204b2683b889600",
+      "new": "3ec81dee60bc67d7a80d40b78e85d5c005441b99"
+    },
+    {
+      "path": "src/canvaspilot/bundle.py",
+      "old": "293c02dc86520d9d11907d47d014d2f73aa56fc0",
+      "new": "c2544032a1cfcdc116725c6403ff09d7b0328f87"
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "old": "226f3f7d502dd61ad03c59cd8212289d133a0190",
+      "new": "9b9e00dcdb6e768c02a8cf9e23d1a56094970846"
+    },
+    {
+      "path": "src/canvaspilot/mcp_server.py",
+      "old": "34e9a2fad9d361718f5a9d4f3a89a3a42537b8fc",
+      "new": "0f7130673b3a139abdacb588410edb23a01dc56d"
+    },
+    {
+      "path": "docs/grade-review.md",
+      "new": "fb2947c53df49c8f934a6ea3f62f25030cd18e61"
+    },
+    {
+      "path": "src/canvaspilot/grade_review.py",
+      "new": "24d93cb693af09cf5123f31fea90e77a589b023c"
+    },
+    {
+      "path": "tests/grade_review_fixture.py",
+      "new": "556e0df9e64a1cac9c8403e3b3ce648099e1c639"
+    },
+    {
+      "path": "tests/test_grade_review.py",
+      "new": "272343a2721919d64622fbbb99967f58226c6519"
+    },
+    {
+      "path": "tests/test_grade_review_process.py",
+      "new": "b699570e59cac8c573a571f1d10da8624266849f"
+    }
+  ],
+  "apiDeltaReviewed": "@@ -171,6 +171,12 @@ def list_courses(self, *, enrollment_state: str = \"active\") -> list[dict[str, An\n             if isinstance(c, dict) and c.get(\"id\")\n         ]\n \n+    def grade_review(self, course_id: int | str) -> dict[str, Any]:\n+        \"\"\"Review only Canvas-reported current-user grades and group context.\"\"\"\n+        from canvaspilot.grade_review import grade_review\n+\n+        return grade_review(self.client, course_id)\n+\n     def list_assignments(\n         self,\n         course_id: int | str,",
+  "exactClosure": [
+    {
+      "path": "src/canvaspilot/module_progress.py",
+      "sha": "a9d3e4bbea22067f76110f03a5f31a5bc9d8de05"
+    },
+    {
+      "path": "src/canvaspilot/client.py",
+      "sha": "1db4b1135305f7e410025ae7937f9a6cd349f020"
+    },
+    {
+      "path": "src/canvaspilot/calendar_export.py",
+      "sha": "ef74cfdf50fd894327dbe45a9a9d43042953bc31"
+    },
+    {
+      "path": "src/canvaspilot/__init__.py",
+      "sha": "74a7a6087bf81fd7c75c15769b30408039618e0f"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha": "76eba6d30696b4f2733539cd47df6e178bc0f585"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha": "ef7bbebe192c0db55dc4467e064ba44805c13446"
+    }
+  ],
+  "limits": [
+    "This is source composition and preservation proof; no new native or browser execution is claimed.",
+    "The accepted original and0480 executions retain their exact attribution. Fresh hosted checks will qualify this public composed tree.",
+    "PR creation first returned ReadTimeout; a fresh matching-head PR-list read returned empty before one normal retry created PR73. No duplicate PR or alternate credential was used."
+  ]
+}

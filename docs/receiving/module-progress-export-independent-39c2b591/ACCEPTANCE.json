@@ -1,0 +1,121 @@
+{
+  "decision": "accepted_for_frozen_source_owner_review",
+  "author_head": "dbb4a4fa04c25849a079f89a67b3049a2f55946f",
+  "full_tree": "f17362750896b2834b4321151403b61e64429486",
+  "native_executed_snapshot": "66928d2288ab2e21c2e18b8c9d676d6efa726ff3",
+  "native_cli": {
+    "groups": 5,
+    "actual_product_children": 4,
+    "http_gets": 11,
+    "negative_control_groups": 1
+  },
+  "native_baseline": {
+    "groups": 1,
+    "actual_product_children": 1,
+    "http_gets": 3
+  },
+  "actual_browser": {
+    "platform": "Mac",
+    "node": "v26.3.0",
+    "browser": {
+      "protocolVersion": "1.3",
+      "product": "Chrome/154.0.8037.98",
+      "revision": "@b859317bf11f6be47f9b7799ec690a0a42a1fb33",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+      "jsVersion": "15.4.80.20"
+    },
+    "assertions": 19,
+    "javascript_disabled": true,
+    "page_network_offline": true,
+    "actual_pointer_download": {
+      "guid": "c1a8dc1d-f961-4ef9-b35b-8df4e089eed1",
+      "suggestedFilename": "module-progress.json",
+      "bytes": 10438,
+      "sha256": "d443188bd288553bd4029b28c176002d47c42f694bdabbf29d64e1e298b4c041",
+      "path": "/Users/me/hamon-canvas-module-independent-39c2b591-2gsod2r2/evidence/browser-v2/actual-normalized-download.json"
+    },
+    "keyboard_focus_seeded_by_receiver": false,
+    "layout": {
+      "all-desktop": {
+        "viewport_width": 1280,
+        "scroll_width": 1280,
+        "document_height": 14810,
+        "capture_height": 12000
+      },
+      "all-phone": {
+        "viewport_width": 390,
+        "scroll_width": 390,
+        "document_height": 22298,
+        "capture_height": 12000
+      },
+      "selected-desktop": {
+        "viewport_width": 1280,
+        "scroll_width": 1280,
+        "document_height": 5609,
+        "capture_height": 5609
+      }
+    }
+  },
+  "visual_review": {
+    "inspected_images": [
+      "browser-v2/selected-desktop.png",
+      "browser-v2/all-desktop.png",
+      "browser-v2/phone-unknown-module-viewport.png"
+    ],
+    "findings": "Selected report and threshold/count distinctions are legible; literal markup and Japanese remain text; the phone long title wraps, unknown and original raw state remain separately visible; no visible layout defect was found.",
+    "all_report_long_capture_limit": 12000,
+    "layout": {
+      "all-desktop": {
+        "viewport_width": 1280,
+        "scroll_width": 1280,
+        "document_height": 14810,
+        "capture_height": 12000
+      },
+      "all-phone": {
+        "viewport_width": 390,
+        "scroll_width": 390,
+        "document_height": 22298,
+        "capture_height": 12000
+      },
+      "selected-desktop": {
+        "viewport_width": 1280,
+        "scroll_width": 1280,
+        "document_height": 5609,
+        "capture_height": 5609
+      }
+    },
+    "not_claimed": [
+      "every pixel of the two long documents",
+      "physical printing",
+      "a generated PDF",
+      "live provider state"
+    ],
+    "chrome_stderr_bytes": 2363
+  },
+  "product_source_edits": 0,
+  "preserved_environment_failures": {
+    "thinkpad_intake": "timeout; no PID/path returned",
+    "mac_first_browser": {
+      "checks": 0,
+      "free_bytes": 212058112,
+      "guard_bytes": 536870912
+    },
+    "windows_first_browser": {
+      "checks": 0,
+      "failure": "no debugger endpoint",
+      "cause_unestablished": true
+    }
+  },
+  "coverage_boundaries": [
+    "Frozen dbb4a4fa/f173 tree only; later current-main composition is owned separately",
+    "No new author-suite, existing reader/pagination matrix, live Canvas, deployment, Windows browser pass, or print/PDF qualification",
+    "Original normalized JSON is preserved; raw provider-page coverage is not inferred",
+    "Long all-report screenshots are capped; every displayed data-field was checked in the DOM",
+    "Chrome display/teardown diagnostics and original failed attempts remain present"
+  ],
+  "raw_container": {
+    "files": 72,
+    "bytes": 3553811,
+    "sha256": "d75fa31486d40ab66fa219baceada16ca6ee0527a16cf1b9a1b9ac6f4c81e3b0"
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "repository": "Jacob-Met/canvaspilot",
+  "pull_request": 50,
+  "head": "0bbb29a9eb04cca3a3a8b362c891ef6db7607d8e",
+  "tree": "4d994e2a71009c1b1c245e92ccb0069c57830830",
+  "parent": "ca2318fe7c56d2e4ec1b363ff8a945ab78bf4a0c",
+  "source_root": "/dev/shm/memory-delivery-canvas-grade-review-3dab/source",
+  "files": [
+    {
+      "path": "src/canvaspilot/__init__.py",
+      "bytes": 561,
+      "sha256": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5",
+      "git_blob": "74a7a6087bf81fd7c75c15769b30408039618e0f",
+      "mode": "100644"
+    },
+    {
+      "path": "src/canvaspilot/api.py",
+      "bytes": 27762,
+      "sha256": "aac64644842ac893bc2a9ac07774e40cdf17cf58d38a3f63feea8f06efc6d69b",
+      "git_blob": "e664b4cb140fc54ccb5649f3d749b69b95f176f1",
+      "mode": "100644"
+    },
+    {
+      "path": "src/canvaspilot/bundle.py",
+      "bytes": 2668,
+      "sha256": "baa38a29b09b126accae908494310a03ae68391e80514b2fb8208124d5ffb22f",
+      "git_blob": "ce737c9fda5b9b517f794add7b55a59297e73632",
+      "mode": "100644"
+    },
+    {
+      "path": "src/canvaspilot/calendar_export.py",
+      "bytes": 9050,
+      "sha256": "f3e06eb68d7f74bb757a28f9cdc9a229f2af9476d4a93ba709698b54ffed82a8",
+      "git_blob": "0b3b59edcefb0dda52f0de41252c1b7486201ffc",
+      "mode": "100644"
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "bytes": 13267,
+      "sha256": "8c2591862f665a208d21e621f0065b0de9a37ca8b746b89a1f74807b4828d01c",
+      "git_blob": "54b41cc691b8fbea2b0b46c69a2fc973c3e33616",
+      "mode": "100644"
+    },
+    {
+      "path": "src/canvaspilot/client.py",
+      "bytes": 18934,
+      "sha256": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797",
+      "git_blob": "1db4b1135305f7e410025ae7937f9a6cd349f020",
+      "mode": "100644"
+    },
+    {
+      "path": "src/canvaspilot/feedback.py",
+      "bytes": 3900,
+      "sha256": "55454598effea598474a21f67e36d5bc5bea84aaefeefc18e4d8c49804ab9869",
+      "git_blob": "ec996f421a851d699a9ac7cb1f2a486f9ff7c4ea",
+      "mode": "100644"
+    },
+    {
+      "path": "src/canvaspilot/folder_browser.py",
+      "bytes": 6293,
+      "sha256": "c6a67229b268c539e5edb581e3320b06229460adc3fbc01d72e4964e31c0348a",
+      "git_blob": "4b3078ddb00a4a34015710e49fa7b7806adebd23",
+      "mode": "100644"
+    },
+    {
+      "path": "src/canvaspilot/mcp_server.py",
+      "bytes": 13224,
+      "sha256": "e17e12afd476e8fe4d0911c5ed06dc78559a5a2ee3ca63a581987014329e15c7",
+      "git_blob": "3729ec4caafe1351926d209d5ebc5dc44de5baa5",
+      "mode": "100644"
+    },
+    {
+      "path": "src/canvaspilot/module_progress.py",
+      "bytes": 9615,
+      "sha256": "974ee31925514a2e53b899888302a7fa357e280ab5f2461b754b814473653d99",
+      "git_blob": "a9d3e4bbea22067f76110f03a5f31a5bc9d8de05",
+      "mode": "100644"
+    },
+    {
+      "path": "src/canvaspilot/offline_demo.py",
+      "bytes": 4124,
+      "sha256": "2389f3ccc1b6db5995be0d90e014ea9345e3029aa5546a5b2dcf12c1197e6d4d",
+      "git_blob": "9d2cfd260d8db052b8183e3ec4fc9626a5bb2b9a",
+      "mode": "100644"
+    },
+    {
+      "path": "src/canvaspilot/session_broker.py",
+      "bytes": 12264,
+      "sha256": "749e11c92d6d56d54ccf208dda6784cb2d43ac3b837188f5d82bfe73c3129e8e",
+      "git_blob": "0e586bb933d517160bc3bfbd8ad86b3ba59ee92f",
+      "mode": "100644"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 1353,
+      "sha256": "555ad3c7e338d38ae5feabc06c0c07503f22d9c732a9af153c7706c63d2b3c63",
+      "git_blob": "76eba6d30696b4f2733539cd47df6e178bc0f585",
+      "mode": "100644"
+    },
+    {
+      "path": "README.md",
+      "bytes": 19959,
+      "sha256": "69417ce3d5dedc782a8689e8e71f16d60bf5fbb3e819b91dfb5a87c490b59ac0",
+      "git_blob": "1c4d186584c6aca8151061a046f1ec1e82c3cd07",
+      "mode": "100644"
+    },
+    {
+      "path": "tests/test_grade_review.py",
+      "bytes": 11258,
+      "sha256": "8341921a36daaacd044e245401e9889bea61100516c5339fb091097b13f21f2e",
+      "git_blob": "272343a2721919d64622fbbb99967f58226c6519",
+      "mode": "100644"
+    },
+    {
+      "path": "tests/test_grade_review_process.py",
+      "bytes": 6052,
+      "sha256": "a32e69a7b2de05ea38cd87cbe64f3e1731b7c17d1b08949158afdfc4aa3b4969",
+      "git_blob": "b699570e59cac8c573a571f1d10da8624266849f",
+      "mode": "100644"
+    },
+    {
+      "path": "src/canvaspilot/grade_review.py",
+      "bytes": 13247,
+      "sha256": "e550752a830ca9cf4c2ef5d5b06dbf464abd9dfed3a5252d310a4acf8e2411f5",
+      "git_blob": "24d93cb693af09cf5123f31fea90e77a589b023c",
+      "mode": "100644"
+    },
+    {
+      "path": "tests/grade_review_fixture.py",
+      "bytes": 6499,
+      "sha256": "b09005f728662b346f1a4d8779e6cb3d98d5fcf3ee70abcc2c2a16470038b269",
+      "git_blob": "556e0df9e64a1cac9c8403e3b3ce648099e1c639",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/grade-review.md",
+      "bytes": 8141,
+      "sha256": "e08848ba015aa2d41e1b3971652405f390f8ce292f784887d5c1ecb820cfe87c",
+      "git_blob": "fb2947c53df49c8f934a6ea3f62f25030cd18e61",
+      "mode": "100644"
+    }
+  ],
+  "upstream_agents": [],
+  "scope": "Independent grade-value receiving only; native owner source is unchanged."
+}

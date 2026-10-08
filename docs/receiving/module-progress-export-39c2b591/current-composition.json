@@ -1,0 +1,575 @@
+{
+  "source": {
+    "preparedAt": "2026-10-08T15:48:09.479133+00:00",
+    "originalProduct": "dbb4a4fa04c25849a079f89a67b3049a2f55946f",
+    "originalProductTree": "f17362750896b2834b4321151403b61e64429486",
+    "currentBase": "0480cbce421bae532e3e909899fc8fb83789e878",
+    "currentBaseTree": "f9ecaa4311d93cfe3a1fd1c9cc140834e2449341",
+    "mergeBase": "a5ce672e5b3580c1f52e13c49eefee830f11346c",
+    "mergeReturncode": 1,
+    "initialWholeMergeWhitespaceCheck": {
+      "exit": 2,
+      "cause": "Inherited discussion evidence patch files contain context whitespace; these current-main blobs are preserved exactly.",
+      "raw": "evidence/diff-check.stdout"
+    },
+    "sixFileDeltaWhitespaceCheck": 0,
+    "initialConflicts": [
+      "src/canvaspilot/cli.py"
+    ],
+    "provisionalTree": "056e1f28301c0a9e0de497284aaf512d119f5a60",
+    "currentBaseLeaves": 1107,
+    "expectedComposedLeaves": 1111,
+    "deltaPaths": [
+      "README.md",
+      "docs/module-progress-export.md",
+      "src/canvaspilot/cli.py",
+      "src/canvaspilot/module_progress_export.py",
+      "tests/test_module_progress_export.py",
+      "tests/test_module_progress_export_cli.py"
+    ],
+    "allCurrentLeavesExceptCliReadmeExact": true,
+    "cliInverseExact": true,
+    "readmeInverseExact": true,
+    "fourFeatureFilesExact": [
+      {
+        "path": "docs/module-progress-export.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "fa650a6b9d8cd51f134b576eb4f40975edef1a4c",
+        "sha256": "80659a9c333c38d84ddea8c65b751e028a4a32c1d9b970d081d1c3917b18e31f",
+        "bytes": 5978
+      },
+      {
+        "path": "src/canvaspilot/module_progress_export.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8ccb9f1262790a744418d4212e072ee43031ab88",
+        "sha256": "f723c06e551fae2cf50745460f9109867e6e0f9ebc3cc997d49d5e2173aa9f50",
+        "bytes": 12904
+      },
+      {
+        "path": "tests/test_module_progress_export.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "10ad56e53ecbdc7945471fe119a64a54cfd0c274",
+        "sha256": "75c7ff826494042183970d105690908b64935fdf7f847f692aeda85c194b5003",
+        "bytes": 10275
+      },
+      {
+        "path": "tests/test_module_progress_export_cli.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6c51c60c505bd3d76468d569f8b07e1952c47e87",
+        "sha256": "345c5c94a5b0b3c593b46922aef73e53b264bcc00ab66e40c2376650a353ceb5",
+        "bytes": 7567
+      }
+    ],
+    "apiOnlyAddedMethods": [
+      "discussion_thread",
+      "course_agenda"
+    ],
+    "apiAfterRemovingAddedMethodsAstExact": true,
+    "unchangedReceiverClosure": [
+      {
+        "path": "src/canvaspilot/module_progress.py",
+        "gitBlob": "a9d3e4bbea22067f76110f03a5f31a5bc9d8de05"
+      },
+      {
+        "path": "src/canvaspilot/client.py",
+        "gitBlob": "1db4b1135305f7e410025ae7937f9a6cd349f020"
+      },
+      {
+        "path": "src/canvaspilot/calendar_export.py",
+        "gitBlob": "ef74cfdf50fd894327dbe45a9a9d43042953bc31"
+      },
+      {
+        "path": "src/canvaspilot/__init__.py",
+        "gitBlob": "74a7a6087bf81fd7c75c15769b30408039618e0f"
+      },
+      {
+        "path": "pyproject.toml",
+        "gitBlob": "76eba6d30696b4f2733539cd47df6e178bc0f585"
+      },
+      {
+        "path": "tests/module_progress_fixture.py",
+        "gitBlob": "cde6154c03f5987a31e30f3cefaeb97247fd0198"
+      },
+      {
+        "path": ".github/workflows/ci.yml",
+        "gitBlob": "ef7bbebe192c0db55dc4467e064ba44805c13446"
+      }
+    ],
+    "source": "/Users/me/hamon-canvas-module-export-39c2b591-v1/composition-0480cbce/source"
+  },
+  "qualifiedProduct": {
+    "frozenAt": "2026-10-08T15:55:23.661682+00:00",
+    "nativeCommit": "2fada92331765b70a7c7ec3864d3ed261901c06f",
+    "nativeTree": "056e1f28301c0a9e0de497284aaf512d119f5a60",
+    "parents": [
+      "dbb4a4fa04c25849a079f89a67b3049a2f55946f",
+      "0480cbce421bae532e3e909899fc8fb83789e878"
+    ],
+    "publicBase": "0480cbce421bae532e3e909899fc8fb83789e878",
+    "publicBaseTree": "f9ecaa4311d93cfe3a1fd1c9cc140834e2449341",
+    "originalProduct": "dbb4a4fa04c25849a079f89a67b3049a2f55946f",
+    "originalProductTree": "f17362750896b2834b4321151403b61e64429486",
+    "source": "/Users/me/hamon-canvas-module-export-39c2b591-v1/composition-0480cbce/source",
+    "leafCount": 1111,
+    "files": [
+      {
+        "path": "README.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "518117ee19e74c86ed32743699ec3811faa6ea00",
+        "sha256": "68a1ee6bd8c7b308c2dc3e2dbb0ac5f479b391431a533f4370fa3388718db64e",
+        "bytes": 22567
+      },
+      {
+        "path": "docs/module-progress-export.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "fa650a6b9d8cd51f134b576eb4f40975edef1a4c",
+        "sha256": "80659a9c333c38d84ddea8c65b751e028a4a32c1d9b970d081d1c3917b18e31f",
+        "bytes": 5978
+      },
+      {
+        "path": "src/canvaspilot/cli.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "fc5701f67a53a0862ee7d26f817752a0ba79296e",
+        "sha256": "3f97deae063ef56babc4d7b4eb9622cc3500bdf77fb9e0f3af83a6564bee253e",
+        "bytes": 21752
+      },
+      {
+        "path": "src/canvaspilot/module_progress_export.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8ccb9f1262790a744418d4212e072ee43031ab88",
+        "sha256": "f723c06e551fae2cf50745460f9109867e6e0f9ebc3cc997d49d5e2173aa9f50",
+        "bytes": 12904
+      },
+      {
+        "path": "tests/test_module_progress_export.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "10ad56e53ecbdc7945471fe119a64a54cfd0c274",
+        "sha256": "75c7ff826494042183970d105690908b64935fdf7f847f692aeda85c194b5003",
+        "bytes": 10275
+      },
+      {
+        "path": "tests/test_module_progress_export_cli.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6c51c60c505bd3d76468d569f8b07e1952c47e87",
+        "sha256": "345c5c94a5b0b3c593b46922aef73e53b264bcc00ab66e40c2376650a353ceb5",
+        "bytes": 7567
+      }
+    ],
+    "currentCliReceipt": "evidence/current-cli/receipt.json",
+    "strictRuffReturncode": 0,
+    "sourcePreservation": "source-composition.json"
+  },
+  "currentCli": {
+    "completedAt": "2026-10-08T15:52:00.451549+00:00",
+    "currentBase": "0480cbce421bae532e3e909899fc8fb83789e878",
+    "qualifiedTree": "056e1f28301c0a9e0de497284aaf512d119f5a60",
+    "cases": [
+      {
+        "label": "help",
+        "argv": [
+          "/Users/me/hamon-canvas-module-export-39c2b591-v1/runtime/bin/python",
+          "-B",
+          "-m",
+          "canvaspilot.cli",
+          "--help"
+        ],
+        "startedAt": "2026-10-08T15:51:58.044687+00:00",
+        "finishedAt": "2026-10-08T15:51:58.623726+00:00",
+        "returncode": 0,
+        "stdoutBytes": 2172,
+        "stderrBytes": 0
+      },
+      {
+        "label": "all",
+        "argv": [
+          "/Users/me/hamon-canvas-module-export-39c2b591-v1/runtime/bin/python",
+          "-B",
+          "-m",
+          "canvaspilot.cli",
+          "export-module-progress",
+          "42",
+          "--out",
+          "/Users/me/hamon-canvas-module-export-39c2b591-v1/composition-0480cbce/evidence/current-cli/all.html",
+          "--base-url",
+          "http://127.0.0.1:53630",
+          "--token",
+          "synthetic-current-export-only",
+          "--profile",
+          "/Users/me/hamon-canvas-module-export-39c2b591-v1/composition-0480cbce/evidence/current-cli/unused-profile"
+        ],
+        "startedAt": "2026-10-08T15:51:58.623768+00:00",
+        "finishedAt": "2026-10-08T15:51:59.092950+00:00",
+        "returncode": 0,
+        "stdoutBytes": 476,
+        "stderrBytes": 0
+      },
+      {
+        "label": "selected",
+        "argv": [
+          "/Users/me/hamon-canvas-module-export-39c2b591-v1/runtime/bin/python",
+          "-B",
+          "-m",
+          "canvaspilot.cli",
+          "export-module-progress",
+          "42",
+          "--module-id",
+          "9",
+          "--out",
+          "/Users/me/hamon-canvas-module-export-39c2b591-v1/composition-0480cbce/evidence/current-cli/selected.html",
+          "--base-url",
+          "http://127.0.0.1:53630",
+          "--token",
+          "synthetic-current-export-only",
+          "--profile",
+          "/Users/me/hamon-canvas-module-export-39c2b591-v1/composition-0480cbce/evidence/current-cli/unused-profile"
+        ],
+        "startedAt": "2026-10-08T15:51:59.092996+00:00",
+        "finishedAt": "2026-10-08T15:51:59.527474+00:00",
+        "returncode": 0,
+        "stdoutBytes": 480,
+        "stderrBytes": 0
+      },
+      {
+        "label": "original",
+        "argv": [
+          "/Users/me/hamon-canvas-module-export-39c2b591-v1/runtime/bin/python",
+          "-B",
+          "-m",
+          "canvaspilot.cli",
+          "module-progress",
+          "42",
+          "--base-url",
+          "http://127.0.0.1:53630",
+          "--token",
+          "synthetic-current-export-only",
+          "--profile",
+          "/Users/me/hamon-canvas-module-export-39c2b591-v1/composition-0480cbce/evidence/current-cli/unused-profile"
+        ],
+        "startedAt": "2026-10-08T15:51:59.527516+00:00",
+        "finishedAt": "2026-10-08T15:51:59.982495+00:00",
+        "returncode": 0,
+        "stdoutBytes": 9446,
+        "stderrBytes": 414
+      }
+    ],
+    "requests": [
+      {
+        "method": "GET",
+        "path": "/api/v1/courses/42/modules",
+        "query": {
+          "include[]": [
+            "items"
+          ],
+          "per_page": [
+            "50"
+          ]
+        }
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/courses/42/modules",
+        "query": {
+          "page": [
+            "2"
+          ]
+        }
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/courses/42/modules/7/items",
+        "query": {
+          "per_page": [
+            "50"
+          ]
+        }
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/courses/42/modules/7/items",
+        "query": {
+          "page": [
+            "2"
+          ]
+        }
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/courses/42/modules",
+        "query": {
+          "include[]": [
+            "items"
+          ],
+          "per_page": [
+            "50"
+          ]
+        }
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/courses/42/modules",
+        "query": {
+          "page": [
+            "2"
+          ]
+        }
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/courses/42/modules/7/items",
+        "query": {
+          "per_page": [
+            "50"
+          ]
+        }
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/courses/42/modules/7/items",
+        "query": {
+          "page": [
+            "2"
+          ]
+        }
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/courses/42/modules",
+        "query": {
+          "include[]": [
+            "items"
+          ],
+          "per_page": [
+            "50"
+          ]
+        }
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/courses/42/modules",
+        "query": {
+          "page": [
+            "2"
+          ]
+        }
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/courses/42/modules/7/items",
+        "query": {
+          "per_page": [
+            "50"
+          ]
+        }
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/courses/42/modules/7/items",
+        "query": {
+          "page": [
+            "2"
+          ]
+        }
+      }
+    ],
+    "requestCount": 12,
+    "allFullJsonBytesEqualCurrentOriginalCliAndPriorObservation": true,
+    "selectedJsonBytesEqualPriorSelectedObservation": true,
+    "allJsonSha256": "5337f26754214199eb81664f73d36133814ab1e629ae1872d093d89ac61c875c",
+    "selectedJsonSha256": "34168936d9d155decd4087be5e6d267c16ea6b1e3658fc30abea57379e5c494f",
+    "unchangedSourceAfter": true,
+    "serverClosed": true,
+    "browserNotRepeated": true
+  },
+  "artifactByteEquality": [
+    {
+      "selection": "all",
+      "heldCreationTime": "2026-10-08T15:24:34Z",
+      "bytes": 40454,
+      "htmlSha256": "e088d9c1b430f868f2a3577d5876c68b8d4a34f7da3e008211f5cc7f6682b3a6",
+      "currentRendererEqualsPreviouslyBrowsedBytes": true
+    },
+    {
+      "selection": "selected",
+      "heldCreationTime": "2026-10-08T15:24:35Z",
+      "bytes": 12942,
+      "htmlSha256": "3169dfe4d119770335b183624aa5a5ed67dc01e8282a5d415734249ec7d1c884",
+      "currentRendererEqualsPreviouslyBrowsedBytes": true
+    }
+  ],
+  "mergeAndLintStreams": {
+    "checkout.stderr": {
+      "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/composition-0480cbce/evidence/checkout.stderr",
+      "bytes": 63,
+      "sha256": "6211b115803ae37e6f5e5e5ade0b420ebfec3e918abd232956a239583fb3d8d9",
+      "text": "Switched to a new branch 'compose-0480-module-progress-export'\n"
+    },
+    "checkout.stdout": {
+      "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/composition-0480cbce/evidence/checkout.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text": ""
+    },
+    "clone.stderr": {
+      "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/composition-0480cbce/evidence/clone.stderr",
+      "bytes": 95,
+      "sha256": "6246d6ba2c80b7819ded923904bc124797d18951bcb1fac7515bec67eacb8e8c",
+      "text": "Cloning into '/Users/me/hamon-canvas-module-export-39c2b591-v1/composition-0480cbce/source'...\n"
+    },
+    "clone.stdout": {
+      "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/composition-0480cbce/evidence/clone.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text": ""
+    },
+    "current-ruff.stderr": {
+      "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/composition-0480cbce/evidence/current-ruff.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text": ""
+    },
+    "current-ruff.stdout": {
+      "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/composition-0480cbce/evidence/current-ruff.stdout",
+      "bytes": 19,
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "text": "All checks passed!\n"
+    },
+    "diff-check.stderr": {
+      "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/composition-0480cbce/evidence/diff-check.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text": ""
+    },
+    "diff-check.stdout": {
+      "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/composition-0480cbce/evidence/diff-check.stdout",
+      "bytes": 3196,
+      "sha256": "1c5bf7da39f2406bb2f686fc619cbef10e6ed98157c391d974019b75926b2cd6",
+      "text": "docs/evidence/discussion-context-c6cc965b64c2/composition/current39d-product.patch:6: trailing whitespace.\n+ \ndocs/evidence/discussion-context-c6cc965b64c2/composition/current39d-product.patch:39: trailing whitespace.\n+ \ndocs/evidence/discussion-context-c6cc965b64c2/composition/current39d-product.patch:72: trailing whitespace.\n+ \ndocs/evidence/discussion-context-c6cc965b64c2/composition/current39d-product.patch:77: trailing whitespace.\n+ \ndocs/evidence/discussion-context-c6cc965b64c2/composition/current39d-product.patch:78: trailing whitespace.\n+ \ndocs/evidence/discussion-context-c6cc965b64c2/composition/current39d-product.patch:921: trailing whitespace.\n+ \ndocs/evidence/discussion-context-c6cc965b64c2/composition/current39d-product.patch:934: trailing whitespace.\n+ \ndocs/evidence/discussion-context-c6cc965b64c2/composition/current39d-product.patch:950: trailing whitespace.\n+ \ndocs/evidence/discussion-context-c6cc965b64c2/composition/current39d-runtime.patch:6: trailing whitespace.\n+ \ndocs/evidence/discussion-context-c6cc965b64c2/composition/current39d-runtime.patch:39: trailing whitespace.\n+ \ndocs/evidence/discussion-context-c6cc965b64c2/composition/current39d-runtime.patch:72: trailing whitespace.\n+ \ndocs/evidence/discussion-context-c6cc965b64c2/composition/current39d-runtime.patch:77: trailing whitespace.\n+ \ndocs/evidence/discussion-context-c6cc965b64c2/composition/current39d-runtime.patch:78: trailing whitespace.\n+ \ndocs/evidence/discussion-context-c6cc965b64c2/composition/currenta5-product.patch:11: trailing whitespace.\n+ \ndocs/evidence/discussion-context-c6cc965b64c2/composition/currenta5-product.patch:24: trailing whitespace.\n+ \ndocs/evidence/discussion-context-c6cc965b64c2/composition/currenta5-product.patch:40: trailing whitespace.\n+ \ndocs/evidence/discussion-context-c6cc965b64c2/composition/currenta5-product.patch:47: trailing whitespace.\n+ \ndocs/evidence/discussion-context-c6cc965b64c2/composition/currenta5-product.patch:80: trailing whitespace.\n+ \ndocs/evidence/discussion-context-c6cc965b64c2/composition/currenta5-product.patch:113: trailing whitespace.\n+ \ndocs/evidence/discussion-context-c6cc965b64c2/composition/currenta5-product.patch:118: trailing whitespace.\n+ \ndocs/evidence/discussion-context-c6cc965b64c2/composition/currenta5-product.patch:119: trailing whitespace.\n+ \ndocs/evidence/discussion-context-c6cc965b64c2/composition/currenta5-runtime.patch:6: trailing whitespace.\n+ \ndocs/evidence/discussion-context-c6cc965b64c2/composition/currenta5-runtime.patch:39: trailing whitespace.\n+ \ndocs/evidence/discussion-context-c6cc965b64c2/composition/currenta5-runtime.patch:72: trailing whitespace.\n+ \ndocs/evidence/discussion-context-c6cc965b64c2/composition/currenta5-runtime.patch:77: trailing whitespace.\n+ \ndocs/evidence/discussion-context-c6cc965b64c2/composition/currenta5-runtime.patch:78: trailing whitespace.\n+ \ndocs/evidence/discussion-context-c6cc965b64c2/history/79a2-source/README.md:383: new blank line at EOF.\ndocs/evidence/discussion-context-c6cc965b64c2/history/current39d-source/README.md:392: new blank line at EOF.\ndocs/evidence/discussion-context-c6cc965b64c2/independent-current39d/REVIEW.md:69: new blank line at EOF.\n"
+    },
+    "fetch-current.stderr": {
+      "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/composition-0480cbce/evidence/fetch-current.stderr",
+      "bytes": 122,
+      "sha256": "2cec8a24ee1fb08fb0735c5b31a754c8a26eb2d8f14d247485a2fbd1fe37965f",
+      "text": "From https://github.com/Jacob-Met/canvaspilot\n * branch            0480cbce421bae532e3e909899fc8fb83789e878 -> FETCH_HEAD\n"
+    },
+    "fetch-current.stdout": {
+      "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/composition-0480cbce/evidence/fetch-current.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text": ""
+    },
+    "merge.stderr": {
+      "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/composition-0480cbce/evidence/merge.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text": ""
+    },
+    "merge.stdout": {
+      "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/composition-0480cbce/evidence/merge.stdout",
+      "bytes": 186,
+      "sha256": "9eead8b87d5502ddd57ae7a2efbce8c55af31114af3d0b468d53a28c3cbd1ff3",
+      "text": "Auto-merging README.md\nAuto-merging src/canvaspilot/cli.py\nCONFLICT (content): Merge conflict in src/canvaspilot/cli.py\nAutomatic merge failed; fix conflicts and then commit the result.\n"
+    },
+    "new-delta-diff-check.stderr": {
+      "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/composition-0480cbce/evidence/new-delta-diff-check.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text": ""
+    },
+    "new-delta-diff-check.stdout": {
+      "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/composition-0480cbce/evidence/new-delta-diff-check.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text": ""
+    },
+    "packaging-first-attempt.stderr": {
+      "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/composition-0480cbce/evidence/packaging-first-attempt.stderr",
+      "bytes": 744,
+      "sha256": "9af9f495a279f1c0c1925249e23c40dd8b05918b059c61462756c179f4b2b817",
+      "text": "Traceback (most recent call last):\n  File \"<string>\", line 13, in <module>\n    from canvaspilot.module_progress_export import render_module_progress_report\n  File \"/Users/me/hamon-canvas-module-export-39c2b591-v1/composition-0480cbce/source/src/canvaspilot/__init__.py\", line 3, in <module>\n    from canvaspilot.api import CanvasAPI, assert_canvas_api_path, strip_html\n  File \"/Users/me/hamon-canvas-module-export-39c2b591-v1/composition-0480cbce/source/src/canvaspilot/api.py\", line 13, in <module>\n    from canvaspilot.client import CanvasClient\n  File \"/Users/me/hamon-canvas-module-export-39c2b591-v1/composition-0480cbce/source/src/canvaspilot/client.py\", line 11, in <module>\n    import httpx\nModuleNotFoundError: No module named 'httpx'\n"
+    },
+    "resolve-only-additive-seams.stderr": {
+      "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/composition-0480cbce/evidence/resolve-only-additive-seams.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text": ""
+    },
+    "resolve-only-additive-seams.stdout": {
+      "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/composition-0480cbce/evidence/resolve-only-additive-seams.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text": ""
+    },
+    "source-commit.stderr": {
+      "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/composition-0480cbce/evidence/source-commit.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text": ""
+    },
+    "source-commit.stdout": {
+      "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/composition-0480cbce/evidence/source-commit.stdout",
+      "bytes": 118,
+      "sha256": "1a3d3639664d61a6fc73114926285ea78390b19c604559c9ebc0f4b1715a1c82",
+      "text": "[compose-0480-module-progress-export 2fada92] Compose module-progress export with current Canvas readers and commands\n"
+    }
+  },
+  "currentCliStreams": {
+    "all.stderr": {
+      "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/composition-0480cbce/evidence/current-cli/all.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text": ""
+    },
+    "all.stdout": {
+      "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/composition-0480cbce/evidence/current-cli/all.stdout",
+      "bytes": 476,
+      "sha256": "a8ae2e58790cab029af703b637ee9febb4744ee20a794891849c36a4240cf9db",
+      "text": "{\n  \"ok\": true,\n  \"output\": \"/Users/me/hamon-canvas-module-export-39c2b591-v1/composition-0480cbce/evidence/current-cli/all.html\",\n  \"course_id\": \"42\",\n  \"module_id\": null,\n  \"modules_returned\": 4,\n  \"modules_included\": 4,\n  \"generated_at\": \"2026-10-08T15:51:59Z\",\n  \"html_bytes\": 40454,\n  \"sha256\": \"9795b8b665cf88f86ca3e8ef9dff28fbd545be8cdb5d56739bfec4f7eecddcd2\",\n  \"json_bytes\": 9446,\n  \"json_sha256\": \"5337f26754214199eb81664f73d36133814ab1e629ae1872d093d89ac61c875c\"\n}\n"
+    },
+    "help.stderr": {
+      "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/composition-0480cbce/evidence/current-cli/help.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text": ""
+    },
+    "help.stdout": {
+      "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/composition-0480cbce/evidence/current-cli/help.stdout",
+      "bytes": 2172,
+      "sha256": "4794bee7fcd621cadc41a8bf4d2389cbffae09b3fb4b2ce016fd1cbc525c58bf",
+      "text": "usage: canvaspilot [-h]\n                   {login,session,whoami,courses,sync,announcements,assignments,brief,feedback,inbox,conversation,discussions,discussion,files,browse-files,export-calendar,module-progress,export-module-progress,submission-history,agenda,mcp}\n                   ...\n\npositional arguments:\n  {login,session,whoami,courses,sync,announcements,assignments,brief,feedback,inbox,conversation,discussions,discussion,files,browse-files,export-calendar,module-progress,export-module-progress,submission-history,agenda,mcp}\n    login               Open headed browser for Canvas SSO (one-shot)\n    session             Stay-open session broker\n    whoami              GET /users/self/profile\n    courses             List active courses\n    sync                Courses + upcoming assignments digest\n    announcements       Read active announcements for selected courses\n    assignments         List assignments for a course\n    brief               Assignment brief (cleaned prompt and supplied rubric)\n    feedback            Read self submission comments, rubric feedback, and\n                        grade/attempt metadata\n    inbox               List your inbox without changing conversation state\n    conversation        Read one conversation while preserving unread state\n    discussions         List discussion topics\n    discussion          Read one cached discussion; unread focus retains reply\n                        context\n    files               List course files\n    browse-files        Browse one course folder; metadata only\n    export-calendar     Save selected assignment deadlines to a new .ics file\n    module-progress     Inspect reported module progress and requirements\n    export-module-progress\n                        Save reported module progress to a new offline HTML\n                        file\n    submission-history  Read your returned submission versions and their\n                        submitted content\n    agenda              Read selected course events and assignment deadlines\n                        together\n    mcp                 Run MCP stdio server\n\noptions:\n  -h, --help            show this help message and exit\n"
+    },
+    "original.stderr": {
+      "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/composition-0480cbce/evidence/current-cli/original.stderr",
+      "bytes": 414,
+      "sha256": "e72dcd26bb13c43d316f54ebf644f180f82aec610a6f4a67d76a27b2f3c49e5b",
+      "text": "HTTP Request: GET http://127.0.0.1:53630/api/v1/courses/42/modules?include%5B%5D=items&per_page=50 \"HTTP/1.0 200 OK\"\nHTTP Request: GET http://127.0.0.1:53630/api/v1/courses/42/modules?page=2 \"HTTP/1.0 200 OK\"\nHTTP Request: GET http://127.0.0.1:53630/api/v1/courses/42/modules/7/items?per_page=50 \"HTTP/1.0 200 OK\"\nHTTP Request: GET http://127.0.0.1:53630/api/v1/courses/42/modules/7/items?page=2 \"HTTP/1.0 200 OK\"\n"
+    },
+    "original.stdout": {
+      "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/composition-0480cbce/evidence/current-cli/original.stdout",
+      "bytes": 9446,
+      "sha256": "5337f26754214199eb81664f73d36133814ab1e629ae1872d093d89ac61c875c",
+      "text": "{\n  \"course_id\": \"42\",\n  \"mode\": \"token\",\n  \"module_id\": null,\n  \"modules_returned\": 4,\n  \"modules_included\": 4,\n  \"modules_omitted_by_selection\": 0,\n  \"collection_complete\": null,\n  \"count_scope\": \"returned_modules_and_items\",\n  \"state_source\": \"Canvas module.state for the authenticated caller\",\n  \"reader_source\": \"CanvasAPI.list_modules(detail=full)\",\n  \"upstream_response_shape\": \"not_observed\",\n  \"module_state_counts\": {\n    \"locked\": 1,\n    \"unlocked\": 0,\n    \"started\": 1,\n    \"completed\": 1,\n    \"unknown\": 1\n  },\n  \"modules\": [\n    {\n      \"id\": 7,\n      \"name\": \"Foundations\",\n      \"position\": 1,\n      \"published\": null,\n      \"state\": \"started\",\n      \"reported_state\": \"started\",\n      \"completed_at\": null,\n      \"unlock_at\": null,\n      \"requirement_type\": \"all\",\n      \"reported_requirement_type\": \"all\",\n      \"require_sequential_progress\": true,\n      \"prerequisite_module_ids\": [],\n      \"reported_prerequisite_module_ids\": [],\n      \"item_coverage\": {\n        \"reported_count\": 3,\n        \"returned_count\": 3,\n        \"status\": \"matches_reported_count\"\n      },\n      \"requirement_counts\": {\n        \"completed\": 1,\n        \"incomplete\": 1,\n        \"unknown\": 0,\n        \"not_reported\": 1\n      },\n      \"remaining_work\": {\n        \"scope\": \"reported_requirements_in_returned_items\",\n        \"rule\": \"all\",\n        \"incomplete_item_ids\": [\n          72\n        ],\n        \"unknown_completion_item_ids\": [],\n        \"module_locked\": false,\n        \"item_access\": \"not_assessed\"\n      },\n      \"items\": [\n        {\n          \"id\": 71,\n          \"module_id\": 7,\n          \"title\": \"Read Caf\\u00e9 notes\",\n          \"type\": \"Page\",\n          \"position\": 1,\n          \"indent\": null,\n          \"content_id\": null,\n          \"html_url\": \"https://canvas.invalid/courses/42/modules/items/71\",\n          \"published\": null,\n          \"completion_requirement\": {\n            \"type\": \"must_view\",\n            \"completed\": true\n          },\n          \"completion_status\": \"completed\",\n          \"requirement_type_supported\": true,\n          \"required_action\": \"View the item\"\n        },\n        {\n          \"id\": 72,\n          \"module_id\": 7,\n          \"title\": \"Preparation quiz\",\n          \"type\": \"Quiz\",\n          \"position\": 2,\n          \"indent\": null,\n          \"content_id\": null,\n          \"html_url\": \"https://canvas.invalid/courses/42/modules/items/72\",\n          \"published\": null,\n          \"completion_requirement\": {\n            \"type\": \"min_score\",\n            \"min_score\": 8,\n            \"completed\": false\n          },\n          \"completion_status\": \"incomplete\",\n          \"requirement_type_supported\": true,\n          \"required_action\": \"Meet the reported minimum score\"\n        },\n        {\n          \"id\": 73,\n          \"module_id\": 7,\n          \"title\": \"Additional material\",\n          \"type\": \"ExternalUrl\",\n          \"position\": 3,\n          \"indent\": null,\n          \"content_id\": null,\n          \"html_url\": null,\n          \"published\": null,\n          \"completion_requirement\": null,\n          \"completion_status\": \"not_reported\",\n          \"requirement_type_supported\": null,\n          \"required_action\": null\n        }\n      ],\n      \"diagnostics\": [\n        \"Some items have no reported requirement; this does not establish optionality.\"\n      ]\n    },\n    {\n      \"id\": 8,\n      \"name\": \"Choose one topic\",\n      \"position\": 2,\n      \"published\": null,\n      \"state\": \"completed\",\n      \"reported_state\": \"completed\",\n      \"completed_at\": null,\n      \"unlock_at\": null,\n      \"requirement_type\": \"one\",\n      \"reported_requirement_type\": \"one\",\n      \"require_sequential_progress\": false,\n      \"prerequisite_module_ids\": [],\n      \"reported_prerequisite_module_ids\": [],\n      \"item_coverage\": {\n        \"reported_count\": 2,\n        \"returned_count\": 2,\n        \"status\": \"matches_reported_count\"\n      },\n      \"requirement_counts\": {\n        \"completed\": 1,\n        \"incomplete\": 1,\n        \"unknown\": 0,\n        \"not_reported\": 0\n      },\n      \"remaining_work\": {\n        \"scope\": \"reported_requirements_in_returned_items\",\n        \"rule\": \"module_completed\",\n        \"incomplete_item_ids\": [],\n        \"unknown_completion_item_ids\": [],\n        \"module_locked\": false,\n        \"item_access\": \"not_assessed\"\n      },\n      \"items\": [\n        {\n          \"id\": 81,\n          \"module_id\": 8,\n          \"title\": \"Topic A\",\n          \"type\": \"Page\",\n          \"position\": null,\n          \"indent\": null,\n          \"content_id\": null,\n          \"html_url\": null,\n          \"published\": null,\n          \"completion_requirement\": {\n            \"type\": \"must_view\",\n            \"completed\": true\n          },\n          \"completion_status\": \"completed\",\n          \"requirement_type_supported\": true,\n          \"required_action\": \"View the item\"\n        },\n        {\n          \"id\": 82,\n          \"module_id\": 8,\n          \"title\": \"Topic B\",\n          \"type\": \"Page\",\n          \"position\": null,\n          \"indent\": null,\n          \"content_id\": null,\n          \"html_url\": null,\n          \"published\": null,\n          \"completion_requirement\": {\n            \"type\": \"must_view\",\n            \"completed\": false\n          },\n          \"completion_status\": \"incomplete\",\n          \"requirement_type_supported\": true,\n          \"required_action\": \"View the item\"\n        }\n      ],\n      \"diagnostics\": []\n    },\n    {\n      \"id\": 9,\n      \"name\": \"Later work\",\n      \"position\": 3,\n      \"published\": null,\n      \"state\": \"locked\",\n      \"reported_state\": \"locked\",\n      \"completed_at\": null,\n      \"unlock_at\": \"2026-10-10T10:00:00Z\",\n      \"requirement_type\": \"all\",\n      \"reported_requirement_type\": \"all\",\n      \"require_sequential_progress\": false,\n      \"prerequisite_module_ids\": [\n        7\n      ],\n      \"reported_prerequisite_module_ids\": [\n        7\n      ],\n      \"item_coverage\": {\n        \"reported_count\": 1,\n        \"returned_count\": 1,\n        \"status\": \"matches_reported_count\"\n      },\n      \"requirement_counts\": {\n        \"completed\": 0,\n        \"incomplete\": 1,\n        \"unknown\": 0,\n        \"not_reported\": 0\n      },\n      \"remaining_work\": {\n        \"scope\": \"reported_requirements_in_returned_items\",\n        \"rule\": \"all\",\n        \"incomplete_item_ids\": [\n          91\n        ],\n        \"unknown_completion_item_ids\": [],\n        \"module_locked\": true,\n        \"item_access\": \"not_assessed\"\n      },\n      \"items\": [\n        {\n          \"id\": 91,\n          \"module_id\": 9,\n          \"title\": \"Final draft\",\n          \"type\": \"Assignment\",\n          \"position\": null,\n          \"indent\": null,\n          \"content_id\": null,\n          \"html_url\": null,\n          \"published\": null,\n          \"completion_requirement\": {\n            \"type\": \"must_submit\",\n            \"completed\": false\n          },\n          \"completion_status\": \"incomplete\",\n          \"requirement_type_supported\": true,\n          \"required_action\": \"Submit the work\"\n        }\n      ],\n      \"diagnostics\": []\n    },\n    {\n      \"id\": 10,\n      \"name\": \"Progress unavailable\",\n      \"position\": 4,\n      \"published\": null,\n      \"state\": \"unknown\",\n      \"reported_state\": null,\n      \"completed_at\": null,\n      \"unlock_at\": null,\n      \"requirement_type\": \"unknown\",\n      \"reported_requirement_type\": null,\n      \"require_sequential_progress\": null,\n      \"prerequisite_module_ids\": null,\n      \"reported_prerequisite_module_ids\": null,\n      \"item_coverage\": {\n        \"reported_count\": 2,\n        \"returned_count\": 2,\n        \"status\": \"matches_reported_count\"\n      },\n      \"requirement_counts\": {\n        \"completed\": 0,\n        \"incomplete\": 0,\n        \"unknown\": 2,\n        \"not_reported\": 0\n      },\n      \"remaining_work\": {\n        \"scope\": \"reported_requirements_in_returned_items\",\n        \"rule\": \"unknown\",\n        \"incomplete_item_ids\": [],\n        \"unknown_completion_item_ids\": [\n          101,\n          102\n        ],\n        \"module_locked\": null,\n        \"item_access\": \"not_assessed\"\n      },\n      \"items\": [\n        {\n          \"id\": 101,\n          \"module_id\": 10,\n          \"title\": \"Readiness check\",\n          \"type\": \"Quiz\",\n          \"position\": null,\n          \"indent\": null,\n          \"content_id\": null,\n          \"html_url\": null,\n          \"published\": null,\n          \"completion_requirement\": {\n            \"type\": \"min_percentage\",\n            \"min_percentage\": 70\n          },\n          \"completion_status\": \"unknown\",\n          \"requirement_type_supported\": true,\n          \"required_action\": \"Meet the reported minimum percentage\"\n        },\n        {\n          \"id\": 102,\n          \"module_id\": 10,\n          \"title\": \"Future requirement\",\n          \"type\": \"Page\",\n          \"position\": null,\n          \"indent\": null,\n          \"content_id\": null,\n          \"html_url\": null,\n          \"published\": null,\n          \"completion_requirement\": {\n            \"type\": \"future_rule\",\n            \"completed\": true\n          },\n          \"completion_status\": \"unknown\",\n          \"requirement_type_supported\": false,\n          \"required_action\": null\n        }\n      ],\n      \"diagnostics\": [\n        \"Student-specific module state is missing or unsupported.\",\n        \"The all-versus-one requirement rule is missing or unsupported.\",\n        \"Sequential-progress policy was not reported as a boolean.\",\n        \"Prerequisite module IDs are missing or malformed.\",\n        \"Some reported requirements have unsupported types or unknown completion.\"\n      ]\n    }\n  ]\n}\n"
+    },
+    "selected.stderr": {
+      "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/composition-0480cbce/evidence/current-cli/selected.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text": ""
+    },
+    "selected.stdout": {
+      "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/composition-0480cbce/evidence/current-cli/selected.stdout",
+      "bytes": 480,
+      "sha256": "75f4e897747eec9a6eec137da526725a839fbf1550176f9ef6a2d04148ae3b41",
+      "text": "{\n  \"ok\": true,\n  \"output\": \"/Users/me/hamon-canvas-module-export-39c2b591-v1/composition-0480cbce/evidence/current-cli/selected.html\",\n  \"course_id\": \"42\",\n  \"module_id\": \"9\",\n  \"modules_returned\": 4,\n  \"modules_included\": 1,\n  \"generated_at\": \"2026-10-08T15:51:59Z\",\n  \"html_bytes\": 12942,\n  \"sha256\": \"c59c3e03ff5e5f5bdee6d25dcf38667e776b0cd125db855c9fd99ff43d259b29\",\n  \"json_bytes\": 2147,\n  \"json_sha256\": \"34168936d9d155decd4087be5e6d267c16ea6b1e3658fc30abea57379e5c494f\"\n}\n"
+    }
+  }
+}

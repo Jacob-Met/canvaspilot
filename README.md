@@ -14,8 +14,9 @@ Same architecture as OpenCLI-style web agents (persistent browser session → si
 - **Agent-shaped digests** — `assignment_brief` (cleaned prompt + rubric), `sync_summary` (courses + upcoming), `submission_status`
 - **Submission feedback** — self submission comments and rubric assessments alongside current-attempt and grading metadata
 - **Submission history** — inspect returned attempts and submitted text/file metadata without assigning current grades or comments to earlier versions ([guide](docs/submission-history.md))
+- **Course grade review** — reported totals, assignment-group rules and each returned assignment's own grade/status, with hidden and unknown values kept explicit
 - **Fixture mode** — offline dict backend for tests and CI; no Canvas required
-- **39 MCP tools**, one stdio server, one env var for the host (`CANVAS_BASE_URL`) plus either a PAT or a running session broker
+- **40 MCP tools**, one stdio server, one env var for the host (`CANVAS_BASE_URL`) plus either a PAT or a running session broker
 - **Course folder browsing** — select nested folders and inspect bounded file-metadata pages through CLI, MCP or Python
 - **Module progress checklist** — review reported completion, remaining requirements and module locks through CLI, MCP or Python
 
@@ -71,6 +72,7 @@ canvaspilot sync
 canvaspilot brief <course_id> <assignment_id>
 canvaspilot feedback <course_id> <assignment_id>
 canvaspilot submission-history <course_id> <assignment_id>
+canvaspilot grade-review <course_id>
 ```
 
 `canvaspilot sync` orders upcoming assignments by deadline across the selected
@@ -108,6 +110,12 @@ With a PAT instead:
 export CANVAS_API_TOKEN=...   # broker not needed
 canvaspilot courses
 ```
+
+To inspect Canvas-reported course totals and assignment grades together, run
+`canvaspilot grade-review 42` or call the read-only MCP `canvas_grade_review` tool.
+The [grade review guide](docs/grade-review.md) explains the original Canvas field
+names, group/drop-rule context, visibility rules and returned-row limits. No
+replacement course grade or missing-work status is inferred.
 
 ## Assignment briefs
 
@@ -167,7 +175,7 @@ Tools exposed (all prefixed `canvas_`):
 | Area | Tools |
 |------|-------|
 | Identity | `whoami`, `sync_summary`, `planner_items`, `activity_stream`, `list_todo_items`, `list_enrollments` |
-| Courses | `list_courses`, `get_course`, `list_modules`, `module_progress`, `list_pages`, `get_page`, `list_files`, `browse_files`, `list_announcements` |
+| Courses | `list_courses`, `get_course`, `grade_review`, `list_modules`, `module_progress`, `list_pages`, `get_page`, `list_files`, `browse_files`, `list_announcements` |
 | Assignments | `list_assignments`, `get_assignment`, `assignment_brief`, `submission_status`, `submission_feedback`, `submission_history`, `submit_assignment_text` |
 | Discussions | `list_discussion_topics`, `get_discussion`, `discussion_thread`, `post_discussion_reply` |
 | Quizzes | `list_quizzes`, `get_quiz`, `list_quiz_questions`, `list_quiz_submissions`, `start_quiz_submission`, `complete_quiz_submission` |
@@ -294,6 +302,18 @@ sequential-progress context. Missing student fields stay unknown; counts cover
 returned rows. This read-only workflow never marks items read or complete. See
 [the module-progress guide](docs/module-progress.md) for Python/MCP examples and
 coverage meanings.
+
+Save that same report for offline reading or printing:
+
+```bash
+canvaspilot export-module-progress 42 --out module-progress.html
+canvaspilot export-module-progress 42 --module-id 7 --out module-7-progress.html
+```
+
+The self-contained HTML keeps the reader's states, all-versus-one rules,
+thresholds, prerequisites, unknowns and coverage diagnostics visible. It includes
+the complete normalized report as a JSON download and protects existing output
+paths. See [offline module-progress reports](docs/module-progress-export.md).
 
 ## Course files
 

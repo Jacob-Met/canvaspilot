@@ -1,0 +1,23 @@
+{
+  "format": "canvas-planner-local-materialization-observation-v1",
+  "attempted_root": "/dev/hamon-development-canvas-planner-e04-169i1dkc",
+  "creation_observation": {
+    "root": "/dev/hamon-development-canvas-planner-e04-169i1dkc",
+    "uid": 0,
+    "gid": 0,
+    "mode": "0o700",
+    "free_before": 5225730048
+  },
+  "write_batches": 8,
+  "per_batch_immediate_readback_pin_count": 41,
+  "later_manifest_attempt": {
+    "chunk_id": "2f5d3a",
+    "wall_time_seconds": 0.00001977,
+    "exit_code": 1,
+    "original_token_count": 115,
+    "output": "Traceback (most recent call last):\n  File \"<string>\", line 4, in <module>\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py\", line 1013, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: '/dev/hamon-development-canvas-planner-e04-169i1dkc/capsule-manifest.json'\n"
+  },
+  "disposition": "A subsequent tool call could not find the previously created root when opening the manifest with exclusive creation. The failed call stopped before local git init/add/commit. No complete local capsule or Git freeze is claimed. The cause was not established, and no mount/device/configuration changes or fallback transport were used.",
+  "durable_source": "The complete original source/evidence was already committed at75e5d51f661a9165e1a494b47ef2433001d877ea and test-only hosted lint correction at1425925f659efa2cf8199d9fcc9f44ea44d32fcf. Their exact bytes remain the receiving source.",
+  "limits": "Successful immediate per-batch write/readback observations do not establish persistence across later tool calls. This follow-up does not alter any previous executed result or capacity-refusal receipt."
+}

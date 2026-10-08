@@ -1,0 +1,95 @@
+{
+  "schema": 1,
+  "owner": "estate-accel-e04ee971c817",
+  "repository": "Jacob-Met/canvaspilot",
+  "date": "2026-10-08T17:09:06.554Z",
+  "reviewed_cli": "df01e112b3c7f525e99b3179176d57497391f16b",
+  "final_composed_cli": "99247f6d57c4eda52a99e32683ed8d33c56b8d9b",
+  "totals": {
+    "actual_children": 9,
+    "conditions": 123,
+    "failed": 0,
+    "harness_errors": 0
+  },
+  "files": {
+    "input.json": {
+      "bytes": 85319,
+      "git_blob": "7bafa4026add2a4e01a554fd489f585e6fc7f908",
+      "sha256": "401532b29e4e09c18bf3a9c3d0ff9d850afa404e7c6b9a9ab927f52d9a8a4134"
+    },
+    "README.md": {
+      "bytes": 4682,
+      "git_blob": "602751e200071af2ac3644d5096436ac059135db",
+      "sha256": "0ebb84c48f0be0b73cf30713ab1b38ed01b75dae1c6970f2ba1b218be04eece7"
+    },
+    "receive_cli.py": {
+      "bytes": 6475,
+      "git_blob": "1de44b9344052035353b9f73a09f164c2d8f9272",
+      "sha256": "ec11ca7e5b913fdb4001c6a76c1b565254cbd8838638672116ce8a45b5bc1eb1"
+    },
+    "results.json": {
+      "bytes": 16165,
+      "git_blob": "7322cd2f71a61bd586b9b87ecb2ca14cf2242ae4",
+      "sha256": "3b71bd2a1adcc07adc2ea70cc478e0e5ad36a087817bc43c535da3a47f4a8f63"
+    },
+    "execution.json": {
+      "bytes": 1231,
+      "git_blob": "0707279c44115bbab34f048c979b987c91a21957",
+      "sha256": "e4e7f36ce0791a7ead532ed6736e4c41151ab9bf0f1d0f3a7783c617744e2f0e"
+    },
+    "composition-grade-review.json": {
+      "bytes": 1120,
+      "git_blob": "3855eb630ed396e0ecaa6b73b597acc1681c7572",
+      "sha256": "3490449513f17234adeeea46b865fc805280cc6abd2941bd900b95ac5e966e48"
+    },
+    "composition-module-export.json": {
+      "bytes": 4976,
+      "git_blob": "40105f4bb98b739e76195cb4175f8ce80370a4bc",
+      "sha256": "25fdace4f66d6dbd1e067932e58d8de9f9312e6de3432a6db54fc520beab659f"
+    }
+  },
+  "tree_elements": [
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/independent/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "602751e200071af2ac3644d5096436ac059135db"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/independent/receive_cli.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1de44b9344052035353b9f73a09f164c2d8f9272"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/independent/input.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7bafa4026add2a4e01a554fd489f585e6fc7f908"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/independent/results.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7322cd2f71a61bd586b9b87ecb2ca14cf2242ae4"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/independent/execution.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0707279c44115bbab34f048c979b987c91a21957"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/independent/composition-grade-review.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3855eb630ed396e0ecaa6b73b597acc1681c7572"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/independent/composition-module-export.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "40105f4bb98b739e76195cb4175f8ce80370a4bc"
+    }
+  ]
+}

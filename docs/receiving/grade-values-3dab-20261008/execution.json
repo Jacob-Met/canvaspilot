@@ -1,0 +1,31 @@
+[
+  {
+    "mode": "normal",
+    "command": [
+      "/workspace/scratch/3dab0b9d2ce9/canvaspilot-product/test-env/bin/python",
+      "-B",
+      "/dev/shm/memory-delivery-canvas-grade-review-3dab/evidence/test_grade_value_receiving.py",
+      "/dev/shm/memory-delivery-canvas-grade-review-3dab/source",
+      "/dev/shm/memory-delivery-canvas-grade-review-3dab/evidence/source-manifest.json",
+      "/dev/shm/memory-delivery-canvas-grade-review-3dab/evidence/normal"
+    ],
+    "exit_code": 0,
+    "combined_tool_output": "normal-run.tool-output.txt",
+    "combined_tool_output_sha256": "b70af30022a942f2f461d4dd8893aeac38ab6f822ea2bf5b36dab809980e5990"
+  },
+  {
+    "mode": "optimized",
+    "command": [
+      "/workspace/scratch/3dab0b9d2ce9/canvaspilot-product/test-env/bin/python",
+      "-B",
+      "-O",
+      "/dev/shm/memory-delivery-canvas-grade-review-3dab/evidence/test_grade_value_receiving.py",
+      "/dev/shm/memory-delivery-canvas-grade-review-3dab/source",
+      "/dev/shm/memory-delivery-canvas-grade-review-3dab/evidence/source-manifest.json",
+      "/dev/shm/memory-delivery-canvas-grade-review-3dab/evidence/optimized"
+    ],
+    "exit_code": 0,
+    "combined_tool_output": "optimized-run.tool-output.txt",
+    "combined_tool_output_sha256": "276d66f156af507034d271b153414648a646ab36f6bc145b748c902ae9f183f7"
+  }
+]
