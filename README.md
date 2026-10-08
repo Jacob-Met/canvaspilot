@@ -296,6 +296,12 @@ false empty result. Canvas's cached-view boundary and unmatched unread identifie
 remain visible. See [the discussion reader guide](docs/DISCUSSIONS.md) for fields,
 selection rules and error behavior.
 
+Save the same normalized report as a readable, printable offline document with
+`canvaspilot export-discussion 42 71 --out discussion.html`. Add `--unread-only`
+to retain unread replies with their ancestor context. The new-file-only export
+keeps cached-view warnings and includes the complete report JSON without
+rendering source markup. See [offline discussion reading](docs/discussion-export.md).
+
 ### Announcements
 
 Read selected courses from the terminal with `canvaspilot announcements 42 77`.

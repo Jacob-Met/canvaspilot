@@ -1,0 +1,119 @@
+{
+  "schema": 1,
+  "repository": "Jacob-Met/canvaspilot",
+  "issue": 85,
+  "authorBase": "92e9f1b500a15dd61d4c74539dedbf880afde30b",
+  "authorBaseTree": "13ad8dabadb259983fb568dd35e65f2762f3ee3b",
+  "authorSourceBundle": "ee54656fcfe78fe464baf0b4965fae28b45b8a8c",
+  "compositionParent": "e46a90ff00f80a128baf842587f08df5862318aa",
+  "compositionParentTree": "5fef10b4fac997cd1049de24447dce02bfa49ec3",
+  "baseLeaves": 1462,
+  "targetLeaves": 1562,
+  "unchangedNativeQualificationInputs": 95,
+  "sharedFiles": [
+    {
+      "path": "src/canvaspilot/cli.py",
+      "authorBaseBlob": "6df35a5f3e81c6e2c1ca646ae052e99c2534da79",
+      "authorCandidateBlob": "22c5fedb5a5aad714400f159f32dc86ec7ef9711",
+      "currentTargetBlob": "2ce3811bf17ad10c6c02c360259a19cdb5057478",
+      "ownInsertedLines": 43,
+      "peerInsertedLines": 88,
+      "deletions": 0,
+      "authorAdditionExactlyReversible": true,
+      "peerAdditionExactlyReversible": true,
+      "compositionOrderIndependent": true
+    },
+    {
+      "path": "README.md",
+      "authorBaseBlob": "c6a609a2d3b3d9ccf489267a455031364188eff1",
+      "authorCandidateBlob": "8b24024f7505a9daba4703222175bb8b5e37d245",
+      "currentTargetBlob": "f3718da817a266e6f2f1fe801a7ccce642134b56",
+      "ownInsertedLines": 6,
+      "peerInsertedLines": 21,
+      "deletions": 0,
+      "authorAdditionExactlyReversible": true,
+      "peerAdditionExactlyReversible": true,
+      "compositionOrderIndependent": true
+    }
+  ],
+  "newFiles": [
+    {
+      "path": "src/canvaspilot/discussion_export.py",
+      "bytes": 12890,
+      "git": "3e6ab7731ce72cdedaef084d3cee6e3f5f539133",
+      "sha256": "95e8d7078462a60d4d3f1c4bd46b302bb69598563675f44d5d0326edf69d8cde"
+    },
+    {
+      "path": "tests/test_discussion_export.py",
+      "bytes": 7817,
+      "git": "bedb511d9e2f41da95c56c6caa31bd8cf0e76731",
+      "sha256": "511c0539f7fd507cd1b1d93c362e47bd188538358a1c0548b7125f5fd7510cb4"
+    },
+    {
+      "path": "tests/test_discussion_export_cli.py",
+      "bytes": 6441,
+      "git": "18821ea094dc6f295f4294bb6bf3de1c89ad3218",
+      "sha256": "59f548a76461608aa2085b6805586d35f9baf66949c3f3f305b5d336cfc357a2"
+    },
+    {
+      "path": "docs/discussion-export.md",
+      "bytes": 6286,
+      "git": "540e37d3f6e4bdb81f28dca525428ccfae533bc2",
+      "sha256": "b537d5b59673042397e75791e9a42512b881cbdb8e9776e1bde0405e4c53ea91"
+    }
+  ],
+  "nativeScope": "Exact 101-path source/test/config closure rooted in 92e9; composed full target includes the independently owned PR75 agenda and PR86 submission-history changes. New composed CLI has not yet been executed.",
+  "receivingBoundary": "Nine maintained renderer cases and native lint reported passed; independent full CLI and full browser received. Full maintained suite and unread/failure independent continuation pending at composition.",
+  "composedFiles": [
+    {
+      "path": "src/canvaspilot/cli.py",
+      "bytes": 37229,
+      "git": "6557cfe0105490a617fdc9da6a33eb902e218d8b",
+      "sha256": "e107b1f62340280e8cbdbd57bfafff6b702f19830c5ebb2a5f83200f04e7607b"
+    },
+    {
+      "path": "README.md",
+      "bytes": 27576,
+      "git": "61d85c80ced54dbddf289afda4c47cdd80c457aa",
+      "sha256": "680f09dca043bdb3ce07a85021849fcff2efcce48c0ec08a33f49fae0664f414"
+    },
+    {
+      "path": "src/canvaspilot/discussion_export.py",
+      "bytes": 12890,
+      "git": "3e6ab7731ce72cdedaef084d3cee6e3f5f539133",
+      "sha256": "95e8d7078462a60d4d3f1c4bd46b302bb69598563675f44d5d0326edf69d8cde"
+    },
+    {
+      "path": "tests/test_discussion_export.py",
+      "bytes": 7817,
+      "git": "bedb511d9e2f41da95c56c6caa31bd8cf0e76731",
+      "sha256": "511c0539f7fd507cd1b1d93c362e47bd188538358a1c0548b7125f5fd7510cb4"
+    },
+    {
+      "path": "tests/test_discussion_export_cli.py",
+      "bytes": 6441,
+      "git": "18821ea094dc6f295f4294bb6bf3de1c89ad3218",
+      "sha256": "59f548a76461608aa2085b6805586d35f9baf66949c3f3f305b5d336cfc357a2"
+    },
+    {
+      "path": "docs/discussion-export.md",
+      "bytes": 6286,
+      "git": "540e37d3f6e4bdb81f28dca525428ccfae533bc2",
+      "sha256": "b537d5b59673042397e75791e9a42512b881cbdb8e9776e1bde0405e4c53ea91"
+    }
+  ],
+  "review": {
+    "readerAndClientUnchanged": true,
+    "existingPagePacketWriterUnchanged": true,
+    "completeNormalizedJsonPreserved": true,
+    "sourceMarkupOnlyEscapedText": true,
+    "noNetworkedHtmlAssets": true,
+    "testPath": "tests/test_discussion_export_cli.py",
+    "testPathNote": "Routine naming clarification of the issue's provisional _native.py test path; scope unchanged.",
+    "maintainedCases": {
+      "renderer": 9,
+      "cli": 11,
+      "cliSubprocessInvocations": 12
+    }
+  }
+}

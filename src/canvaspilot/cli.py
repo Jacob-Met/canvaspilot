@@ -126,6 +126,20 @@ def main(argv: list[str] | None = None) -> None:
     add_common(conversation)
     conversation.add_argument("conversation_id", type=_positive_int)
 
+    discussion_export = sub.add_parser(
+        "export-discussion", help="Save a cached discussion to a new offline HTML file",
+    )
+    add_common(discussion_export)
+    discussion_export.add_argument("course_id", type=_positive_int)
+    discussion_export.add_argument("topic_id", type=_positive_int)
+    discussion_export.add_argument(
+        "--unread-only", action="store_true",
+        help="Include known unread entries and the ancestors needed for their context",
+    )
+    discussion_export.add_argument(
+        "--out", required=True, type=Path, help="New HTML report; existing paths are protected",
+    )
+
     disc = sub.add_parser("discussions", help="List discussion topics")
     add_common(disc)
     disc.add_argument("course_id")
@@ -416,6 +430,35 @@ def main(argv: list[str] | None = None) -> None:
             finally:
                 http_log.setLevel(previous_level)
             print(json.dumps(result, indent=2, default=str))
+        elif args.cmd == "export-discussion":
+            import os
+
+            import httpx
+
+            from canvaspilot.client import CanvasAuthError
+            from canvaspilot.discussion_export import build_discussion_report
+            from canvaspilot.page_export import write_page_packet
+
+            http_log = logging.getLogger("httpx")
+            previous_level = http_log.level
+            http_log.setLevel(max(http_log.getEffectiveLevel(), logging.WARNING))
+            try:
+                if os.path.lexists(args.out):
+                    raise FileExistsError("Output path already exists; choose a new HTML file")
+                content, report = build_discussion_report(
+                    api, args.course_id, args.topic_id, unread_only=args.unread_only,
+                )
+                cleanup_warning = write_page_packet(args.out, content)
+            except (CanvasAuthError, httpx.HTTPError, ValueError, TypeError, OSError) as error:
+                print(json.dumps({
+                    "ok": False, "error": type(error).__name__, "message": str(error),
+                }), file=sys.stderr)
+                raise SystemExit(1) from None
+            finally:
+                http_log.setLevel(previous_level)
+            if cleanup_warning:
+                report["cleanup_warning"] = cleanup_warning
+            print(json.dumps({"ok": True, "output": str(args.out), **report}, indent=2))
         elif args.cmd == "discussions":
             print(json.dumps(api.list_discussion_topics(args.course_id), indent=2, default=str))
         elif args.cmd == "discussion":
