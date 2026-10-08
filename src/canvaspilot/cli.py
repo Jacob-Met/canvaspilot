@@ -19,6 +19,15 @@ def _positive_int(value: str) -> int:
     return parsed
 
 
+def _announcement_query(value: str) -> str:
+    from canvaspilot.announcement_search import validate_query
+
+    try:
+        return validate_query(value)
+    except ValueError as exc:
+        raise argparse.ArgumentTypeError(str(exc)) from exc
+
+
 def main(argv: list[str] | None = None) -> None:
     parser = argparse.ArgumentParser(prog="canvaspilot")
     sub = parser.add_subparsers(dest="cmd", required=True)
@@ -63,6 +72,20 @@ def main(argv: list[str] | None = None) -> None:
                            help="Maximum courses to inspect (default: 10)")
             p.add_argument("--limit-assignments-per-course", type=_positive_int, default=5,
                            help="Maximum assignments to include per course (default: 5)")
+
+    find_announcements = sub.add_parser(
+        "find-announcements", help="Find literal text in complete selected-course announcements",
+    )
+    add_common(find_announcements)
+    find_announcements.add_argument("course_ids", nargs="+", type=_positive_int)
+    find_announcements.add_argument(
+        "--text", required=True, type=_announcement_query,
+        help="Literal case-insensitive text to find in titles or complete cleaned messages",
+    )
+    find_announcements.add_argument(
+        "--start-date", default=None,
+        help="Existing Canvas start_date filter; omitted uses Canvas defaults",
+    )
 
     announcements = sub.add_parser(
         "announcements", help="Read active announcements for selected courses",
@@ -243,6 +266,32 @@ def main(argv: list[str] | None = None) -> None:
                 limit_courses=args.limit_courses,
                 limit_assignments_per_course=args.limit_assignments_per_course,
             ), indent=2, default=str))
+        elif args.cmd == "find-announcements":
+            import httpx
+
+            from canvaspilot.announcement_search import search_announcements
+            from canvaspilot.client import CanvasAuthError, CanvasPaginationError
+
+            http_log = logging.getLogger("httpx")
+            previous_level = http_log.level
+            http_log.setLevel(max(http_log.getEffectiveLevel(), logging.WARNING))
+            try:
+                rows = api.list_announcements(
+                    args.course_ids, start_date=args.start_date, detail="full",
+                )
+                result = {
+                    "course_ids": args.course_ids,
+                    "start_date": args.start_date,
+                    **search_announcements(rows, args.text),
+                }
+            except (CanvasAuthError, CanvasPaginationError, httpx.HTTPError, ValueError) as error:
+                print(json.dumps({
+                    "ok": False, "error": type(error).__name__, "message": str(error),
+                }), file=sys.stderr)
+                raise SystemExit(1) from None
+            finally:
+                http_log.setLevel(previous_level)
+            print(json.dumps(result, indent=2))
         elif args.cmd == "announcements":
             import httpx
 

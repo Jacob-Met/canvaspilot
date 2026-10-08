@@ -1,0 +1,109 @@
+{
+  "baselineCommit": "1bafdaa31f7789d8e561680cb6001bbe38b2da64",
+  "currentCommit": "f618c3ed13f191ea58642283c1f9cd45a0c1ca81",
+  "currentTree": "1bcfff90694cdb8358684ada58ff349562244de7",
+  "originalRuntimeLeaves": 18,
+  "currentRuntimeLeaves": 19,
+  "candidateRuntimeLeaves": 20,
+  "protectedOriginalRuntimeLeaves": 17,
+  "changedCurrentOwnerCliRestoredByRemovingExactThreeSearchSpans": true,
+  "currentReadmeRestoredByRemovingExactAppendedPointer": true,
+  "unchangedOriginalRuntimePaths": [
+    "src/canvaspilot/__init__.py",
+    "src/canvaspilot/agenda.py",
+    "src/canvaspilot/api.py",
+    "src/canvaspilot/assignment_submission.py",
+    "src/canvaspilot/bundle.py",
+    "src/canvaspilot/calendar_export.py",
+    "src/canvaspilot/client.py",
+    "src/canvaspilot/discussion_thread.py",
+    "src/canvaspilot/feedback.py",
+    "src/canvaspilot/folder_browser.py",
+    "src/canvaspilot/grade_review.py",
+    "src/canvaspilot/mcp_server.py",
+    "src/canvaspilot/module_progress.py",
+    "src/canvaspilot/module_progress_export.py",
+    "src/canvaspilot/offline_demo.py",
+    "src/canvaspilot/session_broker.py",
+    "src/canvaspilot/submission_history.py"
+  ],
+  "newCurrentOwnerRuntimeLeaf": {
+    "path": "src/canvaspilot/page_export.py",
+    "mode": "100644",
+    "type": "blob",
+    "sha": "1b46af8af07d24e24cde54aba393d9f977e77136",
+    "size": 17041,
+    "url": "https://api.github.com/repos/Jacob-Met/canvaspilot/git/blobs/1b46af8af07d24e24cde54aba393d9f977e77136"
+  },
+  "schema": "canvaspilot74.current-source-closure.v1",
+  "productManifest": [
+    {
+      "path": "src/canvaspilot/announcement_search.py",
+      "bytes": 1555,
+      "sha256": "aa766157ccc10d6c3371a0e761c89ce3189d201cd9fcf5b82eec22d1c572f65e",
+      "gitBlob": "b2b344526b14c2f123163f6bcfd28f70e28281e8"
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "bytes": 27527,
+      "sha256": "65ffa7825fc2ffdc1c8c85198f772d7f171d96c2d39633dc010fc98f23858903",
+      "gitBlob": "2a3471d108fab7e236e0eb24891ee4d306f531a2"
+    },
+    {
+      "path": "tests/test_announcement_search.py",
+      "bytes": 4085,
+      "sha256": "3922b4884150bbca5ea5d5b717d117e62343b025d3fac235affd879fc9fe29e4",
+      "gitBlob": "a62f05e5600d0b084af5e8cbe967296dce023548"
+    },
+    {
+      "path": "tests/test_announcement_search_cli.py",
+      "bytes": 15573,
+      "sha256": "6a8babaaaa17d5719622e05fd22a4ade694d4625bbc3379312bfbbb06c338507",
+      "gitBlob": "6ff91a36f36c2e521e35b1b20affe7d0c296c6b2"
+    },
+    {
+      "path": "docs/announcement-search.md",
+      "bytes": 3301,
+      "sha256": "4c7eb491f83dd353669edfc63f4e53cd5cd15b4712d0cda32df593145ab6ee1d",
+      "gitBlob": "093e1b29e0b84a79b66a5ad4adf6ea938bc3f763"
+    },
+    {
+      "path": "README.md",
+      "bytes": 25426,
+      "sha256": "b1241458cc96b71113847ae70701c6d539346e886efdb63164a25da41fb94b5b",
+      "gitBlob": "dcacca9c93c58e440e67d3857e5d14a9ccd16aa4"
+    }
+  ],
+  "sourceZip": {
+    "bytes": 62555,
+    "sha256": "fb96edaf741668547fb62e7bdbc06695d3a7642d42e3a3ac9d6b4b083004ef37",
+    "gitBlob": "f36fd968bb2f6684e41e049450b661f436c2fa72"
+  },
+  "baselineBlobCount": 1333,
+  "sourceChangePaths": [
+    "src/canvaspilot/announcement_search.py",
+    "src/canvaspilot/cli.py",
+    "tests/test_announcement_search.py",
+    "tests/test_announcement_search_cli.py",
+    "docs/announcement-search.md",
+    "README.md"
+  ],
+  "evidencePrefix": "docs/qualification/announcement-search-20261008-406d0fb04c43",
+  "unchangedPeerAreas": [
+    "api.py",
+    "client.py",
+    "page_export.py",
+    "session_broker.py",
+    "mcp_server.py",
+    "bundle.py",
+    "all existing test files",
+    "pyproject.toml",
+    ".github/workflows/ci.yml"
+  ],
+  "insertions": {
+    "validator": "def _announcement_query(value: str) -> str:\n    from canvaspilot.announcement_search import validate_query\n\n    try:\n        return validate_query(value)\n    except ValueError as exc:\n        raise argparse.ArgumentTypeError(str(exc)) from exc\n\n\n",
+    "parser": "    find_announcements = sub.add_parser(\n        \"find-announcements\", help=\"Find literal text in complete selected-course announcements\",\n    )\n    add_common(find_announcements)\n    find_announcements.add_argument(\"course_ids\", nargs=\"+\", type=_positive_int)\n    find_announcements.add_argument(\n        \"--text\", required=True, type=_announcement_query,\n        help=\"Literal case-insensitive text to find in titles or complete cleaned messages\",\n    )\n    find_announcements.add_argument(\n        \"--start-date\", default=None,\n        help=\"Existing Canvas start_date filter; omitted uses Canvas defaults\",\n    )\n\n",
+    "dispatch": "        elif args.cmd == \"find-announcements\":\n            import httpx\n\n            from canvaspilot.announcement_search import search_announcements\n            from canvaspilot.client import CanvasAuthError, CanvasPaginationError\n\n            http_log = logging.getLogger(\"httpx\")\n            previous_level = http_log.level\n            http_log.setLevel(max(http_log.getEffectiveLevel(), logging.WARNING))\n            try:\n                rows = api.list_announcements(\n                    args.course_ids, start_date=args.start_date, detail=\"full\",\n                )\n                result = {\n                    \"course_ids\": args.course_ids,\n                    \"start_date\": args.start_date,\n                    **search_announcements(rows, args.text),\n                }\n            except (CanvasAuthError, CanvasPaginationError, httpx.HTTPError, ValueError) as error:\n                print(json.dumps({\n                    \"ok\": False, \"error\": type(error).__name__, \"message\": str(error),\n                }), file=sys.stderr)\n                raise SystemExit(1) from None\n            finally:\n                http_log.setLevel(previous_level)\n            print(json.dumps(result, indent=2))\n"
+  },
+  "readmeSuffix": "\n## Announcement text search\n\nFind a literal phrase in the complete titles and cleaned messages for selected courses:\n\n```bash\ncanvaspilot find-announcements 42 77 --text \"room change\" --start-date 2026-10-01\n```\n\nThe result preserves ordered full announcement rows and identifies which fields matched.\nSee [announcement text search](docs/announcement-search.md) for matching, output, and complete-read behavior.\n"
+}

@@ -471,3 +471,14 @@ MIT
 [Jacob Metoyer](https://jacobmetoyer.com/) — software and research tooling.
 Upstream and collaborator credit are retained.
 
+
+## Announcement text search
+
+Find a literal phrase in the complete titles and cleaned messages for selected courses:
+
+```bash
+canvaspilot find-announcements 42 77 --text "room change" --start-date 2026-10-01
+```
+
+The result preserves ordered full announcement rows and identifies which fields matched.
+See [announcement text search](docs/announcement-search.md) for matching, output, and complete-read behavior.
