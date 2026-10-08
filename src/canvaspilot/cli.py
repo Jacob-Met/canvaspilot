@@ -124,9 +124,12 @@ def main(argv: list[str] | None = None) -> None:
 
 
 def _session_cmd(args: argparse.Namespace) -> None:
-    import httpx
-
-    from canvaspilot.client import BROKER_PORT, broker_base, broker_health
+    from canvaspilot.client import (
+        BROKER_PORT,
+        _broker_request,
+        broker_base,
+        broker_health,
+    )
     from canvaspilot.session_broker import main as broker_main
 
     port = getattr(args, "port", None) or BROKER_PORT
@@ -150,14 +153,14 @@ def _session_cmd(args: argparse.Namespace) -> None:
             print(json.dumps({"ok": False, "error": "broker not running", "url": broker_base()}, indent=2))
             sys.exit(1)
         try:
-            st = httpx.get(f"{broker_base()}/status", timeout=30.0).json()
+            st = _broker_request("GET", f"{broker_base()}/status", timeout=30.0).json()
         except Exception as exc:  # noqa: BLE001 — report broker comms failures as JSON, never traceback
             st = {"error": str(exc)}
         print(json.dumps({"health": h, "status": st}, indent=2))
         return
     if args.scmd == "stop":
         try:
-            r = httpx.post(f"{broker_base()}/shutdown", json={}, timeout=5.0)
+            r = _broker_request("POST", f"{broker_base()}/shutdown", json={}, timeout=5.0)
             print(r.text)
         except Exception as exc:  # noqa: BLE001 — report shutdown failures as JSON, never traceback
             print(json.dumps({"ok": False, "error": str(exc)}))

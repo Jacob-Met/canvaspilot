@@ -26,12 +26,23 @@ def broker_base() -> str:
     return f"http://127.0.0.1:{BROKER_PORT}"
 
 
+def _broker_request(method: str, url: str, **kwargs: Any) -> httpx.Response:
+    """Broker traffic targets hardcoded 127.0.0.1 and must never consult proxy env.
+
+    A proxy must never see localhost traffic anyway; and a malformed NO_PROXY
+    entry (e.g. bracketed IPv6 ``[::1]``) makes httpx raise ``InvalidURL`` at
+    Client construction, which callers do not expect. See issue #20.
+    """
+    kwargs.setdefault("trust_env", False)
+    return httpx.request(method, url, **kwargs)
+
+
 def broker_health() -> dict[str, Any] | None:
     try:
-        r = httpx.get(f"{broker_base()}/health", timeout=2.0)
+        r = _broker_request("GET", f"{broker_base()}/health", timeout=2.0)
         if r.status_code == 200:
             return r.json()
-    except (httpx.HTTPError, ValueError):
+    except (httpx.HTTPError, httpx.InvalidURL, ValueError):
         return None
     return None
 
@@ -66,7 +77,8 @@ def broker_fetch(
         body = urlencode({k: str(v) for k, v in data.items()})
         headers["Content-Type"] = "application/x-www-form-urlencoded"
 
-    r = httpx.post(
+    r = _broker_request(
+        "POST",
         f"{broker_base()}/fetch",
         json={"op": "fetch", "method": method, "path": full, "headers": headers, "body": body},
         timeout=timeout,
