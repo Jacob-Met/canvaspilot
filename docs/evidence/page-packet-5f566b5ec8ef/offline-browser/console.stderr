@@ -1,0 +1,4 @@
+HTTP Request: GET http://127.0.0.1:51076/api/v1/courses/42?per_page=50 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:51076/api/v1/courses/42/pages/intro?per_page=50 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:51076/api/v1/courses/42/pages/7?per_page=50 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:51076/api/v1/courses/42/pages/page_id%3A7?per_page=50 "HTTP/1.0 200 OK"

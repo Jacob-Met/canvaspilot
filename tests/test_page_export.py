@@ -1,0 +1,409 @@
+"""Consequential selected-page, retained-source and output-publication controls."""
+
+from __future__ import annotations
+
+import copy
+import errno
+import hashlib
+import json
+import os
+import tempfile
+from datetime import UTC, datetime
+from html.parser import HTMLParser
+from pathlib import Path
+from unittest.mock import patch
+from urllib.parse import quote
+
+import pytest
+
+from canvaspilot.api import CanvasAPI
+from canvaspilot.client import CanvasClient
+from canvaspilot.page_export import (
+    MAX_PAGE_BYTES,
+    build_page_packet,
+    validate_page_selection,
+    write_page_packet,
+)
+
+FIXTURE = Path(__file__).parent / "fixtures" / "page_packet.json"
+NOW = datetime(2026, 10, 8, 14, 30, tzinfo=UTC)
+
+
+class PacketReader(HTMLParser):
+    def __init__(self, source: bytes):
+        super().__init__(convert_charrefs=True)
+        self.originals: list[str] = []
+        self.metadata: list[dict] = []
+        self.readings: list[str] = []
+        self.tags: list[str] = []
+        self.attributes: list[tuple[str, str | None]] = []
+        self.urls: list[str] = []
+        self.current: str | None = None
+        self.parts: list[str] = []
+        self.feed(source.decode("utf-8"))
+
+    def handle_starttag(self, tag, attrs):
+        self.tags.append(tag)
+        self.attributes.extend(attrs)
+        fields = dict(attrs)
+        if tag == "a":
+            self.urls.append(fields["href"])
+        if tag == "pre":
+            for key in ("data-original-html", "data-page-metadata", "data-reading"):
+                if key in fields:
+                    self.current, self.parts = key, []
+
+    def handle_data(self, data):
+        if self.current:
+            self.parts.append(data)
+
+    def handle_endtag(self, tag):
+        if tag == "pre" and self.current:
+            value = "".join(self.parts)
+            if self.current == "data-original-html":
+                self.originals.append(value)
+            elif self.current == "data-page-metadata":
+                self.metadata.append(json.loads(value))
+            else:
+                self.readings.append(value)
+            self.current = None
+
+
+class RecordingClient(CanvasClient):
+    def __init__(self, data):
+        self.requests = []
+        routes = {"GET /api/v1/courses/42": data["course"]}
+        routes.update({
+            f"GET /api/v1/courses/42/pages/{quote(locator, safe='')}": page
+            for locator, page in data["pages"].items()
+        })
+        super().__init__(base_url="https://synthetic-canvas.example", token="", fixture={"routes": routes})
+
+    def request(self, method, path, **kwargs):
+        self.requests.append((method, path, kwargs))
+        assert method == "GET"
+        return super().request(method, path, **kwargs)
+
+
+@pytest.fixture
+def data():
+    return json.loads(FIXTURE.read_text())
+
+
+@pytest.fixture(autouse=True)
+def no_live_transport():
+    with patch("canvaspilot.client.broker_health", side_effect=AssertionError("No broker access")), \
+         patch("canvaspilot.client.httpx.Client", side_effect=AssertionError("No HTTP access")):
+        yield
+
+
+def build(data, pages=None):
+    client = RecordingClient(data)
+    content, report = build_page_packet(CanvasAPI(client), 42, pages or ["intro", "7"], generated_at=NOW)
+    return content, report, client
+
+
+def test_selected_order_original_sources_and_large_identity_are_exact(data):
+    original = copy.deepcopy(data)
+    content, report, client = build(data, ["7", "intro"])
+    parsed = PacketReader(content)
+    assert parsed.originals == [data["pages"][key]["body"] for key in ["7", "intro"]]
+    assert [row["page_id"] for row in parsed.metadata] == [8, 9007199254740993]
+    assert parsed.metadata[1]["updated_at"] == "2026-10-08T12:45:00.000-07:00"
+    assert report["pages"][1]["body_sha256"] == hashlib.sha256(parsed.originals[1].encode()).hexdigest()
+    assert report["sha256"] == hashlib.sha256(content).hexdigest()
+    assert report["generated_at"] == "2026-10-08T14:30:00+00:00"
+    assert [path for _, path, _ in client.requests] == [
+        "/api/v1/courses/42", "/api/v1/courses/42/pages/7", "/api/v1/courses/42/pages/intro"
+    ]
+    assert data == original
+
+
+def test_provider_html_is_inert_and_embedded_resources_are_not_fetched(data):
+    content, _, client = build(data)
+    parsed = PacketReader(content)
+    assert not {"script", "img", "iframe", "object", "embed", "svg"}.intersection(parsed.tags)
+    assert not any(name.startswith("on") for name, _ in parsed.attributes)
+    assert all(url.startswith(("#", "https://synthetic-canvas.example/courses/42/pages/")) for url in parsed.urls)
+    assert "<img src=x onerror=alert(2)>" in parsed.readings[0]
+    assert "[Image: A phase diagram]" in parsed.readings[0]
+    assert "[Embedded iframe not included]" in parsed.readings[0]
+    assert "https://unrequested.example/reading?q=1&n=2" in parsed.readings[0]
+    assert "__pagePacketExecuted" not in parsed.readings[0]
+    assert "body{display:none}" not in parsed.readings[0]
+    assert len(client.requests) == 3
+
+
+def test_numeric_url_and_explicit_numeric_id_select_different_pages(data):
+    content, report, client = build(data, ["7", "page_id:0007"])
+    assert [row["page_id"] for row in report["pages"]] == [8, 7]
+    assert [row["requested"] for row in report["pages"]] == ["7", "page_id:7"]
+    assert client.requests[-1][1].endswith("/page_id%3A7")
+    assert PacketReader(content).metadata[-1]["url"] == "notes-雪"
+
+
+def test_reading_projection_keeps_code_indentation_and_skips_nested_templates(data):
+    data["pages"]["intro"]["body"] = (
+        "<pre>    first_line()\n    second_line()</pre>"
+        "<template>hidden<template>also hidden</template>still hidden</template>"
+        "<p>Visible ending.</p>"
+    )
+    content, _, _ = build(data, ["intro"])
+    text = PacketReader(content).readings[0]
+    assert text.startswith("    first_line()\n    second_line()")
+    assert "hidden" not in text
+    assert "Visible ending." in text
+
+
+def test_numeric_slug_must_not_silently_fall_back_to_a_page_id(data):
+    data["pages"]["7"] = data["pages"]["page_id:7"]
+    with pytest.raises(ValueError, match="did not match 7"):
+        build(data, ["7"])
+
+
+def test_explicit_page_id_must_match_returned_identity(data):
+    data["pages"]["page_id:7"]["page_id"] = 9
+    with pytest.raises(ValueError, match="did not match page_id:7"):
+        build(data, ["page_id:7"])
+
+
+def test_aliases_cannot_silently_duplicate_one_page(data):
+    data["pages"]["page_id:9007199254740993"] = copy.deepcopy(data["pages"]["intro"])
+    with pytest.raises(ValueError, match="same page more than once"):
+        build(data, ["intro", "page_id:9007199254740993"])
+
+
+@pytest.mark.parametrize("course,pages", [
+    (True, ["intro"]), (0, ["intro"]), ("42/../8", ["intro"]),
+    (42, []), (42, "intro"), (42, ["intro"] * 21), (42, ["intro", "intro"]),
+    (42, ["page_id:7", "page_id:0007"]), (42, [None]), (42, [""]),
+    (42, ["."]), (42, [".."]), (42, ["intro/other"]), (42, ["intro\\other"]),
+    (42, ["https://another.example/page"]), (42, [" intro"]), (42, ["intro\n"]),
+    (42, ["page_id:0"]), (42, ["page_id:-1"]), (42, ["x" * 513]),
+])
+def test_whole_selection_is_admitted_before_any_request(data, course, pages):
+    client = RecordingClient(data)
+    with pytest.raises((TypeError, ValueError)):
+        build_page_packet(CanvasAPI(client), course, pages, generated_at=NOW)
+    assert client.requests == []
+
+
+def test_single_component_locators_are_encoded_without_changing_the_returned_value(data):
+    locator = "snow-雪?#%&"
+    data["pages"][locator] = {**data["pages"]["intro"], "url": locator}
+    content, _, client = build(data, [locator])
+    assert client.requests[-1][1].endswith("/snow-%E9%9B%AA%3F%23%25%26")
+    assert PacketReader(content).metadata[0]["url"] == locator
+
+
+def test_unknown_metadata_and_explicit_empty_body_are_preserved(data):
+    data["pages"]["intro"] = {"page_id": 1, "url": "intro", "title": "Empty", "body": ""}
+    data["course"]["name"] = None
+    content, report, _ = build(data, ["intro"])
+    parsed = PacketReader(content)
+    assert parsed.metadata == [{"page_id": 1, "url": "intro", "title": "Empty"}]
+    assert parsed.originals == [""]
+    assert report["original_body_bytes"] == 0
+    assert b"The supplied page body is empty." in content
+    assert b"Publication: Not supplied" in content
+    assert b"Updated: Not supplied" in content
+
+
+@pytest.mark.parametrize("field,value", [
+    ("page_id", False), ("page_id", 1.0), ("page_id", 0), ("url", "other"),
+    ("url", None), ("title", None), ("body", None), ("body", {"html": "wrong shape"}),
+    ("body", "\u0000"), ("body", "\ud800"), ("title", "\u0001"),
+    ("locked_for_user", True), ("locked_for_user", "false"),
+    ("published", 1), ("front_page", []), ("updated_at", 99), ("editor", {}),
+])
+def test_unavailable_or_malformed_selected_content_refuses_the_whole_packet(data, field, value):
+    data["pages"]["7"][field] = value
+    original = copy.deepcopy(data)
+    with pytest.raises((TypeError, ValueError)):
+        build(data)
+    assert data == original
+
+
+def test_missing_body_does_not_become_an_empty_page(data):
+    del data["pages"]["intro"]["body"]
+    with pytest.raises(TypeError, match="body must be text"):
+        build(data, ["intro"])
+
+
+def test_foreign_course_is_rejected_before_any_page_read(data):
+    data["course"]["id"] = 43
+    client = RecordingClient(data)
+    with pytest.raises(ValueError, match="course response"):
+        build_page_packet(CanvasAPI(client), 42, ["intro"])
+    assert len(client.requests) == 1
+
+
+def test_body_limit_counts_utf8_bytes(data):
+    data["pages"]["intro"]["body"] = "雪" * (MAX_PAGE_BYTES // 3 + 1)
+    with pytest.raises(ValueError, match="byte limit"):
+        build(data, ["intro"])
+
+
+def test_combined_limit_does_not_truncate_or_publish_a_prefix(data):
+    pages = [f"chapter-{index}" for index in range(5)]
+    data["pages"] = {
+        key: {"page_id": i + 1, "url": key, "title": key, "body": "x" * MAX_PAGE_BYTES}
+        for i, key in enumerate(pages)
+    }
+    with pytest.raises(ValueError, match="combined 2 MiB"):
+        build(data, pages)
+
+
+def test_a_later_request_failure_never_returns_an_earlier_partial_packet(data):
+    client = RecordingClient(data)
+    original = client.request
+
+    def failure(method, path, **kwargs):
+        if path.endswith("/7"):
+            raise OSError("authored later read failed")
+        return original(method, path, **kwargs)
+
+    client.request = failure
+    with pytest.raises(OSError, match="later read failed"):
+        build_page_packet(CanvasAPI(client), 42, ["intro", "7"], generated_at=NOW)
+
+
+def test_observed_provider_change_is_refused(data):
+    client = RecordingClient(data)
+    with patch("canvaspilot.page_export._calendar_source", side_effect=[
+        "https://school-a.example", "https://school-a.example", "https://school-b.example"
+    ]), pytest.raises(ValueError, match="provider changed"):
+        build_page_packet(CanvasAPI(client), 42, ["intro"], generated_at=NOW)
+
+
+def test_output_has_complete_exact_bytes_and_private_permissions(tmp_path, data):
+    content, _, _ = build(data)
+    path = tmp_path / "reading.html"
+    assert write_page_packet(path, content) is None
+    assert path.read_bytes() == content
+    assert path.stat().st_mode & 0o777 == 0o600
+    assert list(tmp_path.iterdir()) == [path]
+
+
+@pytest.mark.parametrize("kind", ["file", "symlink", "dangling-symlink", "hardlink", "directory"])
+def test_every_existing_output_entry_is_protected(tmp_path, kind):
+    original = tmp_path / "original"
+    original.write_bytes(b"KEEP ORIGINAL\r\n")
+    target = tmp_path / "reading.html"
+    if kind == "file":
+        target.write_bytes(b"KEEP TARGET")
+    elif kind == "symlink":
+        target.symlink_to(original)
+    elif kind == "dangling-symlink":
+        target.symlink_to(tmp_path / "absent")
+    elif kind == "hardlink":
+        os.link(original, target)
+    else:
+        target.mkdir()
+    before = target.lstat()
+    with pytest.raises(FileExistsError):
+        write_page_packet(target, b"new packet")
+    after = target.lstat()
+    assert (before.st_ino, before.st_mode, before.st_size) == (after.st_ino, after.st_mode, after.st_size)
+    assert original.read_bytes() == b"KEEP ORIGINAL\r\n"
+    if kind == "file":
+        assert target.read_bytes() == b"KEEP TARGET"
+    assert not list(tmp_path.glob(".canvaspilot-pages-*.tmp"))
+
+
+def test_output_publish_failure_preserves_original_error_and_no_destination(tmp_path):
+    path = tmp_path / "reading.html"
+    with patch("canvaspilot.page_export.os.link", side_effect=OSError(errno.ENOSPC, "authored full")), \
+         pytest.raises(OSError) as caught:
+        write_page_packet(path, b"complete content")
+    assert caught.value.errno == errno.ENOSPC
+    assert not path.exists()
+    assert list(tmp_path.iterdir()) == []
+
+
+def test_flush_failure_closes_and_removes_the_owned_temporary_only(tmp_path):
+    path = tmp_path / "reading.html"
+    sentinel = tmp_path / "original"
+    sentinel.write_bytes(b"unchanged")
+    with patch("canvaspilot.page_export.os.fsync", side_effect=OSError(errno.EIO, "authored flush")), \
+         pytest.raises(OSError, match="authored flush"):
+        write_page_packet(path, b"complete content")
+    assert not path.exists()
+    assert sentinel.read_bytes() == b"unchanged"
+    assert not list(tmp_path.glob(".canvaspilot-pages-*.tmp"))
+
+
+def test_missing_output_parent_is_not_created(tmp_path):
+    target = tmp_path / "missing" / "reading.html"
+    with pytest.raises(FileNotFoundError):
+        write_page_packet(target, b"content")
+    assert not target.parent.exists()
+
+
+@pytest.mark.parametrize("failure", ["write", "flush", "close"])
+def test_secondary_close_error_does_not_hide_the_original_failure(tmp_path, failure):
+    target = tmp_path / "reading.html"
+    primary = OSError(errno.EIO, f"authored primary {failure}")
+    real_temporary_file = tempfile.NamedTemporaryFile
+
+    class FailingFile:
+        def __init__(self, *args, **kwargs):
+            self.file = real_temporary_file(*args, **kwargs)
+            self.name = self.file.name
+            self.close_calls = 0
+
+        def write(self, content):
+            if failure == "write":
+                raise primary
+            return self.file.write(content)
+
+        def flush(self):
+            if failure == "flush":
+                raise primary
+            return self.file.flush()
+
+        def fileno(self):
+            return self.file.fileno()
+
+        def close(self):
+            self.file.close()
+            self.close_calls += 1
+            if failure == "close" and self.close_calls == 1:
+                raise primary
+            raise OSError(errno.EIO, "authored secondary close")
+
+    with patch("canvaspilot.page_export.tempfile.NamedTemporaryFile", FailingFile), \
+         pytest.raises(OSError) as caught:
+        write_page_packet(target, b"complete content")
+    assert caught.value is primary
+    assert not target.exists()
+    assert not list(tmp_path.glob(".canvaspilot-pages-*.tmp"))
+
+
+def test_post_publication_cleanup_failure_reports_the_created_packet(tmp_path):
+    target = tmp_path / "reading.html"
+    real_unlink = Path.unlink
+
+    def refuse_temporary_cleanup(path, *args, **kwargs):
+        if path.name.startswith(".canvaspilot-pages-"):
+            raise PermissionError("authored cleanup refusal")
+        return real_unlink(path, *args, **kwargs)
+
+    with patch.object(Path, "unlink", refuse_temporary_cleanup):
+        warning = write_page_packet(target, b"complete content")
+    assert warning and warning.startswith("Packet created, but temporary source could not be removed:")
+    assert target.read_bytes() == b"complete content"
+    remaining = list(tmp_path.glob(".canvaspilot-pages-*.tmp"))
+    assert len(remaining) == 1 and remaining[0].samefile(target)
+    remaining[0].unlink()
+
+
+def test_naive_capture_time_is_rejected_before_any_read(data):
+    client = RecordingClient(data)
+    with pytest.raises(ValueError, match="timezone-aware"):
+        build_page_packet(CanvasAPI(client), 42, ["intro"], generated_at=NOW.replace(tzinfo=None))
+    assert client.requests == []
+
+
+def test_selection_function_is_available_without_a_client():
+    assert validate_page_selection("00042", ["7", "page_id:0007"]) == ("42", ["7", "page_id:7"])

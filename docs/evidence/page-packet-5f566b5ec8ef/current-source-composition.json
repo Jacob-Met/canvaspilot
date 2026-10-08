@@ -1,0 +1,40 @@
+{
+  "utc": "2026-10-08T15:27:03.054961+00:00",
+  "base": "a5ce672e5b3580c1f52e13c49eefee830f11346c",
+  "base_tree": "0661a7005e577864cb87bc41e0e715409c92ee76",
+  "candidate_tree": "48a6bd4ce600f0f240fe8006511f4baffa030025",
+  "base_leaves": 948,
+  "candidate_leaves": 953,
+  "owned_paths": [
+    "README.md",
+    "docs/page-export.md",
+    "src/canvaspilot/cli.py",
+    "src/canvaspilot/page_export.py",
+    "tests/fixtures/page_packet.json",
+    "tests/test_page_export.py",
+    "tests/test_page_export_process.py"
+  ],
+  "unowned_leaves_preserved": 946,
+  "all_unowned_leaf_modes_and_objects_preserved": true,
+  "cli_pure_additions": {
+    "parser_lines": 8,
+    "dispatch_lines": 21,
+    "existing_current_bytes_preserved_after_removing_additions": true,
+    "initial_candidate_only_extra_final_blank_line_not_carried": true
+  },
+  "source_sha256": {
+    "src/canvaspilot/page_export.py": "8800e959ee620438273c3291fd24c51b9ed567430b28093cd3f8bef52bff5015",
+    "tests/test_page_export.py": "8b17008213e04441cbd97a5bd295c55c65edcc4f28bfc55cb5299fc633265d09",
+    "tests/test_page_export_process.py": "cc34051000f69a79fcc58043cf9c1b70689285990bbe198f1acee058337760e4",
+    "tests/fixtures/page_packet.json": "c5d348db60489544c4c2291170d18528f617981a374326c6d3c9059e490fd82b",
+    "docs/page-export.md": "3976c1b5bfb80d1d196b0fa4ab0ba655a6193e2b15b1a8145e7ba197a44f23b8",
+    "src/canvaspilot/cli.py": "361b1dafb3c264900b393b2367a71b66fc8a6f2d8e78921372e87650bbbd6330",
+    "README.md": "86174db3566461df2af68bb39a742d4d568730bbdda5b96563dbfd3367d0493e"
+  },
+  "unchanged_transport_blobs": {
+    "src/canvaspilot/client.py": "1db4b1135305f7e410025ae7937f9a6cd349f020",
+    "src/canvaspilot/calendar_export.py": "ef74cfdf50fd894327dbe45a9a9d43042953bc31",
+    "pyproject.toml": "76eba6d30696b4f2733539cd47df6e178bc0f585",
+    ".github/workflows/ci.yml": "ef7bbebe192c0db55dc4467e064ba44805c13446"
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "utc": "2026-10-08T15:44:22.334341+00:00",
+  "packet_sha256": "c9511af4f33ab4931a5b828131a82e625610ac4b5fd5eafbb8f30d8cb8c68aba",
+  "capture_sha256": "c7ed13970b96f9ce73adade399d3cb3998de168ae26d1c8e3bf5606ab2aa222c",
+  "selection": [
+    "intro",
+    "7",
+    "page_id:7"
+  ],
+  "checks": [
+    {
+      "name": "saved packet opens with the browser offline",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "literal course and page titles remain text",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "selected identities retain exact integers without JavaScript number coercion",
+      "passed": true,
+      "detail": [
+        "9007199254740993",
+        "8",
+        "7"
+      ]
+    },
+    {
+      "name": "retained HTML preserves exact Unicode entities and CR LF source",
+      "passed": true,
+      "detail": [
+        "51398b8a771fb85e769ed07bcd3ddcda10682c65a981478dfd6a1cb5399834e7",
+        "3f3f9716b6f22281ace1de5d8874857eb7dabe930ff38bca711d527fa1844c6d",
+        "452d9c2b3bf3f5fc05f43c7cd844c0fb1b843e8e65ad2e2421fd9c05c4acdc48"
+      ]
+    },
+    {
+      "name": "supplied metadata remains exact including null and draft status",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "reading projection retains sentences bullets code indentation and inert link references",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "provider markup is absent from the active document",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "only local contents and deliberate Canvas page links are active",
+      "passed": true,
+      "detail": [
+        "#page-1",
+        "#page-2",
+        "#page-3",
+        "http://127.0.0.1:51076/courses/42/pages/intro",
+        "#contents",
+        "http://127.0.0.1:51076/courses/42/pages/7",
+        "#contents",
+        "http://127.0.0.1:51076/courses/42/pages/notes-%E9%9B%AA",
+        "#contents"
+      ]
+    },
+    {
+      "name": "contents and return navigation work offline",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "original-source disclosure is usable without executing or fetching it",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390px reading and expanded source stay within the viewport",
+      "passed": true,
+      "detail": {
+        "width": 390,
+        "scroll": 390
+      }
+    },
+    {
+      "name": "closed metadata and source records are excluded from print layout",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "offline reading performs no HTTP requests and reports no browser errors",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "requests": [
+    {
+      "url": "file:///Users/me/canvaspilot-page-packet-20261008-5f566b5ec8ef/evidence/offline-browser/reading.html",
+      "method": "GET"
+    }
+  ],
+  "blocked_http": [],
+  "page_errors": [],
+  "dialogs": [],
+  "console_errors": [],
+  "browser_version": "154.0.8037.98",
+  "screenshots": {
+    "desktop.png": {
+      "sha256": "53828022ef504d675027d15de2e85cc3a93b708d07322be77bf76ac6651192a1",
+      "bytes": 294591
+    },
+    "phone.png": {
+      "sha256": "df0e89ceb848bf0d3c5b6e953f5dd70021bcadf80025f22c7ccc9526b3dde77d",
+      "bytes": 269981
+    }
+  },
+  "passed": true,
+  "packet_unchanged": true,
+  "fixture_unchanged": true
+}
