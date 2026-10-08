@@ -1,0 +1,37 @@
+{
+  "nativeReplayCommit": "38efbe97301580fec4a6fc6a6040f7989ab8bb22",
+  "originalNativeWitness": "326a77e913ba031cb46f73e68e03d2643fb295e7",
+  "originalPublicWitness": "b582b15754c675e2cf8c57ba6963fb27ba2a7541",
+  "status": "syntax-checked-not-executed",
+  "contract": "Same three cases; source-pin manifest and explicit baseline/candidate expectation are the variable inputs.",
+  "files": [
+    {
+      "path": "replay/README.md",
+      "mode": "100644",
+      "gitBlob": "80d6178b8e94099239fe6a9491525599ed4891f3",
+      "bytes": 2165,
+      "sha256": "324a9e8cf7ffbef0eddfb85ab2ade3a1309fdbe463784ec9a21539ff8f4b033f"
+    },
+    {
+      "path": "replay/baseline-source-pins.json",
+      "mode": "100644",
+      "gitBlob": "eff22c9d723b7820b484934120e2321ec717cf03",
+      "bytes": 509,
+      "sha256": "4cca16d999163fadd440ed65f62b95f0d45c4dc29dc33d9369e312038cc766aa"
+    },
+    {
+      "path": "replay/receive_provider_page_contract.py",
+      "mode": "100644",
+      "gitBlob": "68a539760990dcdd584ad54cd9107b3006d8b3b6",
+      "bytes": 11713,
+      "sha256": "4650abbddcc0d74307f66424ec14c2d4d1c6645ce26b5af83d1018d463278a98"
+    },
+    {
+      "path": "replay/receiver-diff.txt",
+      "mode": "100644",
+      "gitBlob": "b750358f49d2fbed37dab65c7ebcafc7c49e2ad4",
+      "bytes": 7685,
+      "sha256": "8339ea61c21e348f2636652d154a3c160aab95ccee34b872796096b431537e9b"
+    }
+  ]
+}
