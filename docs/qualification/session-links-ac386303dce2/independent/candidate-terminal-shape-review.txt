@@ -1,0 +1,48 @@
+test_first_terminal_object_preserves_single_resource_compatibility (__main__.TerminalPageShapeReceiving.test_first_terminal_object_preserves_single_resource_compatibility) ... HTTP Request: GET http://127.0.0.1:37915/health "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:37915/fetch "HTTP/1.0 200 OK"
+ok
+test_later_terminal_page_cannot_turn_a_collection_into_an_object (__main__.TerminalPageShapeReceiving.test_later_terminal_page_cannot_turn_a_collection_into_an_object) ... HTTP Request: GET http://127.0.0.1:41865/health "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:41865/fetch "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:41865/fetch "HTTP/1.0 200 OK"
+
+  test_later_terminal_page_cannot_turn_a_collection_into_an_object (__main__.TerminalPageShapeReceiving.test_later_terminal_page_cannot_turn_a_collection_into_an_object) (shape='object') ... FAIL
+HTTP Request: GET http://127.0.0.1:45285/health "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:45285/fetch "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:45285/fetch "HTTP/1.0 200 OK"
+  test_later_terminal_page_cannot_turn_a_collection_into_an_object (__main__.TerminalPageShapeReceiving.test_later_terminal_page_cannot_turn_a_collection_into_an_object) (shape='html') ... FAIL
+HTTP Request: GET http://127.0.0.1:33881/health "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:33881/fetch "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:33881/fetch "HTTP/1.0 200 OK"
+  test_later_terminal_page_cannot_turn_a_collection_into_an_object (__main__.TerminalPageShapeReceiving.test_later_terminal_page_cannot_turn_a_collection_into_an_object) (shape='empty') ... FAIL
+
+======================================================================
+FAIL: test_later_terminal_page_cannot_turn_a_collection_into_an_object (__main__.TerminalPageShapeReceiving.test_later_terminal_page_cannot_turn_a_collection_into_an_object) (shape='object')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/canvas-receiving-ac386303dce2/test_terminal_page_shape_receiving.py", line 28, in test_later_terminal_page_cannot_turn_a_collection_into_an_object
+    with self.assertRaisesRegex(RuntimeError, 'non-list|collection|shape|list'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: RuntimeError not raised
+
+======================================================================
+FAIL: test_later_terminal_page_cannot_turn_a_collection_into_an_object (__main__.TerminalPageShapeReceiving.test_later_terminal_page_cannot_turn_a_collection_into_an_object) (shape='html')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/canvas-receiving-ac386303dce2/test_terminal_page_shape_receiving.py", line 28, in test_later_terminal_page_cannot_turn_a_collection_into_an_object
+    with self.assertRaisesRegex(RuntimeError, 'non-list|collection|shape|list'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: RuntimeError not raised
+
+======================================================================
+FAIL: test_later_terminal_page_cannot_turn_a_collection_into_an_object (__main__.TerminalPageShapeReceiving.test_later_terminal_page_cannot_turn_a_collection_into_an_object) (shape='empty')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/canvas-receiving-ac386303dce2/test_terminal_page_shape_receiving.py", line 28, in test_later_terminal_page_cannot_turn_a_collection_into_an_object
+    with self.assertRaisesRegex(RuntimeError, 'non-list|collection|shape|list'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: RuntimeError not raised
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.161s
+
+FAILED (failures=3)

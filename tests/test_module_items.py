@@ -99,31 +99,42 @@ def test_broker_module_fallback_receives_multiple_pages_through_actual_client(mo
     def broker_transport(method, url, **kwargs):
         if method == "GET":
             assert url == f"{client_module.broker_base()}/health"
-            return httpx.Response(200, json={"ok": True})
+            return httpx.Response(200, json={
+                "ok": True, "base_url": "https://canvas.invalid", "link_pagination": True,
+            })
         assert method == "POST"
         assert url == f"{client_module.broker_base()}/fetch"
         envelope = kwargs["json"]
         assert envelope["method"] == "GET"
         path = envelope["path"]
-        assert path.startswith("/api/v1/courses/42/modules")
-        parsed = httpx.URL("https://canvas.invalid" + path)
-        requests.append((parsed.path, parsed.params.get("page")))
+        parsed = httpx.URL(path if path.startswith("https://") else "https://canvas.invalid" + path)
+        assert parsed.host == "canvas.invalid"
+        assert parsed.path.startswith("/api/v1/courses/42/modules")
+        requests.append((parsed.path, parsed.params.get("after")))
+        link = ""
         if parsed.path == "/api/v1/courses/42/modules":
             data = [{"id": 7, "items_count": 51}]
         else:
             assert parsed.path == "/api/v1/courses/42/modules/7/items"
             assert parsed.params.get("per_page") == "50"
-            data = items[50:] if parsed.params.get("page") == "2" else items[:50]
-        return httpx.Response(200, json={"ok": True, "response": {"status": 200, "json": data}})
+            if parsed.params.get("after") == "items/second":
+                data = items[50:]
+            else:
+                data = items[:50]
+                link = ('<https://canvas.invalid/api/v1/courses/42/modules/7/items'
+                        '?after=items%2Fsecond&per_page=50>; rel="next"')
+        return httpx.Response(200, json={"ok": True, "response": {
+            "status": 200, "json": data, "headers": {"link": link},
+        }})
 
     monkeypatch.setattr(client_module, "_broker_request", broker_transport)
     with CanvasAPI(CanvasClient(token="", base_url="https://canvas.invalid")) as api:
         result = api.list_modules(42)
     assert [item["id"] for item in result[0]["items"]] == list(range(1, 52))
     assert requests == [
-        ("/api/v1/courses/42/modules", "1"),
-        ("/api/v1/courses/42/modules/7/items", "1"),
-        ("/api/v1/courses/42/modules/7/items", "2"),
+        ("/api/v1/courses/42/modules", None),
+        ("/api/v1/courses/42/modules/7/items", None),
+        ("/api/v1/courses/42/modules/7/items", "items/second"),
     ]
 
 

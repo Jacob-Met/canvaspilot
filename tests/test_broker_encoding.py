@@ -149,9 +149,15 @@ def test_paginated_includes_survive_every_page(broker, monkeypatch):
 
     def page(job):
         broker.append(job)
-        number = int(query(job)["page"][0])
+        number = int(query(job).get("page", ["1"])[0])
         start = (number - 1) * 2
-        return {"ok": True, "response": {"status": 200, "json": rows[start:start + 2]}}
+        next_url = (
+            'https://canvas.instructure.com/api/v1/courses/1/modules'
+            '?include%5B%5D=items&per_page=2&page=2'
+        )
+        link = f'<{next_url}>; rel="next"' if number == 1 else ''
+        return {"ok": True, "response": {"status": 200, "json": rows[start:start + 2],
+                                         "headers": {"link": link}}}
 
     monkeypatch.setattr(session_broker, "_call", page)
     with CanvasClient(token="") as client:
@@ -159,7 +165,7 @@ def test_paginated_includes_survive_every_page(broker, monkeypatch):
 
     assert result == rows
     assert [query(job) for job in broker] == [
-        {"include[]": ["items"], "per_page": ["2"], "page": ["1"]},
+        {"include[]": ["items"], "per_page": ["2"]},
         {"include[]": ["items"], "per_page": ["2"], "page": ["2"]},
     ]
     assert params == {"include[]": ["items"], "per_page": 2}

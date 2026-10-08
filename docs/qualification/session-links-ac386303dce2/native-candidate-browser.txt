@@ -1,0 +1,8 @@
+Exit code: 0
+test_real_browser_returns_link_only_and_keeps_session_fetch (__main__.BrowserLinkMetadata.test_real_browser_returns_link_only_and_keeps_session_fetch) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 1.004s
+
+OK
+

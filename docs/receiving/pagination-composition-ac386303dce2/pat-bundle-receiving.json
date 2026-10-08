@@ -1,0 +1,20 @@
+{
+  "bundle_sha256": "d6ac4960d263b376b4f9717e6711e8e68ebbfa44be7e43ae6be67c373caa7a55",
+  "bundle_bytes": 46354,
+  "baseline": "e20890089f6338de655a7c6ea7f0ada6d5c8fe6b",
+  "both_donor_commits_absent_before_fetch": true,
+  "fetch_exit_code": 0,
+  "fetch_stdout": "",
+  "fetch_stderr": "From /dev/shm/runtime-canvas-composition-ac386303dce2/docs/receiving/pagination-composition-ac386303dce2/pat-donor-history.bundle\n * [new branch]      received-pat-composition -> received-pat-composition\n * [new branch]      received-pat-increment   -> received-pat-increment\n",
+  "received": [
+    {
+      "commit": "2e51d58905d999e5fb8f3d34a7f56f17bf5f8c61",
+      "client_sha256": "02ea5ff157a1fb310b35ed3b41d1fbc5a09a928987cabebd34bbc7cafc830222"
+    },
+    {
+      "commit": "e678faaa4809ac0eddfd17228c1e940d19865217",
+      "client_sha256": "82ac737ec34259b42a1629ab40bddf5d54aaafe17d178cdcf56983ea5c440395"
+    }
+  ],
+  "github_commit_lookup": "Both donor commit lookups returned404; this bundle retains the genuine unpublished objects without claiming they exist in GitHub."
+}
