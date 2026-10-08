@@ -2,8 +2,10 @@
 from __future__ import annotations
 
 import json
+import os
 import traceback
 from datetime import UTC, datetime, timedelta
+from pathlib import Path
 
 from canvaspilot.api import CanvasAPI
 from canvaspilot.client import CanvasClient, broker_health
@@ -134,8 +136,6 @@ passed = sum(1 for r in results if r["ok"])
 failed = [r for r in results if not r["ok"]]
 summary = {"passed": passed, "failed": len(failed), "total": len(results), "failures": failed}
 print(json.dumps({"SUMMARY": summary}, indent=2, default=str), flush=True)
-import os
-from pathlib import Path
 
 out_dir = Path(os.environ.get("CANVASPILOT_REPORTS") or Path.home() / ".canvaspilot" / "reports")
 out_dir.mkdir(parents=True, exist_ok=True)
