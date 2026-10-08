@@ -186,6 +186,17 @@ def main(argv: list[str] | None = None) -> None:
     history.add_argument("course_id", help="Positive numeric Canvas course ID")
     history.add_argument("assignment_id", help="Positive numeric Canvas assignment ID")
 
+    history_export = sub.add_parser(
+        "export-submission-history",
+        help="Save returned self submission versions to a new offline HTML report",
+    )
+    add_common(history_export)
+    history_export.add_argument("course_id", help="Positive numeric Canvas course ID")
+    history_export.add_argument("assignment_id", help="Positive numeric Canvas assignment ID")
+    history_export.add_argument(
+        "--out", required=True, type=Path, help="New HTML report; existing paths are protected",
+    )
+
     agenda = sub.add_parser(
         "agenda", help="Read selected course events and assignment deadlines together",
         description=(
@@ -426,6 +437,38 @@ def main(argv: list[str] | None = None) -> None:
                 raise SystemExit(1) from None
             finally:
                 http_log.setLevel(previous_level)
+            print(json.dumps({"ok": True, "output": str(args.out), **report}, indent=2))
+        elif args.cmd == "export-submission-history":
+            import os
+
+            import httpx
+
+            from canvaspilot.client import CanvasAuthError
+            from canvaspilot.page_export import write_page_packet
+            from canvaspilot.submission_history_export import (
+                build_submission_history_report,
+            )
+
+            http_log = logging.getLogger("httpx")
+            previous_level = http_log.level
+            http_log.setLevel(max(http_log.getEffectiveLevel(), logging.WARNING))
+            try:
+                if os.path.lexists(args.out):
+                    raise FileExistsError("Output path already exists; choose a new HTML file")
+                content, report = build_submission_history_report(
+                    api, args.course_id, args.assignment_id,
+                )
+                # Reuse the current complete-byte, exclusive HTML publisher.
+                cleanup_warning = write_page_packet(args.out, content)
+            except (CanvasAuthError, httpx.HTTPError, ValueError, TypeError, OSError) as error:
+                print(json.dumps({
+                    "ok": False, "error": type(error).__name__, "message": str(error),
+                }), file=sys.stderr)
+                raise SystemExit(1) from None
+            finally:
+                http_log.setLevel(previous_level)
+            if cleanup_warning:
+                report["cleanup_warning"] = cleanup_warning
             print(json.dumps({"ok": True, "output": str(args.out), **report}, indent=2))
         elif args.cmd == "submission-history":
             import httpx
