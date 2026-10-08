@@ -1,0 +1,38 @@
+{
+  "recordedAt": "2026-10-08T16:31:44.066886+00:00",
+  "reviewer": "/root",
+  "receiptKind": "Independent source review communicated through the active parent task",
+  "finding": "Root reviewed the renderer, full CLI export registration and dispatch, renderer tests, CLI tests and complete guide from the exact accepted product payload. No actionable defect was found: normalized facts, unsupported values, zero and unknown distinctions stay visible; provider text is escaped; original JSON is preserved; no completion is inferred; publication uses the existing race-safe new-file publisher and restores the scoped logging level.",
+  "boundary": "This is source review, separate from author and runtime independent executions. No new behavioral run is attributed to root in this receipt. Late current-main composition is covered by the adjacent late-current-main.json.",
+  "reviewedOriginalNativeCommit": "dbb4a4fa04c25849a079f89a67b3049a2f55946f",
+  "reviewedOriginalNativeTree": "f17362750896b2834b4321151403b61e64429486",
+  "reviewedSourceFiles": [
+    {
+      "path": "docs/module-progress-export.md",
+      "blob": "fa650a6b9d8cd51f134b576eb4f40975edef1a4c"
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "blob": "d2cc746c8be14f3b10dcb42bb32d497b989980b4"
+    },
+    {
+      "path": "src/canvaspilot/module_progress_export.py",
+      "blob": "8ccb9f1262790a744418d4212e072ee43031ab88"
+    },
+    {
+      "path": "tests/test_module_progress_export.py",
+      "blob": "10ad56e53ecbdc7945471fe119a64a54cfd0c274"
+    },
+    {
+      "path": "tests/test_module_progress_export_cli.py",
+      "blob": "6c51c60c505bd3d76468d569f8b07e1952c47e87"
+    }
+  ],
+  "receivedCurrentPayload": {
+    "sha256": "62aa1e939723a8351ff32e9ac35a328b2da6f7e75d0240241d1954b94eb05ef7",
+    "nativeCommit": "eb0f4f9389d82215258ece2e8cceacc6baf8d7d5",
+    "nativeTree": "6ce1a36ab2039488f24b2c333973a0335d6b353d",
+    "relationship": "Received for publication. Four original feature additions stay byte-identical; current CLI/README insertions are covered separately by current-composition and late-current-main source proofs."
+  },
+  "correction": "Before publication, root corrected this receipt's original draft attribution, which named the combined current packet as though that entire source were reviewed. The actual detailed source review read the original accepted product files named here; no native or browser execution is attributed to root."
+}

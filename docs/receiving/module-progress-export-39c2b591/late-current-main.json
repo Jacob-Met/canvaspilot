@@ -1,0 +1,481 @@
+{
+  "observedAt": "2026-10-08T16:28:10.322614+00:00",
+  "repository": "Jacob-Met/canvaspilot",
+  "issue": 59,
+  "previousBase": "0480cbce421bae532e3e909899fc8fb83789e878",
+  "previousTree": "f9ecaa4311d93cfe3a1fd1c9cc140834e2449341",
+  "currentMain": "6c4d5d2e7526cddc1aa6c90bfbef2d1188382ad3",
+  "currentMainTree": "50b0e4001ccad72078b073e2cc3606b619e064ff",
+  "sealedAcceptedCommit": "eb0f4f9389d82215258ece2e8cceacc6baf8d7d5",
+  "sealedAcceptedTree": "6ce1a36ab2039488f24b2c333973a0335d6b353d",
+  "currentBaseLeaves": 1133,
+  "predictedPublicationLeaves": 1170,
+  "predictedPublicationTree": "fd2f1f969a024f38d1644e8aa6176606c45bc2fb",
+  "changedUpstreamLeaves": [
+    {
+      "path": "README.md",
+      "before": {
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d30540e34b17788c88f5fd79c84ef0e0fc507fc5"
+      },
+      "after": {
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ec4830e30ac59b7f0e02cc19e08c14475d32bedf"
+      }
+    },
+    {
+      "path": "docs/receiving/files-completeness-f5611f6dc10a/README.md",
+      "before": null,
+      "after": {
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7de7f19e9ec579e1a67a0bdef9d561e43b7cad25"
+      }
+    },
+    {
+      "path": "docs/receiving/files-completeness-f5611f6dc10a/baseline-cli.json",
+      "before": null,
+      "after": {
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3f97a8c317967acfbdf3dfbbad688f3ccb181cc9"
+      }
+    },
+    {
+      "path": "docs/receiving/files-completeness-f5611f6dc10a/baseline-pytest.log",
+      "before": null,
+      "after": {
+        "mode": "100644",
+        "type": "blob",
+        "sha": "fddeb133867aa4a4c7ce393e20a17edabeefd7d1"
+      }
+    },
+    {
+      "path": "docs/receiving/files-completeness-f5611f6dc10a/candidate-cli.json",
+      "before": null,
+      "after": {
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e37b712e3c8fd5cb2c43092bb71a5121d2062be2"
+      }
+    },
+    {
+      "path": "docs/receiving/files-completeness-f5611f6dc10a/candidate-pytest.log",
+      "before": null,
+      "after": {
+        "mode": "100644",
+        "type": "blob",
+        "sha": "610044ccb7239f365421de6f38729d45fc23a8e3"
+      }
+    },
+    {
+      "path": "docs/receiving/files-completeness-f5611f6dc10a/original-cli-driver.py.txt",
+      "before": null,
+      "after": {
+        "mode": "100644",
+        "type": "blob",
+        "sha": "561100b1c703cb856c0703917876c31d428933f1"
+      }
+    },
+    {
+      "path": "docs/receiving/files-completeness-f5611f6dc10a/receipt.json",
+      "before": null,
+      "after": {
+        "mode": "100644",
+        "type": "blob",
+        "sha": "440e9886c5836e5242a14c54fec6fec7e421b47e"
+      }
+    },
+    {
+      "path": "docs/receiving/files-completeness-f5611f6dc10a/ruff.log",
+      "before": null,
+      "after": {
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1f5f344d054fae10f39140fb7199c99321d9190a"
+      }
+    },
+    {
+      "path": "docs/receiving/files-completeness-f5611f6dc10a/setup-cli.json",
+      "before": null,
+      "after": {
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ec15b868726b75249fd3c52ac8b7ba2cdd05294f"
+      }
+    },
+    {
+      "path": "docs/receiving/quiz-cli-3dcb83a1/README.md",
+      "before": null,
+      "after": {
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6e95d360403668897435355ff5c570ae09e9427b"
+      }
+    },
+    {
+      "path": "docs/receiving/quiz-cli-3dcb83a1/author-results.json",
+      "before": null,
+      "after": {
+        "mode": "100644",
+        "type": "blob",
+        "sha": "966278c81872fd8deeea9573568db9d71d58fb99"
+      }
+    },
+    {
+      "path": "docs/receiving/quiz-cli-3dcb83a1/current-owner-source-composition.json",
+      "before": null,
+      "after": {
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c9b2cc1ecba5bfd8a45c67e07c9290ef2478c6d5"
+      }
+    },
+    {
+      "path": "docs/receiving/quiz-cli-3dcb83a1/current-source-correspondence.json",
+      "before": null,
+      "after": {
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6202ec172fc32b675386f23b2502c78236154492"
+      }
+    },
+    {
+      "path": "docs/receiving/quiz-cli-3dcb83a1/environment.json",
+      "before": null,
+      "after": {
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7cd956fa3c5868213de4b95cd5c67fb3edb29d10"
+      }
+    },
+    {
+      "path": "docs/receiving/quiz-cli-3dcb83a1/fixture-correction.diff",
+      "before": null,
+      "after": {
+        "mode": "100644",
+        "type": "blob",
+        "sha": "44096d5346c128b1cc4c29185cfe481c4fd2f561"
+      }
+    },
+    {
+      "path": "docs/receiving/quiz-cli-3dcb83a1/independent/REVIEW.md",
+      "before": null,
+      "after": {
+        "mode": "100644",
+        "type": "blob",
+        "sha": "29524946633e6e3a0c1d97e817ddc556deef1b73"
+      }
+    },
+    {
+      "path": "docs/receiving/quiz-cli-3dcb83a1/independent/broker-results.json",
+      "before": null,
+      "after": {
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0f3bb19fe4f301bf07041e1861d3e6f3725ceb64"
+      }
+    },
+    {
+      "path": "docs/receiving/quiz-cli-3dcb83a1/independent/contract.json",
+      "before": null,
+      "after": {
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5245284bf5745615c9a431a4e15267ff09d433ea"
+      }
+    },
+    {
+      "path": "docs/receiving/quiz-cli-3dcb83a1/independent/files-manifest.json",
+      "before": null,
+      "after": {
+        "mode": "100644",
+        "type": "blob",
+        "sha": "05299469cfd67d0e24a7a6ceadd8e349b92c1c9f"
+      }
+    },
+    {
+      "path": "docs/receiving/quiz-cli-3dcb83a1/independent/receive_broker.py",
+      "before": null,
+      "after": {
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0b99bda52dc03e8b33b29ee1adf97f39f119903b"
+      }
+    },
+    {
+      "path": "docs/receiving/quiz-cli-3dcb83a1/source-correspondence.json",
+      "before": null,
+      "after": {
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f392cb6b694735c2424edc1dd88d9fab310bf35f"
+      }
+    },
+    {
+      "path": "docs/receiving/quiz-cli-3dcb83a1/source-pins.json",
+      "before": null,
+      "after": {
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a25127f3c2d53fc4d45a735a37353b34eb1eaf57"
+      }
+    },
+    {
+      "path": "docs/receiving/quiz-cli-3dcb83a1/submission-source-correspondence.json",
+      "before": null,
+      "after": {
+        "mode": "100644",
+        "type": "blob",
+        "sha": "41afdf88031decaec0b31f7fb0411ca667757383"
+      }
+    },
+    {
+      "path": "docs/receiving/quiz-cli-3dcb83a1/test_quiz_cli.initial.py.txt",
+      "before": null,
+      "after": {
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b19e5649d990ea83aa57b7ce1012a06315977390"
+      }
+    },
+    {
+      "path": "src/canvaspilot/api.py",
+      "before": {
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a9d16294a673f8f1df7b76b52f4b3ab059f69c64"
+      },
+      "after": {
+        "mode": "100644",
+        "type": "blob",
+        "sha": "cd17584bed618fb4a42d7128d204b2683b889600"
+      }
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "before": {
+        "mode": "100644",
+        "type": "blob",
+        "sha": "82f1cdfe7cec50413222b3d4b12a27aea587a4d1"
+      },
+      "after": {
+        "mode": "100644",
+        "type": "blob",
+        "sha": "226f3f7d502dd61ad03c59cd8212289d133a0190"
+      }
+    },
+    {
+      "path": "tests/test_files_completeness.py",
+      "before": null,
+      "after": {
+        "mode": "100644",
+        "type": "blob",
+        "sha": "96e25ab6082a06ec18d1ff56dbb6ab5f954445be"
+      }
+    },
+    {
+      "path": "tests/test_quiz_cli.py",
+      "before": null,
+      "after": {
+        "mode": "100644",
+        "type": "blob",
+        "sha": "527c57f3d66e4e167c96bbc51d1fcc8bd7e56fcf"
+      }
+    }
+  ],
+  "currentMainProtectedLeaves": 1131,
+  "inverseProof": {
+    "cli": "Removing the exact frozen parser/dispatch spans restores complete current CLI bytes.",
+    "readme": "Removing the exact frozen paragraph restores complete current README bytes. The paragraph remains in module-progress before the new Course files heading."
+  },
+  "apiProof": "Removing only CanvasAPI.list_files from both previous/current API ASTs makes them identical; module-progress remains exact.",
+  "exactClosure": [
+    {
+      "path": "src/canvaspilot/module_progress.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a9d3e4bbea22067f76110f03a5f31a5bc9d8de05"
+    },
+    {
+      "path": "src/canvaspilot/client.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1db4b1135305f7e410025ae7937f9a6cd349f020"
+    },
+    {
+      "path": "src/canvaspilot/calendar_export.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ef74cfdf50fd894327dbe45a9a9d43042953bc31"
+    },
+    {
+      "path": "src/canvaspilot/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "74a7a6087bf81fd7c75c15769b30408039618e0f"
+    },
+    {
+      "path": "pyproject.toml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "76eba6d30696b4f2733539cd47df6e178bc0f585"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ef7bbebe192c0db55dc4467e064ba44805c13446"
+    }
+  ],
+  "newBehaviorExecutions": 0,
+  "sourceMutation": "None in either frozen source. Separate Git object/index composition only.",
+  "readmeSha256": "286d1d869ad5fdd370a858c093f81b353db31bc992c9ae6c3969ffba667809a5",
+  "cliSha256": "eea5225b25cbd967c90cded3daa077cd37aa5346cda95fa9cb16a51ba85432a4",
+  "ownership": [
+    {
+      "number": 68,
+      "title": "Read current-user planner items through the native CLI",
+      "updated_at": "2026-10-08T15:50:00Z",
+      "comments": 0
+    },
+    {
+      "number": 67,
+      "title": "Compare two returned submission records in an offline reading report",
+      "updated_at": "2026-10-08T15:46:38Z",
+      "comments": 0
+    },
+    {
+      "number": 66,
+      "title": "Review and print selected-course agendas offline with exact source context",
+      "updated_at": "2026-10-08T15:46:30Z",
+      "comments": 0
+    },
+    {
+      "number": 65,
+      "title": "Save selected course syllabi as an offline reading packet",
+      "updated_at": "2026-10-08T15:34:05Z",
+      "comments": 0
+    },
+    {
+      "number": 59,
+      "title": "Save a readable offline report of Canvas-reported module progress",
+      "updated_at": "2026-10-08T15:07:52Z",
+      "comments": 0
+    },
+    {
+      "number": 57,
+      "title": "Export an offline assignment study workspace with personal notes and saved working copies",
+      "updated_at": "2026-10-08T14:33:53Z",
+      "comments": 0
+    },
+    {
+      "number": 54,
+      "title": "Save selected course pages as an offline reading packet",
+      "updated_at": "2026-10-08T14:03:55Z",
+      "comments": 0
+    },
+    {
+      "number": 47,
+      "title": "Review Canvas-reported course grades and assignment-group context through CLI and MCP",
+      "updated_at": "2026-10-08T14:31:59Z",
+      "comments": 5
+    }
+  ],
+  "openPRs": [
+    {
+      "number": 60,
+      "title": "Save submission feedback as a readable local HTML sheet",
+      "head": "cbf24dcbc7b82ad75e4efb2bf1e2002bfacfa2f0",
+      "base": "a5ce672e5b3580c1f52e13c49eefee830f11346c",
+      "updated_at": "2026-10-08T15:08:11Z"
+    },
+    {
+      "number": 50,
+      "title": "Add student course grade review to CLI and MCP",
+      "head": "9db3a4a75c8204a94e51dd3bf301c8ef0e92549f",
+      "base": "728d2d8b67b6f0812956fecdeeb50e25ee32e979",
+      "updated_at": "2026-10-08T16:06:16Z"
+    },
+    {
+      "number": 28,
+      "title": "T164 demo: untested lines should FAIL the diff-cover gate",
+      "head": "0f37f89c548d0e677ae4c4ca7aa8dc20d15dae0b",
+      "base": "b0655cfc6f298c956fcdd27fbba32e3c5609516f",
+      "updated_at": "2026-10-07T19:37:00Z"
+    },
+    {
+      "number": 27,
+      "title": "T164: diff-cover CI gate with per-file baseline (pilot)",
+      "head": "d5462863bad2d0abab4656ad6b6ea5fe8426b936",
+      "base": "b0655cfc6f298c956fcdd27fbba32e3c5609516f",
+      "updated_at": "2026-10-07T19:04:17Z"
+    },
+    {
+      "number": 25,
+      "title": "T156: pin pypi lockfile for mcp SDK consumers + CI freshness gate",
+      "head": "e33e562344686664464fa30eecbd4b4c866d7543",
+      "base": "b0655cfc6f298c956fcdd27fbba32e3c5609516f",
+      "updated_at": "2026-10-07T03:19:29Z"
+    },
+    {
+      "number": 24,
+      "title": "T158: Add SHA-pinned gitleaks secret-scan CI gate",
+      "head": "259e62af72e1af8c1d01d98cbba05acf5bcfcd8e",
+      "base": "b0655cfc6f298c956fcdd27fbba32e3c5609516f",
+      "updated_at": "2026-10-07T01:34:40Z"
+    },
+    {
+      "number": 23,
+      "title": "docs: add agent operations handbook (T133)",
+      "head": "56d06e7c07b1761fa93f282f60b1d35079089ccb",
+      "base": "b0655cfc6f298c956fcdd27fbba32e3c5609516f",
+      "updated_at": "2026-10-07T03:15:08Z"
+    },
+    {
+      "number": 9,
+      "title": "[security] Shared-secret auth for session-broker localhost API (proposal for #5)",
+      "head": "e1a100a8e589fd65e98db1c42557eda80b00d960",
+      "base": "e5985068e64643152919f64d89540dae3dcf70e7",
+      "updated_at": "2026-10-05T15:41:55Z"
+    },
+    {
+      "number": 8,
+      "title": "Draft: broker shared-secret auth for localhost API (X-Broker-Token)",
+      "head": "a33769661556002489f7b105c504ba62e5e51c10",
+      "base": "e5985068e64643152919f64d89540dae3dcf70e7",
+      "updated_at": "2026-10-04T00:50:34Z"
+    },
+    {
+      "number": 7,
+      "title": "broker: require shared-secret token on /fetch, /status, /shutdown",
+      "head": "8aa08f7da57c2061e7e4a92b58253f8a97e3db38",
+      "base": "e5985068e64643152919f64d89540dae3dcf70e7",
+      "updated_at": "2026-10-07T18:39:21Z"
+    }
+  ],
+  "meaning": "Source-only composition on current 6c4d. Prior 0480 qualification stays historical; no current browser/full-suite execution claimed. The predictedPublicationTree excludes this late receipt and root-source-review.json, whose final union is recorded externally.",
+  "nativeAudit": {
+    "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/audit-6c4d5d2e/current-main-audit.json",
+    "sha256": "f3e8571a4b11d04fd0803e26065a7925540f7391634b874bada5fae75b5a91aa",
+    "proofExecution": {
+      "startedAt": "2026-10-08T16:28:08.280008+00:00",
+      "finishedAt": "2026-10-08T16:28:10.334256+00:00",
+      "returncode": 0,
+      "stdoutBytes": 715,
+      "stderrBytes": 0,
+      "script": "/Users/me/hamon-canvas-module-export-39c2b591-v1/tools/audit-current-main-6c4d.py"
+    }
+  },
+  "preparationFailures": {
+    "initial": "PID 36259 helper failed Python parsing before any statements: unmatched right parenthesis; one extra parenthesis removed.",
+    "retiredLaunch": {
+      "pid": 37788,
+      "sessionResult": "No session found; no final stdout or process exit retained",
+      "subsequentReadback": "Own audit clone HEAD equals eb0f4f93; no process remains; no fetch logs existed",
+      "scope": "No execution or product qualification claim attaches to retired launch"
+    }
+  }
+}
