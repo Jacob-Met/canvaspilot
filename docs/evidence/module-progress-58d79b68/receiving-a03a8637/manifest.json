@@ -1,0 +1,133 @@
+{
+  "schema": 1,
+  "group": "current-parent",
+  "source": "/home/jacob/canvaspilot-module-progress-proof-58d79b68/current-parent",
+  "files": [
+    {
+      "path": "calendar-parser-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 436
+    },
+    {
+      "path": "calendar-parser-stdout.log",
+      "bytes": 716,
+      "sha256": "48f339e1a9fbea14265dd27e1b6583320018dd51661a4ed44d540f06746574a7",
+      "mode": 436
+    },
+    {
+      "path": "composition-source.json",
+      "bytes": 766,
+      "sha256": "8fe42656c58f83cd9bd5c5bb954f1e785a4d33db474709277b5ec5677fefb2f3",
+      "mode": 436
+    },
+    {
+      "path": "current-parent-merge.json",
+      "bytes": 493,
+      "sha256": "e68a7a4c8c42cf31ebb52e23cf2099d8bf4f2c1540c58b186c87e0ae00d4d37a",
+      "mode": 436
+    },
+    {
+      "path": "module-dispatch-block.txt",
+      "bytes": 563,
+      "sha256": "b9875e566dd44a26736ef4f2952ec37b3c2578b871701ec6b11cf28eaafd944e",
+      "mode": 436
+    },
+    {
+      "path": "module-parser-block.txt",
+      "bytes": 308,
+      "sha256": "7a3e6db2f4b61e0854aee6cc8ceb9f7144ff140abad87bc1e41cdf73fafdc763",
+      "mode": 436
+    },
+    {
+      "path": "preservation.json",
+      "bytes": 3181,
+      "sha256": "66c0ec9990b504fb5314f66c9c0fc0d97c5429ae3bf3e5e013aea8e64e848dde",
+      "mode": 436
+    },
+    {
+      "path": "process/test_real_cli_and_mcp_report_t0/mcp-boundary-stderr.log",
+      "bytes": 117,
+      "sha256": "9f374ae9476e53082b1f9d70dedd031b9298748fd4b7bc778aa8f58b23ac7927",
+      "mode": 436
+    },
+    {
+      "path": "process/test_real_cli_and_mcp_report_t0/normalized-reader-boundary.json",
+      "bytes": 7326,
+      "sha256": "fba3f07ad9347ffa563b4e8255ed332e01a9b4f3ce6ceb18008e71be95f4f653",
+      "mode": 436
+    },
+    {
+      "path": "process/test_real_cli_course_selection0/cli-receiving.json",
+      "bytes": 19297,
+      "sha256": "b320be2320195d688b1e2e3f9132c51241cbc53c8644e11301263ab3e6b43baf",
+      "mode": 436
+    },
+    {
+      "path": "pytest.xml",
+      "bytes": 537,
+      "sha256": "79d33b55cafc8e6d939b98f650593ae923ae0e612b0ab96a5f673dd5bab56afe",
+      "mode": 436
+    },
+    {
+      "path": "readme-contribution.patch",
+      "bytes": 2738,
+      "sha256": "2f5ffc028af80e5df58ef2126bb1005e1d7f49b63e69307048f4c88f1f7b0e4d",
+      "mode": 436
+    },
+    {
+      "path": "README.md",
+      "bytes": 1440,
+      "sha256": "6a36fb05dc7ee932eb694ef4fbe0b962046094a2a466843a8edac6c115843b19",
+      "mode": 436
+    },
+    {
+      "path": "receiving.json",
+      "bytes": 1859,
+      "sha256": "fdd6dec212920fad43d1290507f4ced1fbca773a5dbd059822d34894e23f448b",
+      "mode": 436
+    },
+    {
+      "path": "resolved-cli-mcp-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 436
+    },
+    {
+      "path": "resolved-cli-mcp-stdout.log",
+      "bytes": 99,
+      "sha256": "fd9545485514b9e149b6c5a7c02823301d91c763fcf7888d7e6f0acd748b3dc6",
+      "mode": 436
+    },
+    {
+      "path": "ruff-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 436
+    },
+    {
+      "path": "ruff-stdout.log",
+      "bytes": 19,
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "mode": 436
+    },
+    {
+      "path": "source-whitespace.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 436
+    },
+    {
+      "path": "source-whitespace.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 436
+    },
+    {
+      "path": "unresolved-cli.py.txt",
+      "bytes": 12559,
+      "sha256": "66369d91077440d651b10177124b19833fd32e21aa735d07be1ee1b2977d734b",
+      "mode": 436
+    }
+  ]
+}

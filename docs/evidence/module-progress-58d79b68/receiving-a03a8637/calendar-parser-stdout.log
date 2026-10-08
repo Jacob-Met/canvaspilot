@@ -1,0 +1,17 @@
+usage: canvaspilot export-calendar [-h] [--base-url BASE_URL]
+                                   [--profile PROFILE] [--token TOKEN]
+                                   --out OUT
+                                   [--bucket {upcoming,past,overdue,undated,ungraded,unsubmitted,all}]
+                                   course_ids [course_ids ...]
+
+positional arguments:
+  course_ids
+
+options:
+  -h, --help            show this help message and exit
+  --base-url BASE_URL
+  --profile PROFILE
+  --token TOKEN
+  --out OUT             New calendar file; existing paths are protected
+  --bucket {upcoming,past,overdue,undated,ungraded,unsubmitted,all}
+                        Canvas assignment selection (default: upcoming)

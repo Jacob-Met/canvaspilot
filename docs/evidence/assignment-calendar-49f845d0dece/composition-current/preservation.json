@@ -1,0 +1,15 @@
+{
+  "composition": "6e2e58f4e28e09749f9f97162a8ce460eccdd4b1",
+  "publication_base": "e8cd1aecf8e5ca9ede0313b2576ddd71303b82ad",
+  "sha256": {
+    "src/canvaspilot/calendar_export.py": "f3e06eb68d7f74bb757a28f9cdc9a229f2af9476d4a93ba709698b54ffed82a8",
+    "src/canvaspilot/cli.py": "173df7056f7d86084aa2dc00ba129bf8c36aaf109cdbf9497e24ec436d90d47b",
+    "src/canvaspilot/api.py": "546fd973330ffb3c95c81ba670b5ae2add751a23362c83a370254ea702eee1a0",
+    "tests/test_calendar_export.py": "0774869f562ab1bdff8d09df38216fab7cc44543ded02be620c2a4e5e3a9e17f"
+  },
+  "insertions": {
+    "src/canvaspilot/cli.py": 29,
+    "README.md": 5
+  },
+  "preserved_current_main_files": 185
+}

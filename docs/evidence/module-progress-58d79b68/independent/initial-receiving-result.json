@@ -1,0 +1,14 @@
+{
+  "started_at": "2026-10-08T11:37:58.604Z",
+  "finished_at": "2026-10-08T11:38:13.177Z",
+  "source_commit": "51609ba3f93d20f69616b357c3c6bee19732dfd4",
+  "run_as": "jacob",
+  "exit_status": 1,
+  "signal": null,
+  "tests": 8,
+  "failures": 2,
+  "errors": 2,
+  "skipped": 0,
+  "raw_log_sha256": "20eb88bb72f2e4abeed6cbba8a2a28fb9810754c47f7825142d0b94d252173a7",
+  "observations_sha256": "738d34e8f6db52f902d43b6bb5d401f2daef516dd3d629cdcb7c3d3de2735e2f"
+}

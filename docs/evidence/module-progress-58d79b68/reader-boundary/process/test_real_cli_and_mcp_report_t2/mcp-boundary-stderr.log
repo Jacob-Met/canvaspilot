@@ -1,0 +1,2 @@
+HTTP Request: GET http://127.0.0.1:35577/api/v1/courses/42/modules?include%5B%5D=items&per_page=50 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:35577/api/v1/courses/42/modules/7/items?per_page=50 "HTTP/1.0 200 OK"

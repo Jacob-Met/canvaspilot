@@ -1,0 +1,13 @@
+{
+  "native_initial_source_commit": "7ff3518e9025c6d54899b01da21b378aebd01f3d",
+  "native_corrected_source_commit": "553bce63f7febf2abc123d63e0023da6e1859b02",
+  "base": "72357053a1629c349f700030013559fa6d8130f2",
+  "source_sha256": {
+    "src/canvaspilot/calendar_export.py": "f3e06eb68d7f74bb757a28f9cdc9a229f2af9476d4a93ba709698b54ffed82a8",
+    "src/canvaspilot/cli.py": "28d278a60ee0b5b036948071c0965f42ea3f36cc1892940406577491e2c3ef38",
+    "tests/test_calendar_export.py": "0774869f562ab1bdff8d09df38216fab7cc44543ded02be620c2a4e5e3a9e17f",
+    "docs/calendar-export.md": "24035a63438cfdcdbbf71807db24029fc43a40bc8f7b48e652fb9ba2f9e31df7",
+    "README.md": "2b18f58a59944ea1cc9ab7f72ced77a78323d62296f667c6423185c447197699"
+  },
+  "rejection": "Invalid +00:60 offset normalized to +01:00 and was exported. Independent receiver24pass1fail. Corrected offset grammar preserves valid instants and refuses malformed minute/hour fields."
+}

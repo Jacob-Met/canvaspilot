@@ -1,0 +1,33 @@
+{
+  "ok": true,
+  "output": "/Users/me/workspace/estate/production-evidence-49f845d0dece/canvaspilot-calendar/docs/evidence/assignment-calendar-49f845d0dece/parser-final/revised.ics",
+  "source": "http://127.0.0.1:62478",
+  "bucket": "upcoming",
+  "generated_at": "2026-10-08T11:04:01.989612+00:00",
+  "course_ids": [
+    "42",
+    "77"
+  ],
+  "course_summaries": [
+    {
+      "course_id": "42",
+      "assignments_returned": 2,
+      "events_exported": 1
+    },
+    {
+      "course_id": "77",
+      "assignments_returned": 1,
+      "events_exported": 1
+    }
+  ],
+  "events_exported": 2,
+  "assignments_omitted": [
+    {
+      "course_id": "42",
+      "assignment_id": "2",
+      "reason": "no_due_date"
+    }
+  ],
+  "coverage": "Returned assignment rows only; existing transport pagination limits apply.",
+  "sha256": "13ff3630d5faa4b33757c060ed1510bcac5e576b7c2b10d9c4d28daaeecc9c0b"
+}

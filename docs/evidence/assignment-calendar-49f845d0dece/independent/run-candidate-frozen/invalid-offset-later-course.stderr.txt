@@ -1,0 +1,3 @@
+HTTP Request: GET http://localhost:64527/api/v1/courses/42/assignments?order_by=due_at&include%5B%5D=submission&bucket=upcoming&per_page=50 "HTTP/1.0 200 OK"
+HTTP Request: GET http://localhost:64527/api/v1/courses/77/assignments?order_by=due_at&include%5B%5D=submission&bucket=upcoming&per_page=50 "HTTP/1.0 200 OK"
+{"ok": false, "error": "ValueError", "message": "Assignment 77/901 due_at must be an ISO whole-second timestamp with a timezone"}

@@ -189,3 +189,68 @@ def test_registered_mcp_stdio_progress_journey_and_refusals(receiving, tmp_path)
     (tmp_path / "mcp-receiving.json").write_text(json.dumps({
         "records": records, "requests": fixture.requests,
     }, indent=2))
+
+
+@pytest.mark.parametrize("case", [
+    "singleton_module", "singleton_fallback_item", "replaced_inline_items",
+])
+def test_real_cli_and_mcp_report_the_normalized_reader_boundary(receiving, tmp_path, case):
+    from mcp import ClientSession, StdioServerParameters
+    from mcp.client.stdio import stdio_client
+
+    fixture = receiving
+    modules_route = "GET /api/v1/courses/42/modules"
+    items_route = "GET /api/v1/courses/42/modules/7/items"
+    module = deepcopy(fixture.fixture["routes"][modules_route][0])
+    item = deepcopy(fixture.fixture["routes"][items_route][0])
+    module["items_count"] = 1
+    if case == "singleton_module":
+        module["items"] = [item]
+        fixture.fixture["routes"][modules_route] = module
+    else:
+        fixture.fixture["routes"][modules_route] = [module]
+        if case == "replaced_inline_items":
+            module["items"] = [{"id": "invalid-inline-id", "module_id": 7}]
+        fixture.fixture["routes"][items_route] = item if case == "singleton_fallback_item" else [item]
+    original = deepcopy(fixture.fixture)
+    process = cli("42")
+    assert process.returncode == 0
+    cli_report = json.loads(process.stdout)
+    records = {"case": case, "upstream_fixture": original,
+               "cli": {"exit": process.returncode, "stdout": process.stdout, "stderr": process.stderr}}
+
+    async def call_mcp():
+        parameters = StdioServerParameters(
+            command=sys.executable, args=["-m", "canvaspilot.cli", "mcp"], env=dict(os.environ),
+        )
+        with (tmp_path / "mcp-boundary-stderr.log").open("w") as errlog:
+            async with (
+                stdio_client(parameters, errlog=errlog) as (read, write),
+                ClientSession(read, write, read_timeout_seconds=10) as session,
+            ):
+                await session.initialize()
+                response = await session.call_tool("canvas_module_progress", {"course_id": "42"})
+                wire = response.model_dump(by_alias=True)
+                assert not wire.get("isError", False)
+                records["mcp"] = wire
+                return json.loads("".join(row["text"] for row in wire["content"] if row["type"] == "text"))
+
+    mcp_report = asyncio.run(call_mcp())
+    assert cli_report == mcp_report
+    assert cli_report["reader_source"] == "CanvasAPI.list_modules(detail=full)"
+    assert cli_report["upstream_response_shape"] == "not_observed"
+    assert cli_report["collection_complete"] is None
+    assert [row["id"] for row in cli_report["modules"]] == [7]
+    module_report = cli_report["modules"][0]
+    assert [row["id"] for row in module_report["items"]] == [71]
+    assert module_report["state"] == "started"
+    assert module_report["item_coverage"]["returned_count"] == 1
+    assert module_report["remaining_work"]["incomplete_item_ids"] == []
+    assert fixture.fixture == original
+    assert {request["method"] for request in fixture.requests} == {"GET"}
+    expected_paths = ["/api/v1/courses/42/modules"]
+    if case != "singleton_module":
+        expected_paths.append("/api/v1/courses/42/modules/7/items")
+    assert [request["path"] for request in fixture.requests] == expected_paths * 2
+    records["requests"] = fixture.requests
+    (tmp_path / "normalized-reader-boundary.json").write_text(json.dumps(records, indent=2))

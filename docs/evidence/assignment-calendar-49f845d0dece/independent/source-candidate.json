@@ -1,0 +1,8 @@
+{
+  "head": "553bce63f7febf2abc123d63e0023da6e1859b02",
+  "hashes": {
+    "src/canvaspilot/calendar_export.py": "f3e06eb68d7f74bb757a28f9cdc9a229f2af9476d4a93ba709698b54ffed82a8",
+    "src/canvaspilot/cli.py": "28d278a60ee0b5b036948071c0965f42ea3f36cc1892940406577491e2c3ef38",
+    "tests/test_calendar_export.py": "0774869f562ab1bdff8d09df38216fab7cc44543ded02be620c2a4e5e3a9e17f"
+  }
+}

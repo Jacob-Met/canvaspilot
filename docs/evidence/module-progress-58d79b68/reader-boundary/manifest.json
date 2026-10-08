@@ -1,0 +1,115 @@
+{
+  "schema": 1,
+  "group": "reader-boundary",
+  "source": "/home/jacob/canvaspilot-module-progress-proof-58d79b68/reader-boundary",
+  "files": [
+    {
+      "path": "process/test_real_cli_and_mcp_report_t0/mcp-boundary-stderr.log",
+      "bytes": 117,
+      "sha256": "f6f26b020407584aa47986fd2b6d101d59e5f36a1274bd2379c5c623b2a967df",
+      "mode": 436
+    },
+    {
+      "path": "process/test_real_cli_and_mcp_report_t0/normalized-reader-boundary.json",
+      "bytes": 7326,
+      "sha256": "29c90592ce8764548c675f2ab2310c8b4e6c277e1c8fcda378923e6ae8308bc7",
+      "mode": 436
+    },
+    {
+      "path": "process/test_real_cli_and_mcp_report_t1/mcp-boundary-stderr.log",
+      "bytes": 222,
+      "sha256": "77f4fe2727d1f6aee63410b374cc1f4756b23b3b9da6f60c15f449cdb5a38637",
+      "mode": 436
+    },
+    {
+      "path": "process/test_real_cli_and_mcp_report_t1/normalized-reader-boundary.json",
+      "bytes": 6813,
+      "sha256": "29ebc0c5d754db75e955c63c2b5caf118d70faaa4aa47fd97acf7d06f6846fb6",
+      "mode": 436
+    },
+    {
+      "path": "process/test_real_cli_and_mcp_report_t2/mcp-boundary-stderr.log",
+      "bytes": 222,
+      "sha256": "93ded0ca585663ee4d51a9f2152dacf51b769636574e214a33a3a530f3924b38",
+      "mode": 436
+    },
+    {
+      "path": "process/test_real_cli_and_mcp_report_t2/normalized-reader-boundary.json",
+      "bytes": 6983,
+      "sha256": "0780ef148b0a6613d9e40dae33bf4da9dfd5a42cc9d3128cb741952c646b7085",
+      "mode": 436
+    },
+    {
+      "path": "pytest-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 436
+    },
+    {
+      "path": "pytest-stdout.log",
+      "bytes": 100,
+      "sha256": "3c35af35b4d40daf8276f92cd7bce2148f43d917b6dcbe3b5e430cb9b494cea0",
+      "mode": 436
+    },
+    {
+      "path": "pytest.xml",
+      "bytes": 10518,
+      "sha256": "21e1cf56934969b9a1fc465253b6f8a324d9c358ae2a9a4e5fd7aafa74292a98",
+      "mode": 436
+    },
+    {
+      "path": "README.md",
+      "bytes": 1352,
+      "sha256": "ef55aabcded7711abd4455c6af389f402f3fcd9d86f841052f3ac6cd1e35c13e",
+      "mode": 436
+    },
+    {
+      "path": "ruff-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 436
+    },
+    {
+      "path": "ruff-stdout.log",
+      "bytes": 19,
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "mode": 436
+    },
+    {
+      "path": "source-freeze.json",
+      "bytes": 1448,
+      "sha256": "b1f12f84e655b83bd4db1ac64b621c23307da1fb4705ed68e8b1892426b4aa06",
+      "mode": 436
+    },
+    {
+      "path": "source-whitespace-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 436
+    },
+    {
+      "path": "source-whitespace-stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 436
+    },
+    {
+      "path": "source.patch",
+      "bytes": 8631,
+      "sha256": "1413bd8c9f2a9e0cf3b916018ddbff5777371634e5b4541194dfb6c232952d86",
+      "mode": 436
+    },
+    {
+      "path": "static-checks.json",
+      "bytes": 424,
+      "sha256": "465a598bf34390966bdcebe6d292a785801ee1da035a89394686ce21adaa03b0",
+      "mode": 436
+    },
+    {
+      "path": "test-receipt.json",
+      "bytes": 1256,
+      "sha256": "60830a56deb2c682e488dfd9c8205ba8cfea17396116b9300b8f1ebaa15487fc",
+      "mode": 436
+    }
+  ]
+}

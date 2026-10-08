@@ -77,6 +77,11 @@ and reports omitted rows, unknown dates, and per-course read failures. Adjust
 the overview with `--limit-courses` and `--limit-assignments-per-course`; see
 [the sync guide](docs/SYNC.md) for CLI, Python, and MCP examples and count meanings.
 
+To take selected course deadlines into a calendar application, save an explicit
+local snapshot with `canvaspilot export-calendar 42 77 --out deadlines.ics`.
+The [calendar export guide](docs/calendar-export.md) explains selection,
+undated omissions, snapshot limits and safe re-import expectations.
+
 With a PAT instead:
 
 ```bash

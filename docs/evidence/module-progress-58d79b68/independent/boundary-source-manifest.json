@@ -1,0 +1,107 @@
+{
+  "schema": "hamon.independent_source_freeze.v1",
+  "captured_at": "2026-10-08T11:46:24.378Z",
+  "source": "/home/jacob/canvaspilot-module-progress-boundary-58d79b68",
+  "commit": "96e4f3d37b4e2e222e30ff34a0bab96bed95b8cd",
+  "parent": "baddc78a3be0b1b2cd84fbada388ad85d7b1e657",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "7f960eae30393163912cb208e7f9d2433c3667cc67972dd0463a37cdeea94600",
+      "bytes": 13820,
+      "previous_sha256": "7f960eae30393163912cb208e7f9d2433c3667cc67972dd0463a37cdeea94600",
+      "unchanged": true
+    },
+    {
+      "path": "docs/module-progress.md",
+      "sha256": "2eb07cea692b9f157b007cf0d88cbf7e16487dbdc49a38ee73d885bfdff9cfdc",
+      "bytes": 5868,
+      "previous_sha256": "2680578420d9f65fa7884348756f59487edcd0d4787f90a42ff745fb58acf04f",
+      "unchanged": false
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "555ad3c7e338d38ae5feabc06c0c07503f22d9c732a9af153c7706c63d2b3c63",
+      "bytes": 1353,
+      "previous_sha256": "555ad3c7e338d38ae5feabc06c0c07503f22d9c732a9af153c7706c63d2b3c63",
+      "unchanged": true
+    },
+    {
+      "path": "src/canvaspilot/__init__.py",
+      "sha256": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5",
+      "bytes": 561,
+      "previous_sha256": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5",
+      "unchanged": true
+    },
+    {
+      "path": "src/canvaspilot/api.py",
+      "sha256": "9c8325499296bc6563c1804676a47462b396c853ec860dbdbe6579280df6588f",
+      "bytes": 23950,
+      "previous_sha256": "9c8325499296bc6563c1804676a47462b396c853ec860dbdbe6579280df6588f",
+      "unchanged": true
+    },
+    {
+      "path": "src/canvaspilot/bundle.py",
+      "sha256": "7a5600680c22f3cce5d512ed96137de0171bcca7df6a8c46baa8c09143de3168",
+      "bytes": 2641,
+      "previous_sha256": "7a5600680c22f3cce5d512ed96137de0171bcca7df6a8c46baa8c09143de3168",
+      "unchanged": true
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "sha256": "35256c690fbb82b9f35cb231b0560afab907c9ceffd9c26e960627f9d640322a",
+      "bytes": 11019,
+      "previous_sha256": "35256c690fbb82b9f35cb231b0560afab907c9ceffd9c26e960627f9d640322a",
+      "unchanged": true
+    },
+    {
+      "path": "src/canvaspilot/client.py",
+      "sha256": "6368329745216f473204995c101c912d9070fdd310def150bdbee927f9872de4",
+      "bytes": 12381,
+      "previous_sha256": "6368329745216f473204995c101c912d9070fdd310def150bdbee927f9872de4",
+      "unchanged": true
+    },
+    {
+      "path": "src/canvaspilot/feedback.py",
+      "sha256": "55454598effea598474a21f67e36d5bc5bea84aaefeefc18e4d8c49804ab9869",
+      "bytes": 3900,
+      "previous_sha256": "55454598effea598474a21f67e36d5bc5bea84aaefeefc18e4d8c49804ab9869",
+      "unchanged": true
+    },
+    {
+      "path": "src/canvaspilot/folder_browser.py",
+      "sha256": "c6a67229b268c539e5edb581e3320b06229460adc3fbc01d72e4964e31c0348a",
+      "bytes": 6293,
+      "previous_sha256": "c6a67229b268c539e5edb581e3320b06229460adc3fbc01d72e4964e31c0348a",
+      "unchanged": true
+    },
+    {
+      "path": "src/canvaspilot/mcp_server.py",
+      "sha256": "70a4ad0950cba12149aba205fcae43d54ad3688a12f96904b3f88c860caf83a2",
+      "bytes": 12456,
+      "previous_sha256": "70a4ad0950cba12149aba205fcae43d54ad3688a12f96904b3f88c860caf83a2",
+      "unchanged": true
+    },
+    {
+      "path": "src/canvaspilot/module_progress.py",
+      "sha256": "974ee31925514a2e53b899888302a7fa357e280ab5f2461b754b814473653d99",
+      "bytes": 9615,
+      "previous_sha256": "42aee00dbc05e37b28942f6022e5eb23516589b7f07289f0d725e1d6c66e51d1",
+      "unchanged": false
+    },
+    {
+      "path": "src/canvaspilot/offline_demo.py",
+      "sha256": "2389f3ccc1b6db5995be0d90e014ea9345e3029aa5546a5b2dcf12c1197e6d4d",
+      "bytes": 4124,
+      "previous_sha256": "2389f3ccc1b6db5995be0d90e014ea9345e3029aa5546a5b2dcf12c1197e6d4d",
+      "unchanged": true
+    },
+    {
+      "path": "src/canvaspilot/session_broker.py",
+      "sha256": "2a106130c344aefebb23b078cd93b5d3ca3afd7f5325ae5fac2fb8a7251780cc",
+      "bytes": 12151,
+      "previous_sha256": "2a106130c344aefebb23b078cd93b5d3ca3afd7f5325ae5fac2fb8a7251780cc",
+      "unchanged": true
+    }
+  ]
+}

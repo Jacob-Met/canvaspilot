@@ -1,0 +1,26 @@
+[
+  {
+    "label": "ruff",
+    "command": [
+      "/home/jacob/canvaspilot-module-progress-proof-58d79b68/venv/bin/ruff",
+      "check",
+      "src",
+      "tests",
+      "scripts"
+    ],
+    "exit": 0,
+    "stdout": "All checks passed!\n",
+    "stderr": ""
+  },
+  {
+    "label": "source-whitespace",
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+]

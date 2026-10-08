@@ -1,0 +1,3 @@
+usage: canvaspilot [-h]
+                   {login,session,whoami,courses,sync,assignments,brief,discussions,files,browse-files,mcp} ...
+canvaspilot: error: argument cmd: invalid choice: 'export-calendar' (choose from login, session, whoami, courses, sync, assignments, brief, discussions, files, browse-files, mcp)

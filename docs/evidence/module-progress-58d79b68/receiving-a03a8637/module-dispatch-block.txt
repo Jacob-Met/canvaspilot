@@ -1,0 +1,13 @@
+        elif args.cmd == "module-progress":
+            import httpx
+
+            from canvaspilot.client import CanvasAuthError
+
+            try:
+                result = api.module_progress(args.course_id, module_id=args.module_id)
+            except (CanvasAuthError, httpx.HTTPError, ValueError) as error:
+                print(json.dumps({
+                    "ok": False, "error": type(error).__name__, "message": str(error),
+                }), file=sys.stderr)
+                raise SystemExit(1) from None
+            print(json.dumps(result, indent=2))
