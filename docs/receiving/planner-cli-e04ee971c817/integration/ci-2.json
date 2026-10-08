@@ -1,0 +1,142 @@
+{
+  "format": "canvas-planner-cli-second-hosted-gate-v1",
+  "repository": "Jacob-Met/canvaspilot",
+  "run_id": 37809390738,
+  "job_id": 113421989277,
+  "url": "https://github.com/Jacob-Met/canvaspilot/actions/runs/37809390738",
+  "head": "1425925f659efa2cf8199d9fcc9f44ea44d32fcf",
+  "status": "completed",
+  "conclusion": "success",
+  "checkout": {
+    "sha": "b9b74faff5c9b7db1a946a2bab64d8843c2c9298",
+    "parents": [
+      "6c4d5d2e7526cddc1aa6c90bfbef2d1188382ad3",
+      "1425925f659efa2cf8199d9fcc9f44ea44d32fcf"
+    ],
+    "tree": "bd6dc1c88a884748cec6a2e0992dfcac364b1895",
+    "head_tree": "bd6dc1c88a884748cec6a2e0992dfcac364b1895",
+    "equals_head_tree": true,
+    "method": "Read the exact next output line after git log -1 --format=%H in the decoded job log; fetched that Git commit and compared its tree to the published head tree."
+  },
+  "steps": [
+    {
+      "name": "Set up job",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 1
+    },
+    {
+      "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 2
+    },
+    {
+      "name": "Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 3
+    },
+    {
+      "name": "Install package with dev extras",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 4
+    },
+    {
+      "name": "Lint",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 5
+    },
+    {
+      "name": "Run test suite",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 6
+    },
+    {
+      "name": "Post Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 11
+    },
+    {
+      "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 12
+    },
+    {
+      "name": "Complete job",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 13
+    }
+  ],
+  "environment": {
+    "python": "CPython 3.12.15",
+    "install_command": "pip install -e \".[dev]\"",
+    "lint_command": "ruff check src tests scripts",
+    "test_command": "pytest -q",
+    "workflow_blob": "ef7bbebe192c0db55dc4467e064ba44805c13446"
+  },
+  "test_summary": {
+    "passed": 792,
+    "skipped": 1,
+    "subtests_passed": 57,
+    "seconds": 171.2,
+    "exact_line": "2026-10-08T16:34:06.7338453Z 792 passed, 1 skipped, 57 subtests passed in 171.20s (0:02:51)"
+  },
+  "scope": "The native repository workflow installed the declared package/dev dependencies and exercised the whole pytest suite, including the six new planner test methods and their eight actual module CLI children against disposable loopback HTTP fixtures. HTTPX, native pagination and package imports ran in this hosted environment.",
+  "limits": [
+    "No live Canvas account, token, course, student data or API was used; all planner HTTP data and credentials were synthetic.",
+    "The aggregate pytest log does not identify the one skipped test; this receipt does not infer its identity.",
+    "This success describes head1425925f; the final evidence-only commit will have its own observed check gate before merge.",
+    "The first hosted lint failure and all historical local author results remain unmodified."
+  ],
+  "decoded_log_excerpt": {
+    "path": "ci-2-excerpt.log",
+    "line_ranges_1_based": [
+      [
+        128,
+        131
+      ],
+      [
+        301,
+        336
+      ]
+    ],
+    "join": "One blank line separates two exact slices of the tool-decoded job log; no assertion is made about the bytes of GitHub's original log archive."
+  },
+  "contribution_pins": [
+    {
+      "path": "src/canvaspilot/cli.py",
+      "bytes": 22586,
+      "git_blob": "df01e112b3c7f525e99b3179176d57497391f16b",
+      "sha256": "b8145ab7fdfb4f01784a45624d17cb5813b92cff6dc5812ad157a8bd357d97ab",
+      "mode": "100644"
+    },
+    {
+      "path": "README.md",
+      "bytes": 23924,
+      "git_blob": "5a4dff0dfad82c26a94083f544949a582524beb1",
+      "sha256": "b031154b28a37c2e18dba98ca583fc795127ce3c409f8787c04780a4ff071e1b",
+      "mode": "100644"
+    },
+    {
+      "path": "tests/test_planner_cli.py",
+      "bytes": 8730,
+      "git_blob": "e41b4bcfec8103e333a3292776087e8ed84f8848",
+      "sha256": "b4ef2333c663e46884150d302f458b7989cff0f83ba27b21ec3343eb1b67d08e",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/planner-cli.md",
+      "bytes": 4544,
+      "git_blob": "7d1d54d03face5afd51fc4be015ba10a927ad9ef",
+      "sha256": "bcb651c6a9402957442860ff621fa7ab13a693f8745490c4f271847a2492e9af",
+      "mode": "100644"
+    }
+  ]
+}

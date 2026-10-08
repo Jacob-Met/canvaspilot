@@ -1,0 +1,37 @@
+{
+  "schema": "hamon.production_contribution_qualification.v1",
+  "qualified_at": "2026-10-08T17:30:38.953464+00:00",
+  "worker": "estate-926c3dc2605e-production",
+  "repository": "Jacob-Met/canvaspilot",
+  "native_path": "/home/jacob/canvaspilot-grade-review-export-926c3dc2605e",
+  "branch": "work/926c3dc2605e-grade-review-export",
+  "source_commit": "ed86b59fd5e619a33a3e99d4c6ea44948fb3c922",
+  "source_tree": "e946599c811a2e288396139e1abf38ac4adc415b",
+  "base_commit": "1bafdaa31f7789d8e561680cb6001bbe38b2da64",
+  "state": "qualified_awaiting_integration",
+  "feature": "canvaspilot export-grade-review COURSE --out NEW.html",
+  "qualification": {
+    "repository_pytest": "874 passed, 1 skipped, 54 subtests passed",
+    "focused_pytest": "9 passed",
+    "ruff": "all src/tests/scripts passed",
+    "diff_check": "passed",
+    "independent_actual_api": "13 cases / 188 assertions passed",
+    "native_chromium": "13 checks passed; actual desktop/mobile, keyboard, download, print",
+    "source_correspondence": "AST-equivalent formatter revisions; final source byte-recreates the actual browser-qualified HTML"
+  },
+  "paths": [
+    "README.md",
+    "docs/grade-review-export.md",
+    "src/canvaspilot/cli.py",
+    "src/canvaspilot/grade_review_export.py",
+    "tests/test_grade_review_export.py"
+  ],
+  "receiving_index": "docs/receiving/grade-review-export-926c3dc2605e/README.md",
+  "native_external_scope": "/srv/hamon-estate/coord/estate-926c3dc2605e-production-canvas-grade-export.json",
+  "independent_commit": "d0058740eb582bfe7f6b69952b63fff88570a0ad",
+  "hosted_issue_created": false,
+  "hosted_pull_request_created": false,
+  "hosted_ci_run": false,
+  "live_canvas_run": false,
+  "publication_boundary": "GitHub issue creation17:11:36UTC returned403 secondary rate limit; no repeated or alternate-transport creation. Root owns integration/Conscience handoff."
+}

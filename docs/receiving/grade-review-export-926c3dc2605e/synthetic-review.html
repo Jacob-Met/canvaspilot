@@ -1,0 +1,143 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="referrer" content="no-referrer"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'"><title>Course grade review — CanvasPilot</title><style>
+:root { color-scheme: light; font: 16px/1.55 system-ui,sans-serif; color:#20313b; background:#eff3f5; }
+* { box-sizing:border-box; }
+body { margin:0; }
+main { max-width:1100px; margin:auto; padding:32px 24px 64px; }
+h1,h2,h3,h4,p { margin-top:0; }
+h1 { font-size:clamp(1.8rem,5vw,2.75rem); line-height:1.15; margin-bottom:12px; }
+h2 { font-size:1.45rem; line-height:1.25; }
+h3 { font-size:1.1rem; }
+h4 { font-size:1rem; margin-bottom:8px; }
+.eyebrow { text-transform:uppercase; letter-spacing:.09em; font-weight:700; color:#365867; }
+.muted { color:#4a606b; }
+header,.panel,.group { margin-bottom:24px; }
+.panel,.group { background:white; border:1px solid #cad7dc; border-radius:12px; padding:24px; }
+.notice { border-left:4px solid #367081; padding:12px 16px; background:#e8f1f4; }
+.warning { border-left-color:#916322; background:#fff6e5; }
+.facts { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,2fr); margin:0 0 20px; }
+.facts dt,.facts dd { min-width:0; margin:0; padding:7px 10px; border-bottom:1px solid #e1e9ed; }
+.facts dt { color:#3b5663; font-weight:600; }
+pre,code { font: .88rem/1.5 ui-monospace,SFMono-Regular,Consolas,monospace; }
+pre { white-space:pre-wrap; margin:0; }
+h1,h2,h3,h4,p,li,dt,dd,pre,code,a,summary { overflow-wrap:anywhere; }
+a { color:#155b7b; text-underline-offset:.2em; }
+a:focus-visible,summary:focus-visible { outline:3px solid #155b7b; outline-offset:4px; }
+.download { display:inline-block; border:1px solid #155b7b; border-radius:6px; padding:10px 14px; font-weight:650; }
+nav ul { padding-left:22px; }
+nav li { margin:6px 0; }
+.assignment { padding:20px 0 8px; border-top:2px solid #dbe5e9; }
+.assignment h3 { margin-bottom:12px; }
+.assignment-summary { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-bottom:12px; }
+.reading { padding:12px; border:1px solid #dbe5e9; border-radius:6px; }
+.reading .label { display:block; font-size:.84rem; color:#4a606b; margin-bottom:6px; }
+.flags { padding-left:22px; }
+details { margin:14px 0; }
+summary { cursor:pointer; color:#155b7b; font-weight:600; padding:4px 0; }
+details[open] summary { margin-bottom:12px; }
+.enrollment+.enrollment { border-top:1px solid #dbe5e9; padding-top:18px; }
+footer { color:#4a606b; font-size:.9rem; }
+@media (max-width:540px) {
+ main { padding:22px 12px 36px; }
+ .panel,.group { padding:16px; }
+ .facts { grid-template-columns:minmax(0,1fr); }
+ .facts dt { border-bottom:0; padding-bottom:0; }
+ .facts dd { padding-top:2px; }
+ .assignment-summary { grid-template-columns:minmax(0,1fr); }
+}
+@media print {
+ :root { background:white; color:black; font-size:10pt; }
+ main { max-width:none; padding:0; }
+ .panel,.group { padding:12px; border-radius:0; }
+ h2,h3,h4,summary { break-after:avoid; }
+ .reading { break-inside:avoid; }
+ .download,.back { display:none; }
+ a,summary { color:black; }
+ details:not([open]) > *:not(summary) { display:block !important; }
+ details::details-content { content-visibility:visible !important; display:block !important; }
+}
+</style></head><body><main id="top"><header><p class="eyebrow">CanvasPilot · Saved course review</p><h1>Synthetic Linear Algebra</h1><p>Report created <time datetime="2026-10-08T17:16:52Z">2026-10-08T17:16:52Z</time></p><p class="notice">This saved observation shows Canvas-reported values for the authenticated caller. It does not refresh or calculate a replacement grade. Counts cover returned rows; whole-course completeness remains unknown.</p><p class="muted">Values use JSON notation: null means unavailable, false differs from a missing flag, 0 stays zero, and "" is an explicitly returned empty string. A field marked Not returned is unknown.</p></header><section class="panel" aria-labelledby="totals-title"><h2 id="totals-title">Reported course totals</h2><p class="muted">Each enrollment stays separate. Current, final and grading-period values retain their original Canvas field names; no enrollment is chosen for you.</p><article class="enrollment"><h3>Returned enrollment 1</h3><dl class="facts"><dt>Type <code>(type)</code></dt><dd data-field="type"><pre>&quot;student&quot;</pre></dd><dt>Role <code>(role)</code></dt><dd data-field="role"><pre>&quot;StudentEnrollment&quot;</pre></dd><dt>User id <code>(user_id)</code></dt><dd data-field="user_id"><pre>7</pre></dd><dt>Enrollment state <code>(enrollment_state)</code></dt><dd data-field="enrollment_state"><pre>&quot;active&quot;</pre></dd><dt>Totals for all grading periods option <code>(totals_for_all_grading_periods_option)</code></dt><dd data-field="totals_for_all_grading_periods_option"><pre>false</pre></dd><dt>Current grading period id <code>(current_grading_period_id)</code></dt><dd data-field="current_grading_period_id"><pre>5</pre></dd><dt>Current grading period title <code>(current_grading_period_title)</code></dt><dd data-field="current_grading_period_title"><pre>&quot;Autumn&quot;</pre></dd></dl><h4>Reported totals</h4><dl class="facts"><dt>Reported current score <code>(computed_current_score)</code></dt><dd data-field="computed_current_score"><pre>0</pre></dd><dt>Reported final score <code>(computed_final_score)</code></dt><dd data-field="computed_final_score"><pre>0</pre></dd><dt>Reported current grade <code>(computed_current_grade)</code></dt><dd data-field="computed_current_grade"><pre>null</pre></dd><dt>Reported final grade <code>(computed_final_grade)</code></dt><dd data-field="computed_final_grade"><pre>null</pre></dd><dt>Current period: reported current score <code>(current_period_computed_current_score)</code></dt><dd data-field="current_period_computed_current_score"><pre>12.5</pre></dd><dt>Current period: reported final score <code>(current_period_computed_final_score)</code></dt><dd data-field="current_period_computed_final_score"><pre>null</pre></dd></dl></article></section><nav class="panel" aria-label="Assignment groups"><h2>Assignment groups</h2><ul><li><a href="#group-0">Problem sets</a></li><li><a href="#group-1">Exams</a></li></ul></nav><section class="group" id="group-0" aria-labelledby="group-0-title"><h2 id="group-0-title">Problem sets</h2><dl class="facts"><dt>Id <code>(id)</code></dt><dd data-field="id"><pre>3</pre></dd><dt>Name <code>(name)</code></dt><dd data-field="name"><pre>&quot;Problem sets&quot;</pre></dd><dt>Position <code>(position)</code></dt><dd data-field="position"><pre>1</pre></dd><dt>Reported group weight <code>(group_weight)</code></dt><dd data-field="group_weight"><pre>40</pre></dd><dt>Rules <code>(rules)</code></dt><dd data-field="rules"><pre>{
+  &quot;drop_lowest&quot;: 1,
+  &quot;drop_highest&quot;: 0,
+  &quot;never_drop&quot;: [
+    102
+  ]
+}</pre></dd><dt>Assignments state <code>(assignments_state)</code></dt><dd data-field="assignments_state"><pre>&quot;returned&quot;</pre></dd></dl><p class="muted">Group weights and drop rules are reported context. This file does not select dropped work or recalculate a grade.</p><article class="assignment" id="assignment-0-0"><h3>Vector spaces</h3><div class="assignment-summary"><div class="reading"><span class="label">Due date as returned</span><pre>null</pre></div><div class="reading"><span class="label">Assignment points possible</span><pre>20</pre></div><div class="reading"><span class="label">Reported submission score</span><pre>0</pre></div><div class="reading"><span class="label">Reported submission grade</span><pre>&quot;0&quot;</pre></div></div><p class="notice">Only the grade fields returned by Canvas are shown.</p><h4>Submission context</h4><dl class="facts"><dt>Attempt</dt><dd><pre>1</pre></dd><dt>Workflow state</dt><dd><pre>&quot;graded&quot;</pre></dd><dt>Excused</dt><dd><pre>false</pre></dd><dt>Missing</dt><dd><pre>false</pre></dd><dt>Late</dt><dd><pre>true</pre></dd></dl><details><summary>All returned assignment and submission fields</summary><h4>Assignment</h4><dl class="facts"><dt>Id <code>(id)</code></dt><dd data-field="id"><pre>101</pre></dd><dt>Course id <code>(course_id)</code></dt><dd data-field="course_id"><pre>42</pre></dd><dt>Assignment group id <code>(assignment_group_id)</code></dt><dd data-field="assignment_group_id"><pre>3</pre></dd><dt>Name <code>(name)</code></dt><dd data-field="name"><pre>&quot;Vector spaces&quot;</pre></dd><dt>Due at <code>(due_at)</code></dt><dd data-field="due_at"><pre>null</pre></dd><dt>Assignment points possible <code>(points_possible)</code></dt><dd data-field="points_possible"><pre>20</pre></dd><dt>Grading type <code>(grading_type)</code></dt><dd data-field="grading_type"><pre>&quot;points&quot;</pre></dd><dt>Submission types <code>(submission_types)</code></dt><dd data-field="submission_types"><pre>[
+  &quot;online_upload&quot;
+]</pre></dd><dt>Html url <code>(html_url)</code></dt><dd data-field="html_url"><pre>&quot;https://school.invalid/courses/42/assignments/101&quot;</pre></dd></dl><h4>Submission</h4><pre>{
+  &quot;submission_state&quot;: &quot;returned&quot;,
+  &quot;submission&quot;: {
+    &quot;grade_visibility&quot;: &quot;reported_fields&quot;,
+    &quot;fields&quot;: {
+      &quot;id&quot;: 801,
+      &quot;assignment_id&quot;: 101,
+      &quot;user_id&quot;: 7,
+      &quot;attempt&quot;: 1,
+      &quot;workflow_state&quot;: &quot;graded&quot;,
+      &quot;posted_at&quot;: &quot;2026-10-01T09:00:00Z&quot;,
+      &quot;grade&quot;: &quot;0&quot;,
+      &quot;score&quot;: 0,
+      &quot;entered_score&quot;: 1,
+      &quot;points_deducted&quot;: 1,
+      &quot;grade_matches_current_submission&quot;: true,
+      &quot;assignment_visible&quot;: true,
+      &quot;excused&quot;: false,
+      &quot;missing&quot;: false,
+      &quot;late&quot;: true
+    }
+  }
+}</pre></details></article><article class="assignment" id="assignment-0-1"><h3>Excused lab</h3><div class="assignment-summary"><div class="reading"><span class="label">Due date as returned</span><span class="muted">Not returned</span></div><div class="reading"><span class="label">Assignment points possible</span><pre>0</pre></div><div class="reading"><span class="label">Submission grade</span>Withheld by the reader</div></div><p class="notice">Canvas reports that this grade is not posted. Its grade fields are withheld.</p><p class="muted">Whether the grade matches the current submission is unknown.</p><h4>Submission context</h4><dl class="facts"><dt>Attempt</dt><dd><span class="muted">Not returned</span></dd><dt>Workflow state</dt><dd><span class="muted">Not returned</span></dd><dt>Excused</dt><dd><pre>true</pre></dd><dt>Missing</dt><dd><span class="muted">Not returned</span></dd><dt>Late</dt><dd><span class="muted">Not returned</span></dd></dl><details><summary>All returned assignment and submission fields</summary><h4>Assignment</h4><dl class="facts"><dt>Id <code>(id)</code></dt><dd data-field="id"><pre>102</pre></dd><dt>Course id <code>(course_id)</code></dt><dd data-field="course_id"><pre>42</pre></dd><dt>Assignment group id <code>(assignment_group_id)</code></dt><dd data-field="assignment_group_id"><pre>3</pre></dd><dt>Name <code>(name)</code></dt><dd data-field="name"><pre>&quot;Excused lab&quot;</pre></dd><dt>Assignment points possible <code>(points_possible)</code></dt><dd data-field="points_possible"><pre>0</pre></dd></dl><h4>Submission</h4><pre>{
+  &quot;submission_state&quot;: &quot;returned&quot;,
+  &quot;submission&quot;: {
+    &quot;grade_visibility&quot;: &quot;not_posted&quot;,
+    &quot;fields&quot;: {
+      &quot;assignment_id&quot;: 102,
+      &quot;user_id&quot;: 7,
+      &quot;posted_at&quot;: null,
+      &quot;excused&quot;: true
+    }
+  }
+}</pre></details></article><article class="assignment" id="assignment-0-2"><h3>Revised proof</h3><div class="assignment-summary"><div class="reading"><span class="label">Due date as returned</span><span class="muted">Not returned</span></div><div class="reading"><span class="label">Assignment points possible</span><pre>100</pre></div><div class="reading"><span class="label">Reported submission score</span><pre>85</pre></div><div class="reading"><span class="label">Reported submission grade</span><pre>&quot;B&quot;</pre></div></div><p class="notice">Only the grade fields returned by Canvas are shown.</p><p class="notice warning">Canvas reports that this grade does not match the current submission. Do not treat it as the grade for the latest attempt.</p><h4>Submission context</h4><dl class="facts"><dt>Attempt</dt><dd><pre>2</pre></dd><dt>Workflow state</dt><dd><pre>&quot;submitted&quot;</pre></dd><dt>Excused</dt><dd><span class="muted">Not returned</span></dd><dt>Missing</dt><dd><span class="muted">Not returned</span></dd><dt>Late</dt><dd><span class="muted">Not returned</span></dd></dl><details><summary>All returned assignment and submission fields</summary><h4>Assignment</h4><dl class="facts"><dt>Id <code>(id)</code></dt><dd data-field="id"><pre>103</pre></dd><dt>Course id <code>(course_id)</code></dt><dd data-field="course_id"><pre>42</pre></dd><dt>Assignment group id <code>(assignment_group_id)</code></dt><dd data-field="assignment_group_id"><pre>3</pre></dd><dt>Name <code>(name)</code></dt><dd data-field="name"><pre>&quot;Revised proof&quot;</pre></dd><dt>Assignment points possible <code>(points_possible)</code></dt><dd data-field="points_possible"><pre>100</pre></dd></dl><h4>Submission</h4><pre>{
+  &quot;submission_state&quot;: &quot;returned&quot;,
+  &quot;submission&quot;: {
+    &quot;grade_visibility&quot;: &quot;reported_fields&quot;,
+    &quot;fields&quot;: {
+      &quot;assignment_id&quot;: 103,
+      &quot;user_id&quot;: 7,
+      &quot;attempt&quot;: 2,
+      &quot;workflow_state&quot;: &quot;submitted&quot;,
+      &quot;posted_at&quot;: &quot;2026-10-02T09:00:00Z&quot;,
+      &quot;grade&quot;: &quot;B&quot;,
+      &quot;score&quot;: 85,
+      &quot;grade_matches_current_submission&quot;: false
+    }
+  }
+}</pre></details></article><a class="back" href="#top">Back to report overview</a></section><section class="group" id="group-1" aria-labelledby="group-1-title"><h2 id="group-1-title">Exams</h2><dl class="facts"><dt>Id <code>(id)</code></dt><dd data-field="id"><pre>4</pre></dd><dt>Name <code>(name)</code></dt><dd data-field="name"><pre>&quot;Exams&quot;</pre></dd><dt>Position <code>(position)</code></dt><dd data-field="position"><pre>2</pre></dd><dt>Reported group weight <code>(group_weight)</code></dt><dd data-field="group_weight"><pre>60</pre></dd><dt>Rules <code>(rules)</code></dt><dd data-field="rules"><pre>null</pre></dd><dt>Assignments state <code>(assignments_state)</code></dt><dd data-field="assignments_state"><pre>&quot;returned&quot;</pre></dd></dl><p class="muted">Group weights and drop rules are reported context. This file does not select dropped work or recalculate a grade.</p><article class="assignment" id="assignment-1-0"><h3>Future exam</h3><div class="assignment-summary"><div class="reading"><span class="label">Due date as returned</span><pre>&quot;2026-12-01T12:00:00Z&quot;</pre></div><div class="reading"><span class="label">Assignment points possible</span><pre>100</pre></div></div><p class="notice">Submission: Not returned by Canvas. No grade or missing-work status is inferred.</p><h4>Submission context</h4><dl class="facts"><dt>Attempt</dt><dd><span class="muted">Not returned</span></dd><dt>Workflow state</dt><dd><span class="muted">Not returned</span></dd><dt>Excused</dt><dd><span class="muted">Not returned</span></dd><dt>Missing</dt><dd><span class="muted">Not returned</span></dd><dt>Late</dt><dd><span class="muted">Not returned</span></dd></dl><details><summary>All returned assignment and submission fields</summary><h4>Assignment</h4><dl class="facts"><dt>Id <code>(id)</code></dt><dd data-field="id"><pre>201</pre></dd><dt>Course id <code>(course_id)</code></dt><dd data-field="course_id"><pre>42</pre></dd><dt>Assignment group id <code>(assignment_group_id)</code></dt><dd data-field="assignment_group_id"><pre>4</pre></dd><dt>Name <code>(name)</code></dt><dd data-field="name"><pre>&quot;Future exam&quot;</pre></dd><dt>Due at <code>(due_at)</code></dt><dd data-field="due_at"><pre>&quot;2026-12-01T12:00:00Z&quot;</pre></dd><dt>Assignment points possible <code>(points_possible)</code></dt><dd data-field="points_possible"><pre>100</pre></dd></dl><h4>Submission</h4><pre>{
+  &quot;submission_state&quot;: &quot;not_returned&quot;,
+  &quot;submission&quot;: null
+}</pre></details></article><a class="back" href="#top">Back to report overview</a></section><section class="panel" aria-labelledby="scope-title"><h2 id="scope-title">Report context</h2><h3>Course and authenticated caller</h3><dl class="facts"><dt>Course <code>(course)</code></dt><dd data-field="course"><pre>{
+  &quot;id&quot;: 42,
+  &quot;name&quot;: &quot;Synthetic Linear Algebra&quot;,
+  &quot;course_code&quot;: &quot;FIX-MATH&quot;,
+  &quot;hide_final_grades&quot;: false,
+  &quot;apply_assignment_group_weights&quot;: true,
+  &quot;has_grading_periods&quot;: true,
+  &quot;has_weighted_grading_periods&quot;: false
+}</pre></dd><dt>Authenticated user id <code>(authenticated_user_id)</code></dt><dd data-field="authenticated_user_id"><pre>7</pre></dd></dl><h3>Grading periods</h3><dl class="facts"><dt>Grading periods state <code>(grading_periods_state)</code></dt><dd data-field="grading_periods_state"><pre>&quot;returned&quot;</pre></dd><dt>Grading periods <code>(grading_periods)</code></dt><dd data-field="grading_periods"><pre>[
+  {
+    &quot;id&quot;: 5,
+    &quot;title&quot;: &quot;Autumn&quot;,
+    &quot;start_date&quot;: &quot;2026-09-01&quot;
+  }
+]</pre></dd></dl><h3>Returned-row counts and reader boundaries</h3><dl class="facts"><dt>Totals visibility <code>(totals_visibility)</code></dt><dd data-field="totals_visibility"><pre>&quot;reported_fields_only&quot;</pre></dd><dt>Enrollments state <code>(enrollments_state)</code></dt><dd data-field="enrollments_state"><pre>&quot;returned&quot;</pre></dd><dt>Grading periods state <code>(grading_periods_state)</code></dt><dd data-field="grading_periods_state"><pre>&quot;returned&quot;</pre></dd><dt>Assignment scope <code>(assignment_scope)</code></dt><dd data-field="assignment_scope"><pre>&quot;all_returned_assignment_groups&quot;</pre></dd><dt>Counts <code>(counts)</code></dt><dd data-field="counts"><pre>{
+  &quot;groups_returned&quot;: 2,
+  &quot;assignments_returned&quot;: 4,
+  &quot;groups_without_assignment_list&quot;: 0,
+  &quot;submissions_not_returned&quot;: 1,
+  &quot;submissions_null&quot;: 0,
+  &quot;explicitly_not_posted&quot;: 1,
+  &quot;explicitly_not_visible&quot;: 0,
+  &quot;excused_true&quot;: 1,
+  &quot;missing_true&quot;: 0,
+  &quot;late_true&quot;: 1,
+  &quot;grade_matches_current_submission_false&quot;: 1
+}</pre></dd><dt>Whole collection complete <code>(collection_complete)</code></dt><dd data-field="collection_complete"><pre>null</pre></dd><dt>Reader source <code>(reader_source)</code></dt><dd data-field="reader_source"><pre>&quot;CanvasClient.get_paginated&quot;</pre></dd><dt>Upstream response shape <code>(upstream_response_shape)</code></dt><dd data-field="upstream_response_shape"><pre>&quot;not_observed&quot;</pre></dd></dl><h3>Reader warnings</h3><p>No reader warnings were returned.</p><p><a class="download" id="download-report" download="course-grade-review.json" href="data:application/json;base64,ewogICJjb3Vyc2UiOiB7CiAgICAiaWQiOiA0MiwKICAgICJuYW1lIjogIlN5bnRoZXRpYyBMaW5lYXIgQWxnZWJyYSIsCiAgICAiY291cnNlX2NvZGUiOiAiRklYLU1BVEgiLAogICAgImhpZGVfZmluYWxfZ3JhZGVzIjogZmFsc2UsCiAgICAiYXBwbHlfYXNzaWdubWVudF9ncm91cF93ZWlnaHRzIjogdHJ1ZSwKICAgICJoYXNfZ3JhZGluZ19wZXJpb2RzIjogdHJ1ZSwKICAgICJoYXNfd2VpZ2h0ZWRfZ3JhZGluZ19wZXJpb2RzIjogZmFsc2UKICB9LAogICJhdXRoZW50aWNhdGVkX3VzZXJfaWQiOiA3LAogICJ0b3RhbHNfdmlzaWJpbGl0eSI6ICJyZXBvcnRlZF9maWVsZHNfb25seSIsCiAgImVucm9sbG1lbnRzX3N0YXRlIjogInJldHVybmVkIiwKICAiZW5yb2xsbWVudHMiOiBbCiAgICB7CiAgICAgICJjb250ZXh0IjogewogICAgICAgICJ0eXBlIjogInN0dWRlbnQiLAogICAgICAgICJyb2xlIjogIlN0dWRlbnRFbnJvbGxtZW50IiwKICAgICAgICAidXNlcl9pZCI6IDcsCiAgICAgICAgImVucm9sbG1lbnRfc3RhdGUiOiAiYWN0aXZlIiwKICAgICAgICAidG90YWxzX2Zvcl9hbGxfZ3JhZGluZ19wZXJpb2RzX29wdGlvbiI6IGZhbHNlLAogICAgICAgICJjdXJyZW50X2dyYWRpbmdfcGVyaW9kX2lkIjogNSwKICAgICAgICAiY3VycmVudF9ncmFkaW5nX3BlcmlvZF90aXRsZSI6ICJBdXR1bW4iCiAgICAgIH0sCiAgICAgICJyZXBvcnRlZF90b3RhbHMiOiB7CiAgICAgICAgImNvbXB1dGVkX2N1cnJlbnRfc2NvcmUiOiAwLAogICAgICAgICJjb21wdXRlZF9maW5hbF9zY29yZSI6IDAsCiAgICAgICAgImNvbXB1dGVkX2N1cnJlbnRfZ3JhZGUiOiBudWxsLAogICAgICAgICJjb21wdXRlZF9maW5hbF9ncmFkZSI6IG51bGwsCiAgICAgICAgImN1cnJlbnRfcGVyaW9kX2NvbXB1dGVkX2N1cnJlbnRfc2NvcmUiOiAxMi41LAogICAgICAgICJjdXJyZW50X3BlcmlvZF9jb21wdXRlZF9maW5hbF9zY29yZSI6IG51bGwKICAgICAgfQogICAgfQogIF0sCiAgImdyYWRpbmdfcGVyaW9kc19zdGF0ZSI6ICJyZXR1cm5lZCIsCiAgImdyYWRpbmdfcGVyaW9kcyI6IFsKICAgIHsKICAgICAgImlkIjogNSwKICAgICAgInRpdGxlIjogIkF1dHVtbiIsCiAgICAgICJzdGFydF9kYXRlIjogIjIwMjYtMDktMDEiCiAgICB9CiAgXSwKICAiYXNzaWdubWVudF9zY29wZSI6ICJhbGxfcmV0dXJuZWRfYXNzaWdubWVudF9ncm91cHMiLAogICJhc3NpZ25tZW50X2dyb3VwcyI6IFsKICAgIHsKICAgICAgImlkIjogMywKICAgICAgIm5hbWUiOiAiUHJvYmxlbSBzZXRzIiwKICAgICAgInBvc2l0aW9uIjogMSwKICAgICAgImdyb3VwX3dlaWdodCI6IDQwLAogICAgICAicnVsZXMiOiB7CiAgICAgICAgImRyb3BfbG93ZXN0IjogMSwKICAgICAgICAiZHJvcF9oaWdoZXN0IjogMCwKICAgICAgICAibmV2ZXJfZHJvcCI6IFsKICAgICAgICAgIDEwMgogICAgICAgIF0KICAgICAgfSwKICAgICAgImFzc2lnbm1lbnRzX3N0YXRlIjogInJldHVybmVkIiwKICAgICAgImFzc2lnbm1lbnRzIjogWwogICAgICAgIHsKICAgICAgICAgICJmaWVsZHMiOiB7CiAgICAgICAgICAgICJpZCI6IDEwMSwKICAgICAgICAgICAgImNvdXJzZV9pZCI6IDQyLAogICAgICAgICAgICAiYXNzaWdubWVudF9ncm91cF9pZCI6IDMsCiAgICAgICAgICAgICJuYW1lIjogIlZlY3RvciBzcGFjZXMiLAogICAgICAgICAgICAiZHVlX2F0IjogbnVsbCwKICAgICAgICAgICAgInBvaW50c19wb3NzaWJsZSI6IDIwLAogICAgICAgICAgICAiZ3JhZGluZ190eXBlIjogInBvaW50cyIsCiAgICAgICAgICAgICJzdWJtaXNzaW9uX3R5cGVzIjogWwogICAgICAgICAgICAgICJvbmxpbmVfdXBsb2FkIgogICAgICAgICAgICBdLAogICAgICAgICAgICAiaHRtbF91cmwiOiAiaHR0cHM6Ly9zY2hvb2wuaW52YWxpZC9jb3Vyc2VzLzQyL2Fzc2lnbm1lbnRzLzEwMSIKICAgICAgICAgIH0sCiAgICAgICAgICAic3VibWlzc2lvbl9zdGF0ZSI6ICJyZXR1cm5lZCIsCiAgICAgICAgICAic3VibWlzc2lvbiI6IHsKICAgICAgICAgICAgImdyYWRlX3Zpc2liaWxpdHkiOiAicmVwb3J0ZWRfZmllbGRzIiwKICAgICAgICAgICAgImZpZWxkcyI6IHsKICAgICAgICAgICAgICAiaWQiOiA4MDEsCiAgICAgICAgICAgICAgImFzc2lnbm1lbnRfaWQiOiAxMDEsCiAgICAgICAgICAgICAgInVzZXJfaWQiOiA3LAogICAgICAgICAgICAgICJhdHRlbXB0IjogMSwKICAgICAgICAgICAgICAid29ya2Zsb3dfc3RhdGUiOiAiZ3JhZGVkIiwKICAgICAgICAgICAgICAicG9zdGVkX2F0IjogIjIwMjYtMTAtMDFUMDk6MDA6MDBaIiwKICAgICAgICAgICAgICAiZ3JhZGUiOiAiMCIsCiAgICAgICAgICAgICAgInNjb3JlIjogMCwKICAgICAgICAgICAgICAiZW50ZXJlZF9zY29yZSI6IDEsCiAgICAgICAgICAgICAgInBvaW50c19kZWR1Y3RlZCI6IDEsCiAgICAgICAgICAgICAgImdyYWRlX21hdGNoZXNfY3VycmVudF9zdWJtaXNzaW9uIjogdHJ1ZSwKICAgICAgICAgICAgICAiYXNzaWdubWVudF92aXNpYmxlIjogdHJ1ZSwKICAgICAgICAgICAgICAiZXhjdXNlZCI6IGZhbHNlLAogICAgICAgICAgICAgICJtaXNzaW5nIjogZmFsc2UsCiAgICAgICAgICAgICAgImxhdGUiOiB0cnVlCiAgICAgICAgICAgIH0KICAgICAgICAgIH0KICAgICAgICB9LAogICAgICAgIHsKICAgICAgICAgICJmaWVsZHMiOiB7CiAgICAgICAgICAgICJpZCI6IDEwMiwKICAgICAgICAgICAgImNvdXJzZV9pZCI6IDQyLAogICAgICAgICAgICAiYXNzaWdubWVudF9ncm91cF9pZCI6IDMsCiAgICAgICAgICAgICJuYW1lIjogIkV4Y3VzZWQgbGFiIiwKICAgICAgICAgICAgInBvaW50c19wb3NzaWJsZSI6IDAKICAgICAgICAgIH0sCiAgICAgICAgICAic3VibWlzc2lvbl9zdGF0ZSI6ICJyZXR1cm5lZCIsCiAgICAgICAgICAic3VibWlzc2lvbiI6IHsKICAgICAgICAgICAgImdyYWRlX3Zpc2liaWxpdHkiOiAibm90X3Bvc3RlZCIsCiAgICAgICAgICAgICJmaWVsZHMiOiB7CiAgICAgICAgICAgICAgImFzc2lnbm1lbnRfaWQiOiAxMDIsCiAgICAgICAgICAgICAgInVzZXJfaWQiOiA3LAogICAgICAgICAgICAgICJwb3N0ZWRfYXQiOiBudWxsLAogICAgICAgICAgICAgICJleGN1c2VkIjogdHJ1ZQogICAgICAgICAgICB9CiAgICAgICAgICB9CiAgICAgICAgfSwKICAgICAgICB7CiAgICAgICAgICAiZmllbGRzIjogewogICAgICAgICAgICAiaWQiOiAxMDMsCiAgICAgICAgICAgICJjb3Vyc2VfaWQiOiA0MiwKICAgICAgICAgICAgImFzc2lnbm1lbnRfZ3JvdXBfaWQiOiAzLAogICAgICAgICAgICAibmFtZSI6ICJSZXZpc2VkIHByb29mIiwKICAgICAgICAgICAgInBvaW50c19wb3NzaWJsZSI6IDEwMAogICAgICAgICAgfSwKICAgICAgICAgICJzdWJtaXNzaW9uX3N0YXRlIjogInJldHVybmVkIiwKICAgICAgICAgICJzdWJtaXNzaW9uIjogewogICAgICAgICAgICAiZ3JhZGVfdmlzaWJpbGl0eSI6ICJyZXBvcnRlZF9maWVsZHMiLAogICAgICAgICAgICAiZmllbGRzIjogewogICAgICAgICAgICAgICJhc3NpZ25tZW50X2lkIjogMTAzLAogICAgICAgICAgICAgICJ1c2VyX2lkIjogNywKICAgICAgICAgICAgICAiYXR0ZW1wdCI6IDIsCiAgICAgICAgICAgICAgIndvcmtmbG93X3N0YXRlIjogInN1Ym1pdHRlZCIsCiAgICAgICAgICAgICAgInBvc3RlZF9hdCI6ICIyMDI2LTEwLTAyVDA5OjAwOjAwWiIsCiAgICAgICAgICAgICAgImdyYWRlIjogIkIiLAogICAgICAgICAgICAgICJzY29yZSI6IDg1LAogICAgICAgICAgICAgICJncmFkZV9tYXRjaGVzX2N1cnJlbnRfc3VibWlzc2lvbiI6IGZhbHNlCiAgICAgICAgICAgIH0KICAgICAgICAgIH0KICAgICAgICB9CiAgICAgIF0KICAgIH0sCiAgICB7CiAgICAgICJpZCI6IDQsCiAgICAgICJuYW1lIjogIkV4YW1zIiwKICAgICAgInBvc2l0aW9uIjogMiwKICAgICAgImdyb3VwX3dlaWdodCI6IDYwLAogICAgICAicnVsZXMiOiBudWxsLAogICAgICAiYXNzaWdubWVudHNfc3RhdGUiOiAicmV0dXJuZWQiLAogICAgICAiYXNzaWdubWVudHMiOiBbCiAgICAgICAgewogICAgICAgICAgImZpZWxkcyI6IHsKICAgICAgICAgICAgImlkIjogMjAxLAogICAgICAgICAgICAiY291cnNlX2lkIjogNDIsCiAgICAgICAgICAgICJhc3NpZ25tZW50X2dyb3VwX2lkIjogNCwKICAgICAgICAgICAgIm5hbWUiOiAiRnV0dXJlIGV4YW0iLAogICAgICAgICAgICAiZHVlX2F0IjogIjIwMjYtMTItMDFUMTI6MDA6MDBaIiwKICAgICAgICAgICAgInBvaW50c19wb3NzaWJsZSI6IDEwMAogICAgICAgICAgfSwKICAgICAgICAgICJzdWJtaXNzaW9uX3N0YXRlIjogIm5vdF9yZXR1cm5lZCIsCiAgICAgICAgICAic3VibWlzc2lvbiI6IG51bGwKICAgICAgICB9CiAgICAgIF0KICAgIH0KICBdLAogICJjb3VudHMiOiB7CiAgICAiZ3JvdXBzX3JldHVybmVkIjogMiwKICAgICJhc3NpZ25tZW50c19yZXR1cm5lZCI6IDQsCiAgICAiZ3JvdXBzX3dpdGhvdXRfYXNzaWdubWVudF9saXN0IjogMCwKICAgICJzdWJtaXNzaW9uc19ub3RfcmV0dXJuZWQiOiAxLAogICAgInN1Ym1pc3Npb25zX251bGwiOiAwLAogICAgImV4cGxpY2l0bHlfbm90X3Bvc3RlZCI6IDEsCiAgICAiZXhwbGljaXRseV9ub3RfdmlzaWJsZSI6IDAsCiAgICAiZXhjdXNlZF90cnVlIjogMSwKICAgICJtaXNzaW5nX3RydWUiOiAwLAogICAgImxhdGVfdHJ1ZSI6IDEsCiAgICAiZ3JhZGVfbWF0Y2hlc19jdXJyZW50X3N1Ym1pc3Npb25fZmFsc2UiOiAxCiAgfSwKICAiY29sbGVjdGlvbl9jb21wbGV0ZSI6IG51bGwsCiAgInJlYWRlcl9zb3VyY2UiOiAiQ2FudmFzQ2xpZW50LmdldF9wYWdpbmF0ZWQiLAogICJ1cHN0cmVhbV9yZXNwb25zZV9zaGFwZSI6ICJub3Rfb2JzZXJ2ZWQiLAogICJ3YXJuaW5ncyI6IFtdCn0K">Download complete report JSON</a></p><p class="muted">The download preserves the complete normalized report used here. Original Canvas response pages are not included.</p><p class="muted">JSON SHA-256: <code id="json-sha256">e55182d1fc34bf366ec4800dda85f128c616cfd28372360a5bdbd1093d71fe51</code></p></section><footer>Open this file directly in a browser. Use the browser's Print command for paper or PDF. Source links are shown as text; this report has no scripts, remote assets or grade-editing controls.</footer></main></body></html>

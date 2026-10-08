@@ -1,0 +1,29 @@
+{
+  "passed": false,
+  "checks": {
+    "desktop_content": {
+      "passed": false,
+      "detail": {
+        "title": "Synthetic Linear Algebra",
+        "cards": 4,
+        "scrollWidth": 1085,
+        "width": 1100,
+        "hasWarning": false,
+        "details": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "headings": [
+          "Reported course totals",
+          "Assignment groups",
+          "Problem sets",
+          "Exams",
+          "Report context"
+        ]
+      }
+    }
+  },
+  "error": "Error: Receiving assertion: desktop_content\n    at check (file:///home/jacob/canvaspilot-grade-review-export-926c3dc2605e/docs/receiving/grade-review-export-926c3dc2605e/browser-receiving.mjs:27:25)\n    at file:///home/jacob/canvaspilot-grade-review-export-926c3dc2605e/docs/receiving/grade-review-export-926c3dc2605e/browser-receiving.mjs:71:3"
+}

@@ -1,0 +1,295 @@
+{
+  "format": "canvas-planner-current-module-progress-composition-v1",
+  "base": "1bafdaa31f7789d8e561680cb6001bbe38b2da64",
+  "base_tree": "fc4c5cee949a3a15caf32111af9144cb7eb95b6d",
+  "previous_base": "d15de13fb6fa39d3cace04bec0e218b4a2ed2ffd",
+  "native_cli": "8d6644d0e1b916ca38a578147db8392a2e92d226",
+  "native_readme": "bd0d16245c59e4a5cf4badee0e7193c0eb09fdfc",
+  "api": "3ec81dee60bc67d7a80d40b78e85d5c005441b99",
+  "native_cli_reverse_exact": true,
+  "native_readme_reverse_exact": true,
+  "original_planner_parser_exact": true,
+  "original_planner_dispatch_exact": true,
+  "original_readme_paragraph_exact": true,
+  "api_client_helpers_bootstrap_workflow_unchanged_since_d15": true,
+  "all_native_module_progress_exports_preserved": true,
+  "contribution_pins": [
+    {
+      "path": "src/canvaspilot/cli.py",
+      "bytes": 25259,
+      "mode": "100644",
+      "git_blob": "99247f6d57c4eda52a99e32683ed8d33c56b8d9b",
+      "sha256": "00e8ec35a93546623eba626e58e96f97d76c469cb9ce1ce3f37c7ff74ee18346"
+    },
+    {
+      "path": "README.md",
+      "bytes": 25051,
+      "mode": "100644",
+      "git_blob": "88f76d780b3437807c570d696c5335cb5cac259f",
+      "sha256": "67b211de13ccedad13250d6b0f411772e544bf6e3f6d7a70603a991f7a665fe5"
+    }
+  ],
+  "native_changed_paths": [
+    {
+      "path": "README.md",
+      "before": "c81b52961f634667f52a02d6a597c400919815a4",
+      "after": "bd0d16245c59e4a5cf4badee0e7193c0eb09fdfc",
+      "mode": "100644"
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "before": "9b9e00dcdb6e768c02a8cf9e23d1a56094970846",
+      "after": "8d6644d0e1b916ca38a578147db8392a2e92d226",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/module-progress-export.md",
+      "before": null,
+      "after": "fa650a6b9d8cd51f134b576eb4f40975edef1a4c",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-39c2b591/PUBLICATION-d15de13f.json",
+      "before": null,
+      "after": "0be27ad91cfd9650b0dcf1edd9b7bbb1c0d968e8",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-39c2b591/README.md",
+      "before": null,
+      "after": "cb68e4f08c8a3466190e13ef5fdcd0f4fccce09b",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-39c2b591/artifact-custody.json",
+      "before": null,
+      "after": "fa923dedf1b636ea0680a58e38e55de0243f7abf",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-39c2b591/author-results.json",
+      "before": null,
+      "after": "2f59ce84a540a6a4c5b84446b038fd562c77ac96",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-39c2b591/current-composition.json",
+      "before": null,
+      "after": "100f39d0a2f39a384802b5fb7ecb9beb6f9b56fe",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-39c2b591/late-current-main.json",
+      "before": null,
+      "after": "7d60d318af88a3a854e63a27137faaa21d6d5c78",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-39c2b591/root-source-review.json",
+      "before": null,
+      "after": "c67b4c6d65347f05dfc740c1a74f720e571278c0",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/ACCEPTANCE.json",
+      "before": null,
+      "after": "8e3e6edf76ec981cf7e1034ff9e0d62ee8f01e6a",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_000.b64",
+      "before": null,
+      "after": "5cdcf60b0e800a895560b4f36a73eb064c3b0286",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_001.b64",
+      "before": null,
+      "after": "5103aac1995f7cd7597d51e791e28bdda7f3c9b4",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_002.b64",
+      "before": null,
+      "after": "84429e4c1d5d6e58a0ecf10db12177dd1bde308f",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_003.b64",
+      "before": null,
+      "after": "1abd25dec6496920fa6d3c337fdd351358e80f4c",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_004.b64",
+      "before": null,
+      "after": "f4b06a1e697e37108c690f85cf591fbd2515b057",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_005.b64",
+      "before": null,
+      "after": "a3b10e61c52b40b8679dc5073e7748e8a58596a1",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_006.b64",
+      "before": null,
+      "after": "f6411d775a8b18fd7d758c34a8f4996ddc39122c",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_007.b64",
+      "before": null,
+      "after": "d513d987ef09ebbda8b5216aa5cc07ea70fb89b6",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_008.b64",
+      "before": null,
+      "after": "9f82a4ee570fa39ca53e307142ec683ded85152d",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_009.b64",
+      "before": null,
+      "after": "f5fc25b39b4c5f6f88645b309b6cebff97edfeba",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_010.b64",
+      "before": null,
+      "after": "78a9931a0d5318abd2309948a85c0d9fe7c3065e",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_011.b64",
+      "before": null,
+      "after": "bbae9fbf53f00af39d9b2f6515137d3f4b804e3f",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_012.b64",
+      "before": null,
+      "after": "173febeb6363545f4e860af3993708e8476309e2",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_013.b64",
+      "before": null,
+      "after": "6ad374f083e788125f7c6db8520d8a4f55c50efe",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_014.b64",
+      "before": null,
+      "after": "b476c9ad03d2d087b44839c3fce16b56c2ede8f4",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_015.b64",
+      "before": null,
+      "after": "2b2e61ca68854efc78cad927597f49b4df915930",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_016.b64",
+      "before": null,
+      "after": "83e8e11621371cd454155077bd19d0becc2483fa",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_017.b64",
+      "before": null,
+      "after": "bf0259239b11073af7150cf6bcbcf78188f27aa5",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_018.b64",
+      "before": null,
+      "after": "ba3cc28c75cf542cb29a5af32cd32bd5afdb4c7c",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_MANIFEST.json",
+      "before": null,
+      "after": "afdaec10ec8ea1473fbe8c1c441592e2dabb6124",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/REPLAY.md",
+      "before": null,
+      "after": "681386b8a55aac3941d0e1a8cb565f9bfa64dd85",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/REVIEW.md",
+      "before": null,
+      "after": "0c55366043ed7ebce13ef9267c9f38b348498019",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/SOURCE.json",
+      "before": null,
+      "after": "2f273c5ca9cd751861952f682193a3515003851a",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/browser_receiver_v2.mjs",
+      "before": null,
+      "after": "3aae438400b4c69f37ed59d85839d290450cbec6",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/candidate_receiver_v2.py",
+      "before": null,
+      "after": "73c596ac0a525e156e3f04a5e5e83fdfbc02e966",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/independent_fixture_v1.py",
+      "before": null,
+      "after": "c59ddb7f69f9545b87aebc81c5bb2d3e83b98e2e",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/producer_receiver_v1.py",
+      "before": null,
+      "after": "f5f2bb1d4fdfc94320fa4dc054430fef13e98dc9",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/unpack-receiving.py",
+      "before": null,
+      "after": "f12facfb263b0780eac4efc57e9f6d0b590a211c",
+      "mode": "100644"
+    },
+    {
+      "path": "src/canvaspilot/module_progress_export.py",
+      "before": null,
+      "after": "8ccb9f1262790a744418d4212e072ee43031ab88",
+      "mode": "100644"
+    },
+    {
+      "path": "tests/test_module_progress_export.py",
+      "before": null,
+      "after": "10ad56e53ecbdc7945471fe119a64a54cfd0c274",
+      "mode": "100644"
+    },
+    {
+      "path": "tests/test_module_progress_export_cli.py",
+      "before": null,
+      "after": "6c51c60c505bd3d76468d569f8b07e1952c47e87",
+      "mode": "100644"
+    }
+  ],
+  "method": "Insert the same frozen planner blocks at the unique existing mcp parser and agenda dispatcher anchors. Remove them and the one README paragraph and compare all original native bytes. The current API and every earlier support/workflow blob are identical to the prior d15 receiving tree; the new module-progress export's own source/tests/evidence are outside this delta.",
+  "authored_current_control": {
+    "receiver_blob": "73c701db360a6b8614594e20da190bdbd9abcdc4",
+    "result": "module-progress-composition-results.json",
+    "actual_cli_children": 1,
+    "conditions_passed": 10,
+    "conditions_failed": 0,
+    "scope": "Exact full composed CLI and current native API compiled; unchanged current client/helpers imported from the retained original capsule. Package/bootstrap/real HTTP are separate hosted gates."
+  }
+}

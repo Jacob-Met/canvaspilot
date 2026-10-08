@@ -1,0 +1,573 @@
+CANVASPILOT · SAVED COURSE REVIEW
+
+
+
+Synthetic Linear Algebra
+Report created 2026-10-08T17:16:52Z
+
+
+   This saved observation shows Canvas-reported values for the authenticated caller. It does not refresh or
+   calculate a replacement grade. Counts cover returned rows; whole-course completeness remains unknown.
+
+
+Values use JSON notation: null means unavailable, false differs from a missing flag, 0 stays zero, and "" is an explicitly
+returned empty string. A field marked Not returned is unknown.
+
+
+
+  Reported course totals
+  Each enrollment stays separate. Current, final and grading-period values retain their original Canvas field names;
+  no enrollment is chosen for you.
+
+  Returned enrollment 1
+
+   Type (type)                             "student"
+
+
+   Role (role)                             "StudentEnrollment"
+
+
+   User id (user_id)                       7
+
+
+   Enrollment state                        "active"
+
+   (enrollment_state)
+
+
+   Totals for all grading periods          false
+   option
+   (totals_for_all_grading_period
+   s_option)
+
+   Current grading period id               5
+
+   (current_grading_period_id)
+
+
+   Current grading period title            "Autumn"
+   (current_grading_period_title)
+
+
+
+  Reported totals
+
+   Reported current score                  0
+   (computed_current_score)
+
+
+   Reported final score                    0
+   (computed_final_score)
+ Reported current grade                null
+
+ (computed_current_grade)
+
+ Reported final grade                  null
+
+ (computed_final_grade)
+
+
+ Current period: reported current      12.5
+ score
+ (current_period_computed_curre
+ nt_score)
+
+ Current period: reported final        null
+
+ score
+ (current_period_computed_final
+ _score)
+
+
+
+
+Assignment groups
+   Problem sets
+
+   Exams
+
+
+
+
+Problem sets
+
+ Id (id)                               3
+
+
+ Name (name)                           "Problem sets"
+
+
+ Position (position)                   1
+
+
+ Reported group weight                 40
+
+ (group_weight)
+
+ Rules (rules)                         {
+                                            "drop_lowest": 1,
+                                            "drop_highest": 0,
+                                            "never_drop": [
+                                                102
+                                            ]
+                                       }
+
+ Assignments state                     "returned"
+
+ (assignments_state)
+
+
+
+Group weights and drop rules are reported context. This file does not select dropped work or recalculate a grade.
+Vector spaces
+
+
+ Due date as returned                                      Assignment points possible
+ null                                                      20
+
+
+
+ Reported submission score                                 Reported submission grade
+ 0                                                         "0"
+
+
+
+     Only the grade fields returned by Canvas are shown.
+
+
+Submission context
+
+ Attempt                                1
+
+
+ Workflow state                         "graded"
+
+
+ Excused                                false
+
+
+ Missing                                false
+
+
+ Late                                   true
+
+
+
+ All returned assignment and submission fields
+Assignment
+
+ Id (id)
+
+ 101
+
+ Course id (course_id)
+
+ 42
+
+ Assignment group id (assignment_group_id)
+
+ 3
+
+
+ Name (name)
+
+ "Vector spaces"
+
+
+ Due at (due_at)
+
+ null
+
+ Assignment points possible (points_possible)
+
+ 20
+    Grading type (grading_type)
+
+    "points"
+
+    Submission types (submission_types)
+
+    [
+        "online_upload"
+    ]
+
+
+    Html url (html_url)
+
+    "https://school.invalid/courses/42/assignments/101"
+
+
+
+Submission
+{
+    "submission_state": "returned",
+    "submission": {
+      "grade_visibility": "reported_fields",
+         "fields": {
+             "id": 801,
+             "assignment_id": 101,
+             "user_id": 7,
+             "attempt": 1,
+             "workflow_state": "graded",
+             "posted_at": "2026-10-01T09:00:00Z",
+             "grade": "0",
+             "score": 0,
+             "entered_score": 1,
+             "points_deducted": 1,
+             "grade_matches_current_submission": true,
+             "assignment_visible": true,
+             "excused": false,
+             "missing": false,
+             "late": true
+         }
+    }
+}
+
+
+
+
+Excused lab
+
+
+    Due date as returned                                           Assignment points possible
+
+    Not returned                                                   0
+
+
+
+
+    Submission grade
+
+    Withheld by the reader
+
+
+
+        Canvas reports that this grade is not posted. Its grade fields are withheld.
+Whether the grade matches the current submission is unknown.
+
+Submission context
+
+    Attempt                             Not returned
+
+    Workflow state                      Not returned
+
+    Excused                             true
+
+
+    Missing                             Not returned
+
+    Late                                Not returned
+
+
+    All returned assignment and submission fields
+Assignment
+
+    Id (id)
+
+    102
+
+    Course id (course_id)
+
+    42
+
+
+    Assignment group id (assignment_group_id)
+
+    3
+
+
+    Name (name)
+
+    "Excused lab"
+
+    Assignment points possible (points_possible)
+
+    0
+
+
+
+Submission
+{
+    "submission_state": "returned",
+    "submission": {
+         "grade_visibility": "not_posted",
+         "fields": {
+           "assignment_id": 102,
+             "user_id": 7,
+             "posted_at": null,
+             "excused": true
+         }
+    }
+}
+Revised proof
+
+
+ Due date as returned                                         Assignment points possible
+
+ Not returned                                                 100
+
+
+
+
+ Reported submission score                                    Reported submission grade
+ 85                                                           "B"
+
+
+
+     Only the grade fields returned by Canvas are shown.
+
+
+
+     Canvas reports that this grade does not match the current submission. Do not treat it as the grade for the
+     latest attempt.
+
+
+Submission context
+
+ Attempt                                 2
+
+
+ Workflow state                          "submitted"
+
+
+ Excused                                 Not returned
+
+ Missing                                 Not returned
+
+ Late                                    Not returned
+
+
+ All returned assignment and submission fields
+Assignment
+
+ Id (id)
+
+ 103
+
+
+ Course id (course_id)
+
+ 42
+
+
+ Assignment group id (assignment_group_id)
+
+ 3
+
+ Name (name)
+
+ "Revised proof"
+
+
+ Assignment points possible (points_possible)
+
+ 100
+Submission
+{
+    "submission_state": "returned",
+    "submission": {
+      "grade_visibility": "reported_fields",
+        "fields": {
+            "assignment_id": 103,
+            "user_id": 7,
+            "attempt": 2,
+            "workflow_state": "submitted",
+            "posted_at": "2026-10-02T09:00:00Z",
+            "grade": "B",
+            "score": 85,
+            "grade_matches_current_submission": false
+        }
+    }
+}
+
+
+
+
+Exams
+
+    Id (id)                              4
+
+
+    Name (name)                          "Exams"
+
+
+    Position (position)                  2
+
+
+    Reported group weight                60
+
+    (group_weight)
+
+
+    Rules (rules)                        null
+
+
+    Assignments state                    "returned"
+
+    (assignments_state)
+
+
+
+Group weights and drop rules are reported context. This file does not select dropped work or recalculate a grade.
+
+
+
+Future exam
+
+    Due date as returned                                     Assignment points possible
+
+    "2026-12-01T12:00:00Z"                                   100
+
+
+
+     Submission: Not returned by Canvas. No grade or missing-work status is inferred.
+Submission context
+
+    Attempt                           Not returned
+
+    Workflow state                    Not returned
+
+    Excused                           Not returned
+
+    Missing                           Not returned
+
+    Late                              Not returned
+
+
+    All returned assignment and submission fields
+Assignment
+
+    Id (id)
+
+    201
+
+
+    Course id (course_id)
+
+    42
+
+
+    Assignment group id (assignment_group_id)
+
+    4
+
+
+    Name (name)
+
+    "Future exam"
+
+    Due at (due_at)
+
+    "2026-12-01T12:00:00Z"
+
+
+    Assignment points possible (points_possible)
+
+    100
+
+
+
+Submission
+{
+    "submission_state": "not_returned",
+    "submission": null
+}
+Report context
+Course and authenticated caller
+
+ Course (course)                  {
+                                      "id": 42,
+                                      "name": "Synthetic Linear Algebra",
+                                      "course_code": "FIX-MATH",
+                                      "hide_final_grades": false,
+                                      "apply_assignment_group_weights": true,
+                                      "has_grading_periods": true,
+                                      "has_weighted_grading_periods": false
+                                  }
+
+
+ Authenticated user id            7
+
+ (authenticated_user_id)
+
+
+
+Grading periods
+
+ Grading periods state            "returned"
+ (grading_periods_state)
+
+
+ Grading periods                  [
+                                      {
+ (grading_periods)
+                                          "id": 5,
+                                          "title": "Autumn",
+                                          "start_date": "2026-09-01"
+                                      }
+                                  ]
+
+
+
+Returned-row counts and reader boundaries
+
+ Totals visibility                "reported_fields_only"
+
+ (totals_visibility)
+
+
+ Enrollments state                "returned"
+ (enrollments_state)
+
+
+ Grading periods state            "returned"
+
+ (grading_periods_state)
+
+ Assignment scope                 "all_returned_assignment_groups"
+
+ (assignment_scope)
+
+
+ Counts (counts)                  {
+                                      "groups_returned": 2,
+                                      "assignments_returned": 4,
+                                      "groups_without_assignment_list": 0,
+                                      "submissions_not_returned": 1,
+                                      "submissions_null": 0,
+                                                   "explicitly_not_posted": 1,
+                                                   "explicitly_not_visible": 0,
+                                                   "excused_true": 1,
+                                                   "missing_true": 0,
+                                                   "late_true": 1,
+                                                   "grade_matches_current_submission_false": 1
+                                               }
+
+    Whole collection complete                  null
+
+    (collection_complete)
+
+    Reader source (reader_source)              "CanvasClient.get_paginated"
+
+
+    Upstream response shape                    "not_observed"
+
+    (upstream_response_shape)
+
+
+
+  Reader warnings
+
+  No reader warnings were returned.
+
+  The download preserves the complete normalized report used here. Original Canvas response pages are not
+  included.
+
+  JSON SHA-256: e55182d1fc34bf366ec4800dda85f128c616cfd28372360a5bdbd1093d71fe51
+
+
+
+
+Open this file directly in a browser. Use the browser's Print command for paper or PDF. Source links are shown as text; this report
+has no scripts, remote assets or grade-editing controls.
+

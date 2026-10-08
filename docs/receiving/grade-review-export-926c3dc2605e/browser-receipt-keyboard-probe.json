@@ -1,0 +1,114 @@
+{
+  "synthetic": true,
+  "started_at": "2026-10-08T17:23:52.927Z",
+  "browser_profile": "/home/jacob/grade-export-browser-926c3dc2605e-32pJ7s",
+  "html_sha256": "8bc68c0e8db335a069afdeb29c8efbd00baa7d5d1ef583ceebede0a8f0927f11",
+  "normalized_sha256": "e55182d1fc34bf366ec4800dda85f128c616cfd28372360a5bdbd1093d71fe51",
+  "requests": [
+    {
+      "url": "file:///home/jacob/canvaspilot-grade-review-export-926c3dc2605e/docs/receiving/grade-review-export-926c3dc2605e/synthetic-review.html",
+      "method": "GET"
+    }
+  ],
+  "exceptions": [],
+  "checks": {
+    "desktop_content": {
+      "passed": true,
+      "detail": {
+        "title": "Synthetic Linear Algebra",
+        "cards": 4,
+        "scrollWidth": 1085,
+        "width": 1100,
+        "hasWarning": true,
+        "details": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "headings": [
+          "Reported course totals",
+          "Assignment groups",
+          "Problem sets",
+          "Exams",
+          "Report context"
+        ]
+      }
+    },
+    "desktop_width": {
+      "passed": true,
+      "detail": {
+        "title": "Synthetic Linear Algebra",
+        "cards": 4,
+        "scrollWidth": 1085,
+        "width": 1100,
+        "hasWarning": true,
+        "details": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "headings": [
+          "Reported course totals",
+          "Assignment groups",
+          "Problem sets",
+          "Exams",
+          "Report context"
+        ]
+      }
+    },
+    "details_initially_closed": {
+      "passed": true,
+      "detail": [
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    "keyboard_reaches_details": {
+      "passed": true,
+      "detail": {
+        "tag": "SUMMARY",
+        "text": "All returned assignment and submission fields"
+      }
+    },
+    "keyboard_opens_details": {
+      "passed": false,
+      "detail": false
+    }
+  },
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/153.0.8010.47",
+    "revision": "@73934a44f61e6b3878d1943064c141a5a820f5f7",
+    "userAgent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+    "jsVersion": "15.3.76.12"
+  },
+  "passed": false,
+  "error": "Error: Receiving assertion: keyboard_opens_details\n    at check (file:///home/jacob/canvaspilot-grade-review-export-926c3dc2605e/docs/receiving/grade-review-export-926c3dc2605e/browser-receiving.mjs:27:25)\n    at file:///home/jacob/canvaspilot-grade-review-export-926c3dc2605e/docs/receiving/grade-review-export-926c3dc2605e/browser-receiving.mjs:93:3",
+  "finished_at": "2026-10-08T17:23:59.909Z",
+  "artifacts": {
+    "synthetic-review.html": {
+      "bytes": 26586,
+      "sha256": "8bc68c0e8db335a069afdeb29c8efbd00baa7d5d1ef583ceebede0a8f0927f11"
+    },
+    "synthetic-normalized.json": {
+      "bytes": 4881,
+      "sha256": "e55182d1fc34bf366ec4800dda85f128c616cfd28372360a5bdbd1093d71fe51"
+    },
+    "desktop.png": {
+      "bytes": 112697,
+      "sha256": "5921b0dc71890e31f274ad9c4b0d32b4ea8529fe256ba3e687504eb20b9eb0a7"
+    },
+    "desktop-assignments.png": {
+      "bytes": 63946,
+      "sha256": "6ec598684f519958be5b37927c7deacf5013a9f0e6b41804048a8ff0c2ec542e"
+    },
+    "browser-receiving.mjs": {
+      "bytes": 10839,
+      "sha256": "d42d12834f1ac882c09569a853eb66ec728b99b6a7f1e78d6f7f955badedca3c"
+    }
+  }
+}
