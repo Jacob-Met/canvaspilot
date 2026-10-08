@@ -659,7 +659,7 @@ class CanvasAPI:
         return self.client.get_paginated("/api/v1/planner/items", params=params)
 
     def activity_stream(self) -> Any:
-        return self.client.request("GET", "/api/v1/users/self/activity_stream")
+        return self.client.get_paginated("/api/v1/users/self/activity_stream")
 
     def list_todo_items(self) -> list[Any]:
         return self.client.get_paginated("/api/v1/users/self/todo")

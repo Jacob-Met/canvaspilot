@@ -73,6 +73,11 @@ def main(argv: list[str] | None = None) -> None:
             p.add_argument("--limit-assignments-per-course", type=_positive_int, default=5,
                            help="Maximum assignments to include per course (default: 5)")
 
+    activity = sub.add_parser(
+        "activity", help="Read all available current-user activity-stream pages",
+    )
+    add_common(activity)
+
     find_announcements = sub.add_parser(
         "find-announcements", help="Find literal text in complete selected-course announcements",
     )
@@ -538,6 +543,24 @@ def main(argv: list[str] | None = None) -> None:
                 }), file=sys.stderr)
                 raise SystemExit(1) from None
             print(json.dumps({"ok": True, "output": str(args.out), **report}, indent=2))
+        elif args.cmd == "activity":
+            import httpx
+
+            from canvaspilot.client import CanvasAuthError, CanvasPaginationError
+
+            http_log = logging.getLogger("httpx")
+            previous_level = http_log.level
+            http_log.setLevel(max(http_log.getEffectiveLevel(), logging.WARNING))
+            try:
+                result = api.activity_stream()
+            except (CanvasAuthError, CanvasPaginationError, httpx.HTTPError, ValueError) as error:
+                print(json.dumps({
+                    "ok": False, "error": type(error).__name__, "message": str(error),
+                }), file=sys.stderr)
+                raise SystemExit(1) from None
+            finally:
+                http_log.setLevel(previous_level)
+            print(json.dumps(result, indent=2, default=str))
         elif args.cmd == "planner":
             import httpx
 

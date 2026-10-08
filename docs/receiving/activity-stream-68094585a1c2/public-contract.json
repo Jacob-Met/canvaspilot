@@ -1,0 +1,131 @@
+{
+  "schema": "hamon.canvaspilot.activity-stream.public-contract/1",
+  "owner": "chatgpt:68094585a1c2 / levenshtein_receiving",
+  "project": "Jacob-Met/canvaspilot",
+  "purpose": "Let a learner read the available current-user global activity stream through the native CLI, including later pages supplied by Canvas, with complete-read failure behavior.",
+  "source": {
+    "commit": "56a72a2e2cee5ec04671d12ebe5bc2484afb8026",
+    "tree": "a07c3e941219ff80968e1ff20528a63541bb7400",
+    "leaves": 1616,
+    "root": "/home/jacob/hamon-canvas-activity-68094585a1c2/source",
+    "originalBlobs": {
+      "src/canvaspilot/api.py": "3ec81dee60bc67d7a80d40b78e85d5c005441b99",
+      "src/canvaspilot/client.py": "1db4b1135305f7e410025ae7937f9a6cd349f020",
+      "src/canvaspilot/cli.py": "1c29dd2a2a1632b7f3c27878259efe492a08fdfd",
+      "src/canvaspilot/mcp_server.py": "0f7130673b3a139abdacb588410edb23a01dc56d"
+    },
+    "pins": [
+      {
+        "path": "src/canvaspilot/api.py",
+        "bytes": 29742,
+        "sha256": "b6b770c2cdef9c9ce44a4a6aefd5b6d0876bc09e5aee29a4adb5a7c603b41c24",
+        "git_blob": "3ec81dee60bc67d7a80d40b78e85d5c005441b99"
+      },
+      {
+        "path": "src/canvaspilot/client.py",
+        "bytes": 18934,
+        "sha256": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797",
+        "git_blob": "1db4b1135305f7e410025ae7937f9a6cd349f020"
+      },
+      {
+        "path": "src/canvaspilot/cli.py",
+        "bytes": 40011,
+        "sha256": "c703a5dad3ef54ed308fb217c4a3b0a32791ea5f9b84093669fa667bb7a3a12b",
+        "git_blob": "1c29dd2a2a1632b7f3c27878259efe492a08fdfd"
+      },
+      {
+        "path": "src/canvaspilot/mcp_server.py",
+        "bytes": 16291,
+        "sha256": "52cfd5cbe167438762049f4c36feec822986f5e5e63aeaf494e07907235e1c98",
+        "git_blob": "0f7130673b3a139abdacb588410edb23a01dc56d"
+      }
+    ]
+  },
+  "publicInterface": {
+    "python": "CanvasAPI.activity_stream() — existing no-argument interface retained",
+    "cli": "canvaspilot activity [--base-url URL] [--profile PATH] [--token TOKEN]",
+    "entrypoint": "canvaspilot.cli:main (existing pyproject console entry)",
+    "newSelectionFlags": [],
+    "newFilters": [],
+    "endpoint": "GET /api/v1/users/self/activity_stream",
+    "mcp": "Existing canvas_activity_stream delegate remains byte-identical and inherits the API result."
+  },
+  "behavior": [
+    "Use the existing CanvasClient.get_paginated for this endpoint; do not create a second pagination implementation.",
+    "Preserve each returned item's complete decoded payload, unknown fields, nested values, original page/row order and duplicate identities. Do not sort, normalize, deduplicate, rank, infer unread state or fetch linked content.",
+    "Apply no new course, date, read-state, active-course or result-count filter. The client's original per_page default, opaque continuation URL handling, same-origin guard, token/session/fixture routing and 40-page bound remain authoritative.",
+    "A terminal response ends traversal without an extra empty-page probe. A continuing short or empty page follows its valid next link.",
+    "An authentication/HTTP/pagination/JSON-decoding failure, invalid continuation, repeated URL, continuing non-list body or known continuation after 40 pages propagates through the API; do not return previously collected pages as success.",
+    "Preserve the generic client's first terminal single-resource convention: a first terminal object/scalar is wrapped as one list entry; fixture behavior is unchanged. This change adds no stricter activity-item schema.",
+    "CLI waits for the API result before stdout, then prints that result using the existing JSON style: indent=2, default=str, trailing newline.",
+    "Within the new activity dispatch, CanvasAuthError, CanvasPaginationError, httpx.HTTPError and ValueError produce exit1, empty successful stdout and one JSON error object on stderr with ok=false, error class name and message.",
+    "During the activity read, suppress ordinary HTTPX request logging and restore the exact caller's HTTPX logger level on success or failure. Preserve the existing API/client close path.",
+    "Unknown activity arguments are rejected by argparse before CanvasClient construction. The new command makes no independent account/profile/broker setup changes.",
+    "No Canvas write, mark-read, hide/delete, subscription, provider/model request, browser launch or linked-resource fetch is introduced. Native qualification uses authored loopback/fixture data only."
+  ],
+  "limitations": [
+    "This is the available Canvas activity-stream collection, not a full historical archive, complete assignment inventory, count of all unread work or proof of message-body completeness.",
+    "The primary API documents truncation of some activity message types at 4KB. This reader preserves received payloads; it does not recover omitted source text.",
+    "Native fixture/loopback receiving does not establish live school authentication, live unread-state behavior or student outcomes.",
+    "Generic client validation and native JSON serialization remain unchanged; no new validation promise is made for arbitrary provider scalar values.",
+    "Actual required hosted gates remain unrun under the no-Actions hold."
+  ],
+  "sourceFence": {
+    "modify": {
+      "src/canvaspilot/api.py": "Only existing activity_stream method body; preserve no-argument signature and every other body.",
+      "src/canvaspilot/cli.py": "Only additive activity parser and dispatch spans; preserve all existing commands.",
+      "README.md": "One additive activity section or pointer."
+    },
+    "add": [
+      "tests/test_activity_stream.py",
+      "docs/activity-stream.md",
+      "docs/receiving/activity-stream-68094585a1c2/**"
+    ],
+    "excluded": [
+      "client transport/pagination/auth/broker",
+      "MCP delegate and registry",
+      "existing assignment/page search and inbox/discussion export source",
+      "dependencies/workflows",
+      "all other API/CLI behaviors"
+    ]
+  },
+  "primaryReferences": [
+    {
+      "url": "https://developerdocs.instructure.com/services/canvas/resources/users#method.users.activity_stream",
+      "observed": "2026-10-08",
+      "basis": "Official activity-stream endpoint is paginated; heterogeneous records and endpoint message truncation are documented."
+    },
+    {
+      "url": "https://developerdocs.instructure.com/services/canvas/basics/file.pagination",
+      "basis": "Existing client's opaque Link pagination contract remains authoritative."
+    }
+  ],
+  "nativeEnvironment": {
+    "device": "d55b2499-5e82-4805-819a-d0d7ddea1efe",
+    "deviceName": "hamon-thinkpad",
+    "python": "/home/jacob/canvaspilot-enrollments-env-65ae877160f6/bin/python",
+    "pythonVersion": "3.14.4",
+    "dependencies": {
+      "httpx": "0.28.1",
+      "pytest": "9.1.1",
+      "pydantic": "2.14.0",
+      "mcp": "2.3.0"
+    },
+    "dependencyUse": "Existing environment read-only; -B/PYTHONDONTWRITEBYTECODE, own source and own temporary roots. No installs or peer cleanup."
+  },
+  "executionBoundary": {
+    "candidateWritten": false,
+    "baselineRequiredBeforeCandidate": true,
+    "independentReceiver": "/root — freeze independent expectations before candidate exposure",
+    "actionsHold": "Jacob-Met/hamon#143 comment6067592767; no dispatch, rerun or triggering push/PR/merge"
+  },
+  "receivingIntent": [
+    "Actual native original before-image, including omitted configured later page and missing activity CLI command",
+    "Real token loopback pages, exact payload preservation and terminal controls",
+    "Initial/later errors and pagination failure with no partial CLI success",
+    "Logger restoration, client close and argument admission",
+    "Unchanged MCP delegation using installed SDK where available",
+    "Original source/tree preservation and meaningful existing tests"
+  ],
+  "frozenAt": "2026-10-08T21:15:42.557924+00:00"
+}

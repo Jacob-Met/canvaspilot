@@ -1,0 +1,517 @@
+{
+  "schema": "hamon.canvaspilot.activity-independent-capsule/1",
+  "actor": "chatgpt:68094585a1c2 / root",
+  "sealedAt": "2026-10-08T21:37:11.417938+00:00",
+  "sourceCommit": "56a72a2e2cee5ec04671d12ebe5bc2484afb8026",
+  "sourceTree": "a07c3e941219ff80968e1ff20528a63541bb7400",
+  "files": {
+    "CONTINUATION.json": {
+      "bytes": 4623,
+      "sha256": "7e95325c3379377f2908594364bb89cc1d549c3d788a294f7a1b8f6e65c8d581",
+      "git_blob": "6fc279ee26c51bdc80a64c87141d2fbe3144bb25",
+      "mode": "0o664"
+    },
+    "actions-comment-trigger-audit-v1.json": {
+      "bytes": 7402,
+      "sha256": "2698f908c7263cb1ee43e2fb85d85604fefa5f65600536fbad28b4c579d3bf52",
+      "git_blob": "b26d32c1a0ce5e45e7ea9de40c1a85118c0f298a",
+      "mode": "0o664"
+    },
+    "author-public-contract.json": {
+      "bytes": 7933,
+      "sha256": "5ff5e39438db240fb2a1867df01c52218a0e4eed9df2a6dd9f071e2ff2373bc5",
+      "git_blob": "983f912f820efb50aeb320fa589f76cd4a425056",
+      "mode": "0o664"
+    },
+    "baseline-v1/receipt.json": {
+      "bytes": 22596,
+      "sha256": "cbaa7d44a46b3f3bc45fba085626447501a0fbc3fbae4a9816c668853e68d23c",
+      "git_blob": "ce48870d1b31446ac3ba8c72134b5e7642feea61",
+      "mode": "0o664"
+    },
+    "candidate-admission-v1.json": {
+      "bytes": 25164,
+      "sha256": "91d73bef6443abefbe0dd009d63ddfdafdc26517bc8d449ed1c585db208f3d19",
+      "git_blob": "b720d4f785e9cf42a68a1d0bb2f272b481ed4ccf",
+      "mode": "0o664"
+    },
+    "candidate-product-manifest-v1.json": {
+      "bytes": 9966,
+      "sha256": "d5149f9f86c6da871ed05ee39007062cd55780604f0b1b27b62276910fa1ae3e",
+      "git_blob": "9c368cf6d97f6ea18aff0718ca9ea9d89d594f55",
+      "mode": "0o664"
+    },
+    "candidate-source-v1/README.md": {
+      "bytes": 28545,
+      "sha256": "0d051f8f54bcf134300c36779e6b4d76ae63dc9dbebd4192af245c2563dc7825",
+      "git_blob": "09eedad6e9d98b42fbaaa849b951f7c25a9a8aa8",
+      "mode": "0o664"
+    },
+    "candidate-source-v1/docs/activity-stream.md": {
+      "bytes": 5304,
+      "sha256": "8227a935283b72668510f6d6d6e377e58b02225b702869c160e6df8fe3a3160b",
+      "git_blob": "2e7ebd7fcbc74f26f9d96e4b6412a97c63c62a20",
+      "mode": "0o664"
+    },
+    "candidate-source-v1/pyproject.toml": {
+      "bytes": 1353,
+      "sha256": "555ad3c7e338d38ae5feabc06c0c07503f22d9c732a9af153c7706c63d2b3c63",
+      "git_blob": "76eba6d30696b4f2733539cd47df6e178bc0f585",
+      "mode": "0o664"
+    },
+    "candidate-source-v1/src/canvaspilot/__init__.py": {
+      "bytes": 561,
+      "sha256": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5",
+      "git_blob": "74a7a6087bf81fd7c75c15769b30408039618e0f",
+      "mode": "0o664"
+    },
+    "candidate-source-v1/src/canvaspilot/agenda.py": {
+      "bytes": 8455,
+      "sha256": "cd9d9e027393ce21cff0b4d0a13098dca3a906af3e9803201655bca40d3c3fda",
+      "git_blob": "82ab4fa8f9b92b8d9e5d4c74962d138e1d882ebd",
+      "mode": "0o664"
+    },
+    "candidate-source-v1/src/canvaspilot/agenda_export.py": {
+      "bytes": 15270,
+      "sha256": "4e55a0c16e76286130f01e81f04685da1a3ecd9bb5a7a0493ccbfe97c0fcd3ce",
+      "git_blob": "af25e95a1c9bf4a20784617e5c867d18584ac49a",
+      "mode": "0o664"
+    },
+    "candidate-source-v1/src/canvaspilot/agenda_view/controls.js": {
+      "bytes": 2823,
+      "sha256": "98474fb98fff0027e26fabd024c33a186715b5ac612979c4ef8b1d84b181d172",
+      "git_blob": "107097a5ad2379fb7497e1b38c488b3a7917e93f",
+      "mode": "0o664"
+    },
+    "candidate-source-v1/src/canvaspilot/agenda_view/style.css": {
+      "bytes": 7435,
+      "sha256": "ed5f86e62198a9a0b13cbcd87db0bdae9cb2e5732358bf6eb684da47f45610d0",
+      "git_blob": "86ad5459a44c91d0fb448e77dcda78cf1d39642b",
+      "mode": "0o664"
+    },
+    "candidate-source-v1/src/canvaspilot/announcement_search.py": {
+      "bytes": 1555,
+      "sha256": "aa766157ccc10d6c3371a0e761c89ce3189d201cd9fcf5b82eec22d1c572f65e",
+      "git_blob": "b2b344526b14c2f123163f6bcfd28f70e28281e8",
+      "mode": "0o664"
+    },
+    "candidate-source-v1/src/canvaspilot/api.py": {
+      "bytes": 29741,
+      "sha256": "512f768d782e0775f2ec573c3a3b7ce8426c1c99900a6964c33fa37cdb267402",
+      "git_blob": "f0e25c38f8ed521fae3dfbcbf7c9f1757a9fbba0",
+      "mode": "0o664"
+    },
+    "candidate-source-v1/src/canvaspilot/assignment_submission.py": {
+      "bytes": 1296,
+      "sha256": "52fc732660b8844a2ee0801931a363f20db15b5309d148d01e3b618be487133d",
+      "git_blob": "95b1f19927e4eecf99fc852325737c3cfe86cd0d",
+      "mode": "0o664"
+    },
+    "candidate-source-v1/src/canvaspilot/bundle.py": {
+      "bytes": 2761,
+      "sha256": "c8a1854b5c04715c1371c05f4c25ba867ec2d2daafc132b7ed8a973d3e55ddcf",
+      "git_blob": "c2544032a1cfcdc116725c6403ff09d7b0328f87",
+      "mode": "0o664"
+    },
+    "candidate-source-v1/src/canvaspilot/calendar_export.py": {
+      "bytes": 9950,
+      "sha256": "b92948c438063438bf9b8ef01b0b0c067802ddb06354f00e8ee18749f3c5e2fa",
+      "git_blob": "ef74cfdf50fd894327dbe45a9a9d43042953bc31",
+      "mode": "0o664"
+    },
+    "candidate-source-v1/src/canvaspilot/cli.py": {
+      "bytes": 40978,
+      "sha256": "fa3fb1cb85c7e7e3301f31d0cc8dfa52f53a11173615b565de76ed49ec110bc6",
+      "git_blob": "786a2dedac34942bd320964ba19edeede88c537e",
+      "mode": "0o664"
+    },
+    "candidate-source-v1/src/canvaspilot/client.py": {
+      "bytes": 18934,
+      "sha256": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797",
+      "git_blob": "1db4b1135305f7e410025ae7937f9a6cd349f020",
+      "mode": "0o664"
+    },
+    "candidate-source-v1/src/canvaspilot/discussion_thread.py": {
+      "bytes": 8547,
+      "sha256": "11f955f827c29421143782518a1aaf1894d0892739c3b56c4d5e413da74555ff",
+      "git_blob": "2ed658fcf5cee996a02115742935716f1d039e25",
+      "mode": "0o664"
+    },
+    "candidate-source-v1/src/canvaspilot/feedback.py": {
+      "bytes": 3900,
+      "sha256": "55454598effea598474a21f67e36d5bc5bea84aaefeefc18e4d8c49804ab9869",
+      "git_blob": "ec996f421a851d699a9ac7cb1f2a486f9ff7c4ea",
+      "mode": "0o664"
+    },
+    "candidate-source-v1/src/canvaspilot/folder_browser.py": {
+      "bytes": 6293,
+      "sha256": "c6a67229b268c539e5edb581e3320b06229460adc3fbc01d72e4964e31c0348a",
+      "git_blob": "4b3078ddb00a4a34015710e49fa7b7806adebd23",
+      "mode": "0o664"
+    },
+    "candidate-source-v1/src/canvaspilot/grade_review.py": {
+      "bytes": 13247,
+      "sha256": "e550752a830ca9cf4c2ef5d5b06dbf464abd9dfed3a5252d310a4acf8e2411f5",
+      "git_blob": "24d93cb693af09cf5123f31fea90e77a589b023c",
+      "mode": "0o664"
+    },
+    "candidate-source-v1/src/canvaspilot/grade_review_export.py": {
+      "bytes": 18810,
+      "sha256": "0f16c805d57bf9aa8eba09b6bde2afde033bf09fe64b4525adf22de3b248c351",
+      "git_blob": "8a6281f62f99e18109f90a273a4c29da4929f3a3",
+      "mode": "0o664"
+    },
+    "candidate-source-v1/src/canvaspilot/mcp_server.py": {
+      "bytes": 16291,
+      "sha256": "52cfd5cbe167438762049f4c36feec822986f5e5e63aeaf494e07907235e1c98",
+      "git_blob": "0f7130673b3a139abdacb588410edb23a01dc56d",
+      "mode": "0o664"
+    },
+    "candidate-source-v1/src/canvaspilot/module_progress.py": {
+      "bytes": 9615,
+      "sha256": "974ee31925514a2e53b899888302a7fa357e280ab5f2461b754b814473653d99",
+      "git_blob": "a9d3e4bbea22067f76110f03a5f31a5bc9d8de05",
+      "mode": "0o664"
+    },
+    "candidate-source-v1/src/canvaspilot/module_progress_export.py": {
+      "bytes": 12904,
+      "sha256": "f723c06e551fae2cf50745460f9109867e6e0f9ebc3cc997d49d5e2173aa9f50",
+      "git_blob": "8ccb9f1262790a744418d4212e072ee43031ab88",
+      "mode": "0o664"
+    },
+    "candidate-source-v1/src/canvaspilot/offline_demo.py": {
+      "bytes": 4124,
+      "sha256": "2389f3ccc1b6db5995be0d90e014ea9345e3029aa5546a5b2dcf12c1197e6d4d",
+      "git_blob": "9d2cfd260d8db052b8183e3ec4fc9626a5bb2b9a",
+      "mode": "0o664"
+    },
+    "candidate-source-v1/src/canvaspilot/page_export.py": {
+      "bytes": 17041,
+      "sha256": "8800e959ee620438273c3291fd24c51b9ed567430b28093cd3f8bef52bff5015",
+      "git_blob": "1b46af8af07d24e24cde54aba393d9f977e77136",
+      "mode": "0o664"
+    },
+    "candidate-source-v1/src/canvaspilot/session_broker.py": {
+      "bytes": 13944,
+      "sha256": "a692cd2812cbc09536f1b60c84892bc8e87d2ae984c5a5aa25a13f6537ba6da2",
+      "git_blob": "cc706d5860489ec37cb2cf7f0b1cb4eee33b664f",
+      "mode": "0o664"
+    },
+    "candidate-source-v1/src/canvaspilot/study_workspace.css": {
+      "bytes": 6648,
+      "sha256": "aa77aeba7b1400eeccde7430e77eb0de0d5fd9791c4f1960c930309ba574fe2b",
+      "git_blob": "951e0416c9bf558d7fb79d2257d636654e195918",
+      "mode": "0o664"
+    },
+    "candidate-source-v1/src/canvaspilot/study_workspace.html": {
+      "bytes": 2334,
+      "sha256": "1181415863ceef48a6238ce1588a722f1ae914be6d8125f04553fe2321110c1e",
+      "git_blob": "9b9b94bf209fda6918979e380a1c2616118f1466",
+      "mode": "0o664"
+    },
+    "candidate-source-v1/src/canvaspilot/study_workspace.js": {
+      "bytes": 16544,
+      "sha256": "62dcac599d6cf7f880a08a2297d2880c238e8a758843ec790a365b18a88bc38c",
+      "git_blob": "bed8d49493c4d4b162046e49e4545418ca131f95",
+      "mode": "0o664"
+    },
+    "candidate-source-v1/src/canvaspilot/study_workspace.py": {
+      "bytes": 11259,
+      "sha256": "fb791929a7322850d4a92fbf2a7d54a71780e2dd54a0737b84258de09abd0515",
+      "git_blob": "fe3b47e2ba55463c4f016d3173f8397e281f421b",
+      "mode": "0o664"
+    },
+    "candidate-source-v1/src/canvaspilot/submission_comparison.py": {
+      "bytes": 27015,
+      "sha256": "ab7445cadf2a22b31d8f8f837b816d90367d5295e90fe73615a459bc2d9101d4",
+      "git_blob": "f8e2b9bfef5bb799bd75c6c1f3c6e56366fcf9ad",
+      "mode": "0o664"
+    },
+    "candidate-source-v1/src/canvaspilot/submission_history.py": {
+      "bytes": 2853,
+      "sha256": "b007234b9861a68504e36f005ae463943b36b5cd50a3d157532c1cab09fcf9da",
+      "git_blob": "9e71a0dc944bee71b0b5c61d7ff84cbb59119e1a",
+      "mode": "0o664"
+    },
+    "candidate-source-v1/src/canvaspilot/submission_history_export.py": {
+      "bytes": 16025,
+      "sha256": "7582f1aa2a18ace57c1ed4e0f75dc095850520853f26f578104f8fbd893da14f",
+      "git_blob": "bc94606454e7d5cb880a5d281716cd7ee0dfb8ac",
+      "mode": "0o664"
+    },
+    "candidate-source-v1/src/canvaspilot/syllabus_packet.py": {
+      "bytes": 21513,
+      "sha256": "005a837c10bb185edf0bcc75c3ab50609f6afbe49d38161e841380116ab97bd7",
+      "git_blob": "1faf3448c391fdb76b8cf38fe5854906614443b1",
+      "mode": "0o664"
+    },
+    "candidate-v1/receipt.json": {
+      "bytes": 34466,
+      "sha256": "ec1428fde471fc55ab66c1f10c5d0625f4d3a66fde5268a2255bd077afbca5e3",
+      "git_blob": "19f8996f70666d1a832ebd2905bd0b1959ba0f8d",
+      "mode": "0o664"
+    },
+    "continuation-at-baseline-v1.json": {
+      "bytes": 4120,
+      "sha256": "b2aacc08d092e467026a81e2982f9a3b2366fb10dbb0298be9ec48081259145b",
+      "git_blob": "49cda4e6820d35793aa73b3e84ad778a3d999c85",
+      "mode": "0o664"
+    },
+    "contract-before-candidate.json": {
+      "bytes": 9879,
+      "sha256": "2f2b42e0c0a5c17026c5450a9a811dc96baeb5c0910ec38ffe5c787912cffead",
+      "git_blob": "e605666edefffbe80b1171614bab39489227827e",
+      "mode": "0o664"
+    },
+    "fixtures-before-candidate.json": {
+      "bytes": 5054,
+      "sha256": "9696bd0b1aad9a682b0c37b6a69c16dd64e97f1e4f18baaf410f92346f8db141",
+      "git_blob": "ab383855cc984acdb9f6d76b0961b9aee24f827a",
+      "mode": "0o664"
+    },
+    "freeze-receipt.json": {
+      "bytes": 8284,
+      "sha256": "0577e41350f64addc0195485a18ceece085bf6c1df2059dc98b75262cd9c57fd",
+      "git_blob": "8bc6fae7488c084ea7d47decac480698c4b5f2ad",
+      "mode": "0o664"
+    },
+    "independent_receiver_v1.py": {
+      "bytes": 16957,
+      "sha256": "62c2be4542753977e0ba5fd51a0569897b4ae13db7b0ce45000d44cf3f1ba3b1",
+      "git_blob": "4782b50ea7cb94d1e818cc07d0a9b6260a9fd101",
+      "mode": "0o664"
+    },
+    "observer-initial-sdk-probe.json": {
+      "bytes": 1063,
+      "sha256": "07cbd19a4d94876f628ad09455cef6630d4a048e7c373b9bf9b710bcad428f56",
+      "git_blob": "eb7df82985fabaac8226db6cbd8e780b4086f3aa",
+      "mode": "0o664"
+    },
+    "original/README.md": {
+      "bytes": 28312,
+      "sha256": "b0aa880aca4d5651a7291ea99516b1dbf1a9ba2f20f38a3fc440fe2a99302ba8",
+      "git_blob": "8df69ec7c8f3deed9a8cd1c44deac70bd92fe1cb",
+      "mode": "0o664"
+    },
+    "original/pyproject.toml": {
+      "bytes": 1353,
+      "sha256": "555ad3c7e338d38ae5feabc06c0c07503f22d9c732a9af153c7706c63d2b3c63",
+      "git_blob": "76eba6d30696b4f2733539cd47df6e178bc0f585",
+      "mode": "0o664"
+    },
+    "original/src/canvaspilot/__init__.py": {
+      "bytes": 561,
+      "sha256": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5",
+      "git_blob": "74a7a6087bf81fd7c75c15769b30408039618e0f",
+      "mode": "0o664"
+    },
+    "original/src/canvaspilot/agenda.py": {
+      "bytes": 8455,
+      "sha256": "cd9d9e027393ce21cff0b4d0a13098dca3a906af3e9803201655bca40d3c3fda",
+      "git_blob": "82ab4fa8f9b92b8d9e5d4c74962d138e1d882ebd",
+      "mode": "0o664"
+    },
+    "original/src/canvaspilot/agenda_export.py": {
+      "bytes": 15270,
+      "sha256": "4e55a0c16e76286130f01e81f04685da1a3ecd9bb5a7a0493ccbfe97c0fcd3ce",
+      "git_blob": "af25e95a1c9bf4a20784617e5c867d18584ac49a",
+      "mode": "0o664"
+    },
+    "original/src/canvaspilot/agenda_view/controls.js": {
+      "bytes": 2823,
+      "sha256": "98474fb98fff0027e26fabd024c33a186715b5ac612979c4ef8b1d84b181d172",
+      "git_blob": "107097a5ad2379fb7497e1b38c488b3a7917e93f",
+      "mode": "0o664"
+    },
+    "original/src/canvaspilot/agenda_view/style.css": {
+      "bytes": 7435,
+      "sha256": "ed5f86e62198a9a0b13cbcd87db0bdae9cb2e5732358bf6eb684da47f45610d0",
+      "git_blob": "86ad5459a44c91d0fb448e77dcda78cf1d39642b",
+      "mode": "0o664"
+    },
+    "original/src/canvaspilot/announcement_search.py": {
+      "bytes": 1555,
+      "sha256": "aa766157ccc10d6c3371a0e761c89ce3189d201cd9fcf5b82eec22d1c572f65e",
+      "git_blob": "b2b344526b14c2f123163f6bcfd28f70e28281e8",
+      "mode": "0o664"
+    },
+    "original/src/canvaspilot/api.py": {
+      "bytes": 29742,
+      "sha256": "b6b770c2cdef9c9ce44a4a6aefd5b6d0876bc09e5aee29a4adb5a7c603b41c24",
+      "git_blob": "3ec81dee60bc67d7a80d40b78e85d5c005441b99",
+      "mode": "0o664"
+    },
+    "original/src/canvaspilot/assignment_submission.py": {
+      "bytes": 1296,
+      "sha256": "52fc732660b8844a2ee0801931a363f20db15b5309d148d01e3b618be487133d",
+      "git_blob": "95b1f19927e4eecf99fc852325737c3cfe86cd0d",
+      "mode": "0o664"
+    },
+    "original/src/canvaspilot/bundle.py": {
+      "bytes": 2761,
+      "sha256": "c8a1854b5c04715c1371c05f4c25ba867ec2d2daafc132b7ed8a973d3e55ddcf",
+      "git_blob": "c2544032a1cfcdc116725c6403ff09d7b0328f87",
+      "mode": "0o664"
+    },
+    "original/src/canvaspilot/calendar_export.py": {
+      "bytes": 9950,
+      "sha256": "b92948c438063438bf9b8ef01b0b0c067802ddb06354f00e8ee18749f3c5e2fa",
+      "git_blob": "ef74cfdf50fd894327dbe45a9a9d43042953bc31",
+      "mode": "0o664"
+    },
+    "original/src/canvaspilot/cli.py": {
+      "bytes": 40011,
+      "sha256": "c703a5dad3ef54ed308fb217c4a3b0a32791ea5f9b84093669fa667bb7a3a12b",
+      "git_blob": "1c29dd2a2a1632b7f3c27878259efe492a08fdfd",
+      "mode": "0o664"
+    },
+    "original/src/canvaspilot/client.py": {
+      "bytes": 18934,
+      "sha256": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797",
+      "git_blob": "1db4b1135305f7e410025ae7937f9a6cd349f020",
+      "mode": "0o664"
+    },
+    "original/src/canvaspilot/discussion_thread.py": {
+      "bytes": 8547,
+      "sha256": "11f955f827c29421143782518a1aaf1894d0892739c3b56c4d5e413da74555ff",
+      "git_blob": "2ed658fcf5cee996a02115742935716f1d039e25",
+      "mode": "0o664"
+    },
+    "original/src/canvaspilot/feedback.py": {
+      "bytes": 3900,
+      "sha256": "55454598effea598474a21f67e36d5bc5bea84aaefeefc18e4d8c49804ab9869",
+      "git_blob": "ec996f421a851d699a9ac7cb1f2a486f9ff7c4ea",
+      "mode": "0o664"
+    },
+    "original/src/canvaspilot/folder_browser.py": {
+      "bytes": 6293,
+      "sha256": "c6a67229b268c539e5edb581e3320b06229460adc3fbc01d72e4964e31c0348a",
+      "git_blob": "4b3078ddb00a4a34015710e49fa7b7806adebd23",
+      "mode": "0o664"
+    },
+    "original/src/canvaspilot/grade_review.py": {
+      "bytes": 13247,
+      "sha256": "e550752a830ca9cf4c2ef5d5b06dbf464abd9dfed3a5252d310a4acf8e2411f5",
+      "git_blob": "24d93cb693af09cf5123f31fea90e77a589b023c",
+      "mode": "0o664"
+    },
+    "original/src/canvaspilot/grade_review_export.py": {
+      "bytes": 18810,
+      "sha256": "0f16c805d57bf9aa8eba09b6bde2afde033bf09fe64b4525adf22de3b248c351",
+      "git_blob": "8a6281f62f99e18109f90a273a4c29da4929f3a3",
+      "mode": "0o664"
+    },
+    "original/src/canvaspilot/mcp_server.py": {
+      "bytes": 16291,
+      "sha256": "52cfd5cbe167438762049f4c36feec822986f5e5e63aeaf494e07907235e1c98",
+      "git_blob": "0f7130673b3a139abdacb588410edb23a01dc56d",
+      "mode": "0o664"
+    },
+    "original/src/canvaspilot/module_progress.py": {
+      "bytes": 9615,
+      "sha256": "974ee31925514a2e53b899888302a7fa357e280ab5f2461b754b814473653d99",
+      "git_blob": "a9d3e4bbea22067f76110f03a5f31a5bc9d8de05",
+      "mode": "0o664"
+    },
+    "original/src/canvaspilot/module_progress_export.py": {
+      "bytes": 12904,
+      "sha256": "f723c06e551fae2cf50745460f9109867e6e0f9ebc3cc997d49d5e2173aa9f50",
+      "git_blob": "8ccb9f1262790a744418d4212e072ee43031ab88",
+      "mode": "0o664"
+    },
+    "original/src/canvaspilot/offline_demo.py": {
+      "bytes": 4124,
+      "sha256": "2389f3ccc1b6db5995be0d90e014ea9345e3029aa5546a5b2dcf12c1197e6d4d",
+      "git_blob": "9d2cfd260d8db052b8183e3ec4fc9626a5bb2b9a",
+      "mode": "0o664"
+    },
+    "original/src/canvaspilot/page_export.py": {
+      "bytes": 17041,
+      "sha256": "8800e959ee620438273c3291fd24c51b9ed567430b28093cd3f8bef52bff5015",
+      "git_blob": "1b46af8af07d24e24cde54aba393d9f977e77136",
+      "mode": "0o664"
+    },
+    "original/src/canvaspilot/session_broker.py": {
+      "bytes": 13944,
+      "sha256": "a692cd2812cbc09536f1b60c84892bc8e87d2ae984c5a5aa25a13f6537ba6da2",
+      "git_blob": "cc706d5860489ec37cb2cf7f0b1cb4eee33b664f",
+      "mode": "0o664"
+    },
+    "original/src/canvaspilot/study_workspace.css": {
+      "bytes": 6648,
+      "sha256": "aa77aeba7b1400eeccde7430e77eb0de0d5fd9791c4f1960c930309ba574fe2b",
+      "git_blob": "951e0416c9bf558d7fb79d2257d636654e195918",
+      "mode": "0o664"
+    },
+    "original/src/canvaspilot/study_workspace.html": {
+      "bytes": 2334,
+      "sha256": "1181415863ceef48a6238ce1588a722f1ae914be6d8125f04553fe2321110c1e",
+      "git_blob": "9b9b94bf209fda6918979e380a1c2616118f1466",
+      "mode": "0o664"
+    },
+    "original/src/canvaspilot/study_workspace.js": {
+      "bytes": 16544,
+      "sha256": "62dcac599d6cf7f880a08a2297d2880c238e8a758843ec790a365b18a88bc38c",
+      "git_blob": "bed8d49493c4d4b162046e49e4545418ca131f95",
+      "mode": "0o664"
+    },
+    "original/src/canvaspilot/study_workspace.py": {
+      "bytes": 11259,
+      "sha256": "fb791929a7322850d4a92fbf2a7d54a71780e2dd54a0737b84258de09abd0515",
+      "git_blob": "fe3b47e2ba55463c4f016d3173f8397e281f421b",
+      "mode": "0o664"
+    },
+    "original/src/canvaspilot/submission_comparison.py": {
+      "bytes": 27015,
+      "sha256": "ab7445cadf2a22b31d8f8f837b816d90367d5295e90fe73615a459bc2d9101d4",
+      "git_blob": "f8e2b9bfef5bb799bd75c6c1f3c6e56366fcf9ad",
+      "mode": "0o664"
+    },
+    "original/src/canvaspilot/submission_history.py": {
+      "bytes": 2853,
+      "sha256": "b007234b9861a68504e36f005ae463943b36b5cd50a3d157532c1cab09fcf9da",
+      "git_blob": "9e71a0dc944bee71b0b5c61d7ff84cbb59119e1a",
+      "mode": "0o664"
+    },
+    "original/src/canvaspilot/submission_history_export.py": {
+      "bytes": 16025,
+      "sha256": "7582f1aa2a18ace57c1ed4e0f75dc095850520853f26f578104f8fbd893da14f",
+      "git_blob": "bc94606454e7d5cb880a5d281716cd7ee0dfb8ac",
+      "mode": "0o664"
+    },
+    "original/src/canvaspilot/syllabus_packet.py": {
+      "bytes": 21513,
+      "sha256": "005a837c10bb185edf0bcc75c3ab50609f6afbe49d38161e841380116ab97bd7",
+      "git_blob": "1faf3448c391fdb76b8cf38fe5854906614443b1",
+      "mode": "0o664"
+    },
+    "seal-independent-capsule-v1.py": {
+      "bytes": 5775,
+      "sha256": "1af8dc3fb90241349f53622b96d7121e8dc231a6f24e6583be60ea9e2f97b26e",
+      "git_blob": "dfdd7fd0ce3662db283dc5090da229d9731e34e8",
+      "mode": "0o664"
+    },
+    "source-review-v1.json": {
+      "bytes": 6491,
+      "sha256": "ef1623bad5d7412ab572c49172b8fae7a1c2e66e96bec00853720e8ab9ddac4c",
+      "git_blob": "d566c898f96ccb9832bdd7e0bd9e5afd9522c452",
+      "mode": "0o664"
+    }
+  },
+  "originalSourceFiles": 33,
+  "candidateSourceFiles": 34,
+  "originalBaselineGroups": 3,
+  "candidateGroups": 13,
+  "candidateRealLoopbackGetRequests": 27,
+  "frozenBeforeCandidate": true,
+  "negativeObserverPreserved": "observer-initial-sdk-probe.json",
+  "sourceReview": {
+    "bytes": 6491,
+    "sha256": "ef1623bad5d7412ab572c49172b8fae7a1c2e66e96bec00853720e8ab9ddac4c",
+    "git_blob": "d566c898f96ccb9832bdd7e0bd9e5afd9522c452"
+  },
+  "requiredHostedGatesUnrun": true,
+  "liveCanvas": false,
+  "mcpBoundary": "Installed registered tool dispatch; not stdio.",
+  "actionsUsed": false
+}

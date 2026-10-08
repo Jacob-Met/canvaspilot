@@ -106,6 +106,10 @@ and a printable current view:
 The original native JSON remains available byte-identically.
 [Review and print a saved agenda](docs/agenda-export.md).
 
+Read your available global activity stream with `canvaspilot activity`.
+The [activity-stream guide](docs/activity-stream.md) explains complete page traversal,
+preserved returned records, JSON failures and the feed's content limits.
+
 Read your reported enrollment roles, states and grades with `canvaspilot enrollments`.
 The [enrollments CLI guide](docs/enrollments-cli.md) explains the default active
 filter, native state selection and the complete returned JSON collection.

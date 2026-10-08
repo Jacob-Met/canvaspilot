@@ -1,0 +1,89 @@
+{
+  "at": "2026-10-08T21:28:59.493086+00:00",
+  "sourceCommit": "56a72a2e2cee5ec04671d12ebe5bc2484afb8026",
+  "sourceTree": "a07c3e941219ff80968e1ff20528a63541bb7400",
+  "patch": {
+    "path": "/home/jacob/hamon-canvas-activity-68094585a1c2/activity-stream-v1.patch",
+    "bytes": 23781,
+    "sha256": "b5272e001f8b771d21f9e316f041f3b8405efbc2aa46e8bb1eb3c51fa4fa09d3",
+    "gitBlob": "2f26d4e685414eb1de0c864c103c16b08be4c97a"
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "nativePath": "/home/jacob/hamon-canvas-activity-68094585a1c2/candidate-v1/README.md",
+      "before": {
+        "bytes": 28312,
+        "sha256": "b0aa880aca4d5651a7291ea99516b1dbf1a9ba2f20f38a3fc440fe2a99302ba8",
+        "gitBlob": "8df69ec7c8f3deed9a8cd1c44deac70bd92fe1cb"
+      },
+      "after": {
+        "bytes": 28545,
+        "sha256": "0d051f8f54bcf134300c36779e6b4d76ae63dc9dbebd4192af245c2563dc7825",
+        "gitBlob": "09eedad6e9d98b42fbaaa849b951f7c25a9a8aa8"
+      }
+    },
+    {
+      "path": "docs/activity-stream.md",
+      "nativePath": "/home/jacob/hamon-canvas-activity-68094585a1c2/candidate-v1/docs/activity-stream.md",
+      "before": null,
+      "after": {
+        "bytes": 5304,
+        "sha256": "8227a935283b72668510f6d6d6e377e58b02225b702869c160e6df8fe3a3160b",
+        "gitBlob": "2e7ebd7fcbc74f26f9d96e4b6412a97c63c62a20"
+      }
+    },
+    {
+      "path": "src/canvaspilot/api.py",
+      "nativePath": "/home/jacob/hamon-canvas-activity-68094585a1c2/candidate-v1/src/canvaspilot/api.py",
+      "before": {
+        "bytes": 29742,
+        "sha256": "b6b770c2cdef9c9ce44a4a6aefd5b6d0876bc09e5aee29a4adb5a7c603b41c24",
+        "gitBlob": "3ec81dee60bc67d7a80d40b78e85d5c005441b99"
+      },
+      "after": {
+        "bytes": 29741,
+        "sha256": "512f768d782e0775f2ec573c3a3b7ce8426c1c99900a6964c33fa37cdb267402",
+        "gitBlob": "f0e25c38f8ed521fae3dfbcbf7c9f1757a9fbba0"
+      }
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "nativePath": "/home/jacob/hamon-canvas-activity-68094585a1c2/candidate-v1/src/canvaspilot/cli.py",
+      "before": {
+        "bytes": 40011,
+        "sha256": "c703a5dad3ef54ed308fb217c4a3b0a32791ea5f9b84093669fa667bb7a3a12b",
+        "gitBlob": "1c29dd2a2a1632b7f3c27878259efe492a08fdfd"
+      },
+      "after": {
+        "bytes": 40978,
+        "sha256": "fa3fb1cb85c7e7e3301f31d0cc8dfa52f53a11173615b565de76ed49ec110bc6",
+        "gitBlob": "786a2dedac34942bd320964ba19edeede88c537e"
+      }
+    },
+    {
+      "path": "tests/test_activity_stream.py",
+      "nativePath": "/home/jacob/hamon-canvas-activity-68094585a1c2/candidate-v1/tests/test_activity_stream.py",
+      "before": null,
+      "after": {
+        "bytes": 14700,
+        "sha256": "fa8702cc57c7e72f4cd87c99f2535323f28aacf5a1ceeb76a5215542ede231c5",
+        "gitBlob": "c4e1a65336e411dac04e289438a8627d319ed345"
+      }
+    }
+  ],
+  "check": {
+    "command": [
+      "/usr/bin/git",
+      "-C",
+      "/home/jacob/hamon-canvas-activity-68094585a1c2/source",
+      "apply",
+      "--check",
+      "/home/jacob/hamon-canvas-activity-68094585a1c2/activity-stream-v1.patch"
+    ],
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "sourceUnchanged": true
+}

@@ -1,0 +1,659 @@
+{
+  "kind": "CanvasPilot activity-stream exact Git custody transfer",
+  "owner": "chatgpt:68094585a1c2 / levenshtein_receiving",
+  "createdAt": "2026-10-08T21:48:43.766Z",
+  "sourceParent": "56a72a2e2cee5ec04671d12ebe5bc2484afb8026",
+  "sourceBaseTree": "a07c3e941219ff80968e1ff20528a63541bb7400",
+  "sourceAndWorkflowIdentity": "Fresh main is the exact originally reviewed commit; no composition with changed source or workflows.",
+  "nativeInputManifest": "/home/jacob/hamon-canvas-activity-68094585a1c2/publication-inputs-v1.json",
+  "nativeInputs": [
+    {
+      "nativePath": "/home/jacob/hamon-canvas-activity-68094585a1c2/candidate-v1/README.md",
+      "path": "README.md",
+      "kind": "product",
+      "bytes": 28545,
+      "sha256": "0d051f8f54bcf134300c36779e6b4d76ae63dc9dbebd4192af245c2563dc7825",
+      "gitBlob": "09eedad6e9d98b42fbaaa849b951f7c25a9a8aa8",
+      "mode": "100644",
+      "parts": 1
+    },
+    {
+      "nativePath": "/home/jacob/hamon-canvas-activity-68094585a1c2/candidate-v1/docs/activity-stream.md",
+      "path": "docs/activity-stream.md",
+      "kind": "product",
+      "bytes": 5304,
+      "sha256": "8227a935283b72668510f6d6d6e377e58b02225b702869c160e6df8fe3a3160b",
+      "gitBlob": "2e7ebd7fcbc74f26f9d96e4b6412a97c63c62a20",
+      "mode": "100644",
+      "parts": 1
+    },
+    {
+      "nativePath": "/home/jacob/hamon-canvas-activity-68094585a1c2/candidate-v1/src/canvaspilot/api.py",
+      "path": "src/canvaspilot/api.py",
+      "kind": "product",
+      "bytes": 29741,
+      "sha256": "512f768d782e0775f2ec573c3a3b7ce8426c1c99900a6964c33fa37cdb267402",
+      "gitBlob": "f0e25c38f8ed521fae3dfbcbf7c9f1757a9fbba0",
+      "mode": "100644",
+      "parts": 1
+    },
+    {
+      "nativePath": "/home/jacob/hamon-canvas-activity-68094585a1c2/candidate-v1/src/canvaspilot/cli.py",
+      "path": "src/canvaspilot/cli.py",
+      "kind": "product",
+      "bytes": 40978,
+      "sha256": "fa3fb1cb85c7e7e3301f31d0cc8dfa52f53a11173615b565de76ed49ec110bc6",
+      "gitBlob": "786a2dedac34942bd320964ba19edeede88c537e",
+      "mode": "100644",
+      "parts": 1
+    },
+    {
+      "nativePath": "/home/jacob/hamon-canvas-activity-68094585a1c2/candidate-v1/tests/test_activity_stream.py",
+      "path": "tests/test_activity_stream.py",
+      "kind": "product",
+      "bytes": 14700,
+      "sha256": "fa8702cc57c7e72f4cd87c99f2535323f28aacf5a1ceeb76a5215542ede231c5",
+      "gitBlob": "c4e1a65336e411dac04e289438a8627d319ed345",
+      "mode": "100644",
+      "parts": 1
+    },
+    {
+      "nativePath": "/home/jacob/hamon-canvas-activity-68094585a1c2/PUBLICATION-README.md",
+      "path": "docs/receiving/activity-stream-68094585a1c2/README.md",
+      "kind": "evidence",
+      "bytes": 3398,
+      "sha256": "7cd679c087e9e998891620e33082f719cfeaa4111034ce03d57955c2d9048897",
+      "gitBlob": "d545c40908866231086848dcbddfd0a90f6f2e78",
+      "mode": "100644",
+      "parts": 1
+    },
+    {
+      "nativePath": "/home/jacob/hamon-canvas-activity-68094585a1c2/public-contract.json",
+      "path": "docs/receiving/activity-stream-68094585a1c2/public-contract.json",
+      "kind": "evidence",
+      "bytes": 7933,
+      "sha256": "5ff5e39438db240fb2a1867df01c52218a0e4eed9df2a6dd9f071e2ff2373bc5",
+      "gitBlob": "983f912f820efb50aeb320fa589f76cd4a425056",
+      "mode": "100644",
+      "parts": 1
+    },
+    {
+      "nativePath": "/home/jacob/hamon-canvas-activity-68094585a1c2/activity-stream-v1.patch",
+      "path": "docs/receiving/activity-stream-68094585a1c2/activity-stream-v1.patch",
+      "kind": "evidence",
+      "bytes": 23781,
+      "sha256": "b5272e001f8b771d21f9e316f041f3b8405efbc2aa46e8bb1eb3c51fa4fa09d3",
+      "gitBlob": "2f26d4e685414eb1de0c864c103c16b08be4c97a",
+      "mode": "100644",
+      "parts": 1
+    },
+    {
+      "nativePath": "/home/jacob/hamon-canvas-activity-68094585a1c2/patch-manifest-v1.json",
+      "path": "docs/receiving/activity-stream-68094585a1c2/patch-manifest-v1.json",
+      "kind": "evidence",
+      "bytes": 3193,
+      "sha256": "0be8c852ad3ad04ad4db8a127a1f2e33a8a2f25144770f54deb7f37d039b0de6",
+      "gitBlob": "fe6506368037ab4140e04db631841ed26d94aa85",
+      "mode": "100644",
+      "parts": 1
+    },
+    {
+      "nativePath": "/home/jacob/hamon-canvas-activity-68094585a1c2/workflow-guard-v1.json",
+      "path": "docs/receiving/activity-stream-68094585a1c2/workflow-guard-v1.json",
+      "kind": "evidence",
+      "bytes": 5655,
+      "sha256": "fd5896342cf68909ae87cad4a8fc07720b8cf5b0f1bc993785f159e43ac03e8a",
+      "gitBlob": "ec32711d4bbae6cbbdce16b48bfae2381ac5a2e4",
+      "mode": "100644",
+      "parts": 1
+    },
+    {
+      "nativePath": "/home/jacob/hamon-canvas-activity-68094585a1c2/author-capsule-v1/canvaspilot-activity-author-capsule.tar.gz",
+      "path": "docs/receiving/activity-stream-68094585a1c2/author/canvaspilot-activity-author-capsule.tar.gz",
+      "kind": "evidence",
+      "bytes": 496743,
+      "sha256": "fe428c39c0086a10bb92ed12c5b2e3e563cb9f2a18bae7fdc52be6472a46c1e1",
+      "gitBlob": "fcd6d888a034fd60d79fe29948e820df38d14b12",
+      "mode": "100644",
+      "parts": 11
+    },
+    {
+      "nativePath": "/home/jacob/hamon-canvas-activity-68094585a1c2/author-capsule-v1/MANIFEST.json",
+      "path": "docs/receiving/activity-stream-68094585a1c2/author/MANIFEST.json",
+      "kind": "evidence",
+      "bytes": 43302,
+      "sha256": "1cd1fc4c6f965c8c415c498590338d67996b48f625fbaf136bd5403c7f8c4b74",
+      "gitBlob": "b290cb95c63961242e937b11f3de638e3c53e458",
+      "mode": "100644",
+      "parts": 1
+    },
+    {
+      "nativePath": "/home/jacob/hamon-canvas-activity-68094585a1c2/author-capsule-v1/CAPSULE.json",
+      "path": "docs/receiving/activity-stream-68094585a1c2/author/CAPSULE.json",
+      "kind": "evidence",
+      "bytes": 1490,
+      "sha256": "085151e06a845bbb44732b523a70292010fa3680216477dd4f994869c0fa0655",
+      "gitBlob": "76d4c787b1b738739243edfcb8e12e027aaad2ce",
+      "mode": "100644",
+      "parts": 1
+    },
+    {
+      "nativePath": "/home/jacob/hamon-canvas-activity-68094585a1c2/author-native-v1/receipt.json",
+      "path": "docs/receiving/activity-stream-68094585a1c2/author/native-receipt.json",
+      "kind": "evidence",
+      "bytes": 60843,
+      "sha256": "e2b88e3c39afbd29e06c374844d5571254578cf18eeb6cef0f339905952bec92",
+      "gitBlob": "6373d85d632e23bf0f3c53c1c8acd4ca6d8a7915",
+      "mode": "100644",
+      "parts": 2
+    },
+    {
+      "nativePath": "/home/jacob/hamon-canvas-activity-68094585a1c2/native-lint-v1.json",
+      "path": "docs/receiving/activity-stream-68094585a1c2/author/lint-receipt.json",
+      "kind": "evidence",
+      "bytes": 29650,
+      "sha256": "0e77360eea033cdc7c3f42d87ab92f76ce7da0ef2e6f0743f6cea5498d8f7f00",
+      "gitBlob": "6e321373f027ba77058eff8993467b9a41cc9dce",
+      "mode": "100644",
+      "parts": 1
+    },
+    {
+      "nativePath": "/home/jacob/hamon-canvas-activity-68094585a1c2/original-native-baseline.json",
+      "path": "docs/receiving/activity-stream-68094585a1c2/author/original-baseline.json",
+      "kind": "evidence",
+      "bytes": 65955,
+      "sha256": "bfd57a719c7705d17aab26f98c845b3a4f2bad4671e6952abcebdd324c0590d7",
+      "gitBlob": "7c5d4ca265070a69b64e11c7c8a50dd785bb4b4a",
+      "mode": "100644",
+      "parts": 2
+    },
+    {
+      "nativePath": "/home/jacob/hamon-canvas-activity-68094585a1c2/original-focused-regression.json",
+      "path": "docs/receiving/activity-stream-68094585a1c2/author/original-regression.json",
+      "kind": "evidence",
+      "bytes": 29501,
+      "sha256": "3c831263fff9812e5d5fd2e98245a6342875587a5168a8323dc8ad4227d4067a",
+      "gitBlob": "5de22946095dc3601d0463783a0321550001eab2",
+      "mode": "100644",
+      "parts": 1
+    },
+    {
+      "nativePath": "/home/jacob/hamon-canvas-activity-independent-68094585a1c2/capsule-v1/canvaspilot-activity-independent-capsule.tar.gz",
+      "path": "docs/receiving/activity-stream-68094585a1c2/independent/canvaspilot-activity-independent-capsule.tar.gz",
+      "kind": "independent-evidence",
+      "bytes": 252340,
+      "sha256": "e6193f434a46169bab9e0d925477f077c87be84332dec5562d5d1e9bdb3ddefa",
+      "gitBlob": "54bae2efe95dc22a11a927b3657b1798ffd1f758",
+      "mode": "100644",
+      "parts": 6
+    },
+    {
+      "nativePath": "/home/jacob/hamon-canvas-activity-independent-68094585a1c2/capsule-v1/MANIFEST.json",
+      "path": "docs/receiving/activity-stream-68094585a1c2/independent/MANIFEST.json",
+      "kind": "independent-evidence",
+      "bytes": 21317,
+      "sha256": "1141bf6a76a3befdf148a3c39a8c824e55106468f20f617bd31edbbbab37783f",
+      "gitBlob": "ac7c4333559c5e41290db0f03bbacfb45725b12b",
+      "mode": "100644",
+      "parts": 1
+    },
+    {
+      "nativePath": "/home/jacob/hamon-canvas-activity-independent-68094585a1c2/capsule-v1/CAPSULE.json",
+      "path": "docs/receiving/activity-stream-68094585a1c2/independent/CAPSULE.json",
+      "kind": "independent-evidence",
+      "bytes": 1612,
+      "sha256": "0c7c29a3ff31c4a218be700866dc24296e7aa3b1bd6be1e4b61890b1aa47ae0c",
+      "gitBlob": "8280479862cee51d3f568951079a290c118d086c",
+      "mode": "100644",
+      "parts": 1
+    },
+    {
+      "nativePath": "/home/jacob/hamon-canvas-activity-independent-68094585a1c2/source-review-v1.json",
+      "path": "docs/receiving/activity-stream-68094585a1c2/independent/source-review-v1.json",
+      "kind": "independent-evidence",
+      "bytes": 6491,
+      "sha256": "ef1623bad5d7412ab572c49172b8fae7a1c2e66e96bec00853720e8ab9ddac4c",
+      "gitBlob": "d566c898f96ccb9832bdd7e0bd9e5afd9522c452",
+      "mode": "100644",
+      "parts": 1
+    },
+    {
+      "nativePath": "/home/jacob/hamon-canvas-activity-independent-68094585a1c2/candidate-v1/receipt.json",
+      "path": "docs/receiving/activity-stream-68094585a1c2/independent/native-receipt.json",
+      "kind": "independent-evidence",
+      "bytes": 34466,
+      "sha256": "ec1428fde471fc55ab66c1f10c5d0625f4d3a66fde5268a2255bd077afbca5e3",
+      "gitBlob": "19f8996f70666d1a832ebd2905bd0b1959ba0f8d",
+      "mode": "100644",
+      "parts": 1
+    }
+  ],
+  "confirmedGitBlobs": [
+    {
+      "index": 0,
+      "path": "README.md",
+      "sha": "09eedad6e9d98b42fbaaa849b951f7c25a9a8aa8",
+      "bytes": 28545,
+      "confirmedAt": "2026-10-08T21:41:01.741Z"
+    },
+    {
+      "index": 1,
+      "path": "docs/activity-stream.md",
+      "sha": "2e7ebd7fcbc74f26f9d96e4b6412a97c63c62a20",
+      "bytes": 5304,
+      "sha256": "8227a935283b72668510f6d6d6e377e58b02225b702869c160e6df8fe3a3160b",
+      "confirmedAt": "2026-10-08T21:43:56.602Z"
+    },
+    {
+      "index": 2,
+      "path": "src/canvaspilot/api.py",
+      "sha": "f0e25c38f8ed521fae3dfbcbf7c9f1757a9fbba0",
+      "bytes": 29741,
+      "sha256": "512f768d782e0775f2ec573c3a3b7ce8426c1c99900a6964c33fa37cdb267402",
+      "confirmedAt": "2026-10-08T21:43:57.171Z"
+    },
+    {
+      "index": 3,
+      "path": "src/canvaspilot/cli.py",
+      "sha": "786a2dedac34942bd320964ba19edeede88c537e",
+      "bytes": 40978,
+      "sha256": "fa3fb1cb85c7e7e3301f31d0cc8dfa52f53a11173615b565de76ed49ec110bc6",
+      "confirmedAt": "2026-10-08T21:43:57.868Z"
+    },
+    {
+      "index": 4,
+      "path": "tests/test_activity_stream.py",
+      "sha": "c4e1a65336e411dac04e289438a8627d319ed345",
+      "bytes": 14700,
+      "sha256": "fa8702cc57c7e72f4cd87c99f2535323f28aacf5a1ceeb76a5215542ede231c5",
+      "confirmedAt": "2026-10-08T21:43:58.557Z"
+    },
+    {
+      "index": 5,
+      "path": "docs/receiving/activity-stream-68094585a1c2/README.md",
+      "sha": "d545c40908866231086848dcbddfd0a90f6f2e78",
+      "bytes": 3398,
+      "sha256": "7cd679c087e9e998891620e33082f719cfeaa4111034ce03d57955c2d9048897",
+      "confirmedAt": "2026-10-08T21:43:58.976Z"
+    },
+    {
+      "index": 6,
+      "path": "docs/receiving/activity-stream-68094585a1c2/public-contract.json",
+      "sha": "983f912f820efb50aeb320fa589f76cd4a425056",
+      "bytes": 7933,
+      "sha256": "5ff5e39438db240fb2a1867df01c52218a0e4eed9df2a6dd9f071e2ff2373bc5",
+      "confirmedAt": "2026-10-08T21:43:59.424Z"
+    },
+    {
+      "index": 7,
+      "path": "docs/receiving/activity-stream-68094585a1c2/activity-stream-v1.patch",
+      "sha": "2f26d4e685414eb1de0c864c103c16b08be4c97a",
+      "bytes": 23781,
+      "sha256": "b5272e001f8b771d21f9e316f041f3b8405efbc2aa46e8bb1eb3c51fa4fa09d3",
+      "confirmedAt": "2026-10-08T21:43:59.832Z"
+    },
+    {
+      "index": 8,
+      "path": "docs/receiving/activity-stream-68094585a1c2/patch-manifest-v1.json",
+      "sha": "fe6506368037ab4140e04db631841ed26d94aa85",
+      "bytes": 3193,
+      "sha256": "0be8c852ad3ad04ad4db8a127a1f2e33a8a2f25144770f54deb7f37d039b0de6",
+      "confirmedAt": "2026-10-08T21:44:00.287Z"
+    },
+    {
+      "index": 9,
+      "path": "docs/receiving/activity-stream-68094585a1c2/workflow-guard-v1.json",
+      "sha": "ec32711d4bbae6cbbdce16b48bfae2381ac5a2e4",
+      "bytes": 5655,
+      "sha256": "fd5896342cf68909ae87cad4a8fc07720b8cf5b0f1bc993785f159e43ac03e8a",
+      "confirmedAt": "2026-10-08T21:44:00.853Z"
+    },
+    {
+      "index": 10,
+      "path": "docs/receiving/activity-stream-68094585a1c2/author/canvaspilot-activity-author-capsule.tar.gz",
+      "sha": "fcd6d888a034fd60d79fe29948e820df38d14b12",
+      "bytes": 496743,
+      "sha256": "fe428c39c0086a10bb92ed12c5b2e3e563cb9f2a18bae7fdc52be6472a46c1e1",
+      "confirmedAt": "2026-10-08T21:44:49.527Z"
+    },
+    {
+      "index": 11,
+      "path": "docs/receiving/activity-stream-68094585a1c2/author/MANIFEST.json",
+      "sha": "b290cb95c63961242e937b11f3de638e3c53e458",
+      "bytes": 43302,
+      "sha256": "1cd1fc4c6f965c8c415c498590338d67996b48f625fbaf136bd5403c7f8c4b74",
+      "confirmedAt": "2026-10-08T21:44:50.110Z"
+    },
+    {
+      "index": 12,
+      "path": "docs/receiving/activity-stream-68094585a1c2/author/CAPSULE.json",
+      "sha": "76d4c787b1b738739243edfcb8e12e027aaad2ce",
+      "bytes": 1490,
+      "sha256": "085151e06a845bbb44732b523a70292010fa3680216477dd4f994869c0fa0655",
+      "confirmedAt": "2026-10-08T21:44:50.825Z"
+    },
+    {
+      "index": 13,
+      "path": "docs/receiving/activity-stream-68094585a1c2/author/native-receipt.json",
+      "sha": "6373d85d632e23bf0f3c53c1c8acd4ca6d8a7915",
+      "bytes": 60843,
+      "sha256": "e2b88e3c39afbd29e06c374844d5571254578cf18eeb6cef0f339905952bec92",
+      "confirmedAt": "2026-10-08T21:44:51.583Z"
+    },
+    {
+      "index": 14,
+      "path": "docs/receiving/activity-stream-68094585a1c2/author/lint-receipt.json",
+      "sha": "6e321373f027ba77058eff8993467b9a41cc9dce",
+      "bytes": 29650,
+      "sha256": "0e77360eea033cdc7c3f42d87ab92f76ce7da0ef2e6f0743f6cea5498d8f7f00",
+      "confirmedAt": "2026-10-08T21:44:52.076Z"
+    },
+    {
+      "index": 15,
+      "path": "docs/receiving/activity-stream-68094585a1c2/author/original-baseline.json",
+      "sha": "7c5d4ca265070a69b64e11c7c8a50dd785bb4b4a",
+      "bytes": 65955,
+      "sha256": "bfd57a719c7705d17aab26f98c845b3a4f2bad4671e6952abcebdd324c0590d7",
+      "confirmedAt": "2026-10-08T21:45:57.898Z"
+    },
+    {
+      "index": 16,
+      "path": "docs/receiving/activity-stream-68094585a1c2/author/original-regression.json",
+      "sha": "5de22946095dc3601d0463783a0321550001eab2",
+      "bytes": 29501,
+      "sha256": "3c831263fff9812e5d5fd2e98245a6342875587a5168a8323dc8ad4227d4067a",
+      "confirmedAt": "2026-10-08T21:45:58.569Z"
+    },
+    {
+      "index": 17,
+      "path": "docs/receiving/activity-stream-68094585a1c2/independent/canvaspilot-activity-independent-capsule.tar.gz",
+      "sha": "54bae2efe95dc22a11a927b3657b1798ffd1f758",
+      "bytes": 252340,
+      "sha256": "e6193f434a46169bab9e0d925477f077c87be84332dec5562d5d1e9bdb3ddefa",
+      "confirmedAt": "2026-10-08T21:45:59.363Z"
+    },
+    {
+      "index": 18,
+      "path": "docs/receiving/activity-stream-68094585a1c2/independent/MANIFEST.json",
+      "sha": "ac7c4333559c5e41290db0f03bbacfb45725b12b",
+      "bytes": 21317,
+      "sha256": "1141bf6a76a3befdf148a3c39a8c824e55106468f20f617bd31edbbbab37783f",
+      "confirmedAt": "2026-10-08T21:45:59.871Z"
+    },
+    {
+      "index": 19,
+      "path": "docs/receiving/activity-stream-68094585a1c2/independent/CAPSULE.json",
+      "sha": "8280479862cee51d3f568951079a290c118d086c",
+      "bytes": 1612,
+      "sha256": "0c7c29a3ff31c4a218be700866dc24296e7aa3b1bd6be1e4b61890b1aa47ae0c",
+      "confirmedAt": "2026-10-08T21:46:00.345Z"
+    },
+    {
+      "index": 20,
+      "path": "docs/receiving/activity-stream-68094585a1c2/independent/source-review-v1.json",
+      "sha": "d566c898f96ccb9832bdd7e0bd9e5afd9522c452",
+      "bytes": 6491,
+      "sha256": "ef1623bad5d7412ab572c49172b8fae7a1c2e66e96bec00853720e8ab9ddac4c",
+      "confirmedAt": "2026-10-08T21:46:01.027Z"
+    },
+    {
+      "index": 21,
+      "path": "docs/receiving/activity-stream-68094585a1c2/independent/native-receipt.json",
+      "sha": "19f8996f70666d1a832ebd2905bd0b1959ba0f8d",
+      "bytes": 34466,
+      "sha256": "ec1428fde471fc55ab66c1f10c5d0625f4d3a66fde5268a2255bd077afbca5e3",
+      "confirmedAt": "2026-10-08T21:46:01.533Z"
+    }
+  ],
+  "textBlobReadbacks": [
+    {
+      "index": 0,
+      "path": "README.md",
+      "sha": "09eedad6e9d98b42fbaaa849b951f7c25a9a8aa8",
+      "bytes": 28545,
+      "fullNativeBytesMatch": true,
+      "readbackKind": "Decoded UTF-8 reencoded exactly to native Base64",
+      "at": "2026-10-08T21:47:31.742Z"
+    },
+    {
+      "index": 1,
+      "path": "docs/activity-stream.md",
+      "sha": "2e7ebd7fcbc74f26f9d96e4b6412a97c63c62a20",
+      "bytes": 5304,
+      "fullNativeBytesMatch": true,
+      "readbackKind": "Decoded UTF-8 reencoded exactly to native Base64",
+      "at": "2026-10-08T21:47:31.743Z"
+    },
+    {
+      "index": 2,
+      "path": "src/canvaspilot/api.py",
+      "sha": "f0e25c38f8ed521fae3dfbcbf7c9f1757a9fbba0",
+      "bytes": 29741,
+      "fullNativeBytesMatch": true,
+      "readbackKind": "Decoded UTF-8 reencoded exactly to native Base64",
+      "at": "2026-10-08T21:47:31.750Z"
+    },
+    {
+      "index": 3,
+      "path": "src/canvaspilot/cli.py",
+      "sha": "786a2dedac34942bd320964ba19edeede88c537e",
+      "bytes": 40978,
+      "fullNativeBytesMatch": true,
+      "readbackKind": "Decoded UTF-8 reencoded exactly to native Base64",
+      "at": "2026-10-08T21:47:31.759Z"
+    },
+    {
+      "index": 4,
+      "path": "tests/test_activity_stream.py",
+      "sha": "c4e1a65336e411dac04e289438a8627d319ed345",
+      "bytes": 14700,
+      "fullNativeBytesMatch": true,
+      "readbackKind": "Decoded UTF-8 reencoded exactly to native Base64",
+      "at": "2026-10-08T21:47:32.035Z"
+    },
+    {
+      "index": 5,
+      "path": "docs/receiving/activity-stream-68094585a1c2/README.md",
+      "sha": "d545c40908866231086848dcbddfd0a90f6f2e78",
+      "bytes": 3398,
+      "fullNativeBytesMatch": true,
+      "readbackKind": "Decoded UTF-8 reencoded exactly to native Base64",
+      "at": "2026-10-08T21:47:32.720Z"
+    },
+    {
+      "index": 6,
+      "path": "docs/receiving/activity-stream-68094585a1c2/public-contract.json",
+      "sha": "983f912f820efb50aeb320fa589f76cd4a425056",
+      "bytes": 7933,
+      "fullNativeBytesMatch": true,
+      "readbackKind": "Decoded UTF-8 reencoded exactly to native Base64",
+      "at": "2026-10-08T21:47:32.344Z"
+    },
+    {
+      "index": 7,
+      "path": "docs/receiving/activity-stream-68094585a1c2/activity-stream-v1.patch",
+      "sha": "2f26d4e685414eb1de0c864c103c16b08be4c97a",
+      "bytes": 23781,
+      "fullNativeBytesMatch": true,
+      "readbackKind": "Decoded UTF-8 reencoded exactly to native Base64",
+      "at": "2026-10-08T21:47:32.074Z"
+    },
+    {
+      "index": 8,
+      "path": "docs/receiving/activity-stream-68094585a1c2/patch-manifest-v1.json",
+      "sha": "fe6506368037ab4140e04db631841ed26d94aa85",
+      "bytes": 3193,
+      "fullNativeBytesMatch": true,
+      "readbackKind": "Decoded UTF-8 reencoded exactly to native Base64",
+      "at": "2026-10-08T21:47:33.107Z"
+    },
+    {
+      "index": 9,
+      "path": "docs/receiving/activity-stream-68094585a1c2/workflow-guard-v1.json",
+      "sha": "ec32711d4bbae6cbbdce16b48bfae2381ac5a2e4",
+      "bytes": 5655,
+      "fullNativeBytesMatch": true,
+      "readbackKind": "Decoded UTF-8 reencoded exactly to native Base64",
+      "at": "2026-10-08T21:47:33.046Z"
+    },
+    {
+      "index": 11,
+      "path": "docs/receiving/activity-stream-68094585a1c2/author/MANIFEST.json",
+      "sha": "b290cb95c63961242e937b11f3de638e3c53e458",
+      "bytes": 43302,
+      "fullNativeBytesMatch": true,
+      "readbackKind": "Decoded UTF-8 reencoded exactly to native Base64",
+      "at": "2026-10-08T21:47:33.226Z"
+    },
+    {
+      "index": 12,
+      "path": "docs/receiving/activity-stream-68094585a1c2/author/CAPSULE.json",
+      "sha": "76d4c787b1b738739243edfcb8e12e027aaad2ce",
+      "bytes": 1490,
+      "fullNativeBytesMatch": true,
+      "readbackKind": "Decoded UTF-8 reencoded exactly to native Base64",
+      "at": "2026-10-08T21:47:33.152Z"
+    },
+    {
+      "index": 13,
+      "path": "docs/receiving/activity-stream-68094585a1c2/author/native-receipt.json",
+      "sha": "6373d85d632e23bf0f3c53c1c8acd4ca6d8a7915",
+      "bytes": 60843,
+      "fullNativeBytesMatch": true,
+      "readbackKind": "Decoded UTF-8 reencoded exactly to native Base64",
+      "at": "2026-10-08T21:47:33.669Z"
+    },
+    {
+      "index": 14,
+      "path": "docs/receiving/activity-stream-68094585a1c2/author/lint-receipt.json",
+      "sha": "6e321373f027ba77058eff8993467b9a41cc9dce",
+      "bytes": 29650,
+      "fullNativeBytesMatch": true,
+      "readbackKind": "Decoded UTF-8 reencoded exactly to native Base64",
+      "at": "2026-10-08T21:47:33.533Z"
+    },
+    {
+      "index": 15,
+      "path": "docs/receiving/activity-stream-68094585a1c2/author/original-baseline.json",
+      "sha": "7c5d4ca265070a69b64e11c7c8a50dd785bb4b4a",
+      "bytes": 65955,
+      "fullNativeBytesMatch": true,
+      "readbackKind": "Decoded UTF-8 reencoded exactly to native Base64",
+      "at": "2026-10-08T21:47:33.547Z"
+    },
+    {
+      "index": 16,
+      "path": "docs/receiving/activity-stream-68094585a1c2/author/original-regression.json",
+      "sha": "5de22946095dc3601d0463783a0321550001eab2",
+      "bytes": 29501,
+      "fullNativeBytesMatch": true,
+      "readbackKind": "Decoded UTF-8 reencoded exactly to native Base64",
+      "at": "2026-10-08T21:47:33.596Z"
+    },
+    {
+      "index": 18,
+      "path": "docs/receiving/activity-stream-68094585a1c2/independent/MANIFEST.json",
+      "sha": "ac7c4333559c5e41290db0f03bbacfb45725b12b",
+      "bytes": 21317,
+      "fullNativeBytesMatch": true,
+      "readbackKind": "Decoded UTF-8 reencoded exactly to native Base64",
+      "at": "2026-10-08T21:47:33.988Z"
+    },
+    {
+      "index": 19,
+      "path": "docs/receiving/activity-stream-68094585a1c2/independent/CAPSULE.json",
+      "sha": "8280479862cee51d3f568951079a290c118d086c",
+      "bytes": 1612,
+      "fullNativeBytesMatch": true,
+      "readbackKind": "Decoded UTF-8 reencoded exactly to native Base64",
+      "at": "2026-10-08T21:47:34.092Z"
+    },
+    {
+      "index": 20,
+      "path": "docs/receiving/activity-stream-68094585a1c2/independent/source-review-v1.json",
+      "sha": "d566c898f96ccb9832bdd7e0bd9e5afd9522c452",
+      "bytes": 6491,
+      "fullNativeBytesMatch": true,
+      "readbackKind": "Decoded UTF-8 reencoded exactly to native Base64",
+      "at": "2026-10-08T21:47:33.977Z"
+    },
+    {
+      "index": 21,
+      "path": "docs/receiving/activity-stream-68094585a1c2/independent/native-receipt.json",
+      "sha": "19f8996f70666d1a832ebd2905bd0b1959ba0f8d",
+      "bytes": 34466,
+      "fullNativeBytesMatch": true,
+      "readbackKind": "Decoded UTF-8 reencoded exactly to native Base64",
+      "at": "2026-10-08T21:47:34.051Z"
+    }
+  ],
+  "binaryCapsules": {
+    "nativeFullFileHashesCheckedBeforeEveryChunk": true,
+    "gitCreationSHAIdentitiesMatchNative": true,
+    "repacked": false,
+    "explicitBase64FileReadbackPendingUnattachedCommit": true
+  },
+  "failureHistory": [
+    {
+      "kind": "Native custody-progress write ENOSPC",
+      "path": "/home/jacob/hamon-canvas-activity-68094585a1c2/git-blobs-prepared-v1.json",
+      "tool": "remote_desktop_commander_write_file",
+      "returnedText": "Error: ENOSPC: no space left on device, write",
+      "returnedErrorCode": "INVALID_ARGUMENT",
+      "outcomeInitiallyUncertain": true,
+      "readback": {
+        "observedAt": "2026-10-08T21:41:46.556932+00:00",
+        "exists": true,
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "homeFreeBytes": 100098048,
+        "tmpFreeBytes": 326373376,
+        "sharedMemoryFreeBytes": 1809645568,
+        "archiveBytes": 496743,
+        "publicationInputBytes": 9888
+      },
+      "resolution": "Failed empty ledger left intact. No native write retried; all remaining work uses read-only byte transfers and immutable Git objects."
+    },
+    {
+      "kind": "Observer expected REST JSON for decoded blob content",
+      "inputIndexes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "connectorRequestsSucceeded": true,
+      "observerError": "Blob response not structured JSON",
+      "resolution": "Inspected actual connector schema; decoded UTF-8 content was reencoded and compared exactly against native Base64. All 20 text blobs, including all five product paths, matched.",
+      "productChanged": false
+    },
+    {
+      "kind": "Binary archive unsupported by UTF-8 blob-reader helper",
+      "blob": "fcd6d888a034fd60d79fe29948e820df38d14b12",
+      "tool": "github_fetch_blob",
+      "returnedError": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0x8b in position 1: invalid start byte",
+      "resolution": "Git create_blob returned the exact native content identity. Explicit base64 file reader will be used against the unattached commit before any branch.",
+      "productChanged": false
+    }
+  ],
+  "expectedTree": {
+    "baseLeaves": 1616,
+    "inheritedLeavesUnchanged": 1613,
+    "modifiedExistingLeaves": 3,
+    "newProductLeaves": 2,
+    "newEvidenceLeaves": 18,
+    "totalLeaves": 1636,
+    "deletedLeaves": 0
+  },
+  "gates": {
+    "authorPytest": "69 tests (30 new plus 39 existing) and 14 subtests passed",
+    "independent": "13 groups and 27 loopback GETs passed; source-review file included",
+    "nativeLint": "Ruff 0.16.10 passed src/tests/scripts",
+    "qualifiedCandidateRerunAfterReceiving": false,
+    "fullMaintainedSuite": "not run for this increment",
+    "hostedActions": "not run",
+    "branchOrPR": "none"
+  },
+  "noPeerCleanup": true,
+  "noRefOrPR": true
+}

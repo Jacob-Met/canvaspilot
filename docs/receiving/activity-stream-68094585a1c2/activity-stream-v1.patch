@@ -1,0 +1,573 @@
+diff --git a/README.md b/README.md
+--- a/README.md
++++ b/README.md
+@@ -105,6 +105,10 @@
+ `canvaspilot export-agenda 42 77 --start 2026-10-08 --end 2026-10-15 --out agenda.html`.
+ The original native JSON remains available byte-identically.
+ [Review and print a saved agenda](docs/agenda-export.md).
++
++Read your available global activity stream with `canvaspilot activity`.
++The [activity-stream guide](docs/activity-stream.md) explains complete page traversal,
++preserved returned records, JSON failures and the feed's content limits.
+ 
+ Read your reported enrollment roles, states and grades with `canvaspilot enrollments`.
+ The [enrollments CLI guide](docs/enrollments-cli.md) explains the default active
+diff --git a/docs/activity-stream.md b/docs/activity-stream.md
+new file mode 100644
+--- /dev/null
++++ b/docs/activity-stream.md
+@@ -0,0 +1,114 @@
++# Read your Canvas activity stream
++
++Run `canvaspilot activity` to read the available current-user global activity
++stream as one JSON collection. It uses your existing CanvasPilot base URL and
++authentication configuration.
++
++```bash
++canvaspilot activity
++canvaspilot activity --base-url https://example.instructure.com
++```
++
++The command also accepts the existing `--profile PATH` and `--token TOKEN`
++options. It adds no course, date, read-state or active-course filter, and accepts
++no positional arguments. Unknown options fail during argument parsing.
++
++## What the JSON means
++
++The response retains each decoded record as supplied by Canvas, including
++unknown fields, nested values, duplicate rows, HTML-containing strings, Unicode,
++zero, false and null. It keeps page order and row order. It does not shorten
++messages, strip markup, sort events, merge duplicates or fetch linked content.
++
++A record's supplied `read_state`, type, course/group context, title and timestamps
++remain source observations. Missing fields stay missing. The command does not
++mark an event read, hide it or delete it.
++
++The [Canvas Users API](https://developerdocs.instructure.com/services/canvas/resources/users#method.users.activity_stream)
++describes this endpoint as a paginated global activity stream. It is an available
++feed, not a complete historical archive, complete assignment inventory or
++complete list of unread work. Canvas documents a 4 KB message limit for
++DiscussionTopic and Announcement activity records. Reading every available page
++cannot recover content the endpoint did not return.
++
++## Pages and complete-result behavior
++
++`CanvasAPI.activity_stream()` uses the existing
++`CanvasClient.get_paginated("/api/v1/users/self/activity_stream")` reader.
++
++- The first request uses the client's current `per_page=50` setting.
++- The reader follows Canvas's opaque `rel="next"` links, including after a short
++  or empty continuing page. It does not invent page numbers or reapply first-page
++  parameters to the next URL.
++- A terminal page ends traversal without an extra empty-page probe.
++- The existing same-origin, repeated-link and malformed-link checks apply.
++- Forty pages is the current client limit. A terminal fortieth page succeeds;
++  a remaining next link at that boundary raises a pagination error.
++
++These are the existing client rules, not a new paginator. Canvas's
++[pagination documentation](https://developerdocs.instructure.com/services/canvas/basics/file.pagination)
++explains why callers must follow returned links rather than infer completion from
++the number of returned items.
++
++The command collects the complete accepted result before printing success JSON.
++Authentication, HTTP, JSON-decoding or pagination failure returns exit status 1,
++leaves success stdout empty, and prints one JSON error object to stderr:
++
++```json
++{"ok": false, "error": "CanvasPaginationError", "message": "…"}
++```
++
++The `error` and `message` values describe the actual failure; they are not fixed
++to the example above. An incomplete traversal is not reported as a successful
++partial feed. Ordinary HTTPX request logging is suppressed during the read, and
++the caller's previous logger level is restored. The existing client close path
++runs on success and failure.
++
++| Result | Exit status | Output |
++| --- | --- | --- |
++| Successful read | 0 | One indented JSON array and a final newline on stdout |
++| Successful empty feed | 0 | `[]` and a final newline on stdout |
++| Read or pagination failure | 1 | One JSON error on stderr; empty stdout |
++| Unknown or invalid command arguments | 2 | Argument-parser error before client construction |
++| `--help` | 0 | Command help without a Canvas request |
++
++The endpoint normally returns an array. The original client's compatibility
++behavior is retained: a first terminal non-list JSON value is wrapped in a
++one-element list. A non-list continuing page or later non-list page is rejected.
++There is no new record schema validation or normalization.
++
++Session authentication uses the existing broker route. Complete collection reads
++require the current broker's Link-response metadata; an older broker without
++that metadata produces the existing explicit incomplete-collection error.
++Authentication and broker implementation are unchanged.
++
++## Python and MCP
++
++The Python method keeps its no-argument interface:
++
++```python
++from canvaspilot.api import CanvasAPI
++from canvaspilot.client import CanvasClient
++
++with CanvasAPI(CanvasClient()) as api:
++    activity = api.activity_stream()
++    for record in activity:
++        print(record)
++```
++
++Configure the normal token or running CanvasPilot session broker before a live
++read. The existing MCP tool `canvas_activity_stream` delegates to the same method
++without new arguments, so it also receives the paginated collection.
++
++## Local qualification
++
++`tests/test_activity_stream.py` exercises the actual API and CLI against synthetic
++loopback HTTP responses, plus the existing fixture route and a disposable
++synthetic broker. It checks literal records, opaque links, short and empty
++continuation pages, terminal compatibility, first and later failures, the
++forty-page boundary, argument refusal, logger restoration and client closing.
++The tests use no live Canvas account or user browser session.
++
++```bash
++python -m pytest tests/test_activity_stream.py
++```
+diff --git a/src/canvaspilot/api.py b/src/canvaspilot/api.py
+--- a/src/canvaspilot/api.py
++++ b/src/canvaspilot/api.py
+@@ -659,7 +659,7 @@
+         return self.client.get_paginated("/api/v1/planner/items", params=params)
+ 
+     def activity_stream(self) -> Any:
+-        return self.client.request("GET", "/api/v1/users/self/activity_stream")
++        return self.client.get_paginated("/api/v1/users/self/activity_stream")
+ 
+     def list_todo_items(self) -> list[Any]:
+         return self.client.get_paginated("/api/v1/users/self/todo")
+diff --git a/src/canvaspilot/cli.py b/src/canvaspilot/cli.py
+--- a/src/canvaspilot/cli.py
++++ b/src/canvaspilot/cli.py
+@@ -73,6 +73,11 @@
+             p.add_argument("--limit-assignments-per-course", type=_positive_int, default=5,
+                            help="Maximum assignments to include per course (default: 5)")
+ 
++    activity = sub.add_parser(
++        "activity", help="Read all available current-user activity-stream pages",
++    )
++    add_common(activity)
++
+     find_announcements = sub.add_parser(
+         "find-announcements", help="Find literal text in complete selected-course announcements",
+     )
+@@ -538,6 +543,24 @@
+                 }), file=sys.stderr)
+                 raise SystemExit(1) from None
+             print(json.dumps({"ok": True, "output": str(args.out), **report}, indent=2))
++        elif args.cmd == "activity":
++            import httpx
++
++            from canvaspilot.client import CanvasAuthError, CanvasPaginationError
++
++            http_log = logging.getLogger("httpx")
++            previous_level = http_log.level
++            http_log.setLevel(max(http_log.getEffectiveLevel(), logging.WARNING))
++            try:
++                result = api.activity_stream()
++            except (CanvasAuthError, CanvasPaginationError, httpx.HTTPError, ValueError) as error:
++                print(json.dumps({
++                    "ok": False, "error": type(error).__name__, "message": str(error),
++                }), file=sys.stderr)
++                raise SystemExit(1) from None
++            finally:
++                http_log.setLevel(previous_level)
++            print(json.dumps(result, indent=2, default=str))
+         elif args.cmd == "planner":
+             import httpx
+ 
+diff --git a/tests/test_activity_stream.py b/tests/test_activity_stream.py
+new file mode 100644
+--- /dev/null
++++ b/tests/test_activity_stream.py
+@@ -0,0 +1,383 @@
++"""Read the activity feed through the native API, transport and CLI.
++
++All credentials and content below are synthetic. The HTTP server belongs to
++each test; token requests and the optional synthetic broker stay on loopback.
++"""
++from __future__ import annotations
++
++import json
++import logging
++import os
++import subprocess
++import sys
++import threading
++from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
++from pathlib import Path
++from urllib.parse import parse_qs, urlsplit
++
++import pytest
++
++from canvaspilot import client as client_module
++from canvaspilot.api import CanvasAPI
++from canvaspilot.cli import main
++from canvaspilot.client import CanvasClient
++
++ROOT = Path(__file__).resolve().parents[1]
++ACTIVITY = "/api/v1/users/self/activity_stream"
++TOKEN = "synthetic-activity-token"
++ROW = {
++    "id": 9, "type": "Announcement", "read_state": False, "course_id": 0,
++    "title": "  Literal <b>読書</b> & e\u0301\n",
++    "message": "First line\n\tsecond line",
++    "unknown": [0, None, False, {"nested": "🪶"}],
++}
++
++
++class ActivityServer:
++    def __init__(self, work: Path):
++        self.work = work
++        self.calls = []
++        self.pages = []
++        self.responder = None
++        self.broker_mode = False
++        owner = self
++
++        class Handler(BaseHTTPRequestHandler):
++            def log_message(self, *_args):
++                pass
++
++            def send_payload(self, status, body, headers=None):
++                data = body if isinstance(body, bytes) else json.dumps(
++                    body, ensure_ascii=False,
++                ).encode("utf-8")
++                self.send_response(status)
++                self.send_header("Content-Type", "application/json")
++                self.send_header("Content-Length", str(len(data)))
++                for key, value in (headers or {}).items():
++                    self.send_header(key, value)
++                self.end_headers()
++                self.wfile.write(data)
++
++            def do_GET(self):
++                owner.calls.append({
++                    "method": "GET", "path": self.path,
++                    "authorization": self.headers.get("Authorization"),
++                })
++                if owner.broker_mode and self.path == "/health":
++                    self.send_payload(200, {
++                        "link_pagination": True,
++                        "base_url": "https://synthetic-activity.invalid",
++                    })
++                    return
++                self.send_payload(*owner.next_page())
++
++            def do_POST(self):
++                if owner.broker_mode and self.path == "/fetch":
++                    payload = json.loads(self.rfile.read(int(self.headers["Content-Length"])))
++                    owner.calls.append({"method": "POST", "path": self.path, "payload": payload})
++                    status, body, headers = owner.next_page()
++                    self.send_payload(200, {"ok": True, "response": {
++                        "status": status, "json": body, "text": None,
++                        "headers": {"link": headers.get("Link", "")},
++                    }})
++                    return
++                owner.calls.append({"method": self.command, "path": self.path})
++                self.send_payload(405, {"error": "synthetic read-only receiver"})
++
++            do_PUT = do_POST
++            do_PATCH = do_POST
++            do_DELETE = do_POST
++
++        self.server = ThreadingHTTPServer(("127.0.0.1", 0), Handler)
++        self.thread = threading.Thread(
++            target=self.server.serve_forever, kwargs={"poll_interval": 0.01}, daemon=True,
++        )
++        self.thread.start()
++        self.base = f"http://127.0.0.1:{self.server.server_port}"
++        self.profile = work / "unused-activity-profile"
++
++    def next_page(self):
++        if self.responder is not None:
++            return self.responder(len(self.calls))
++        return self.pages.pop(0) if self.pages else (
++            500, {"error": "unexpected activity read"}, {},
++        )
++
++    def close(self):
++        self.server.shutdown()
++        self.server.server_close()
++        self.thread.join(timeout=5)
++        assert not self.thread.is_alive()
++
++    def api(self):
++        return CanvasAPI(CanvasClient(
++            base_url=self.base, token=TOKEN, profile=self.profile,
++        ))
++
++    def cli(self, *options):
++        env = {
++            "PATH": os.defpath, "PYTHONPATH": str(ROOT / "src"),
++            "PYTHONDONTWRITEBYTECODE": "1", "PYTHONHASHSEED": "0",
++            "LANG": "C.UTF-8", "TMPDIR": str(self.work),
++        }
++        return subprocess.run(
++            [sys.executable, "-B", "-m", "canvaspilot.cli", "activity", *options,
++             "--base-url", self.base, "--token", TOKEN, "--profile", str(self.profile)],
++            cwd=self.work, env=env, capture_output=True, timeout=30, check=False,
++        )
++
++    def assert_reads(self, count):
++        assert len(self.calls) == count
++        assert all(call["method"] == "GET" for call in self.calls)
++        assert all(call["authorization"] == f"Bearer {TOKEN}" for call in self.calls)
++        assert not self.profile.exists()
++        first = urlsplit(self.calls[0]["path"])
++        assert first.path == ACTIVITY
++        assert parse_qs(first.query) == {"per_page": ["50"]}
++
++    def chain(self):
++        middle = ACTIVITY + "?after=first%2Fopaque&include%5B%5D=one&include%5B%5D=two"
++        last = ACTIVITY + "?after=last%3Dopaque"
++        second = {"id": 0, "type": "FutureType", "read_state": None, "nested": {"empty": []}}
++        self.pages = [
++            (200, [ROW], {"Link": f'<{self.base}{middle}>; rel="next"'}),
++            (200, [], {"Link": f'<{self.base}{last}>; rel="next"'}),
++            (200, [second, ROW], {}),
++        ]
++        return [ROW, second, ROW], [middle, last]
++
++
++@pytest.fixture
++def activity_server(tmp_path, monkeypatch):
++    for name in tuple(os.environ):
++        if name.lower().endswith("_proxy") or name.startswith("CANVAS_"):
++            monkeypatch.delenv(name)
++    monkeypatch.setenv("NO_PROXY", "127.0.0.1")
++    server = ActivityServer(tmp_path)
++    try:
++        yield server
++    finally:
++        server.close()
++
++
++def test_api_follows_short_and_empty_pages_without_rewriting_rows(activity_server):
++    server = activity_server
++    expected, continuations = server.chain()
++    api = server.api()
++    try:
++        assert api.activity_stream() == expected
++    finally:
++        api.close()
++    server.assert_reads(3)
++    assert [row["path"] for row in server.calls[1:]] == continuations
++    assert server.pages == []
++
++
++def test_real_cli_prints_one_complete_document_with_literal_nested_values(activity_server):
++    server = activity_server
++    expected, continuations = server.chain()
++    result = server.cli()
++    assert result.returncode == 0, result.stderr
++    assert result.stderr == b""
++    assert result.stdout == (json.dumps(expected, indent=2, default=str) + "\n").encode()
++    server.assert_reads(3)
++    assert [row["path"] for row in server.calls[1:]] == continuations
++
++
++@pytest.mark.parametrize("body,expected", [
++    ([], []),
++    ({"unknown": None, "id": 0}, [{"unknown": None, "id": 0}]),
++    (None, [None]),
++    ([0, False, None, "untyped row"], [0, False, None, "untyped row"]),
++])
++def test_terminal_response_keeps_client_compatibility_without_extra_probe(
++    activity_server, body, expected,
++):
++    server = activity_server
++    server.pages = [(200, body, {})]
++    api = server.api()
++    try:
++        assert api.activity_stream() == expected
++    finally:
++        api.close()
++    server.assert_reads(1)
++    assert server.pages == []
++
++
++@pytest.mark.parametrize("later", [False, True], ids=["first-page", "later-page"])
++@pytest.mark.parametrize("status,body,error_name", [
++    (401, {"error": "synthetic expiry"}, "CanvasAuthError"),
++    (403, {"error": "synthetic refusal"}, "CanvasAuthError"),
++    (429, {"error": "synthetic rate limit"}, "HTTPStatusError"),
++    (503, {"error": "synthetic service failure"}, "HTTPStatusError"),
++    (200, b"{invalid authored JSON", "CanvasPaginationError"),
++])
++def test_cli_read_errors_are_one_json_error_with_no_partial_stdout(
++    activity_server, later, status, body, error_name,
++):
++    server = activity_server
++    server.pages = [(status, body, {})]
++    if later:
++        server.pages.insert(0, (
++            200, [ROW], {"Link": f'<{server.base}{ACTIVITY}?cursor=later>; rel="next"'},
++        ))
++    result = server.cli()
++    assert result.returncode == 1
++    assert result.stdout == b""
++    error = json.loads(result.stderr)
++    assert set(error) == {"ok", "error", "message"}
++    assert error["ok"] is False
++    assert error["error"] == error_name
++    assert isinstance(error["message"], str) and error["message"]
++    server.assert_reads(2 if later else 1)
++
++
++@pytest.mark.parametrize("kind", ["foreign", "cycle", "ambiguous", "malformed", "later-object"])
++def test_cli_invalid_continuation_never_publishes_an_early_page(activity_server, kind):
++    server = activity_server
++    second = f"{server.base}{ACTIVITY}?cursor=next"
++    links = {
++        "foreign": f'<http://foreign.synthetic.invalid{ACTIVITY}>; rel="next"',
++        "cycle": f'<{server.base}{ACTIVITY}?per_page=50>; rel="next"',
++        "ambiguous": f'<{second}>; rel="next", <{second}2>; rel="next"',
++        "malformed": f'<{second}>; rel="next',
++        "later-object": f'<{second}>; rel="next"',
++    }
++    server.pages = [(200, [ROW], {"Link": links[kind]})]
++    if kind == "later-object":
++        server.pages.append((200, {"unexpected": "later object"}, {}))
++    result = server.cli()
++    assert result.returncode == 1
++    assert result.stdout == b""
++    assert json.loads(result.stderr)["error"] == "CanvasPaginationError"
++    server.assert_reads(2 if kind == "later-object" else 1)
++
++
++@pytest.mark.parametrize("terminal", [True, False], ids=["complete-40", "continuing-40"])
++def test_cli_distinguishes_exact_terminal_cap_from_incomplete_feed(activity_server, terminal):
++    server = activity_server
++
++    def respond(number):
++        headers = {} if terminal and number == 40 else {
++            "Link": f'<{server.base}{ACTIVITY}?cursor={number + 1}>; rel="next"',
++        }
++        return 200, [{"id": number}], headers
++
++    server.responder = respond
++    result = server.cli()
++    server.assert_reads(40)
++    if terminal:
++        assert result.returncode == 0, result.stderr
++        assert result.stderr == b""
++        assert json.loads(result.stdout) == [{"id": number} for number in range(1, 41)]
++    else:
++        assert result.returncode == 1
++        assert result.stdout == b""
++        assert json.loads(result.stderr)["error"] == "CanvasPaginationError"
++        assert b"40-page cap" in result.stderr
++
++
++@pytest.mark.parametrize("body", [[], [ROW, ROW], {"unknown": [0, None]}])
++def test_fixture_route_keeps_original_client_list_wrapper(body, tmp_path, monkeypatch):
++    def forbid(*_args, **_kwargs):
++        pytest.fail("Fixture activity touched a live transport")
++    monkeypatch.setattr(client_module, "broker_health", forbid)
++    monkeypatch.setattr(client_module.httpx, "Client", forbid)
++    client = CanvasClient(
++        token="", profile=tmp_path / "unused-fixture-profile",
++        fixture={"routes": {f"GET {ACTIVITY}": body}},
++    )
++    api = CanvasAPI(client)
++    try:
++        assert api.activity_stream() == (body if isinstance(body, list) else [body])
++    finally:
++        api.close()
++    assert not client.profile.exists()
++
++
++def test_existing_broker_transport_collects_synthetic_link_metadata(activity_server, monkeypatch):
++    server = activity_server
++    server.broker_mode = True
++    next_url = f"https://synthetic-activity.invalid{ACTIVITY}?after=opaque%2Ftwo"
++    server.pages = [
++        (200, [ROW], {"Link": f'<{next_url}>; rel="next"'}),
++        (200, [ROW], {}),
++    ]
++    monkeypatch.setattr(client_module, "BROKER_PORT", server.server.server_port)
++    api = CanvasAPI(CanvasClient(
++        base_url="https://synthetic-activity.invalid", token="", profile=server.profile,
++    ))
++    try:
++        assert api.activity_stream() == [ROW, ROW]
++    finally:
++        api.close()
++    assert [call["path"] for call in server.calls] == ["/health", "/fetch", "/fetch"]
++    jobs = [call["payload"] for call in server.calls[1:]]
++    assert all(job["method"] == "GET" and job["body"] is None for job in jobs)
++    assert jobs[0]["path"] == ACTIVITY + "?per_page=50"
++    assert jobs[1]["path"] == next_url
++    assert not server.profile.exists()
++
++
++@pytest.mark.parametrize("fail", [False, True], ids=["success", "failure"])
++def test_cli_restores_explicit_httpx_level_and_closes_original_client(
++    activity_server, monkeypatch, capsys, fail,
++):
++    server = activity_server
++    server.pages = [(403, {"error": "synthetic expiry"}, {})] if fail else [(200, [ROW], {})]
++    closed = []
++    original_close = CanvasClient.close
++
++    def close(client):
++        native_http = client._http
++        original_close(client)
++        closed.append((client._http is None, native_http is not None and native_http.is_closed))
++
++    monkeypatch.setattr(CanvasClient, "close", close)
++    logger = logging.getLogger("httpx")
++    prior_level = logger.level
++    logger.setLevel(logging.DEBUG)
++    try:
++        args = ["activity", "--base-url", server.base, "--token", TOKEN,
++                "--profile", str(server.profile)]
++        if fail:
++            with pytest.raises(SystemExit) as error:
++                main(args)
++            assert error.value.code == 1
++        else:
++            main(args)
++        assert logger.level == logging.DEBUG
++    finally:
++        logger.setLevel(prior_level)
++    captured = capsys.readouterr()
++    assert closed == [(True, True)]
++    if fail:
++        assert captured.out == ""
++        assert json.loads(captured.err)["error"] == "CanvasAuthError"
++    else:
++        assert json.loads(captured.out) == [ROW]
++        assert captured.err == ""
++    server.assert_reads(1)
++
++
++def test_activity_help_and_unknown_options_do_not_construct_a_client(
++    activity_server, monkeypatch, capsys,
++):
++    server = activity_server
++    help_result = server.cli("--help")
++    assert help_result.returncode == 0
++    assert b"--base-url" in help_result.stdout and b"--token" in help_result.stdout
++    assert help_result.stderr == b""
++
++    def forbid(*_args, **_kwargs):
++        pytest.fail("Invalid arguments constructed a CanvasClient")
++    monkeypatch.setattr(CanvasClient, "__init__", forbid)
++    for arguments in [["activity", "--course", "42"], ["activity", "--unread"], ["activity", "42"]]:
++        with pytest.raises(SystemExit) as error:
++            main(arguments)
++        assert error.value.code == 2
++        captured = capsys.readouterr()
++        assert captured.out == ""
++        assert "error:" in captured.err
++    assert server.calls == []
++    assert not server.profile.exists()

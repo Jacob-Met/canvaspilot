@@ -1,0 +1,40 @@
+{
+  "sealedAt": "2026-10-08T21:34:06.204497+00:00",
+  "nativeRoot": "/home/jacob/hamon-canvas-activity-68094585a1c2",
+  "archive": {
+    "path": "/home/jacob/hamon-canvas-activity-68094585a1c2/author-capsule-v1/canvaspilot-activity-author-capsule.tar.gz",
+    "bytes": 496743,
+    "sha256": "fe428c39c0086a10bb92ed12c5b2e3e563cb9f2a18bae7fdc52be6472a46c1e1",
+    "gitBlob": "fcd6d888a034fd60d79fe29948e820df38d14b12",
+    "members": 166
+  },
+  "manifest": {
+    "path": "/home/jacob/hamon-canvas-activity-68094585a1c2/author-capsule-v1/MANIFEST.json",
+    "bytes": 43302,
+    "sha256": "1cd1fc4c6f965c8c415c498590338d67996b48f625fbaf136bd5403c7f8c4b74",
+    "gitBlob": "b290cb95c63961242e937b11f3de638e3c53e458"
+  },
+  "payloadFiles": 165,
+  "verifiedArchiveMembers": 166,
+  "originalFiles": 134,
+  "candidateFiles": 136,
+  "authoredProductPaths": 5,
+  "sourceUnchanged": true,
+  "candidateUnchanged": true,
+  "publicContract": {
+    "bytes": 7933,
+    "sha256": "5ff5e39438db240fb2a1867df01c52218a0e4eed9df2a6dd9f071e2ff2373bc5",
+    "gitBlob": "983f912f820efb50aeb320fa589f76cd4a425056"
+  },
+  "authorQualification": {
+    "bytes": 60843,
+    "sha256": "e2b88e3c39afbd29e06c374844d5571254578cf18eeb6cef0f339905952bec92",
+    "gitBlob": "6373d85d632e23bf0f3c53c1c8acd4ca6d8a7915"
+  },
+  "patch": {
+    "bytes": 23781,
+    "sha256": "b5272e001f8b771d21f9e316f041f3b8405efbc2aa46e8bb1eb3c51fa4fa09d3",
+    "gitBlob": "2f26d4e685414eb1de0c864c103c16b08be4c97a"
+  },
+  "noPublication": true
+}

@@ -1,0 +1,154 @@
+{
+  "schema": "hamon.canvaspilot.activity-root-source-review/1",
+  "actor": "chatgpt:68094585a1c2 / root",
+  "at": "2026-10-08T21:35:06.720079+00:00",
+  "sourceCommit": "56a72a2e2cee5ec04671d12ebe5bc2484afb8026",
+  "sourceTree": "a07c3e941219ff80968e1ff20528a63541bb7400",
+  "sourceFiles": {
+    "README.md": {
+      "bytes": 28545,
+      "sha256": "0d051f8f54bcf134300c36779e6b4d76ae63dc9dbebd4192af245c2563dc7825",
+      "git_blob": "09eedad6e9d98b42fbaaa849b951f7c25a9a8aa8"
+    },
+    "docs/activity-stream.md": {
+      "bytes": 5304,
+      "sha256": "8227a935283b72668510f6d6d6e377e58b02225b702869c160e6df8fe3a3160b",
+      "git_blob": "2e7ebd7fcbc74f26f9d96e4b6412a97c63c62a20"
+    },
+    "src/canvaspilot/api.py": {
+      "bytes": 29741,
+      "sha256": "512f768d782e0775f2ec573c3a3b7ce8426c1c99900a6964c33fa37cdb267402",
+      "git_blob": "f0e25c38f8ed521fae3dfbcbf7c9f1757a9fbba0"
+    },
+    "src/canvaspilot/cli.py": {
+      "bytes": 40978,
+      "sha256": "fa3fb1cb85c7e7e3301f31d0cc8dfa52f53a11173615b565de76ed49ec110bc6",
+      "git_blob": "786a2dedac34942bd320964ba19edeede88c537e"
+    },
+    "tests/test_activity_stream.py": {
+      "bytes": 14700,
+      "sha256": "fa8702cc57c7e72f4cd87c99f2535323f28aacf5a1ceeb76a5215542ede231c5",
+      "git_blob": "c4e1a65336e411dac04e289438a8627d319ed345"
+    }
+  },
+  "sourceFence": {
+    "apiFullInverse": true,
+    "apiBodyReplacements": 1,
+    "cliFullInverse": true,
+    "cliAdditions": 2,
+    "readmeFullInverse": true,
+    "readmeAdditions": 1,
+    "unchangedMaterializedFiles": [
+      "pyproject.toml",
+      "src/canvaspilot/__init__.py",
+      "src/canvaspilot/agenda.py",
+      "src/canvaspilot/agenda_export.py",
+      "src/canvaspilot/agenda_view/controls.js",
+      "src/canvaspilot/agenda_view/style.css",
+      "src/canvaspilot/announcement_search.py",
+      "src/canvaspilot/assignment_submission.py",
+      "src/canvaspilot/bundle.py",
+      "src/canvaspilot/calendar_export.py",
+      "src/canvaspilot/client.py",
+      "src/canvaspilot/discussion_thread.py",
+      "src/canvaspilot/feedback.py",
+      "src/canvaspilot/folder_browser.py",
+      "src/canvaspilot/grade_review.py",
+      "src/canvaspilot/grade_review_export.py",
+      "src/canvaspilot/mcp_server.py",
+      "src/canvaspilot/module_progress.py",
+      "src/canvaspilot/module_progress_export.py",
+      "src/canvaspilot/offline_demo.py",
+      "src/canvaspilot/page_export.py",
+      "src/canvaspilot/session_broker.py",
+      "src/canvaspilot/study_workspace.css",
+      "src/canvaspilot/study_workspace.html",
+      "src/canvaspilot/study_workspace.js",
+      "src/canvaspilot/study_workspace.py",
+      "src/canvaspilot/submission_comparison.py",
+      "src/canvaspilot/submission_history.py",
+      "src/canvaspilot/submission_history_export.py",
+      "src/canvaspilot/syllabus_packet.py"
+    ],
+    "guideContextManagerExistsInOriginal": true,
+    "clientMcpDependenciesUnchanged": true
+  },
+  "review": {
+    "fullProductDiffRead": true,
+    "fullGuideRead": true,
+    "authored383LineTestModuleReadAfterIndependentCandidateCompleted": true,
+    "findings": [],
+    "guideReferences": [
+      "https://developerdocs.instructure.com/services/canvas/resources/users",
+      "https://developerdocs.instructure.com/services/canvas/basics/file.pagination"
+    ],
+    "guideLimits": "Available paginated feed, not historical archive or complete message body; source 4KB DiscussionTopic/Announcement limit retained."
+  },
+  "independent": {
+    "frozenAt": "2026-10-08T21:17:17.821378+00:00",
+    "baseline": {
+      "bytes": 22596,
+      "sha256": "cbaa7d44a46b3f3bc45fba085626447501a0fbc3fbae4a9816c668853e68d23c",
+      "git_blob": "ce48870d1b31446ac3ba8c72134b5e7642feea61"
+    },
+    "baselineGroups": 3,
+    "baselineNegative": "Original API returned only first2 of5 rows; original CLI refused activity with exit2/zero HTTP. Original client paginator independently returned all5 across3 opaque URLs.",
+    "candidate": {
+      "bytes": 34466,
+      "sha256": "ec1428fde471fc55ab66c1f10c5d0625f4d3a66fde5268a2255bd077afbca5e3",
+      "git_blob": "19f8996f70666d1a832ebd2905bd0b1959ba0f8d"
+    },
+    "candidateStartedAt": "2026-10-08T21:31:29.143763+00:00",
+    "candidateEndedAt": "2026-10-08T21:31:41.703222+00:00",
+    "candidatePid": 1880962,
+    "candidateExit": 0,
+    "candidateGroups": 13,
+    "candidateRealLoopbackGetRequests": 27,
+    "protectedCandidateInputCount": 37,
+    "allProtectedExact": true,
+    "receiver": {
+      "bytes": 16957,
+      "sha256": "62c2be4542753977e0ba5fd51a0569897b4ae13db7b0ce45000d44cf3f1ba3b1",
+      "git_blob": "4782b50ea7cb94d1e818cc07d0a9b6260a9fd101"
+    },
+    "original37ProtectedExactAfterCandidate": true,
+    "scope": "Actual unchanged CanvasClient/API over synthetic loopback; declared CLI subprocess; success/error logger-level and client-close lifetime; installed MCPServer2.3 registered tool dispatch. No live Canvas or MCP stdio."
+  },
+  "author": {
+    "author": "chatgpt:68094585a1c2 / levenshtein_receiving",
+    "qualificationReceipt": {
+      "bytes": 60843,
+      "sha256": "e2b88e3c39afbd29e06c374844d5571254578cf18eeb6cef0f339905952bec92",
+      "git_blob": "6373d85d632e23bf0f3c53c1c8acd4ca6d8a7915"
+    },
+    "reportedTests": 69,
+    "reportedNewTests": 30,
+    "reportedExistingTests": 39,
+    "reportedExistingSubtests": 14,
+    "reportedNativeLint": "Ruff0.16.10 passed existing CI path set; no repeated test run",
+    "fullFivePathPatchManifest": {
+      "bytes": 3193,
+      "sha256": "0be8c852ad3ad04ad4db8a127a1f2e33a8a2f25144770f54deb7f37d039b0de6",
+      "git_blob": "fe6506368037ab4140e04db631841ed26d94aa85"
+    }
+  },
+  "observerNegative": {
+    "path": "observer-initial-sdk-probe.json",
+    "preserved": true,
+    "error": "Initial receiver introspection assumed old FastMCP; installed original application uses MCPServer2.3. Corrected inspection, no dependency/source change and no product failure."
+  },
+  "state": {
+    "nativeQualified": true,
+    "sourcePublished": false,
+    "integrated": false,
+    "hostedPython312Executed": false,
+    "hostedBrowserGateExecuted": false,
+    "requiredGatesWaived": false,
+    "actionsUsed": false
+  },
+  "limits": [
+    "Native Python3.14.4 is not hosted Python3.12 acceptance.",
+    "Synthetic transport and registered MCP dispatch are not live-account or stdio verification.",
+    "Original client40-page and broker conventions retained; author native cases cover these, root does not duplicate that full matrix."
+  ]
+}

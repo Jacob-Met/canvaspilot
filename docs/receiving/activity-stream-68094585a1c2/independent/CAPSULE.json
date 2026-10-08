@@ -1,0 +1,42 @@
+{
+  "schema": "hamon.canvaspilot.activity-independent-capsule-receipt/1",
+  "actor": "chatgpt:68094585a1c2 / root",
+  "at": "2026-10-08T21:37:11.725693+00:00",
+  "archive": {
+    "path": "/home/jacob/hamon-canvas-activity-independent-68094585a1c2/capsule-v1/canvaspilot-activity-independent-capsule.tar.gz",
+    "bytes": 252340,
+    "sha256": "e6193f434a46169bab9e0d925477f077c87be84332dec5562d5d1e9bdb3ddefa",
+    "git_blob": "54bae2efe95dc22a11a927b3657b1798ffd1f758"
+  },
+  "manifest": {
+    "path": "/home/jacob/hamon-canvas-activity-independent-68094585a1c2/capsule-v1/MANIFEST.json",
+    "bytes": 21317,
+    "sha256": "1141bf6a76a3befdf148a3c39a8c824e55106468f20f617bd31edbbbab37783f",
+    "git_blob": "ac7c4333559c5e41290db0f03bbacfb45725b12b"
+  },
+  "memberCount": 83,
+  "allMembersBytesAndModesVerified": true,
+  "allInputsUnchanged": true,
+  "nativeOriginalGroups": 3,
+  "nativeCandidateGroups": 13,
+  "candidateLoopbackGetRequests": 27,
+  "candidateExecution": {
+    "pid": 1880962,
+    "exit": 0,
+    "receipt": {
+      "bytes": 34466,
+      "sha256": "ec1428fde471fc55ab66c1f10c5d0625f4d3a66fde5268a2255bd077afbca5e3",
+      "git_blob": "19f8996f70666d1a832ebd2905bd0b1959ba0f8d"
+    }
+  },
+  "sourceReview": {
+    "bytes": 6491,
+    "sha256": "ef1623bad5d7412ab572c49172b8fae7a1c2e66e96bec00853720e8ab9ddac4c",
+    "git_blob": "d566c898f96ccb9832bdd7e0bd9e5afd9522c452"
+  },
+  "sourcePublished": false,
+  "integrated": false,
+  "requiredHostedGatesUnrun": true,
+  "actionsUsed": false,
+  "repackInstruction": "Transfer these exact bytes. Do not regenerate the archive and label it the original."
+}
