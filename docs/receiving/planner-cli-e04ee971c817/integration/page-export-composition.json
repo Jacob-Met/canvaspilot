@@ -1,0 +1,103 @@
+{
+  "format": "canvas-planner-page-export-composition-v1",
+  "repository": "Jacob-Met/canvaspilot",
+  "native_base": "f618c3ed13f191ea58642283c1f9cd45a0c1ca81",
+  "native_tree": "1bcfff90694cdb8358684ada58ff349562244de7",
+  "native_pr": 71,
+  "previous_native": "1bafdaa31f7789d8e561680cb6001bbe38b2da64",
+  "previous_accepted_head": "16ddd61e4ed2bb971d84b8e9823890de145bc1b3",
+  "native_change": {
+    "leaves_before": 1205,
+    "leaves_after": 1333,
+    "changed_existing_paths": [
+      "README.md",
+      "src/canvaspilot/cli.py"
+    ],
+    "added_leaves": 128
+  },
+  "pins": {
+    "native_cli": {
+      "bytes": 25461,
+      "git_blob": "0e1a04c36972641b65a9022e507bad03cb300e1f",
+      "sha256": "93716be70753b1cfd2f6ff4d2198cbeac8ed7e408d400d3e01a3fc1dd6637631"
+    },
+    "native_readme": {
+      "bytes": 25013,
+      "git_blob": "f1588471682c37698b4bcf9d69e96da05cd0f29b",
+      "sha256": "df274c8ba3c7b1e279fbb6807b0cbb5f7970136929b6438791d12f90ac56fdc3"
+    },
+    "candidate": [
+      {
+        "path": "src/canvaspilot/cli.py",
+        "bytes": 26783,
+        "git_blob": "24ef2d4a6481391dbd7234420ffd267ce31947ee",
+        "sha256": "e112751ee130379bd331c9cff3b4ec6f48ff67a60808014c895be5b5a0b81084"
+      },
+      {
+        "path": "README.md",
+        "bytes": 25351,
+        "git_blob": "ee2d1515ca732bb6afacb84016a5b8aca3a04fd5",
+        "sha256": "d2e84b8359bc999cc7cb7c8a687b4a44a52fe44d91e04dddb0a181efe9d1de43"
+      }
+    ],
+    "api": {
+      "bytes": 29742,
+      "git_blob": "3ec81dee60bc67d7a80d40b78e85d5c005441b99",
+      "sha256": "b6b770c2cdef9c9ce44a4a6aefd5b6d0876bc09e5aee29a4adb5a7c603b41c24"
+    }
+  },
+  "checks": {
+    "planner_removal_recovers_f618": true,
+    "readme_removal_recovers_f618": true,
+    "native_page_removal_recovers_1b": true,
+    "composed_page_removal_recovers_received_99247f6d": true,
+    "page_readme_removal_recovers_1b": true,
+    "composed_page_readme_removal_recovers_88f76d78": true,
+    "api_byte_identical": true
+  },
+  "exact_blocks": {
+    "planner_parser": "    planner = sub.add_parser(\n        \"planner\", help=\"Read your planner items without changing completion or visibility\",\n    )\n    add_common(planner)\n    planner.add_argument(\n        \"--start-date\", default=None, help=\"Native date filter: YYYY-MM-DD or ISO 8601 timestamp\",\n    )\n    planner.add_argument(\n        \"--end-date\", default=None, help=\"Native date filter: YYYY-MM-DD or ISO 8601 timestamp\",\n    )\n\n",
+    "planner_dispatch": "        elif args.cmd == \"planner\":\n            import httpx\n\n            from canvaspilot.client import CanvasAuthError, CanvasPaginationError\n\n            http_log = logging.getLogger(\"httpx\")\n            previous_level = http_log.level\n            http_log.setLevel(max(http_log.getEffectiveLevel(), logging.WARNING))\n            try:\n                result = api.planner_items(\n                    start_date=args.start_date, end_date=args.end_date,\n                )\n            except (CanvasAuthError, CanvasPaginationError, httpx.HTTPError, ValueError) as error:\n                print(json.dumps({\n                    \"ok\": False, \"error\": type(error).__name__, \"message\": str(error),\n                }), file=sys.stderr)\n                raise SystemExit(1) from None\n            finally:\n                http_log.setLevel(previous_level)\n            print(json.dumps(result, indent=2, default=str))\n",
+    "planner_readme": "Read your own planner items with `canvaspilot planner --start-date 2026-10-08 --end-date 2026-10-15`.\nThe [planner CLI guide](docs/planner-cli.md) explains native date filters,\npersonal notes, supplied completion metadata and complete-list error behavior.\nThe command uses the existing planner API and does not change any planner state.\n\n",
+    "page_export": {
+      "parser": "\n    page_export = sub.add_parser(\n        \"export-pages\", help=\"Save explicitly selected course pages to a new offline HTML reading packet\"\n    )\n    add_common(page_export)\n    page_export.add_argument(\"course_id\", help=\"Positive numeric Canvas course ID\")\n    page_export.add_argument(\"pages\", nargs=\"+\", help=\"Page URL locators, or page_id:ID for an explicit numeric ID\")\n    page_export.add_argument(\"--out\", required=True, type=Path, help=\"New HTML file; existing paths are protected\")\n",
+      "dispatch": "        elif args.cmd == \"export-pages\":\n            import os\n\n            import httpx\n\n            from canvaspilot.client import CanvasAuthError\n            from canvaspilot.page_export import build_page_packet, write_page_packet\n\n            try:\n                if os.path.lexists(args.out):\n                    raise FileExistsError(\"Output path already exists; choose a new HTML file\")\n                content, report = build_page_packet(api, args.course_id, args.pages)\n                cleanup_warning = write_page_packet(args.out, content)\n            except (CanvasAuthError, httpx.HTTPError, ValueError, TypeError, OSError) as error:\n                print(json.dumps({\n                    \"ok\": False, \"error\": type(error).__name__, \"message\": str(error),\n                }), file=sys.stderr)\n                raise SystemExit(1) from None\n            if cleanup_warning:\n                report[\"cleanup_warning\"] = cleanup_warning\n            print(json.dumps({\"ok\": True, \"output\": str(args.out), **report}, indent=2))\n",
+      "readme": "\nTo take explicitly selected course pages offline, use\n`canvaspilot export-pages 42 course-introduction week-two-reading --out reading.html`.\nThe [page export guide](docs/page-export.md) explains numeric page IDs, the inert\noriginal-source record, selection limits and protection of existing output.\n"
+    }
+  },
+  "method": "Use exact UTF-8 source fetched from GitHub. Assert each block occurs once before removal. Remove only the original planner blocks to recover current native source. Independently remove the exact new page-export blocks from both native and composed source to recover their respective prior versions. Compare the unchanged API bodies. Full published tree preservation is qualified separately.",
+  "initial_probe": {
+    "result": "4 reverse checks false, 3 checks true",
+    "cause": "The first page-export extractor omitted the leading newline included in the accepted native additions. The full candidate already preserved current native bytes; correcting only the reverse-check block to include that newline made all seven checks pass.",
+    "original_checks": {
+      "planner_removal_recovers_f618": true,
+      "readme_removal_recovers_f618": true,
+      "native_page_removal_recovers_1b": false,
+      "composed_page_removal_recovers_received_99247f6d": false,
+      "page_readme_removal_recovers_1b": false,
+      "composed_page_readme_removal_recovers_88f76d78": false,
+      "api_byte_identical": true
+    },
+    "source_changed": false,
+    "execution_scope": "Pure text composition check; no Python or product child ran."
+  },
+  "independent": {
+    "observed_at": "2026-10-08T17:51:19Z",
+    "reviewer": "/root",
+    "kind": "independent byte-only composition",
+    "candidate_git_blob": "24ef2d4a6481391dbd7234420ffd267ce31947ee",
+    "native_commit": "f618c3ed13f191ea58642283c1f9cd45a0c1ca81",
+    "native_cli_git_blob": "0e1a04c36972641b65a9022e507bad03cb300e1f",
+    "result": "PASS",
+    "source": "Direct parent collaboration message; parent independently fetched both exact GitHub source bodies.",
+    "observation": "Deleting the same two exact original planner blocks from candidate source reproduces the complete native CLI byte for byte.",
+    "limits": "No repeated source receiver or full package execution. The original 123-condition packet remains immutable; final full-package acceptance is the actual hosted gate on the new composition."
+  },
+  "limits": [
+    "No new product behavior, API/client/helper/dependency/workflow change is introduced.",
+    "The current native page-export parser and dispatch are separate branches with lazy page-export imports. All pre-existing native bytes survive removal of the planner additions.",
+    "The previous nine-child independent 123-condition result stays pinned to original df01 source; the prior three one-child composition results stay pinned to their executed source.",
+    "No extra local product receiver was run for this byte-exact additive composition. The new head must pass the unchanged hosted package/Ruff/pytest gate before merge.",
+    "No live Canvas account, API, course, student record, browser session, release or production state was used."
+  ]
+}

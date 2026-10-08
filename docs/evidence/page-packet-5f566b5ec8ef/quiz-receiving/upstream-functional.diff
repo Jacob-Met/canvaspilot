@@ -1,0 +1,73 @@
+diff --git a/src/canvaspilot/api.py b/src/canvaspilot/api.py
+index a9d1629..cd17584 100644
+--- a/src/canvaspilot/api.py
++++ b/src/canvaspilot/api.py
+@@ -454,17 +454,9 @@ class CanvasAPI:
+         )
+ 
+     def list_files(self, course_id: int | str) -> list[dict[str, Any]]:
+-        try:
+-            rows = self.client.get_paginated(f"/api/v1/courses/{course_id}/files")
+-        except Exception:
+-            folders = self.client.request(
+-                "GET",
+-                f"/api/v1/courses/{course_id}/folders/by_path",
+-            )
+-            root = folders[0] if isinstance(folders, list) and folders else None
+-            if not root:
+-                raise
+-            rows = self.client.get_paginated(f"/api/v1/folders/{root['id']}/files")
++        """List the course collection or propagate its read/pagination error."""
++        # A folder's direct children cannot stand in for the course collection.
++        rows = self.client.get_paginated(f"/api/v1/courses/{course_id}/files")
+         return [
+             {
+                 "id": f.get("id"),
+diff --git a/src/canvaspilot/cli.py b/src/canvaspilot/cli.py
+index 82f1cdf..226f3f7 100644
+--- a/src/canvaspilot/cli.py
++++ b/src/canvaspilot/cli.py
+@@ -176,6 +176,15 @@ def main(argv: list[str] | None = None) -> None:
+     agenda.add_argument("--start", dest="start_date", required=True, help="YYYY-MM-DD")
+     agenda.add_argument("--end", dest="end_date", required=True, help="YYYY-MM-DD")
+ 
++    quizzes = sub.add_parser("quizzes", help="List classic quizzes for a course")
++    add_common(quizzes)
++    quizzes.add_argument("course_id", type=_positive_int, help="Positive numeric Canvas course ID")
++
++    quiz = sub.add_parser("quiz", help="Read one classic quiz without starting an attempt")
++    add_common(quiz)
++    quiz.add_argument("course_id", type=_positive_int, help="Positive numeric Canvas course ID")
++    quiz.add_argument("quiz_id", type=_positive_int, help="Positive numeric Canvas quiz ID")
++
+     mcp = sub.add_parser("mcp", help="Run MCP stdio server")
+     add_common(mcp)
+ 
+@@ -258,6 +267,27 @@ def main(argv: list[str] | None = None) -> None:
+                     default=str,
+                 )
+             )
++        elif args.cmd in {"quizzes", "quiz"}:
++            import httpx
++
++            from canvaspilot.client import CanvasAuthError, CanvasPaginationError
++
++            http_log = logging.getLogger("httpx")
++            previous_level = http_log.level
++            http_log.setLevel(max(http_log.getEffectiveLevel(), logging.WARNING))
++            try:
++                if args.cmd == "quizzes":
++                    result = api.list_quizzes(args.course_id)
++                else:
++                    result = api.get_quiz(args.course_id, args.quiz_id)
++            except (CanvasAuthError, CanvasPaginationError, httpx.HTTPError, ValueError) as error:
++                print(json.dumps({
++                    "ok": False, "error": type(error).__name__, "message": str(error),
++                }), file=sys.stderr)
++                raise SystemExit(1) from None
++            finally:
++                http_log.setLevel(previous_level)
++            print(json.dumps(result, indent=2, default=str))
+         elif args.cmd == "discussions":
+             print(json.dumps(api.list_discussion_topics(args.course_id), indent=2, default=str))
+         elif args.cmd == "discussion":

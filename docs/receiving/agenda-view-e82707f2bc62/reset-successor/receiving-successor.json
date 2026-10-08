@@ -1,0 +1,121 @@
+{
+  "schema": "canvaspilot-agenda-reset-successor/1",
+  "recorded_at": "2026-10-08T17:51:01Z",
+  "issue": 66,
+  "pr": 75,
+  "author": "estate-e82707f2bc62/runtime_discovery",
+  "original": {
+    "head": "b3d9646472c6dbb60d82bccebd41f3cd3521133e",
+    "tree": "6bd8f291b5c80c421fc97626073d67699643785d",
+    "synthetic_commit": "2bf3457228e308f74693fd8d4e3c05b8dbe0e6fe",
+    "synthetic_parents": [
+      "1bafdaa31f7789d8e561680cb6001bbe38b2da64",
+      "b3d9646472c6dbb60d82bccebd41f3cd3521133e"
+    ],
+    "controls_git_blob": "f90040d5a13080ee8050fbf31ea5b3b94675c070",
+    "controls_sha256": "7e62636fe393e957717b885ed1e02e29b76c855b336a423f08685a22e1b94e72",
+    "native_run": 37817156890,
+    "native_job": 113448597799,
+    "native_result": {
+      "ruff": "passed",
+      "pytest_passed": 886,
+      "pytest_skipped": 1,
+      "pytest_subtests_passed": 54,
+      "seconds": 241.38,
+      "skip_reason": "Not printed by the unchanged pytest -q gate; no inferred coverage for this skipped case."
+    },
+    "wheel": {
+      "schema": "canvaspilot-agenda-wheel/1",
+      "accepted": true,
+      "wheel": "canvaspilot-0.1.1-py3-none-any.whl",
+      "wheel_bytes": 77307,
+      "wheel_sha256": "67f2ebd0c1faee4dbaa93890741e64ed71ab709b4fcdb8327ef4798aedb655a5",
+      "packaged_assets_equal_actual_checkout": [
+        {
+          "path": "canvaspilot/agenda_export.py",
+          "bytes": 15270,
+          "sha256": "4e55a0c16e76286130f01e81f04685da1a3ecd9bb5a7a0493ccbfe97c0fcd3ce"
+        },
+        {
+          "path": "canvaspilot/agenda_view/style.css",
+          "bytes": 7402,
+          "sha256": "12f3bf80b16ff74eb93b9244a2d6c28996449203f8fcd219745c38111df552c2"
+        },
+        {
+          "path": "canvaspilot/agenda_view/controls.js",
+          "bytes": 2824,
+          "sha256": "7e62636fe393e957717b885ed1e02e29b76c855b336a423f08685a22e1b94e72"
+        }
+      ]
+    },
+    "browser_run": 37817157069,
+    "browser_job": 113448597315,
+    "browser_runtime": {
+      "node": "v22.23.3",
+      "chrome": "Google Chrome 154.0.8037.97",
+      "executable": "/usr/bin/google-chrome"
+    },
+    "browser_result": {
+      "accepted": false,
+      "completed_observations": 6,
+      "error": {
+        "name": "Error",
+        "message": "Timed out: reset complete view",
+        "stack": "Error: Timed out: reset complete view\n    at until (file:///home/runner/work/canvaspilot/canvaspilot/scripts/receive_agenda_view.mjs:36:9)\n    at async main (file:///home/runner/work/canvaspilot/canvaspilot/scripts/receive_agenda_view.mjs:214:3)"
+      },
+      "page_errors": [],
+      "external_requests": [],
+      "cleanup_errors": [],
+      "post_click_field_values": "not captured; no observation claimed"
+    },
+    "raw_archive": {
+      "path": "hosted-v1-original.zip",
+      "bytes": 32348,
+      "sha256": "84d892f2bd0200849976886b0f6652127331bf0f15d714a2ebf041bae141bbb0",
+      "git_blob": "7c2f49798f2cb42a86780c39ea417905ef937746",
+      "members": [
+        "browser.log",
+        "native.log",
+        "receiving.json"
+      ],
+      "complete_logs_and_structured_receipt": true,
+      "exact_readback": true
+    }
+  },
+  "correction": {
+    "path": "src/canvaspilot/agenda_view/controls.js",
+    "before": "form.addEventListener('reset', () => queueMicrotask(update));",
+    "after": "form.addEventListener('reset', () => setTimeout(update, 0));",
+    "git_blob": "107097a5ad2379fb7497e1b38c488b3a7917e93f",
+    "sha256": "98474fb98fff0027e26fabd024c33a186715b5ac612979c4ef8b1d84b181d172",
+    "bytes": 2823,
+    "exact_inverse_recovers_original": true,
+    "node_syntax": "passed; Node 24.19.0",
+    "driver_git_blob_unchanged": "5779f13b3efd7c7a94b4e88a76a66837465db910",
+    "workflow_git_blob_unchanged": "a06b862c23dccc61d5da9eea99d82b76668f78c8",
+    "all_browser_assertions_unchanged": true
+  },
+  "reasoning": {
+    "observed": "The actual installed-Chrome receiver reaches the correct empty filtered view, sends a native mouse click to Reset view, and times out awaiting all four original entries.",
+    "inference": "The native reset listener schedules a microtask that can run before the browser restores control values. The subsequent native reset emits no input event to update the derived view. A later task recalculates from the restored fields.",
+    "primary_sources": [
+      {
+        "url": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#resetting-a-form",
+        "retrieved": "2026-10-08",
+        "support": "The reset event precedes resetting each control, and control reset does not emit input events."
+      },
+      {
+        "url": "https://html.spec.whatwg.org/multipage/webappapis.html#clean-up-after-running-script",
+        "retrieved": "2026-10-08",
+        "support": "Script cleanup performs a microtask checkpoint when the JavaScript execution stack becomes empty."
+      }
+    ],
+    "limits": [
+      "No post-click field-value evidence is invented.",
+      "The source-supported correction requires a new actual Chrome run; the original browser verdict remains failure.",
+      "No local browser run, screenshot visual inspection, live Canvas account, or installed-wheel CLI invocation is claimed.",
+      "The packaged-assets result is bound to the original controls source; the successor must pass the unchanged wheel check again."
+    ]
+  },
+  "next_gate": "Existing full native CI and the unchanged wheel/Chrome workflow on the actual successor composition."
+}

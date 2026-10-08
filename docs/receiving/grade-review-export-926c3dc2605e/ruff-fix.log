@@ -1,0 +1,103 @@
+ISC004 Unparenthesized implicit string concatenation in collection
+   --> src/canvaspilot/grade_review_export.py:221:9
+    |
+219 |           f'<h2 id="group-{index}-title">{title}</h2>',
+220 |           _facts({key: value for key, value in group.items() if key != "assignments"}),
+221 | /         '<p class="muted">Group weights and drop rules are reported context. '
+222 | |         "This file does not select dropped work or recalculate a grade.</p>",
+    | |____________________________________________________________________________^
+223 |       ]
+224 |       assignments = group["assignments"]
+    |
+help: Did you forget a comma?
+help: Wrap implicitly concatenated strings in parentheses
+
+ISC004 Unparenthesized implicit string concatenation in collection
+   --> src/canvaspilot/grade_review_export.py:257:9
+    |
+255 |           '<meta name="viewport" content="width=device-width, initial-scale=1">',
+256 |           '<meta name="referrer" content="no-referrer">',
+257 | /         '<meta http-equiv="Content-Security-Policy" content="default-src \'none\'; '
+258 | |         "style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'\">",
+    | |___________________________________________________________________________^
+259 |           "<title>Course grade review — CanvasPilot</title><style>", _STYLE,
+260 |           '</style></head><body><main id="top"><header>',
+    |
+help: Did you forget a comma?
+help: Wrap implicitly concatenated strings in parentheses
+
+ISC004 Unparenthesized implicit string concatenation in collection
+   --> src/canvaspilot/grade_review_export.py:264:9
+    |
+262 |           f"<h1>{title}</h1>",
+263 |           f'<p>Report created <time datetime="{created}">{created}</time></p>',
+264 | /         '<p class="notice">This saved observation shows Canvas-reported values for the '
+265 | |         "authenticated caller. It does not refresh or calculate a replacement grade. "
+266 | |         "Counts cover returned rows; whole-course completeness remains unknown.</p>",
+    | |____________________________________________________________________________________^
+267 |           '<p class="muted">Values use JSON notation: null means unavailable, false differs '
+268 |           'from a missing flag, 0 stays zero, and "" is an explicitly returned empty string. '
+    |
+help: Did you forget a comma?
+help: Wrap implicitly concatenated strings in parentheses
+
+ISC004 Unparenthesized implicit string concatenation in collection
+   --> src/canvaspilot/grade_review_export.py:267:9
+    |
+265 |           "authenticated caller. It does not refresh or calculate a replacement grade. "
+266 |           "Counts cover returned rows; whole-course completeness remains unknown.</p>",
+267 | /         '<p class="muted">Values use JSON notation: null means unavailable, false differs '
+268 | |         'from a missing flag, 0 stays zero, and "" is an explicitly returned empty string. '
+269 | |         "A field marked Not returned is unknown.</p></header>",
+    | |______________________________________________________________^
+270 |           '<section class="panel" aria-labelledby="totals-title"><h2 id="totals-title">Reported course totals</h2>',
+271 |       ]
+    |
+help: Did you forget a comma?
+help: Wrap implicitly concatenated strings in parentheses
+
+ISC004 Unparenthesized implicit string concatenation in collection
+   --> src/canvaspilot/grade_review_export.py:318:9
+    |
+316 |           "<ul>" + "".join("<li>" + _escape(message) + "</li>" for message in report["warnings"])
+317 |           + "</ul>" if report["warnings"] else "<p>No reader warnings were returned.</p>",
+318 | /         f'<p><a class="download" id="download-report" download="course-grade-review.json" '
+319 | |         f'href="data:application/json;base64,{encoded}">Download complete report JSON</a></p>',
+    | |______________________________________________________________________________________________^
+320 |           '<p class="muted">The download preserves the complete normalized report used here. '
+321 |           "Original Canvas response pages are not included.</p>",
+    |
+help: Did you forget a comma?
+help: Wrap implicitly concatenated strings in parentheses
+
+ISC004 Unparenthesized implicit string concatenation in collection
+   --> src/canvaspilot/grade_review_export.py:320:9
+    |
+318 |           f'<p><a class="download" id="download-report" download="course-grade-review.json" '
+319 |           f'href="data:application/json;base64,{encoded}">Download complete report JSON</a></p>',
+320 | /         '<p class="muted">The download preserves the complete normalized report used here. '
+321 | |         "Original Canvas response pages are not included.</p>",
+    | |______________________________________________________________^
+322 |           f'<p class="muted">JSON SHA-256: <code id="json-sha256">{payload_hash}</code></p>',
+323 |           "</section><footer>Open this file directly in a browser. Use the browser's Print command "
+    |
+help: Did you forget a comma?
+help: Wrap implicitly concatenated strings in parentheses
+
+ISC004 Unparenthesized implicit string concatenation in collection
+   --> src/canvaspilot/grade_review_export.py:323:9
+    |
+321 |           "Original Canvas response pages are not included.</p>",
+322 |           f'<p class="muted">JSON SHA-256: <code id="json-sha256">{payload_hash}</code></p>',
+323 | /         "</section><footer>Open this file directly in a browser. Use the browser's Print command "
+324 | |         "for paper or PDF. Source links are shown as text; this report has no scripts, "
+325 | |         "remote assets or grade-editing controls.</footer></main></body></html>\n",
+    | |__________________________________________________________________________________^
+326 |       ])
+327 |       content = "".join(parts).encode("utf-8")
+    |
+help: Did you forget a comma?
+help: Wrap implicitly concatenated strings in parentheses
+
+Found 7 errors.
+No fixes available (7 hidden fixes can be enabled with the `--unsafe-fixes` option).

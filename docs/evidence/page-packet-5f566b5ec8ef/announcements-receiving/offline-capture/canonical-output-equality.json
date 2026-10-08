@@ -1,0 +1,27 @@
+{
+  "utc": "2026-10-08T16:08:13.250631+00:00",
+  "source_commit": "b881d4acfb2a80f05842e86b25fdb499e576b745",
+  "installed_wheel_sha256": "498b8819c9661bcc5f4f26b9bfb9c9327c632420f80b0489a6dc5920a1e293b8",
+  "page_module_sha256": "8800e959ee620438273c3291fd24c51b9ed567430b28093cd3f8bef52bff5015",
+  "old_browser_receipt_sha256": "d72a1860049709d9a58e74606612f843c0d4a124fed211f3f7cf040bd081e437",
+  "new_capture_sha256": "7958fc45552a431fd49cb5edeabdb8dcbe10ede26359d1df59ce73fa47bcf477",
+  "new_packet_sha256": "c07962063919bd7c9c966f997ba35ee9ef1c76895a64bc52b4c1cf69f5317c65",
+  "old_packet_sha256": "c9511af4f33ab4931a5b828131a82e625610ac4b5fd5eafbb8f30d8cb8c68aba",
+  "normalizations": [
+    {
+      "field": "configured authored loopback fixture origin",
+      "new": "http://127.0.0.1:57750",
+      "old": "http://127.0.0.1:51076",
+      "occurrences": 4
+    },
+    {
+      "field": "generated timestamp",
+      "new": "2026-10-08T16:08:12.748538+00:00",
+      "old": "2026-10-08T15:37:43.462106+00:00",
+      "occurrences": 1
+    }
+  ],
+  "all_other_bytes_identical": true,
+  "browser_rerun": false,
+  "claim": "The latest installed console produced the previously browser-qualified packet bytes after replacing only the two explicitly recorded fixture-dependent fields."
+}

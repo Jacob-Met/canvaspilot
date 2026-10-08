@@ -1,0 +1,463 @@
+{
+  "format": "canvas-planner-current-publication-manifest-v2",
+  "repository": "Jacob-Met/canvaspilot",
+  "branch": "estate/fourth-planner-cli-20261008",
+  "pull_request": 72,
+  "native_base": "543a81ef22cdb6996a83233e86c7fd887e0f977b",
+  "native_base_tree": "1efaf4d3fe14cb24cfe9f41d0fc7ff8ba1b4a821",
+  "planned_commit_parents": [
+    "16ddd61e4ed2bb971d84b8e9823890de145bc1b3",
+    "543a81ef22cdb6996a83233e86c7fd887e0f977b"
+  ],
+  "original_author_freeze": "75e5d51f661a9165e1a494b47ef2433001d877ea",
+  "prior_accepted_head": "16ddd61e4ed2bb971d84b8e9823890de145bc1b3",
+  "production_scope": [
+    "src/canvaspilot/cli.py",
+    "README.md",
+    "tests/test_planner_cli.py",
+    "docs/planner-cli.md"
+  ],
+  "preservation": {
+    "native_leaves": 1382,
+    "changed_existing_native_paths": [
+      "README.md",
+      "src/canvaspilot/cli.py"
+    ],
+    "all_other_native_leaves": 1380,
+    "required": "Build on complete native tree, compare all explicit paths and every unrelated leaf and mode, then check actual merge first parent."
+  },
+  "executed_receipts": {
+    "original_author": "../author/",
+    "independent": "../independent/manifest.json",
+    "hosted_792": "ci-2.json",
+    "hosted_871": "ci-3.json",
+    "page_composition": "page-export-composition.json",
+    "grade_export_composition": "grade-export-composition.json"
+  },
+  "gate": "The actual new head's hosted workflow and its exact checkout tree must pass before expected-head merge. It is not recorded as passed inside its own pre-run evidence commit.",
+  "path_count_excluding_this_manifest": 52,
+  "path_count_including_this_manifest": 53,
+  "files": [
+    {
+      "path": "src/canvaspilot/cli.py",
+      "mode": "100644",
+      "category": "production",
+      "bytes": 28314,
+      "git_blob": "14d7edde66a0c1979bf79d9544d075b65c98d1f4",
+      "sha256": "0e80f11bd35e6d26bcb64698aa7ec5d625c30bba455ae8e0f1ce1224a7ce3524"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "category": "documentation",
+      "bytes": 25663,
+      "git_blob": "21b50a527973946bd77e3e883b4366798a922309",
+      "sha256": "a3f5e3d071bdcbe437baec0bc1f51977706b321fe878c05e4fd350175c9f0c4a"
+    },
+    {
+      "path": "tests/test_planner_cli.py",
+      "bytes": 8730,
+      "sha256": "b4ef2333c663e46884150d302f458b7989cff0f83ba27b21ec3343eb1b67d08e",
+      "git_blob": "e41b4bcfec8103e333a3292776087e8ed84f8848",
+      "mode": "100644",
+      "category": "contribution"
+    },
+    {
+      "path": "docs/planner-cli.md",
+      "bytes": 4544,
+      "sha256": "bcb651c6a9402957442860ff621fa7ab13a693f8745490c4f271847a2492e9af",
+      "git_blob": "7d1d54d03face5afd51fc4be015ba10a927ad9ef",
+      "mode": "100644",
+      "category": "contribution"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/baseline/source-pins.json",
+      "bytes": 3337,
+      "git_blob": "4726d77b5d5e2da4a96ea81a81c12438f1a85a61",
+      "sha256": "c25dbc644952ad8e95bcbdf1bf1ba65a46283d871537bb1cb76557bc3c545001",
+      "mode": "100644",
+      "category": "original executed baseline"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/baseline/receive_planner_baseline.py",
+      "bytes": 8533,
+      "git_blob": "5fd2c3f169304af35df3ddbfb358a8538ee282ef",
+      "sha256": "8a633c282d34a4afe1942ae2eaf22d8219aa0d4d10294df1af6337b0e4eacfba",
+      "mode": "100644",
+      "category": "original executed baseline"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/baseline/evidence/baseline/baseline-results.json",
+      "bytes": 2964,
+      "git_blob": "11e4329c61a82b63c05cdcd0285e80149dd2c216",
+      "sha256": "ec7d698c53c02396478e9980982f42f81578a25533e0598347c916b2a7a5c235",
+      "mode": "100644",
+      "category": "original executed baseline"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/baseline/evidence/baseline/native-fixture.stderr",
+      "bytes": 0,
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "100644",
+      "category": "original executed baseline"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/baseline/evidence/baseline/native-fixture.stdout",
+      "bytes": 2208,
+      "git_blob": "19968d66a1374e89fa4a6a0055389949eb435590",
+      "sha256": "84e51720976307d23e25514aa438bcb4826c5d7678010e8b2914598dc2b6f4fd",
+      "mode": "100644",
+      "category": "original executed baseline"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/baseline/evidence/baseline/original-help.stderr",
+      "bytes": 0,
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "100644",
+      "category": "original executed baseline"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/baseline/evidence/baseline/original-help.stdout",
+      "bytes": 1895,
+      "git_blob": "4b22c1ef518921abbd0664583daee02c8861af33",
+      "sha256": "12b9a9d43f72b49b0f051f1dbb378eab79e90e38568c038ee7dc22216c60a4bd",
+      "mode": "100644",
+      "category": "original executed baseline"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/baseline/evidence/baseline/original-planner.stderr",
+      "bytes": 528,
+      "git_blob": "154c3b2fcc306ff283f2879c12c0c1bf262f88a6",
+      "sha256": "07980f7dab03f53848bdb2d0586c609548f70f656976527a4ff5365bf2e7d7a5",
+      "mode": "100644",
+      "category": "original executed baseline"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/baseline/evidence/baseline/original-planner.stdout",
+      "bytes": 0,
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "100644",
+      "category": "original executed baseline"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/baseline/evidence/baseline/synthetic-planner.json",
+      "bytes": 1368,
+      "git_blob": "4213cda8714bf0b04089ccfc8451424c745365b7",
+      "sha256": "44712520a75a96f9702758e6de8a51288bb4e12c7bef059d3dfaa1fbc9bc8547",
+      "mode": "100644",
+      "category": "original executed baseline"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/author/receive_planner_fixture.initial.py",
+      "mode": "100644",
+      "category": "executed author input",
+      "bytes": 12167,
+      "sha256": "e960fde7a3f9519da1b69564ba8d751ad5952f4b960bca2fab161e93e0df7859",
+      "git_blob": "762ca4eeac041f13a4904608b59c20c2f887b253"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/author/receive_planner_fixture.py",
+      "mode": "100644",
+      "category": "executed author input",
+      "bytes": 12546,
+      "sha256": "3d241b2edb73d796c135c249b84ae47e84ff77de580068893925bce62f073561",
+      "git_blob": "94bd3e095f9af02119e3b568d4992d0ef40f7458"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/author/receive_planner_composition.py",
+      "mode": "100644",
+      "category": "executed author input",
+      "bytes": 13602,
+      "sha256": "2b789775a4a39911c40805802198f2787b588521d6f43ae0a440c560d54578d2",
+      "git_blob": "73c701db360a6b8614594e20da190bdbd9abcdc4"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/author/historical-cli-0480.py",
+      "mode": "100644",
+      "category": "executed author input",
+      "bytes": 21093,
+      "sha256": "d306d25b8b9308e99a58c9ea789bb9e9c31fbac708dec87a6244cb0cbc6f70d6",
+      "git_blob": "dec78b9d024515fdcf48b1aa960090655f5dcde1"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/author/initial-fixture-results.json",
+      "mode": "100644",
+      "category": "exact executed author result",
+      "bytes": 27407,
+      "sha256": "2cddf9e17cd6f3db88fffc2404375529b34da2092ef671998ad53b05255c2a0d",
+      "git_blob": "4d741693e35642af5c6e9b9d825cc35e9c8360cf"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/author/corrected-whoami-results.json",
+      "mode": "100644",
+      "category": "exact executed author result",
+      "bytes": 5515,
+      "sha256": "b1a7fa12edb02d07ecf35a1fc955b2669b2182047671641be4ce5135e1a6d14d",
+      "git_blob": "28d77914d48092a3d3fb713adff1d9dbfeb46fff"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/author/current-composition-results.json",
+      "mode": "100644",
+      "category": "exact executed author result",
+      "bytes": 7317,
+      "sha256": "197751c30876a055ddd2675965158d1665c0a6957cd30adf7988f558586deb76",
+      "git_blob": "d85f7d655c22d57813f6ce27d5c20a7052bb2768"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/author/qualification.json",
+      "mode": "100644",
+      "category": "honest qualification summary",
+      "bytes": 3782,
+      "sha256": "f8bfaff4217d37e26e733fc868250332cfa82f6d3cd6fe6b36acf019e1cff856",
+      "git_blob": "37c35d0eb92aa689621b699d5f6683dc80663df2"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/source-preservation.json",
+      "mode": "100644",
+      "category": "current native preservation",
+      "bytes": 2452,
+      "sha256": "52dab14e4d9d5cb8f4344a130b6009919c3fa20936e7f2e4db147433d208c48b",
+      "git_blob": "a5231d63e636725833e179847e7df1d5e0b5ca05"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/candidate-pins.json",
+      "mode": "100644",
+      "category": "source custody",
+      "bytes": 4588,
+      "sha256": "ffdbed58f231075fdebfdaef48b4ad473291d71eac515295b798a6601de9df65",
+      "git_blob": "ca90955c27753a7b787f47f05d8ed789a07c1851"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/environment-observations.json",
+      "mode": "100644",
+      "category": "capacity and execution limits",
+      "bytes": 3733,
+      "sha256": "8ebcfd57d0dc440d1f4c011a8f3169333400c3f52a82631d86f655caede2d7f3",
+      "git_blob": "cb404c196cf7ef5919b6531a5acfc72859420b1e"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/README.md",
+      "mode": "100644",
+      "category": "receiving guide",
+      "bytes": 6876,
+      "sha256": "377cbc672420dd16b4ab470ff1e182f8a6abd04eef7e7d72d40e8a3d79441220",
+      "git_blob": "81027e29c077b7bfe7f682148e2860ed2885408c"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/publication-manifest.json",
+      "mode": "100644",
+      "category": "publication custody",
+      "bytes": 10457,
+      "sha256": "97a55abb888e43288d2dddc2170831bc144f5c287b0c3c198a3fb0c73fc91f51",
+      "git_blob": "a0afa4da0612de5dd4b881cb14a19b83745fee92"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/integration/ci-1.json",
+      "mode": "100644",
+      "bytes": 2946,
+      "sha256": "405d3f725a09f5b964d6d87951055673b775949d658c4e877249ac92dd432118",
+      "git_blob": "87a60bd91cd4d5df48f586f1a61f0f077c9dfe64",
+      "category": "hosted lint integration"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/integration/ci-1-lint.log",
+      "mode": "100644",
+      "bytes": 3687,
+      "sha256": "44a95d5642e95b5497a827a993dd10d7d1a78c16a297ddc1af043be21c29f883",
+      "git_blob": "2237be2ea511077048299a1c816f438bf57cff1b",
+      "category": "hosted lint integration"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/integration/current-source-pins.json",
+      "mode": "100644",
+      "bytes": 1341,
+      "sha256": "64aeff8357aa8244f0b8e24ee5674ffb501dd158af4038a86046e5b2e7b0bbaf",
+      "git_blob": "56ae7eb7ef15687d9e7cb603900b516f7990e97f",
+      "category": "hosted lint integration"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/integration/ci-2.json",
+      "mode": "100644",
+      "category": "hosted package and HTTP receiving",
+      "bytes": 4822,
+      "sha256": "ede859da5a2b4d428d75f16528ec848d559e0d34ec602d1d252d4585f0ab7034",
+      "git_blob": "dfd2d12ae7ed753b273e7410b77eef71f0c39127"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/integration/ci-2-excerpt.log",
+      "mode": "100644",
+      "category": "hosted package and HTTP receiving",
+      "bytes": 3321,
+      "sha256": "c67ab79a8e4300f6c5e5ddfebedb2c8cabb72d833ca3106606b1fe383e0c0eac",
+      "git_blob": "0059f08520c9b78dde58d4a6fd759dc2edadbe91"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/integration/grade-review-composition.json",
+      "mode": "100644",
+      "category": "accepted native composition",
+      "bytes": 10768,
+      "sha256": "f80011db87556bc0377bd283e1a1e735a067498bb673f660741d2fbf3611bd98",
+      "git_blob": "1e607c6ad2cd149d9e35e1ecf57792196d053026"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/integration/grade-review-composition-results.json",
+      "mode": "100644",
+      "category": "accepted native composition",
+      "bytes": 7317,
+      "sha256": "cf5d9a239652e691049366f0cfdbd694b6acd5f22ea5ab7ba46f93fb532b740d",
+      "git_blob": "c7d4129b0f15a9b5d61e6943f0505f1e5589d5a2"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/integration/local-materialization-observation.json",
+      "mode": "100644",
+      "category": "local persistence limitation",
+      "bytes": 1853,
+      "sha256": "a3078cae22496525ad72e2880a25373a971919953130b6a0d25a018ce34ca383",
+      "git_blob": "f5150dc013365f4f8bea40d5328c39b7d650e2f5"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/integration/module-progress-composition.json",
+      "mode": "100644",
+      "category": "accepted native composition",
+      "bytes": 10614,
+      "git_blob": "6612e78d837e4b79e2451e2c43bfc01b6c8ef5e5",
+      "sha256": "4d5ce96361274257507fa6630f5c8103cec005ea1eb752d6f8123447c6dd32ae"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/integration/module-progress-composition-results.json",
+      "mode": "100644",
+      "category": "accepted native composition",
+      "bytes": 7317,
+      "git_blob": "7582e70d766ea8bd7add4da8f7c6b487fe98eeb4",
+      "sha256": "093ccacfb25d44509cfc940a4b3ea0d5dd6c50fde637b1c3fc322553da5454ac"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/independent/input.json",
+      "bytes": 85319,
+      "git_blob": "7bafa4026add2a4e01a554fd489f585e6fc7f908",
+      "sha256": "401532b29e4e09c18bf3a9c3d0ff9d850afa404e7c6b9a9ab927f52d9a8a4134",
+      "mode": "100644",
+      "category": "independent receiving"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/independent/README.md",
+      "bytes": 4682,
+      "git_blob": "602751e200071af2ac3644d5096436ac059135db",
+      "sha256": "0ebb84c48f0be0b73cf30713ab1b38ed01b75dae1c6970f2ba1b218be04eece7",
+      "mode": "100644",
+      "category": "independent receiving"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/independent/receive_cli.py",
+      "bytes": 6475,
+      "git_blob": "1de44b9344052035353b9f73a09f164c2d8f9272",
+      "sha256": "ec11ca7e5b913fdb4001c6a76c1b565254cbd8838638672116ce8a45b5bc1eb1",
+      "mode": "100644",
+      "category": "independent receiving"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/independent/results.json",
+      "bytes": 16165,
+      "git_blob": "7322cd2f71a61bd586b9b87ecb2ca14cf2242ae4",
+      "sha256": "3b71bd2a1adcc07adc2ea70cc478e0e5ad36a087817bc43c535da3a47f4a8f63",
+      "mode": "100644",
+      "category": "independent receiving"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/independent/execution.json",
+      "bytes": 1231,
+      "git_blob": "0707279c44115bbab34f048c979b987c91a21957",
+      "sha256": "e4e7f36ce0791a7ead532ed6736e4c41151ab9bf0f1d0f3a7783c617744e2f0e",
+      "mode": "100644",
+      "category": "independent receiving"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/independent/composition-grade-review.json",
+      "bytes": 1120,
+      "git_blob": "3855eb630ed396e0ecaa6b73b597acc1681c7572",
+      "sha256": "3490449513f17234adeeea46b865fc805280cc6abd2941bd900b95ac5e966e48",
+      "mode": "100644",
+      "category": "independent receiving"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/independent/composition-module-export.json",
+      "bytes": 4976,
+      "git_blob": "40105f4bb98b739e76195cb4175f8ce80370a4bc",
+      "sha256": "25fdace4f66d6dbd1e067932e58d8de9f9312e6de3432a6db54fc520beab659f",
+      "mode": "100644",
+      "category": "independent receiving"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/independent/manifest.json",
+      "bytes": 3232,
+      "git_blob": "b7fa77ad817525ddea728f3e7d04c03fb830e0b0",
+      "sha256": "2d506c7f86e051cff8baca4823cb7f56e1e06ee54e1531b231ffef5d4aa7e0d7",
+      "mode": "100644",
+      "category": "independent receiving"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/integration/text-pin-verification.json",
+      "bytes": 18270,
+      "git_blob": "0813e5fe0c7b5d429e9c57d6e045478ae5705811",
+      "sha256": "7c4b1ac8f720cb8e384ee6ebcdaaa3eafdda0a1fc777dc64b1736e7149255f03",
+      "mode": "100644",
+      "category": "publication raw-byte custody"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/integration/README.md",
+      "mode": "100644",
+      "category": "receiving",
+      "bytes": 8646,
+      "git_blob": "c29d5cd41209502bbdffa5d1d85925c74cf874f9",
+      "sha256": "1979fb0d0c1cedaf1b0b5740c3ec8f346d2d24fa51932478bf1a6ec1dabff028"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/integration/publication-final-manifest.json",
+      "bytes": 18476,
+      "git_blob": "f57cb13021c1a03720b2ae745082eb35d30b2418",
+      "sha256": "bba46f556e8c78f7a499bfbbd15c030ed0f21dd58b9686934caec865d2504644",
+      "mode": "100644",
+      "category": "final publication custody"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/integration/page-export-composition.json",
+      "mode": "100644",
+      "category": "receiving",
+      "bytes": 8642,
+      "git_blob": "72faf03e3a1728c0e6b90c784db70963fe9c1d57",
+      "sha256": "ce660edee1796ff3150fa475e98c3993c87e6230c58b39cb57964d1fc6226be5"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/integration/ci-3.json",
+      "mode": "100644",
+      "category": "receiving",
+      "bytes": 4790,
+      "git_blob": "ad212d82ef15163ea3f7b12b3bfa5eae5f238f76",
+      "sha256": "b85fcd38168e223a0d7775655e4a963d7580e83e946b31d40a9223a21270ba18"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/integration/ci-3-excerpt.log",
+      "mode": "100644",
+      "category": "receiving",
+      "bytes": 3430,
+      "git_blob": "33743d9c44a11e2d6996ca119ffe4e50ebf93e91",
+      "sha256": "bac5fa5315c46b26bce4a4010eb4aff9170bf4d1164cea347aa60765d8cbc578"
+    },
+    {
+      "path": "docs/receiving/planner-cli-e04ee971c817/integration/grade-export-composition.json",
+      "mode": "100644",
+      "category": "receiving",
+      "bytes": 9851,
+      "git_blob": "b0f181b992528b9fae702a764f9c2394bdb52a9c",
+      "sha256": "faaf1075f93118d8b1a07d7a18d8c927f994a966b899ad6e22a0b7f2e46976f1"
+    }
+  ],
+  "limits": [
+    "All original author/review source, raw failures and passing results remain exact. Earlier manifests retain their own source/history.",
+    "Local source fixtures use explicit adapters; real package and HTTPX coverage comes from the hosted synthetic-loopback tests.",
+    "No live Canvas account, data, course, API, broker, browser, provider or release operation."
+  ]
+}

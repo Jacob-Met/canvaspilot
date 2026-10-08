@@ -1,0 +1,81 @@
+{
+  "format": "planner-author-environment-observations-v1",
+  "observations": [
+    {
+      "kind": "source-capture-refusal",
+      "result": {
+        "chunk_id": "dbbdbf",
+        "wall_time_seconds": 0.000043435,
+        "exit_code": 1,
+        "original_token_count": 38,
+        "output": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\nAssertionError: Insufficient source capture capacity\n{\"free_before\": 192512}\n"
+      },
+      "created_directory": false,
+      "minimum_free_bytes": 350000
+    },
+    {
+      "kind": "compact-source-capture-refusal",
+      "result": {
+        "chunk_id": "1db9d3",
+        "wall_time_seconds": 0.000018558,
+        "exit_code": 1,
+        "original_token_count": 40,
+        "output": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\nAssertionError: Insufficient compact source capture capacity\n{\"free_before\": 221184}\n"
+      },
+      "created_directory": false,
+      "minimum_free_bytes": 262144
+    }
+  ],
+  "continued_execution": "Actual source compilation/native-fixture children required no new fixture files and completed. Their exact output is retained separately. No unexecuted filesystem witness is labeled reproduced.",
+  "publication_staging_reclamation": {
+    "format": "completed-publication-staging-reclamation-v1",
+    "scope": "Only two completed publication staging directories owned by development_acceleration; original author, support and independent-review freezes remain untouched.",
+    "checks": [
+      {
+        "root": "/dev/shm/hamon-development-local-release-archive-publication-e04ee971c817",
+        "mapped_files": 33,
+        "source_errors": [],
+        "git_status": "",
+        "commit": "b3a85181b1486a293813952ba982b1ec3629dcc9",
+        "staging_files": {
+          "prepared-file-map.json": {
+            "bytes": 16200,
+            "git_blob": "61311012745facd65d180e9442ad8e2e0daebd4f",
+            "sha256": "f68c8b5ebe61ad52ab98e4243b7dbeb53aef4f337cc363eafbced380406bff01"
+          },
+          "README.md": {
+            "bytes": 4741,
+            "git_blob": "c170bd7ad2d160272f04ecf225ebedf5c4a44ad6",
+            "sha256": "448579c3d651dff59082b02e9c0d6cfc243d5b2cfc4c4debf716549eebf7e5a1"
+          }
+        },
+        "repository": "Jacob-Met/hamon",
+        "durable_merge": "1b383b5bb699d31a35319a8466fe8f207d52541a",
+        "durable_tree": "16f6797181014b3bc69b84fb697e8ccef6a6582f",
+        "all_mapped_blobs_and_modes_match_merged_tree": true
+      },
+      {
+        "root": "/dev/shm/hamon-development-testpilot-publication-e04ee971c817",
+        "mapped_files": 20,
+        "source_errors": [],
+        "git_status": "",
+        "commit": "b127c4f080b3415ce1640ea29e386f8591fc3ecd",
+        "staging_files": {
+          "prepared-file-map.json": {
+            "bytes": 8774,
+            "git_blob": "171bd177275063b824484c3ab38904621e0c6cb4",
+            "sha256": "17e6ba3f4da0ebf52eb0e8ea09ac4e5a097747d9c5fb4fbb6b60475faebe6f17"
+          }
+        },
+        "repository": "Jacob-Met/testpilot",
+        "durable_merge": "dc9735cbbd9c271bdf2bc68656aff1f56d88c0fa",
+        "durable_tree": "c79b55004d28ebcd9592dcdd27cb77dd49644f39",
+        "all_mapped_blobs_and_modes_match_merged_tree": true
+      }
+    ],
+    "native_calls": 0,
+    "replay": false
+  },
+  "source_freezes": "All original author, baseline and independent-review freezes remain untouched; only two completed own publication staging directories were removed after exact merged-tree/source checks.",
+  "dependencies": "No httpx, mcp or pytest is installed in the local Python used for receiving. No dependency installation, live API action or additional native-device call was made."
+}

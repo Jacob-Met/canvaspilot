@@ -1,0 +1,70 @@
+{
+  "format": "canvas-planner-cli-author-qualification-v1",
+  "baseline": {
+    "source_main": "17d63dc43fde30efd8d3454ef09b1d1a8c5bcd0d",
+    "capture": {
+      "root": "/dev/shm/hamon-development-canvas-planner-e04-heuji486",
+      "commit": "69d95c7e7ce6e242e6d147c37976c3dd1887443f",
+      "tree": "3111a8272544d78c5da985d0f51340806a00d330",
+      "status": "",
+      "receipt_blob": "11e4329c61a82b63c05cdcd0285e80149dd2c216",
+      "receipt_sha256": "ec7d698c53c02396478e9980982f42f81578a25533e0598347c916b2a7a5c235"
+    },
+    "conditions": 11,
+    "actual_children": 3,
+    "interpretation": "Actual original CLI help/refusal plus unchanged native API/client fixture control; no installed-package or HTTPX execution."
+  },
+  "first_fixture": {
+    "cli_blob": "dec78b9d024515fdcf48b1aa960090655f5dcde1",
+    "actual_children": 9,
+    "passed": 58,
+    "failed": 1,
+    "failure": "Receiver's old whoami expectation omitted the unchanged native mode/base_url/profile wrapper. All planner, error and parser cases passed; production source was not changed."
+  },
+  "corrected_control": {
+    "actual_children": 1,
+    "passed": 10,
+    "failed": 0,
+    "scope": "Only corrected the expected native whoami wrapper and reran that case. The initial failed receipt and original receiver remain exact."
+  },
+  "current_composition": {
+    "main": "6c4d5d2e7526cddc1aa6c90bfbef2d1188382ad3",
+    "cli": {
+      "bytes": 22586,
+      "sha256": "b8145ab7fdfb4f01784a45624d17cb5813b92cff6dc5812ad157a8bd357d97ab",
+      "git_blob": "df01e112b3c7f525e99b3179176d57497391f16b"
+    },
+    "api": {
+      "bytes": 29481,
+      "sha256": "1160b492217d300499e47e43549b1bf854914b4bf6a93bc1f192f543b1d1b1c6",
+      "git_blob": "cd17584bed618fb4a42d7128d204b2683b889600"
+    },
+    "actual_children": 1,
+    "passed": 10,
+    "failed": 0,
+    "scope": "Exact current API and composed CLI source compiled in one native-client fixture child. New native quizzes and list_files behavior preserved. Current planner blocks equal previously received blocks; all API source outside the native list_files change is exact."
+  },
+  "local_author_cli_children_total": 11,
+  "local_disposition": "PASS for the preserved planner dispatch/output/cleanup and stated native-fixture composition; counts above describe distinct executions and are not an asserted fresh full-suite rerun.",
+  "real_package_http_tests": {
+    "path": "tests/test_planner_cli.py",
+    "methods": 6,
+    "planned_children": 8,
+    "status": "Source parses; not executed locally because declared HTTPX/MCP dependencies are absent. Existing hosted CI is required before integration."
+  },
+  "independent_receiving": "pending",
+  "deployed": false,
+  "limits": [
+    "Full exact CLI source is compiled in each actual Python -I -B -S child; actual_cli_children reports the selected count.",
+    "When compiled_api_source is present, that full exact API source is compiled before CLI execution; native_support records the retained on-disk files and unchanged client/helpers. Otherwise the API is imported from those files.",
+    "Package __init__/bundle/MCP and installed entry points are not executed.",
+    "HTTPX is only an import/exception adapter with every other attribute forbidden.",
+    "Error propagation uses explicit native exception injection; real HTTP, token/session transport and Link pagination are separate tests.",
+    "No network, GUI, provider, file mutation or live Canvas effect was admitted."
+  ],
+  "primary_reference": {
+    "url": "https://developerdocs.instructure.com/services/canvas/resources/planner",
+    "read_date": "2026-10-08",
+    "semantics": "Existing planner GET, optional native start/end date values, supplied personal/course items and planner_override; no writes or local reinterpretation."
+  }
+}

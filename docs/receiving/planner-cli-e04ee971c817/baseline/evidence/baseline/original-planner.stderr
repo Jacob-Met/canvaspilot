@@ -1,0 +1,4 @@
+usage: canvaspilot [-h]
+                   {login,session,whoami,courses,sync,assignments,brief,feedback,inbox,conversation,discussions,discussion,files,browse-files,export-calendar,module-progress,submission-history,agenda,mcp}
+                   ...
+canvaspilot: error: argument cmd: invalid choice: 'planner' (choose from login, session, whoami, courses, sync, assignments, brief, feedback, inbox, conversation, discussions, discussion, files, browse-files, export-calendar, module-progress, submission-history, agenda, mcp)

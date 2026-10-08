@@ -1,0 +1,46 @@
+{
+  "utc": "2026-10-08T15:29:33.197474+00:00",
+  "runtime": "/Users/me/canvaspilot-page-packet-20261008-5f566b5ec8ef/venv",
+  "dependency_provider_interpreter": "/Users/me/hamon-work-ledgerly-566d51f04b31-venv/bin/python",
+  "source_changed": false,
+  "live_installation": false,
+  "runs": [
+    {
+      "name": "venv",
+      "command": [
+        "/Users/me/hamon-work-ledgerly-566d51f04b31-venv/bin/python",
+        "-B",
+        "-m",
+        "venv",
+        "--without-pip",
+        "/Users/me/canvaspilot-page-packet-20261008-5f566b5ec8ef/venv"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "dependencies",
+      "command": [
+        "/Users/me/hamon-work-ledgerly-566d51f04b31-venv/bin/python",
+        "-B",
+        "-m",
+        "pip",
+        "--python",
+        "/Users/me/canvaspilot-page-packet-20261008-5f566b5ec8ef/venv/bin/python",
+        "install",
+        "--index-url",
+        "https://pypi.org/simple",
+        "--no-cache-dir",
+        "--no-compile",
+        "hatchling",
+        "pytest>=8",
+        "ruff>=0.4",
+        "httpx>=0.27",
+        "mcp>=1.0.0,<3",
+        "pydantic>=2.0"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "free_bytes_before": 812265472,
+  "free_bytes_after": 733073408
+}

@@ -94,6 +94,11 @@ Read selected courses' calendar events and assignment deadlines together with
 timing, source identity and read limits. The same report is available through
 `canvas_course_agenda` in MCP.
 
+Read your own planner items with `canvaspilot planner --start-date 2026-10-08 --end-date 2026-10-15`.
+The [planner CLI guide](docs/planner-cli.md) explains native date filters,
+personal notes, supplied completion metadata and complete-list error behavior.
+The command uses the existing planner API and does not change any planner state.
+
 Save that same selection as an offline view with course/source-date/search controls
 and a printable current view:
 `canvaspilot export-agenda 42 77 --start 2026-10-08 --end 2026-10-15 --out agenda.html`.
@@ -105,6 +110,11 @@ local snapshot with `canvaspilot export-calendar 42 77 --out deadlines.ics`.
 The [calendar export guide](docs/calendar-export.md) explains selection,
 undated omissions, snapshot limits and safe re-import expectations.
 
+
+To take explicitly selected course pages offline, use
+`canvaspilot export-pages 42 course-introduction week-two-reading --out reading.html`.
+The [page export guide](docs/page-export.md) explains numeric page IDs, the inert
+original-source record, selection limits and protection of existing output.
 With a PAT instead:
 
 ```bash
@@ -117,6 +127,12 @@ To inspect Canvas-reported course totals and assignment grades together, run
 The [grade review guide](docs/grade-review.md) explains the original Canvas field
 names, group/drop-rule context, visibility rules and returned-row limits. No
 replacement course grade or missing-work status is inferred.
+
+Save that same grade review for offline reading or printing with
+`canvaspilot export-grade-review 42 --out course-grades.html`. The
+[saved grade-review guide](docs/grade-review-export.md) explains reported totals,
+assignment context, withheld/unknown values, the complete JSON download and
+new-file protection.
 
 ## Assignment briefs
 
