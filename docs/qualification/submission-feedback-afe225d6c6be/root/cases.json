@@ -1,0 +1,251 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-10-08",
+  "purpose": "Independent CanvasPilot submission-feedback inputs and semantic expectations, frozen before candidate inspection.",
+  "sources": [
+    "https://developerdocs.instructure.com/services/canvas/resources/submissions",
+    "https://developerdocs.instructure.com/services/canvas/resources/assignments"
+  ],
+  "request_contract": {
+    "course_id": 41,
+    "assignment_id": 73,
+    "allowed_methods": [
+      "GET"
+    ],
+    "submission_user": "self",
+    "submission_includes": [
+      "submission_comments",
+      "rubric_assessment"
+    ],
+    "no_live_account": true
+  },
+  "cases": [
+    {
+      "name": "Reordered IDs, zero marks, prior attempt and advisory rubric",
+      "assignment": {
+        "id": 73,
+        "course_id": 41,
+        "name": "Synthetic revision exercise",
+        "points_possible": 20,
+        "grading_type": "points",
+        "html_url": "https://canvas.example/courses/41/assignments/73",
+        "use_rubric_for_grading": false,
+        "rubric_settings": {
+          "points_possible": 20,
+          "title": "Revision guidance"
+        },
+        "rubric": [
+          {
+            "id": "argument",
+            "description": "Explain the argument",
+            "long_description": "Connect each claim to evidence.",
+            "points": 12,
+            "ratings": [
+              {
+                "id": "strong",
+                "points": 12,
+                "description": "Supported"
+              }
+            ]
+          },
+          {
+            "id": "sources",
+            "description": "Document sources",
+            "points": 8,
+            "ratings": [
+              {
+                "id": "none",
+                "points": 0,
+                "description": "No sources"
+              }
+            ]
+          },
+          {
+            "id": "reflection",
+            "description": "Reflect on the revision",
+            "points": 5,
+            "ignore_for_scoring": true,
+            "criterion_use_range": true
+          }
+        ]
+      },
+      "submission": {
+        "assignment_id": 73,
+        "user_id": 501,
+        "attempt": 2,
+        "workflow_state": "submitted",
+        "submitted_at": "2026-10-08T10:00:00Z",
+        "graded_at": "2026-10-07T12:00:00Z",
+        "grade": "0",
+        "score": 0,
+        "grader_id": -73,
+        "grade_matches_current_submission": false,
+        "rubric_assessment": {
+          "sources": {
+            "points": 0,
+            "rating_id": "none",
+            "comments": "Add the source details."
+          },
+          "argument": {
+            "points": 7,
+            "comments": "The second claim needs support."
+          },
+          "removed": {
+            "points": 3,
+            "comments": "Feedback from a criterion no longer in the assignment rubric."
+          }
+        },
+        "submission_comments": [
+          {
+            "id": 901,
+            "author_id": 501,
+            "author_name": "Synthetic Student",
+            "comment": "I revised the second claim.",
+            "created_at": "2026-10-08T10:01:00Z",
+            "edited_at": null
+          },
+          {
+            "id": 902,
+            "author_id": 601,
+            "author_name": "Synthetic Reviewer",
+            "comment": "",
+            "created_at": "2026-10-07T12:01:00Z",
+            "edited_at": "2026-10-07T12:02:00Z",
+            "media_comment": {
+              "media_type": "audio",
+              "display_name": "Revision feedback",
+              "url": "https://media.example/feedback",
+              "media_id": "synthetic-media"
+            }
+          }
+        ]
+      },
+      "expected": {
+        "score": 0,
+        "grade": "0",
+        "current_attempt": 2,
+        "grade_matches_current_submission": false,
+        "grader_id": -73,
+        "grade_not_presented_as_current": true,
+        "rubric_use_for_grading": false,
+        "no_derived_grade": true,
+        "criterion_join": {
+          "argument": {
+            "points": 7,
+            "comments": "The second claim needs support."
+          },
+          "sources": {
+            "points": 0,
+            "comments": "Add the source details."
+          }
+        },
+        "unassessed_criterion": "reflection",
+        "non_scoring_criterion": "reflection",
+        "unmatched_assessment_retained": "removed",
+        "comments_keep_authorship_and_timestamps": true,
+        "media_only_comment_retained": true,
+        "no_comment_author_role_inference": true
+      }
+    },
+    {
+      "name": "Missing assessment and grade-current metadata remain unknown",
+      "assignment": {
+        "id": 73,
+        "course_id": 41,
+        "name": "Awaiting feedback",
+        "points_possible": 10,
+        "rubric": [
+          {
+            "id": "one",
+            "description": "One criterion",
+            "points": 10
+          }
+        ]
+      },
+      "submission": {
+        "assignment_id": 73,
+        "user_id": 501,
+        "attempt": 1,
+        "workflow_state": "submitted",
+        "score": null,
+        "grade": null,
+        "submitted_at": "2026-10-08T10:00:00Z"
+      },
+      "expected": {
+        "score": null,
+        "grade": null,
+        "grade_matches_current_submission": null,
+        "rubric_use_for_grading": null,
+        "unassessed_points_not_zero": true,
+        "missing_comments_not_invented": true
+      }
+    },
+    {
+      "name": "Current grade without a rubric",
+      "assignment": {
+        "id": 73,
+        "course_id": 41,
+        "name": "Plain assessment",
+        "points_possible": 10,
+        "grading_type": "points"
+      },
+      "submission": {
+        "assignment_id": 73,
+        "user_id": 501,
+        "attempt": 1,
+        "workflow_state": "graded",
+        "score": 8,
+        "grade": "8",
+        "grade_matches_current_submission": true,
+        "rubric_assessment": null,
+        "submission_comments": [
+          {
+            "id": 910,
+            "author_id": 601,
+            "author_name": "Synthetic Reviewer",
+            "comment": "Review the final step.",
+            "created_at": "2026-10-08T11:00:00Z"
+          }
+        ]
+      },
+      "expected": {
+        "score": 8,
+        "grade_matches_current_submission": true,
+        "comments_retained": true,
+        "no_rubric_invented": true
+      }
+    },
+    {
+      "name": "Assessment comments survive unavailable rubric definitions",
+      "assignment": {
+        "id": 73,
+        "course_id": 41,
+        "name": "Unavailable rubric",
+        "points_possible": 10,
+        "rubric": null
+      },
+      "submission": {
+        "assignment_id": 73,
+        "user_id": 501,
+        "attempt": 3,
+        "workflow_state": "graded",
+        "score": 6,
+        "grade": "6",
+        "grade_matches_current_submission": true,
+        "rubric_assessment": {
+          "unknown": {
+            "points": null,
+            "comments": "Discuss this criterion with the reviewer."
+          }
+        },
+        "submission_comments": []
+      },
+      "expected": {
+        "unmatched_assessment_retained": "unknown",
+        "null_points_retained": true,
+        "criterion_description_not_guessed": true,
+        "comment_retained": "Discuss this criterion with the reviewer."
+      }
+    }
+  ]
+}

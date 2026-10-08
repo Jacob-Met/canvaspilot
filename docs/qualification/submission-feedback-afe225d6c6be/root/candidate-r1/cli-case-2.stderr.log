@@ -1,0 +1,2 @@
+HTTP Request: GET http://127.0.0.1:33035/api/v1/courses/41/assignments/73?per_page=50 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:33035/api/v1/courses/41/assignments/73/submissions/self?include%5B%5D=submission_comments&include%5B%5D=rubric_assessment&per_page=50 "HTTP/1.0 200 OK"

@@ -1,0 +1,137 @@
+{
+  "schema": 1,
+  "reviewer": "chatgpt-afe225d6c6be/root",
+  "repository": "Jacob-Met/canvaspilot",
+  "issue": 34,
+  "source_commit": "a98da7dce9f4839a20a21a6973d7cc7e6fa635a2",
+  "source_tree": "8abeb42ccb66263841ade748cc33103b4fe4c4fe",
+  "parent": "72357053a1629c349f700030013559fa6d8130f2",
+  "decision": "accept bounded native submission-feedback interfaces",
+  "interface_checks": 12,
+  "synthetic_get_requests": 24,
+  "source_files_unchanged": 127,
+  "peer_feedback_bytes_identical": true,
+  "peer_api_method_ast_identical": true,
+  "peer_client_bytes_identical": true,
+  "peer_receipt_sha256": "43ae81a525c8fb7b87e7f8ab36b1c74ac7fdc1ba152de46ad88ae94d7e02e359",
+  "published": false,
+  "integrated": false,
+  "live_account_used": false,
+  "artifacts": [
+    {
+      "path": "REVIEW.md",
+      "bytes": 5231,
+      "sha256": "96e1fd2f15ce6dd116a80fa8acb0fbbccdf2807d43fda7477291e245d8789df0"
+    },
+    {
+      "path": "cases.json",
+      "bytes": 7296,
+      "sha256": "7ce2ff38268b7caf0b5eb80620546b6bb24d41c38c95ed767bfe0ff7f4fe6652"
+    },
+    {
+      "path": "verify_feedback.py",
+      "bytes": 13313,
+      "sha256": "b10c9735bcf4f8c4d9bd340662851b68364b523ff8c2373a132c120a5bcf651f"
+    },
+    {
+      "path": "candidate-a98da7d-source-manifest.json",
+      "bytes": 23936,
+      "sha256": "9037da13b2b2af36b88840600f0a057064c1d4903d1b84f5151c1efdb69c62f9"
+    },
+    {
+      "path": "baseline-witness/receipt.json",
+      "bytes": 1198,
+      "sha256": "649efbebff9c06f3c0ed14e48c5239eec401c3045b0d1d2a4b28bcd29c709c25"
+    },
+    {
+      "path": "candidate-r1/api-case-1.json",
+      "bytes": 2888,
+      "sha256": "e87084480232940c3dd3847d97cccfae7c208aefdf87a4670b6e8cf67e7d218a"
+    },
+    {
+      "path": "candidate-r1/api-case-2.json",
+      "bytes": 976,
+      "sha256": "1918d63a11bfd51c088b8d3061824e73fb87b7de93e7085a10c430cdc5f2458c"
+    },
+    {
+      "path": "candidate-r1/api-case-3.json",
+      "bytes": 965,
+      "sha256": "3d314fa7fd6fd243c3267b943b1036b2656524fc0888b799222808c057a6e9e7"
+    },
+    {
+      "path": "candidate-r1/api-case-4.json",
+      "bytes": 899,
+      "sha256": "d26f0f2c23d0349c67c75125450e37297b2e8d4129a3e3d2c593a5cc73edf722"
+    },
+    {
+      "path": "candidate-r1/cli-case-1.stderr.log",
+      "bytes": 291,
+      "sha256": "a3e7b386b2e07e070ff59e5f814a38b14181411659e77b794c02dfbb76cc5782"
+    },
+    {
+      "path": "candidate-r1/cli-case-1.stdout.json",
+      "bytes": 2888,
+      "sha256": "e87084480232940c3dd3847d97cccfae7c208aefdf87a4670b6e8cf67e7d218a"
+    },
+    {
+      "path": "candidate-r1/cli-case-2.stderr.log",
+      "bytes": 291,
+      "sha256": "a3e7b386b2e07e070ff59e5f814a38b14181411659e77b794c02dfbb76cc5782"
+    },
+    {
+      "path": "candidate-r1/cli-case-2.stdout.json",
+      "bytes": 976,
+      "sha256": "1918d63a11bfd51c088b8d3061824e73fb87b7de93e7085a10c430cdc5f2458c"
+    },
+    {
+      "path": "candidate-r1/cli-case-3.stderr.log",
+      "bytes": 291,
+      "sha256": "a3e7b386b2e07e070ff59e5f814a38b14181411659e77b794c02dfbb76cc5782"
+    },
+    {
+      "path": "candidate-r1/cli-case-3.stdout.json",
+      "bytes": 965,
+      "sha256": "3d314fa7fd6fd243c3267b943b1036b2656524fc0888b799222808c057a6e9e7"
+    },
+    {
+      "path": "candidate-r1/cli-case-4.stderr.log",
+      "bytes": 291,
+      "sha256": "a3e7b386b2e07e070ff59e5f814a38b14181411659e77b794c02dfbb76cc5782"
+    },
+    {
+      "path": "candidate-r1/cli-case-4.stdout.json",
+      "bytes": 899,
+      "sha256": "d26f0f2c23d0349c67c75125450e37297b2e8d4129a3e3d2c593a5cc73edf722"
+    },
+    {
+      "path": "candidate-r1/mcp-case-1.json",
+      "bytes": 2888,
+      "sha256": "e87084480232940c3dd3847d97cccfae7c208aefdf87a4670b6e8cf67e7d218a"
+    },
+    {
+      "path": "candidate-r1/mcp-case-2.json",
+      "bytes": 976,
+      "sha256": "1918d63a11bfd51c088b8d3061824e73fb87b7de93e7085a10c430cdc5f2458c"
+    },
+    {
+      "path": "candidate-r1/mcp-case-3.json",
+      "bytes": 965,
+      "sha256": "3d314fa7fd6fd243c3267b943b1036b2656524fc0888b799222808c057a6e9e7"
+    },
+    {
+      "path": "candidate-r1/mcp-case-4.json",
+      "bytes": 899,
+      "sha256": "d26f0f2c23d0349c67c75125450e37297b2e8d4129a3e3d2c593a5cc73edf722"
+    },
+    {
+      "path": "candidate-r1/mcp-stderr.log",
+      "bytes": 1164,
+      "sha256": "7df86f50b6b9f97a69d6201959a038dc58e602876166590d4445c36b8784d385"
+    },
+    {
+      "path": "candidate-r1/receipt.json",
+      "bytes": 12514,
+      "sha256": "5c5786cfc96cbe65049eff8edefdf0b5151a1b4732ae36dbdbac8c41e140c678"
+    }
+  ]
+}

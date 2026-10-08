@@ -1,0 +1,13 @@
+{
+  "recorded_utc": "2026-10-08T10:36:34.149601+00:00",
+  "reviewed_composition": "a98da7dce9f4839a20a21a6973d7cc7e6fa635a2",
+  "parent": "72357053a1629c349f700030013559fa6d8130f2",
+  "feedback_module_sha256": "7cbedb04d0f0fedb684a1cb49d2a2616d5393210b1b4a17cb3d0bffa24001eb9",
+  "api_module_sha256": "546fd973330ffb3c95c81ba670b5ae2add751a23362c83a370254ea702eee1a0",
+  "api_method_source_sha256": "b4abacdcbaa3cf33769207adae97e8e306dc36a93f145a95923b3621b7bda990",
+  "feedback_module_identical": true,
+  "api_method_source_identical": true,
+  "helper_import_unchanged": true,
+  "acceptance": "Six-group semantic acceptance carries to the exact unchanged transformation and API method; parent interface qualification is separate",
+  "original_receipt_sha256": "43ae81a525c8fb7b87e7f8ab36b1c74ac7fdc1ba152de46ad88ae94d7e02e359"
+}

@@ -1,0 +1,95 @@
+{
+  "observed_at": "2026-10-08T10:41:50.937Z",
+  "repository": "Jacob-Met/canvaspilot",
+  "receiving_main": {
+    "sha": "72357053a1629c349f700030013559fa6d8130f2",
+    "tree": "919634af69c067e04f391fca84b3071ab8da9159",
+    "url": "https://github.com/Jacob-Met/canvaspilot/commit/72357053a1629c349f700030013559fa6d8130f2"
+  },
+  "feedback_claim": {
+    "number": 34,
+    "url": "https://github.com/Jacob-Met/canvaspilot/issues/34",
+    "state": "open",
+    "updated_at": "2026-10-08T09:30:53Z",
+    "comments": 0
+  },
+  "open_pull_requests": [
+    {
+      "number": 35,
+      "title": "Follow Canvas Link pagination in session-broker lists",
+      "url": "https://github.com/Jacob-Met/canvaspilot/pull/35"
+    },
+    {
+      "number": 37,
+      "title": "Require valid Link relations before completing broker collections",
+      "url": "https://github.com/Jacob-Met/canvaspilot/pull/37"
+    },
+    {
+      "number": 28,
+      "title": "T164 demo: untested lines should FAIL the diff-cover gate",
+      "url": "https://github.com/Jacob-Met/canvaspilot/pull/28"
+    },
+    {
+      "number": 27,
+      "title": "T164: diff-cover CI gate with per-file baseline (pilot)",
+      "url": "https://github.com/Jacob-Met/canvaspilot/pull/27"
+    },
+    {
+      "number": 7,
+      "title": "broker: require shared-secret token on /fetch, /status, /shutdown",
+      "url": "https://github.com/Jacob-Met/canvaspilot/pull/7"
+    },
+    {
+      "number": 25,
+      "title": "T156: pin pypi lockfile for mcp SDK consumers + CI freshness gate",
+      "url": "https://github.com/Jacob-Met/canvaspilot/pull/25"
+    },
+    {
+      "number": 23,
+      "title": "docs: add agent operations handbook (T133)",
+      "url": "https://github.com/Jacob-Met/canvaspilot/pull/23"
+    },
+    {
+      "number": 24,
+      "title": "T158: Add SHA-pinned gitleaks secret-scan CI gate",
+      "url": "https://github.com/Jacob-Met/canvaspilot/pull/24"
+    },
+    {
+      "number": 9,
+      "title": "[security] Shared-secret auth for session-broker localhost API (proposal for #5)",
+      "url": "https://github.com/Jacob-Met/canvaspilot/pull/9"
+    },
+    {
+      "number": 8,
+      "title": "Draft: broker shared-secret auth for localhost API (X-Broker-Token)",
+      "url": "https://github.com/Jacob-Met/canvaspilot/pull/8"
+    }
+  ],
+  "semantic_overlap_found": false,
+  "inherited_scopes_preserved": [
+    {
+      "scope": "Assignment brief and get_assignment",
+      "owner": "ultra-20b27c2e",
+      "claim": "https://github.com/Jacob-Met/hamon/issues/140#issuecomment-6057160009",
+      "source": "Root's independent central-coordination read; method ASTs preserved against current main"
+    },
+    {
+      "scope": "Deadline summary",
+      "pull_request": 32,
+      "status": "merged before final composition"
+    },
+    {
+      "scope": "Course folder navigation",
+      "pull_request": 36,
+      "status": "merged as final receiving main"
+    },
+    {
+      "scope": "Session pagination",
+      "pull_requests": [
+        35,
+        37
+      ],
+      "status": "open; no client or broker change in this contribution"
+    }
+  ]
+}

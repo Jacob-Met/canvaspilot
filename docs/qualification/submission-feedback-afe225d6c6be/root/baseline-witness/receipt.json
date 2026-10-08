@@ -1,0 +1,18 @@
+{
+  "independent_input_sha256": "7ce2ff38268b7caf0b5eb80620546b6bb24d41c38c95ed767bfe0ff7f4fe6652",
+  "source_pins": {
+    "src/canvaspilot/__init__.py": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5",
+    "src/canvaspilot/api.py": "08f868e82235df42b0427e07067d47cf3ea3d35c7ece11538dbd06e01b3b77c7",
+    "src/canvaspilot/bundle.py": "db1ca6da89ea4f1a07c327f56ab40a39fe89e22c91034ed2be8fb3e497a6e696",
+    "src/canvaspilot/cli.py": "289acef34c3d910cab6af811220cc3ac12f04f82c16d92bcb85341f83269705e",
+    "src/canvaspilot/client.py": "6368329745216f473204995c101c912d9070fdd310def150bdbee927f9872de4",
+    "src/canvaspilot/mcp_server.py": "3012df86f365d054f92db20b733562bef6871c65ff88d75e0acb893a0414fb4f",
+    "src/canvaspilot/offline_demo.py": "2389f3ccc1b6db5995be0d90e014ea9345e3029aa5546a5b2dcf12c1197e6d4d",
+    "src/canvaspilot/session_broker.py": "2a106130c344aefebb23b078cd93b5d3ca3afd7f5325ae5fac2fb8a7251780cc"
+  },
+  "runtime_started_at": "2026-10-08T09:59:27.215781+00:00",
+  "interfaces": [],
+  "passed": false,
+  "error": "AttributeError(\"'CanvasAPI' object has no attribute 'submission_feedback'\")",
+  "runtime_finished_at": "2026-10-08T09:59:28.218916+00:00"
+}

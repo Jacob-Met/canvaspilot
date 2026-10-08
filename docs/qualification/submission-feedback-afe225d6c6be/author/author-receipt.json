@@ -1,0 +1,89 @@
+{
+  "repository": "Jacob-Met/canvaspilot",
+  "claim": "https://github.com/Jacob-Met/canvaspilot/issues/34",
+  "production_commit": "a98da7dce9f4839a20a21a6973d7cc7e6fa635a2",
+  "production_tree": "8abeb42ccb66263841ade748cc33103b4fe4c4fe",
+  "receiving_parent": "72357053a1629c349f700030013559fa6d8130f2",
+  "baseline_witness_parent": "5b1780ca4fcdce3d5f997cee401c86806ece822a",
+  "results": {
+    "all_tests": 217,
+    "feedback_tests": 25,
+    "semantic_feedback_tests": 16,
+    "native_feedback_tests": 9,
+    "failures": 0,
+    "baseline_new_entry_point_failures": 3,
+    "lint": "passed: ruff check src tests scripts",
+    "diff_check": "passed"
+  },
+  "native_command": "PYTHONPATH=src python -m pytest -q -p no:cacheprovider",
+  "scope_limit": "Synthetic offline/loopback receiving; no live Canvas account, browser profile, or runtime deployment.",
+  "independent_receiving": "Root and peer packets are separate; this receipt contains only author evidence.",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "bytes": 5856,
+      "sha256": "751650851c8e39a8cbda59612e3748a6a4fd92796c4d3a8609433e45a1d6914f"
+    },
+    {
+      "path": "baseline-native.log.json",
+      "bytes": 6342,
+      "sha256": "ff4a968055655e37e6349be086d9e83120916420f91edcc577176e332ab90487"
+    },
+    {
+      "path": "baseline-native.xml.json",
+      "bytes": 7174,
+      "sha256": "6e74cbcd03a2a8cf8365fb49f0991da42eeb4eb9f2dbad75d40882af83ce98bb"
+    },
+    {
+      "path": "dependencies-install.log",
+      "bytes": 10210,
+      "sha256": "09133b80867d0083109adff6318f4f921d712400dbe6908c30d6e86201683b8b"
+    },
+    {
+      "path": "final-lint.log",
+      "bytes": 19,
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "path": "final-native.log",
+      "bytes": 341,
+      "sha256": "923d3b1f4a1499a588d616b1f9f0b85a72b3075852383d3c9f6083114ac3590a"
+    },
+    {
+      "path": "final-native.xml",
+      "bytes": 28739,
+      "sha256": "3f2fd253ea811f0be64f8ab6d2ac40615b8f91dbaa8a5ff5092185614db8c24e"
+    },
+    {
+      "path": "inherited-subprocess-setup.log.json",
+      "bytes": 11412,
+      "sha256": "0e565032bf1739e578ef3dac08ef304a8bf2c011bee51e6703a7da6a3dccc786"
+    },
+    {
+      "path": "native-harness-mcp-refusal.log",
+      "bytes": 4765,
+      "sha256": "a3ef137478cab8421263dc7ef848a9fb3d1e6d38456640addce4709c31dcfc9f"
+    },
+    {
+      "path": "native-harness-setup.log.json",
+      "bytes": 35975,
+      "sha256": "fd25f0bfc0b16ec3135070e54afd3df2882b1a78d14af5987a495a7fbddc55be"
+    },
+    {
+      "path": "ownership-refresh.json",
+      "bytes": 3104,
+      "sha256": "96031e20d3764b00d70876d52952f5b71b2d48342931bf3dd9026fdceb4d7bcc"
+    },
+    {
+      "path": "runtime.json",
+      "bytes": 1531,
+      "sha256": "d10573ec86172a92d8e86304a5490b6e7d25001309c8b0ac53ae204f5a595596"
+    },
+    {
+      "path": "source-freeze.json",
+      "bytes": 2910,
+      "sha256": "2df8659e7b2b94df8b70220931d5e2c2d87be5d90d01e74dc9234e50f56138db"
+    }
+  ],
+  "negative_report_transport": "Four original reports are lossless UTF-8 JSON envelopes; original hashes and bytes are verified after decoding. Raw files remain unchanged in the isolated canvas-evidence directory."
+}

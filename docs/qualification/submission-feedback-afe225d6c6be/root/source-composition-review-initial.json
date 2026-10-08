@@ -1,0 +1,10 @@
+{
+  "stage": "supplementary source comparison after native interface acceptance",
+  "exit_code": 1,
+  "failed_assertion": "root line slice == peer extracted method source",
+  "cause": "The line slice retained four leading spaces on its first line, while the peer used ast.get_source_segment. Subsequent lines were identical.",
+  "root_slice_bytes": 747,
+  "peer_segment_bytes": 743,
+  "source_changed": false,
+  "native_tests_repeated": false
+}

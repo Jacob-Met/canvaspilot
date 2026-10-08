@@ -1,0 +1,42 @@
+{
+  "assignment": {
+    "id": 73,
+    "course_id": 41,
+    "name": "Unavailable rubric",
+    "html_url": null,
+    "due_at": null,
+    "points_possible": 10
+  },
+  "submission": {
+    "id": null,
+    "assignment_id": 73,
+    "user_id": 501,
+    "submission_type": null,
+    "attempt": 3,
+    "workflow_state": "graded",
+    "submitted_at": null,
+    "graded_at": null,
+    "posted_at": null,
+    "grader_id": null,
+    "score": 6,
+    "grade": "6",
+    "grade_matches_current_submission": true,
+    "excused": null,
+    "late": null,
+    "missing": null,
+    "redo_request": null
+  },
+  "rubric": {
+    "use_rubric_for_grading": null,
+    "settings": null,
+    "assessment_returned": true,
+    "criteria": null,
+    "unmatched_assessments": {
+      "unknown": {
+        "points": null,
+        "comments": "Discuss this criterion with the reviewer."
+      }
+    }
+  },
+  "submission_comments": []
+}

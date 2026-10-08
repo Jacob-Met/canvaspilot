@@ -1,0 +1,211 @@
+--- a/src/canvaspilot/api.py
++++ b/src/canvaspilot/api.py
+@@ -7,6 +7,7 @@
+ from typing import Any
+ 
+ from canvaspilot.client import CanvasClient
++from canvaspilot.feedback import build_submission_feedback
+ 
+ TAG_RE = re.compile(r"<[^>]+>")
+ WS_RE = re.compile(r"\s+")
+@@ -448,6 +449,21 @@
+             f"/api/v1/courses/{course_id}/assignments/{assignment_id}/submissions/self",
+         )
+ 
++    def submission_feedback(self, course_id: int | str, assignment_id: int | str) -> dict[str, Any]:
++        """Read self submission comments and rubric evidence alongside grade/attempt metadata.
++
++        A false grade_matches_current_submission means grading preceded the
++        latest resubmission. Rubric points are not used to calculate a grade.
++        """
++        path = f"/api/v1/courses/{course_id}/assignments/{assignment_id}"
++        assignment = self.client.request("GET", path)
++        submission = self.client.request(
++            "GET",
++            f"{path}/submissions/self",
++            params={"include[]": ["submission_comments", "rubric_assessment"]},
++        )
++        return build_submission_feedback(assignment, submission)
++
+     def submit_assignment_text(
+         self,
+         course_id: int | str,
+--- a/src/canvaspilot/bundle.py
++++ b/src/canvaspilot/bundle.py
+@@ -42,6 +42,7 @@
+     "canvas_list_enrollments",
+     "canvas_sync_summary",
+     "canvas_submission_status",
++    "canvas_submission_feedback",
+     "canvas_submit_assignment_text",
+     "canvas_api_request",
+     "canvas_api_paginated",
+--- a/src/canvaspilot/cli.py
++++ b/src/canvaspilot/cli.py
+@@ -57,6 +57,18 @@
+     add_common(brief)
+     brief.add_argument("course_id")
+     brief.add_argument("assignment_id")
++
++    feedback = sub.add_parser(
++        "feedback",
++        help="Read self submission comments, rubric feedback, and grade/attempt metadata",
++        description=(
++            "Read self submission comments and rubric feedback. A false "
++            "grade_matches_current_submission means grading preceded the latest resubmission."
++        ),
++    )
++    add_common(feedback)
++    feedback.add_argument("course_id")
++    feedback.add_argument("assignment_id")
+ 
+     disc = sub.add_parser("discussions", help="List discussion topics")
+     add_common(disc)
+@@ -111,6 +123,14 @@
+             print(
+                 json.dumps(
+                     api.assignment_brief(args.course_id, args.assignment_id),
++                    indent=2,
++                    default=str,
++                )
++            )
++        elif args.cmd == "feedback":
++            print(
++                json.dumps(
++                    api.submission_feedback(args.course_id, args.assignment_id),
+                     indent=2,
+                     default=str,
+                 )
+--- a/src/canvaspilot/feedback.py
++++ b/src/canvaspilot/feedback.py
+@@ -0,0 +1,109 @@
++"""Join a student's Canvas submission feedback to its rubric without grading it."""
++
++from __future__ import annotations
++
++from collections import Counter
++from copy import deepcopy
++from typing import Any
++
++ASSIGNMENT_FIELDS = (
++    "id",
++    "course_id",
++    "name",
++    "html_url",
++    "due_at",
++    "points_possible",
++)
++SUBMISSION_FIELDS = (
++    "id",
++    "assignment_id",
++    "user_id",
++    "submission_type",
++    "attempt",
++    "workflow_state",
++    "submitted_at",
++    "graded_at",
++    "posted_at",
++    "grader_id",
++    "score",
++    "grade",
++    "grade_matches_current_submission",
++    "excused",
++    "late",
++    "missing",
++    "redo_request",
++)
++
++
++def build_submission_feedback(
++    assignment: dict[str, Any], submission: dict[str, Any]
++) -> dict[str, Any]:
++    """Preserve reported grades, attempts, rubric evidence, and comment authors.
++
++    A false grade_matches_current_submission means grading preceded the latest
++    resubmission. Neither that grade nor the rubric is reinterpreted here.
++    Missing values stay unknown; an empty assessment/comment list stays empty.
++    """
++    if not isinstance(assignment, dict) or not isinstance(submission, dict):
++        raise ValueError("Canvas returned malformed assignment or submission feedback")
++
++    criteria = assignment.get("rubric")
++    assessments = submission.get("rubric_assessment")
++    comments = submission.get("submission_comments")
++    if criteria is not None and (
++        not isinstance(criteria, list)
++        or any(not isinstance(criterion, dict) for criterion in criteria)
++    ):
++        raise ValueError("Canvas returned malformed rubric criteria")
++    if assessments is not None and (
++        not isinstance(assessments, dict)
++        or any(
++            value is not None and not isinstance(value, dict)
++            for value in assessments.values()
++        )
++    ):
++        raise ValueError("Canvas returned malformed rubric assessment")
++    if comments is not None and (
++        not isinstance(comments, list)
++        or any(not isinstance(comment, dict) for comment in comments)
++    ):
++        raise ValueError("Canvas returned malformed submission comments")
++
++    # Canvas documents string criterion IDs. Array order, descriptions, and
++    # duplicate IDs cannot establish which criterion an assessment belongs to.
++    counts = Counter(
++        criterion["id"]
++        for criterion in criteria or []
++        if isinstance(criterion.get("id"), str) and criterion["id"]
++    )
++    joined = None
++    remaining = dict(assessments) if assessments is not None else None
++    if criteria is not None:
++        joined = []
++        for criterion in criteria:
++            criterion_id = criterion.get("id")
++            assessment = None
++            if (
++                isinstance(criterion_id, str)
++                and counts[criterion_id] == 1
++                and remaining is not None
++            ):
++                assessment = remaining.pop(criterion_id, None)
++            joined.append({"criterion": criterion, "assessment": assessment})
++
++    # Retain all criterion/assessment and comment fields, including media-only
++    # comments and future Canvas metadata, without sharing mutable fixture data.
++    return deepcopy(
++        {
++            "assignment": {field: assignment.get(field) for field in ASSIGNMENT_FIELDS},
++            "submission": {field: submission.get(field) for field in SUBMISSION_FIELDS},
++            "rubric": {
++                "use_rubric_for_grading": assignment.get("use_rubric_for_grading"),
++                "settings": assignment.get("rubric_settings"),
++                "assessment_returned": assessments is not None,
++                "criteria": joined,
++                "unmatched_assessments": remaining,
++            },
++            "submission_comments": comments,
++        }
++    )
+--- a/src/canvaspilot/mcp_server.py
++++ b/src/canvaspilot/mcp_server.py
+@@ -216,6 +216,18 @@
+ @mcp.tool(description="Submission status for an assignment (self).", structured_output=False)
+ async def canvas_submission_status(course_id: str, assignment_id: str) -> str:
+     return _dump(_get_api().submission_status(course_id, assignment_id))
++
++
++@mcp.tool(
++    description=(
++        "Read self submission comments and rubric feedback with original authors, "
++        "criteria, and grade/attempt metadata. A false grade_matches_current_submission "
++        "means grading preceded the latest resubmission. Does not calculate a grade."
++    ),
++    structured_output=False,
++)
++async def canvas_submission_feedback(course_id: str, assignment_id: str) -> str:
++    return _dump(_get_api().submission_feedback(course_id, assignment_id))
+ 
+ 
+ @mcp.tool(description="Submit finished online_text_entry work.", structured_output=False)

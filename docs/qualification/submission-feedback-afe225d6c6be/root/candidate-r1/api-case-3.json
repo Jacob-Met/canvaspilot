@@ -1,0 +1,45 @@
+{
+  "assignment": {
+    "id": 73,
+    "course_id": 41,
+    "name": "Plain assessment",
+    "html_url": null,
+    "due_at": null,
+    "points_possible": 10
+  },
+  "submission": {
+    "id": null,
+    "assignment_id": 73,
+    "user_id": 501,
+    "submission_type": null,
+    "attempt": 1,
+    "workflow_state": "graded",
+    "submitted_at": null,
+    "graded_at": null,
+    "posted_at": null,
+    "grader_id": null,
+    "score": 8,
+    "grade": "8",
+    "grade_matches_current_submission": true,
+    "excused": null,
+    "late": null,
+    "missing": null,
+    "redo_request": null
+  },
+  "rubric": {
+    "use_rubric_for_grading": null,
+    "settings": null,
+    "assessment_returned": false,
+    "criteria": null,
+    "unmatched_assessments": null
+  },
+  "submission_comments": [
+    {
+      "id": 910,
+      "author_id": 601,
+      "author_name": "Synthetic Reviewer",
+      "comment": "Review the final step.",
+      "created_at": "2026-10-08T11:00:00Z"
+    }
+  ]
+}

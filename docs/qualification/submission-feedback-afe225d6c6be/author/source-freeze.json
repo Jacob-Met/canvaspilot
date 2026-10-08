@@ -1,0 +1,78 @@
+{
+  "repository": "Jacob-Met/canvaspilot",
+  "claim": "https://github.com/Jacob-Met/canvaspilot/issues/34",
+  "base": "72357053a1629c349f700030013559fa6d8130f2",
+  "base_tree": "919634af69c067e04f391fca84b3071ab8da9159",
+  "head": "a98da7dce9f4839a20a21a6973d7cc7e6fa635a2",
+  "tree": "8abeb42ccb66263841ade748cc33103b4fe4c4fe",
+  "preserved_base_files": 118,
+  "base_files": 123,
+  "candidate_files": 127,
+  "changed": [
+    {
+      "path": "README.md",
+      "bytes": 13135,
+      "sha256": "aa58d2cba99de710b9dae1915c63e6bb83a89d5c19cb3f21a874d1df16f160af",
+      "blob": "7c04e33f6702235ef181718d91a618129f0fe436",
+      "base_blob": "f1a22d3d3ca37847cdef89aca7bf509b518908dc"
+    },
+    {
+      "path": "src/canvaspilot/api.py",
+      "bytes": 23609,
+      "sha256": "546fd973330ffb3c95c81ba670b5ae2add751a23362c83a370254ea702eee1a0",
+      "blob": "f66a0916554361c075f82bf0bcf3b8e49aa272d8",
+      "base_blob": "336955bd9a305f8c71e2a9c49d4ca5731afa6193"
+    },
+    {
+      "path": "src/canvaspilot/bundle.py",
+      "bytes": 2611,
+      "sha256": "83f6d27e9587cd234a2d18f32e5807ca4cd8ca99e8aa295e246d6927f7c9eaf4",
+      "blob": "ab17a3ded1f80860bc9818ca90cd4a65f397f9b9",
+      "base_blob": "b347e64bca073e8dc6a721bbeae1ca07f253dd89"
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "bytes": 10148,
+      "sha256": "f1e34f8ef91942605a7b95c0e00a4b13ba6f08ac9c9563c12b575cad7944cb3c",
+      "blob": "ea095007c0d7ed41524f79c0a0ca0dbe1f317a71",
+      "base_blob": "bdd428e804fea968348f782075b0a44185ceccfc"
+    },
+    {
+      "path": "src/canvaspilot/feedback.py",
+      "bytes": 3779,
+      "sha256": "7cbedb04d0f0fedb684a1cb49d2a2616d5393210b1b4a17cb3d0bffa24001eb9",
+      "blob": "4bc14197b0fbaeb2010dc15baff14c2c0eea99a6",
+      "base_blob": null
+    },
+    {
+      "path": "src/canvaspilot/mcp_server.py",
+      "bytes": 11855,
+      "sha256": "311d920918ef8731865e6f865674979857e8cf7b63aaa2317570ef37e617ae96",
+      "blob": "7bd34dea25913288d9d4e1cef4152e18ccd76628",
+      "base_blob": "6d9dcb8312140f20e164407cb3d5ae99c805af87"
+    },
+    {
+      "path": "tests/fixtures/submission_feedback.json",
+      "bytes": 2380,
+      "sha256": "435038bef1e6147eb60f60a2269de49df8bfa2fea31736694a7ada4cddfeb95a",
+      "blob": "445d73ea1bf1db0b8bbbaeceaa3fb0b675f1ecdd",
+      "base_blob": null
+    },
+    {
+      "path": "tests/test_submission_feedback.py",
+      "bytes": 6891,
+      "sha256": "d6669be101562d6d2c88e5e0a6a468f6c82d614960bee65cb294243ebf136be7",
+      "blob": "0d747c4866ddc87e77ed84caad877414c7be329b",
+      "base_blob": null
+    },
+    {
+      "path": "tests/test_submission_feedback_native.py",
+      "bytes": 9492,
+      "sha256": "ddbca46db607421445f1ac0a371f7e2843feb96b28bdcaae88982daa397159f6",
+      "blob": "70ef1d5085cf22aa4e21d7a761a870f1c24122e7",
+      "base_blob": null
+    }
+  ],
+  "all_existing_api_methods_preserved": true,
+  "existing_api_method_count": 38
+}
