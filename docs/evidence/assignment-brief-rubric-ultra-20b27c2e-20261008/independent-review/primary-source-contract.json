@@ -1,0 +1,16 @@
+{
+  "checked_utc": "2026-10-08 08:55:23 UTC",
+  "assignment_docs": "https://developerdocs.instructure.com/services/canvas/resources/assignments",
+  "rubric_docs": "https://developerdocs.instructure.com/services/canvas/resources/rubrics",
+  "serializer_repository": "instructure/canvas-lms",
+  "serializer_commit": "1c9f0bb8013ed69c4f2efe11fd483025469b7e6c",
+  "serializer_path": "lib/api/v1/assignment.rb",
+  "serializer_git_blob": "ba97b808ca7215d5f2714459ddf5e3477e75e31b",
+  "findings": [
+    "Assignments may use rubrics for grading or only as advice; do not infer true from a present rubric.",
+    "Criteria carry their own points, optional range/scoring flags and ordered ratings; rating and description data can be nullable.",
+    "The assignment serializer separately emits rubric_settings.hide_score_total and hide_points, rubric total and free_form_criterion_comments.",
+    "The serializer may include outcome_id and vendor_guid; copying those canonical values does not infer grading requirements.",
+    "This review checks JSON data preservation and explicit optional-data diagnostics; it does not mandate score redaction or a separate rubric renderer."
+  ]
+}

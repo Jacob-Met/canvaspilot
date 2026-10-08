@@ -1,0 +1,125 @@
+{
+  "baseline_commit": "1393f40047297147029d8571bfd824f74e58e1dc",
+  "baseline_tree": "cb758a4d82431552ab9dc35755c04a12b15b2f2a",
+  "baseline_blobs_verified": 63,
+  "candidate_files": 65,
+  "unowned_base_blobs_preserved": 59,
+  "rubric_member_spans_identical_to_accepted": [
+    "_brief_rubric",
+    "CanvasAPI.get_assignment",
+    "CanvasAPI.assignment_brief"
+  ],
+  "unowned_api_member_spans_identical_to_current": [
+    "CanvasAPI.__enter__",
+    "CanvasAPI.__exit__",
+    "CanvasAPI.__init__",
+    "CanvasAPI.activity_stream",
+    "CanvasAPI.api_paginated",
+    "CanvasAPI.api_request",
+    "CanvasAPI.close",
+    "CanvasAPI.complete_quiz_submission",
+    "CanvasAPI.get_conversation",
+    "CanvasAPI.get_course",
+    "CanvasAPI.get_discussion",
+    "CanvasAPI.get_page",
+    "CanvasAPI.get_quiz",
+    "CanvasAPI.list_announcements",
+    "CanvasAPI.list_assignments",
+    "CanvasAPI.list_calendar_events",
+    "CanvasAPI.list_conversations",
+    "CanvasAPI.list_courses",
+    "CanvasAPI.list_discussion_topics",
+    "CanvasAPI.list_enrollments",
+    "CanvasAPI.list_files",
+    "CanvasAPI.list_modules",
+    "CanvasAPI.list_pages",
+    "CanvasAPI.list_quiz_questions",
+    "CanvasAPI.list_quiz_submissions",
+    "CanvasAPI.list_quizzes",
+    "CanvasAPI.list_todo_items",
+    "CanvasAPI.planner_items",
+    "CanvasAPI.post_discussion_reply",
+    "CanvasAPI.reply_conversation",
+    "CanvasAPI.start_quiz_submission",
+    "CanvasAPI.submission_status",
+    "CanvasAPI.submit_assignment_text",
+    "CanvasAPI.sync_summary",
+    "CanvasAPI.whoami",
+    "_sync_due_key",
+    "_validate_sync_limits",
+    "assert_canvas_api_path",
+    "strip_html"
+  ],
+  "unowned_api_structure_identical": true,
+  "public_source_single_line_deltas_only": [
+    "src/canvaspilot/cli.py",
+    "src/canvaspilot/mcp_server.py"
+  ],
+  "readme_reverse_patch": {
+    "command": [
+      "git",
+      "apply",
+      "--reverse",
+      "/workspace/scratch/20b27c2ea29e/workers/memory-improvement/canvas-review/receiving-1393f400/readme-only.patch"
+    ],
+    "exit_code": 0,
+    "current_bytes_restored": true
+  },
+  "resolved_conflict": "Only adjacent imports: retain accepted deepcopy and current datetime, along with isfinite.",
+  "files": [
+    {
+      "repo_path": "README.md",
+      "local_path": "/workspace/scratch/20b27c2ea29e/workers/memory-improvement/canvas-review/receiving-1393f400/candidate/README.md",
+      "mode": "100644",
+      "bytes": 11484,
+      "sha256": "32466d3db345824b913e5a69b8b19fc7962329a49abccccf486bd210b88c0c59",
+      "git_blob_sha": "1e6fc524ffdc5e4651b0c8163be07d29a2912f4a",
+      "original_git_blob": "f20c3bb8885ba7e249a018c580308553ef5f7bbb"
+    },
+    {
+      "repo_path": "src/canvaspilot/api.py",
+      "local_path": "/workspace/scratch/20b27c2ea29e/workers/memory-improvement/canvas-review/receiving-1393f400/candidate/src/canvaspilot/api.py",
+      "mode": "100644",
+      "bytes": 25800,
+      "sha256": "f113a59bac2cc25f4e9b380be4011add99b115eee3d3b7e4b270fe93afb9a1e8",
+      "git_blob_sha": "bf7929ff5be89b23a75a880d077149be8c12533d",
+      "original_git_blob": "b2be910641ddfff6d81dc2c952068dcaa65a1196"
+    },
+    {
+      "repo_path": "src/canvaspilot/cli.py",
+      "local_path": "/workspace/scratch/20b27c2ea29e/workers/memory-improvement/canvas-review/receiving-1393f400/candidate/src/canvaspilot/cli.py",
+      "mode": "100644",
+      "bytes": 8218,
+      "sha256": "f03046a41118601e81f30baae4e55681223f0088042441bad118a11c883ef7af",
+      "git_blob_sha": "0337db81791b13386c61f2fcb1c27ed6a97065d6",
+      "original_git_blob": "fb04e882c966bca2845b1ef6ec06c78ef514c3d2"
+    },
+    {
+      "repo_path": "src/canvaspilot/mcp_server.py",
+      "local_path": "/workspace/scratch/20b27c2ea29e/workers/memory-improvement/canvas-review/receiving-1393f400/candidate/src/canvaspilot/mcp_server.py",
+      "mode": "100644",
+      "bytes": 10644,
+      "sha256": "305bfc685976911edb4c45e7047c76bcfb9994193479608e2971501b8604aade",
+      "git_blob_sha": "4f42a91547a62d642a55dcaf2703d6f84312a5ab",
+      "original_git_blob": "c43ef611615a33b3178fe413f5d6254543b1f2e6"
+    },
+    {
+      "repo_path": "tests/fixtures/assignment_rubric.json",
+      "local_path": "/workspace/scratch/20b27c2ea29e/workers/memory-improvement/canvas-review/receiving-1393f400/candidate/tests/fixtures/assignment_rubric.json",
+      "mode": "100644",
+      "bytes": 2057,
+      "sha256": "1c7eebf96e3a09b40b934fab219e9c8b7a6258fe881560f53a1c38a8e1b4bc4b",
+      "git_blob_sha": "8298dc92458b2f4c0f5c2b6845e32c52395d9d46",
+      "original_git_blob": null
+    },
+    {
+      "repo_path": "tests/test_assignment_brief_rubric.py",
+      "local_path": "/workspace/scratch/20b27c2ea29e/workers/memory-improvement/canvas-review/receiving-1393f400/candidate/tests/test_assignment_brief_rubric.py",
+      "mode": "100644",
+      "bytes": 9514,
+      "sha256": "cc4bdb56034b32e08a63d4b1ae193e364bfc9b9b4b2a506cf2ef08f43000158c",
+      "git_blob_sha": "1881a19e593c4fb095d1a4dc97fce53a8c13f02e",
+      "original_git_blob": null
+    }
+  ]
+}

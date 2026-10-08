@@ -1,0 +1,72 @@
+{
+  "id": 311,
+  "name": "Synthetic source analysis",
+  "due_at": "2026-10-15T17:00:00Z",
+  "points_possible": 20,
+  "submission_types": [
+    "online_upload"
+  ],
+  "html_url": "https://canvas.example.invalid/courses/17/assignments/311",
+  "description": "<p>Write a short analysis. Follow the attached grading rubric.</p>",
+  "rubric": [
+    {
+      "id": "evidence",
+      "description": "Use primary evidence",
+      "long_description": "Cite two sources; preserve literal <img> examples and café 📚.",
+      "points": 12,
+      "criterion_use_range": false,
+      "ignore_for_scoring": false,
+      "outcome_id": 73,
+      "vendor_guid": "synthetic-outcome-evidence",
+      "ratings": [
+        {
+          "id": "full-evidence",
+          "description": "Meets all requirements",
+          "long_description": "Explain how both sources support the argument.",
+          "points": 12
+        },
+        {
+          "id": "partial-evidence",
+          "description": "Some supporting evidence",
+          "long_description": "One source is explained.",
+          "points": 6.5
+        },
+        {
+          "id": "no-evidence",
+          "description": "No supporting sources",
+          "points": 0
+        }
+      ]
+    },
+    {
+      "id": "reasoning",
+      "description": "Address a counterargument",
+      "long_description": "Explain one limitation in the proposed interpretation.",
+      "points": 8,
+      "criterion_use_range": true,
+      "ignore_for_scoring": true,
+      "learning_outcome_id": "0059",
+      "ratings": [
+        {
+          "id": "no-reasoning",
+          "description": "No counterargument",
+          "points": 0
+        },
+        {
+          "id": "full-reasoning",
+          "description": "Meets all requirements",
+          "points": 8
+        }
+      ]
+    }
+  ],
+  "rubric_settings": {
+    "id": 91,
+    "title": "Synthetic analysis rubric",
+    "points_possible": "12",
+    "free_form_criterion_comments": false,
+    "hide_score_total": true,
+    "hide_points": false
+  },
+  "use_rubric_for_grading": false
+}
