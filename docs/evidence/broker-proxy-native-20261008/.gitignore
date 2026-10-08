@@ -1,0 +1,6 @@
+head/
+base/
+receiving-venv/
+pytest-unused-profile/
+actual-*.json
+__pycache__/
