@@ -1,0 +1,82 @@
+{
+  "reviewer": "/root/engine_execution",
+  "accepted": true,
+  "review_kind": "Independent static source binding; historical native attribution preserved",
+  "parent": "79a2f2b2cbb7e74128d731cf096c7e86f1942d4b",
+  "parent_tree": "0114a6230c473c1ee1d01b99c7121c754b781d54",
+  "parent_native_inputs_verified": 49,
+  "feature_files": [
+    {
+      "path": "README.md",
+      "bytes": 19769,
+      "sha256": "9243eeac04fd867cc111e1d0a95259aa266dae210d8eebc4da33287af28bfaae",
+      "git_blob": "f1740a512af81916490a27887141382d10469efa"
+    },
+    {
+      "path": "docs/assignment-submission.md",
+      "bytes": 5473,
+      "sha256": "a8a8b9c7600c9c61f1108c1488efbaa4b39db5e16decaabee8adf96bb025869a",
+      "git_blob": "be1465caebdc7cddc302fb3e71a372fe540195c4"
+    },
+    {
+      "path": "src/canvaspilot/api.py",
+      "bytes": 27718,
+      "sha256": "00b65511b84a77d69312dbdc6abe21bfd62ef47ce0a5cdf8c1af2fd2d705c3e8",
+      "git_blob": "8de750525055991ca470fb4881d0368a07631818"
+    },
+    {
+      "path": "src/canvaspilot/assignment_submission.py",
+      "bytes": 1296,
+      "sha256": "52fc732660b8844a2ee0801931a363f20db15b5309d148d01e3b618be487133d",
+      "git_blob": "95b1f19927e4eecf99fc852325737c3cfe86cd0d"
+    },
+    {
+      "path": "tests/test_assignment_submission.py",
+      "bytes": 9989,
+      "sha256": "ccf038f9e1fb0bd6c8658041d88bf90d11404ef32baeff3e937b2b514a44e4a5",
+      "git_blob": "5a5b14e207a85b414e973508bcbc8c94558d2479"
+    },
+    {
+      "path": "tests/test_assignment_submission_process.py",
+      "bytes": 15931,
+      "sha256": "6cb60d1ffe02875999ef54ac8770984086b760afbc43ac10aa43fd3139820935",
+      "git_blob": "41c5efc672cd1154c278609c773e5deff003ec08"
+    }
+  ],
+  "unchanged_client": {
+    "bytes": 18934,
+    "sha256": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797",
+    "git_blob": "1db4b1135305f7e410025ae7937f9a6cd349f020"
+  },
+  "current_broker": {
+    "bytes": 13944,
+    "sha256": "a692cd2812cbc09536f1b60c84892bc8e87d2ae984c5a5aa25a13f6537ba6da2",
+    "git_blob": "cc706d5860489ec37cb2cf7f0b1cb4eee33b664f"
+  },
+  "current_cli": {
+    "bytes": 12621,
+    "sha256": "a6029296bba4e84b3889bd62487b966d7bc1832a8b1b1e0fd928dfb9b9ab68a8",
+    "git_blob": "9b8eec6ea177d0fe69e3cb7776af185d2e7ad4a5"
+  },
+  "independent_remote_blob_reads": {
+    "src/canvaspilot/session_broker.py": "cc706d5860489ec37cb2cf7f0b1cb4eee33b664f",
+    "src/canvaspilot/cli.py": "9b8eec6ea177d0fe69e3cb7776af185d2e7ad4a5"
+  },
+  "handler_exact_except_one_added_health_boolean": true,
+  "broker_call_and_state_definitions_byte_exact": true,
+  "client_does_not_read_new_health_key": true,
+  "cli_exact_except_export_calendar_import_and_exception_tuple": true,
+  "six_feature_blobs_unchanged": true,
+  "historical_native_parent": "ca2318fe7c56d2e4ec1b363ff8a945ab78bf4a0c",
+  "historical_native_cli_processes": 4,
+  "additional_native_executions": 0,
+  "native_repeat_needed": false,
+  "reason": "The exercised assignment projection, pagination, Handler POST/serialization and CLI branch remain unchanged. The only exercised-source delta adds a health key ignored by the unchanged client. New provider-origin enforcement lives beyond the explicitly synthetic browser-terminal _call seam; repeating that receiver would not qualify changed browser routing.",
+  "limits": [
+    "No native run is attributed to parent79a2 by this static receipt.",
+    "Browser/provider-origin behavior belongs to PR45 owner receiving and hosted gates.",
+    "No whole-broker or whole-CLI identity claim.",
+    "Ordinary published-head CI and final-parent integration remain with the owner."
+  ],
+  "historical_appendix_sha256": "792e183779aa81f2927d28f27e53d0f811ca1970a4f82a79f11314e68b2e1dbe"
+}

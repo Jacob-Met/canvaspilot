@@ -1,0 +1,764 @@
+{
+  "source": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-session-identity",
+  "head": "8f75e03121df061ff80f100ee276565d61fdb9c2",
+  "receiver_sha256": "c79e6708ba582830dc0084b08ec992e2fe4efdc33158c7ff89c81e7c0860dd64",
+  "production_sha256_before": {
+    "src/canvaspilot/client.py": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797",
+    "src/canvaspilot/api.py": "fe147e5d3943e7299f400e7607385a7c8f02a68aeff07f72b3219f5c70c7bb5b",
+    "src/canvaspilot/cli.py": "a6029296bba4e84b3889bd62487b966d7bc1832a8b1b1e0fd928dfb9b9ab68a8",
+    "src/canvaspilot/calendar_export.py": "b92948c438063438bf9b8ef01b0b0c067802ddb06354f00e8ee18749f3c5e2fa",
+    "src/canvaspilot/session_broker.py": "a692cd2812cbc09536f1b60c84892bc8e87d2ae984c5a5aa25a13f6537ba6da2"
+  },
+  "production_sha256_after": {
+    "src/canvaspilot/client.py": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797",
+    "src/canvaspilot/api.py": "fe147e5d3943e7299f400e7607385a7c8f02a68aeff07f72b3219f5c70c7bb5b",
+    "src/canvaspilot/cli.py": "a6029296bba4e84b3889bd62487b966d7bc1832a8b1b1e0fd928dfb9b9ab68a8",
+    "src/canvaspilot/calendar_export.py": "b92948c438063438bf9b8ef01b0b0c067802ddb06354f00e8ee18749f3c5e2fa",
+    "src/canvaspilot/session_broker.py": "a692cd2812cbc09536f1b60c84892bc8e87d2ae984c5a5aa25a13f6537ba6da2"
+  },
+  "broker_import": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-session-identity/src/canvaspilot/session_broker.py",
+  "python": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "runs": [
+    {
+      "label": "complete",
+      "command": [
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-venv/bin/python",
+        "-m",
+        "canvaspilot.cli",
+        "export-calendar",
+        "42",
+        "77",
+        "--token",
+        "",
+        "--profile",
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-provider-routing-receiving/landed-pagination/cli-after/unused-profile",
+        "--out",
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-provider-routing-receiving/landed-pagination/cli-after/complete.ics",
+        "--base-url",
+        "https://school-a.fixture.invalid"
+      ],
+      "exit": 0,
+      "requests": [
+        {
+          "op": "fetch",
+          "method": "GET",
+          "path": "/api/v1/courses/42/assignments?order_by=due_at&include%5B%5D=submission&bucket=upcoming&per_page=50",
+          "headers": {
+            "Accept": "application/json"
+          },
+          "body": null
+        },
+        {
+          "op": "fetch",
+          "method": "GET",
+          "path": "https://school-a.fixture.invalid/api/v1/courses/42/assignments?cursor=%2f%2F,a;b&empty=&literal=+",
+          "headers": {
+            "Accept": "application/json"
+          },
+          "body": null
+        },
+        {
+          "op": "fetch",
+          "method": "GET",
+          "path": "/api/v1/courses/77/assignments?order_by=due_at&include%5B%5D=submission&bucket=upcoming&per_page=50",
+          "headers": {
+            "Accept": "application/json"
+          },
+          "body": null
+        }
+      ],
+      "report": {
+        "ok": true,
+        "output": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-provider-routing-receiving/landed-pagination/cli-after/complete.ics",
+        "source": "https://school-a.fixture.invalid",
+        "bucket": "upcoming",
+        "generated_at": "2026-10-08T13:01:20.440236+00:00",
+        "course_ids": [
+          "42",
+          "77"
+        ],
+        "course_summaries": [
+          {
+            "course_id": "42",
+            "assignments_returned": 3,
+            "events_exported": 2
+          },
+          {
+            "course_id": "77",
+            "assignments_returned": 1,
+            "events_exported": 1
+          }
+        ],
+        "events_exported": 3,
+        "assignments_omitted": [
+          {
+            "course_id": "42",
+            "assignment_id": "3",
+            "reason": "no_due_date"
+          }
+        ],
+        "coverage": "Returned assignment rows only; existing transport pagination limits apply.",
+        "sha256": "c129f4f9f80ccc38fb13a6f52db757968c249368d32158a42876389d1e2542f9"
+      },
+      "error_report": null,
+      "events": [
+        {
+          "uid": "9965c38a34df9e4e101e7e05db8413451850c7413e15c41d4b2f84c385823736@canvaspilot",
+          "summary": "[Course 42] Later deadline \u79d1\u5b66\ud83d\ude00, notes; line\nnext",
+          "due": "2026-11-01T08:15:00+00:00",
+          "url": "https://school-a.fixture.invalid/courses/42/assignments/2"
+        },
+        {
+          "uid": "9f91e04be273b85a1145c56850e4ff4bdfe24d1d57328e49bcbff0725b7b94fd@canvaspilot",
+          "summary": "[Course 77] Assignment 77/1",
+          "due": "2026-11-01T08:30:00+00:00",
+          "url": "https://school-a.fixture.invalid/courses/77/assignments/1"
+        },
+        {
+          "uid": "bf40ff11b3c8b5a65b1d7d0c6aa1d548cd236cd9e0239ef264be23d9376173a0@canvaspilot",
+          "summary": "[Course 42] Assignment 42/1",
+          "due": "2026-11-01T08:45:00+00:00",
+          "url": "https://school-a.fixture.invalid/courses/42/assignments/1"
+        }
+      ],
+      "artifact_exists": true,
+      "parser_errors": [],
+      "traceback": false
+    },
+    {
+      "label": "changed",
+      "command": [
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-venv/bin/python",
+        "-m",
+        "canvaspilot.cli",
+        "export-calendar",
+        "42",
+        "77",
+        "--token",
+        "",
+        "--profile",
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-provider-routing-receiving/landed-pagination/cli-after/unused-profile",
+        "--out",
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-provider-routing-receiving/landed-pagination/cli-after/changed.ics",
+        "--base-url",
+        "https://school-a.fixture.invalid"
+      ],
+      "exit": 0,
+      "requests": [
+        {
+          "op": "fetch",
+          "method": "GET",
+          "path": "/api/v1/courses/42/assignments?order_by=due_at&include%5B%5D=submission&bucket=upcoming&per_page=50",
+          "headers": {
+            "Accept": "application/json"
+          },
+          "body": null
+        },
+        {
+          "op": "fetch",
+          "method": "GET",
+          "path": "https://school-a.fixture.invalid/api/v1/courses/42/assignments?cursor=%2f%2F,a;b&empty=&literal=+",
+          "headers": {
+            "Accept": "application/json"
+          },
+          "body": null
+        },
+        {
+          "op": "fetch",
+          "method": "GET",
+          "path": "/api/v1/courses/77/assignments?order_by=due_at&include%5B%5D=submission&bucket=upcoming&per_page=50",
+          "headers": {
+            "Accept": "application/json"
+          },
+          "body": null
+        }
+      ],
+      "report": {
+        "ok": true,
+        "output": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-provider-routing-receiving/landed-pagination/cli-after/changed.ics",
+        "source": "https://school-a.fixture.invalid",
+        "bucket": "upcoming",
+        "generated_at": "2026-10-08T13:01:21.086152+00:00",
+        "course_ids": [
+          "42",
+          "77"
+        ],
+        "course_summaries": [
+          {
+            "course_id": "42",
+            "assignments_returned": 3,
+            "events_exported": 2
+          },
+          {
+            "course_id": "77",
+            "assignments_returned": 1,
+            "events_exported": 1
+          }
+        ],
+        "events_exported": 3,
+        "assignments_omitted": [
+          {
+            "course_id": "42",
+            "assignment_id": "3",
+            "reason": "no_due_date"
+          }
+        ],
+        "coverage": "Returned assignment rows only; existing transport pagination limits apply.",
+        "sha256": "51cc7ca06b4eaef332cabba2814d032dd05fa44c3c774aebd21ca577673456e6"
+      },
+      "error_report": null,
+      "events": [
+        {
+          "uid": "9f91e04be273b85a1145c56850e4ff4bdfe24d1d57328e49bcbff0725b7b94fd@canvaspilot",
+          "summary": "[Course 77] Assignment 77/1",
+          "due": "2026-11-01T08:30:00+00:00",
+          "url": "https://school-a.fixture.invalid/courses/77/assignments/1"
+        },
+        {
+          "uid": "bf40ff11b3c8b5a65b1d7d0c6aa1d548cd236cd9e0239ef264be23d9376173a0@canvaspilot",
+          "summary": "[Course 42] Assignment 42/1",
+          "due": "2026-11-01T08:45:00+00:00",
+          "url": "https://school-a.fixture.invalid/courses/42/assignments/1"
+        },
+        {
+          "uid": "9965c38a34df9e4e101e7e05db8413451850c7413e15c41d4b2f84c385823736@canvaspilot",
+          "summary": "[Course 42] Changed second page \u79d1\u5b66",
+          "due": "2026-11-03T03:45:00+00:00",
+          "url": "https://school-a.fixture.invalid/courses/42/assignments/2"
+        }
+      ],
+      "artifact_exists": true,
+      "parser_errors": [],
+      "traceback": false
+    },
+    {
+      "label": "later-http",
+      "command": [
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-venv/bin/python",
+        "-m",
+        "canvaspilot.cli",
+        "export-calendar",
+        "42",
+        "77",
+        "--token",
+        "",
+        "--profile",
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-provider-routing-receiving/landed-pagination/cli-after/unused-profile",
+        "--out",
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-provider-routing-receiving/landed-pagination/cli-after/later-http.ics",
+        "--base-url",
+        "https://school-a.fixture.invalid"
+      ],
+      "exit": 1,
+      "requests": [
+        {
+          "op": "fetch",
+          "method": "GET",
+          "path": "/api/v1/courses/42/assignments?order_by=due_at&include%5B%5D=submission&bucket=upcoming&per_page=50",
+          "headers": {
+            "Accept": "application/json"
+          },
+          "body": null
+        },
+        {
+          "op": "fetch",
+          "method": "GET",
+          "path": "https://school-a.fixture.invalid/api/v1/courses/42/assignments?cursor=%2f%2F,a;b&empty=&literal=+",
+          "headers": {
+            "Accept": "application/json"
+          },
+          "body": null
+        },
+        {
+          "op": "fetch",
+          "method": "GET",
+          "path": "/api/v1/courses/77/assignments?order_by=due_at&include%5B%5D=submission&bucket=upcoming&per_page=50",
+          "headers": {
+            "Accept": "application/json"
+          },
+          "body": null
+        },
+        {
+          "op": "fetch",
+          "method": "GET",
+          "path": "https://school-a.fixture.invalid/api/v1/courses/77/assignments?cursor=%2f%2F,a;b&empty=&literal=+",
+          "headers": {
+            "Accept": "application/json"
+          },
+          "body": null
+        }
+      ],
+      "report": null,
+      "error_report": {
+        "ok": false,
+        "error": "HTTPStatusError",
+        "message": "Canvas HTTP 503"
+      },
+      "events": [],
+      "artifact_exists": false,
+      "parser_errors": [],
+      "traceback": false
+    },
+    {
+      "label": "later-metadata",
+      "command": [
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-venv/bin/python",
+        "-m",
+        "canvaspilot.cli",
+        "export-calendar",
+        "42",
+        "77",
+        "--token",
+        "",
+        "--profile",
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-provider-routing-receiving/landed-pagination/cli-after/unused-profile",
+        "--out",
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-provider-routing-receiving/landed-pagination/cli-after/later-metadata.ics",
+        "--base-url",
+        "https://school-a.fixture.invalid"
+      ],
+      "exit": 1,
+      "requests": [
+        {
+          "op": "fetch",
+          "method": "GET",
+          "path": "/api/v1/courses/42/assignments?order_by=due_at&include%5B%5D=submission&bucket=upcoming&per_page=50",
+          "headers": {
+            "Accept": "application/json"
+          },
+          "body": null
+        },
+        {
+          "op": "fetch",
+          "method": "GET",
+          "path": "https://school-a.fixture.invalid/api/v1/courses/42/assignments?cursor=%2f%2F,a;b&empty=&literal=+",
+          "headers": {
+            "Accept": "application/json"
+          },
+          "body": null
+        },
+        {
+          "op": "fetch",
+          "method": "GET",
+          "path": "/api/v1/courses/77/assignments?order_by=due_at&include%5B%5D=submission&bucket=upcoming&per_page=50",
+          "headers": {
+            "Accept": "application/json"
+          },
+          "body": null
+        },
+        {
+          "op": "fetch",
+          "method": "GET",
+          "path": "https://school-a.fixture.invalid/api/v1/courses/77/assignments?cursor=%2f%2F,a;b&empty=&literal=+",
+          "headers": {
+            "Accept": "application/json"
+          },
+          "body": null
+        }
+      ],
+      "report": null,
+      "error_report": {
+        "ok": false,
+        "error": "CanvasPaginationError",
+        "message": "session pagination Link relation is ambiguous"
+      },
+      "events": [],
+      "artifact_exists": false,
+      "parser_errors": [],
+      "traceback": false
+    },
+    {
+      "label": "duplicate",
+      "command": [
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-venv/bin/python",
+        "-m",
+        "canvaspilot.cli",
+        "export-calendar",
+        "42",
+        "77",
+        "--token",
+        "",
+        "--profile",
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-provider-routing-receiving/landed-pagination/cli-after/unused-profile",
+        "--out",
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-provider-routing-receiving/landed-pagination/cli-after/duplicate.ics",
+        "--base-url",
+        "https://school-a.fixture.invalid"
+      ],
+      "exit": 1,
+      "requests": [
+        {
+          "op": "fetch",
+          "method": "GET",
+          "path": "/api/v1/courses/42/assignments?order_by=due_at&include%5B%5D=submission&bucket=upcoming&per_page=50",
+          "headers": {
+            "Accept": "application/json"
+          },
+          "body": null
+        },
+        {
+          "op": "fetch",
+          "method": "GET",
+          "path": "https://school-a.fixture.invalid/api/v1/courses/42/assignments?cursor=%2f%2F,a;b&empty=&literal=+",
+          "headers": {
+            "Accept": "application/json"
+          },
+          "body": null
+        }
+      ],
+      "report": null,
+      "error_report": {
+        "ok": false,
+        "error": "ValueError",
+        "message": "Course 42 returned duplicate assignment 1"
+      },
+      "events": [],
+      "artifact_exists": false,
+      "parser_errors": [],
+      "traceback": false
+    },
+    {
+      "label": "identity-default-a",
+      "command": [
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-venv/bin/python",
+        "-m",
+        "canvaspilot.cli",
+        "export-calendar",
+        "42",
+        "--token",
+        "",
+        "--profile",
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-provider-routing-receiving/landed-pagination/cli-after/unused-profile",
+        "--out",
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-provider-routing-receiving/landed-pagination/cli-after/identity-default-a.ics"
+      ],
+      "exit": 0,
+      "requests": [
+        {
+          "op": "fetch",
+          "method": "GET",
+          "path": "/api/v1/courses/42/assignments?order_by=due_at&include%5B%5D=submission&bucket=upcoming&per_page=50",
+          "headers": {
+            "Accept": "application/json"
+          },
+          "body": null
+        }
+      ],
+      "report": {
+        "ok": true,
+        "output": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-provider-routing-receiving/landed-pagination/cli-after/identity-default-a.ics",
+        "source": "https://school-a.fixture.invalid",
+        "bucket": "upcoming",
+        "generated_at": "2026-10-08T13:01:23.376886+00:00",
+        "course_ids": [
+          "42"
+        ],
+        "course_summaries": [
+          {
+            "course_id": "42",
+            "assignments_returned": 1,
+            "events_exported": 1
+          }
+        ],
+        "events_exported": 1,
+        "assignments_omitted": [],
+        "coverage": "Returned assignment rows only; existing transport pagination limits apply.",
+        "sha256": "462988ac5867065f8f04bf910938462163c7e37590620b8c4dd123a94a42934f"
+      },
+      "error_report": null,
+      "events": [
+        {
+          "uid": "bf40ff11b3c8b5a65b1d7d0c6aa1d548cd236cd9e0239ef264be23d9376173a0@canvaspilot",
+          "summary": "[Course 42] Assignment 42/1",
+          "due": "2026-11-01T08:45:00+00:00",
+          "url": "https://school-a.fixture.invalid/courses/42/assignments/1"
+        }
+      ],
+      "artifact_exists": true,
+      "parser_errors": [],
+      "traceback": false
+    },
+    {
+      "label": "identity-default-b",
+      "command": [
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-venv/bin/python",
+        "-m",
+        "canvaspilot.cli",
+        "export-calendar",
+        "42",
+        "--token",
+        "",
+        "--profile",
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-provider-routing-receiving/landed-pagination/cli-after/unused-profile",
+        "--out",
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-provider-routing-receiving/landed-pagination/cli-after/identity-default-b.ics"
+      ],
+      "exit": 0,
+      "requests": [
+        {
+          "op": "fetch",
+          "method": "GET",
+          "path": "/api/v1/courses/42/assignments?order_by=due_at&include%5B%5D=submission&bucket=upcoming&per_page=50",
+          "headers": {
+            "Accept": "application/json"
+          },
+          "body": null
+        }
+      ],
+      "report": {
+        "ok": true,
+        "output": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-provider-routing-receiving/landed-pagination/cli-after/identity-default-b.ics",
+        "source": "https://school-b.fixture.invalid",
+        "bucket": "upcoming",
+        "generated_at": "2026-10-08T13:01:23.898367+00:00",
+        "course_ids": [
+          "42"
+        ],
+        "course_summaries": [
+          {
+            "course_id": "42",
+            "assignments_returned": 1,
+            "events_exported": 1
+          }
+        ],
+        "events_exported": 1,
+        "assignments_omitted": [],
+        "coverage": "Returned assignment rows only; existing transport pagination limits apply.",
+        "sha256": "3a955dc2bb2cac08557d1d4576dec4af704dce8d5c660d28e94dfda62c433025"
+      },
+      "error_report": null,
+      "events": [
+        {
+          "uid": "6a3ee6eb34651c0ea99bcf180ef2d5d33860ff3e962ca6e326f229d96ca34243@canvaspilot",
+          "summary": "[Course 42] Assignment 42/1",
+          "due": "2026-11-01T08:45:00+00:00",
+          "url": "https://school-b.fixture.invalid/courses/42/assignments/1"
+        }
+      ],
+      "artifact_exists": true,
+      "parser_errors": [],
+      "traceback": false
+    },
+    {
+      "label": "identity-explicit-a",
+      "command": [
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-venv/bin/python",
+        "-m",
+        "canvaspilot.cli",
+        "export-calendar",
+        "42",
+        "--token",
+        "",
+        "--profile",
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-provider-routing-receiving/landed-pagination/cli-after/unused-profile",
+        "--out",
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-provider-routing-receiving/landed-pagination/cli-after/identity-explicit-a.ics",
+        "--base-url",
+        "https://school-a.fixture.invalid"
+      ],
+      "exit": 0,
+      "requests": [
+        {
+          "op": "fetch",
+          "method": "GET",
+          "path": "/api/v1/courses/42/assignments?order_by=due_at&include%5B%5D=submission&bucket=upcoming&per_page=50",
+          "headers": {
+            "Accept": "application/json"
+          },
+          "body": null
+        }
+      ],
+      "report": {
+        "ok": true,
+        "output": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-provider-routing-receiving/landed-pagination/cli-after/identity-explicit-a.ics",
+        "source": "https://school-a.fixture.invalid",
+        "bucket": "upcoming",
+        "generated_at": "2026-10-08T13:01:24.472705+00:00",
+        "course_ids": [
+          "42"
+        ],
+        "course_summaries": [
+          {
+            "course_id": "42",
+            "assignments_returned": 1,
+            "events_exported": 1
+          }
+        ],
+        "events_exported": 1,
+        "assignments_omitted": [],
+        "coverage": "Returned assignment rows only; existing transport pagination limits apply.",
+        "sha256": "0d95c700e088f9a904369f1f9fca2a85b2da06e2f6b172eded7ad8acca260282"
+      },
+      "error_report": null,
+      "events": [
+        {
+          "uid": "bf40ff11b3c8b5a65b1d7d0c6aa1d548cd236cd9e0239ef264be23d9376173a0@canvaspilot",
+          "summary": "[Course 42] Assignment 42/1",
+          "due": "2026-11-01T08:45:00+00:00",
+          "url": "https://school-a.fixture.invalid/courses/42/assignments/1"
+        }
+      ],
+      "artifact_exists": true,
+      "parser_errors": [],
+      "traceback": false
+    }
+  ],
+  "checks": [
+    {
+      "name": "complete CLI succeeds",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "three dated assignments reach independent parser",
+      "pass": true,
+      "detail": [
+        {
+          "uid": "9965c38a34df9e4e101e7e05db8413451850c7413e15c41d4b2f84c385823736@canvaspilot",
+          "summary": "[Course 42] Later deadline \u79d1\u5b66\ud83d\ude00, notes; line\nnext",
+          "due": "2026-11-01T08:15:00+00:00",
+          "url": "https://school-a.fixture.invalid/courses/42/assignments/2"
+        },
+        {
+          "uid": "9f91e04be273b85a1145c56850e4ff4bdfe24d1d57328e49bcbff0725b7b94fd@canvaspilot",
+          "summary": "[Course 77] Assignment 77/1",
+          "due": "2026-11-01T08:30:00+00:00",
+          "url": "https://school-a.fixture.invalid/courses/77/assignments/1"
+        },
+        {
+          "uid": "bf40ff11b3c8b5a65b1d7d0c6aa1d548cd236cd9e0239ef264be23d9376173a0@canvaspilot",
+          "summary": "[Course 42] Assignment 42/1",
+          "due": "2026-11-01T08:45:00+00:00",
+          "url": "https://school-a.fixture.invalid/courses/42/assignments/1"
+        }
+      ]
+    },
+    {
+      "name": "cross-page events globally sort by UTC",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "receipt accounts for second-page omission and every returned row",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "first filters stay on first request and opaque cursor arrives unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "later Unicode title survives independent parsing",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "equal numeric assignment IDs across courses remain distinct",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "changing page two preserves every assignment identity",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "changed second-page content reaches next fresh export",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "unchanged page-one/course-two content remains stable",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "later-http refuses entire calendar",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "later-http emits structured error without traceback",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "later-http preserves previous export",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "later-metadata refuses entire calendar",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "later-metadata emits structured error without traceback",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "later-metadata preserves previous export",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "duplicate refuses entire calendar",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "duplicate emits structured error without traceback",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "duplicate preserves previous export",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "default-client receipt identifies actual school A",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "default-client receipt identifies actual school B",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "different school providers cannot collapse to one calendar UID",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "default and explicit same-school exports preserve identity",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "all browser-worker operations are GET",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "no profile or temporary calendar files remain",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "authored fixture handled only planned requests",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "production bytes unchanged",
+      "pass": true,
+      "detail": null
+    }
+  ],
+  "passed": 27,
+  "failed": 0
+}

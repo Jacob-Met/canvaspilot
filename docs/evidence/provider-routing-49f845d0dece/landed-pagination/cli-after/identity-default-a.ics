@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CanvasPilot//Assignment deadlines//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:bf40ff11b3c8b5a65b1d7d0c6aa1d548cd236cd9e0239ef264be23d9376173a0@canvas
+ pilot
+DTSTAMP:20261008T130123Z
+DTSTART:20261101T084500Z
+SUMMARY:[Course 42] Assignment 42/1
+DESCRIPTION:Canvas assignment deadline. Exported snapshot\; check Canvas fo
+ r changes.
+TRANSP:TRANSPARENT
+URL:https://school-a.fixture.invalid/courses/42/assignments/1
+END:VEVENT
+END:VCALENDAR

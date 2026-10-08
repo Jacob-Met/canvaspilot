@@ -13,9 +13,10 @@ Same architecture as OpenCLI-style web agents (persistent browser session → si
 - **Full REST surface** — courses, assignments, modules, pages, files, discussions, announcements, planner, inbox, calendar, activity stream, submissions, and **quizzes** (list/questions/submissions/start/complete)
 - **Agent-shaped digests** — `assignment_brief` (cleaned prompt + rubric), `sync_summary` (courses + upcoming), `submission_status`
 - **Submission feedback** — self submission comments and rubric assessments alongside current-attempt and grading metadata
+- **Submission history** — inspect returned attempts and submitted text/file metadata without assigning current grades or comments to earlier versions ([guide](docs/submission-history.md))
 - **Course grade review** — reported totals, assignment-group rules and each returned assignment's own grade/status, with hidden and unknown values kept explicit
 - **Fixture mode** — offline dict backend for tests and CI; no Canvas required
-- **37 MCP tools**, one stdio server, one env var for the host (`CANVAS_BASE_URL`) plus either a PAT or a running session broker
+- **38 MCP tools**, one stdio server, one env var for the host (`CANVAS_BASE_URL`) plus either a PAT or a running session broker
 - **Course folder browsing** — select nested folders and inspect bounded file-metadata pages through CLI, MCP or Python
 - **Module progress checklist** — review reported completion, remaining requirements and module locks through CLI, MCP or Python
 
@@ -70,6 +71,7 @@ canvaspilot courses
 canvaspilot sync
 canvaspilot brief <course_id> <assignment_id>
 canvaspilot feedback <course_id> <assignment_id>
+canvaspilot submission-history <course_id> <assignment_id>
 canvaspilot grade-review <course_id>
 ```
 
@@ -78,6 +80,13 @@ courses. It includes up to 10 courses and 5 assignments per course by default,
 and reports omitted rows, unknown dates, and per-course read failures. Adjust
 the overview with `--limit-courses` and `--limit-assignments-per-course`; see
 [the sync guide](docs/SYNC.md) for CLI, Python, and MCP examples and count meanings.
+
+Assignment lists and sync rows also include the current user's reported
+submission state, attempt, and late/missing/excused flags when Canvas supplies
+them. Missing data remains unknown; the existing `has_submitted_submissions`
+flag describes submissions by any student. See the
+[assignment submission guide](docs/assignment-submission.md) for field meanings,
+selection examples and malformed-data warnings.
 
 To take selected course deadlines into a calendar application, save an explicit
 local snapshot with `canvaspilot export-calendar 42 77 --out deadlines.ics`.
@@ -156,7 +165,7 @@ Tools exposed (all prefixed `canvas_`):
 |------|-------|
 | Identity | `whoami`, `sync_summary`, `planner_items`, `activity_stream`, `list_todo_items`, `list_enrollments` |
 | Courses | `list_courses`, `get_course`, `grade_review`, `list_modules`, `module_progress`, `list_pages`, `get_page`, `list_files`, `browse_files`, `list_announcements` |
-| Assignments | `list_assignments`, `get_assignment`, `assignment_brief`, `submission_status`, `submission_feedback`, `submit_assignment_text` |
+| Assignments | `list_assignments`, `get_assignment`, `assignment_brief`, `submission_status`, `submission_feedback`, `submission_history`, `submit_assignment_text` |
 | Discussions | `list_discussion_topics`, `get_discussion`, `post_discussion_reply` |
 | Quizzes | `list_quizzes`, `get_quiz`, `list_quiz_questions`, `list_quiz_submissions`, `start_quiz_submission`, `complete_quiz_submission` |
 | Inbox / Calendar | `list_conversations`, `get_conversation`, `reply_conversation`, `list_calendar_events` |

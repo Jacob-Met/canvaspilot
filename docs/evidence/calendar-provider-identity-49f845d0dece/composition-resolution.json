@@ -1,0 +1,375 @@
+[
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--name-only",
+      "--diff-filter=U"
+    ],
+    "cwd": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-pagination-pr35",
+    "exit": 0,
+    "stdout": "README.md\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "add",
+      "README.md"
+    ],
+    "cwd": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-pagination-pr35",
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "-c",
+      "user.name=Estate calendar receiver (49f845d0dece)",
+      "-c",
+      "user.email=estate-49f845d0dece@users.noreply.github.com",
+      "commit",
+      "-m",
+      "Receive published pr35 into current calendar main for isolated consumer qualification"
+    ],
+    "cwd": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-pagination-pr35",
+    "exit": 0,
+    "stdout": "[detached HEAD 2eb8676] Receive published pr35 into current calendar main for isolated consumer qualification\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "status",
+      "--porcelain"
+    ],
+    "cwd": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-pagination-pr35",
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "HEAD:src/canvaspilot/calendar_export.py"
+    ],
+    "cwd": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-pagination-pr35",
+    "exit": 0,
+    "stdout": "0b3b59edcefb0dda52f0de41252c1b7486201ffc\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "a03a8637efad8ff22103a0c5018c93f7ecbb7d8d:src/canvaspilot/calendar_export.py"
+    ],
+    "cwd": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-pagination-pr35",
+    "exit": 0,
+    "stdout": "0b3b59edcefb0dda52f0de41252c1b7486201ffc\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "HEAD:src/canvaspilot/cli.py"
+    ],
+    "cwd": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-pagination-pr35",
+    "exit": 0,
+    "stdout": "f20f947bf80e0f06c4271985153b3aa8540ddb8f\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "a03a8637efad8ff22103a0c5018c93f7ecbb7d8d:src/canvaspilot/cli.py"
+    ],
+    "cwd": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-pagination-pr35",
+    "exit": 0,
+    "stdout": "f20f947bf80e0f06c4271985153b3aa8540ddb8f\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "HEAD:src/canvaspilot/api.py"
+    ],
+    "cwd": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-pagination-pr35",
+    "exit": 0,
+    "stdout": "f66a0916554361c075f82bf0bcf3b8e49aa272d8\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "a03a8637efad8ff22103a0c5018c93f7ecbb7d8d:src/canvaspilot/api.py"
+    ],
+    "cwd": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-pagination-pr35",
+    "exit": 0,
+    "stdout": "f66a0916554361c075f82bf0bcf3b8e49aa272d8\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "HEAD:src/canvaspilot/client.py"
+    ],
+    "cwd": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-pagination-pr35",
+    "exit": 0,
+    "stdout": "60a1de218f65b94442e1f8addd223c5054197e29\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "e20890089f6338de655a7c6ea7f0ada6d5c8fe6b:src/canvaspilot/client.py"
+    ],
+    "cwd": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-pagination-pr35",
+    "exit": 0,
+    "stdout": "60a1de218f65b94442e1f8addd223c5054197e29\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "HEAD:src/canvaspilot/session_broker.py"
+    ],
+    "cwd": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-pagination-pr35",
+    "exit": 0,
+    "stdout": "0e586bb933d517160bc3bfbd8ad86b3ba59ee92f\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "e20890089f6338de655a7c6ea7f0ada6d5c8fe6b:src/canvaspilot/session_broker.py"
+    ],
+    "cwd": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-pagination-pr35",
+    "exit": 0,
+    "stdout": "0e586bb933d517160bc3bfbd8ad86b3ba59ee92f\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-pagination-pr35",
+    "exit": 0,
+    "stdout": "2eb8676a8975cbe0d2d49dae3d12b418bd940186\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "worktree",
+      "add",
+      "--detach",
+      "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-pagination-pr37",
+      "a03a8637efad8ff22103a0c5018c93f7ecbb7d8d"
+    ],
+    "cwd": "/Users/me/workspace/estate/production-evidence-49f845d0dece/canvaspilot-calendar",
+    "exit": 0,
+    "stdout": "HEAD is now at a03a863 Export assignment deadlines to a local calendar snapshot (#42)\n",
+    "stderr": "Preparing worktree (detached HEAD a03a863)\n"
+  },
+  {
+    "argv": [
+      "git",
+      "-c",
+      "user.name=Estate calendar receiver (49f845d0dece)",
+      "-c",
+      "user.email=estate-49f845d0dece@users.noreply.github.com",
+      "merge",
+      "--no-ff",
+      "--no-commit",
+      "857a226d54c9784ca528bccc6ace7b4f02d90f4d"
+    ],
+    "cwd": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-pagination-pr37",
+    "exit": 1,
+    "stdout": "Auto-merging README.md\nCONFLICT (content): Merge conflict in README.md\nAutomatic merge failed; fix conflicts and then commit the result.\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--name-only",
+      "--diff-filter=U"
+    ],
+    "cwd": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-pagination-pr37",
+    "exit": 0,
+    "stdout": "README.md\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "add",
+      "README.md"
+    ],
+    "cwd": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-pagination-pr37",
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "-c",
+      "user.name=Estate calendar receiver (49f845d0dece)",
+      "-c",
+      "user.email=estate-49f845d0dece@users.noreply.github.com",
+      "commit",
+      "-m",
+      "Receive published pr37 into current calendar main for isolated consumer qualification"
+    ],
+    "cwd": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-pagination-pr37",
+    "exit": 0,
+    "stdout": "[detached HEAD 4b93d47] Receive published pr37 into current calendar main for isolated consumer qualification\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "status",
+      "--porcelain"
+    ],
+    "cwd": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-pagination-pr37",
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "HEAD:src/canvaspilot/calendar_export.py"
+    ],
+    "cwd": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-pagination-pr37",
+    "exit": 0,
+    "stdout": "0b3b59edcefb0dda52f0de41252c1b7486201ffc\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "a03a8637efad8ff22103a0c5018c93f7ecbb7d8d:src/canvaspilot/calendar_export.py"
+    ],
+    "cwd": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-pagination-pr37",
+    "exit": 0,
+    "stdout": "0b3b59edcefb0dda52f0de41252c1b7486201ffc\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "HEAD:src/canvaspilot/cli.py"
+    ],
+    "cwd": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-pagination-pr37",
+    "exit": 0,
+    "stdout": "f20f947bf80e0f06c4271985153b3aa8540ddb8f\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "a03a8637efad8ff22103a0c5018c93f7ecbb7d8d:src/canvaspilot/cli.py"
+    ],
+    "cwd": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-pagination-pr37",
+    "exit": 0,
+    "stdout": "f20f947bf80e0f06c4271985153b3aa8540ddb8f\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "HEAD:src/canvaspilot/api.py"
+    ],
+    "cwd": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-pagination-pr37",
+    "exit": 0,
+    "stdout": "f66a0916554361c075f82bf0bcf3b8e49aa272d8\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "a03a8637efad8ff22103a0c5018c93f7ecbb7d8d:src/canvaspilot/api.py"
+    ],
+    "cwd": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-pagination-pr37",
+    "exit": 0,
+    "stdout": "f66a0916554361c075f82bf0bcf3b8e49aa272d8\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "HEAD:src/canvaspilot/client.py"
+    ],
+    "cwd": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-pagination-pr37",
+    "exit": 0,
+    "stdout": "3751f754348e340563015fbbf13dae48beb0f47e\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "857a226d54c9784ca528bccc6ace7b4f02d90f4d:src/canvaspilot/client.py"
+    ],
+    "cwd": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-pagination-pr37",
+    "exit": 0,
+    "stdout": "3751f754348e340563015fbbf13dae48beb0f47e\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "HEAD:src/canvaspilot/session_broker.py"
+    ],
+    "cwd": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-pagination-pr37",
+    "exit": 0,
+    "stdout": "0e586bb933d517160bc3bfbd8ad86b3ba59ee92f\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "857a226d54c9784ca528bccc6ace7b4f02d90f4d:src/canvaspilot/session_broker.py"
+    ],
+    "cwd": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-pagination-pr37",
+    "exit": 0,
+    "stdout": "0e586bb933d517160bc3bfbd8ad86b3ba59ee92f\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-pagination-pr37",
+    "exit": 0,
+    "stdout": "4b93d471d546600257e0f41b1a357c8b5d402d62\n",
+    "stderr": ""
+  }
+]

@@ -1,0 +1,38 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CanvasPilot//Assignment deadlines//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:9965c38a34df9e4e101e7e05db8413451850c7413e15c41d4b2f84c385823736@canvas
+ pilot
+DTSTAMP:20261008T125843Z
+DTSTART:20261101T081500Z
+SUMMARY:[Course 42] Later deadline 科学😀\, notes\; line\nnext
+DESCRIPTION:Canvas assignment deadline. Exported snapshot\; check Canvas fo
+ r changes.
+TRANSP:TRANSPARENT
+URL:https://school-a.fixture.invalid/courses/42/assignments/2
+END:VEVENT
+BEGIN:VEVENT
+UID:9f91e04be273b85a1145c56850e4ff4bdfe24d1d57328e49bcbff0725b7b94fd@canvas
+ pilot
+DTSTAMP:20261008T125843Z
+DTSTART:20261101T083000Z
+SUMMARY:[Course 77] Assignment 77/1
+DESCRIPTION:Canvas assignment deadline. Exported snapshot\; check Canvas fo
+ r changes.
+TRANSP:TRANSPARENT
+URL:https://school-a.fixture.invalid/courses/77/assignments/1
+END:VEVENT
+BEGIN:VEVENT
+UID:bf40ff11b3c8b5a65b1d7d0c6aa1d548cd236cd9e0239ef264be23d9376173a0@canvas
+ pilot
+DTSTAMP:20261008T125843Z
+DTSTART:20261101T084500Z
+SUMMARY:[Course 42] Assignment 42/1
+DESCRIPTION:Canvas assignment deadline. Exported snapshot\; check Canvas fo
+ r changes.
+TRANSP:TRANSPARENT
+URL:https://school-a.fixture.invalid/courses/42/assignments/1
+END:VEVENT
+END:VCALENDAR

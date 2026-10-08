@@ -1,0 +1,32 @@
+[
+  {
+    "name": "browser-origins",
+    "exit": 0,
+    "seconds": 2.27,
+    "log": "browser-origins.txt"
+  },
+  {
+    "name": "browser-link-metadata",
+    "exit": 1,
+    "seconds": 30.76,
+    "log": "browser-link-metadata.txt"
+  },
+  {
+    "name": "ruff",
+    "exit": 0,
+    "seconds": 0.11,
+    "log": "ruff.txt"
+  },
+  {
+    "name": "pytest",
+    "exit": 0,
+    "seconds": 54.27,
+    "log": "pytest.txt"
+  },
+  {
+    "name": "whitespace",
+    "exit": 0,
+    "seconds": 0.03,
+    "log": "whitespace.txt"
+  }
+]

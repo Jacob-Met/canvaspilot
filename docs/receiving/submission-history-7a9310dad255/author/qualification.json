@@ -1,0 +1,128 @@
+{
+  "schema": "canvaspilot.submission-history.author-qualification.v1",
+  "accepted": true,
+  "created_at": "2026-10-08T13:50:43Z",
+  "public_parent": "79a2f2b2cbb7e74128d731cf096c7e86f1942d4b",
+  "public_parent_tree": "0114a6230c473c1ee1d01b99c7121c754b781d54",
+  "native_source_head": "67a1963d8b34bff33ee504c8fd8a1fc4c4af9e86",
+  "native_source_tree": "bf2d1499fe0e3fdd620297fa01a1ab705b46637b",
+  "publication_ancestry": "Publication must parent actual public 79a, not the native capture commit.",
+  "source_manifest": {
+    "path": "current-79a/candidate-source-manifest.json",
+    "mode": "100644",
+    "bytes": 213715,
+    "sha256": "b81aed59a0751b602a425b745ad1aa8e73eb2f7c24a5a6c3609e3119ff8b779a",
+    "git_blob": "87cd76e65158cb6844675f9976f6eb5736d16573"
+  },
+  "source_files_verified": 712,
+  "feature_paths": [
+    "README.md",
+    "docs/submission-history.md",
+    "src/canvaspilot/api.py",
+    "src/canvaspilot/bundle.py",
+    "src/canvaspilot/cli.py",
+    "src/canvaspilot/mcp_server.py",
+    "src/canvaspilot/submission_history.py",
+    "tests/test_submission_history.py",
+    "tests/test_submission_history_process.py"
+  ],
+  "unrelated_parent_leaves_preserved": 703,
+  "current_native_gate": {
+    "passed": 603,
+    "skipped": 1,
+    "subtests_passed": 6,
+    "receipt": {
+      "path": "candidate-current79-clean-env-checks/receipt.json",
+      "mode": "100644",
+      "bytes": 274602,
+      "sha256": "164131e052a62ddc85f81bf905678e95a035bb23e2935a323233cd564761fe2f",
+      "git_blob": "63f9b7cef937a9163ca895e4cb5b0b3ba8adaa32"
+    },
+    "raw_result": "603 passed, 1 skipped, 6 subtests passed in 90.77s (0:01:30)",
+    "source_unchanged": true
+  },
+  "configured_lint_and_registered_mcp_catalog": {
+    "passed": true,
+    "receipt": {
+      "path": "candidate-current79-checks/receipt.json",
+      "mode": "100644",
+      "bytes": 275071,
+      "sha256": "2badd30202e9cedb135f1ea43a5cf9303c50c920c053b1b5042744097382f89b",
+      "git_blob": "44a41abce89479a0fdf318bd3768f3fe92f4b4d2"
+    },
+    "scope": "Unchanged current source; the inherited-suite failure in this receipt is separately preserved."
+  },
+  "independent_current": {
+    "groups": 9,
+    "assertions": 465,
+    "accepted": true,
+    "acceptance": {
+      "path": "acceptance.json",
+      "mode": "100644",
+      "bytes": 5254,
+      "sha256": "3475b8077d79ed178bf450fd0b15023c06a90ca60c580385816fbcef6ea9fa70",
+      "git_blob": "6b95087fadee7a6843975059d550c84cabafd30e"
+    }
+  },
+  "receiver_packet_bindings": [
+    {
+      "label": "original-qualified-55fe",
+      "payload": {
+        "path": "publication-payload.json",
+        "mode": "100644",
+        "bytes": 3161,
+        "sha256": "b4de275f9ea4bcca5581329764ee5472eb471c86bedfd35681553db571de1424",
+        "git_blob": "0b9586a9ce8fdecc242d72f8f0e2f81d311d85e0"
+      },
+      "file_count": 8,
+      "archive_members_verified": 148,
+      "archive": {
+        "path": "evidence.tar.gz",
+        "mode": "100644",
+        "encoding": "base64",
+        "bytes": 253337,
+        "sha256": "e390b25650c3f497c829c1f97c5cde9b61ee3d34df0168961dbf2bf9fa227c6d",
+        "git_blob": "5358ba536b69af05cd2c808d642f51ca87c361a6"
+      }
+    },
+    {
+      "label": "current-qualified-79a",
+      "payload": {
+        "path": "publication-current-79a-payload.json",
+        "mode": "100644",
+        "bytes": 1734,
+        "sha256": "d9f8928a1b841ad7527286525585c02f7d56fbcd9a85db29bb2fc6f33e2415b2",
+        "git_blob": "c859ecb294bc18bb3a54797b6950fa57158f420d"
+      },
+      "file_count": 4,
+      "archive_members_verified": 61,
+      "archive": {
+        "path": "evidence.tar.gz",
+        "mode": "100644",
+        "encoding": "base64",
+        "bytes": 110715,
+        "sha256": "cba6e3c0894407c2f6fc484d79f7715b32fbf89d76f16af588e00f14c39371ec",
+        "git_blob": "40e1f17ba6d60c6beedc8933a9524f919e27c682"
+      }
+    }
+  ],
+  "author_archive": {
+    "path": "author-evidence.tar.gz",
+    "mode": "100644",
+    "bytes": 786527,
+    "sha256": "f1c81280e088f51a40a5801852ebf737793f538174489431521075a29687694f",
+    "git_blob": "9ce56081983a44cba044a82dad886df0919a2bfd"
+  },
+  "author_archive_members": 218,
+  "preserved_failures": [
+    "Initial directory setup ENOENT and missing rg inspection helper.",
+    "Original baseline runner synthetic global token selected PAT in six broker stub cases: 408 passed, 6 failed. All six stopped on TLS verification; no successful remote HTTP response. Empty global token fixed only the harness; corrected baseline 414 passed.",
+    "Initial d95 source: 472 passed, 9 failed, two Ruff findings; independent receiver 7/9. Actual CLI httpx INFO stderr contamination plus maintained SDK annotation attribute mismatch.",
+    "Scoped CLI logger restoration and maintained wire-annotation assertion correction: independent receiver 9/9 and 465 assertions; authored focus 66/67, expected malformed-shape message masked by MCP SDK.",
+    "Anticipated ValueError translated to SDK ToolError in only the new MCP tool, retaining error status; authored complete 481 passed on 55fe, independent affected MCP groups 82 assertions passed.",
+    "Current original runner: 602 passed, 1 failed, 1 skipped, 6 subtests; root loopback CANVAS_BASE_URL mismatched inherited standard-origin pagination continuation. Explicitly unsetting only that override produced the accepted suite without source or assertion changes.",
+    "First publication-builder code-mode submission had a JavaScript nested-template SyntaxError before any native tool execution or file write; corrected serialization retained this record."
+  ],
+  "reconstruction": "All nine owned files from each of d95, 33e, bc1 and 67a are archived with native commit text. Exact parent blobs remain at immutable public Git commits 55fe and 79a, with full source manifests archived. The reproducible 79a archive bytes are not duplicated; immutable URL, SHA256, full Git leaf validation and fetch logs are retained.",
+  "limits": "Native Python 3.14.4, actual MCP stdio and synthetic loopback process HTTP; no school/account activation, user profile, browser broker, deployment or live submission changes. Initial failed baseline attempted TLS to an inherited test host using only a synthetic token; it is not described as wholly offline."
+}

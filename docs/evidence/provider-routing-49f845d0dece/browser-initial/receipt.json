@@ -1,0 +1,153 @@
+{
+  "receiver_sha256": "aae56d8ee61e7bc5e719201668fa314e96dedbb3adf1936c87028ec63ab53ed2",
+  "browser": "154.0.8037.98",
+  "executable": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+  "input": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-provider-routing-receiving/browser-expressions-initial.json",
+  "input_sha256": "02b857499c9a793a0bf1f8d310efd6f6eade01990cfb7299feb660005231aece",
+  "origins": {
+    "a": "http://127.0.0.1:63978",
+    "b": "http://127.0.0.1:63979"
+  },
+  "boundary": "Exact production JavaScript expression in a fresh actual Chrome context; authored loopback HTTP only; no Python broker/browser startup claim",
+  "redirect_limit": "Response-origin guard refuses foreign redirected data after the browser follows the redirect; no prevention of the redirect network request is claimed.",
+  "runs": [
+    {
+      "pin": "3e251e5e1de71d56042daa76e2109cdd977b97a6",
+      "broker_sha256": "2a106130c344aefebb23b078cd93b5d3ca3afd7f5325ae5fac2fb8a7251780cc",
+      "expression_sha256": "610a4267c7e71092b877456ccc0dd8df4eca3871a24aba6b90d238de21ebfe83",
+      "passed": 0,
+      "failed": 5,
+      "results": [
+        {
+          "name": "matching",
+          "pass": false,
+          "documentState": {
+            "href": "http://127.0.0.1:63978/courses",
+            "origin": "http://127.0.0.1:63978",
+            "baseURI": "http://127.0.0.1:63978/courses"
+          },
+          "request": "/api/assignments",
+          "error": null,
+          "requests": []
+        },
+        {
+          "name": "wrong-selected-page",
+          "pass": false,
+          "documentState": {
+            "href": "http://127.0.0.1:63979/courses",
+            "origin": "http://127.0.0.1:63979",
+            "baseURI": "http://127.0.0.1:63979/courses"
+          },
+          "request": "/api/assignments",
+          "error": null,
+          "requests": []
+        },
+        {
+          "name": "foreign-base-element",
+          "pass": false,
+          "documentState": {
+            "href": "http://127.0.0.1:63978/foreign-base",
+            "origin": "http://127.0.0.1:63978",
+            "baseURI": "http://127.0.0.1:63979/courses"
+          },
+          "request": "/api/assignments",
+          "error": null,
+          "requests": []
+        },
+        {
+          "name": "foreign-request-url",
+          "pass": false,
+          "documentState": {
+            "href": "http://127.0.0.1:63978/courses",
+            "origin": "http://127.0.0.1:63978",
+            "baseURI": "http://127.0.0.1:63978/courses"
+          },
+          "request": "http://127.0.0.1:63979/api/assignments",
+          "error": null,
+          "requests": []
+        },
+        {
+          "name": "foreign-redirect-response",
+          "pass": false,
+          "documentState": {
+            "href": "http://127.0.0.1:63978/courses",
+            "origin": "http://127.0.0.1:63978",
+            "baseURI": "http://127.0.0.1:63978/courses"
+          },
+          "request": "/api/redirect",
+          "error": null,
+          "requests": []
+        }
+      ]
+    },
+    {
+      "pin": "b6661032ca5654e6e672d287b86d99a7fe1e01ee",
+      "broker_sha256": "7a9b1fd8c8828834b0f12f48eb5e92cd4beea17a17566219540d5d93ab83e07e",
+      "expression_sha256": "9583b9952482b42da97aa82f99600984e67aaa87c70c549fe6652f2cd16f5c61",
+      "passed": 0,
+      "failed": 5,
+      "results": [
+        {
+          "name": "matching",
+          "pass": false,
+          "documentState": {
+            "href": "http://127.0.0.1:63978/courses",
+            "origin": "http://127.0.0.1:63978",
+            "baseURI": "http://127.0.0.1:63978/courses"
+          },
+          "request": "/api/assignments",
+          "error": null,
+          "requests": []
+        },
+        {
+          "name": "wrong-selected-page",
+          "pass": false,
+          "documentState": {
+            "href": "http://127.0.0.1:63979/courses",
+            "origin": "http://127.0.0.1:63979",
+            "baseURI": "http://127.0.0.1:63979/courses"
+          },
+          "request": "/api/assignments",
+          "error": null,
+          "requests": []
+        },
+        {
+          "name": "foreign-base-element",
+          "pass": false,
+          "documentState": {
+            "href": "http://127.0.0.1:63978/foreign-base",
+            "origin": "http://127.0.0.1:63978",
+            "baseURI": "http://127.0.0.1:63979/courses"
+          },
+          "request": "/api/assignments",
+          "error": null,
+          "requests": []
+        },
+        {
+          "name": "foreign-request-url",
+          "pass": false,
+          "documentState": {
+            "href": "http://127.0.0.1:63978/courses",
+            "origin": "http://127.0.0.1:63978",
+            "baseURI": "http://127.0.0.1:63978/courses"
+          },
+          "request": "http://127.0.0.1:63979/api/assignments",
+          "error": null,
+          "requests": []
+        },
+        {
+          "name": "foreign-redirect-response",
+          "pass": false,
+          "documentState": {
+            "href": "http://127.0.0.1:63978/courses",
+            "origin": "http://127.0.0.1:63978",
+            "baseURI": "http://127.0.0.1:63978/courses"
+          },
+          "request": "/api/redirect",
+          "error": null,
+          "requests": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+[
+  {
+    "pin": "677130b070321b159ee09e30e81f8e3ec90b40a8",
+    "broker_sha256": "a692cd2812cbc09536f1b60c84892bc8e87d2ae984c5a5aa25a13f6537ba6da2",
+    "expression": "async ({method, path, headers, body, providerOrigin}) => {\n              const origin = providerOrigin || location.origin;\n              const target = new URL(path, location.href);\n              if (location.origin !== origin || target.origin !== origin) {\n                throw new Error('Canvas provider mismatch before fetch');\n              }\n              const opts = {method, credentials: 'include', headers: headers || {}};\n              if (body != null && method !== 'GET' && method !== 'HEAD') {\n                if (typeof body === 'string') opts.body = body;\n                else {\n                  opts.headers = Object.assign({'Content-Type': 'application/json'}, opts.headers);\n                  opts.body = JSON.stringify(body);\n                }\n              }\n              const r = await fetch(target.href, opts);\n              if (new URL(r.url).origin !== origin || location.origin !== origin) {\n                throw new Error('Canvas provider mismatch after fetch');\n              }\n              const text = await r.text();\n              let json = null;\n              try { json = JSON.parse(text); } catch (e) {}\n              return {status: r.status, json, text: json ? null : text.slice(0, 4000),\n                      headers: {link: r.headers.get('link') || ''}};\n            }",
+    "expression_sha256": "10c759fc18d17167af671be400ee2aedc70357a04063a051420defa0e318f943"
+  }
+]

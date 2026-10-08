@@ -1,0 +1,65 @@
+{
+  "schema": "canvaspilot.submission-history.independent-memory.v1",
+  "owner": "7a9310dad255 / memory",
+  "source_parent": "55fe1e0a3c4ad85e1065f295e49d44722c3be32b",
+  "source_tree": "7c1bd0a858a3fda82a4d5e69076801ae65a73ea1",
+  "authored_without_candidate_source": true,
+  "baseline_sources_read": [
+    "src/canvaspilot/api.py",
+    "src/canvaspilot/client.py",
+    "src/canvaspilot/cli.py",
+    "src/canvaspilot/mcp_server.py"
+  ],
+  "interfaces": {
+    "api": "CanvasAPI.submission_history(course_id, assignment_id)",
+    "cli": "python -B -m canvaspilot.cli submission-history COURSE ASSIGNMENT",
+    "mcp": "python -B -m canvaspilot.mcp_server; canvas_submission_history(string, string)"
+  },
+  "clarifications": {
+    "assignment_projection": "Always exactly id, course_id, name, html_url, due_at, points_possible; absent source key is null. Current and history raw dictionaries retain key absence.",
+    "ids": "Positive integer excluding bool or nonempty ASCII digit string; remove leading zeroes without imposing a magnitude bound; all-zero is invalid.",
+    "queries": "Two GET requests only. The existing CanvasClient adds per_page=50; otherwise assignment has no includes, self submission has exactly the two advertised includes."
+  },
+  "groups": [
+    [
+      "G1",
+      "Rich raw records and duplicate preservation; isolated deep output mutation cannot alter native fixture dictionaries."
+    ],
+    [
+      "G2",
+      "Nine combinations of absent, null and empty history/comments; exact six-key assignment unknowns and no current-attempt synthesis."
+    ],
+    [
+      "G3",
+      "Both identifier positions reject booleans, nonintegral/type-invalid values, Unicode digits, whitespace and path/query punctuation before any client request; admitted padded/large IDs normalize exactly."
+    ],
+    [
+      "G4",
+      "Wrong endpoint envelopes and malformed late history/comment rows refuse the entire report, including a valid leading record; raw input remains unchanged."
+    ],
+    [
+      "G5",
+      "Actual CLI rich report via loopback HTTP with padded IDs, exact inherited query shape, metadata-only links, and no write/download request."
+    ],
+    [
+      "G6",
+      "Two actual CLI reads after the server changes the same assignment payload return current distinct history, without inventing or retaining stale records."
+    ],
+    [
+      "G7",
+      "Actual CLI Unicode/zero/negative identifiers, malformed row, HTTP 403 and malformed JSON produce nonzero JSON errors and no successful partial stdout."
+    ],
+    [
+      "G8",
+      "Real MCP stdio catalog exposes the string/string caller; repeated calls in one process observe changed payloads with exact two-GET shapes."
+    ],
+    [
+      "G9",
+      "Real MCP bad typed/string IDs and malformed records remain isError, make no forbidden requests, and a later valid call in the same process succeeds."
+    ]
+  ],
+  "baseline_control": "Record absent API method, actual unsupported CLI exit, absent real MCP catalog entry, and zero fixture HTTP calls before candidate execution.",
+  "isolation": "Explicit synthetic token, loopback-only base URL and owned unused profile in every process. No browser/session calls or account operations. Native real CanvasClient fixtures for API cases, native real HTTP transport for CLI/MCP cases.",
+  "qualification_boundary": "Native metadata-reader API/CLI/MCP receiving with authored fixtures; no live Canvas account, completeness inference, GUI, downloads, grade/submission writes, or deployment.",
+  "status": "Contract semantics frozen before candidate source access; transport bindings derived solely from exact baseline."
+}

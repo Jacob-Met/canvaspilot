@@ -1,0 +1,7 @@
+{
+  "src/canvaspilot/client.py": "6368329745216f473204995c101c912d9070fdd310def150bdbee927f9872de4",
+  "src/canvaspilot/api.py": "fe147e5d3943e7299f400e7607385a7c8f02a68aeff07f72b3219f5c70c7bb5b",
+  "src/canvaspilot/cli.py": "34ca64ec5075a51fe3dfc4de15480fa2daf53c690c5490e01c65322eb809a9c4",
+  "src/canvaspilot/calendar_export.py": "b92948c438063438bf9b8ef01b0b0c067802ddb06354f00e8ee18749f3c5e2fa",
+  "src/canvaspilot/session_broker.py": "e6f550988cfa3882e8b5b4a711bdf9bb10d958a1bbb5d85a1f6006c3dbf695f1"
+}

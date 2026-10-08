@@ -1,0 +1,146 @@
+{
+  "schema": "canvaspilot.submission-history.independent-memory.acceptance.v1",
+  "reviewer": "7a9310dad255 / memory",
+  "created_at": "2026-10-08T13:18:18.035294+00:00",
+  "status": "Accepted for pinned native source; later current-main composition is a separate gate.",
+  "public_parent": "55fe1e0a3c4ad85e1065f295e49d44722c3be32b",
+  "final_native_head": "bc1baddd38b19fc454b2adb4a53acfd3cb6c254d",
+  "final_native_tree": "4e114ac2aba9daec205b186b66ca1447e900d944",
+  "receiver_frozen_before_candidate_inspection": true,
+  "freeze": {
+    "schema": "canvaspilot.submission-history.independent-memory.freeze.v1",
+    "frozen_at": "2026-10-08T12:51:55.428949+00:00",
+    "candidate_source_inspected": false,
+    "baseline": "55fe1e0a3c4ad85e1065f295e49d44722c3be32b",
+    "files": {
+      "contract.json": {
+        "bytes": 3654,
+        "sha256": "1ca24427f6dd1bcb9bcdd3e5b69614b3dd6cc1c69cb82d75c2aacd2def23b7fc"
+      },
+      "fixture.json": {
+        "bytes": 2682,
+        "sha256": "4f5ca3be3b5676be3262fc9f503377231edbab562daac6e2c9f79ba5518d32aa"
+      },
+      "receive_history.py": {
+        "bytes": 29132,
+        "sha256": "158aa881f34a479a0ebcca0bf679f6cdff28ef8a8588d5d2a6a585e1983e84c3"
+      }
+    }
+  },
+  "runs": {
+    "baseline": {
+      "source": "55fe1e0a3c4ad85e1065f295e49d44722c3be32b",
+      "receipt": "baseline-run/receipt.json",
+      "bytes": 5824,
+      "sha256": "663852d5c0885674052f38f4ace5a65b85035958d2e4859ee085c993d9f01752",
+      "git_blob": "347b7f01937a9da27b732dccf38f8d47815691d0",
+      "passed": 1,
+      "failed": 0,
+      "assertions": 12,
+      "source_unchanged": true,
+      "owned_profiles_created": false
+    },
+    "initial": {
+      "source": "d95a11f65314779a9a35993ae2072093fba18990",
+      "receipt": "candidate-run/receipt.json",
+      "bytes": 13577,
+      "sha256": "37db8a5f87d27a073dd6340fc474254544a3f52086cbd4004b98ee83cbcae0a8",
+      "git_blob": "7e02a05e44315ff47ed673d99aa2220e665fd1f9",
+      "passed": 7,
+      "failed": 2,
+      "assertions": 427,
+      "source_unchanged": true,
+      "owned_profiles_created": false
+    },
+    "corrected": {
+      "source": "33e5d1257851ef97021c70b82cd523240a25e1b5",
+      "receipt": "corrected-candidate-run/receipt.json",
+      "bytes": 11806,
+      "sha256": "f23fddc693c4e2ccff067dd86bb0f3cd853abe2bb53d845088fe1708a63d3506",
+      "git_blob": "4535dc8cfab75ef94a8727263d161ea2cd347282",
+      "passed": 9,
+      "failed": 0,
+      "assertions": 465,
+      "source_unchanged": true,
+      "owned_profiles_created": false
+    },
+    "final_mcp": {
+      "source": "bc1baddd38b19fc454b2adb4a53acfd3cb6c254d",
+      "receipt": "final-candidate-mcp-run/receipt.json",
+      "bytes": 6278,
+      "sha256": "5dcf177da08eaacc5f8f91e7918f4a563791d0e12bc42c088b7c72a10375fd1a",
+      "git_blob": "dba70af9538d67688f9be3b01d3d1f13c23e59f3",
+      "passed": 2,
+      "failed": 0,
+      "assertions": 82,
+      "source_unchanged": true,
+      "owned_profiles_created": false
+    }
+  },
+  "final_adoption": {
+    "previous_head": "33e5d1257851ef97021c70b82cd523240a25e1b5",
+    "final_head": "bc1baddd38b19fc454b2adb4a53acfd3cb6c254d",
+    "different_paths": [
+      "src/canvaspilot/mcp_server.py"
+    ],
+    "all_other_manifest_entries_exact": 519,
+    "scope": "Manifest metadata comparison plus exact byte verification of all native src/ inputs before receiving."
+  },
+  "final_manifest": {
+    "bytes": 156680,
+    "sha256": "4e88d12e61424cc87b5717b1e9df078802818696e7f2e32c2c2502f1fcd2bce0",
+    "git_blob": "73cfcdf240b0c535e6f3d705bc77ec4885a200d2"
+  },
+  "reviewed_production_modules": [
+    {
+      "path": "src/canvaspilot/api.py",
+      "mode": "100644",
+      "git_blob": "aa77158791696e3166be22a12498e204d4ebd2b3",
+      "bytes": 27843,
+      "sha256": "1c4e6c656fde7042ca528776b98519f05e7fc07e41f24d763245075120447217"
+    },
+    {
+      "path": "src/canvaspilot/bundle.py",
+      "mode": "100644",
+      "git_blob": "23badab9d8ea96b4ed30fb2b5f32f773c910c7f9",
+      "bytes": 2674,
+      "sha256": "7c592252e190542706b779d48cdb62fc9b305be168bc011249fc42cc60f7d6ef"
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "mode": "100644",
+      "git_blob": "7a53a0cf4e9549d028de4a84ad71c8e13ec125c3",
+      "bytes": 14130,
+      "sha256": "876333a532435fc9de86bee2abc118dbf9e7d05664d5f3ff4d1d391647cdf0d4"
+    },
+    {
+      "path": "src/canvaspilot/mcp_server.py",
+      "mode": "100644",
+      "git_blob": "f9c470b034a524609f4aedae51479ffd92bfaa8f",
+      "bytes": 13388,
+      "sha256": "75656082445acb1fc2959cab1e2de7473544702d478c3ab5f1574bfc9296db4f"
+    },
+    {
+      "path": "src/canvaspilot/submission_history.py",
+      "mode": "100644",
+      "git_blob": "9e71a0dc944bee71b0b5c61d7ff84cbb59119e1a",
+      "bytes": 2853,
+      "sha256": "b007234b9861a68504e36f005ae463943b36b5cd50a3d157532c1cab09fcf9da"
+    }
+  ],
+  "review_findings": [
+    "Both identifiers are admitted before either GET; the self-submission route is fixed and no content URLs are followed by the feature.",
+    "Only assignment and submissions/self GETs are introduced, with the declared history/comments includes.",
+    "Complete envelope/list/row shape admission precedes report creation; the result is one deepcopy.",
+    "Current submission, raw returned historical dictionaries and top-level comments remain separate; no synthetic attempts or grade/comment joins.",
+    "CLI suppresses only HTTPX INFO request noise for this command and restores the prior logger level in finally.",
+    "MCP ValueError-to-ToolError wrapping is confined to the new tool and preserves isError with controlled explanations.",
+    "API delegation and bundle/MCP registration are additive; all other final manifest entries match the fully accepted preceding candidate."
+  ],
+  "limits": [
+    "The final run intentionally selects only the two unchanged frozen MCP groups; seven API/CLI groups rely on their complete33e acceptance and exact unchanged-source binding.",
+    "The initial negative G7 stopped before its later HTTP403 and malformed-JSON cases; both are executed in the successful corrected run.",
+    "No live Canvas account, provider writes, browser/session operation, deployment or history-completeness claim.",
+    "Root's authored full-suite/lint/CI results are separate and not counted here."
+  ]
+}
