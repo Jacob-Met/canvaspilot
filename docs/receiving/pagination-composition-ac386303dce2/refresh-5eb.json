@@ -1,0 +1,46 @@
+{
+  "pre_update_main_advance": "5eb681b1714a64a273fc273ffe9985426474f52c",
+  "main_tree": "48fbcdc168ea0f25995f0bdcc1de47162abbf386",
+  "previous_qualified_commit": "47143773c6a5f3a0f965432a5b87e4d38048f05d",
+  "previous_qualified_tree": "ef7aa9ca657a745215596c942a3eaf6c7b0d26af",
+  "branch_lease_retained": "e20890089f6338de655a7c6ea7f0ada6d5c8fe6b",
+  "scope": "Receive exact new main rubric-brief API/CLI/MCP, fixture/test and peer evidence. README merges without conflict. No pagination source change.",
+  "received_main_files": [
+    {
+      "path": "README.md",
+      "sha": "52590a2435e62c795d377afd0478dbd16fed82e8"
+    },
+    {
+      "path": "src/canvaspilot/api.py",
+      "sha": "622493c7acfaeb0323424cd5df59489ef392009f"
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "sha": "d42f2e8a9083bec6c6dc75fab2422401f2b8c952"
+    },
+    {
+      "path": "src/canvaspilot/mcp_server.py",
+      "sha": "52294648c2da5b06b8fe5ed05c029daea8816ebb"
+    },
+    {
+      "path": "tests/fixtures/assignment_rubric.json",
+      "sha": "8298dc92458b2f4c0f5c2b6845e32c52395d9d46"
+    },
+    {
+      "path": "tests/test_assignment_brief_rubric.py",
+      "sha": "1881a19e593c4fb095d1a4dc97fce53a8c13f02e"
+    }
+  ],
+  "composed_readme_sha256": "7f3285028bd53ed09b62878134cebbbb08426f3720f1015a7afe8a5b4c1ff0fc",
+  "client_sha256": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797",
+  "broker_sha256": "749e11c92d6d56d54ccf208dda6784cb2d43ac3b837188f5d82bfe73c3129e8e",
+  "pytest": {
+    "exit": 0,
+    "output": "........................................................................ [ 17%]\n........................................................................ [ 34%]\n..................s..................................................... [ 52%]\n..................................................................... [ 69%]\n........................................................................ [ 86%]\n.......................................................               [100%]\n411 passed, 1 skipped, 6 subtests passed in 37.42s\n"
+  },
+  "ruff": {
+    "exit": 0,
+    "output": "All checks passed!\n"
+  },
+  "publication": "Preserve previous qualified commit as first parent and current main as second parent. Root retains final merge authority."
+}

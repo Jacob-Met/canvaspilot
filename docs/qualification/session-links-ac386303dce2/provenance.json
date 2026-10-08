@@ -1,0 +1,73 @@
+{
+  "date_utc": "2026-10-08",
+  "repository": "https://github.com/Jacob-Met/canvaspilot",
+  "claim": "https://github.com/Jacob-Met/canvaspilot/issues/33",
+  "baseline_commit": "3d7a9453fb0cbdf08312320d71c648462592b217",
+  "baseline_tree": "2b38a186887b7ed5dc5a4020dc26e51636a6ab1f",
+  "source_files_sha256": {
+    "src/canvaspilot/client.py": "21aec589fc27f3a664dd6f844ac0762c496d2e68fa94b3052172f80b046c0d1b",
+    "src/canvaspilot/session_broker.py": "749e11c92d6d56d54ccf208dda6784cb2d43ac3b837188f5d82bfe73c3129e8e",
+    "tests/test_broker_links.py": "f43c485a79c7d28559980e6ab3ff2b570a5832f194d49e28b736e35c63c3dd13",
+    "tests/test_browser_link_metadata.py": "e7bb134adebdaaf9fda596f79b853d0c42bd42ff9aafb4958c1e07a6a0de90d3",
+    "tests/test_link_context_receiving.py": "90f974937666e2d347f1cb7a6351e319ac6965aadc9ded6ec7f4287ed0aff4ad",
+    "tests/test_terminal_page_shape_receiving.py": "86d8d4e3556aa436b2eaf8021e67073bdfc44cac4c202791a1bb8608ff53280e"
+  },
+  "local_python": "Python 3.12.14",
+  "native_browser": {
+    "device": "hamon-thinkpad",
+    "device_id": "cadafaf3-4d0b-4c4f-a0d3-34a95d2cec90",
+    "version": "Chromium 153.0.8010.47 snap",
+    "binary": "/usr/bin/chromium-browser",
+    "python": "3.14.4",
+    "test_directory": "/dev/shm/hamon-canvas-links-ac386303dce2",
+    "profile_parent": "/home/jacob/snap/chromium/common",
+    "profile_kind": "fresh TemporaryDirectory, removed after each test",
+    "candidate_broker_sha256": "749e11c92d6d56d54ccf208dda6784cb2d43ac3b837188f5d82bfe73c3129e8e",
+    "legacy_broker_sha256": "2a106130c344aefebb23b078cd93b5d3ca3afd7f5325ae5fac2fb8a7251780cc",
+    "test_sha256": "e7bb134adebdaaf9fda596f79b853d0c42bd42ff9aafb4958c1e07a6a0de90d3"
+  },
+  "receiving_state": "Source candidate qualified; no real Canvas session, deployment or benefit measurement claimed.",
+  "publication_parent": "5b1780ca4fcdce3d5f997cee401c86806ece822a",
+  "publication_parent_tree": "5d3b9b7b8f3cca5f3940f31e020ad4310078dd70",
+  "initial_contract_test_sha256": "97ea0bfa5dcdbf2e30257f02718bb92eac856675b85d244373b3eef489d66ee2",
+  "composition_results": {
+    "pytest": {
+      "passed": 152,
+      "skipped": 1,
+      "seconds": 9.59
+    },
+    "ruff": "passed",
+    "http_contract_cases": 40
+  },
+  "initial_publication_head": "89fa86d20e4eff47ce42e18afd8cd8e75ab376c3",
+  "initial_published_client_sha256": "45a60b2c31a3c95914dca9d563958422bc346478a9d70f0058f9c5c623f20ada",
+  "successor_parents": [
+    "89fa86d20e4eff47ce42e18afd8cd8e75ab376c3",
+    "1393f40047297147029d8571bfd824f74e58e1dc"
+  ],
+  "successor_receiving_main": "1393f40047297147029d8571bfd824f74e58e1dc",
+  "successor_results": {
+    "pytest": {
+      "passed": 207,
+      "skipped": 1,
+      "subtests_passed": 6,
+      "seconds": 9.83
+    },
+    "ruff": "passed",
+    "original_independent_methods": 8,
+    "production_broker_unchanged": true
+  },
+  "independent_receiving": {
+    "review": "https://github.com/Jacob-Met/canvaspilot/pull/35#pullrequestreview-5454974316",
+    "original_files_sha256": {
+      "baseline-review.txt": "05666d56d0fe8ac3cddcf726833c268028443cd487d82ea1ae6827daee699589",
+      "candidate-review.txt": "5356c736940ebf966e6e0d065458a4f4980a9fcbbec7273a91b1bb4d58926d68",
+      "candidate-terminal-shape-review.txt": "4ee8112bdc944cc215ec3eed4028df6e35203c5e59ae3251cec9da2008fc1185",
+      "source-pins.json": "fe64ceaccb38e65e6747ae299d4cf43aad15d76697b06681732f6bfb37c6737b",
+      "test_link_context_receiving.py": "2c9c0c01d5e1a46903356706f2735ca0437febbc9da16bf61bf3ece0d66ce72e",
+      "test_terminal_page_shape_receiving.py": "fc462c6dc15f17a7647945386f7c0bb73c4e602b316d10e44927abb545ca1571"
+    },
+    "ci_copy_normalization": "Only import ordering, equivalent combined with, and explicit callback default bindings; original probes archived unchanged.",
+    "replay_gate": "Independent unchanged 8-method replay required on frozen successor before merge."
+  }
+}
