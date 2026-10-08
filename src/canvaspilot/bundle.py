@@ -43,6 +43,7 @@ CURATED_MCP_TOOLS: tuple[str, ...] = (
     "canvas_list_enrollments",
     "canvas_sync_summary",
     "canvas_submission_status",
+    "canvas_submission_feedback",
     "canvas_submit_assignment_text",
     "canvas_api_request",
     "canvas_api_paginated",

@@ -253,6 +253,18 @@ async def canvas_submission_status(course_id: str, assignment_id: str) -> str:
     return _dump(_get_api().submission_status(course_id, assignment_id))
 
 
+@mcp.tool(
+    description=(
+        "Read self submission comments and rubric feedback with original authors, "
+        "criteria, and grade/attempt metadata. A false grade_matches_current_submission "
+        "means grading preceded the latest resubmission. Does not calculate a grade."
+    ),
+    structured_output=False,
+)
+async def canvas_submission_feedback(course_id: str, assignment_id: str) -> str:
+    return _dump(_get_api().submission_feedback(course_id, assignment_id))
+
+
 @mcp.tool(description="Submit finished online_text_entry work.", structured_output=False)
 async def canvas_submit_assignment_text(course_id: str, assignment_id: str, body: str) -> str:
     return _dump(_get_api().submit_assignment_text(course_id, assignment_id, body))
