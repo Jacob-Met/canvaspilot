@@ -1,0 +1,144 @@
+{
+  "status": "candidate_contract_passed",
+  "expected_contract": "candidate",
+  "original_witness_head": "1748e52ed1533c102e04525f96c3d76d4141d30c",
+  "source_pins_path": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-provider-routing-receiving/candidate-source-pins.json",
+  "source_pins_sha256": "7ac496a258e7b50aebeb53e1666d1458fd1441ce5c984a522196ced1e46877cf",
+  "source": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-session-identity",
+  "native_head": "b6661032ca5654e6e672d287b86d99a7fe1e01ee",
+  "python": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "receiver_sha256": "4650abbddcc0d74307f66424ec14c2d4d1c6645ce26b5af83d1018d463278a98",
+  "boundary": "Actual CLI, Handler, _call, queue, _canvas_page, _run_job; authored terminal Page object only",
+  "actual_browser_or_live_account_used": false,
+  "external_requests": 0,
+  "source_sha256_before": {
+    "src/canvaspilot/client.py": "6368329745216f473204995c101c912d9070fdd310def150bdbee927f9872de4",
+    "src/canvaspilot/api.py": "546fd973330ffb3c95c81ba670b5ae2add751a23362c83a370254ea702eee1a0",
+    "src/canvaspilot/cli.py": "173df7056f7d86084aa2dc00ba129bf8c36aaf109cdbf9497e24ec436d90d47b",
+    "src/canvaspilot/calendar_export.py": "d0bfe685bc14375cf202e38a55ee64381a1fd75cd38edb2774091d9610f99d90",
+    "src/canvaspilot/session_broker.py": "7a9b1fd8c8828834b0f12f48eb5e92cd4beea17a17566219540d5d93ab83e07e"
+  },
+  "source_sha256_after": {
+    "src/canvaspilot/client.py": "6368329745216f473204995c101c912d9070fdd310def150bdbee927f9872de4",
+    "src/canvaspilot/api.py": "546fd973330ffb3c95c81ba670b5ae2add751a23362c83a370254ea702eee1a0",
+    "src/canvaspilot/cli.py": "173df7056f7d86084aa2dc00ba129bf8c36aaf109cdbf9497e24ec436d90d47b",
+    "src/canvaspilot/calendar_export.py": "d0bfe685bc14375cf202e38a55ee64381a1fd75cd38edb2774091d9610f99d90",
+    "src/canvaspilot/session_broker.py": "7a9b1fd8c8828834b0f12f48eb5e92cd4beea17a17566219540d5d93ab83e07e"
+  },
+  "witness": {
+    "mismatched_provider_refused": true,
+    "no_evaluation_for_mismatched_provider": true,
+    "matching_providers_keep_correct_sources": true,
+    "matching_providers_have_distinct_uids": true,
+    "matching_providers_keep_assignment_urls": true,
+    "no_profile_created": true,
+    "no_temporary_calendar_files": true
+  },
+  "runs": [
+    {
+      "label": "configured-a-page-a",
+      "configured_provider": "https://school-a.instructure.com",
+      "selected_page_origin": "https://school-a.instructure.com",
+      "exit": 0,
+      "reported_source": "https://school-a.instructure.com",
+      "uid": "dd1be4e3a1b9fcb6c01f19076f51372f84c0ba5d3b1915e6896e0381280580f3@canvaspilot",
+      "assignment_url": "https://school-a.instructure.com/courses/42/assignments/1",
+      "transport": [
+        {
+          "page_url": "https://school-a.instructure.com/courses",
+          "relative_path": "/api/v1/courses/42/assignments?order_by=due_at&include%5B%5D=submission&bucket=upcoming&per_page=50&page=1",
+          "resolved_url": "https://school-a.instructure.com/api/v1/courses/42/assignments?order_by=due_at&include%5B%5D=submission&bucket=upcoming&per_page=50&page=1",
+          "configured_base_url": "https://school-a.instructure.com",
+          "navigations": [],
+          "production_expression_sha256": "9583b9952482b42da97aa82f99600984e67aaa87c70c549fe6652f2cd16f5c61"
+        }
+      ],
+      "output_sha256": "8834f0b4d455beaa8e85144b03ee750c2a4eaf686bf97be137102e3af2265ca9",
+      "command": [
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-venv/bin/python",
+        "-m",
+        "canvaspilot.cli",
+        "export-calendar",
+        "42",
+        "--token",
+        "",
+        "--profile",
+        "/Users/me/workspace/estate/estate-49f845d0dece/canvas-provider-pr45-receiving/replay-candidate/unused-profile",
+        "--out",
+        "/Users/me/workspace/estate/estate-49f845d0dece/canvas-provider-pr45-receiving/replay-candidate/configured-a-page-a.ics"
+      ],
+      "artifact_exists": true
+    },
+    {
+      "label": "configured-a-page-b",
+      "configured_provider": "https://school-a.instructure.com",
+      "selected_page_origin": "https://school-b.instructure.com",
+      "exit": 1,
+      "reported_source": null,
+      "uid": null,
+      "assignment_url": null,
+      "transport": [],
+      "page_navigations": [],
+      "command": [
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-venv/bin/python",
+        "-m",
+        "canvaspilot.cli",
+        "export-calendar",
+        "42",
+        "--token",
+        "",
+        "--profile",
+        "/Users/me/workspace/estate/estate-49f845d0dece/canvas-provider-pr45-receiving/replay-candidate/unused-profile",
+        "--out",
+        "/Users/me/workspace/estate/estate-49f845d0dece/canvas-provider-pr45-receiving/replay-candidate/configured-a-page-b.ics"
+      ],
+      "artifact_exists": false,
+      "error_report": {
+        "ok": false,
+        "error": "CanvasAuthError",
+        "message": "Canvas provider mismatch: selected browser page is not the configured school"
+      }
+    },
+    {
+      "label": "configured-b-page-b",
+      "configured_provider": "https://school-b.instructure.com",
+      "selected_page_origin": "https://school-b.instructure.com",
+      "exit": 0,
+      "reported_source": "https://school-b.instructure.com",
+      "uid": "ae3e05812c81a0ba114457c28d8c29302f6ef23108367c128aa1b19e113957b6@canvaspilot",
+      "assignment_url": "https://school-b.instructure.com/courses/42/assignments/1",
+      "transport": [
+        {
+          "page_url": "https://school-b.instructure.com/courses",
+          "relative_path": "/api/v1/courses/42/assignments?order_by=due_at&include%5B%5D=submission&bucket=upcoming&per_page=50&page=1",
+          "resolved_url": "https://school-b.instructure.com/api/v1/courses/42/assignments?order_by=due_at&include%5B%5D=submission&bucket=upcoming&per_page=50&page=1",
+          "configured_base_url": "https://school-b.instructure.com",
+          "navigations": [],
+          "production_expression_sha256": "9583b9952482b42da97aa82f99600984e67aaa87c70c549fe6652f2cd16f5c61"
+        }
+      ],
+      "output_sha256": "3891073ed22f93590979541597e49df137cce7c0eb347cfa25344b7526f56c98",
+      "command": [
+        "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-venv/bin/python",
+        "-m",
+        "canvaspilot.cli",
+        "export-calendar",
+        "42",
+        "--token",
+        "",
+        "--profile",
+        "/Users/me/workspace/estate/estate-49f845d0dece/canvas-provider-pr45-receiving/replay-candidate/unused-profile",
+        "--out",
+        "/Users/me/workspace/estate/estate-49f845d0dece/canvas-provider-pr45-receiving/replay-candidate/configured-b-page-b.ics"
+      ],
+      "artifact_exists": true
+    }
+  ],
+  "production_job_errors": [
+    {
+      "case": "configured-a-page-b",
+      "type": "RuntimeError",
+      "message": "Canvas provider mismatch: selected browser page is not the configured school"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "ok": true,
+  "output": "/Users/me/workspace/estate/estate-49f845d0dece/canvas-provider-pr45-receiving/replay-baseline/configured-a-page-b.ics",
+  "source": "https://school-a.instructure.com",
+  "bucket": "upcoming",
+  "generated_at": "2026-10-08T12:21:45.877197+00:00",
+  "course_ids": [
+    "42"
+  ],
+  "course_summaries": [
+    {
+      "course_id": "42",
+      "assignments_returned": 1,
+      "events_exported": 1
+    }
+  ],
+  "events_exported": 1,
+  "assignments_omitted": [],
+  "coverage": "Returned assignment rows only; existing transport pagination limits apply.",
+  "sha256": "36468b422a81213849ec0dd987bf9f22d77906fbf8a0463fd35b96f51a87b375"
+}

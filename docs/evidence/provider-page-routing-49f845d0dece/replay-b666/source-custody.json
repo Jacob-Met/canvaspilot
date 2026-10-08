@@ -1,0 +1,53 @@
+{
+  "scope": "Frozen three-case terminal-Page receiving of the first broker correction; final browser-dispatch qualification pending.",
+  "baseline_public_source": "1748e52ed1533c102e04525f96c3d76d4141d30c",
+  "receiver_sha256": "4650abbddcc0d74307f66424ec14c2d4d1c6645ce26b5af83d1018d463278a98",
+  "brokers": {
+    "baseline": {
+      "native_head": "3e251e5e1de71d56042daa76e2109cdd977b97a6",
+      "path": "src/canvaspilot/session_broker.py",
+      "bytes": 12151,
+      "sha256": "2a106130c344aefebb23b078cd93b5d3ca3afd7f5325ae5fac2fb8a7251780cc",
+      "git_blob": "ba23543f62e6be9f611ae06260b91f239206cb23"
+    },
+    "candidate": {
+      "native_head": "b6661032ca5654e6e672d287b86d99a7fe1e01ee",
+      "path": "src/canvaspilot/session_broker.py",
+      "bytes": 13735,
+      "sha256": "7a9b1fd8c8828834b0f12f48eb5e92cd4beea17a17566219540d5d93ab83e07e",
+      "git_blob": "b51d7aa7a51ae6e1eea943061d474cbd0c79c563"
+    }
+  },
+  "patch_sha256": "5981ddcfb7dfa5f0552ed960fa4cb7be409bf611506064978d393c9bb99c6c40",
+  "candidate_pins_sha256": "7ac496a258e7b50aebeb53e1666d1458fd1441ce5c984a522196ced1e46877cf",
+  "runs": {
+    "replay-baseline": {
+      "receipt_sha256": "41067b0e6fe9e4290ba5b028b3dc61ccf5609345cacf6d0e1633c836c3b905e4",
+      "status": "counterexample_reproduced",
+      "source_sha256": {
+        "src/canvaspilot/client.py": "6368329745216f473204995c101c912d9070fdd310def150bdbee927f9872de4",
+        "src/canvaspilot/api.py": "546fd973330ffb3c95c81ba670b5ae2add751a23362c83a370254ea702eee1a0",
+        "src/canvaspilot/cli.py": "173df7056f7d86084aa2dc00ba129bf8c36aaf109cdbf9497e24ec436d90d47b",
+        "src/canvaspilot/calendar_export.py": "d0bfe685bc14375cf202e38a55ee64381a1fd75cd38edb2774091d9610f99d90",
+        "src/canvaspilot/session_broker.py": "2a106130c344aefebb23b078cd93b5d3ca3afd7f5325ae5fac2fb8a7251780cc"
+      }
+    },
+    "replay-candidate": {
+      "receipt_sha256": "2fbb4417b6f753b95d5d1fc1979c7c8ab00f356a216e31708d878edafe10cc7f",
+      "status": "candidate_contract_passed",
+      "source_sha256": {
+        "src/canvaspilot/client.py": "6368329745216f473204995c101c912d9070fdd310def150bdbee927f9872de4",
+        "src/canvaspilot/api.py": "546fd973330ffb3c95c81ba670b5ae2add751a23362c83a370254ea702eee1a0",
+        "src/canvaspilot/cli.py": "173df7056f7d86084aa2dc00ba129bf8c36aaf109cdbf9497e24ec436d90d47b",
+        "src/canvaspilot/calendar_export.py": "d0bfe685bc14375cf202e38a55ee64381a1fd75cd38edb2774091d9610f99d90",
+        "src/canvaspilot/session_broker.py": "7a9b1fd8c8828834b0f12f48eb5e92cd4beea17a17566219540d5d93ab83e07e"
+      }
+    }
+  },
+  "same_matching_control_identity_fields": [
+    "reported_source",
+    "uid",
+    "assignment_url"
+  ],
+  "browser_gap_pending": "JavaScript guards new URL(path, location.href) but dispatches fetch(path, opts), which honors document.baseURI. A foreign base element can route elsewhere before response-origin refusal."
+}
