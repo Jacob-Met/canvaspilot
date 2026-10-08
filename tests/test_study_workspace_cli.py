@@ -7,6 +7,7 @@ import hashlib
 import json
 import logging
 import os
+import re
 import subprocess
 import sys
 import threading
@@ -18,9 +19,17 @@ from urllib.parse import parse_qs, urlsplit
 
 import pytest
 
-from tests.test_study_workspace import envelope
-
 FIXTURE = Path(__file__).parent / "fixtures/study_workspace_assignments.json"
+
+
+def envelope(page):
+    match = re.search(
+        r'<script id="workspace-data" type="application/json">(.*?)</script>',
+        page.decode(),
+        re.DOTALL,
+    )
+    assert match
+    return json.loads(match.group(1))
 
 
 @contextmanager
