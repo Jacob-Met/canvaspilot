@@ -1,0 +1,17 @@
+{
+  "started": "2026-10-08T18:58:21Z",
+  "source_commit": "6fdb3dc955426da7667e1f4e3844c6741077369f",
+  "source_tree": "bec620b72b9ed59f4d99981e80728a90a880a955",
+  "all_five_git_blobs_exact": true,
+  "python": "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+  "steps": [
+    {
+      "name": "runtime",
+      "status": 0
+    },
+    {
+      "name": "ruff",
+      "status": 0
+    }
+  ]
+}

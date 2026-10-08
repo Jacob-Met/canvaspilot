@@ -1,0 +1,82 @@
+{
+  "id": 501,
+  "assignment_id": 902,
+  "user_id": 19,
+  "attempt": 4,
+  "workflow_state": "submitted",
+  "submitted_at": "2026-10-07T14:00:00Z",
+  "score": 12,
+  "grade": "12",
+  "grade_matches_current_submission": false,
+  "body": "<p>Current fourth submission only</p>",
+  "future_metadata": {
+    "original": [
+      "keep ∑ & <tag>"
+    ],
+    "enabled": false
+  },
+  "submission_history": [
+    {
+      "attempt": 2,
+      "submission_type": "online_upload",
+      "score": 0,
+      "grade": "0",
+      "grade_matches_current_submission": true,
+      "attachments": [
+        {
+          "id": 508,
+          "filename": "v2-λ.pdf",
+          "size": 42,
+          "url": "https://files.invalid/v2?opaque=literal&second=2"
+        }
+      ],
+      "submission_comments": [
+        {
+          "id": 6,
+          "attempt": 2,
+          "comment": "Earlier record only"
+        }
+      ]
+    },
+    {
+      "attempt": 1,
+      "submission_type": "online_text_entry",
+      "score": null,
+      "body": "<p>λ &lt;theta&gt; “quoted”\r\nsecond line</p><img src=\"https://forbidden.invalid/pixel\" onerror=\"alert(1)\"><script>alert('never')</script>",
+      "late": false,
+      "missing": null
+    },
+    {
+      "attempt": 2,
+      "submission_type": "online_url",
+      "url": "javascript:alert('literal URL metadata')",
+      "graded_at": "2026-10-06T13:00:00Z",
+      "vendor": {
+        "revision": "other",
+        "control": "a\u0000b",
+        "empty": "",
+        "nil": null
+      }
+    },
+    {}
+  ],
+  "submission_comments": [
+    {
+      "id": 8,
+      "author_id": 19,
+      "author_name": "Student λ",
+      "attempt": 4,
+      "comment": "Top-level fourth comment <b>literal</b>\nnot assigned to history"
+    },
+    {
+      "id": 9,
+      "author_id": 81,
+      "author_name": "Reader",
+      "comment": null,
+      "media_comment": {
+        "media_type": "audio",
+        "url": "https://media.invalid/never-fetch"
+      }
+    }
+  ]
+}

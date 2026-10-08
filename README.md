@@ -100,6 +100,12 @@ The [planner CLI guide](docs/planner-cli.md) explains native date filters,
 personal notes, supplied completion metadata and complete-list error behavior.
 The command uses the existing planner API and does not change any planner state.
 
+Save that same selection as an offline view with course/source-date/search controls
+and a printable current view:
+`canvaspilot export-agenda 42 77 --start 2026-10-08 --end 2026-10-15 --out agenda.html`.
+The original native JSON remains available byte-identically.
+[Review and print a saved agenda](docs/agenda-export.md).
+
 To take selected course deadlines into a calendar application, save an explicit
 local snapshot with `canvaspilot export-calendar 42 77 --out deadlines.ics`.
 The [calendar export guide](docs/calendar-export.md) explains selection,
@@ -128,6 +134,21 @@ Save that same grade review for offline reading or printing with
 [saved grade-review guide](docs/grade-review-export.md) explains reported totals,
 assignment context, withheld/unknown values, the complete JSON download and
 new-file protection.
+
+## Save submission attempts for offline review
+
+Save the existing self-history report as a readable standalone HTML file:
+
+```bash
+canvaspilot export-submission-history 71 902 --out submission-history.html
+```
+
+The report keeps the current submission, every returned historical record, and
+top-level comments separate. Returned order and missing/empty distinctions stay
+visible; current grades are never assigned to earlier attempts. It includes the
+complete normalized JSON and works with the browser's Print command. Existing
+files are protected. See [offline submission history](docs/submission-history-export.md)
+for scope, provenance, limits and CLI/Python usage.
 
 ## Assignment briefs
 

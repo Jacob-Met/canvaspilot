@@ -1,0 +1,95 @@
+{
+  "assignment": {
+    "id": 902,
+    "course_id": 71,
+    "name": "Vector revisions \u00b7 \u03bb & <proof>",
+    "html_url": "https://canvas-fixture.invalid/courses/71/assignments/902",
+    "due_at": null,
+    "points_possible": 20
+  },
+  "current_submission": {
+    "id": 501,
+    "assignment_id": 902,
+    "user_id": 19,
+    "attempt": 4,
+    "workflow_state": "submitted",
+    "submitted_at": "2026-10-07T14:00:00Z",
+    "score": 12,
+    "grade": "12",
+    "grade_matches_current_submission": false,
+    "body": "<p>Current fourth submission only</p>",
+    "future_metadata": {
+      "original": [
+        "keep \u2211 & <tag>"
+      ],
+      "enabled": false
+    }
+  },
+  "history": {
+    "returned": true,
+    "records": [
+      {
+        "attempt": 2,
+        "submission_type": "online_upload",
+        "score": 0,
+        "grade": "0",
+        "grade_matches_current_submission": true,
+        "attachments": [
+          {
+            "id": 508,
+            "filename": "v2-\u03bb.pdf",
+            "size": 42,
+            "url": "https://files.invalid/v2?opaque=literal&second=2"
+          }
+        ],
+        "submission_comments": [
+          {
+            "id": 6,
+            "attempt": 2,
+            "comment": "Earlier record only"
+          }
+        ]
+      },
+      {
+        "attempt": 1,
+        "submission_type": "online_text_entry",
+        "score": null,
+        "body": "<p>\u03bb &lt;theta&gt; \u201cquoted\u201d\r\nsecond line</p><img src=\"https://forbidden.invalid/pixel\" onerror=\"alert(1)\"><script>alert('never')</script>",
+        "late": false,
+        "missing": null
+      },
+      {
+        "attempt": 2,
+        "submission_type": "online_url",
+        "url": "javascript:alert('literal URL metadata')",
+        "graded_at": "2026-10-06T13:00:00Z",
+        "vendor": {
+          "revision": "other",
+          "control": "a\u0000b",
+          "empty": "",
+          "nil": null
+        }
+      },
+      {}
+    ]
+  },
+  "submission_comments": [
+    {
+      "id": 8,
+      "author_id": 19,
+      "author_name": "Student \u03bb",
+      "attempt": 4,
+      "comment": "Top-level fourth comment <b>literal</b>\nnot assigned to history"
+    },
+    {
+      "id": 9,
+      "author_id": 81,
+      "author_name": "Reader",
+      "comment": null,
+      "media_comment": {
+        "media_type": "audio",
+        "url": "https://media.invalid/never-fetch"
+      }
+    }
+  ]
+}

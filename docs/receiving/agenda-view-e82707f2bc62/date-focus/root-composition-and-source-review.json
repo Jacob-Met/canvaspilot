@@ -1,0 +1,48 @@
+{
+  "kind": "Independent actual-synthetic composition and narrow CSS/driver source review",
+  "reviewer": "estate-e82707f2bc62/root",
+  "actual_synthetic": "bb1e7e02904d20162f094fa79a35403f26c767de",
+  "actual_tree": "f9b5a1554bdf8c7e8157632eb790b913bd2b55e7",
+  "actual_parent": "a5e7bec9f93132341e4031de184487310a51daae",
+  "actual_parent_tree": "967b9325d83e7c6d6517aa0aae0550a1e0c8d249",
+  "branch_head": "4c1233b5083ad507586698621e6209dd7566f9e4",
+  "unrelated_parent_leaves_exact": 1451,
+  "own_paths": 31,
+  "additions": 29,
+  "total_leaves": 1482,
+  "inverse": [
+    {
+      "path": "src/canvaspilot/cli.py",
+      "parent_blob": "728ca125aa39c7e66098f83ea2ed6b630e221422",
+      "synthetic_blob": "59d82db6a96be827bd1deef550ae65caf9004cc2",
+      "removed_original_insertions": [
+        610,
+        1657
+      ],
+      "parent_exact": true
+    },
+    {
+      "path": "README.md",
+      "parent_blob": "01f3e9ca6947171b5b40e650872bcff335e085c7",
+      "synthetic_blob": "f619af456808c491db4789a8ff724838807a5743",
+      "removed_original_insertions": [
+        323
+      ],
+      "parent_exact": true
+    }
+  ],
+  "diagnostic_driver": {
+    "old_blob": "5779f13b3efd7c7a94b4e88a76a66837465db910",
+    "new_blob": "4af4230560adf0d035f168a46855e8c54c613164",
+    "change": "Move only existing keyboard observations into receipt before all unchanged assertions",
+    "all_remaining_bytes_exact": true
+  },
+  "proposed_css": {
+    "old_blob": "30ee1d7b27445b88a4ef32bae7411865b3c2a374",
+    "new_blob": "86ad5459a44c91d0fb448e77dcda78cf1d39642b",
+    "sha256": "ed5f86e62198a9a0b13cbcd87db0bdae9cb2e5732358bf6eb684da47f45610d0",
+    "change": "Extend existing 3px focus-visible outline to input[type=date]:focus-within",
+    "all_remaining_bytes_exact": true
+  },
+  "acceptance": "Source and composition only. Native browser v3 still fails the unchanged focus predicate; focus-v4 requires its own actual browser receiving. No visual acceptance claimed."
+}

@@ -1,0 +1,63 @@
+{
+  "schema": "canvaspilot-agenda-view-native-receiving/1",
+  "recorded_at": "2026-10-08T16:11:14.466066+00:00",
+  "source_parent": "0480cbce421bae532e3e909899fc8fb83789e878",
+  "final_source_freeze": "source-freeze.json",
+  "runtime": {
+    "python": "3.12.14",
+    "httpx": "0.28.1",
+    "mcp": "2.3.0",
+    "pydantic": "2.13.5",
+    "pytest": "9.1.1"
+  },
+  "test_methods": [
+    "test_original_native_agenda_control",
+    "test_complete_cli_view_retains_exact_native_bytes_and_literal_source",
+    "test_empty_native_result_is_a_complete_readable_view",
+    "test_invalid_selection_refuses_before_http",
+    "test_late_provider_refusal_does_not_publish_partial_calendar",
+    "test_late_foreign_course_record_refuses_whole_view",
+    "test_all_existing_destination_entries_are_preserved_before_http",
+    "test_destination_created_during_native_reads_is_not_overwritten",
+    "test_absent_output_parent_is_an_unsuccessful_complete_read",
+    "test_controlled_publication_failure_removes_only_own_temporary",
+    "test_native_record_limit_is_inclusive_and_refuses_whole_oversize_view",
+    "test_native_json_byte_limit_is_inclusive_and_input_is_immutable",
+    "test_corrupted_counts_sources_and_group_order_are_refused"
+  ],
+  "pytest_cases": 16,
+  "baseline_original": "1 passed;15 failed, original native agenda control healthy and human-view route/module absent",
+  "candidate_original": "13 passed;3 fixture environment errors before direct loopback read (optional socksio unavailable under inherited proxy)",
+  "helper_only_successor": {
+    "original_test_sha256": "36f4d83027e5b5bb972092fd401579393228501a4cbdd376e48df55b31588afb",
+    "current_test_sha256": "6e5a9c75748f082413d34a70af3d1272b763c2df860c0942aeaaca723c8b6830",
+    "baseline": "3 failed,13deselected;new module absent",
+    "candidate": "3 passed,13deselected",
+    "all_13_test_method_ASTs_unchanged": true,
+    "production_bytes_unchanged": true,
+    "correction": "The three report-building calls now use the same actual native CLI subprocess with scoped authored-loopback environment. No shared runtime/proxy changes."
+  },
+  "aggregate_acceptance": "All16 authored pytest cases qualified;13originalpasses+3affected-successorpasses. This is not a claim of a second full local16case run.",
+  "browser": "No local Chrome or visual acceptance. Frozen real-installed-Chrome workflow must qualify saved-file controls/download/keyboard/print/no-JS/source custody on published composition.",
+  "source_currentness": "Current quiz parent728d2d8b changes sharedCLI/README; exact additive composition is prepared separately. Full hosted existingCI and browser gates qualify current source.",
+  "logs": {
+    "author-baseline-harness-v2.log": {
+      "bytes": 4214,
+      "sha256": "b97eff81442ef46366d2aab9751551b6d994db8d4c7905d6b020f28aef02cd91"
+    },
+    "author-baseline-v1.log": {
+      "bytes": 18869,
+      "sha256": "e32b95269e6c353cbf5b3dea1844a5614397b1e304032e52d8f53539a274802b"
+    },
+    "author-candidate-harness-v2.log": {
+      "bytes": 114,
+      "sha256": "cd22724b26a349144230116ddb8c4f90d99ceae599eb18ccde56ef81a19a65ad"
+    },
+    "author-candidate-v1.log": {
+      "bytes": 13961,
+      "sha256": "f5f3285a80be0480db13997b9d8f9b634cb80281f28942296574a3889bf138ae"
+    }
+  },
+  "limits": "Authored loopback provider inputs, actual native CLI/client/renderer/files. No live school, account, adoption, provider write or timing inference claim.",
+  "metadata_note": "The earlier source-freeze narrative used16 for test methods; precise count is13 unchanged methods yielding16 parametrized cases."
+}

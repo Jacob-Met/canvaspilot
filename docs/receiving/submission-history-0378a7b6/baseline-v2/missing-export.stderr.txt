@@ -1,0 +1,4 @@
+usage: canvaspilot [-h]
+                   {login,session,whoami,courses,sync,announcements,grade-review,assignments,brief,feedback,inbox,conversation,discussions,discussion,files,browse-files,export-calendar,export-pages,module-progress,export-module-progress,submission-history,agenda,quizzes,quiz,mcp}
+                   ...
+canvaspilot: error: argument cmd: invalid choice: 'export-submission-history' (choose from 'login', 'session', 'whoami', 'courses', 'sync', 'announcements', 'grade-review', 'assignments', 'brief', 'feedback', 'inbox', 'conversation', 'discussions', 'discussion', 'files', 'browse-files', 'export-calendar', 'export-pages', 'module-progress', 'export-module-progress', 'submission-history', 'agenda', 'quizzes', 'quiz', 'mcp')

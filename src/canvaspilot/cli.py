@@ -210,6 +210,17 @@ def main(argv: list[str] | None = None) -> None:
     history.add_argument("course_id", help="Positive numeric Canvas course ID")
     history.add_argument("assignment_id", help="Positive numeric Canvas assignment ID")
 
+    history_export = sub.add_parser(
+        "export-submission-history",
+        help="Save returned self submission versions to a new offline HTML report",
+    )
+    add_common(history_export)
+    history_export.add_argument("course_id", help="Positive numeric Canvas course ID")
+    history_export.add_argument("assignment_id", help="Positive numeric Canvas assignment ID")
+    history_export.add_argument(
+        "--out", required=True, type=Path, help="New HTML report; existing paths are protected",
+    )
+
     comparison = sub.add_parser(
         "compare-submissions", help="Compare two returned submission records in a new offline HTML report",
         description=(
@@ -255,6 +266,17 @@ def main(argv: list[str] | None = None) -> None:
     )
     planner.add_argument(
         "--end-date", default=None, help="Native date filter: YYYY-MM-DD or ISO 8601 timestamp",
+    )
+
+    agenda_export = sub.add_parser(
+        "export-agenda", help="Save a selected-course agenda as a filterable, printable offline HTML view",
+    )
+    add_common(agenda_export)
+    agenda_export.add_argument("course_ids", nargs="+", help="Positive numeric Canvas course IDs")
+    agenda_export.add_argument("--start", dest="start_date", required=True, help="YYYY-MM-DD")
+    agenda_export.add_argument("--end", dest="end_date", required=True, help="YYYY-MM-DD")
+    agenda_export.add_argument(
+        "--out", required=True, type=Path, help="New HTML file; every existing destination is protected",
     )
 
     mcp = sub.add_parser("mcp", help="Run MCP stdio server")
@@ -478,6 +500,40 @@ def main(argv: list[str] | None = None) -> None:
             finally:
                 http_log.setLevel(previous_level)
             print(json.dumps(result, indent=2, default=str))
+        elif args.cmd == "export-agenda":
+            import hashlib
+            import os
+
+            import httpx
+
+            from canvaspilot.agenda_export import render_agenda_html, write_agenda_html
+            from canvaspilot.client import CanvasAuthError, CanvasPaginationError
+
+            http_log = logging.getLogger("httpx")
+            previous_level = http_log.level
+            http_log.setLevel(max(http_log.getEffectiveLevel(), logging.WARNING))
+            try:
+                if os.path.lexists(args.out):
+                    raise FileExistsError("Output path already exists; choose a new HTML file")
+                result = api.course_agenda(
+                    args.course_ids, start_date=args.start_date, end_date=args.end_date,
+                )
+                content = render_agenda_html(result)
+                native = (json.dumps(result, indent=2) + "\n").encode("utf-8")
+                write_agenda_html(args.out, content)
+            except (CanvasAuthError, CanvasPaginationError, httpx.HTTPError,
+                    ValueError, TypeError, OSError) as error:
+                print(json.dumps({
+                    "ok": False, "error": type(error).__name__, "message": str(error),
+                }), file=sys.stderr)
+                raise SystemExit(1) from None
+            finally:
+                http_log.setLevel(previous_level)
+            print(json.dumps({
+                "ok": True, "output": str(args.out), "counts": result["counts"],
+                "native_report_sha256": hashlib.sha256(native).hexdigest(),
+                "html_sha256": hashlib.sha256(content).hexdigest(),
+            }, indent=2))
         elif args.cmd == "agenda":
             import httpx
 
@@ -526,6 +582,38 @@ def main(argv: list[str] | None = None) -> None:
                 raise SystemExit(1) from None
             finally:
                 http_log.setLevel(previous_level)
+            print(json.dumps({"ok": True, "output": str(args.out), **report}, indent=2))
+        elif args.cmd == "export-submission-history":
+            import os
+
+            import httpx
+
+            from canvaspilot.client import CanvasAuthError
+            from canvaspilot.page_export import write_page_packet
+            from canvaspilot.submission_history_export import (
+                build_submission_history_report,
+            )
+
+            http_log = logging.getLogger("httpx")
+            previous_level = http_log.level
+            http_log.setLevel(max(http_log.getEffectiveLevel(), logging.WARNING))
+            try:
+                if os.path.lexists(args.out):
+                    raise FileExistsError("Output path already exists; choose a new HTML file")
+                content, report = build_submission_history_report(
+                    api, args.course_id, args.assignment_id,
+                )
+                # Reuse the current complete-byte, exclusive HTML publisher.
+                cleanup_warning = write_page_packet(args.out, content)
+            except (CanvasAuthError, httpx.HTTPError, ValueError, TypeError, OSError) as error:
+                print(json.dumps({
+                    "ok": False, "error": type(error).__name__, "message": str(error),
+                }), file=sys.stderr)
+                raise SystemExit(1) from None
+            finally:
+                http_log.setLevel(previous_level)
+            if cleanup_warning:
+                report["cleanup_warning"] = cleanup_warning
             print(json.dumps({"ok": True, "output": str(args.out), **report}, indent=2))
         elif args.cmd == "compare-submissions":
             import httpx

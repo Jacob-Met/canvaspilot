@@ -1,0 +1,14 @@
+{
+  "observed_at": "2026-10-08T19:15:00.949Z",
+  "state": "incomplete",
+  "native_pytest_timeout_seconds": 900,
+  "observed_progress": "90% plus six dots, four earlier failure markers",
+  "runtime_and_ruff_status": 0,
+  "full_suite_pass": false,
+  "processes_absent": [
+    547089,
+    547583
+  ],
+  "limitations": "Final traceback reports subprocess.TimeoutExpired. No final pytest summary/tracebacks were produced, so the four failure causes are not inferred. Original partial log, driver and failure traceback retained. The host also reported a transient ENOSPC and load40.48 during receiving.",
+  "planned_resolution": "Use normal configured hosted Python3.12 gate on the exact published head. Investigate any product failures there; do not relax tests or change shared runtime."
+}

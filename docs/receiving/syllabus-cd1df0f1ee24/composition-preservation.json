@@ -1,0 +1,114 @@
+{
+  "schema": "hamon.canvas-syllabus-composition-preservation.v2",
+  "at": "2026-10-08T20:16:00.464592+00:00",
+  "runtime": {
+    "python": "3.12.14",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+    "scope": "local Git object/source calculation and AST parsing; no product execution"
+  },
+  "current_main": "e46a90ff00f80a128baf842587f08df5862318aa",
+  "adopted_handoff": "31d31e22dc333ce44e57e3d165a87798d38d3bed",
+  "author_head": "3f6309f273a226453dbf2e39578c582acff3b9d3",
+  "prior_tested_merge": "e92c2e14a07d82e683b8c4336ba23cf76cce8611",
+  "verified_input_trees": {
+    "base": {
+      "sha": "1bcfff90694cdb8358684ada58ff349562244de7",
+      "leaves": 1333
+    },
+    "feature": {
+      "sha": "51c0859c2e51842d12de47d96fd3d1345d6cd0e8",
+      "leaves": 1358
+    },
+    "current": {
+      "sha": "13ad8dabadb259983fb568dd35e65f2762f3ee3b",
+      "leaves": 1462
+    },
+    "handoff": {
+      "sha": "bbb76f0e7ac0643b4f4ac448b45237b0565db5b5",
+      "leaves": 1487
+    },
+    "tested": {
+      "sha": "60ec236f7456573088816b4a216f5d9dd0452a9b",
+      "leaves": 1554
+    },
+    "newmain": {
+      "sha": "5fef10b4fac997cd1049de24447dce02bfa49ec3",
+      "leaves": 1562
+    }
+  },
+  "original_handoff_exact": true,
+  "method": "Reconstructed every input Git tree from every leaf mode/type/blob SHA. Rebuilt the independent handoff from current92 plus exactly27 original contribution paths. Compared all incoming leaves and inverted exact source insertions.",
+  "current_unrelated_leaf_count": 1560,
+  "all_current_unrelated_leaves_exact": true,
+  "current_unrelated_leaf_manifest_sha256": "34a910d36b7150c5274a0aee365a541b63c58188814841cb4a2dfab65b652604",
+  "shared_source_inverse": {
+    "cli": true,
+    "readme": true,
+    "parser_span_lines": 7,
+    "dispatch_span_lines": 27,
+    "readme_span_lines": 4
+  },
+  "guide_single_paragraph_inverse": true,
+  "current_cli_ast_parse": true,
+  "product_parser_blob": "1faf3448c391fdb76b8cf38fe5854906614443b1",
+  "maintained_test_blobs": {
+    "tests/test_syllabus_packet.py": "fbd71a3aeb546ae77aad32d8e13e56495b19781e",
+    "tests/test_syllabus_packet_cli.py": "31b898a4bdedffaed06e0c83656e023640cc1db8"
+  },
+  "new_body_files_before_receipt": [
+    {
+      "path": "src/canvaspilot/cli.py",
+      "bytes": 36766,
+      "sha256": "d8676a8ad47d4bff733099e82ce53cb4eb0b11c7aab3afe479d7f3d2e1f88a92",
+      "git_blob": "06efbe7aa8857aaa13fa48909a47b0372b879d92"
+    },
+    {
+      "path": "README.md",
+      "bytes": 27656,
+      "sha256": "e115d1ab41f2492f33a799374f10000e0674fd3b6f9eeff39231f065fb444d33",
+      "git_blob": "221932b7d10b8abb31bfe986124922ddc200f0ee"
+    },
+    {
+      "path": "docs/syllabus-packet.md",
+      "bytes": 8976,
+      "sha256": "ccc0cf3ec0672d27a1e1baa7cafd121be52b7d0dfa4ff16758cc48d633e62829",
+      "git_blob": "1e02a7da12d6dbf0fa66ab9bfda3c26d5993a412"
+    },
+    {
+      "path": "docs/receiving/syllabus-cd1df0f1ee24/LATEST.md",
+      "bytes": 4060,
+      "sha256": "84abe621d159d71f6e7e10d0f97688c3202c4c7946067848aa27506a322732ac",
+      "git_blob": "0012264f74209f8aea25adc1fbb240da5aa90c84"
+    },
+    {
+      "path": "docs/receiving/syllabus-cd1df0f1ee24/companion-policy-review.json",
+      "bytes": 3625,
+      "sha256": "55e3f0a906ed417a60015f4057593b4c24ce4eed18683ec3aa2fdee34e51af15",
+      "git_blob": "2a6ebcce5c7c468bae9735c672301637291b5350"
+    },
+    {
+      "path": "docs/receiving/syllabus-cd1df0f1ee24/companion-preservation-proof.json",
+      "bytes": 7656,
+      "sha256": "28da47f95c4a2e23c047054a11448cfa2efe37533165f8d4caf65bff0ea89ca5",
+      "git_blob": "9d68134257066c753e539bd3244dc75748d29bd2"
+    },
+    {
+      "path": "docs/receiving/syllabus-cd1df0f1ee24/handoff-review.json",
+      "bytes": 8495,
+      "sha256": "c477bb8573a47324702f9f68f2fbcd4d3f6686cf7f64a7a3c2d0edf15b1bf85b",
+      "git_blob": "bc61692bf8ed4ba4a99cffa70fe38981ca3a3862"
+    },
+    {
+      "path": "docs/receiving/syllabus-cd1df0f1ee24/handoff-hosted-job.log",
+      "bytes": 35430,
+      "sha256": "62794ee80c12219e209e8ed624d055185b90d108e1833aca292b5b5578548743",
+      "git_blob": "d2cf5b42a3d325f5b28aeae1a9b3bf2a7e7b6977"
+    }
+  ],
+  "transport_newline_restored_by_exact_recorded_sha256": [
+    "docs/receiving/syllabus-cd1df0f1ee24/companion-policy-review.json",
+    "docs/receiving/syllabus-cd1df0f1ee24/companion-preservation-proof.json"
+  ],
+  "qualification_limit": "Earlier hosted job113503197468 qualifies e92c2e14 with main4675. This final e46 composition requires its own hosted gate. Native/visual evidence stays pinned to original received source. Strict optional companion3933 is not selected.",
+  "native_staging": "Source snapshots were staged on known ThinkPad before it disconnected; final object proof ran locally. Initial missing-directory write failed before staging and was corrected; no product run was inferred."
+}

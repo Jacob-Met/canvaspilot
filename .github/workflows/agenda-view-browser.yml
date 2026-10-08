@@ -1,0 +1,86 @@
+name: agenda-view-browser
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'src/canvaspilot/agenda_export.py'
+      - 'src/canvaspilot/agenda_view/**'
+      - 'src/canvaspilot/agenda.py'
+      - 'src/canvaspilot/api.py'
+      - 'src/canvaspilot/cli.py'
+      - 'src/canvaspilot/client.py'
+      - 'tests/test_agenda_export.py'
+      - 'tests/fixtures/agenda_view_calendar.json'
+      - 'scripts/receive_agenda_view.mjs'
+      - '.github/workflows/agenda-view-browser.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  installed-chrome:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '22'
+      - name: Install existing declared package dependencies
+        run: pip install -e .
+      - name: Build the declared wheel and receive exact packaged agenda assets
+        run: |
+          pip wheel --no-deps --wheel-dir "$RUNNER_TEMP/agenda-view-wheel" .
+          python -B - "$RUNNER_TEMP/agenda-view-wheel" <<'PY'
+          import hashlib
+          import json
+          import sys
+          import zipfile
+          from pathlib import Path
+
+          output = Path(sys.argv[1])
+          wheels = list(output.glob("canvaspilot-*.whl"))
+          assert len(wheels) == 1, wheels
+          wheel = wheels[0]
+          received = []
+          with zipfile.ZipFile(wheel) as archive:
+              assert archive.testzip() is None
+              for relative in (
+                  "canvaspilot/agenda_export.py",
+                  "canvaspilot/agenda_view/style.css",
+                  "canvaspilot/agenda_view/controls.js",
+              ):
+                  packaged = archive.read(relative)
+                  source = (Path("src") / relative).read_bytes()
+                  assert packaged == source, relative
+                  received.append({"path": relative, "bytes": len(packaged),
+                                   "sha256": hashlib.sha256(packaged).hexdigest()})
+          receipt = {"schema": "canvaspilot-agenda-wheel/1", "accepted": True,
+                     "wheel": wheel.name, "wheel_bytes": wheel.stat().st_size,
+                     "wheel_sha256": hashlib.sha256(wheel.read_bytes()).hexdigest(),
+                     "packaged_assets_equal_actual_checkout": received}
+          (output / "receiving.json").write_text(json.dumps(receipt, indent=2) + "\n")
+          print(json.dumps(receipt, indent=2))
+          PY
+      - name: Receive actual native saved agenda in installed Chrome
+        run: |
+          git worktree add --detach "$RUNNER_TEMP/agenda-view-baseline" 0480cbce421bae532e3e909899fc8fb83789e878
+          node scripts/receive_agenda_view.mjs "$RUNNER_TEMP/agenda-view-receiving" "$RUNNER_TEMP/agenda-view-baseline"
+      - name: Retain actual source, browser results, failures and rendered artifacts
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: agenda-view-browser-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            ${{ runner.temp }}/agenda-view-receiving
+            ${{ runner.temp }}/agenda-view-wheel
+          if-no-files-found: error
+          retention-days: 14

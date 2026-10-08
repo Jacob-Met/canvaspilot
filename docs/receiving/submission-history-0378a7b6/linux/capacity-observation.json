@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-08T19:09Z",
+  "operation": "Write own 14-line preliminary evidence packer through Remote Desktop Commander",
+  "error": "ENOSPC: no space left on device, write",
+  "preflight_available": "4.0G",
+  "later_read_available": "779M",
+  "observed_load_average": [
+    40.48,
+    32.77,
+    29.25
+  ],
+  "pytest_state": "Existing bounded run continued; evidence still preliminary at this observation",
+  "other_worker_changes": false,
+  "privilege_changes": false,
+  "cleanup_performed": false,
+  "notes": "Capacity and timing limits are receiving-host observations, not an attribution of the earlier test failures. Actual final tracebacks must be inspected."
+}

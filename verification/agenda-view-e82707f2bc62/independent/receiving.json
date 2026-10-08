@@ -1,0 +1,434 @@
+{
+  "schema": "canvaspilot-agenda-view-independent-receiving/1",
+  "at": "2026-10-08T16:54:12.420760+00:00",
+  "repository": "Jacob-Met/canvaspilot",
+  "issue": 66,
+  "reviewer": "estate-e827/source_discovery",
+  "accepted_native": true,
+  "baseline": {
+    "commit": "0480cbce421bae532e3e909899fc8fb83789e878",
+    "tree": "f9ecaa4311d93cfe3a1fd1c9cc140834e2449341",
+    "tests": 5,
+    "passed": 1,
+    "failed": 4,
+    "errors": 0,
+    "skipped": 0,
+    "interpretation": "Original native seven-record paginated agenda control passed; four new view/export capability assertions fail because the module and CLI route are absent. No baseline renderer implementation claim.",
+    "execution": {
+      "exit": 1,
+      "test_sha256": "1ede9105b1ac62cb18bd5df4c73a694db91d57909f15c1fbda5a43b9af5d3c99",
+      "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+      "source": "0480cbce421bae532e3e909899fc8fb83789e878",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e0ac9cdb19d619a064f3a6cb1500aa46fdbd19f6a109f183c3da630cb4ee33e3"
+    }
+  },
+  "candidate": {
+    "tests": 5,
+    "passed": 5,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "execution": {
+      "exit": 0,
+      "test_sha256": "1ede9105b1ac62cb18bd5df4c73a694db91d57909f15c1fbda5a43b9af5d3c99",
+      "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+      "source_freeze_sha256": "b84e4bbeec8c54a6c803e75877d8392679bfdd8f1ca13c827664c82103e59bc9",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "87ba8f75ee06403e7e15cbd46d6186a550dd54a52b820a1541e703b11b49f8cc",
+      "frozen_author_paths_unchanged": 10
+    },
+    "source_freeze": {
+      "schema": "canvaspilot-agenda-view-final-author-freeze/1",
+      "at": "2026-10-08T16:23:11.726613+00:00",
+      "base": "0480cbce421bae532e3e909899fc8fb83789e878",
+      "paths": [
+        {
+          "path": "src/canvaspilot/agenda_export.py",
+          "bytes": 15270,
+          "sha256": "4e55a0c16e76286130f01e81f04685da1a3ecd9bb5a7a0493ccbfe97c0fcd3ce",
+          "git_blob": "af25e95a1c9bf4a20784617e5c867d18584ac49a"
+        },
+        {
+          "path": "src/canvaspilot/agenda_view/style.css",
+          "bytes": 7402,
+          "sha256": "12f3bf80b16ff74eb93b9244a2d6c28996449203f8fcd219745c38111df552c2",
+          "git_blob": "30ee1d7b27445b88a4ef32bae7411865b3c2a374"
+        },
+        {
+          "path": "src/canvaspilot/agenda_view/controls.js",
+          "bytes": 2824,
+          "sha256": "7e62636fe393e957717b885ed1e02e29b76c855b336a423f08685a22e1b94e72",
+          "git_blob": "f90040d5a13080ee8050fbf31ea5b3b94675c070"
+        },
+        {
+          "path": "src/canvaspilot/cli.py",
+          "bytes": 22038,
+          "sha256": "991cb17f6b9a4cb8b6a2d0101af18b1c468ae6d98f884c680e5632eadb2455c8",
+          "git_blob": "d11809191ac805a9bdfd628b5881b8ce968a362f"
+        },
+        {
+          "path": "README.md",
+          "bytes": 22362,
+          "sha256": "597091d8ebf86e7801c555a7a5f7423019adecc2623a72554abc2ae5e8d04d78",
+          "git_blob": "3536bd35c847964115db6b97de53d16d07184310"
+        },
+        {
+          "path": "docs/agenda-export.md",
+          "bytes": 4694,
+          "sha256": "08b2953bfaaccaa4d2c99f5490101230b941ad680cfbec0db7a589524756422a",
+          "git_blob": "bebc5fb40a59f1fff4d168e066d5a4830c28ad2c"
+        },
+        {
+          "path": "tests/test_agenda_export.py",
+          "bytes": 13357,
+          "sha256": "6e5a9c75748f082413d34a70af3d1272b763c2df860c0942aeaaca723c8b6830",
+          "git_blob": "ceefa0150136dc7b76edd6c17eb9c5befedcdbb7"
+        },
+        {
+          "path": "tests/fixtures/agenda_view_calendar.json",
+          "bytes": 1195,
+          "sha256": "0a72127b1de5f4f9836c30fd8dd5bbd762e63e5805111e64db8a918c7ee14f19",
+          "git_blob": "3483a2f0a1c8b98ad96a2382c72af1bf7c323652"
+        },
+        {
+          "path": "scripts/receive_agenda_view.mjs",
+          "bytes": 24908,
+          "sha256": "05fe206afd47744a44fc2a072fb3e64039e664a2885edbce68296d33e4d47f91",
+          "git_blob": "5779f13b3efd7c7a94b4e88a76a66837465db910"
+        },
+        {
+          "path": ".github/workflows/agenda-view-browser.yml",
+          "bytes": 3575,
+          "sha256": "b37a58b588d50da8a32699696398cb16c32e58b29600b43236d7cc6fe1291e40",
+          "git_blob": "a06b862c23dccc61d5da9eea99d82b76668f78c8"
+        }
+      ],
+      "production_unchanged_from_author_freeze_v1": true,
+      "native_receiving": "13 original candidate passes plus3 affected helper-successor passes;13 unchanged test-method ASTs produce16 pytest cases; full hosted final gate required",
+      "browser": "Node syntax only; real installed Chrome gate prepared, no local execution or visual claim",
+      "native_preservation": "18 other hydrated source files and complete original baseline unchanged",
+      "readme_only_successor": "readme-placement-successor.json",
+      "required_wheel_gate": "wheel-gate-addition.json"
+    },
+    "source_files_unchanged": 19
+  },
+  "blind_protocol": {
+    "path": "protocol.json",
+    "sha256": "adde7e9db589a72c27b5b344ccbe4d2e335f3cd6e7ecd8b75eb3119992b2de31",
+    "fixture_sha256": "319e77fbf378bfa0c012516a0837559ad4cfb28e0a71db663e7b29af7540f3a2",
+    "candidate_hidden_until_frozen": true
+  },
+  "test": {
+    "test_sha256": "1ede9105b1ac62cb18bd5df4c73a694db91d57909f15c1fbda5a43b9af5d3c99",
+    "test_blob": "83d980c44b29ed04bf847c7f4fa61c4ef44ac481",
+    "bytes": 18075,
+    "fixture_sha256": "319e77fbf378bfa0c012516a0837559ad4cfb28e0a71db663e7b29af7540f3a2",
+    "protocol_sha256": "adde7e9db589a72c27b5b344ccbe4d2e335f3cd6e7ecd8b75eb3119992b2de31",
+    "source_freeze_sha256": "b84e4bbeec8c54a6c803e75877d8392679bfdd8f1ca13c827664c82103e59bc9",
+    "semantics": "Four frozen feature cases plus original native producer control; candidate source unchanged from released freeze.",
+    "ruff": "0.16.10: All checks passed; no native test execution before final freeze."
+  },
+  "qualifications": [
+    "Actual native CLI/CanvasClient over an authored loopback HTTP server: one event page and two opaque assignment pages; first-page filters are not carried onto the opaque continuation.",
+    "Seven original typed/raw records across three normalized courses remain complete and in native group/source order, including numeric0/string0/negative ID, null/false/empty/nested values, 19-digit fractional timing, -00:00 marker, offset-vs-source-date distinction and explicitly unavailable timing.",
+    "Deterministic complete UTF8 HTML contains every complete native entry; original JSON download is byte-identical to both the original baseline native CLI and candidate native CLI output. Saved data fields are literal; injected source markup creates no active resource element.",
+    "Five separate malformed count/source/course copies are wholly refused without input mutation.",
+    "Actual export creates one new Unicode/space HTML destination and exact native-report/html hash receipt. Repeating the destination refuses before HTTP and preserves bytes.",
+    "A valid first pair of pages followed by assignment[1] outside the selected courses exits1 with exact useful JSON error, empty stdout and no requested file or temporary residue.",
+    "Every original selected source/input and all10 author frozen packet paths remain unchanged. No executed receiver correction or optional replay. Ruff0.16.10 passed before the same-byte baseline/candidate runs."
+  ],
+  "processes": {
+    "baseline": {
+      "export-complete": {
+        "exit": 2,
+        "requests": [],
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "b66f7edd240b925d4f031d4a30b165f19e1d34c49a3adee12ec856dbc0cbb9ed",
+        "output_created": false
+      },
+      "export-late-source-refusal": {
+        "exit": 2,
+        "requests": [],
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "b66f7edd240b925d4f031d4a30b165f19e1d34c49a3adee12ec856dbc0cbb9ed",
+        "output_created": false
+      },
+      "original-agenda": {
+        "exit": 0,
+        "requests": [
+          {
+            "method": "GET",
+            "path": "/api/v1/calendar_events",
+            "query": {
+              "type": [
+                "event"
+              ],
+              "start_date": [
+                "2026-10-09"
+              ],
+              "end_date": [
+                "2026-10-11"
+              ],
+              "context_codes[]": [
+                "course_901",
+                "course_44",
+                "course_7"
+              ],
+              "per_page": [
+                "50"
+              ]
+            }
+          },
+          {
+            "method": "GET",
+            "path": "/api/v1/calendar_events",
+            "query": {
+              "type": [
+                "assignment"
+              ],
+              "start_date": [
+                "2026-10-09"
+              ],
+              "end_date": [
+                "2026-10-11"
+              ],
+              "context_codes[]": [
+                "course_901",
+                "course_44",
+                "course_7"
+              ],
+              "per_page": [
+                "50"
+              ]
+            }
+          },
+          {
+            "method": "GET",
+            "path": "/api/v1/calendar_events",
+            "query": {
+              "opaque_cursor": [
+                "peer-tail"
+              ]
+            }
+          }
+        ],
+        "stdout_sha256": "4c21a3bb0574d93549ae4040e5398809b10a649c4f4aa41246d340092be3ece0",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "output_created": false
+      }
+    },
+    "candidate": {
+      "export-complete": {
+        "exit": 0,
+        "requests": [
+          {
+            "method": "GET",
+            "path": "/api/v1/calendar_events",
+            "query": {
+              "type": [
+                "event"
+              ],
+              "start_date": [
+                "2026-10-09"
+              ],
+              "end_date": [
+                "2026-10-11"
+              ],
+              "context_codes[]": [
+                "course_901",
+                "course_44",
+                "course_7"
+              ],
+              "per_page": [
+                "50"
+              ]
+            }
+          },
+          {
+            "method": "GET",
+            "path": "/api/v1/calendar_events",
+            "query": {
+              "type": [
+                "assignment"
+              ],
+              "start_date": [
+                "2026-10-09"
+              ],
+              "end_date": [
+                "2026-10-11"
+              ],
+              "context_codes[]": [
+                "course_901",
+                "course_44",
+                "course_7"
+              ],
+              "per_page": [
+                "50"
+              ]
+            }
+          },
+          {
+            "method": "GET",
+            "path": "/api/v1/calendar_events",
+            "query": {
+              "opaque_cursor": [
+                "peer-tail"
+              ]
+            }
+          }
+        ],
+        "stdout_sha256": "0443230cd9c3c6b7e2b4e879d44d247353217980d8fa0b5e3402676c951226b3",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "output_created": true
+      },
+      "export-existing": {
+        "exit": 1,
+        "requests": [],
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "1d9a91e72cd18a89592fbe06e66d953216e780f0107bf6f455818329feab9456",
+        "output_created": true
+      },
+      "export-late-source-refusal": {
+        "exit": 1,
+        "requests": [
+          {
+            "method": "GET",
+            "path": "/api/v1/calendar_events",
+            "query": {
+              "type": [
+                "event"
+              ],
+              "start_date": [
+                "2026-10-09"
+              ],
+              "end_date": [
+                "2026-10-11"
+              ],
+              "context_codes[]": [
+                "course_901",
+                "course_44",
+                "course_7"
+              ],
+              "per_page": [
+                "50"
+              ]
+            }
+          },
+          {
+            "method": "GET",
+            "path": "/api/v1/calendar_events",
+            "query": {
+              "type": [
+                "assignment"
+              ],
+              "start_date": [
+                "2026-10-09"
+              ],
+              "end_date": [
+                "2026-10-11"
+              ],
+              "context_codes[]": [
+                "course_901",
+                "course_44",
+                "course_7"
+              ],
+              "per_page": [
+                "50"
+              ]
+            }
+          },
+          {
+            "method": "GET",
+            "path": "/api/v1/calendar_events",
+            "query": {
+              "opaque_cursor": [
+                "peer-tail"
+              ]
+            }
+          }
+        ],
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "d311676eb99289aa4123e6d94e6ab3badc59bd1dc8aa9e834adb3f97ea068a99",
+        "output_created": false
+      },
+      "original-agenda": {
+        "exit": 0,
+        "requests": [
+          {
+            "method": "GET",
+            "path": "/api/v1/calendar_events",
+            "query": {
+              "type": [
+                "event"
+              ],
+              "start_date": [
+                "2026-10-09"
+              ],
+              "end_date": [
+                "2026-10-11"
+              ],
+              "context_codes[]": [
+                "course_901",
+                "course_44",
+                "course_7"
+              ],
+              "per_page": [
+                "50"
+              ]
+            }
+          },
+          {
+            "method": "GET",
+            "path": "/api/v1/calendar_events",
+            "query": {
+              "type": [
+                "assignment"
+              ],
+              "start_date": [
+                "2026-10-09"
+              ],
+              "end_date": [
+                "2026-10-11"
+              ],
+              "context_codes[]": [
+                "course_901",
+                "course_44",
+                "course_7"
+              ],
+              "per_page": [
+                "50"
+              ]
+            }
+          },
+          {
+            "method": "GET",
+            "path": "/api/v1/calendar_events",
+            "query": {
+              "opaque_cursor": [
+                "peer-tail"
+              ]
+            }
+          }
+        ],
+        "stdout_sha256": "4c21a3bb0574d93549ae4040e5398809b10a649c4f4aa41246d340092be3ece0",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "output_created": false
+      }
+    }
+  },
+  "archive": {
+    "path": "native-evidence.zip",
+    "bytes": 69353,
+    "sha256": "bd741734566462fa6f989495dea75cdb6ea4991ecf942ba2acbf1e5d0c315e10",
+    "git_blob": "2f96dd0de3d7f2e66ef72b11f3840a6955d47841",
+    "members": 47,
+    "all_members_readback_verified": true
+  },
+  "boundaries": [
+    "Synthetic software acceptance uses actual native HTTP/CLI/renderer/filesystem; no live school account or live Canvas claim.",
+    "HTML parsing is not a browser, visual, print, download-click or filter-control execution claim; the author hosted genuine Chrome gate remains required.",
+    "Executed original-parent CLI d1180919 and unchanged agenda dependencies are explicitly bound here; later current-main composition and packaged wheel assets require the author hosted final gate.",
+    "Initial Ruff-only preflight required explicit check=False before either native run; no behavioral assertions were changed after either execution."
+  ]
+}

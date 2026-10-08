@@ -1,0 +1,55 @@
+{
+  "schema": "canvaspilot-agenda-view-root-source-review/1",
+  "reviewer": "estate-e82707f2bc62/root",
+  "created_at": "2026-10-08T16:22:53Z",
+  "state": "Source accepted for publication; peer, current-source native CI, actual browser, and wheel asset receiving remain required.",
+  "reviewed_product": {
+    "src/canvaspilot/agenda_export.py": "af25e95a1c9bf4a20784617e5c867d18584ac49a",
+    "src/canvaspilot/agenda_view/style.css": "30ee1d7b27445b88a4ef32bae7411865b3c2a374",
+    "src/canvaspilot/agenda_view/controls.js": "f90040d5a13080ee8050fbf31ea5b3b94675c070",
+    "src/canvaspilot/cli.py": "bc71bd129a71e00389bee54bf353f2d71ff6f633",
+    "README.md": "12501a9736632fb8eaf3dc38562ad8cb244a35f2",
+    "docs/agenda-export.md": "bebc5fb40a59f1fff4d168e066d5a4830c28ad2c"
+  },
+  "reviewed_receivers": {
+    "tests/test_agenda_export.py": "ceefa0150136dc7b76edd6c17eb9c5befedcdbb7",
+    "scripts/receive_agenda_view.mjs": "5779f13b3efd7c7a94b4e88a76a66837465db910",
+    ".github/workflows/agenda-view-browser.yml": "be4312513d7ab34a2053fd1736598671bc039270"
+  },
+  "local_manifest_readback": "All 16 then-current delivery paths matched declared byte count, SHA256 and Git blob. A later wheel-only workflow successor is expected and is not silently covered by this identity.",
+  "direct_parent_readback": {
+    "parent": "728d2d8b67b6f0812956fecdeeb50e25ee32e979",
+    "cli_parent_blob": "226f3f7d502dd61ad03c59cd8212289d133a0190",
+    "cli_two_additions_reversed_exactly": true,
+    "readme_parent_blob": "92a5e57ff04c941bfc57e8674324dd811f7c9fcb",
+    "readme_old_middle": "",
+    "readme_new_middle": "Save that same selection as an offline view with course/source-date/search controls\nand a printable current view:\n`canvaspilot export-agenda 42 77 --start 2026-10-08 --end 2026-10-15 --out agenda.html`.\nThe original native JSON remains available byte-identically.\n[Review and print a saved agenda](docs/agenda-export.md).\n\n",
+    "readme_single_addition_reversed_exactly": true
+  },
+  "findings": [
+    "Selection is validated by the existing agenda_selection producer. Course binding and timing reuse _record_course and _timing; source position uniqueness/range plus complete collection/group totals retain every producer record. Per-group sort includes native exact instant/date and stable event/assignment source order.",
+    "Raw original native JSON is serialized with the ordinary agenda CLI's indent=2 and final LF, hashed and embedded as a base64 data download. Per-entry source and complete native report remain present. Fields, typed IDs, original offsets/fractional precision, duplicate positions and nested source are retained.",
+    "All source strings pass explicit control/surrogate rendering and HTML escaping. Data attributes contain validated course/date/group values; source URLs are displayed text. Description uses the existing strip_html helper and remains escaped. There is no source-controlled resource, script or handler interpolation.",
+    "Real human controls intersect course, source date and saved text; unknown timing bypasses only the date predicate and still obeys course/search. Counts/context/empty states update consistently. Reset is scheduled after native reset, print opens visible source disclosures then restores them. Complete no-JS content and JSON remain available.",
+    "The renderer validates complete input before composing HTML, accepts inclusive 2000-record and 4 MiB native JSON bounds, and does not mutate the report. No truncation or inferred learner state is introduced.",
+    "The writer prepares and fsyncs a same-directory owned temporary file, then creates an exclusive hardlink without overwrite fallback. Existing files, symlinks and races remain protected; temporary cleanup stays scoped to the created path. The CLI prechecks existing destinations, calls the existing agenda API once and emits structured failure or source/hash/count success.",
+    "Both CLI additions reversed byte-for-byte to the directly fetched 728d parent. The README is one additive insertion beside agenda; its reversal is exact. The existing quiz, agenda and other command content is preserved.",
+    "The actual Chrome receiver reads baseline/native/current CLI outputs through an authored HTTP server and then serves no provider during offline browser operation. It uses real key/mouse input for course, search, reset, download and disclosure; date selection uses the stated browser value/event path. It checks native identity, actual JSON download, keyboard focus, narrow layout, print, no-JS, no requests/errors/storage and exact source preservation.",
+    "The workflow currently uses editable/source execution. Since CSS and JS are newly required installed assets, a targeted declared wheel build and exact ZIP asset comparison was requested before packaged availability is accepted. No production or dependency change is needed merely to perform that check."
+  ],
+  "execution_claims": {
+    "new_root_behavior_tests": 0,
+    "root_browser_execution": false,
+    "root_visual_inspection": false,
+    "author_receiving": "13 candidate cases passed in the original 16-case run, with three receiver helper/proxy failures. Three affected cases passed after a test-only helper successor. These are distinct stages; root did not relabel them as a single 16-case run.",
+    "independent_peer": "Separate source-discovery protocol and cases are in progress; root source review did not provide peer fixtures or alter them.",
+    "original_failures_preserved": true
+  },
+  "remaining_gates": [
+    "Independent frozen peer native/renderer/file receiving.",
+    "Targeted wheel build and exact new packaged asset readback.",
+    "Exact current receiving-tree native CI and actual installed Chrome result.",
+    "Actual produced view/print inspection when ordinary artifact access permits; no source-only visual claim.",
+    "Current main ownership/preservation, tested synthetic source versus actual merge distinction, and normal final integration."
+  ]
+}
