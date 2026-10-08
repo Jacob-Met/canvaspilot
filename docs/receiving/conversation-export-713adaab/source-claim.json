@@ -1,0 +1,39 @@
+{
+  "event": {
+    "actor": "chatgpt:/root/713adaab",
+    "branch": "main",
+    "created_at": 1791489502.2294798,
+    "event_hash": "5a529bd92970500c877b8248cd60851969175082125a4cb507345bce6c881bfc",
+    "event_id": "cev_355894b82cac4826972ed31e",
+    "event_type": "conscience.decision",
+    "payload_sha256": "eb1e5088f2c73b09499867672c1bc2c8c9f5cb189c90da4ded5ff791f641014c",
+    "prev_hash": "a16199900fb15431d54959835fc92f5459f099ed34e0a4f589b8a4d195bd23ef",
+    "seq": 4879
+  },
+  "payload": {
+    "coordination": "https://github.com/Jacob-Met/hamon/issues/140#issuecomment-6067943555",
+    "issue": "https://github.com/Jacob-Met/canvaspilot/issues/88",
+    "key": "claim:canvaspilot-conversation-export-713adaab",
+    "ownership_boundary": "Discussion export85 and enrollment/group/syllabus/agenda/feedback/study/history/todo/announcement plus security/CI owners preserved. Native overlap coverage incomplete and advisory.",
+    "qualification": "Baseline actual missing-command exit2, unchanged read exit0 and exact authored nested Unicode JSON; no real network/profile/broker/attachment. Source baseline and independent tests frozen before candidate execution.",
+    "scope": [
+      "src/canvaspilot/conversation_export.py",
+      "src/canvaspilot/cli.py additive parser/dispatch only",
+      "tests/test_conversation_export.py",
+      "docs/conversation-export.md",
+      "README.md additive pointer",
+      "docs/receiving/conversation-export-713adaab/"
+    ],
+    "source": {
+      "canonical_base": "92e9f1b500a15dd61d4c74539dedbf880afde30b",
+      "canonical_tree": "13ad8dabadb259983fb568dd35e65f2762f3ee3b",
+      "native_partial_commit": "ca45f6e07706e7eedd555b7f287f21f9b0430fbf",
+      "native_partial_tree": "5fbc0dff6e64c5baee870423699a0e015bbb258f",
+      "partial_files": 30,
+      "root": "/dev/shm/canvaspilot-conversation-work-713adaab"
+    },
+    "source_claim_only": true,
+    "text": "CanvasPilot issue88: new passive offline conversation export through one unchanged get_conversation call. Root owns the module, additive CLI/doc spans and source composition; mac_execution independently authored and froze31 tests. No native goal/attempt lease or installation is claimed.",
+    "value": "active_isolated_source"
+  }
+}

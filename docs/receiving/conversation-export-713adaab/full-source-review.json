@@ -1,0 +1,78 @@
+{
+  "canonical_base": "56a72a2e2cee5ec04671d12ebe5bc2484afb8026",
+  "composition_sha256": "72178486a9bc134811a21dd15ccdefb75d713c7f0357285bc580c73613d32e05",
+  "created_utc": "2026-10-08T21:31:09.550621+00:00",
+  "disposition": "approve_no_blocker",
+  "findings": [
+    "Complete exporter, 502-line maintained test file and contract reviewed; existing API get_conversation, client request, page writer and both CLI insertions inspected.",
+    "Complete decoded JSON is serialized with string keys, supported JSON value types, finite numeric values and ASCII escaping. Unknown fields, record order and distinctions between absent, null, empty, false and zero are retained. Embedded download represents decoded source rather than HTTP wire bytes.",
+    "All source values entering HTML use escaping; source URLs remain literal text. Dynamic content is not inserted into style or script. The only generated links are fragment links and a Base64 JSON download. CSP and no-referrer are defense in depth; this review is not browser-network qualification.",
+    "Author display matches both exact Python JSON type and value, labels missing or duplicate matches, and never infers chronology or completeness.",
+    "Existing destination admission precedes client construction. Source read, validation, rendering and client close precede writer publication. Existing writer flushes and closes its temporary file before exclusive hard-link publication, never replacing a concurrent entry; post-publication cleanup warning remains success.",
+    "4 MiB source and 16 MiB HTML limits use the actual complete serialized byte lengths with exact-boundary acceptance. They are export artifact size limits after the existing reader returns, not network, peak-memory, CPU, parent-directory race or crash-durability guarantees.",
+    "Maintained cases exercise literal Unicode/control bodies, lossless decoded download, unknown fields, author ambiguity, malformed collection entries, root/nonfinite rejection, existing destinations, structured reader failure, query-state preservation and exact size thresholds. This review did not rerun any case.",
+    "Independent SHA256 and Git blob recomputation matches all 32 listed runtime files. Removing exactly the two reviewed blocks totaling 15 CLI lines restores the canonical CLI blob; 31 other listed runtime files, including API/client/page writer, match canonical blobs unchanged."
+  ],
+  "head": "4192602afeee369e90bc7a145ba387ded9e10c61",
+  "independent_readback": {
+    "cli_added_lines_removed": 15,
+    "cli_recovered_canonical_blob": "1c29dd2a2a1632b7f3c27878259efe492a08fdfd",
+    "runtime_files_hashed": 32,
+    "unchanged_canonical_blob_matches": 31
+  },
+  "limits": {
+    "actions_gates": "pending under current no-Actions hold",
+    "browser_or_print_execution": false,
+    "live_canvas_access": false,
+    "product_execution": false,
+    "review_artifacts_written_only_to_own_namespace": true,
+    "source_writes": false,
+    "test_rerun": false
+  },
+  "native_root": "/dev/shm/canvaspilot-conversation-work-713adaab",
+  "pins": {
+    "docs/conversation-export.md": {
+      "bytes": 4429,
+      "git_blob": "b252e7edd8275bb879d160faea22287dcbf7158c",
+      "sha256": "52e2f1940d4c0fb6433eb779a7d12d3bfade63fb66758b45f28013ca1415cab5"
+    },
+    "src/canvaspilot/api.py": {
+      "bytes": 29742,
+      "canonical_unchanged": true,
+      "git_blob": "3ec81dee60bc67d7a80d40b78e85d5c005441b99",
+      "sha256": "b6b770c2cdef9c9ce44a4a6aefd5b6d0876bc09e5aee29a4adb5a7c603b41c24"
+    },
+    "src/canvaspilot/cli.py": {
+      "bytes": 40605,
+      "canonical_unchanged": false,
+      "git_blob": "e584fdb59e39f7e3e162b1f4aba334d4a244006c",
+      "sha256": "0845653584629523a70382dd5e2ae2f5f1229145fc4ba9c394a52c2ad2609188"
+    },
+    "src/canvaspilot/client.py": {
+      "bytes": 18934,
+      "canonical_unchanged": true,
+      "git_blob": "1db4b1135305f7e410025ae7937f9a6cd349f020",
+      "sha256": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797"
+    },
+    "src/canvaspilot/conversation_export.py": {
+      "bytes": 15939,
+      "git_blob": "4ee626e13c524576756be9643728562cb29daeff",
+      "sha256": "f18490e6eaa26a2176426711a20a6626bbdb063d539a650d5a09f86811245ff2"
+    },
+    "src/canvaspilot/page_export.py": {
+      "bytes": 17041,
+      "canonical_unchanged": true,
+      "git_blob": "1b46af8af07d24e24cde54aba393d9f977e77136",
+      "sha256": "8800e959ee620438273c3291fd24c51b9ed567430b28093cd3f8bef52bff5015"
+    },
+    "tests/test_conversation_export.py": {
+      "bytes": 20310,
+      "git_blob": "b5b3a0cb8dba30e66f70bd309011a906e4dc8d3b",
+      "sha256": "33dbb68b76136c88ffa99bfd12740b1c7dadf517da4f89bdf2d5d1b4bb6f9203"
+    }
+  },
+  "readback_negative": "The local partial checkout lacks canonical commit 56a72a2 and canonical CLI object, so direct git diff/cat-file lookup failed read-only. No fetch or mutation followed. Exact canonical blob proof was independently recomputed from current bytes after removing the two reviewed blocks.",
+  "reviewer": "chatgpt:/root/production_execution",
+  "schema": "hamon.independent-source-review/1",
+  "scope": "CanvasPilot conversation export: source-only, read-only peer review"
+}

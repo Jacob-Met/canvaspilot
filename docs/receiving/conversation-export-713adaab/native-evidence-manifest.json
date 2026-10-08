@@ -1,0 +1,1383 @@
+{
+  "canonical_commit": "56a72a2e2cee5ec04671d12ebe5bc2484afb8026",
+  "canonical_tree": "a07c3e941219ff80968e1ff20528a63541bb7400",
+  "directories": [
+    "author-receiving/candidate-after-lint",
+    "author-receiving/candidate-after-lint/tmp",
+    "author-receiving/candidate-after-lint/tmp/test_actual_cli_new_file_recei0",
+    "author-receiving/candidate-after-lint/tmp/test_author_matching_preserves0",
+    "author-receiving/candidate-after-lint/tmp/test_builder_reads_once_with_o0",
+    "author-receiving/candidate-after-lint/tmp/test_byte_limits_and_aware_cre0",
+    "author-receiving/candidate-after-lint/tmp/test_cli_reader_or_shape_error0",
+    "author-receiving/candidate-after-lint/tmp/test_cli_reader_or_shape_error1",
+    "author-receiving/candidate-after-lint/tmp/test_cli_reader_or_shape_error2",
+    "author-receiving/candidate-after-lint/tmp/test_collection_states_and_non0",
+    "author-receiving/candidate-after-lint/tmp/test_collection_states_and_non1",
+    "author-receiving/candidate-after-lint/tmp/test_collection_states_and_non2",
+    "author-receiving/candidate-after-lint/tmp/test_collection_states_and_non3",
+    "author-receiving/candidate-after-lint/tmp/test_collection_states_and_non4",
+    "author-receiving/candidate-after-lint/tmp/test_existing_destination_refu0",
+    "author-receiving/candidate-after-lint/tmp/test_existing_destination_refu1",
+    "author-receiving/candidate-after-lint/tmp/test_existing_destination_refu1/existing.html",
+    "author-receiving/candidate-after-lint/tmp/test_existing_destination_refu2",
+    "author-receiving/candidate-after-lint/tmp/test_existing_destination_refu3",
+    "author-receiving/candidate-after-lint/tmp/test_field_states_distinguish_0",
+    "author-receiving/candidate-after-lint/tmp/test_field_states_distinguish_1",
+    "author-receiving/candidate-after-lint/tmp/test_field_states_distinguish_2",
+    "author-receiving/candidate-after-lint/tmp/test_field_states_distinguish_3",
+    "author-receiving/candidate-after-lint/tmp/test_field_states_distinguish_4",
+    "author-receiving/candidate-after-lint/tmp/test_non_object_collection_row0",
+    "author-receiving/candidate-after-lint/tmp/test_passive_html_and_control_0",
+    "author-receiving/candidate-after-lint/tmp/test_readable_order_literal_bo0",
+    "author-receiving/candidate-after-lint/tmp/test_real_reader_keeps_false_q0",
+    "author-receiving/candidate-after-lint/tmp/test_real_reader_keeps_false_q1",
+    "author-receiving/candidate-after-lint/tmp/test_real_reader_keeps_false_q2",
+    "author-receiving/candidate-after-lint/tmp/test_root_and_nonfinite_json_a0",
+    "author-receiving/candidate-after-lint/tmp/test_root_and_nonfinite_json_a1",
+    "author-receiving/candidate-after-lint/tmp/test_root_and_nonfinite_json_a2",
+    "author-receiving/candidate-after-lint/tmp/test_root_and_nonfinite_json_a3",
+    "author-receiving/candidate-current-main-acdd",
+    "author-receiving/candidate-current-main-acdd/tmp",
+    "author-receiving/candidate-current-main-acdd/tmp/test_actual_cli_new_file_recei0",
+    "author-receiving/candidate-current-main-acdd/tmp/test_author_matching_preserves0",
+    "author-receiving/candidate-current-main-acdd/tmp/test_builder_reads_once_with_o0",
+    "author-receiving/candidate-current-main-acdd/tmp/test_byte_limits_and_aware_cre0",
+    "author-receiving/candidate-current-main-acdd/tmp/test_cli_reader_or_shape_error0",
+    "author-receiving/candidate-current-main-acdd/tmp/test_cli_reader_or_shape_error1",
+    "author-receiving/candidate-current-main-acdd/tmp/test_cli_reader_or_shape_error2",
+    "author-receiving/candidate-current-main-acdd/tmp/test_collection_states_and_non0",
+    "author-receiving/candidate-current-main-acdd/tmp/test_collection_states_and_non1",
+    "author-receiving/candidate-current-main-acdd/tmp/test_collection_states_and_non2",
+    "author-receiving/candidate-current-main-acdd/tmp/test_collection_states_and_non3",
+    "author-receiving/candidate-current-main-acdd/tmp/test_collection_states_and_non4",
+    "author-receiving/candidate-current-main-acdd/tmp/test_existing_destination_refu0",
+    "author-receiving/candidate-current-main-acdd/tmp/test_existing_destination_refu1",
+    "author-receiving/candidate-current-main-acdd/tmp/test_existing_destination_refu1/existing.html",
+    "author-receiving/candidate-current-main-acdd/tmp/test_existing_destination_refu2",
+    "author-receiving/candidate-current-main-acdd/tmp/test_existing_destination_refu3",
+    "author-receiving/candidate-current-main-acdd/tmp/test_field_states_distinguish_0",
+    "author-receiving/candidate-current-main-acdd/tmp/test_field_states_distinguish_1",
+    "author-receiving/candidate-current-main-acdd/tmp/test_field_states_distinguish_2",
+    "author-receiving/candidate-current-main-acdd/tmp/test_field_states_distinguish_3",
+    "author-receiving/candidate-current-main-acdd/tmp/test_field_states_distinguish_4",
+    "author-receiving/candidate-current-main-acdd/tmp/test_non_object_collection_row0",
+    "author-receiving/candidate-current-main-acdd/tmp/test_passive_html_and_control_0",
+    "author-receiving/candidate-current-main-acdd/tmp/test_readable_order_literal_bo0",
+    "author-receiving/candidate-current-main-acdd/tmp/test_real_reader_keeps_false_q0",
+    "author-receiving/candidate-current-main-acdd/tmp/test_real_reader_keeps_false_q1",
+    "author-receiving/candidate-current-main-acdd/tmp/test_real_reader_keeps_false_q2",
+    "author-receiving/candidate-current-main-acdd/tmp/test_root_and_nonfinite_json_a0",
+    "author-receiving/candidate-current-main-acdd/tmp/test_root_and_nonfinite_json_a1",
+    "author-receiving/candidate-current-main-acdd/tmp/test_root_and_nonfinite_json_a2",
+    "author-receiving/candidate-current-main-acdd/tmp/test_root_and_nonfinite_json_a3",
+    "author-receiving/candidate-current-main56",
+    "author-receiving/candidate-current-main56/tmp",
+    "author-receiving/candidate-current-main56/tmp/test_actual_cli_new_file_recei0",
+    "author-receiving/candidate-current-main56/tmp/test_author_matching_preserves0",
+    "author-receiving/candidate-current-main56/tmp/test_builder_reads_once_with_o0",
+    "author-receiving/candidate-current-main56/tmp/test_byte_limits_and_aware_cre0",
+    "author-receiving/candidate-current-main56/tmp/test_cli_reader_or_shape_error0",
+    "author-receiving/candidate-current-main56/tmp/test_cli_reader_or_shape_error1",
+    "author-receiving/candidate-current-main56/tmp/test_cli_reader_or_shape_error2",
+    "author-receiving/candidate-current-main56/tmp/test_collection_states_and_non0",
+    "author-receiving/candidate-current-main56/tmp/test_collection_states_and_non1",
+    "author-receiving/candidate-current-main56/tmp/test_collection_states_and_non2",
+    "author-receiving/candidate-current-main56/tmp/test_collection_states_and_non3",
+    "author-receiving/candidate-current-main56/tmp/test_collection_states_and_non4",
+    "author-receiving/candidate-current-main56/tmp/test_existing_destination_refu0",
+    "author-receiving/candidate-current-main56/tmp/test_existing_destination_refu1",
+    "author-receiving/candidate-current-main56/tmp/test_existing_destination_refu1/existing.html",
+    "author-receiving/candidate-current-main56/tmp/test_existing_destination_refu2",
+    "author-receiving/candidate-current-main56/tmp/test_existing_destination_refu3",
+    "author-receiving/candidate-current-main56/tmp/test_field_states_distinguish_0",
+    "author-receiving/candidate-current-main56/tmp/test_field_states_distinguish_1",
+    "author-receiving/candidate-current-main56/tmp/test_field_states_distinguish_2",
+    "author-receiving/candidate-current-main56/tmp/test_field_states_distinguish_3",
+    "author-receiving/candidate-current-main56/tmp/test_field_states_distinguish_4",
+    "author-receiving/candidate-current-main56/tmp/test_non_object_collection_row0",
+    "author-receiving/candidate-current-main56/tmp/test_passive_html_and_control_0",
+    "author-receiving/candidate-current-main56/tmp/test_readable_order_literal_bo0",
+    "author-receiving/candidate-current-main56/tmp/test_real_reader_keeps_false_q0",
+    "author-receiving/candidate-current-main56/tmp/test_real_reader_keeps_false_q1",
+    "author-receiving/candidate-current-main56/tmp/test_real_reader_keeps_false_q2",
+    "author-receiving/candidate-current-main56/tmp/test_root_and_nonfinite_json_a0",
+    "author-receiving/candidate-current-main56/tmp/test_root_and_nonfinite_json_a1",
+    "author-receiving/candidate-current-main56/tmp/test_root_and_nonfinite_json_a2",
+    "author-receiving/candidate-current-main56/tmp/test_root_and_nonfinite_json_a3",
+    "author-receiving/candidate-first",
+    "author-receiving/current-main-acdd-composition",
+    "author-receiving/current-main56-composition",
+    "author-receiving/native-checkpoint",
+    "author-receiving/source-adoption-f18490e6",
+    "frozen-baseline/evidence",
+    "frozen-baseline/results",
+    "frozen-baseline/results/missing-command",
+    "frozen-baseline/results/reader",
+    "frozen-baseline/results/reader-corrected",
+    "frozen-baseline/source",
+    "frozen-baseline/source/.github",
+    "frozen-baseline/source/.github/workflows",
+    "frozen-baseline/source/docs",
+    "frozen-baseline/source/src",
+    "frozen-baseline/source/src/canvaspilot",
+    "frozen-baseline/source/tests",
+    "frozen-baseline/witness",
+    "independent-tests/evidence",
+    "independent-tests/tests"
+  ],
+  "limits": [
+    "No product execution during packaging",
+    "No symlink target followed",
+    "No browser profiles, raw netlog or external files in this archive",
+    "Native Git history is independently rooted partial source, not canonical full history"
+  ],
+  "native_evidence_commit": "fc4f83a83811fd023a2906972028ba17400f5598",
+  "native_evidence_tree": "cc9bff51c3557c0443ed61b084c4d49e93d67dee",
+  "payloads": [
+    {
+      "bytes": 3291,
+      "git_blob_sha1": "5984e4e294434d200bc83d6b191e55db0e951dfe",
+      "path": "author-receiving/actions-hold.json",
+      "sha256": "abdd1cc6d307f52f4716a180b1f329febae6abf5f2c7a4802ddf300cd7e4523d"
+    },
+    {
+      "bytes": 4681,
+      "git_blob_sha1": "8cc7e033c252c6d40c4ad497ca2d351a62f18929",
+      "path": "author-receiving/candidate-after-lint/junit.xml",
+      "sha256": "a8e6408840e2d29ff2ccd1a4e1b8a7948edf7252b6131fee5094ed6c95c38480"
+    },
+    {
+      "bytes": 0,
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "path": "author-receiving/candidate-after-lint/pytest.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 100,
+      "git_blob_sha1": "2d3891f6a3125332276220817ed05353652b7291",
+      "path": "author-receiving/candidate-after-lint/pytest.stdout",
+      "sha256": "22ce0a510a2c7c3b57220fb5cef3e2b86cb351f1e37c447c78660daaa0b0e172"
+    },
+    {
+      "bytes": 9725,
+      "git_blob_sha1": "12b6bc1f247d36818f9447f085e778d665aa8c28",
+      "path": "author-receiving/candidate-after-lint/report.json",
+      "sha256": "76fa9a35aa485a07cf8c16fbdf9658e461a23c0138a31292268976c81d3987b7"
+    },
+    {
+      "bytes": 0,
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "path": "author-receiving/candidate-after-lint/ruff.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2,
+      "git_blob_sha1": "0637a088a01e8ddab3bf3fa98dbe804cbde1a0dc",
+      "path": "author-receiving/candidate-after-lint/ruff.stdout",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "bytes": 9247,
+      "git_blob_sha1": "673b22e89477bf9ac328e9de873d7587f55f04f3",
+      "path": "author-receiving/candidate-after-lint/tmp/test_actual_cli_new_file_recei0/saved conversation.html",
+      "sha256": "74283dbd9c95e0371ddc46c915bd94da2262e15397d28316ed08bdea603993fb"
+    },
+    {
+      "bytes": 27,
+      "git_blob_sha1": "9fbea5cc6fefa7259b99fc1594c5eb593f71ee32",
+      "path": "author-receiving/candidate-after-lint/tmp/test_existing_destination_refu0/existing.html",
+      "sha256": "4d94ad7a6730bc741e160662113aed6cd2e1687a8ba6edbfe83463c83d1ce08f"
+    },
+    {
+      "bytes": 4,
+      "git_blob_sha1": "c693f138c8109c954f7924104ea8e7fccde96d47",
+      "path": "author-receiving/candidate-after-lint/tmp/test_existing_destination_refu1/existing.html/sentinel",
+      "sha256": "6ca7ea2feefc88ecb5ed6356ed963f47dc9137f82526fdd25d618ea626d0803f"
+    },
+    {
+      "bytes": 18,
+      "git_blob_sha1": "d9b2efdf1b9429ab55f23eb1be52955a1b5eb645",
+      "path": "author-receiving/candidate-after-lint/tmp/test_existing_destination_refu2/owned-target.txt",
+      "sha256": "10b8102786dc4810fb529443068cf5bff5b3e490b4bb44e44ebb668414742c24"
+    },
+    {
+      "bytes": 4680,
+      "git_blob_sha1": "07427a0052baa7011170508f85e3d0e753b5a97f",
+      "path": "author-receiving/candidate-current-main-acdd/junit.xml",
+      "sha256": "248502b5c0ba4bfe06c7b97fe43080df969297ece079c98d997deff80de4cd4d"
+    },
+    {
+      "bytes": 0,
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "path": "author-receiving/candidate-current-main-acdd/pytest.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 99,
+      "git_blob_sha1": "16f39e5e6505b97ab6127017e4aa8fdedb5fc982",
+      "path": "author-receiving/candidate-current-main-acdd/pytest.stdout",
+      "sha256": "59534363f07066c5202ccbb4a7af576a91e789699e6c61f4abc44c02f8b81a03"
+    },
+    {
+      "bytes": 10885,
+      "git_blob_sha1": "b6537ebcaa68259ef9fbfb514728e13252dccae9",
+      "path": "author-receiving/candidate-current-main-acdd/report.json",
+      "sha256": "9655aea0c0cfc45d9db678cb5d2412f1cac011c8419ecb061a92d43a3da301d5"
+    },
+    {
+      "bytes": 0,
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "path": "author-receiving/candidate-current-main-acdd/ruff.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2,
+      "git_blob_sha1": "0637a088a01e8ddab3bf3fa98dbe804cbde1a0dc",
+      "path": "author-receiving/candidate-current-main-acdd/ruff.stdout",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "bytes": 9599,
+      "git_blob_sha1": "bf42aa435a236cfee1d514ece541971107fc4b6c",
+      "path": "author-receiving/candidate-current-main-acdd/tmp/test_actual_cli_new_file_recei0/saved conversation.html",
+      "sha256": "2fe819bd3ac36f79774c2c42985b44d96e54d080982bddbffab4d4eacd0c5570"
+    },
+    {
+      "bytes": 27,
+      "git_blob_sha1": "9fbea5cc6fefa7259b99fc1594c5eb593f71ee32",
+      "path": "author-receiving/candidate-current-main-acdd/tmp/test_existing_destination_refu0/existing.html",
+      "sha256": "4d94ad7a6730bc741e160662113aed6cd2e1687a8ba6edbfe83463c83d1ce08f"
+    },
+    {
+      "bytes": 4,
+      "git_blob_sha1": "c693f138c8109c954f7924104ea8e7fccde96d47",
+      "path": "author-receiving/candidate-current-main-acdd/tmp/test_existing_destination_refu1/existing.html/sentinel",
+      "sha256": "6ca7ea2feefc88ecb5ed6356ed963f47dc9137f82526fdd25d618ea626d0803f"
+    },
+    {
+      "bytes": 18,
+      "git_blob_sha1": "d9b2efdf1b9429ab55f23eb1be52955a1b5eb645",
+      "path": "author-receiving/candidate-current-main-acdd/tmp/test_existing_destination_refu2/owned-target.txt",
+      "sha256": "10b8102786dc4810fb529443068cf5bff5b3e490b4bb44e44ebb668414742c24"
+    },
+    {
+      "bytes": 4680,
+      "git_blob_sha1": "e69aad00fe01126a3804acb0ca3df206093f0eae",
+      "path": "author-receiving/candidate-current-main56/junit.xml",
+      "sha256": "25978425347d72958d57aa7b21944bef31ffc8af7c6055ab6027bdc9dac7bfec"
+    },
+    {
+      "bytes": 0,
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "path": "author-receiving/candidate-current-main56/pytest.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 99,
+      "git_blob_sha1": "3047c34729729cf275ae9c6eb23554f306bc1d1f",
+      "path": "author-receiving/candidate-current-main56/pytest.stdout",
+      "sha256": "3ea1163171d49ce4190a542bc130898fab18c32e417cc25e81f454a90a755d2c"
+    },
+    {
+      "bytes": 11099,
+      "git_blob_sha1": "b282dfa518573f8d6590e63bacdb51088f50af81",
+      "path": "author-receiving/candidate-current-main56/report.json",
+      "sha256": "bb5b6ba9acd86d88eef1a55ff701a04a7a10778bf2b9cf7f77c1bafb292c2819"
+    },
+    {
+      "bytes": 0,
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "path": "author-receiving/candidate-current-main56/ruff.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2,
+      "git_blob_sha1": "0637a088a01e8ddab3bf3fa98dbe804cbde1a0dc",
+      "path": "author-receiving/candidate-current-main56/ruff.stdout",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "bytes": 9599,
+      "git_blob_sha1": "d8144dafcafe06f94cd455c278e9c8054e5e78d2",
+      "path": "author-receiving/candidate-current-main56/tmp/test_actual_cli_new_file_recei0/saved conversation.html",
+      "sha256": "218093468fb8beb7672c5bdf9a17a05a5e0a4538a5d4b295d002c6bf1ece77fa"
+    },
+    {
+      "bytes": 27,
+      "git_blob_sha1": "9fbea5cc6fefa7259b99fc1594c5eb593f71ee32",
+      "path": "author-receiving/candidate-current-main56/tmp/test_existing_destination_refu0/existing.html",
+      "sha256": "4d94ad7a6730bc741e160662113aed6cd2e1687a8ba6edbfe83463c83d1ce08f"
+    },
+    {
+      "bytes": 4,
+      "git_blob_sha1": "c693f138c8109c954f7924104ea8e7fccde96d47",
+      "path": "author-receiving/candidate-current-main56/tmp/test_existing_destination_refu1/existing.html/sentinel",
+      "sha256": "6ca7ea2feefc88ecb5ed6356ed963f47dc9137f82526fdd25d618ea626d0803f"
+    },
+    {
+      "bytes": 18,
+      "git_blob_sha1": "d9b2efdf1b9429ab55f23eb1be52955a1b5eb645",
+      "path": "author-receiving/candidate-current-main56/tmp/test_existing_destination_refu2/owned-target.txt",
+      "sha256": "10b8102786dc4810fb529443068cf5bff5b3e490b4bb44e44ebb668414742c24"
+    },
+    {
+      "bytes": 8763,
+      "git_blob_sha1": "a782967b88555a68d2721c1a06d1b3049919eab4",
+      "path": "author-receiving/candidate-first/report.json",
+      "sha256": "f69b2401eb7049758162448c3aec7c87dad3b7c0f66ff1794b6a30eedd41949f"
+    },
+    {
+      "bytes": 0,
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "path": "author-receiving/candidate-first/ruff.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 6821,
+      "git_blob_sha1": "c48633140014b0883532fd5552a2134582d730d9",
+      "path": "author-receiving/candidate-first/ruff.stdout",
+      "sha256": "5a359133fea5f1d848bc126696e5eabf9e30941bd7c304379ae7c6ba2d3a7954"
+    },
+    {
+      "bytes": 7774,
+      "git_blob_sha1": "14589d2f0d0fd3e410749e40bb0a28b7e9a61b23",
+      "path": "author-receiving/compose_current_main56.py.txt",
+      "sha256": "942ab794d75a4e75abb264326afb095203eb6edb7817869ff18fdeaa70687e5a"
+    },
+    {
+      "bytes": 9242,
+      "git_blob_sha1": "7d67255f34a24c7483a35b1f47bf7a6bb7edf0c8",
+      "path": "author-receiving/compose_current_main_acdd.py.txt",
+      "sha256": "7112eca41133ed0bb80e3f4303fbd68cfe103ac5af6c79048422ce057c037c2f"
+    },
+    {
+      "bytes": 11013,
+      "git_blob_sha1": "7913e110e995638f989d2553648f8c20e7bade17",
+      "path": "author-receiving/current-main-acdd-composition/composition.json",
+      "sha256": "d5ccaa9515749e597496ae4a46f44d446d7c03dd28b82f386607b3179ef481a0"
+    },
+    {
+      "bytes": 26524,
+      "git_blob_sha1": "b43b4ec6c4d2b1a645196861bb558fafb1a25962",
+      "path": "author-receiving/current-main-acdd-composition/previous-qualified-README.md",
+      "sha256": "b5caeb7dcfbedb1017aff7d71088458808e956a210e35f89ca8eefa8a0fe89ac"
+    },
+    {
+      "bytes": 31463,
+      "git_blob_sha1": "7c1e9c450f1abc7b5e7458fe966dbee697d6c0ee",
+      "path": "author-receiving/current-main-acdd-composition/previous-qualified-cli.py.txt",
+      "sha256": "f7cfd12eac46dd9197f2a07813d16db9ff4156b178dc52ee30dbfcee432c20d8"
+    },
+    {
+      "bytes": 385674,
+      "git_blob_sha1": "982f8d21f1a5efd1c22c6a8541f736529025affb",
+      "path": "author-receiving/current-main-acdd-input.json",
+      "sha256": "649b20f140aa7f50f7e761fb90ad0e824cd06ba227fb92426834e15848b465ad"
+    },
+    {
+      "bytes": 9955,
+      "git_blob_sha1": "bffea2b2b06a09d2537b550101dcf1483182c844",
+      "path": "author-receiving/current-main56-composition/composition.json",
+      "sha256": "72178486a9bc134811a21dd15ccdefb75d713c7f0357285bc580c73613d32e05"
+    },
+    {
+      "bytes": 28173,
+      "git_blob_sha1": "2da7222b1ad0effcbf9ba38d02103200fa9621cd",
+      "path": "author-receiving/current-main56-composition/previous-qualified-README.md",
+      "sha256": "e640cfb5ba916fbe6acf7c138d86d73b243bf258b4a7ad76b4ca333c46af9725"
+    },
+    {
+      "bytes": 39027,
+      "git_blob_sha1": "4c431a056b02546f9b5e94b3bed92096752e9197",
+      "path": "author-receiving/current-main56-composition/previous-qualified-cli.py.txt",
+      "sha256": "86f0e464832d87d4f3de2cee66c0c9894e01b04776968c6628c0293c28870b20"
+    },
+    {
+      "bytes": 366454,
+      "git_blob_sha1": "f316569282d9a82039f82088e82abf8321b37b94",
+      "path": "author-receiving/current-main56-input.json",
+      "sha256": "51a7d7514dfade78446b3d58e2d2983bef0715f0b356cbb87dc190fe0c443eb6"
+    },
+    {
+      "bytes": 434,
+      "git_blob_sha1": "e6de44adeb7740ad8a2023bda3d167b0b34cca42",
+      "path": "author-receiving/lint-correction.json",
+      "sha256": "86f4cc9af90ae681b1a91be6d24919f0a4d939377123eda4f1ca460a0ca1afa0"
+    },
+    {
+      "bytes": 5196,
+      "git_blob_sha1": "2a82bf273a433b3c2994349e085c9b9de91fbfdb",
+      "path": "author-receiving/native-checkpoint/full-source-review.json",
+      "sha256": "3ec3dae8df11e17c684b474dd44f6b8ad7ffac0b706cc6f8dc4ebc06c10848cd"
+    },
+    {
+      "bytes": 621,
+      "git_blob_sha1": "25dd29909c9248d13ba787f0e736ed28c414873c",
+      "path": "author-receiving/native-checkpoint/native-context.json",
+      "sha256": "03e616766b64d95da0ac66045377dce0af8fc7d8f2ffab9fca3f3dcce65bc414"
+    },
+    {
+      "bytes": 6435,
+      "git_blob_sha1": "ccd95ed88775620d19bd9be71e24cc5cd5b17c0e",
+      "path": "author-receiving/native-checkpoint/official-api-and-workflows.json",
+      "sha256": "6b033f8829a6b0860f8df863894bfe37e6ed91bdc004d471a9f6c50f05855e87"
+    },
+    {
+      "bytes": 4570,
+      "git_blob_sha1": "9696b89640a7607f84af027e76e9a978c971feb8",
+      "path": "author-receiving/native-checkpoint/qualified-source.json",
+      "sha256": "abcf8afe9876a729306b48032b1408570c749a0e1211dc316f5757117d010d4b"
+    },
+    {
+      "bytes": 1213,
+      "git_blob_sha1": "59123f2c0b518beb5c0882479d9c51aac2fab491",
+      "path": "author-receiving/native-checkpoint/sample-binding.json",
+      "sha256": "27d8d03bc4cd1ad8d05cab2198488c32b53b9a805003c7dccff9a5d5abf62b74"
+    },
+    {
+      "bytes": 20413,
+      "git_blob_sha1": "0b303268d296e5f7f77e842a4322db00cbbe15c0",
+      "path": "author-receiving/native-checkpoint/seal_native_checkpoint.py.txt",
+      "sha256": "0d6abf34b67cf383bb24592b59a9700f9fcc0307155b354c8df041946f519d9f"
+    },
+    {
+      "bytes": 5571,
+      "git_blob_sha1": "bd873145a7696cfb025f06c0cc332d0a7687d80c",
+      "path": "author-receiving/receive_candidate.py.txt",
+      "sha256": "88d35a3070af935d97f5f2ac8a23d457097fe3821c7ad2ced52d2013134d3866"
+    },
+    {
+      "bytes": 5579,
+      "git_blob_sha1": "5266d060e77bb1aa8b37f4bb2e512e7c180cb505",
+      "path": "author-receiving/receive_candidate_after_lint.py.txt",
+      "sha256": "45b4653514f68dd165d87a4026a85f3d700803dde213446fee0dd4f1a5e73059"
+    },
+    {
+      "bytes": 5818,
+      "git_blob_sha1": "09d6b2b45f4ebc4d88f66a5298f2c5af0c1082ea",
+      "path": "author-receiving/receive_candidate_current_main56.py.txt",
+      "sha256": "7a30122ac07636be0b2ef2c102ee0a4ab43332826802cb114f95f065afc1d021"
+    },
+    {
+      "bytes": 5821,
+      "git_blob_sha1": "88b72e6007d6932b0e5a4bc4e1bfbc34fe003a8a",
+      "path": "author-receiving/receive_candidate_current_main_acdd.py.txt",
+      "sha256": "3c7537a6f7ffdad34360e4192940dd0cb04740b1cf48c76591178ec1ecf76aff"
+    },
+    {
+      "bytes": 1822,
+      "git_blob_sha1": "f0de0155f80d777d52797ccee4e2149111d07f68",
+      "path": "author-receiving/source-adoption-f18490e6/adoption.json",
+      "sha256": "a3c03420a8b6dc323beed325600c175c603127db347d51d0708a5dfd6d7f9304"
+    },
+    {
+      "bytes": 2017,
+      "git_blob_sha1": "ceb0d30a434159997e0c4c43174f805d4844aa4e",
+      "path": "author-receiving/source-adoption-f18490e6/body-order.patch",
+      "sha256": "714ff5eadf3d0810d2537e77e83e868944f505b66e10137cae050ff98e015cb0"
+    },
+    {
+      "bytes": 15939,
+      "git_blob_sha1": "4ee626e13c524576756be9643728562cb29daeff",
+      "path": "author-receiving/source-adoption-f18490e6/observed-f18490e6-module.py.txt",
+      "sha256": "f18490e6eaa26a2176426711a20a6626bbdb063d539a650d5a09f86811245ff2"
+    },
+    {
+      "bytes": 3100,
+      "git_blob_sha1": "b184544a0097d3f40a2a4c3b38560c435dc68071",
+      "path": "author-receiving/source-adoption-f18490e6/prior-readback.json",
+      "sha256": "66390f62348cd56c7f02ca09440ce7ccd64c6bf39b1bae45e8cff83c30689550"
+    },
+    {
+      "bytes": 15341,
+      "git_blob_sha1": "eef5416d677e5ca9f01c6be1036f4e82640454da",
+      "path": "author-receiving/source-adoption-f18490e6/qualified-b9ac2167-module.py.txt",
+      "sha256": "189565ab3d90f73150accb5a4d9ddfa955b3c8e27f46caa17792b53a80cc717c"
+    },
+    {
+      "bytes": 460,
+      "git_blob_sha1": "0c9be94cef6605bb94fa8dab89215c9c173f195f",
+      "path": "author-receiving/source-baseline.json",
+      "sha256": "66f2f52bf23f39f8021578b4047945cebc9ee420b6f7c0c17b16e2d7a16b59a4"
+    },
+    {
+      "bytes": 1699,
+      "git_blob_sha1": "474efde05b0e548bcb9cf317b723ac1a20be1d0f",
+      "path": "author-receiving/source-claim.intent.json",
+      "sha256": "73f822dcec1894d3b995723c825922103d3a63c3a6a99dc0a580d31369255995"
+    },
+    {
+      "bytes": 2249,
+      "git_blob_sha1": "4e1f4fbb5a1a4c196d3b3bad6e80dc3e24c55d67",
+      "path": "author-receiving/source-claim.json",
+      "sha256": "8374397f283b79c7f35cd846c2276ab2565421d7533d5df7993758f14f54c7a5"
+    },
+    {
+      "bytes": 655,
+      "git_blob_sha1": "ad30253a2984ceddd5c217211dceb80b1c35e3d5",
+      "path": "author-receiving/static-draft.json",
+      "sha256": "0bf3e4c9330456b60fcaaa53e0c46d6280f50293523e011fbd79c55fc2beb0b0"
+    },
+    {
+      "bytes": 3023,
+      "git_blob_sha1": "0c775e105b91d8b30ce09d25c274ca2fc9479f87",
+      "path": "frozen-baseline/BASELINE.md",
+      "sha256": "561bcbcd0623f5b37273b8bba440edf2687783d346308861e6d06fcbf74b7e06"
+    },
+    {
+      "bytes": 1996,
+      "git_blob_sha1": "8664fe6972c887580af87fb91a9663cf90b58d7e",
+      "path": "frozen-baseline/evidence/baseline-receipt.json",
+      "sha256": "e42b2eb0d5942c913b942edf41ad5ee702b583ee6c4d5ad17e1b1fc576fcf634"
+    },
+    {
+      "bytes": 10294,
+      "git_blob_sha1": "0358defb72473ce6473c5d864d3a70639345f9eb",
+      "path": "frozen-baseline/evidence/ownership-source-context.json",
+      "sha256": "cc7d830ef30e55c3862e90bbef445c8ddccba8fdfd05634bc0a9d13535748a1b"
+    },
+    {
+      "bytes": 698,
+      "git_blob_sha1": "d930b40b74e8756bfa595d5c01ff1f494d6a5b69",
+      "path": "frozen-baseline/evidence/receiver-correction.json",
+      "sha256": "003403584086cd78d21f973ce4b2c3a35bb44b612e9c1d7e60b9ff20a23d005b"
+    },
+    {
+      "bytes": 7674,
+      "git_blob_sha1": "05c54f25e590e3b7bc532021e9bd3cd7ac69167d",
+      "path": "frozen-baseline/evidence/source-after.json",
+      "sha256": "6ccd3ce8f1e601b9c02a51c67a29b6176af47a48bc293b315b6304b8f63f791a"
+    },
+    {
+      "bytes": 7847,
+      "git_blob_sha1": "ba0efda797ecc2868019218437cf8087c0539f08",
+      "path": "frozen-baseline/evidence/source-before.json",
+      "sha256": "450a4a7ff62ebc3d3318b9084a627f248bd0a87a1cc09a2fed90c3695fd9fcab"
+    },
+    {
+      "bytes": 8746,
+      "git_blob_sha1": "293e1cdd0cc616036c05898144983a76d7bdb49a",
+      "path": "frozen-baseline/packet-manifest.json",
+      "sha256": "eabba2513b4f75da5167b38073c699551b2b8e3cd7b3015eb98a415cefc8d065"
+    },
+    {
+      "bytes": 805,
+      "git_blob_sha1": "90b02b398a5e8926847b3c0aa36af487f976f8a0",
+      "path": "frozen-baseline/results/missing-command/stderr.txt",
+      "sha256": "375c4c9f242698ed661c088cf2b05206e2e360667ba781f2af298ba35c2c3356"
+    },
+    {
+      "bytes": 0,
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "path": "frozen-baseline/results/missing-command/stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 526,
+      "git_blob_sha1": "afeb756cf68db0052afd0e6067e7a6205078c4c6",
+      "path": "frozen-baseline/results/missing-command/transport.json",
+      "sha256": "1d8888955d99fa1d6b3be97ee4f9bd23de9bd9cea35790c0b366c550bc49667a"
+    },
+    {
+      "bytes": 134,
+      "git_blob_sha1": "b3c77711ca230adf92c85c6b411e61ad91a62689",
+      "path": "frozen-baseline/results/reader-corrected/stderr.txt",
+      "sha256": "00532f8b3b3a257d6bf1af5c62d5e84b1568d3f7a98f7e1bb3803131b4b4b98d"
+    },
+    {
+      "bytes": 1707,
+      "git_blob_sha1": "78846ca808596f15b7fad6e09fa5fbac9d110c52",
+      "path": "frozen-baseline/results/reader-corrected/stdout.txt",
+      "sha256": "a2715db30a5cc68e322274d8b371e9b917b236aa757845194339ab77e01a45fa"
+    },
+    {
+      "bytes": 886,
+      "git_blob_sha1": "681396103d96dc2d4ccf1fa820647b5a8905410a",
+      "path": "frozen-baseline/results/reader-corrected/transport.json",
+      "sha256": "f426a6aca5a44c772591f27a8d2e8efccdcf3a8c0577b5a3e1d386f1436ce87e"
+    },
+    {
+      "bytes": 3036,
+      "git_blob_sha1": "a26617260f0e73aeb48aba832713cf4cfd1bccee",
+      "path": "frozen-baseline/results/reader/stderr.txt",
+      "sha256": "45d92b5ce64e1b8d142ccbc0c0556c0bb946d3f96d8bd15ae55d497aabb3a61b"
+    },
+    {
+      "bytes": 0,
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "path": "frozen-baseline/results/reader/stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 887,
+      "git_blob_sha1": "0ad51d1812fcf2bde49112ee292fcd03a23d4caf",
+      "path": "frozen-baseline/results/reader/transport.json",
+      "sha256": "2452969ce12da80af88185a86c80b4d472b43fb4fa6bd1b89cf11522b9986f76"
+    },
+    {
+      "bytes": 708,
+      "git_blob_sha1": "ef7bbebe192c0db55dc4467e064ba44805c13446",
+      "path": "frozen-baseline/source/.github/workflows/ci.yml",
+      "sha256": "62f17b95af03d1ff8a172f168282b405fefcab3a5f1094c70e618b44920bd0ff"
+    },
+    {
+      "bytes": 26184,
+      "git_blob_sha1": "c6a609a2d3b3d9ccf489267a455031364188eff1",
+      "path": "frozen-baseline/source/README.md",
+      "sha256": "de77bd919d07fc8565e8f354c370cc133f41440b0a456e7449c804510deab2e1"
+    },
+    {
+      "bytes": 3805,
+      "git_blob_sha1": "30066a2a3893586ccd228bebb32ab7e1394f745b",
+      "path": "frozen-baseline/source/docs/inbox-review.md",
+      "sha256": "5aa0bc5ee35dc42237fb9d33c1f2fdc37f233b638518cd0d84773f9ffa0f2081"
+    },
+    {
+      "bytes": 1353,
+      "git_blob_sha1": "76eba6d30696b4f2733539cd47df6e178bc0f585",
+      "path": "frozen-baseline/source/pyproject.toml",
+      "sha256": "555ad3c7e338d38ae5feabc06c0c07503f22d9c732a9af153c7706c63d2b3c63"
+    },
+    {
+      "bytes": 561,
+      "git_blob_sha1": "74a7a6087bf81fd7c75c15769b30408039618e0f",
+      "path": "frozen-baseline/source/src/canvaspilot/__init__.py",
+      "sha256": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5"
+    },
+    {
+      "bytes": 8455,
+      "git_blob_sha1": "82ab4fa8f9b92b8d9e5d4c74962d138e1d882ebd",
+      "path": "frozen-baseline/source/src/canvaspilot/agenda.py",
+      "sha256": "cd9d9e027393ce21cff0b4d0a13098dca3a906af3e9803201655bca40d3c3fda"
+    },
+    {
+      "bytes": 29742,
+      "git_blob_sha1": "3ec81dee60bc67d7a80d40b78e85d5c005441b99",
+      "path": "frozen-baseline/source/src/canvaspilot/api.py",
+      "sha256": "b6b770c2cdef9c9ce44a4a6aefd5b6d0876bc09e5aee29a4adb5a7c603b41c24"
+    },
+    {
+      "bytes": 1296,
+      "git_blob_sha1": "95b1f19927e4eecf99fc852325737c3cfe86cd0d",
+      "path": "frozen-baseline/source/src/canvaspilot/assignment_submission.py",
+      "sha256": "52fc732660b8844a2ee0801931a363f20db15b5309d148d01e3b618be487133d"
+    },
+    {
+      "bytes": 2761,
+      "git_blob_sha1": "c2544032a1cfcdc116725c6403ff09d7b0328f87",
+      "path": "frozen-baseline/source/src/canvaspilot/bundle.py",
+      "sha256": "c8a1854b5c04715c1371c05f4c25ba867ec2d2daafc132b7ed8a973d3e55ddcf"
+    },
+    {
+      "bytes": 9950,
+      "git_blob_sha1": "ef74cfdf50fd894327dbe45a9a9d43042953bc31",
+      "path": "frozen-baseline/source/src/canvaspilot/calendar_export.py",
+      "sha256": "b92948c438063438bf9b8ef01b0b0c067802ddb06354f00e8ee18749f3c5e2fa"
+    },
+    {
+      "bytes": 30869,
+      "git_blob_sha1": "6df35a5f3e81c6e2c1ca646ae052e99c2534da79",
+      "path": "frozen-baseline/source/src/canvaspilot/cli.py",
+      "sha256": "e54e82a82a7c9bddbe114265eba84e8960d77135beeb8512f37f2d89a826191e"
+    },
+    {
+      "bytes": 18934,
+      "git_blob_sha1": "1db4b1135305f7e410025ae7937f9a6cd349f020",
+      "path": "frozen-baseline/source/src/canvaspilot/client.py",
+      "sha256": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797"
+    },
+    {
+      "bytes": 8547,
+      "git_blob_sha1": "2ed658fcf5cee996a02115742935716f1d039e25",
+      "path": "frozen-baseline/source/src/canvaspilot/discussion_thread.py",
+      "sha256": "11f955f827c29421143782518a1aaf1894d0892739c3b56c4d5e413da74555ff"
+    },
+    {
+      "bytes": 3900,
+      "git_blob_sha1": "ec996f421a851d699a9ac7cb1f2a486f9ff7c4ea",
+      "path": "frozen-baseline/source/src/canvaspilot/feedback.py",
+      "sha256": "55454598effea598474a21f67e36d5bc5bea84aaefeefc18e4d8c49804ab9869"
+    },
+    {
+      "bytes": 6293,
+      "git_blob_sha1": "4b3078ddb00a4a34015710e49fa7b7806adebd23",
+      "path": "frozen-baseline/source/src/canvaspilot/folder_browser.py",
+      "sha256": "c6a67229b268c539e5edb581e3320b06229460adc3fbc01d72e4964e31c0348a"
+    },
+    {
+      "bytes": 13247,
+      "git_blob_sha1": "24d93cb693af09cf5123f31fea90e77a589b023c",
+      "path": "frozen-baseline/source/src/canvaspilot/grade_review.py",
+      "sha256": "e550752a830ca9cf4c2ef5d5b06dbf464abd9dfed3a5252d310a4acf8e2411f5"
+    },
+    {
+      "bytes": 18810,
+      "git_blob_sha1": "8a6281f62f99e18109f90a273a4c29da4929f3a3",
+      "path": "frozen-baseline/source/src/canvaspilot/grade_review_export.py",
+      "sha256": "0f16c805d57bf9aa8eba09b6bde2afde033bf09fe64b4525adf22de3b248c351"
+    },
+    {
+      "bytes": 16291,
+      "git_blob_sha1": "0f7130673b3a139abdacb588410edb23a01dc56d",
+      "path": "frozen-baseline/source/src/canvaspilot/mcp_server.py",
+      "sha256": "52cfd5cbe167438762049f4c36feec822986f5e5e63aeaf494e07907235e1c98"
+    },
+    {
+      "bytes": 9615,
+      "git_blob_sha1": "a9d3e4bbea22067f76110f03a5f31a5bc9d8de05",
+      "path": "frozen-baseline/source/src/canvaspilot/module_progress.py",
+      "sha256": "974ee31925514a2e53b899888302a7fa357e280ab5f2461b754b814473653d99"
+    },
+    {
+      "bytes": 12904,
+      "git_blob_sha1": "8ccb9f1262790a744418d4212e072ee43031ab88",
+      "path": "frozen-baseline/source/src/canvaspilot/module_progress_export.py",
+      "sha256": "f723c06e551fae2cf50745460f9109867e6e0f9ebc3cc997d49d5e2173aa9f50"
+    },
+    {
+      "bytes": 4124,
+      "git_blob_sha1": "9d2cfd260d8db052b8183e3ec4fc9626a5bb2b9a",
+      "path": "frozen-baseline/source/src/canvaspilot/offline_demo.py",
+      "sha256": "2389f3ccc1b6db5995be0d90e014ea9345e3029aa5546a5b2dcf12c1197e6d4d"
+    },
+    {
+      "bytes": 17041,
+      "git_blob_sha1": "1b46af8af07d24e24cde54aba393d9f977e77136",
+      "path": "frozen-baseline/source/src/canvaspilot/page_export.py",
+      "sha256": "8800e959ee620438273c3291fd24c51b9ed567430b28093cd3f8bef52bff5015"
+    },
+    {
+      "bytes": 13944,
+      "git_blob_sha1": "cc706d5860489ec37cb2cf7f0b1cb4eee33b664f",
+      "path": "frozen-baseline/source/src/canvaspilot/session_broker.py",
+      "sha256": "a692cd2812cbc09536f1b60c84892bc8e87d2ae984c5a5aa25a13f6537ba6da2"
+    },
+    {
+      "bytes": 6648,
+      "git_blob_sha1": "951e0416c9bf558d7fb79d2257d636654e195918",
+      "path": "frozen-baseline/source/src/canvaspilot/study_workspace.css",
+      "sha256": "aa77aeba7b1400eeccde7430e77eb0de0d5fd9791c4f1960c930309ba574fe2b"
+    },
+    {
+      "bytes": 2334,
+      "git_blob_sha1": "9b9b94bf209fda6918979e380a1c2616118f1466",
+      "path": "frozen-baseline/source/src/canvaspilot/study_workspace.html",
+      "sha256": "1181415863ceef48a6238ce1588a722f1ae914be6d8125f04553fe2321110c1e"
+    },
+    {
+      "bytes": 16544,
+      "git_blob_sha1": "bed8d49493c4d4b162046e49e4545418ca131f95",
+      "path": "frozen-baseline/source/src/canvaspilot/study_workspace.js",
+      "sha256": "62dcac599d6cf7f880a08a2297d2880c238e8a758843ec790a365b18a88bc38c"
+    },
+    {
+      "bytes": 11259,
+      "git_blob_sha1": "fe3b47e2ba55463c4f016d3173f8397e281f421b",
+      "path": "frozen-baseline/source/src/canvaspilot/study_workspace.py",
+      "sha256": "fb791929a7322850d4a92fbf2a7d54a71780e2dd54a0737b84258de09abd0515"
+    },
+    {
+      "bytes": 27015,
+      "git_blob_sha1": "f8e2b9bfef5bb799bd75c6c1f3c6e56366fcf9ad",
+      "path": "frozen-baseline/source/src/canvaspilot/submission_comparison.py",
+      "sha256": "ab7445cadf2a22b31d8f8f837b816d90367d5295e90fe73615a459bc2d9101d4"
+    },
+    {
+      "bytes": 2853,
+      "git_blob_sha1": "9e71a0dc944bee71b0b5c61d7ff84cbb59119e1a",
+      "path": "frozen-baseline/source/src/canvaspilot/submission_history.py",
+      "sha256": "b007234b9861a68504e36f005ae463943b36b5cd50a3d157532c1cab09fcf9da"
+    },
+    {
+      "bytes": 11356,
+      "git_blob_sha1": "3f16eddbf62d74ee1432cbbc0ec8a0ef2507a191",
+      "path": "frozen-baseline/source/tests/test_inbox_review.py",
+      "sha256": "b97139af7b9cc51c2c04238eb89d1059745510daf92d44267117ce3d037ff172"
+    },
+    {
+      "bytes": 1707,
+      "git_blob_sha1": "78846ca808596f15b7fad6e09fa5fbac9d110c52",
+      "path": "frozen-baseline/witness/conversation.json",
+      "sha256": "a2715db30a5cc68e322274d8b371e9b917b236aa757845194339ab77e01a45fa"
+    },
+    {
+      "bytes": 5072,
+      "git_blob_sha1": "0aa6866903dcd73be659a4e29c780147c7750346",
+      "path": "frozen-baseline/witness/run-baseline-corrected.py",
+      "sha256": "a79e1f43792fe516de461f81cfe4b003e848698dfea1af893939ffb0cf3779ec"
+    },
+    {
+      "bytes": 4330,
+      "git_blob_sha1": "8059c83a3b93c76f2ade61357b57360556e3e8a7",
+      "path": "frozen-baseline/witness/run-baseline.py",
+      "sha256": "c8b8662477ac549d8f6f0d3fb2f29d782892cda3eb0a9c6d21541dc8fb589ba2"
+    },
+    {
+      "bytes": 3586,
+      "git_blob_sha1": "8a011fafd66b212a1917defe87d64d54c93555d5",
+      "path": "frozen-baseline/witness/run-cli-corrected.py",
+      "sha256": "bc9f4201df0e589068cc309b1c4436138d009190a71b2a2870494f8b4c3155c9"
+    },
+    {
+      "bytes": 3541,
+      "git_blob_sha1": "1ce781a40ef3c9838df736d9f41149f8e18b643a",
+      "path": "frozen-baseline/witness/run-cli.py",
+      "sha256": "ec49e0384936654d82398c81ac35fc2d3a4b0f572cf84e453c252b5bbefafcea"
+    },
+    {
+      "bytes": 0,
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "path": "independent-tests/evidence/collection.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 3218,
+      "git_blob_sha1": "98c64ab98de3db7fbec5d328aae870e6b5bcb797",
+      "path": "independent-tests/evidence/collection.stdout.txt",
+      "sha256": "d3dbce0c7962b85821e1171b47dc98ebbf5fa4dbd5ee2080cefa027a945ab5cf"
+    },
+    {
+      "bytes": 0,
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "path": "independent-tests/evidence/final-collection.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 3218,
+      "git_blob_sha1": "5a6e16023565d0a16cb0e097aa694cb283cfd7c6",
+      "path": "independent-tests/evidence/final-collection.stdout.txt",
+      "sha256": "2c5f2f83e7aff83572a04646636405c18b5eb2e7645e760c4e4d8809e738a967"
+    },
+    {
+      "bytes": 0,
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "path": "independent-tests/evidence/final-ruff.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 19,
+      "git_blob_sha1": "1f5f344d054fae10f39140fb7199c99321d9190a",
+      "path": "independent-tests/evidence/final-ruff.stdout.txt",
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "bytes": 1615,
+      "git_blob_sha1": "f971f208a297d1abe61dbadd2832c2957590c770",
+      "path": "independent-tests/evidence/final-static-checks.json",
+      "sha256": "6977edf17c2ee93dd741b9f266b42a632309fa594fd67f9080ca54d9ab9c7360"
+    },
+    {
+      "bytes": 2173,
+      "git_blob_sha1": "41c34438a3188dbe7ea878d4964517bb32edbc07",
+      "path": "independent-tests/evidence/independent-author-freeze.json",
+      "sha256": "ebfe83bdcf3cc8cbf5a240cdc256e6bb969d2415901c81252450ab6085a7770a"
+    },
+    {
+      "bytes": 1420,
+      "git_blob_sha1": "17479e4cf6d0a43f216d011680633db3544df97d",
+      "path": "independent-tests/evidence/pre-freeze-checks.json",
+      "sha256": "3e26d0f8c13beb6b16a152d74a2a53f5b368762c21fef29e0f069056a8c0b410"
+    },
+    {
+      "bytes": 20294,
+      "git_blob_sha1": "ad5d6a6151569e0d9076573909d5c263c933bd99",
+      "path": "independent-tests/evidence/pre-lint-test.py",
+      "sha256": "c7d030996474646592cc8adf406bfc8da58fcee64940d722ece63881949894dc"
+    },
+    {
+      "bytes": 0,
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "path": "independent-tests/evidence/ruff.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1154,
+      "git_blob_sha1": "c0a2d6d2630d829a9d9745b94ce2756bf3496067",
+      "path": "independent-tests/evidence/ruff.stdout.txt",
+      "sha256": "93b0be348aac2c6fdbaec65bc02dc6b95391a798664c88b04e34b5fba2d1cf91"
+    },
+    {
+      "bytes": 2280,
+      "git_blob_sha1": "ba91bf1e278825448e1552211bfc7f6acf14fabe",
+      "path": "independent-tests/packet-manifest.json",
+      "sha256": "ada18d3360316f46be6b6fa81fc36a01bcf99757d444cc1275b870d205879f7f"
+    },
+    {
+      "bytes": 20310,
+      "git_blob_sha1": "b5b3a0cb8dba30e66f70bd309011a906e4dc8d3b",
+      "path": "independent-tests/tests/test_conversation_export.py",
+      "sha256": "33dbb68b76136c88ffa99bfd12740b1c7dadf517da4f89bdf2d5d1b4bb6f9203"
+    },
+    {
+      "bytes": 708,
+      "git_blob_sha1": "ef7bbebe192c0db55dc4467e064ba44805c13446",
+      "path": "qualified-source/.github/workflows/ci.yml",
+      "sha256": "62f17b95af03d1ff8a172f168282b405fefcab3a5f1094c70e618b44920bd0ff"
+    },
+    {
+      "bytes": 28652,
+      "git_blob_sha1": "79b08567000d4b06c64316429437f159dcc60c75",
+      "path": "qualified-source/README.md",
+      "sha256": "3d15e68f9692ce25b5e327803089aba3cba64ab321c1c18b13d7477fc715eb2f"
+    },
+    {
+      "bytes": 4429,
+      "git_blob_sha1": "b252e7edd8275bb879d160faea22287dcbf7158c",
+      "path": "qualified-source/docs/conversation-export.md",
+      "sha256": "52e2f1940d4c0fb6433eb779a7d12d3bfade63fb66758b45f28013ca1415cab5"
+    },
+    {
+      "bytes": 3805,
+      "git_blob_sha1": "30066a2a3893586ccd228bebb32ab7e1394f745b",
+      "path": "qualified-source/docs/inbox-review.md",
+      "sha256": "5aa0bc5ee35dc42237fb9d33c1f2fdc37f233b638518cd0d84773f9ffa0f2081"
+    },
+    {
+      "bytes": 1353,
+      "git_blob_sha1": "76eba6d30696b4f2733539cd47df6e178bc0f585",
+      "path": "qualified-source/pyproject.toml",
+      "sha256": "555ad3c7e338d38ae5feabc06c0c07503f22d9c732a9af153c7706c63d2b3c63"
+    },
+    {
+      "bytes": 561,
+      "git_blob_sha1": "74a7a6087bf81fd7c75c15769b30408039618e0f",
+      "path": "qualified-source/src/canvaspilot/__init__.py",
+      "sha256": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5"
+    },
+    {
+      "bytes": 8455,
+      "git_blob_sha1": "82ab4fa8f9b92b8d9e5d4c74962d138e1d882ebd",
+      "path": "qualified-source/src/canvaspilot/agenda.py",
+      "sha256": "cd9d9e027393ce21cff0b4d0a13098dca3a906af3e9803201655bca40d3c3fda"
+    },
+    {
+      "bytes": 15270,
+      "git_blob_sha1": "af25e95a1c9bf4a20784617e5c867d18584ac49a",
+      "path": "qualified-source/src/canvaspilot/agenda_export.py",
+      "sha256": "4e55a0c16e76286130f01e81f04685da1a3ecd9bb5a7a0493ccbfe97c0fcd3ce"
+    },
+    {
+      "bytes": 2823,
+      "git_blob_sha1": "107097a5ad2379fb7497e1b38c488b3a7917e93f",
+      "path": "qualified-source/src/canvaspilot/agenda_view/controls.js",
+      "sha256": "98474fb98fff0027e26fabd024c33a186715b5ac612979c4ef8b1d84b181d172"
+    },
+    {
+      "bytes": 7435,
+      "git_blob_sha1": "86ad5459a44c91d0fb448e77dcda78cf1d39642b",
+      "path": "qualified-source/src/canvaspilot/agenda_view/style.css",
+      "sha256": "ed5f86e62198a9a0b13cbcd87db0bdae9cb2e5732358bf6eb684da47f45610d0"
+    },
+    {
+      "bytes": 1555,
+      "git_blob_sha1": "b2b344526b14c2f123163f6bcfd28f70e28281e8",
+      "path": "qualified-source/src/canvaspilot/announcement_search.py",
+      "sha256": "aa766157ccc10d6c3371a0e761c89ce3189d201cd9fcf5b82eec22d1c572f65e"
+    },
+    {
+      "bytes": 29742,
+      "git_blob_sha1": "3ec81dee60bc67d7a80d40b78e85d5c005441b99",
+      "path": "qualified-source/src/canvaspilot/api.py",
+      "sha256": "b6b770c2cdef9c9ce44a4a6aefd5b6d0876bc09e5aee29a4adb5a7c603b41c24"
+    },
+    {
+      "bytes": 1296,
+      "git_blob_sha1": "95b1f19927e4eecf99fc852325737c3cfe86cd0d",
+      "path": "qualified-source/src/canvaspilot/assignment_submission.py",
+      "sha256": "52fc732660b8844a2ee0801931a363f20db15b5309d148d01e3b618be487133d"
+    },
+    {
+      "bytes": 2761,
+      "git_blob_sha1": "c2544032a1cfcdc116725c6403ff09d7b0328f87",
+      "path": "qualified-source/src/canvaspilot/bundle.py",
+      "sha256": "c8a1854b5c04715c1371c05f4c25ba867ec2d2daafc132b7ed8a973d3e55ddcf"
+    },
+    {
+      "bytes": 9950,
+      "git_blob_sha1": "ef74cfdf50fd894327dbe45a9a9d43042953bc31",
+      "path": "qualified-source/src/canvaspilot/calendar_export.py",
+      "sha256": "b92948c438063438bf9b8ef01b0b0c067802ddb06354f00e8ee18749f3c5e2fa"
+    },
+    {
+      "bytes": 40605,
+      "git_blob_sha1": "e584fdb59e39f7e3e162b1f4aba334d4a244006c",
+      "path": "qualified-source/src/canvaspilot/cli.py",
+      "sha256": "0845653584629523a70382dd5e2ae2f5f1229145fc4ba9c394a52c2ad2609188"
+    },
+    {
+      "bytes": 18934,
+      "git_blob_sha1": "1db4b1135305f7e410025ae7937f9a6cd349f020",
+      "path": "qualified-source/src/canvaspilot/client.py",
+      "sha256": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797"
+    },
+    {
+      "bytes": 15939,
+      "git_blob_sha1": "4ee626e13c524576756be9643728562cb29daeff",
+      "path": "qualified-source/src/canvaspilot/conversation_export.py",
+      "sha256": "f18490e6eaa26a2176426711a20a6626bbdb063d539a650d5a09f86811245ff2"
+    },
+    {
+      "bytes": 8547,
+      "git_blob_sha1": "2ed658fcf5cee996a02115742935716f1d039e25",
+      "path": "qualified-source/src/canvaspilot/discussion_thread.py",
+      "sha256": "11f955f827c29421143782518a1aaf1894d0892739c3b56c4d5e413da74555ff"
+    },
+    {
+      "bytes": 3900,
+      "git_blob_sha1": "ec996f421a851d699a9ac7cb1f2a486f9ff7c4ea",
+      "path": "qualified-source/src/canvaspilot/feedback.py",
+      "sha256": "55454598effea598474a21f67e36d5bc5bea84aaefeefc18e4d8c49804ab9869"
+    },
+    {
+      "bytes": 6293,
+      "git_blob_sha1": "4b3078ddb00a4a34015710e49fa7b7806adebd23",
+      "path": "qualified-source/src/canvaspilot/folder_browser.py",
+      "sha256": "c6a67229b268c539e5edb581e3320b06229460adc3fbc01d72e4964e31c0348a"
+    },
+    {
+      "bytes": 13247,
+      "git_blob_sha1": "24d93cb693af09cf5123f31fea90e77a589b023c",
+      "path": "qualified-source/src/canvaspilot/grade_review.py",
+      "sha256": "e550752a830ca9cf4c2ef5d5b06dbf464abd9dfed3a5252d310a4acf8e2411f5"
+    },
+    {
+      "bytes": 18810,
+      "git_blob_sha1": "8a6281f62f99e18109f90a273a4c29da4929f3a3",
+      "path": "qualified-source/src/canvaspilot/grade_review_export.py",
+      "sha256": "0f16c805d57bf9aa8eba09b6bde2afde033bf09fe64b4525adf22de3b248c351"
+    },
+    {
+      "bytes": 16291,
+      "git_blob_sha1": "0f7130673b3a139abdacb588410edb23a01dc56d",
+      "path": "qualified-source/src/canvaspilot/mcp_server.py",
+      "sha256": "52cfd5cbe167438762049f4c36feec822986f5e5e63aeaf494e07907235e1c98"
+    },
+    {
+      "bytes": 9615,
+      "git_blob_sha1": "a9d3e4bbea22067f76110f03a5f31a5bc9d8de05",
+      "path": "qualified-source/src/canvaspilot/module_progress.py",
+      "sha256": "974ee31925514a2e53b899888302a7fa357e280ab5f2461b754b814473653d99"
+    },
+    {
+      "bytes": 12904,
+      "git_blob_sha1": "8ccb9f1262790a744418d4212e072ee43031ab88",
+      "path": "qualified-source/src/canvaspilot/module_progress_export.py",
+      "sha256": "f723c06e551fae2cf50745460f9109867e6e0f9ebc3cc997d49d5e2173aa9f50"
+    },
+    {
+      "bytes": 4124,
+      "git_blob_sha1": "9d2cfd260d8db052b8183e3ec4fc9626a5bb2b9a",
+      "path": "qualified-source/src/canvaspilot/offline_demo.py",
+      "sha256": "2389f3ccc1b6db5995be0d90e014ea9345e3029aa5546a5b2dcf12c1197e6d4d"
+    },
+    {
+      "bytes": 17041,
+      "git_blob_sha1": "1b46af8af07d24e24cde54aba393d9f977e77136",
+      "path": "qualified-source/src/canvaspilot/page_export.py",
+      "sha256": "8800e959ee620438273c3291fd24c51b9ed567430b28093cd3f8bef52bff5015"
+    },
+    {
+      "bytes": 13944,
+      "git_blob_sha1": "cc706d5860489ec37cb2cf7f0b1cb4eee33b664f",
+      "path": "qualified-source/src/canvaspilot/session_broker.py",
+      "sha256": "a692cd2812cbc09536f1b60c84892bc8e87d2ae984c5a5aa25a13f6537ba6da2"
+    },
+    {
+      "bytes": 6648,
+      "git_blob_sha1": "951e0416c9bf558d7fb79d2257d636654e195918",
+      "path": "qualified-source/src/canvaspilot/study_workspace.css",
+      "sha256": "aa77aeba7b1400eeccde7430e77eb0de0d5fd9791c4f1960c930309ba574fe2b"
+    },
+    {
+      "bytes": 2334,
+      "git_blob_sha1": "9b9b94bf209fda6918979e380a1c2616118f1466",
+      "path": "qualified-source/src/canvaspilot/study_workspace.html",
+      "sha256": "1181415863ceef48a6238ce1588a722f1ae914be6d8125f04553fe2321110c1e"
+    },
+    {
+      "bytes": 16544,
+      "git_blob_sha1": "bed8d49493c4d4b162046e49e4545418ca131f95",
+      "path": "qualified-source/src/canvaspilot/study_workspace.js",
+      "sha256": "62dcac599d6cf7f880a08a2297d2880c238e8a758843ec790a365b18a88bc38c"
+    },
+    {
+      "bytes": 11259,
+      "git_blob_sha1": "fe3b47e2ba55463c4f016d3173f8397e281f421b",
+      "path": "qualified-source/src/canvaspilot/study_workspace.py",
+      "sha256": "fb791929a7322850d4a92fbf2a7d54a71780e2dd54a0737b84258de09abd0515"
+    },
+    {
+      "bytes": 27015,
+      "git_blob_sha1": "f8e2b9bfef5bb799bd75c6c1f3c6e56366fcf9ad",
+      "path": "qualified-source/src/canvaspilot/submission_comparison.py",
+      "sha256": "ab7445cadf2a22b31d8f8f837b816d90367d5295e90fe73615a459bc2d9101d4"
+    },
+    {
+      "bytes": 2853,
+      "git_blob_sha1": "9e71a0dc944bee71b0b5c61d7ff84cbb59119e1a",
+      "path": "qualified-source/src/canvaspilot/submission_history.py",
+      "sha256": "b007234b9861a68504e36f005ae463943b36b5cd50a3d157532c1cab09fcf9da"
+    },
+    {
+      "bytes": 16025,
+      "git_blob_sha1": "bc94606454e7d5cb880a5d281716cd7ee0dfb8ac",
+      "path": "qualified-source/src/canvaspilot/submission_history_export.py",
+      "sha256": "7582f1aa2a18ace57c1ed4e0f75dc095850520853f26f578104f8fbd893da14f"
+    },
+    {
+      "bytes": 21513,
+      "git_blob_sha1": "1faf3448c391fdb76b8cf38fe5854906614443b1",
+      "path": "qualified-source/src/canvaspilot/syllabus_packet.py",
+      "sha256": "005a837c10bb185edf0bcc75c3ab50609f6afbe49d38161e841380116ab97bd7"
+    },
+    {
+      "bytes": 20310,
+      "git_blob_sha1": "b5b3a0cb8dba30e66f70bd309011a906e4dc8d3b",
+      "path": "qualified-source/tests/test_conversation_export.py",
+      "sha256": "33dbb68b76136c88ffa99bfd12740b1c7dadf517da4f89bdf2d5d1b4bb6f9203"
+    },
+    {
+      "bytes": 11356,
+      "git_blob_sha1": "3f16eddbf62d74ee1432cbbc0ec8a0ef2507a191",
+      "path": "qualified-source/tests/test_inbox_review.py",
+      "sha256": "b97139af7b9cc51c2c04238eb89d1059745510daf92d44267117ce3d037ff172"
+    },
+    {
+      "bytes": 5196,
+      "git_blob_sha1": "2a82bf273a433b3c2994349e085c9b9de91fbfdb",
+      "path": "reviews/full-source-review.json",
+      "sha256": "3ec3dae8df11e17c684b474dd44f6b8ad7ffac0b706cc6f8dc4ebc06c10848cd"
+    }
+  ],
+  "qualified_files": 39,
+  "schema": "canvaspilot.conversation.native-evidence/1",
+  "source_commit": "4192602afeee369e90bc7a145ba387ded9e10c61",
+  "source_is_partial": true,
+  "symlink_metadata_only": [
+    {
+      "mode": "0o777",
+      "path": "author-receiving/candidate-after-lint/tmp/test_actual_cli_new_file_receicurrent",
+      "target": "/dev/shm/canvaspilot-conversation-work-713adaab/docs/receiving/conversation-export-713adaab/candidate-after-lint/tmp/test_actual_cli_new_file_recei0"
+    },
+    {
+      "mode": "0o777",
+      "path": "author-receiving/candidate-after-lint/tmp/test_author_matching_preservescurrent",
+      "target": "/dev/shm/canvaspilot-conversation-work-713adaab/docs/receiving/conversation-export-713adaab/candidate-after-lint/tmp/test_author_matching_preserves0"
+    },
+    {
+      "mode": "0o777",
+      "path": "author-receiving/candidate-after-lint/tmp/test_builder_reads_once_with_ocurrent",
+      "target": "/dev/shm/canvaspilot-conversation-work-713adaab/docs/receiving/conversation-export-713adaab/candidate-after-lint/tmp/test_builder_reads_once_with_o0"
+    },
+    {
+      "mode": "0o777",
+      "path": "author-receiving/candidate-after-lint/tmp/test_byte_limits_and_aware_crecurrent",
+      "target": "/dev/shm/canvaspilot-conversation-work-713adaab/docs/receiving/conversation-export-713adaab/candidate-after-lint/tmp/test_byte_limits_and_aware_cre0"
+    },
+    {
+      "mode": "0o777",
+      "path": "author-receiving/candidate-after-lint/tmp/test_cli_reader_or_shape_errorcurrent",
+      "target": "/dev/shm/canvaspilot-conversation-work-713adaab/docs/receiving/conversation-export-713adaab/candidate-after-lint/tmp/test_cli_reader_or_shape_error2"
+    },
+    {
+      "mode": "0o777",
+      "path": "author-receiving/candidate-after-lint/tmp/test_collection_states_and_noncurrent",
+      "target": "/dev/shm/canvaspilot-conversation-work-713adaab/docs/receiving/conversation-export-713adaab/candidate-after-lint/tmp/test_collection_states_and_non4"
+    },
+    {
+      "mode": "0o777",
+      "path": "author-receiving/candidate-after-lint/tmp/test_existing_destination_refu2/existing.html",
+      "target": "/dev/shm/canvaspilot-conversation-work-713adaab/docs/receiving/conversation-export-713adaab/candidate-after-lint/tmp/test_existing_destination_refu2/owned-target.txt"
+    },
+    {
+      "mode": "0o777",
+      "path": "author-receiving/candidate-after-lint/tmp/test_existing_destination_refu3/existing.html",
+      "target": "/dev/shm/canvaspilot-conversation-work-713adaab/docs/receiving/conversation-export-713adaab/candidate-after-lint/tmp/test_existing_destination_refu3/owned-target.txt"
+    },
+    {
+      "mode": "0o777",
+      "path": "author-receiving/candidate-after-lint/tmp/test_existing_destination_refucurrent",
+      "target": "/dev/shm/canvaspilot-conversation-work-713adaab/docs/receiving/conversation-export-713adaab/candidate-after-lint/tmp/test_existing_destination_refu3"
+    },
+    {
+      "mode": "0o777",
+      "path": "author-receiving/candidate-after-lint/tmp/test_field_states_distinguish_current",
+      "target": "/dev/shm/canvaspilot-conversation-work-713adaab/docs/receiving/conversation-export-713adaab/candidate-after-lint/tmp/test_field_states_distinguish_4"
+    },
+    {
+      "mode": "0o777",
+      "path": "author-receiving/candidate-after-lint/tmp/test_non_object_collection_rowcurrent",
+      "target": "/dev/shm/canvaspilot-conversation-work-713adaab/docs/receiving/conversation-export-713adaab/candidate-after-lint/tmp/test_non_object_collection_row0"
+    },
+    {
+      "mode": "0o777",
+      "path": "author-receiving/candidate-after-lint/tmp/test_passive_html_and_control_current",
+      "target": "/dev/shm/canvaspilot-conversation-work-713adaab/docs/receiving/conversation-export-713adaab/candidate-after-lint/tmp/test_passive_html_and_control_0"
+    },
+    {
+      "mode": "0o777",
+      "path": "author-receiving/candidate-after-lint/tmp/test_readable_order_literal_bocurrent",
+      "target": "/dev/shm/canvaspilot-conversation-work-713adaab/docs/receiving/conversation-export-713adaab/candidate-after-lint/tmp/test_readable_order_literal_bo0"
+    },
+    {
+      "mode": "0o777",
+      "path": "author-receiving/candidate-after-lint/tmp/test_real_reader_keeps_false_qcurrent",
+      "target": "/dev/shm/canvaspilot-conversation-work-713adaab/docs/receiving/conversation-export-713adaab/candidate-after-lint/tmp/test_real_reader_keeps_false_q2"
+    },
+    {
+      "mode": "0o777",
+      "path": "author-receiving/candidate-after-lint/tmp/test_root_and_nonfinite_json_acurrent",
+      "target": "/dev/shm/canvaspilot-conversation-work-713adaab/docs/receiving/conversation-export-713adaab/candidate-after-lint/tmp/test_root_and_nonfinite_json_a3"
+    },
+    {
+      "mode": "0o777",
+      "path": "author-receiving/candidate-current-main-acdd/tmp/test_actual_cli_new_file_receicurrent",
+      "target": "/dev/shm/canvaspilot-conversation-work-713adaab/docs/receiving/conversation-export-713adaab/candidate-current-main-acdd/tmp/test_actual_cli_new_file_recei0"
+    },
+    {
+      "mode": "0o777",
+      "path": "author-receiving/candidate-current-main-acdd/tmp/test_author_matching_preservescurrent",
+      "target": "/dev/shm/canvaspilot-conversation-work-713adaab/docs/receiving/conversation-export-713adaab/candidate-current-main-acdd/tmp/test_author_matching_preserves0"
+    },
+    {
+      "mode": "0o777",
+      "path": "author-receiving/candidate-current-main-acdd/tmp/test_builder_reads_once_with_ocurrent",
+      "target": "/dev/shm/canvaspilot-conversation-work-713adaab/docs/receiving/conversation-export-713adaab/candidate-current-main-acdd/tmp/test_builder_reads_once_with_o0"
+    },
+    {
+      "mode": "0o777",
+      "path": "author-receiving/candidate-current-main-acdd/tmp/test_byte_limits_and_aware_crecurrent",
+      "target": "/dev/shm/canvaspilot-conversation-work-713adaab/docs/receiving/conversation-export-713adaab/candidate-current-main-acdd/tmp/test_byte_limits_and_aware_cre0"
+    },
+    {
+      "mode": "0o777",
+      "path": "author-receiving/candidate-current-main-acdd/tmp/test_cli_reader_or_shape_errorcurrent",
+      "target": "/dev/shm/canvaspilot-conversation-work-713adaab/docs/receiving/conversation-export-713adaab/candidate-current-main-acdd/tmp/test_cli_reader_or_shape_error2"
+    },
+    {
+      "mode": "0o777",
+      "path": "author-receiving/candidate-current-main-acdd/tmp/test_collection_states_and_noncurrent",
+      "target": "/dev/shm/canvaspilot-conversation-work-713adaab/docs/receiving/conversation-export-713adaab/candidate-current-main-acdd/tmp/test_collection_states_and_non4"
+    },
+    {
+      "mode": "0o777",
+      "path": "author-receiving/candidate-current-main-acdd/tmp/test_existing_destination_refu2/existing.html",
+      "target": "/dev/shm/canvaspilot-conversation-work-713adaab/docs/receiving/conversation-export-713adaab/candidate-current-main-acdd/tmp/test_existing_destination_refu2/owned-target.txt"
+    },
+    {
+      "mode": "0o777",
+      "path": "author-receiving/candidate-current-main-acdd/tmp/test_existing_destination_refu3/existing.html",
+      "target": "/dev/shm/canvaspilot-conversation-work-713adaab/docs/receiving/conversation-export-713adaab/candidate-current-main-acdd/tmp/test_existing_destination_refu3/owned-target.txt"
+    },
+    {
+      "mode": "0o777",
+      "path": "author-receiving/candidate-current-main-acdd/tmp/test_existing_destination_refucurrent",
+      "target": "/dev/shm/canvaspilot-conversation-work-713adaab/docs/receiving/conversation-export-713adaab/candidate-current-main-acdd/tmp/test_existing_destination_refu3"
+    },
+    {
+      "mode": "0o777",
+      "path": "author-receiving/candidate-current-main-acdd/tmp/test_field_states_distinguish_current",
+      "target": "/dev/shm/canvaspilot-conversation-work-713adaab/docs/receiving/conversation-export-713adaab/candidate-current-main-acdd/tmp/test_field_states_distinguish_4"
+    },
+    {
+      "mode": "0o777",
+      "path": "author-receiving/candidate-current-main-acdd/tmp/test_non_object_collection_rowcurrent",
+      "target": "/dev/shm/canvaspilot-conversation-work-713adaab/docs/receiving/conversation-export-713adaab/candidate-current-main-acdd/tmp/test_non_object_collection_row0"
+    },
+    {
+      "mode": "0o777",
+      "path": "author-receiving/candidate-current-main-acdd/tmp/test_passive_html_and_control_current",
+      "target": "/dev/shm/canvaspilot-conversation-work-713adaab/docs/receiving/conversation-export-713adaab/candidate-current-main-acdd/tmp/test_passive_html_and_control_0"
+    },
+    {
+      "mode": "0o777",
+      "path": "author-receiving/candidate-current-main-acdd/tmp/test_readable_order_literal_bocurrent",
+      "target": "/dev/shm/canvaspilot-conversation-work-713adaab/docs/receiving/conversation-export-713adaab/candidate-current-main-acdd/tmp/test_readable_order_literal_bo0"
+    },
+    {
+      "mode": "0o777",
+      "path": "author-receiving/candidate-current-main-acdd/tmp/test_real_reader_keeps_false_qcurrent",
+      "target": "/dev/shm/canvaspilot-conversation-work-713adaab/docs/receiving/conversation-export-713adaab/candidate-current-main-acdd/tmp/test_real_reader_keeps_false_q2"
+    },
+    {
+      "mode": "0o777",
+      "path": "author-receiving/candidate-current-main-acdd/tmp/test_root_and_nonfinite_json_acurrent",
+      "target": "/dev/shm/canvaspilot-conversation-work-713adaab/docs/receiving/conversation-export-713adaab/candidate-current-main-acdd/tmp/test_root_and_nonfinite_json_a3"
+    },
+    {
+      "mode": "0o777",
+      "path": "author-receiving/candidate-current-main56/tmp/test_actual_cli_new_file_receicurrent",
+      "target": "/dev/shm/canvaspilot-conversation-work-713adaab/docs/receiving/conversation-export-713adaab/candidate-current-main56/tmp/test_actual_cli_new_file_recei0"
+    },
+    {
+      "mode": "0o777",
+      "path": "author-receiving/candidate-current-main56/tmp/test_author_matching_preservescurrent",
+      "target": "/dev/shm/canvaspilot-conversation-work-713adaab/docs/receiving/conversation-export-713adaab/candidate-current-main56/tmp/test_author_matching_preserves0"
+    },
+    {
+      "mode": "0o777",
+      "path": "author-receiving/candidate-current-main56/tmp/test_builder_reads_once_with_ocurrent",
+      "target": "/dev/shm/canvaspilot-conversation-work-713adaab/docs/receiving/conversation-export-713adaab/candidate-current-main56/tmp/test_builder_reads_once_with_o0"
+    },
+    {
+      "mode": "0o777",
+      "path": "author-receiving/candidate-current-main56/tmp/test_byte_limits_and_aware_crecurrent",
+      "target": "/dev/shm/canvaspilot-conversation-work-713adaab/docs/receiving/conversation-export-713adaab/candidate-current-main56/tmp/test_byte_limits_and_aware_cre0"
+    },
+    {
+      "mode": "0o777",
+      "path": "author-receiving/candidate-current-main56/tmp/test_cli_reader_or_shape_errorcurrent",
+      "target": "/dev/shm/canvaspilot-conversation-work-713adaab/docs/receiving/conversation-export-713adaab/candidate-current-main56/tmp/test_cli_reader_or_shape_error2"
+    },
+    {
+      "mode": "0o777",
+      "path": "author-receiving/candidate-current-main56/tmp/test_collection_states_and_noncurrent",
+      "target": "/dev/shm/canvaspilot-conversation-work-713adaab/docs/receiving/conversation-export-713adaab/candidate-current-main56/tmp/test_collection_states_and_non4"
+    },
+    {
+      "mode": "0o777",
+      "path": "author-receiving/candidate-current-main56/tmp/test_existing_destination_refu2/existing.html",
+      "target": "/dev/shm/canvaspilot-conversation-work-713adaab/docs/receiving/conversation-export-713adaab/candidate-current-main56/tmp/test_existing_destination_refu2/owned-target.txt"
+    },
+    {
+      "mode": "0o777",
+      "path": "author-receiving/candidate-current-main56/tmp/test_existing_destination_refu3/existing.html",
+      "target": "/dev/shm/canvaspilot-conversation-work-713adaab/docs/receiving/conversation-export-713adaab/candidate-current-main56/tmp/test_existing_destination_refu3/owned-target.txt"
+    },
+    {
+      "mode": "0o777",
+      "path": "author-receiving/candidate-current-main56/tmp/test_existing_destination_refucurrent",
+      "target": "/dev/shm/canvaspilot-conversation-work-713adaab/docs/receiving/conversation-export-713adaab/candidate-current-main56/tmp/test_existing_destination_refu3"
+    },
+    {
+      "mode": "0o777",
+      "path": "author-receiving/candidate-current-main56/tmp/test_field_states_distinguish_current",
+      "target": "/dev/shm/canvaspilot-conversation-work-713adaab/docs/receiving/conversation-export-713adaab/candidate-current-main56/tmp/test_field_states_distinguish_4"
+    },
+    {
+      "mode": "0o777",
+      "path": "author-receiving/candidate-current-main56/tmp/test_non_object_collection_rowcurrent",
+      "target": "/dev/shm/canvaspilot-conversation-work-713adaab/docs/receiving/conversation-export-713adaab/candidate-current-main56/tmp/test_non_object_collection_row0"
+    },
+    {
+      "mode": "0o777",
+      "path": "author-receiving/candidate-current-main56/tmp/test_passive_html_and_control_current",
+      "target": "/dev/shm/canvaspilot-conversation-work-713adaab/docs/receiving/conversation-export-713adaab/candidate-current-main56/tmp/test_passive_html_and_control_0"
+    },
+    {
+      "mode": "0o777",
+      "path": "author-receiving/candidate-current-main56/tmp/test_readable_order_literal_bocurrent",
+      "target": "/dev/shm/canvaspilot-conversation-work-713adaab/docs/receiving/conversation-export-713adaab/candidate-current-main56/tmp/test_readable_order_literal_bo0"
+    },
+    {
+      "mode": "0o777",
+      "path": "author-receiving/candidate-current-main56/tmp/test_real_reader_keeps_false_qcurrent",
+      "target": "/dev/shm/canvaspilot-conversation-work-713adaab/docs/receiving/conversation-export-713adaab/candidate-current-main56/tmp/test_real_reader_keeps_false_q2"
+    },
+    {
+      "mode": "0o777",
+      "path": "author-receiving/candidate-current-main56/tmp/test_root_and_nonfinite_json_acurrent",
+      "target": "/dev/shm/canvaspilot-conversation-work-713adaab/docs/receiving/conversation-export-713adaab/candidate-current-main56/tmp/test_root_and_nonfinite_json_a3"
+    }
+  ]
+}

@@ -149,6 +149,15 @@ def main(argv: list[str] | None = None) -> None:
     add_common(conversation)
     conversation.add_argument("conversation_id", type=_positive_int)
 
+    conversation_export = sub.add_parser(
+        "export-conversation", help="Save an inbox conversation as a new offline HTML file",
+    )
+    add_common(conversation_export)
+    conversation_export.add_argument("conversation_id", help="Positive decimal Canvas conversation ID")
+    conversation_export.add_argument(
+        "--out", required=True, type=Path, help="New HTML file; existing paths are protected",
+    )
+
     disc = sub.add_parser("discussions", help="List discussion topics")
     add_common(disc)
     disc.add_argument("course_id")
@@ -326,6 +335,12 @@ def main(argv: list[str] | None = None) -> None:
         from canvaspilot.mcp_server import main as mcp_main
 
         mcp_main()
+        return
+
+    if args.cmd == "export-conversation":
+        from canvaspilot.conversation_export import run_export_conversation
+
+        run_export_conversation(args)
         return
 
     if args.cmd == "export-study":

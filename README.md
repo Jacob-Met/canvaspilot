@@ -529,3 +529,7 @@ canvaspilot find-announcements 42 77 --text "room change" --start-date 2026-10-0
 
 The result preserves ordered full announcement rows and identifies which fields matched.
 See [announcement text search](docs/announcement-search.md) for matching, output, and complete-read behavior.
+
+## Offline inbox conversations
+
+Use `canvaspilot export-conversation ID --out NEW_HTML` to save a readable, printable inbox thread without marking it read. Returned order, explicit missing values and complete decoded JSON are retained. Existing output paths are protected. See [the conversation export guide](docs/conversation-export.md).

@@ -1,0 +1,18 @@
+{
+  "exact_equal_after_only_two_time_replacements": true,
+  "latest": {
+    "bytes": 9599,
+    "generated_at": "2026-10-08T21:15:33.317615Z",
+    "path": "/dev/shm/canvaspilot-conversation-work-713adaab/docs/receiving/conversation-export-713adaab/candidate-current-main56/tmp/test_actual_cli_new_file_recei0/saved conversation.html",
+    "sha256": "218093468fb8beb7672c5bdf9a17a05a5e0a4538a5d4b295d002c6bf1ece77fa"
+  },
+  "method": "Byte replacement only, no rerender or browser. One Saved/time element has two equal generated timestamp occurrences; each document contains exactly those two occurrences; replacing old timestamp with new produces the entire latest document byte-for-byte.",
+  "normalized_sha256": "e3eee1d21b8c0c685ce713163a31b06e9da3e9c16ca9b0a47a0c9001295bd799",
+  "reviewed": {
+    "bytes": 9599,
+    "generated_at": "2026-10-08T20:46:28.962333Z",
+    "path": "/dev/shm/canvaspilot-conversation-work-713adaab/docs/receiving/conversation-export-713adaab/candidate-current-main-acdd/tmp/test_actual_cli_new_file_recei0/saved conversation.html",
+    "sha256": "2fe819bd3ac36f79774c2c42985b44d96e54d080982bddbffab4d4eacd0c5570"
+  },
+  "schema": "canvaspilot.conversation.visual-sample-binding/1"
+}

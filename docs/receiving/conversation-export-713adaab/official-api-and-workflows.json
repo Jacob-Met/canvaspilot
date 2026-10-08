@@ -1,0 +1,40 @@
+{
+  "agenda_workflow": {
+    "content": "name: agenda-view-browser\n\non:\n  pull_request:\n    branches: [main]\n    paths:\n      - 'src/canvaspilot/agenda_export.py'\n      - 'src/canvaspilot/agenda_view/**'\n      - 'src/canvaspilot/agenda.py'\n      - 'src/canvaspilot/api.py'\n      - 'src/canvaspilot/cli.py'\n      - 'src/canvaspilot/client.py'\n      - 'tests/test_agenda_export.py'\n      - 'tests/fixtures/agenda_view_calendar.json'\n      - 'scripts/receive_agenda_view.mjs'\n      - '.github/workflows/agenda-view-browser.yml'\n  workflow_dispatch:\n\npermissions:\n  contents: read\n\njobs:\n  installed-chrome:\n    runs-on: ubuntu-24.04\n    timeout-minutes: 8\n    steps:\n      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1\n        with:\n          fetch-depth: 0\n          persist-credentials: false\n      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0\n        with:\n          python-version: '3.12'\n      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0\n        with:\n          node-version: '22'\n      - name: Install existing declared package dependencies\n        run: pip install -e .\n      - name: Build the declared wheel and receive exact packaged agenda assets\n        run: |\n          pip wheel --no-deps --wheel-dir \"$RUNNER_TEMP/agenda-view-wheel\" .\n          python -B - \"$RUNNER_TEMP/agenda-view-wheel\" <<'PY'\n          import hashlib\n          import json\n          import sys\n          import zipfile\n          from pathlib import Path\n\n          output = Path(sys.argv[1])\n          wheels = list(output.glob(\"canvaspilot-*.whl\"))\n          assert len(wheels) == 1, wheels\n          wheel = wheels[0]\n          received = []\n          with zipfile.ZipFile(wheel) as archive:\n              assert archive.testzip() is None\n              for relative in (\n                  \"canvaspilot/agenda_export.py\",\n                  \"canvaspilot/agenda_view/style.css\",\n                  \"canvaspilot/agenda_view/controls.js\",\n              ):\n                  packaged = archive.read(relative)\n                  source = (Path(\"src\") / relative).read_bytes()\n                  assert packaged == source, relative\n                  received.append({\"path\": relative, \"bytes\": len(packaged),\n                                   \"sha256\": hashlib.sha256(packaged).hexdigest()})\n          receipt = {\"schema\": \"canvaspilot-agenda-wheel/1\", \"accepted\": True,\n                     \"wheel\": wheel.name, \"wheel_bytes\": wheel.stat().st_size,\n                     \"wheel_sha256\": hashlib.sha256(wheel.read_bytes()).hexdigest(),\n                     \"packaged_assets_equal_actual_checkout\": received}\n          (output / \"receiving.json\").write_text(json.dumps(receipt, indent=2) + \"\\n\")\n          print(json.dumps(receipt, indent=2))\n          PY\n      - name: Receive actual native saved agenda in installed Chrome\n        run: |\n          git worktree add --detach \"$RUNNER_TEMP/agenda-view-baseline\" 0480cbce421bae532e3e909899fc8fb83789e878\n          node scripts/receive_agenda_view.mjs \"$RUNNER_TEMP/agenda-view-receiving\" \"$RUNNER_TEMP/agenda-view-baseline\"\n      - name: Retain actual source, browser results, failures and rendered artifacts\n        if: always()\n        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2\n        with:\n          name: agenda-view-browser-${{ github.run_id }}-${{ github.run_attempt }}\n          path: |\n            ${{ runner.temp }}/agenda-view-receiving\n            ${{ runner.temp }}/agenda-view-wheel\n          if-no-files-found: error\n          retention-days: 14\n",
+    "display_title": "agenda-view-browser.yml",
+    "display_url": "https://github.com/Jacob-Met/canvaspilot/blob/56a72a2e2cee5ec04671d12ebe5bc2484afb8026/.github/workflows/agenda-view-browser.yml",
+    "encoding": "utf-8",
+    "sha": "a06b862c23dccc61d5da9eea99d82b76668f78c8"
+  },
+  "checked_at": "2026-10-08",
+  "ci_content": "name: CI\n\non:\n  push:\n    branches: [main]\n  pull_request:\n    branches: [main]\n\npermissions:\n  contents: read\n\nconcurrency:\n  group: ci-${{ github.ref }}\n  cancel-in-progress: true\n\njobs:\n  test:\n    name: pytest (offline fixture mode)\n    runs-on: ubuntu-latest\n    timeout-minutes: 10\n    steps:\n      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1\n      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0\n        with:\n          python-version: \"3.12\"\n      - name: Install package with dev extras\n        run: pip install -e \".[dev]\"\n      - name: Lint\n        run: ruff check src tests scripts\n      - name: Run test suite\n        run: pytest -q\n",
+  "inference": "Under the exact two workflow definitions pinned at canonical56a72a2, an unreferenced Git object without a branch/ref, PR, dispatch or other workflow event does not itself match their trigger clauses. This is a bounded inference from the API/event contracts, not a guarantee for arbitrary integrations. Required gates remain pending. Reviewer creates no remote object/reference/PR.",
+  "references": [
+    {
+      "finding": "The official sequence creates blob, tree and commit objects, then separately updates a branch reference. Native preparation and any eventual unreferenced object creation are not a branch update.",
+      "url": "https://docs.github.com/en/rest/guides/using-the-rest-api-to-interact-with-your-git-database"
+    },
+    {
+      "finding": "The tree endpoint creates a tree object; committing it and updating a branch are separate operations.",
+      "url": "https://docs.github.com/en/rest/git/trees"
+    },
+    {
+      "finding": "push, pull_request, create and workflow_dispatch are declared triggering events. A workflow's configured on clause determines its supported event handling.",
+      "url": "https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows"
+    }
+  ],
+  "workflow_leaves": [
+    {
+      "mode": "100644",
+      "path": ".github/workflows/agenda-view-browser.yml",
+      "sha": "a06b862c23dccc61d5da9eea99d82b76668f78c8",
+      "type": "blob"
+    },
+    {
+      "mode": "100644",
+      "path": ".github/workflows/ci.yml",
+      "sha": "ef7bbebe192c0db55dc4467e064ba44805c13446",
+      "type": "blob"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "actor": "chatgpt:/root/mac_execution",
+  "decision": "Approve supplied target artifact readability and passive local rendering, with explicit browser-wide networking and print-pagination limits",
+  "sample_sha256": "2fe819bd3ac36f79774c2c42985b44d96e54d080982bddbffab4d4eacd0c5570",
+  "sample_bytes": 9599,
+  "root_qualified_commit": "6cfa5b2a3c177eed87a2c7ffdbb484e3eb2f6eb7",
+  "root_qualified_tree": "bad208080229deaa3840479b838aacef7cfd60ae",
+  "reviewed_module_sha256": "f18490e6eaa26a2176426711a20a6626bbdb063d539a650d5a09f86811245ff2",
+  "receiver_sha256": "5d43061b90a00ef0263a50ed4de369c6c30a19bb548353c0dd4cf0c65348227d",
+  "browser": "Chromium153.0.8010.47, native private profile",
+  "images_inspected": [
+    "runs/candidate-corrected/desktop.png",
+    "runs/candidate-corrected/mobile.png",
+    "runs/candidate-corrected/print-page-1.png",
+    "print-review-corrected/page-2.png",
+    "print-review-corrected/page-3.png",
+    "print-review-corrected/page-4.png"
+  ],
+  "desktop": {
+    "viewport_width": 1280,
+    "capture_height": 3504,
+    "full_height": true,
+    "overflow_elements": 0,
+    "assessment": "Clear hierarchy and readable literal message bodies after author/ID/date and before secondary metadata. Unicode and supplied markup-looking text remain visible; no clipping/overlap observed."
+  },
+  "narrow": {
+    "viewport_width": 390,
+    "capture_height": 4555,
+    "full_height": true,
+    "overflow_elements": 0,
+    "assessment": "Single-column fact rows, long metadata/URLs and download label wrap within the viewport; body-first placement remains clear. No horizontal clipping/overlap observed."
+  },
+  "print": {
+    "pages": 4,
+    "page_size": "A4",
+    "pdf_sha256": "22a03e0663210367864a3a2d4ab26a1fd2ff3268bf79d8e8a3131e453579f163",
+    "assessment": "All four pages inspected. Bodies, Unicode, metadata and footer are readable and retained; download/back controls are suppressed. Page2 has substantial blank area before first-message metadata continues on page3; page4 is sparse. This is a nonblocking pagination inefficiency, not content loss. No source edit proposed."
+  },
+  "rendered_body_values": "Both actual DOM body text values exactly match decoded-source JSON at desktop, narrow and print media; original LF/tab/Unicode retained.",
+  "target_requests": {
+    "count": 1,
+    "kind": "Pinned local file only",
+    "external": 0
+  },
+  "browser_wide_networking": {
+    "raw_netlog_sha256": "1066648fd98560049c13cde99d810ed8eb3e6dfba9fcd2081d50aaaec65eae52",
+    "http_url_jobs": 8,
+    "http_terminal_error": "All8 ERR_NAME_NOT_RESOLVED(-105)",
+    "udp_socket_connectivity_checks": 6,
+    "udp_target": "[2001:4860:4860::8888]:443",
+    "logged_byte_or_http_transaction_events": 0,
+    "limits": "Actual browser startup/background URL jobs and UDP socket checks occurred despite disabling flags. Target offline mode is not proof of whole-browser network silence. No OS packet capture/isolation claim; no successful outside HTTP transaction is evidenced by this netlog."
+  },
+  "publication_redaction": "The exact isolated-run netlog stays native. Archive contains a deterministic HTTP(S) query-value-redacted copy plus raw hash and redaction receipt; key/cup2 query values are never printed or published.",
+  "preservation": "Original frozen driver, initial socket-path failure, corrected receiver, original source review and body-first source review retained. Supplied HTML and receiver unchanged. No source edits, maintained-test replay or third browser attempt.",
+  "scope_limits": "One authored synthetic conversation and one installed browser, not live school/account receiving, all browser/font/OS coverage, accessibility certification, or universal print-pagination proof.",
+  "reviewed_at_utc": "2026-10-08T21:08:58.735136+00:00"
+}

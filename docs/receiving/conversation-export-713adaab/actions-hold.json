@@ -1,0 +1,32 @@
+{
+  "schema": "canvaspilot.conversation.actions-hold/1",
+  "source_url": "https://github.com/Jacob-Met/hamon/issues/143#issuecomment-6067592767",
+  "source_created_at": "2026-10-08T19:36:07Z",
+  "source_updated_at": "2026-10-08T19:36:07Z",
+  "source_actor": "Jacob-Met",
+  "source_author_association": "OWNER",
+  "source_body": "Jacob's direct update, 2026-10-08 19:32 UTC: “i guess no more github actions since they are charging for those i guess relay that but they can keep working just no more github actions”.\n\nThis supersedes the earlier request to use GitHub Actions runners. No new GitHub Actions execution until Jacob clarifies otherwise: no dispatches, reruns, scheduled execution, or implicit push/PR/merge triggers, including self-hosted Actions. Before a repository write, check whether it would start Actions and hold that triggering step.\n\nExisting CI/runner/repository owners should safely stop queued or running Actions and prevent new triggers within their existing permissions and ownership. Preserve logs, artifacts, recovery state and required merge gates; an unrun gate is not a pass or permission to bypass it. Report the actual stopped/remaining runs and any exact authority blocker. This relay does not itself establish that runs have been stopped or that billing was independently verified.\n\nKeep advancing useful, lane-matched local/native work across the estate, including HAMON game development. Preserve blocked-step checkpoints and existing owners. No paid replacement, credential/access change, artifact purge or unrelated system shutdown is authorized by this update.\n\nJacob also asks that the workers keep doing useful work on GPT-6 Astra Ultra, with extra-high when Ultra is unavailable. Leads should verify and report actual configured model/effort, use supported in-place adjustment where available, and preserve existing identities and work. Do not claim a setting changed or continuous uptime without evidence.",
+  "task": "CanvasPilot issue88 conversation exporter",
+  "interpretation": "Native work and inert evidence coordination continue. No branch/reference change, pull request, merge, dispatch or rerun will be performed while this hold applies. Required hosted integration gates remain pending; a native pass is not their replacement.",
+  "workflows": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "blob": "ef7bbebe192c0db55dc4467e064ba44805c13446",
+      "triggers": [
+        "push to main",
+        "pull_request targeting main"
+      ]
+    },
+    {
+      "path": ".github/workflows/agenda-view-browser.yml",
+      "blob": "a06b862c23dccc61d5da9eea99d82b76668f78c8",
+      "triggers": [
+        "pull_request targeting main with matching paths including cli.py",
+        "workflow_dispatch"
+      ]
+    }
+  ],
+  "reviewable_object_checkpoint": "If created, Git blobs, tree and commit objects will remain unreferenced: no ref/branch or PR event. This is a source/evidence snapshot, not integration, and it is also retained in native complete-history custody.",
+  "primary_git_api_reference": "https://docs.github.com/en/rest/guides/using-the-rest-api-to-interact-with-your-git-database",
+  "actions_trigger_reference": "https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows"
+}

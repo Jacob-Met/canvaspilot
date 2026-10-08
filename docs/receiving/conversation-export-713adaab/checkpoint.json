@@ -1,0 +1,79 @@
+{
+  "all_archive_members_reopened_and_verified": true,
+  "archives": {
+    "native": {
+      "bytes": 492960,
+      "git_blob_sha1": "e940b7a3de5e87fa7315d3a0834da5af78aa388b",
+      "path": "docs/receiving/conversation-export-713adaab/native-evidence.tar.gz",
+      "sha256": "0c949ea3c2fd93f3d270903d9bad8b195565b7eef84377c903524caf0314cd0f"
+    },
+    "visual": {
+      "bytes": 915884,
+      "git_blob_sha1": "cac1d15607fd6750e8c4a9fb5305d573a36f266f",
+      "path": "docs/receiving/conversation-export-713adaab/visual-evidence.tar.gz",
+      "sha256": "4639c5fe4afc02d99b9b2b82aa77a4a6eebb74ec0e6e0b3c93ad5bacb9e5437e"
+    }
+  },
+  "baseline_files": 51,
+  "canonical_commit": "56a72a2e2cee5ec04671d12ebe5bc2484afb8026",
+  "canonical_tree": "a07c3e941219ff80968e1ff20528a63541bb7400",
+  "created_at": "2026-10-08T21:51:20.616770+00:00",
+  "independent_test_files": 14,
+  "limitations": [
+    "Required hosted checks remain pending under the operator Actions hold",
+    "No reference/PR/merge/dispatch or remote objects written by this packaging worker",
+    "Browser target had one local request and zero external target requests; Chromium startup had eight failed HTTP jobs and six UDP connection checks; not an OS trace or whole-browser zero-egress claim",
+    "No source or test replay during packaging; original sample transfer proven only by two generated-time replacements"
+  ],
+  "native_archive_deterministic_reencode_equal": true,
+  "native_archive_members": 170,
+  "native_archive_regular_payloads": 169,
+  "native_bundle": {
+    "bytes": 300428,
+    "path": "/home/jacob/canvaspilot-conversation-export-713adaab/custody/native-complete-history.bundle",
+    "scope": "All refs and complete local native history; partial source independent of canonical ancestry",
+    "sha256": "f56ef056a2e80a01c0de4c67aa14adee5802de36f59ec3f359e2acfe9a099246",
+    "verify_exit": 0
+  },
+  "native_evidence_commit": "fc4f83a83811fd023a2906972028ba17400f5598",
+  "native_evidence_tree": "cc9bff51c3557c0443ed61b084c4d49e93d67dee",
+  "native_runtime": {
+    "qualified": true,
+    "report_sha256": "bb5b6ba9acd86d88eef1a55ff701a04a7a10778bf2b9cf7f77c1bafb292c2819",
+    "tests": {
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "tests": 31
+    }
+  },
+  "private_raw_netlog": {
+    "bytes": 153826,
+    "retained_native_only": true,
+    "sha256": "1066648fd98560049c13cde99d810ed8eb3e6dfba9fcd2081d50aaaec65eae52"
+  },
+  "qualified_commit": "4192602afeee369e90bc7a145ba387ded9e10c61",
+  "qualified_files": 39,
+  "qualified_source_unchanged": true,
+  "qualified_tree": "4c133362dd4d2ca0aefd6b5f6eb3c3ca89535b65",
+  "sample_binding": {
+    "exact_equal_after_only_two_time_replacements": true,
+    "latest": {
+      "bytes": 9599,
+      "generated_at": "2026-10-08T21:15:33.317615Z",
+      "path": "/dev/shm/canvaspilot-conversation-work-713adaab/docs/receiving/conversation-export-713adaab/candidate-current-main56/tmp/test_actual_cli_new_file_recei0/saved conversation.html",
+      "sha256": "218093468fb8beb7672c5bdf9a17a05a5e0a4538a5d4b295d002c6bf1ece77fa"
+    },
+    "method": "Byte replacement only, no rerender or browser. One Saved/time element has two equal generated timestamp occurrences; each document contains exactly those two occurrences; replacing old timestamp with new produces the entire latest document byte-for-byte.",
+    "normalized_sha256": "e3eee1d21b8c0c685ce713163a31b06e9da3e9c16ca9b0a47a0c9001295bd799",
+    "reviewed": {
+      "bytes": 9599,
+      "generated_at": "2026-10-08T20:46:28.962333Z",
+      "path": "/dev/shm/canvaspilot-conversation-work-713adaab/docs/receiving/conversation-export-713adaab/candidate-current-main-acdd/tmp/test_actual_cli_new_file_recei0/saved conversation.html",
+      "sha256": "2fe819bd3ac36f79774c2c42985b44d96e54d080982bddbffab4d4eacd0c5570"
+    },
+    "schema": "canvaspilot.conversation.visual-sample-binding/1"
+  },
+  "schema": "canvaspilot.conversation.native-checkpoint/1",
+  "symlinks_metadata_only": 45
+}

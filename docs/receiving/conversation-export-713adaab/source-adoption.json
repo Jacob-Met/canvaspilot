@@ -1,0 +1,28 @@
+{
+  "adopted_module_sha256": "f18490e6eaa26a2176426711a20a6626bbdb063d539a650d5a09f86811245ff2",
+  "change": "Two CSS lines; identity facts then the unchanged body then all additional returned fields in an open native details disclosure.",
+  "exact_intended_transformation_proven": true,
+  "modification_provenance": "Original worktree write was not reconciled from the visible session. Preserve the exact observation and do not attribute it to a peer or claim a known original writer.",
+  "observed_mtime_ns": 1791490695591542480,
+  "observed_utc": "2026-10-08T20:40:23.524362+00:00",
+  "partial_source_head": "b9ac2167e707d9802493c384a005b2da4f4907fd",
+  "patch_sha256": "714ff5eadf3d0810d2537e77e83e868944f505b66e10137cae050ff98e015cb0",
+  "preserved_contract": [
+    "complete source JSON",
+    "all returned fields and value states",
+    "message/participant order",
+    "author type matching",
+    "literal escaped body",
+    "single API read",
+    "read state",
+    "writer",
+    "CLI",
+    "frozen maintained tests"
+  ],
+  "prior_readback_sha256": "66390f62348cd56c7f02ca09440ce7ccd64c6bf39b1bae45e8cff83c30689550",
+  "qualification": "This source change has not been executed. The prior 31-pass receipt applies to b9ac2167; next receiving must bind these adopted bytes.",
+  "qualified_module_sha256": "189565ab3d90f73150accb5a4d9ddfa955b3c8e27f46caa17792b53a80cc717c",
+  "review_and_authorization": "Root reviewed the complete exact diff, confirmed it equals the intended accepted UX correction, and adopts these bytes as its owned subsequent candidate under the standing source mandate. Independent mac_execution read-only review found no safety or correctness blocker and denied source edits.",
+  "schema": "canvaspilot.conversation.reviewed-source-adoption/1",
+  "source_not_modified_by_this_adoption": true
+}
