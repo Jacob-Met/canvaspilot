@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CanvasPilot//Assignment deadlines//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:dd1be4e3a1b9fcb6c01f19076f51372f84c0ba5d3b1915e6896e0381280580f3@canvas
+ pilot
+DTSTAMP:20261008T123031Z
+DTSTART:20261101T084500Z
+SUMMARY:[Course 42] Synthetic deadline from school-b.instructure.com
+DESCRIPTION:Canvas assignment deadline. Exported snapshot\; check Canvas fo
+ r changes.
+TRANSP:TRANSPARENT
+URL:https://school-b.instructure.com/courses/42/assignments/1
+END:VEVENT
+END:VCALENDAR

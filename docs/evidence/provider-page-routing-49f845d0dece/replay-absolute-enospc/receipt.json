@@ -1,0 +1,23 @@
+{
+  "status": "infrastructure_blocked",
+  "attempt": "replay-absolute-successor",
+  "process_id": 7103,
+  "receiver_sha256": "f2684d1046843da7533a41086da73421e4a1cb1abc84da1b417bb7be799ca587",
+  "source_native_commit": "8e1a1b87a1f7379b884310cf05cbad8129ea1bb8",
+  "classification": "No receiving verdict. The wrapper raised ENOSPC before recording the child result; no complete receipt exists.",
+  "observed_tool_result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "[Reading 10 new lines (total: 10 lines)]\n\nTraceback (most recent call last):\n  File \"<stdin>\", line 10, in <module>\n  File \"/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/pathlib.py\", line 1265, in write_bytes\n    with self.open(mode='wb') as f:\n  File \"/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/pathlib.py\", line 1242, in open\n    return io.open(self, mode, buffering, encoding, errors, newline,\n  File \"/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/pathlib.py\", line 1110, in _opener\n    return self._accessor.open(self, flags, mode)\nOSError: [Errno 28] No space left on device: '/Users/me/workspace/estate/estate-49f845d0dece/canvas-provider-pr45-receiving/replay-absolute-successor.stdout.txt'\n\n\u2705 Process completed with exit code 1 (runtime: 1.17s)"
+      },
+      {
+        "type": "text",
+        "text": "\n[executed on device: Mac.lan (0e3d582f-e25b-44b2-8418-9639fc4e4e33)]"
+      }
+    ],
+    "isError": false
+  },
+  "partial_output_directory_exists": true,
+  "partial_output_files": []
+}

@@ -1,0 +1,23 @@
+diff --git a/src/canvaspilot/session_broker.py b/src/canvaspilot/session_broker.py
+index b51d7aa7a51ae6e1eea943061d474cbd0c79c563..42537e323550e8b0a2da4cbbb3a6b94bfaf16ddc 100644
+--- a/src/canvaspilot/session_broker.py
++++ b/src/canvaspilot/session_broker.py
+@@ -203,7 +203,8 @@ def _run_job(ctx, job: dict[str, Any]) -> dict[str, Any]:  # type: ignore[no-unt
+         result = page.evaluate(
+             """async ({method, path, headers, body, providerOrigin}) => {
+               const origin = providerOrigin || location.origin;
+-              if (location.origin !== origin || new URL(path, location.href).origin !== origin) {
++              const target = new URL(path, location.href);
++              if (location.origin !== origin || target.origin !== origin) {
+                 throw new Error('Canvas provider mismatch before fetch');
+               }
+               const opts = {method, credentials: 'include', headers: headers || {}};
+@@ -214,7 +215,7 @@ def _run_job(ctx, job: dict[str, Any]) -> dict[str, Any]:  # type: ignore[no-unt
+                   opts.body = JSON.stringify(body);
+                 }
+               }
+-              const r = await fetch(path, opts);
++              const r = await fetch(target.href, opts);
+               if (new URL(r.url).origin !== origin || location.origin !== origin) {
+                 throw new Error('Canvas provider mismatch after fetch');
+               }

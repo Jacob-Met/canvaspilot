@@ -1,0 +1,15 @@
+--- replay/receive_provider_page_contract.py
++++ replay-absolute/receive_provider_page_contract.py
+@@ -68,7 +68,11 @@
+  def title(self):
+   return "Synthetic provider routing receiver"
+  def evaluate(self, expression, parameters):
+-  if "const r = await fetch(path, opts);" not in expression:
++  admitted_fetch_statements = (
++   "const r = await fetch(path, opts);",
++   "const r = await fetch(target.href, opts);",
++  )
++  if sum(statement in expression for statement in admitted_fetch_statements) != 1:
+    raise RuntimeError("Unexpected production page expression")
+   if parameters["method"] != "GET":
+    raise RuntimeError("Unexpected non-GET operation")
