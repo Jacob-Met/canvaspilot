@@ -1,0 +1,18 @@
+{
+  "command": [
+    "/workspace/scratch/87eaaf0fdf63/estate-production/venv/bin/python",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "docs/qualification/link-context-20261008-87eaaf0fdf63/donor_receiving.py",
+    "-k",
+    "malformed_relation_metadata or unsupported_link_context or opaque_query_and_quoted_valid_parameters or equivalent_origin_cycle",
+    "--tb=short"
+  ],
+  "exit_code": 0,
+  "stdout": "......................                                                   [100%]\n22 passed, 16 deselected in 0.98s\n",
+  "stderr": ""
+}

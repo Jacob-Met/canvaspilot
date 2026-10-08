@@ -1,0 +1,8 @@
+Preserved exception excerpt from the interrupted qualification rerun:
+
+OSError: [Errno 28] No space left on device
+
+The traceback reached pytest/cacheprovider.py, set(), while writing cache/lastfailed.
+The corresponding incomplete stdout is tests-enospc-incomplete.txt. This run
+returned exit code 1 and is not a successful test result. The shared filesystem
+then reported available capacity, and the subsequent full rerun completed.

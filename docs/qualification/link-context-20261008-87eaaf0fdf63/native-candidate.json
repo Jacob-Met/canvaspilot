@@ -1,0 +1,16 @@
+{
+  "command": [
+    "/workspace/scratch/87eaaf0fdf63/estate-production/venv/bin/python",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "tests/test_link_metadata_receiving.py",
+    "--tb=short"
+  ],
+  "exit_code": 0,
+  "stdout": "........................                                                 [100%]\n24 passed in 1.17s\n",
+  "stderr": ""
+}

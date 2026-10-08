@@ -1,0 +1,78 @@
+FFFFFFFFFFF.                                                             [100%]
+=================================== FAILURES ===================================
+____ test_public_assignments_keep_opaque_cursor_and_empty_intermediate_page ____
+canvas-receiving/test_broker_http_receiving.py:101: in test_public_assignments_keep_opaque_cursor_and_empty_intermediate_page
+    assert [row["id"] for row in rows] == list(range(1, 26))
+E   assert [1, 2, 3, 4, 5, 6, ...] == [1, 2, 3, 4, 5, 6, ...]
+E     
+E     Right contains 15 more items, first extra item: 11
+E     Use -v to get more diff
+__________ test_a_full_terminal_page_does_not_invent_another_request ___________
+canvas-receiving/test_broker_http_receiving.py:115: in test_a_full_terminal_page_does_not_invent_another_request
+    assert len(api.list_assignments(17)) == 50
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+canvas-receiving/baseline/src/canvaspilot/api.py:95: in list_assignments
+    rows = self.client.get_paginated(
+canvas-receiving/baseline/src/canvaspilot/client.py:245: in get_paginated
+    data = broker_fetch(
+canvas-receiving/baseline/src/canvaspilot/client.py:76: in broker_fetch
+    raise CanvasAuthError(payload.get("error") or "broker fetch failed")
+E   canvaspilot.client.CanvasAuthError: The broker guessed another page after a terminal Link.
+_ test_unsafe_or_ambiguous_next_is_refused_before_another_fetch[<https://other-fixture.invalid/api/v1/items?cursor=private-value>; rel="next"] _
+canvas-receiving/test_broker_http_receiving.py:127: in test_unsafe_or_ambiguous_next_is_refused_before_another_fetch
+    with pytest.raises(RuntimeError) as caught:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'RuntimeError'>
+_ test_unsafe_or_ambiguous_next_is_refused_before_another_fetch[<//other-fixture.invalid/api/v1/items>; rel="next"] _
+canvas-receiving/test_broker_http_receiving.py:127: in test_unsafe_or_ambiguous_next_is_refused_before_another_fetch
+    with pytest.raises(RuntimeError) as caught:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'RuntimeError'>
+_ test_unsafe_or_ambiguous_next_is_refused_before_another_fetch[<https://receiving-fixture.instructure.com//other-fixture.invalid/api/v1/items>; rel="next"] _
+canvas-receiving/test_broker_http_receiving.py:127: in test_unsafe_or_ambiguous_next_is_refused_before_another_fetch
+    with pytest.raises(RuntimeError) as caught:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'RuntimeError'>
+_ test_unsafe_or_ambiguous_next_is_refused_before_another_fetch[<https://receiving-fixture.instructure.com/api/v1/items?cursor=private-value>; rel="next", <https://receiving-fixture.instructure.com/api/v1/other>; rel="next"] _
+canvas-receiving/test_broker_http_receiving.py:127: in test_unsafe_or_ambiguous_next_is_refused_before_another_fetch
+    with pytest.raises(RuntimeError) as caught:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'RuntimeError'>
+____ test_cycle_refuses_a_partial_list_and_never_fetches_the_same_url_twice ____
+canvas-receiving/test_broker_http_receiving.py:137: in test_cycle_refuses_a_partial_list_and_never_fetches_the_same_url_twice
+    with pytest.raises(RuntimeError, match="repeated|incomplete"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'RuntimeError'>
+___ test_old_broker_metadata_is_an_actionable_error_not_a_partial_collection ___
+canvas-receiving/test_broker_http_receiving.py:145: in test_old_broker_metadata_is_an_actionable_error_not_a_partial_collection
+    with pytest.raises(RuntimeError, match="[Rr]estart"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'RuntimeError'>
+_____ test_error_on_later_page_never_becomes_successful_partial_data[401] ______
+canvas-receiving/test_broker_http_receiving.py:159: in test_error_on_later_page_never_becomes_successful_partial_data
+    with pytest.raises(expected_error):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'canvaspilot.client.CanvasAuthError'>
+_____ test_error_on_later_page_never_becomes_successful_partial_data[403] ______
+canvas-receiving/test_broker_http_receiving.py:159: in test_error_on_later_page_never_becomes_successful_partial_data
+    with pytest.raises(expected_error):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'canvaspilot.client.CanvasAuthError'>
+_____ test_error_on_later_page_never_becomes_successful_partial_data[429] ______
+canvas-receiving/test_broker_http_receiving.py:159: in test_error_on_later_page_never_becomes_successful_partial_data
+    with pytest.raises(expected_error):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'httpx.HTTPStatusError'>
+=========================== short test summary info ============================
+FAILED canvas-receiving/test_broker_http_receiving.py::test_public_assignments_keep_opaque_cursor_and_empty_intermediate_page
+FAILED canvas-receiving/test_broker_http_receiving.py::test_a_full_terminal_page_does_not_invent_another_request
+FAILED canvas-receiving/test_broker_http_receiving.py::test_unsafe_or_ambiguous_next_is_refused_before_another_fetch[<https://other-fixture.invalid/api/v1/items?cursor=private-value>; rel="next"]
+FAILED canvas-receiving/test_broker_http_receiving.py::test_unsafe_or_ambiguous_next_is_refused_before_another_fetch[<//other-fixture.invalid/api/v1/items>; rel="next"]
+FAILED canvas-receiving/test_broker_http_receiving.py::test_unsafe_or_ambiguous_next_is_refused_before_another_fetch[<https://receiving-fixture.instructure.com//other-fixture.invalid/api/v1/items>; rel="next"]
+FAILED canvas-receiving/test_broker_http_receiving.py::test_unsafe_or_ambiguous_next_is_refused_before_another_fetch[<https://receiving-fixture.instructure.com/api/v1/items?cursor=private-value>; rel="next", <https://receiving-fixture.instructure.com/api/v1/other>; rel="next"]
+FAILED canvas-receiving/test_broker_http_receiving.py::test_cycle_refuses_a_partial_list_and_never_fetches_the_same_url_twice
+FAILED canvas-receiving/test_broker_http_receiving.py::test_old_broker_metadata_is_an_actionable_error_not_a_partial_collection
+FAILED canvas-receiving/test_broker_http_receiving.py::test_error_on_later_page_never_becomes_successful_partial_data[401]
+FAILED canvas-receiving/test_broker_http_receiving.py::test_error_on_later_page_never_becomes_successful_partial_data[403]
+FAILED canvas-receiving/test_broker_http_receiving.py::test_error_on_later_page_never_becomes_successful_partial_data[429]
+11 failed, 1 passed in 1.72s

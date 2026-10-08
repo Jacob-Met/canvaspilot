@@ -192,7 +192,8 @@ def _run_job(ctx, job: dict[str, Any]) -> dict[str, Any]:  # type: ignore[no-unt
               const text = await r.text();
               let json = null;
               try { json = JSON.parse(text); } catch (e) {}
-              return {status: r.status, json, text: json ? null : text.slice(0, 4000)};
+              return {status: r.status, json, text: json ? null : text.slice(0, 4000),
+                      link: r.headers.get('Link')};
             }""",
             {"method": method, "path": path, "headers": headers, "body": body},
         )

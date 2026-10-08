@@ -146,21 +146,26 @@ def test_empty_query_parameters_keep_path(broker, params):
 def test_paginated_includes_survive_every_page(broker, monkeypatch):
     rows = [{"id": 1}, {"id": 2}, {"id": 3}]
     params = {"include[]": ["items"], "per_page": 2}
+    base = "https://canvas.example.test"
+    next_path = "/api/v1/courses/1/modules?include%5B%5D=items&cursor=remaining"
 
     def page(job):
         broker.append(job)
-        number = int(query(job)["page"][0])
-        start = (number - 1) * 2
-        return {"ok": True, "response": {"status": 200, "json": rows[start:start + 2]}}
+        following = query(job).get("cursor") == ["remaining"]
+        return {"ok": True, "response": {
+            "status": 200,
+            "json": rows[2:] if following else rows[:2],
+            "link": None if following else f'<{base}{next_path}>; rel="next"',
+        }}
 
     monkeypatch.setattr(session_broker, "_call", page)
-    with CanvasClient(token="") as client:
+    with CanvasClient(token="", base_url=base) as client:
         result = client.get_paginated("/api/v1/courses/1/modules", params=params)
 
     assert result == rows
     assert [query(job) for job in broker] == [
-        {"include[]": ["items"], "per_page": ["2"], "page": ["1"]},
-        {"include[]": ["items"], "per_page": ["2"], "page": ["2"]},
+        {"include[]": ["items"], "per_page": ["2"]},
+        {"include[]": ["items"], "cursor": ["remaining"]},
     ]
     assert params == {"include[]": ["items"], "per_page": 2}
 

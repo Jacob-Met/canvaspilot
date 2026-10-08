@@ -1,0 +1,15 @@
+{
+  "check": "full-tests",
+  "command": [
+    "/workspace/scratch/87eaaf0fdf63/estate-production/venv/bin/python",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider"
+  ],
+  "exit_code": 0,
+  "stdout": "........................................................................ [ 42%]\n........................................................................ [ 85%]\n.........................                                                [100%]\n169 passed in 9.08s\n",
+  "stderr": ""
+}

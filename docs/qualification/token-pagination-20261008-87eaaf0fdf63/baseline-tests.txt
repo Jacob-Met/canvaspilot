@@ -1,0 +1,111 @@
+.FFFFFFFFFFF.FF.FFF......F                                               [100%]
+=================================== FAILURES ===================================
+_ test_invalid_next_never_receives_the_configured_authorization_header[https://foreign-pagination-fixture.invalid/api/v1/items?cursor=private-marker] _
+tests/test_token_pagination.py:77: in test_invalid_next_never_receives_the_configured_authorization_header
+    with client, pytest.raises(CanvasPaginationError) as error:
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'canvaspilot.pagination.CanvasPaginationError'>
+_ test_invalid_next_never_receives_the_configured_authorization_header[http://token-pagination-fixture.instructure.com/api/v1/items] _
+tests/test_token_pagination.py:77: in test_invalid_next_never_receives_the_configured_authorization_header
+    with client, pytest.raises(CanvasPaginationError) as error:
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'canvaspilot.pagination.CanvasPaginationError'>
+_ test_invalid_next_never_receives_the_configured_authorization_header[https://token-pagination-fixture.instructure.com:444/api/v1/items] _
+tests/test_token_pagination.py:77: in test_invalid_next_never_receives_the_configured_authorization_header
+    with client, pytest.raises(CanvasPaginationError) as error:
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'canvaspilot.pagination.CanvasPaginationError'>
+_ test_invalid_next_never_receives_the_configured_authorization_header[https://user:private-marker@token-pagination-fixture.instructure.com/api/v1/items] _
+tests/test_token_pagination.py:77: in test_invalid_next_never_receives_the_configured_authorization_header
+    with client, pytest.raises(CanvasPaginationError) as error:
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'canvaspilot.pagination.CanvasPaginationError'>
+_ test_invalid_next_never_receives_the_configured_authorization_header[//foreign-pagination-fixture.invalid/api/v1/items] _
+tests/test_token_pagination.py:77: in test_invalid_next_never_receives_the_configured_authorization_header
+    with client, pytest.raises(CanvasPaginationError) as error:
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'canvaspilot.pagination.CanvasPaginationError'>
+_ test_invalid_next_never_receives_the_configured_authorization_header[https://token-pagination-fixture.instructure.com//foreign-pagination-fixture.invalid/api/v1/items] _
+tests/test_token_pagination.py:77: in test_invalid_next_never_receives_the_configured_authorization_header
+    with client, pytest.raises(CanvasPaginationError) as error:
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'canvaspilot.pagination.CanvasPaginationError'>
+_ test_invalid_next_never_receives_the_configured_authorization_header[https://token-pagination-fixture.instructure.com/api/v1/items#fragment] _
+tests/test_token_pagination.py:77: in test_invalid_next_never_receives_the_configured_authorization_header
+    with client, pytest.raises(CanvasPaginationError) as error:
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'canvaspilot.pagination.CanvasPaginationError'>
+_ test_invalid_next_never_receives_the_configured_authorization_header[https://token-pagination-fixture.instructure.com\\@foreign-pagination-fixture.invalid/api/v1/items] _
+tests/test_token_pagination.py:77: in test_invalid_next_never_receives_the_configured_authorization_header
+    with client, pytest.raises(CanvasPaginationError) as error:
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'canvaspilot.pagination.CanvasPaginationError'>
+____________ test_foreign_initial_url_is_refused_before_any_request ____________
+tests/test_token_pagination.py:86: in test_foreign_initial_url_is_refused_before_any_request
+    with client, pytest.raises(CanvasPaginationError):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'canvaspilot.pagination.CanvasPaginationError'>
+________ test_same_origin_absolute_initial_url_keeps_initial_parameters ________
+tests/test_token_pagination.py:95: in test_same_origin_absolute_initial_url_keeps_initial_parameters
+    assert parse_qsl(requests[0].url.query.decode()) == [
+E   AssertionError: assert [] == [('include[]'..._page', '50')]
+E
+E     Right contains 3 more items, first extra item: ('include[]', 'one')
+E     Use -v to get more diff
+____ test_initial_path_query_and_native_httpx_parameter_types_are_preserved ____
+tests/test_token_pagination.py:105: in test_initial_path_query_and_native_httpx_parameter_types_are_preserved
+    assert parse_qsl(requests[0].url.query.decode(), keep_blank_values=True) == [
+E   AssertionError: assert [('include[]'..._page', '50')] == [('starting_c..._page', '50')]
+E
+E     At index 0 diff: ('include[]', 'one') != ('starting_cursor', 'given/opaque')
+E     Right contains one more item: ('per_page', '50')
+E     Use -v to get more diff
+__________ test_cycle_refuses_partial_output_before_a_repeated_fetch ___________
+tests/test_token_pagination.py:124: in test_cycle_refuses_partial_output_before_a_repeated_fetch
+    with client, pytest.raises(CanvasPaginationError, match="repeated"):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'canvaspilot.pagination.CanvasPaginationError'>
+__ test_exact_forty_page_boundary_distinguishes_complete_and_truncated[False] __
+tests/test_token_pagination.py:139: in test_exact_forty_page_boundary_distinguishes_complete_and_truncated
+    with pytest.raises(CanvasPaginationError, match="40-page cap"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'canvaspilot.pagination.CanvasPaginationError'>
+_ test_ambiguous_or_malformed_link_refuses_a_complete_result[<https://token-pagination-fixture.instructure.com/api/v1/items?cursor=a>; rel="next", <https://token-pagination-fixture.instructure.com/api/v1/items?cursor=b>; rel="next"] _
+tests/test_token_pagination.py:153: in test_ambiguous_or_malformed_link_refuses_a_complete_result
+    with client, pytest.raises(CanvasPaginationError):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'canvaspilot.pagination.CanvasPaginationError'>
+_ test_ambiguous_or_malformed_link_refuses_a_complete_result[<https://token-pagination-fixture.instructure.com/api/v1/items?cursor=a>; rel="next] _
+tests/test_token_pagination.py:153: in test_ambiguous_or_malformed_link_refuses_a_complete_result
+    with client, pytest.raises(CanvasPaginationError):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'canvaspilot.pagination.CanvasPaginationError'>
+_ test_ambiguous_or_malformed_link_refuses_a_complete_result[https://token-pagination-fixture.instructure.com/api/v1/items?cursor=a; rel="next"] _
+tests/test_token_pagination.py:153: in test_ambiguous_or_malformed_link_refuses_a_complete_result
+    with client, pytest.raises(CanvasPaginationError):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'canvaspilot.pagination.CanvasPaginationError'>
+______________ test_non_list_with_next_refuses_partial_collection ______________
+tests/test_token_pagination.py:190: in test_non_list_with_next_refuses_partial_collection
+    with client, pytest.raises(CanvasPaginationError, match="non-list"):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'canvaspilot.pagination.CanvasPaginationError'>
+=========================== short test summary info ============================
+FAILED tests/test_token_pagination.py::test_invalid_next_never_receives_the_configured_authorization_header[https://foreign-pagination-fixture.invalid/api/v1/items?cursor=private-marker]
+FAILED tests/test_token_pagination.py::test_invalid_next_never_receives_the_configured_authorization_header[http://token-pagination-fixture.instructure.com/api/v1/items]
+FAILED tests/test_token_pagination.py::test_invalid_next_never_receives_the_configured_authorization_header[https://token-pagination-fixture.instructure.com:444/api/v1/items]
+FAILED tests/test_token_pagination.py::test_invalid_next_never_receives_the_configured_authorization_header[https://user:private-marker@token-pagination-fixture.instructure.com/api/v1/items]
+FAILED tests/test_token_pagination.py::test_invalid_next_never_receives_the_configured_authorization_header[//foreign-pagination-fixture.invalid/api/v1/items]
+FAILED tests/test_token_pagination.py::test_invalid_next_never_receives_the_configured_authorization_header[https://token-pagination-fixture.instructure.com//foreign-pagination-fixture.invalid/api/v1/items]
+FAILED tests/test_token_pagination.py::test_invalid_next_never_receives_the_configured_authorization_header[https://token-pagination-fixture.instructure.com/api/v1/items#fragment]
+FAILED tests/test_token_pagination.py::test_invalid_next_never_receives_the_configured_authorization_header[https://token-pagination-fixture.instructure.com\\@foreign-pagination-fixture.invalid/api/v1/items]
+FAILED tests/test_token_pagination.py::test_foreign_initial_url_is_refused_before_any_request
+FAILED tests/test_token_pagination.py::test_same_origin_absolute_initial_url_keeps_initial_parameters
+FAILED tests/test_token_pagination.py::test_initial_path_query_and_native_httpx_parameter_types_are_preserved
+FAILED tests/test_token_pagination.py::test_cycle_refuses_partial_output_before_a_repeated_fetch
+FAILED tests/test_token_pagination.py::test_exact_forty_page_boundary_distinguishes_complete_and_truncated[False]
+FAILED tests/test_token_pagination.py::test_ambiguous_or_malformed_link_refuses_a_complete_result[<https://token-pagination-fixture.instructure.com/api/v1/items?cursor=a>; rel="next", <https://token-pagination-fixture.instructure.com/api/v1/items?cursor=b>; rel="next"]
+FAILED tests/test_token_pagination.py::test_ambiguous_or_malformed_link_refuses_a_complete_result[<https://token-pagination-fixture.instructure.com/api/v1/items?cursor=a>; rel="next]
+FAILED tests/test_token_pagination.py::test_ambiguous_or_malformed_link_refuses_a_complete_result[https://token-pagination-fixture.instructure.com/api/v1/items?cursor=a; rel="next"]
+FAILED tests/test_token_pagination.py::test_non_list_with_next_refuses_partial_collection
+17 failed, 9 passed in 0.89s

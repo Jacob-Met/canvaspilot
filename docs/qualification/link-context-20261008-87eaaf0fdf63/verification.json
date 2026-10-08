@@ -1,0 +1,23 @@
+{
+  "baseline_commit": "0330e6176c300e6ddf4ab76a88d5555fce7e4e26",
+  "donor_commit": "246602b0edac3092ef957e391702815702451e2c",
+  "source_sha256": {
+    "src/canvaspilot/client.py": "02ea5ff157a1fb310b35ed3b41d1fbc5a09a928987cabebd34bbc7cafc830222",
+    "src/canvaspilot/pagination.py": "1bf2ffbeb29408f25561c5f1bece9f3d839978bea3ef84e519d4a4af6ad1a8df",
+    "tests/test_link_metadata_receiving.py": "80b9dfc06ffb111abecfd4d03fdf27b96dd2a2c2acbcaa075b7fd1659fa65f9a"
+  },
+  "checks": [
+    {
+      "name": "full-tests",
+      "exit_code": 0
+    },
+    {
+      "name": "lint",
+      "exit_code": 0
+    },
+    {
+      "name": "staged-diff-check",
+      "exit_code": 0
+    }
+  ]
+}

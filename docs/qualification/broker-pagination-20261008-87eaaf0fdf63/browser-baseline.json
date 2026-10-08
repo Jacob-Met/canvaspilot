@@ -1,0 +1,17 @@
+{
+  "expectation": "baseline",
+  "chromium": "153.0.8010.0",
+  "public_api": "CanvasAPI.list_assignments(7)",
+  "fictional_collection_count": 25,
+  "returned_count": 10,
+  "canvas_requests": [
+    "https://pagination-fixture.instructure.com/api/v1/courses/7/assignments?order_by=due_at&include%5B%5D=submission&bucket=upcoming&per_page=50&page=1"
+  ],
+  "broker_response_has_link": false,
+  "blocked_requests": [],
+  "source_sha256": {
+    "client.py": "7cc5f5df0834daf98dd75801b569345acec58fd8c982cbf746af4c6aea367f7d",
+    "session_broker.py": "2a106130c344aefebb23b078cd93b5d3ca3afd7f5325ae5fac2fb8a7251780cc"
+  },
+  "scope": "actual broker JavaScript and public client; local request interception, no live account"
+}

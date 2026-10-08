@@ -8,6 +8,7 @@ from canvaspilot.bundle import (
     tool_inventory,
 )
 from canvaspilot.client import CanvasAuthError, CanvasClient
+from canvaspilot.pagination import CanvasPaginationError
 
 __all__ = [
     "CURATED_MCP_TOOLS",
@@ -15,6 +16,7 @@ __all__ = [
     "CanvasAPI",
     "CanvasAuthError",
     "CanvasClient",
+    "CanvasPaginationError",
     "assert_canvas_api_path",
     "make_api",
     "strip_html",

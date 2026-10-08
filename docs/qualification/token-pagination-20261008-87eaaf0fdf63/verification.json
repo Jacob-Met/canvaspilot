@@ -1,0 +1,25 @@
+{
+  "baseline_commit": "640bca994bd98f2c4b1759e450ebeda0e0b92dab",
+  "source_sha256": {
+    "src/canvaspilot/client.py": "82ac737ec34259b42a1629ab40bddf5d54aaafe17d178cdcf56983ea5c440395",
+    "src/canvaspilot/pagination.py": "9f37282f3a6810c277937183b2ca319e3c19fca958fa306ff83ee9e6dd9583db",
+    "tests/test_token_pagination.py": "34e6b063048e7231dc1162908a5b00340f1149c4c2824a267cf7b67a2d80c646"
+  },
+  "checks": [
+    {
+      "name": "full-tests",
+      "exit_code": 0
+    },
+    {
+      "name": "lint",
+      "exit_code": 0
+    },
+    {
+      "name": "diff-check",
+      "exit_code": 0
+    }
+  ],
+  "fixture_boundary": "Only synthetic token and httpx.MockTransport; no real credential, user profile, provider request or account mutation.",
+  "baseline_stdout_sha256": "3f9d704cfc6bea0a7b784d4a62d05c9d5e46c30df8ccec9e6df82854625050b2",
+  "diff_check_scope": "git diff --cached 640bca994bd98f2c4b1759e450ebeda0e0b92dab --check, including all new qualification and test files"
+}

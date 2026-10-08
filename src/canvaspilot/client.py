@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import logging
 import os
 import re
 from pathlib import Path
@@ -10,7 +9,7 @@ from typing import Any
 
 import httpx
 
-log = logging.getLogger(__name__)
+from canvaspilot.pagination import CanvasPaginationError, broker_path, next_link, with_query
 
 # Override with CANVAS_BASE_URL or --base-url (e.g. https://<school>.instructure.com).
 DEFAULT_BASE = "https://canvas.instructure.com"
@@ -55,15 +54,14 @@ def broker_fetch(
     json_body: dict[str, Any] | None = None,
     data: dict[str, Any] | None = None,
     timeout: float = 120.0,
+    include_response: bool = False,
 ) -> Any:
-    """Call Canvas via the stay-open session broker (in-page fetch)."""
-    full = path
-    if params:
-        # Match token-mode HTTPX encoding, including arrays and booleans.
-        q = str(httpx.QueryParams(params))
-        if q:
-            sep = "&" if "?" in full else "?"
-            full = f"{full}{sep}{q}"
+    """Call Canvas via the stay-open session broker (in-page fetch).
+
+    ``include_response`` retains the broker's response metadata for pagination.
+    Ordinary callers continue to receive only the decoded body.
+    """
+    full = with_query(path, params)
 
     body: Any = None
     headers = {"Accept": "application/json"}
@@ -95,6 +93,8 @@ def broker_fetch(
             request=httpx.Request(method, full),
             response=httpx.Response(int(status), text=str(resp.get("text") or resp.get("json"))),
         )
+    if include_response:
+        return resp
     if resp.get("json") is not None:
         return resp["json"]
     return resp.get("text")
@@ -230,68 +230,81 @@ class CanvasClient:
         *,
         params: dict[str, Any] | list[tuple[str, Any]] | None = None,
     ) -> list[Any]:
-        """Follow Link rel=next until exhausted (cap pages)."""
+        """Read a complete collection via same-origin Link URLs, or raise.
+
+        A next link remaining after 40 pages is incomplete, even if earlier
+        pages succeeded. Initial filters are sent only with the first request.
+        """
         if self.fixture is not None:
             data = self.request("GET", path, params=params)
             return data if isinstance(data, list) else [data]
 
         if not self.token and broker_health():
-            # The session broker's /fetch returns {status, json, text} with no
-            # response headers, so Link: rel=next following is impossible here.
-            # Use Canvas explicit pagination (?page=N&per_page=M) instead of
-            # silently returning only the first page.
-            params = _with_per_page(params)
-            if isinstance(params, list):
-                per_page = min(int(dict(params).get("per_page", 50)), 100)
-                params = [(k, v) for k, v in params if k != "per_page"]
-                params.append(("per_page", per_page))
-            else:
-                per_page = min(int(params.get("per_page", 50)), 100)
-                params = {**params, "per_page": per_page}
+            # Canvas may cap page sizes and uses opaque continuation URLs:
+            # https://developerdocs.instructure.com/services/canvas/basics/file.pagination
+            url = with_query(broker_path(path, self.base_url), _with_per_page(params))
             out: list[Any] = []
-            truncated = True
-            for page in range(1, 41):
-                data = broker_fetch(
-                    "GET", path, params=_with_page(params, page), timeout=self.timeout
+            seen: set[str] = set()
+            for _ in range(40):
+                if url in seen:
+                    raise CanvasPaginationError("Canvas pagination repeated a page; collection incomplete.")
+                seen.add(url)
+                response = broker_fetch(
+                    "GET", url, timeout=self.timeout, include_response=True
                 )
+                if not isinstance(response, dict) or "link" not in response:
+                    raise CanvasPaginationError(
+                        "The session broker does not provide pagination metadata. "
+                        "Restart it with the current CanvasPilot version and retry the read."
+                    )
+                following = next_link(response["link"])
+                data = response.get("json")
+                if data is None:
+                    raise CanvasPaginationError("Canvas pagination expected a JSON response; collection incomplete.")
                 if not isinstance(data, list):
-                    # Mirror the token path: keep the non-list chunk, then stop.
+                    # Preserve the existing single-object response convention.
+                    if following:
+                        raise CanvasPaginationError("Canvas pagination returned a non-list page with a next link.")
                     out.append(data)
-                    truncated = False
-                    break
+                    return out
                 out.extend(data)
-                if len(data) < per_page:
-                    truncated = False
-                    break
-            if truncated:
-                log.warning(
-                    "get_paginated(%s): hit 40-page cap with %d rows; result truncated",
-                    path,
-                    len(out),
-                )
-            return out
+                if following is None:
+                    return out
+                url = broker_path(following, self.base_url)
+            raise CanvasPaginationError("Canvas pagination exceeded the 40-page cap; collection incomplete.")
 
         http = self._ensure_http()
-        params = _with_per_page(params)
+        url = broker_path(path, self.base_url)
+        # Retain token mode's native HTTPX scalar/array encoding. Keep an
+        # authored starting query and send these initial parameters only once.
+        query = str(httpx.QueryParams(_with_per_page(params)))
+        if query:
+            url = f"{url}{'&' if '?' in url else '?'}{query}"
         out: list[Any] = []
-        url: str | None = path
-        pages = 0
-        while url and pages < 40:
-            pages += 1
-            r = http.get(url, params=params if pages == 1 and not str(url).startswith("http") else None)
+        seen: set[str] = set()
+        for _ in range(40):
+            if url in seen:
+                raise CanvasPaginationError("Canvas pagination repeated a page; collection incomplete.")
+            seen.add(url)
+            r = http.get(url)
             if r.status_code in (401, 403):
                 raise CanvasAuthError(f"Canvas auth failed ({r.status_code})")
             r.raise_for_status()
+            following = next_link(r.headers.get("link"))
             chunk = r.json()
             if isinstance(chunk, list):
                 out.extend(chunk)
             else:
+                if following:
+                    raise CanvasPaginationError("Canvas pagination returned a non-list page with a next link.")
                 out.append(chunk)
-                break
-            next_url = _link_next(r.headers.get("link") or r.headers.get("Link") or "")
-            url = next_url
-            params = None
-        return out
+                return out
+            if following is None:
+                return out
+            # Never give an absolute foreign next URL to the client carrying
+            # the configured Authorization header. Redirect policy is unchanged.
+            url = broker_path(following, self.base_url)
+        raise CanvasPaginationError("Canvas pagination exceeded the 40-page cap; collection incomplete.")
 
     def _fixture_request(
         self,
@@ -321,27 +334,6 @@ class CanvasClient:
         if path.endswith(("/users/self/profile", "/users/self")):
             return self.fixture.get("profile", {"id": 1, "name": "Fixture User"})
         raise KeyError(f"fixture miss: {key}")
-
-
-def _with_page(
-    params: dict[str, Any] | list[tuple[str, Any]] | None,
-    page: int,
-) -> dict[str, Any] | list[tuple[str, Any]]:
-    """Return params with an explicit Canvas ?page=N for explicit pagination."""
-    if isinstance(params, list):
-        return [(k, v) for k, v in params if k != "page"] + [("page", page)]
-    out = dict(params or {})
-    out["page"] = page
-    return out
-
-
-def _link_next(link_header: str) -> str | None:
-    for part in link_header.split(","):
-        if 'rel="next"' in part or "rel=next" in part:
-            m = re.search(r"<([^>]+)>", part)
-            if m:
-                return m.group(1)
-    return None
 
 
 def _with_per_page(

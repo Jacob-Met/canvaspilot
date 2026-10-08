@@ -104,7 +104,7 @@ Tools exposed (all prefixed `canvas_`):
 | Discussions | `list_discussion_topics`, `get_discussion`, `post_discussion_reply` |
 | Quizzes | `list_quizzes`, `get_quiz`, `list_quiz_questions`, `list_quiz_submissions`, `start_quiz_submission`, `complete_quiz_submission` |
 | Inbox / Calendar | `list_conversations`, `get_conversation`, `reply_conversation`, `list_calendar_events` |
-| **Full REST** | `canvas_api_request`, `canvas_api_paginated` — any `/api/v1/...` path (escape hatch for everything else; in session-broker mode `api_paginated` returns a single page only — see Auth modes) |
+| **Full REST** | `canvas_api_request`, `canvas_api_paginated` — any `/api/v1/...` path (escape hatch for everything else; collection reads follow Canvas continuation links — see Auth modes) |
 
 Programmatic API bundle: `from canvaspilot.bundle import make_api, tool_inventory`.
 
@@ -118,7 +118,20 @@ Programmatic API bundle: `from canvaspilot.bundle import make_api, tool_inventor
 
 Mode resolution is fixture > token > live broker > session, decided at runtime: `CANVAS_API_TOKEN` always wins and skips the broker; otherwise a live `GET 127.0.0.1:18765/health` probe decides whether the session broker is used. Bare "session" mode with no running broker raises on every request — "session (default)" means "broker if it's up", not "works with no setup".
 
-Pagination follows response `Link` headers only in token mode (up to 40 pages). In session-broker mode the broker returns a single page (`per_page` ≤ 100); paginate by repeated calls.
+Both token and session-broker collection reads follow Canvas's `Link` headers. Canvas
+can return fewer rows than the requested `per_page`; a short or empty page is not
+treated as the end when it has a `next` link. The client preserves opaque cursors
+and repeated filters, sends initial parameters once, validates the starting and
+continuation URLs against the configured Canvas origin, and performs GET requests.
+The session broker passes Canvas's Link header to the client as response metadata.
+
+Both modes raise `CanvasPaginationError` when continuation cannot be
+verified, a page repeats, or the 40-page limit is reached with more pages remaining.
+They do not return a partial collection as if it were complete. A running broker
+from an older version must be restarted with the updated package; otherwise the
+error names the missing pagination metadata. Narrow the requested scope if a
+collection exceeds 40 pages. Direct single-request calls keep their existing body
+format. Token mode's credential setup and HTTP redirect behavior are unchanged.
 
 The broker only listens on loopback — and `session_broker.main()` now refuses to start on any non-loopback bind address (fail-closed: a future host change cannot silently expose the unauthenticated `/fetch`/`/shutdown` endpoints to the network). Cookies never leave the Playwright profile directory; the MCP/CLI process never sees them — it asks the broker to make the request.
 

@@ -90,13 +90,16 @@ Response:
   "response": {
     "status": 200,
     "json": { "..." : "parsed body" },
-    "text": null
+    "text": null,
+    "link": null
   }
 }
 ```
 
 - `response.text` is populated (max 4000 chars) only when the body is **not**
   valid JSON; otherwise it is `null`.
+- `response.link` contains the Canvas `Link` response header, or `null` when
+  absent. Header-name capitalization is handled by the browser's Headers API.
 - The fetch runs with `credentials: 'include'`, so Canvas session cookies ride
   along — no token needed.
 
@@ -124,10 +127,29 @@ The broker process exits ~0.3s after responding. Unknown paths return
 - Startup emits two JSON lines on stdout: `{"status": "session_ready", ...}`
   (browser + profile + port) and `{"status": "listening", "url": ...}`.
 - Job queue is a single in-page worker; concurrent `/fetch` calls serialize.
-- In-page fetch drops response headers, so Canvas `Link: rel=next` pagination is
-  invisible here. `CanvasClient.get_paginated()` compensates with explicit
-  `?page=N&per_page=M` requests (max 100 per page, 40-page cap, warns on
-  truncation). The token auth path follows `Link` headers normally.
+- In-page fetch includes the Canvas `Link` header as `response.link` (a string,
+  or `null` when the response has no Link header). No other response headers are
+  exposed. `CanvasClient.get_paginated()` follows the opaque `rel=next` URL,
+  retaining its query and restricting it to the configured Canvas origin.
+  Initial filters are sent only on the first request; subsequent URLs already
+  contain the continuation parameters. Page length is not a completion signal.
+- Link metadata must contain a valid relation for each link. Missing or malformed
+  relations and unsupported `anchor` contexts raise `CanvasPaginationError`;
+  they cannot establish completion or supply a continuation for another resource.
+- Session-broker collection reads raise `CanvasPaginationError` for missing or
+  malformed pagination metadata, repeated/ambiguous continuation, a foreign
+  origin, an unexpected non-JSON response, or a still-incomplete collection after
+  40 pages. A broker predating `response.link` must be restarted with the updated
+  package. A present `link: null` is a verified terminal response; an absent field
+  cannot establish completion. Single-request body results are unchanged.
+- Token collection reads use the same continuation parser and origin validation.
+  Starting and next URLs must use the configured scheme, host and port; foreign
+  continuation targets are refused before any request carrying the configured
+  Authorization header. Initial query parameters retain HTTPX's scalar and array
+  encoding and are added only to the first request. Repeated or ambiguous links,
+  non-list pages with a next link, and incomplete collections at the 40-page cap
+  raise `CanvasPaginationError`. Existing credential acquisition, mode resolution
+  and HTTP redirect behavior are unchanged.
 - `POST` requests honor the `Content-Length` header (`{}` when absent); a
   missing body is treated as an empty object.
 - Logging is silenced (`log_message` no-op) — there is no access log on this
