@@ -1,0 +1,98 @@
+{
+  "schema": "canvaspilot.independent_current_parent_receiving.v1",
+  "recorded_at": "2026-10-08T11:54:01.792Z",
+  "source": "/home/jacob/canvaspilot-module-progress-current-58d79b68",
+  "commit": "5173b24285e9e3e2dda6b1d8158adea74e03bd52",
+  "tree": "19a5a643e9787ab60a80132cfca1fd76eaac37cb",
+  "canonical_parent": "a03a8637efad8ff22103a0c5018c93f7ecbb7d8d",
+  "cli_parser_sha256": "7a3e6db2f4b61e0854aee6cc8ceb9f7144ff140abad87bc1e41cdf73fafdc763",
+  "cli_dispatch_sha256": "b9875e566dd44a26736ef4f2952ec37b3c2578b871701ec6b11cf28eaafd944e",
+  "stripped_cli_exact_canonical_parent": true,
+  "canonical_cli_sha256": "173df7056f7d86084aa2dc00ba129bf8c36aaf109cdbf9497e24ec436d90d47b",
+  "current_cli_sha256": "1ce47f131de0152dfd494d7ce51f60cc505051809d5ae9bec0e21fea2176e509",
+  "helper_sha256": "974ee31925514a2e53b899888302a7fa357e280ab5f2461b754b814473653d99",
+  "frozen_source_comparison": [
+    {
+      "path": "README.md",
+      "sha256": "687d934b449ba995369d4335cec686b18820738882f09483649ae2efe217db2c",
+      "same_as_96e4": false
+    },
+    {
+      "path": "docs/module-progress.md",
+      "sha256": "2eb07cea692b9f157b007cf0d88cbf7e16487dbdc49a38ee73d885bfdff9cfdc",
+      "same_as_96e4": true
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "555ad3c7e338d38ae5feabc06c0c07503f22d9c732a9af153c7706c63d2b3c63",
+      "same_as_96e4": true
+    },
+    {
+      "path": "src/canvaspilot/__init__.py",
+      "sha256": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5",
+      "same_as_96e4": true
+    },
+    {
+      "path": "src/canvaspilot/api.py",
+      "sha256": "9c8325499296bc6563c1804676a47462b396c853ec860dbdbe6579280df6588f",
+      "same_as_96e4": true
+    },
+    {
+      "path": "src/canvaspilot/bundle.py",
+      "sha256": "7a5600680c22f3cce5d512ed96137de0171bcca7df6a8c46baa8c09143de3168",
+      "same_as_96e4": true
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "sha256": "1ce47f131de0152dfd494d7ce51f60cc505051809d5ae9bec0e21fea2176e509",
+      "same_as_96e4": false
+    },
+    {
+      "path": "src/canvaspilot/client.py",
+      "sha256": "6368329745216f473204995c101c912d9070fdd310def150bdbee927f9872de4",
+      "same_as_96e4": true
+    },
+    {
+      "path": "src/canvaspilot/feedback.py",
+      "sha256": "55454598effea598474a21f67e36d5bc5bea84aaefeefc18e4d8c49804ab9869",
+      "same_as_96e4": true
+    },
+    {
+      "path": "src/canvaspilot/folder_browser.py",
+      "sha256": "c6a67229b268c539e5edb581e3320b06229460adc3fbc01d72e4964e31c0348a",
+      "same_as_96e4": true
+    },
+    {
+      "path": "src/canvaspilot/mcp_server.py",
+      "sha256": "70a4ad0950cba12149aba205fcae43d54ad3688a12f96904b3f88c860caf83a2",
+      "same_as_96e4": true
+    },
+    {
+      "path": "src/canvaspilot/module_progress.py",
+      "sha256": "974ee31925514a2e53b899888302a7fa357e280ab5f2461b754b814473653d99",
+      "same_as_96e4": true
+    },
+    {
+      "path": "src/canvaspilot/offline_demo.py",
+      "sha256": "2389f3ccc1b6db5995be0d90e014ea9345e3029aa5546a5b2dcf12c1197e6d4d",
+      "same_as_96e4": true
+    },
+    {
+      "path": "src/canvaspilot/session_broker.py",
+      "sha256": "2a106130c344aefebb23b078cd93b5d3ca3afd7f5325ae5fac2fb8a7251780cc",
+      "same_as_96e4": true
+    }
+  ],
+  "parent_leaf_count": 289,
+  "unchanged_parent_leaves": 284,
+  "changed_parent_leaves": [
+    "README.md",
+    "src/canvaspilot/api.py",
+    "src/canvaspilot/bundle.py",
+    "src/canvaspilot/cli.py",
+    "src/canvaspilot/mcp_server.py"
+  ],
+  "removed_parent_leaves": [],
+  "added_count": 52,
+  "testing": "No settled suite repeated. Product owner reported two current CLI/MCP routing groups plus calendar parser and Ruff passed; independent reviewer qualified exact reviewed block and unrelated canonical CLI byte preservation."
+}

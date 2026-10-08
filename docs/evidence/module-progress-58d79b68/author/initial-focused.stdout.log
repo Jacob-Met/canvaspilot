@@ -1,0 +1,127 @@
+....................................................................FF.  [100%]
+=================================== FAILURES ===================================
+_______________ test_real_cli_course_selection_empty_and_failure _______________
+
+receiving = <module_progress_fixture.ModuleProgressHTTPFixture object at 0x7ce0e56134d0>
+tmp_path = PosixPath('/home/jacob/canvaspilot-module-progress-proof-58d79b68/focused-tmp/test_real_cli_course_selection0')
+
+    def test_real_cli_course_selection_empty_and_failure(receiving, tmp_path):
+        fixture = receiving
+        records = []
+    
+        def run(*arguments):
+            process = cli(*arguments)
+            records.append({"arguments": arguments, "exit": process.returncode,
+                            "stdout": process.stdout, "stderr": process.stderr})
+            return process
+    
+        full = run("42")
+        assert full.returncode == 0
+        report = json.loads(full.stdout)
+        assert report["module_state_counts"]["locked"] == 1
+        assert report["collection_complete"] is None
+        selected = run("42", "--module-id", "8")
+        assert selected.returncode == 0
+        selected_report = json.loads(selected.stdout)
+        assert selected_report["modules_included"] == 1
+        assert selected_report["modules"][0]["remaining_work"]["rule"] == "module_completed"
+        assert selected_report["modules"][0]["remaining_work"]["incomplete_item_ids"] == []
+    
+        before = len(fixture.requests)
+        invalid = run("42/../99")
+        assert invalid.returncode == 1 and invalid.stdout == ""
+        assert json.loads(invalid.stderr)["ok"] is False
+        assert len(fixture.requests) == before
+        missing = run("42", "--module-id", "999")
+        assert missing.returncode == 1 and missing.stdout == ""
+        fixture.overrides[("/api/v1/courses/42/modules", "2")] = (403, {"error": "authored denial"}, {})
+        denied = run("42")
+        assert denied.returncode == 1 and denied.stdout == ""
+>       assert json.loads(denied.stderr)["ok"] is False
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_module_progress_process.py:98: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.14/json/__init__.py:352: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.14/json/decoder.py:345: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <json.decoder.JSONDecoder object at 0x7ce0e92878c0>
+s = 'HTTP Request: GET http://127.0.0.1:43149/api/v1/courses/42/modules?include%5B%5D=items&per_page=50 "HTTP/1.0 200 OK"\...es?page=2 "HTTP/1.0 403 Forbidden"\n{"ok": false, "error": "CanvasAuthError", "message": "Canvas auth failed (403)"}\n'
+idx = 0
+
+    def raw_decode(self, s, idx=0):
+        """Decode a JSON document from ``s`` (a ``str`` beginning with
+        a JSON document) and return a 2-tuple of the Python
+        representation and the index in ``s`` where the document ended.
+    
+        This can be used to decode a JSON document from a string that may
+        have extraneous data at the end.
+    
+        """
+        try:
+            obj, end = self.scan_once(s, idx)
+        except StopIteration as err:
+>           raise JSONDecodeError("Expecting value", s, err.value) from None
+E           json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+/usr/lib/python3.14/json/decoder.py:363: JSONDecodeError
+______________ test_real_cli_short_fallback_and_foreign_identity _______________
+
+receiving = <module_progress_fixture.ModuleProgressHTTPFixture object at 0x7ce0e55f4410>
+
+    def test_real_cli_short_fallback_and_foreign_identity(receiving):
+        fixture = receiving
+        fixture.overrides[("/api/v1/courses/42/modules/7/items", "2")] = (200, [], {})
+        short = cli("42")
+        assert short.returncode == 0
+        module = json.loads(short.stdout)["modules"][0]
+        assert module["item_coverage"] == {
+            "reported_count": 3, "returned_count": 2, "status": "shorter_than_reported_count",
+        }
+        assert json.loads(short.stdout)["collection_complete"] is None
+        fixture.overrides.clear()
+        fixture.fixture["routes"]["GET /api/v1/courses/42/modules/7/items"][0]["module_id"] = 900
+        foreign = cli("42")
+        assert foreign.returncode == 1 and foreign.stdout == ""
+>       assert "different module" in json.loads(foreign.stderr)["message"]
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_module_progress_process.py:124: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.14/json/__init__.py:352: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.14/json/decoder.py:345: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <json.decoder.JSONDecoder object at 0x7ce0e92878c0>
+s = 'HTTP Request: GET http://127.0.0.1:43403/api/v1/courses/42/modules?include%5B%5D=items&per_page=50 "HTTP/1.0 200 OK"\...HTTP/1.0 200 OK"\n{"ok": false, "error": "ValueError", "message": "Canvas returned an item from a different module"}\n'
+idx = 0
+
+    def raw_decode(self, s, idx=0):
+        """Decode a JSON document from ``s`` (a ``str`` beginning with
+        a JSON document) and return a 2-tuple of the Python
+        representation and the index in ``s`` where the document ended.
+    
+        This can be used to decode a JSON document from a string that may
+        have extraneous data at the end.
+    
+        """
+        try:
+            obj, end = self.scan_once(s, idx)
+        except StopIteration as err:
+>           raise JSONDecodeError("Expecting value", s, err.value) from None
+E           json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+/usr/lib/python3.14/json/decoder.py:363: JSONDecodeError
+=========================== short test summary info ============================
+FAILED tests/test_module_progress_process.py::test_real_cli_course_selection_empty_and_failure
+FAILED tests/test_module_progress_process.py::test_real_cli_short_fallback_and_foreign_identity
+2 failed, 69 passed in 13.10s

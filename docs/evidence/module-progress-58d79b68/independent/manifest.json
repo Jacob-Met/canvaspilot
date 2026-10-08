@@ -1,0 +1,260 @@
+{
+  "schema": "hamon.receiving_packet_manifest.v1",
+  "recorded_at": "2026-10-08T11:56:45.182Z",
+  "files": [
+    {
+      "path": "MCP-ADAPTER-CORRECTION.txt",
+      "bytes": 526,
+      "sha256": "564cafccd191784f581e986b123127bf5b14b921d4ccf99c27a23b2faae199e8"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6932,
+      "sha256": "1a8303072ac408b13532505645a357524399b8fa710008625787fbb3e13812f0"
+    },
+    {
+      "path": "RECEIVER-SPEC.md",
+      "bytes": 2153,
+      "sha256": "76aab983ee6a1241649a43931e20f2f9aa949bf133a21259d8838d1e92fa2332"
+    },
+    {
+      "path": "boundary-production.diff",
+      "bytes": 3540,
+      "sha256": "f7c79584bb262d9b88a87517abb6c4b9dcfda1416d0fc7fed6471e1848aaf584"
+    },
+    {
+      "path": "boundary-receiving-raw.log",
+      "bytes": 7822,
+      "sha256": "2bc643e5609b31bd589f1ca5db16cafed132b0665c9e6d0dea5c4f92c1c38340"
+    },
+    {
+      "path": "boundary-receiving-result.json",
+      "bytes": 542,
+      "sha256": "e95c37346f988ec3117a713d2c56c8ea202afe38f8636a752ec63069a9af566c"
+    },
+    {
+      "path": "boundary-source-manifest.json",
+      "bytes": 4203,
+      "sha256": "50df5b62902e065c981df789317c108e8f331cd098fbe623e470869b3de724e7"
+    },
+    {
+      "path": "boundary-wire-observations.json",
+      "bytes": 8369,
+      "sha256": "48a8bc8a181ab16c5278623affc99a2ab91cf1b07ff3a1c5cf419649b2ed1b8c"
+    },
+    {
+      "path": "candidate/README.md",
+      "bytes": 13820,
+      "sha256": "7f960eae30393163912cb208e7f9d2433c3667cc67972dd0463a37cdeea94600"
+    },
+    {
+      "path": "candidate/docs/module-progress.md",
+      "bytes": 5159,
+      "sha256": "2680578420d9f65fa7884348756f59487edcd0d4787f90a42ff745fb58acf04f"
+    },
+    {
+      "path": "candidate/pyproject.toml",
+      "bytes": 1353,
+      "sha256": "555ad3c7e338d38ae5feabc06c0c07503f22d9c732a9af153c7706c63d2b3c63"
+    },
+    {
+      "path": "candidate/src/canvaspilot/__init__.py",
+      "bytes": 561,
+      "sha256": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5"
+    },
+    {
+      "path": "candidate/src/canvaspilot/api.py",
+      "bytes": 23950,
+      "sha256": "9c8325499296bc6563c1804676a47462b396c853ec860dbdbe6579280df6588f"
+    },
+    {
+      "path": "candidate/src/canvaspilot/bundle.py",
+      "bytes": 2641,
+      "sha256": "7a5600680c22f3cce5d512ed96137de0171bcca7df6a8c46baa8c09143de3168"
+    },
+    {
+      "path": "candidate/src/canvaspilot/cli.py",
+      "bytes": 11019,
+      "sha256": "35256c690fbb82b9f35cb231b0560afab907c9ceffd9c26e960627f9d640322a"
+    },
+    {
+      "path": "candidate/src/canvaspilot/client.py",
+      "bytes": 12381,
+      "sha256": "6368329745216f473204995c101c912d9070fdd310def150bdbee927f9872de4"
+    },
+    {
+      "path": "candidate/src/canvaspilot/feedback.py",
+      "bytes": 3900,
+      "sha256": "55454598effea598474a21f67e36d5bc5bea84aaefeefc18e4d8c49804ab9869"
+    },
+    {
+      "path": "candidate/src/canvaspilot/folder_browser.py",
+      "bytes": 6293,
+      "sha256": "c6a67229b268c539e5edb581e3320b06229460adc3fbc01d72e4964e31c0348a"
+    },
+    {
+      "path": "candidate/src/canvaspilot/mcp_server.py",
+      "bytes": 12456,
+      "sha256": "70a4ad0950cba12149aba205fcae43d54ad3688a12f96904b3f88c860caf83a2"
+    },
+    {
+      "path": "candidate/src/canvaspilot/module_progress.py",
+      "bytes": 9234,
+      "sha256": "42aee00dbc05e37b28942f6022e5eb23516589b7f07289f0d725e1d6c66e51d1"
+    },
+    {
+      "path": "candidate/src/canvaspilot/offline_demo.py",
+      "bytes": 4124,
+      "sha256": "2389f3ccc1b6db5995be0d90e014ea9345e3029aa5546a5b2dcf12c1197e6d4d"
+    },
+    {
+      "path": "candidate/src/canvaspilot/session_broker.py",
+      "bytes": 12151,
+      "sha256": "2a106130c344aefebb23b078cd93b5d3ca3afd7f5325ae5fac2fb8a7251780cc"
+    },
+    {
+      "path": "candidate-v2/README.md",
+      "bytes": 13820,
+      "sha256": "7f960eae30393163912cb208e7f9d2433c3667cc67972dd0463a37cdeea94600"
+    },
+    {
+      "path": "candidate-v2/docs/module-progress.md",
+      "bytes": 5868,
+      "sha256": "2eb07cea692b9f157b007cf0d88cbf7e16487dbdc49a38ee73d885bfdff9cfdc"
+    },
+    {
+      "path": "candidate-v2/pyproject.toml",
+      "bytes": 1353,
+      "sha256": "555ad3c7e338d38ae5feabc06c0c07503f22d9c732a9af153c7706c63d2b3c63"
+    },
+    {
+      "path": "candidate-v2/src/canvaspilot/__init__.py",
+      "bytes": 561,
+      "sha256": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5"
+    },
+    {
+      "path": "candidate-v2/src/canvaspilot/api.py",
+      "bytes": 23950,
+      "sha256": "9c8325499296bc6563c1804676a47462b396c853ec860dbdbe6579280df6588f"
+    },
+    {
+      "path": "candidate-v2/src/canvaspilot/bundle.py",
+      "bytes": 2641,
+      "sha256": "7a5600680c22f3cce5d512ed96137de0171bcca7df6a8c46baa8c09143de3168"
+    },
+    {
+      "path": "candidate-v2/src/canvaspilot/cli.py",
+      "bytes": 11019,
+      "sha256": "35256c690fbb82b9f35cb231b0560afab907c9ceffd9c26e960627f9d640322a"
+    },
+    {
+      "path": "candidate-v2/src/canvaspilot/client.py",
+      "bytes": 12381,
+      "sha256": "6368329745216f473204995c101c912d9070fdd310def150bdbee927f9872de4"
+    },
+    {
+      "path": "candidate-v2/src/canvaspilot/feedback.py",
+      "bytes": 3900,
+      "sha256": "55454598effea598474a21f67e36d5bc5bea84aaefeefc18e4d8c49804ab9869"
+    },
+    {
+      "path": "candidate-v2/src/canvaspilot/folder_browser.py",
+      "bytes": 6293,
+      "sha256": "c6a67229b268c539e5edb581e3320b06229460adc3fbc01d72e4964e31c0348a"
+    },
+    {
+      "path": "candidate-v2/src/canvaspilot/mcp_server.py",
+      "bytes": 12456,
+      "sha256": "70a4ad0950cba12149aba205fcae43d54ad3688a12f96904b3f88c860caf83a2"
+    },
+    {
+      "path": "candidate-v2/src/canvaspilot/module_progress.py",
+      "bytes": 9615,
+      "sha256": "974ee31925514a2e53b899888302a7fa357e280ab5f2461b754b814473653d99"
+    },
+    {
+      "path": "candidate-v2/src/canvaspilot/offline_demo.py",
+      "bytes": 4124,
+      "sha256": "2389f3ccc1b6db5995be0d90e014ea9345e3029aa5546a5b2dcf12c1197e6d4d"
+    },
+    {
+      "path": "candidate-v2/src/canvaspilot/session_broker.py",
+      "bytes": 12151,
+      "sha256": "2a106130c344aefebb23b078cd93b5d3ca3afd7f5325ae5fac2fb8a7251780cc"
+    },
+    {
+      "path": "current-parent-cli.py",
+      "bytes": 12555,
+      "sha256": "1ce47f131de0152dfd494d7ce51f60cc505051809d5ae9bec0e21fea2176e509"
+    },
+    {
+      "path": "current-parent-preservation.json",
+      "bytes": 3779,
+      "sha256": "f0b522db1ef154c680b159236c537555316604ba52060fa88fa8cda868fd5d84"
+    },
+    {
+      "path": "initial-receiving-raw.log",
+      "bytes": 81784,
+      "sha256": "20eb88bb72f2e4abeed6cbba8a2a28fb9810754c47f7825142d0b94d252173a7"
+    },
+    {
+      "path": "initial-receiving-result.json",
+      "bytes": 457,
+      "sha256": "64f2a97e8b5341f1a9431aca3de68231614d274d66f46f7d395716c4411d6e2a"
+    },
+    {
+      "path": "initial-wire-observations.json",
+      "bytes": 77857,
+      "sha256": "738d34e8f6db52f902d43b6bb5d401f2daef516dd3d629cdcb7c3d3de2735e2f"
+    },
+    {
+      "path": "mcp-receiving-raw.log",
+      "bytes": 14568,
+      "sha256": "b9e5aa52b3142293d6bc56ee0f239dc0d052fca80e72bb22bdc52b2238aa5f43"
+    },
+    {
+      "path": "mcp-receiving-result.json",
+      "bytes": 542,
+      "sha256": "2449df52ae8b582256b98d11b6b3ed3801d4097288a6d8e6af4e5677e01856cf"
+    },
+    {
+      "path": "mcp-wire-observations.json",
+      "bytes": 14921,
+      "sha256": "760e3b4f0bb6f6d4d116f04274035ff1e21a06f4928482ab0dc46d383ae7298c"
+    },
+    {
+      "path": "normalized-reader-source-excerpts.txt",
+      "bytes": 3657,
+      "sha256": "5031c2230bb7471eecfcbc7037da731c41135265134d5b9f04cc1b96891a7f05"
+    },
+    {
+      "path": "review-result.json",
+      "bytes": 5667,
+      "sha256": "901b0ef3b167421d1506e07ab11b0089a894bf8ddde91ea3421414c2fd0d3fb4"
+    },
+    {
+      "path": "source-manifest.json",
+      "bytes": 4088,
+      "sha256": "f14d5ae13643c45f2be7a65cd99e71d21f845478a35ff0005d60d976c81b6ad3"
+    },
+    {
+      "path": "test_boundary_markers.py",
+      "bytes": 2741,
+      "sha256": "06a1c42fa02e6812930ef5c8379216e37b83fba378272f632c216de508df8b74"
+    },
+    {
+      "path": "test_independent_receiving.py",
+      "bytes": 14709,
+      "sha256": "432932033e997a353569e56885a544e0999dd956878a8d544d3f0771cde6fc3e"
+    },
+    {
+      "path": "test_independent_receiving_v2.py",
+      "bytes": 14913,
+      "sha256": "79f1a597c8c407f9ba5844e14b2916c14f4f51b626ab94ec7a0c90c608a29683"
+    }
+  ],
+  "excluded": [
+    "manifest.json (self)",
+    "conscience-receipt.json (later native receipt)"
+  ]
+}

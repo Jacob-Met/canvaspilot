@@ -1,0 +1,30 @@
+{
+  "source": "/home/jacob/canvaspilot-module-progress-boundary-58d79b68",
+  "sourceHead": "baddc78a3be0b1b2cd84fbada388ad85d7b1e657",
+  "changedPaths": [
+    "docs/module-progress.md",
+    "src/canvaspilot/module_progress.py",
+    "tests/test_module_progress_process.py"
+  ],
+  "sourceHashes": {
+    "docs/module-progress.md": "2eb07cea692b9f157b007cf0d88cbf7e16487dbdc49a38ee73d885bfdff9cfdc",
+    "src/canvaspilot/module_progress.py": "974ee31925514a2e53b899888302a7fa357e280ab5f2461b754b814473653d99",
+    "tests/test_module_progress_process.py": "21187c11a7bca557a8b37c0d61933e3532c8c69e628bd618fa62361e0f713826"
+  },
+  "sourceUnchanged": true,
+  "command": [
+    "/home/jacob/canvaspilot-module-progress-proof-58d79b68/venv/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_module_progress.py",
+    "tests/test_module_progress_process.py::test_real_cli_and_mcp_report_the_normalized_reader_boundary",
+    "--basetemp=/home/jacob/canvaspilot-module-progress-proof-58d79b68/reader-boundary/pytest-tmp",
+    "--junitxml=/home/jacob/canvaspilot-module-progress-proof-58d79b68/reader-boundary/pytest.xml"
+  ],
+  "started": "2026-10-08T11:39:20.956Z",
+  "finished": "2026-10-08T11:39:33.220Z",
+  "exit": 0,
+  "signal": null,
+  "error": null
+}

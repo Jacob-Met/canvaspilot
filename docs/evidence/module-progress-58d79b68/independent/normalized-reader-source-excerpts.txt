@@ -1,0 +1,77 @@
+src/canvaspilot/client.py:227-236
+227:     def get_paginated(
+228:         self,
+229:         path: str,
+230:         *,
+231:         params: dict[str, Any] | list[tuple[str, Any]] | None = None,
+232:     ) -> list[Any]:
+233:         """Follow Link rel=next until exhausted (cap pages)."""
+234:         if self.fixture is not None:
+235:             data = self.request("GET", path, params=params)
+236:             return data if isinstance(data, list) else [data]
+
+src/canvaspilot/client.py:274-294
+274:         http = self._ensure_http()
+275:         params = _with_per_page(params)
+276:         out: list[Any] = []
+277:         url: str | None = path
+278:         pages = 0
+279:         while url and pages < 40:
+280:             pages += 1
+281:             r = http.get(url, params=params if pages == 1 and not str(url).startswith("http") else None)
+282:             if r.status_code in (401, 403):
+283:                 raise CanvasAuthError(f"Canvas auth failed ({r.status_code})")
+284:             r.raise_for_status()
+285:             chunk = r.json()
+286:             if isinstance(chunk, list):
+287:                 out.extend(chunk)
+288:             else:
+289:                 out.append(chunk)
+290:                 break
+291:             next_url = _link_next(r.headers.get("link") or r.headers.get("Link") or "")
+292:             url = next_url
+293:             params = None
+294:         return out
+
+src/canvaspilot/api.py:215-255
+215:     def list_modules(self, course_id: int | str, *, detail: str = "compact") -> list[dict[str, Any]]:
+216:         rows = self.client.get_paginated(
+217:             f"/api/v1/courses/{course_id}/modules",
+218:             params={"include[]": ["items"]},
+219:         )
+220: 
+221:         def valid_items(value: Any) -> bool:
+222:             return isinstance(value, list) and all(
+223:                 isinstance(item, dict)
+224:                 and isinstance(item.get("id"), (int, str))
+225:                 and re.fullmatch(r"[0-9]+", str(item["id"]))
+226:                 for item in value
+227:             )
+228: 
+229:         modules = []
+230:         for module in rows:
+231:             if not isinstance(module, dict):
+232:                 modules.append(module)
+233:                 continue
+234:             inline = module.get("items")
+235:             count = module.get("items_count")
+236:             if not valid_items(inline) or (type(count) is int and len(inline) < count):
+237:                 # Canvas may omit inline items even when include[]=items was
+238:                 # requested. Resolve them before projecting either detail mode.
+239:                 if inline is None and type(count) is int and count == 0:
+240:                     items = []
+241:                 else:
+242:                     module_id = module.get("id")
+243:                     if not isinstance(module_id, (int, str)) or not re.fullmatch(r"[0-9]+", str(module_id)):
+244:                         raise ValueError("Cannot retrieve module items without a valid module ID")
+245:                     items = self.client.get_paginated(
+246:                         f"/api/v1/courses/{course_id}/modules/{module_id}/items"
+247:                     )
+248:                     if not valid_items(items):
+249:                         raise ValueError("Canvas returned malformed module items")
+250:                 # Do not mutate fixture data or another caller's response object.
+251:                 module = {**module, "items": items}
+252:             modules.append(module)
+253:         full = str(detail or "compact").lower() in {"full", "verbose", "all"}
+254:         if full:
+255:             return modules

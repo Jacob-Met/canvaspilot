@@ -77,50 +77,12 @@ and reports omitted rows, unknown dates, and per-course read failures. Adjust
 the overview with `--limit-courses` and `--limit-assignments-per-course`; see
 [the sync guide](docs/SYNC.md) for CLI, Python, and MCP examples and count meanings.
 
-To take selected course deadlines into a calendar application, save an explicit
-local snapshot with `canvaspilot export-calendar 42 77 --out deadlines.ics`.
-The [calendar export guide](docs/calendar-export.md) explains selection,
-undated omissions, snapshot limits and safe re-import expectations.
-
 With a PAT instead:
 
 ```bash
 export CANVAS_API_TOKEN=...   # broker not needed
 canvaspilot courses
 ```
-
-## Assignment briefs
-
-`canvaspilot brief <course_id> <assignment_id>`, the Python
-`CanvasAPI.assignment_brief()` method, and the MCP `canvas_assignment_brief` tool
-return the same JSON brief: the cleaned prompt, due date, assignment points,
-submission types, Canvas link, and the rubric supplied with the assignment.
-
-- `rubric` preserves the supplied criterion and rating order, IDs, descriptions,
-  long descriptions, points (including zero), range/scoring flags, and outcome
-  identifiers. Rubric text is not rewritten. Only these canonical rubric fields
-  are projected; `get_assignment()` retains the complete original rubric payload.
-- `rubric_settings` preserves the supplied settings object, including any display
-  flags such as `hide_points`, `hide_score_total`, and free-form criterion comments.
-  The CLI and MCP return data, without rendering a Canvas rubric UI. Consumers
-  should honor the distinct display flags when rendering it.
-- `use_rubric_for_grading` preserves Canvas's boolean: `false` means the rubric is
-  advisory; `null` means the assignment response did not supply a usable value.
-- `rubric_warnings` is normally empty. Malformed optional containers, entries, or
-  canonical field values are omitted locally with a warning that names their
-  location, while the ordinary brief and usable neighboring entries remain.
-
-A missing or `null` rubric remains `null`; a supplied empty list remains `[]`.
-Missing criterion fields are not filled in, and missing ratings remain unknown.
-No criteria, score totals, or grading requirements are inferred. Assignment
-`points_possible` and rubric settings' `points_possible` remain separate supplied
-values. This uses the existing assignment GET request, without another rubric
-request or a change to authentication.
-
-The field meanings follow Canvas's [Assignments API](https://developerdocs.instructure.com/services/canvas/resources/assignments)
-and [Rubrics API](https://developerdocs.instructure.com/services/canvas/resources/rubrics).
-The public-path tests in `tests/test_assignment_brief_rubric.py` use a clearly
-synthetic assignment and forbid HTTP and broker access.
 
 ## MCP server
 
@@ -194,16 +156,6 @@ assessment has `assessment: null`; omitted assessment points or comments remain
 omitted. An inaccessible submission or malformed response is reported as an error,
 so it cannot be mistaken for a submission with no feedback. This operation performs
 two GETs and does not mark comments read, submit work, or change a grade.
-
-### Announcements
-
-`canvas_list_announcements` and `CanvasAPI.list_announcements()` use the existing
-client paginator in both compact and full detail modes. Course and optional start-date
-filters are retained, and results keep Canvas's page order and announcement metadata.
-Compact message text remains limited to 400 characters plus an ellipsis; full detail
-retains the complete stripped text. A failed page request raises an error instead of
-returning the announcements collected before the failure. The selected client's
-existing transport and pagination limits still apply.
 
 ### Module contents
 

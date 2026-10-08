@@ -68,7 +68,7 @@ def main(argv: list[str] | None = None) -> None:
     assigns.add_argument("course_id")
     assigns.add_argument("--bucket", default="upcoming")
 
-    brief = sub.add_parser("brief", help="Assignment brief (cleaned prompt and supplied rubric)")
+    brief = sub.add_parser("brief", help="Assignment brief (cleaned prompt)")
     add_common(brief)
     brief.add_argument("course_id")
     brief.add_argument("assignment_id")

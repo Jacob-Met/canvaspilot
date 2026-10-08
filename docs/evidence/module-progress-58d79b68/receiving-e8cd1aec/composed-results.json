@@ -1,0 +1,14 @@
+[
+  {
+    "stage": "composed-suite",
+    "exit": 0
+  },
+  {
+    "stage": "composed-ruff",
+    "exit": 0
+  },
+  {
+    "stage": "composed-diff",
+    "exit": 2
+  }
+]

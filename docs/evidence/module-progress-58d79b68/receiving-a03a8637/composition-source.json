@@ -1,0 +1,15 @@
+{
+  "source": "/home/jacob/canvaspilot-module-progress-current-58d79b68",
+  "head": "5173b24285e9e3e2dda6b1d8158adea74e03bd52",
+  "tree": "19a5a643e9787ab60a80132cfca1fd76eaac37cb",
+  "parents": [
+    "a03a8637efad8ff22103a0c5018c93f7ecbb7d8d",
+    "96e4f3d37b4e2e222e30ff34a0bab96bed95b8cd"
+  ],
+  "status": "",
+  "conflictResolution": "Reconstructed from exact current canonical CLI, inserting both exact separately reviewed module-progress blocks; removing those two blocks reproduces current parent CLI bytes exactly",
+  "parserBlockSha256": "7a3e6db2f4b61e0854aee6cc8ceb9f7144ff140abad87bc1e41cdf73fafdc763",
+  "dispatchBlockSha256": "b9875e566dd44a26736ef4f2952ec37b3c2578b871701ec6b11cf28eaafd944e",
+  "canonicalCLIExact": true,
+  "sourceWhitespaceExit": 0
+}

@@ -1,0 +1,122 @@
+{
+  "schema": "hamon.independent_source_freeze.v1",
+  "captured_at": "2026-10-08T11:33:39.005Z",
+  "source": "/home/jacob/canvaspilot-module-progress-receiving-58d79b68",
+  "commit": "51609ba3f93d20f69616b357c3c6bee19732dfd4",
+  "original_commit": "a8ba4be26d09d287304ca12808a1867483efd040",
+  "published_head_reported": "c537b983757b00115abd4fd7373a0822e64508b9",
+  "files": [
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "blob": "5f944bcde53df612687c87b4804c97c9d5ba6706",
+      "sha256": "7f960eae30393163912cb208e7f9d2433c3667cc67972dd0463a37cdeea94600",
+      "bytes": 13820
+    },
+    {
+      "path": "docs/module-progress.md",
+      "mode": "100644",
+      "type": "blob",
+      "blob": "52e98278eb8208d31078dd9e740c443fa046d17a",
+      "sha256": "2680578420d9f65fa7884348756f59487edcd0d4787f90a42ff745fb58acf04f",
+      "bytes": 5159
+    },
+    {
+      "path": "pyproject.toml",
+      "mode": "100644",
+      "type": "blob",
+      "blob": "76eba6d30696b4f2733539cd47df6e178bc0f585",
+      "sha256": "555ad3c7e338d38ae5feabc06c0c07503f22d9c732a9af153c7706c63d2b3c63",
+      "bytes": 1353
+    },
+    {
+      "path": "src/canvaspilot/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "blob": "74a7a6087bf81fd7c75c15769b30408039618e0f",
+      "sha256": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5",
+      "bytes": 561
+    },
+    {
+      "path": "src/canvaspilot/api.py",
+      "mode": "100644",
+      "type": "blob",
+      "blob": "3bae6ea7939f56e4b3f64e8d1ba26ad4fc31d90b",
+      "sha256": "9c8325499296bc6563c1804676a47462b396c853ec860dbdbe6579280df6588f",
+      "bytes": 23950
+    },
+    {
+      "path": "src/canvaspilot/bundle.py",
+      "mode": "100644",
+      "type": "blob",
+      "blob": "383efb28dfdd0d3e1d9ce8e1e259468d7eb44586",
+      "sha256": "7a5600680c22f3cce5d512ed96137de0171bcca7df6a8c46baa8c09143de3168",
+      "bytes": 2641
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "mode": "100644",
+      "type": "blob",
+      "blob": "0e8ed94f5668bf8aba308cf0797969d2adcd5b63",
+      "sha256": "35256c690fbb82b9f35cb231b0560afab907c9ceffd9c26e960627f9d640322a",
+      "bytes": 11019
+    },
+    {
+      "path": "src/canvaspilot/client.py",
+      "mode": "100644",
+      "type": "blob",
+      "blob": "c06d24fa3d6ce9466caa633aff71207f59833bf4",
+      "sha256": "6368329745216f473204995c101c912d9070fdd310def150bdbee927f9872de4",
+      "bytes": 12381
+    },
+    {
+      "path": "src/canvaspilot/feedback.py",
+      "mode": "100644",
+      "type": "blob",
+      "blob": "ec996f421a851d699a9ac7cb1f2a486f9ff7c4ea",
+      "sha256": "55454598effea598474a21f67e36d5bc5bea84aaefeefc18e4d8c49804ab9869",
+      "bytes": 3900
+    },
+    {
+      "path": "src/canvaspilot/folder_browser.py",
+      "mode": "100644",
+      "type": "blob",
+      "blob": "4b3078ddb00a4a34015710e49fa7b7806adebd23",
+      "sha256": "c6a67229b268c539e5edb581e3320b06229460adc3fbc01d72e4964e31c0348a",
+      "bytes": 6293
+    },
+    {
+      "path": "src/canvaspilot/mcp_server.py",
+      "mode": "100644",
+      "type": "blob",
+      "blob": "8f46df27c363c1a946576d63911cd7c1710d69ec",
+      "sha256": "70a4ad0950cba12149aba205fcae43d54ad3688a12f96904b3f88c860caf83a2",
+      "bytes": 12456
+    },
+    {
+      "path": "src/canvaspilot/module_progress.py",
+      "mode": "100644",
+      "type": "blob",
+      "blob": "cc535d1dd4d44148653697eb5f3096782beb8ffa",
+      "sha256": "42aee00dbc05e37b28942f6022e5eb23516589b7f07289f0d725e1d6c66e51d1",
+      "bytes": 9234
+    },
+    {
+      "path": "src/canvaspilot/offline_demo.py",
+      "mode": "100644",
+      "type": "blob",
+      "blob": "9d2cfd260d8db052b8183e3ec4fc9626a5bb2b9a",
+      "sha256": "2389f3ccc1b6db5995be0d90e014ea9345e3029aa5546a5b2dcf12c1197e6d4d",
+      "bytes": 4124
+    },
+    {
+      "path": "src/canvaspilot/session_broker.py",
+      "mode": "100644",
+      "type": "blob",
+      "blob": "ba23543f62e6be9f611ae06260b91f239206cb23",
+      "sha256": "2a106130c344aefebb23b078cd93b5d3ca3afd7f5325ae5fac2fb8a7251780cc",
+      "bytes": 12151
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "base_tree": "919634af69c067e04f391fca84b3071ab8da9159",
+  "source_tree": "18895f08360bc6f5138eb1cf59555bed75af8260",
+  "base_leaves": 123,
+  "source_leaves": 128,
+  "unrelated_preserved": 118,
+  "mismatches": [],
+  "source_paths": [
+    "README.md",
+    "src/canvaspilot/api.py",
+    "src/canvaspilot/bundle.py",
+    "src/canvaspilot/cli.py",
+    "src/canvaspilot/mcp_server.py",
+    "src/canvaspilot/module_progress.py",
+    "docs/module-progress.md",
+    "tests/module_progress_fixture.py",
+    "tests/test_module_progress.py",
+    "tests/test_module_progress_process.py"
+  ]
+}
