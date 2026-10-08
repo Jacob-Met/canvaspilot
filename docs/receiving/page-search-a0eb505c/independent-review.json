@@ -1,0 +1,66 @@
+{
+  "schema": 1,
+  "recorded_at": 1791493336.2888765,
+  "reviewer": "chatgpt-a0eb505c4971/integration_review",
+  "actor": "chatgpt:a0eb505c4971:coordination",
+  "claim": 5006,
+  "status": "qualified_exact_acdd_composition_current_successor_binding_pending",
+  "contract_sha256": "858521cc9091d44fb7d2424ee64b8a9ee3634d334b6b3622192cd06ff754b43f",
+  "contract_sealed_before_candidate_read": true,
+  "source": {
+    "canonical_parent": "acdd8c1be09300dc4daf455d7f010a69bf7fede5",
+    "native_partial_commit_reported": "997feb6f794da9bf08b1032b72a489859886bd34",
+    "native_partial_tree_reported": "a2ded4e46f37bb5d726633429d8d9e7d23ee1c1e",
+    "source_freeze_sha256": "9a93aa77708ca7c8ae8cbf18653e84924a009558bbff6db410b4f820336a9cfe",
+    "native_materialized_files_verified": 40,
+    "helper_sha256": "d43858f12a338195c77aae4453e7dcac67486c4a7b49d20e9cbf362f8b76d296",
+    "cli_sha256": "d126473d926721837aa4b8e88061e3809750ea58b83ebda6144bb8db7a575a63",
+    "source_representation": "Exact40-file native materialization/raw Git blobs, not a claim of canonical commit ancestry or complete1589-leaf execution."
+  },
+  "source_review": [
+    "Literal casefold is applied separately to supplied title and cleaned available body. Returned order and duplicate identities survive; deep-copied original pages retain all supplied fields.",
+    "Locked/missing/null bodies get explicit ordered unavailable entries, while empty string is searched. Title matching stays independent of unavailable body.",
+    "Existing paginator completes before rows are interpreted and CLI prints success only after the complete report. Existing close/finally and logger restoration apply on a later HTTP error.",
+    "Own two CLI spans remove exactly to the recorded current parent CLI Git blob; full parent README remains an exact prefix; inherited client/API bytes match the freeze."
+  ],
+  "actual_receiving": {
+    "invocation": "Actual cli.main and CanvasClient with unchanged HTTPX transport over a private real loopback HTTP server; only close() observational wrapper calls native close unchanged.",
+    "isolation": "UID1000, separate network namespace with loopback only, explicit fictional token and nonexistent private profile; no live/provider/account traffic.",
+    "raw_result": "receiving/gate-01/result.json",
+    "raw_result_sha256": "cc940b827d8ef701cc0399c9d291e6f70cc0ff90c65194450a8673f37cb1fb15",
+    "raw_run_exit_code": 1,
+    "raw_run_explanation": "Both actual requests/cases completed and their full stdout/stderr/requests/close/logger observations were captured. Receiver assertions then stopped on an unsupported per_page100 assumption; unchanged native client uses50. Original run remains failed, not relabeled.",
+    "completed_assertions": "receiving/captured-receiving-completion/result.json",
+    "completed_assertions_sha256": "e483434bd7f77f49d5322dfa7dee9c4dc0e81345d6aaf633463c27289b445693",
+    "completed_assertion_count": 42,
+    "case_count": 2,
+    "additional_http_calls_during_completion": 0,
+    "outcomes": [
+      "Success returned six page objects in source order, four matches at positions1/2/3/5, with separate title/body_text fields and exact cleaned text. Duplicate page_id17 occurred twice with its distinct complete source objects.",
+      "Three unavailable bodies retained exact locked/missing/null identities at positions3/4/5. Empty body contributed to three available bodies; Unicode STRASSE matched Straße.",
+      "A matching first page followed by actual HTTP503 emitted no stdout, returned structured nonzero failure, closed native HTTP client exactly once and restored the exact prior logger level.",
+      "Private profile was never created; no extra account/detail/broker requests were sent. All40 source bytes/blob hashes/modes matched before and after actual execution."
+    ]
+  },
+  "runtime": {
+    "python": "3.14.4",
+    "httpx": "0.28.1",
+    "pydantic": "2.14.0",
+    "path": "/home/jacob/canvaspilot-todo-847ff4f12343/venv/bin/python",
+    "borrowed_unchanged": true,
+    "installed_dependencies": false,
+    "full_dependency_byte_closure_claimed": false
+  },
+  "findings": [],
+  "limits": [
+    "No broad/author test rerun, new HTTP replay, product edit, live account or GitHub mutation.",
+    "Public matched_fields body_text is the explicit implementation spelling of the pre-read semantic body expectation; mapping was recorded before execution.",
+    "Producer reported subsequent56a syllabus main drift. This receipt qualifies exact frozenacdd bytes only; narrow fresh-composition source binding remains pending.",
+    "An unrelated shell runuser lookup failed before the captured-data completion script started; original observation and unknown formal exit are retained."
+  ],
+  "previous_task_closed": {
+    "ledger_publication_sha256": "966fc2ca17b952d68b2128d299362d667e00e070fda9423e76f19344fb0f0444",
+    "ledger_closure_sha256": "9c99b57a7b0107ca8e57f4d84b938bfff6335b0c80761ab97afd28a4fb3c0b9c",
+    "ledger_seq": 4994
+  }
+}
