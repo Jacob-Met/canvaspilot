@@ -1,0 +1,48 @@
+{
+  "repository": "Jacob-Met/canvaspilot",
+  "baseline_commit": "874ad9c073fc5bab625e583849dbbe4eaf7fc6af",
+  "checkout": "/workspace/scratch/20b27c2ea29e/workers/runtime-integration/product-discovery/canvaspilot/baseline",
+  "api_source_sha256": "f3583da81feb695b818b51111dd05f05e3c3eba6cf6aa6439a3a966c3f0d0621",
+  "full_assignment_preserves_supplied_rubric": true,
+  "supplied_criteria": 2,
+  "supplied_criterion_points": 20,
+  "brief_rubric_present": false,
+  "cli_brief_rubric_present": false,
+  "registered_mcp_brief_rubric_present": false,
+  "registered_mcp_is_error": false,
+  "prompt_preserved": true,
+  "cli_equals_api_brief": true,
+  "registered_mcp_equals_api_brief": true,
+  "observed_native_calls": [
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/17/assignments/311"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/17/assignments/311"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/17/assignments/311"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/17/assignments/311"
+    }
+  ],
+  "native_brief_output": {
+    "title": "Synthetic source analysis",
+    "due_at": "2026-10-15T17:00:00Z",
+    "points_possible": 20,
+    "submission_types": [
+      "online_upload"
+    ],
+    "prompt": "Write a short analysis. Follow the attached grading rubric.",
+    "html_url": "https://canvas.example.invalid/courses/17/assignments/311",
+    "course_id": "17",
+    "assignment_id": "311"
+  },
+  "finding": "The getter retains the supplied rubric; compare the API, CLI and registered MCP brief outputs against it.",
+  "limits": "Explicit synthetic fixture backend and actual registered MCP call_tool dispatcher; no school account, browser session, token, HTTP transport, stdio client, submission, model or external state is used."
+}

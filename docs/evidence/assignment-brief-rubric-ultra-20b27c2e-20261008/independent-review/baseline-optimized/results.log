@@ -1,0 +1,1021 @@
+test_absent_null_and_empty_rubrics_remain_distinct (__main__.TestIndependentBrief.test_absent_null_and_empty_rubrics_remain_distinct) ... 
+  test_absent_null_and_empty_rubrics_remain_distinct (__main__.TestIndependentBrief.test_absent_null_and_empty_rubrics_remain_distinct) (surface='api', kind='absent') ... FAIL
+  test_absent_null_and_empty_rubrics_remain_distinct (__main__.TestIndependentBrief.test_absent_null_and_empty_rubrics_remain_distinct) (surface='cli', kind='absent') ... FAIL
+  test_absent_null_and_empty_rubrics_remain_distinct (__main__.TestIndependentBrief.test_absent_null_and_empty_rubrics_remain_distinct) (surface='registered-mcp', kind='absent') ... FAIL
+  test_absent_null_and_empty_rubrics_remain_distinct (__main__.TestIndependentBrief.test_absent_null_and_empty_rubrics_remain_distinct) (surface='api', kind='null') ... FAIL
+  test_absent_null_and_empty_rubrics_remain_distinct (__main__.TestIndependentBrief.test_absent_null_and_empty_rubrics_remain_distinct) (surface='cli', kind='null') ... FAIL
+  test_absent_null_and_empty_rubrics_remain_distinct (__main__.TestIndependentBrief.test_absent_null_and_empty_rubrics_remain_distinct) (surface='registered-mcp', kind='null') ... FAIL
+  test_absent_null_and_empty_rubrics_remain_distinct (__main__.TestIndependentBrief.test_absent_null_and_empty_rubrics_remain_distinct) (surface='api', kind='empty') ... FAIL
+  test_absent_null_and_empty_rubrics_remain_distinct (__main__.TestIndependentBrief.test_absent_null_and_empty_rubrics_remain_distinct) (surface='cli', kind='empty') ... FAIL
+  test_absent_null_and_empty_rubrics_remain_distinct (__main__.TestIndependentBrief.test_absent_null_and_empty_rubrics_remain_distinct) (surface='registered-mcp', kind='empty') ... FAIL
+test_advisory_grading_and_display_flags_are_independent (__main__.TestIndependentBrief.test_advisory_grading_and_display_flags_are_independent) ... 
+  test_advisory_grading_and_display_flags_are_independent (__main__.TestIndependentBrief.test_advisory_grading_and_display_flags_are_independent) (surface='api', grading=False) ... FAIL
+  test_advisory_grading_and_display_flags_are_independent (__main__.TestIndependentBrief.test_advisory_grading_and_display_flags_are_independent) (surface='cli', grading=False) ... FAIL
+  test_advisory_grading_and_display_flags_are_independent (__main__.TestIndependentBrief.test_advisory_grading_and_display_flags_are_independent) (surface='registered-mcp', grading=False) ... FAIL
+  test_advisory_grading_and_display_flags_are_independent (__main__.TestIndependentBrief.test_advisory_grading_and_display_flags_are_independent) (surface='api', grading=True) ... FAIL
+  test_advisory_grading_and_display_flags_are_independent (__main__.TestIndependentBrief.test_advisory_grading_and_display_flags_are_independent) (surface='cli', grading=True) ... FAIL
+  test_advisory_grading_and_display_flags_are_independent (__main__.TestIndependentBrief.test_advisory_grading_and_display_flags_are_independent) (surface='registered-mcp', grading=True) ... FAIL
+test_bad_criterion_rows_and_fields_preserve_healthy_neighbors (__main__.TestIndependentBrief.test_bad_criterion_rows_and_fields_preserve_healthy_neighbors) ... 
+  test_bad_criterion_rows_and_fields_preserve_healthy_neighbors (__main__.TestIndependentBrief.test_bad_criterion_rows_and_fields_preserve_healthy_neighbors) (surface='api') ... FAIL
+  test_bad_criterion_rows_and_fields_preserve_healthy_neighbors (__main__.TestIndependentBrief.test_bad_criterion_rows_and_fields_preserve_healthy_neighbors) (surface='cli') ... FAIL
+  test_bad_criterion_rows_and_fields_preserve_healthy_neighbors (__main__.TestIndependentBrief.test_bad_criterion_rows_and_fields_preserve_healthy_neighbors) (surface='registered-mcp') ... FAIL
+test_bad_rating_containers_remain_unavailable (__main__.TestIndependentBrief.test_bad_rating_containers_remain_unavailable) ... 
+  test_bad_rating_containers_remain_unavailable (__main__.TestIndependentBrief.test_bad_rating_containers_remain_unavailable) (surface='api', value='bad') ... FAIL
+  test_bad_rating_containers_remain_unavailable (__main__.TestIndependentBrief.test_bad_rating_containers_remain_unavailable) (surface='cli', value='bad') ... FAIL
+  test_bad_rating_containers_remain_unavailable (__main__.TestIndependentBrief.test_bad_rating_containers_remain_unavailable) (surface='registered-mcp', value='bad') ... FAIL
+  test_bad_rating_containers_remain_unavailable (__main__.TestIndependentBrief.test_bad_rating_containers_remain_unavailable) (surface='api', value={}) ... FAIL
+  test_bad_rating_containers_remain_unavailable (__main__.TestIndependentBrief.test_bad_rating_containers_remain_unavailable) (surface='cli', value={}) ... FAIL
+  test_bad_rating_containers_remain_unavailable (__main__.TestIndependentBrief.test_bad_rating_containers_remain_unavailable) (surface='registered-mcp', value={}) ... FAIL
+  test_bad_rating_containers_remain_unavailable (__main__.TestIndependentBrief.test_bad_rating_containers_remain_unavailable) (surface='api', value=False) ... FAIL
+  test_bad_rating_containers_remain_unavailable (__main__.TestIndependentBrief.test_bad_rating_containers_remain_unavailable) (surface='cli', value=False) ... FAIL
+  test_bad_rating_containers_remain_unavailable (__main__.TestIndependentBrief.test_bad_rating_containers_remain_unavailable) (surface='registered-mcp', value=False) ... FAIL
+  test_bad_rating_containers_remain_unavailable (__main__.TestIndependentBrief.test_bad_rating_containers_remain_unavailable) (surface='api', value=7) ... FAIL
+  test_bad_rating_containers_remain_unavailable (__main__.TestIndependentBrief.test_bad_rating_containers_remain_unavailable) (surface='cli', value=7) ... FAIL
+  test_bad_rating_containers_remain_unavailable (__main__.TestIndependentBrief.test_bad_rating_containers_remain_unavailable) (surface='registered-mcp', value=7) ... FAIL
+test_bad_rating_rows_and_fields_preserve_healthy_levels (__main__.TestIndependentBrief.test_bad_rating_rows_and_fields_preserve_healthy_levels) ... 
+  test_bad_rating_rows_and_fields_preserve_healthy_levels (__main__.TestIndependentBrief.test_bad_rating_rows_and_fields_preserve_healthy_levels) (surface='api') ... FAIL
+  test_bad_rating_rows_and_fields_preserve_healthy_levels (__main__.TestIndependentBrief.test_bad_rating_rows_and_fields_preserve_healthy_levels) (surface='cli') ... FAIL
+  test_bad_rating_rows_and_fields_preserve_healthy_levels (__main__.TestIndependentBrief.test_bad_rating_rows_and_fields_preserve_healthy_levels) (surface='registered-mcp') ... FAIL
+test_grading_flag_rejects_coercion (__main__.TestIndependentBrief.test_grading_flag_rejects_coercion) ... 
+  test_grading_flag_rejects_coercion (__main__.TestIndependentBrief.test_grading_flag_rejects_coercion) (surface='api', value='false') ... FAIL
+  test_grading_flag_rejects_coercion (__main__.TestIndependentBrief.test_grading_flag_rejects_coercion) (surface='cli', value='false') ... FAIL
+  test_grading_flag_rejects_coercion (__main__.TestIndependentBrief.test_grading_flag_rejects_coercion) (surface='registered-mcp', value='false') ... FAIL
+  test_grading_flag_rejects_coercion (__main__.TestIndependentBrief.test_grading_flag_rejects_coercion) (surface='api', value='true') ... FAIL
+  test_grading_flag_rejects_coercion (__main__.TestIndependentBrief.test_grading_flag_rejects_coercion) (surface='cli', value='true') ... FAIL
+  test_grading_flag_rejects_coercion (__main__.TestIndependentBrief.test_grading_flag_rejects_coercion) (surface='registered-mcp', value='true') ... FAIL
+  test_grading_flag_rejects_coercion (__main__.TestIndependentBrief.test_grading_flag_rejects_coercion) (surface='api', value=0) ... FAIL
+  test_grading_flag_rejects_coercion (__main__.TestIndependentBrief.test_grading_flag_rejects_coercion) (surface='cli', value=0) ... FAIL
+  test_grading_flag_rejects_coercion (__main__.TestIndependentBrief.test_grading_flag_rejects_coercion) (surface='registered-mcp', value=0) ... FAIL
+  test_grading_flag_rejects_coercion (__main__.TestIndependentBrief.test_grading_flag_rejects_coercion) (surface='api', value=1) ... FAIL
+  test_grading_flag_rejects_coercion (__main__.TestIndependentBrief.test_grading_flag_rejects_coercion) (surface='cli', value=1) ... FAIL
+  test_grading_flag_rejects_coercion (__main__.TestIndependentBrief.test_grading_flag_rejects_coercion) (surface='registered-mcp', value=1) ... FAIL
+  test_grading_flag_rejects_coercion (__main__.TestIndependentBrief.test_grading_flag_rejects_coercion) (surface='api', value={}) ... FAIL
+  test_grading_flag_rejects_coercion (__main__.TestIndependentBrief.test_grading_flag_rejects_coercion) (surface='cli', value={}) ... FAIL
+  test_grading_flag_rejects_coercion (__main__.TestIndependentBrief.test_grading_flag_rejects_coercion) (surface='registered-mcp', value={}) ... FAIL
+  test_grading_flag_rejects_coercion (__main__.TestIndependentBrief.test_grading_flag_rejects_coercion) (surface='api', value=[]) ... FAIL
+  test_grading_flag_rejects_coercion (__main__.TestIndependentBrief.test_grading_flag_rejects_coercion) (surface='cli', value=[]) ... FAIL
+  test_grading_flag_rejects_coercion (__main__.TestIndependentBrief.test_grading_flag_rejects_coercion) (surface='registered-mcp', value=[]) ... FAIL
+test_invalid_points_are_local_and_output_is_strict_json (__main__.TestIndependentBrief.test_invalid_points_are_local_and_output_is_strict_json) ... 
+  test_invalid_points_are_local_and_output_is_strict_json (__main__.TestIndependentBrief.test_invalid_points_are_local_and_output_is_strict_json) (surface='api', value='False') ... FAIL
+  test_invalid_points_are_local_and_output_is_strict_json (__main__.TestIndependentBrief.test_invalid_points_are_local_and_output_is_strict_json) (surface='cli', value='False') ... FAIL
+  test_invalid_points_are_local_and_output_is_strict_json (__main__.TestIndependentBrief.test_invalid_points_are_local_and_output_is_strict_json) (surface='registered-mcp', value='False') ... FAIL
+  test_invalid_points_are_local_and_output_is_strict_json (__main__.TestIndependentBrief.test_invalid_points_are_local_and_output_is_strict_json) (surface='api', value="'2.5'") ... FAIL
+  test_invalid_points_are_local_and_output_is_strict_json (__main__.TestIndependentBrief.test_invalid_points_are_local_and_output_is_strict_json) (surface='cli', value="'2.5'") ... FAIL
+  test_invalid_points_are_local_and_output_is_strict_json (__main__.TestIndependentBrief.test_invalid_points_are_local_and_output_is_strict_json) (surface='registered-mcp', value="'2.5'") ... FAIL
+  test_invalid_points_are_local_and_output_is_strict_json (__main__.TestIndependentBrief.test_invalid_points_are_local_and_output_is_strict_json) (surface='api', value='nan') ... FAIL
+  test_invalid_points_are_local_and_output_is_strict_json (__main__.TestIndependentBrief.test_invalid_points_are_local_and_output_is_strict_json) (surface='cli', value='nan') ... FAIL
+  test_invalid_points_are_local_and_output_is_strict_json (__main__.TestIndependentBrief.test_invalid_points_are_local_and_output_is_strict_json) (surface='registered-mcp', value='nan') ... FAIL
+  test_invalid_points_are_local_and_output_is_strict_json (__main__.TestIndependentBrief.test_invalid_points_are_local_and_output_is_strict_json) (surface='api', value='inf') ... FAIL
+  test_invalid_points_are_local_and_output_is_strict_json (__main__.TestIndependentBrief.test_invalid_points_are_local_and_output_is_strict_json) (surface='cli', value='inf') ... FAIL
+  test_invalid_points_are_local_and_output_is_strict_json (__main__.TestIndependentBrief.test_invalid_points_are_local_and_output_is_strict_json) (surface='registered-mcp', value='inf') ... FAIL
+  test_invalid_points_are_local_and_output_is_strict_json (__main__.TestIndependentBrief.test_invalid_points_are_local_and_output_is_strict_json) (surface='api', value='-inf') ... FAIL
+  test_invalid_points_are_local_and_output_is_strict_json (__main__.TestIndependentBrief.test_invalid_points_are_local_and_output_is_strict_json) (surface='cli', value='-inf') ... FAIL
+  test_invalid_points_are_local_and_output_is_strict_json (__main__.TestIndependentBrief.test_invalid_points_are_local_and_output_is_strict_json) (surface='registered-mcp', value='-inf') ... FAIL
+test_malformed_rubric_containers_preserve_the_brief (__main__.TestIndependentBrief.test_malformed_rubric_containers_preserve_the_brief) ... 
+  test_malformed_rubric_containers_preserve_the_brief (__main__.TestIndependentBrief.test_malformed_rubric_containers_preserve_the_brief) (surface='api', value='bad') ... FAIL
+  test_malformed_rubric_containers_preserve_the_brief (__main__.TestIndependentBrief.test_malformed_rubric_containers_preserve_the_brief) (surface='cli', value='bad') ... FAIL
+  test_malformed_rubric_containers_preserve_the_brief (__main__.TestIndependentBrief.test_malformed_rubric_containers_preserve_the_brief) (surface='registered-mcp', value='bad') ... FAIL
+  test_malformed_rubric_containers_preserve_the_brief (__main__.TestIndependentBrief.test_malformed_rubric_containers_preserve_the_brief) (surface='api', value={'description': 'not a criterion list'}) ... FAIL
+  test_malformed_rubric_containers_preserve_the_brief (__main__.TestIndependentBrief.test_malformed_rubric_containers_preserve_the_brief) (surface='cli', value={'description': 'not a criterion list'}) ... FAIL
+  test_malformed_rubric_containers_preserve_the_brief (__main__.TestIndependentBrief.test_malformed_rubric_containers_preserve_the_brief) (surface='registered-mcp', value={'description': 'not a criterion list'}) ... FAIL
+  test_malformed_rubric_containers_preserve_the_brief (__main__.TestIndependentBrief.test_malformed_rubric_containers_preserve_the_brief) (surface='api', value=False) ... FAIL
+  test_malformed_rubric_containers_preserve_the_brief (__main__.TestIndependentBrief.test_malformed_rubric_containers_preserve_the_brief) (surface='cli', value=False) ... FAIL
+  test_malformed_rubric_containers_preserve_the_brief (__main__.TestIndependentBrief.test_malformed_rubric_containers_preserve_the_brief) (surface='registered-mcp', value=False) ... FAIL
+  test_malformed_rubric_containers_preserve_the_brief (__main__.TestIndependentBrief.test_malformed_rubric_containers_preserve_the_brief) (surface='api', value=7) ... FAIL
+  test_malformed_rubric_containers_preserve_the_brief (__main__.TestIndependentBrief.test_malformed_rubric_containers_preserve_the_brief) (surface='cli', value=7) ... FAIL
+  test_malformed_rubric_containers_preserve_the_brief (__main__.TestIndependentBrief.test_malformed_rubric_containers_preserve_the_brief) (surface='registered-mcp', value=7) ... FAIL
+test_native_api_preserves_integer_requested_ids (__main__.TestIndependentBrief.test_native_api_preserves_integer_requested_ids) ... ok
+test_no_usable_criteria_is_diagnosed_empty_not_missing (__main__.TestIndependentBrief.test_no_usable_criteria_is_diagnosed_empty_not_missing) ... 
+  test_no_usable_criteria_is_diagnosed_empty_not_missing (__main__.TestIndependentBrief.test_no_usable_criteria_is_diagnosed_empty_not_missing) (surface='api') ... FAIL
+  test_no_usable_criteria_is_diagnosed_empty_not_missing (__main__.TestIndependentBrief.test_no_usable_criteria_is_diagnosed_empty_not_missing) (surface='cli') ... FAIL
+  test_no_usable_criteria_is_diagnosed_empty_not_missing (__main__.TestIndependentBrief.test_no_usable_criteria_is_diagnosed_empty_not_missing) (surface='registered-mcp') ... FAIL
+test_nullable_and_sparse_criteria_do_not_invent_fields (__main__.TestIndependentBrief.test_nullable_and_sparse_criteria_do_not_invent_fields) ... 
+  test_nullable_and_sparse_criteria_do_not_invent_fields (__main__.TestIndependentBrief.test_nullable_and_sparse_criteria_do_not_invent_fields) (surface='api') ... FAIL
+  test_nullable_and_sparse_criteria_do_not_invent_fields (__main__.TestIndependentBrief.test_nullable_and_sparse_criteria_do_not_invent_fields) (surface='cli') ... FAIL
+  test_nullable_and_sparse_criteria_do_not_invent_fields (__main__.TestIndependentBrief.test_nullable_and_sparse_criteria_do_not_invent_fields) (surface='registered-mcp') ... FAIL
+test_ordered_ratings_fractional_zero_points_and_literal_text (__main__.TestIndependentBrief.test_ordered_ratings_fractional_zero_points_and_literal_text) ... 
+  test_ordered_ratings_fractional_zero_points_and_literal_text (__main__.TestIndependentBrief.test_ordered_ratings_fractional_zero_points_and_literal_text) (surface='api') ... FAIL
+  test_ordered_ratings_fractional_zero_points_and_literal_text (__main__.TestIndependentBrief.test_ordered_ratings_fractional_zero_points_and_literal_text) (surface='cli') ... FAIL
+  test_ordered_ratings_fractional_zero_points_and_literal_text (__main__.TestIndependentBrief.test_ordered_ratings_fractional_zero_points_and_literal_text) (surface='registered-mcp') ... FAIL
+test_original_brief_fields_links_body_and_request (__main__.TestIndependentBrief.test_original_brief_fields_links_body_and_request) ... ok
+test_original_get_assignment_fields (__main__.TestIndependentBrief.test_original_get_assignment_fields) ... ok
+test_outcome_range_and_nonscoring_fields (__main__.TestIndependentBrief.test_outcome_range_and_nonscoring_fields) ... 
+  test_outcome_range_and_nonscoring_fields (__main__.TestIndependentBrief.test_outcome_range_and_nonscoring_fields) (surface='api') ... FAIL
+  test_outcome_range_and_nonscoring_fields (__main__.TestIndependentBrief.test_outcome_range_and_nonscoring_fields) (surface='cli') ... FAIL
+  test_outcome_range_and_nonscoring_fields (__main__.TestIndependentBrief.test_outcome_range_and_nonscoring_fields) (surface='registered-mcp') ... FAIL
+test_projection_and_settings_do_not_alias_supplied_data (__main__.TestIndependentBrief.test_projection_and_settings_do_not_alias_supplied_data) ... FAIL
+test_public_help_and_registered_tool_description_expose_rubric (__main__.TestIndependentBrief.test_public_help_and_registered_tool_description_expose_rubric) ... FAIL
+test_registered_mcp_rereads_current_assignment (__main__.TestIndependentBrief.test_registered_mcp_rereads_current_assignment) ... FAIL
+test_settings_container_validation_and_whole_object_custody (__main__.TestIndependentBrief.test_settings_container_validation_and_whole_object_custody) ... 
+  test_settings_container_validation_and_whole_object_custody (__main__.TestIndependentBrief.test_settings_container_validation_and_whole_object_custody) (surface='api', value='bad') ... FAIL
+  test_settings_container_validation_and_whole_object_custody (__main__.TestIndependentBrief.test_settings_container_validation_and_whole_object_custody) (surface='cli', value='bad') ... FAIL
+  test_settings_container_validation_and_whole_object_custody (__main__.TestIndependentBrief.test_settings_container_validation_and_whole_object_custody) (surface='registered-mcp', value='bad') ... FAIL
+  test_settings_container_validation_and_whole_object_custody (__main__.TestIndependentBrief.test_settings_container_validation_and_whole_object_custody) (surface='api', value=[]) ... FAIL
+  test_settings_container_validation_and_whole_object_custody (__main__.TestIndependentBrief.test_settings_container_validation_and_whole_object_custody) (surface='cli', value=[]) ... FAIL
+  test_settings_container_validation_and_whole_object_custody (__main__.TestIndependentBrief.test_settings_container_validation_and_whole_object_custody) (surface='registered-mcp', value=[]) ... FAIL
+  test_settings_container_validation_and_whole_object_custody (__main__.TestIndependentBrief.test_settings_container_validation_and_whole_object_custody) (surface='api', value=False) ... FAIL
+  test_settings_container_validation_and_whole_object_custody (__main__.TestIndependentBrief.test_settings_container_validation_and_whole_object_custody) (surface='cli', value=False) ... FAIL
+  test_settings_container_validation_and_whole_object_custody (__main__.TestIndependentBrief.test_settings_container_validation_and_whole_object_custody) (surface='registered-mcp', value=False) ... FAIL
+  test_settings_container_validation_and_whole_object_custody (__main__.TestIndependentBrief.test_settings_container_validation_and_whole_object_custody) (surface='api', value=0) ... FAIL
+  test_settings_container_validation_and_whole_object_custody (__main__.TestIndependentBrief.test_settings_container_validation_and_whole_object_custody) (surface='cli', value=0) ... FAIL
+  test_settings_container_validation_and_whole_object_custody (__main__.TestIndependentBrief.test_settings_container_validation_and_whole_object_custody) (surface='registered-mcp', value=0) ... FAIL
+  test_settings_container_validation_and_whole_object_custody (__main__.TestIndependentBrief.test_settings_container_validation_and_whole_object_custody) (surface='api') ... FAIL
+  test_settings_container_validation_and_whole_object_custody (__main__.TestIndependentBrief.test_settings_container_validation_and_whole_object_custody) (surface='cli') ... FAIL
+  test_settings_container_validation_and_whole_object_custody (__main__.TestIndependentBrief.test_settings_container_validation_and_whole_object_custody) (surface='registered-mcp') ... FAIL
+test_unknown_criterion_fields_are_not_invented_as_contract (__main__.TestIndependentBrief.test_unknown_criterion_fields_are_not_invented_as_contract) ... 
+  test_unknown_criterion_fields_are_not_invented_as_contract (__main__.TestIndependentBrief.test_unknown_criterion_fields_are_not_invented_as_contract) (surface='api') ... FAIL
+  test_unknown_criterion_fields_are_not_invented_as_contract (__main__.TestIndependentBrief.test_unknown_criterion_fields_are_not_invented_as_contract) (surface='cli') ... FAIL
+  test_unknown_criterion_fields_are_not_invented_as_contract (__main__.TestIndependentBrief.test_unknown_criterion_fields_are_not_invented_as_contract) (surface='registered-mcp') ... FAIL
+
+======================================================================
+FAIL: test_absent_null_and_empty_rubrics_remain_distinct (__main__.TestIndependentBrief.test_absent_null_and_empty_rubrics_remain_distinct) (surface='api', kind='absent')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_absent_null_and_empty_rubrics_remain_distinct (__main__.TestIndependentBrief.test_absent_null_and_empty_rubrics_remain_distinct) (surface='cli', kind='absent')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_absent_null_and_empty_rubrics_remain_distinct (__main__.TestIndependentBrief.test_absent_null_and_empty_rubrics_remain_distinct) (surface='registered-mcp', kind='absent')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_absent_null_and_empty_rubrics_remain_distinct (__main__.TestIndependentBrief.test_absent_null_and_empty_rubrics_remain_distinct) (surface='api', kind='null')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_absent_null_and_empty_rubrics_remain_distinct (__main__.TestIndependentBrief.test_absent_null_and_empty_rubrics_remain_distinct) (surface='cli', kind='null')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_absent_null_and_empty_rubrics_remain_distinct (__main__.TestIndependentBrief.test_absent_null_and_empty_rubrics_remain_distinct) (surface='registered-mcp', kind='null')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_absent_null_and_empty_rubrics_remain_distinct (__main__.TestIndependentBrief.test_absent_null_and_empty_rubrics_remain_distinct) (surface='api', kind='empty')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_absent_null_and_empty_rubrics_remain_distinct (__main__.TestIndependentBrief.test_absent_null_and_empty_rubrics_remain_distinct) (surface='cli', kind='empty')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_absent_null_and_empty_rubrics_remain_distinct (__main__.TestIndependentBrief.test_absent_null_and_empty_rubrics_remain_distinct) (surface='registered-mcp', kind='empty')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_advisory_grading_and_display_flags_are_independent (__main__.TestIndependentBrief.test_advisory_grading_and_display_flags_are_independent) (surface='api', grading=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_advisory_grading_and_display_flags_are_independent (__main__.TestIndependentBrief.test_advisory_grading_and_display_flags_are_independent) (surface='cli', grading=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_advisory_grading_and_display_flags_are_independent (__main__.TestIndependentBrief.test_advisory_grading_and_display_flags_are_independent) (surface='registered-mcp', grading=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_advisory_grading_and_display_flags_are_independent (__main__.TestIndependentBrief.test_advisory_grading_and_display_flags_are_independent) (surface='api', grading=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_advisory_grading_and_display_flags_are_independent (__main__.TestIndependentBrief.test_advisory_grading_and_display_flags_are_independent) (surface='cli', grading=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_advisory_grading_and_display_flags_are_independent (__main__.TestIndependentBrief.test_advisory_grading_and_display_flags_are_independent) (surface='registered-mcp', grading=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_bad_criterion_rows_and_fields_preserve_healthy_neighbors (__main__.TestIndependentBrief.test_bad_criterion_rows_and_fields_preserve_healthy_neighbors) (surface='api')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_bad_criterion_rows_and_fields_preserve_healthy_neighbors (__main__.TestIndependentBrief.test_bad_criterion_rows_and_fields_preserve_healthy_neighbors) (surface='cli')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_bad_criterion_rows_and_fields_preserve_healthy_neighbors (__main__.TestIndependentBrief.test_bad_criterion_rows_and_fields_preserve_healthy_neighbors) (surface='registered-mcp')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_bad_rating_containers_remain_unavailable (__main__.TestIndependentBrief.test_bad_rating_containers_remain_unavailable) (surface='api', value='bad')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_bad_rating_containers_remain_unavailable (__main__.TestIndependentBrief.test_bad_rating_containers_remain_unavailable) (surface='cli', value='bad')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_bad_rating_containers_remain_unavailable (__main__.TestIndependentBrief.test_bad_rating_containers_remain_unavailable) (surface='registered-mcp', value='bad')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_bad_rating_containers_remain_unavailable (__main__.TestIndependentBrief.test_bad_rating_containers_remain_unavailable) (surface='api', value={})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_bad_rating_containers_remain_unavailable (__main__.TestIndependentBrief.test_bad_rating_containers_remain_unavailable) (surface='cli', value={})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_bad_rating_containers_remain_unavailable (__main__.TestIndependentBrief.test_bad_rating_containers_remain_unavailable) (surface='registered-mcp', value={})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_bad_rating_containers_remain_unavailable (__main__.TestIndependentBrief.test_bad_rating_containers_remain_unavailable) (surface='api', value=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_bad_rating_containers_remain_unavailable (__main__.TestIndependentBrief.test_bad_rating_containers_remain_unavailable) (surface='cli', value=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_bad_rating_containers_remain_unavailable (__main__.TestIndependentBrief.test_bad_rating_containers_remain_unavailable) (surface='registered-mcp', value=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_bad_rating_containers_remain_unavailable (__main__.TestIndependentBrief.test_bad_rating_containers_remain_unavailable) (surface='api', value=7)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_bad_rating_containers_remain_unavailable (__main__.TestIndependentBrief.test_bad_rating_containers_remain_unavailable) (surface='cli', value=7)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_bad_rating_containers_remain_unavailable (__main__.TestIndependentBrief.test_bad_rating_containers_remain_unavailable) (surface='registered-mcp', value=7)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_bad_rating_rows_and_fields_preserve_healthy_levels (__main__.TestIndependentBrief.test_bad_rating_rows_and_fields_preserve_healthy_levels) (surface='api')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_bad_rating_rows_and_fields_preserve_healthy_levels (__main__.TestIndependentBrief.test_bad_rating_rows_and_fields_preserve_healthy_levels) (surface='cli')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_bad_rating_rows_and_fields_preserve_healthy_levels (__main__.TestIndependentBrief.test_bad_rating_rows_and_fields_preserve_healthy_levels) (surface='registered-mcp')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_grading_flag_rejects_coercion (__main__.TestIndependentBrief.test_grading_flag_rejects_coercion) (surface='api', value='false')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_grading_flag_rejects_coercion (__main__.TestIndependentBrief.test_grading_flag_rejects_coercion) (surface='cli', value='false')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_grading_flag_rejects_coercion (__main__.TestIndependentBrief.test_grading_flag_rejects_coercion) (surface='registered-mcp', value='false')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_grading_flag_rejects_coercion (__main__.TestIndependentBrief.test_grading_flag_rejects_coercion) (surface='api', value='true')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_grading_flag_rejects_coercion (__main__.TestIndependentBrief.test_grading_flag_rejects_coercion) (surface='cli', value='true')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_grading_flag_rejects_coercion (__main__.TestIndependentBrief.test_grading_flag_rejects_coercion) (surface='registered-mcp', value='true')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_grading_flag_rejects_coercion (__main__.TestIndependentBrief.test_grading_flag_rejects_coercion) (surface='api', value=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_grading_flag_rejects_coercion (__main__.TestIndependentBrief.test_grading_flag_rejects_coercion) (surface='cli', value=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_grading_flag_rejects_coercion (__main__.TestIndependentBrief.test_grading_flag_rejects_coercion) (surface='registered-mcp', value=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_grading_flag_rejects_coercion (__main__.TestIndependentBrief.test_grading_flag_rejects_coercion) (surface='api', value=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_grading_flag_rejects_coercion (__main__.TestIndependentBrief.test_grading_flag_rejects_coercion) (surface='cli', value=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_grading_flag_rejects_coercion (__main__.TestIndependentBrief.test_grading_flag_rejects_coercion) (surface='registered-mcp', value=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_grading_flag_rejects_coercion (__main__.TestIndependentBrief.test_grading_flag_rejects_coercion) (surface='api', value={})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_grading_flag_rejects_coercion (__main__.TestIndependentBrief.test_grading_flag_rejects_coercion) (surface='cli', value={})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_grading_flag_rejects_coercion (__main__.TestIndependentBrief.test_grading_flag_rejects_coercion) (surface='registered-mcp', value={})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_grading_flag_rejects_coercion (__main__.TestIndependentBrief.test_grading_flag_rejects_coercion) (surface='api', value=[])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_grading_flag_rejects_coercion (__main__.TestIndependentBrief.test_grading_flag_rejects_coercion) (surface='cli', value=[])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_grading_flag_rejects_coercion (__main__.TestIndependentBrief.test_grading_flag_rejects_coercion) (surface='registered-mcp', value=[])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_invalid_points_are_local_and_output_is_strict_json (__main__.TestIndependentBrief.test_invalid_points_are_local_and_output_is_strict_json) (surface='api', value='False')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_invalid_points_are_local_and_output_is_strict_json (__main__.TestIndependentBrief.test_invalid_points_are_local_and_output_is_strict_json) (surface='cli', value='False')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_invalid_points_are_local_and_output_is_strict_json (__main__.TestIndependentBrief.test_invalid_points_are_local_and_output_is_strict_json) (surface='registered-mcp', value='False')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_invalid_points_are_local_and_output_is_strict_json (__main__.TestIndependentBrief.test_invalid_points_are_local_and_output_is_strict_json) (surface='api', value="'2.5'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_invalid_points_are_local_and_output_is_strict_json (__main__.TestIndependentBrief.test_invalid_points_are_local_and_output_is_strict_json) (surface='cli', value="'2.5'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_invalid_points_are_local_and_output_is_strict_json (__main__.TestIndependentBrief.test_invalid_points_are_local_and_output_is_strict_json) (surface='registered-mcp', value="'2.5'")
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_invalid_points_are_local_and_output_is_strict_json (__main__.TestIndependentBrief.test_invalid_points_are_local_and_output_is_strict_json) (surface='api', value='nan')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_invalid_points_are_local_and_output_is_strict_json (__main__.TestIndependentBrief.test_invalid_points_are_local_and_output_is_strict_json) (surface='cli', value='nan')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_invalid_points_are_local_and_output_is_strict_json (__main__.TestIndependentBrief.test_invalid_points_are_local_and_output_is_strict_json) (surface='registered-mcp', value='nan')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_invalid_points_are_local_and_output_is_strict_json (__main__.TestIndependentBrief.test_invalid_points_are_local_and_output_is_strict_json) (surface='api', value='inf')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_invalid_points_are_local_and_output_is_strict_json (__main__.TestIndependentBrief.test_invalid_points_are_local_and_output_is_strict_json) (surface='cli', value='inf')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_invalid_points_are_local_and_output_is_strict_json (__main__.TestIndependentBrief.test_invalid_points_are_local_and_output_is_strict_json) (surface='registered-mcp', value='inf')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_invalid_points_are_local_and_output_is_strict_json (__main__.TestIndependentBrief.test_invalid_points_are_local_and_output_is_strict_json) (surface='api', value='-inf')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_invalid_points_are_local_and_output_is_strict_json (__main__.TestIndependentBrief.test_invalid_points_are_local_and_output_is_strict_json) (surface='cli', value='-inf')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_invalid_points_are_local_and_output_is_strict_json (__main__.TestIndependentBrief.test_invalid_points_are_local_and_output_is_strict_json) (surface='registered-mcp', value='-inf')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_malformed_rubric_containers_preserve_the_brief (__main__.TestIndependentBrief.test_malformed_rubric_containers_preserve_the_brief) (surface='api', value='bad')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_malformed_rubric_containers_preserve_the_brief (__main__.TestIndependentBrief.test_malformed_rubric_containers_preserve_the_brief) (surface='cli', value='bad')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_malformed_rubric_containers_preserve_the_brief (__main__.TestIndependentBrief.test_malformed_rubric_containers_preserve_the_brief) (surface='registered-mcp', value='bad')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_malformed_rubric_containers_preserve_the_brief (__main__.TestIndependentBrief.test_malformed_rubric_containers_preserve_the_brief) (surface='api', value={'description': 'not a criterion list'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_malformed_rubric_containers_preserve_the_brief (__main__.TestIndependentBrief.test_malformed_rubric_containers_preserve_the_brief) (surface='cli', value={'description': 'not a criterion list'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_malformed_rubric_containers_preserve_the_brief (__main__.TestIndependentBrief.test_malformed_rubric_containers_preserve_the_brief) (surface='registered-mcp', value={'description': 'not a criterion list'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_malformed_rubric_containers_preserve_the_brief (__main__.TestIndependentBrief.test_malformed_rubric_containers_preserve_the_brief) (surface='api', value=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_malformed_rubric_containers_preserve_the_brief (__main__.TestIndependentBrief.test_malformed_rubric_containers_preserve_the_brief) (surface='cli', value=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_malformed_rubric_containers_preserve_the_brief (__main__.TestIndependentBrief.test_malformed_rubric_containers_preserve_the_brief) (surface='registered-mcp', value=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_malformed_rubric_containers_preserve_the_brief (__main__.TestIndependentBrief.test_malformed_rubric_containers_preserve_the_brief) (surface='api', value=7)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_malformed_rubric_containers_preserve_the_brief (__main__.TestIndependentBrief.test_malformed_rubric_containers_preserve_the_brief) (surface='cli', value=7)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_malformed_rubric_containers_preserve_the_brief (__main__.TestIndependentBrief.test_malformed_rubric_containers_preserve_the_brief) (surface='registered-mcp', value=7)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_no_usable_criteria_is_diagnosed_empty_not_missing (__main__.TestIndependentBrief.test_no_usable_criteria_is_diagnosed_empty_not_missing) (surface='api')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_no_usable_criteria_is_diagnosed_empty_not_missing (__main__.TestIndependentBrief.test_no_usable_criteria_is_diagnosed_empty_not_missing) (surface='cli')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_no_usable_criteria_is_diagnosed_empty_not_missing (__main__.TestIndependentBrief.test_no_usable_criteria_is_diagnosed_empty_not_missing) (surface='registered-mcp')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_nullable_and_sparse_criteria_do_not_invent_fields (__main__.TestIndependentBrief.test_nullable_and_sparse_criteria_do_not_invent_fields) (surface='api')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_nullable_and_sparse_criteria_do_not_invent_fields (__main__.TestIndependentBrief.test_nullable_and_sparse_criteria_do_not_invent_fields) (surface='cli')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_nullable_and_sparse_criteria_do_not_invent_fields (__main__.TestIndependentBrief.test_nullable_and_sparse_criteria_do_not_invent_fields) (surface='registered-mcp')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_ordered_ratings_fractional_zero_points_and_literal_text (__main__.TestIndependentBrief.test_ordered_ratings_fractional_zero_points_and_literal_text) (surface='api')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_ordered_ratings_fractional_zero_points_and_literal_text (__main__.TestIndependentBrief.test_ordered_ratings_fractional_zero_points_and_literal_text) (surface='cli')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_ordered_ratings_fractional_zero_points_and_literal_text (__main__.TestIndependentBrief.test_ordered_ratings_fractional_zero_points_and_literal_text) (surface='registered-mcp')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_outcome_range_and_nonscoring_fields (__main__.TestIndependentBrief.test_outcome_range_and_nonscoring_fields) (surface='api')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_outcome_range_and_nonscoring_fields (__main__.TestIndependentBrief.test_outcome_range_and_nonscoring_fields) (surface='cli')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_outcome_range_and_nonscoring_fields (__main__.TestIndependentBrief.test_outcome_range_and_nonscoring_fields) (surface='registered-mcp')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_projection_and_settings_do_not_alias_supplied_data (__main__.TestIndependentBrief.test_projection_and_settings_do_not_alias_supplied_data)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 239, in test_projection_and_settings_do_not_alias_supplied_data
+    self.assertIn('rubric', first)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_public_help_and_registered_tool_description_expose_rubric (__main__.TestIndependentBrief.test_public_help_and_registered_tool_description_expose_rubric)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 271, in test_public_help_and_registered_tool_description_expose_rubric
+    self.assertIn('rubric', out.getvalue().lower())
+AssertionError: 'rubric' not found in 'usage: canvaspilot [-h]\n                   {login,session,whoami,courses,sync,assignments,brief,discussions,files,mcp}\n                   ...\n\npositional arguments:\n  {login,session,whoami,courses,sync,assignments,brief,discussions,files,mcp}\n    login               open headed browser for canvas sso (one-shot)\n    session             stay-open session broker\n    whoami              get /users/self/profile\n    courses             list active courses\n    sync                courses + upcoming assignments digest\n    assignments         list assignments for a course\n    brief               assignment brief (cleaned prompt)\n    discussions         list discussion topics\n    files               list course files\n    mcp                 run mcp stdio server\n\noptions:\n  -h, --help            show this help message and exit\n'
+
+======================================================================
+FAIL: test_registered_mcp_rereads_current_assignment (__main__.TestIndependentBrief.test_registered_mcp_rereads_current_assignment)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 258, in test_registered_mcp_rereads_current_assignment
+    self.assertIn('rubric', first)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_settings_container_validation_and_whole_object_custody (__main__.TestIndependentBrief.test_settings_container_validation_and_whole_object_custody) (surface='api', value='bad')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_settings_container_validation_and_whole_object_custody (__main__.TestIndependentBrief.test_settings_container_validation_and_whole_object_custody) (surface='cli', value='bad')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_settings_container_validation_and_whole_object_custody (__main__.TestIndependentBrief.test_settings_container_validation_and_whole_object_custody) (surface='registered-mcp', value='bad')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_settings_container_validation_and_whole_object_custody (__main__.TestIndependentBrief.test_settings_container_validation_and_whole_object_custody) (surface='api', value=[])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_settings_container_validation_and_whole_object_custody (__main__.TestIndependentBrief.test_settings_container_validation_and_whole_object_custody) (surface='cli', value=[])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_settings_container_validation_and_whole_object_custody (__main__.TestIndependentBrief.test_settings_container_validation_and_whole_object_custody) (surface='registered-mcp', value=[])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_settings_container_validation_and_whole_object_custody (__main__.TestIndependentBrief.test_settings_container_validation_and_whole_object_custody) (surface='api', value=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_settings_container_validation_and_whole_object_custody (__main__.TestIndependentBrief.test_settings_container_validation_and_whole_object_custody) (surface='cli', value=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_settings_container_validation_and_whole_object_custody (__main__.TestIndependentBrief.test_settings_container_validation_and_whole_object_custody) (surface='registered-mcp', value=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_settings_container_validation_and_whole_object_custody (__main__.TestIndependentBrief.test_settings_container_validation_and_whole_object_custody) (surface='api', value=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_settings_container_validation_and_whole_object_custody (__main__.TestIndependentBrief.test_settings_container_validation_and_whole_object_custody) (surface='cli', value=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_settings_container_validation_and_whole_object_custody (__main__.TestIndependentBrief.test_settings_container_validation_and_whole_object_custody) (surface='registered-mcp', value=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_settings_container_validation_and_whole_object_custody (__main__.TestIndependentBrief.test_settings_container_validation_and_whole_object_custody) (surface='api')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_settings_container_validation_and_whole_object_custody (__main__.TestIndependentBrief.test_settings_container_validation_and_whole_object_custody) (surface='cli')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_settings_container_validation_and_whole_object_custody (__main__.TestIndependentBrief.test_settings_container_validation_and_whole_object_custody) (surface='registered-mcp')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_unknown_criterion_fields_are_not_invented_as_contract (__main__.TestIndependentBrief.test_unknown_criterion_fields_are_not_invented_as_contract) (surface='api')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_unknown_criterion_fields_are_not_invented_as_contract (__main__.TestIndependentBrief.test_unknown_criterion_fields_are_not_invented_as_contract) (surface='cli')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+======================================================================
+FAIL: test_unknown_criterion_fields_are_not_invented_as_contract (__main__.TestIndependentBrief.test_unknown_criterion_fields_are_not_invented_as_contract) (surface='registered-mcp')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/ultra-20b27c2e-memory-canvas-review/test_independent_rubric_brief.py", line 88, in check
+    self.assertIn(name, result)
+AssertionError: 'rubric' not found in {'title': 'Evidence lab — raw <title> & source', 'due_at': '2026-11-04T01:20:00-07:00', 'points_possible': 100, 'submission_types': ['online_upload', 'online_text_entry'], 'prompt': 'Read <lab> & compare α β. Source link', 'html_url': 'https://canvas.example.test/courses/74/assignments/701?module=9#details', 'course_id': '74', 'assignment_id': '701'}
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.121s
+
+FAILED (failures=111)
