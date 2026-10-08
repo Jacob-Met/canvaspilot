@@ -1,0 +1,65 @@
+{
+  "status": "legacy_broker_restart_refusal_passed",
+  "expected_contract": "candidate",
+  "source": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-session-identity",
+  "source_pins": "/Users/me/workspace/estate/estate-49f845d0dece/canvas-provider-pr45-receiving/pagination-composition/source-pins.json",
+  "source_pins_sha256": "edfa641b5e3880439c6fa65c6e9b779fd5e84f8f0b1cffebc24e089cb4ccd5ed",
+  "source_native_head": "8f75e03121df061ff80f100ee276565d61fdb9c2",
+  "source_sha256_before": {
+    "src/canvaspilot/client.py": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797",
+    "src/canvaspilot/api.py": "fe147e5d3943e7299f400e7607385a7c8f02a68aeff07f72b3219f5c70c7bb5b",
+    "src/canvaspilot/cli.py": "a6029296bba4e84b3889bd62487b966d7bc1832a8b1b1e0fd928dfb9b9ab68a8",
+    "src/canvaspilot/calendar_export.py": "b92948c438063438bf9b8ef01b0b0c067802ddb06354f00e8ee18749f3c5e2fa",
+    "src/canvaspilot/session_broker.py": "a692cd2812cbc09536f1b60c84892bc8e87d2ae984c5a5aa25a13f6537ba6da2"
+  },
+  "source_sha256_after": {
+    "src/canvaspilot/client.py": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797",
+    "src/canvaspilot/api.py": "fe147e5d3943e7299f400e7607385a7c8f02a68aeff07f72b3219f5c70c7bb5b",
+    "src/canvaspilot/cli.py": "a6029296bba4e84b3889bd62487b966d7bc1832a8b1b1e0fd928dfb9b9ab68a8",
+    "src/canvaspilot/calendar_export.py": "b92948c438063438bf9b8ef01b0b0c067802ddb06354f00e8ee18749f3c5e2fa",
+    "src/canvaspilot/session_broker.py": "a692cd2812cbc09536f1b60c84892bc8e87d2ae984c5a5aa25a13f6537ba6da2"
+  },
+  "legacy_source": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-provider-routing-baseline",
+  "legacy_broker_sha256": "2a106130c344aefebb23b078cd93b5d3ca3afd7f5325ae5fac2fb8a7251780cc",
+  "legacy_native_head": "3e251e5e1de71d56042daa76e2109cdd977b97a6",
+  "receiver_sha256": "e48456f822ca8861374641f4fa698f62d15c099e955cef2de354c26f78c6b75f",
+  "python": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "boundary": "Actual CLI/client/calendar plus exact legacy Handler/_call/queue; observation-only Handler wrapper and fail-fast responder for forbidden fetches",
+  "actual_browser_or_live_account_used": false,
+  "external_requests": 0,
+  "legacy_health_responses": [
+    {
+      "ok": true,
+      "ready": true,
+      "url": "https://school-b.instructure.com/courses",
+      "title": "",
+      "headless": false,
+      "read_only": true,
+      "error": null,
+      "base_url": "https://school-a.instructure.com"
+    }
+  ],
+  "post_requests": [],
+  "queued_jobs": [],
+  "command": [
+    "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-venv/bin/python",
+    "-m",
+    "canvaspilot.cli",
+    "export-calendar",
+    "42",
+    "--token",
+    "",
+    "--profile",
+    "/Users/me/workspace/estate/estate-49f845d0dece/canvas-provider-pr45-receiving/pagination-legacy-compatibility/unused-profile",
+    "--out",
+    "/Users/me/workspace/estate/estate-49f845d0dece/canvas-provider-pr45-receiving/pagination-legacy-compatibility/legacy-broker.ics"
+  ],
+  "cli_exit": 1,
+  "error_report": {
+    "ok": false,
+    "error": "ValueError",
+    "message": "Running session broker lacks provider origin checks; restart it with updated CanvasPilot before export"
+  },
+  "artifact_exists": false,
+  "profile_exists": false
+}

@@ -1,0 +1,2 @@
+HTTP Request: GET http://127.0.0.1:55227/health "HTTP/1.0 200 OK"
+{"ok": false, "error": "ValueError", "message": "Running session broker lacks provider origin checks; restart it with updated CanvasPilot before export"}

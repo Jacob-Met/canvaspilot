@@ -1,0 +1,53 @@
+{
+  "verdict": "accept_landed_pagination_and_provider_identity_composition",
+  "production_source_checkpoint": "8f75e03121df061ff80f100ee276565d61fdb9c2",
+  "source_sha256": {
+    "src/canvaspilot/client.py": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797",
+    "src/canvaspilot/api.py": "fe147e5d3943e7299f400e7607385a7c8f02a68aeff07f72b3219f5c70c7bb5b",
+    "src/canvaspilot/cli.py": "a6029296bba4e84b3889bd62487b966d7bc1832a8b1b1e0fd928dfb9b9ab68a8",
+    "src/canvaspilot/calendar_export.py": "b92948c438063438bf9b8ef01b0b0c067802ddb06354f00e8ee18749f3c5e2fa",
+    "src/canvaspilot/session_broker.py": "a692cd2812cbc09536f1b60c84892bc8e87d2ae984c5a5aa25a13f6537ba6da2"
+  },
+  "source_git_blobs": {
+    "src/canvaspilot/client.py": "1db4b1135305f7e410025ae7937f9a6cd349f020",
+    "src/canvaspilot/api.py": "140ced2576481a90b8319272714009d326835bf1",
+    "src/canvaspilot/cli.py": "9b8eec6ea177d0fe69e3cb7776af185d2e7ad4a5",
+    "src/canvaspilot/calendar_export.py": "ef74cfdf50fd894327dbe45a9a9d43042953bc31",
+    "src/canvaspilot/session_broker.py": "cc706d5860489ec37cb2cf7f0b1cb4eee33b664f"
+  },
+  "source_pin_file_sha256": "edfa641b5e3880439c6fa65c6e9b779fd5e84f8f0b1cffebc24e089cb4ccd5ed",
+  "receiver_freeze_commit": "0590a79e437467cdac90b420828cb4bf036e6d58",
+  "two_page_receiver_sha256": "d2f0a8626f7bfcebd6f6cbf240b91d3dca228718024ebde5b3decda2dd10db7e",
+  "legacy_receiver_sha256": "e48456f822ca8861374641f4fa698f62d15c099e955cef2de354c26f78c6b75f",
+  "execution_native_heads": {
+    "pagination-composed-run": "b747b2ed00657587c3798936f8596209cdab7985",
+    "pagination-legacy-compatibility": "8f75e03121df061ff80f100ee276565d61fdb9c2"
+  },
+  "test_only_followup_changed_paths": [
+    "tests/test_calendar_pagination_errors.py"
+  ],
+  "production_changes_in_test_followup": [],
+  "receipts": {
+    "pagination-composed-run": {
+      "sha256": "8da18c8b8227c4b73f04c07e51eb8606d975a1fcd1ff05078e056c035a65207b",
+      "status": "candidate_contract_passed"
+    },
+    "pagination-legacy-compatibility": {
+      "sha256": "594c333dd1763cc670932b894fdf47cab90ced27d1903cd908d69e3bc3250f92",
+      "status": "legacy_broker_restart_refusal_passed"
+    }
+  },
+  "browser_expression_sha256": "10c759fc18d17167af671be400ee2aedc70357a04063a051420defa0e318f943",
+  "browser_review": "pagination-composition/browser-review.json",
+  "expected_page_uids": {
+    "https://school-a.instructure.com": {
+      "1": "dd1be4e3a1b9fcb6c01f19076f51372f84c0ba5d3b1915e6896e0381280580f3@canvaspilot",
+      "2": "03e27d6473b5bbf6e36e90690a7771baed89fb85503f5662b068af745c815564@canvaspilot"
+    },
+    "https://school-b.instructure.com": {
+      "1": "ae3e05812c81a0ba114457c28d8c29302f6ef23108367c128aa1b19e113957b6@canvaspilot",
+      "2": "866ea84938b7872822a424f85e99171b6b4283549cf3e93a488ca9a4eafeb54c@canvaspilot"
+    }
+  },
+  "no_prior_receivers_or_receipts_modified": true
+}

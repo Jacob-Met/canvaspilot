@@ -1,0 +1,66 @@
+{
+  "review": {
+    "verdict": "accepted",
+    "failures": [],
+    "sourceCommit": "8f75e03121df061ff80f100ee276565d61fdb9c2",
+    "expressionSHA256": "10c759fc18d17167af671be400ee2aedc70357a04063a051420defa0e318f943",
+    "browserReceiptSHA256": "dbb2831cf1eda15b7a822c5d674e9c3270cee1ab2275b98a15d509a35020ca2c",
+    "metadataReceiptSHA256": "fbfa54d164bf9116576725b094622eeec43168777fc1c23c3939b65f7d957618",
+    "browser": "154.0.8037.98",
+    "actualExpressionInputPin": "677130b070321b159ee09e30e81f8e3ec90b40a8",
+    "browserPasses": 5,
+    "metadataChecks": {
+      "rows": true,
+      "status": true,
+      "only_link": true,
+      "private_cookie_remains_browser": true
+    },
+    "foreignBaseApiRequests": [
+      {
+        "server": "a",
+        "method": "GET",
+        "path": "/api/assignments",
+        "origin": null
+      }
+    ],
+    "redirectApiRequests": [
+      {
+        "server": "a",
+        "method": "GET",
+        "path": "/api/redirect",
+        "origin": null
+      },
+      {
+        "server": "b",
+        "method": "GET",
+        "path": "/api/assignments",
+        "origin": "http://127.0.0.1:53002"
+      }
+    ],
+    "redirectLimit": "Response-origin guard refuses foreign redirected data after the browser follows the redirect; no prevention of the redirect network request is claimed."
+  },
+  "author_native_root": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-provider-routing-receiving",
+  "author_files": {
+    "receive_browser_origins.cjs": {
+      "sha256": "c400109a9fcf8a120b9f974d28d29150f2424b5652d7fb911c6474fbdd5234e9",
+      "bytes": 5581
+    },
+    "landed-pagination/browser/receipt.json": {
+      "sha256": "dbb2831cf1eda15b7a822c5d674e9c3270cee1ab2275b98a15d509a35020ca2c",
+      "bytes": 5333
+    },
+    "landed-pagination/metadata-playwright.json": {
+      "sha256": "fbfa54d164bf9116576725b094622eeec43168777fc1c23c3939b65f7d957618",
+      "bytes": 1143
+    },
+    "landed-pagination/receive_link_metadata.cjs": {
+      "sha256": "981c072ababa9be3d503ae605ef7ad098ffba41584da1861c058d29b431b07f5",
+      "bytes": 3201
+    },
+    "landed-pagination/browser-input.json": {
+      "sha256": "dbc433b00607be62de66af0e8a1b3eaa354eb319a9491e5abfe56db9fd06c34f",
+      "bytes": 1606
+    }
+  },
+  "standalone_owner_browser_attempt": "Reported timeout retained by author separately; not relabeled as passed. Separate Playwright exact-expression metadata receipt qualifies its stated four checks."
+}
