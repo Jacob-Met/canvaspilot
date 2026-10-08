@@ -1,0 +1,27 @@
+[
+  {
+    "command": [
+      "git",
+      "switch",
+      "-c",
+      "receiving/calendar-session-identity-pr37-49f845d0dece"
+    ],
+    "exit": 0,
+    "stdout": "",
+    "stderr": "Switched to a new branch 'receiving/calendar-session-identity-pr37-49f845d0dece'\n"
+  },
+  {
+    "command": [
+      "git",
+      "-c",
+      "user.name=Estate calendar receiver (49f845d0dece)",
+      "-c",
+      "user.email=estate-49f845d0dece@users.noreply.github.com",
+      "cherry-pick",
+      "af26c9bca55e05f261c021fb167876e7a7cc32c0"
+    ],
+    "exit": 0,
+    "stdout": "[receiving/calendar-session-identity-pr37-49f845d0dece c8a5021] Keep calendar identities bound to the active session provider\n Author: Estate product worker (49f845d0dece) <estate-49f845d0dece@users.noreply.github.com>\n Date: Thu Oct 8 04:45:00 2026 -0700\n 3 files changed, 158 insertions(+), 2 deletions(-)\n create mode 100644 tests/test_calendar_session_identity.py\n",
+    "stderr": ""
+  }
+]

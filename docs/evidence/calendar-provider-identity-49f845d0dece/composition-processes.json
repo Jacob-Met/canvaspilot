@@ -1,0 +1,85 @@
+[
+  {
+    "argv": [
+      "git",
+      "status",
+      "--porcelain"
+    ],
+    "cwd": "/Users/me/workspace/estate/production-evidence-49f845d0dece/canvaspilot-calendar",
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "fetch",
+      "--no-tags",
+      "https://github.com/Jacob-Met/canvaspilot.git",
+      "a03a8637efad8ff22103a0c5018c93f7ecbb7d8d",
+      "e20890089f6338de655a7c6ea7f0ada6d5c8fe6b",
+      "857a226d54c9784ca528bccc6ace7b4f02d90f4d"
+    ],
+    "cwd": "/Users/me/workspace/estate/production-evidence-49f845d0dece/canvaspilot-calendar",
+    "exit": 0,
+    "stdout": "",
+    "stderr": "From https://github.com/Jacob-Met/canvaspilot\n * branch            a03a8637efad8ff22103a0c5018c93f7ecbb7d8d -> FETCH_HEAD\n * branch            e20890089f6338de655a7c6ea7f0ada6d5c8fe6b -> FETCH_HEAD\n * branch            857a226d54c9784ca528bccc6ace7b4f02d90f4d -> FETCH_HEAD\n"
+  },
+  {
+    "argv": [
+      "git",
+      "worktree",
+      "add",
+      "--detach",
+      "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-pagination-main",
+      "a03a8637efad8ff22103a0c5018c93f7ecbb7d8d"
+    ],
+    "cwd": "/Users/me/workspace/estate/production-evidence-49f845d0dece/canvaspilot-calendar",
+    "exit": 0,
+    "stdout": "HEAD is now at a03a863 Export assignment deadlines to a local calendar snapshot (#42)\n",
+    "stderr": "Preparing worktree (detached HEAD a03a863)\n"
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-pagination-main",
+    "exit": 0,
+    "stdout": "a03a8637efad8ff22103a0c5018c93f7ecbb7d8d\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "git",
+      "worktree",
+      "add",
+      "--detach",
+      "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-pagination-pr35",
+      "a03a8637efad8ff22103a0c5018c93f7ecbb7d8d"
+    ],
+    "cwd": "/Users/me/workspace/estate/production-evidence-49f845d0dece/canvaspilot-calendar",
+    "exit": 0,
+    "stdout": "HEAD is now at a03a863 Export assignment deadlines to a local calendar snapshot (#42)\n",
+    "stderr": "Preparing worktree (detached HEAD a03a863)\n"
+  },
+  {
+    "argv": [
+      "git",
+      "-c",
+      "user.name=Estate calendar receiver (49f845d0dece)",
+      "-c",
+      "user.email=estate-49f845d0dece@users.noreply.github.com",
+      "merge",
+      "--no-ff",
+      "e20890089f6338de655a7c6ea7f0ada6d5c8fe6b",
+      "-m",
+      "Receive published pr35 into calendar main for isolated consumer qualification"
+    ],
+    "cwd": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-pagination-pr35",
+    "exit": 1,
+    "stdout": "Auto-merging README.md\nCONFLICT (content): Merge conflict in README.md\nAutomatic merge failed; fix conflicts and then commit the result.\n",
+    "stderr": ""
+  }
+]

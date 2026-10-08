@@ -44,7 +44,15 @@ remain, the command returns an error and creates no empty calendar.
 
 A deadline keeps the same UID when its name or due date changes, using the
 Canvas source, course ID and assignment ID as identity. Different courses or
-schools remain distinct. Import applications differ in how they handle an
+schools remain distinct. Session exports use the running broker's configured
+Canvas provider, including when the CLI retains its default host; token and
+fixture exports use their configured client base. The broker must identify a
+valid provider and remain on that provider throughout the export. The writer
+checks identity before reading and after each selected course, refusing a missing
+or changed provider instead of publishing mixed-source identities. These checks
+do not lock the broker or create a transactional server snapshot.
+
+Import applications differ in how they handle an
 already imported UID: this command does **not** guarantee that re-importing
 will update or remove previous calendar entries. Check the import preview or
 use a dedicated calendar for each snapshot as appropriate.
