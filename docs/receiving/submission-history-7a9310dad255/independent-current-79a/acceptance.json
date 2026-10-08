@@ -1,0 +1,116 @@
+{
+  "accepted": true,
+  "kind": "unchanged independent current-parent receiving and narrow composition source review",
+  "public_parent": "79a2f2b2cbb7e74128d731cf096c7e86f1942d4b",
+  "public_parent_tree": "0114a6230c473c1ee1d01b99c7121c754b781d54",
+  "candidate_head": "67a1963d8b34bff33ee504c8fd8a1fc4c4af9e86",
+  "candidate_tree": "bf2d1499fe0e3fdd620297fa01a1ab705b46637b",
+  "source_manifest": {
+    "path": "/tmp/hamon-7a9310dad255-canvas-history-memory/received-current-79a-candidate-owner-manifest.json",
+    "bytes": 213715,
+    "sha256": "b81aed59a0751b602a425b745ad1aa8e73eb2f7c24a5a6c3609e3119ff8b779a",
+    "git_blob": "87cd76e65158cb6844675f9976f6eb5736d16573"
+  },
+  "unchanged_feature_files": [
+    "docs/submission-history.md",
+    "src/canvaspilot/api.py",
+    "src/canvaspilot/bundle.py",
+    "src/canvaspilot/mcp_server.py",
+    "src/canvaspilot/submission_history.py",
+    "tests/test_submission_history.py",
+    "tests/test_submission_history_process.py"
+  ],
+  "composed_feature_files": [
+    "README.md",
+    "src/canvaspilot/cli.py"
+  ],
+  "cli_review": "Reversing exactly the two incoming calendar-specific CanvasPaginationError additions restores the complete accepted bc1 CLI byte-for-byte.",
+  "readme_review": "Applying only the exact original history README changes onto verified current79a README reproduces the entire composed README byte-for-byte.",
+  "readme_hunks": [
+    {
+      "operation": "insert",
+      "before": "",
+      "after": "- **Submission history** \u2014 inspect returned attempts and submitted text/file metadata without assigning current grades or comments to earlier versions ([guide](docs/submission-history.md))\n"
+    },
+    {
+      "operation": "replace",
+      "before": "- **36 MCP tools**, one stdio server, one env var for the host (`CANVAS_BASE_URL`) plus either a PAT or a running session broker\n",
+      "after": "- **37 MCP tools**, one stdio server, one env var for the host (`CANVAS_BASE_URL`) plus either a PAT or a running session broker\n"
+    },
+    {
+      "operation": "insert",
+      "before": "",
+      "after": "canvaspilot submission-history <course_id> <assignment_id>\n"
+    },
+    {
+      "operation": "replace",
+      "before": "| Assignments | `list_assignments`, `get_assignment`, `assignment_brief`, `submission_status`, `submission_feedback`, `submit_assignment_text` |\n",
+      "after": "| Assignments | `list_assignments`, `get_assignment`, `assignment_brief`, `submission_status`, `submission_feedback`, `submission_history`, `submit_assignment_text` |\n"
+    }
+  ],
+  "receipt": {
+    "path": "/tmp/hamon-7a9310dad255-canvas-history-memory/current-79a-candidate-run/receipt.json",
+    "bytes": 11805,
+    "sha256": "8c64807921389fe427d05d898d445614b99c923a342856eee0d397adbfaa1d39",
+    "git_blob": "00c7b811e85c96302823e81838a8ffa7da0b3655"
+  },
+  "run": {
+    "command": [
+      "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+      "-B",
+      "/tmp/hamon-7a9310dad255-canvas-history-memory/receive_history.py",
+      "--source",
+      "/tmp/hamon-7a9310dad255-canvas-history-memory/received-candidate-67a196",
+      "--out",
+      "/tmp/hamon-7a9310dad255-canvas-history-memory/current-79a-candidate-run"
+    ],
+    "exit": 0,
+    "seconds": 32.309615061967634,
+    "owner_head": "67a1963d8b34bff33ee504c8fd8a1fc4c4af9e86",
+    "source_entries": 13
+  },
+  "execution": {
+    "path": "/tmp/hamon-7a9310dad255-canvas-history-memory/current-79a-candidate-execution.json",
+    "bytes": 492,
+    "sha256": "3b481240f77dad501df2ec409e8fe2f10d63201478a7ec088a743510261fde5b",
+    "git_blob": "7d77360f0299b9dc6ca5ebbd702668536ee6b4f1"
+  },
+  "stdout": {
+    "path": "/tmp/hamon-7a9310dad255-canvas-history-memory/current-79a-candidate-process.stdout",
+    "bytes": 660,
+    "sha256": "b3cc6e8e091c3bd941d5787228e529fb708b2cba6fd9032656d5f7e70d8f4241",
+    "git_blob": "b0f961655793fea39c1f9dcc82fe463273998db6"
+  },
+  "stderr": {
+    "path": "/tmp/hamon-7a9310dad255-canvas-history-memory/current-79a-candidate-process.stderr",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+  },
+  "runner": {
+    "path": "/tmp/hamon-7a9310dad255-canvas-history-memory/receive_history.py",
+    "bytes": 29132,
+    "sha256": "158aa881f34a479a0ebcca0bf679f6cdff28ef8a8588d5d2a6a585e1983e84c3",
+    "git_blob": "ccb55d3fdafdcf1068a53d245757501387ae39af"
+  },
+  "contract": {
+    "path": "/tmp/hamon-7a9310dad255-canvas-history-memory/contract.json",
+    "bytes": 3654,
+    "sha256": "1ca24427f6dd1bcb9bcdd3e5b69614b3dd6cc1c69cb82d75c2aacd2def23b7fc",
+    "git_blob": "c5e0094bf3e17b15b9ae697653ed9cd449a0e59c"
+  },
+  "fixture": {
+    "path": "/tmp/hamon-7a9310dad255-canvas-history-memory/fixture.json",
+    "bytes": 2682,
+    "sha256": "4f5ca3be3b5676be3262fc9f503377231edbab562daac6e2c9f79ba5518d32aa",
+    "git_blob": "fd0fab25023bd1be950406d43d2acb2d930439ab"
+  },
+  "counts": {
+    "passed": 9,
+    "failed": 0,
+    "assertions": 465,
+    "source_unchanged": true
+  },
+  "source_entries": 13,
+  "limits": "Native API, synthetic loopback HTTP CLI, and actual MCP stdio receiving; no school/account/browser/session-broker activation or deployment."
+}

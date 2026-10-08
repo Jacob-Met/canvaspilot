@@ -1,0 +1,120 @@
+{
+  "assignment": {
+    "id": 92,
+    "course_id": "0007",
+    "name": "History receiver — café\n\"literal\"",
+    "html_url": "https://assignment.invalid/review/92",
+    "due_at": null,
+    "points_possible": 0,
+    "description": "must not project",
+    "submission": {
+      "score": 999
+    },
+    "published": false
+  },
+  "submission": {
+    "id": 901,
+    "assignment_id": 92,
+    "user_id": 1701,
+    "attempt": 8,
+    "score": 0,
+    "grade": null,
+    "late": false,
+    "workflow_state": "submitted",
+    "submitted_at": null,
+    "body": "current <p>body & raw</p>",
+    "url": "https://submission.invalid/keep-metadata",
+    "attachments": [
+      {
+        "id": "09007199254740993",
+        "url": "https://download.invalid/never-open",
+        "size": 0,
+        "display_name": "review → draft.txt"
+      }
+    ],
+    "extension": {
+      "flags": [
+        false,
+        null,
+        0
+      ],
+      "owner": "current"
+    },
+    "submission_history": [
+      {
+        "id": "same-id",
+        "attempt": 4,
+        "score": null,
+        "grade": "",
+        "late": false,
+        "body": "historical version α",
+        "submission_comments": [
+          {
+            "id": "shared-comment-id",
+            "comment": "Historical-only remark",
+            "author_id": 44
+          }
+        ],
+        "extension": {
+          "array": [
+            0,
+            false,
+            null
+          ],
+          "version": "older"
+        }
+      },
+      {
+        "attempt": 1,
+        "grade": 0,
+        "submitted_at": false,
+        "submission_type": "online_url",
+        "url": "https://historical.invalid/no-open",
+        "attachments": [],
+        "extension": {
+          "missing_score_is_unknown": true
+        }
+      },
+      {
+        "id": "same-id",
+        "attempt": 4,
+        "score": null,
+        "grade": "",
+        "late": false,
+        "body": "historical version α",
+        "submission_comments": [
+          {
+            "id": "shared-comment-id",
+            "comment": "Historical-only remark",
+            "author_id": 44
+          }
+        ],
+        "extension": {
+          "array": [
+            0,
+            false,
+            null
+          ],
+          "version": "older"
+        }
+      },
+      {}
+    ],
+    "submission_comments": [
+      {
+        "id": "shared-comment-id",
+        "comment": "Top-level remark stays separate",
+        "author_id": 55,
+        "attempt": null,
+        "extensions": {
+          "published": false
+        }
+      },
+      {
+        "id": "shared-comment-id",
+        "comment": "Duplicate top-level comment remains",
+        "author_id": 55
+      }
+    ]
+  }
+}

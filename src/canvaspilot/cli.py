@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import logging
 import sys
 from pathlib import Path
 
@@ -113,6 +114,19 @@ def main(argv: list[str] | None = None) -> None:
     progress.add_argument("course_id", help="Positive numeric Canvas course ID")
     progress.add_argument("--module-id", default=None, help="Inspect one returned module ID")
 
+    history = sub.add_parser(
+        "submission-history",
+        help="Read your returned submission versions and their submitted content",
+        description=(
+            "Read the current self submission and Canvas-returned history. "
+            "Missing history stays unavailable; grades and comments are not "
+            "assigned to other attempts."
+        ),
+    )
+    add_common(history)
+    history.add_argument("course_id", help="Positive numeric Canvas course ID")
+    history.add_argument("assignment_id", help="Positive numeric Canvas assignment ID")
+
     mcp = sub.add_parser("mcp", help="Run MCP stdio server")
     add_common(mcp)
 
@@ -199,6 +213,26 @@ def main(argv: list[str] | None = None) -> None:
                 }), file=sys.stderr)
                 raise SystemExit(1) from None
             print(json.dumps({"ok": True, "output": str(args.out), **report}, indent=2))
+        elif args.cmd == "submission-history":
+            import httpx
+
+            from canvaspilot.client import CanvasAuthError
+
+            # MCP initialization can enable HTTPX request logs; keep this CLI
+            # report machine-readable and restore the caller's logging setting.
+            http_log = logging.getLogger("httpx")
+            previous_level = http_log.level
+            http_log.setLevel(max(http_log.getEffectiveLevel(), logging.WARNING))
+            try:
+                result = api.submission_history(args.course_id, args.assignment_id)
+            except (CanvasAuthError, httpx.HTTPError, ValueError) as error:
+                print(json.dumps({
+                    "ok": False, "error": type(error).__name__, "message": str(error),
+                }), file=sys.stderr)
+                raise SystemExit(1) from None
+            finally:
+                http_log.setLevel(previous_level)
+            print(json.dumps(result, indent=2))
         elif args.cmd == "module-progress":
             import httpx
 

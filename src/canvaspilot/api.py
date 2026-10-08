@@ -572,6 +572,12 @@ class CanvasAPI:
             params.append(("context_codes[]", code))
         return self.client.get_paginated("/api/v1/calendar_events", params=params or None)
 
+    def submission_history(self, course_id: int | str, assignment_id: int | str) -> dict[str, Any]:
+        """Read the current self submission and exactly the history Canvas returns."""
+        from canvaspilot.submission_history import read_submission_history
+
+        return read_submission_history(self.client, course_id, assignment_id)
+
     def submission_status(self, course_id: int | str, assignment_id: int | str) -> dict[str, Any]:
         return self.client.request(
             "GET",
