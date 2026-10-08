@@ -67,6 +67,12 @@ canvaspilot sync
 canvaspilot brief <course_id> <assignment_id>
 ```
 
+`canvaspilot sync` orders upcoming assignments by deadline across the selected
+courses. It includes up to 10 courses and 5 assignments per course by default,
+and reports omitted rows, unknown dates, and per-course read failures. Adjust
+the overview with `--limit-courses` and `--limit-assignments-per-course`; see
+[the sync guide](docs/SYNC.md) for CLI, Python, and MCP examples and count meanings.
+
 With a PAT instead:
 
 ```bash

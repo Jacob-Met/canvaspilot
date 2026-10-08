@@ -1,0 +1,10 @@
+{
+  "candidate_head": "89fa86d20e4eff47ce42e18afd8cd8e75ab376c3",
+  "baseline_head": "5b1780ca4fcdce3d5f997cee401c86806ece822a",
+  "files": {
+    "candidate/src/canvaspilot/client.py": "45a60b2c31a3c95914dca9d563958422bc346478a9d70f0058f9c5c623f20ada",
+    "candidate/src/canvaspilot/session_broker.py": "749e11c92d6d56d54ccf208dda6784cb2d43ac3b837188f5d82bfe73c3129e8e",
+    "baseline/src/canvaspilot/client.py": "6368329745216f473204995c101c912d9070fdd310def150bdbee927f9872de4",
+    "baseline/src/canvaspilot/session_broker.py": "2a106130c344aefebb23b078cd93b5d3ca3afd7f5325ae5fac2fb8a7251780cc"
+  }
+}

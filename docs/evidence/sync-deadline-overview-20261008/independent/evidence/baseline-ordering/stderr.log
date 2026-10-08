@@ -1,0 +1,52 @@
+test_default_limits_choose_earliest_then_merge_courses (__main__.IndependentSyncReview.test_default_limits_choose_earliest_then_merge_courses) ... FAIL
+test_offsets_same_instant_and_source_values_are_stable (__main__.IndependentSyncReview.test_offsets_same_instant_and_source_values_are_stable) ... FAIL
+test_extreme_valid_dates_and_microseconds_sort_without_float_loss (__main__.IndependentSyncReview.test_extreme_valid_dates_and_microseconds_sort_without_float_loss) ... FAIL
+
+======================================================================
+FAIL: test_default_limits_choose_earliest_then_merge_courses (__main__.IndependentSyncReview.test_default_limits_choose_earliest_then_merge_courses)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/3dab0b9d2ce9/estate-runtime/canvaspilot-review/test_independent_sync.py", line 106, in test_default_limits_choose_earliest_then_merge_courses
+    self.assertEqual(ids(summary), expected)
+AssertionError: Lists differ: ['1-20', '1-19', '1-18', '1-17', '1-16', '2-2[355 chars]-16'] != ['1-8', '2-8', '3-8', '4-8', '5-8', '6-8', '7[345 chars]-19']
+
+First differing element 0:
+'1-20'
+'1-8'
+
+Diff is 1046 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_offsets_same_instant_and_source_values_are_stable (__main__.IndependentSyncReview.test_offsets_same_instant_and_source_values_are_stable)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/3dab0b9d2ce9/estate-runtime/canvaspilot-review/test_independent_sync.py", line 132, in test_offsets_same_instant_and_source_values_are_stable
+    self.assertEqual(ids(first), ["a-first", "a-east", "a-west", "b-tie", "a-late", "b-later"])
+AssertionError: Lists differ: ['a-late', 'a-east', 'a-west', 'a-first', 'b-tie', 'b-later'] != ['a-first', 'a-east', 'a-west', 'b-tie', 'a-late', 'b-later']
+
+First differing element 0:
+'a-late'
+'a-first'
+
+- ['a-late', 'a-east', 'a-west', 'a-first', 'b-tie', 'b-later']
++ ['a-first', 'a-east', 'a-west', 'b-tie', 'a-late', 'b-later']
+
+======================================================================
+FAIL: test_extreme_valid_dates_and_microseconds_sort_without_float_loss (__main__.IndependentSyncReview.test_extreme_valid_dates_and_microseconds_sort_without_float_loss)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/3dab0b9d2ce9/estate-runtime/canvaspilot-review/test_independent_sync.py", line 157, in test_extreme_valid_dates_and_microseconds_sort_without_float_loss
+    self.assertEqual(ids(summary), ["first-outside-utc", "first", "last", "last-plus", "last-outside-utc"])
+AssertionError: Lists differ: ['last-outside-utc', 'last-plus', 'last', 'first', 'first-outside-utc'] != ['first-outside-utc', 'first', 'last', 'last-plus', 'last-outside-utc']
+
+First differing element 0:
+'last-outside-utc'
+'first-outside-utc'
+
+- ['last-outside-utc', 'last-plus', 'last', 'first', 'first-outside-utc']
++ ['first-outside-utc', 'first', 'last', 'last-plus', 'last-outside-utc']
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.009s
+
+FAILED (failures=3)

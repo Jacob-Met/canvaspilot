@@ -1,0 +1,113 @@
+{
+  "label": "baseline-ordering",
+  "started_utc": "2026-10-08T08:23:39.469490+00:00",
+  "ended_utc": "2026-10-08T08:23:41.935739+00:00",
+  "source_root": "/workspace/scratch/3dab0b9d2ce9/estate-runtime/canvaspilot-review/baseline",
+  "argv": [
+    "/workspace/scratch/3dab0b9d2ce9/canvaspilot-product/test-env/bin/python",
+    "-B",
+    "/workspace/scratch/3dab0b9d2ce9/estate-runtime/canvaspilot-review/test_independent_sync.py",
+    "IndependentSyncReview.test_default_limits_choose_earliest_then_merge_courses",
+    "IndependentSyncReview.test_offsets_same_instant_and_source_values_are_stable",
+    "IndependentSyncReview.test_extreme_valid_dates_and_microseconds_sort_without_float_loss"
+  ],
+  "environment": {
+    "PATH": "/usr/bin:/bin",
+    "PYTHONPATH": "/workspace/scratch/3dab0b9d2ce9/estate-runtime/canvaspilot-review/baseline/src",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONHASHSEED": "0",
+    "LC_ALL": "C.UTF-8"
+  },
+  "exit_code": 1,
+  "probe": {
+    "sha256": "74a393296321593a3fdf0a7fb6d9de95dbf65faedc9d5e325970cccda14dc2a7",
+    "bytes": 11169
+  },
+  "driver": {
+    "sha256": "71255f9369069150d4dde6bb55afdffdd158b177c730f23eaebff5dc9025d07a",
+    "bytes": 2362
+  },
+  "runtime_executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+  "runtime_sha256": {
+    "sha256": "fa67443527ed9647f760d807e2a38f26340757123e643c4639cf273ed15d5ea7",
+    "bytes": 30894944
+  },
+  "source_before": {
+    "src/canvaspilot/__init__.py": {
+      "sha256": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5",
+      "bytes": 561
+    },
+    "src/canvaspilot/api.py": {
+      "sha256": "f3583da81feb695b818b51111dd05f05e3c3eba6cf6aa6439a3a966c3f0d0621",
+      "bytes": 18248
+    },
+    "src/canvaspilot/bundle.py": {
+      "sha256": "db1ca6da89ea4f1a07c327f56ab40a39fe89e22c91034ed2be8fb3e497a6e696",
+      "bytes": 2550
+    },
+    "src/canvaspilot/cli.py": {
+      "sha256": "e52ddca6ae538e2d11482d3be70f3201ad0b14070414c862beca363d50f49228",
+      "bytes": 7330
+    },
+    "src/canvaspilot/client.py": {
+      "sha256": "7cc5f5df0834daf98dd75801b569345acec58fd8c982cbf746af4c6aea367f7d",
+      "bytes": 11939
+    },
+    "src/canvaspilot/mcp_server.py": {
+      "sha256": "3012df86f365d054f92db20b733562bef6871c65ff88d75e0acb893a0414fb4f",
+      "bytes": 10096
+    },
+    "src/canvaspilot/offline_demo.py": {
+      "sha256": "2389f3ccc1b6db5995be0d90e014ea9345e3029aa5546a5b2dcf12c1197e6d4d",
+      "bytes": 4124
+    },
+    "src/canvaspilot/session_broker.py": {
+      "sha256": "2a106130c344aefebb23b078cd93b5d3ca3afd7f5325ae5fac2fb8a7251780cc",
+      "bytes": 12151
+    }
+  },
+  "source_after": {
+    "src/canvaspilot/__init__.py": {
+      "sha256": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5",
+      "bytes": 561
+    },
+    "src/canvaspilot/api.py": {
+      "sha256": "f3583da81feb695b818b51111dd05f05e3c3eba6cf6aa6439a3a966c3f0d0621",
+      "bytes": 18248
+    },
+    "src/canvaspilot/bundle.py": {
+      "sha256": "db1ca6da89ea4f1a07c327f56ab40a39fe89e22c91034ed2be8fb3e497a6e696",
+      "bytes": 2550
+    },
+    "src/canvaspilot/cli.py": {
+      "sha256": "e52ddca6ae538e2d11482d3be70f3201ad0b14070414c862beca363d50f49228",
+      "bytes": 7330
+    },
+    "src/canvaspilot/client.py": {
+      "sha256": "7cc5f5df0834daf98dd75801b569345acec58fd8c982cbf746af4c6aea367f7d",
+      "bytes": 11939
+    },
+    "src/canvaspilot/mcp_server.py": {
+      "sha256": "3012df86f365d054f92db20b733562bef6871c65ff88d75e0acb893a0414fb4f",
+      "bytes": 10096
+    },
+    "src/canvaspilot/offline_demo.py": {
+      "sha256": "2389f3ccc1b6db5995be0d90e014ea9345e3029aa5546a5b2dcf12c1197e6d4d",
+      "bytes": 4124
+    },
+    "src/canvaspilot/session_broker.py": {
+      "sha256": "2a106130c344aefebb23b078cd93b5d3ca3afd7f5325ae5fac2fb8a7251780cc",
+      "bytes": 12151
+    }
+  },
+  "source_unchanged": true,
+  "stdout": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  "stderr": {
+    "sha256": "450a8f67b47d004b5295dcac15999249f22cfdbd44d9223a280e4b775eefffc1",
+    "bytes": 3354
+  },
+  "boundary": "Authored CanvasClient fixture data only. Socket connect, broker access, profile/default lookups guarded; no network install or account operations."
+}

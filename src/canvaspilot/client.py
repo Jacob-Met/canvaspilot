@@ -333,7 +333,7 @@ class CanvasClient:
             next_url = _session_link_next(links[0])
             chunk = response["json"] if response.get("json") is not None else response.get("text")
             if not isinstance(chunk, list):
-                if next_url:
+                if next_url or page > 0:
                     raise CanvasPaginationError("session pagination returned a non-list continuing page")
                 out.append(chunk)
                 return out
@@ -428,15 +428,20 @@ def _session_link_next(header: str) -> str | None:
         link = _SESSION_LINK.match(header, offset)
         if link is None or not link[1]:
             raise CanvasPaginationError("session pagination Link header is malformed")
-        relations = [param[2] for param in _SESSION_LINK_PARAM.finditer(link[2])
-                     if param[1].lower() == "rel"]
+        params = list(_SESSION_LINK_PARAM.finditer(link[2]))
+        # An anchor changes the link's context. This collection traversal does
+        # not support alternate contexts, so ignore the entire anchored link.
+        if any(param[1].lower() == "anchor" for param in params):
+            offset = link.end()
+            continue
+        relations = [param[2] for param in params if param[1].lower() == "rel"]
         if len(relations) > 1 or (relations and relations[0] is None):
             raise CanvasPaginationError("session pagination Link relation is ambiguous")
         if relations:
             value = relations[0]
             if value.startswith('"'):
                 value = re.sub(r"\\(.)", r"\1", value[1:-1])
-            if "next" in value.split():
+            if "next" in value.lower().split():
                 if next_url is not None:
                     raise CanvasPaginationError("session pagination has multiple next links")
                 next_url = link[1]

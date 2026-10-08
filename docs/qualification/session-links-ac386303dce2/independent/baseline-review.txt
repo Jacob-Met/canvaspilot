@@ -1,0 +1,113 @@
+test_anchored_next_does_not_hide_the_applicable_next (__main__.LinkContextReceiving.test_anchored_next_does_not_hide_the_applicable_next) ... HTTP Request: GET http://127.0.0.1:35895/health "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:35895/fetch "HTTP/1.0 200 OK"
+FAIL
+test_older_broker_terminal_short_page_still_works (__main__.LinkContextReceiving.test_older_broker_terminal_short_page_still_works) ... HTTP Request: POST http://127.0.0.1:42229/fetch "HTTP/1.0 200 OK"
+ok
+test_other_origin_is_refused_before_dispatch (__main__.LinkContextReceiving.test_other_origin_is_refused_before_dispatch) ... HTTP Request: GET http://127.0.0.1:37105/health "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:37105/fetch "HTTP/1.0 200 OK"
+FAIL
+test_other_resource_anchor_is_not_current_pagination (__main__.LinkContextReceiving.test_other_resource_anchor_is_not_current_pagination) ... HTTP Request: GET http://127.0.0.1:42831/health "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:42831/fetch "HTTP/1.0 200 OK"
+ok
+test_registered_next_relation_is_case_insensitive (__main__.LinkContextReceiving.test_registered_next_relation_is_case_insensitive) ... HTTP Request: GET http://127.0.0.1:36835/health "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:36835/fetch "HTTP/1.0 200 OK"
+
+  test_registered_next_relation_is_case_insensitive (__main__.LinkContextReceiving.test_registered_next_relation_is_case_insensitive) (relation='NEXT') ... FAIL
+HTTP Request: GET http://127.0.0.1:42199/health "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:42199/fetch "HTTP/1.0 200 OK"
+  test_registered_next_relation_is_case_insensitive (__main__.LinkContextReceiving.test_registered_next_relation_is_case_insensitive) (relation='NeXt') ... FAIL
+HTTP Request: GET http://127.0.0.1:38021/health "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:38021/fetch "HTTP/1.0 200 OK"
+  test_registered_next_relation_is_case_insensitive (__main__.LinkContextReceiving.test_registered_next_relation_is_case_insensitive) (relation='prev NEXT') ... FAIL
+test_standard_opaque_continuation_preserves_punctuation (__main__.LinkContextReceiving.test_standard_opaque_continuation_preserves_punctuation) ... HTTP Request: GET http://127.0.0.1:46473/health "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:46473/fetch "HTTP/1.0 200 OK"
+FAIL
+
+======================================================================
+FAIL: test_anchored_next_does_not_hide_the_applicable_next (__main__.LinkContextReceiving.test_anchored_next_does_not_hide_the_applicable_next)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/canvas-receiving-ac386303dce2/test_link_context_receiving.py", line 77, in test_anchored_next_does_not_hide_the_applicable_next
+    self.assertEqual([row['id'] for row in self.collect()], [1, 2])
+AssertionError: Lists differ: [1] != [1, 2]
+
+Second list contains 1 additional elements.
+First extra element 1:
+2
+
+- [1]
++ [1, 2]
+
+======================================================================
+FAIL: test_other_origin_is_refused_before_dispatch (__main__.LinkContextReceiving.test_other_origin_is_refused_before_dispatch)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/canvas-receiving-ac386303dce2/test_link_context_receiving.py", line 87, in test_other_origin_is_refused_before_dispatch
+    with self.assertRaisesRegex(RuntimeError, 'origin'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: RuntimeError not raised
+
+======================================================================
+FAIL: test_registered_next_relation_is_case_insensitive (__main__.LinkContextReceiving.test_registered_next_relation_is_case_insensitive) (relation='NEXT')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/canvas-receiving-ac386303dce2/test_link_context_receiving.py", line 64, in test_registered_next_relation_is_case_insensitive
+    self.assertEqual([row['id'] for row in self.collect()], [1, 2])
+AssertionError: Lists differ: [1] != [1, 2]
+
+Second list contains 1 additional elements.
+First extra element 1:
+2
+
+- [1]
++ [1, 2]
+
+======================================================================
+FAIL: test_registered_next_relation_is_case_insensitive (__main__.LinkContextReceiving.test_registered_next_relation_is_case_insensitive) (relation='NeXt')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/canvas-receiving-ac386303dce2/test_link_context_receiving.py", line 64, in test_registered_next_relation_is_case_insensitive
+    self.assertEqual([row['id'] for row in self.collect()], [1, 2])
+AssertionError: Lists differ: [1] != [1, 2]
+
+Second list contains 1 additional elements.
+First extra element 1:
+2
+
+- [1]
++ [1, 2]
+
+======================================================================
+FAIL: test_registered_next_relation_is_case_insensitive (__main__.LinkContextReceiving.test_registered_next_relation_is_case_insensitive) (relation='prev NEXT')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/canvas-receiving-ac386303dce2/test_link_context_receiving.py", line 64, in test_registered_next_relation_is_case_insensitive
+    self.assertEqual([row['id'] for row in self.collect()], [1, 2])
+AssertionError: Lists differ: [1] != [1, 2]
+
+Second list contains 1 additional elements.
+First extra element 1:
+2
+
+- [1]
++ [1, 2]
+
+======================================================================
+FAIL: test_standard_opaque_continuation_preserves_punctuation (__main__.LinkContextReceiving.test_standard_opaque_continuation_preserves_punctuation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/dev/shm/canvas-receiving-ac386303dce2/test_link_context_receiving.py", line 82, in test_standard_opaque_continuation_preserves_punctuation
+    self.assertEqual([row['id'] for row in self.collect()], [1, 2])
+AssertionError: Lists differ: [1] != [1, 2]
+
+Second list contains 1 additional elements.
+First extra element 1:
+2
+
+- [1]
++ [1, 2]
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.204s
+
+FAILED (failures=6)
