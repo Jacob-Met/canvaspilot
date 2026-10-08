@@ -1,0 +1,28 @@
+{
+  "format": "canvaspilot-author-archive-integrity-v1",
+  "native_seal": {
+    "archive": "/Users/me/hamon-canvas-comparison-db371a37f4c8/author-evidence.tar.xz",
+    "bytes": 875596,
+    "sha256": "f7d960c1778ea5670e0c27ea0edde1e1f4ed6d76e30bcf0ca8cbea69b71bc216",
+    "git_blob": "2de7f23f6e8d12b075cb97bf0debeceeb8dd985a",
+    "members": 345,
+    "uncompressed_member_bytes": 4936514,
+    "manifest_sha256": "11fff5e07ca0c5be629a5bc1ac5be1f82aec9a33a90a285ca302e8fb0d74d018",
+    "verified_extraction_members": 345,
+    "base64_characters": 1167464,
+    "private_source_commit": "7ca4fc69095829e39afa0dac898c3a0195fe5a45",
+    "disk_free": 291528704
+  },
+  "controller_transfer": {
+    "bytes": 875596,
+    "sha256": "f7d960c1778ea5670e0c27ea0edde1e1f4ed6d76e30bcf0ca8cbea69b71bc216",
+    "git_blob": "2de7f23f6e8d12b075cb97bf0debeceeb8dd985a",
+    "manifest_sha256": "11fff5e07ca0c5be629a5bc1ac5be1f82aec9a33a90a285ca302e8fb0d74d018",
+    "archive_bytes_verified": true,
+    "manifest_bytes_verified": true,
+    "contribution_files_verified": 7
+  },
+  "native_full_suite": "incomplete_environmental_ENOSPC",
+  "root_receiving": "pending",
+  "hosted_full_suite": "pending"
+}

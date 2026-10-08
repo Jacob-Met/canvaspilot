@@ -1,0 +1,90 @@
+{
+  "assignment": {
+    "id": 902,
+    "course_id": 71,
+    "name": "Revision notebook · 波",
+    "html_url": "https://canvas.example.invalid/courses/71/assignments/902",
+    "due_at": null,
+    "points_possible": 10
+  },
+  "submission": {
+    "id": 8801,
+    "assignment_id": 902,
+    "course_id": 71,
+    "user_id": 310,
+    "attempt": 4,
+    "submitted_at": "2026-10-08T11:40:00Z",
+    "submission_type": "online_text_entry",
+    "body": "<h2>Wave notebook · 波</h2><p>The period is 2 seconds.</p><p>Energy follows amplitude squared.</p><p>Keep café é and 👩🏽‍🔬 literal.</p><img src=\"https://probe.example.invalid/current.png\" onerror=\"window.submittedMarkupRan=true\"><script>window.submittedMarkupRan=true</script><style>body{display:none}</style>",
+    "url": "https://student.example.invalid/notebook?q=%E6%B3%A2&keep=%2f#revision",
+    "attachments": [
+      {
+        "id": 9007199254740993,
+        "display_name": "波 — revised.pdf",
+        "filename": "revision-2.pdf",
+        "content-type": "application/pdf",
+        "size": 0,
+        "url": "https://files.example.invalid/download?download_frd=1&name=%E6%B3%A2",
+        "locked": false,
+        "future_metadata": {"blank": "", "unknown": null}
+      }
+    ],
+    "media_comment": {
+      "media_id": "m-7",
+      "media_type": "audio",
+      "url": "https://media.example.invalid/audio?id=7"
+    },
+    "score": 0,
+    "grade": "0",
+    "grade_matches_current_submission": false,
+    "future_field": {"enabled": false, "count": 0, "literal": "</pre><script>alert('x')</script>"},
+    "submission_history": [
+      {
+        "id": 8801,
+        "assignment_id": 902,
+        "user_id": 310,
+        "attempt": 2,
+        "submitted_at": "2026-10-08T09:00:00Z",
+        "submission_type": "online_text_entry",
+        "body": "<h2>Wave notebook · 波</h2><p>The period is 3 seconds.</p><p>Energy follows amplitude.</p><p>Keep café é and 👩🏽‍🔬 literal.</p>",
+        "url": "https://student.example.invalid/notebook?q=%E6%B3%A2&keep=%2F#revision",
+        "attachments": [
+          {
+            "id": 9007199254740993,
+            "display_name": "波 — original.pdf",
+            "filename": "revision-1.pdf",
+            "content-type": "application/pdf",
+            "size": 0,
+            "url": "https://files.example.invalid/original?name=%E6%B3%A2",
+            "locked": false
+          }
+        ],
+        "score": null,
+        "record_local_comment": {"text": "This belongs to history position 1", "attempt": 2}
+      },
+      {
+        "id": 8801,
+        "assignment_id": 902,
+        "attempt": 2,
+        "submitted_at": "2026-10-09T16:00:00Z",
+        "submission_type": "online_url",
+        "body": "",
+        "url": "",
+        "attachments": null,
+        "media_comment": null,
+        "future_field": {"enabled": 0, "count": false}
+      },
+      {
+        "assignment_id": 902,
+        "attempt": 1,
+        "submitted_at": null,
+        "submission_type": "online_upload",
+        "body": null,
+        "attachments": []
+      }
+    ],
+    "submission_comments": [
+      {"id": 800, "attempt": 4, "comment": "Current-only feedback, not a historical join"}
+    ]
+  }
+}
