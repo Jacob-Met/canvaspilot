@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "reviewer": "chatgpt:5f566b5ec8ef:mac_continuity",
+  "scope": "Selected Canvas Pages offline reading packet: source identity, inert HTML retention, exclusive complete publication; no edits or duplicate execution.",
+  "decision": "No blocker found in the two exact product sources reviewed. Final native HTTP-to-CLI process and current composition receipts remain separate receiving gates.",
+  "pins": {
+    "src/canvaspilot/page_export.py": "8800e959ee620438273c3291fd24c51b9ed567430b28093cd3f8bef52bff5015",
+    "src/canvaspilot/cli.py": "0a6061396f6043960971dd0db8fef372710bbd9b6f77a63c474f3714dbfa0238"
+  },
+  "checks": [
+    "Course ID, requested URL or explicit page_id, returned normalized page IDs and provider identity are bound before rendering; alias duplicates are refused.",
+    "Current official Pages API URL-first numeric locator semantics match the implemented parser and encoded request path.",
+    "Original UTF-8 HTML is retained as escaped inert source, including carriage-return handling; the reading projection is separately labelled and escaped.",
+    "Provider HTML cannot introduce active DOM resources; generated links use the verified Canvas source and fixed encoded course/page paths.",
+    "All selected pages are collected within declared source and output limits before publication. This is honestly described as sequential reads, not an atomic backup.",
+    "Temporary complete bytes are written, flushed, fsynced and closed before exclusive hard-link publication. No overwrite fallback is used.",
+    "Existing files, directories and dangling symlinks are refused before transport; a destination raced into existence is protected by exclusive publication.",
+    "Failure before publication cleans the private temporary best-effort; cleanup failure after publication is a warning on successful committed output."
+  ],
+  "primary_reference": "https://developerdocs.instructure.com/services/canvas/resources/pages",
+  "limits": [
+    "Source review only; no live Canvas account/provider calls, no author source edits, no repeated module suite.",
+    "The acceptance does not assert cross-filesystem publication support or directory-fsync power-loss durability.",
+    "Projection fidelity for arbitrary malformed HTML is not a backup claim; exact escaped source remains available."
+  ],
+  "receipt_location_note": "Preserved on Mac after a hash-only receipt-write SSH connection to the ThinkPad timed out before reaching the host. Acceptance is tied to exact source bytes independently read earlier; no latest-head assertion.",
+  "recorded_utc": "2026-10-08T15:06:47.739131+00:00"
+}

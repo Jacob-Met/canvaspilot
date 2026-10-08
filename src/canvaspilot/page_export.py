@@ -1,0 +1,338 @@
+"""Keep explicitly selected Canvas pages in an inert, local reading packet."""
+
+from __future__ import annotations
+
+import hashlib
+import html
+import json
+import os
+import re
+import tempfile
+from datetime import UTC, datetime
+from html.parser import HTMLParser
+from pathlib import Path
+from typing import TYPE_CHECKING, Any
+from urllib.parse import quote
+
+from canvaspilot.calendar_export import _calendar_source
+
+if TYPE_CHECKING:
+    from canvaspilot.api import CanvasAPI
+
+MAX_PAGES = 20
+MAX_PAGE_BYTES = 512 * 1024
+MAX_SOURCE_BYTES = 2 * 1024 * 1024
+MAX_PACKET_BYTES = 16 * 1024 * 1024
+_PAGE_FIELDS = (
+    "page_id", "url", "title", "created_at", "updated_at", "published",
+    "front_page", "locked_for_user", "editor",
+)
+
+
+def _text(value: Any, label: str, limit: int) -> str:
+    if not isinstance(value, str):
+        raise TypeError(f"{label} must be text")
+    try:
+        size = len(value.encode("utf-8"))
+    except UnicodeEncodeError as error:
+        raise ValueError(f"{label} must be valid Unicode") from error
+    if size > limit:
+        raise ValueError(f"{label} exceeds the {limit:,}-byte limit")
+    if any(ord(char) < 32 and char not in "\t\n\r" for char in value):
+        raise ValueError(f"{label} contains unsupported control characters")
+    return value
+
+
+def _identifier(value: Any, label: str) -> str:
+    if isinstance(value, bool) or not isinstance(value, (int, str)):
+        raise TypeError(f"{label} must be a positive numeric Canvas ID")
+    value = str(value)
+    if not re.fullmatch(r"[0-9]{1,64}", value) or not value.strip("0"):
+        raise ValueError(f"{label} must be a positive numeric Canvas ID")
+    return value.lstrip("0")
+
+
+def _page_url(value: Any) -> str:
+    value = _text(value, "Page locator", 512)
+    if not value or value != value.strip() or value in {".", ".."}:
+        raise ValueError("Choose a nonempty page URL locator or page_id:ID")
+    if any(char in value for char in "/\\\t\r\n"):
+        raise ValueError("Use a page URL locator, not a full URL or path")
+    return value
+
+
+def _locator(value: Any) -> str:
+    value = _page_url(value)
+    if value.startswith("page_id:"):
+        return "page_id:" + _identifier(value[8:], "page_id")
+    return value
+
+
+def validate_page_selection(course_id: Any, page_locators: Any) -> tuple[str, list[str]]:
+    """Validate the complete selection before transport or output operations."""
+    course = _identifier(course_id, "course_id")
+    if not isinstance(page_locators, (list, tuple)) or not 1 <= len(page_locators) <= MAX_PAGES:
+        raise ValueError(f"Select between 1 and {MAX_PAGES} page locators")
+    pages = [_locator(value) for value in page_locators]
+    if len(set(pages)) != len(pages):
+        raise ValueError("The selected page locators must be distinct")
+    return course, pages
+
+
+class _ReadingText(HTMLParser):
+    """A labelled text projection; the original HTML is retained separately."""
+
+    _blocks = frozenset({
+        "address", "article", "aside", "blockquote", "dd", "div", "dl", "dt",
+        "fieldset", "figcaption", "figure", "footer", "form", "h1", "h2", "h3",
+        "h4", "h5", "h6", "header", "hr", "li", "main", "nav", "ol", "p",
+        "pre", "section", "table", "tr", "ul",
+    })
+    _ignored = frozenset({"script", "style", "template"})
+
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self.parts: list[str] = []
+        self.hidden: list[str] = []
+        self.links: list[str | None] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        if tag in self._ignored:
+            self.hidden.append(tag)
+        if self.hidden:
+            return
+        fields = dict(attrs)
+        if tag in self._blocks or tag == "br":
+            self.parts.append("\n")
+        if tag == "li":
+            self.parts.append("• ")
+        if tag in {"td", "th"}:
+            self.parts.append("\t")
+        if tag == "a":
+            self.links.append(fields.get("href"))
+        if tag == "img":
+            description = fields.get("alt")
+            self.parts.append(f"[Image: {description}]" if description else "[Image not included]")
+        if tag in {"audio", "video", "iframe", "object", "embed"}:
+            self.parts.append(f"\n[Embedded {tag} not included]\n")
+
+    def handle_endtag(self, tag: str) -> None:
+        if self.hidden:
+            if tag in self.hidden:
+                index = len(self.hidden) - 1 - self.hidden[::-1].index(tag)
+                self.hidden = self.hidden[:index]
+            return
+        if tag == "a" and self.links:
+            target = self.links.pop()
+            if target:
+                self.parts.append(f" [{target}]")
+        if tag in self._blocks:
+            self.parts.append("\n")
+
+    def handle_data(self, data: str) -> None:
+        if not self.hidden:
+            self.parts.append(data)
+
+
+def _reading_text(source: str) -> str:
+    reader = _ReadingText()
+    reader.feed(source)
+    reader.close()
+    return "".join(reader.parts).strip("\r\n")
+
+
+def _h(value: str) -> str:
+    # Character references keep original CR/CRLF text through HTML input parsing.
+    return html.escape(value, quote=True).replace("\r", "&#13;")
+
+
+def _metadata(value: dict[str, Any]) -> str:
+    return _h(json.dumps(value, ensure_ascii=False, indent=2, allow_nan=False))
+
+
+_STYLE = """
+:root{color-scheme:light;font-family:system-ui,-apple-system,sans-serif;color:#182c35;background:#f4f2eb}
+*{box-sizing:border-box}body{margin:0}main{max-width:960px;margin:auto;padding:32px 24px 72px}
+h1{font-size:clamp(1.8rem,5vw,2.8rem);line-height:1.15;margin:.4em 0}h2{line-height:1.3}
+.eyebrow{font-size:.8rem;text-transform:uppercase;letter-spacing:.12em;color:#3c666b}
+.summary,.page{background:#fff;border:1px solid #d7dfdc;border-radius:14px;padding:24px;margin:24px 0}
+.muted{color:#52646a;line-height:1.6}.summary p{margin:.6em 0}nav ol{padding-left:24px}
+a{color:#17656b;text-underline-offset:3px}nav a{display:inline-block;padding:10px 0;min-height:44px}
+a:focus,summary:focus{outline:3px solid #b75a28;outline-offset:4px}summary{cursor:pointer;min-height:44px;padding:12px 0}
+.page{scroll-margin-top:16px;break-inside:auto}.page h2{margin-top:0}.page-meta{display:flex;flex-wrap:wrap;gap:8px 24px}
+.reading{font:1rem/1.7 system-ui,-apple-system,sans-serif;white-space:pre-wrap;overflow-wrap:anywhere}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;word-break:break-word;font:.82rem/1.55 ui-monospace,monospace}
+.source{background:#f3f6f5;border-radius:8px;padding:16px}h1,h2,p,a,code{overflow-wrap:anywhere}
+.empty{padding:16px;border-left:3px solid #3c666b}.source-note{font-size:.9rem}footer{font-size:.85rem}
+@media(max-width:480px){main{padding:20px 12px 48px}.summary,.page{padding:18px 14px}}
+@media print{body{background:white}main{max-width:none;padding:0}.summary,.page{border-radius:0;padding:14px}.page{break-before:page}a{color:inherit}.source{background:white}details:not([open]){display:none}}
+"""
+
+
+def _render(course: str, course_source: dict[str, Any], source: str,
+            generated: str, pages: list[dict[str, Any]]) -> bytes:
+    title = course_source.get("name") or f"Course {course}"
+    toc = "".join(
+        f'<li><a href="#page-{index}">{_h(page["metadata"]["title"])}</a></li>'
+        for index, page in enumerate(pages, 1)
+    )
+    sections = []
+    for index, page in enumerate(pages, 1):
+        metadata = page["metadata"]
+        updated = metadata.get("updated_at")
+        update_label = "Not supplied" if updated is None else updated
+        publication = metadata.get("published")
+        publication_label = "Not supplied" if publication is None else "Published" if publication else "Draft"
+        text = page["body_text"]
+        if text.strip():
+            reading = f'<pre class="reading" data-reading><code>{_h(text)}</code></pre>'
+        else:
+            label = "The supplied page body is empty." if not page["body_html"] else (
+                "This page has no text in the reading projection. Inspect the retained source or open Canvas."
+            )
+            reading = f'<p class="empty">{label}</p>'
+        sections.append(f'''<article class="page" id="page-{index}" data-page-id="{_h(str(metadata['page_id']))}">
+<p class="eyebrow">Page {index} of {len(pages)}</p><h2>{_h(metadata['title'])}</h2>
+<div class="page-meta muted"><span>Publication: {_h(publication_label)}</span><span>Updated: {_h(update_label)}</span></div>
+<p><a href="{_h(page['source_url'])}" rel="noreferrer">Open this page in Canvas</a></p>
+<p class="muted source-note">Reading text extracted from the supplied HTML. Formatting and embedded media are not reproduced; link destinations are inert text references.</p>
+{reading}
+<details><summary>Supplied page identity and metadata</summary><pre class="source" data-page-metadata><code>{_metadata(metadata)}</code></pre></details>
+<details><summary>Original Canvas HTML — retained as inert text</summary><p class="muted source-note">Original UTF-8 body: {page['body_bytes']:,} bytes · SHA-256 <code>{page['body_sha256']}</code></p><pre class="source" data-original-html><code>{_h(page['body_html'])}</code></pre></details>
+<p><a href="#contents">Back to contents</a></p></article>''')
+    document = f'''<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer"><title>{_h(title)} — selected reading pages</title><style>{_STYLE}</style></head>
+<body><main><header><p class="eyebrow">CanvasPilot · Offline reading packet</p><h1>{_h(title)}</h1>
+<p class="muted">{len(pages)} explicitly selected pages · Course {_h(course)}</p></header>
+<section class="summary" aria-label="Snapshot details"><p><strong>Export generated:</strong> {_h(generated)}</p>
+<p><strong>Configured Canvas source:</strong> {_h(source)}</p>
+<p class="muted">Pages were read sequentially through the existing Canvas transport. This is a saved reading copy, not a live course view or an atomic course backup. Check Canvas for later changes.</p>
+<p class="muted">Only the selected page bodies and the metadata shown here are included. Images, attachments, styles, scripts and other embedded resources were not downloaded. Opening this file makes no automatic network requests; Canvas links require a deliberate click.</p>
+<details><summary>Supplied course identity</summary><pre class="source" data-course-metadata><code>{_metadata(course_source)}</code></pre></details></section>
+<nav id="contents" aria-label="Selected page contents"><h2>Contents</h2><ol>{toc}</ol></nav>
+{''.join(sections)}<footer class="muted">Created with CanvasPilot. This local file contains the selected course content; keep it according to the course's sharing rules. No course completion, submission, grade or page was changed.</footer>
+</main></body></html>'''
+    content = document.encode("utf-8")
+    if len(content) > MAX_PACKET_BYTES:
+        raise ValueError("The rendered reading packet exceeds the 16 MiB limit")
+    return content
+
+
+def build_page_packet(api: CanvasAPI, course_id: int | str, page_locators: list[str], *,
+                      generated_at: datetime | None = None) -> tuple[bytes, dict[str, Any]]:
+    """Read only the selected course/pages; publish nothing on a failed selection.
+
+    Provider identity uses the existing calendar snapshot guard. The transport's
+    authentication, redirect behavior and server response limits are unchanged.
+    Limits here apply after the existing client has decoded each JSON response.
+    """
+    course, locators = validate_page_selection(course_id, page_locators)
+    if generated_at is not None and (
+        not isinstance(generated_at, datetime) or generated_at.utcoffset() is None
+    ):
+        raise ValueError("generated_at must be a timezone-aware datetime")
+    source = _calendar_source(api.client)
+
+    def read(path: str) -> Any:
+        value = api.client.request("GET", path)
+        if _calendar_source(api.client) != source:
+            raise ValueError("Canvas provider changed during export; no reading packet created")
+        return value
+
+    course_row = read(f"/api/v1/courses/{course}")
+    if not isinstance(course_row, dict) or _identifier(course_row.get("id"), "Returned course ID") != course:
+        raise ValueError("The course response did not match the selected course")
+    course_source = {key: course_row[key] for key in ("id", "name", "course_code") if key in course_row}
+    for key in ("name", "course_code"):
+        if course_source.get(key) is not None:
+            _text(course_source[key], f"Course {key}", 4096)
+
+    pages: list[dict[str, Any]] = []
+    seen_ids: set[str] = set()
+    total_bytes = 0
+    for locator in locators:
+        row = read(f"/api/v1/courses/{course}/pages/{quote(locator, safe='')}")
+        if not isinstance(row, dict):
+            raise TypeError(f"Page {locator} did not return a page object")
+        page_id = _identifier(row.get("page_id"), f"Page {locator} ID")
+        url = _page_url(row.get("url"))
+        expected = page_id == locator[8:] if locator.startswith("page_id:") else url == locator
+        if not expected:
+            raise ValueError(f"The page response did not match {locator}; use page_id:ID to select by numeric ID")
+        if page_id in seen_ids:
+            raise ValueError("The selection resolved to the same page more than once")
+        seen_ids.add(page_id)
+        _text(row.get("title"), f"Page {locator} title", 4096)
+        for key in ("published", "front_page", "locked_for_user"):
+            if row.get(key) is not None and not isinstance(row[key], bool):
+                raise TypeError(f"Page {locator} {key} must be boolean or null")
+        if row.get("locked_for_user") is True:
+            raise ValueError(f"Page {locator} is locked for the current user; no reading packet created")
+        for key in ("created_at", "updated_at", "editor"):
+            if row.get(key) is not None:
+                _text(row[key], f"Page {locator} {key}", 1024)
+        body = _text(row.get("body"), f"Page {locator} body", MAX_PAGE_BYTES)
+        body_bytes = len(body.encode("utf-8"))
+        total_bytes += body_bytes
+        if total_bytes > MAX_SOURCE_BYTES:
+            raise ValueError("The selected page bodies exceed the combined 2 MiB limit")
+        pages.append({
+            "requested": locator,
+            "metadata": {key: row[key] for key in _PAGE_FIELDS if key in row},
+            "body_html": body,
+            "body_text": _reading_text(body),
+            "body_bytes": body_bytes,
+            "body_sha256": hashlib.sha256(body.encode("utf-8")).hexdigest(),
+            "source_url": f"{source}/courses/{course}/pages/{quote(url, safe='')}",
+        })
+    generated = (generated_at or datetime.now(UTC)).astimezone(UTC).isoformat()
+    content = _render(course, course_source, source, generated, pages)
+    return content, {
+        "source": source, "course_id": course, "generated_at": generated,
+        "pages_exported": len(pages), "original_body_bytes": total_bytes,
+        "pages": [{
+            "requested": page["requested"], "page_id": page["metadata"]["page_id"],
+            "url": page["metadata"]["url"], "title": page["metadata"]["title"],
+            "body_sha256": page["body_sha256"], "body_bytes": page["body_bytes"],
+        } for page in pages],
+        "sha256": hashlib.sha256(content).hexdigest(), "bytes": len(content),
+    }
+
+
+def write_page_packet(path: Path, content: bytes) -> str | None:
+    """Publish complete bytes at a new path, never replace an existing entry."""
+    temporary: Path | None = None
+    handle = None
+    try:
+        handle = tempfile.NamedTemporaryFile(prefix=".canvaspilot-pages-", suffix=".tmp",  # noqa: SIM115 — preserve the original close failure
+                                             dir=path.parent, delete=False)
+        temporary = Path(handle.name)
+        handle.write(content)
+        handle.flush()
+        os.fsync(handle.fileno())
+        handle.close()
+        handle = None
+        # A same-directory hard link publishes complete bytes exclusively.
+        # An unsupported filesystem refuses this operation without a replace fallback.
+        os.link(temporary, path)
+    except BaseException:
+        # A failed close/unlink must not replace the original publication failure.
+        if handle is not None:
+            try:
+                handle.close()
+            except OSError:
+                pass
+        if temporary is not None:
+            try:
+                temporary.unlink()
+            except OSError:
+                pass
+        raise
+    try:
+        temporary.unlink()
+    except OSError:
+        # Publication already succeeded; do not report a false failed creation.
+        return f"Packet created, but temporary source could not be removed: {temporary.name}"
+    return None

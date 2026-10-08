@@ -1,0 +1,38 @@
+{
+  "base": "6c4d5d2e7526cddc1aa6c90bfbef2d1188382ad3",
+  "base_tree": "50b0e4001ccad72078b073e2cc3606b619e064ff",
+  "source_commit": "0ef6b368ba9a21bfb93e8a513ad12a19e232219a",
+  "source_tree": "170ea4c27c88791e8a4a3725966ba722839a736b",
+  "base_leaves": 1133,
+  "source_leaves": 1138,
+  "preserved_unowned_leaves": 1131,
+  "changed_paths": [
+    "README.md",
+    "docs/page-export.md",
+    "src/canvaspilot/cli.py",
+    "src/canvaspilot/page_export.py",
+    "tests/fixtures/page_packet.json",
+    "tests/test_page_export.py",
+    "tests/test_page_export_process.py"
+  ],
+  "source_sha256": {
+    "README.md": "c526aa58aefdc64941c28b9f84de43ffb81c69e94a5df3f012c0b1ce9b3331e2",
+    "docs/page-export.md": "3976c1b5bfb80d1d196b0fa4ab0ba655a6193e2b15b1a8145e7ba197a44f23b8",
+    "src/canvaspilot/cli.py": "e297bb2a7f3bb702297fc15fd43feace9b645297405c1ddc51b0eb2e3c82a221",
+    "src/canvaspilot/page_export.py": "8800e959ee620438273c3291fd24c51b9ed567430b28093cd3f8bef52bff5015",
+    "tests/fixtures/page_packet.json": "c5d348db60489544c4c2291170d18528f617981a374326c6d3c9059e490fd82b",
+    "tests/test_page_export.py": "8b17008213e04441cbd97a5bd295c55c65edcc4f28bfc55cb5299fc633265d09",
+    "tests/test_page_export_process.py": "2d406b0a4dc1dc711dffd00094baa3fd574789263f8cc39dae82dc18fbf6b478"
+  },
+  "pure_insertion_lines": {
+    "src/canvaspilot/cli.py": [
+      8,
+      21
+    ],
+    "README.md": [
+      5
+    ]
+  },
+  "all_unowned_leaves_and_modes_preserved": true,
+  "qualification_scope": "Existing native851/full and browser13 remain pinned to prior source; final installed-wheel process controls and exact published-head full CI qualify this narrow current composition."
+}

@@ -1,0 +1,37 @@
+{
+  "description": "Authored fictional Canvas pages for offline reading-packet receiving; no school data.",
+  "course": {
+    "id": 42,
+    "name": "Field notes & observations — <img src=x onerror=alert(1)>",
+    "course_code": "SYNTHETIC-42"
+  },
+  "pages": {
+    "intro": {
+      "page_id": 9007199254740993,
+      "url": "intro",
+      "title": "Reading one — 雪 & <script>literal title</script>",
+      "created_at": "2026-10-01T08:00:00-07:00",
+      "updated_at": "2026-10-08T12:45:00.000-07:00",
+      "published": true,
+      "front_page": true,
+      "locked_for_user": false,
+      "body": "\n<p>Observe the <strong>same specimen</strong> twice. Keep uncertainty explicit.</p>\r\n<p>Literal code: &lt;img src=x onerror=alert(2)&gt; &amp; temperature Ω.</p>\n<ul><li>Record the units.</li><li>Retain both readings.</li></ul>\n<img src=\"https://unrequested.example/diagram.png\" alt=\"A phase diagram\">\n<a href=\"https://unrequested.example/reading?q=1&amp;n=2\">Reference reading</a>\n<script>globalThis.__pagePacketExecuted = true;</script>\n<style>body{display:none}</style>\n<iframe src=\"https://unrequested.example/embed\"></iframe>\r\n"
+    },
+    "7": {
+      "page_id": 8,
+      "url": "7",
+      "title": "A numeric URL is still a URL",
+      "published": false,
+      "updated_at": null,
+      "body": "<p>This fictional page has URL <code>7</code> and page ID <code>8</code>.</p><pre>    first_line()\n    second_line(&quot;雪&quot;)</pre>"
+    },
+    "page_id:7": {
+      "page_id": 7,
+      "url": "notes-雪",
+      "title": "Explicit page ID seven",
+      "published": true,
+      "locked_for_user": false,
+      "body": "<p>This is the separately selected page with ID seven.</p>"
+    }
+  }
+}

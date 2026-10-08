@@ -97,6 +97,11 @@ local snapshot with `canvaspilot export-calendar 42 77 --out deadlines.ics`.
 The [calendar export guide](docs/calendar-export.md) explains selection,
 undated omissions, snapshot limits and safe re-import expectations.
 
+
+To take explicitly selected course pages offline, use
+`canvaspilot export-pages 42 course-introduction week-two-reading --out reading.html`.
+The [page export guide](docs/page-export.md) explains numeric page IDs, the inert
+original-source record, selection limits and protection of existing output.
 With a PAT instead:
 
 ```bash
