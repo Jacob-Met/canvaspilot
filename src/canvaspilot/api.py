@@ -192,11 +192,44 @@ class CanvasAPI:
             f"/api/v1/courses/{course_id}/modules",
             params={"include[]": ["items"]},
         )
+
+        def valid_items(value: Any) -> bool:
+            return isinstance(value, list) and all(
+                isinstance(item, dict)
+                and isinstance(item.get("id"), (int, str))
+                and re.fullmatch(r"[0-9]+", str(item["id"]))
+                for item in value
+            )
+
+        modules = []
+        for module in rows:
+            if not isinstance(module, dict):
+                modules.append(module)
+                continue
+            inline = module.get("items")
+            count = module.get("items_count")
+            if not valid_items(inline) or (type(count) is int and len(inline) < count):
+                # Canvas may omit inline items even when include[]=items was
+                # requested. Resolve them before projecting either detail mode.
+                if inline is None and type(count) is int and count == 0:
+                    items = []
+                else:
+                    module_id = module.get("id")
+                    if not isinstance(module_id, (int, str)) or not re.fullmatch(r"[0-9]+", str(module_id)):
+                        raise ValueError("Cannot retrieve module items without a valid module ID")
+                    items = self.client.get_paginated(
+                        f"/api/v1/courses/{course_id}/modules/{module_id}/items"
+                    )
+                    if not valid_items(items):
+                        raise ValueError("Canvas returned malformed module items")
+                # Do not mutate fixture data or another caller's response object.
+                module = {**module, "items": items}
+            modules.append(module)
         full = str(detail or "compact").lower() in {"full", "verbose", "all"}
         if full:
-            return rows
+            return modules
         out = []
-        for m in rows:
+        for m in modules:
             if not isinstance(m, dict):
                 continue
             items = []
