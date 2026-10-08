@@ -1,0 +1,324 @@
+{
+  "repository": "Jacob-Met/canvaspilot",
+  "native_parent": "72357053a1629c349f700030013559fa6d8130f2",
+  "native_parent_tree": "919634af69c067e04f391fca84b3071ab8da9159",
+  "publication_parent": "e8cd1aecf8e5ca9ede0313b2576ddd71303b82ad",
+  "publication_parent_tree": "5479f4a3b56660671973259596b0b07568f367e6",
+  "publication_parent_leaves": 187,
+  "only_production_change": "CanvasAPI.list_announcements: one request call becomes existing get_paginated call",
+  "source_changes": [
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "before_git_blob": "7c04e33f6702235ef181718d91a618129f0fe436",
+      "bytes": 13714,
+      "git_blob": "9af8a060dc7f1506639720cde25f68cd2e65c5e2",
+      "sha256": "d89ac645d88212787319bc3f0d598a607bf690472231dc26b579990796f06acb"
+    },
+    {
+      "path": "src/canvaspilot/api.py",
+      "mode": "100644",
+      "before_git_blob": "f66a0916554361c075f82bf0bcf3b8e49aa272d8",
+      "bytes": 23608,
+      "git_blob": "81b0f44edb7d5ff80770745050c8f3a296203e75",
+      "sha256": "216f90f7c0f274f4636d6e2a5381454cbaf0544e3d986f2dda09f351af87bf64"
+    },
+    {
+      "path": "tests/test_announcements_pagination.py",
+      "mode": "100644",
+      "before_git_blob": null,
+      "bytes": 7215,
+      "git_blob": "a2c03bfa853867a6a491b7b5b08b67cbc92037be",
+      "sha256": "209ff27f2243deccadb67577e5c335c51e9a3917a095246bd40644ac91b050d2"
+    }
+  ],
+  "original_list_announcements_matches_current_parent": true,
+  "qualified_list_announcements_matches_current_composition": true,
+  "all_other_current_api_bytes_preserved": true,
+  "qualified_test_bytes_preserved": true,
+  "current_closure_comparison": [
+    {
+      "path": "README.md",
+      "old": "8d60623cfebc0a844fe167386722dedde5c0cd54",
+      "current": "7c04e33f6702235ef181718d91a618129f0fe436",
+      "unchanged": false
+    },
+    {
+      "path": "pyproject.toml",
+      "old": "76eba6d30696b4f2733539cd47df6e178bc0f585",
+      "current": "76eba6d30696b4f2733539cd47df6e178bc0f585",
+      "unchanged": true
+    },
+    {
+      "path": "scripts/inventory_pass.py",
+      "old": "dda42bf3ac3679bc1936917ab1f981a8c6849811",
+      "current": "dda42bf3ac3679bc1936917ab1f981a8c6849811",
+      "unchanged": true
+    },
+    {
+      "path": "scripts/readonly_sweep.py",
+      "old": "c273fdbcc495c5283422bcb7ee94664eb9a32230",
+      "current": "c273fdbcc495c5283422bcb7ee94664eb9a32230",
+      "unchanged": true
+    },
+    {
+      "path": "src/canvaspilot/__init__.py",
+      "old": "74a7a6087bf81fd7c75c15769b30408039618e0f",
+      "current": "74a7a6087bf81fd7c75c15769b30408039618e0f",
+      "unchanged": true
+    },
+    {
+      "path": "src/canvaspilot/api.py",
+      "old": "3b9b16b211393f4da4be5a7fde2b49ae81ccf263",
+      "current": "f66a0916554361c075f82bf0bcf3b8e49aa272d8",
+      "unchanged": false
+    },
+    {
+      "path": "src/canvaspilot/bundle.py",
+      "old": "b347e64bca073e8dc6a721bbeae1ca07f253dd89",
+      "current": "ab17a3ded1f80860bc9818ca90cd4a65f397f9b9",
+      "unchanged": false
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "old": "bdd428e804fea968348f782075b0a44185ceccfc",
+      "current": "ea095007c0d7ed41524f79c0a0ca0dbe1f317a71",
+      "unchanged": false
+    },
+    {
+      "path": "src/canvaspilot/client.py",
+      "old": "c06d24fa3d6ce9466caa633aff71207f59833bf4",
+      "current": "c06d24fa3d6ce9466caa633aff71207f59833bf4",
+      "unchanged": true
+    },
+    {
+      "path": "src/canvaspilot/folder_browser.py",
+      "old": "4b3078ddb00a4a34015710e49fa7b7806adebd23",
+      "current": "4b3078ddb00a4a34015710e49fa7b7806adebd23",
+      "unchanged": true
+    },
+    {
+      "path": "src/canvaspilot/mcp_server.py",
+      "old": "6d9dcb8312140f20e164407cb3d5ae99c805af87",
+      "current": "7bd34dea25913288d9d4e1cef4152e18ccd76628",
+      "unchanged": false
+    },
+    {
+      "path": "src/canvaspilot/offline_demo.py",
+      "old": "9d2cfd260d8db052b8183e3ec4fc9626a5bb2b9a",
+      "current": "9d2cfd260d8db052b8183e3ec4fc9626a5bb2b9a",
+      "unchanged": true
+    },
+    {
+      "path": "src/canvaspilot/session_broker.py",
+      "old": "ba23543f62e6be9f611ae06260b91f239206cb23",
+      "current": "ba23543f62e6be9f611ae06260b91f239206cb23",
+      "unchanged": true
+    },
+    {
+      "path": "tests/folder_http_fixture.py",
+      "old": "454a761a6557daad73234b2f5801839a7db460a2",
+      "current": "454a761a6557daad73234b2f5801839a7db460a2",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_broker_encoding.py",
+      "old": "767484e032273b094fb620a61eb5ed49c9a23af1",
+      "current": "767484e032273b094fb620a61eb5ed49c9a23af1",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_broker_loopback_bind.py",
+      "old": "fd8971cefe9da9bb8f7832d81c9a26c5725eda86",
+      "current": "fd8971cefe9da9bb8f7832d81c9a26c5725eda86",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_broker_pagination.py",
+      "old": "131bc28eaaee50e931d87bee08554bd1287fbe44",
+      "current": "131bc28eaaee50e931d87bee08554bd1287fbe44",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_broker_readonly.py",
+      "old": "fa609760903148b6d55623e6e3b79f6ffd3395b0",
+      "current": "fa609760903148b6d55623e6e3b79f6ffd3395b0",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_bundle_api.py",
+      "old": "d42f4cca2f1f08203d831f098aa1d9f82d3d9f78",
+      "current": "d42f4cca2f1f08203d831f098aa1d9f82d3d9f78",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_fixture.py",
+      "old": "fbee86133431fbe2b1eabaa598f8de094fc18b0c",
+      "current": "fbee86133431fbe2b1eabaa598f8de094fc18b0c",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_folder_browser.py",
+      "old": "f2aacab375da0976bcbbb3d50f0231a1db54eeb7",
+      "current": "f2aacab375da0976bcbbb3d50f0231a1db54eeb7",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_module_items.py",
+      "old": "f41fea3b6697a994225c1ecd4a84869951c00779",
+      "current": "f41fea3b6697a994225c1ecd4a84869951c00779",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_offline_demo.py",
+      "old": "96b0f352f9c8dfe4c268c32ddbf0027506a010e2",
+      "current": "96b0f352f9c8dfe4c268c32ddbf0027506a010e2",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_strip_html.py",
+      "old": "9cac253f89820d36375b364daec9b34bb2d78e25",
+      "current": "9cac253f89820d36375b364daec9b34bb2d78e25",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_sync_summary.py",
+      "old": "f15e781cd0580324c668bec4181ed238b9cacb29",
+      "current": "f15e781cd0580324c668bec4181ed238b9cacb29",
+      "unchanged": true
+    }
+  ],
+  "newer_feedback_contribution_retained": {
+    "pull_request": 40,
+    "paths": [
+      {
+        "path": "src/canvaspilot/bundle.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ab17a3ded1f80860bc9818ca90cd4a65f397f9b9"
+      },
+      {
+        "path": "src/canvaspilot/cli.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ea095007c0d7ed41524f79c0a0ca0dbe1f317a71"
+      },
+      {
+        "path": "src/canvaspilot/feedback.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ec996f421a851d699a9ac7cb1f2a486f9ff7c4ea"
+      },
+      {
+        "path": "src/canvaspilot/mcp_server.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7bd34dea25913288d9d4e1cef4152e18ccd76628"
+      }
+    ],
+    "boundary": "Complete current leaves retained, including newer imports and feedback behavior; no new runtime run of the entire composition."
+  },
+  "token_baseline": {
+    "cases": 6,
+    "failed_contracts": 3,
+    "passed_controls": 3,
+    "source_unchanged": true,
+    "rerun_after_authoring": false
+  },
+  "native_candidate": {
+    "focused_cases": 17,
+    "full_cases": 209,
+    "inherited_cases": 192,
+    "source_unchanged": true,
+    "receipt": "native-qualification.json"
+  },
+  "independent_broker_receiving": {
+    "reviewer": "estate-0ee86eaeaf8d/root",
+    "baseline": {
+      "cases": 7,
+      "failed_contracts": 5,
+      "passed_controls": 2
+    },
+    "candidate": {
+      "cases": 7,
+      "passed": 7
+    },
+    "scope": "Real curated API, pagination, health/fetch helpers and query encoding; synthetic terminal HTTP, no live broker.",
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "httpx": "0.28.1",
+    "source_filter_payload_invariance": true,
+    "receipt_source": "Qualified 72357053 baseline/candidate images; newer composition verified separately as source only.",
+    "source_review_verdict": "ACCEPT for the exercised source and test contract"
+  },
+  "local_lint": {
+    "status": "environment_unavailable_before_analysis",
+    "reason": "Ruff 0.16.10 package metadata and Python wrapper are installed, but no executable survives in the shared runtime; the wrapper raises RuffNotFound before analysis. No source-level lint finding was produced.",
+    "remaining_gate": "Existing repository exact-head hosted Ruff CI after root publication."
+  },
+  "assembly_runtime_executions": 0,
+  "existing_transport_limit": "Shared client/broker response-shape rules and 40-page guard unchanged; separate Link-continuation #35/#37 not adopted.",
+  "hosted_checks": "Not yet run for this unpublished composition; required after exact-head publication.",
+  "external_operations": "No live Canvas account/browser/broker/network operation and no GitHub write by packet assembler.",
+  "evidence_inputs": {
+    "README.md": {
+      "bytes": 5546,
+      "git_blob": "c294c360c67c1bdec87a16bc20575862410dc9f7",
+      "sha256": "25d726a9439ed1f44c4786dfec399ae33d1d701eb0eb5be5f3b6ba12551eef1a"
+    },
+    "receive_announcements_broker.py": {
+      "bytes": 5803,
+      "git_blob": "73da1b15ca089441ed7fe0a47dc68e02ecba1e20",
+      "sha256": "a626442cc3ac4f2e3b49aa5e9ad5600daf24abf94cc4635548f0618f5e416a48"
+    },
+    "announcements-broker-base.json": {
+      "bytes": 5005,
+      "git_blob": "f39e1e2c9b6af27bac6f363e161af5df1b8794d4",
+      "sha256": "c838373b363bc1b0cbccb77907f77beed71fed1aa37ccc9766ac715f8091586a"
+    },
+    "announcements-broker-candidate.json": {
+      "bytes": 6268,
+      "git_blob": "260309afc461804aeebd4485d4ee6be4ceafac9c",
+      "sha256": "962b79e44487998b7484c8249fd62aea54210c341a16025ce8ce377bff220b01"
+    },
+    "baseline-receiver.py": {
+      "bytes": 5438,
+      "git_blob": "e1b0ed2d2532baba705212cdef9fb433ca8b0cd3",
+      "sha256": "42d7a5475b53a6f80bec49e79cc2028f7ecf66668793191aa01f87e45509ecc2"
+    },
+    "baseline-receiving.json": {
+      "bytes": 4865,
+      "git_blob": "31f974408fd24c71cb42b05636d7ee1d20c5c5cd",
+      "sha256": "bbfe97c0eda42cb55f4f2634f5bfc62e04df67350a679dc2ca36eb573c2b70be"
+    },
+    "current-primary.json": {
+      "bytes": 83540,
+      "git_blob": "dbd1b1ef8dbc20d693e3cb2d7bf65bcaf615e639",
+      "sha256": "04008993d938195175023c7e8f7faea24ef2ce7a04db12227929fd6703666def"
+    },
+    "native-qualification.json": {
+      "bytes": 13937,
+      "git_blob": "856d3e91846540e679fe5914d4e55062cc5a9096",
+      "sha256": "f23bfb1b115f17ba1c80d0088436f2f374c8c61388ea580b3eb3d6dcb7586e2e"
+    },
+    "qualify.py": {
+      "bytes": 2584,
+      "git_blob": "1e982e454fd87727707bb0ec97149cd0f74a613b",
+      "sha256": "4b418a76cb0a010b383be4e69921de085cc152f852bb4f740a6861213739f95a"
+    },
+    "focused.log": {
+      "bytes": 99,
+      "git_blob": "69f0f1762b8505c0ec3f1e65760b31287701e30c",
+      "sha256": "5ae3a0fe93252ba215702f5e93dfb24553615662bc406c2970fbb9670308546a"
+    },
+    "full.log": {
+      "bytes": 261,
+      "git_blob": "3c4c5db512877a9ecd01c97150273bbde20fc15c",
+      "sha256": "9d82d34f5d5cfb4cdbf07ecff4fc3afad0f2ca8edcfbf9f99bbe6b1ff04ad8c6"
+    },
+    "ruff.log": {
+      "bytes": 997,
+      "git_blob": "1fadbce4317d98812313379a96511a5e3c474d32",
+      "sha256": "516594d73656f6f29f1b56e339b5668d0b4817fa46120f1b3f093a6b4f6f6e6b"
+    }
+  }
+}
