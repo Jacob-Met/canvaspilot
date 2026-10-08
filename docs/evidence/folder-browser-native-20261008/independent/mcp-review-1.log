@@ -1,0 +1,89 @@
+<frozen runpy>:128: RuntimeWarning: 'canvaspilot.mcp_server' found in sys.modules after import of package 'canvaspilot', but prior to execution of 'canvaspilot.mcp_server'; this may result in unpredictable behaviour
+HTTP Request: GET http://127.0.0.1:59849/api/v1/courses/42/folders/110?per_page=50 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:59849/api/v1/folders/110/folders?page=1&per_page=2 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:59849/api/v1/folders/110/files?page=1&per_page=2 "HTTP/1.0 200 OK"
+Tool 'canvas_browse_files' rejected arguments: ['files_page']
+Tool 'canvas_browse_files' rejected arguments: ['files_page']
+Tool 'canvas_browse_files' rejected arguments: ['files_page']
+Tool 'canvas_browse_files' rejected arguments: ['files_page']
+Tool 'canvas_browse_files' raised an unexpected exception
+Traceback (most recent call last):
+  File "/private/tmp/canvaspilot-receiving-cf5799f6d38b-9VQmAF/venv/lib/python3.12/site-packages/mcp/server/mcpserver/tools/base.py", line 179, in run
+    result = await self.fn_metadata.call_fn(self.fn, self.is_async, validated, pass_directly)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/canvaspilot-receiving-cf5799f6d38b-9VQmAF/venv/lib/python3.12/site-packages/mcp/server/mcpserver/utilities/func_metadata.py", line 163, in call_fn
+    return await fn(**kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/canvas-folder-review-cf5799f6d38b-g_fgiv9w/candidate/src/canvaspilot/mcp_server.py", line 140, in canvas_browse_files
+    return _dump(_get_api().browse_files(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/canvas-folder-review-cf5799f6d38b-g_fgiv9w/candidate/src/canvaspilot/api.py", line 331, in browse_files
+    return browse_course_folder(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/canvas-folder-review-cf5799f6d38b-g_fgiv9w/candidate/src/canvaspilot/folder_browser.py", line 130, in browse_course_folder
+    files_page = _bounded_integer(files_page, "files_page", MAX_PAGE)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/canvas-folder-review-cf5799f6d38b-g_fgiv9w/candidate/src/canvaspilot/folder_browser.py", line 43, in _bounded_integer
+    raise ValueError(f"{name} must be an integer from 1 to {maximum}")
+ValueError: files_page must be an integer from 1 to 10000
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/private/tmp/canvaspilot-receiving-cf5799f6d38b-9VQmAF/venv/lib/python3.12/site-packages/mcp/server/mcpserver/server.py", line 442, in _handle_call_tool
+    return await self.call_tool(params.name, params.arguments or {}, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/canvaspilot-receiving-cf5799f6d38b-9VQmAF/venv/lib/python3.12/site-packages/mcp/server/mcpserver/server.py", line 548, in call_tool
+    return await self._tool_manager.call_tool(name, arguments, context, convert_result=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/canvaspilot-receiving-cf5799f6d38b-9VQmAF/venv/lib/python3.12/site-packages/mcp/server/mcpserver/tools/tool_manager.py", line 87, in call_tool
+    return await tool.run(arguments, context, convert_result=convert_result)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/canvaspilot-receiving-cf5799f6d38b-9VQmAF/venv/lib/python3.12/site-packages/mcp/server/mcpserver/tools/base.py", line 213, in run
+    raise UnexpectedToolError(f"Error executing tool {self.name}") from exc
+mcp.server.mcpserver.exceptions.UnexpectedToolError: Error executing tool canvas_browse_files
+HTTP Request: GET http://127.0.0.1:59849/api/v1/courses/42/folders/110?per_page=50 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:59849/api/v1/folders/110/folders?page=1&per_page=50 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:59849/api/v1/folders/110/files?page=1&per_page=50 "HTTP/1.0 200 OK"
+Tool 'canvas_browse_files' raised an unexpected exception
+Traceback (most recent call last):
+  File "/private/tmp/canvaspilot-receiving-cf5799f6d38b-9VQmAF/venv/lib/python3.12/site-packages/mcp/server/mcpserver/tools/base.py", line 179, in run
+    result = await self.fn_metadata.call_fn(self.fn, self.is_async, validated, pass_directly)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/canvaspilot-receiving-cf5799f6d38b-9VQmAF/venv/lib/python3.12/site-packages/mcp/server/mcpserver/utilities/func_metadata.py", line 163, in call_fn
+    return await fn(**kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/canvas-folder-review-cf5799f6d38b-g_fgiv9w/candidate/src/canvaspilot/mcp_server.py", line 140, in canvas_browse_files
+    return _dump(_get_api().browse_files(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/canvas-folder-review-cf5799f6d38b-g_fgiv9w/candidate/src/canvaspilot/api.py", line 331, in browse_files
+    return browse_course_folder(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/canvas-folder-review-cf5799f6d38b-g_fgiv9w/candidate/src/canvaspilot/folder_browser.py", line 148, in browse_course_folder
+    files = _page(
+            ^^^^^^
+  File "/private/tmp/canvas-folder-review-cf5799f6d38b-g_fgiv9w/candidate/src/canvaspilot/folder_browser.py", line 94, in _page
+    items = [project(item) for item in value]
+             ^^^^^^^^^^^^^
+  File "/private/tmp/canvas-folder-review-cf5799f6d38b-g_fgiv9w/candidate/src/canvaspilot/folder_browser.py", line 155, in <lambda>
+    lambda child: _file(child, selected),
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/canvas-folder-review-cf5799f6d38b-g_fgiv9w/candidate/src/canvaspilot/folder_browser.py", line 83, in _file
+    raise FolderBrowseError("File response belongs to another folder")
+canvaspilot.folder_browser.FolderBrowseError: File response belongs to another folder
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/private/tmp/canvaspilot-receiving-cf5799f6d38b-9VQmAF/venv/lib/python3.12/site-packages/mcp/server/mcpserver/server.py", line 442, in _handle_call_tool
+    return await self.call_tool(params.name, params.arguments or {}, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/canvaspilot-receiving-cf5799f6d38b-9VQmAF/venv/lib/python3.12/site-packages/mcp/server/mcpserver/server.py", line 548, in call_tool
+    return await self._tool_manager.call_tool(name, arguments, context, convert_result=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/canvaspilot-receiving-cf5799f6d38b-9VQmAF/venv/lib/python3.12/site-packages/mcp/server/mcpserver/tools/tool_manager.py", line 87, in call_tool
+    return await tool.run(arguments, context, convert_result=convert_result)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/canvaspilot-receiving-cf5799f6d38b-9VQmAF/venv/lib/python3.12/site-packages/mcp/server/mcpserver/tools/base.py", line 213, in run
+    raise UnexpectedToolError(f"Error executing tool {self.name}") from exc
+mcp.server.mcpserver.exceptions.UnexpectedToolError: Error executing tool canvas_browse_files

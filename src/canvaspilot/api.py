@@ -373,6 +373,23 @@ class CanvasAPI:
             if isinstance(f, dict)
         ]
 
+    def browse_files(
+        self,
+        course_id: int | str,
+        folder_id: int | str = "root",
+        *,
+        folders_page: int = 1,
+        files_page: int = 1,
+        per_page: int = 50,
+    ) -> dict[str, Any]:
+        """Browse one course folder and bounded direct-child metadata pages."""
+        from canvaspilot.folder_browser import browse_course_folder
+
+        return browse_course_folder(
+            self.client, course_id, folder_id,
+            folders_page=folders_page, files_page=files_page, per_page=per_page,
+        )
+
     def list_quizzes(self, course_id: int | str) -> list[dict[str, Any]]:
         rows = self.client.get_paginated(f"/api/v1/courses/{course_id}/quizzes")
         return [

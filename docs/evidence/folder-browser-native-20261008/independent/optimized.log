@@ -1,0 +1,41 @@
+test_duplicate_numeric_aliases_and_self_parent_child_stop_before_file_reads (__main__.IndependentFolders.test_duplicate_numeric_aliases_and_self_parent_child_stop_before_file_reads) ... HTTP Request: GET http://127.0.0.1:59815/api/v1/courses/42/folders/110?per_page=50 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:59815/api/v1/folders/110/folders?page=1&per_page=50 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:59815/api/v1/courses/42/folders/110?per_page=50 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:59815/api/v1/folders/110/folders?page=1&per_page=50 "HTTP/1.0 200 OK"
+ok
+test_mixed_foreign_file_page_never_returns_a_valid_prefix_through_cli (__main__.IndependentFolders.test_mixed_foreign_file_page_never_returns_a_valid_prefix_through_cli) ... HTTP Request: GET http://127.0.0.1:59820/api/v1/courses/42/folders/110?per_page=50 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:59820/api/v1/folders/110/folders?page=1&per_page=50 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:59820/api/v1/folders/110/files?page=1&per_page=50 "HTTP/1.0 200 OK"
+ok
+test_normalized_ids_and_independent_pages_reach_exact_native_requests (__main__.IndependentFolders.test_normalized_ids_and_independent_pages_reach_exact_native_requests) ... HTTP Request: GET http://127.0.0.1:59829/api/v1/courses/42/folders/110?per_page=50 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:59829/api/v1/folders/110/folders?page=2&per_page=2 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:59829/api/v1/folders/110/files?page=1&per_page=2 "HTTP/1.0 200 OK"
+ok
+test_permission_change_empty_and_server_page_cap_preserve_unknown_completeness (__main__.IndependentFolders.test_permission_change_empty_and_server_page_cap_preserve_unknown_completeness) ... HTTP Request: GET http://127.0.0.1:59833/api/v1/courses/42/folders/110?per_page=50 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:59833/api/v1/folders/110/folders?page=1&per_page=100 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:59833/api/v1/folders/110/files?page=1&per_page=100 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:59833/api/v1/courses/42/folders/110?per_page=50 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:59833/api/v1/folders/110/folders?page=2&per_page=100 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:59833/api/v1/folders/110/files?page=2&per_page=100 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:59833/api/v1/courses/42/folders/110?per_page=50 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:59833/api/v1/folders/110/folders?page=1&per_page=100 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:59833/api/v1/folders/110/files?page=10000&per_page=100 "HTTP/1.0 200 OK"
+ok
+test_real_mcp_stdio_rejects_foreign_metadata_and_strictly_typed_pages (__main__.IndependentFolders.test_real_mcp_stdio_rejects_foreign_metadata_and_strictly_typed_pages) ... ok
+test_real_readonly_broker_keeps_course_binding_and_independent_pages (__main__.IndependentFolders.test_real_readonly_broker_keeps_course_binding_and_independent_pages) ... HTTP Request: GET http://127.0.0.1:59858/health "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:59858/fetch "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:59858/health "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:59858/fetch "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:59858/health "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:59858/fetch "HTTP/1.0 200 OK"
+ok
+test_same_numeric_context_in_another_context_type_never_reaches_children (__main__.IndependentFolders.test_same_numeric_context_in_another_context_type_never_reaches_children) ... HTTP Request: GET http://127.0.0.1:59875/api/v1/courses/42/folders/110?per_page=50 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:59875/api/v1/courses/42/folders/110?per_page=50 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:59875/api/v1/courses/42/folders/110?per_page=50 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:59875/api/v1/courses/42/folders/110?per_page=50 "HTTP/1.0 200 OK"
+ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 5.145s
+
+OK

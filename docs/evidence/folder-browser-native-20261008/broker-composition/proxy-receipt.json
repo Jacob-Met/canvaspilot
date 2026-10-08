@@ -1,0 +1,236 @@
+{
+  "schema": "canvaspilot.broker-proxy-native-receiving.v1",
+  "source": "/private/tmp/canvaspilot-folders-cf5799f6d38b-FIWmPE/broker-compose/source",
+  "python": "3.12.8 (main, Dec  3 2024, 18:42:41) [Clang 16.0.0 (clang-1600.0.26.4)]",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "dependencies": {
+    "httpx": "0.28.1",
+    "httpcore": "1.0.9",
+    "anyio": "4.15.1",
+    "certifi": "2026.7.22",
+    "pytest": "8.4.2",
+    "mcp": "2.3.0",
+    "pydantic": "2.13.5"
+  },
+  "source_sha256": {
+    "src/canvaspilot/__init__.py": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5",
+    "src/canvaspilot/api.py": "ee994fb0e6979495d8fa559c82209ecb38b90066213a35e016a006bdd94e31a6",
+    "src/canvaspilot/bundle.py": "05239bf39f2df9e3dc749462fc97d15f3aafa884a6e3593f4d40c5878540ce6f",
+    "src/canvaspilot/cli.py": "893a1f3dfe425c64d9f0aa4528db109397c39edafea9d3f00313a1720897bbb0",
+    "src/canvaspilot/client.py": "ff6b68ebee132e2cddb0c588d87927ba68cf158ca97e9074803d9769a5bc19f5",
+    "src/canvaspilot/folder_browser.py": "c6a67229b268c539e5edb581e3320b06229460adc3fbc01d72e4964e31c0348a",
+    "src/canvaspilot/mcp_server.py": "7d8ed3e6589a67d061e2a4a3dc518a882f5e378c3c20515df27f30745e1993ed",
+    "src/canvaspilot/offline_demo.py": "2389f3ccc1b6db5995be0d90e014ea9345e3029aa5546a5b2dcf12c1197e6d4d",
+    "src/canvaspilot/session_broker.py": "2a106130c344aefebb23b078cd93b5d3ca3afd7f5325ae5fac2fb8a7251780cc"
+  },
+  "results": [
+    {
+      "name": "dependency_invalid_url_characterization",
+      "passed": true,
+      "details": {
+        "exception": "InvalidURL",
+        "message": "Invalid port: ':1]'"
+      }
+    },
+    {
+      "name": "native_health_and_fetch_without_proxy",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "native_health_with_malformed_no_proxy",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "native_fetch_with_malformed_no_proxy",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "public_cli_whoami_with_malformed_no_proxy",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "public_cli_status_with_malformed_no_proxy",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "broker_bypasses_valid_proxy_configuration",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "native_read_only_refusal_preserved",
+      "passed": true,
+      "details": {
+        "error": "CanvasAuthError",
+        "read_only": true
+      }
+    },
+    {
+      "name": "upstream_auth_failure_preserved",
+      "passed": true,
+      "details": {
+        "error": "CanvasAuthError",
+        "status": 401
+      }
+    },
+    {
+      "name": "unavailable_broker_health_is_clean",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "direct_canvas_proxy_behavior_preserved",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "name": "native_cli_stop_with_malformed_no_proxy",
+      "passed": true,
+      "details": {}
+    }
+  ],
+  "passed": 12,
+  "failed": 0,
+  "native_fixture_exit": 0,
+  "native_fixture_stderr": "",
+  "native_http_requests": [
+    {
+      "event": "http",
+      "method": "GET",
+      "path": "/health"
+    },
+    {
+      "event": "http",
+      "method": "POST",
+      "path": "/fetch"
+    },
+    {
+      "event": "http",
+      "method": "GET",
+      "path": "/health"
+    },
+    {
+      "event": "http",
+      "method": "POST",
+      "path": "/fetch"
+    },
+    {
+      "event": "http",
+      "method": "GET",
+      "path": "/health"
+    },
+    {
+      "event": "http",
+      "method": "POST",
+      "path": "/fetch"
+    },
+    {
+      "event": "http",
+      "method": "GET",
+      "path": "/health"
+    },
+    {
+      "event": "http",
+      "method": "GET",
+      "path": "/health"
+    },
+    {
+      "event": "http",
+      "method": "GET",
+      "path": "/status"
+    },
+    {
+      "event": "http",
+      "method": "GET",
+      "path": "/health"
+    },
+    {
+      "event": "http",
+      "method": "POST",
+      "path": "/fetch"
+    },
+    {
+      "event": "http",
+      "method": "POST",
+      "path": "/fetch"
+    },
+    {
+      "event": "http",
+      "method": "POST",
+      "path": "/fetch"
+    },
+    {
+      "event": "http",
+      "method": "POST",
+      "path": "/shutdown"
+    }
+  ],
+  "native_jobs": [
+    {
+      "op": "fetch",
+      "method": "GET",
+      "path": "/api/v1/courses",
+      "headers": {
+        "Accept": "application/json"
+      },
+      "body": null
+    },
+    {
+      "op": "fetch",
+      "method": "GET",
+      "path": "/api/v1/courses?existing=yes&include%5B%5D=a&include%5B%5D=b&name=%E9%9B%AA+%26",
+      "headers": {
+        "Accept": "application/json"
+      },
+      "body": null
+    },
+    {
+      "op": "fetch",
+      "method": "GET",
+      "path": "/api/v1/users/self/profile?per_page=50",
+      "headers": {
+        "Accept": "application/json"
+      },
+      "body": null
+    },
+    {
+      "op": "status"
+    },
+    {
+      "op": "fetch",
+      "method": "GET",
+      "path": "/api/v1/courses",
+      "headers": {
+        "Accept": "application/json"
+      },
+      "body": null
+    },
+    {
+      "op": "fetch",
+      "method": "GET",
+      "path": "/api/v1/auth-denied",
+      "headers": {
+        "Accept": "application/json"
+      },
+      "body": null
+    },
+    {
+      "op": "shutdown"
+    }
+  ],
+  "proxy_requests": [
+    {
+      "method": "GET",
+      "path": "http://127.0.0.1:61028/api/v1/courses?per_page=50",
+      "body_bytes": 0,
+      "authorization_present": true
+    }
+  ],
+  "direct_requests": [],
+  "boundary": "Unchanged native Handler, public client and CLI; authored queue worker and loopback services only. No real Canvas, browser, account, provider or installed broker is used."
+}

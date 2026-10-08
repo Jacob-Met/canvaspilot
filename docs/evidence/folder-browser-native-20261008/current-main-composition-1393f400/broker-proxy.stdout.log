@@ -1,0 +1,54 @@
+{
+  "passed": 12,
+  "failed": 0,
+  "results": [
+    {
+      "name": "dependency_invalid_url_characterization",
+      "passed": true
+    },
+    {
+      "name": "native_health_and_fetch_without_proxy",
+      "passed": true
+    },
+    {
+      "name": "native_health_with_malformed_no_proxy",
+      "passed": true
+    },
+    {
+      "name": "native_fetch_with_malformed_no_proxy",
+      "passed": true
+    },
+    {
+      "name": "public_cli_whoami_with_malformed_no_proxy",
+      "passed": true
+    },
+    {
+      "name": "public_cli_status_with_malformed_no_proxy",
+      "passed": true
+    },
+    {
+      "name": "broker_bypasses_valid_proxy_configuration",
+      "passed": true
+    },
+    {
+      "name": "native_read_only_refusal_preserved",
+      "passed": true
+    },
+    {
+      "name": "upstream_auth_failure_preserved",
+      "passed": true
+    },
+    {
+      "name": "unavailable_broker_health_is_clean",
+      "passed": true
+    },
+    {
+      "name": "direct_canvas_proxy_behavior_preserved",
+      "passed": true
+    },
+    {
+      "name": "native_cli_stop_with_malformed_no_proxy",
+      "passed": true
+    }
+  ]
+}

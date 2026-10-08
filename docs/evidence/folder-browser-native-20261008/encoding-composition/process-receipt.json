@@ -1,0 +1,44 @@
+{
+  "schema": "canvaspilot.folder-browser-encoding-processes.v1",
+  "base_commit": "3d7a9453fb0cbdf08312320d71c648462592b217",
+  "source_tree": "9bf3697e5d577227caeb3117d1b4d7cbc96772ab",
+  "ruff": {
+    "content": [
+      {
+        "type": "text",
+        "text": "[Reading 2 new lines (total: 2 lines)]\n\nAll checks passed!\n\n✅ Process completed with exit code 0 (runtime: 0.20s)"
+      },
+      {
+        "type": "text",
+        "text": "\n[executed on device: Mac.lan (0e3d582f-e25b-44b2-8418-9639fc4e4e33)]"
+      }
+    ],
+    "isError": false
+  },
+  "full_suite": {
+    "content": [
+      {
+        "type": "text",
+        "text": "[Reading 5 new lines (total: 5 lines)]\n\n........................................................................ [ 66%]\n....................................                                     [100%]\n- generated xml file: /tmp/canvaspilot-folders-cf5799f6d38b-FIWmPE/encoding-compose/full-suite.xml -\n108 passed in 14.28s\n\n✅ Process completed with exit code 0 (runtime: 15.04s)"
+      },
+      {
+        "type": "text",
+        "text": "\n[executed on device: Mac.lan (0e3d582f-e25b-44b2-8418-9639fc4e4e33)]"
+      }
+    ],
+    "isError": false
+  },
+  "proxy_receiving": {
+    "content": [
+      {
+        "type": "text",
+        "text": "[Reading 64 new lines (total: 64 lines)]\n\nHTTP Request: GET http://127.0.0.1:62285/health \"HTTP/1.0 200 OK\"\nHTTP Request: POST http://127.0.0.1:62285/fetch \"HTTP/1.0 200 OK\"\nHTTP Request: GET http://127.0.0.1:62285/health \"HTTP/1.0 200 OK\"\nHTTP Request: POST http://127.0.0.1:62285/fetch \"HTTP/1.0 200 OK\"\nHTTP Request: GET http://127.0.0.1:62285/health \"HTTP/1.0 200 OK\"\nHTTP Request: POST http://127.0.0.1:62285/fetch \"HTTP/1.0 200 OK\"\nHTTP Request: POST http://127.0.0.1:62285/fetch \"HTTP/1.0 403 Forbidden\"\nHTTP Request: POST http://127.0.0.1:62285/fetch \"HTTP/1.0 200 OK\"\nHTTP Request: GET http://127.0.0.1:62289/api/v1/courses?per_page=50 \"HTTP/1.0 200 OK\"\n{\n  \"passed\": 12,\n  \"failed\": 0,\n  \"results\": [\n    {\n      \"name\": \"dependency_invalid_url_characterization\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"native_health_and_fetch_without_proxy\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"native_health_with_malformed_no_proxy\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"native_fetch_with_malformed_no_proxy\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"public_cli_whoami_with_malformed_no_proxy\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"public_cli_status_with_malformed_no_proxy\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"broker_bypasses_valid_proxy_configuration\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"native_read_only_refusal_preserved\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"upstream_auth_failure_preserved\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"unavailable_broker_health_is_clean\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"direct_canvas_proxy_behavior_preserved\",\n      \"passed\": true\n    },\n    {\n      \"name\": \"native_cli_stop_with_malformed_no_proxy\",\n      \"passed\": true\n    }\n  ]\n}\n\n✅ Process completed with exit code 0 (runtime: 3.45s)"
+      },
+      {
+        "type": "text",
+        "text": "\n[executed on device: Mac.lan (0e3d582f-e25b-44b2-8418-9639fc4e4e33)]"
+      }
+    ],
+    "isError": false
+  }
+}

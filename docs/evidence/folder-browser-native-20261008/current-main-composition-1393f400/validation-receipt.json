@@ -1,0 +1,90 @@
+{
+  "schema": "canvaspilot.folder-current-native-validation.v1",
+  "parent": "1393f40047297147029d8571bfd824f74e58e1dc",
+  "source_tree": "76a9f5c4523df2f2affc75e050e53cf9fb652845",
+  "source": "/tmp/canvaspilot-folders-cf5799f6d38b-FIWmPE/module-current-compose/source",
+  "python": "3.12.8 (main, Dec  3 2024, 18:42:41) [Clang 16.0.0 (clang-1600.0.26.4)]",
+  "executable": "/private/tmp/canvaspilot-receiving-cf5799f6d38b-9VQmAF/venv/bin/python3",
+  "dependencies": {
+    "httpx": "0.28.1",
+    "httpcore": "1.0.9",
+    "anyio": "4.15.1",
+    "mcp": "2.3.0",
+    "pydantic": "2.13.5",
+    "pytest": "8.4.2"
+  },
+  "checks": [
+    {
+      "name": "ruff",
+      "command": [
+        "/tmp/canvaspilot-folders-cf5799f6d38b-FIWmPE/lint-tools/bin/ruff",
+        "check",
+        "--no-cache",
+        "src",
+        "tests",
+        "scripts"
+      ],
+      "cwd": "/tmp/canvaspilot-folders-cf5799f6d38b-FIWmPE/module-current-compose/source",
+      "started_at": "2026-10-08T09:56:45.706379+00:00",
+      "elapsed_seconds": 0.136,
+      "exit_code": 0,
+      "stdout_path": "ruff.stdout.log",
+      "stderr_path": "ruff.stderr.log"
+    },
+    {
+      "name": "full-suite",
+      "command": [
+        "/tmp/canvaspilot-receiving-cf5799f6d38b-9VQmAF/venv/bin/python3",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--junitxml=/tmp/canvaspilot-folders-cf5799f6d38b-FIWmPE/module-current-compose/receiving/full-suite.xml",
+        "/tmp/canvaspilot-folders-cf5799f6d38b-FIWmPE/module-current-compose/source/tests"
+      ],
+      "cwd": "/tmp/canvaspilot-folders-cf5799f6d38b-FIWmPE/module-current-compose/source",
+      "started_at": "2026-10-08T09:56:45.706560+00:00",
+      "elapsed_seconds": 14.235,
+      "exit_code": 0,
+      "stdout_path": "full-suite.stdout.log",
+      "stderr_path": "full-suite.stderr.log"
+    },
+    {
+      "name": "broker-proxy",
+      "command": [
+        "/tmp/canvaspilot-receiving-cf5799f6d38b-9VQmAF/venv/bin/python3",
+        "/tmp/canvaspilot-receiving-cf5799f6d38b-9VQmAF/review_broker_proxy.py",
+        "--source",
+        "/tmp/canvaspilot-folders-cf5799f6d38b-FIWmPE/module-current-compose/source",
+        "--output",
+        "/tmp/canvaspilot-folders-cf5799f6d38b-FIWmPE/module-current-compose/receiving/proxy-receipt.json"
+      ],
+      "cwd": "/tmp/canvaspilot-folders-cf5799f6d38b-FIWmPE/module-current-compose/source",
+      "started_at": "2026-10-08T09:56:45.706629+00:00",
+      "elapsed_seconds": 3.546,
+      "exit_code": 0,
+      "stdout_path": "broker-proxy.stdout.log",
+      "stderr_path": "broker-proxy.stderr.log"
+    }
+  ],
+  "source_files_verified": 67,
+  "source_unchanged": true,
+  "sanitized_environment": {
+    "removed": [
+      "CANVAS_API_TOKEN",
+      "HTTP_PROXY",
+      "HTTPS_PROXY",
+      "ALL_PROXY",
+      "NO_PROXY",
+      "http_proxy",
+      "https_proxy",
+      "all_proxy",
+      "no_proxy"
+    ],
+    "CANVAS_BASE_URL": "https://canvas.fixture.invalid",
+    "CANVAS_SESSION_PORT": "0",
+    "CANVAS_PROFILE": "/tmp/canvaspilot-folders-cf5799f6d38b-FIWmPE/module-current-compose/receiving/unused-bootstrap-profile",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  }
+}

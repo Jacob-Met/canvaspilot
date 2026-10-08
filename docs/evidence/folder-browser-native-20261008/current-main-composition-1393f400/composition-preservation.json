@@ -1,0 +1,136 @@
+{
+  "schema": "canvaspilot.folder-current-preservation.v1",
+  "parent": "1393f40047297147029d8571bfd824f74e58e1dc",
+  "source_tree": "76a9f5c4523df2f2affc75e050e53cf9fb652845",
+  "unchanged_main_paths": [
+    ".github/dependabot.yml",
+    ".github/workflows/ci.yml",
+    ".gitignore",
+    "LICENSE",
+    "docs/API.md",
+    "docs/SYNC.md",
+    "docs/evidence/broker-proxy-native-20261008/.gitignore",
+    "docs/evidence/broker-proxy-native-20261008/README.md",
+    "docs/evidence/broker-proxy-native-20261008/base-source-manifest.json",
+    "docs/evidence/broker-proxy-native-20261008/baseline-receipt.json",
+    "docs/evidence/broker-proxy-native-20261008/candidate-receipt.json",
+    "docs/evidence/broker-proxy-native-20261008/head-source-manifest.json",
+    "docs/evidence/broker-proxy-native-20261008/native_broker_fixture.py",
+    "docs/evidence/broker-proxy-native-20261008/prepare_sources.py",
+    "docs/evidence/broker-proxy-native-20261008/process-receipt.json",
+    "docs/evidence/broker-proxy-native-20261008/requirements-receiving.txt",
+    "docs/evidence/broker-proxy-native-20261008/review_broker_proxy.py",
+    "docs/evidence/broker-proxy-native-20261008/runtime-receipt.json",
+    "docs/evidence/broker-proxy-native-20261008/verify_receiving.py",
+    "docs/evidence/module-items-20261008/receiving.json",
+    "docs/evidence/module-items-20261008/test_independent_module_receiving.py",
+    "docs/evidence/offline-demo-20260909.json",
+    "docs/evidence/sync-deadline-overview-20261008/README.md",
+    "docs/evidence/sync-deadline-overview-20261008/author-validation.json",
+    "docs/evidence/sync-deadline-overview-20261008/independent/REVIEW.md",
+    "docs/evidence/sync-deadline-overview-20261008/independent/baseline-manifest.json",
+    "docs/evidence/sync-deadline-overview-20261008/independent/candidate-origin.json",
+    "docs/evidence/sync-deadline-overview-20261008/independent/candidate-postcheck.json",
+    "docs/evidence/sync-deadline-overview-20261008/independent/candidate-v1-source-pins.json",
+    "docs/evidence/sync-deadline-overview-20261008/independent/evidence/baseline-ordering/receipt.json",
+    "docs/evidence/sync-deadline-overview-20261008/independent/evidence/baseline-ordering/stderr.log",
+    "docs/evidence/sync-deadline-overview-20261008/independent/evidence/baseline-ordering/stdout.log",
+    "docs/evidence/sync-deadline-overview-20261008/independent/evidence/baseline-ordering/test_independent_sync.py",
+    "docs/evidence/sync-deadline-overview-20261008/independent/evidence/candidate-v1/receipt.json",
+    "docs/evidence/sync-deadline-overview-20261008/independent/evidence/candidate-v1/stderr.log",
+    "docs/evidence/sync-deadline-overview-20261008/independent/evidence/candidate-v1/stdout.log",
+    "docs/evidence/sync-deadline-overview-20261008/independent/manifest.json",
+    "docs/evidence/sync-deadline-overview-20261008/independent/run_review.py",
+    "docs/evidence/sync-deadline-overview-20261008/independent/runtime.json",
+    "docs/evidence/sync-deadline-overview-20261008/independent/source-origin.json",
+    "docs/evidence/sync-deadline-overview-20261008/independent/test_independent_sync.py",
+    "pyproject.toml",
+    "scripts/inventory_pass.py",
+    "scripts/readonly_sweep.py",
+    "src/canvaspilot/__init__.py",
+    "src/canvaspilot/client.py",
+    "src/canvaspilot/offline_demo.py",
+    "src/canvaspilot/session_broker.py",
+    "tests/test_broker_encoding.py",
+    "tests/test_broker_loopback_bind.py",
+    "tests/test_broker_pagination.py",
+    "tests/test_broker_readonly.py",
+    "tests/test_bundle_api.py",
+    "tests/test_fixture.py",
+    "tests/test_module_items.py",
+    "tests/test_offline_demo.py",
+    "tests/test_strip_html.py",
+    "tests/test_sync_summary.py"
+  ],
+  "unchanged_prior_feature_paths": [
+    "docs/folder-browser.md",
+    "src/canvaspilot/bundle.py",
+    "src/canvaspilot/folder_browser.py",
+    "tests/folder_http_fixture.py",
+    "tests/test_folder_browser.py"
+  ],
+  "updated_prior_feature_paths": [
+    {
+      "path": "README.md",
+      "old_blob": "d8fad44b568942b14403467be24a3b4ba9cb8772",
+      "new_blob": "f1a22d3d3ca37847cdef89aca7bf509b518908dc"
+    },
+    {
+      "path": "src/canvaspilot/api.py",
+      "old_blob": "46388d919c0e9d072f115cf8489ae7cc941233d5",
+      "new_blob": "336955bd9a305f8c71e2a9c49d4ca5731afa6193"
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "old_blob": "6fb5546712dd9c31610027dd9653c8b0f1a96424",
+      "new_blob": "bdd428e804fea968348f782075b0a44185ceccfc"
+    },
+    {
+      "path": "src/canvaspilot/mcp_server.py",
+      "old_blob": "a9549ae7aa234554cd8a2b24f4c6f9e5d6562a27",
+      "new_blob": "6d9dcb8312140f20e164407cb3d5ae99c805af87"
+    }
+  ],
+  "inherited_definition_preservation": {
+    "src/canvaspilot/api.py": {
+      "all_inherited_definitions_identical": true,
+      "inherited_count": 41,
+      "added": [
+        "CanvasAPI.browse_files"
+      ]
+    },
+    "src/canvaspilot/mcp_server.py": {
+      "all_inherited_definitions_identical": true,
+      "inherited_count": 36,
+      "added": [
+        "canvas_browse_files"
+      ]
+    }
+  },
+  "full_suite_summary": [
+    {
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "tests": "192",
+      "time": "13.760",
+      "timestamp": "2026-10-08T02:56:46.016193-07:00",
+      "hostname": "Mac.lan"
+    }
+  ],
+  "test_counts_by_class": {
+    "tests.test_broker_encoding": 16,
+    "tests.test_broker_loopback_bind": 18,
+    "tests.test_broker_pagination": 6,
+    "tests.test_broker_readonly": 14,
+    "tests.test_bundle_api": 4,
+    "tests.test_fixture": 1,
+    "tests.test_folder_browser": 33,
+    "tests.test_module_items": 37,
+    "tests.test_offline_demo": 11,
+    "tests.test_strip_html": 5,
+    "tests.test_sync_summary": 47
+  },
+  "prior_evidence_files_preserved": 34
+}

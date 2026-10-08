@@ -1,0 +1,122 @@
+{
+  "after_checks": [
+    {
+      "matched": true,
+      "path": ".github/dependabot.yml"
+    },
+    {
+      "matched": true,
+      "path": ".github/workflows/ci.yml"
+    },
+    {
+      "matched": true,
+      "path": ".gitignore"
+    },
+    {
+      "matched": true,
+      "path": "LICENSE"
+    },
+    {
+      "matched": true,
+      "path": "README.md"
+    },
+    {
+      "matched": true,
+      "path": "docs/API.md"
+    },
+    {
+      "matched": true,
+      "path": "docs/evidence/offline-demo-20260909.json"
+    },
+    {
+      "matched": true,
+      "path": "docs/folder-browser.md"
+    },
+    {
+      "matched": true,
+      "path": "pyproject.toml"
+    },
+    {
+      "matched": true,
+      "path": "scripts/inventory_pass.py"
+    },
+    {
+      "matched": true,
+      "path": "scripts/readonly_sweep.py"
+    },
+    {
+      "matched": true,
+      "path": "src/canvaspilot/__init__.py"
+    },
+    {
+      "matched": true,
+      "path": "src/canvaspilot/api.py"
+    },
+    {
+      "matched": true,
+      "path": "src/canvaspilot/bundle.py"
+    },
+    {
+      "matched": true,
+      "path": "src/canvaspilot/cli.py"
+    },
+    {
+      "matched": true,
+      "path": "src/canvaspilot/client.py"
+    },
+    {
+      "matched": true,
+      "path": "src/canvaspilot/folder_browser.py"
+    },
+    {
+      "matched": true,
+      "path": "src/canvaspilot/mcp_server.py"
+    },
+    {
+      "matched": true,
+      "path": "src/canvaspilot/offline_demo.py"
+    },
+    {
+      "matched": true,
+      "path": "src/canvaspilot/session_broker.py"
+    },
+    {
+      "matched": true,
+      "path": "tests/folder_http_fixture.py"
+    },
+    {
+      "matched": true,
+      "path": "tests/test_broker_loopback_bind.py"
+    },
+    {
+      "matched": true,
+      "path": "tests/test_broker_pagination.py"
+    },
+    {
+      "matched": true,
+      "path": "tests/test_broker_readonly.py"
+    },
+    {
+      "matched": true,
+      "path": "tests/test_bundle_api.py"
+    },
+    {
+      "matched": true,
+      "path": "tests/test_fixture.py"
+    },
+    {
+      "matched": true,
+      "path": "tests/test_folder_browser.py"
+    },
+    {
+      "matched": true,
+      "path": "tests/test_offline_demo.py"
+    },
+    {
+      "matched": true,
+      "path": "tests/test_strip_html.py"
+    }
+  ],
+  "candidate_tree": "fbc99e88b46328072ab8eaab23023b9b17dd1898",
+  "test_sha256": "98ba706a7d1cba13ab1740ab54ace7ee326815b1d2fd9dad0ec8f4911a7a85ca"
+}
