@@ -1,0 +1,12 @@
+{
+  "src/canvaspilot/feedback.py": {
+    "old_sha256": "7cbedb04d0f0fedb684a1cb49d2a2616d5393210b1b4a17cb3d0bffa24001eb9",
+    "new_sha256": "55454598effea598474a21f67e36d5bc5bea84aaefeefc18e4d8c49804ab9869",
+    "normalized_ast_equal": true
+  },
+  "tests/test_submission_feedback_native.py": {
+    "old_sha256": "ddbca46db607421445f1ac0a371f7e2843feb96b28bdcaae88982daa397159f6",
+    "new_sha256": "8ad68b80e63d2d448c2b1b9e8821bb6ebf47adc0b5e1ccc9379633bb9495d5fb",
+    "normalized_ast_equal": true
+  }
+}

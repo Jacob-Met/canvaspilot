@@ -1,0 +1,100 @@
+{
+  "source": "/dev/shm/hamon-afe225d6c6be-coordination-canvas/candidate",
+  "review_program_sha256": "9db5bbbde33d00758cbcaf4e22745bb00c8857a0cba1a4d92990ef20507c67f0",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "groups": [
+    {
+      "name": "duplicate_ids",
+      "observations": {
+        "criterion_orders": 6,
+        "duplicate_assessments_joined": 0
+      },
+      "passed": true
+    },
+    {
+      "name": "invalid_ids",
+      "observations": {
+        "non_string_ids": 6,
+        "missing_ids": 1,
+        "unmatched_assessments": 8
+      },
+      "passed": true
+    },
+    {
+      "name": "exact_strings",
+      "observations": {
+        "distinct_string_ids": 7,
+        "exact_joins": 4
+      },
+      "passed": true
+    },
+    {
+      "name": "source_and_output_isolation",
+      "observations": {
+        "nested_output_mutation_challenges": 7,
+        "repeat_transform_stable": true,
+        "api_inputs_unchanged": true
+      },
+      "passed": true
+    },
+    {
+      "name": "absent_and_empty",
+      "observations": {
+        "observations": [
+          {
+            "assessment_returned": false,
+            "comments": null
+          },
+          {
+            "assessment_returned": false,
+            "comments": null
+          },
+          {
+            "assessment_returned": true,
+            "comments": []
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "name": "error_propagation",
+      "observations": {
+        "original_exception_identities_preserved": [
+          {
+            "stage": "assignment",
+            "exception": "CanvasAuthError",
+            "requests": 1
+          },
+          {
+            "stage": "assignment",
+            "exception": "HTTPStatusError",
+            "requests": 1
+          },
+          {
+            "stage": "assignment",
+            "exception": "ReadTimeout",
+            "requests": 1
+          },
+          {
+            "stage": "submission",
+            "exception": "CanvasAuthError",
+            "requests": 2
+          },
+          {
+            "stage": "submission",
+            "exception": "HTTPStatusError",
+            "requests": 2
+          },
+          {
+            "stage": "submission",
+            "exception": "ReadTimeout",
+            "requests": 2
+          }
+        ]
+      },
+      "passed": true
+    }
+  ],
+  "passed": true
+}

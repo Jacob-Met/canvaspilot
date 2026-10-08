@@ -1,0 +1,13 @@
+{
+  "base": "5b1780ca4fcdce3d5f997cee401c86806ece822a",
+  "status": "immutable pre-composition production snapshot for independent semantic review",
+  "paths": {
+    "src/canvaspilot/feedback.py": "7cbedb04d0f0fedb684a1cb49d2a2616d5393210b1b4a17cb3d0bffa24001eb9",
+    "src/canvaspilot/api.py": "f3960294f48029da7734f0a25b99242720bf494bab46f75406ebbaa46defaec6",
+    "src/canvaspilot/cli.py": "e183bebcd4d48ebac4b32bf24f93316917466537fe45f95fba61c05874d1fcf2",
+    "src/canvaspilot/mcp_server.py": "ab354dc2a089825bf36c94bdfbdf8d8a1b63ab74b4cdb9e1f3c6821996207144",
+    "src/canvaspilot/bundle.py": "97085fbd7b355917a3454e0612e6e28c5ba5aa991ba1537003a09514908dc05c",
+    "src/canvaspilot/client.py": "6368329745216f473204995c101c912d9070fdd310def150bdbee927f9872de4",
+    "src/canvaspilot/__init__.py": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5"
+  }
+}

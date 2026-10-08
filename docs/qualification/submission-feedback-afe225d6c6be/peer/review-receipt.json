@@ -1,0 +1,69 @@
+{
+  "schema": 1,
+  "reviewer": "/root/coordination_review",
+  "recorded_utc": "2026-10-08T10:33:53.124142+00:00",
+  "repository": "Jacob-Met/canvaspilot",
+  "issue": 34,
+  "base_commit": "5b1780ca4fcdce3d5f997cee401c86806ece822a",
+  "decision": "accept frozen feedback semantic contract",
+  "feedback_module_sha256": "7cbedb04d0f0fedb684a1cb49d2a2616d5393210b1b4a17cb3d0bffa24001eb9",
+  "api_module_sha256": "f3960294f48029da7734f0a25b99242720bf494bab46f75406ebbaa46defaec6",
+  "api_method_source_sha256": "b4abacdcbaa3cf33769207adae97e8e306dc36a93f145a95923b3621b7bda990",
+  "program_sha256": "9db5bbbde33d00758cbcaf4e22745bb00c8857a0cba1a4d92990ef20507c67f0",
+  "source_files_unchanged_after_execution": true,
+  "passed_groups": 6,
+  "negative_read_failures": 6,
+  "parent_interface_qualification_is_separate": true,
+  "artifacts": [
+    {
+      "path": "REVIEW.md",
+      "bytes": 3426,
+      "sha256": "242fee76deb1c77bd434964537eb934f72c5beec8c50077aa2f64903009a78e0"
+    },
+    {
+      "path": "REVIEW_CONTRACT.md",
+      "bytes": 1531,
+      "sha256": "9ac933988dbb76c0e10606d1f835c54ffca9c1fb7f50a4ef4edd47e17c4102aa"
+    },
+    {
+      "path": "PRIMARY_SOURCES.md",
+      "bytes": 1295,
+      "sha256": "248780a82d7fe931c9e9baac1bd754acfc8d906da92a7e2a50585a925c8fe22a"
+    },
+    {
+      "path": "review_feedback_semantics.py",
+      "bytes": 11457,
+      "sha256": "9db5bbbde33d00758cbcaf4e22745bb00c8857a0cba1a4d92990ef20507c67f0"
+    },
+    {
+      "path": "pre-inspection-freeze.json",
+      "bytes": 380,
+      "sha256": "fbfd5db4485017cd4dbfa8ac448aac34956ce91835e749c1dc04b275faf843d4"
+    },
+    {
+      "path": "author-freeze-manifest.json",
+      "bytes": 876,
+      "sha256": "d21de2eec0d7afcf979a48aa3ed9560a9fb01207eacf2690acb39a5979110da4"
+    },
+    {
+      "path": "candidate-source-manifest.json",
+      "bytes": 1765,
+      "sha256": "ff23259a4f2d0c9cf8898482eaf154c016396eec76de9af22de8e33052b96380"
+    },
+    {
+      "path": "semantic-review.json",
+      "bytes": 2385,
+      "sha256": "7d85a4365659ed7d03db39ec00b48ac0416d1e315c1a64a195d7826c7434b4c0"
+    },
+    {
+      "path": "source-review.diff",
+      "bytes": 7692,
+      "sha256": "2c9f4b38accb8944fe8c93950c733419896c46c0b0226a278524ed1a327ce8eb"
+    },
+    {
+      "path": "reviewed-api-method.py.source",
+      "bytes": 743,
+      "sha256": "b4abacdcbaa3cf33769207adae97e8e306dc36a93f145a95923b3621b7bda990"
+    }
+  ]
+}

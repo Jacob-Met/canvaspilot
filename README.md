@@ -12,8 +12,9 @@ Same architecture as OpenCLI-style web agents (persistent browser session → si
 - **Headless after one headed login** — `session start --headless` reuses the saved profile
 - **Full REST surface** — courses, assignments, modules, pages, files, discussions, announcements, planner, inbox, calendar, activity stream, submissions, and **quizzes** (list/questions/submissions/start/complete)
 - **Agent-shaped digests** — `assignment_brief` (cleaned prompt + rubric), `sync_summary` (courses + upcoming), `submission_status`
+- **Submission feedback** — self submission comments and rubric assessments alongside current-attempt and grading metadata
 - **Fixture mode** — offline dict backend for tests and CI; no Canvas required
-- **34 MCP tools**, one stdio server, one env var for the host (`CANVAS_BASE_URL`) plus either a PAT or a running session broker
+- **35 MCP tools**, one stdio server, one env var for the host (`CANVAS_BASE_URL`) plus either a PAT or a running session broker
 - **Course folder browsing** — select nested folders and inspect bounded file-metadata pages through CLI, MCP or Python
 
 ## Install
@@ -66,6 +67,7 @@ canvaspilot whoami
 canvaspilot courses
 canvaspilot sync
 canvaspilot brief <course_id> <assignment_id>
+canvaspilot feedback <course_id> <assignment_id>
 ```
 
 `canvaspilot sync` orders upcoming assignments by deadline across the selected
@@ -107,13 +109,52 @@ Tools exposed (all prefixed `canvas_`):
 |------|-------|
 | Identity | `whoami`, `sync_summary`, `planner_items`, `activity_stream`, `list_todo_items`, `list_enrollments` |
 | Courses | `list_courses`, `get_course`, `list_modules`, `list_pages`, `get_page`, `list_files`, `browse_files`, `list_announcements` |
-| Assignments | `list_assignments`, `get_assignment`, `assignment_brief`, `submission_status`, `submit_assignment_text` |
+| Assignments | `list_assignments`, `get_assignment`, `assignment_brief`, `submission_status`, `submission_feedback`, `submit_assignment_text` |
 | Discussions | `list_discussion_topics`, `get_discussion`, `post_discussion_reply` |
 | Quizzes | `list_quizzes`, `get_quiz`, `list_quiz_questions`, `list_quiz_submissions`, `start_quiz_submission`, `complete_quiz_submission` |
 | Inbox / Calendar | `list_conversations`, `get_conversation`, `reply_conversation`, `list_calendar_events` |
 | **Full REST** | `canvas_api_request`, `canvas_api_paginated` — any `/api/v1/...` path (escape hatch for everything else; in session-broker mode `api_paginated` returns a single page only — see Auth modes) |
 
 Programmatic API bundle: `from canvaspilot.bundle import make_api, tool_inventory`.
+
+### Submission feedback
+
+Use `canvaspilot feedback <course_id> <assignment_id>`, the MCP tool
+`canvas_submission_feedback`, or `CanvasAPI.submission_feedback(course_id, assignment_id)`
+to review your submission comments and rubric evidence together. The report uses
+the [assignment](https://developerdocs.instructure.com/services/canvas/resources/assignments)
+and [self submission](https://developerdocs.instructure.com/services/canvas/resources/submissions)
+GET endpoints, requesting `submission_comments` and `rubric_assessment`. It uses
+the selected client's existing authentication and returns only what Canvas exposes
+to that user.
+
+The JSON report contains:
+
+- `assignment`: the assignment's identity, title, URL, due date, and possible points.
+- `submission`: Canvas's score, grade, attempt, workflow state, grader ID, and
+  submission/grading timestamps. A false `grade_matches_current_submission` means
+  the student resubmitted since grading; the displayed grade may describe an
+  earlier attempt. A missing flag remains `null`. Negative grader IDs are retained
+  because Canvas can identify an autograder that way.
+- `rubric.criteria`: each original `criterion` beside its `assessment`, joined
+  only by a unique exact string criterion ID. Criterion descriptions, ratings,
+  `ignore_for_scoring`, and `criterion_use_range` remain available. Missing or
+  ambiguous IDs leave the assessment in `rubric.unmatched_assessments`, keyed by
+  its original ID. Assessment points and comments are preserved as returned.
+- `rubric.use_rubric_for_grading` and `rubric.settings`: Canvas's grading/advisory
+  distinction and rubric settings. The report does not sum rubric points or infer
+  a grade. `assessment_returned` says whether Canvas returned an assessment object,
+  including an empty object; it does not mean the submission has been graded.
+- `submission_comments`: original comment objects, including authors, timestamps,
+  media comments, and attachments when supplied. Students and peers can also
+  author these comments. Media-only comments remain present.
+
+Zero marks remain zero. Missing/null comments or rubric data remain `null`, while
+explicitly returned empty arrays/maps remain empty. A criterion with no matching
+assessment has `assessment: null`; omitted assessment points or comments remain
+omitted. An inaccessible submission or malformed response is reported as an error,
+so it cannot be mistaken for a submission with no feedback. This operation performs
+two GETs and does not mark comments read, submit work, or change a grade.
 
 ### Module contents
 
@@ -197,7 +238,9 @@ pip install -e ".[dev]"
 pytest
 ```
 
-Tests run entirely in fixture mode.
+Tests use offline fixtures and disposable loopback HTTP servers. Feedback tests
+also exercise CLI subprocesses and the real MCP stdio interface; no Canvas account
+or running browser is needed.
 
 ## Responsible use
 

@@ -1,0 +1,450 @@
+{
+  "independent_input_sha256": "7ce2ff38268b7caf0b5eb80620546b6bb24d41c38c95ed767bfe0ff7f4fe6652",
+  "source_pins": {
+    "src/canvaspilot/__init__.py": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5",
+    "src/canvaspilot/api.py": "546fd973330ffb3c95c81ba670b5ae2add751a23362c83a370254ea702eee1a0",
+    "src/canvaspilot/bundle.py": "83f6d27e9587cd234a2d18f32e5807ca4cd8ca99e8aa295e246d6927f7c9eaf4",
+    "src/canvaspilot/cli.py": "f1e34f8ef91942605a7b95c0e00a4b13ba6f08ac9c9563c12b575cad7944cb3c",
+    "src/canvaspilot/client.py": "6368329745216f473204995c101c912d9070fdd310def150bdbee927f9872de4",
+    "src/canvaspilot/feedback.py": "7cbedb04d0f0fedb684a1cb49d2a2616d5393210b1b4a17cb3d0bffa24001eb9",
+    "src/canvaspilot/folder_browser.py": "c6a67229b268c539e5edb581e3320b06229460adc3fbc01d72e4964e31c0348a",
+    "src/canvaspilot/mcp_server.py": "311d920918ef8731865e6f865674979857e8cf7b63aaa2317570ef37e617ae96",
+    "src/canvaspilot/offline_demo.py": "2389f3ccc1b6db5995be0d90e014ea9345e3029aa5546a5b2dcf12c1197e6d4d",
+    "src/canvaspilot/session_broker.py": "2a106130c344aefebb23b078cd93b5d3ca3afd7f5325ae5fac2fb8a7251780cc"
+  },
+  "runtime_started_at": "2026-10-08T10:33:36.168962+00:00",
+  "interfaces": [
+    {
+      "interface": "python-api",
+      "case": "Reordered IDs, zero marks, prior attempt and advisory rubric",
+      "passed": true,
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/41/assignments/73",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          },
+          "synthetic_authorization_valid": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/41/assignments/73/submissions/self",
+          "query": {
+            "include[]": [
+              "submission_comments",
+              "rubric_assessment"
+            ],
+            "per_page": [
+              "50"
+            ]
+          },
+          "synthetic_authorization_valid": true
+        }
+      ]
+    },
+    {
+      "interface": "cli-process",
+      "case": "Reordered IDs, zero marks, prior attempt and advisory rubric",
+      "passed": true,
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/41/assignments/73",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          },
+          "synthetic_authorization_valid": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/41/assignments/73/submissions/self",
+          "query": {
+            "include[]": [
+              "submission_comments",
+              "rubric_assessment"
+            ],
+            "per_page": [
+              "50"
+            ]
+          },
+          "synthetic_authorization_valid": true
+        }
+      ]
+    },
+    {
+      "interface": "python-api",
+      "case": "Missing assessment and grade-current metadata remain unknown",
+      "passed": true,
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/41/assignments/73",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          },
+          "synthetic_authorization_valid": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/41/assignments/73/submissions/self",
+          "query": {
+            "include[]": [
+              "submission_comments",
+              "rubric_assessment"
+            ],
+            "per_page": [
+              "50"
+            ]
+          },
+          "synthetic_authorization_valid": true
+        }
+      ]
+    },
+    {
+      "interface": "cli-process",
+      "case": "Missing assessment and grade-current metadata remain unknown",
+      "passed": true,
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/41/assignments/73",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          },
+          "synthetic_authorization_valid": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/41/assignments/73/submissions/self",
+          "query": {
+            "include[]": [
+              "submission_comments",
+              "rubric_assessment"
+            ],
+            "per_page": [
+              "50"
+            ]
+          },
+          "synthetic_authorization_valid": true
+        }
+      ]
+    },
+    {
+      "interface": "python-api",
+      "case": "Current grade without a rubric",
+      "passed": true,
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/41/assignments/73",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          },
+          "synthetic_authorization_valid": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/41/assignments/73/submissions/self",
+          "query": {
+            "include[]": [
+              "submission_comments",
+              "rubric_assessment"
+            ],
+            "per_page": [
+              "50"
+            ]
+          },
+          "synthetic_authorization_valid": true
+        }
+      ]
+    },
+    {
+      "interface": "cli-process",
+      "case": "Current grade without a rubric",
+      "passed": true,
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/41/assignments/73",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          },
+          "synthetic_authorization_valid": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/41/assignments/73/submissions/self",
+          "query": {
+            "include[]": [
+              "submission_comments",
+              "rubric_assessment"
+            ],
+            "per_page": [
+              "50"
+            ]
+          },
+          "synthetic_authorization_valid": true
+        }
+      ]
+    },
+    {
+      "interface": "python-api",
+      "case": "Assessment comments survive unavailable rubric definitions",
+      "passed": true,
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/41/assignments/73",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          },
+          "synthetic_authorization_valid": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/41/assignments/73/submissions/self",
+          "query": {
+            "include[]": [
+              "submission_comments",
+              "rubric_assessment"
+            ],
+            "per_page": [
+              "50"
+            ]
+          },
+          "synthetic_authorization_valid": true
+        }
+      ]
+    },
+    {
+      "interface": "cli-process",
+      "case": "Assessment comments survive unavailable rubric definitions",
+      "passed": true,
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/41/assignments/73",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          },
+          "synthetic_authorization_valid": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/41/assignments/73/submissions/self",
+          "query": {
+            "include[]": [
+              "submission_comments",
+              "rubric_assessment"
+            ],
+            "per_page": [
+              "50"
+            ]
+          },
+          "synthetic_authorization_valid": true
+        }
+      ]
+    },
+    {
+      "interface": "mcp-stdio",
+      "case": "Reordered IDs, zero marks, prior attempt and advisory rubric",
+      "passed": true,
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/41/assignments/73",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          },
+          "synthetic_authorization_valid": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/41/assignments/73/submissions/self",
+          "query": {
+            "include[]": [
+              "submission_comments",
+              "rubric_assessment"
+            ],
+            "per_page": [
+              "50"
+            ]
+          },
+          "synthetic_authorization_valid": true
+        }
+      ]
+    },
+    {
+      "interface": "mcp-stdio",
+      "case": "Missing assessment and grade-current metadata remain unknown",
+      "passed": true,
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/41/assignments/73",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          },
+          "synthetic_authorization_valid": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/41/assignments/73/submissions/self",
+          "query": {
+            "include[]": [
+              "submission_comments",
+              "rubric_assessment"
+            ],
+            "per_page": [
+              "50"
+            ]
+          },
+          "synthetic_authorization_valid": true
+        }
+      ]
+    },
+    {
+      "interface": "mcp-stdio",
+      "case": "Current grade without a rubric",
+      "passed": true,
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/41/assignments/73",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          },
+          "synthetic_authorization_valid": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/41/assignments/73/submissions/self",
+          "query": {
+            "include[]": [
+              "submission_comments",
+              "rubric_assessment"
+            ],
+            "per_page": [
+              "50"
+            ]
+          },
+          "synthetic_authorization_valid": true
+        }
+      ]
+    },
+    {
+      "interface": "mcp-stdio",
+      "case": "Assessment comments survive unavailable rubric definitions",
+      "passed": true,
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/41/assignments/73",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          },
+          "synthetic_authorization_valid": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/41/assignments/73/submissions/self",
+          "query": {
+            "include[]": [
+              "submission_comments",
+              "rubric_assessment"
+            ],
+            "per_page": [
+              "50"
+            ]
+          },
+          "synthetic_authorization_valid": true
+        }
+      ]
+    }
+  ],
+  "passed": true,
+  "mcp_initialization": {
+    "_meta": null,
+    "protocolVersion": "2025-11-25",
+    "capabilities": {
+      "experimental": null,
+      "logging": null,
+      "prompts": {
+        "listChanged": false
+      },
+      "resources": {
+        "subscribe": false,
+        "listChanged": false
+      },
+      "tools": {
+        "listChanged": false
+      },
+      "completions": null,
+      "extensions": null,
+      "tasks": null
+    },
+    "serverInfo": {
+      "name": "canvaspilot",
+      "title": null,
+      "version": "",
+      "description": null,
+      "websiteUrl": null,
+      "icons": null
+    },
+    "instructions": "Canvas LMS MCP bundle: curated canvas_* tools for common student/ops workflows, plus canvas_api_request / canvas_api_paginated escape hatches for any /api/v1 REST path (session broker or PAT). Prefer curated tools first; use the escape hatch when a named tool is missing. Prefer these over raw browser clicking."
+  },
+  "mcp_feedback_tool": {
+    "name": "canvas_submission_feedback",
+    "title": null,
+    "description": "Read self submission comments and rubric feedback with original authors, criteria, and grade/attempt metadata. A false grade_matches_current_submission means grading preceded the latest resubmission. Does not calculate a grade.",
+    "inputSchema": {
+      "properties": {
+        "course_id": {
+          "title": "Course Id",
+          "type": "string"
+        },
+        "assignment_id": {
+          "title": "Assignment Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "course_id",
+        "assignment_id"
+      ],
+      "type": "object",
+      "title": "canvas_submission_feedbackArguments"
+    },
+    "execution": null,
+    "outputSchema": null,
+    "icons": null,
+    "annotations": null,
+    "_meta": null
+  },
+  "runtime_finished_at": "2026-10-08T10:33:41.334295+00:00"
+}

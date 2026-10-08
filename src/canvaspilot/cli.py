@@ -73,6 +73,18 @@ def main(argv: list[str] | None = None) -> None:
     brief.add_argument("course_id")
     brief.add_argument("assignment_id")
 
+    feedback = sub.add_parser(
+        "feedback",
+        help="Read self submission comments, rubric feedback, and grade/attempt metadata",
+        description=(
+            "Read self submission comments and rubric feedback. A false "
+            "grade_matches_current_submission means grading preceded the latest resubmission."
+        ),
+    )
+    add_common(feedback)
+    feedback.add_argument("course_id")
+    feedback.add_argument("assignment_id")
+
     disc = sub.add_parser("discussions", help="List discussion topics")
     add_common(disc)
     disc.add_argument("course_id")
@@ -137,6 +149,14 @@ def main(argv: list[str] | None = None) -> None:
             print(
                 json.dumps(
                     api.assignment_brief(args.course_id, args.assignment_id),
+                    indent=2,
+                    default=str,
+                )
+            )
+        elif args.cmd == "feedback":
+            print(
+                json.dumps(
+                    api.submission_feedback(args.course_id, args.assignment_id),
                     indent=2,
                     default=str,
                 )

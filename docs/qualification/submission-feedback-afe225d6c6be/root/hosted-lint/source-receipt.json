@@ -1,0 +1,110 @@
+{
+  "repository": "Jacob-Met/canvaspilot",
+  "parent": "e5aa86ff8cee87389fa57448d5368cf16c0d1e36",
+  "parent_tree": "d5b161eac824c23e9af8a437875bbc7fc6edae84",
+  "native_commit": "2b764c87daab0395d7bf355ebef997f30fc4d7d6",
+  "native_parent": "2fbc0de25f95bbc20197e18228997c367316ee66",
+  "expected_source_descendant_tree": "19d5a363a3c7b2fc632cedd61e656b7e1086c0ce",
+  "production_files": 127,
+  "production_tree": "bcdc4a15a98567b2e6f18bc0f8fd10cf6cb3eafc",
+  "unchanged_parent_files": 177,
+  "hosted_failure": {
+    "run": 37767836872,
+    "job": 113279722222,
+    "decoded_log_bytes": 35281,
+    "decoded_log_sha256": "9dfc10e0daf631d48358e92e6886d1ff42b297a6fb0e1e16e9350329d513e5f6"
+  },
+  "files": [
+    {
+      "path": "src/canvaspilot/feedback.py",
+      "local_path": "/dev/shm/hamon-afe225d6c6be-product/canvaspilot/src/canvaspilot/feedback.py",
+      "mode": "100644",
+      "type": "blob",
+      "bytes": 3900,
+      "sha256": "55454598effea598474a21f67e36d5bc5bea84aaefeefc18e4d8c49804ab9869",
+      "git_blob_sha": "ec996f421a851d699a9ac7cb1f2a486f9ff7c4ea",
+      "group": "source"
+    },
+    {
+      "path": "tests/test_submission_feedback_native.py",
+      "local_path": "/dev/shm/hamon-afe225d6c6be-product/canvaspilot/tests/test_submission_feedback_native.py",
+      "mode": "100644",
+      "type": "blob",
+      "bytes": 9410,
+      "sha256": "8ad68b80e63d2d448c2b1b9e8821bb6ebf47adc0b5e1ccc9379633bb9495d5fb",
+      "git_blob_sha": "bb5bce648386995732b08c098fb5d4249f6bc0c8",
+      "group": "source"
+    },
+    {
+      "path": "docs/qualification/submission-feedback-afe225d6c6be/root/hosted-lint/hosted-ci-37767836872.json",
+      "local_path": "/dev/shm/hamon-afe225d6c6be/canvas-feedback-review/hosted-ci-37767836872.json",
+      "mode": "100644",
+      "type": "blob",
+      "bytes": 35954,
+      "sha256": "eaef2f2118ab43f2b9e1bfe398381a8ce402371bf9d9b77c69cea4d7d16b1804",
+      "git_blob_sha": "a4924effa1b54d9aa7abfda19b8c717c63f95c08",
+      "group": "evidence"
+    },
+    {
+      "path": "docs/qualification/submission-feedback-afe225d6c6be/root/hosted-lint/hosted-lint-repair-ast.json",
+      "local_path": "/dev/shm/hamon-afe225d6c6be/canvas-feedback-review/hosted-lint-repair-ast.json",
+      "mode": "100644",
+      "type": "blob",
+      "bytes": 506,
+      "sha256": "7b1a015565f6e5beec058e5d5d5e85e88c2a2ee87c51508122d7bdd35a46fd7c",
+      "git_blob_sha": "022a13108945c69071b73d7693788b8b7ce57383",
+      "group": "evidence"
+    },
+    {
+      "path": "docs/qualification/submission-feedback-afe225d6c6be/root/hosted-lint/hosted-lint-repair-native.log",
+      "local_path": "/dev/shm/hamon-afe225d6c6be/canvas-feedback-review/hosted-lint-repair-native.log",
+      "mode": "100644",
+      "type": "blob",
+      "bytes": 99,
+      "sha256": "c66452dffab6a63412e878d0f240baf1e9ecfdcc0d3f3b7b8152b355b0ff0038",
+      "git_blob_sha": "2dc14f5c46b845d54d2fae269096755895104ecd",
+      "group": "evidence"
+    },
+    {
+      "path": "docs/qualification/submission-feedback-afe225d6c6be/root/hosted-lint/hosted-lint-repair-native.xml",
+      "local_path": "/dev/shm/hamon-afe225d6c6be/canvas-feedback-review/hosted-lint-repair-native.xml",
+      "mode": "100644",
+      "type": "blob",
+      "bytes": 3587,
+      "sha256": "2dc704e4a3a5330a601ffaa3a9ece161f2d9c4eb46ce7af0fdd54ca95b5ba521",
+      "git_blob_sha": "8ecdf43ed01d03fc252a0ddad8bd8748ca74dc25",
+      "group": "evidence"
+    },
+    {
+      "path": "docs/qualification/submission-feedback-afe225d6c6be/root/hosted-lint/hosted-lint-repair-local-ruff.log",
+      "local_path": "/dev/shm/hamon-afe225d6c6be/canvas-feedback-review/hosted-lint-repair-local-ruff.log",
+      "mode": "100644",
+      "type": "blob",
+      "bytes": 31,
+      "sha256": "a2139a0fac3d593227213b20687e8ca609969de43a2fbe3a9de919754b204273",
+      "git_blob_sha": "43ef9b5336973dc3ac05039714be3dff1c05fb6e",
+      "group": "evidence"
+    },
+    {
+      "path": "docs/qualification/submission-feedback-afe225d6c6be/root/hosted-lint/hosted-lint-repair-local-results.json",
+      "local_path": "/dev/shm/hamon-afe225d6c6be/canvas-feedback-review/hosted-lint-repair-local-results.json",
+      "mode": "100644",
+      "type": "blob",
+      "bytes": 636,
+      "sha256": "434a2d6e8c878b1c50a463fa1d496a761a9e247569649d5165b79c7a511103d6",
+      "git_blob_sha": "3f4a15e1d70986b955aba46227a17d6385c0fcab",
+      "group": "evidence"
+    },
+    {
+      "path": "docs/qualification/submission-feedback-afe225d6c6be/root/hosted-lint/README.md",
+      "local_path": "/dev/shm/hamon-afe225d6c6be/canvas-feedback-review/hosted-lint-repair-README.md",
+      "mode": "100644",
+      "type": "blob",
+      "bytes": 1950,
+      "sha256": "d6314a1f06a6a9b553615d7f0d87d2e846301bf2f32592f1b3928676c3c804ef",
+      "git_blob_sha": "d8af2f7495ceeecf7850024adc850f95d0843dd1",
+      "group": "evidence"
+    }
+  ],
+  "meaning": "Production feedback AST is unchanged; test contexts normalize identically. Original source qualification remains tied to its original hashes. This receipt binds the narrow follow-up and retained initial hosted failure."
+}

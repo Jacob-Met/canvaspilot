@@ -8,6 +8,7 @@ from html import unescape
 from typing import Any
 
 from canvaspilot.client import CanvasClient
+from canvaspilot.feedback import build_submission_feedback
 
 TAG_RE = re.compile(r"<[^>]+>")
 WS_RE = re.compile(r"\s+")
@@ -488,6 +489,21 @@ class CanvasAPI:
             "GET",
             f"/api/v1/courses/{course_id}/assignments/{assignment_id}/submissions/self",
         )
+
+    def submission_feedback(self, course_id: int | str, assignment_id: int | str) -> dict[str, Any]:
+        """Read self submission comments and rubric evidence alongside grade/attempt metadata.
+
+        A false grade_matches_current_submission means grading preceded the
+        latest resubmission. Rubric points are not used to calculate a grade.
+        """
+        path = f"/api/v1/courses/{course_id}/assignments/{assignment_id}"
+        assignment = self.client.request("GET", path)
+        submission = self.client.request(
+            "GET",
+            f"{path}/submissions/self",
+            params={"include[]": ["submission_comments", "rubric_assessment"]},
+        )
+        return build_submission_feedback(assignment, submission)
 
     def submit_assignment_text(
         self,
