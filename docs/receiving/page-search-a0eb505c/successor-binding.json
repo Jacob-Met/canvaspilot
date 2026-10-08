@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "recorded_at": 1791494006.8890808,
+  "status": "qualified_exact_56a_source_composition_no_new_runtime_gate",
+  "reviewer": "chatgpt-a0eb505c4971/integration_review",
+  "parent": "56a72a2e2cee5ec04671d12ebe5bc2484afb8026",
+  "parent_tree": "a07c3e941219ff80968e1ff20528a63541bb7400",
+  "source_only_prospective_tree": "061e78751f9a0eb0b7cd905ceda67bbc81066864",
+  "source_freeze_sha256": "bc775aec9488d876bd5b3d6353cd0054f4a6397ae580ffff3f8beb5cef27cffa",
+  "prior_review_sha256": "d0f6875bc87b8eae9ed807604ce7c83c2c19c0ac7991a675dde403719b7b0352",
+  "helper_sha256": "d43858f12a338195c77aae4453e7dcac67486c4a7b49d20e9cbf362f8b76d296",
+  "cli_sha256": "15ee9f7102ff34748b7cdb8d753b92661680600bf1359edeff935becd49bfc95",
+  "native_files_bound": 43,
+  "prior_nonshared_files_exact": 38,
+  "incoming_peer_files_exact": [
+    "src/canvaspilot/syllabus_packet.py",
+    "tests/test_syllabus_packet.py",
+    "tests/test_syllabus_packet_cli.py"
+  ],
+  "complete_parent_leaf_count": 1616,
+  "computed_product_leaf_count": 1620,
+  "unrelated_parent_leaves_preserved": 1614,
+  "checks": [
+    "All43 native raw-byte hashes/Git blob hashes/modes match the immutable freeze.",
+    "All38 prior nonshared files remain byte-exact; helper/API/client/runtime declarations and all receiving-test source are unchanged.",
+    "Current CLI removes only the exact own parser/dispatch to recover the actual56a parent input; parent raw Git blob agrees with canonical leaf map.",
+    "Current README preserves complete parent bytes and exact prior own appendix.",
+    "Read actual two-file delta: only separate export-syllabus parser and lazy selected-command dispatch plus its documentation. Existing find-pages handling, logger/close behavior and paginator source stay exact.",
+    "Independently reconstructed canonical parent tree a07c from all1616 saved leaf records and bound it to a fresh GitHub commit-object read. Applying only six own path objects reproduces061e exactly and preserves all1614 unrelated parent leaves."
+  ],
+  "execution_evidence": "Prior two actual native-client HTTP cases retain original process exit1 for unsupported per_page100 receiver expectation;42/42 corrected assertions over their exact captured observations establish stated behavior. No tests or HTTP calls were repeated for this disjoint source composition.",
+  "findings": [],
+  "limits": [
+    "This is source-only composition binding, not a claimed new runtime execution on56a.",
+    "Partial native Git commits are reproduction custody, not canonical ancestry.",
+    "No publication/hosted CI/merge/deployment or live account claim."
+  ]
+}

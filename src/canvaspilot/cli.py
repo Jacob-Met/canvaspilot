@@ -183,6 +183,23 @@ def main(argv: list[str] | None = None) -> None:
                         default="upcoming", help="Canvas assignment selection (default: upcoming)")
 
 
+    page_search = sub.add_parser(
+        "find-pages", help="Find literal text in returned course-page titles and available bodies",
+    )
+    add_common(page_search)
+    from canvaspilot.page_search import validate_course, validate_query
+
+    def page_search_type(validate):
+        def parse(value: str) -> str:
+            try:
+                return validate(value)
+            except (TypeError, ValueError) as error:
+                raise argparse.ArgumentTypeError(str(error)) from error
+        return parse
+
+    page_search.add_argument("course_id", type=page_search_type(validate_course))
+    page_search.add_argument("--text", required=True, type=page_search_type(validate_query))
+
     page_export = sub.add_parser(
         "export-pages", help="Save explicitly selected course pages to a new offline HTML reading packet"
     )
@@ -401,6 +418,24 @@ def main(argv: list[str] | None = None) -> None:
             finally:
                 http_log.setLevel(previous_level)
             print(json.dumps(result, indent=2))
+        elif args.cmd == "find-pages":
+            import httpx
+
+            from canvaspilot.page_search import find_pages
+
+            http_log = logging.getLogger("httpx")
+            previous_level = http_log.level
+            http_log.setLevel(max(http_log.getEffectiveLevel(), logging.WARNING))
+            try:
+                result = find_pages(api, args.course_id, args.text)
+            except (RuntimeError, httpx.HTTPError, ValueError, TypeError) as error:
+                print(json.dumps({
+                    "ok": False, "error": type(error).__name__, "message": str(error),
+                }), file=sys.stderr)
+                raise SystemExit(1) from None
+            finally:
+                http_log.setLevel(previous_level)
+            print(json.dumps(result, indent=2, ensure_ascii=False, allow_nan=False))
         elif args.cmd == "grade-review":
             import httpx
 

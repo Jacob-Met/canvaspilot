@@ -1,0 +1,58 @@
+{
+  "scope": "Literal course-page search through the existing Canvas API collection reader. Native qualification only; no live Canvas, account, deployment or installation claim.",
+  "issue": "https://github.com/Jacob-Met/canvaspilot/issues/92",
+  "worker_id": "chatgpt-a0eb505c4971/mac_production",
+  "source": {
+    "original_base": "e46a90ff00f80a128baf842587f08df5862318aa",
+    "first_current_receiving": "acdd8c1be09300dc4daf455d7f010a69bf7fede5",
+    "current_parent": "56a72a2e2cee5ec04671d12ebe5bc2484afb8026",
+    "current_parent_tree": "a07c3e941219ff80968e1ff20528a63541bb7400",
+    "product_only_tree": "061e78751f9a0eb0b7cd905ceda67bbc81066864",
+    "runtime_materialization_files": 43,
+    "full_product_leaves": 1620,
+    "unrelated_parent_leaves_preserved": 1614
+  },
+  "baseline": {
+    "path": "author/evidence/baseline-result.json",
+    "sha256": "28eb676361d37be536cec406e54326e8da6066f2f04b4b0dd1d4c3edbb57c4b7",
+    "outcome": "Actual original CLI lacks find-pages (exit2, empty stdout); existing fixture demonstrates body phrase omitted by ordinary list but retained when bodies are explicitly requested."
+  },
+  "author_gates": [
+    {
+      "path": "author/evidence/gate-01/result.json",
+      "outcome": "19 cases:17 passed,2 failed. One inherited per_page100 expectation was corrected to50. New query admission wrapper was improved to expose its precise validation error. Original source, failing output, Ruff findings and patch retained."
+    },
+    {
+      "path": "author/evidence/gate02-reconciliation.json",
+      "outcome": "Durable JUnit/stdout:18 passed,1 failed; Ruff output passed. The remaining old whoami assertion expected id instead of actual profile.id. Source bytes unchanged. Remote session was lost and no final result/exit was recovered; reconciliation preserves that limit and identifies two generated cache files in the overly broad controller inventory."
+    },
+    {
+      "path": "author/evidence/gate-03/result.json",
+      "outcome": "Only the previously failing actual-client/whoami case rerun after correcting its response-envelope expectation:1 passed. No other18 cases rerun."
+    },
+    {
+      "path": "author/evidence/gate03-lint-correction/result.json",
+      "outcome": "Lint-only corrected controller invocation passed. Earlier invalid pytest-selector-as-lint-path setup failure retained; no product change."
+    },
+    {
+      "path": "author/evidence/subprocess-receiving-acdd8c1b/result.json",
+      "outcome": "Actual CLI subprocess/current acdd composition:9 checks passed; two private fictional HTTP pages, exact duplicate rows, title/body coverage, opaque cursor, empty stderr/profile absence and unchanged40 source files."
+    }
+  ],
+  "independent": {
+    "receipt": "independent-acdd/independent-review.json",
+    "sha256": "d0f6875bc87b8eae9ed807604ce7c83c2c19c0ac7991a675dde403719b7b0352",
+    "outcome": "Actual CanvasClient/cli.main over isolated fictional HTTP: ordered duplicates, Unicode casefold, unavailable bodies, separate title/body matching and later503/no partial stdout. Original per_page100 expectation failure retained;42 remaining assertions completed over immutable captured reports without new HTTP. Native close once and logger restoration observed.",
+    "successor": "Narrow successor source-binding receipt is included separately; original actual HTTP receiving remains pinned to acdd."
+  },
+  "limits": [
+    "All data is authored fiction; no real Canvas profile, student record, provider token or account was used.",
+    "Python3.14.4 native runtime is recorded. Hosted repository CI on its configured runtime remains a separate publication gate.",
+    "Decoded collection limits apply after the unchanged client has collected data. Existing pagination limits and transport behavior are unchanged.",
+    "Matching uses Unicode casefold and the repository's existing strip_html conversion, not a browser renderer or embedded-resource fetch.",
+    "Missing/null/locked bodies and block-editor-only content are not represented as searched no-matches.",
+    "Partial native Git bundles preserve source custody; their commits do not claim canonical GitHub ancestry.",
+    "Initial failures, setup mistakes, missing session status and source generations remain in the archive."
+  ],
+  "created_at": "2026-10-08T21:13:00.169933+00:00"
+}

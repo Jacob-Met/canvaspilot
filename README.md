@@ -529,3 +529,9 @@ canvaspilot find-announcements 42 77 --text "room change" --start-date 2026-10-0
 
 The result preserves ordered full announcement rows and identifies which fields matched.
 See [announcement text search](docs/announcement-search.md) for matching, output, and complete-read behavior.
+
+## Find text in course pages
+
+Use `canvaspilot find-pages 42 --text "field journal"` to search returned page
+titles and available body text. Unavailable bodies remain explicit; see
+[page search and coverage](docs/page-search.md).
