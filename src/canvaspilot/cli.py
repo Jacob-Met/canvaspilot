@@ -8,6 +8,16 @@ import sys
 from pathlib import Path
 
 
+def _positive_int(value: str) -> int:
+    try:
+        parsed = int(value)
+    except ValueError as exc:
+        raise argparse.ArgumentTypeError("must be a positive integer") from exc
+    if parsed <= 0:
+        raise argparse.ArgumentTypeError("must be a positive integer")
+    return parsed
+
+
 def main(argv: list[str] | None = None) -> None:
     parser = argparse.ArgumentParser(prog="canvaspilot")
     sub = parser.add_subparsers(dest="cmd", required=True)
@@ -47,6 +57,11 @@ def main(argv: list[str] | None = None) -> None:
     ]:
         p = sub.add_parser(name, help=help_)
         add_common(p)
+        if name == "sync":
+            p.add_argument("--limit-courses", type=_positive_int, default=10,
+                           help="Maximum courses to inspect (default: 10)")
+            p.add_argument("--limit-assignments-per-course", type=_positive_int, default=5,
+                           help="Maximum assignments to include per course (default: 5)")
 
     assigns = sub.add_parser("assignments", help="List assignments for a course")
     add_common(assigns)
@@ -106,7 +121,10 @@ def main(argv: list[str] | None = None) -> None:
         elif args.cmd == "courses":
             print(json.dumps(api.list_courses(), indent=2, default=str))
         elif args.cmd == "sync":
-            print(json.dumps(api.sync_summary(), indent=2, default=str))
+            print(json.dumps(api.sync_summary(
+                limit_courses=args.limit_courses,
+                limit_assignments_per_course=args.limit_assignments_per_course,
+            ), indent=2, default=str))
         elif args.cmd == "assignments":
             print(
                 json.dumps(

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import re
+from datetime import datetime
 from html import unescape
 from typing import Any
 
@@ -10,6 +11,29 @@ from canvaspilot.client import CanvasClient
 
 TAG_RE = re.compile(r"<[^>]+>")
 WS_RE = re.compile(r"\s+")
+
+
+def _validate_sync_limits(limit_courses: int, limit_assignments_per_course: int) -> None:
+    for name, value in (
+        ("limit_courses", limit_courses),
+        ("limit_assignments_per_course", limit_assignments_per_course),
+    ):
+        if type(value) is not int or value <= 0:
+            raise ValueError(f"{name} must be a positive integer")
+
+
+def _sync_due_key(row: dict[str, Any]) -> tuple[int, datetime | None]:
+    """Order aware timestamps by instant, leaving all unknown dates stable at the end."""
+    raw = row.get("due_at")
+    if isinstance(raw, str):
+        try:
+            value = datetime.fromisoformat(raw)
+            if value.utcoffset() is not None:
+                # Direct comparison avoids UTC conversion overflow at years 1/9999.
+                return (0, value)
+        except ValueError:
+            pass
+    return (1, None)
 
 
 def assert_canvas_api_path(path: str) -> str:
@@ -192,11 +216,44 @@ class CanvasAPI:
             f"/api/v1/courses/{course_id}/modules",
             params={"include[]": ["items"]},
         )
+
+        def valid_items(value: Any) -> bool:
+            return isinstance(value, list) and all(
+                isinstance(item, dict)
+                and isinstance(item.get("id"), (int, str))
+                and re.fullmatch(r"[0-9]+", str(item["id"]))
+                for item in value
+            )
+
+        modules = []
+        for module in rows:
+            if not isinstance(module, dict):
+                modules.append(module)
+                continue
+            inline = module.get("items")
+            count = module.get("items_count")
+            if not valid_items(inline) or (type(count) is int and len(inline) < count):
+                # Canvas may omit inline items even when include[]=items was
+                # requested. Resolve them before projecting either detail mode.
+                if inline is None and type(count) is int and count == 0:
+                    items = []
+                else:
+                    module_id = module.get("id")
+                    if not isinstance(module_id, (int, str)) or not re.fullmatch(r"[0-9]+", str(module_id)):
+                        raise ValueError("Cannot retrieve module items without a valid module ID")
+                    items = self.client.get_paginated(
+                        f"/api/v1/courses/{course_id}/modules/{module_id}/items"
+                    )
+                    if not valid_items(items):
+                        raise ValueError("Canvas returned malformed module items")
+                # Do not mutate fixture data or another caller's response object.
+                module = {**module, "items": items}
+            modules.append(module)
         full = str(detail or "compact").lower() in {"full", "verbose", "all"}
         if full:
-            return rows
+            return modules
         out = []
-        for m in rows:
+        for m in modules:
             if not isinstance(m, dict):
                 continue
             items = []
@@ -501,20 +558,49 @@ class CanvasAPI:
         """Escape hatch: paginated GET under ``/api/v1``."""
         return self.client.get_paginated(assert_canvas_api_path(path), params=params)
 
-    def sync_summary(self, *, limit_courses: int = 10) -> dict[str, Any]:
-        courses = self.list_courses()[:limit_courses]
+    def sync_summary(
+        self, *, limit_courses: int = 10, limit_assignments_per_course: int = 5
+    ) -> dict[str, Any]:
+        """Read upcoming deadlines with explicit selection counts over returned API rows."""
+        _validate_sync_limits(limit_courses, limit_assignments_per_course)
+        returned_courses = self.list_courses()
+        courses = returned_courses[:limit_courses]
         upcoming: list[dict[str, Any]] = []
+        course_summaries: list[dict[str, Any]] = []
         for c in courses:
             try:
                 assigns = self.list_assignments(c["id"], bucket="upcoming")
             except Exception as exc:  # noqa: BLE001 — per-course soft fail
                 upcoming.append({"course_id": c["id"], "error": str(exc)})
+                course_summaries.append({
+                    "course_id": c["id"],
+                    "status": "error",
+                    "assignments_returned": None,
+                    "assignments_included": None,
+                    "assignments_omitted": None,
+                    "unknown_due_dates": None,
+                })
                 continue
-            for a in assigns[:5]:
-                upcoming.append({**a, "course_name": c.get("name")})
+            selected = sorted(assigns, key=_sync_due_key)[:limit_assignments_per_course]
+            upcoming.extend({**a, "course_name": c.get("name")} for a in selected)
+            course_summaries.append({
+                "course_id": c["id"],
+                "status": "ok",
+                "assignments_returned": len(assigns),
+                "assignments_included": len(selected),
+                "assignments_omitted": len(assigns) - len(selected),
+                "unknown_due_dates": sum(1 for a in assigns if _sync_due_key(a)[0]),
+            })
         return {
             "mode": self.client.mode,
             "course_count": len(courses),
             "courses": courses,
-            "upcoming_assignments": upcoming,
+            "upcoming_assignments": sorted(upcoming, key=_sync_due_key),
+            "courses_returned": len(returned_courses),
+            "courses_omitted": len(returned_courses) - len(courses),
+            "limits": {
+                "courses": limit_courses,
+                "assignments_per_course": limit_assignments_per_course,
+            },
+            "course_summaries": course_summaries,
         }

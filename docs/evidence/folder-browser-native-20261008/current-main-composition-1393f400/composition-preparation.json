@@ -1,0 +1,58 @@
+{
+  "schema": "canvaspilot.folder-current-composition-preparation.v1",
+  "observed_at": "2026-10-08T09:54:44.950877+00:00",
+  "base_commit": "1393f40047297147029d8571bfd824f74e58e1dc",
+  "base_tree": "cb758a4d82431552ab9dc35755c04a12b15b2f2a",
+  "base_files": 63,
+  "prior_feature_base": "3d7a9453fb0cbdf08312320d71c648462592b217",
+  "qualified_prior_tree": "9bf3697e5d577227caeb3117d1b4d7cbc96772ab",
+  "source": "/tmp/canvaspilot-folders-cf5799f6d38b-FIWmPE/module-current-compose/source",
+  "merges": [
+    {
+      "path": "README.md",
+      "merge_exit": 1,
+      "conflict": true
+    },
+    {
+      "path": "docs/folder-browser.md",
+      "merge_exit": 0,
+      "new": true
+    },
+    {
+      "path": "src/canvaspilot/api.py",
+      "merge_exit": 0,
+      "conflict": false
+    },
+    {
+      "path": "src/canvaspilot/bundle.py",
+      "merge_exit": 0,
+      "conflict": false
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "merge_exit": 0,
+      "conflict": false
+    },
+    {
+      "path": "src/canvaspilot/folder_browser.py",
+      "merge_exit": 0,
+      "new": true
+    },
+    {
+      "path": "src/canvaspilot/mcp_server.py",
+      "merge_exit": 1,
+      "conflict": true
+    },
+    {
+      "path": "tests/folder_http_fixture.py",
+      "merge_exit": 0,
+      "new": true
+    },
+    {
+      "path": "tests/test_folder_browser.py",
+      "merge_exit": 0,
+      "new": true
+    }
+  ],
+  "github_mutations_performed": false
+}

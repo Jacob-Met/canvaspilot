@@ -1,0 +1,68 @@
+{
+  "mode": "session_broker",
+  "course_count": 2,
+  "courses": [
+    {
+      "id": 42,
+      "name": "Synthetic course 42",
+      "course_code": null,
+      "enrollment_term_id": null,
+      "term": null
+    },
+    {
+      "id": 77,
+      "name": "Synthetic course 77",
+      "course_code": null,
+      "enrollment_term_id": null,
+      "term": null
+    }
+  ],
+  "upcoming_assignments": [
+    {
+      "id": 7701,
+      "course_id": 77,
+      "name": "Nearest overall",
+      "due_at": "2026-11-01T12:00:00Z",
+      "points_possible": null,
+      "submission_types": null,
+      "html_url": null,
+      "has_submitted_submissions": null,
+      "course_name": "Synthetic course 77"
+    },
+    {
+      "id": 4202,
+      "course_id": 42,
+      "name": "Nearest 42",
+      "due_at": "2026-11-10T12:00:00Z",
+      "points_possible": null,
+      "submission_types": null,
+      "html_url": null,
+      "has_submitted_submissions": null,
+      "course_name": "Synthetic course 42"
+    }
+  ],
+  "courses_returned": 2,
+  "courses_omitted": 0,
+  "limits": {
+    "courses": 2,
+    "assignments_per_course": 1
+  },
+  "course_summaries": [
+    {
+      "course_id": 42,
+      "status": "ok",
+      "assignments_returned": 2,
+      "assignments_included": 1,
+      "assignments_omitted": 1,
+      "unknown_due_dates": 0
+    },
+    {
+      "course_id": 77,
+      "status": "ok",
+      "assignments_returned": 1,
+      "assignments_included": 1,
+      "assignments_omitted": 0,
+      "unknown_due_dates": 0
+    }
+  ]
+}
