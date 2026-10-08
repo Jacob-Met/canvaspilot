@@ -1,0 +1,26 @@
+[
+  {
+    "label": "ruff",
+    "command": [
+      "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-venv/bin/python",
+      "-m",
+      "ruff",
+      "check",
+      "src",
+      "tests",
+      "scripts"
+    ],
+    "exit": 0
+  },
+  {
+    "label": "tests",
+    "command": [
+      "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-venv/bin/python",
+      "-m",
+      "pytest",
+      "-q",
+      "--junitxml=/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-provider-routing-receiving/capable-junit.xml"
+    ],
+    "exit": 1
+  }
+]

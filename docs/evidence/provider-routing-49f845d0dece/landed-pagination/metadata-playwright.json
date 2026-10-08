@@ -1,0 +1,35 @@
+{
+  "receiver_sha256": "981c072ababa9be3d503ae605ef7ad098ffba41584da1861c058d29b431b07f5",
+  "input_sha256": "dbc433b00607be62de66af0e8a1b3eaa354eb319a9491e5abfe56db9fd06c34f",
+  "source": "677130b070321b159ee09e30e81f8e3ec90b40a8",
+  "broker_sha256": "a692cd2812cbc09536f1b60c84892bc8e87d2ae984c5a5aa25a13f6537ba6da2",
+  "expression_sha256": "10c759fc18d17167af671be400ee2aedc70357a04063a051420defa0e318f943",
+  "browser": "154.0.8037.98",
+  "boundary": "Exact composed production expression in actual Chrome via Playwright, authored loopback only; owner Link/cookie/JSON/status assertions retained, no school or broker startup",
+  "requests": [
+    {
+      "method": "GET",
+      "session_present": true,
+      "accept": "application/json"
+    }
+  ],
+  "result": {
+    "status": 200,
+    "json": [
+      {
+        "id": 17,
+        "name": "Authored fixture assignment"
+      }
+    ],
+    "text": null,
+    "headers": {
+      "link": "<http://127.0.0.1:54395/api/v1/courses?opaque=a%2Bb%3D>; rel=\"next\""
+    }
+  },
+  "checks": {
+    "rows": true,
+    "status": true,
+    "only_link": true,
+    "private_cookie_remains_browser": true
+  }
+}

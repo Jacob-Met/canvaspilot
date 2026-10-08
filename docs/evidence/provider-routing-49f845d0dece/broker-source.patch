@@ -1,0 +1,102 @@
+diff --git a/src/canvaspilot/session_broker.py b/src/canvaspilot/session_broker.py
+index ba23543..b51d7aa 100644
+--- a/src/canvaspilot/session_broker.py
++++ b/src/canvaspilot/session_broker.py
+@@ -17,7 +17,7 @@ import time
+ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+ from pathlib import Path
+ from typing import Any
+-from urllib.parse import urlparse
++from urllib.parse import urljoin, urlsplit
+ 
+ from canvaspilot.client import default_base_url, default_profile
+ 
+@@ -75,10 +75,33 @@ class _BrokerState:
+ STATE = _BrokerState()
+ 
+ 
++def _provider_origin(url: str) -> str:
++    """Normalize a configured or browser HTTP origin without substring matching."""
++    try:
++        parsed = urlsplit(url)
++        port = parsed.port
++        if (parsed.scheme not in {"http", "https"} or not parsed.hostname
++                or parsed.username is not None or parsed.password is not None):
++            raise ValueError()
++        host = parsed.hostname
++        if ":" in host:
++            host = "[" + host + "]"
++        if port is not None and port != (443 if parsed.scheme == "https" else 80):
++            host += ":" + str(port)
++        return parsed.scheme + "://" + host
++    except (TypeError, ValueError) as exc:
++        raise ValueError("Canvas provider requires a valid HTTP(S) origin") from exc
++
++
+ def _canvas_page(ctx):  # type: ignore[no-untyped-def]
++    origin = _provider_origin(STATE.base_url)
+     for p in ctx.pages:
+-        if "instructure.com" in (p.url or "") and "login.microsoft" not in (p.url or ""):
+-            return p
++        try:
++            if _provider_origin(p.url or "") == origin:
++                return p
++        except ValueError:
++            continue
++    # Keep login/status pages visible. Fetch separately requires origin agreement.
+     return ctx.pages[0] if ctx.pages else ctx.new_page()
+ 
+ 
+@@ -168,18 +191,21 @@ def _run_job(ctx, job: dict[str, Any]) -> dict[str, Any]:  # type: ignore[no-unt
+         body = job.get("body")
+         headers = job.get("headers") or {"Accept": "application/json"}
+         page = _canvas_page(ctx)
+-        if "instructure.com" not in page.url:
+-            page.goto(STATE.base_url, wait_until="domcontentloaded")
+-            time.sleep(1)
+-        # Ensure same-origin: relative path on Canvas host
+-        if path.startswith("http"):
+-            parsed = urlparse(path)
+-            if parsed.netloc and parsed.netloc not in page.url:
+-                page.goto(f"{parsed.scheme}://{parsed.netloc}/", wait_until="domcontentloaded")
+-            path = parsed.path + (("?" + parsed.query) if parsed.query else "")
++        origin = _provider_origin(STATE.base_url)
++        if _provider_origin(page.url) != origin:
++            raise RuntimeError("Canvas provider mismatch: selected browser page is not the configured school")
++        if _provider_origin(urljoin(page.url, path)) != origin:
++            raise RuntimeError("Canvas provider mismatch: requested URL is outside the configured school")
++        parsed = urlsplit(path)
++        if parsed.scheme or parsed.netloc:
++            path = (parsed.path or "/") + (("?" + parsed.query) if parsed.query else "")
+ 
+         result = page.evaluate(
+-            """async ({method, path, headers, body}) => {
++            """async ({method, path, headers, body, providerOrigin}) => {
++              const origin = providerOrigin || location.origin;
++              if (location.origin !== origin || new URL(path, location.href).origin !== origin) {
++                throw new Error('Canvas provider mismatch before fetch');
++              }
+               const opts = {method, credentials: 'include', headers: headers || {}};
+               if (body != null && method !== 'GET' && method !== 'HEAD') {
+                 if (typeof body === 'string') opts.body = body;
+@@ -189,13 +215,19 @@ def _run_job(ctx, job: dict[str, Any]) -> dict[str, Any]:  # type: ignore[no-unt
+                 }
+               }
+               const r = await fetch(path, opts);
++              if (new URL(r.url).origin !== origin || location.origin !== origin) {
++                throw new Error('Canvas provider mismatch after fetch');
++              }
+               const text = await r.text();
+               let json = null;
+               try { json = JSON.parse(text); } catch (e) {}
+               return {status: r.status, json, text: json ? null : text.slice(0, 4000)};
+             }""",
+-            {"method": method, "path": path, "headers": headers, "body": body},
++            {"method": method, "path": path, "headers": headers, "body": body,
++             "providerOrigin": origin},
+         )
++        if _provider_origin(page.url) != origin:
++            raise RuntimeError("Canvas provider mismatch: browser page changed during fetch")
+         return {"response": result}
+ 
+     raise RuntimeError(f"unknown op: {op}")

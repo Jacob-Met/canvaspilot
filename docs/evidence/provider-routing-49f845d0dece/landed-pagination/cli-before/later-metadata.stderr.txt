@@ -1,0 +1,36 @@
+HTTP Request: GET http://127.0.0.1:54017/health "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:54017/health "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:54017/fetch "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:54017/fetch "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:54017/health "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:54017/health "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:54017/fetch "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:54017/fetch "HTTP/1.0 200 OK"
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-session-identity/src/canvaspilot/cli.py", line 321, in <module>
+    main()
+    ~~~~^^
+  File "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-session-identity/src/canvaspilot/cli.py", line 194, in main
+    content, report = build_assignment_calendar(api, args.course_ids, bucket=args.bucket)
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-session-identity/src/canvaspilot/calendar_export.py", line 157, in build_assignment_calendar
+    rows = api.list_assignments(course, bucket=None if bucket == "all" else bucket)
+  File "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-session-identity/src/canvaspilot/api.py", line 184, in list_assignments
+    rows = self.client.get_paginated(
+        f"/api/v1/courses/{course_id}/assignments",
+        params=params,
+    )
+  File "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-session-identity/src/canvaspilot/client.py", line 255, in get_paginated
+    return self._get_broker_link_pages(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        path, params=params, origin=health.get("base_url") or self.base_url,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-session-identity/src/canvaspilot/client.py", line 322, in _get_broker_link_pages
+    next_url = _session_link_next(links[0])
+  File "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-session-identity/src/canvaspilot/client.py", line 454, in _session_link_next
+    raise CanvasPaginationError("session pagination Link relation is ambiguous")
+canvaspilot.client.CanvasPaginationError: session pagination Link relation is ambiguous

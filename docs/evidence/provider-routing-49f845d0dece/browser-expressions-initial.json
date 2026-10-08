@@ -1,0 +1,14 @@
+[
+  {
+    "pin": "3e251e5e1de71d56042daa76e2109cdd977b97a6",
+    "broker_sha256": "2a106130c344aefebb23b078cd93b5d3ca3afd7f5325ae5fac2fb8a7251780cc",
+    "expression": "async ({method, path, headers, body}) => {\n              const opts = {method, credentials: 'include', headers: headers || {}};\n              if (body != null && method !== 'GET' && method !== 'HEAD') {\n                if (typeof body === 'string') opts.body = body;\n                else {\n                  opts.headers = Object.assign({'Content-Type': 'application/json'}, opts.headers);\n                  opts.body = JSON.stringify(body);\n                }\n              }\n              const r = await fetch(path, opts);\n              const text = await r.text();\n              let json = null;\n              try { json = JSON.parse(text); } catch (e) {}\n              return {status: r.status, json, text: json ? null : text.slice(0, 4000)};\n            }",
+    "expression_sha256": "610a4267c7e71092b877456ccc0dd8df4eca3871a24aba6b90d238de21ebfe83"
+  },
+  {
+    "pin": "b6661032ca5654e6e672d287b86d99a7fe1e01ee",
+    "broker_sha256": "7a9b1fd8c8828834b0f12f48eb5e92cd4beea17a17566219540d5d93ab83e07e",
+    "expression": "async ({method, path, headers, body, providerOrigin}) => {\n              const origin = providerOrigin || location.origin;\n              if (location.origin !== origin || new URL(path, location.href).origin !== origin) {\n                throw new Error('Canvas provider mismatch before fetch');\n              }\n              const opts = {method, credentials: 'include', headers: headers || {}};\n              if (body != null && method !== 'GET' && method !== 'HEAD') {\n                if (typeof body === 'string') opts.body = body;\n                else {\n                  opts.headers = Object.assign({'Content-Type': 'application/json'}, opts.headers);\n                  opts.body = JSON.stringify(body);\n                }\n              }\n              const r = await fetch(path, opts);\n              if (new URL(r.url).origin !== origin || location.origin !== origin) {\n                throw new Error('Canvas provider mismatch after fetch');\n              }\n              const text = await r.text();\n              let json = null;\n              try { json = JSON.parse(text); } catch (e) {}\n              return {status: r.status, json, text: json ? null : text.slice(0, 4000)};\n            }",
+    "expression_sha256": "9583b9952482b42da97aa82f99600984e67aaa87c70c549fe6652f2cd16f5c61"
+  }
+]

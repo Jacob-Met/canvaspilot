@@ -1,0 +1,548 @@
+diff --git a/docs/calendar-export.md b/docs/calendar-export.md
+index 985ec2d8d7159259f3d82316872aa8fc38a33752..8e16dd191f128ed835cd39e1460620aec0ab902b 100644
+--- a/docs/calendar-export.md
++++ b/docs/calendar-export.md
+@@ -44,7 +44,25 @@ remain, the command returns an error and creates no empty calendar.
+ 
+ A deadline keeps the same UID when its name or due date changes, using the
+ Canvas source, course ID and assignment ID as identity. Different courses or
+-schools remain distinct. Import applications differ in how they handle an
++schools remain distinct. Session exports use the running broker's configured
++Canvas provider, including when the CLI retains its default host; token and
++fixture exports use their configured client base. The broker must identify a
++valid provider and remain on that provider throughout the export. The writer
++checks identity before reading and after each selected course, refusing a missing
++or changed provider instead of publishing mixed-source identities. These checks
++do not lock the broker or create a transactional server snapshot.
++
++Session export requires a running broker with provider-origin checks. After
++upgrading CanvasPilot, restart an older broker with the updated source; a missing
++or false capability produces that instruction before assignment reads. The
++updated broker chooses a page on the configured school's exact origin and
++refuses mismatched page or request origins instead of switching schools. Finish
++login to the configured school if its page is unavailable. The dispatched URL is
++bound before fetch, so an HTML base element cannot change the destination.
++Foreign response origins are refused before rows are returned; browser redirect
++contact may already have occurred. This does not activate or restart a broker.
++
++Import applications differ in how they handle an
+ already imported UID: this command does **not** guarantee that re-importing
+ will update or remove previous calendar entries. Check the import preview or
+ use a dedicated calendar for each snapshot as appropriate.
+diff --git a/src/canvaspilot/calendar_export.py b/src/canvaspilot/calendar_export.py
+index 0b3b59edcefb0dda52f0de41252c1b7486201ffc..ef74cfdf50fd894327dbe45a9a9d43042953bc31 100644
+--- a/src/canvaspilot/calendar_export.py
++++ b/src/canvaspilot/calendar_export.py
+@@ -12,6 +12,8 @@ from pathlib import Path
+ from typing import TYPE_CHECKING, Any
+ from urllib.parse import urlsplit, urlunsplit
+ 
++from canvaspilot.client import CanvasClient, broker_health
++
+ if TYPE_CHECKING:
+     from canvaspilot.api import CanvasAPI
+ 
+@@ -84,6 +86,22 @@ def _source_identity(value: str) -> str:
+     return urlunsplit((parsed.scheme.lower(), host, parsed.path.rstrip("/"), "", ""))
+ 
+ 
++def _calendar_source(client: CanvasClient) -> str:
++    """Name the provider used by the existing transport, not a default CLI host."""
++    if client.fixture is not None or client.token:
++        return _source_identity(client.base_url)
++    health = broker_health()
++    if not health or not health.get("base_url"):
++        raise ValueError("Running session broker must identify its Canvas base URL before export")
++    source = _source_identity(health["base_url"])
++    if health.get("provider_origin_checks") is not True:
++        raise ValueError(
++            "Running session broker lacks provider origin checks; "
++            "restart it with updated CanvasPilot before export"
++        )
++    return source
++
++
+ def _instant(value: Any, label: str) -> datetime:
+     if not isinstance(value, str) or not re.fullmatch(
+         r"[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(?:\.0+)?(?:Z|[+-](?:[01][0-9]|2[0-3]):[0-5][0-9])", value
+@@ -122,7 +140,7 @@ def build_assignment_calendar(
+     courses = list(dict.fromkeys(_identifier(value, "course_id") for value in course_ids))
+     if not courses:
+         raise ValueError("Select at least one course")
+-    source = _source_identity(api.client.base_url)
++    source = _calendar_source(api.client)
+     now = generated_at if generated_at is not None else datetime.now(UTC)
+     if not isinstance(now, datetime) or now.utcoffset() is None:
+         raise ValueError("generated_at must be a timezone-aware datetime")
+@@ -137,6 +155,8 @@ def build_assignment_calendar(
+     seen = set()
+     for course in courses:
+         rows = api.list_assignments(course, bucket=None if bucket == "all" else bucket)
++        if _calendar_source(api.client) != source:
++            raise ValueError("Canvas provider changed during export; no calendar created")
+         if not isinstance(rows, list):
+             raise TypeError(f"Course {course} did not return an assignment list")
+         exported = 0
+diff --git a/src/canvaspilot/cli.py b/src/canvaspilot/cli.py
+index 8f58cbd70ec70f2b441b3ad8509396d4f2b57608..9b8eec6ea177d0fe69e3cb7776af185d2e7ad4a5 100644
+--- a/src/canvaspilot/cli.py
++++ b/src/canvaspilot/cli.py
+@@ -186,14 +186,14 @@ def main(argv: list[str] | None = None) -> None:
+                 build_assignment_calendar,
+                 write_calendar,
+             )
+-            from canvaspilot.client import CanvasAuthError
++            from canvaspilot.client import CanvasAuthError, CanvasPaginationError
+ 
+             try:
+                 if os.path.lexists(args.out):
+                     raise FileExistsError("Output path already exists; choose a new .ics file")
+                 content, report = build_assignment_calendar(api, args.course_ids, bucket=args.bucket)
+                 write_calendar(args.out, content)
+-            except (CanvasAuthError, httpx.HTTPError, ValueError, TypeError, OSError) as error:
++            except (CanvasAuthError, CanvasPaginationError, httpx.HTTPError, ValueError, TypeError, OSError) as error:
+                 print(json.dumps({
+                     "ok": False, "error": type(error).__name__, "message": str(error),
+                 }), file=sys.stderr)
+diff --git a/src/canvaspilot/session_broker.py b/src/canvaspilot/session_broker.py
+index 0e586bb933d517160bc3bfbd8ad86b3ba59ee92f..cc706d5860489ec37cb2cf7f0b1cb4eee33b664f 100644
+--- a/src/canvaspilot/session_broker.py
++++ b/src/canvaspilot/session_broker.py
+@@ -17,7 +17,7 @@ import time
+ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+ from pathlib import Path
+ from typing import Any
+-from urllib.parse import urlparse
++from urllib.parse import urljoin, urlsplit
+ 
+ from canvaspilot.client import default_base_url, default_profile
+ 
+@@ -75,10 +75,33 @@ class _BrokerState:
+ STATE = _BrokerState()
+ 
+ 
++def _provider_origin(url: str) -> str:
++    """Normalize a configured or browser HTTP origin without substring matching."""
++    try:
++        parsed = urlsplit(url)
++        port = parsed.port
++        if (parsed.scheme not in {"http", "https"} or not parsed.hostname
++                or parsed.username is not None or parsed.password is not None):
++            raise ValueError()
++        host = parsed.hostname
++        if ":" in host:
++            host = "[" + host + "]"
++        if port is not None and port != (443 if parsed.scheme == "https" else 80):
++            host += ":" + str(port)
++        return parsed.scheme + "://" + host
++    except (TypeError, ValueError) as exc:
++        raise ValueError("Canvas provider requires a valid HTTP(S) origin") from exc
++
++
+ def _canvas_page(ctx):  # type: ignore[no-untyped-def]
++    origin = _provider_origin(STATE.base_url)
+     for p in ctx.pages:
+-        if "instructure.com" in (p.url or "") and "login.microsoft" not in (p.url or ""):
+-            return p
++        try:
++            if _provider_origin(p.url or "") == origin:
++                return p
++        except ValueError:
++            continue
++    # Keep login/status pages visible. Fetch separately requires origin agreement.
+     return ctx.pages[0] if ctx.pages else ctx.new_page()
+ 
+ 
+@@ -168,18 +191,22 @@ def _run_job(ctx, job: dict[str, Any]) -> dict[str, Any]:  # type: ignore[no-unt
+         body = job.get("body")
+         headers = job.get("headers") or {"Accept": "application/json"}
+         page = _canvas_page(ctx)
+-        if "instructure.com" not in page.url:
+-            page.goto(STATE.base_url, wait_until="domcontentloaded")
+-            time.sleep(1)
+-        # Ensure same-origin: relative path on Canvas host
+-        if path.startswith("http"):
+-            parsed = urlparse(path)
+-            if parsed.netloc and parsed.netloc not in page.url:
+-                page.goto(f"{parsed.scheme}://{parsed.netloc}/", wait_until="domcontentloaded")
+-            path = parsed.path + (("?" + parsed.query) if parsed.query else "")
++        origin = _provider_origin(STATE.base_url)
++        if _provider_origin(page.url) != origin:
++            raise RuntimeError("Canvas provider mismatch: selected browser page is not the configured school")
++        if _provider_origin(urljoin(page.url, path)) != origin:
++            raise RuntimeError("Canvas provider mismatch: requested URL is outside the configured school")
++        parsed = urlsplit(path)
++        if parsed.scheme or parsed.netloc:
++            path = (parsed.path or "/") + (("?" + parsed.query) if parsed.query else "")
+ 
+         result = page.evaluate(
+-            """async ({method, path, headers, body}) => {
++            """async ({method, path, headers, body, providerOrigin}) => {
++              const origin = providerOrigin || location.origin;
++              const target = new URL(path, location.href);
++              if (location.origin !== origin || target.origin !== origin) {
++                throw new Error('Canvas provider mismatch before fetch');
++              }
+               const opts = {method, credentials: 'include', headers: headers || {}};
+               if (body != null && method !== 'GET' && method !== 'HEAD') {
+                 if (typeof body === 'string') opts.body = body;
+@@ -188,15 +215,21 @@ def _run_job(ctx, job: dict[str, Any]) -> dict[str, Any]:  # type: ignore[no-unt
+                   opts.body = JSON.stringify(body);
+                 }
+               }
+-              const r = await fetch(path, opts);
++              const r = await fetch(target.href, opts);
++              if (new URL(r.url).origin !== origin || location.origin !== origin) {
++                throw new Error('Canvas provider mismatch after fetch');
++              }
+               const text = await r.text();
+               let json = null;
+               try { json = JSON.parse(text); } catch (e) {}
+               return {status: r.status, json, text: json ? null : text.slice(0, 4000),
+                       headers: {link: r.headers.get('link') || ''}};
+             }""",
+-            {"method": method, "path": path, "headers": headers, "body": body},
++            {"method": method, "path": path, "headers": headers, "body": body,
++             "providerOrigin": origin},
+         )
++        if _provider_origin(page.url) != origin:
++            raise RuntimeError("Canvas provider mismatch: browser page changed during fetch")
+         return {"response": result}
+ 
+     raise RuntimeError(f"unknown op: {op}")
+@@ -227,6 +260,7 @@ class Handler(BaseHTTPRequestHandler):
+                     "read_only": STATE.read_only,
+                     "error": STATE.error,
+                     "base_url": STATE.base_url,
++                    "provider_origin_checks": True,
+                     "link_pagination": True,
+                 },
+             )
+diff --git a/tests/test_broker_provider_routing.py b/tests/test_broker_provider_routing.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..7fc17ef832057d1090f742a0c3c85f0d67e80752
+--- /dev/null
++++ b/tests/test_broker_provider_routing.py
+@@ -0,0 +1,107 @@
++"""Provider agreement at the broker's actual page-selection/fetch boundary."""
++from __future__ import annotations
++
++from types import SimpleNamespace
++
++import pytest
++
++from canvaspilot import session_broker as broker
++
++A = "https://school-a.instructure.com"
++B = "https://school-b.instructure.com"
++PATH = "/api/v1/courses/42/assignments?cursor=a,b;c&empty=&literal=+"
++
++
++class Page:
++    def __init__(self, url, *, after_fetch=None):
++        self.url = url
++        self.after_fetch = after_fetch
++        self.evaluations = []
++        self.navigations = []
++
++    def goto(self, url, **kwargs):
++        self.navigations.append(url)
++        self.url = url
++
++    def title(self):
++        return "Authored provider page"
++
++    def evaluate(self, expression, parameters):
++        self.evaluations.append((expression, parameters))
++        if self.after_fetch:
++            self.url = self.after_fetch
++        return {"status": 200, "json": [{"id": 1}], "text": None}
++
++
++def fetch(pages, path=PATH):
++    context = SimpleNamespace(pages=pages)
++    return broker._run_job(context, {"op": "fetch", "method": "GET", "path": path})
++
++
++def test_matching_page_selected_even_when_another_school_tab_is_first(monkeypatch):
++    monkeypatch.setattr(broker.STATE, "base_url", A)
++    other, matching = Page(B + "/courses"), Page(A + "/courses")
++    assert fetch([other, matching])["response"]["json"] == [{"id": 1}]
++    assert not other.evaluations and not other.navigations
++    assert len(matching.evaluations) == 1 and not matching.navigations
++    assert matching.evaluations[0][1]["path"] == PATH
++
++
++@pytest.mark.parametrize("configured,page_url", [
++    (A, B + "/courses"),
++    (A, "https://login.fixture.invalid/"),
++    (A, "about:blank"),
++    (A, "http://school-a.instructure.com/courses"),
++    (A, "https://school-a.instructure.com:444/courses"),
++])
++def test_unmatched_provider_refuses_before_evaluation_or_navigation(monkeypatch, configured, page_url):
++    monkeypatch.setattr(broker.STATE, "base_url", configured)
++    page = Page(page_url)
++    with pytest.raises((RuntimeError, ValueError), match="provider"):
++        fetch([page])
++    assert page.evaluations == [] and page.navigations == []
++
++
++@pytest.mark.parametrize("url", [
++    B + PATH,
++    "//school-b.instructure.com" + PATH,
++    "http://school-a.instructure.com" + PATH,
++])
++def test_other_provider_request_refuses_without_navigating_matching_page(monkeypatch, url):
++    monkeypatch.setattr(broker.STATE, "base_url", A)
++    page = Page(A + "/courses")
++    with pytest.raises(RuntimeError, match="provider mismatch"):
++        fetch([page], url)
++    assert page.evaluations == [] and page.navigations == []
++
++
++def test_same_provider_absolute_continuation_preserves_opaque_query(monkeypatch):
++    monkeypatch.setattr(broker.STATE, "base_url", A)
++    page = Page(A + "/courses")
++    result = fetch([page], A + PATH)
++    assert result["response"]["json"] == [{"id": 1}]
++    assert page.evaluations[0][1]["path"] == PATH
++    assert page.navigations == []
++
++
++def test_equivalent_origin_spelling_and_custom_canvas_host_work(monkeypatch):
++    monkeypatch.setattr(broker.STATE, "base_url", "https://CANVAS.school.invalid:443/")
++    page = Page("https://canvas.school.invalid/courses")
++    assert fetch([page])["response"]["json"] == [{"id": 1}]
++    assert len(page.evaluations) == 1 and page.navigations == []
++
++
++def test_page_provider_change_during_evaluation_refuses_returned_rows(monkeypatch):
++    monkeypatch.setattr(broker.STATE, "base_url", A)
++    page = Page(A + "/courses", after_fetch=B + "/courses")
++    with pytest.raises(RuntimeError, match="provider mismatch.*changed"):
++        fetch([page])
++    assert len(page.evaluations) == 1 and page.navigations == []
++
++
++def test_status_keeps_login_page_visible_without_fetch_or_navigation(monkeypatch):
++    monkeypatch.setattr(broker.STATE, "base_url", A)
++    page = Page("https://login.fixture.invalid/")
++    result = broker._run_job(SimpleNamespace(pages=[page]), {"op": "status"})
++    assert result["url"] == page.url and result["logged_in"] is False
++    assert page.evaluations == [] and page.navigations == []
+diff --git a/tests/test_calendar_pagination_errors.py b/tests/test_calendar_pagination_errors.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..60df1b66987c0e1dc9027593d2d06710ee4a6b88
+--- /dev/null
++++ b/tests/test_calendar_pagination_errors.py
+@@ -0,0 +1,58 @@
++"""The actual calendar CLI refuses incomplete collections without an artifact."""
++import json
++import threading
++from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
++from urllib.parse import urlsplit
++
++import pytest
++from test_calendar_export import assignment, run_cli
++
++
++@pytest.mark.parametrize("failure", ["metadata", "shape"])
++def test_later_pagination_failure_has_structured_calendar_error(tmp_path, failure):
++    requests = []
++
++    class Handler(BaseHTTPRequestHandler):
++        def log_message(self, *_args):
++            pass
++
++        def do_GET(self):
++            requests.append(self.path)
++            later = "cursor=" in self.path
++            rows = {"error": "authored wrong collection shape"} if later and failure == "shape" else [
++                assignment(2 if later else 1),
++            ]
++            payload = json.dumps(rows).encode()
++            self.send_response(200)
++            self.send_header("Content-Type", "application/json")
++            self.send_header("Content-Length", str(len(payload)))
++            if not later:
++                self.send_header("Link", f'<{server.url}/api/v1/courses/42/assignments?cursor=next%2Fopaque>; rel="next"')
++            elif failure == "metadata":
++                self.send_header("Link", f'<{server.url}/api/v1/courses/42/assignments?cursor=invalid>')
++            self.end_headers()
++            self.wfile.write(payload)
++
++    server = ThreadingHTTPServer(("127.0.0.1", 0), Handler)
++    server.url = f"http://127.0.0.1:{server.server_port}"
++    thread = threading.Thread(target=server.serve_forever, daemon=True)
++    thread.start()
++    try:
++        result = run_cli(server, tmp_path)
++        assert result.returncode == 1
++        assert not result.stdout
++        assert "Traceback" not in result.stderr
++        error = json.loads(result.stderr.splitlines()[-1])
++        assert error["ok"] is False
++        assert error["error"] == "CanvasPaginationError"
++        assert error["message"]
++        assert len(requests) == 2
++        assert [urlsplit(path).path for path in requests] == [
++            "/api/v1/courses/42/assignments", "/api/v1/courses/42/assignments",
++        ]
++        assert urlsplit(requests[1]).query == "cursor=next%2Fopaque"
++        assert not list(tmp_path.iterdir())
++    finally:
++        server.shutdown()
++        server.server_close()
++        thread.join(timeout=3)
+diff --git a/tests/test_calendar_session_identity.py b/tests/test_calendar_session_identity.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..fcad9a69739aa859f399ed0c37712fa10bf3f7c6
+--- /dev/null
++++ b/tests/test_calendar_session_identity.py
+@@ -0,0 +1,145 @@
++"""Calendar identity follows the provider actually serving session reads."""
++from __future__ import annotations
++
++import json
++import os
++import queue
++import subprocess
++import sys
++import threading
++from datetime import UTC, datetime
++from http.server import ThreadingHTTPServer
++from types import SimpleNamespace
++
++import pytest
++
++from canvaspilot import calendar_export, session_broker
++from canvaspilot.api import CanvasAPI
++from canvaspilot.client import CanvasClient
++
++SCHOOL = "https://school.fixture.invalid"
++ROWS = [{"id": 1, "name": "Authored deadline", "due_at": "2026-11-01T08:45:00Z"}]
++NOW = datetime(2026, 10, 8, 12, tzinfo=UTC)
++
++
++def api_for_session(monkeypatch, health):
++    monkeypatch.setattr(calendar_export, "broker_health", health)
++    calls = []
++    client = CanvasClient(token="", base_url="https://canvas.instructure.com")
++    def assignments(course, **kwargs):
++        calls.append(course)
++        return ROWS
++    return SimpleNamespace(client=client, list_assignments=assignments), calls
++
++
++@pytest.mark.parametrize("health", [
++    None, {}, {"ok": True}, {"base_url": None}, {"base_url": ""},
++    {"base_url": "school.fixture.invalid"}, {"base_url": "https://school.fixture.invalid/?query=1"},
++])
++def test_unknown_or_invalid_session_provider_refuses_before_course_read(monkeypatch, health):
++    api, calls = api_for_session(monkeypatch, lambda: health)
++    with pytest.raises(ValueError, match="base URL|HTTP"):
++        calendar_export.build_assignment_calendar(api, [42], generated_at=NOW)
++    assert calls == []
++
++
++def test_provider_change_refuses_before_reading_next_course(monkeypatch):
++    states = iter([{"base_url": SCHOOL, "provider_origin_checks": True}, {"base_url": "https://other.fixture.invalid", "provider_origin_checks": True}])
++    api, calls = api_for_session(monkeypatch, lambda: next(states))
++    with pytest.raises(ValueError, match="provider changed"):
++        calendar_export.build_assignment_calendar(api, [42, 77], generated_at=NOW)
++    assert calls == ["42"]
++
++
++def test_equivalent_provider_spelling_keeps_identity(monkeypatch):
++    states = iter([{"base_url": "https://SCHOOL.fixture.invalid:443/", "provider_origin_checks": True},
++                   {"base_url": SCHOOL, "provider_origin_checks": True}])
++    api, calls = api_for_session(monkeypatch, lambda: next(states))
++    _, report = calendar_export.build_assignment_calendar(api, [42], generated_at=NOW)
++    assert report["source"] == SCHOOL
++    assert calls == ["42"]
++
++
++@pytest.mark.parametrize("mode", ["fixture", "token"])
++def test_token_and_fixture_identity_never_consult_session_broker(monkeypatch, mode):
++    def forbidden():
++        raise AssertionError("session broker must not be probed for token/fixture export")
++    monkeypatch.setattr(calendar_export, "broker_health", forbidden)
++    client = CanvasClient(base_url=SCHOOL, token="synthetic-only" if mode == "token" else "",
++                          fixture={"routes": {"GET /api/v1/courses/42/assignments": ROWS}}
++                          if mode == "fixture" else None)
++    if mode == "fixture":
++        api = CanvasAPI(client)
++    else:
++        api = SimpleNamespace(client=client, list_assignments=lambda *args, **kwargs: ROWS)
++    _, report = calendar_export.build_assignment_calendar(api, [42], generated_at=NOW)
++    assert report["source"] == SCHOOL
++    client.close()
++
++
++@pytest.mark.parametrize("transition", ["unknown-before", "changed-after", "missing-after"])
++def test_real_cli_provider_guard_leaves_no_artifact(monkeypatch, tmp_path, transition):
++    """Execute unchanged Handler/_call/queue, replacing only browser response work."""
++    calls = []
++    stop = threading.Event()
++    monkeypatch.setattr(session_broker.STATE, "base_url", "" if transition == "unknown-before" else SCHOOL)
++    monkeypatch.setattr(session_broker.STATE, "read_only", True)
++    monkeypatch.setattr(session_broker.STATE, "error", None)
++    monkeypatch.setattr(session_broker.STATE, "jobs", queue.Queue())
++    monkeypatch.setattr(session_broker.STATE, "ready", threading.Event())
++    session_broker.STATE.ready.set()
++
++    def browser():
++        while not stop.is_set():
++            try:
++                job, reply = session_broker.STATE.jobs.get(timeout=0.03)
++            except queue.Empty:
++                continue
++            calls.append(job)
++            assert job["method"] == "GET"
++            session_broker.STATE.base_url = (
++                "https://other.fixture.invalid" if transition == "changed-after" else ""
++            )
++            reply.put({"ok": True, "response": {"status": 200, "json": ROWS,
++                                                "text": None, "headers": {"link": ""}}})
++
++    server = ThreadingHTTPServer(("127.0.0.1", 0), session_broker.Handler)
++    serving = threading.Thread(target=server.serve_forever,
++                               kwargs={"poll_interval": 0.02}, daemon=True)
++    worker = threading.Thread(target=browser, daemon=True)
++    serving.start()
++    worker.start()
++    output, profile = tmp_path / "refused.ics", tmp_path / "unused-profile"
++    env = {key: value for key, value in os.environ.items()
++           if not key.startswith("CANVAS") and not key.upper().endswith("_PROXY")}
++    env["CANVAS_SESSION_PORT"] = str(server.server_address[1])
++    try:
++        result = subprocess.run(
++            [sys.executable, "-m", "canvaspilot.cli", "export-calendar", "42", "77",
++             "--token", "", "--profile", str(profile), "--out", str(output)],
++            env=env, capture_output=True, text=True, timeout=10, check=False,
++        )
++        assert result.returncode == 1
++        error = json.loads(result.stderr.strip().splitlines()[-1])
++        assert error["ok"] is False and error["error"] == "ValueError"
++        assert not result.stdout and "Traceback" not in result.stderr
++        assert not output.exists() and not profile.exists()
++        assert not list(tmp_path.glob(".*.tmp"))
++        assert len(calls) == (0 if transition == "unknown-before" else 1)
++    finally:
++        server.shutdown()
++        server.server_close()
++        stop.set()
++        serving.join(timeout=3)
++        worker.join(timeout=3)
++
++
++@pytest.mark.parametrize("capability", ["missing", False, None, "true", 1])
++def test_old_or_ambiguous_broker_capability_requires_restart_before_read(monkeypatch, capability):
++    health = {"base_url": SCHOOL}
++    if capability != "missing":
++        health["provider_origin_checks"] = capability
++    api, calls = api_for_session(monkeypatch, lambda: health)
++    with pytest.raises(ValueError, match="restart.*updated CanvasPilot"):
++        calendar_export.build_assignment_calendar(api, [42], generated_at=NOW)
++    assert calls == []

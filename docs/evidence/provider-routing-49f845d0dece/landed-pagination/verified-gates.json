@@ -1,0 +1,17 @@
+[
+  {
+    "name": "verified-ruff",
+    "exit": 0,
+    "seconds": 0.08
+  },
+  {
+    "name": "verified-pytest",
+    "exit": 0,
+    "seconds": 60.99
+  },
+  {
+    "name": "verified-whitespace",
+    "exit": 0,
+    "seconds": 0.06
+  }
+]

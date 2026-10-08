@@ -186,14 +186,14 @@ def main(argv: list[str] | None = None) -> None:
                 build_assignment_calendar,
                 write_calendar,
             )
-            from canvaspilot.client import CanvasAuthError
+            from canvaspilot.client import CanvasAuthError, CanvasPaginationError
 
             try:
                 if os.path.lexists(args.out):
                     raise FileExistsError("Output path already exists; choose a new .ics file")
                 content, report = build_assignment_calendar(api, args.course_ids, bucket=args.bucket)
                 write_calendar(args.out, content)
-            except (CanvasAuthError, httpx.HTTPError, ValueError, TypeError, OSError) as error:
+            except (CanvasAuthError, CanvasPaginationError, httpx.HTTPError, ValueError, TypeError, OSError) as error:
                 print(json.dumps({
                     "ok": False, "error": type(error).__name__, "message": str(error),
                 }), file=sys.stderr)
