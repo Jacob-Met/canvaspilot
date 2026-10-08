@@ -1,0 +1,48 @@
+{
+  "receiver_baseline": "e20890089f6338de655a7c6ea7f0ada6d5c8fe6b",
+  "parser_published_parent": "857a226d54c9784ca528bccc6ace7b4f02d90f4d",
+  "parser_local_source_parent": "348a42b88c1fcd329be0132519a20d27e933900d",
+  "pat_parent": "2e51d58905d999e5fb8f3d34a7f56f17bf5f8c61",
+  "pat_original_increment": "e678faaa4809ac0eddfd17228c1e940d19865217",
+  "source_pins": {
+    "src/canvaspilot/client.py": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797",
+    "src/canvaspilot/session_broker.py": "749e11c92d6d56d54ccf208dda6784cb2d43ac3b837188f5d82bfe73c3129e8e",
+    "src/canvaspilot/api.py": "925af4a55924e81050ea04c95725705dd7189ac603b8d6824b1253f639226a96",
+    "src/canvaspilot/cli.py": "1af004e5d5e3ca4aa23ac1f4e3f49eae7ab9b290c1f250705e040af9d3421897",
+    "src/canvaspilot/mcp_server.py": "b765930008d1d1123f351771d6edab182af9228617a3b7a9791103a66ba43452",
+    "tests/test_token_pagination.py": "7845205886f73ab3e8efdb783733a27be6e076c313089689117e5ed612e7923a",
+    "tests/test_token_collection_receiving.py": "7ea5e0d80612a532cbe9829851e9c8c065a33f3b2d4a69a871142d46324faa3e",
+    "tests/test_broker_link_metadata_receiving.py": "5b92def5254d9a00a73f6e268903b367664763d440bbfafd3861a570ce2c3ace",
+    "tests/test_legacy_metadata_policy.py": "9e66b4a135ab4cb70123aad962bec5afb8a18bebe82b7063d39055521235ea93",
+    "tests/test_link_context_receiving.py": "54c35e25c55e9c19b24f35680bcb2c4aa22e191f197b3894e26de1c730895d6f",
+    "tests/test_module_items.py": "fd70a1a0f1e880c9c9075633ece8d83a710a47136e102ad675dce55bc844aad6",
+    "tests/test_broker_links.py": "a65ea84914e8afe13bdf2c88c9a6107fbc448ed46f00db50ae1d92f5de427028"
+  },
+  "named_definitions_byte_equal_e208": [
+    "broker_base",
+    "_broker_request",
+    "broker_health",
+    "broker_fetch",
+    "default_profile",
+    "default_base_url",
+    "CanvasClient.__init__",
+    "CanvasClient.mode",
+    "CanvasClient.close",
+    "CanvasClient.__enter__",
+    "CanvasClient.__exit__",
+    "CanvasClient._ensure_http",
+    "CanvasClient.request",
+    "CanvasClient._get_broker_link_pages",
+    "CanvasClient._fixture_request",
+    "_assert_pagination_origin",
+    "_with_per_page"
+  ],
+  "unexpected_changed_definitions": [],
+  "shared_parser_byte_equal_current_pr37": true,
+  "explicitly_removed_helpers": [
+    "_with_page",
+    "_link_next"
+  ],
+  "root_policy_original_sha256": "e7d779a4fc913dafcc3e1b593e940b66103e3acc94f967d4e06257f74d419852",
+  "author_baseline_test_sha256": "82f2eb834116f7a159d43865b7b78ced71e6d55294930a5592e8a73439fd8ae6"
+}

@@ -1,0 +1,110 @@
+{
+  "schema": "canvas-independent-composition-receiving.v1",
+  "files": [
+    {
+      "path": "baseline.txt",
+      "bytes": 25887,
+      "sha256": "fbf816ebc910ac94034589f4483b2b6f09b25d58f92196ef95d586911672cfe2"
+    },
+    {
+      "path": "baseline/src/canvaspilot/__init__.py",
+      "bytes": 561,
+      "sha256": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5"
+    },
+    {
+      "path": "baseline/src/canvaspilot/client.py",
+      "bytes": 17690,
+      "sha256": "21aec589fc27f3a664dd6f844ac0762c496d2e68fa94b3052172f80b046c0d1b"
+    },
+    {
+      "path": "baseline/src/canvaspilot/session_broker.py",
+      "bytes": 12264,
+      "sha256": "749e11c92d6d56d54ccf208dda6784cb2d43ac3b837188f5d82bfe73c3129e8e"
+    },
+    {
+      "path": "candidate-optimized.txt",
+      "bytes": 4586,
+      "sha256": "52883dbc67cec48e2c70349a56bf2c34c8f1364fb976c5095042ebc5c6e01884"
+    },
+    {
+      "path": "candidate.txt",
+      "bytes": 4586,
+      "sha256": "7b2c6c5900a18ee661f973ac24cf789c69e93f1a269f28fe239d952d49702e29"
+    },
+    {
+      "path": "candidate/src/canvaspilot/__init__.py",
+      "bytes": 561,
+      "sha256": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5"
+    },
+    {
+      "path": "candidate/src/canvaspilot/client.py",
+      "bytes": 18934,
+      "sha256": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797"
+    },
+    {
+      "path": "candidate/src/canvaspilot/session_broker.py",
+      "bytes": 12264,
+      "sha256": "749e11c92d6d56d54ccf208dda6784cb2d43ac3b837188f5d82bfe73c3129e8e"
+    },
+    {
+      "path": "donors/helper-adaptation.diff",
+      "bytes": 1045,
+      "sha256": "35f36cbef19cd7feda5c623fe72141a687fba177bbdfe1a4f688a802d2f73c4e"
+    },
+    {
+      "path": "donors/pat-donor-history.bundle",
+      "bytes": 46354,
+      "sha256": "d6ac4960d263b376b4f9717e6711e8e68ebbfa44be7e43ae6be67c373caa7a55"
+    },
+    {
+      "path": "donors/pr37-client.py",
+      "bytes": 18034,
+      "sha256": "5ab0c0cd579f82b89ace05be6e15b6d38844abe1d8bf6df5b0c35b906d09a1c8"
+    },
+    {
+      "path": "donors/received-pat-composition-client.py",
+      "bytes": 13018,
+      "sha256": "02ea5ff157a1fb310b35ed3b41d1fbc5a09a928987cabebd34bbc7cafc830222"
+    },
+    {
+      "path": "donors/received-pat-composition-pagination.py",
+      "bytes": 6395,
+      "sha256": "1bf2ffbeb29408f25561c5f1bece9f3d839978bea3ef84e519d4a4af6ad1a8df"
+    },
+    {
+      "path": "donors/received-pat-increment-client.py",
+      "bytes": 12538,
+      "sha256": "82ac737ec34259b42a1629ab40bddf5d54aaafe17d178cdcf56983ea5c440395"
+    },
+    {
+      "path": "donors/received-pat-increment-pagination.py",
+      "bytes": 5372,
+      "sha256": "9f37282f3a6810c277937183b2ca319e3c19fca958fa306ff83ee9e6dd9583db"
+    },
+    {
+      "path": "independent-bundle-receiving.json",
+      "bytes": 7340,
+      "sha256": "3c80bcba797b25c144edb7a1b279304335c862b9e200ce2dec890d7b4ae9fec0"
+    },
+    {
+      "path": "independent-source-preservation.json",
+      "bytes": 937,
+      "sha256": "b245b029770f430f3a4d748461d1234b7fd36b7bd65ea96849194a967f7d317e"
+    },
+    {
+      "path": "QUALIFICATION.md",
+      "bytes": 6227,
+      "sha256": "899ac0eb72fa253f844a85e828aaf5743ec2e2fb2f86a66cab3b254de808411b"
+    },
+    {
+      "path": "source-pins.json",
+      "bytes": 552,
+      "sha256": "0b80e725217ddd5a82ea155ca173f1c01ee6fdb9190b42947d739c4828f35dd1"
+    },
+    {
+      "path": "test_composed_receiving.py",
+      "bytes": 8213,
+      "sha256": "2846e49c537bd48d9457da4cf8814f2110df6488b1174d5ec21169f1d2218709"
+    }
+  ]
+}

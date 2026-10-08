@@ -1,0 +1,56 @@
+{
+  "course_id": "42",
+  "folder": {
+    "id": 110,
+    "context_type": "Course",
+    "context_id": 42,
+    "parent_folder_id": 100,
+    "name": "Unit 1 \u2014 \u96ea",
+    "full_name": "course files/Unit 1 \u2014 \u96ea",
+    "folders_count": 1,
+    "files_count": 3,
+    "locked_for_user": false
+  },
+  "folders": {
+    "items": [
+      {
+        "id": 111,
+        "context_type": "Course",
+        "context_id": 42,
+        "parent_folder_id": 110,
+        "name": "Lab <notes>",
+        "full_name": "course files/Lab <notes>",
+        "folders_count": 0,
+        "files_count": 1,
+        "locked_for_user": false
+      }
+    ],
+    "page": 1,
+    "per_page": 2,
+    "returned_count": 1,
+    "has_more": null,
+    "next_page_to_try": 2,
+    "page_limit_reached": false
+  },
+  "files": {
+    "items": [
+      {
+        "id": 2003,
+        "folder_id": 110,
+        "display_name": "C.pdf",
+        "filename": "C.pdf",
+        "size": 123,
+        "hidden_for_user": false,
+        "content_type": "application/pdf"
+      }
+    ],
+    "page": 2,
+    "per_page": 2,
+    "returned_count": 1,
+    "has_more": null,
+    "next_page_to_try": 3,
+    "page_limit_reached": false
+  },
+  "scope": "direct_children",
+  "pagination": "explicit_pages_without_next_link_metadata"
+}

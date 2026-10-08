@@ -1,0 +1,61 @@
+........................F                                                [100%]
+=================================== FAILURES ===================================
+_______________________ test_mcp_refusal_is_a_tool_error _______________________
+
+loopback = ({'requests': [{'method': 'GET', 'path': '/api/v1/courses/41/assignments/902', 'query': {'per_page': ['50']}, 'authori...d': 902, 'user_id': 73, 'submission_type': 'online_upload', ...}}, 'submission_status': 404}, 'http://127.0.0.1:46533')
+
+    def test_mcp_refusal_is_a_tool_error(loopback):
+        state, _ = loopback
+        state["submission_status"] = 404
+        result = asyncio.run(asyncio.wait_for(mcp_feedback(), timeout=25))
+        assert result["isError"]
+>       assert "404" in "".join(
+            item["text"] for item in result["content"] if item["type"] == "text"
+        )
+E       AssertionError: assert '404' in 'Error executing tool canvas_submission_feedback'
+E        +  where 'Error executing tool canvas_submission_feedback' = <built-in method join of str object at 0x154dcc0>(<generator object test_mcp_refusal_is_a_tool_error.<locals>.<genexpr> at 0x7f4974b96c20>)
+E        +    where <built-in method join of str object at 0x154dcc0> = ''.join
+
+tests/test_submission_feedback_native.py:260: AssertionError
+----------------------------- Captured stderr call -----------------------------
+HTTP Request: GET http://127.0.0.1:46533/api/v1/courses/41/assignments/902?per_page=50 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:46533/api/v1/courses/41/assignments/902/submissions/self?include%5B%5D=submission_comments&include%5B%5D=rubric_assessment&per_page=50 "HTTP/1.0 404 Not Found"
+Tool 'canvas_submission_feedback' raised an unexpected exception
+Traceback (most recent call last):
+  File "/dev/shm/hamon-afe225d6c6be-product/canvas-deps/mcp/server/mcpserver/tools/base.py", line 179, in run
+    result = await self.fn_metadata.call_fn(self.fn, self.is_async, validated, pass_directly)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dev/shm/hamon-afe225d6c6be-product/canvas-deps/mcp/server/mcpserver/utilities/func_metadata.py", line 163, in call_fn
+    return await fn(**kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/dev/shm/hamon-afe225d6c6be-product/canvaspilot/src/canvaspilot/mcp_server.py", line 230, in canvas_submission_feedback
+    return _dump(_get_api().submission_feedback(course_id, assignment_id))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dev/shm/hamon-afe225d6c6be-product/canvaspilot/src/canvaspilot/api.py", line 460, in submission_feedback
+    submission = self.client.request(
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/dev/shm/hamon-afe225d6c6be-product/canvaspilot/src/canvaspilot/client.py", line 219, in request
+    r.raise_for_status()
+  File "/dev/shm/hamon-afe225d6c6be-product/canvas-deps/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '404 Not Found' for url 'http://127.0.0.1:46533/api/v1/courses/41/assignments/902/submissions/self?include%5B%5D=submission_comments&include%5B%5D=rubric_assessment&per_page=50'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/dev/shm/hamon-afe225d6c6be-product/canvas-deps/mcp/server/mcpserver/server.py", line 442, in _handle_call_tool
+    return await self.call_tool(params.name, params.arguments or {}, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dev/shm/hamon-afe225d6c6be-product/canvas-deps/mcp/server/mcpserver/server.py", line 548, in call_tool
+    return await self._tool_manager.call_tool(name, arguments, context, convert_result=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dev/shm/hamon-afe225d6c6be-product/canvas-deps/mcp/server/mcpserver/tools/tool_manager.py", line 87, in call_tool
+    return await tool.run(arguments, context, convert_result=convert_result)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dev/shm/hamon-afe225d6c6be-product/canvas-deps/mcp/server/mcpserver/tools/base.py", line 213, in run
+    raise UnexpectedToolError(f"Error executing tool {self.name}") from exc
+mcp.server.mcpserver.exceptions.UnexpectedToolError: Error executing tool canvas_submission_feedback
+=========================== short test summary info ============================
+FAILED tests/test_submission_feedback_native.py::test_mcp_refusal_is_a_tool_error
+1 failed, 24 passed in 8.40s

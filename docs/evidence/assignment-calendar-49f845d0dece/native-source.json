@@ -1,0 +1,11 @@
+{
+  "native_source_commit": "7ff3518e9025c6d54899b01da21b378aebd01f3d",
+  "base": "72357053a1629c349f700030013559fa6d8130f2",
+  "source_sha256": {
+    "src/canvaspilot/calendar_export.py": "5e2196dba90b1a787c8b51e84c6d5695f49edff0e47c9f9eb30a8313f442e4aa",
+    "src/canvaspilot/cli.py": "28d278a60ee0b5b036948071c0965f42ea3f36cc1892940406577491e2c3ef38",
+    "tests/test_calendar_export.py": "d239fcb95c05892bc72b8b77d1ae20328436646987a36bd0fa428db05af31635",
+    "docs/calendar-export.md": "24035a63438cfdcdbbf71807db24029fc43a40bc8f7b48e652fb9ba2f9e31df7",
+    "README.md": "2b18f58a59944ea1cc9ab7f72ced77a78323d62296f667c6423185c447197699"
+  }
+}

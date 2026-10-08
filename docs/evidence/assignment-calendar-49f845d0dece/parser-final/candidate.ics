@@ -1,0 +1,31 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CanvasPilot//Assignment deadlines//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:626cbe26496c7e56059218664331db16ba9ad1295909d6a8867df94db32d2f73@canvas
+ pilot
+DTSTAMP:20261008T110401Z
+DTSTART:20261101T084500Z
+SUMMARY:[Course 42] 細胞と宇宙😀細胞と宇宙😀細胞と宇宙
+ 😀細胞と宇宙😀細胞と宇宙😀細胞と宇宙😀細胞と宇
+ 宙😀細胞と宇宙😀細胞と宇宙😀細胞と宇宙😀細胞と
+ 宇宙😀細胞と宇宙😀細胞と宇宙😀細胞と宇宙😀細胞
+ と宇宙😀細胞と宇宙😀\, review\; notes\\source\nEND:VEVENT
+DESCRIPTION:Canvas assignment deadline. Exported snapshot\; check Canvas fo
+ r changes.
+TRANSP:TRANSPARENT
+URL:https://canvas.fixture.invalid/courses/42/assignments/1
+END:VEVENT
+BEGIN:VEVENT
+UID:4cd7bdcffcc99daec367656ff25e906effb6cb3cec717fd10f3a666ca69bfe4b@canvas
+ pilot
+DTSTAMP:20261008T110401Z
+DTSTART:20261101T091500Z
+SUMMARY:[Course 77] Assignment 3
+DESCRIPTION:Canvas assignment deadline. Exported snapshot\; check Canvas fo
+ r changes.
+TRANSP:TRANSPARENT
+URL:https://canvas.fixture.invalid/courses/77/assignments/3
+END:VEVENT
+END:VCALENDAR

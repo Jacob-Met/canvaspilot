@@ -1,0 +1,42 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CanvasPilot//Assignment deadlines//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:db2799808a7eeda8e214f9ea674d3c838e91207c3247f45e5b6a87976dbf2fe9@canvas
+ pilot
+DTSTAMP:20261008T111309Z
+DTSTART:20261101T001000Z
+SUMMARY:[Course 77] Same numeric ID\, other course
+DESCRIPTION:Canvas assignment deadline. Exported snapshot\; check Canvas fo
+ r changes.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:16d6a0a6d3c2673d951a996c7749212c824e885be39c55fd11a73bc22b436189@canvas
+ pilot
+DTSTAMP:20261008T111309Z
+DTSTART:20261101T085000Z
+SUMMARY:[Course 42] 研究🪐é研究🪐é研究🪐é研究🪐é研究
+ 🪐é研究🪐é研究🪐é研究🪐é研究🪐é研究🪐é研究
+ 🪐é研究🪐é研究🪐é研究🪐é研究🪐é研究🪐é研究
+ 🪐é研究🪐é研究🪐é研究🪐é研究🪐é研究🪐é研究
+ 🪐é研究🪐é研究🪐é研究🪐é研究🪐é研究🪐é研究
+ 🪐é研究🪐é研究🪐é研究🪐é研究🪐é研究🪐é研究
+ 🪐é\, draft\; path\\item\nBEGIN:VEVENT\nnext\nfinal
+DESCRIPTION:Canvas assignment deadline. Exported snapshot\; check Canvas fo
+ r changes.
+TRANSP:TRANSPARENT
+URL:https://canvas.fixture.invalid/courses/42/assignments/901?a=1,2;b=3
+END:VEVENT
+BEGIN:VEVENT
+UID:adfc4321f6a7efcfe94582407ccd90691bea372f29a5ec55b3ce2c2187cfa5ce@canvas
+ pilot
+DTSTAMP:20261008T111309Z
+DTSTART:20261231T175500Z
+SUMMARY:[Course 77] Quarter-hour offset
+DESCRIPTION:Canvas assignment deadline. Exported snapshot\; check Canvas fo
+ r changes.
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

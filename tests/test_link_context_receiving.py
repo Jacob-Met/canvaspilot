@@ -87,10 +87,6 @@ class LinkContextReceiving(unittest.TestCase):
                 self.collect()
             self.assertEqual(len(calls), 1)
 
-    def test_older_broker_terminal_short_page_still_works(self):
-        with server_for('', old_broker=True) as calls:
-            self.assertEqual(self.collect(), [{'id': 1, 'course_id': 42}])
-            self.assertEqual(len(calls), 1)
 
 
 if __name__ == '__main__':

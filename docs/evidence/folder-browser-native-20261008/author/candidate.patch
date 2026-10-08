@@ -1,0 +1,945 @@
+diff --git a/README.md b/README.md
+index 9d6e7b8..d8fad44 100644
+--- a/README.md
++++ b/README.md
+@@ -13,7 +13,8 @@ Same architecture as OpenCLI-style web agents (persistent browser session → si
+ - **Full REST surface** — courses, assignments, modules, pages, files, discussions, announcements, planner, inbox, calendar, activity stream, submissions, and **quizzes** (list/questions/submissions/start/complete)
+ - **Agent-shaped digests** — `assignment_brief` (cleaned prompt + rubric), `sync_summary` (courses + upcoming), `submission_status`
+ - **Fixture mode** — offline dict backend for tests and CI; no Canvas required
+-- **33 MCP tools**, one stdio server, one env var for the host (`CANVAS_BASE_URL`) plus either a PAT or a running session broker
++- **34 MCP tools**, one stdio server, one env var for the host (`CANVAS_BASE_URL`) plus either a PAT or a running session broker
++- **Course folder browsing** — select nested folders and inspect bounded file-metadata pages through CLI, MCP or Python
+ 
+ ## Install
+ 
+@@ -99,7 +100,7 @@ Tools exposed (all prefixed `canvas_`):
+ | Area | Tools |
+ |------|-------|
+ | Identity | `whoami`, `sync_summary`, `planner_items`, `activity_stream`, `list_todo_items`, `list_enrollments` |
+-| Courses | `list_courses`, `get_course`, `list_modules`, `list_pages`, `get_page`, `list_files`, `list_announcements` |
++| Courses | `list_courses`, `get_course`, `list_modules`, `list_pages`, `get_page`, `list_files`, `browse_files`, `list_announcements` |
+ | Assignments | `list_assignments`, `get_assignment`, `assignment_brief`, `submission_status`, `submit_assignment_text` |
+ | Discussions | `list_discussion_topics`, `get_discussion`, `post_discussion_reply` |
+ | Quizzes | `list_quizzes`, `get_quiz`, `list_quiz_questions`, `list_quiz_submissions`, `start_quiz_submission`, `complete_quiz_submission` |
+@@ -108,6 +109,22 @@ Tools exposed (all prefixed `canvas_`):
+ 
+ Programmatic API bundle: `from canvaspilot.bundle import make_api, tool_inventory`.
+ 
++## Browse course folders
++
++```bash
++canvaspilot browse-files 42
++canvaspilot browse-files 42 --folder-id 110 --files-page 2 --per-page 20
++```
++
++Start at the course root, then choose a returned child folder ID. Each result
++contains the selected folder and one requested page each of direct child folders
++and files. Only metadata is returned; file bodies and download/preview URLs are
++excluded. A foreign folder or permission failure returns an error, not an empty
++listing. `has_more` is unknown because the existing request interface omits
++pagination headers; `next_page_to_try` is an optional probe, not a completeness
++claim. See [folder-browser usage and contract](docs/folder-browser.md) for the
++MCP/Python interfaces, page limits and examples.
++
+ ## Auth modes
+ 
+ | Mode | How | When |
+diff --git a/docs/folder-browser.md b/docs/folder-browser.md
+new file mode 100644
+index 0000000..2225f0e
+--- /dev/null
++++ b/docs/folder-browser.md
+@@ -0,0 +1,140 @@
++# Browse course folders
++
++`browse-files` lets you start at a course's root, choose a child folder and inspect
++file metadata inside it. It fills the navigation gap left by `files`: that older
++command offers a flat course list and its fallback lists only root-folder files.
++The existing command and its return shape are unchanged.
++
++## CLI journey
++
++Use the numeric course ID returned by `canvaspilot courses`. These example IDs
++are synthetic:
++
++```sh
++# Read the root folder, its first child-folder page and its first file page.
++canvaspilot browse-files 42 --per-page 20
++
++# Choose a child folder by the ID returned above.
++canvaspilot browse-files 42 --folder-id 110 --per-page 20
++
++# Request another file page while keeping the first child-folder page.
++canvaspilot browse-files 42 --folder-id 110 --files-page 2 --per-page 20
++
++# Child folders have an independent page selection.
++canvaspilot browse-files 42 --folder-id 110 --folders-page 2 --files-page 1
++```
++
++The command uses the existing token or session-broker mode and accepts the same
++`--base-url`, `--profile` and `--token` options as the other read commands. It does
++not start a browser or log in. Invalid parameters and permission/transport errors
++produce no result on stdout, a structured error on stderr and a nonzero exit.
++Normal HTTP client logs may precede that final stderr error.
++
++## MCP and Python
++
++The registered MCP tool is `canvas_browse_files`; its read-only annotation
++reflects the implementation's three Canvas GETs. It has the same folder/page
++arguments as the CLI:
++
++```json
++{
++  "course_id": "42",
++  "folder_id": "110",
++  "folders_page": 1,
++  "files_page": 2,
++  "per_page": 20
++}
++```
++
++```python
++from canvaspilot.bundle import make_api
++
++with make_api() as api:
++    root = api.browse_files(42)
++    child = api.browse_files(42, 110, files_page=2, per_page=20)
++```
++
++| Argument | Default | Accepted values |
++| --- | --- | --- |
++| `course_id` | required | Positive numeric Canvas ID, integer or ASCII decimal text in Python; text in MCP |
++| `folder_id` | `root` | `root` or a positive numeric Canvas folder ID |
++| `folders_page` | `1` | Integer from 1 through 10,000 |
++| `files_page` | `1` | Integer from 1 through 10,000 |
++| `per_page` | `50` | Integer from 1 through 100 |
++
++IDs accept at most 32 decimal digits and are normalized before constructing a
++path. Boolean values, path/query fragments, special IDs such as `media`, and
++invalid page/size values are rejected before a client request. MCP page and size
++arguments use strict integers, so JSON `true` does not silently become page 1.
++SIS identifier syntax is not part of this new interface; use a canonical numeric
++ID from the existing course list.
++
++## Result and pagination limits
++
++A result contains `course_id`, the selected `folder`, and `folders`/`files` page
++objects. Each page has `items`, `page`, `per_page`, `returned_count`, `has_more`,
++`next_page_to_try` and `page_limit_reached`. The result's `scope` is
++`direct_children`: descendants are reached by choosing their folder IDs, not by
++an automatic recursive crawl.
++
++The existing `CanvasClient.request()` returns response bodies without `Link`
++headers, including on its session-broker path. This feature therefore sends
++explicit page requests, as the existing broker pagination does. It always leaves
++`has_more` as JSON `null`. A short or empty page does not establish completeness.
++`next_page_to_try` is only the next bounded integer a caller may request; it is
++not evidence that another page exists. At page 10,000 that field is `null` and
++`page_limit_reached` is `true`, while `has_more` remains unknown.
++
++Canvas's [pagination documentation](https://developerdocs.instructure.com/services/canvas/basics/file.pagination)
++requires opaque `Link` headers for authoritative continuation and notes that a
++server may cap the requested page size. Automatic opaque-cursor traversal and a
++complete recursive inventory are not supplied by this feature. The caller must
++not treat its page probes as either. No response-supplied URL is followed.
++
++## Course and metadata boundaries
++
++The [official Files API](https://developerdocs.instructure.com/services/canvas/resources/files)
++documents the course-scoped folder lookup, including `root`, and the two
++paginated child-list endpoints. The browser first requests:
++
++```text
++GET /api/v1/courses/{course_id}/folders/{folder_id_or_root}
++```
++
++It requires the returned folder to match the selected course and requested ID
++before issuing either child-list request:
++
++```text
++GET /api/v1/folders/{verified_folder_id}/folders?page=N&per_page=M
++GET /api/v1/folders/{verified_folder_id}/files?page=N&per_page=M
++```
++
++Child folders must retain that course and parent; files must retain the selected
++folder ID. A mismatched identity, malformed page, duplicate identity within a
++page, or oversized page fails the operation without returning a partial browse
++result. An inaccessible folder remains an error; it is never relabeled empty.
++
++Metadata preserves names, stable IDs, parent/context relationships, reported
++counts, timestamps, content type, size and available lock/visibility fields.
++Missing optional fields remain absent, and the selected folder's reported counts
++are source metadata rather than proof of an accessible complete inventory.
++Download, preview and thumbnail URLs, embedded file bodies, and response-supplied
++child-list URLs are excluded. No file is downloaded, marked read, edited or
++submitted. The current Canvas permission/authentication behavior remains in the
++existing client.
++
++## Receiving
++
++`tests/test_folder_browser.py` exercises the real `CanvasClient`, public CLI
++subprocesses and the actual MCP stdio server against an authored loopback HTTP
++fixture. It covers root-to-child navigation, independent next-page requests,
++nested files, empty and forbidden folders, foreign course/folder responses,
++literal Unicode names, omitted access URLs, bounded pages and parameter
++rejection before network access. No live account, provider, browser or downloaded
++file is used.
++
++A separate receiving case routes the real API and CLI through the unchanged
++read-only broker `Handler`, with an authored queue worker supplying the metadata
++responses. It verifies exact folder/file page queries, nested selection and a
++foreign-folder permission refusal while all dispatched Canvas operations remain
++GET requests.
+diff --git a/src/canvaspilot/api.py b/src/canvaspilot/api.py
+index a769e52..46388d9 100644
+--- a/src/canvaspilot/api.py
++++ b/src/canvaspilot/api.py
+@@ -316,6 +316,23 @@ class CanvasAPI:
+             if isinstance(f, dict)
+         ]
+ 
++    def browse_files(
++        self,
++        course_id: int | str,
++        folder_id: int | str = "root",
++        *,
++        folders_page: int = 1,
++        files_page: int = 1,
++        per_page: int = 50,
++    ) -> dict[str, Any]:
++        """Browse one course folder and bounded direct-child metadata pages."""
++        from canvaspilot.folder_browser import browse_course_folder
++
++        return browse_course_folder(
++            self.client, course_id, folder_id,
++            folders_page=folders_page, files_page=files_page, per_page=per_page,
++        )
++
+     def list_quizzes(self, course_id: int | str) -> list[dict[str, Any]]:
+         rows = self.client.get_paginated(f"/api/v1/courses/{course_id}/quizzes")
+         return [
+diff --git a/src/canvaspilot/bundle.py b/src/canvaspilot/bundle.py
+index 5be38ec..b347e64 100644
+--- a/src/canvaspilot/bundle.py
++++ b/src/canvaspilot/bundle.py
+@@ -26,6 +26,7 @@ CURATED_MCP_TOOLS: tuple[str, ...] = (
+     "canvas_get_discussion",
+     "canvas_post_discussion_reply",
+     "canvas_list_files",
++    "canvas_browse_files",
+     "canvas_list_quizzes",
+     "canvas_get_quiz",
+     "canvas_list_quiz_questions",
+diff --git a/src/canvaspilot/cli.py b/src/canvaspilot/cli.py
+index cd97179..747c1d2 100644
+--- a/src/canvaspilot/cli.py
++++ b/src/canvaspilot/cli.py
+@@ -66,6 +66,14 @@ def main(argv: list[str] | None = None) -> None:
+     add_common(files)
+     files.add_argument("course_id")
+ 
++    browse = sub.add_parser("browse-files", help="Browse one course folder; metadata only")
++    add_common(browse)
++    browse.add_argument("course_id", help="Positive numeric Canvas course ID")
++    browse.add_argument("--folder-id", default="root", help="root or a returned numeric folder ID")
++    browse.add_argument("--folders-page", type=int, default=1)
++    browse.add_argument("--files-page", type=int, default=1)
++    browse.add_argument("--per-page", type=int, default=50, help="Requested child-page size, 1–100")
++
+     mcp = sub.add_parser("mcp", help="Run MCP stdio server")
+     add_common(mcp)
+ 
+@@ -119,6 +127,23 @@ def main(argv: list[str] | None = None) -> None:
+             print(json.dumps(api.list_discussion_topics(args.course_id), indent=2, default=str))
+         elif args.cmd == "files":
+             print(json.dumps(api.list_files(args.course_id), indent=2, default=str))
++        elif args.cmd == "browse-files":
++            import httpx
++
++            from canvaspilot.client import CanvasAuthError
++
++            try:
++                result = api.browse_files(
++                    args.course_id, args.folder_id,
++                    folders_page=args.folders_page, files_page=args.files_page,
++                    per_page=args.per_page,
++                )
++            except (CanvasAuthError, httpx.HTTPError, ValueError) as error:
++                print(json.dumps({
++                    "ok": False, "error": type(error).__name__, "message": str(error),
++                }), file=sys.stderr)
++                raise SystemExit(1) from None
++            print(json.dumps(result, indent=2))
+     finally:
+         api.close()
+ 
+diff --git a/src/canvaspilot/folder_browser.py b/src/canvaspilot/folder_browser.py
+new file mode 100644
+index 0000000..4b3078d
+--- /dev/null
++++ b/src/canvaspilot/folder_browser.py
+@@ -0,0 +1,164 @@
++"""Read one folder and bounded child-metadata pages within a Canvas course."""
++
++from __future__ import annotations
++
++import re
++from typing import Any
++
++from canvaspilot.client import CanvasClient
++
++MAX_PAGE = 10_000
++MAX_PER_PAGE = 100
++_NUMERIC_ID = re.compile(r"[0-9]{1,32}\Z")
++_FOLDER_FIELDS = (
++    "id", "context_type", "context_id", "parent_folder_id", "name", "full_name",
++    "position", "folders_count", "files_count", "created_at", "updated_at",
++    "unlock_at", "lock_at", "locked", "hidden", "locked_for_user",
++    "hidden_for_user", "for_submissions",
++)
++_FILE_FIELDS = (
++    "id", "folder_id", "display_name", "filename", "size", "created_at",
++    "updated_at", "modified_at", "unlock_at", "lock_at", "locked", "hidden",
++    "locked_for_user", "hidden_for_user", "lock_explanation",
++)
++
++
++class FolderBrowseError(ValueError):
++    """The server response cannot establish the requested folder scope."""
++
++
++def _identifier(value: int | str, name: str, *, root: bool = False) -> str:
++    if root and value == "root":
++        return "root"
++    if type(value) not in (int, str):
++        raise ValueError(f"{name} must be a positive numeric Canvas ID")
++    text = str(value)
++    if not _NUMERIC_ID.fullmatch(text) or int(text) < 1:
++        raise ValueError(f"{name} must be a positive numeric Canvas ID")
++    return str(int(text))
++
++
++def _bounded_integer(value: int, name: str, maximum: int) -> int:
++    if type(value) is not int or not 1 <= value <= maximum:
++        raise ValueError(f"{name} must be an integer from 1 to {maximum}")
++    return value
++
++
++def _response_id(value: Any, name: str) -> str:
++    try:
++        return _identifier(value, name)
++    except ValueError as error:
++        raise FolderBrowseError(f"Folder browser received an invalid {name}") from error
++
++
++def _folder(
++    value: Any,
++    course_id: str,
++    *,
++    expected_id: str | None = None,
++    parent_id: str | None = None,
++) -> dict[str, Any]:
++    if not isinstance(value, dict):
++        raise FolderBrowseError("Folder browser expected a folder object")
++    folder_id = _response_id(value.get("id"), "folder ID")
++    if value.get("context_type") != "Course" or _response_id(
++        value.get("context_id"), "course ID"
++    ) != course_id:
++        raise FolderBrowseError("Folder response belongs to another course")
++    if expected_id is not None and folder_id != expected_id:
++        raise FolderBrowseError("Folder response does not match the requested folder")
++    if parent_id is not None and (
++        folder_id == parent_id
++        or _response_id(value.get("parent_folder_id"), "parent folder ID") != parent_id
++    ):
++        raise FolderBrowseError("Child folder response belongs to another parent")
++    return {key: value[key] for key in _FOLDER_FIELDS if key in value}
++
++
++def _file(value: Any, folder_id: str) -> dict[str, Any]:
++    if not isinstance(value, dict):
++        raise FolderBrowseError("Folder browser expected a file object")
++    _response_id(value.get("id"), "file ID")
++    if _response_id(value.get("folder_id"), "file folder ID") != folder_id:
++        raise FolderBrowseError("File response belongs to another folder")
++    result = {key: value[key] for key in _FILE_FIELDS if key in value}
++    result["content_type"] = value.get("content-type") or value.get("content_type")
++    return result
++
++
++def _page(value: Any, page: int, per_page: int, project: Any) -> dict[str, Any]:
++    if not isinstance(value, list):
++        raise FolderBrowseError("Folder browser expected a metadata page array")
++    if len(value) > per_page:
++        raise FolderBrowseError("Folder browser received more items than the requested page bound")
++    items = [project(item) for item in value]
++    ids = [_response_id(item.get("id"), "item ID") for item in items]
++    if len(ids) != len(set(ids)):
++        raise FolderBrowseError("Folder browser received duplicate identities within a page")
++    return {
++        "items": items,
++        "page": page,
++        "per_page": per_page,
++        "returned_count": len(items),
++        # CanvasClient.request and the broker return bodies without Link headers.
++        # A short (or empty) page therefore does not establish global completeness.
++        "has_more": None,
++        "next_page_to_try": page + 1 if page < MAX_PAGE else None,
++        "page_limit_reached": page == MAX_PAGE,
++    }
++
++
++def browse_course_folder(
++    client: CanvasClient,
++    course_id: int | str,
++    folder_id: int | str = "root",
++    *,
++    folders_page: int = 1,
++    files_page: int = 1,
++    per_page: int = 50,
++) -> dict[str, Any]:
++    """Return one selected folder and direct child pages, without downloading files.
++
++    All three requests are GETs. The course-scoped folder lookup must establish
++    identity and membership before the two folder-ID list endpoints are called.
++    Page numbers are explicit requests through the existing client; next-page
++    probes are not a claim that another page exists or that a listing is complete.
++    """
++    course = _identifier(course_id, "course_id")
++    requested = _identifier(folder_id, "folder_id", root=True)
++    folders_page = _bounded_integer(folders_page, "folders_page", MAX_PAGE)
++    files_page = _bounded_integer(files_page, "files_page", MAX_PAGE)
++    per_page = _bounded_integer(per_page, "per_page", MAX_PER_PAGE)
++
++    folder = _folder(
++        client.request("GET", f"/api/v1/courses/{course}/folders/{requested}"),
++        course,
++        expected_id=None if requested == "root" else requested,
++    )
++    selected = _response_id(folder["id"], "folder ID")
++    folders = _page(
++        client.request(
++            "GET", f"/api/v1/folders/{selected}/folders",
++            params={"page": folders_page, "per_page": per_page},
++        ),
++        folders_page,
++        per_page,
++        lambda child: _folder(child, course, parent_id=selected),
++    )
++    files = _page(
++        client.request(
++            "GET", f"/api/v1/folders/{selected}/files",
++            params={"page": files_page, "per_page": per_page},
++        ),
++        files_page,
++        per_page,
++        lambda child: _file(child, selected),
++    )
++    return {
++        "course_id": course,
++        "folder": folder,
++        "folders": folders,
++        "files": files,
++        "scope": "direct_children",
++        "pagination": "explicit_pages_without_next_link_metadata",
++    }
+diff --git a/src/canvaspilot/mcp_server.py b/src/canvaspilot/mcp_server.py
+index 346f6a2..a9549ae 100644
+--- a/src/canvaspilot/mcp_server.py
++++ b/src/canvaspilot/mcp_server.py
+@@ -6,6 +6,8 @@ import json
+ from typing import Any
+ 
+ from mcp.server.mcpserver import MCPServer
++from mcp.types import ToolAnnotations
++from pydantic import StrictInt
+ 
+ from canvaspilot.api import CanvasAPI
+ from canvaspilot.client import CanvasClient
+@@ -118,6 +120,29 @@ async def canvas_list_files(course_id: str) -> str:
+     return _dump(_get_api().list_files(course_id))
+ 
+ 
++@mcp.tool(
++    description=(
++        "Browse metadata in one Canvas course folder. Start with folder_id=root, "
++        "then choose a returned child folder ID. Requests one bounded folder page "
++        "and one file page; no downloads or recursive inventory. has_more is unknown; "
++        "next_page_to_try is an optional probe, not a confirmed next page."
++    ),
++    annotations=ToolAnnotations(readOnlyHint=True, destructiveHint=False),
++    structured_output=False,
++)
++async def canvas_browse_files(
++    course_id: str,
++    folder_id: str = "root",
++    folders_page: StrictInt = 1,
++    files_page: StrictInt = 1,
++    per_page: StrictInt = 50,
++) -> str:
++    return _dump(_get_api().browse_files(
++        course_id, folder_id,
++        folders_page=folders_page, files_page=files_page, per_page=per_page,
++    ))
++
++
+ @mcp.tool(description="List classic quizzes in a course.", structured_output=False)
+ async def canvas_list_quizzes(course_id: str) -> str:
+     return _dump(_get_api().list_quizzes(course_id))
+diff --git a/tests/folder_http_fixture.py b/tests/folder_http_fixture.py
+new file mode 100644
+index 0000000..454a761
+--- /dev/null
++++ b/tests/folder_http_fixture.py
+@@ -0,0 +1,176 @@
++"""Authored course metadata over disposable loopback HTTP; never real Canvas."""
++
++from __future__ import annotations
++
++import copy
++import json
++import queue
++import threading
++from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
++from urllib.parse import parse_qs, urlsplit
++
++
++def folder(identity, parent, name, *, course=42, folders=0, files=0):
++    return {
++        "id": identity, "context_type": "Course", "context_id": course,
++        "parent_folder_id": parent, "name": name, "full_name": "course files/" + name,
++        "folders_count": folders, "files_count": files, "locked_for_user": False,
++        "folders_url": "https://must-not-follow.invalid/folders",
++        "files_url": "https://must-not-follow.invalid/files",
++    }
++
++
++def file(identity, parent, name):
++    return {
++        "id": identity, "folder_id": parent, "display_name": name, "filename": name,
++        "size": 123, "content-type": "application/pdf", "hidden_for_user": False,
++        "url": "https://must-not-download.invalid/file?verifier=authored-fixture",
++        "preview_url": "https://must-not-preview.invalid/file",
++        "body": "This authored body must never be returned as file metadata.",
++    }
++
++
++class FolderHTTPFixture:
++    def __init__(self):
++        self.requests = []
++        self.overrides = {}
++        self.folders = {
++            100: folder(100, None, "course files", folders=3, files=1),
++            110: folder(110, 100, "Unit 1 — 雪", folders=1, files=3),
++            111: folder(111, 110, "Lab <notes>", files=1),
++            120: folder(120, 100, "Empty"),
++            130: folder(130, 100, "Restricted"),
++        }
++        self.child_folders = {100: [110, 120, 130], 110: [111]}
++        self.files = {
++            100: [file(1001, 100, "Syllabus.pdf")],
++            110: [file(2001, 110, "A.pdf"), file(2002, 110, "B 雪.pdf"), file(2003, 110, "C.pdf")],
++            111: [file(3001, 111, "Lab <notes>.pdf")],
++        }
++        instance = self
++
++        class Handler(BaseHTTPRequestHandler):
++            def log_message(self, *_arguments):
++                pass
++
++            def do_GET(self):
++                parsed = urlsplit(self.path)
++                query = parse_qs(parsed.query)
++                instance.requests.append({"method": "GET", "path": parsed.path, "query": query})
++                status, body = instance.route(parsed.path, query)
++                encoded = json.dumps(body, ensure_ascii=False).encode()
++                self.send_response(status)
++                self.send_header("Content-Type", "application/json")
++                self.send_header("Content-Length", str(len(encoded)))
++                # Deliberately opaque: the product must not invent Link availability.
++                self.send_header("Link", '<https://must-not-follow.invalid/opaque>; rel="next"')
++                self.end_headers()
++                self.wfile.write(encoded)
++
++            def do_POST(self):
++                instance.requests.append({"method": "POST", "path": self.path})
++                self.send_error(405)
++
++        self.server = ThreadingHTTPServer(("127.0.0.1", 0), Handler)
++        self.server.daemon_threads = True
++        self.thread = threading.Thread(
++            target=lambda: self.server.serve_forever(poll_interval=0.01), daemon=True,
++        )
++        self.thread.start()
++        self.url = "http://127.0.0.1:" + str(self.server.server_port)
++
++    def route(self, path, query):
++        if path in self.overrides:
++            return copy.deepcopy(self.overrides[path])
++        parts = path.strip("/").split("/")
++        if len(parts) == 6 and parts[:4] == ["api", "v1", "courses", "42"] and parts[4] == "folders":
++            selected = parts[5]
++            if selected == "900":
++                return 403, {"error": "authored foreign-course refusal"}
++            if selected == "901":
++                return 200, folder(901, None, "Foreign private name", course=77)
++            if selected == "902":
++                return 200, self.folders[110]
++            identity = 100 if selected == "root" else int(selected)
++            if identity not in self.folders:
++                return 404, {"error": "authored missing folder"}
++            return 200, self.folders[identity]
++        if len(parts) == 5 and parts[:3] == ["api", "v1", "folders"]:
++            identity = int(parts[3])
++            kind = parts[4]
++            if identity == 130 and kind == "files":
++                return 403, {"error": "authored files permission refusal"}
++            if kind == "folders":
++                values = [self.folders[item] for item in self.child_folders.get(identity, [])]
++            elif kind == "files":
++                values = self.files.get(identity, [])
++            else:
++                return 404, {"error": "unexpected authored fixture route"}
++            page, limit = int(query.get("page", ["1"])[0]), int(query.get("per_page", ["50"])[0])
++            return 200, values[(page - 1) * limit:page * limit]
++        return 404, {"error": "unexpected authored fixture route"}
++
++    def close(self):
++        self.server.shutdown()
++        self.server.server_close()
++        self.thread.join(timeout=3)
++
++
++class FolderBrokerFixture:
++    """Actual broker Handler with authored GET results at its browser queue seam."""
++
++    def __init__(self, metadata):
++        from canvaspilot.session_broker import STATE, Handler
++
++        self.state = STATE
++        self.saved = {
++            name: getattr(STATE, name) for name in (
++                "base_url", "profile", "headless", "read_only", "jobs", "page_url",
++                "page_title", "error",
++            )
++        }
++        self.was_ready = STATE.ready.is_set()
++        STATE.base_url = "https://canvas.fixture.invalid"
++        STATE.page_url = "https://canvas.fixture.invalid/courses"
++        STATE.page_title = "Authored folder receiving"
++        STATE.headless = False
++        STATE.read_only = True
++        STATE.error = None
++        STATE.jobs = queue.Queue()
++        STATE.ready.set()
++        self.jobs = []
++        self.stopping = threading.Event()
++
++        def respond():
++            while not self.stopping.is_set():
++                try:
++                    job, reply = STATE.jobs.get(timeout=0.05)
++                except queue.Empty:
++                    continue
++                self.jobs.append(copy.deepcopy(job))
++                if job.get("op") != "fetch" or job.get("method") != "GET":
++                    reply.put({"ok": False, "error": "unexpected fixture operation"})
++                    continue
++                parsed = urlsplit(job["path"])
++                status, body = metadata.route(parsed.path, parse_qs(parsed.query))
++                reply.put({"ok": True, "response": {"status": status, "json": body, "text": None}})
++
++        self.worker = threading.Thread(target=respond, daemon=True)
++        self.worker.start()
++        self.server = ThreadingHTTPServer(("127.0.0.1", 0), Handler)
++        self.server.daemon_threads = True
++        self.thread = threading.Thread(
++            target=lambda: self.server.serve_forever(poll_interval=0.01), daemon=True,
++        )
++        self.thread.start()
++
++    def close(self):
++        self.server.shutdown()
++        self.server.server_close()
++        self.stopping.set()
++        self.worker.join(timeout=3)
++        self.thread.join(timeout=3)
++        for name, value in self.saved.items():
++            setattr(self.state, name, value)
++        if not self.was_ready:
++            self.state.ready.clear()
+diff --git a/tests/test_folder_browser.py b/tests/test_folder_browser.py
+new file mode 100644
+index 0000000..f2aacab
+--- /dev/null
++++ b/tests/test_folder_browser.py
+@@ -0,0 +1,269 @@
++"""Receiving at the real API/client, CLI subprocess and MCP stdio boundaries."""
++
++from __future__ import annotations
++
++import asyncio
++import json
++import os
++import subprocess
++import sys
++from pathlib import Path
++
++import pytest
++from folder_http_fixture import FolderBrokerFixture, FolderHTTPFixture, file, folder
++
++from canvaspilot.api import CanvasAPI
++from canvaspilot.client import CanvasAuthError, CanvasClient
++from canvaspilot.folder_browser import FolderBrowseError
++
++
++@pytest.fixture
++def receiving(tmp_path, monkeypatch):
++    for name in (
++        "HTTP_PROXY", "HTTPS_PROXY", "ALL_PROXY", "NO_PROXY",
++        "http_proxy", "https_proxy", "all_proxy", "no_proxy",
++    ):
++        monkeypatch.delenv(name, raising=False)
++    fixture = FolderHTTPFixture()
++    monkeypatch.setenv("CANVAS_BASE_URL", fixture.url)
++    monkeypatch.setenv("CANVAS_API_TOKEN", "authored-fixture-value")
++    monkeypatch.setenv("CANVAS_PROFILE", str(tmp_path / "unused-profile"))
++    monkeypatch.setenv("CANVAS_SESSION_PORT", str(fixture.server.server_port))
++    monkeypatch.setenv("PYTHONPATH", str(Path(__file__).resolve().parents[1] / "src"))
++    monkeypatch.setenv("PYTHONDONTWRITEBYTECODE", "1")
++    try:
++        with CanvasAPI(CanvasClient()) as api:
++            yield fixture, api
++    finally:
++        fixture.close()
++        assert not (tmp_path / "unused-profile").exists()
++        assert all(request["method"] == "GET" for request in fixture.requests)
++
++
++def _ids(page):
++    return [item["id"] for item in page["items"]]
++
++
++def _cli(*arguments):
++    return subprocess.run(
++        [sys.executable, "-m", "canvaspilot.cli", "browse-files", *arguments],
++        capture_output=True, text=True, timeout=15, env=dict(os.environ), check=False,
++    )
++
++
++def test_real_client_root_chosen_folder_next_pages_and_nested_file(receiving):
++    fixture, api = receiving
++    root = api.browse_files(42, per_page=2)
++    assert root["course_id"] == "42" and root["folder"]["id"] == 100
++    assert _ids(root["folders"]) == [110, 120]
++    assert _ids(root["files"]) == [1001]
++    assert root["folders"]["next_page_to_try"] == 2
++    assert root["files"]["has_more"] is None
++    second_folders = api.browse_files(42, folders_page=2, per_page=2)
++    assert _ids(second_folders["folders"]) == [130]
++    chosen = api.browse_files("42", "110", files_page=2, per_page=2)
++    assert chosen["folder"]["name"] == "Unit 1 — 雪"
++    assert _ids(chosen["folders"]) == [111]
++    assert _ids(chosen["files"]) == [2003]
++    nested = api.browse_files(42, 111)
++    assert _ids(nested["files"]) == [3001]
++    assert nested["files"]["items"][0]["filename"] == "Lab <notes>.pdf"
++    assert nested["scope"] == "direct_children"
++    assert len(fixture.requests) == 12
++    assert fixture.requests[6]["path"] == "/api/v1/courses/42/folders/110"
++    assert fixture.requests[7]["query"] == {"page": ["1"], "per_page": ["2"]}
++    assert fixture.requests[8]["query"] == {"page": ["2"], "per_page": ["2"]}
++    for result in (root, second_folders, chosen, nested):
++        serialized = json.dumps(result)
++        assert "must-not-" not in serialized and "authored body" not in serialized
++        assert result["folders"]["has_more"] is None
++        assert result["files"]["has_more"] is None
++
++
++def test_empty_folder_is_scoped_without_a_false_completeness_claim(receiving):
++    fixture, api = receiving
++    result = api.browse_files(42, 120)
++    assert result["folder"]["id"] == 120
++    for kind in ("folders", "files"):
++        assert result[kind]["items"] == []
++        assert result[kind]["returned_count"] == 0
++        assert result[kind]["has_more"] is None
++    assert len(fixture.requests) == 3
++
++
++@pytest.mark.parametrize("selected,exception", [
++    (900, CanvasAuthError), (901, FolderBrowseError), (902, FolderBrowseError),
++])
++def test_foreign_or_mismatched_folder_stops_before_child_requests(receiving, selected, exception):
++    fixture, api = receiving
++    with pytest.raises(exception):
++        api.browse_files(42, selected)
++    assert len(fixture.requests) == 1
++    assert fixture.requests[0]["path"] == f"/api/v1/courses/42/folders/{selected}"
++
++
++@pytest.mark.parametrize("path,body", [
++    ("/api/v1/folders/100/folders", [folder(900, 100, "Foreign", course=77)]),
++    ("/api/v1/folders/100/folders", [folder(110, 999, "Wrong parent")]),
++    ("/api/v1/folders/100/files", [file(1001, 999, "Wrong folder.pdf")]),
++    ("/api/v1/folders/100/files", {"error": "not an array"}),
++    ("/api/v1/folders/100/files", [file(1001, 100, "A"), file(1001, 100, "B")]),
++])
++def test_malformed_or_foreign_children_cannot_produce_a_browse_result(receiving, path, body):
++    fixture, api = receiving
++    fixture.overrides[path] = (200, body)
++    with pytest.raises(FolderBrowseError):
++        api.browse_files(42)
++
++
++def test_server_cannot_exceed_requested_output_page_bound(receiving):
++    fixture, api = receiving
++    fixture.overrides["/api/v1/folders/100/files"] = (
++        200, [file(1001, 100, "A"), file(1002, 100, "B")],
++    )
++    with pytest.raises(FolderBrowseError, match="page bound"):
++        api.browse_files(42, per_page=1)
++
++
++def test_files_permission_failure_remains_an_error(receiving):
++    fixture, api = receiving
++    with pytest.raises(CanvasAuthError, match="403"):
++        api.browse_files(42, 130)
++    assert len(fixture.requests) == 3
++
++
++@pytest.mark.parametrize("arguments", [
++    {"course_id": "42/../77"}, {"course_id": "42?other=77"}, {"course_id": True},
++    {"course_id": "٤٢"}, {"folder_id": "root/../900"}, {"folder_id": "media"},
++    {"folder_id": 0}, {"folder_id": None}, {"folders_page": 0},
++    {"folders_page": 10001}, {"files_page": -1}, {"files_page": True},
++    {"files_page": 1.5}, {"per_page": "2"}, {"per_page": 101}, {"per_page": 0},
++])
++def test_query_validation_precedes_any_client_call(arguments):
++    class NoRequests:
++        def request(self, *_args, **_kwargs):
++            raise AssertionError("invalid query reached client")
++
++    from canvaspilot.folder_browser import browse_course_folder
++
++    with pytest.raises(ValueError):
++        browse_course_folder(NoRequests(), **{"course_id": 42, **arguments})
++
++
++def test_explicit_maximum_page_is_bounded_and_remains_unknown(receiving):
++    _, api = receiving
++    result = api.browse_files(42, files_page=10_000)
++    assert result["files"]["page_limit_reached"] is True
++    assert result["files"]["next_page_to_try"] is None
++    assert result["files"]["has_more"] is None
++
++
++def test_public_cli_root_selection_next_page_and_empty_folder(receiving):
++    fixture, _ = receiving
++    root = _cli("42", "--per-page", "2")
++    assert root.returncode == 0, root.stderr
++    assert _ids(json.loads(root.stdout)["folders"]) == [110, 120]
++    selected = _cli("42", "--folder-id", "110", "--files-page", "2", "--per-page", "2")
++    assert selected.returncode == 0, selected.stderr
++    assert _ids(json.loads(selected.stdout)["files"]) == [2003]
++    empty = _cli("42", "--folder-id", "120")
++    assert empty.returncode == 0, empty.stderr
++    assert json.loads(empty.stdout)["files"]["items"] == []
++    assert len(fixture.requests) == 9
++
++
++def test_public_cli_foreign_forbidden_and_invalid_queries_return_no_data(receiving):
++    fixture, _ = receiving
++    for selected in ("900", "901", "902", "130", "404"):
++        result = _cli("42", "--folder-id", selected)
++        assert result.returncode == 1 and result.stdout == ""
++        # httpx's normal informational logs may precede the final structured error.
++        error = json.loads(result.stderr.strip().splitlines()[-1])
++        assert error["ok"] is False
++        assert "Foreign private name" not in result.stderr
++    before = len(fixture.requests)
++    for args in (("42/../77",), ("42", "--folder-id", "media"), ("42", "--per-page", "101")):
++        result = _cli(*args)
++        assert result.returncode == 1 and result.stdout == ""
++    assert len(fixture.requests) == before
++
++
++def test_public_api_and_cli_through_actual_read_only_broker_handler(receiving, monkeypatch):
++    metadata, _ = receiving
++    broker = FolderBrokerFixture(metadata)
++    monkeypatch.delenv("CANVAS_API_TOKEN")
++    monkeypatch.setenv("CANVAS_SESSION_PORT", str(broker.server.server_port))
++    monkeypatch.setattr("canvaspilot.client.BROKER_PORT", broker.server.server_port)
++    try:
++        with CanvasAPI(CanvasClient()) as api:
++            result = api.browse_files(42, 110, files_page=2, per_page=2)
++        assert _ids(result["files"]) == [2003]
++        assert len(broker.jobs) == 3
++        assert broker.jobs[0]["path"] == "/api/v1/courses/42/folders/110?per_page=50"
++        assert broker.jobs[1]["path"] == "/api/v1/folders/110/folders?page=1&per_page=2"
++        assert broker.jobs[2]["path"] == "/api/v1/folders/110/files?page=2&per_page=2"
++        child = _cli("42", "--folder-id", "111")
++        assert child.returncode == 0, child.stderr
++        assert _ids(json.loads(child.stdout)["files"]) == [3001]
++        foreign = _cli("42", "--folder-id", "900")
++        assert foreign.returncode == 1 and foreign.stdout == ""
++        assert len(broker.jobs) == 7
++        assert all(job["method"] == "GET" and job["body"] is None for job in broker.jobs)
++        assert metadata.requests == []
++    finally:
++        broker.close()
++
++
++def test_public_mcp_stdio_browse_journey_and_refusals(receiving, tmp_path):
++    fixture, _ = receiving
++    from mcp import ClientSession, StdioServerParameters
++    from mcp.client.stdio import stdio_client
++
++    async def run():
++        parameters = StdioServerParameters(
++            command=sys.executable, args=["-m", "canvaspilot.cli", "mcp"], env=dict(os.environ),
++        )
++        with (tmp_path / "mcp-stderr.log").open("w") as errlog:
++            async with (
++                stdio_client(parameters, errlog=errlog) as (read, write),
++                ClientSession(read, write, read_timeout_seconds=10) as session,
++            ):
++                await session.initialize()
++                catalog = await session.list_tools()
++                tool = next(item for item in catalog.tools if item.name == "canvas_browse_files")
++                wire_tool = tool.model_dump(by_alias=True)
++                assert wire_tool["inputSchema"]["properties"]["per_page"]["type"] == "integer"
++                assert wire_tool["annotations"]["readOnlyHint"] is True
++
++                async def call(arguments):
++                    result = await session.call_tool("canvas_browse_files", arguments)
++                    wire_result = result.model_dump(by_alias=True)
++                    text = "".join(item["text"] for item in wire_result["content"] if item["type"] == "text")
++                    return wire_result.get("isError", False), text
++
++                failed, text = await call({"course_id": "42", "per_page": 2})
++                assert not failed and _ids(json.loads(text)["folders"]) == [110, 120]
++                failed, text = await call({
++                    "course_id": "42", "folder_id": "110", "files_page": 2, "per_page": 2,
++                })
++                chosen = json.loads(text)
++                assert not failed and _ids(chosen["files"]) == [2003]
++                assert chosen["files"]["has_more"] is None
++                failed, text = await call({"course_id": "42", "folder_id": "120"})
++                assert not failed and json.loads(text)["folders"]["items"] == []
++                for selected in ("900", "901", "130"):
++                    failed, text = await call({"course_id": "42", "folder_id": selected})
++                    assert failed and "Foreign private name" not in text
++                before = len(fixture.requests)
++                for arguments in (
++                    {"course_id": "42", "per_page": True},
++                    {"course_id": "42", "per_page": 101},
++                    {"course_id": "42", "files_page": 0},
++                    {"course_id": "42/../77"},
++                    {"course_id": "42", "folder_id": "media"},
++                ):
++                    failed, _ = await call(arguments)
++                    assert failed
++                assert len(fixture.requests) == before
++
++    asyncio.run(run())

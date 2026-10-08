@@ -73,6 +73,18 @@ def main(argv: list[str] | None = None) -> None:
     brief.add_argument("course_id")
     brief.add_argument("assignment_id")
 
+    feedback = sub.add_parser(
+        "feedback",
+        help="Read self submission comments, rubric feedback, and grade/attempt metadata",
+        description=(
+            "Read self submission comments and rubric feedback. A false "
+            "grade_matches_current_submission means grading preceded the latest resubmission."
+        ),
+    )
+    add_common(feedback)
+    feedback.add_argument("course_id")
+    feedback.add_argument("assignment_id")
+
     disc = sub.add_parser("discussions", help="List discussion topics")
     add_common(disc)
     disc.add_argument("course_id")
@@ -80,6 +92,21 @@ def main(argv: list[str] | None = None) -> None:
     files = sub.add_parser("files", help="List course files")
     add_common(files)
     files.add_argument("course_id")
+
+    browse = sub.add_parser("browse-files", help="Browse one course folder; metadata only")
+    add_common(browse)
+    browse.add_argument("course_id", help="Positive numeric Canvas course ID")
+    browse.add_argument("--folder-id", default="root", help="root or a returned numeric folder ID")
+    browse.add_argument("--folders-page", type=int, default=1)
+    browse.add_argument("--files-page", type=int, default=1)
+    browse.add_argument("--per-page", type=int, default=50, help="Requested child-page size, 1–100")
+
+    export = sub.add_parser("export-calendar", help="Save selected assignment deadlines to a new .ics file")
+    add_common(export)
+    export.add_argument("course_ids", nargs="+", type=_positive_int)
+    export.add_argument("--out", required=True, type=Path, help="New calendar file; existing paths are protected")
+    export.add_argument("--bucket", choices=("upcoming", "past", "overdue", "undated", "ungraded", "unsubmitted", "all"),
+                        default="upcoming", help="Canvas assignment selection (default: upcoming)")
 
     mcp = sub.add_parser("mcp", help="Run MCP stdio server")
     add_common(mcp)
@@ -133,10 +160,57 @@ def main(argv: list[str] | None = None) -> None:
                     default=str,
                 )
             )
+        elif args.cmd == "feedback":
+            print(
+                json.dumps(
+                    api.submission_feedback(args.course_id, args.assignment_id),
+                    indent=2,
+                    default=str,
+                )
+            )
         elif args.cmd == "discussions":
             print(json.dumps(api.list_discussion_topics(args.course_id), indent=2, default=str))
         elif args.cmd == "files":
             print(json.dumps(api.list_files(args.course_id), indent=2, default=str))
+        elif args.cmd == "export-calendar":
+            import os
+
+            import httpx
+
+            from canvaspilot.calendar_export import (
+                build_assignment_calendar,
+                write_calendar,
+            )
+            from canvaspilot.client import CanvasAuthError
+
+            try:
+                if os.path.lexists(args.out):
+                    raise FileExistsError("Output path already exists; choose a new .ics file")
+                content, report = build_assignment_calendar(api, args.course_ids, bucket=args.bucket)
+                write_calendar(args.out, content)
+            except (CanvasAuthError, httpx.HTTPError, ValueError, TypeError, OSError) as error:
+                print(json.dumps({
+                    "ok": False, "error": type(error).__name__, "message": str(error),
+                }), file=sys.stderr)
+                raise SystemExit(1) from None
+            print(json.dumps({"ok": True, "output": str(args.out), **report}, indent=2))
+        elif args.cmd == "browse-files":
+            import httpx
+
+            from canvaspilot.client import CanvasAuthError
+
+            try:
+                result = api.browse_files(
+                    args.course_id, args.folder_id,
+                    folders_page=args.folders_page, files_page=args.files_page,
+                    per_page=args.per_page,
+                )
+            except (CanvasAuthError, httpx.HTTPError, ValueError) as error:
+                print(json.dumps({
+                    "ok": False, "error": type(error).__name__, "message": str(error),
+                }), file=sys.stderr)
+                raise SystemExit(1) from None
+            print(json.dumps(result, indent=2))
     finally:
         api.close()
 

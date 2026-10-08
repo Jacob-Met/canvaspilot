@@ -1,0 +1,17 @@
+{
+  "base": "72357053a1629c349f700030013559fa6d8130f2",
+  "source_commit": "7ff3518e9025c6d54899b01da21b378aebd01f3d",
+  "base_files": 123,
+  "existing_modified_paths": {
+    "src/canvaspilot/cli.py": {
+      "insertions_only": true,
+      "inserted_lines": 29
+    },
+    "README.md": {
+      "insertions_only": true,
+      "inserted_lines": 5
+    }
+  },
+  "unchanged_existing_files": 121,
+  "all_existing_unchanged_except_declared": true
+}

@@ -1,0 +1,26 @@
+PASS Source hashes match frozen implementation
+PASS Native CLI produces complete new calendar
+PASS Independent parser accepts exactly three deadline events
+PASS Unicode, delimiters and literal content lines round-trip
+PASS UTF-8 physical lines are intact and at most 75 octets
+PASS Aware offsets convert exactly and sort by UTC instant
+PASS Unknown date is explicitly omitted
+PASS Duplicate selected course is read once and upcoming bucket retained
+PASS Same assignment ID in different courses remains distinct
+PASS No duration, invitation, busy block or alarm is invented
+PASS URL punctuation and reported bytes remain exact
+PASS Name and deadline edit plus normalized source retain UIDs
+PASS Changed deadline reaches parser without changing identity
+PASS Same course and assignment IDs from a different source do not collide
+PASS Naive date in later course: whole output refused
+PASS Malformed timezone minute in later course: whole output refused
+PASS Later course read failure: whole output refused
+PASS Late failure occurs after one good course
+PASS Existing calendar bytes protected without further reads
+PASS Dangling destination symlink preserved without creating its target
+PASS All dates unknown: whole output refused
+PASS All bucket omits transport bucket parameter
+PASS Only selected loopback GET reads occurred
+PASS No profile or temporary publication residue
+PASS All three handed-off source hashes remain unchanged
+{"passed": 25, "failed": 0, "receipt": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-independent/run-candidate-frozen/receipt.json"}

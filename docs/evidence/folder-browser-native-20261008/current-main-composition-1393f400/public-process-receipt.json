@@ -1,0 +1,13 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "[Reading 2 new lines (total: 2 lines)]\n\n{\"passed\": true, \"actions\": 6, \"broker_jobs\": 17, \"proxy_requests\": 0, \"source_tree\": \"76a9f5c4523df2f2affc75e050e53cf9fb652845\"}\n\n✅ Process completed with exit code 0 (runtime: 2.86s)"
+    },
+    {
+      "type": "text",
+      "text": "\n[executed on device: Mac.lan (0e3d582f-e25b-44b2-8418-9639fc4e4e33)]"
+    }
+  ],
+  "isError": false
+}

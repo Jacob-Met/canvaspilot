@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CanvasPilot//Assignment deadlines//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:926d8c9aa8ad426c0be3681fbd50dc933e4d0e60212c75a5ff66c4dba4d851dd@canvas
+ pilot
+DTSTAMP:20261008T111227Z
+DTSTART:20261101T091500Z
+SUMMARY:[Course 77] Assignment 3
+DESCRIPTION:Canvas assignment deadline. Exported snapshot\; check Canvas fo
+ r changes.
+TRANSP:TRANSPARENT
+URL:https://canvas.fixture.invalid/courses/77/assignments/3
+END:VEVENT
+BEGIN:VEVENT
+UID:3fddadbbbea7609ef2db96dc2cf208e401733a016134f1a43454be26804121d8@canvas
+ pilot
+DTSTAMP:20261008T111227Z
+DTSTART:20261103T073000Z
+SUMMARY:[Course 42] Revised deadline
+DESCRIPTION:Canvas assignment deadline. Exported snapshot\; check Canvas fo
+ r changes.
+TRANSP:TRANSPARENT
+URL:https://canvas.fixture.invalid/courses/42/assignments/1
+END:VEVENT
+END:VCALENDAR

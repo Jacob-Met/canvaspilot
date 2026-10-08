@@ -6,7 +6,8 @@ import json
 from typing import Annotated, Any
 
 from mcp.server.mcpserver import MCPServer
-from pydantic import Field
+from mcp.types import ToolAnnotations
+from pydantic import Field, StrictInt
 
 from canvaspilot.api import CanvasAPI, _validate_sync_limits
 from canvaspilot.client import CanvasClient
@@ -119,6 +120,29 @@ async def canvas_list_files(course_id: str) -> str:
     return _dump(_get_api().list_files(course_id))
 
 
+@mcp.tool(
+    description=(
+        "Browse metadata in one Canvas course folder. Start with folder_id=root, "
+        "then choose a returned child folder ID. Requests one bounded folder page "
+        "and one file page; no downloads or recursive inventory. has_more is unknown; "
+        "next_page_to_try is an optional probe, not a confirmed next page."
+    ),
+    annotations=ToolAnnotations(readOnlyHint=True, destructiveHint=False),
+    structured_output=False,
+)
+async def canvas_browse_files(
+    course_id: str,
+    folder_id: str = "root",
+    folders_page: StrictInt = 1,
+    files_page: StrictInt = 1,
+    per_page: StrictInt = 50,
+) -> str:
+    return _dump(_get_api().browse_files(
+        course_id, folder_id,
+        folders_page=folders_page, files_page=files_page, per_page=per_page,
+    ))
+
+
 @mcp.tool(description="List classic quizzes in a course.", structured_output=False)
 async def canvas_list_quizzes(course_id: str) -> str:
     return _dump(_get_api().list_quizzes(course_id))
@@ -227,6 +251,18 @@ async def canvas_sync_summary(
 @mcp.tool(description="Submission status for an assignment (self).", structured_output=False)
 async def canvas_submission_status(course_id: str, assignment_id: str) -> str:
     return _dump(_get_api().submission_status(course_id, assignment_id))
+
+
+@mcp.tool(
+    description=(
+        "Read self submission comments and rubric feedback with original authors, "
+        "criteria, and grade/attempt metadata. A false grade_matches_current_submission "
+        "means grading preceded the latest resubmission. Does not calculate a grade."
+    ),
+    structured_output=False,
+)
+async def canvas_submission_feedback(course_id: str, assignment_id: str) -> str:
+    return _dump(_get_api().submission_feedback(course_id, assignment_id))
 
 
 @mcp.tool(description="Submit finished online_text_entry work.", structured_output=False)

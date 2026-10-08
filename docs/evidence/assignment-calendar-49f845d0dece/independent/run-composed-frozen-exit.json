@@ -1,0 +1,11 @@
+{
+  "exit": 0,
+  "argv": [
+    "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-venv/bin/python",
+    "-B",
+    "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-independent/receive_calendar_independent.py",
+    "run-composed-frozen",
+    "/Users/me/workspace/estate/production-evidence-49f845d0dece/canvaspilot-calendar",
+    "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-independent/source-composed.json"
+  ]
+}

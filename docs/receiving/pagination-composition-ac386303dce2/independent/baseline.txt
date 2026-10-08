@@ -1,0 +1,279 @@
+test_context_exclusion_is_independent_of_order_and_transport (__main__.ComposedReceiving.test_context_exclusion_is_independent_of_order_and_transport) ... HTTP Request: GET https://composition-campus.instructure.com/api/v1/courses/42/assignments?per_page=50 "HTTP/1.1 200 OK"
+HTTP Request: GET https://other.invalid/list?cursor=canary "HTTP/1.1 200 OK"
+
+  test_context_exclusion_is_independent_of_order_and_transport (__main__.ComposedReceiving.test_context_exclusion_is_independent_of_order_and_transport) (mode='token', anchored_first=True) ... FAIL
+HTTP Request: GET https://composition-campus.instructure.com/api/v1/courses/42/assignments?per_page=50 "HTTP/1.1 200 OK"
+HTTP Request: GET https://other.invalid/list?cursor=canary "HTTP/1.1 200 OK"
+  test_context_exclusion_is_independent_of_order_and_transport (__main__.ComposedReceiving.test_context_exclusion_is_independent_of_order_and_transport) (mode='token', anchored_first=False) ... FAIL
+HTTP Request: GET http://127.0.0.1:43923/health "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:43923/fetch "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:43923/fetch "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:34033/health "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:34033/fetch "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:34033/fetch "HTTP/1.0 200 OK"
+test_first_query_filters_and_opaque_continuation_have_the_same_wire_contract (__main__.ComposedReceiving.test_first_query_filters_and_opaque_continuation_have_the_same_wire_contract) ... HTTP Request: GET https://composition-campus.instructure.com/api/v1/courses/42/assignments?cursor=first%2f&tag=one&tag=two "HTTP/1.1 200 OK"
+
+  test_first_query_filters_and_opaque_continuation_have_the_same_wire_contract (__main__.ComposedReceiving.test_first_query_filters_and_opaque_continuation_have_the_same_wire_contract) (mode='token') ... FAIL
+HTTP Request: GET http://127.0.0.1:38887/health "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:38887/fetch "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:38887/fetch "HTTP/1.0 200 OK"
+test_initial_pat_target_admission_precedes_any_http_dispatch (__main__.ComposedReceiving.test_initial_pat_target_admission_precedes_any_http_dispatch) ... HTTP Request: GET https://composition-campus.instructure.com/api/v1/assignments?per_page=50 "HTTP/1.1 200 OK"
+
+  test_initial_pat_target_admission_precedes_any_http_dispatch (__main__.ComposedReceiving.test_initial_pat_target_admission_precedes_any_http_dispatch) (path='//other.invalid/api/v1/assignments') ... FAIL
+HTTP Request: GET https://composition-campus.instructure.com/api/v1/courses/42/assignments?per_page=50 "HTTP/1.1 200 OK"
+  test_initial_pat_target_admission_precedes_any_http_dispatch (__main__.ComposedReceiving.test_initial_pat_target_admission_precedes_any_http_dispatch) (path='/api/v1/courses/42/assignments#private-fragment') ... FAIL
+HTTP Request: GET https://composition-campus.instructure.com/api/v1/courses/42/assignments?per_page=50 "HTTP/1.1 200 OK"
+  test_initial_pat_target_admission_precedes_any_http_dispatch (__main__.ComposedReceiving.test_initial_pat_target_admission_precedes_any_http_dispatch) (path='/api/v1/courses/42/assignments?cursor=back\\slash') ... FAIL
+  test_initial_pat_target_admission_precedes_any_http_dispatch (__main__.ComposedReceiving.test_initial_pat_target_admission_precedes_any_http_dispatch) (path='https://composition-campus.instructure.com:not-a-port/api/v1/courses/42/assignments') ... ERROR
+  test_initial_pat_target_admission_precedes_any_http_dispatch (__main__.ComposedReceiving.test_initial_pat_target_admission_precedes_any_http_dispatch) (path='/api/v1/courses/42/assignments?cursor=control\nvalue') ... ERROR
+test_malformed_metadata_after_a_valid_page_never_returns_a_prefix (__main__.ComposedReceiving.test_malformed_metadata_after_a_valid_page_never_returns_a_prefix) ... HTTP Request: GET https://composition-campus.instructure.com/api/v1/courses/42/assignments?per_page=50 "HTTP/1.1 200 OK"
+HTTP Request: GET https://composition-campus.instructure.com/api/v1/courses/42/assignments?cursor=second "HTTP/1.1 200 OK"
+
+  test_malformed_metadata_after_a_valid_page_never_returns_a_prefix (__main__.ComposedReceiving.test_malformed_metadata_after_a_valid_page_never_returns_a_prefix) (mode='token', header='<https://composition-campus.instructure.com/api/v1/courses/42/assignments?cursor=unclassified>') ... FAIL
+HTTP Request: GET https://composition-campus.instructure.com/api/v1/courses/42/assignments?per_page=50 "HTTP/1.1 200 OK"
+HTTP Request: GET https://composition-campus.instructure.com/api/v1/courses/42/assignments?cursor=second "HTTP/1.1 200 OK"
+  test_malformed_metadata_after_a_valid_page_never_returns_a_prefix (__main__.ComposedReceiving.test_malformed_metadata_after_a_valid_page_never_returns_a_prefix) (mode='token', header='<https://composition-campus.instructure.com/api/v1/courses/42/assignments?cursor=unclassified>; rel="https://relations.invalid/bad%qq"') ... FAIL
+HTTP Request: GET http://127.0.0.1:44737/health "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:44737/fetch "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:44737/fetch "HTTP/1.0 200 OK"
+  test_malformed_metadata_after_a_valid_page_never_returns_a_prefix (__main__.ComposedReceiving.test_malformed_metadata_after_a_valid_page_never_returns_a_prefix) (mode='broker', header='<https://composition-campus.instructure.com/api/v1/courses/42/assignments?cursor=unclassified>') ... FAIL
+HTTP Request: GET http://127.0.0.1:45707/health "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:45707/fetch "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:45707/fetch "HTTP/1.0 200 OK"
+  test_malformed_metadata_after_a_valid_page_never_returns_a_prefix (__main__.ComposedReceiving.test_malformed_metadata_after_a_valid_page_never_returns_a_prefix) (mode='broker', header='<https://composition-campus.instructure.com/api/v1/courses/42/assignments?cursor=unclassified>; rel="https://relations.invalid/bad%qq"') ... FAIL
+test_nonboolean_broker_capability_cannot_assert_collection_completeness (__main__.ComposedReceiving.test_nonboolean_broker_capability_cannot_assert_collection_completeness) ... HTTP Request: POST http://127.0.0.1:43761/fetch "HTTP/1.0 200 OK"
+
+  test_nonboolean_broker_capability_cannot_assert_collection_completeness (__main__.ComposedReceiving.test_nonboolean_broker_capability_cannot_assert_collection_completeness) (capability=False) ... FAIL
+HTTP Request: POST http://127.0.0.1:38679/fetch "HTTP/1.0 200 OK"
+  test_nonboolean_broker_capability_cannot_assert_collection_completeness (__main__.ComposedReceiving.test_nonboolean_broker_capability_cannot_assert_collection_completeness) (capability='true') ... FAIL
+HTTP Request: POST http://127.0.0.1:38341/fetch "HTTP/1.0 200 OK"
+  test_nonboolean_broker_capability_cannot_assert_collection_completeness (__main__.ComposedReceiving.test_nonboolean_broker_capability_cannot_assert_collection_completeness) (capability=1) ... FAIL
+HTTP Request: POST http://127.0.0.1:44309/fetch "HTTP/1.0 200 OK"
+  test_nonboolean_broker_capability_cannot_assert_collection_completeness (__main__.ComposedReceiving.test_nonboolean_broker_capability_cannot_assert_collection_completeness) (capability=None) ... FAIL
+test_terminal_mapping_compatibility_does_not_admit_a_later_mapping (__main__.ComposedReceiving.test_terminal_mapping_compatibility_does_not_admit_a_later_mapping) ... HTTP Request: GET https://composition-campus.instructure.com/api/v1/courses/42/assignments?per_page=50 "HTTP/1.1 200 OK"
+HTTP Request: GET https://composition-campus.instructure.com/api/v1/courses/42/assignments?per_page=50 "HTTP/1.1 200 OK"
+HTTP Request: GET https://composition-campus.instructure.com/api/v1/courses/42/assignments?cursor=second "HTTP/1.1 200 OK"
+
+  test_terminal_mapping_compatibility_does_not_admit_a_later_mapping (__main__.ComposedReceiving.test_terminal_mapping_compatibility_does_not_admit_a_later_mapping) (mode='token', position='later') ... FAIL
+HTTP Request: GET http://127.0.0.1:43327/health "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:43327/fetch "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:46223/health "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:46223/fetch "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:46223/fetch "HTTP/1.0 200 OK"
+
+======================================================================
+ERROR: test_initial_pat_target_admission_precedes_any_http_dispatch (__main__.ComposedReceiving.test_initial_pat_target_admission_precedes_any_http_dispatch) (path='https://composition-campus.instructure.com:not-a-port/api/v1/courses/42/assignments')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ac386303dce2/runtime-execution/canvaspilot-env/lib/python3.12/site-packages/httpx/_urlparse.py", line 409, in normalize_port
+    port_as_int = int(port)
+                  ^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'not-a-port'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/scratch/ac386303dce2/research-integration/canvas-composition-review/test_composed_receiving.py", line 146, in test_initial_pat_target_admission_precedes_any_http_dispatch
+    client.get_paginated(path)
+  File "/workspace/scratch/ac386303dce2/research-integration/canvas-composition-review/baseline/src/canvaspilot/client.py", line 293, in get_paginated
+    r = http.get(url, params=params if pages == 1 and not str(url).startswith("http") else None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ac386303dce2/runtime-execution/canvaspilot-env/lib/python3.12/site-packages/httpx/_client.py", line 1053, in get
+    return self.request(
+           ^^^^^^^^^^^^^
+  File "/workspace/scratch/ac386303dce2/runtime-execution/canvaspilot-env/lib/python3.12/site-packages/httpx/_client.py", line 812, in request
+    request = self.build_request(
+              ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ac386303dce2/runtime-execution/canvaspilot-env/lib/python3.12/site-packages/httpx/_client.py", line 366, in build_request
+    url = self._merge_url(url)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ac386303dce2/runtime-execution/canvaspilot-env/lib/python3.12/site-packages/httpx/_client.py", line 396, in _merge_url
+    merge_url = URL(url)
+                ^^^^^^^^
+  File "/workspace/scratch/ac386303dce2/runtime-execution/canvaspilot-env/lib/python3.12/site-packages/httpx/_urls.py", line 117, in __init__
+    self._uri_reference = urlparse(url, **kwargs)
+                          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ac386303dce2/runtime-execution/canvaspilot-env/lib/python3.12/site-packages/httpx/_urlparse.py", line 321, in urlparse
+    parsed_port: int | None = normalize_port(port, scheme)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ac386303dce2/runtime-execution/canvaspilot-env/lib/python3.12/site-packages/httpx/_urlparse.py", line 411, in normalize_port
+    raise InvalidURL(f"Invalid port: {port!r}")
+httpx.InvalidURL: Invalid port: 'not-a-port'
+
+======================================================================
+ERROR: test_initial_pat_target_admission_precedes_any_http_dispatch (__main__.ComposedReceiving.test_initial_pat_target_admission_precedes_any_http_dispatch) (path='/api/v1/courses/42/assignments?cursor=control\nvalue')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ac386303dce2/research-integration/canvas-composition-review/test_composed_receiving.py", line 146, in test_initial_pat_target_admission_precedes_any_http_dispatch
+    client.get_paginated(path)
+  File "/workspace/scratch/ac386303dce2/research-integration/canvas-composition-review/baseline/src/canvaspilot/client.py", line 293, in get_paginated
+    r = http.get(url, params=params if pages == 1 and not str(url).startswith("http") else None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ac386303dce2/runtime-execution/canvaspilot-env/lib/python3.12/site-packages/httpx/_client.py", line 1053, in get
+    return self.request(
+           ^^^^^^^^^^^^^
+  File "/workspace/scratch/ac386303dce2/runtime-execution/canvaspilot-env/lib/python3.12/site-packages/httpx/_client.py", line 812, in request
+    request = self.build_request(
+              ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ac386303dce2/runtime-execution/canvaspilot-env/lib/python3.12/site-packages/httpx/_client.py", line 366, in build_request
+    url = self._merge_url(url)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ac386303dce2/runtime-execution/canvaspilot-env/lib/python3.12/site-packages/httpx/_client.py", line 396, in _merge_url
+    merge_url = URL(url)
+                ^^^^^^^^
+  File "/workspace/scratch/ac386303dce2/runtime-execution/canvaspilot-env/lib/python3.12/site-packages/httpx/_urls.py", line 117, in __init__
+    self._uri_reference = urlparse(url, **kwargs)
+                          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/ac386303dce2/runtime-execution/canvaspilot-env/lib/python3.12/site-packages/httpx/_urlparse.py", line 229, in urlparse
+    raise InvalidURL(error)
+httpx.InvalidURL: Invalid non-printable ASCII character in URL, '\n' at position 45.
+
+======================================================================
+FAIL: test_context_exclusion_is_independent_of_order_and_transport (__main__.ComposedReceiving.test_context_exclusion_is_independent_of_order_and_transport) (mode='token', anchored_first=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ac386303dce2/research-integration/canvas-composition-review/test_composed_receiving.py", line 104, in test_context_exclusion_is_independent_of_order_and_transport
+    self.assertEqual(calls[1]["url"], NEXT)
+AssertionError: 'https://other.invalid/list?cursor=canary' != 'https://composition-campus.instructure.com/api/v1[90 chars]al=+'
+- https://other.invalid/list?cursor=canary
++ https://composition-campus.instructure.com/api/v1/courses/42/assignments?cursor=%2f%2F,a;b&include%5B%5D=one&include%5B%5D=two&empty=&literal=+
+
+
+======================================================================
+FAIL: test_context_exclusion_is_independent_of_order_and_transport (__main__.ComposedReceiving.test_context_exclusion_is_independent_of_order_and_transport) (mode='token', anchored_first=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ac386303dce2/research-integration/canvas-composition-review/test_composed_receiving.py", line 104, in test_context_exclusion_is_independent_of_order_and_transport
+    self.assertEqual(calls[1]["url"], NEXT)
+AssertionError: 'https://other.invalid/list?cursor=canary' != 'https://composition-campus.instructure.com/api/v1[90 chars]al=+'
+- https://other.invalid/list?cursor=canary
++ https://composition-campus.instructure.com/api/v1/courses/42/assignments?cursor=%2f%2F,a;b&include%5B%5D=one&include%5B%5D=two&empty=&literal=+
+
+
+======================================================================
+FAIL: test_first_query_filters_and_opaque_continuation_have_the_same_wire_contract (__main__.ComposedReceiving.test_first_query_filters_and_opaque_continuation_have_the_same_wire_contract) (mode='token')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ac386303dce2/research-integration/canvas-composition-review/test_composed_receiving.py", line 170, in test_first_query_filters_and_opaque_continuation_have_the_same_wire_contract
+    self.assertEqual(client.get_paginated(path, params=filters), [{"id": 2}])
+AssertionError: Lists differ: [] != [{'id': 2}]
+
+Second list contains 1 additional elements.
+First extra element 0:
+{'id': 2}
+
+- []
++ [{'id': 2}]
+
+======================================================================
+FAIL: test_initial_pat_target_admission_precedes_any_http_dispatch (__main__.ComposedReceiving.test_initial_pat_target_admission_precedes_any_http_dispatch) (path='//other.invalid/api/v1/assignments')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ac386303dce2/research-integration/canvas-composition-review/test_composed_receiving.py", line 145, in test_initial_pat_target_admission_precedes_any_http_dispatch
+    with self.assertRaises(cm.CanvasPaginationError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: CanvasPaginationError not raised
+
+======================================================================
+FAIL: test_initial_pat_target_admission_precedes_any_http_dispatch (__main__.ComposedReceiving.test_initial_pat_target_admission_precedes_any_http_dispatch) (path='/api/v1/courses/42/assignments#private-fragment')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ac386303dce2/research-integration/canvas-composition-review/test_composed_receiving.py", line 145, in test_initial_pat_target_admission_precedes_any_http_dispatch
+    with self.assertRaises(cm.CanvasPaginationError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: CanvasPaginationError not raised
+
+======================================================================
+FAIL: test_initial_pat_target_admission_precedes_any_http_dispatch (__main__.ComposedReceiving.test_initial_pat_target_admission_precedes_any_http_dispatch) (path='/api/v1/courses/42/assignments?cursor=back\\slash')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ac386303dce2/research-integration/canvas-composition-review/test_composed_receiving.py", line 145, in test_initial_pat_target_admission_precedes_any_http_dispatch
+    with self.assertRaises(cm.CanvasPaginationError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: CanvasPaginationError not raised
+
+======================================================================
+FAIL: test_malformed_metadata_after_a_valid_page_never_returns_a_prefix (__main__.ComposedReceiving.test_malformed_metadata_after_a_valid_page_never_returns_a_prefix) (mode='token', header='<https://composition-campus.instructure.com/api/v1/courses/42/assignments?cursor=unclassified>')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ac386303dce2/research-integration/canvas-composition-review/test_composed_receiving.py", line 116, in test_malformed_metadata_after_a_valid_page_never_returns_a_prefix
+    with self.assertRaises(cm.CanvasPaginationError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: CanvasPaginationError not raised
+
+======================================================================
+FAIL: test_malformed_metadata_after_a_valid_page_never_returns_a_prefix (__main__.ComposedReceiving.test_malformed_metadata_after_a_valid_page_never_returns_a_prefix) (mode='token', header='<https://composition-campus.instructure.com/api/v1/courses/42/assignments?cursor=unclassified>; rel="https://relations.invalid/bad%qq"')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ac386303dce2/research-integration/canvas-composition-review/test_composed_receiving.py", line 116, in test_malformed_metadata_after_a_valid_page_never_returns_a_prefix
+    with self.assertRaises(cm.CanvasPaginationError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: CanvasPaginationError not raised
+
+======================================================================
+FAIL: test_malformed_metadata_after_a_valid_page_never_returns_a_prefix (__main__.ComposedReceiving.test_malformed_metadata_after_a_valid_page_never_returns_a_prefix) (mode='broker', header='<https://composition-campus.instructure.com/api/v1/courses/42/assignments?cursor=unclassified>')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ac386303dce2/research-integration/canvas-composition-review/test_composed_receiving.py", line 116, in test_malformed_metadata_after_a_valid_page_never_returns_a_prefix
+    with self.assertRaises(cm.CanvasPaginationError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: CanvasPaginationError not raised
+
+======================================================================
+FAIL: test_malformed_metadata_after_a_valid_page_never_returns_a_prefix (__main__.ComposedReceiving.test_malformed_metadata_after_a_valid_page_never_returns_a_prefix) (mode='broker', header='<https://composition-campus.instructure.com/api/v1/courses/42/assignments?cursor=unclassified>; rel="https://relations.invalid/bad%qq"')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ac386303dce2/research-integration/canvas-composition-review/test_composed_receiving.py", line 116, in test_malformed_metadata_after_a_valid_page_never_returns_a_prefix
+    with self.assertRaises(cm.CanvasPaginationError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: CanvasPaginationError not raised
+
+======================================================================
+FAIL: test_nonboolean_broker_capability_cannot_assert_collection_completeness (__main__.ComposedReceiving.test_nonboolean_broker_capability_cannot_assert_collection_completeness) (capability=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ac386303dce2/research-integration/canvas-composition-review/test_composed_receiving.py", line 155, in test_nonboolean_broker_capability_cannot_assert_collection_completeness
+    with self.assertRaisesRegex(cm.CanvasPaginationError, "metadata|restart|[Ll]ink|incomplete"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: CanvasPaginationError not raised
+
+======================================================================
+FAIL: test_nonboolean_broker_capability_cannot_assert_collection_completeness (__main__.ComposedReceiving.test_nonboolean_broker_capability_cannot_assert_collection_completeness) (capability='true')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ac386303dce2/research-integration/canvas-composition-review/test_composed_receiving.py", line 155, in test_nonboolean_broker_capability_cannot_assert_collection_completeness
+    with self.assertRaisesRegex(cm.CanvasPaginationError, "metadata|restart|[Ll]ink|incomplete"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: CanvasPaginationError not raised
+
+======================================================================
+FAIL: test_nonboolean_broker_capability_cannot_assert_collection_completeness (__main__.ComposedReceiving.test_nonboolean_broker_capability_cannot_assert_collection_completeness) (capability=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ac386303dce2/research-integration/canvas-composition-review/test_composed_receiving.py", line 155, in test_nonboolean_broker_capability_cannot_assert_collection_completeness
+    with self.assertRaisesRegex(cm.CanvasPaginationError, "metadata|restart|[Ll]ink|incomplete"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: CanvasPaginationError not raised
+
+======================================================================
+FAIL: test_nonboolean_broker_capability_cannot_assert_collection_completeness (__main__.ComposedReceiving.test_nonboolean_broker_capability_cannot_assert_collection_completeness) (capability=None)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ac386303dce2/research-integration/canvas-composition-review/test_composed_receiving.py", line 155, in test_nonboolean_broker_capability_cannot_assert_collection_completeness
+    with self.assertRaisesRegex(cm.CanvasPaginationError, "metadata|restart|[Ll]ink|incomplete"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: CanvasPaginationError not raised
+
+======================================================================
+FAIL: test_terminal_mapping_compatibility_does_not_admit_a_later_mapping (__main__.ComposedReceiving.test_terminal_mapping_compatibility_does_not_admit_a_later_mapping) (mode='token', position='later')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/ac386303dce2/research-integration/canvas-composition-review/test_composed_receiving.py", line 130, in test_terminal_mapping_compatibility_does_not_admit_a_later_mapping
+    with self.assertRaises(cm.CanvasPaginationError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: CanvasPaginationError not raised
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.326s
+
+FAILED (failures=15, errors=2)

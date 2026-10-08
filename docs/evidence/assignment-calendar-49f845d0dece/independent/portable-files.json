@@ -1,0 +1,145 @@
+{
+  "root": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-independent",
+  "verdict": "ACCEPT",
+  "candidate_source": "6e2e58f4e28e09749f9f97162a8ce460eccdd4b1",
+  "files": [
+    {
+      "path": "INDEPENDENT_REVIEW.md",
+      "bytes": 7292,
+      "sha256": "87d853c3115ffbb11f6bb5170ddb4e2d738a480b450180c9f9f8fb37d418e4b2"
+    },
+    {
+      "path": "receive_calendar_independent.py",
+      "bytes": 12202,
+      "sha256": "f29728013fa49e3923a3d7317b0f722d4a393dc4fd902ed2dcad60327875044b"
+    },
+    {
+      "path": "receive_calendar_independent.initial.py",
+      "bytes": 12424,
+      "sha256": "e3e8307143884539f4958f95f77f5e7b361947c3ed3a47d45503a9500af01730"
+    },
+    {
+      "path": "receiver-configuration-only.patch",
+      "bytes": 1384,
+      "sha256": "0e6fcb4cc0d4483827ef2006d72ed5d8b41cbb8f94cc3be10a3674007cdee84d"
+    },
+    {
+      "path": "source-baseline.json",
+      "bytes": 388,
+      "sha256": "f3aba9ef5978a1cddb2ebc6812b25812b1e6ec1f1c58ce5401d4b6be95880466"
+    },
+    {
+      "path": "source-candidate.json",
+      "bytes": 388,
+      "sha256": "c37857a4ed6bd88e52dbfc53f2b43b311d4f026ccb33f5e8794ea5ceb4282643"
+    },
+    {
+      "path": "run-baseline-frozen/receipt.json",
+      "bytes": 25235,
+      "sha256": "4ee6edcb78902ac968106ffa89c59890af687cefa4771fc501f8511b6d6f4982"
+    },
+    {
+      "path": "run-candidate-frozen/receipt.json",
+      "bytes": 24527,
+      "sha256": "81aae78102fd5c96a44733bfe2233f95e77c3904afc2bf8d3459145046eb9df0"
+    },
+    {
+      "path": "run-baseline-frozen-exit.json",
+      "bytes": 492,
+      "sha256": "9afe6c7df8de88b8d6db645ac12358341400d2eaa1e2f2e0269091b7f56674d8"
+    },
+    {
+      "path": "run-candidate-frozen-exit.json",
+      "bytes": 480,
+      "sha256": "c8e567f66d576e22ea1982d44424ea92cf2b028b9476bd6090f840b049a2e354"
+    },
+    {
+      "path": "run-baseline-frozen.stdout.txt",
+      "bytes": 1586,
+      "sha256": "ae28ff149f3f895587b1895fa44bc7fc8ae0a711d21c60e8b46ece4b01b348b1"
+    },
+    {
+      "path": "run-baseline-frozen.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "run-candidate-frozen.stdout.txt",
+      "bytes": 1587,
+      "sha256": "15144c79e513f5d7f3a0df467f72f7a9971a51dcbbcfa43783b6c24298bebb06"
+    },
+    {
+      "path": "run-candidate-frozen.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "run-baseline-frozen/invalid-offset-later-course.ics",
+      "bytes": 1607,
+      "sha256": "6ed8683849f0e33a091b24aa3d090f7eca93682c1c5d2454167e304374517f81"
+    },
+    {
+      "path": "run-baseline-frozen/invalid-offset-later-course.stdout.txt",
+      "bytes": 872,
+      "sha256": "bb513a49fc6bac837354cc6504267f0be57c69bc7ab493b9aac494f08c0e9ae9"
+    },
+    {
+      "path": "run-baseline-frozen/invalid-offset-later-course.stderr.txt",
+      "bytes": 316,
+      "sha256": "1726e3d4713a8c2064234e9ea2065b42e57421611e83e41cc81846ed7468a299"
+    },
+    {
+      "path": "run-candidate-frozen/invalid-offset-later-course.stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "run-candidate-frozen/invalid-offset-later-course.stderr.txt",
+      "bytes": 446,
+      "sha256": "c85858637780dd78a2b0100bb3da03ab44a87dce06d4585a43dbe3881def166b"
+    },
+    {
+      "path": "run-candidate-frozen/unicode-and-offsets.ics",
+      "bytes": 1607,
+      "sha256": "6f52a74759b90555cee288973afedbe76e8c4cd7e4cd9563b843ae9df2b190e1"
+    },
+    {
+      "path": "run-candidate-frozen/revised-normalized-source.ics",
+      "bytes": 1150,
+      "sha256": "f1a63dd7708bdba9291dbfed3ffbb223c6a78a3fa1abb56c20b5f3040937f64b"
+    },
+    {
+      "path": "run-composed-frozen/receipt.json",
+      "bytes": 24497,
+      "sha256": "8769c5fe6a838e309465152b4b4f5aec71fdec73b4c7cda8a00cac1ea4431215"
+    },
+    {
+      "path": "run-composed-frozen.stdout.txt",
+      "bytes": 1586,
+      "sha256": "e0b521146192d7746eca499164feaf7184eb3c662f1ddea1e28f88f2aed9ea38"
+    },
+    {
+      "path": "run-composed-frozen.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "run-composed-frozen-exit.json",
+      "bytes": 478,
+      "sha256": "2f98e7bf838b1317963e2724bf04b5f4c31f48a5c6ac6df0f885d3973a274b38"
+    },
+    {
+      "path": "source-composed.json",
+      "bytes": 536,
+      "sha256": "7d8351559bae18fddccb5ecc38117f0e53cb2b36a21481ee84cb5449bd4ae111"
+    },
+    {
+      "path": "composition-preservation.json",
+      "bytes": 1372,
+      "sha256": "67a12ac2a14c83c7581ef63a22d0154dcff59186e48d10528b4f36876ca85035"
+    }
+  ],
+  "total_files": 27,
+  "total_bytes": 122452,
+  "frozen_calendar_source": "553bce63f7febf2abc123d63e0023da6e1859b02"
+}

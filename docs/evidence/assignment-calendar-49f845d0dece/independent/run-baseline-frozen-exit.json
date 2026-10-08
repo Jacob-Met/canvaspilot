@@ -1,0 +1,11 @@
+{
+  "exit": 1,
+  "argv": [
+    "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-venv/bin/python",
+    "-B",
+    "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-independent/receive_calendar_independent.py",
+    "run-baseline-frozen",
+    "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-independent/baseline-source",
+    "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-independent/source-before.json"
+  ]
+}

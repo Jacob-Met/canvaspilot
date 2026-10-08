@@ -1,0 +1,550 @@
+{
+  "boundary": "native public API/CLI/MCP and actual Handler with authored loopback responses",
+  "candidate_tree": "fbc99e88b46328072ab8eaab23023b9b17dd1898",
+  "dependencies": {
+    "httpx": "0.28.1",
+    "mcp": "2.3.0",
+    "pydantic": "2.13.5"
+  },
+  "errors": 0,
+  "events": [
+    {
+      "http_requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/folders/110",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/folders/110/folders",
+          "query": {
+            "page": [
+              "1"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/folders/110",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/folders/110/folders",
+          "query": {
+            "page": [
+              "1"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        }
+      ],
+      "test": "test_duplicate_numeric_aliases_and_self_parent_child_stop_before_file_reads"
+    },
+    {
+      "http_requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/folders/110",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/folders/110/folders",
+          "query": {
+            "page": [
+              "1"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/folders/110/files",
+          "query": {
+            "page": [
+              "1"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/folders/110",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/folders/110/folders",
+          "query": {
+            "page": [
+              "1"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/folders/110/files",
+          "query": {
+            "page": [
+              "1"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        }
+      ],
+      "test": "test_mixed_foreign_file_page_never_returns_a_valid_prefix_through_cli"
+    },
+    {
+      "http_requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/folders/110",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/folders/110/folders",
+          "query": {
+            "page": [
+              "2"
+            ],
+            "per_page": [
+              "2"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/folders/110/files",
+          "query": {
+            "page": [
+              "1"
+            ],
+            "per_page": [
+              "2"
+            ]
+          }
+        }
+      ],
+      "test": "test_normalized_ids_and_independent_pages_reach_exact_native_requests"
+    },
+    {
+      "http_requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/folders/110",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/folders/110/folders",
+          "query": {
+            "page": [
+              "1"
+            ],
+            "per_page": [
+              "100"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/folders/110/files",
+          "query": {
+            "page": [
+              "1"
+            ],
+            "per_page": [
+              "100"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/folders/110",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/folders/110/folders",
+          "query": {
+            "page": [
+              "2"
+            ],
+            "per_page": [
+              "100"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/folders/110/files",
+          "query": {
+            "page": [
+              "2"
+            ],
+            "per_page": [
+              "100"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/folders/110",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/folders/110/folders",
+          "query": {
+            "page": [
+              "1"
+            ],
+            "per_page": [
+              "100"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/folders/110/files",
+          "query": {
+            "page": [
+              "10000"
+            ],
+            "per_page": [
+              "100"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/folders/110",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/folders/110/folders",
+          "query": {
+            "page": [
+              "1"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/folders/110/files",
+          "query": {
+            "page": [
+              "1"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        }
+      ],
+      "test": "test_permission_change_empty_and_server_page_cap_preserve_unknown_completeness"
+    },
+    {
+      "foreign_file_error": "Error executing tool canvas_browse_files",
+      "mcp_catalog": {
+        "_meta": null,
+        "annotations": {
+          "destructiveHint": false,
+          "idempotentHint": null,
+          "openWorldHint": null,
+          "readOnlyHint": true,
+          "title": null
+        },
+        "description": "Browse metadata in one Canvas course folder. Start with folder_id=root, then choose a returned child folder ID. Requests one bounded folder page and one file page; no downloads or recursive inventory. has_more is unknown; next_page_to_try is an optional probe, not a confirmed next page.",
+        "execution": null,
+        "icons": null,
+        "inputSchema": {
+          "properties": {
+            "course_id": {
+              "title": "Course Id",
+              "type": "string"
+            },
+            "files_page": {
+              "default": 1,
+              "title": "Files Page",
+              "type": "integer"
+            },
+            "folder_id": {
+              "default": "root",
+              "title": "Folder Id",
+              "type": "string"
+            },
+            "folders_page": {
+              "default": 1,
+              "title": "Folders Page",
+              "type": "integer"
+            },
+            "per_page": {
+              "default": 50,
+              "title": "Per Page",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "course_id"
+          ],
+          "title": "canvas_browse_filesArguments",
+          "type": "object"
+        },
+        "name": "canvas_browse_files",
+        "outputSchema": null,
+        "title": null
+      },
+      "test": "test_real_mcp_stdio_rejects_foreign_metadata_and_strictly_typed_pages"
+    },
+    {
+      "http_requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/folders/110",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/folders/110/folders",
+          "query": {
+            "page": [
+              "1"
+            ],
+            "per_page": [
+              "2"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/folders/110/files",
+          "query": {
+            "page": [
+              "1"
+            ],
+            "per_page": [
+              "2"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/folders/110",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/folders/110/folders",
+          "query": {
+            "page": [
+              "1"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/folders/110/files",
+          "query": {
+            "page": [
+              "1"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        }
+      ],
+      "test": "test_real_mcp_stdio_rejects_foreign_metadata_and_strictly_typed_pages"
+    },
+    {
+      "broker_jobs": [
+        {
+          "body": null,
+          "headers": {
+            "Accept": "application/json"
+          },
+          "method": "GET",
+          "op": "fetch",
+          "path": "/api/v1/courses/42/folders/110?per_page=50"
+        },
+        {
+          "body": null,
+          "headers": {
+            "Accept": "application/json"
+          },
+          "method": "GET",
+          "op": "fetch",
+          "path": "/api/v1/folders/110/folders?page=2&per_page=2"
+        },
+        {
+          "body": null,
+          "headers": {
+            "Accept": "application/json"
+          },
+          "method": "GET",
+          "op": "fetch",
+          "path": "/api/v1/folders/110/files?page=1&per_page=2"
+        },
+        {
+          "body": null,
+          "headers": {
+            "Accept": "application/json"
+          },
+          "method": "GET",
+          "op": "fetch",
+          "path": "/api/v1/courses/42/folders/110?per_page=50"
+        },
+        {
+          "body": null,
+          "headers": {
+            "Accept": "application/json"
+          },
+          "method": "GET",
+          "op": "fetch",
+          "path": "/api/v1/folders/110/folders?page=1&per_page=2"
+        },
+        {
+          "body": null,
+          "headers": {
+            "Accept": "application/json"
+          },
+          "method": "GET",
+          "op": "fetch",
+          "path": "/api/v1/folders/110/files?page=2&per_page=2"
+        },
+        {
+          "body": null,
+          "headers": {
+            "Accept": "application/json"
+          },
+          "method": "GET",
+          "op": "fetch",
+          "path": "/api/v1/courses/42/folders/110?per_page=50"
+        }
+      ],
+      "test": "test_real_readonly_broker_keeps_course_binding_and_independent_pages"
+    },
+    {
+      "http_requests": [],
+      "test": "test_real_readonly_broker_keeps_course_binding_and_independent_pages"
+    },
+    {
+      "http_requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/folders/110",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/folders/110",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/folders/110",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/folders/110",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        }
+      ],
+      "test": "test_same_numeric_context_in_another_context_type_never_reaches_children"
+    }
+  ],
+  "failures": 0,
+  "live_provider_or_browser_calls": 0,
+  "optimization": 0,
+  "python": "3.12.8 (main, Dec  3 2024, 18:42:41) [Clang 16.0.0 (clang-1600.0.26.4)]",
+  "schema": "canvaspilot.independent-folder-receiving.v1",
+  "skips": 0,
+  "successful": true,
+  "tests": 7
+}

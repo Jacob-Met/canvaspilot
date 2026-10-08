@@ -1,0 +1,9 @@
+{
+  "baseline_head": "e20890089f6338de655a7c6ea7f0ada6d5c8fe6b",
+  "baseline_client": "21aec589fc27f3a664dd6f844ac0762c496d2e68fa94b3052172f80b046c0d1b",
+  "candidate_client": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797",
+  "broker": "749e11c92d6d56d54ccf208dda6784cb2d43ac3b837188f5d82bfe73c3129e8e",
+  "pr37_head": "857a226d54c9784ca528bccc6ace7b4f02d90f4d",
+  "pr37_client": "5ab0c0cd579f82b89ace05be6e15b6d38844abe1d8bf6df5b0c35b906d09a1c8",
+  "candidate_source_path": "/dev/shm/runtime-canvas-composition-ac386303dce2/src"
+}

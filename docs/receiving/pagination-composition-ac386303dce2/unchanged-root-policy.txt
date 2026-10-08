@@ -1,0 +1,8 @@
+test_collection_requires_actionable_metadata_or_restart_error (test_legacy_metadata_policy.LegacyMetadataPolicy.test_collection_requires_actionable_metadata_or_restart_error) ... ok
+test_ordinary_decoded_request_keeps_old_broker_compatibility (test_legacy_metadata_policy.LegacyMetadataPolicy.test_ordinary_decoded_request_keeps_old_broker_compatibility) ... HTTP Request: POST http://127.0.0.1:41689/fetch "HTTP/1.0 200 OK"
+ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.048s
+
+OK

@@ -1,0 +1,368 @@
+{
+  "schema": "canvaspilot.folder-browser-publication.v3",
+  "repository": "Jacob-Met/canvaspilot",
+  "base_commit": "3d7a9453fb0cbdf08312320d71c648462592b217",
+  "base_tree": "2b38a186887b7ed5dc5a4020dc26e51636a6ab1f",
+  "qualified_source_tree": "9bf3697e5d577227caeb3117d1b4d7cbc96772ab",
+  "preceding_broker_source_tree": "b098eed93b0d26ac876b0282edccaa194069ce89",
+  "independently_reviewed_source_tree": "fbc99e88b46328072ab8eaab23023b9b17dd1898",
+  "existing_preimages": {
+    "README.md": "9d6e7b8d39ddcd0c675cfd761f84fe5db72d97ec",
+    "src/canvaspilot/api.py": "a769e521144a578e1069b27482c879fb4b42f78e",
+    "src/canvaspilot/bundle.py": "5be38ec248d1e7efc54de9ee62e2e3be4c71f77c",
+    "src/canvaspilot/cli.py": "c00f7d12f52ba162b10930b965298b6364d4dab3",
+    "src/canvaspilot/mcp_server.py": "346f6a2653b5027b271e1fe1d69f2b78c7e2635f"
+  },
+  "receiving": {
+    "original_author_tests": 92,
+    "new_feature_cases": 33,
+    "independent_normal": 7,
+    "independent_optimized": 7,
+    "first_broker_composition_tests": 92,
+    "first_broker_proxy_cases": 12,
+    "current_composition_tests": 108,
+    "current_broker_proxy_cases": 12,
+    "inherited_encoding_tests": 16,
+    "ruff": "passed"
+  },
+  "self_excluded": "docs/evidence/folder-browser-native-20261008/publication-manifest.json",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 8922,
+      "sha256": "3fb8d1e8d999184dc52c649782e58cd9f47f1fa4fa2632f0d58a29df1a359ef7",
+      "git_blob": "d8fad44b568942b14403467be24a3b4ba9cb8772",
+      "mode": "100644",
+      "binary": false
+    },
+    {
+      "path": "docs/folder-browser.md",
+      "bytes": 6320,
+      "sha256": "17c0215239bfcd07b0e703069a06166e78514447206607623a4f27eae6d71720",
+      "git_blob": "2225f0e3af12b44cbeccda7c1e869086fbe7d4f7",
+      "mode": "100644",
+      "binary": false
+    },
+    {
+      "path": "src/canvaspilot/api.py",
+      "bytes": 18802,
+      "sha256": "ee994fb0e6979495d8fa559c82209ecb38b90066213a35e016a006bdd94e31a6",
+      "git_blob": "46388d919c0e9d072f115cf8489ae7cc941233d5",
+      "mode": "100644",
+      "binary": false
+    },
+    {
+      "path": "src/canvaspilot/bundle.py",
+      "bytes": 2577,
+      "sha256": "05239bf39f2df9e3dc749462fc97d15f3aafa884a6e3593f4d40c5878540ce6f",
+      "git_blob": "b347e64bca073e8dc6a721bbeae1ca07f253dd89",
+      "mode": "100644",
+      "binary": false
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "bytes": 8628,
+      "sha256": "893a1f3dfe425c64d9f0aa4528db109397c39edafea9d3f00313a1720897bbb0",
+      "git_blob": "6fb5546712dd9c31610027dd9653c8b0f1a96424",
+      "mode": "100644",
+      "binary": false
+    },
+    {
+      "path": "src/canvaspilot/folder_browser.py",
+      "bytes": 6293,
+      "sha256": "c6a67229b268c539e5edb581e3320b06229460adc3fbc01d72e4964e31c0348a",
+      "git_blob": "4b3078ddb00a4a34015710e49fa7b7806adebd23",
+      "mode": "100644",
+      "binary": false
+    },
+    {
+      "path": "src/canvaspilot/mcp_server.py",
+      "bytes": 10980,
+      "sha256": "7d8ed3e6589a67d061e2a4a3dc518a882f5e378c3c20515df27f30745e1993ed",
+      "git_blob": "a9549ae7aa234554cd8a2b24f4c6f9e5d6562a27",
+      "mode": "100644",
+      "binary": false
+    },
+    {
+      "path": "tests/folder_http_fixture.py",
+      "bytes": 7440,
+      "sha256": "c7e29a633e66020b9440bbff54ee636889a022fc5a92d4ee2dae193314d72944",
+      "git_blob": "454a761a6557daad73234b2f5801839a7db460a2",
+      "mode": "100644",
+      "binary": false
+    },
+    {
+      "path": "tests/test_folder_browser.py",
+      "bytes": 12027,
+      "sha256": "4068912fe7d32953c576b1278c28c47c3697592e6a194a230400be13b9cae95c",
+      "git_blob": "f2aacab375da0976bcbbb3d50f0231a1db54eeb7",
+      "mode": "100644",
+      "binary": false
+    },
+    {
+      "path": "docs/evidence/folder-browser-native-20261008/author/README.md",
+      "bytes": 5898,
+      "sha256": "683bdf7764bfd73a08e8e7d71a36ec12e7183564d117e62ece676e5b38832ed5",
+      "git_blob": "74436263e2b04d145e4876de1ae32ac824c7707b",
+      "mode": "100644",
+      "binary": false
+    },
+    {
+      "path": "docs/evidence/folder-browser-native-20261008/author/candidate.patch",
+      "bytes": 41314,
+      "sha256": "cb87a4ff5a174748add70aa01da0d6486fcd7da7c4394c1eeebd6698d71a8129",
+      "git_blob": "0d2372f7069dec91c668a2a0513b5b12070462e2",
+      "mode": "100644",
+      "binary": false
+    },
+    {
+      "path": "docs/evidence/folder-browser-native-20261008/author/full-suite-final.xml",
+      "bytes": 11316,
+      "sha256": "cc3f0c0724a707a63112f7d9c90f4f547bcb0c6170252c72c58610989f7c89a5",
+      "git_blob": "afae3031d7a988dfadf89360c1765953370e20e9",
+      "mode": "100644",
+      "binary": false
+    },
+    {
+      "path": "docs/evidence/folder-browser-native-20261008/author/process-receipt.json",
+      "bytes": 1288,
+      "sha256": "df7335e2d4f8070e326c3a3856780cebfe9d360bf947cf0b9957fdc66f24a6a9",
+      "git_blob": "547884f1f5cb2145d263ca676f60fb7594f44532",
+      "mode": "100644",
+      "binary": false
+    },
+    {
+      "path": "docs/evidence/folder-browser-native-20261008/author/requirements-receiving.txt",
+      "bytes": 658,
+      "sha256": "0ee9483cacf9c47cbc5b5a5fbe03f4b3ba228350275edd1ccbbbcbb6ba3cb75a",
+      "git_blob": "77e812f52ba0353285db9dc0843d66ad0c8883ae",
+      "mode": "100644",
+      "binary": false
+    },
+    {
+      "path": "docs/evidence/folder-browser-native-20261008/author/runtime-receipt.json",
+      "bytes": 8835,
+      "sha256": "c4451bb750525f3c73689f5f3ed3c295ee1d831ec2331ceffd208969ac9c9d35",
+      "git_blob": "2aea95aa9aeb5ee934f146249f70a6f4dd0eef25",
+      "mode": "100644",
+      "binary": false
+    },
+    {
+      "path": "docs/evidence/folder-browser-native-20261008/author/source-manifest.json",
+      "bytes": 7377,
+      "sha256": "8f534de89c36c59248328db68a569a0a9ccdff689e3aa190e0b816660f38f415",
+      "git_blob": "0ada6dafd91a5fada3255dd2fe0cfbbbf41a8551",
+      "mode": "100644",
+      "binary": false
+    },
+    {
+      "path": "docs/evidence/folder-browser-native-20261008/independent/README.md",
+      "bytes": 7482,
+      "sha256": "75e440bfa4ae660cd4eea033c757af0e40d5d9007e09670f516d40293d094ed1",
+      "git_blob": "d636ce4996a32fd2949e4aa264a260ec7bb985ef",
+      "mode": "100644",
+      "binary": false
+    },
+    {
+      "path": "docs/evidence/folder-browser-native-20261008/independent/expected-source.json",
+      "bytes": 7377,
+      "sha256": "8f534de89c36c59248328db68a569a0a9ccdff689e3aa190e0b816660f38f415",
+      "git_blob": "0ada6dafd91a5fada3255dd2fe0cfbbbf41a8551",
+      "mode": "100644",
+      "binary": false
+    },
+    {
+      "path": "docs/evidence/folder-browser-native-20261008/independent/manifest.json",
+      "bytes": 1797,
+      "sha256": "bb01f8ced02c68cd84e69ec8d86ce6446177cddc5da11e88b0e7d99e57add973",
+      "git_blob": "aab631d20f273d3cb9558a25f02a52956594bf86",
+      "mode": "100644",
+      "binary": false
+    },
+    {
+      "path": "docs/evidence/folder-browser-native-20261008/independent/mcp-review-0.log",
+      "bytes": 7465,
+      "sha256": "fe216a2541ddef55d7bd8ae1b8fd6f26bba3009a5f4a1829db0366a24c74891b",
+      "git_blob": "aacb39f2fecb36120ef706c1a502590c983ff000",
+      "mode": "100644",
+      "binary": false
+    },
+    {
+      "path": "docs/evidence/folder-browser-native-20261008/independent/mcp-review-1.log",
+      "bytes": 7465,
+      "sha256": "563669ba162b65ab41d71fedd1c309743a1fa7512531557696e0a512fdd3af15",
+      "git_blob": "2e8a949991bbc30bc15c468727532f909f841b3d",
+      "mode": "100644",
+      "binary": false
+    },
+    {
+      "path": "docs/evidence/folder-browser-native-20261008/independent/normal.log",
+      "bytes": 4136,
+      "sha256": "e7892ee4402397d4358fe9ade9caa6df4130e2a036d6c0144a87014f4e6e3aac",
+      "git_blob": "23db4d7d5346a4465ef769091f83d832143016cb",
+      "mode": "100644",
+      "binary": false
+    },
+    {
+      "path": "docs/evidence/folder-browser-native-20261008/independent/optimized.log",
+      "bytes": 4136,
+      "sha256": "9d5aa0d6ec94664857a7d6c3b488d732ccf556ba5b01bf8b823cef47fd5c8c74",
+      "git_blob": "a2793eabb99f57ba91b3c1780766077da7ac678d",
+      "mode": "100644",
+      "binary": false
+    },
+    {
+      "path": "docs/evidence/folder-browser-native-20261008/independent/review-0.json",
+      "bytes": 12801,
+      "sha256": "d33759bca01fc6b9db1502186a2fd183610761f01d331c444ba2adc4d6652d4b",
+      "git_blob": "2c361c726e08d8e210de13f5e50b70b763ce1e71",
+      "mode": "100644",
+      "binary": false
+    },
+    {
+      "path": "docs/evidence/folder-browser-native-20261008/independent/review-1.json",
+      "bytes": 12801,
+      "sha256": "1d03d8a5e830cb9fc0c0271944e25de5524ce7fd018f3b9644ef0b06d085a4dc",
+      "git_blob": "1dcb738d7ed17922634c7063d0bdfa15053e5a06",
+      "mode": "100644",
+      "binary": false
+    },
+    {
+      "path": "docs/evidence/folder-browser-native-20261008/independent/source-checks.json",
+      "bytes": 2414,
+      "sha256": "b696fa38241d38f3c18536cf8b1334a58d0d6cdd7c36ad2ff7799fe646d2a69a",
+      "git_blob": "d0e312dc749e8ce37410a997ad0500ce75637de9",
+      "mode": "100644",
+      "binary": false
+    },
+    {
+      "path": "docs/evidence/folder-browser-native-20261008/independent/test_independent_folders.py",
+      "bytes": 17198,
+      "sha256": "98ba706a7d1cba13ab1740ab54ace7ee326815b1d2fd9dad0ec8f4911a7a85ca",
+      "git_blob": "3e19b709989021c53b6e29c481827c0109832eec",
+      "mode": "100644",
+      "binary": false
+    },
+    {
+      "path": "docs/evidence/folder-browser-native-20261008/broker-composition/README.md",
+      "bytes": 4267,
+      "sha256": "4bee16dc6bec53cce3a8433f82ded44a4bf9809227495e1123bb6a3eaedd65ad",
+      "git_blob": "d6f4f82eb103f7e45b24cee5de351fb99fb9144c",
+      "mode": "100644",
+      "binary": false
+    },
+    {
+      "path": "docs/evidence/folder-browser-native-20261008/broker-composition/candidate.patch",
+      "bytes": 41314,
+      "sha256": "7474dfab8445b44969db5667e9d2a6aa14aab1698e630a9ee258ad3749d356d7",
+      "git_blob": "acffd1466aeb1b63ccc8362f759bfb5ea3566a3b",
+      "mode": "100644",
+      "binary": false
+    },
+    {
+      "path": "docs/evidence/folder-browser-native-20261008/broker-composition/full-suite.xml",
+      "bytes": 11316,
+      "sha256": "c81aa4c82a06bdedd53be18775cf1429f0b4d716769d31a0d05b7a11f6b8b34e",
+      "git_blob": "bc508c6d653d8dfdebd9d49ce04cf006c6488d46",
+      "mode": "100644",
+      "binary": false
+    },
+    {
+      "path": "docs/evidence/folder-browser-native-20261008/broker-composition/process-receipt.json",
+      "bytes": 3465,
+      "sha256": "048c708a1a06678f3a934dc9b8d8339ec606683827d932492438700d72779f9e",
+      "git_blob": "cafef4ba741ac8db90a8e3acf788ab6d81b90c55",
+      "mode": "100644",
+      "binary": false
+    },
+    {
+      "path": "docs/evidence/folder-browser-native-20261008/broker-composition/proxy-receipt.json",
+      "bytes": 5736,
+      "sha256": "957b6324bb4b966fe8a3aec28aef685a3077b0c2da652a72a2853e3053f1a4ad",
+      "git_blob": "11645ffa6202d0d345b27e0fd09e3c58f986a0a6",
+      "mode": "100644",
+      "binary": false
+    },
+    {
+      "path": "docs/evidence/folder-browser-native-20261008/broker-composition/runtime-receipt.json",
+      "bytes": 9552,
+      "sha256": "13ee50ffcb96250eaf5e3739cb654812231ed2571031e61b7032c594741cc93d",
+      "git_blob": "bc7ae348ec48af93366881d585a8834e9ed65fca",
+      "mode": "100644",
+      "binary": false
+    },
+    {
+      "path": "docs/evidence/folder-browser-native-20261008/broker-composition/source-manifest.json",
+      "bytes": 7635,
+      "sha256": "5e253af15141a4a8f76995cec9df0dd67eae7346a201653da8c5f345b8aa9153",
+      "git_blob": "454c368379532e1e5691b8dbbb26d7ac7fccf496",
+      "mode": "100644",
+      "binary": false
+    },
+    {
+      "path": "docs/evidence/folder-browser-native-20261008/encoding-composition/README.md",
+      "bytes": 3113,
+      "sha256": "2d3d8c65fb834c4250bf070df203e3047a830fe539adff42d91efc39524f3bae",
+      "git_blob": "1f660c7d08f0b403dc761f38a3aece5cf8836b81",
+      "mode": "100644",
+      "binary": false
+    },
+    {
+      "path": "docs/evidence/folder-browser-native-20261008/encoding-composition/candidate.patch",
+      "bytes": 41314,
+      "sha256": "7474dfab8445b44969db5667e9d2a6aa14aab1698e630a9ee258ad3749d356d7",
+      "git_blob": "acffd1466aeb1b63ccc8362f759bfb5ea3566a3b",
+      "mode": "100644",
+      "binary": false
+    },
+    {
+      "path": "docs/evidence/folder-browser-native-20261008/encoding-composition/full-suite.xml",
+      "bytes": 13237,
+      "sha256": "3f9e0ceafd2f1a4f70c0f082adab7a36a5b72b444eb689c5757f653922a5f104",
+      "git_blob": "7cf6bc0ca01c2ccbc37ac4331f1030548023adbd",
+      "mode": "100644",
+      "binary": false
+    },
+    {
+      "path": "docs/evidence/folder-browser-native-20261008/encoding-composition/process-receipt.json",
+      "bytes": 3470,
+      "sha256": "e1e5af6b6cb676e150f845337e4a57efef510dc51c4d6277215a7b1c11bd62ef",
+      "git_blob": "d65867afd240048ef6a568dd71b792f22a01def2",
+      "mode": "100644",
+      "binary": false
+    },
+    {
+      "path": "docs/evidence/folder-browser-native-20261008/encoding-composition/proxy-receipt.json",
+      "bytes": 5738,
+      "sha256": "a1cd0687724a2cf167d4ee7f5e8fe38ffd9d3bb47f449d561e59f653d2bc1def",
+      "git_blob": "9378fcf81c0e6ab267f407ee231f1dc4fd715472",
+      "mode": "100644",
+      "binary": false
+    },
+    {
+      "path": "docs/evidence/folder-browser-native-20261008/encoding-composition/runtime-receipt.json",
+      "bytes": 10037,
+      "sha256": "7db7a75bcd3e6c7b09cde553429efb45bef775f6b4b9abbfaba94ff019889c95",
+      "git_blob": "1c0e69fd6fda4e95eb72370a8db3aff0e9feec24",
+      "mode": "100644",
+      "binary": false
+    },
+    {
+      "path": "docs/evidence/folder-browser-native-20261008/encoding-composition/source-manifest.json",
+      "bytes": 8007,
+      "sha256": "bb92118f3688785b914442456fbb1adfe34225bb551e5d2246c898b33341b3a6",
+      "git_blob": "d3c4c4214ccbaa59771795075b141dadc4e433dd",
+      "mode": "100644",
+      "binary": false
+    },
+    {
+      "path": "docs/evidence/folder-browser-native-20261008/README.md",
+      "bytes": 3863,
+      "sha256": "d0851e9d9c5cb99164d767db101b230475fc8c2055323bf2e41393b1a16568b9",
+      "git_blob": "e366f7b077b82a55b530120df2eaec8c37763dc7",
+      "mode": "100644",
+      "binary": false
+    }
+  ],
+  "no_captured_source_or_dependency_trees": true
+}

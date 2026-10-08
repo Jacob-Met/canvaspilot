@@ -1,0 +1,26 @@
+{
+  "targeted_tests": {
+    "exit_code": 0,
+    "tests": 25,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "seconds": 8.22
+  },
+  "local_ruff": {
+    "version": "ruff 0.11.4",
+    "exit_code": 0,
+    "command": [
+      "/workspace/scratch/afe225d6c6be/product_execution/lint-toolchain/bin/ruff",
+      "check",
+      "src",
+      "tests",
+      "scripts"
+    ]
+  },
+  "retained_harness_issue": {
+    "exit_code": 1,
+    "stage": "after successful targeted tests, before local lint",
+    "error": "FileNotFoundError: ruff was absent from PATH; reran lint only with the existing explicit tool path; no test was repeated."
+  }
+}

@@ -1,0 +1,215 @@
+{
+  "schema": "canvaspilot.folder-current-public-composition.v1",
+  "received_at": "2026-10-08T09:58:28.387754+00:00",
+  "source": "/private/tmp/canvaspilot-folders-cf5799f6d38b-FIWmPE/module-current-compose/source",
+  "parent": "1393f40047297147029d8571bfd824f74e58e1dc",
+  "source_tree": "76a9f5c4523df2f2affc75e050e53cf9fb652845",
+  "source_files_verified": 67,
+  "source_unchanged": true,
+  "python": "3.12.8 (main, Dec  3 2024, 18:42:41) [Clang 16.0.0 (clang-1600.0.26.4)]",
+  "actions": [
+    {
+      "name": "mcp_module_items_fallback",
+      "passed": true,
+      "item_ids": [
+        7101,
+        7102
+      ]
+    },
+    {
+      "name": "mcp_sync_deadlines_and_counts",
+      "passed": true,
+      "assignment_ids": [
+        7701,
+        4202
+      ]
+    },
+    {
+      "name": "mcp_folder_root_selection_and_page",
+      "passed": true,
+      "folder_id": 110,
+      "file_ids": [
+        2003
+      ]
+    },
+    {
+      "name": "mcp_both_strict_argument_schemas_refuse_before_io",
+      "passed": true
+    },
+    {
+      "name": "public_cli_sync_preserves_current_deadline_selection",
+      "passed": true,
+      "assignment_ids": [
+        7701,
+        4202
+      ]
+    },
+    {
+      "name": "public_cli_folder_navigation_coexists",
+      "passed": true,
+      "file_ids": [
+        2003
+      ]
+    }
+  ],
+  "broker_jobs": [
+    {
+      "op": "fetch",
+      "method": "GET",
+      "path": "/api/v1/courses/42/modules?include%5B%5D=items&per_page=50&page=1",
+      "headers": {
+        "Accept": "application/json"
+      },
+      "body": null
+    },
+    {
+      "op": "fetch",
+      "method": "GET",
+      "path": "/api/v1/courses/42/modules/7/items?per_page=50&page=1",
+      "headers": {
+        "Accept": "application/json"
+      },
+      "body": null
+    },
+    {
+      "op": "fetch",
+      "method": "GET",
+      "path": "/api/v1/courses?enrollment_state=active&include%5B%5D=term&include%5B%5D=total_scores&per_page=50&page=1",
+      "headers": {
+        "Accept": "application/json"
+      },
+      "body": null
+    },
+    {
+      "op": "fetch",
+      "method": "GET",
+      "path": "/api/v1/courses/42/assignments?order_by=due_at&include%5B%5D=submission&bucket=upcoming&per_page=50&page=1",
+      "headers": {
+        "Accept": "application/json"
+      },
+      "body": null
+    },
+    {
+      "op": "fetch",
+      "method": "GET",
+      "path": "/api/v1/courses/77/assignments?order_by=due_at&include%5B%5D=submission&bucket=upcoming&per_page=50&page=1",
+      "headers": {
+        "Accept": "application/json"
+      },
+      "body": null
+    },
+    {
+      "op": "fetch",
+      "method": "GET",
+      "path": "/api/v1/courses/42/folders/root?per_page=50",
+      "headers": {
+        "Accept": "application/json"
+      },
+      "body": null
+    },
+    {
+      "op": "fetch",
+      "method": "GET",
+      "path": "/api/v1/folders/100/folders?page=1&per_page=2",
+      "headers": {
+        "Accept": "application/json"
+      },
+      "body": null
+    },
+    {
+      "op": "fetch",
+      "method": "GET",
+      "path": "/api/v1/folders/100/files?page=1&per_page=2",
+      "headers": {
+        "Accept": "application/json"
+      },
+      "body": null
+    },
+    {
+      "op": "fetch",
+      "method": "GET",
+      "path": "/api/v1/courses/42/folders/110?per_page=50",
+      "headers": {
+        "Accept": "application/json"
+      },
+      "body": null
+    },
+    {
+      "op": "fetch",
+      "method": "GET",
+      "path": "/api/v1/folders/110/folders?page=1&per_page=2",
+      "headers": {
+        "Accept": "application/json"
+      },
+      "body": null
+    },
+    {
+      "op": "fetch",
+      "method": "GET",
+      "path": "/api/v1/folders/110/files?page=2&per_page=2",
+      "headers": {
+        "Accept": "application/json"
+      },
+      "body": null
+    },
+    {
+      "op": "fetch",
+      "method": "GET",
+      "path": "/api/v1/courses?enrollment_state=active&include%5B%5D=term&include%5B%5D=total_scores&per_page=50&page=1",
+      "headers": {
+        "Accept": "application/json"
+      },
+      "body": null
+    },
+    {
+      "op": "fetch",
+      "method": "GET",
+      "path": "/api/v1/courses/42/assignments?order_by=due_at&include%5B%5D=submission&bucket=upcoming&per_page=50&page=1",
+      "headers": {
+        "Accept": "application/json"
+      },
+      "body": null
+    },
+    {
+      "op": "fetch",
+      "method": "GET",
+      "path": "/api/v1/courses/77/assignments?order_by=due_at&include%5B%5D=submission&bucket=upcoming&per_page=50&page=1",
+      "headers": {
+        "Accept": "application/json"
+      },
+      "body": null
+    },
+    {
+      "op": "fetch",
+      "method": "GET",
+      "path": "/api/v1/courses/42/folders/110?per_page=50",
+      "headers": {
+        "Accept": "application/json"
+      },
+      "body": null
+    },
+    {
+      "op": "fetch",
+      "method": "GET",
+      "path": "/api/v1/folders/110/folders?page=1&per_page=2",
+      "headers": {
+        "Accept": "application/json"
+      },
+      "body": null
+    },
+    {
+      "op": "fetch",
+      "method": "GET",
+      "path": "/api/v1/folders/110/files?page=2&per_page=2",
+      "headers": {
+        "Accept": "application/json"
+      },
+      "body": null
+    }
+  ],
+  "proxy_requests": [],
+  "read_only_handler": true,
+  "transport": "actual CLI subprocess and MCP stdio -> CanvasAPI/CanvasClient -> actual loopback broker Handler; authored browser-queue responses only",
+  "proxy_environment": "HTTP/HTTPS/ALL_PROXY point to own loopback metadata trap; NO_PROXY=[::1]",
+  "script_sha256": "48c22a4874d7cf83e84f00905589ccf12ddbcbad033b9ab77da873bf01590f39"
+}

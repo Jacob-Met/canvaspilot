@@ -1,0 +1,3 @@
+HTTP Request: GET http://127.0.0.1:64371/api/v1/courses/42/assignments?order_by=due_at&include%5B%5D=submission&bucket=upcoming&per_page=50 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:64371/api/v1/courses/77/assignments?order_by=due_at&include%5B%5D=submission&bucket=upcoming&per_page=50 "HTTP/1.0 503 Service Unavailable"
+{"ok": false, "error": "HTTPStatusError", "message": "Server error '503 Service Unavailable' for url 'http://127.0.0.1:64371/api/v1/courses/77/assignments?order_by=due_at&include%5B%5D=submission&bucket=upcoming&per_page=50'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"}
