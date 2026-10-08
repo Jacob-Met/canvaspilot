@@ -106,6 +106,10 @@ and a printable current view:
 The original native JSON remains available byte-identically.
 [Review and print a saved agenda](docs/agenda-export.md).
 
+Read your reported enrollment roles, states and grades with `canvaspilot enrollments`.
+The [enrollments CLI guide](docs/enrollments-cli.md) explains the default active
+filter, native state selection and the complete returned JSON collection.
+
 To take selected course deadlines into a calendar application, save an explicit
 local snapshot with `canvaspilot export-calendar 42 77 --out deadlines.ics`.
 The [calendar export guide](docs/calendar-export.md) explains selection,
