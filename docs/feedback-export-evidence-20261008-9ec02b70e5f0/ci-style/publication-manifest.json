@@ -1,0 +1,64 @@
+{
+  "schema": "canvaspilot-feedback-export-ci-style-publication/1",
+  "previous_head": "01774ea46b07d01a56e6b4f42f33ad83029ad9f9",
+  "previous_tree": "56a0de0948bd17d847332f0e608bb7f6c22e4de3",
+  "files": [
+    {
+      "path": "src/canvaspilot/cli.py",
+      "mode": "100644",
+      "bytes": 22730,
+      "sha256": "ca8dc57d5c4fe69b9011e6039c2dd10706441be8901b6f1aebbf3c16338685af",
+      "git_blob": "350e40574627311786f52d63bcc6540d81646ff5"
+    },
+    {
+      "path": "src/canvaspilot/feedback_export.py",
+      "mode": "100644",
+      "bytes": 21290,
+      "sha256": "3b0d685031ec6d9a364200c11bd265fb642e686c5de4d0cb249c041c5a6b177f",
+      "git_blob": "9cab55d141484309f5511b857957888d7b040dda"
+    },
+    {
+      "path": "tests/test_feedback_export.py",
+      "mode": "100644",
+      "bytes": 6965,
+      "sha256": "ca82d2eb17884ead835aaa33ec565d134ab7032aa29fabd3661ec2fe3b3909d7",
+      "git_blob": "3032d17555757be4dd289322b440850d08efe453"
+    },
+    {
+      "path": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/ci-style/source-proof.json",
+      "mode": "100644",
+      "bytes": 2903,
+      "sha256": "c6f0d81f81ea8d09b064813381c8fa69581ac7cc6a4248dc28e076231806e815",
+      "git_blob": "478a1d36c28886120a13a84a18755061371f5c2c"
+    },
+    {
+      "path": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/ci-style/source-style.patch",
+      "mode": "100644",
+      "bytes": 3099,
+      "sha256": "cdf34a356a79ab2a1bfb1601b2b55cd9ec22cb70b06c92db276efd083abe0c6f",
+      "git_blob": "1a43aea6e96d978cde1e594d04881fcaf865665d"
+    },
+    {
+      "path": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/ci-style/failed-hosted-job.log",
+      "mode": "100644",
+      "bytes": 39789,
+      "sha256": "158d7f06b7a970c6dbdfd1a2493edb69c275650b2a0ab0ea867be0e6b4295eae",
+      "git_blob": "b11bf2671132839a5affb7e0eebb1ee5ddfb3b90"
+    },
+    {
+      "path": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/ci-style/README.md",
+      "mode": "100644",
+      "bytes": 848,
+      "sha256": "18243d74e488bf12259533aa9abda404577ebddbee48535b86c20344bc6d7870",
+      "git_blob": "8f8cfefabab52deed27596888658fe4870a48a36"
+    },
+    {
+      "path": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/ci-style/metadata-generation-correction.json",
+      "mode": "100644",
+      "bytes": 3674,
+      "sha256": "32788553015c45633c71d49fbfa6c8f358d64e7b81adeac43f39d6163236298d",
+      "git_blob": "f71e4f01c3b8babca5b0306b432f2cd46d3cfd2e"
+    }
+  ],
+  "scope": "Three style-only source replacements and five evidence documents. All other incoming tree entries remain exact. This manifest excludes itself. Hosted success is pending, not claimed here."
+}

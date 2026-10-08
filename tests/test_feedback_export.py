@@ -8,11 +8,11 @@ from datetime import UTC, datetime, timedelta, timezone
 from pathlib import Path
 
 import pytest
+from test_feedback_export_native import Document
 
 from canvaspilot.api import CanvasAPI
 from canvaspilot.client import CanvasClient
 from canvaspilot.feedback_export import build_feedback_document, write_feedback_document
-from test_feedback_export_native import Document
 
 FIXTURE = Path(__file__).parent / "fixtures" / "submission_feedback.json"
 WHEN = datetime(2026, 10, 8, 12, 34, 56, 789123, tzinfo=UTC)

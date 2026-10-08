@@ -303,7 +303,10 @@ def main(argv: list[str] | None = None) -> None:
             import httpx
 
             from canvaspilot.client import CanvasAuthError
-            from canvaspilot.feedback_export import build_feedback_document, write_feedback_document
+            from canvaspilot.feedback_export import (
+                build_feedback_document,
+                write_feedback_document,
+            )
 
             try:
                 if os.path.lexists(args.out):

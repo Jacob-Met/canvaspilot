@@ -79,13 +79,15 @@ def _field(label: str, value: Any, key: str, *, wide: bool = False) -> str:
 
 def _mapping(value: Any, name: str) -> dict[str, Any]:
     if not isinstance(value, dict):
-        raise ValueError(f"Cannot render malformed {name}")
+        # Malformed Canvas data uses the public ValueError refusal contract.
+        raise ValueError(f"Cannot render malformed {name}")  # noqa: TRY004
     return value
 
 
 def _positive_id(value: int | str, name: str) -> int:
     if isinstance(value, bool) or not isinstance(value, (int, str)):
-        raise ValueError(f"{name} must be a positive numeric Canvas ID")
+        # All invalid IDs use one ValueError contract, including wrong types.
+        raise ValueError(f"{name} must be a positive numeric Canvas ID")  # noqa: TRY004
     text = str(value)
     if not text.isascii() or not text.isdigit() or int(text) <= 0:
         raise ValueError(f"{name} must be a positive numeric Canvas ID")
@@ -129,7 +131,8 @@ def _criteria(value: Any, hide_points: bool) -> str:
     if value is None:
         return '<p class="muted">Rubric criteria were not returned; their presence is unknown.</p>'
     if not isinstance(value, list):
-        raise ValueError("Cannot render malformed rubric criteria")
+        # Malformed Canvas data uses the public ValueError refusal contract.
+        raise ValueError("Cannot render malformed rubric criteria")  # noqa: TRY004
     if not value:
         return '<p class="muted">Canvas returned an empty criterion list.</p>'
     cards = []
@@ -177,7 +180,8 @@ def _comments(value: Any) -> str:
     if value is None:
         return '<p class="muted">Submission comments were not returned; their presence is unknown.</p>'
     if not isinstance(value, list):
-        raise ValueError("Cannot render malformed submission comments")
+        # Malformed Canvas data uses the public ValueError refusal contract.
+        raise ValueError("Cannot render malformed submission comments")  # noqa: TRY004
     if not value:
         return '<p class="muted">Canvas returned an empty comment list.</p>'
     cards = []
