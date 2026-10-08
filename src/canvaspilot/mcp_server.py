@@ -68,7 +68,7 @@ async def canvas_get_assignment(course_id: str, assignment_id: str) -> str:
     return _dump(_get_api().get_assignment(course_id, assignment_id))
 
 
-@mcp.tool(description="Digested assignment brief: prompt, due date, submission types.", structured_output=False)
+@mcp.tool(description="Digested assignment brief: prompt, due date, submission types, and supplied rubric with grading/display settings. Missing rubric data stays unknown; inspect rubric_warnings for omitted malformed data.", structured_output=False)
 async def canvas_assignment_brief(course_id: str, assignment_id: str) -> str:
     return _dump(_get_api().assignment_brief(course_id, assignment_id))
 

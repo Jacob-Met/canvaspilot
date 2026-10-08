@@ -1,0 +1,49 @@
+{
+  "condition": "shared overlay filesystem had zero available space",
+  "blocked_attempts": [
+    {
+      "label": "baseline",
+      "exit_code": 120,
+      "classification": "environment failure; no test result",
+      "outputs": [
+        {
+          "original_local_path": "/workspace/scratch/20b27c2ea29e/workers/runtime-integration/product-discovery/canvaspilot/full-baseline.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "original_local_path": "/workspace/scratch/20b27c2ea29e/workers/runtime-integration/product-discovery/canvaspilot/full-baseline.xml",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "label": "candidate",
+      "exit_code": 120,
+      "classification": "environment failure; no test result",
+      "outputs": [
+        {
+          "original_local_path": "/workspace/scratch/20b27c2ea29e/workers/runtime-integration/product-discovery/canvaspilot/full-candidate.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "original_local_path": "/workspace/scratch/20b27c2ea29e/workers/runtime-integration/product-discovery/canvaspilot/full-candidate.xml",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    }
+  ],
+  "followup_before_test_start": {
+    "type": "FileNotFoundError",
+    "message": "[Errno 2] No usable temporary directory found in ['/tmp', '/var/tmp', '/usr/tmp', '<candidate>']"
+  },
+  "recovery": "Root-authorized private tmpfs fallback after a second zero-space recheck; no further installation or download",
+  "successful_replacement_receipt": "complete-suite-receipts.json",
+  "frozen_initial_api_sha256": "d2bed610721167395ba3b8cac53f62587d57f57303e10c6194bcbac3ba0ef226",
+  "initial_test_sha256": "60800fde27afc1d2f141611d4b165908e319f50e2a25d81b12b0616c2713f539",
+  "final_test_sha256": "cc4bdb56034b32e08a63d4b1ae193e364bfc9b9b4b2a506cf2ef08f43000158c",
+  "test_change_before_complete_receiving": "Removed one import blank line for Ruff; no behavioral test change"
+}

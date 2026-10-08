@@ -1,0 +1,108 @@
+{
+  "schema": "independent-canvas-public-brief-v1",
+  "source_root": "/dev/shm/ultra-20b27c2e-runtime-integration-canvaspilot/baseline",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "optimize": 0,
+  "runtime_packages": {
+    "httpx": "0.28.1",
+    "mcp": "2.3.0",
+    "pydantic": "2.13.5"
+  },
+  "source_before": {
+    "src/canvaspilot/__init__.py": {
+      "sha256": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5",
+      "git_blob": "74a7a6087bf81fd7c75c15769b30408039618e0f"
+    },
+    "src/canvaspilot/api.py": {
+      "sha256": "08f868e82235df42b0427e07067d47cf3ea3d35c7ece11538dbd06e01b3b77c7",
+      "git_blob": "5807bd4c7bbe23aaacedfa7281fed3ce94256432"
+    },
+    "src/canvaspilot/bundle.py": {
+      "sha256": "db1ca6da89ea4f1a07c327f56ab40a39fe89e22c91034ed2be8fb3e497a6e696",
+      "git_blob": "5be38ec248d1e7efc54de9ee62e2e3be4c71f77c"
+    },
+    "src/canvaspilot/cli.py": {
+      "sha256": "289acef34c3d910cab6af811220cc3ac12f04f82c16d92bcb85341f83269705e",
+      "git_blob": "c00f7d12f52ba162b10930b965298b6364d4dab3"
+    },
+    "src/canvaspilot/client.py": {
+      "sha256": "6368329745216f473204995c101c912d9070fdd310def150bdbee927f9872de4",
+      "git_blob": "c06d24fa3d6ce9466caa633aff71207f59833bf4"
+    },
+    "src/canvaspilot/mcp_server.py": {
+      "sha256": "3012df86f365d054f92db20b733562bef6871c65ff88d75e0acb893a0414fb4f",
+      "git_blob": "346f6a2653b5027b271e1fe1d69f2b78c7e2635f"
+    },
+    "src/canvaspilot/offline_demo.py": {
+      "sha256": "2389f3ccc1b6db5995be0d90e014ea9345e3029aa5546a5b2dcf12c1197e6d4d",
+      "git_blob": "9d2cfd260d8db052b8183e3ec4fc9626a5bb2b9a"
+    },
+    "src/canvaspilot/session_broker.py": {
+      "sha256": "2a106130c344aefebb23b078cd93b5d3ca3afd7f5325ae5fac2fb8a7251780cc",
+      "git_blob": "ba23543f62e6be9f611ae06260b91f239206cb23"
+    }
+  },
+  "source_after": {
+    "src/canvaspilot/__init__.py": {
+      "sha256": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5",
+      "git_blob": "74a7a6087bf81fd7c75c15769b30408039618e0f"
+    },
+    "src/canvaspilot/api.py": {
+      "sha256": "08f868e82235df42b0427e07067d47cf3ea3d35c7ece11538dbd06e01b3b77c7",
+      "git_blob": "5807bd4c7bbe23aaacedfa7281fed3ce94256432"
+    },
+    "src/canvaspilot/bundle.py": {
+      "sha256": "db1ca6da89ea4f1a07c327f56ab40a39fe89e22c91034ed2be8fb3e497a6e696",
+      "git_blob": "5be38ec248d1e7efc54de9ee62e2e3be4c71f77c"
+    },
+    "src/canvaspilot/cli.py": {
+      "sha256": "289acef34c3d910cab6af811220cc3ac12f04f82c16d92bcb85341f83269705e",
+      "git_blob": "c00f7d12f52ba162b10930b965298b6364d4dab3"
+    },
+    "src/canvaspilot/client.py": {
+      "sha256": "6368329745216f473204995c101c912d9070fdd310def150bdbee927f9872de4",
+      "git_blob": "c06d24fa3d6ce9466caa633aff71207f59833bf4"
+    },
+    "src/canvaspilot/mcp_server.py": {
+      "sha256": "3012df86f365d054f92db20b733562bef6871c65ff88d75e0acb893a0414fb4f",
+      "git_blob": "346f6a2653b5027b271e1fe1d69f2b78c7e2635f"
+    },
+    "src/canvaspilot/offline_demo.py": {
+      "sha256": "2389f3ccc1b6db5995be0d90e014ea9345e3029aa5546a5b2dcf12c1197e6d4d",
+      "git_blob": "9d2cfd260d8db052b8183e3ec4fc9626a5bb2b9a"
+    },
+    "src/canvaspilot/session_broker.py": {
+      "sha256": "2a106130c344aefebb23b078cd93b5d3ca3afd7f5325ae5fac2fb8a7251780cc",
+      "git_blob": "ba23543f62e6be9f611ae06260b91f239206cb23"
+    }
+  },
+  "source_unchanged": true,
+  "test_sha256": "0d4f352f81c0c2a39415df9effdf4ffc0318e7f6dd21a6876e459233f28d8a0b",
+  "fixture_sha256": "b0185efda8933d88cd209d7162e39bcc5f825421d25f0c790126dac37c11ab08",
+  "methods": 20,
+  "passed_methods": 3,
+  "failed_methods": [
+    "__main__.TestIndependentBrief.test_absent_null_and_empty_rubrics_remain_distinct",
+    "__main__.TestIndependentBrief.test_advisory_grading_and_display_flags_are_independent",
+    "__main__.TestIndependentBrief.test_bad_criterion_rows_and_fields_preserve_healthy_neighbors",
+    "__main__.TestIndependentBrief.test_bad_rating_containers_remain_unavailable",
+    "__main__.TestIndependentBrief.test_bad_rating_rows_and_fields_preserve_healthy_levels",
+    "__main__.TestIndependentBrief.test_grading_flag_rejects_coercion",
+    "__main__.TestIndependentBrief.test_invalid_points_are_local_and_output_is_strict_json",
+    "__main__.TestIndependentBrief.test_malformed_rubric_containers_preserve_the_brief",
+    "__main__.TestIndependentBrief.test_no_usable_criteria_is_diagnosed_empty_not_missing",
+    "__main__.TestIndependentBrief.test_nullable_and_sparse_criteria_do_not_invent_fields",
+    "__main__.TestIndependentBrief.test_ordered_ratings_fractional_zero_points_and_literal_text",
+    "__main__.TestIndependentBrief.test_outcome_range_and_nonscoring_fields",
+    "__main__.TestIndependentBrief.test_projection_and_settings_do_not_alias_supplied_data",
+    "__main__.TestIndependentBrief.test_public_help_and_registered_tool_description_expose_rubric",
+    "__main__.TestIndependentBrief.test_registered_mcp_rereads_current_assignment",
+    "__main__.TestIndependentBrief.test_settings_container_validation_and_whole_object_custody",
+    "__main__.TestIndependentBrief.test_unknown_criterion_fields_are_not_invented_as_contract"
+  ],
+  "failure_entries": 111,
+  "error_entries": 0,
+  "skips": 0,
+  "public_invocations_captured": 111,
+  "successful": false
+}

@@ -83,6 +83,39 @@ export CANVAS_API_TOKEN=...   # broker not needed
 canvaspilot courses
 ```
 
+## Assignment briefs
+
+`canvaspilot brief <course_id> <assignment_id>`, the Python
+`CanvasAPI.assignment_brief()` method, and the MCP `canvas_assignment_brief` tool
+return the same JSON brief: the cleaned prompt, due date, assignment points,
+submission types, Canvas link, and the rubric supplied with the assignment.
+
+- `rubric` preserves the supplied criterion and rating order, IDs, descriptions,
+  long descriptions, points (including zero), range/scoring flags, and outcome
+  identifiers. Rubric text is not rewritten. Only these canonical rubric fields
+  are projected; `get_assignment()` retains the complete original rubric payload.
+- `rubric_settings` preserves the supplied settings object, including any display
+  flags such as `hide_points`, `hide_score_total`, and free-form criterion comments.
+  The CLI and MCP return data, without rendering a Canvas rubric UI. Consumers
+  should honor the distinct display flags when rendering it.
+- `use_rubric_for_grading` preserves Canvas's boolean: `false` means the rubric is
+  advisory; `null` means the assignment response did not supply a usable value.
+- `rubric_warnings` is normally empty. Malformed optional containers, entries, or
+  canonical field values are omitted locally with a warning that names their
+  location, while the ordinary brief and usable neighboring entries remain.
+
+A missing or `null` rubric remains `null`; a supplied empty list remains `[]`.
+Missing criterion fields are not filled in, and missing ratings remain unknown.
+No criteria, score totals, or grading requirements are inferred. Assignment
+`points_possible` and rubric settings' `points_possible` remain separate supplied
+values. This uses the existing assignment GET request, without another rubric
+request or a change to authentication.
+
+The field meanings follow Canvas's [Assignments API](https://developerdocs.instructure.com/services/canvas/resources/assignments)
+and [Rubrics API](https://developerdocs.instructure.com/services/canvas/resources/rubrics).
+The public-path tests in `tests/test_assignment_brief_rubric.py` use a clearly
+synthetic assignment and forbid HTTP and broker access.
+
 ## MCP server
 
 ```bash

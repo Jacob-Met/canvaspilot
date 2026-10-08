@@ -1,0 +1,54 @@
+{
+  "baseline_commit": "5b1780ca4fcdce3d5f997cee401c86806ece822a",
+  "baseline_tree": "5d3b9b7b8f3cca5f3940f31e020ad4310078dd70",
+  "complete_blobs": 42,
+  "changed_api_members": [
+    "CanvasAPI.get_assignment",
+    "CanvasAPI.assignment_brief"
+  ],
+  "added_api_members": [
+    "_brief_rubric"
+  ],
+  "unowned_module_method_identical": true,
+  "unowned_files_identical": true,
+  "files": [
+    {
+      "path": "src/canvaspilot/api.py",
+      "bytes": 23442,
+      "sha256": "e35290d0899a88cd5fe03178218b2d7e9f8318cb800a09c18180efef33a1150c",
+      "git_blob": "bcc564bd293966deff85a10164e4daca4daeb935"
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "bytes": 7416,
+      "sha256": "3b15ed6c1ec973ed046163837a65bcdad9f60288bb3ea821fe792a11b4bcfec9",
+      "git_blob": "58b1cb740aea32520a05469cfd9baa6fbfca8b30"
+    },
+    {
+      "path": "src/canvaspilot/mcp_server.py",
+      "bytes": 10234,
+      "sha256": "0850fd3d4c06cf7d539dd5a606aed1a8b4e168c6ed2e70c8e617885b4b5810a9",
+      "git_blob": "2a05fe5c099417943cc7a67723ebe3cd9b125e28"
+    },
+    {
+      "path": "README.md",
+      "bytes": 11084,
+      "sha256": "a50af6ce2c0444939826a941a40da16cad8bd1dcef92214b7af01ad2b33a7c78",
+      "git_blob": "3b04baa06190557021b73c12f779f08ad3670501"
+    },
+    {
+      "path": "tests/test_assignment_brief_rubric.py",
+      "bytes": 9514,
+      "sha256": "cc4bdb56034b32e08a63d4b1ae193e364bfc9b9b4b2a506cf2ef08f43000158c",
+      "git_blob": "1881a19e593c4fb095d1a4dc97fce53a8c13f02e"
+    },
+    {
+      "path": "tests/fixtures/assignment_rubric.json",
+      "bytes": 2057,
+      "sha256": "1c7eebf96e3a09b40b934fab219e9c8b7a6258fe881560f53a1c38a8e1b4bc4b",
+      "git_blob": "8298dc92458b2f4c0f5c2b6845e32c52395d9d46"
+    }
+  ],
+  "receiving_root": "/dev/shm/ultra-20b27c2e-runtime-integration-canvaspilot",
+  "overlay_recheck": "zero available; used explicitly authorized private tmpfs fallback"
+}
