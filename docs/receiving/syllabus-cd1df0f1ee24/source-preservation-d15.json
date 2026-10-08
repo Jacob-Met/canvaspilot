@@ -1,0 +1,38 @@
+{
+  "parent": "d15de13fb6fa39d3cace04bec0e218b4a2ed2ffd",
+  "parent_tree": "a98d1f5ddc7bcd682968bea81f6394cdf8c91a53",
+  "parent_leaf_count": 1165,
+  "existing_modified_paths": [
+    "README.md",
+    "src/canvaspilot/cli.py"
+  ],
+  "new_product_paths": [
+    "docs/syllabus-packet.md",
+    "src/canvaspilot/syllabus_packet.py",
+    "tests/test_syllabus_packet.py",
+    "tests/test_syllabus_packet_cli.py"
+  ],
+  "cli_inverse_exact": true,
+  "readme_inverse_exact": true,
+  "cli_before_image": {
+    "path": "src/canvaspilot/cli.py",
+    "bytes": 21956,
+    "sha256": "205408caa8c22f34d0fb0a66b704db76f90f10a99eb9d3f3685f88ec4edbc1ae",
+    "git_blob": "9b9e00dcdb6e768c02a8cf9e23d1a56094970846"
+  },
+  "readme_before_image": {
+    "path": "README.md",
+    "bytes": 24185,
+    "sha256": "961b5bb72e4f2033b8e982ea1546f3b623db7bae5483b0efa0cf6257e1db31cb",
+    "git_blob": "c81b52961f634667f52a02d6a597c400919815a4"
+  },
+  "get_course_source_exact_vs_6c4d": true,
+  "client_blob_exact_vs_6c4d": true,
+  "print_module_exact_two_substitutions": true,
+  "guide_exact_one_sentence_substitution": true,
+  "four_noncomposed_payload_files_exact_vs_qualified_v4": true,
+  "python_syntax_parse": true,
+  "expected_preserved_parent_leaves": 1163,
+  "native_gate_scope": "Authored 76 and independent CLI29/browser9 refer to c744 v3; separate bounded CLI and v4 print gates refer to 6c4d. This d15 composition is statically verified, not a new product run.",
+  "actual_published_tree_and_hosted_ci": "Pending publication."
+}

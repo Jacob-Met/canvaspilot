@@ -355,6 +355,10 @@ unread state. Original message, participant and attachment metadata are returned
 linked content is not downloaded. See [inbox review](docs/inbox-review.md) for
 scope choices, pagination and error behavior.
 
+## Save course syllabi
+
+Use `canvaspilot export-syllabus 42 57 --out syllabi.html` to keep explicitly selected syllabus bodies in one readable, printable offline HTML packet. Missing, unavailable and explicitly empty bodies stay distinct; linked files and media remain clearly marked external resources. The command protects existing output paths and refuses the whole file if a requested course cannot be read or validated. [Source, limits and usage](docs/syllabus-packet.md).
+
 ## Auth modes
 
 | Mode | How | When |

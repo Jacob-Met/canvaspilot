@@ -158,6 +158,13 @@ def main(argv: list[str] | None = None) -> None:
     page_export.add_argument("course_id", help="Positive numeric Canvas course ID")
     page_export.add_argument("pages", nargs="+", help="Page URL locators, or page_id:ID for an explicit numeric ID")
     page_export.add_argument("--out", required=True, type=Path, help="New HTML file; existing paths are protected")
+    syllabus = sub.add_parser(
+        "export-syllabus", help="Save selected course syllabi as a new offline HTML reading packet",
+    )
+    add_common(syllabus)
+    syllabus.add_argument("course_ids", nargs="+", type=_positive_int)
+    syllabus.add_argument("--out", required=True, type=Path, help="New HTML file; existing paths are protected")
+
     progress = sub.add_parser("module-progress", help="Inspect reported module progress and requirements")
     add_common(progress)
     progress.add_argument("course_id", help="Positive numeric Canvas course ID")
@@ -420,6 +427,33 @@ def main(argv: list[str] | None = None) -> None:
                 # to a new file; it never replaces a path or follows its symlink.
                 write_calendar(args.out, content)
             except (CanvasAuthError, CanvasPaginationError, httpx.HTTPError, ValueError, TypeError, OSError) as error:
+                print(json.dumps({
+                    "ok": False, "error": type(error).__name__, "message": str(error),
+                }), file=sys.stderr)
+                raise SystemExit(1) from None
+            finally:
+                http_log.setLevel(previous_level)
+            print(json.dumps({"ok": True, "output": str(args.out), **report}, indent=2))
+        elif args.cmd == "export-syllabus":
+            import os
+
+            import httpx
+
+            from canvaspilot.client import CanvasAuthError
+            from canvaspilot.syllabus_packet import (
+                build_syllabus_packet,
+                write_syllabus_packet,
+            )
+
+            http_log = logging.getLogger("httpx")
+            previous_level = http_log.level
+            http_log.setLevel(max(http_log.getEffectiveLevel(), logging.WARNING))
+            try:
+                if os.path.lexists(args.out):
+                    raise FileExistsError("Output path already exists; choose a new HTML file")
+                content, report = build_syllabus_packet(api, args.course_ids)
+                write_syllabus_packet(args.out, content)
+            except (CanvasAuthError, httpx.HTTPError, ValueError, TypeError, OSError) as error:
                 print(json.dumps({
                     "ok": False, "error": type(error).__name__, "message": str(error),
                 }), file=sys.stderr)
