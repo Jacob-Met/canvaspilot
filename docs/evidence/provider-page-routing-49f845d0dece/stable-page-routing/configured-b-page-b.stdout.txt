@@ -1,0 +1,21 @@
+{
+  "ok": true,
+  "output": "/Users/me/workspace/estate/estate-49f845d0dece/canvas-provider-pr45-receiving/stable-page-routing/configured-b-page-b.ics",
+  "source": "https://school-b.instructure.com",
+  "bucket": "upcoming",
+  "generated_at": "2026-10-08T12:01:30.486512+00:00",
+  "course_ids": [
+    "42"
+  ],
+  "course_summaries": [
+    {
+      "course_id": "42",
+      "assignments_returned": 1,
+      "events_exported": 1
+    }
+  ],
+  "events_exported": 1,
+  "assignments_omitted": [],
+  "coverage": "Returned assignment rows only; existing transport pagination limits apply.",
+  "sha256": "ce838973ea49daa0d0d94e5df96669861d06f651fc647d49eb1d7df76c70083f"
+}
