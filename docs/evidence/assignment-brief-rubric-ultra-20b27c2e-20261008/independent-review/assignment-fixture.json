@@ -1,0 +1,80 @@
+{
+  "id": 701,
+  "course_id": 74,
+  "name": "Evidence lab — raw <title> & source",
+  "due_at": "2026-11-04T01:20:00-07:00",
+  "points_possible": 100,
+  "submission_types": [
+    "online_upload",
+    "online_text_entry"
+  ],
+  "html_url": "https://canvas.example.test/courses/74/assignments/701?module=9#details",
+  "description": "<p>Read &lt;lab&gt; &amp; compare α β.</p><p><a href=\"https://example.test/reference?q=a&amp;b=c\">Source link</a></p>",
+  "submission": {
+    "id": 991,
+    "workflow_state": "unsubmitted",
+    "attempt": null
+  },
+  "use_rubric_for_grading": true,
+  "free_form_criterion_comments": false,
+  "rubric_settings": {
+    "id": 501,
+    "title": "Evidence review β",
+    "points_possible": 12.5,
+    "free_form_criterion_comments": false,
+    "hide_score_total": false,
+    "hide_points": false
+  },
+  "rubric": [
+    {
+      "id": "criterion-z",
+      "description": "Evidence &amp; reasoning",
+      "long_description": "<p>Explain <em>why</em>; keep &lt;claim&gt; literal.</p>",
+      "points": 7.5,
+      "criterion_use_range": true,
+      "ignore_for_scoring": false,
+      "ratings": [
+        {
+          "id": "rating-mid",
+          "points": 3.25,
+          "description": "Partly supported",
+          "long_description": "Use one example &amp; a limitation."
+        },
+        {
+          "id": "rating-best",
+          "points": 7.5,
+          "description": "Fully supported",
+          "long_description": "<p>Use two independent examples.</p>"
+        },
+        {
+          "id": "rating-zero",
+          "points": 0,
+          "description": "No marks",
+          "long_description": ""
+        }
+      ]
+    },
+    {
+      "id": "criterion-a",
+      "description": "Presentation",
+      "long_description": "Keep the original ordering.",
+      "points": 5,
+      "criterion_use_range": false,
+      "ignore_for_scoring": false,
+      "ratings": [
+        {
+          "id": "presentation-full",
+          "points": 5,
+          "description": "Clear",
+          "long_description": null
+        },
+        {
+          "id": "presentation-none",
+          "points": 0,
+          "description": "Unclear",
+          "long_description": null
+        }
+      ]
+    }
+  ]
+}
