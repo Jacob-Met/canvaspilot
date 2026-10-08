@@ -206,6 +206,12 @@ two GETs and does not mark comments read, submit work, or change a grade.
 
 ### Announcements
 
+Read selected courses from the terminal with `canvaspilot announcements 42 77`.
+Choose `--detail full` for complete cleaned message text and optionally supply
+`--start-date 2026-10-01`. The command preserves the existing course context,
+pagination and date-window rules; see [terminal announcement review](docs/announcements-cli.md)
+for fields, defaults and error behavior.
+
 `canvas_list_announcements` and `CanvasAPI.list_announcements()` use the existing
 client paginator in both compact and full detail modes. Course and optional start-date
 filters are retained, and results keep Canvas's page order and announcement metadata.

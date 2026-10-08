@@ -1,0 +1,50 @@
+{
+  "format": "canvaspilot.announcements-source-overlay.v1",
+  "baseline": {
+    "commit": "a5ce672e5b3580c1f52e13c49eefee830f11346c",
+    "tree": "0661a7005e577864cb87bc41e0e715409c92ee76",
+    "leaves": 948
+  },
+  "product": {
+    "src/canvaspilot/cli.py": "a38cda5d650c6fb400089a84b800c7422ad2dbb2",
+    "tests/test_announcements_cli.py": "f91468be7dc046d0be5c4c10a285fb806496e0b3",
+    "docs/announcements-cli.md": "9f0c53ff7f53177c198c445634b977efb2c6a492",
+    "README.md": "8b14444383c5246f578328b41c0a5e6e19b2294b"
+  },
+  "authorArtifact": {
+    "path": "docs/receiving/announcements-cli-ae0a1ea0b247/author-packet.tar.gz",
+    "bytes": 170482,
+    "sha256": "c0789b047cc5aa4a2245b6bce7e7055160ddfd213674946542a7dc69a7871ce2",
+    "gitBlob": "a26be29ead9d81b33d5659bf424ef6a89f65103e"
+  },
+  "existingPathsModified": [
+    "src/canvaspilot/cli.py",
+    "README.md"
+  ],
+  "preservation": "Remove exactly the new parser/dispatch spans and README paragraph to recover the existing two before-images. Every other current-parent leaf and mode is inherited unchanged by the Git tree overlay.",
+  "sourceChecks": {
+    "focused": "33 passed",
+    "full": "686 passed, 1 existing optional Chromium skip, 6 subtests passed",
+    "ruff": "All checks passed"
+  },
+  "nativeRuntime": "Existing read-only CanvasPilot Python3.12 environment, httpx0.28.1/mcp2.3.0; no package installation or transport substitution. Earlier dependency-path and real first-candidate logging failures remain in author artifact.",
+  "coordination": {
+    "claim": "https://github.com/Jacob-Met/canvaspilot/issues/58",
+    "centralClaim": "https://github.com/Jacob-Met/hamon/issues/140#issuecomment-6062454596",
+    "openPRs": [
+      61,
+      60,
+      50,
+      28,
+      27,
+      25,
+      24,
+      23,
+      9,
+      8,
+      7
+    ],
+    "additionalCurrentScope": "Module-progress offline report #59 remains with its owner; API/client/broker/authentication, other command spans, dependencies and CI are preserved."
+  },
+  "publication": "Receiving source only. Independent review and hosted head CI are recorded separately; no native goal lease, school access or deployed service is claimed."
+}
