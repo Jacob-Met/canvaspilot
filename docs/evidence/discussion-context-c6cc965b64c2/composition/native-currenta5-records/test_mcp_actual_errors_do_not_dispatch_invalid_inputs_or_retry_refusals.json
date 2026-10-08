@@ -1,0 +1,233 @@
+{
+  "case": "test_discussion_thread_native.DiscussionThreadNativeTests.test_mcp_actual_errors_do_not_dispatch_invalid_inputs_or_retry_refusals",
+  "records": [
+    {
+      "surface": "mcp",
+      "tool": {
+        "name": "canvas_discussion_thread",
+        "title": null,
+        "description": "Read a Canvas cached discussion tree with source entry fields, author attribution and reported read markers. unread_only retains known unread entries and their ancestors as context. The cached view is eventually consistent; unknown or unlocated read markers remain explicit. Does not post or mark entries read.",
+        "inputSchema": {
+          "properties": {
+            "course_id": {
+              "title": "Course Id",
+              "type": "string"
+            },
+            "topic_id": {
+              "title": "Topic Id",
+              "type": "string"
+            },
+            "unread_only": {
+              "default": false,
+              "title": "Unread Only",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "course_id",
+            "topic_id"
+          ],
+          "type": "object",
+          "title": "canvas_discussion_threadArguments"
+        },
+        "execution": null,
+        "outputSchema": null,
+        "icons": null,
+        "annotations": {
+          "title": null,
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": null,
+          "openWorldHint": null
+        },
+        "_meta": null
+      }
+    },
+    {
+      "surface": "mcp",
+      "arguments": {
+        "course_id": "63",
+        "topic_id": "81",
+        "unread_only": "false"
+      },
+      "response": {
+        "_meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "Error executing tool canvas_discussion_thread: 1 validation error for canvas_discussion_threadArguments\nunread_only\n  Input should be a valid boolean [type=bool_type, input_value='false', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.13/v/bool_type",
+            "annotations": null,
+            "_meta": null
+          }
+        ],
+        "structuredContent": null,
+        "isError": true,
+        "resultType": "complete"
+      }
+    },
+    {
+      "surface": "mcp",
+      "arguments": {
+        "course_id": "63/../2",
+        "topic_id": "81"
+      },
+      "response": {
+        "_meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "Error executing tool canvas_discussion_thread",
+            "annotations": null,
+            "_meta": null
+          }
+        ],
+        "structuredContent": null,
+        "isError": true,
+        "resultType": "complete"
+      }
+    },
+    {
+      "surface": "mcp",
+      "response": {
+        "_meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "Error executing tool canvas_discussion_thread",
+            "annotations": null,
+            "_meta": null
+          }
+        ],
+        "structuredContent": null,
+        "isError": true,
+        "resultType": "complete"
+      }
+    }
+  ],
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/63/discussion_topics/81",
+      "query": {
+        "per_page": [
+          "50"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/63/discussion_topics/81/view",
+      "query": {
+        "per_page": [
+          "50"
+        ]
+      }
+    }
+  ],
+  "fixture_before": [
+    {
+      "id": 81,
+      "title": "Synthetic station design",
+      "message": "<p>Read both options.</p>",
+      "unread_count": 2,
+      "discussion_subentry_count": 70,
+      "user_can_see_posts": true
+    },
+    {
+      "unread_entries": [
+        13,
+        27
+      ],
+      "forced_entries": [
+        13
+      ],
+      "participants": [
+        {
+          "id": 5,
+          "display_name": "Fixture author"
+        }
+      ],
+      "view": [
+        {
+          "id": 11,
+          "user_id": 5,
+          "parent_id": null,
+          "message": "<p>Platform location?</p>",
+          "replies": [
+            {
+              "id": 13,
+              "user_id": 5,
+              "parent_id": 11,
+              "message": "<p>Near the ramp.</p>"
+            },
+            {
+              "id": 14,
+              "user_id": 5,
+              "parent_id": 11,
+              "message": "<p>Read neighbor.</p>"
+            }
+          ]
+        },
+        {
+          "id": 21,
+          "user_id": 5,
+          "parent_id": null,
+          "message": "<p>Read root.</p>"
+        }
+      ]
+    }
+  ],
+  "fixture_after": [
+    {
+      "id": 81,
+      "title": "Synthetic station design",
+      "message": "<p>Read both options.</p>",
+      "unread_count": 2,
+      "discussion_subentry_count": 70,
+      "user_can_see_posts": true
+    },
+    {
+      "unread_entries": [
+        13,
+        27
+      ],
+      "forced_entries": [
+        13
+      ],
+      "participants": [
+        {
+          "id": 5,
+          "display_name": "Fixture author"
+        }
+      ],
+      "view": [
+        {
+          "id": 11,
+          "user_id": 5,
+          "parent_id": null,
+          "message": "<p>Platform location?</p>",
+          "replies": [
+            {
+              "id": 13,
+              "user_id": 5,
+              "parent_id": 11,
+              "message": "<p>Near the ramp.</p>"
+            },
+            {
+              "id": 14,
+              "user_id": 5,
+              "parent_id": 11,
+              "message": "<p>Read neighbor.</p>"
+            }
+          ]
+        },
+        {
+          "id": 21,
+          "user_id": 5,
+          "parent_id": null,
+          "message": "<p>Read root.</p>"
+        }
+      ]
+    }
+  ]
+}

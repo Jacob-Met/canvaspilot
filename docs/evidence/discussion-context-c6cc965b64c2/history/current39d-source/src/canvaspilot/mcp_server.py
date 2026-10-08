@@ -221,27 +221,12 @@ async def canvas_complete_quiz_submission(
     )
 
 
-@mcp.tool(
-    description=(
-        "List your Canvas conversations without changing their state. "
-        "Default inbox includes read and unread non-archived conversations; "
-        "other scopes are unread, starred, archived, and sent."
-    ),
-    annotations=ToolAnnotations(readOnlyHint=True, destructiveHint=False, idempotentHint=True),
-    structured_output=False,
-)
+@mcp.tool(description="List Canvas Inbox conversations.", structured_output=False)
 async def canvas_list_conversations(scope: str = "inbox") -> str:
     return _dump(_get_api().list_conversations(scope=scope))
 
 
-@mcp.tool(
-    description=(
-        "Read one of your Canvas conversations by positive decimal ID, preserving unread state. "
-        "Returns supplied messages, participants and attachment metadata; does not download links."
-    ),
-    annotations=ToolAnnotations(readOnlyHint=True, destructiveHint=False, idempotentHint=True),
-    structured_output=False,
-)
+@mcp.tool(description="Get one Inbox conversation.", structured_output=False)
 async def canvas_get_conversation(conversation_id: str) -> str:
     return _dump(_get_api().get_conversation(conversation_id))
 

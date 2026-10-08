@@ -565,24 +565,13 @@ class CanvasAPI:
         )
 
     def list_conversations(self, *, scope: str = "inbox") -> list[Any]:
-        """List current-user conversations; inbox means the non-archived default."""
         return self.client.get_paginated(
             "/api/v1/conversations",
-            params=None if scope == "inbox" else {"scope": scope},
+            params={"scope": scope},
         )
 
     def get_conversation(self, conversation_id: int | str) -> Any:
-        """Read a conversation without automatically clearing its unread state."""
-        if isinstance(conversation_id, bool) or not isinstance(conversation_id, (int, str)):
-            raise TypeError("conversation_id must be a positive decimal integer")
-        identifier = str(conversation_id)
-        if not re.fullmatch(r"[0-9]+", identifier) or not identifier.strip("0"):
-            raise ValueError("conversation_id must be a positive decimal integer")
-        return self.client.request(
-            "GET",
-            f"/api/v1/conversations/{identifier}",
-            params={"auto_mark_as_read": False},
-        )
+        return self.client.request("GET", f"/api/v1/conversations/{conversation_id}")
 
     def list_calendar_events(
         self,

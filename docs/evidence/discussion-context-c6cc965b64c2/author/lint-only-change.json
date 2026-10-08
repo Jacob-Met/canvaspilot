@@ -1,0 +1,26 @@
+[
+  {
+    "path": "src/canvaspilot/discussion_thread.py",
+    "old_sha256": "342148c09a33f6bc33b2f32014d0a923341c426856a8ab535ab7ad90caf75bf5",
+    "new_sha256": "11f955f827c29421143782518a1aaf1894d0892739c3b56c4d5e413da74555ff",
+    "old_bytes": 8375,
+    "new_bytes": 8547,
+    "ast_unchanged": true
+  },
+  {
+    "path": "tests/test_discussion_thread.py",
+    "old_sha256": "90d9b8ad787cf519ff01a9270a86fc3c3754c0b944436e7e26b87f18b39ef72e",
+    "new_sha256": "22274853b6dfa5f377f9d42b7d9da9fabcf42ac2fdb1248285725148f7f84698",
+    "old_bytes": 13886,
+    "new_bytes": 13887,
+    "ast_unchanged": false
+  },
+  {
+    "path": "tests/test_discussion_thread_native.py",
+    "old_sha256": "9d8f5b31fe868e01a86489de8120bc552a6271069ca4bf5d5269d56708a36c3d",
+    "new_sha256": "2793e3f3a09c031e99aa735b487f324fb828671691320bca8481465fc7fccc5b",
+    "old_bytes": 13404,
+    "new_bytes": 13404,
+    "ast_unchanged": false
+  }
+]

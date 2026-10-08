@@ -1,0 +1,49 @@
+{
+  "base": "79a2f2b2cbb7e74128d731cf096c7e86f1942d4b",
+  "tree": "0114a6230c473c1ee1d01b99c7121c754b781d54",
+  "source": "/dev/shm/c6cc965b64c2-canvas-discussion/baseline",
+  "files": [
+    {
+      "path": "src/canvaspilot/__init__.py",
+      "bytes": 561,
+      "blob": "74a7a6087bf81fd7c75c15769b30408039618e0f",
+      "sha256": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5"
+    },
+    {
+      "path": "src/canvaspilot/api.py",
+      "bytes": 27501,
+      "blob": "140ced2576481a90b8319272714009d326835bf1",
+      "sha256": "fe147e5d3943e7299f400e7607385a7c8f02a68aeff07f72b3219f5c70c7bb5b"
+    },
+    {
+      "path": "src/canvaspilot/client.py",
+      "bytes": 18934,
+      "blob": "1db4b1135305f7e410025ae7937f9a6cd349f020",
+      "sha256": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797"
+    },
+    {
+      "path": "src/canvaspilot/feedback.py",
+      "bytes": 3900,
+      "blob": "ec996f421a851d699a9ac7cb1f2a486f9ff7c4ea",
+      "sha256": "55454598effea598474a21f67e36d5bc5bea84aaefeefc18e4d8c49804ab9869"
+    },
+    {
+      "path": "src/canvaspilot/bundle.py",
+      "bytes": 2641,
+      "blob": "383efb28dfdd0d3e1d9ce8e1e259468d7eb44586",
+      "sha256": "7a5600680c22f3cce5d512ed96137de0171bcca7df6a8c46baa8c09143de3168"
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "bytes": 12621,
+      "blob": "9b8eec6ea177d0fe69e3cb7776af185d2e7ad4a5",
+      "sha256": "a6029296bba4e84b3889bd62487b966d7bc1832a8b1b1e0fd928dfb9b9ab68a8"
+    },
+    {
+      "path": "src/canvaspilot/mcp_server.py",
+      "bytes": 12594,
+      "blob": "b6c52d710867a8c8cd3058f5476c22803a333501",
+      "sha256": "9ca3a1733167217730eabb5a083fcc72d7d4273ddb36ef5c0306f22ee97c8257"
+    }
+  ]
+}

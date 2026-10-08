@@ -1,0 +1,227 @@
+{
+  "case": "test_discussion_thread_native.DiscussionThreadNativeTests.test_mcp_actual_stdio_and_http_share_the_same_reading_contract",
+  "records": [
+    {
+      "surface": "mcp",
+      "tool": {
+        "name": "canvas_discussion_thread",
+        "title": null,
+        "description": "Read a Canvas cached discussion tree with source entry fields, author attribution and reported read markers. unread_only retains known unread entries and their ancestors as context. The cached view is eventually consistent; unknown or unlocated read markers remain explicit. Does not post or mark entries read.",
+        "inputSchema": {
+          "properties": {
+            "course_id": {
+              "title": "Course Id",
+              "type": "string"
+            },
+            "topic_id": {
+              "title": "Topic Id",
+              "type": "string"
+            },
+            "unread_only": {
+              "default": false,
+              "title": "Unread Only",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "course_id",
+            "topic_id"
+          ],
+          "type": "object",
+          "title": "canvas_discussion_threadArguments"
+        },
+        "execution": null,
+        "outputSchema": null,
+        "icons": null,
+        "annotations": {
+          "title": null,
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "idempotentHint": null,
+          "openWorldHint": null
+        },
+        "_meta": null
+      }
+    },
+    {
+      "surface": "mcp",
+      "unread_only": false,
+      "response": {
+        "_meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"topic\": {\n    \"id\": 81,\n    \"title\": \"Synthetic station design\",\n    \"message\": \"<p>Read both options.</p>\",\n    \"unread_count\": 2,\n    \"discussion_subentry_count\": 70,\n    \"user_can_see_posts\": true\n  },\n  \"topic_message_text\": \"Read both options.\",\n  \"source\": {\n    \"kind\": \"canvas_cached_discussion_view\",\n    \"eventually_consistent\": true,\n    \"new_entries_requested\": false\n  },\n  \"selection\": \"all\",\n  \"view_metadata\": {\n    \"unread_entries\": [\n      13,\n      27\n    ],\n    \"forced_entries\": [\n      13\n    ],\n    \"participants\": [\n      {\n        \"id\": 5,\n        \"display_name\": \"Fixture author\"\n      }\n    ]\n  },\n  \"entries\": [\n    {\n      \"path\": [\n        0\n      ],\n      \"parent_path\": null,\n      \"entry\": {\n        \"id\": 11,\n        \"user_id\": 5,\n        \"parent_id\": null,\n        \"message\": \"<p>Platform location?</p>\"\n      },\n      \"replies_supplied\": true,\n      \"reply_count\": 2,\n      \"message_text\": \"Platform location?\",\n      \"author\": {\n        \"id\": 5,\n        \"display_name\": \"Fixture author\"\n      },\n      \"read_state\": \"read\",\n      \"forced_read_state\": false,\n      \"context_only\": false\n    },\n    {\n      \"path\": [\n        0,\n        0\n      ],\n      \"parent_path\": [\n        0\n      ],\n      \"entry\": {\n        \"id\": 13,\n        \"user_id\": 5,\n        \"parent_id\": 11,\n        \"message\": \"<p>Near the ramp.</p>\"\n      },\n      \"replies_supplied\": false,\n      \"reply_count\": 0,\n      \"message_text\": \"Near the ramp.\",\n      \"author\": {\n        \"id\": 5,\n        \"display_name\": \"Fixture author\"\n      },\n      \"read_state\": \"unread\",\n      \"forced_read_state\": true,\n      \"context_only\": false\n    },\n    {\n      \"path\": [\n        0,\n        1\n      ],\n      \"parent_path\": [\n        0\n      ],\n      \"entry\": {\n        \"id\": 14,\n        \"user_id\": 5,\n        \"parent_id\": 11,\n        \"message\": \"<p>Read neighbor.</p>\"\n      },\n      \"replies_supplied\": false,\n      \"reply_count\": 0,\n      \"message_text\": \"Read neighbor.\",\n      \"author\": {\n        \"id\": 5,\n        \"display_name\": \"Fixture author\"\n      },\n      \"read_state\": \"read\",\n      \"forced_read_state\": false,\n      \"context_only\": false\n    },\n    {\n      \"path\": [\n        1\n      ],\n      \"parent_path\": null,\n      \"entry\": {\n        \"id\": 21,\n        \"user_id\": 5,\n        \"parent_id\": null,\n        \"message\": \"<p>Read root.</p>\"\n      },\n      \"replies_supplied\": false,\n      \"reply_count\": 0,\n      \"message_text\": \"Read root.\",\n      \"author\": {\n        \"id\": 5,\n        \"display_name\": \"Fixture author\"\n      },\n      \"read_state\": \"read\",\n      \"forced_read_state\": false,\n      \"context_only\": false\n    }\n  ],\n  \"unmatched_unread_entries\": [\n    27\n  ],\n  \"counts\": {\n    \"observed_entries\": 4,\n    \"returned_entries\": 4,\n    \"known_unread_entries\": 1,\n    \"unknown_read_state_entries\": 0\n  },\n  \"warnings\": [\n    \"Some supplied unread identifiers are absent from this cached entry tree.\"\n  ]\n}",
+            "annotations": null,
+            "_meta": null
+          }
+        ],
+        "structuredContent": null,
+        "isError": false,
+        "resultType": "complete"
+      }
+    },
+    {
+      "surface": "mcp",
+      "unread_only": true,
+      "response": {
+        "_meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"topic\": {\n    \"id\": 81,\n    \"title\": \"Synthetic station design\",\n    \"message\": \"<p>Read both options.</p>\",\n    \"unread_count\": 2,\n    \"discussion_subentry_count\": 70,\n    \"user_can_see_posts\": true\n  },\n  \"topic_message_text\": \"Read both options.\",\n  \"source\": {\n    \"kind\": \"canvas_cached_discussion_view\",\n    \"eventually_consistent\": true,\n    \"new_entries_requested\": false\n  },\n  \"selection\": \"unread_with_ancestors\",\n  \"view_metadata\": {\n    \"unread_entries\": [\n      13,\n      27\n    ],\n    \"forced_entries\": [\n      13\n    ],\n    \"participants\": [\n      {\n        \"id\": 5,\n        \"display_name\": \"Fixture author\"\n      }\n    ]\n  },\n  \"entries\": [\n    {\n      \"path\": [\n        0\n      ],\n      \"parent_path\": null,\n      \"entry\": {\n        \"id\": 11,\n        \"user_id\": 5,\n        \"parent_id\": null,\n        \"message\": \"<p>Platform location?</p>\"\n      },\n      \"replies_supplied\": true,\n      \"reply_count\": 2,\n      \"message_text\": \"Platform location?\",\n      \"author\": {\n        \"id\": 5,\n        \"display_name\": \"Fixture author\"\n      },\n      \"read_state\": \"read\",\n      \"forced_read_state\": false,\n      \"context_only\": true\n    },\n    {\n      \"path\": [\n        0,\n        0\n      ],\n      \"parent_path\": [\n        0\n      ],\n      \"entry\": {\n        \"id\": 13,\n        \"user_id\": 5,\n        \"parent_id\": 11,\n        \"message\": \"<p>Near the ramp.</p>\"\n      },\n      \"replies_supplied\": false,\n      \"reply_count\": 0,\n      \"message_text\": \"Near the ramp.\",\n      \"author\": {\n        \"id\": 5,\n        \"display_name\": \"Fixture author\"\n      },\n      \"read_state\": \"unread\",\n      \"forced_read_state\": true,\n      \"context_only\": false\n    }\n  ],\n  \"unmatched_unread_entries\": [\n    27\n  ],\n  \"counts\": {\n    \"observed_entries\": 4,\n    \"returned_entries\": 2,\n    \"known_unread_entries\": 1,\n    \"unknown_read_state_entries\": 0\n  },\n  \"warnings\": [\n    \"Some supplied unread identifiers are absent from this cached entry tree.\"\n  ]\n}",
+            "annotations": null,
+            "_meta": null
+          }
+        ],
+        "structuredContent": null,
+        "isError": false,
+        "resultType": "complete"
+      }
+    }
+  ],
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/63/discussion_topics/81",
+      "query": {
+        "per_page": [
+          "50"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/63/discussion_topics/81/view",
+      "query": {
+        "per_page": [
+          "50"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/63/discussion_topics/81",
+      "query": {
+        "per_page": [
+          "50"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/63/discussion_topics/81/view",
+      "query": {
+        "per_page": [
+          "50"
+        ]
+      }
+    }
+  ],
+  "fixture_before": [
+    {
+      "id": 81,
+      "title": "Synthetic station design",
+      "message": "<p>Read both options.</p>",
+      "unread_count": 2,
+      "discussion_subentry_count": 70,
+      "user_can_see_posts": true
+    },
+    {
+      "unread_entries": [
+        13,
+        27
+      ],
+      "forced_entries": [
+        13
+      ],
+      "participants": [
+        {
+          "id": 5,
+          "display_name": "Fixture author"
+        }
+      ],
+      "view": [
+        {
+          "id": 11,
+          "user_id": 5,
+          "parent_id": null,
+          "message": "<p>Platform location?</p>",
+          "replies": [
+            {
+              "id": 13,
+              "user_id": 5,
+              "parent_id": 11,
+              "message": "<p>Near the ramp.</p>"
+            },
+            {
+              "id": 14,
+              "user_id": 5,
+              "parent_id": 11,
+              "message": "<p>Read neighbor.</p>"
+            }
+          ]
+        },
+        {
+          "id": 21,
+          "user_id": 5,
+          "parent_id": null,
+          "message": "<p>Read root.</p>"
+        }
+      ]
+    }
+  ],
+  "fixture_after": [
+    {
+      "id": 81,
+      "title": "Synthetic station design",
+      "message": "<p>Read both options.</p>",
+      "unread_count": 2,
+      "discussion_subentry_count": 70,
+      "user_can_see_posts": true
+    },
+    {
+      "unread_entries": [
+        13,
+        27
+      ],
+      "forced_entries": [
+        13
+      ],
+      "participants": [
+        {
+          "id": 5,
+          "display_name": "Fixture author"
+        }
+      ],
+      "view": [
+        {
+          "id": 11,
+          "user_id": 5,
+          "parent_id": null,
+          "message": "<p>Platform location?</p>",
+          "replies": [
+            {
+              "id": 13,
+              "user_id": 5,
+              "parent_id": 11,
+              "message": "<p>Near the ramp.</p>"
+            },
+            {
+              "id": 14,
+              "user_id": 5,
+              "parent_id": 11,
+              "message": "<p>Read neighbor.</p>"
+            }
+          ]
+        },
+        {
+          "id": 21,
+          "user_id": 5,
+          "parent_id": null,
+          "message": "<p>Read root.</p>"
+        }
+      ]
+    }
+  ]
+}

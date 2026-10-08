@@ -1,0 +1,95 @@
+{
+  "schema": "canvas-independent-evidence-manifest-v1",
+  "files": [
+    {
+      "path": "REVIEW.md",
+      "bytes": 4053,
+      "sha256": "74f05e86ab821e4a24a2fbaa2647b45d260e9a67112ac3a053c2bb90e480a9ae",
+      "git_blob": "b8657029b0d2f2cb560ca26399f24eb15090501b"
+    },
+    {
+      "path": "source-manifest.json",
+      "bytes": 12987,
+      "sha256": "1b39c714736129549f4137986444a72e6d60cbc3148963f8a060b06dda8875cb",
+      "git_blob": "7ff60d0ee5f6f6d8f600ecfd7c5a2cdcf52be981"
+    },
+    {
+      "path": "source-preservation.json",
+      "bytes": 15015,
+      "sha256": "5682bfbddcf596326f51d2cd38db9dc5e9c2133e1e00c31822c5e4410632fe6d",
+      "git_blob": "840439bf551a46d6c869dce9c25aacfe4ceae36f"
+    },
+    {
+      "path": "drivers/check-current-preservation.py",
+      "bytes": 3008,
+      "sha256": "e92b2db792d78b7f17130ec3eeaf53584647f3ad99e4713d7d93aaea762ae63c",
+      "git_blob": "b3d1927a780f7e7e58f517e01f461b0745c9a20c"
+    },
+    {
+      "path": "drivers/receive-current-dispatch.py",
+      "bytes": 48162,
+      "sha256": "13d305e0103b2573aca1677a1492d4438d75ec3d688b327fbd483cc2a4a8af24",
+      "git_blob": "9801902b60f192d68ea6635e541fd7b7cb9a10c6"
+    },
+    {
+      "path": "run-v1/http/requests.json",
+      "bytes": 6155,
+      "sha256": "dfb718133c8812c0cd88177b7205905b12c772ed51fce39b30c6a574d650ed74",
+      "git_blob": "6a60b30a30fbde387d83767f60f406a40faa2767"
+    },
+    {
+      "path": "run-v1/mcp/current-a5-broker-calls.json",
+      "bytes": 5270,
+      "sha256": "e4a08d9d6e88f5be62aefff2221c23aff640c67607136c8b659e8dd15fdcf6a1",
+      "git_blob": "a272e6996a713359f6e67d6f4ea16e0b0a48236b"
+    },
+    {
+      "path": "run-v1/mcp/current-a5-broker-inventory.json",
+      "bytes": 4001,
+      "sha256": "176c29409358e4a49c1ee6711142c6804cb997d4d30067bff8a88a1d5ff1d209",
+      "git_blob": "e24cdba3971f9f8055e57d84905bee2f44dcc315"
+    },
+    {
+      "path": "run-v1/mcp/current-a5-broker-stderr.log",
+      "bytes": 264,
+      "sha256": "9049a6ac7ec1683ca3cef10dd91da936d7064d51f3cf2d8d390bc53531613de6",
+      "git_blob": "d229b50329a59b7b361e170f4918416c19e3a6d9"
+    },
+    {
+      "path": "run-v1/mcp/current-a5-token-calls.json",
+      "bytes": 12105,
+      "sha256": "da6de4f271dc7aa96a05c4313b6c8e1a761a66dec2c19ccea7683a441301fb30",
+      "git_blob": "e7fc854bc3eb6ae7ade3f818456fe1f02eeabc98"
+    },
+    {
+      "path": "run-v1/mcp/current-a5-token-inventory.json",
+      "bytes": 4001,
+      "sha256": "176c29409358e4a49c1ee6711142c6804cb997d4d30067bff8a88a1d5ff1d209",
+      "git_blob": "e24cdba3971f9f8055e57d84905bee2f44dcc315"
+    },
+    {
+      "path": "run-v1/mcp/current-a5-token-stderr.log",
+      "bytes": 466,
+      "sha256": "44b7b7514f881d5be481293b13473fe2428e03b4c9eb6adf0844be04fb131341",
+      "git_blob": "26410f76e9f0f6bb9c0fc7aae270925f3ff0cd54"
+    },
+    {
+      "path": "run-v1/processes/current-a5-cli-focus.json",
+      "bytes": 5376,
+      "sha256": "03018176cc7cb2fd3d2adae2cceb8670e0ea9cc2a7551d29802a7a8e5c7c8c75",
+      "git_blob": "babef447ed6c6dd85f344909a575c52d9e11d59e"
+    },
+    {
+      "path": "run-v1/receipt.json",
+      "bytes": 30183,
+      "sha256": "ac7db4a031bc48cb2e5acddba379ca9a2cfc0ad9ad7d43e277fd63578137a06d",
+      "git_blob": "c9bcc120c4618c67fd4d8a4986738a8d1df2f7fc"
+    },
+    {
+      "path": "run-v1/runtime/parent-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    }
+  ]
+}

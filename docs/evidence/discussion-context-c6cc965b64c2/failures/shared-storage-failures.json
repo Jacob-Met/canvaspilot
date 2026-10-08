@@ -1,0 +1,22 @@
+{
+  "events": [
+    {
+      "stage": "baseline receiver materialization",
+      "outcome": "Failed to write baseline-probe.py due shared ENOSPC before execution"
+    },
+    {
+      "stage": "47-path closure materialization",
+      "outcome": "Failed writing baseline/tests/folder_http_fixture.py; partial source copied, complete cached payload retained and later reconstructed byte-exact"
+    },
+    {
+      "stage": "candidate full gate v1",
+      "outcome": "Seven unchanged owner output-writing cases hit ENOSPC; candidate-native-suite-v1.json write also hit ENOSPC and left an empty file"
+    },
+    {
+      "stage": "candidate full gate stdout collection",
+      "outcome": "The tool returned a truncated excerpt of the original full process output; the preserved available-tool-output artifact is not a complete raw log"
+    }
+  ],
+  "product_source_changed_to_address_environment": false,
+  "donor_files_modified": false
+}

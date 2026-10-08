@@ -1,0 +1,81 @@
+{
+  "schema": "canvas-independent-current39d-preservation-v1",
+  "base": "39d835c8becb04d81b65c90d1491d2d3a2727ffe",
+  "files": {
+    "src/canvaspilot/api.py": {
+      "primary_blob": "79572cdc0391f46ad0b92ea199531371aeff2525",
+      "candidate_sha256": "1760e4ef1060dbf932e1d55d427e8ce57446e24cbebba0760df3fc4b4bf5b055",
+      "all_current_base_bytes_recovered_exactly": true,
+      "owner_functions_ast_exact": 48,
+      "reverse_changes": [
+        {
+          "kind": "remove_exact_insertion",
+          "bytes": 609
+        }
+      ]
+    },
+    "src/canvaspilot/cli.py": {
+      "primary_blob": "5a3ed7be7a24d6461641192a54c77a04b90cc910",
+      "candidate_sha256": "1787673902c05df2dc826fe937efb956df9342d982f6f54bfaaa0f3144b5625f",
+      "all_current_base_bytes_recovered_exactly": true,
+      "owner_functions_ast_exact": null,
+      "reverse_changes": [
+        {
+          "kind": "remove_exact_insertion",
+          "bytes": 468
+        },
+        {
+          "kind": "remove_exact_insertion",
+          "bytes": 617
+        }
+      ]
+    },
+    "src/canvaspilot/mcp_server.py": {
+      "primary_blob": "f9c470b034a524609f4aedae51479ffd92bfaa8f",
+      "candidate_sha256": "69437b00220b81e0d933b5bd01e16800c0ad880799dff8104d407031d94b33d1",
+      "all_current_base_bytes_recovered_exactly": true,
+      "owner_functions_ast_exact": 40,
+      "reverse_changes": [
+        {
+          "kind": "reverse_exact_replace",
+          "bytes": 50
+        },
+        {
+          "kind": "remove_exact_insertion",
+          "bytes": 704
+        }
+      ]
+    },
+    "src/canvaspilot/bundle.py": {
+      "primary_blob": "23badab9d8ea96b4ed30fb2b5f32f773c910c7f9",
+      "candidate_sha256": "43b5eb431f4d785e7e2561310a2f0ef5b8af15edfbd6594136182d54f53d753a",
+      "all_current_base_bytes_recovered_exactly": true,
+      "owner_functions_ast_exact": null,
+      "reverse_changes": [
+        {
+          "kind": "remove_exact_insertion",
+          "bytes": 32
+        }
+      ]
+    },
+    "README.md": {
+      "primary_blob": "083dc576676240d388921d292fedef7d7c8ccce3",
+      "candidate_sha256": "0f22033f2c14c519e45fdb74c9a0894b306a90c0929f78730fca5f05f926bf30",
+      "all_current_base_bytes_recovered_exactly": true,
+      "owner_functions_ast_exact": null,
+      "reverse_changes": [
+        {
+          "kind": "reverse_catalog_count"
+        },
+        {
+          "kind": "reverse_exact_replace",
+          "bytes": 107
+        },
+        {
+          "kind": "remove_exact_insertion",
+          "bytes": 788
+        }
+      ]
+    }
+  }
+}

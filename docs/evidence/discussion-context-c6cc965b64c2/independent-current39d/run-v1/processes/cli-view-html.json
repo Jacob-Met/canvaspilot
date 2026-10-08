@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/workspace/scratch/20b27c2ea29e/workers/runtime-integration/product-discovery/canvaspilot/venv/bin/python",
+    "-B",
+    "-m",
+    "canvaspilot.cli",
+    "discussion",
+    "017",
+    "00019"
+  ],
+  "mode": "token",
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "HTTP Request: GET http://127.0.0.1:43993/api/v1/courses/017/discussion_topics/00019?per_page=50 \"HTTP/1.1 200 OK\"\nHTTP Request: GET http://127.0.0.1:43993/api/v1/courses/017/discussion_topics/00019/view?per_page=50 \"HTTP/1.1 200 OK\"\n{\"ok\": false, \"error\": \"ValueError\", \"message\": \"Canvas returned a malformed discussion topic or view\"}\n",
+  "http_start": 8,
+  "http_end": 10
+}

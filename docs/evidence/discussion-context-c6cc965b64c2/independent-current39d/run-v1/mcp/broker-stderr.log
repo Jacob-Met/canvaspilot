@@ -1,0 +1,88 @@
+HTTP Request: GET http://127.0.0.1:37433/health "HTTP/1.1 200 OK"
+HTTP Request: POST http://127.0.0.1:37433/fetch "HTTP/1.1 200 OK"
+HTTP Request: GET http://127.0.0.1:37433/health "HTTP/1.1 200 OK"
+HTTP Request: POST http://127.0.0.1:37433/fetch "HTTP/1.1 200 OK"
+HTTP Request: GET http://127.0.0.1:37433/health "HTTP/1.1 200 OK"
+HTTP Request: POST http://127.0.0.1:37433/fetch "HTTP/1.1 200 OK"
+HTTP Request: GET http://127.0.0.1:37433/health "HTTP/1.1 200 OK"
+HTTP Request: POST http://127.0.0.1:37433/fetch "HTTP/1.1 200 OK"
+Tool 'canvas_discussion_thread' raised an unexpected exception
+Traceback (most recent call last):
+  File "/workspace/scratch/20b27c2ea29e/workers/runtime-integration/product-discovery/canvaspilot/venv/lib/python3.12/site-packages/mcp/server/mcpserver/tools/base.py", line 179, in run
+    result = await self.fn_metadata.call_fn(self.fn, self.is_async, validated, pass_directly)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/20b27c2ea29e/workers/runtime-integration/product-discovery/canvaspilot/venv/lib/python3.12/site-packages/mcp/server/mcpserver/utilities/func_metadata.py", line 163, in call_fn
+    return await fn(**kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/dev/shm/c6cc965b64c2-canvas-discussion/candidate-current39d/src/canvaspilot/mcp_server.py", line 140, in canvas_discussion_thread
+    return _dump(_get_api().discussion_thread(course_id, topic_id, unread_only=unread_only))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dev/shm/c6cc965b64c2-canvas-discussion/candidate-current39d/src/canvaspilot/api.py", line 441, in discussion_thread
+    result = self.get_discussion(course, topic)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dev/shm/c6cc965b64c2-canvas-discussion/candidate-current39d/src/canvaspilot/api.py", line 425, in get_discussion
+    view = self.client.request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/dev/shm/c6cc965b64c2-canvas-discussion/candidate-current39d/src/canvaspilot/client.py", line 206, in request
+    return broker_fetch(
+           ^^^^^^^^^^^^^
+  File "/dev/shm/c6cc965b64c2-canvas-discussion/candidate-current39d/src/canvaspilot/client.py", line 96, in broker_fetch
+    raise httpx.HTTPStatusError(
+httpx.HTTPStatusError: Canvas HTTP 503
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/scratch/20b27c2ea29e/workers/runtime-integration/product-discovery/canvaspilot/venv/lib/python3.12/site-packages/mcp/server/mcpserver/server.py", line 442, in _handle_call_tool
+    return await self.call_tool(params.name, params.arguments or {}, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/20b27c2ea29e/workers/runtime-integration/product-discovery/canvaspilot/venv/lib/python3.12/site-packages/mcp/server/mcpserver/server.py", line 548, in call_tool
+    return await self._tool_manager.call_tool(name, arguments, context, convert_result=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/20b27c2ea29e/workers/runtime-integration/product-discovery/canvaspilot/venv/lib/python3.12/site-packages/mcp/server/mcpserver/tools/tool_manager.py", line 87, in call_tool
+    return await tool.run(arguments, context, convert_result=convert_result)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/20b27c2ea29e/workers/runtime-integration/product-discovery/canvaspilot/venv/lib/python3.12/site-packages/mcp/server/mcpserver/tools/base.py", line 213, in run
+    raise UnexpectedToolError(f"Error executing tool {self.name}") from exc
+mcp.server.mcpserver.exceptions.UnexpectedToolError: Error executing tool canvas_discussion_thread
+HTTP Request: GET http://127.0.0.1:37433/health "HTTP/1.1 200 OK"
+HTTP Request: POST http://127.0.0.1:37433/fetch "HTTP/1.1 200 OK"
+HTTP Request: GET http://127.0.0.1:37433/health "HTTP/1.1 200 OK"
+HTTP Request: POST http://127.0.0.1:37433/fetch "HTTP/1.1 200 OK"
+Tool 'canvas_discussion_thread' raised an unexpected exception
+Traceback (most recent call last):
+  File "/workspace/scratch/20b27c2ea29e/workers/runtime-integration/product-discovery/canvaspilot/venv/lib/python3.12/site-packages/mcp/server/mcpserver/tools/base.py", line 179, in run
+    result = await self.fn_metadata.call_fn(self.fn, self.is_async, validated, pass_directly)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/20b27c2ea29e/workers/runtime-integration/product-discovery/canvaspilot/venv/lib/python3.12/site-packages/mcp/server/mcpserver/utilities/func_metadata.py", line 163, in call_fn
+    return await fn(**kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/dev/shm/c6cc965b64c2-canvas-discussion/candidate-current39d/src/canvaspilot/mcp_server.py", line 140, in canvas_discussion_thread
+    return _dump(_get_api().discussion_thread(course_id, topic_id, unread_only=unread_only))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dev/shm/c6cc965b64c2-canvas-discussion/candidate-current39d/src/canvaspilot/api.py", line 442, in discussion_thread
+    return build_discussion_thread(result["topic"], result["view"], unread_only=unread_only)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dev/shm/c6cc965b64c2-canvas-discussion/candidate-current39d/src/canvaspilot/discussion_thread.py", line 83, in build_discussion_thread
+    raise ValueError("Unread selection is unavailable: Canvas did not supply unread_entries")
+ValueError: Unread selection is unavailable: Canvas did not supply unread_entries
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/scratch/20b27c2ea29e/workers/runtime-integration/product-discovery/canvaspilot/venv/lib/python3.12/site-packages/mcp/server/mcpserver/server.py", line 442, in _handle_call_tool
+    return await self.call_tool(params.name, params.arguments or {}, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/20b27c2ea29e/workers/runtime-integration/product-discovery/canvaspilot/venv/lib/python3.12/site-packages/mcp/server/mcpserver/server.py", line 548, in call_tool
+    return await self._tool_manager.call_tool(name, arguments, context, convert_result=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/20b27c2ea29e/workers/runtime-integration/product-discovery/canvaspilot/venv/lib/python3.12/site-packages/mcp/server/mcpserver/tools/tool_manager.py", line 87, in call_tool
+    return await tool.run(arguments, context, convert_result=convert_result)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/20b27c2ea29e/workers/runtime-integration/product-discovery/canvaspilot/venv/lib/python3.12/site-packages/mcp/server/mcpserver/tools/base.py", line 213, in run
+    raise UnexpectedToolError(f"Error executing tool {self.name}") from exc
+mcp.server.mcpserver.exceptions.UnexpectedToolError: Error executing tool canvas_discussion_thread
+HTTP Request: GET http://127.0.0.1:37433/health "HTTP/1.1 200 OK"
+HTTP Request: POST http://127.0.0.1:37433/fetch "HTTP/1.1 200 OK"
+HTTP Request: GET http://127.0.0.1:37433/health "HTTP/1.1 200 OK"
+HTTP Request: POST http://127.0.0.1:37433/fetch "HTTP/1.1 200 OK"
