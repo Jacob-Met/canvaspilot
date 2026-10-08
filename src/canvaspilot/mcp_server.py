@@ -256,6 +256,31 @@ async def canvas_list_calendar_events(start_date: str = "", end_date: str = "") 
     )
 
 
+@mcp.tool(
+    description=(
+        "Read events and assignment calendar rows for 1-10 selected course IDs and "
+        "inclusive YYYY-MM-DD start_date/end_date. Known instants are sorted; "
+        "all-day and unavailable timing stay separate. Preserves returned records. "
+        "Reads are sequential; this does not infer learner state or expand recurrence."
+    ),
+    annotations=ToolAnnotations(readOnlyHint=True, destructiveHint=False, idempotentHint=True),
+    structured_output=False,
+)
+async def canvas_course_agenda(
+    course_ids: list[StrictInt | str], start_date: str, end_date: str,
+) -> str:
+    import httpx
+
+    from canvaspilot.client import CanvasAuthError, CanvasPaginationError
+
+    try:
+        return _dump(_get_api().course_agenda(
+            course_ids, start_date=start_date, end_date=end_date,
+        ))
+    except (CanvasAuthError, CanvasPaginationError, httpx.HTTPError, ValueError) as error:
+        raise ToolError(str(error)) from error
+
+
 @mcp.tool(description="Planner items (optional ISO start/end).", structured_output=False)
 async def canvas_planner_items(start_date: str = "", end_date: str = "") -> str:
     return _dump(
