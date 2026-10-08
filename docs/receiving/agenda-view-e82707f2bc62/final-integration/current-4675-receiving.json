@@ -1,0 +1,308 @@
+{
+  "schema": "canvas-agenda-late-current-composition/1",
+  "parent": "4675d3c3467fc210e1340e582b7cfb1b54c2fa4c",
+  "parent_tree": "a78293ce725d9aed629c1c78ddebde31b60146b4",
+  "qualified_branch_head": "d0db2e5dc1e2a82b5034998584a0eb3f18fb502a",
+  "prior_full_tested_checkout": "efea48949045b441af739acc8f4817593a6c107e",
+  "prior_full_tested_tree": "a8c1b34835ae2ca2e9fc67b56120f35b7ee5ba7c",
+  "expected_composed_tree": "5fef10b4fac997cd1049de24447dce02bfa49ec3",
+  "expected_total_leaves": 1562,
+  "unrelated_parent_leaves_preserved": 1527,
+  "owned_paths": 35,
+  "additions": 33,
+  "deletions": 0,
+  "delta": "PR86 adds isolated submission-history formatter/test/guide and64 evidence files, plus43 additive CLI lines and15 README lines. No agenda/API/client/assets/dependencies/workflow change from prior passing checkout.",
+  "shared_composition": [
+    {
+      "path": "src/canvaspilot/cli.py",
+      "git_blob": "2ce3811bf17ad10c6c02c360259a19cdb5057478",
+      "original_agenda_spans": [
+        610,
+        1657
+      ],
+      "inverse_exact_parent": true
+    },
+    {
+      "path": "README.md",
+      "git_blob": "f3718da817a266e6f2f1fe801a7ccce642134b56",
+      "original_agenda_spans": [
+        323
+      ],
+      "inverse_exact_parent": true
+    }
+  ],
+  "current_runtime_pins": [
+    {
+      "path": "src/canvaspilot/mcp_server.py",
+      "sha": "0f7130673b3a139abdacb588410edb23a01dc56d"
+    },
+    {
+      "path": "src/canvaspilot/bundle.py",
+      "sha": "c2544032a1cfcdc116725c6403ff09d7b0328f87"
+    },
+    {
+      "path": "src/canvaspilot/api.py",
+      "sha": "3ec81dee60bc67d7a80d40b78e85d5c005441b99"
+    },
+    {
+      "path": "src/canvaspilot/agenda_export.py",
+      "sha": "af25e95a1c9bf4a20784617e5c867d18584ac49a"
+    },
+    {
+      "path": "src/canvaspilot/agenda.py",
+      "sha": "82ab4fa8f9b92b8d9e5d4c74962d138e1d882ebd"
+    },
+    {
+      "path": "src/canvaspilot/feedback.py",
+      "sha": "ec996f421a851d699a9ac7cb1f2a486f9ff7c4ea"
+    },
+    {
+      "path": "src/canvaspilot/assignment_submission.py",
+      "sha": "95b1f19927e4eecf99fc852325737c3cfe86cd0d"
+    },
+    {
+      "path": "src/canvaspilot/client.py",
+      "sha": "1db4b1135305f7e410025ae7937f9a6cd349f020"
+    },
+    {
+      "path": "src/canvaspilot/__init__.py",
+      "sha": "74a7a6087bf81fd7c75c15769b30408039618e0f"
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "sha": "2ce3811bf17ad10c6c02c360259a19cdb5057478"
+    },
+    {
+      "path": "src/canvaspilot/agenda_view/controls.js",
+      "sha": "107097a5ad2379fb7497e1b38c488b3a7917e93f"
+    },
+    {
+      "path": "src/canvaspilot/agenda_view/style.css",
+      "sha": "86ad5459a44c91d0fb448e77dcda78cf1d39642b"
+    }
+  ],
+  "selected_receiving": {
+    "test": "tests/test_agenda_export.py::test_complete_cli_view_retains_exact_native_bytes_and_literal_source",
+    "test_blob": "ceefa0150136dc7b76edd6c17eb9c5befedcdbb7",
+    "result": "1 passed in4.57s, unchanged source and test",
+    "coverage": "Actual native agenda CLI and actual export-agenda CLI; exact native JSON bytes, receipt/hash, four typed/group/date entries, complete literal source, exact two provider reads and source selectors, no temporary output/profile.",
+    "prior_attempts": [
+      "Before hydration: missing bundle collection error, no product execution.",
+      "After exact current bundle+MCP hydration: native agenda exit0; export correctly refused ENOSPC with exit1, no partial successful report. Logs retained.",
+      "After44KiB genuine recovery from byte-identical archived standalone ZIP duplicates: same test passed."
+    ]
+  },
+  "limits": "Prior native1101+57/1skip and actual Chrome/wheel green remain attributed to92e9/efea. Only the changed current CLI composition was exercised locally; no fresh full-native or browser run claimed. Actual final merge must equal expected composed tree.",
+  "packet": [
+    {
+      "path": "src/canvaspilot/agenda_export.py",
+      "mode": "100644",
+      "type": "blob",
+      "git_blob": "af25e95a1c9bf4a20784617e5c867d18584ac49a"
+    },
+    {
+      "path": "src/canvaspilot/agenda_view/style.css",
+      "mode": "100644",
+      "type": "blob",
+      "git_blob": "86ad5459a44c91d0fb448e77dcda78cf1d39642b"
+    },
+    {
+      "path": "src/canvaspilot/agenda_view/controls.js",
+      "mode": "100644",
+      "type": "blob",
+      "git_blob": "107097a5ad2379fb7497e1b38c488b3a7917e93f"
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "mode": "100644",
+      "type": "blob",
+      "git_blob": "2ce3811bf17ad10c6c02c360259a19cdb5057478"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "git_blob": "f3718da817a266e6f2f1fe801a7ccce642134b56"
+    },
+    {
+      "path": "docs/agenda-export.md",
+      "mode": "100644",
+      "type": "blob",
+      "git_blob": "bebc5fb40a59f1fff4d168e066d5a4830c28ad2c"
+    },
+    {
+      "path": "tests/test_agenda_export.py",
+      "mode": "100644",
+      "type": "blob",
+      "git_blob": "ceefa0150136dc7b76edd6c17eb9c5befedcdbb7"
+    },
+    {
+      "path": "tests/fixtures/agenda_view_calendar.json",
+      "mode": "100644",
+      "type": "blob",
+      "git_blob": "3483a2f0a1c8b98ad96a2382c72af1bf7c323652"
+    },
+    {
+      "path": "scripts/receive_agenda_view.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "git_blob": "4af4230560adf0d035f168a46855e8c54c613164"
+    },
+    {
+      "path": ".github/workflows/agenda-view-browser.yml",
+      "mode": "100644",
+      "type": "blob",
+      "git_blob": "a06b862c23dccc61d5da9eea99d82b76668f78c8"
+    },
+    {
+      "path": "docs/receiving/agenda-view-e82707f2bc62/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "git_blob": "b80f57cbdb45b4767d3b6f8a4ca7174f7fde82cd"
+    },
+    {
+      "path": "docs/receiving/agenda-view-e82707f2bc62/source-freeze.json",
+      "mode": "100644",
+      "type": "blob",
+      "git_blob": "6b7069d05137586ca24a38d7d87645b41ef9ad7c"
+    },
+    {
+      "path": "docs/receiving/agenda-view-e82707f2bc62/native-receiving.json",
+      "mode": "100644",
+      "type": "blob",
+      "git_blob": "e0c4490be7cff582b5b070701d87c8b2df5714c0"
+    },
+    {
+      "path": "docs/receiving/agenda-view-e82707f2bc62/current-parent-composition.json",
+      "mode": "100644",
+      "type": "blob",
+      "git_blob": "f9550b18ee1fd384ff1851c1c8f7ff26cd0331f7"
+    },
+    {
+      "path": "docs/receiving/agenda-view-e82707f2bc62/author-receiving.zip",
+      "mode": "100644",
+      "type": "blob",
+      "git_blob": "95e0f78cc3b4d5a32588e64e2477890ef7195d8e"
+    },
+    {
+      "path": "docs/receiving/agenda-view-e82707f2bc62/readme-placement-successor.json",
+      "mode": "100644",
+      "type": "blob",
+      "git_blob": "a5999b0cdde778c470f1be7a860e034df2c6b899"
+    },
+    {
+      "path": "docs/receiving/agenda-view-e82707f2bc62/wheel-gate-addition.json",
+      "mode": "100644",
+      "type": "blob",
+      "git_blob": "7e7243e5c3f7dd38d183d4975f9211c7cba3b9a6"
+    },
+    {
+      "path": "docs/receiving/agenda-view-e82707f2bc62/root-source-review-v1.json",
+      "mode": "100644",
+      "type": "blob",
+      "git_blob": "5f5af4d9e47721e2b2600036020dfc9362be1e9e"
+    },
+    {
+      "path": "docs/receiving/agenda-view-e82707f2bc62/current-parent-composition-6c4d.json",
+      "mode": "100644",
+      "type": "blob",
+      "git_blob": "21e5e52cb4fac102f767e88643e051a054686561"
+    },
+    {
+      "path": "docs/receiving/agenda-view-e82707f2bc62/current-parent-composition-1baf.json",
+      "mode": "100644",
+      "type": "blob",
+      "git_blob": "79940e1f2b63191db6395f28147491a8d88d518d"
+    },
+    {
+      "path": "tests/test_agenda_export_receiving.py",
+      "mode": "100644",
+      "type": "blob",
+      "git_blob": "83d980c44b29ed04bf847c7f4fa61c4ef44ac481"
+    },
+    {
+      "path": "verification/agenda-view-e82707f2bc62/independent/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "git_blob": "99393202a3a350839a56fd38f2cf201833a57b28"
+    },
+    {
+      "path": "verification/agenda-view-e82707f2bc62/independent/receiving.json",
+      "mode": "100644",
+      "type": "blob",
+      "git_blob": "cb9ee90f394d5fe80f997fdb4fc69c8c1374caf8"
+    },
+    {
+      "path": "verification/agenda-view-e82707f2bc62/independent/native-evidence.zip",
+      "mode": "100644",
+      "type": "blob",
+      "git_blob": "2f96dd0de3d7f2e66ef72b11f3840a6955d47841"
+    },
+    {
+      "path": "docs/receiving/agenda-view-e82707f2bc62/reset-successor/reset-timing.patch",
+      "mode": "100644",
+      "type": "blob",
+      "git_blob": "c3b9e3b3f016885d89e8f3ef61beb3e6f8670eeb"
+    },
+    {
+      "path": "docs/receiving/agenda-view-e82707f2bc62/reset-successor/receiving-successor.json",
+      "mode": "100644",
+      "type": "blob",
+      "git_blob": "1104ea7583e3ae6df1a650000a0f65f1393f8aa2"
+    },
+    {
+      "path": "docs/receiving/agenda-view-e82707f2bc62/reset-successor/hosted-v1-original.zip",
+      "mode": "100644",
+      "type": "blob",
+      "git_blob": "7c2f49798f2cb42a86780c39ea417905ef937746"
+    },
+    {
+      "path": "docs/receiving/agenda-view-e82707f2bc62/current-parent-composition-cf47.json",
+      "mode": "100644",
+      "type": "blob",
+      "git_blob": "89476e495f77a16ed8c407a15af55a9c6915590d"
+    },
+    {
+      "path": "docs/receiving/agenda-view-e82707f2bc62/keyboard-reporting/reporting-only.patch",
+      "mode": "100644",
+      "type": "blob",
+      "git_blob": "e16f505cd242d6f7aa6683dfc91c3e0d840b4434"
+    },
+    {
+      "path": "docs/receiving/agenda-view-e82707f2bc62/keyboard-reporting/receiving-successor.json",
+      "mode": "100644",
+      "type": "blob",
+      "git_blob": "1518ed089b1bf7d1048d7f85cca62536f9133983"
+    },
+    {
+      "path": "docs/receiving/agenda-view-e82707f2bc62/keyboard-reporting/hosted-v2-original.zip",
+      "mode": "100644",
+      "type": "blob",
+      "git_blob": "39ab4782185d69dc05b76cecf134d7e02f05884f"
+    },
+    {
+      "path": "docs/receiving/agenda-view-e82707f2bc62/date-focus/date-focus.patch",
+      "mode": "100644",
+      "type": "blob",
+      "git_blob": "58564096491282350cbb40e9a82db8a3871a8cbb"
+    },
+    {
+      "path": "docs/receiving/agenda-view-e82707f2bc62/date-focus/receiving-successor.json",
+      "mode": "100644",
+      "type": "blob",
+      "git_blob": "d30fd70c4df2129bb449cc053d94cf41575cec8d"
+    },
+    {
+      "path": "docs/receiving/agenda-view-e82707f2bc62/date-focus/root-composition-and-source-review.json",
+      "mode": "100644",
+      "type": "blob",
+      "git_blob": "36296e260dcb537c0b91e8df7316a222098254c8"
+    },
+    {
+      "path": "docs/receiving/agenda-view-e82707f2bc62/date-focus/hosted-v3-original.zip",
+      "mode": "100644",
+      "type": "blob",
+      "git_blob": "8416ebadb1440ac000471c4ec724c6bedcbb35f4"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+# Agenda integration receiving
+
+PR75 merged normally at e46a90ff00f80a128baf842587f08df5862318aa, exact qualified current tree5fef10b4fac997cd1049de24447dce02bfa49ec3. Issue66 is closed. This branch adds receiving documents only, preserving every merged product/workflow leaf.
+
+The full native gate37830112920 passed Ruff,1101 tests and57 subtests with one skip; the unchanged quiet runner did not explain the skip. Actual Chrome/wheel37830112925 passed on synthetic efea4894/treea8c1b348 over92e9. Final-hosted-original.zip preserves the complete native/browser logs and exact receipts (seven members). Packaged renderer/CSS/controls matched that source. One ordinary artifact11572972279 file-reference download returned403; it was not retried. No screenshot/PDF visual inspection, live account, or installed-wheel CLI execution is claimed.
+
+Main then incorporated the separate submission-history report at4675. The current-source proof preserves1527 unrelated parent leaves and all35 owned paths. Removing only the original CLI/README spans restores every newer-parent byte. One unchanged existing actual agenda-export test passed in4.57s; the emitted31707-byte HTML SHA2561c45b9ee7fea81a4ddb438d90cad07e48719832f54308de86de5c8899c37d044 exactly matches the accepted hosted browser file. No new full-suite/browser run is attributed to that later composition.
+
+Current-cli-original.zip retains the original missing-module collection failure, later complete native read plus ENOSPC export refusal, exact dependency hydration/source freezes, unchanged successful test logs, composed CLI/README and actual HTML compressed byte-identically after the run to recover storage. Its15 members were read back exactly. Current-4675-receiving.json pins the35-path packet and12 runtime modules. Root-current-composition-review.json records the independent parent-agent acceptance handoff; root-final-composition-review.json preserves the earlier independently reviewed actual hosted checkout.
+
+Actual-merge.json records the separate true Git merge parents/tree, complete1562-leaf readback, main and PR/issue closure. Earlier reset, focus-reporting and date-focus failures remain in the merged docs/receiving/agenda-view-e82707f2bc62 history; none is reclassified as passing.

@@ -1,0 +1,76 @@
+{
+  "schema": "canvas-agenda-final-hosted-receiving/1",
+  "head": "d0db2e5dc1e2a82b5034998584a0eb3f18fb502a",
+  "tested_checkout": "efea48949045b441af739acc8f4817593a6c107e",
+  "tested_tree": "a8c1b34835ae2ca2e9fc67b56120f35b7ee5ba7c",
+  "parent": "92e9f1b500a15dd61d4c74539dedbf880afde30b",
+  "native": {
+    "run": 37830112920,
+    "job": 113492961352,
+    "result": "success",
+    "ruff": "pass",
+    "pytest_passed": 1101,
+    "pytest_skipped": 1,
+    "pytest_subtests_passed": 57,
+    "duration_s": 321.28,
+    "skip_reason": "Not printed by unchanged pytest -q; no coverage inferred."
+  },
+  "chrome": {
+    "run": 37830112925,
+    "job": 113492960774,
+    "result": "success",
+    "source_receipt": "browser-final-receipt.json",
+    "wheel_receipt": "wheel-final-receipt.json",
+    "coverage": "actual source CLI, original healthy producer and absent-route baseline, four authored records, offline controls/reset/literal text/JSON download, ten native keyboard stops, native details Enter, desktop/narrow geometry, print selected view/PDF generation, JavaScript-disabled complete content, source/file preservation",
+    "boundary": "Artifacts emitted by real Chrome; one ordinary file-reference download returned403. No artifact retry, screenshot/PDF visual inspection, live account or installed-wheel CLI claim."
+  },
+  "composition": {
+    "schema": "canvas-agenda-final-current-composition/1",
+    "head": "d0db2e5dc1e2a82b5034998584a0eb3f18fb502a",
+    "actual_tested_checkout": "efea48949045b441af739acc8f4817593a6c107e",
+    "actual_tested_tree": "a8c1b34835ae2ca2e9fc67b56120f35b7ee5ba7c",
+    "actual_parent": "92e9f1b500a15dd61d4c74539dedbf880afde30b",
+    "actual_parent_tree": "13ad8dabadb259983fb568dd35e65f2762f3ee3b",
+    "parent_leaves": 1462,
+    "actual_leaves": 1495,
+    "packet_paths": 35,
+    "unrelated_preserved": 1460,
+    "packet_exact": 33,
+    "no_deletions": true,
+    "shared_inverses": [
+      {
+        "path": "src/canvaspilot/cli.py",
+        "original_insert_characters": [
+          610,
+          1657
+        ],
+        "removed_exact_parent": true
+      },
+      {
+        "path": "README.md",
+        "original_insert_characters": [
+          323
+        ],
+        "removed_exact_parent": true
+      }
+    ],
+    "boundary": "PR normalized base metadata lagged; actual checkout and Git true parents used."
+  },
+  "artifacts": {
+    "id": 11572972279,
+    "download_boundary": {
+      "run": 37830112925,
+      "artifact": 11572972279,
+      "connector": "returned ordinary file reference",
+      "single_file_download": "HTTP403 Forbidden",
+      "retry": false,
+      "visual_inspection": false,
+      "artifact_contents_unknown": true
+    }
+  },
+  "logs": {
+    "browser-v4.log": "bf884b937505710398964bc1b775fe0e57e3d416abcd3bfd00bdb58f95787699",
+    "native-v4.log": "3b09a5e05e6b2e667461de6741a2d3a1b37b8d5d8b2bd00d93671a996760b655"
+  },
+  "local_preservation_boundary": "First tmpfs summary write failed ENOSPC; complete original log/receipt inputs unchanged; final compact archive saved in owned overlay evidence."
+}

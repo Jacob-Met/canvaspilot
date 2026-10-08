@@ -1,0 +1,58 @@
+{
+  "reviewer": "estate-e82707f2bc62/root",
+  "kind": "Final actual native checkout composition independently received",
+  "synthetic": "efea48949045b441af739acc8f4817593a6c107e",
+  "tree": "a8c1b34835ae2ca2e9fc67b56120f35b7ee5ba7c",
+  "parents": [
+    "92e9f1b500a15dd61d4c74539dedbf880afde30b",
+    "d0db2e5dc1e2a82b5034998584a0eb3f18fb502a"
+  ],
+  "parent_tree": "13ad8dabadb259983fb568dd35e65f2762f3ee3b",
+  "inherited_parent_leaves": 1462,
+  "unrelated_parent_leaves_exact": 1460,
+  "owned_paths": 35,
+  "new_paths": 33,
+  "total_leaves": 1495,
+  "deletions": 0,
+  "inverse": [
+    {
+      "path": "src/canvaspilot/cli.py",
+      "parent_blob": "6df35a5f3e81c6e2c1ca646ae052e99c2534da79",
+      "synthetic_blob": "6816cbbfea81dff5019b4f50fc9dc535577ec419",
+      "removed_spans": [
+        610,
+        1657
+      ],
+      "parent_exact": true
+    },
+    {
+      "path": "README.md",
+      "parent_blob": "c6a609a2d3b3d9ccf489267a455031364188eff1",
+      "synthetic_blob": "fbae49e82be7eda903271e9afa87621ad2fb9357",
+      "removed_spans": [
+        323
+      ],
+      "parent_exact": true
+    }
+  ],
+  "all_other_packet_blobs_modes_types_exact": true,
+  "source_changes_received": {
+    "reset_controls": "107097a5ad2379fb7497e1b38c488b3a7917e93f",
+    "focus_css": "86ad5459a44c91d0fb448e77dcda78cf1d39642b",
+    "diagnostic_driver": "4af4230560adf0d035f168a46855e8c54c613164",
+    "wheel_browser_workflow": "a06b862c23dccc61d5da9eea99d82b76668f78c8"
+  },
+  "receiving_reported_by_owner": {
+    "native_run": 37830112920,
+    "native_job": 113492961352,
+    "passed": 1101,
+    "skipped": 1,
+    "subtests": 57,
+    "ruff": "passed",
+    "browser_run": 37830112925,
+    "browser_job": 113492960774,
+    "wheel": "passed",
+    "browser": "passed"
+  },
+  "root_scope": "Whole-tree and exact shared-source inverse verification plus earlier source reviews; owner preserves complete native/browser logs. Artifact11572972279 download403 remains blocked; no screenshot or PDF visual inspection. Actual merge must be separately received."
+}

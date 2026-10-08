@@ -1,0 +1,30 @@
+{
+  "schema": "canvas-agenda-actual-integration/1",
+  "merge": "e46a90ff00f80a128baf842587f08df5862318aa",
+  "tree": "5fef10b4fac997cd1049de24447dce02bfa49ec3",
+  "parents": [
+    "4675d3c3467fc210e1340e582b7cfb1b54c2fa4c",
+    "d0db2e5dc1e2a82b5034998584a0eb3f18fb502a"
+  ],
+  "method": "normal expected-head merge",
+  "expected_head": "d0db2e5dc1e2a82b5034998584a0eb3f18fb502a",
+  "head_sha_exact": true,
+  "full_tree_readback_exact": true,
+  "total_leaves": 1562,
+  "unrelated_parent_leaves_exact": 1527,
+  "owned_paths": 35,
+  "additions": 33,
+  "deletions": 0,
+  "main_readback_matches_merge": true,
+  "pr75": "merged/closed",
+  "issue66": "closed",
+  "final_body_readback_exact": true,
+  "prior_tested_checkout": "efea48949045b441af739acc8f4817593a6c107e",
+  "prior_tested_tree": "a8c1b34835ae2ca2e9fc67b56120f35b7ee5ba7c",
+  "prior_full_gates": {
+    "native": 37830112920,
+    "browser_and_wheel": 37830112925
+  },
+  "current_parent_receiving": "Exact current-source and shared-insertion inverses; existing actual CLI test1pass4.57s and identical31707-byte HTML SHA1c45b9ee7fea81a4ddb438d90cad07e48719832f54308de86de5c8899c37d044",
+  "evidence_branch": "Documentation-only closure based on actual merged commit; no product source or workflow change."
+}
