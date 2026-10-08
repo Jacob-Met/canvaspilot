@@ -1,0 +1,178 @@
+{
+  "schema": "canvaspilot74.current-candidate.v1",
+  "baseCommit": "f618c3ed13f191ea58642283c1f9cd45a0c1ca81",
+  "baseTree": "1bcfff90694cdb8358684ada58ff349562244de7",
+  "originalAuthorBaselineCommit": "1bafdaa31f7789d8e561680cb6001bbe38b2da64",
+  "sourceZip": {
+    "bytes": 62555,
+    "sha256": "fb96edaf741668547fb62e7bdbc06695d3a7642d42e3a3ac9d6b4b083004ef37",
+    "gitBlob": "f36fd968bb2f6684e41e049450b661f436c2fa72"
+  },
+  "runtimeSourceManifest": [
+    {
+      "path": "src/canvaspilot/__init__.py",
+      "bytes": 561,
+      "sha256": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5",
+      "gitBlob": "74a7a6087bf81fd7c75c15769b30408039618e0f"
+    },
+    {
+      "path": "src/canvaspilot/agenda.py",
+      "bytes": 8455,
+      "sha256": "cd9d9e027393ce21cff0b4d0a13098dca3a906af3e9803201655bca40d3c3fda",
+      "gitBlob": "82ab4fa8f9b92b8d9e5d4c74962d138e1d882ebd"
+    },
+    {
+      "path": "src/canvaspilot/announcement_search.py",
+      "bytes": 1555,
+      "sha256": "aa766157ccc10d6c3371a0e761c89ce3189d201cd9fcf5b82eec22d1c572f65e",
+      "gitBlob": "b2b344526b14c2f123163f6bcfd28f70e28281e8"
+    },
+    {
+      "path": "src/canvaspilot/api.py",
+      "bytes": 29742,
+      "sha256": "b6b770c2cdef9c9ce44a4a6aefd5b6d0876bc09e5aee29a4adb5a7c603b41c24",
+      "gitBlob": "3ec81dee60bc67d7a80d40b78e85d5c005441b99"
+    },
+    {
+      "path": "src/canvaspilot/assignment_submission.py",
+      "bytes": 1296,
+      "sha256": "52fc732660b8844a2ee0801931a363f20db15b5309d148d01e3b618be487133d",
+      "gitBlob": "95b1f19927e4eecf99fc852325737c3cfe86cd0d"
+    },
+    {
+      "path": "src/canvaspilot/bundle.py",
+      "bytes": 2761,
+      "sha256": "c8a1854b5c04715c1371c05f4c25ba867ec2d2daafc132b7ed8a973d3e55ddcf",
+      "gitBlob": "c2544032a1cfcdc116725c6403ff09d7b0328f87"
+    },
+    {
+      "path": "src/canvaspilot/calendar_export.py",
+      "bytes": 9950,
+      "sha256": "b92948c438063438bf9b8ef01b0b0c067802ddb06354f00e8ee18749f3c5e2fa",
+      "gitBlob": "ef74cfdf50fd894327dbe45a9a9d43042953bc31"
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "bytes": 27527,
+      "sha256": "65ffa7825fc2ffdc1c8c85198f772d7f171d96c2d39633dc010fc98f23858903",
+      "gitBlob": "2a3471d108fab7e236e0eb24891ee4d306f531a2"
+    },
+    {
+      "path": "src/canvaspilot/client.py",
+      "bytes": 18934,
+      "sha256": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797",
+      "gitBlob": "1db4b1135305f7e410025ae7937f9a6cd349f020"
+    },
+    {
+      "path": "src/canvaspilot/discussion_thread.py",
+      "bytes": 8547,
+      "sha256": "11f955f827c29421143782518a1aaf1894d0892739c3b56c4d5e413da74555ff",
+      "gitBlob": "2ed658fcf5cee996a02115742935716f1d039e25"
+    },
+    {
+      "path": "src/canvaspilot/feedback.py",
+      "bytes": 3900,
+      "sha256": "55454598effea598474a21f67e36d5bc5bea84aaefeefc18e4d8c49804ab9869",
+      "gitBlob": "ec996f421a851d699a9ac7cb1f2a486f9ff7c4ea"
+    },
+    {
+      "path": "src/canvaspilot/folder_browser.py",
+      "bytes": 6293,
+      "sha256": "c6a67229b268c539e5edb581e3320b06229460adc3fbc01d72e4964e31c0348a",
+      "gitBlob": "4b3078ddb00a4a34015710e49fa7b7806adebd23"
+    },
+    {
+      "path": "src/canvaspilot/grade_review.py",
+      "bytes": 13247,
+      "sha256": "e550752a830ca9cf4c2ef5d5b06dbf464abd9dfed3a5252d310a4acf8e2411f5",
+      "gitBlob": "24d93cb693af09cf5123f31fea90e77a589b023c"
+    },
+    {
+      "path": "src/canvaspilot/mcp_server.py",
+      "bytes": 16291,
+      "sha256": "52cfd5cbe167438762049f4c36feec822986f5e5e63aeaf494e07907235e1c98",
+      "gitBlob": "0f7130673b3a139abdacb588410edb23a01dc56d"
+    },
+    {
+      "path": "src/canvaspilot/module_progress.py",
+      "bytes": 9615,
+      "sha256": "974ee31925514a2e53b899888302a7fa357e280ab5f2461b754b814473653d99",
+      "gitBlob": "a9d3e4bbea22067f76110f03a5f31a5bc9d8de05"
+    },
+    {
+      "path": "src/canvaspilot/module_progress_export.py",
+      "bytes": 12904,
+      "sha256": "f723c06e551fae2cf50745460f9109867e6e0f9ebc3cc997d49d5e2173aa9f50",
+      "gitBlob": "8ccb9f1262790a744418d4212e072ee43031ab88"
+    },
+    {
+      "path": "src/canvaspilot/offline_demo.py",
+      "bytes": 4124,
+      "sha256": "2389f3ccc1b6db5995be0d90e014ea9345e3029aa5546a5b2dcf12c1197e6d4d",
+      "gitBlob": "9d2cfd260d8db052b8183e3ec4fc9626a5bb2b9a"
+    },
+    {
+      "path": "src/canvaspilot/page_export.py",
+      "bytes": 17041,
+      "sha256": "8800e959ee620438273c3291fd24c51b9ed567430b28093cd3f8bef52bff5015",
+      "gitBlob": "1b46af8af07d24e24cde54aba393d9f977e77136"
+    },
+    {
+      "path": "src/canvaspilot/session_broker.py",
+      "bytes": 13944,
+      "sha256": "a692cd2812cbc09536f1b60c84892bc8e87d2ae984c5a5aa25a13f6537ba6da2",
+      "gitBlob": "cc706d5860489ec37cb2cf7f0b1cb4eee33b664f"
+    },
+    {
+      "path": "src/canvaspilot/submission_history.py",
+      "bytes": 2853,
+      "sha256": "b007234b9861a68504e36f005ae463943b36b5cd50a3d157532c1cab09fcf9da",
+      "gitBlob": "9e71a0dc944bee71b0b5c61d7ff84cbb59119e1a"
+    }
+  ],
+  "productManifest": [
+    {
+      "path": "src/canvaspilot/announcement_search.py",
+      "bytes": 1555,
+      "sha256": "aa766157ccc10d6c3371a0e761c89ce3189d201cd9fcf5b82eec22d1c572f65e",
+      "gitBlob": "b2b344526b14c2f123163f6bcfd28f70e28281e8"
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "bytes": 27527,
+      "sha256": "65ffa7825fc2ffdc1c8c85198f772d7f171d96c2d39633dc010fc98f23858903",
+      "gitBlob": "2a3471d108fab7e236e0eb24891ee4d306f531a2"
+    },
+    {
+      "path": "tests/test_announcement_search.py",
+      "bytes": 4085,
+      "sha256": "3922b4884150bbca5ea5d5b717d117e62343b025d3fac235affd879fc9fe29e4",
+      "gitBlob": "a62f05e5600d0b084af5e8cbe967296dce023548"
+    },
+    {
+      "path": "tests/test_announcement_search_cli.py",
+      "bytes": 15573,
+      "sha256": "6a8babaaaa17d5719622e05fd22a4ade694d4625bbc3379312bfbbb06c338507",
+      "gitBlob": "6ff91a36f36c2e521e35b1b20affe7d0c296c6b2"
+    },
+    {
+      "path": "docs/announcement-search.md",
+      "bytes": 3301,
+      "sha256": "4c7eb491f83dd353669edfc63f4e53cd5cd15b4712d0cda32df593145ab6ee1d",
+      "gitBlob": "093e1b29e0b84a79b66a5ad4adf6ea938bc3f763"
+    },
+    {
+      "path": "README.md",
+      "bytes": 25426,
+      "sha256": "b1241458cc96b71113847ae70701c6d539346e886efdb63164a25da41fb94b5b",
+      "gitBlob": "dcacca9c93c58e440e67d3857e5d14a9ccd16aa4"
+    }
+  ],
+  "protectedCurrentRuntimeLeaves": 18,
+  "currentComposition": "Same three search additions over current page-packet CLI. Removing them restores every byte of current CLI; removing the exact README suffix restores every current README byte. API, client, page owner code, existing commands, dependencies, workflows and all other current leaves are preserved. Independent current-source receiving is pending.",
+  "testSourceZip": {
+    "bytes": 5648,
+    "sha256": "c2a2eb09f6fb5789c8f578e69e52dc5ae0c946f3c7256bb05c819b9367223294"
+  },
+  "pythonFloor": "3.11"
+}

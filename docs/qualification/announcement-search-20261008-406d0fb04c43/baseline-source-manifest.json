@@ -1,0 +1,120 @@
+{
+  "schema": "canvaspilot74.baseline-source.v1",
+  "commit": "1bafdaa31f7789d8e561680cb6001bbe38b2da64",
+  "tree": "fc4c5cee949a3a15caf32111af9144cb7eb95b6d",
+  "sourceZip": {
+    "bytes": 55194,
+    "sha256": "1f5348643f80eff13bee807df65cc23b697ae2f8af28be284636bff1da14f6fc",
+    "gitBlob": "ba09a921568880e960e5d2256011a15d2c027175"
+  },
+  "source": [
+    {
+      "path": "src/canvaspilot/__init__.py",
+      "bytes": 561,
+      "gitBlob": "74a7a6087bf81fd7c75c15769b30408039618e0f",
+      "sha256": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5"
+    },
+    {
+      "path": "src/canvaspilot/agenda.py",
+      "bytes": 8455,
+      "gitBlob": "82ab4fa8f9b92b8d9e5d4c74962d138e1d882ebd",
+      "sha256": "cd9d9e027393ce21cff0b4d0a13098dca3a906af3e9803201655bca40d3c3fda"
+    },
+    {
+      "path": "src/canvaspilot/api.py",
+      "bytes": 29742,
+      "gitBlob": "3ec81dee60bc67d7a80d40b78e85d5c005441b99",
+      "sha256": "b6b770c2cdef9c9ce44a4a6aefd5b6d0876bc09e5aee29a4adb5a7c603b41c24"
+    },
+    {
+      "path": "src/canvaspilot/assignment_submission.py",
+      "bytes": 1296,
+      "gitBlob": "95b1f19927e4eecf99fc852325737c3cfe86cd0d",
+      "sha256": "52fc732660b8844a2ee0801931a363f20db15b5309d148d01e3b618be487133d"
+    },
+    {
+      "path": "src/canvaspilot/bundle.py",
+      "bytes": 2761,
+      "gitBlob": "c2544032a1cfcdc116725c6403ff09d7b0328f87",
+      "sha256": "c8a1854b5c04715c1371c05f4c25ba867ec2d2daafc132b7ed8a973d3e55ddcf"
+    },
+    {
+      "path": "src/canvaspilot/calendar_export.py",
+      "bytes": 9950,
+      "gitBlob": "ef74cfdf50fd894327dbe45a9a9d43042953bc31",
+      "sha256": "b92948c438063438bf9b8ef01b0b0c067802ddb06354f00e8ee18749f3c5e2fa"
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "bytes": 23937,
+      "gitBlob": "8d6644d0e1b916ca38a578147db8392a2e92d226",
+      "sha256": "fddcedbe9ffb9736beb35e7959bc91b30a88176b60646a3fd2ab6cf9169d0fd4"
+    },
+    {
+      "path": "src/canvaspilot/client.py",
+      "bytes": 18934,
+      "gitBlob": "1db4b1135305f7e410025ae7937f9a6cd349f020",
+      "sha256": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797"
+    },
+    {
+      "path": "src/canvaspilot/discussion_thread.py",
+      "bytes": 8547,
+      "gitBlob": "2ed658fcf5cee996a02115742935716f1d039e25",
+      "sha256": "11f955f827c29421143782518a1aaf1894d0892739c3b56c4d5e413da74555ff"
+    },
+    {
+      "path": "src/canvaspilot/feedback.py",
+      "bytes": 3900,
+      "gitBlob": "ec996f421a851d699a9ac7cb1f2a486f9ff7c4ea",
+      "sha256": "55454598effea598474a21f67e36d5bc5bea84aaefeefc18e4d8c49804ab9869"
+    },
+    {
+      "path": "src/canvaspilot/folder_browser.py",
+      "bytes": 6293,
+      "gitBlob": "4b3078ddb00a4a34015710e49fa7b7806adebd23",
+      "sha256": "c6a67229b268c539e5edb581e3320b06229460adc3fbc01d72e4964e31c0348a"
+    },
+    {
+      "path": "src/canvaspilot/grade_review.py",
+      "bytes": 13247,
+      "gitBlob": "24d93cb693af09cf5123f31fea90e77a589b023c",
+      "sha256": "e550752a830ca9cf4c2ef5d5b06dbf464abd9dfed3a5252d310a4acf8e2411f5"
+    },
+    {
+      "path": "src/canvaspilot/mcp_server.py",
+      "bytes": 16291,
+      "gitBlob": "0f7130673b3a139abdacb588410edb23a01dc56d",
+      "sha256": "52cfd5cbe167438762049f4c36feec822986f5e5e63aeaf494e07907235e1c98"
+    },
+    {
+      "path": "src/canvaspilot/module_progress.py",
+      "bytes": 9615,
+      "gitBlob": "a9d3e4bbea22067f76110f03a5f31a5bc9d8de05",
+      "sha256": "974ee31925514a2e53b899888302a7fa357e280ab5f2461b754b814473653d99"
+    },
+    {
+      "path": "src/canvaspilot/module_progress_export.py",
+      "bytes": 12904,
+      "gitBlob": "8ccb9f1262790a744418d4212e072ee43031ab88",
+      "sha256": "f723c06e551fae2cf50745460f9109867e6e0f9ebc3cc997d49d5e2173aa9f50"
+    },
+    {
+      "path": "src/canvaspilot/offline_demo.py",
+      "bytes": 4124,
+      "gitBlob": "9d2cfd260d8db052b8183e3ec4fc9626a5bb2b9a",
+      "sha256": "2389f3ccc1b6db5995be0d90e014ea9345e3029aa5546a5b2dcf12c1197e6d4d"
+    },
+    {
+      "path": "src/canvaspilot/session_broker.py",
+      "bytes": 13944,
+      "gitBlob": "cc706d5860489ec37cb2cf7f0b1cb4eee33b664f",
+      "sha256": "a692cd2812cbc09536f1b60c84892bc8e87d2ae984c5a5aa25a13f6537ba6da2"
+    },
+    {
+      "path": "src/canvaspilot/submission_history.py",
+      "bytes": 2853,
+      "gitBlob": "9e71a0dc944bee71b0b5c61d7ff84cbb59119e1a",
+      "sha256": "b007234b9861a68504e36f005ae463943b36b5cd50a3d157532c1cab09fcf9da"
+    }
+  ]
+}
