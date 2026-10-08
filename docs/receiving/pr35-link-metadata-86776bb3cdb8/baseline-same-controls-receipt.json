@@ -1,0 +1,17 @@
+{
+  "source_head": "89fa86d20e4eff47ce42e18afd8cd8e75ab376c3",
+  "command": [
+    "/workspace/scratch/86776bb3cdb8/product-delivery/venv/bin/python",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "/dev/shm/86776bb3cdb8-product-pr35/tests/test_broker_link_metadata_receiving.py"
+  ],
+  "cwd": "/dev/shm/86776bb3cdb8-product-pr35-baseline",
+  "exit_code": 1,
+  "log_sha256": "6734d33ebf39c98d84c53a5777a6969723c1b6504a91dfd377bb50327f2ead6e",
+  "pythonpath": "/dev/shm/86776bb3cdb8-product-pr35-baseline/src"
+}

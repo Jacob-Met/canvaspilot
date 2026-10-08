@@ -1,0 +1,67 @@
+[
+  {
+    "file": "README.md",
+    "bytes": 2509,
+    "sha256": "0eef5ab2b2d74c15823001756531779e21dafe7cf04112e5e50ccc16fc9845fb"
+  },
+  {
+    "file": "baseline-same-controls-receipt.json",
+    "bytes": 545,
+    "sha256": "9de1a8217277f0d5025743d6206e7fbd281273af0b8458d34fb4d3ca71fd450d"
+  },
+  {
+    "file": "baseline-same-controls.log",
+    "bytes": 11783,
+    "sha256": "6734d33ebf39c98d84c53a5777a6969723c1b6504a91dfd377bb50327f2ead6e"
+  },
+  {
+    "file": "browser-startup-failure-receipt.json",
+    "bytes": 658,
+    "sha256": "6afd79cec3f975b5697c9639afa3f3bcf670c0321205632cb7389bffb0cc4766"
+  },
+  {
+    "file": "browser-startup-failure.log",
+    "bytes": 8520,
+    "sha256": "87f97f887395996eab8b5fd152df70d84ab1d8d20781fb6fe1ce0e499debfae5"
+  },
+  {
+    "file": "candidate-native-receipt.json",
+    "bytes": 453,
+    "sha256": "710b876b6d593747d69273fb5d93f0c790c2c53f9dc9e1a97582422708978ec7"
+  },
+  {
+    "file": "candidate-native.log",
+    "bytes": 271,
+    "sha256": "13ffc6edd0b152ee12b74edb43c089dc8235c7791a8eb5bb2c6cacbd52f14224"
+  },
+  {
+    "file": "independent/REVIEW.md",
+    "bytes": 4024,
+    "sha256": "7296e42b0845f182e37a1f6c262313c8486230569dc107ea87da230b09805724"
+  },
+  {
+    "file": "independent/file-hashes.json",
+    "bytes": 605,
+    "sha256": "d7f46917cad5308db64fab659c48a51770f314ce8a78edcf5e53354690631ae7"
+  },
+  {
+    "file": "independent/independent-broker-controls-receipt.json",
+    "bytes": 1222,
+    "sha256": "a8003c8f4c02be1394b695f3b47962fb52491ce84c66afe7b85fd3403cd6ae0d"
+  },
+  {
+    "file": "independent/independent-broker-controls.log",
+    "bytes": 99,
+    "sha256": "d95ab5208d03a6d6fb5f379190e03afc2a57e568537e3505bb35985fdfe39f64"
+  },
+  {
+    "file": "independent/source-preservation.json",
+    "bytes": 3220,
+    "sha256": "0ea6cc2b2fc3bbb8800426c9a12f7b14c5aee22014c59e6238f323877a6d4c56"
+  },
+  {
+    "file": "source-preservation.json",
+    "bytes": 1800,
+    "sha256": "21ca5f4fd675b6dd654ee5f92a0e0db4abc72fe00b2f77450b3bb571c6a9b3f9"
+  }
+]

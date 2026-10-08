@@ -149,6 +149,10 @@ or ambiguous Link metadata, repeated continuation URLs, a later-page error, or a
 known continuation beyond the 40-page limit raises an error instead of returning
 the accumulated pages as a complete result. `CanvasPaginationError` is available
 from `canvaspilot.client`. This does not change the existing token-mode page cap.
+Each session Link entry must carry a valid relation. Link parameters that change
+the context with `anchor` are unsupported and raise an error; registered relation
+names such as `next` are matched without regard to case. Quoted parameter values
+and absolute URI extension relations remain supported.
 
 An older running broker without the capability flag keeps the previous numeric
 `page=1..40` compatibility behavior, including its truncation warning. That

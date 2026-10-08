@@ -1,0 +1,19 @@
+{
+  "source_head": "9d1ac4b64a1d036bb0c7f4331892d26dc9f2bf82",
+  "command": [
+    "/workspace/scratch/86776bb3cdb8/product-delivery/venv/bin/python",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "-s",
+    "-p",
+    "no:cacheprovider",
+    "/workspace/scratch/86776bb3cdb8/product-delivery/canvaspilot-composition/tests/test_link_pagination_browser.py"
+  ],
+  "cwd": "/dev/shm/86776bb3cdb8-product-pr35",
+  "exit_code": 1,
+  "log_sha256": "87f97f887395996eab8b5fd152df70d84ab1d8d20781fb6fe1ce0e499debfae5",
+  "pythonpath": "/dev/shm/86776bb3cdb8-product-pr35/src",
+  "browser": "/workspace/scratch/86776bb3cdb8/product-delivery/browser-runtime/chromium"
+}

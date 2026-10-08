@@ -1,0 +1,30 @@
+{
+  "observed_at": "2026-10-08T09:53:13.377Z",
+  "source_commit": "9d1ac4b64a1d036bb0c7f4331892d26dc9f2bf82",
+  "source_tree": "0d96f5d8ad4711e20c2e92109bbd16bc123671d9",
+  "parent": "89fa86d20e4eff47ce42e18afd8cd8e75ab376c3",
+  "command": [
+    "/workspace/scratch/86776bb3cdb8/product-delivery/venv/bin/python",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "--basetemp",
+    "/dev/shm/86776bb3cdb8-receiving-pr35/tmp/pytest",
+    "tests/test_broker_link_metadata_receiving.py"
+  ],
+  "cwd": "/dev/shm/86776bb3cdb8-receiving-pr35/repo",
+  "source_env": "/dev/shm/86776bb3cdb8-receiving-pr35/repo/src",
+  "temp_dir": "/dev/shm/86776bb3cdb8-receiving-pr35/tmp",
+  "exit_code": 0,
+  "signal": null,
+  "error": null,
+  "elapsed_ms": 1788,
+  "log_sha256": "d95ab5208d03a6d6fb5f379190e03afc2a57e568537e3505bb35985fdfe39f64",
+  "test_file": "tests/test_broker_link_metadata_receiving.py",
+  "test_sha256": "152c84702730e1036eaebd4beedbcbcf3e5f16c92cd7afd678035ebd2ab13395",
+  "client_sha256": "3b2453dd923328042c8bbe1178ac3c004536aa0b075d7c84c3ce15f556f4d0da",
+  "scope": "Ten broker parser controls over actual local HTTP and native client decoding. No browser or token traversal claim."
+}

@@ -1,0 +1,17 @@
+{
+  "source_head": "9d1ac4b64a1d036bb0c7f4331892d26dc9f2bf82",
+  "command": [
+    "/workspace/scratch/86776bb3cdb8/product-delivery/venv/bin/python",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "tests"
+  ],
+  "cwd": "/dev/shm/86776bb3cdb8-product-pr35",
+  "exit_code": 0,
+  "log_sha256": "13ffc6edd0b152ee12b74edb43c089dc8235c7791a8eb5bb2c6cacbd52f14224",
+  "pythonpath": "/dev/shm/86776bb3cdb8-product-pr35/src"
+}

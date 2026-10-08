@@ -1,0 +1,22 @@
+[
+  {
+    "file": "REVIEW.md",
+    "bytes": 4024,
+    "sha256": "7296e42b0845f182e37a1f6c262313c8486230569dc107ea87da230b09805724"
+  },
+  {
+    "file": "independent-broker-controls.log",
+    "bytes": 99,
+    "sha256": "d95ab5208d03a6d6fb5f379190e03afc2a57e568537e3505bb35985fdfe39f64"
+  },
+  {
+    "file": "independent-broker-controls-receipt.json",
+    "bytes": 1222,
+    "sha256": "a8003c8f4c02be1394b695f3b47962fb52491ce84c66afe7b85fd3403cd6ae0d"
+  },
+  {
+    "file": "source-preservation.json",
+    "bytes": 3220,
+    "sha256": "0ea6cc2b2fc3bbb8800426c9a12f7b14c5aee22014c59e6238f323877a6d4c56"
+  }
+]

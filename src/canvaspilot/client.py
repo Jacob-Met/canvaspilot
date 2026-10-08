@@ -411,10 +411,14 @@ def _assert_pagination_origin(url: str, base: str) -> None:
 
 
 _LINK_PARAM_NAME = r"[!#$%&'*+\-.^_`|~0-9A-Za-z]+"
-_LINK_PARAM_VALUE = r'"(?:[^"\\]|\\.)*"|[^\s;,"\\]+'
+_LINK_PARAM_VALUE = rf'"(?:[^"\\]|\\.)*"|{_LINK_PARAM_NAME}'
 _LINK_PARAM_TEXT = rf";\s*{_LINK_PARAM_NAME}(?:\s*=\s*(?:{_LINK_PARAM_VALUE}))?\s*"
 _SESSION_LINK = re.compile(rf"\s*<([^>]*)>\s*((?:{_LINK_PARAM_TEXT})*)(?:,|$)")
 _SESSION_LINK_PARAM = re.compile(rf";\s*({_LINK_PARAM_NAME})(?:\s*=\s*({_LINK_PARAM_VALUE}))?\s*")
+_LINK_RELATION = re.compile(
+    r"(?:[A-Za-z][A-Za-z0-9.-]*|"
+    r"[A-Za-z][A-Za-z0-9+.-]*:(?:[A-Za-z0-9._~:/?#\[\]@!$&'()*+,;=-]|%[0-9A-Fa-f]{2})*)"
+)
 
 
 def _session_link_next(header: str) -> str | None:
@@ -428,18 +432,22 @@ def _session_link_next(header: str) -> str | None:
         link = _SESSION_LINK.match(header, offset)
         if link is None or not link[1]:
             raise CanvasPaginationError("session pagination Link header is malformed")
-        relations = [param[2] for param in _SESSION_LINK_PARAM.finditer(link[2])
-                     if param[1].lower() == "rel"]
-        if len(relations) > 1 or (relations and relations[0] is None):
+        parameters = list(_SESSION_LINK_PARAM.finditer(link[2]))
+        if any(param[1].lower() == "anchor" for param in parameters):
+            raise CanvasPaginationError("session pagination Link has an unsupported anchor context")
+        relations = [param[2] for param in parameters if param[1].lower() == "rel"]
+        if len(relations) != 1 or relations[0] is None:
             raise CanvasPaginationError("session pagination Link relation is ambiguous")
-        if relations:
-            value = relations[0]
-            if value.startswith('"'):
-                value = re.sub(r"\\(.)", r"\1", value[1:-1])
-            if "next" in value.split():
-                if next_url is not None:
-                    raise CanvasPaginationError("session pagination has multiple next links")
-                next_url = link[1]
+        value = relations[0]
+        if value.startswith('"'):
+            value = re.sub(r"\\(.)", r"\1", value[1:-1])
+        words = [word for word in value.split(" ") if word]
+        if not words or any(_LINK_RELATION.fullmatch(word) is None for word in words):
+            raise CanvasPaginationError("session pagination Link relation is malformed")
+        if "next" in (word.lower() for word in words):
+            if next_url is not None:
+                raise CanvasPaginationError("session pagination has multiple next links")
+            next_url = link[1]
         offset = link.end()
     return next_url
 

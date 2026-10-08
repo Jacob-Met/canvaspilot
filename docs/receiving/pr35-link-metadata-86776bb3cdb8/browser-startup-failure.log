@@ -1,0 +1,129 @@
+F
+=================================== FAILURES ===================================
+________ test_actual_fetch_preserves_next_links_through_broker_and_api _________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f87af83c500>
+
+    @pytest.mark.skipif(not CHROME, reason="set CANVASPILOT_TEST_CHROME for isolated browser qualification")
+    def test_actual_fetch_preserves_next_links_through_broker_and_api(monkeypatch):
+        from playwright.sync_api import sync_playwright
+    
+        for name in ("HTTP_PROXY", "HTTPS_PROXY", "ALL_PROXY", "NO_PROXY",
+                     "http_proxy", "https_proxy", "all_proxy", "no_proxy", "CANVAS_API_TOKEN"):
+            monkeypatch.delenv(name, raising=False)
+        state = broker_mod._BrokerState()
+        state.base_url = BASE
+        monkeypatch.setattr(broker_mod, "STATE", state)
+        seen = []
+        blocked = []
+        versions = []
+        stop = threading.Event()
+        next_url = BASE + PATH + "?cursor=a,b;c%2Fd&include%5B%5D=one&include%5B%5D=two"
+        last_url = BASE + PATH + "?cursor=last%3D3"
+    
+        def worker():
+            try:
+                with sync_playwright() as playwright:
+                    browser = playwright.chromium.launch(
+                        executable_path=CHROME, headless=True, args=["--no-sandbox"]
+                    )
+                    versions.append(browser.version)
+                    context = browser.new_context(service_workers="block")
+    
+                    def route_request(route):
+                        url = route.request.url
+                        parsed = urlsplit(url)
+                        if url == BASE + "/":
+                            route.fulfill(status=200, content_type="text/html", body="<title>Synthetic Canvas</title>")
+                            return
+                        if parsed.netloc != "school.instructure.com" or parsed.path != PATH:
+                            blocked.append(url)
+                            route.abort()
+                            return
+                        seen.append(url)
+                        headers = {"Content-Type": "application/json"}
+                        if len(seen) == 1:
+                            rows = [{"id": 1}, {"id": 2}]
+                            headers["LiNk"] = f'<{next_url}>; title="Page, two"; rel="next"'
+                        elif url == next_url:
+                            rows = []
+                            headers["LINK"] = f'<{last_url}>; rel="next"'
+                        elif url == last_url:
+                            rows = [{"id": 3, "name": "Last coursework"}]
+                        else:
+                            route.fulfill(status=400, body="unexpected cursor")
+                            return
+                        route.fulfill(status=200, headers=headers, body=json.dumps(rows))
+    
+                    context.route("**/*", route_request)
+                    context.new_page().goto(BASE + "/")
+                    state.ready.set()
+                    while not stop.is_set():
+                        try:
+                            job, reply = state.jobs.get(timeout=0.1)
+                        except queue.Empty:
+                            continue
+                        try:
+                            result = broker_mod._run_job(context, job)
+                            reply.put({"ok": True, **result})
+                        except Exception as exc:  # noqa: BLE001 — report any worker failure instead of hanging the caller
+                            reply.put({"ok": False, "error": str(exc)})
+                    context.close()
+                    browser.close()
+            except Exception as exc:  # noqa: BLE001 — startup failure must settle the test's wait
+                state.error = str(exc)
+                state.ready.set()
+    
+        thread = threading.Thread(target=worker, daemon=True)
+        thread.start()
+        assert state.ready.wait(20), "isolated browser did not start"
+>       assert state.error is None, state.error
+E       AssertionError: [Errno 2] No such file or directory: '/workspace/scratch/86776bb3cdb8/product-delivery/venv/lib/python3.12/site-packages/playwright/driver/node'
+E       assert "[Errno 2] No such file or directory: '/workspace/scratch/86776bb3cdb8/product-delivery/venv/lib/python3.12/site-packages/playwright/driver/node'" is None
+E        +  where "[Errno 2] No such file or directory: '/workspace/scratch/86776bb3cdb8/product-delivery/venv/lib/python3.12/site-packages/playwright/driver/node'" = <canvaspilot.session_broker._BrokerState object at 0x7f87af83c5c0>.error
+
+/workspace/scratch/86776bb3cdb8/product-delivery/canvaspilot-composition/tests/test_link_pagination_browser.py:101: AssertionError
+=========================== short test summary info ============================
+FAILED ../../../workspace/scratch/86776bb3cdb8/product-delivery/canvaspilot-composition/tests/test_link_pagination_browser.py::test_actual_fetch_preserves_next_links_through_broker_and_api
+1 failed in 0.85s
+Future exception was never retrieved
+future: <Future finished exception=FileNotFoundError(2, 'No such file or directory')>
+Traceback (most recent call last):
+  File "/workspace/scratch/86776bb3cdb8/product-delivery/canvaspilot-composition/tests/test_link_pagination_browser.py", line 47, in worker
+    with sync_playwright() as playwright:
+         ^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/86776bb3cdb8/product-delivery/venv/lib/python3.12/site-packages/playwright/sync_api/_context_manager.py", line 70, in __enter__
+    dispatcher_fiber.switch()
+  File "/workspace/scratch/86776bb3cdb8/product-delivery/venv/lib/python3.12/site-packages/playwright/sync_api/_context_manager.py", line 55, in greenlet_main
+    self._loop.run_until_complete(self._connection.run_as_sync())
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/workspace/scratch/86776bb3cdb8/product-delivery/venv/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 336, in run_as_sync
+    await self.run()
+  File "/workspace/scratch/86776bb3cdb8/product-delivery/venv/lib/python3.12/site-packages/playwright/_impl/_connection.py", line 354, in run
+    await self._transport.connect()
+  File "/workspace/scratch/86776bb3cdb8/product-delivery/venv/lib/python3.12/site-packages/playwright/_impl/_transport.py", line 133, in connect
+    raise exc
+  File "/workspace/scratch/86776bb3cdb8/product-delivery/venv/lib/python3.12/site-packages/playwright/_impl/_transport.py", line 120, in connect
+    self._proc = await asyncio.create_subprocess_exec(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/subprocess.py", line 224, in create_subprocess_exec
+    transport, protocol = await loop.subprocess_exec(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py", line 1756, in subprocess_exec
+    transport = await self._make_subprocess_transport(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/unix_events.py", line 211, in _make_subprocess_transport
+    transp = _UnixSubprocessTransport(self, protocol, args, shell,
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_subprocess.py", line 36, in __init__
+    self._start(args=args, shell=shell, stdin=stdin, stdout=stdout,
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/unix_events.py", line 820, in _start
+    self._proc = subprocess.Popen(
+                 ^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 1955, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: '/workspace/scratch/86776bb3cdb8/product-delivery/venv/lib/python3.12/site-packages/playwright/driver/node'

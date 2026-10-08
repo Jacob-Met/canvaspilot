@@ -237,7 +237,7 @@ def test_link_relations_and_quoted_parameters_do_not_change_continuation(receive
     def canvas(job):
         if len(calls) == 1:
             header = (f'<{BASE + PATH}>; rel="current", <{NEXT}>; title="part, two; <three>"; '
-                      'rel="next alternate"; type=application/json')
+                      'rel="next alternate"; type="application/json"')
             return {'status': 200, 'json': [{'id': 1}], 'headers': {'link': header}}
         return page([{'id': 2}])
 
