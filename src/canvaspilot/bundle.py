@@ -38,6 +38,7 @@ CURATED_MCP_TOOLS: tuple[str, ...] = (
     "canvas_list_conversations",
     "canvas_get_conversation",
     "canvas_reply_conversation",
+    "canvas_course_agenda",
     "canvas_list_calendar_events",
     "canvas_planner_items",
     "canvas_activity_stream",

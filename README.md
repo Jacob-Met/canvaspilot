@@ -15,7 +15,7 @@ Same architecture as OpenCLI-style web agents (persistent browser session → si
 - **Submission feedback** — self submission comments and rubric assessments alongside current-attempt and grading metadata
 - **Submission history** — inspect returned attempts and submitted text/file metadata without assigning current grades or comments to earlier versions ([guide](docs/submission-history.md))
 - **Fixture mode** — offline dict backend for tests and CI; no Canvas required
-- **38 MCP tools**, one stdio server, one env var for the host (`CANVAS_BASE_URL`) plus either a PAT or a running session broker
+- **39 MCP tools**, one stdio server, one env var for the host (`CANVAS_BASE_URL`) plus either a PAT or a running session broker
 - **Course folder browsing** — select nested folders and inspect bounded file-metadata pages through CLI, MCP or Python
 - **Module progress checklist** — review reported completion, remaining requirements and module locks through CLI, MCP or Python
 
@@ -85,6 +85,12 @@ them. Missing data remains unknown; the existing `has_submitted_submissions`
 flag describes submissions by any student. See the
 [assignment submission guide](docs/assignment-submission.md) for field meanings,
 selection examples and malformed-data warnings.
+
+Read selected courses' calendar events and assignment deadlines together with
+`canvaspilot agenda 42 77 --start 2026-10-08 --end 2026-10-15`. The
+[course agenda guide](docs/course-agenda.md) explains timed, all-day and unavailable
+timing, source identity and read limits. The same report is available through
+`canvas_course_agenda` in MCP.
 
 To take selected course deadlines into a calendar application, save an explicit
 local snapshot with `canvaspilot export-calendar 42 77 --out deadlines.ics`.
@@ -160,7 +166,7 @@ Tools exposed (all prefixed `canvas_`):
 | Assignments | `list_assignments`, `get_assignment`, `assignment_brief`, `submission_status`, `submission_feedback`, `submission_history`, `submit_assignment_text` |
 | Discussions | `list_discussion_topics`, `get_discussion`, `discussion_thread`, `post_discussion_reply` |
 | Quizzes | `list_quizzes`, `get_quiz`, `list_quiz_questions`, `list_quiz_submissions`, `start_quiz_submission`, `complete_quiz_submission` |
-| Inbox / Calendar | `list_conversations`, `get_conversation`, `reply_conversation`, `list_calendar_events` |
+| Inbox / Calendar | `list_conversations`, `get_conversation`, `reply_conversation`, `list_calendar_events`, `course_agenda` |
 | **Full REST** | `canvas_api_request`, `canvas_api_paginated` — any `/api/v1/...` path, including paginated reads through a current session broker (see Auth modes for collection requirements) |
 
 Programmatic API bundle: `from canvaspilot.bundle import make_api, tool_inventory`.
@@ -239,6 +245,12 @@ remain visible. See [the discussion reader guide](docs/DISCUSSIONS.md) for field
 selection rules and error behavior.
 
 ### Announcements
+
+Read selected courses from the terminal with `canvaspilot announcements 42 77`.
+Choose `--detail full` for complete cleaned message text and optionally supply
+`--start-date 2026-10-01`. The command preserves the existing course context,
+pagination and date-window rules; see [terminal announcement review](docs/announcements-cli.md)
+for fields, defaults and error behavior.
 
 `canvas_list_announcements` and `CanvasAPI.list_announcements()` use the existing
 client paginator in both compact and full detail modes. Course and optional start-date
