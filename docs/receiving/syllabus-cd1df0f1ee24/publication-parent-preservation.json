@@ -1,0 +1,731 @@
+{
+  "parent": "f618c3ed13f191ea58642283c1f9cd45a0c1ca81",
+  "parent_tree": "1bcfff90694cdb8358684ada58ff349562244de7",
+  "parent_leaf_count": 1333,
+  "cli_inverse_exact": true,
+  "readme_inverse_exact": true,
+  "before_images": [
+    {
+      "path": "src/canvaspilot/cli.py",
+      "bytes": 25461,
+      "sha256": "93716be70753b1cfd2f6ff4d2198cbeac8ed7e408d400d3e01a3fc1dd6637631",
+      "git_blob": "0e1a04c36972641b65a9022e507bad03cb300e1f"
+    },
+    {
+      "path": "README.md",
+      "bytes": 25013,
+      "sha256": "df274c8ba3c7b1e279fbb6807b0cbb5f7970136929b6438791d12f90ac56fdc3",
+      "git_blob": "f1588471682c37698b4bcf9d69e96da05cd0f29b"
+    }
+  ],
+  "qualified_noncomposed_files_exact": 4,
+  "additional_current_feature": "Page export PR71; all 130 added/modified upstream files preserved, including its exact separate CLI/README additions. API/client/dependencies/workflow exact vs 1baf.",
+  "existing_modified_paths": [
+    "README.md",
+    "src/canvaspilot/cli.py"
+  ],
+  "new_product_paths": [
+    "docs/syllabus-packet.md",
+    "src/canvaspilot/syllabus_packet.py",
+    "tests/test_syllabus_packet.py",
+    "tests/test_syllabus_packet_cli.py"
+  ],
+  "expected_preserved_parent_leaves": 1331,
+  "native_scope": "Static current-parent composition only. Native c744 and 6c4d results retain their exact original source boundaries.",
+  "transport_note": "Optional native supplement staging timed out at MCP, so existence was not assumed and no product run followed. Payload remained in memory.",
+  "published_tree_verification": "Pending Git publication.",
+  "lead_review_boundary": {
+    "parent": "1bafdaa31f7789d8e561680cb6001bbe38b2da64",
+    "root_review_git_blob": "d6a56e92954e5b722752562da0dd5f99670003ca",
+    "root_review_sha256": "88087b6aa6b6d2cbecafb157a0498606bf445cde5dc155391f471606cde69f4f"
+  },
+  "prior_static_composition": {
+    "parent": "1bafdaa31f7789d8e561680cb6001bbe38b2da64",
+    "parent_tree": "fc4c5cee949a3a15caf32111af9144cb7eb95b6d",
+    "parent_leaf_count": 1205,
+    "cli_inverse_exact": true,
+    "readme_inverse_exact": true,
+    "before_images": [
+      {
+        "path": "src/canvaspilot/cli.py",
+        "bytes": 23937,
+        "sha256": "fddcedbe9ffb9736beb35e7959bc91b30a88176b60646a3fd2ab6cf9169d0fd4",
+        "git_blob": "8d6644d0e1b916ca38a578147db8392a2e92d226"
+      },
+      {
+        "path": "README.md",
+        "bytes": 24713,
+        "sha256": "08098858ec5b7f24d0fab640e80ff3ae952ef57529135a856c641b31438bb9a5",
+        "git_blob": "bd0d16245c59e4a5cf4badee0e7193c0eb09fdfc"
+      }
+    ],
+    "qualified_noncomposed_files_exact": 4,
+    "additional_current_feature": "module-progress export PR73; exact parent source is preserved by removing the same two CLI spans and one README insertion",
+    "existing_modified_paths": [
+      "README.md",
+      "src/canvaspilot/cli.py"
+    ],
+    "new_product_paths": [
+      "docs/syllabus-packet.md",
+      "src/canvaspilot/syllabus_packet.py",
+      "tests/test_syllabus_packet.py",
+      "tests/test_syllabus_packet_cli.py"
+    ],
+    "expected_preserved_parent_leaves": 1203,
+    "native_scope": "Static current-parent composition only. Native c744 and 6c4d results retain their exact original source boundaries.",
+    "transport_note": "Optional native supplement staging timed out at MCP, so existence was not assumed and no product run followed. Payload remained in memory.",
+    "published_tree_verification": "Pending Git publication."
+  },
+  "latest_parent_delta": [
+    {
+      "path": "README.md",
+      "status": "modified",
+      "git_blob": "f1588471682c37698b4bcf9d69e96da05cd0f29b"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/README.md",
+      "status": "added",
+      "git_blob": "704a621edfbc00cdc32fe3aa741a9e97bdc33c58"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/announcements-receiving/composition.json",
+      "status": "added",
+      "git_blob": "7c864227a529682ac7a33e4e807f569b85169fa4"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/announcements-receiving/contribution.diff",
+      "status": "added",
+      "git_blob": "4a02fb65dca1c2a33ec3bd2f70f262bc433d6934"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/announcements-receiving/fetch.stderr",
+      "status": "added",
+      "git_blob": "8df71955ebec8a15b98c3ef61122de57b271ad60"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/announcements-receiving/fetch.stdout",
+      "status": "added",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/announcements-receiving/full-suite.stderr",
+      "status": "added",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/announcements-receiving/full-suite.stdout",
+      "status": "added",
+      "git_blob": "8af68e7341974d6d1e4b11b55fc9ac928181d759"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/announcements-receiving/incomplete-phase.json",
+      "status": "added",
+      "git_blob": "bdba6eb36e17f561efdb2ec320f1679fd2652167"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/announcements-receiving/installed-origin.stderr",
+      "status": "added",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/announcements-receiving/installed-origin.stdout",
+      "status": "added",
+      "git_blob": "cf48dc6f3f7697faadbc65c4841f26ae90799c30"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/announcements-receiving/merge.stderr",
+      "status": "added",
+      "git_blob": "2824b3450345620e9771e943a11be15a64fc45d5"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/announcements-receiving/merge.stdout",
+      "status": "added",
+      "git_blob": "bd7003441e289a3599780bceb1013de136d17906"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/announcements-receiving/offline-capture/authored-fixture.json",
+      "status": "added",
+      "git_blob": "7cc1b05cf4cc30f34505a29944b24c9b795159bf"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/announcements-receiving/offline-capture/canonical-output-equality.json",
+      "status": "added",
+      "git_blob": "e9ea7431017988820c625d6b9eb2c092904ca3fe"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/announcements-receiving/offline-capture/capture.json",
+      "status": "added",
+      "git_blob": "17d7b019522226c4cd2e09b06a3c93a830b43fec"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/announcements-receiving/offline-capture/console.stderr",
+      "status": "added",
+      "git_blob": "e9c3b7ce085c94f632424c7fe962a65595b70746"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/announcements-receiving/offline-capture/console.stdout",
+      "status": "added",
+      "git_blob": "079b752610b18cb58516081de011982b7c0349c6"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/announcements-receiving/offline-capture/reading.html",
+      "status": "added",
+      "git_blob": "1c3c17b3e7b24538dda38e00269c4f8ab9923e2f"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/announcements-receiving/qualification.json",
+      "status": "added",
+      "git_blob": "bb542e9f5ee7f52489ebfcc67efce88c328a3fb3"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/announcements-receiving/qualifier-process-output.txt",
+      "status": "added",
+      "git_blob": "917ec506c289040d9c8770087a8d47b7a21199bc"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/announcements-receiving/qualify-installed.py",
+      "status": "added",
+      "git_blob": "2ca0594afeaa88e007bcd19233b4c35cb398876c"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/announcements-receiving/replay/full-suite.stderr",
+      "status": "added",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/announcements-receiving/replay/full-suite.stdout",
+      "status": "added",
+      "git_blob": "5b275bd184ced32fdb228a0dbc8da83907a113fe"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/announcements-receiving/replay/full-suite.xml",
+      "status": "added",
+      "git_blob": "8a54fa79a93ca699118abd7fb282a6e7c0a6a487"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/announcements-receiving/replay/qualification.json",
+      "status": "added",
+      "git_blob": "d0850cbc2c20928c9660f4754319222cc4487b4c"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/announcements-receiving/replay/ruff.stderr",
+      "status": "added",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/announcements-receiving/replay/ruff.stdout",
+      "status": "added",
+      "git_blob": "1f5f344d054fae10f39140fb7199c99321d9190a"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/announcements-receiving/upstream-functional.diff",
+      "status": "added",
+      "git_blob": "1c1840211e9ca8a3b8c67c70a7d1b4b75439973b"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/announcements-receiving/wheel-build.stderr",
+      "status": "added",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/announcements-receiving/wheel-build.stdout",
+      "status": "added",
+      "git_blob": "d5a0b4e5c45e997135dba04deb1093a1a8d5ed31"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/announcements-receiving/wheel-install.stderr",
+      "status": "added",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/announcements-receiving/wheel-install.stdout",
+      "status": "added",
+      "git_blob": "e6aa9381fd1d313a228b0bae9c6f364b75d9b686"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/announcements-receiving/wheels/canvaspilot-0.1.1-py3-none-any.whl",
+      "status": "added",
+      "git_blob": "a3b7827838c131d312a8ef0235c54f27fd8da2f9"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/capture_current_packet.py",
+      "status": "added",
+      "git_blob": "da3be560eefa3a666630d5bdc0eb0f22c22b8e13"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/capture_final_packet.py",
+      "status": "added",
+      "git_blob": "717ac043441bb4ef151326f10364932f99c88efe"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/capture_packet.py",
+      "status": "added",
+      "git_blob": "9aab70f6df776f7a3f134a75714004340c75acf6"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/current-source-composition.json",
+      "status": "added",
+      "git_blob": "d48949aec1a8fac2968272692a463379c4fd9398"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/current-source.diff",
+      "status": "added",
+      "git_blob": "e61202a79c26439e09fb7101c4b27579a022f403"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/evidence-manifest.json",
+      "status": "added",
+      "git_blob": "ea2dcf826988d749e29dc46cab43963b0d096092"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/historical-native/announcements-replay-output.txt",
+      "status": "added",
+      "git_blob": "88b1cfe0d1e4252a4ea4564cd3f133a1e5c9b225"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/historical-native/claim-payload.json",
+      "status": "added",
+      "git_blob": "47f572a1e87119243db36526d631216c1170f610"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/historical-native/custody-index.json",
+      "status": "added",
+      "git_blob": "961268fd6db87a1cd00d3b0d3664b6bd245a92eb"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/historical-native/first-candidate-process-output.txt",
+      "status": "added",
+      "git_blob": "567fd500c4b4c9c12c03538c66a60278ecaf4efc"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/historical-native/first-candidate-receipt-read.txt",
+      "status": "added",
+      "git_blob": "abbc70d9e280c0d7b7224accd8e2cc13c8678d39"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/historical-native/first-current-fetch-output.txt",
+      "status": "added",
+      "git_blob": "47b4d70ee182d9d0bee7e2f8926c519450f64dbe"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/historical-native/first-source/src/canvaspilot/cli.py.txt",
+      "status": "added",
+      "git_blob": "2d7f425dc294ab6f4c11b14a9f2a4afcd258ca12"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/historical-native/first-source/src/canvaspilot/page_export.py.txt",
+      "status": "added",
+      "git_blob": "a5f3acbea91cefeb462e73a1ea83786d9137f693"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/historical-native/first-source/tests/fixtures/page_packet.json",
+      "status": "added",
+      "git_blob": "7cc1b05cf4cc30f34505a29944b24c9b795159bf"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/historical-native/first-source/tests/test_page_export.py.txt",
+      "status": "added",
+      "git_blob": "1c3b6e33a0241a991773c88f7372dc026ca58f60"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/historical-native/initial-source-clone-output.txt",
+      "status": "added",
+      "git_blob": "bdc7a3ef82360fc5c3cba042be5fea423bcb58b4"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/historical-native/test_page_export_process.initial.py.txt",
+      "status": "added",
+      "git_blob": "80265d75e9469256d38d4f2962f506fc772902aa"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/installed-wheel/dependencies.stderr",
+      "status": "added",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/installed-wheel/dependencies.stdout",
+      "status": "added",
+      "git_blob": "638a09c28a953b2280143bbc8a0c7c63876232ad"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/installed-wheel/full-suite.stderr",
+      "status": "added",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/installed-wheel/full-suite.stdout",
+      "status": "added",
+      "git_blob": "a30f398c8fdc3ea9b94b12ea45ecde5a4b9ebdf6"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/installed-wheel/full-suite.xml",
+      "status": "added",
+      "git_blob": "3ceb9ee50be63f57d6f65fde5ca0e416c2d8a65f"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/installed-wheel/installed-origin.stderr",
+      "status": "added",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/installed-wheel/installed-origin.stdout",
+      "status": "added",
+      "git_blob": "ef3e48b48e276ca23622d14735b7c8350c0531f1"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/installed-wheel/qualification.json",
+      "status": "added",
+      "git_blob": "1d606fa7a76d6b0b967da034d6fc13300e1ce674"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/installed-wheel/qualify-installed.py",
+      "status": "added",
+      "git_blob": "f7bb91577d10eafe6b422b2bfc91f58dfe494e8e"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/installed-wheel/ruff.stderr",
+      "status": "added",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/installed-wheel/ruff.stdout",
+      "status": "added",
+      "git_blob": "1f5f344d054fae10f39140fb7199c99321d9190a"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/installed-wheel/setup.json",
+      "status": "added",
+      "git_blob": "0e484f8c548d74eced76093ade9c6789e4c220e6"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/installed-wheel/venv.stderr",
+      "status": "added",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/installed-wheel/venv.stdout",
+      "status": "added",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/installed-wheel/wheel-build.stderr",
+      "status": "added",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/installed-wheel/wheel-build.stdout",
+      "status": "added",
+      "git_blob": "8cf4d342ddc3aa55d55f10e904dd83fa83210de0"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/installed-wheel/wheel-install.stderr",
+      "status": "added",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/installed-wheel/wheel-install.stdout",
+      "status": "added",
+      "git_blob": "d918053fd43c1d3dc1253db13792a133c39a0864"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/installed-wheel/wheels/canvaspilot-0.1.1-py3-none-any.whl",
+      "status": "added",
+      "git_blob": "88f8967ee0dc05867e9fef954cea1ec4a25decdb"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/offline-browser/authored-fixture.json",
+      "status": "added",
+      "git_blob": "7cc1b05cf4cc30f34505a29944b24c9b795159bf"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/offline-browser/browser-first/browser.json",
+      "status": "added",
+      "git_blob": "ec6ad9ecd46e0cf2ec4eea331c63faa7def72745"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/offline-browser/browser-first/desktop.png",
+      "status": "added",
+      "git_blob": "1f3d1050c996b3875addb925cf9737523fc3b0cf"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/offline-browser/browser-first/phone.png",
+      "status": "added",
+      "git_blob": "ad5f62df79b2c9c6041d3674359215d746e9efda"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/offline-browser/capture.json",
+      "status": "added",
+      "git_blob": "b84a27c8ae7853caae3baedaa43fb882aad62963"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/offline-browser/console.stderr",
+      "status": "added",
+      "git_blob": "9d69c02f255d23640af7a2675896b4971cfc2b94"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/offline-browser/console.stdout",
+      "status": "added",
+      "git_blob": "73da24c7aacbd7a1a30aa5064d81f117c0271f9b"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/offline-browser/reading.html",
+      "status": "added",
+      "git_blob": "4da4d87b32199118794ec4a81904a5f543c06b50"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/peer-review/mac-announcements-composition-review.json",
+      "status": "added",
+      "git_blob": "7077d635a38c06f0b3c522f3ae8de49586d5f256"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/peer-review/mac-current-composition-review.json",
+      "status": "added",
+      "git_blob": "11125e4b3c0f0eccb9902657a4b1b6621e09568d"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/peer-review/mac-quiz-composition-review.json",
+      "status": "added",
+      "git_blob": "a6667400504f36aa4292e66ddbf05b9e901b2246"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/peer-review/mac-source-review.json",
+      "status": "added",
+      "git_blob": "a28db550ca14d7f7c81e6231b52f98465f71b241"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/qualify_browser.py",
+      "status": "added",
+      "git_blob": "83188fdd0df5948574bacbb8a23f740b835ad280"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/qualify_current_replay.py",
+      "status": "added",
+      "git_blob": "20c46261bbc6d97475e1856dc6843e76e7d91ed4"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/quiz-receiving/composition.json",
+      "status": "added",
+      "git_blob": "9e84ae3427da850c19f27caa14b2db785c8a8b6c"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/quiz-receiving/contribution.diff",
+      "status": "added",
+      "git_blob": "374daf43f401257bab1235e6d6aaa480e23fa9a4"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/quiz-receiving/fetch.stderr",
+      "status": "added",
+      "git_blob": "0f1aabf0771600e69afea923217fad003229e466"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/quiz-receiving/fetch.stdout",
+      "status": "added",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/quiz-receiving/installed-origin.stderr",
+      "status": "added",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/quiz-receiving/installed-origin.stdout",
+      "status": "added",
+      "git_blob": "9750548e843a526977f88353e298800e81b52b48"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/quiz-receiving/merge.stderr",
+      "status": "added",
+      "git_blob": "2824b3450345620e9771e943a11be15a64fc45d5"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/quiz-receiving/merge.stdout",
+      "status": "added",
+      "git_blob": "bd7003441e289a3599780bceb1013de136d17906"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/quiz-receiving/offline-capture/authored-fixture.json",
+      "status": "added",
+      "git_blob": "7cc1b05cf4cc30f34505a29944b24c9b795159bf"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/quiz-receiving/offline-capture/canonical-output-equality.json",
+      "status": "added",
+      "git_blob": "0b95136c3ab8abd79fe9fd338a4f86dabe7d342a"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/quiz-receiving/offline-capture/capture.json",
+      "status": "added",
+      "git_blob": "c989f1d2ba48de5211ccc3d4941c2ea127a1a251"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/quiz-receiving/offline-capture/console.stderr",
+      "status": "added",
+      "git_blob": "0af688c45fedb47be95f5d1c14740274cfa2e542"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/quiz-receiving/offline-capture/console.stdout",
+      "status": "added",
+      "git_blob": "07ef69c955c1e2dcbc12349243f8be5e45070bfb"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/quiz-receiving/offline-capture/reading.html",
+      "status": "added",
+      "git_blob": "580c8524d0685003d4529e845d87c54841516298"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/quiz-receiving/process-controls.stderr",
+      "status": "added",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/quiz-receiving/process-controls.stdout",
+      "status": "added",
+      "git_blob": "58e4674b7da5b92602da33c3fa10c562227d7923"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/quiz-receiving/process-controls.xml",
+      "status": "added",
+      "git_blob": "0fb8f67919ec6ac36c69cc7e71b9e689b7bf9f05"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/quiz-receiving/qualification.json",
+      "status": "added",
+      "git_blob": "2a1ddc043c617c627781cf41c4f59b16045489a2"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/quiz-receiving/qualify-installed.py",
+      "status": "added",
+      "git_blob": "f920d4d39fdcc75792eda217f115355c62d87d4b"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/quiz-receiving/ruff.stderr",
+      "status": "added",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/quiz-receiving/ruff.stdout",
+      "status": "added",
+      "git_blob": "1f5f344d054fae10f39140fb7199c99321d9190a"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/quiz-receiving/upstream-functional.diff",
+      "status": "added",
+      "git_blob": "2f2360b30e2b77e813f3e6af4fd58dd23aba3320"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/quiz-receiving/wheel-build.stderr",
+      "status": "added",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/quiz-receiving/wheel-build.stdout",
+      "status": "added",
+      "git_blob": "6fddb433c5388be5fda9696582573c76d94952da"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/quiz-receiving/wheel-install.stderr",
+      "status": "added",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/quiz-receiving/wheel-install.stdout",
+      "status": "added",
+      "git_blob": "de3dc550c76edd07d11afd5ca96da3ddf46f193b"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/quiz-receiving/wheels/canvaspilot-0.1.1-py3-none-any.whl",
+      "status": "added",
+      "git_blob": "0b71b81dcd28f3593f7dad400ac53254e3a292d4"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/source-fetch-0.stderr",
+      "status": "added",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/source-fetch-0.stdout",
+      "status": "added",
+      "git_blob": "d3fdd448f1e13e622820c93c6db83c7b2a0bb09a"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/source-fetch-1.stderr",
+      "status": "added",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/source-fetch-1.stdout",
+      "status": "added",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/source-fetch-2.stderr",
+      "status": "added",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/source-fetch-2.stdout",
+      "status": "added",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/source-fetch-3.stderr",
+      "status": "added",
+      "git_blob": "8c996f0d0c87a5285284ab5b851791b198f70e41"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/source-fetch-3.stdout",
+      "status": "added",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/source-fetch-4.stderr",
+      "status": "added",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/source-fetch-4.stdout",
+      "status": "added",
+      "git_blob": "30e80c5e6bde47929c145db10206e47a3319ae07"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/source-fetch.json",
+      "status": "added",
+      "git_blob": "ba902a9a896aa01ce6250b29450efec713ca7d89"
+    },
+    {
+      "path": "docs/evidence/page-packet-5f566b5ec8ef/test_page_export_process.before-os-control.py.txt",
+      "status": "added",
+      "git_blob": "b838441a7452178ca4d9c0290bdb48974e685939"
+    },
+    {
+      "path": "docs/page-export.md",
+      "status": "added",
+      "git_blob": "7153f83d86cdf8ab2ffa73b220a849e5ef070ce4"
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "status": "modified",
+      "git_blob": "0e1a04c36972641b65a9022e507bad03cb300e1f"
+    },
+    {
+      "path": "src/canvaspilot/page_export.py",
+      "status": "added",
+      "git_blob": "1b46af8af07d24e24cde54aba393d9f977e77136"
+    },
+    {
+      "path": "tests/fixtures/page_packet.json",
+      "status": "added",
+      "git_blob": "7cc1b05cf4cc30f34505a29944b24c9b795159bf"
+    },
+    {
+      "path": "tests/test_page_export.py",
+      "status": "added",
+      "git_blob": "6ce5490d5995d9254cbacd67c573d508081a33f7"
+    },
+    {
+      "path": "tests/test_page_export_process.py",
+      "status": "added",
+      "git_blob": "d69966b66275ee4785045cb2591c84013387fed5"
+    }
+  ]
+}

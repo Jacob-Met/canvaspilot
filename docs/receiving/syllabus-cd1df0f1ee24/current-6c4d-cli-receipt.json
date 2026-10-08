@@ -1,0 +1,284 @@
+{
+  "parent": "6c4d5d2e7526cddc1aa6c90bfbef2d1188382ad3",
+  "parent_tree": "50b0e4001ccad72078b073e2cc3606b619e064ff",
+  "groups": {
+    "ordered_current_cli_success": "pass",
+    "late_refusal_no_output": "pass",
+    "inherited_help_preservation": "pass"
+  },
+  "exact_http_requests": 4,
+  "preserved_parent_commands": [
+    "login",
+    "session",
+    "whoami",
+    "courses",
+    "sync",
+    "announcements",
+    "assignments",
+    "brief",
+    "feedback",
+    "inbox",
+    "conversation",
+    "discussions",
+    "discussion",
+    "files",
+    "browse-files",
+    "export-calendar",
+    "module-progress",
+    "submission-history",
+    "agenda",
+    "quizzes",
+    "quiz",
+    "mcp"
+  ],
+  "six_new_or_adjacent_command_help_bodies": "byte-identical",
+  "source_after_execution": {
+    "parent_closure": 19,
+    "protected_current_files": 17,
+    "payload": 6,
+    "all_exact": true
+  },
+  "processes": [
+    {
+      "label": "ordered-success",
+      "argv": [
+        "/Users/me/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+        "-m",
+        "canvaspilot.cli",
+        "export-syllabus",
+        "57",
+        "42",
+        "--out",
+        "/Users/me/Developer/canvaspilot-syllabus-cd1df0f1ee24/receiving/current-6c4d5d2e/ordered-syllabi.html",
+        "--base-url",
+        "http://127.0.0.1:63136",
+        "--token",
+        "fictional-current-parent-token",
+        "--profile",
+        "/Users/me/Developer/canvaspilot-syllabus-cd1df0f1ee24/receiving/current-6c4d5d2e/unused-profile"
+      ],
+      "source": "/Users/me/Developer/canvaspilot-syllabus-cd1df0f1ee24/composition-6c4d5d2e",
+      "exit": 0,
+      "stdout_sha256": "6e1bd6cec2ffd2cfdc2d087552ec1b52abbee2f82b205341695119172549813f",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "late-refusal",
+      "argv": [
+        "/Users/me/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+        "-m",
+        "canvaspilot.cli",
+        "export-syllabus",
+        "57",
+        "42",
+        "--out",
+        "/Users/me/Developer/canvaspilot-syllabus-cd1df0f1ee24/receiving/current-6c4d5d2e/must-not-exist.html",
+        "--base-url",
+        "http://127.0.0.1:63136",
+        "--token",
+        "fictional-current-parent-token",
+        "--profile",
+        "/Users/me/Developer/canvaspilot-syllabus-cd1df0f1ee24/receiving/current-6c4d5d2e/unused-profile"
+      ],
+      "source": "/Users/me/Developer/canvaspilot-syllabus-cd1df0f1ee24/composition-6c4d5d2e",
+      "exit": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "10bae43130cf7bbdd2bbc16fd07a1d5ea750a292808b6d82bfcec721d2a00103"
+    },
+    {
+      "label": "parent-help",
+      "argv": [
+        "/Users/me/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+        "-m",
+        "canvaspilot.cli",
+        "--help"
+      ],
+      "source": "/Users/me/Developer/canvaspilot-syllabus-cd1df0f1ee24/baseline-6c4d5d2e",
+      "exit": 0,
+      "stdout_sha256": "725b7ce998dd887b0b2e16b5837e469c7b470a46193b82abe5b21abe765a8ef2",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "candidate-help",
+      "argv": [
+        "/Users/me/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+        "-m",
+        "canvaspilot.cli",
+        "--help"
+      ],
+      "source": "/Users/me/Developer/canvaspilot-syllabus-cd1df0f1ee24/composition-6c4d5d2e",
+      "exit": 0,
+      "stdout_sha256": "3895fe05e3c5b048efd9331476d05b6309e329695b8da169f66778fb843ee394",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "parent-help-announcements",
+      "argv": [
+        "/Users/me/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+        "-m",
+        "canvaspilot.cli",
+        "announcements",
+        "--help"
+      ],
+      "source": "/Users/me/Developer/canvaspilot-syllabus-cd1df0f1ee24/baseline-6c4d5d2e",
+      "exit": 0,
+      "stdout_sha256": "18dcd37d4671639e6d62569e55f816b36968d34cc4fac98a7ce9d80afb25809f",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "candidate-help-announcements",
+      "argv": [
+        "/Users/me/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+        "-m",
+        "canvaspilot.cli",
+        "announcements",
+        "--help"
+      ],
+      "source": "/Users/me/Developer/canvaspilot-syllabus-cd1df0f1ee24/composition-6c4d5d2e",
+      "exit": 0,
+      "stdout_sha256": "18dcd37d4671639e6d62569e55f816b36968d34cc4fac98a7ce9d80afb25809f",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "parent-help-agenda",
+      "argv": [
+        "/Users/me/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+        "-m",
+        "canvaspilot.cli",
+        "agenda",
+        "--help"
+      ],
+      "source": "/Users/me/Developer/canvaspilot-syllabus-cd1df0f1ee24/baseline-6c4d5d2e",
+      "exit": 0,
+      "stdout_sha256": "f0b904877b391989332939c89f2f46c4111f499ce37b72bf364ac944c64e8d02",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "candidate-help-agenda",
+      "argv": [
+        "/Users/me/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+        "-m",
+        "canvaspilot.cli",
+        "agenda",
+        "--help"
+      ],
+      "source": "/Users/me/Developer/canvaspilot-syllabus-cd1df0f1ee24/composition-6c4d5d2e",
+      "exit": 0,
+      "stdout_sha256": "f0b904877b391989332939c89f2f46c4111f499ce37b72bf364ac944c64e8d02",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "parent-help-quizzes",
+      "argv": [
+        "/Users/me/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+        "-m",
+        "canvaspilot.cli",
+        "quizzes",
+        "--help"
+      ],
+      "source": "/Users/me/Developer/canvaspilot-syllabus-cd1df0f1ee24/baseline-6c4d5d2e",
+      "exit": 0,
+      "stdout_sha256": "629078bd9b977e9241ee076c83c924a4e9d9a82d5b0325b92c5e2736af484d98",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "candidate-help-quizzes",
+      "argv": [
+        "/Users/me/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+        "-m",
+        "canvaspilot.cli",
+        "quizzes",
+        "--help"
+      ],
+      "source": "/Users/me/Developer/canvaspilot-syllabus-cd1df0f1ee24/composition-6c4d5d2e",
+      "exit": 0,
+      "stdout_sha256": "629078bd9b977e9241ee076c83c924a4e9d9a82d5b0325b92c5e2736af484d98",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "parent-help-quiz",
+      "argv": [
+        "/Users/me/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+        "-m",
+        "canvaspilot.cli",
+        "quiz",
+        "--help"
+      ],
+      "source": "/Users/me/Developer/canvaspilot-syllabus-cd1df0f1ee24/baseline-6c4d5d2e",
+      "exit": 0,
+      "stdout_sha256": "3a01807f96b98610c497f5c5b21f22c1919079ee420b4c1b4b16173d9bfde981",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "candidate-help-quiz",
+      "argv": [
+        "/Users/me/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+        "-m",
+        "canvaspilot.cli",
+        "quiz",
+        "--help"
+      ],
+      "source": "/Users/me/Developer/canvaspilot-syllabus-cd1df0f1ee24/composition-6c4d5d2e",
+      "exit": 0,
+      "stdout_sha256": "3a01807f96b98610c497f5c5b21f22c1919079ee420b4c1b4b16173d9bfde981",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "parent-help-export-calendar",
+      "argv": [
+        "/Users/me/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+        "-m",
+        "canvaspilot.cli",
+        "export-calendar",
+        "--help"
+      ],
+      "source": "/Users/me/Developer/canvaspilot-syllabus-cd1df0f1ee24/baseline-6c4d5d2e",
+      "exit": 0,
+      "stdout_sha256": "cece744620665b82cd80f68721aac0696db8dd8324fb3bc8c6227ed81437b209",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "candidate-help-export-calendar",
+      "argv": [
+        "/Users/me/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+        "-m",
+        "canvaspilot.cli",
+        "export-calendar",
+        "--help"
+      ],
+      "source": "/Users/me/Developer/canvaspilot-syllabus-cd1df0f1ee24/composition-6c4d5d2e",
+      "exit": 0,
+      "stdout_sha256": "cece744620665b82cd80f68721aac0696db8dd8324fb3bc8c6227ed81437b209",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "parent-help-module-progress",
+      "argv": [
+        "/Users/me/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+        "-m",
+        "canvaspilot.cli",
+        "module-progress",
+        "--help"
+      ],
+      "source": "/Users/me/Developer/canvaspilot-syllabus-cd1df0f1ee24/baseline-6c4d5d2e",
+      "exit": 0,
+      "stdout_sha256": "aa3340442e610b847c5ae6427479c1423831e4fd0efd450762bba4e1fc76413a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "candidate-help-module-progress",
+      "argv": [
+        "/Users/me/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+        "-m",
+        "canvaspilot.cli",
+        "module-progress",
+        "--help"
+      ],
+      "source": "/Users/me/Developer/canvaspilot-syllabus-cd1df0f1ee24/composition-6c4d5d2e",
+      "exit": 0,
+      "stdout_sha256": "aa3340442e610b847c5ae6427479c1423831e4fd0efd450762bba4e1fc76413a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "scope": "One bounded current-parent CLI composition gate. Does not relabel or repeat prior 76 authored, 29 independent or offline browser cases."
+}

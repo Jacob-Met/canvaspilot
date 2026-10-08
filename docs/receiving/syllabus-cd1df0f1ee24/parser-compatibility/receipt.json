@@ -1,0 +1,195 @@
+{
+  "baseline_head": "60986834820abbe6b5a51b4d2cc6b6b80559409a",
+  "original_hosted_checkout": "dd93da752adce9a77619c1f8cd2179fb360f887b",
+  "original_hosted_python": "3.12.15",
+  "original_hosted_result": "1 failed, 1026 passed, 1 skipped, 54 subtests passed; Ruff passed",
+  "original_hosted_log": {
+    "path": "/dev/shm/hamon-canvas-parser-compat-cd1df0f1ee24/evidence/original-hosted-job-113457378013.log",
+    "bytes": 36265,
+    "sha256": "e7185d32824aff50775b3264da8d499c788764aabcf4dec7c0fe1ecda9682360",
+    "git_blob": "cfe0c810b5b68a299548d938f470b132da4e8c20"
+  },
+  "maintained_assertion_bodies_passed": 6,
+  "profile_count": 3,
+  "deliberate_defect_controls_detected": 7,
+  "profiles": [
+    {
+      "profile": "ambient",
+      "interpreter": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+      "execution_kind": "selected maintained assertion bodies through explicitly bounded stdlib adapter; not pytest",
+      "substitution_limit": "Only pinned html.parser and _markupbase are substituted; the interpreter and other stdlib modules remain local.",
+      "substituted_sources": [],
+      "actual_parser_probe": {
+        "passed": true
+      },
+      "original_test_result": {
+        "passed": false,
+        "error": "AssertionError",
+        "message": "DID NOT RAISE ValueError"
+      },
+      "candidate_assertions": {
+        "test_parser_assertion_has_a_handled_whole_packet_refusal": {
+          "passed": true
+        },
+        "test_malformed_marked_declaration_matches_supported_parser_behavior": {
+          "passed": true
+        }
+      },
+      "deliberate_defect_controls": {
+        "removed_assertion_handler_detected": {
+          "passed": false,
+          "error": "AssertionError",
+          "message": "synthetic declaration parser failure"
+        },
+        "changed_projection_detected": {
+          "passed": false,
+          "error": "AssertionError",
+          "message": ""
+        },
+        "changed_source_download_detected": {
+          "passed": false,
+          "error": "AssertionError",
+          "message": ""
+        }
+      },
+      "product_source_unchanged": {
+        "path": "/dev/shm/hamon-canvas-parser-compat-cd1df0f1ee24/src/canvaspilot/syllabus_packet.py",
+        "bytes": 21513,
+        "sha256": "005a837c10bb185edf0bcc75c3ab50609f6afbe49d38161e841380116ab97bd7",
+        "git_blob": "1faf3448c391fdb76b8cf38fe5854906614443b1"
+      },
+      "candidate_test": {
+        "path": "/dev/shm/hamon-canvas-parser-compat-cd1df0f1ee24/tests/test_syllabus_packet.py",
+        "bytes": 14754,
+        "sha256": "fcb487145b860c2cbf6f11430f721e7fd0b11d57f8779a7193381f3cc1ec55f3",
+        "git_blob": "fbd71a3aeb546ae77aad32d8e13e56495b19781e"
+      }
+    },
+    {
+      "profile": "3.12.8",
+      "interpreter": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+      "execution_kind": "selected maintained assertion bodies through explicitly bounded stdlib adapter; not pytest",
+      "substitution_limit": "Only pinned html.parser and _markupbase are substituted; the interpreter and other stdlib modules remain local.",
+      "substituted_sources": [
+        {
+          "path": "/dev/shm/hamon-canvas-root-recovery-cd1df0f1ee24/compatibility/_markupbase-3.12.8.py",
+          "bytes": 14653,
+          "sha256": "cb14dd6f2e2439eb70b806cd49d19911363d424c2b6b9f4b73c9c08022d47030",
+          "git_blob": "3ad7e279960f7e1f2bf79d89fe9b905e53f6a12b"
+        },
+        {
+          "path": "/dev/shm/hamon-canvas-root-recovery-cd1df0f1ee24/compatibility/parser-3.12.8.py",
+          "bytes": 17054,
+          "sha256": "ab5a0a2fce2bec75d969dbe057b490ef574f9ac57cce9e0eaaf7a220b301e838",
+          "git_blob": "13c95c34e505c8958444799fbafa83e774669fb1"
+        }
+      ],
+      "actual_parser_probe": {
+        "passed": false,
+        "error": "AssertionError",
+        "message": "unknown status keyword 'unrecognized' in marked section"
+      },
+      "original_test_result": {
+        "passed": true
+      },
+      "candidate_assertions": {
+        "test_parser_assertion_has_a_handled_whole_packet_refusal": {
+          "passed": true
+        },
+        "test_malformed_marked_declaration_matches_supported_parser_behavior": {
+          "passed": true
+        }
+      },
+      "deliberate_defect_controls": {
+        "removed_assertion_handler_detected": {
+          "passed": false,
+          "error": "AssertionError",
+          "message": "synthetic declaration parser failure"
+        }
+      },
+      "product_source_unchanged": {
+        "path": "/dev/shm/hamon-canvas-parser-compat-cd1df0f1ee24/src/canvaspilot/syllabus_packet.py",
+        "bytes": 21513,
+        "sha256": "005a837c10bb185edf0bcc75c3ab50609f6afbe49d38161e841380116ab97bd7",
+        "git_blob": "1faf3448c391fdb76b8cf38fe5854906614443b1"
+      },
+      "candidate_test": {
+        "path": "/dev/shm/hamon-canvas-parser-compat-cd1df0f1ee24/tests/test_syllabus_packet.py",
+        "bytes": 14754,
+        "sha256": "fcb487145b860c2cbf6f11430f721e7fd0b11d57f8779a7193381f3cc1ec55f3",
+        "git_blob": "fbd71a3aeb546ae77aad32d8e13e56495b19781e"
+      }
+    },
+    {
+      "profile": "3.12.15",
+      "interpreter": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+      "execution_kind": "selected maintained assertion bodies through explicitly bounded stdlib adapter; not pytest",
+      "substitution_limit": "Only pinned html.parser and _markupbase are substituted; the interpreter and other stdlib modules remain local.",
+      "substituted_sources": [
+        {
+          "path": "/dev/shm/hamon-canvas-root-recovery-cd1df0f1ee24/compatibility/_markupbase-3.12.8.py",
+          "bytes": 14653,
+          "sha256": "cb14dd6f2e2439eb70b806cd49d19911363d424c2b6b9f4b73c9c08022d47030",
+          "git_blob": "3ad7e279960f7e1f2bf79d89fe9b905e53f6a12b"
+        },
+        {
+          "path": "/dev/shm/hamon-canvas-root-recovery-cd1df0f1ee24/compatibility/parser-3.12.15.py",
+          "bytes": 22048,
+          "sha256": "a4c5558209ffe6d677dbe18e4a4b2d34672c73aee46e39b1d118846afa62a9ff",
+          "git_blob": "c5d2340b712cd6c33d5c91097f59a007ef756b18"
+        }
+      ],
+      "actual_parser_probe": {
+        "passed": true
+      },
+      "original_test_result": {
+        "passed": false,
+        "error": "AssertionError",
+        "message": "DID NOT RAISE ValueError"
+      },
+      "candidate_assertions": {
+        "test_parser_assertion_has_a_handled_whole_packet_refusal": {
+          "passed": true
+        },
+        "test_malformed_marked_declaration_matches_supported_parser_behavior": {
+          "passed": true
+        }
+      },
+      "deliberate_defect_controls": {
+        "removed_assertion_handler_detected": {
+          "passed": false,
+          "error": "AssertionError",
+          "message": "synthetic declaration parser failure"
+        },
+        "changed_projection_detected": {
+          "passed": false,
+          "error": "AssertionError",
+          "message": ""
+        },
+        "changed_source_download_detected": {
+          "passed": false,
+          "error": "AssertionError",
+          "message": ""
+        }
+      },
+      "product_source_unchanged": {
+        "path": "/dev/shm/hamon-canvas-parser-compat-cd1df0f1ee24/src/canvaspilot/syllabus_packet.py",
+        "bytes": 21513,
+        "sha256": "005a837c10bb185edf0bcc75c3ab50609f6afbe49d38161e841380116ab97bd7",
+        "git_blob": "1faf3448c391fdb76b8cf38fe5854906614443b1"
+      },
+      "candidate_test": {
+        "path": "/dev/shm/hamon-canvas-parser-compat-cd1df0f1ee24/tests/test_syllabus_packet.py",
+        "bytes": 14754,
+        "sha256": "fcb487145b860c2cbf6f11430f721e7fd0b11d57f8779a7193381f3cc1ec55f3",
+        "git_blob": "fbd71a3aeb546ae77aad32d8e13e56495b19781e"
+      }
+    }
+  ],
+  "limitations": [
+    "No pytest, Ruff, HTTPX or other package was installed.",
+    "No whole-repository test run or different Python interpreter is claimed.",
+    "The official _markupbase.py bodies at v3.12.8 and v3.12.15 were fetched and compared equal before using the single pinned copy.",
+    "The original failed CI and earlier native 3.12.8 receiving remain separately attributed."
+  ]
+}

@@ -1,0 +1,232 @@
+{
+  "schema": "hamon.canvaspilot.syllabus.independent-receiving.v4",
+  "sealedAt": "2026-10-08T16:50:23Z",
+  "custody": "https://github.com/Jacob-Met/canvaspilot/issues/65",
+  "authorWorker": "estate_source",
+  "receiverWorker": "estate_coordination",
+  "rootFamily": "estate-cd1df0f1ee24",
+  "accepted": true,
+  "baseline": {
+    "head": "c744bb5b79f23457f4dd9070f762100bc6ad91ad",
+    "tree": "abec51ddc40ab44d9e405857469736550d08b4f2",
+    "files": 18,
+    "controls": 2,
+    "passed": 2,
+    "missingFeatureObserved": true
+  },
+  "candidateV3": {
+    "files": 20,
+    "cliCases": 29,
+    "cliPassed": 29,
+    "browserGroups": 9,
+    "browserPassed": 9,
+    "actualDownloads": [
+      {
+        "courseId": 41001,
+        "filename": "course-41001-syllabus-source.txt",
+        "bytes": 918,
+        "sha256": "48af918bdbb53f4e0ee93dc1d84ce5f92f44c79586a24e4ed7cbeb7396a8d3a0",
+        "exactUtf8": true,
+        "actualNativeClick": true
+      },
+      {
+        "courseId": 41002,
+        "filename": "course-41002-syllabus-source.txt",
+        "bytes": 495,
+        "sha256": "c9f09b05e93aed9790b6e37c3a7d7eff060e7c6b5d456b3bb236bc5df318ff5f",
+        "exactUtf8": true,
+        "actualNativeClick": true
+      },
+      {
+        "courseId": 41009,
+        "filename": "course-41009-syllabus-source.txt",
+        "bytes": 1858,
+        "sha256": "eabb652c743237e1ff2512c966994522689112f80af77dd7764195679c2ac221",
+        "exactUtf8": true,
+        "actualNativeClick": true
+      },
+      {
+        "courseId": 41010,
+        "filename": "course-41010-syllabus-source.txt",
+        "bytes": 108,
+        "sha256": "8beb07b9e2aad4c87509cc3685b2da46595b4597f7f41552a11dbf8e000116cf",
+        "exactUtf8": true,
+        "actualNativeClick": true
+      },
+      {
+        "courseId": 41004,
+        "filename": "course-41004-syllabus-source.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "exactUtf8": true,
+        "actualNativeClick": true
+      }
+    ],
+    "captures": [
+      {
+        "file": "normal-course-desktop.png",
+        "bytes": 111352,
+        "sha256": "013b88b6f0877ad445fce90bf44fee522a0d119738e1a85f1861c4aa179762d1"
+      },
+      {
+        "file": "passive-reading-desktop.png",
+        "bytes": 184121,
+        "sha256": "756cc02fc25743319db7a3ff6cdb0892f2b058c575c85a492639ea445c879dce"
+      },
+      {
+        "file": "normal-course-phone.png",
+        "bytes": 76064,
+        "sha256": "f799dfb0a468f19178176f84f40180004f76c6ad3212b951b914a5051a81ec81"
+      }
+    ],
+    "httpAttempts": 0,
+    "runtimeErrors": 0,
+    "consoleErrors": 0,
+    "dialogs": 0,
+    "printVisualAccepted": false,
+    "printFailure": "Generated navigation footer alone on fourth page"
+  },
+  "finalCurrentPrintV4": {
+    "parent": "6c4d5d2e7526cddc1aa6c90bfbef2d1188382ad3",
+    "parentTree": "50b0e4001ccad72078b073e2cc3606b619e064ff",
+    "files": 21,
+    "sourceManifestSHA256": "294b441fb1690104003e4991b300cb5c5aca9c4a5dee7f8bc7db29be136c5403",
+    "moduleSHA256": "005a837c10bb185edf0bcc75c3ab50609f6afbe49d38161e841380116ab97bd7",
+    "actualOrderedCourseIds": [
+      41002,
+      41001
+    ],
+    "completeHtmlEqualityAfterTwoPrintSubstitutionsAndTimestamp": true,
+    "html": {
+      "bytes": 13470,
+      "sha256": "fcdd2893f74ab569a1511d19bcbbf8ed5d84f2c36b1c88b9028f7b35311272eb"
+    },
+    "pdf": {
+      "file": "selected-syllabus-reading.pdf",
+      "bytes": 264380,
+      "sha256": "64228420a59046c6ac7d17b906e73d85281461d3505db8a11a9a6cda0c78fbea"
+    },
+    "pages": 3,
+    "allPagesVisuallyInspected": true,
+    "coursePage2And3PixelsIdenticalToV3": true,
+    "noFullGateRerun": true,
+    "httpAttempts": 0,
+    "runtimeErrors": 0,
+    "consoleErrors": 0,
+    "dialogs": 0
+  },
+  "runtime": {
+    "python": "3.12.8 (main, Dec  3 2024, 18:42:41) [Clang 16.0.0 (clang-1600.0.26.4)]",
+    "browser": "Chrome/154.0.8037.98",
+    "node": "v26.3.0",
+    "httpx": "0.28.1",
+    "puppeteer": "25.12.0"
+  },
+  "failedAttemptsPreserved": [
+    "Initial ENOSPC receiver-archive transport; missing-input launch before product execution",
+    "v1 baseline empty-stderr assertion on inherited HTTPX INFO line",
+    "v2 receiver edit SyntaxError before execution",
+    "v3 generated-footer-only fourth print page",
+    "Initial diskless PDF renderer closed stdin before parsing"
+  ],
+  "independence": {
+    "contractAndCasesFrozenBeforeSourceImplementationInspection": true,
+    "authoredTestBodiesRead": false,
+    "productSourceEditedByReceiver": false,
+    "liveCanvasAccountUsed": false,
+    "networkSocketsUsedByFixtureTransport": false,
+    "publicationClaim": false
+  },
+  "keyEvidence": [
+    {
+      "path": "baseline-current-manifest.json",
+      "bytes": 4225,
+      "sha256": "e5ead774db7575dae827d1db85c370945453250173ea3c92193126b5e34aec2b",
+      "mode": "0o644"
+    },
+    {
+      "path": "candidate-v3-manifest.json",
+      "bytes": 4940,
+      "sha256": "9ed01815bb617c3059cc76abc7f948107d3520bbb99c0dcbc9e2d6d1dfe3f621",
+      "mode": "0o644"
+    },
+    {
+      "path": "candidate-current-print-v4-manifest.json",
+      "bytes": 5149,
+      "sha256": "294b441fb1690104003e4991b300cb5c5aca9c4a5dee7f8bc7db29be136c5403",
+      "mode": "0o644"
+    },
+    {
+      "path": "baseline-run-v1-01/cli-receiving.json",
+      "bytes": 13064,
+      "sha256": "799c92c87e7c4f05dd4db9721806f209356710b79920670f13a00be4e4a0eb99",
+      "mode": "0o644"
+    },
+    {
+      "path": "baseline-run-v3-01/cli-receiving.json",
+      "bytes": 13846,
+      "sha256": "8034a1ac25ee50fd8a2080ec0fede6b6d4c4f42d3ffd58cde78bad489982e71e",
+      "mode": "0o644"
+    },
+    {
+      "path": "candidate-v3-run-01/cli-receiving.json",
+      "bytes": 82103,
+      "sha256": "1a5b6eefaa45db63418eba00f1816955e79e256bd4cee328635976c6ac539fbc",
+      "mode": "0o644"
+    },
+    {
+      "path": "browser-v3-run-01/browser-receiving.json",
+      "bytes": 25424,
+      "sha256": "b6eec9cc0cf2ce5df12de294cc376351b43a3df8eab1a5af4da37fdf43eca8ef",
+      "mode": "0o644"
+    },
+    {
+      "path": "print-v3-inspection/visual-receiving.json",
+      "bytes": 2989,
+      "sha256": "b66b6f0af801e674e75d9eff2999ce6b1bb0a1b885f7e524dc2416dc96d27e45",
+      "mode": "0o644"
+    },
+    {
+      "path": "current-print-v4-run-01/print-receiving.json",
+      "bytes": 1696,
+      "sha256": "bb4ed3e0652fff8cd64ae7c415819973b7264b0f6348bc98edb701613ab6b430",
+      "mode": "0o644"
+    },
+    {
+      "path": "print-v4-inspection/visual-receiving.json",
+      "bytes": 3081,
+      "sha256": "abc3c3de4ea6d3b6b46bd6d5aa05dc43585cb0249b0ab8dde925f6d0834ca2cd",
+      "mode": "0o644"
+    },
+    {
+      "path": "receiver-correction-v2.json",
+      "bytes": 744,
+      "sha256": "bb3f7cf7e433435cabaca6c0a64a46153c508185bd0edd9d9c7958c59b9acd9e",
+      "mode": "0o644"
+    },
+    {
+      "path": "receiver-correction-v3.json",
+      "bytes": 821,
+      "sha256": "905084d92b4757105aad990cf118d3660cc63bbffa8d2a8d923d69fc81bb124d",
+      "mode": "0o644"
+    },
+    {
+      "path": "receiver-v3/input-manifest.json",
+      "bytes": 1227,
+      "sha256": "c179e00272cc02e28fadb3a9927aee57e58ffedb31727b441abe62edaa793f57",
+      "mode": "0o644"
+    },
+    {
+      "path": "browser-driver-v1-freeze.json",
+      "bytes": 545,
+      "sha256": "def6b91ff6204af1bd58aaa52d054b5093fb5c8a50c2a251797ace1172cf9b34",
+      "mode": "0o644"
+    },
+    {
+      "path": "current-print-v4-stage-receipt.json",
+      "bytes": 696,
+      "sha256": "394e2b2413884ce066396576f69b37afe7b5d370abb9b3c578c2046caedcd6fc",
+      "mode": "0o644"
+    }
+  ]
+}

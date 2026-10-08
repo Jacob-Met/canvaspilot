@@ -1,0 +1,260 @@
+{
+  "repository": "Jacob-Met/canvaspilot",
+  "ownership_issue": "https://github.com/Jacob-Met/canvaspilot/issues/65",
+  "owner": "estate-cd1df0f1ee24/estate_source",
+  "baseline_missing_command_head": "a5ce672e5b3580c1f52e13c49eefee830f11346c",
+  "candidate_parent": "c744bb5b79f23457f4dd9070f762100bc6ad91ad",
+  "candidate_parent_tree": "abec51ddc40ab44d9e405857469736550d08b4f2",
+  "candidate_version": 3,
+  "runtime": {
+    "device_id": "0e3d582f-e25b-44b2-8418-9639fc4e4e33",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "python": "3.12.8 (main, Dec  3 2024, 18:42:41) [Clang 16.0.0 (clang-1600.0.26.4)]",
+    "executable": "/Users/me/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+    "packages": {
+      "pytest": "9.1.1",
+      "httpx": "0.28.1",
+      "mcp": "2.3.0",
+      "pydantic": "2.13.5",
+      "ruff": "0.16.10"
+    },
+    "existing_environment_reused_read_only": true,
+    "source": "candidate-v3",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "source": {
+    "baseline": "c744bb5b79f23457f4dd9070f762100bc6ad91ad",
+    "files": [
+      {
+        "path": "docs/syllabus-packet.md",
+        "bytes": 8498,
+        "sha256": "8cb67be23cd398b392cbbeb0e833af283129602873dbb138e1dd340e214ec7e3",
+        "git_blob": "9eb3170e7eef2f14e7d1bfeaa5001b9d942cdd00"
+      },
+      {
+        "path": "README.md",
+        "bytes": 21785,
+        "sha256": "393895bc59c45d19da0982ff5aea39b74a3da8a0db5123b7e3089dc3462e5efb",
+        "git_blob": "2b890c421ba03e530b00c4fb285e2c77f519505f"
+      },
+      {
+        "path": "src/canvaspilot/syllabus_packet.py",
+        "bytes": 21476,
+        "sha256": "7e60d8b5b1598078ca28a1e11bd458acdcff180cfe28ad126360cae38cf8f0ce",
+        "git_blob": "b121e1e61a12fbfcc6c9dcd53359bb05a55f6cab"
+      },
+      {
+        "path": "src/canvaspilot/cli.py",
+        "bytes": 18137,
+        "sha256": "6c06c58567ccbd831170149333283db52ec8ec7bbc7947626bbdae1974619b72",
+        "git_blob": "99d52f7b6a0513d564c07ca3dbf357240b0baf03"
+      },
+      {
+        "path": "tests/test_syllabus_packet.py",
+        "bytes": 13143,
+        "sha256": "322b5d681b03d2267e0e413e55c394fb1695c6c6cfdd5c144cda32d1d1f494ee",
+        "git_blob": "f9539fdd8ba5d9db5455cb24ce51eb30602c3764"
+      },
+      {
+        "path": "tests/test_syllabus_packet_cli.py",
+        "bytes": 7838,
+        "sha256": "e27070b7e9d89d91ef867ea3ea460fa0b80411bf8eaf353c96cb52308bff25ea",
+        "git_blob": "31b898a4bdedffaed06e0c83656e023640cc1db8"
+      }
+    ],
+    "changes": [
+      "Native Ruff default-rule idioms; upstream wrong types use TypeError under unchanged CLI refusal",
+      "First duplicate HTML attribute retained, as in HTML; v2 negative witness retained",
+      "List numbering attributes preserved as escaped native values; v2 spaced-start witness retained"
+    ]
+  },
+  "baseline": {
+    "native_cli_help": 0,
+    "missing_export_command": 2,
+    "output_absent": true,
+    "existing_get_course_positive": "exact supplied HTML and request include list retained",
+    "source_files_unchanged": 17,
+    "current_get_course_ast_unchanged": true
+  },
+  "author_v1": {
+    "pytest_passed": 70,
+    "pytest_failed": 0,
+    "ruff_exit": 1,
+    "ruff_findings": 11,
+    "extra_marked_declaration": "unhandled AssertionError",
+    "extra_malformed_link": "ValueError instead of inert destination",
+    "preserved": "original source, raw outputs and two extra counterexamples"
+  },
+  "author_v2": {
+    "pytest_passed": 72,
+    "pytest_failed": 0,
+    "ruff_exit": 1,
+    "ruff_findings": 10,
+    "isolated_ruff_findings": 7,
+    "extra_duplicate_attribute": "last href chosen, contrary to HTML first-attribute identity",
+    "extra_spaced_list_start": "numbering attribute lost",
+    "preserved": "original source, raw outputs and two extra counterexamples"
+  },
+  "author_v3": {
+    "pytest_passed": 76,
+    "pytest_failed": 0,
+    "pytest_skipped": 0,
+    "ruff_exit": 0,
+    "canonical_ruff_config": "unchanged pyproject.toml; no repository Ruff settings",
+    "source_hashes_after_execution": "all six exact"
+  },
+  "lint_diagnosis_correction": "An initial ambient-config hypothesis was rejected: the no-config Ruff probe also emitted the non-version-dependent rules. The installed runtime defaults required the final lint idioms. No user/project configuration or rule selection was altered.",
+  "boundary": "Focused native Python/HTTPX/CLI/file qualification on an exact 18-file source closure; not a full repository suite, live Canvas account, broker-origin proof, deployed/installed service or learner outcome. Independent browser/current-parent hosted qualification remain separate.",
+  "source_preservation_receipt": {
+    "path": "receiving/source-preservation-v3.json",
+    "sha256": "e6d4f160974bf60251c32aa34214ee387b4ead473ccbfc5a0bd79c2277c65430",
+    "protected_files": 16,
+    "cli_insertions": 2,
+    "readme_insertions": 1
+  },
+  "storage_events": [
+    {
+      "operation": "local raw review JSON transport",
+      "result": "ENOSPC; zero-byte own failed file removed; native source unchanged"
+    },
+    {
+      "operation": "local compressed review transport",
+      "result": "42932 bytes read back exact"
+    }
+  ],
+  "coordination_boundary": "Current GitHub source/issues/HAMON140+142 were inspected. Native ThinkPad advisory read was unavailable and host later reported offline; no empty native advisory set or resident lease was claimed.",
+  "primary_sources": [
+    "https://developerdocs.instructure.com/services/canvas/resources/courses",
+    "https://docs.python.org/3.12/library/html.parser.html",
+    "https://docs.python.org/3.12/library/os.html#os.link",
+    "https://html.spec.whatwg.org/multipage/parsing.html#attribute-name-state",
+    "https://docs.astral.sh/ruff/configuration/"
+  ],
+  "raw_receiving_files": [
+    {
+      "path": "receiving/baseline/existing-course-reader.json",
+      "bytes": 786,
+      "sha256": "6251e624c54488f7f08b597d3d43dd8fa983ee864460ece4fca184463ec0e888"
+    },
+    {
+      "path": "receiving/baseline/help.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "receiving/baseline/help.stdout",
+      "bytes": 1638,
+      "sha256": "4972093b9edaf5b2e76517c481892921515a9d11fe1d5ad26b4e8fc20defd88d"
+    },
+    {
+      "path": "receiving/baseline/missing-export.stderr",
+      "bytes": 498,
+      "sha256": "f3c9f43c6164982849457576dc698e00a68425ddf11b13164d6e3b54cc94f898"
+    },
+    {
+      "path": "receiving/baseline/missing-export.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "receiving/baseline/receipt.json",
+      "bytes": 1995,
+      "sha256": "a32042d5f236be504348986c1bc40ec5ea3722e52daa7d563c5a0f5d3b7733c3"
+    },
+    {
+      "path": "receiving/author-v1/markup-counterexamples.json",
+      "bytes": 304,
+      "sha256": "0a69bbb5dff5951d727c8bdd18ee86b63942ae34c90fe47e2868ce9051442557"
+    },
+    {
+      "path": "receiving/author-v1/pytest.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "receiving/author-v1/pytest.stdout.log",
+      "bytes": 100,
+      "sha256": "1ec7e493ccc43fe3c57cc4a969e37a49bf4a3313a6e29565cd985b76305e4514"
+    },
+    {
+      "path": "receiving/author-v1/receipt.json",
+      "bytes": 883,
+      "sha256": "fe4a4acc574e39ae49d072f81c24700d753c051b4730997678dabc24797c1a94"
+    },
+    {
+      "path": "receiving/author-v1/ruff.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "receiving/author-v1/ruff.stdout.log",
+      "bytes": 7480,
+      "sha256": "34bdc318b77b8e7831fddabd8715d6c57814b762aa6eee93808aaf2c1ce79c02"
+    },
+    {
+      "path": "receiving/author-v2/attribute-counterexamples.json",
+      "bytes": 1000,
+      "sha256": "8724f6e7791fd23779eddf10ea171e26e3b8be40e1ecf1bea9b8015eaa774971"
+    },
+    {
+      "path": "receiving/author-v2/pytest.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "receiving/author-v2/pytest.stdout.log",
+      "bytes": 100,
+      "sha256": "ee480d8771154812ff6fe4e61771c73f9ae8f044da8969bd798760850fbffd40"
+    },
+    {
+      "path": "receiving/author-v2/receipt.json",
+      "bytes": 929,
+      "sha256": "bb91eec5a986b0fa16405e4f9d504bb40c08a639e79e83d962505854d87d814f"
+    },
+    {
+      "path": "receiving/author-v2/ruff-isolated.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "receiving/author-v2/ruff-isolated.stdout.json",
+      "bytes": 5652,
+      "sha256": "226b81534bdfaaced9eb80874e93b027a27ea25152c493b6b79dc8415e70d7ef"
+    },
+    {
+      "path": "receiving/author-v2/ruff.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "receiving/author-v2/ruff.stdout.log",
+      "bytes": 7129,
+      "sha256": "63ee60ced87a84efad871941e98e5e7a42ea049dc013f0d01708bbff394207a0"
+    },
+    {
+      "path": "receiving/author-v3/pytest.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "receiving/author-v3/pytest.stdout.log",
+      "bytes": 180,
+      "sha256": "6dfbd4e8b54fb688fe9d31b5bb578d836db0bd2431908a742ec71228ef99e6ec"
+    },
+    {
+      "path": "receiving/author-v3/receipt.json",
+      "bytes": 929,
+      "sha256": "2a5317e94d0d5a480d0c06819933c1a657dcb22f1d90831e14855aca4e7e3924"
+    },
+    {
+      "path": "receiving/author-v3/ruff.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "receiving/author-v3/ruff.stdout.log",
+      "bytes": 19,
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    }
+  ]
+}

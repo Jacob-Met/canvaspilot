@@ -1,0 +1,43 @@
+{
+  "parent": "f618c3ed13f191ea58642283c1f9cd45a0c1ca81",
+  "parent_tree": "1bcfff90694cdb8358684ada58ff349562244de7",
+  "component_version": 4,
+  "files": [
+    {
+      "path": "docs/syllabus-packet.md",
+      "bytes": 8588,
+      "sha256": "278f65951c5af51601ae627228685bf6b2b715a85305e128fd851d63255674b1",
+      "git_blob": "b116a01fe40af81318acacd299e3ad61314f8ca7"
+    },
+    {
+      "path": "README.md",
+      "bytes": 25492,
+      "sha256": "d820d8943da105392e811ecdf39be36fbe39e1f4c0895801acb87195c3e83f57",
+      "git_blob": "55d2c68fd93d28a148672241ccb430bfeefeb4d2"
+    },
+    {
+      "path": "src/canvaspilot/syllabus_packet.py",
+      "bytes": 21513,
+      "sha256": "005a837c10bb185edf0bcc75c3ab50609f6afbe49d38161e841380116ab97bd7",
+      "git_blob": "1faf3448c391fdb76b8cf38fe5854906614443b1"
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "bytes": 27039,
+      "sha256": "c2475969c10ea83c953090cccb114b41a9c234a4922a571d0fcd4affd09613ea",
+      "git_blob": "988fdff6fa826d582c4522a135cdd2bd6ac21257"
+    },
+    {
+      "path": "tests/test_syllabus_packet.py",
+      "bytes": 13143,
+      "sha256": "322b5d681b03d2267e0e413e55c394fb1695c6c6cfdd5c144cda32d1d1f494ee",
+      "git_blob": "f9539fdd8ba5d9db5455cb24ce51eb30602c3764"
+    },
+    {
+      "path": "tests/test_syllabus_packet_cli.py",
+      "bytes": 7838,
+      "sha256": "e27070b7e9d89d91ef867ea3ea460fa0b80411bf8eaf353c96cb52308bff25ea",
+      "git_blob": "31b898a4bdedffaed06e0c83656e023640cc1db8"
+    }
+  ]
+}
