@@ -1,0 +1,476 @@
+{
+  "schema": 1,
+  "repository": "Jacob-Met/canvaspilot",
+  "claim": "https://github.com/Jacob-Met/hamon/issues/140#issuecomment-6059762346",
+  "publication_parent": {
+    "commit": "79a2f2b2cbb7e74128d731cf096c7e86f1942d4b",
+    "tree": "0114a6230c473c1ee1d01b99c7121c754b781d54",
+    "native_input_files": 49,
+    "total_parent_leaves": 708,
+    "existing_paths_intentionally_modified": [
+      "README.md",
+      "src/canvaspilot/api.py"
+    ],
+    "other_parent_leaves_to_preserve": 706
+  },
+  "feature_source_files": [
+    {
+      "path": "README.md",
+      "bytes": 19769,
+      "sha256": "9243eeac04fd867cc111e1d0a95259aa266dae210d8eebc4da33287af28bfaae",
+      "git_blob": "f1740a512af81916490a27887141382d10469efa"
+    },
+    {
+      "path": "docs/assignment-submission.md",
+      "bytes": 5473,
+      "sha256": "a8a8b9c7600c9c61f1108c1488efbaa4b39db5e16decaabee8adf96bb025869a",
+      "git_blob": "be1465caebdc7cddc302fb3e71a372fe540195c4"
+    },
+    {
+      "path": "src/canvaspilot/api.py",
+      "bytes": 27718,
+      "sha256": "00b65511b84a77d69312dbdc6abe21bfd62ef47ce0a5cdf8c1af2fd2d705c3e8",
+      "git_blob": "8de750525055991ca470fb4881d0368a07631818"
+    },
+    {
+      "path": "src/canvaspilot/assignment_submission.py",
+      "bytes": 1296,
+      "sha256": "52fc732660b8844a2ee0801931a363f20db15b5309d148d01e3b618be487133d",
+      "git_blob": "95b1f19927e4eecf99fc852325737c3cfe86cd0d"
+    },
+    {
+      "path": "tests/test_assignment_submission.py",
+      "bytes": 9989,
+      "sha256": "ccf038f9e1fb0bd6c8658041d88bf90d11404ef32baeff3e937b2b514a44e4a5",
+      "git_blob": "5a5b14e207a85b414e973508bcbc8c94558d2479"
+    },
+    {
+      "path": "tests/test_assignment_submission_process.py",
+      "bytes": 15931,
+      "sha256": "6cb60d1ffe02875999ef54ac8770984086b760afbc43ac10aa43fd3139820935",
+      "git_blob": "41c5efc672cd1154c278609c773e5deff003ec08"
+    }
+  ],
+  "historical_source_freeze": {
+    "parent": "ca2318fe7c56d2e4ec1b363ff8a945ab78bf4a0c",
+    "tree": "ea775021cbf300367369a169f584f1092347cf5c",
+    "EOF_only_changes_from_tested_current_candidate": [
+      {
+        "path": "docs/assignment-submission.md",
+        "removed_bytes": 1,
+        "before_sha256": "ead2e44389455c22af2bb2ea2dc11c8692e521e2f83379c0b138b32751f44e70",
+        "after_sha256": "a8a8b9c7600c9c61f1108c1488efbaa4b39db5e16decaabee8adf96bb025869a",
+        "before_git_blob": "dbc222df2577b7df326e8ce98b5e5850872bede7",
+        "after_git_blob": "be1465caebdc7cddc302fb3e71a372fe540195c4"
+      },
+      {
+        "path": "src/canvaspilot/assignment_submission.py",
+        "removed_bytes": 1,
+        "before_sha256": "36a8df6aa911461fdfd609a2a6ebc64505312dba38bf77278eee54c5677faa1a",
+        "after_sha256": "52fc732660b8844a2ee0801931a363f20db15b5309d148d01e3b618be487133d",
+        "before_git_blob": "cf670b817b7a47cff065dacc4f15d045d54bce97",
+        "after_git_blob": "95b1f19927e4eecf99fc852325737c3cfe86cd0d",
+        "Python_AST_identical": true
+      },
+      {
+        "path": "tests/test_assignment_submission_process.py",
+        "removed_bytes": 1,
+        "before_sha256": "d13153e2d4d20c9d3dfdbebfce0195a3070c1c5d7d4a8675cb057290d9a6660f",
+        "after_sha256": "6cb60d1ffe02875999ef54ac8770984086b760afbc43ac10aa43fd3139820935",
+        "before_git_blob": "be8b672268332fe6148a810815d901e6ca1731fd",
+        "after_git_blob": "41c5efc672cd1154c278609c773e5deff003ec08",
+        "Python_AST_identical": true
+      }
+    ],
+    "patch_sha256": "d8275fe17ebdd26aa22fc04670856949d5dd41ee10a76d7b53317b88d4eccd57"
+  },
+  "current_parent_source_binding": {
+    "parent": "79a2f2b2cbb7e74128d731cf096c7e86f1942d4b",
+    "tree": "0114a6230c473c1ee1d01b99c7121c754b781d54",
+    "tree_objects": 89,
+    "leaves": 708,
+    "all_six_frozen_source_blobs_identical": true,
+    "feature_patch_unchanged": true,
+    "patch_command": [
+      "git",
+      "apply",
+      "--check",
+      "--whitespace=error-all",
+      "/dev/shm/hamon-31a349052b90/canvas-assignment-submission-31a349052b90/publish.patch"
+    ],
+    "patch_cwd": "/dev/shm/hamon-31a349052b90/canvas-assignment-submission-31a349052b90/parent-79a2",
+    "patch_exit": 0,
+    "stdout": "",
+    "stderr": "",
+    "native_rerun": false
+  },
+  "current_parent_native_inputs": [
+    {
+      "path": "pyproject.toml",
+      "bytes": 1353,
+      "git_blob": "76eba6d30696b4f2733539cd47df6e178bc0f585",
+      "sha256": "555ad3c7e338d38ae5feabc06c0c07503f22d9c732a9af153c7706c63d2b3c63"
+    },
+    {
+      "path": "README.md",
+      "bytes": 19360,
+      "git_blob": "f06fdc3090679d61953951eac6328b91cb674650",
+      "sha256": "b41aab90aacc390f31462a26c6cfbbcc4bacb0c9a7090c64002f004e3a26974b"
+    },
+    {
+      "path": "tests/test_calendar_session_identity.py",
+      "bytes": 6647,
+      "git_blob": "fcad9a69739aa859f399ed0c37712fa10bf3f7c6",
+      "sha256": "54571e3486e670669a19ac5fa1c10c46136435773487f5b566752bd5ef1e5605"
+    },
+    {
+      "path": "tests/test_calendar_pagination_errors.py",
+      "bytes": 2360,
+      "git_blob": "60df1b66987c0e1dc9027593d2d06710ee4a6b88",
+      "sha256": "f3738ecd6addd7cd877de90746c0a9e5c64845a2c3a7e8617ad0d3ca4bc4c8a6"
+    },
+    {
+      "path": "tests/test_broker_provider_routing.py",
+      "bytes": 4087,
+      "git_blob": "7fc17ef832057d1090f742a0c3c85f0d67e80752",
+      "sha256": "b3b896259c9c0c264988bfe532a66c3ffe4f36033e28597b25367fa76c5c865f"
+    },
+    {
+      "path": "tests/test_sync_summary.py",
+      "bytes": 10415,
+      "git_blob": "f15e781cd0580324c668bec4181ed238b9cacb29",
+      "sha256": "5e40e9207a53d423a139db7de9d43898cf95e26877f351baf15bdc129206a424"
+    },
+    {
+      "path": "tests/test_submission_feedback_native.py",
+      "bytes": 9410,
+      "git_blob": "bb5bce648386995732b08c098fb5d4249f6bc0c8",
+      "sha256": "8ad68b80e63d2d448c2b1b9e8821bb6ebf47adc0b5e1ccc9379633bb9495d5fb"
+    },
+    {
+      "path": "tests/test_submission_feedback.py",
+      "bytes": 6891,
+      "git_blob": "0d747c4866ddc87e77ed84caad877414c7be329b",
+      "sha256": "d6669be101562d6d2c88e5e0a6a468f6c82d614960bee65cb294243ebf136be7"
+    },
+    {
+      "path": "tests/test_strip_html.py",
+      "bytes": 1493,
+      "git_blob": "9cac253f89820d36375b364daec9b34bb2d78e25",
+      "sha256": "3445579d5d8e0863e3331fd8fe54de7a45bc88db5546186eb60dc70865dce915"
+    },
+    {
+      "path": "tests/test_offline_demo.py",
+      "bytes": 2226,
+      "git_blob": "96b0f352f9c8dfe4c268c32ddbf0027506a010e2",
+      "sha256": "ddc7a133e76f987decb5774b00e6d6c6b8973d5895d6c4a4ae5ea6d6e6bb1154"
+    },
+    {
+      "path": "tests/test_module_progress_process.py",
+      "bytes": 12181,
+      "git_blob": "e80d30bbd87a16dc469c9bc3409eb2be24a24307",
+      "sha256": "21187c11a7bca557a8b37c0d61933e3532c8c69e628bd618fa62361e0f713826"
+    },
+    {
+      "path": "tests/test_module_progress.py",
+      "bytes": 9506,
+      "git_blob": "97857eb7723ac9460cb38d791d883df9ddc4a449",
+      "sha256": "bdbcf205666ede901fd012764cf009dd90611c1a18089c2e6ce13b242ed081c2"
+    },
+    {
+      "path": "tests/test_module_items.py",
+      "bytes": 10342,
+      "git_blob": "8390e2d8cd6027ee0ba6d7f64d5163b455ae2e7d",
+      "sha256": "fd70a1a0f1e880c9c9075633ece8d83a710a47136e102ad675dce55bc844aad6"
+    },
+    {
+      "path": "tests/test_folder_browser.py",
+      "bytes": 12027,
+      "git_blob": "f2aacab375da0976bcbbb3d50f0231a1db54eeb7",
+      "sha256": "4068912fe7d32953c576b1278c28c47c3697592e6a194a230400be13b9cae95c"
+    },
+    {
+      "path": "tests/test_fixture.py",
+      "bytes": 1497,
+      "git_blob": "fbee86133431fbe2b1eabaa598f8de094fc18b0c",
+      "sha256": "3f53176abf7ee425b1ff8d62a0e4b7f84d2e47e0b0ff9f03adae152301bc23be"
+    },
+    {
+      "path": "tests/test_calendar_export.py",
+      "bytes": 11534,
+      "git_blob": "b6e926ab14ef4320ceeb23d174fc62399e2356a7",
+      "sha256": "0774869f562ab1bdff8d09df38216fab7cc44543ded02be620c2a4e5e3a9e17f"
+    },
+    {
+      "path": "tests/test_bundle_api.py",
+      "bytes": 1657,
+      "git_blob": "d42f4cca2f1f08203d831f098aa1d9f82d3d9f78",
+      "sha256": "a3c200027083582815bcdacf8b19f68a2a7f2b10597e4ae3270c819c54639615"
+    },
+    {
+      "path": "tests/test_broker_readonly.py",
+      "bytes": 4746,
+      "git_blob": "fa609760903148b6d55623e6e3b79f6ffd3395b0",
+      "sha256": "fd9baae5e8f176636eb5377fee753facd87c136416dcc2e3ec252090aad9d6c5"
+    },
+    {
+      "path": "tests/test_broker_loopback_bind.py",
+      "bytes": 3327,
+      "git_blob": "fd8971cefe9da9bb8f7832d81c9a26c5725eda86",
+      "sha256": "c889696ea86f73f0aa00b1b86f623855c92cd6eccef6b7764910e0df99b5c9e5"
+    },
+    {
+      "path": "tests/test_broker_encoding.py",
+      "bytes": 7384,
+      "git_blob": "511618760341a2e011c1334c3e49b1b7219ccff0",
+      "sha256": "1fd19dd35025c9201b2349f565c25932b7f3cd6cc0eff8259eddb0fdc2046b09"
+    },
+    {
+      "path": "tests/test_assignment_brief_rubric.py",
+      "bytes": 9514,
+      "git_blob": "1881a19e593c4fb095d1a4dc97fce53a8c13f02e",
+      "sha256": "cc4bdb56034b32e08a63d4b1ae193e364bfc9b9b4b2a506cf2ef08f43000158c"
+    },
+    {
+      "path": "tests/test_announcements_pagination.py",
+      "bytes": 7414,
+      "git_blob": "1765082a32c2ba35c25e68614a57aaeef4528c15",
+      "sha256": "da3393b733f4cc141bfe6ae1c3f3933398519b4ecd77f0ad44017b10a3b48064"
+    },
+    {
+      "path": "tests/module_progress_fixture.py",
+      "bytes": 5185,
+      "git_blob": "cde6154c03f5987a31e30f3cefaeb97247fd0198",
+      "sha256": "d7c724cd5147ff03321247728d99af19039e05d4a4d56d32feaa4303d68260b9"
+    },
+    {
+      "path": "tests/folder_http_fixture.py",
+      "bytes": 7440,
+      "git_blob": "454a761a6557daad73234b2f5801839a7db460a2",
+      "sha256": "c7e29a633e66020b9440bbff54ee636889a022fc5a92d4ee2dae193314d72944"
+    },
+    {
+      "path": "tests/test_broker_link_metadata_receiving.py",
+      "bytes": 4080,
+      "git_blob": "c43c91f24adebfeafcc8f291427050aca20f8a88",
+      "sha256": "5b92def5254d9a00a73f6e268903b367664763d440bbfafd3861a570ce2c3ace"
+    },
+    {
+      "path": "tests/test_broker_links.py",
+      "bytes": 11929,
+      "git_blob": "2485e980951cb76b39a43d0032631c28891bf0f8",
+      "sha256": "a65ea84914e8afe13bdf2c88c9a6107fbc448ed46f00db50ae1d92f5de427028"
+    },
+    {
+      "path": "tests/test_browser_link_metadata.py",
+      "bytes": 6870,
+      "git_blob": "5f13caea0f3ad5a8d2e8b0aa7bae12c2ae59dec4",
+      "sha256": "e7bb134adebdaaf9fda596f79b853d0c42bd42ff9aafb4958c1e07a6a0de90d3"
+    },
+    {
+      "path": "tests/test_legacy_metadata_policy.py",
+      "bytes": 1223,
+      "git_blob": "a46b5faa10c69dd4a3fa76543d95623cc05db779",
+      "sha256": "9e66b4a135ab4cb70123aad962bec5afb8a18bebe82b7063d39055521235ea93"
+    },
+    {
+      "path": "tests/test_link_context_receiving.py",
+      "bytes": 3901,
+      "git_blob": "f0c2fbd048c182075f06fb92e2bb457673f4b8b4",
+      "sha256": "54c35e25c55e9c19b24f35680bcb2c4aa22e191f197b3894e26de1c730895d6f"
+    },
+    {
+      "path": "tests/test_terminal_page_shape_receiving.py",
+      "bytes": 2146,
+      "git_blob": "f4b3ddae987eb1db7894a4d17e8aa00234628937",
+      "sha256": "86d8d4e3556aa436b2eaf8021e67073bdfc44cac4c202791a1bb8608ff53280e"
+    },
+    {
+      "path": "tests/test_token_collection_receiving.py",
+      "bytes": 3154,
+      "git_blob": "b2f9066fe93269ae361e70f618507ce5990c122b",
+      "sha256": "7ea5e0d80612a532cbe9829851e9c8c065a33f3b2d4a69a871142d46324faa3e"
+    },
+    {
+      "path": "tests/test_token_pagination.py",
+      "bytes": 8749,
+      "git_blob": "5986acbe9315fce95c0dee02305c12d5090b83a1",
+      "sha256": "7845205886f73ab3e8efdb783733a27be6e076c313089689117e5ed612e7923a"
+    },
+    {
+      "path": "scripts/readonly_sweep.py",
+      "bytes": 5828,
+      "git_blob": "c273fdbcc495c5283422bcb7ee94664eb9a32230",
+      "sha256": "30667032bc21a62db780d07bfbf0b48cc6c4aca63e9ea30a3953b78749603b06"
+    },
+    {
+      "path": "scripts/inventory_pass.py",
+      "bytes": 10515,
+      "git_blob": "dda42bf3ac3679bc1936917ab1f981a8c6849811",
+      "sha256": "b2669747165f47b023f666bbb01657f47427d680ea8ff8cbf35203353ba05d06"
+    },
+    {
+      "path": "tests/fixtures/submission_feedback.json",
+      "bytes": 2380,
+      "git_blob": "445d73ea1bf1db0b8bbbaeceaa3fb0b675f1ecdd",
+      "sha256": "435038bef1e6147eb60f60a2269de49df8bfa2fea31736694a7ada4cddfeb95a"
+    },
+    {
+      "path": "tests/fixtures/assignment_rubric.json",
+      "bytes": 2057,
+      "git_blob": "8298dc92458b2f4c0f5c2b6845e32c52395d9d46",
+      "sha256": "1c7eebf96e3a09b40b934fab219e9c8b7a6258fe881560f53a1c38a8e1b4bc4b"
+    },
+    {
+      "path": "src/canvaspilot/session_broker.py",
+      "bytes": 13944,
+      "git_blob": "cc706d5860489ec37cb2cf7f0b1cb4eee33b664f",
+      "sha256": "a692cd2812cbc09536f1b60c84892bc8e87d2ae984c5a5aa25a13f6537ba6da2"
+    },
+    {
+      "path": "src/canvaspilot/offline_demo.py",
+      "bytes": 4124,
+      "git_blob": "9d2cfd260d8db052b8183e3ec4fc9626a5bb2b9a",
+      "sha256": "2389f3ccc1b6db5995be0d90e014ea9345e3029aa5546a5b2dcf12c1197e6d4d"
+    },
+    {
+      "path": "src/canvaspilot/module_progress.py",
+      "bytes": 9615,
+      "git_blob": "a9d3e4bbea22067f76110f03a5f31a5bc9d8de05",
+      "sha256": "974ee31925514a2e53b899888302a7fa357e280ab5f2461b754b814473653d99"
+    },
+    {
+      "path": "src/canvaspilot/mcp_server.py",
+      "bytes": 12594,
+      "git_blob": "b6c52d710867a8c8cd3058f5476c22803a333501",
+      "sha256": "9ca3a1733167217730eabb5a083fcc72d7d4273ddb36ef5c0306f22ee97c8257"
+    },
+    {
+      "path": "src/canvaspilot/folder_browser.py",
+      "bytes": 6293,
+      "git_blob": "4b3078ddb00a4a34015710e49fa7b7806adebd23",
+      "sha256": "c6a67229b268c539e5edb581e3320b06229460adc3fbc01d72e4964e31c0348a"
+    },
+    {
+      "path": "src/canvaspilot/feedback.py",
+      "bytes": 3900,
+      "git_blob": "ec996f421a851d699a9ac7cb1f2a486f9ff7c4ea",
+      "sha256": "55454598effea598474a21f67e36d5bc5bea84aaefeefc18e4d8c49804ab9869"
+    },
+    {
+      "path": "src/canvaspilot/client.py",
+      "bytes": 18934,
+      "git_blob": "1db4b1135305f7e410025ae7937f9a6cd349f020",
+      "sha256": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797"
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "bytes": 12621,
+      "git_blob": "9b8eec6ea177d0fe69e3cb7776af185d2e7ad4a5",
+      "sha256": "a6029296bba4e84b3889bd62487b966d7bc1832a8b1b1e0fd928dfb9b9ab68a8"
+    },
+    {
+      "path": "src/canvaspilot/calendar_export.py",
+      "bytes": 9950,
+      "git_blob": "ef74cfdf50fd894327dbe45a9a9d43042953bc31",
+      "sha256": "b92948c438063438bf9b8ef01b0b0c067802ddb06354f00e8ee18749f3c5e2fa"
+    },
+    {
+      "path": "src/canvaspilot/bundle.py",
+      "bytes": 2641,
+      "git_blob": "383efb28dfdd0d3e1d9ce8e1e259468d7eb44586",
+      "sha256": "7a5600680c22f3cce5d512ed96137de0171bcca7df6a8c46baa8c09143de3168"
+    },
+    {
+      "path": "src/canvaspilot/api.py",
+      "bytes": 27501,
+      "git_blob": "140ced2576481a90b8319272714009d326835bf1",
+      "sha256": "fe147e5d3943e7299f400e7607385a7c8f02a68aeff07f72b3219f5c70c7bb5b"
+    },
+    {
+      "path": "src/canvaspilot/__init__.py",
+      "bytes": 561,
+      "git_blob": "74a7a6087bf81fd7c75c15769b30408039618e0f",
+      "sha256": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "bytes": 708,
+      "git_blob": "ef7bbebe192c0db55dc4467e064ba44805c13446",
+      "sha256": "62f17b95af03d1ff8a172f168282b405fefcab3a5f1094c70e618b44920bd0ff"
+    }
+  ],
+  "archives": [
+    {
+      "path": "author-native-receiving.tar.gz",
+      "bytes": 559468,
+      "sha256": "34d4060f16b71828fedf5b33d7e5dbb563a3deb4d3b8f1b088a9adb719710cd0",
+      "git_blob": "39970f043d35f613cc959d1ea80f993db4d2652f",
+      "members": 312,
+      "all_members_decoded_and_verified": true
+    },
+    {
+      "path": "independent-session-receiving.tar.gz",
+      "bytes": 15974,
+      "sha256": "792e183779aa81f2927d28f27e53d0f811ca1970a4f82a79f11314e68b2e1dbe",
+      "git_blob": "19dc64c6f1ec153e92bebc8b9c5782340e3c4416",
+      "members": 11,
+      "all_members_decoded_and_verified": true
+    }
+  ],
+  "independent_source_acceptance": {
+    "path": "root-source-review.md",
+    "bytes": 1061,
+    "sha256": "703851ae09bd6cb6abd0a354d01b1a0ce956926f26b1984a6020c2c611baad75",
+    "scope": "Unchanged final helper, API hook and usage contract; source review, not another native execution."
+  },
+  "local_receiving_summary": {
+    "original_55fe_existing_tests_passed": 414,
+    "original_API_witness_expected_failure": "missing submission key",
+    "original_process_feature_failures": 5,
+    "original_process_failure_controls_passed": 3,
+    "original_base_feature_tests_passed": 447,
+    "new_test_methods": 33,
+    "ca2318_composed_PAT_process_cases_passed": 8,
+    "ca2318_composed_PAT_GETs": 28,
+    "independent_ca2318_session_CLI_processes": 4,
+    "independent_retained_stream_evaluation": {
+      "baseline_passed": 1,
+      "baseline_missing_feature_failure": 1,
+      "candidate_passed": 2,
+      "initial_receiver_empty_stderr_rejection_preserved": true,
+      "additional_native_processes_for_evaluation_correction": 0
+    }
+  },
+  "execution_limits": [
+    "Authored fixtures and disposable loopback only; no live Canvas, student data or browser interaction.",
+    "Borrowed dependencies remain read-only; no local installation, activated broker, account or deployment change.",
+    "The 447-test pass remains an original-base result, and the four independent CLI processes remain ca2318 executions.",
+    "Actual published-head hosted lint/full-suite and final normal-merge gates are recorded separately in the PR receiving thread."
+  ],
+  "independent_current_parent_binding": {
+    "receipt": {
+      "path": "current-parent-binding.json",
+      "bytes": 3711,
+      "sha256": "a44886a01801ff40b7166dfae9704ed6487944a0404c8b7eacddda96aa6be44b",
+      "git_blob": "bfebbeb20c05bcbd9b3b5c740d2e8b63a48bd4b1"
+    },
+    "source": {
+      "path": "bind-current-parent.py",
+      "bytes": 4327,
+      "sha256": "1bb7ea089b485a6c6a4703311cda995674674c88053ed7f249dde139f6c9f7ef",
+      "git_blob": "526e1d3440506a9d16f2ba5db975d6c5824f512a"
+    },
+    "reviewer": "/root/engine_execution",
+    "execution": {
+      "command": [
+        "/dev/shm/hamon-afe225d6c6be-product/canvas-venv/bin/python",
+        "-B"
+      ],
+      "source_input": "stdin",
+      "exit_code": 0,
+      "additional_application_executions": 0
+    },
+    "custody": "Successful source and original stdout transferred verbatim through agent messages after ENOSPC prevented reviewer filesystem publication; publisher retained them in memory. No valid reviewer-local binding file is claimed and the static proof was not rerun by the publisher."
+  }
+}
