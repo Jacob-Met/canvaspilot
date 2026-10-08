@@ -20,6 +20,7 @@ CURATED_MCP_TOOLS: tuple[str, ...] = (
     "canvas_assignment_brief",
     "canvas_list_announcements",
     "canvas_list_modules",
+    "canvas_module_progress",
     "canvas_list_pages",
     "canvas_get_page",
     "canvas_list_discussion_topics",

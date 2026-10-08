@@ -1,0 +1,522 @@
+{
+  "initial": {
+    "course_id": "42",
+    "mode": "token",
+    "module_id": null,
+    "modules_returned": 4,
+    "modules_included": 4,
+    "modules_omitted_by_selection": 0,
+    "collection_complete": null,
+    "count_scope": "returned_modules_and_items",
+    "state_source": "Canvas module.state for the authenticated caller",
+    "module_state_counts": {
+      "locked": 1,
+      "unlocked": 0,
+      "started": 1,
+      "completed": 1,
+      "unknown": 1
+    },
+    "modules": [
+      {
+        "id": 7,
+        "name": "Foundations",
+        "position": 1,
+        "published": null,
+        "state": "started",
+        "reported_state": "started",
+        "completed_at": null,
+        "unlock_at": null,
+        "requirement_type": "all",
+        "reported_requirement_type": "all",
+        "require_sequential_progress": true,
+        "prerequisite_module_ids": [],
+        "reported_prerequisite_module_ids": [],
+        "item_coverage": {
+          "reported_count": 3,
+          "returned_count": 3,
+          "status": "matches_reported_count"
+        },
+        "requirement_counts": {
+          "completed": 1,
+          "incomplete": 1,
+          "unknown": 0,
+          "not_reported": 1
+        },
+        "remaining_work": {
+          "scope": "reported_requirements_in_returned_items",
+          "rule": "all",
+          "incomplete_item_ids": [
+            72
+          ],
+          "unknown_completion_item_ids": [],
+          "module_locked": false,
+          "item_access": "not_assessed"
+        },
+        "items": [
+          {
+            "id": 71,
+            "module_id": 7,
+            "title": "Read Caf\u00e9 notes",
+            "type": "Page",
+            "position": 1,
+            "indent": null,
+            "content_id": null,
+            "html_url": "https://canvas.invalid/courses/42/modules/items/71",
+            "published": null,
+            "completion_requirement": {
+              "type": "must_view",
+              "completed": true
+            },
+            "completion_status": "completed",
+            "requirement_type_supported": true,
+            "required_action": "View the item"
+          },
+          {
+            "id": 72,
+            "module_id": 7,
+            "title": "Preparation quiz",
+            "type": "Quiz",
+            "position": 2,
+            "indent": null,
+            "content_id": null,
+            "html_url": "https://canvas.invalid/courses/42/modules/items/72",
+            "published": null,
+            "completion_requirement": {
+              "type": "min_score",
+              "min_score": 8,
+              "completed": false
+            },
+            "completion_status": "incomplete",
+            "requirement_type_supported": true,
+            "required_action": "Meet the reported minimum score"
+          },
+          {
+            "id": 73,
+            "module_id": 7,
+            "title": "Additional material",
+            "type": "ExternalUrl",
+            "position": 3,
+            "indent": null,
+            "content_id": null,
+            "html_url": null,
+            "published": null,
+            "completion_requirement": null,
+            "completion_status": "not_reported",
+            "requirement_type_supported": null,
+            "required_action": null
+          }
+        ],
+        "diagnostics": [
+          "Some items have no reported requirement; this does not establish optionality."
+        ]
+      },
+      {
+        "id": 8,
+        "name": "Choose one topic",
+        "position": 2,
+        "published": null,
+        "state": "completed",
+        "reported_state": "completed",
+        "completed_at": null,
+        "unlock_at": null,
+        "requirement_type": "one",
+        "reported_requirement_type": "one",
+        "require_sequential_progress": false,
+        "prerequisite_module_ids": [],
+        "reported_prerequisite_module_ids": [],
+        "item_coverage": {
+          "reported_count": 2,
+          "returned_count": 2,
+          "status": "matches_reported_count"
+        },
+        "requirement_counts": {
+          "completed": 1,
+          "incomplete": 1,
+          "unknown": 0,
+          "not_reported": 0
+        },
+        "remaining_work": {
+          "scope": "reported_requirements_in_returned_items",
+          "rule": "module_completed",
+          "incomplete_item_ids": [],
+          "unknown_completion_item_ids": [],
+          "module_locked": false,
+          "item_access": "not_assessed"
+        },
+        "items": [
+          {
+            "id": 81,
+            "module_id": 8,
+            "title": "Topic A",
+            "type": "Page",
+            "position": null,
+            "indent": null,
+            "content_id": null,
+            "html_url": null,
+            "published": null,
+            "completion_requirement": {
+              "type": "must_view",
+              "completed": true
+            },
+            "completion_status": "completed",
+            "requirement_type_supported": true,
+            "required_action": "View the item"
+          },
+          {
+            "id": 82,
+            "module_id": 8,
+            "title": "Topic B",
+            "type": "Page",
+            "position": null,
+            "indent": null,
+            "content_id": null,
+            "html_url": null,
+            "published": null,
+            "completion_requirement": {
+              "type": "must_view",
+              "completed": false
+            },
+            "completion_status": "incomplete",
+            "requirement_type_supported": true,
+            "required_action": "View the item"
+          }
+        ],
+        "diagnostics": []
+      },
+      {
+        "id": 9,
+        "name": "Later work",
+        "position": 3,
+        "published": null,
+        "state": "locked",
+        "reported_state": "locked",
+        "completed_at": null,
+        "unlock_at": "2026-10-10T10:00:00Z",
+        "requirement_type": "all",
+        "reported_requirement_type": "all",
+        "require_sequential_progress": false,
+        "prerequisite_module_ids": [
+          7
+        ],
+        "reported_prerequisite_module_ids": [
+          7
+        ],
+        "item_coverage": {
+          "reported_count": 1,
+          "returned_count": 1,
+          "status": "matches_reported_count"
+        },
+        "requirement_counts": {
+          "completed": 0,
+          "incomplete": 1,
+          "unknown": 0,
+          "not_reported": 0
+        },
+        "remaining_work": {
+          "scope": "reported_requirements_in_returned_items",
+          "rule": "all",
+          "incomplete_item_ids": [
+            91
+          ],
+          "unknown_completion_item_ids": [],
+          "module_locked": true,
+          "item_access": "not_assessed"
+        },
+        "items": [
+          {
+            "id": 91,
+            "module_id": 9,
+            "title": "Final draft",
+            "type": "Assignment",
+            "position": null,
+            "indent": null,
+            "content_id": null,
+            "html_url": null,
+            "published": null,
+            "completion_requirement": {
+              "type": "must_submit",
+              "completed": false
+            },
+            "completion_status": "incomplete",
+            "requirement_type_supported": true,
+            "required_action": "Submit the work"
+          }
+        ],
+        "diagnostics": []
+      },
+      {
+        "id": 10,
+        "name": "Progress unavailable",
+        "position": 4,
+        "published": null,
+        "state": "unknown",
+        "reported_state": null,
+        "completed_at": null,
+        "unlock_at": null,
+        "requirement_type": "unknown",
+        "reported_requirement_type": null,
+        "require_sequential_progress": null,
+        "prerequisite_module_ids": null,
+        "reported_prerequisite_module_ids": null,
+        "item_coverage": {
+          "reported_count": 2,
+          "returned_count": 2,
+          "status": "matches_reported_count"
+        },
+        "requirement_counts": {
+          "completed": 0,
+          "incomplete": 0,
+          "unknown": 2,
+          "not_reported": 0
+        },
+        "remaining_work": {
+          "scope": "reported_requirements_in_returned_items",
+          "rule": "unknown",
+          "incomplete_item_ids": [],
+          "unknown_completion_item_ids": [
+            101,
+            102
+          ],
+          "module_locked": null,
+          "item_access": "not_assessed"
+        },
+        "items": [
+          {
+            "id": 101,
+            "module_id": 10,
+            "title": "Readiness check",
+            "type": "Quiz",
+            "position": null,
+            "indent": null,
+            "content_id": null,
+            "html_url": null,
+            "published": null,
+            "completion_requirement": {
+              "type": "min_percentage",
+              "min_percentage": 70
+            },
+            "completion_status": "unknown",
+            "requirement_type_supported": true,
+            "required_action": "Meet the reported minimum percentage"
+          },
+          {
+            "id": 102,
+            "module_id": 10,
+            "title": "Future requirement",
+            "type": "Page",
+            "position": null,
+            "indent": null,
+            "content_id": null,
+            "html_url": null,
+            "published": null,
+            "completion_requirement": {
+              "type": "future_rule",
+              "completed": true
+            },
+            "completion_status": "unknown",
+            "requirement_type_supported": false,
+            "required_action": null
+          }
+        ],
+        "diagnostics": [
+          "Student-specific module state is missing or unsupported.",
+          "The all-versus-one requirement rule is missing or unsupported.",
+          "Sequential-progress policy was not reported as a boolean.",
+          "Prerequisite module IDs are missing or malformed.",
+          "Some reported requirements have unsupported types or unknown completion."
+        ]
+      }
+    ]
+  },
+  "changed": {
+    "course_id": "42",
+    "mode": "token",
+    "module_id": "7",
+    "modules_returned": 4,
+    "modules_included": 1,
+    "modules_omitted_by_selection": 3,
+    "collection_complete": null,
+    "count_scope": "returned_modules_and_items",
+    "state_source": "Canvas module.state for the authenticated caller",
+    "module_state_counts": {
+      "locked": 0,
+      "unlocked": 0,
+      "started": 1,
+      "completed": 0,
+      "unknown": 0
+    },
+    "modules": [
+      {
+        "id": 7,
+        "name": "Foundations",
+        "position": 1,
+        "published": null,
+        "state": "started",
+        "reported_state": "started",
+        "completed_at": null,
+        "unlock_at": null,
+        "requirement_type": "all",
+        "reported_requirement_type": "all",
+        "require_sequential_progress": true,
+        "prerequisite_module_ids": [],
+        "reported_prerequisite_module_ids": [],
+        "item_coverage": {
+          "reported_count": 3,
+          "returned_count": 3,
+          "status": "matches_reported_count"
+        },
+        "requirement_counts": {
+          "completed": 2,
+          "incomplete": 0,
+          "unknown": 0,
+          "not_reported": 1
+        },
+        "remaining_work": {
+          "scope": "reported_requirements_in_returned_items",
+          "rule": "all",
+          "incomplete_item_ids": [],
+          "unknown_completion_item_ids": [],
+          "module_locked": false,
+          "item_access": "not_assessed"
+        },
+        "items": [
+          {
+            "id": 71,
+            "module_id": 7,
+            "title": "Read Caf\u00e9 notes",
+            "type": "Page",
+            "position": 1,
+            "indent": null,
+            "content_id": null,
+            "html_url": "https://canvas.invalid/courses/42/modules/items/71",
+            "published": null,
+            "completion_requirement": {
+              "type": "must_view",
+              "completed": true
+            },
+            "completion_status": "completed",
+            "requirement_type_supported": true,
+            "required_action": "View the item"
+          },
+          {
+            "id": 72,
+            "module_id": 7,
+            "title": "Preparation quiz",
+            "type": "Quiz",
+            "position": 2,
+            "indent": null,
+            "content_id": null,
+            "html_url": "https://canvas.invalid/courses/42/modules/items/72",
+            "published": null,
+            "completion_requirement": {
+              "type": "min_score",
+              "min_score": 8,
+              "completed": true
+            },
+            "completion_status": "completed",
+            "requirement_type_supported": true,
+            "required_action": "Meet the reported minimum score"
+          },
+          {
+            "id": 73,
+            "module_id": 7,
+            "title": "Additional material",
+            "type": "ExternalUrl",
+            "position": 3,
+            "indent": null,
+            "content_id": null,
+            "html_url": null,
+            "published": null,
+            "completion_requirement": null,
+            "completion_status": "not_reported",
+            "requirement_type_supported": null,
+            "required_action": null
+          }
+        ],
+        "diagnostics": [
+          "Some items have no reported requirement; this does not establish optionality."
+        ]
+      }
+    ]
+  },
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/42/modules",
+      "query": {
+        "include[]": [
+          "items"
+        ],
+        "per_page": [
+          "50"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/42/modules",
+      "query": {
+        "page": [
+          "2"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/42/modules/7/items",
+      "query": {
+        "per_page": [
+          "50"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/42/modules/7/items",
+      "query": {
+        "page": [
+          "2"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/42/modules",
+      "query": {
+        "include[]": [
+          "items"
+        ],
+        "per_page": [
+          "50"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/42/modules",
+      "query": {
+        "page": [
+          "2"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/42/modules/7/items",
+      "query": {
+        "per_page": [
+          "50"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/42/modules/7/items",
+      "query": {
+        "page": [
+          "2"
+        ]
+      }
+    }
+  ]
+}

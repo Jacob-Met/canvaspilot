@@ -101,6 +101,11 @@ def main(argv: list[str] | None = None) -> None:
     browse.add_argument("--files-page", type=int, default=1)
     browse.add_argument("--per-page", type=int, default=50, help="Requested child-page size, 1–100")
 
+    progress = sub.add_parser("module-progress", help="Inspect reported module progress and requirements")
+    add_common(progress)
+    progress.add_argument("course_id", help="Positive numeric Canvas course ID")
+    progress.add_argument("--module-id", default=None, help="Inspect one returned module ID")
+
     mcp = sub.add_parser("mcp", help="Run MCP stdio server")
     add_common(mcp)
 
@@ -165,6 +170,19 @@ def main(argv: list[str] | None = None) -> None:
             print(json.dumps(api.list_discussion_topics(args.course_id), indent=2, default=str))
         elif args.cmd == "files":
             print(json.dumps(api.list_files(args.course_id), indent=2, default=str))
+        elif args.cmd == "module-progress":
+            import httpx
+
+            from canvaspilot.client import CanvasAuthError
+
+            try:
+                result = api.module_progress(args.course_id, module_id=args.module_id)
+            except (CanvasAuthError, httpx.HTTPError, ValueError) as error:
+                print(json.dumps({
+                    "ok": False, "error": type(error).__name__, "message": str(error),
+                }), file=sys.stderr)
+                raise SystemExit(1) from None
+            print(json.dumps(result, indent=2))
         elif args.cmd == "browse-files":
             import httpx
 

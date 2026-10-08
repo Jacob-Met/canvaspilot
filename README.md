@@ -14,8 +14,9 @@ Same architecture as OpenCLI-style web agents (persistent browser session → si
 - **Agent-shaped digests** — `assignment_brief` (cleaned prompt + rubric), `sync_summary` (courses + upcoming), `submission_status`
 - **Submission feedback** — self submission comments and rubric assessments alongside current-attempt and grading metadata
 - **Fixture mode** — offline dict backend for tests and CI; no Canvas required
-- **35 MCP tools**, one stdio server, one env var for the host (`CANVAS_BASE_URL`) plus either a PAT or a running session broker
+- **36 MCP tools**, one stdio server, one env var for the host (`CANVAS_BASE_URL`) plus either a PAT or a running session broker
 - **Course folder browsing** — select nested folders and inspect bounded file-metadata pages through CLI, MCP or Python
+- **Module progress checklist** — review reported completion, remaining requirements and module locks through CLI, MCP or Python
 
 ## Install
 
@@ -108,7 +109,7 @@ Tools exposed (all prefixed `canvas_`):
 | Area | Tools |
 |------|-------|
 | Identity | `whoami`, `sync_summary`, `planner_items`, `activity_stream`, `list_todo_items`, `list_enrollments` |
-| Courses | `list_courses`, `get_course`, `list_modules`, `list_pages`, `get_page`, `list_files`, `browse_files`, `list_announcements` |
+| Courses | `list_courses`, `get_course`, `list_modules`, `module_progress`, `list_pages`, `get_page`, `list_files`, `browse_files`, `list_announcements` |
 | Assignments | `list_assignments`, `get_assignment`, `assignment_brief`, `submission_status`, `submission_feedback`, `submit_assignment_text` |
 | Discussions | `list_discussion_topics`, `get_discussion`, `post_discussion_reply` |
 | Quizzes | `list_quizzes`, `get_quiz`, `list_quiz_questions`, `list_quiz_submissions`, `start_quiz_submission`, `complete_quiz_submission` |
@@ -171,6 +172,20 @@ This follows the [Canvas Modules API](https://developerdocs.instructure.com/serv
 contract. Requests use the selected client's existing fixture, token, or session
 broker transport and pagination limits. Listing does not mark module items read
 or complete.
+
+## Review module progress
+
+```bash
+canvaspilot module-progress 42
+canvaspilot module-progress 42 --module-id 7
+```
+
+Review Canvas-declared module states and completed, unfinished or unknown item
+requirements. The checklist keeps all-versus-one requirements, prerequisites and
+sequential-progress context. Missing student fields stay unknown; counts cover
+returned rows. This read-only workflow never marks items read or complete. See
+[the module-progress guide](docs/module-progress.md) for Python/MCP examples and
+coverage meanings.
 
 ## Browse course folders
 

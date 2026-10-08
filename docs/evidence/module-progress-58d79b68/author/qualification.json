@@ -1,0 +1,101 @@
+{
+  "base": "72357053a1629c349f700030013559fa6d8130f2",
+  "native_source": {
+    "repository": "Jacob-Met/canvaspilot",
+    "branch": "feat/module-progress-58d79b68",
+    "commit": "a8ba4be26d09d287304ca12808a1867483efd040",
+    "tree": "18895f08360bc6f5138eb1cf59555bed75af8260",
+    "parent": "72357053a1629c349f700030013559fa6d8130f2",
+    "clean": true,
+    "files": [
+      {
+        "path": "README.md",
+        "bytes": 10912,
+        "sha256": "a5e1dd521a950d2614cd3a45a0d63b0f1d43df735fc19045415903714a05264d",
+        "git_blob": "b2c511003cbd0c299e04517734cfa0e29fab01a0"
+      },
+      {
+        "path": "src/canvaspilot/api.py",
+        "bytes": 23143,
+        "sha256": "a44cc5d3ebee2683ecab7509ed1b10ca90f563bde75bf07b9dff213e3e748a45",
+        "git_blob": "8ba136754a358b7e75f4fe9bc4d49eada92ff9a7"
+      },
+      {
+        "path": "src/canvaspilot/bundle.py",
+        "bytes": 2607,
+        "sha256": "c4d3ab72ac564028f2bdbdcd9c4845e372a2f1db77301158fe85dbf81c673c77",
+        "git_blob": "da0faa74235a320ad5bae1caf112d2abd846e22d"
+      },
+      {
+        "path": "src/canvaspilot/cli.py",
+        "bytes": 10301,
+        "sha256": "a14b4abac71c241b5445e4adb1c7632667d4da99fb2cb302e6cfb2ed67bfe628",
+        "git_blob": "4256efccc57c253083c0d1eef5a062be92ba21e2"
+      },
+      {
+        "path": "src/canvaspilot/mcp_server.py",
+        "bytes": 11971,
+        "sha256": "3cc2c7f0fcbf76ca89e776d04674f130773725a47d38fe096cf67f2f68b58890",
+        "git_blob": "1c5465c14061f9ced62763a20d0eb29294b5e980"
+      },
+      {
+        "path": "src/canvaspilot/module_progress.py",
+        "bytes": 9234,
+        "sha256": "42aee00dbc05e37b28942f6022e5eb23516589b7f07289f0d725e1d6c66e51d1",
+        "git_blob": "cc535d1dd4d44148653697eb5f3096782beb8ffa"
+      },
+      {
+        "path": "docs/module-progress.md",
+        "bytes": 5159,
+        "sha256": "2680578420d9f65fa7884348756f59487edcd0d4787f90a42ff745fb58acf04f",
+        "git_blob": "52e98278eb8208d31078dd9e740c443fa046d17a"
+      },
+      {
+        "path": "tests/module_progress_fixture.py",
+        "bytes": 5185,
+        "sha256": "d7c724cd5147ff03321247728d99af19039e05d4a4d56d32feaa4303d68260b9",
+        "git_blob": "cde6154c03f5987a31e30f3cefaeb97247fd0198"
+      },
+      {
+        "path": "tests/test_module_progress.py",
+        "bytes": 9506,
+        "sha256": "bdbcf205666ede901fd012764cf009dd90611c1a18089c2e6ce13b242ed081c2",
+        "git_blob": "97857eb7723ac9460cb38d791d883df9ddc4a449"
+      },
+      {
+        "path": "tests/test_module_progress_process.py",
+        "bytes": 8881,
+        "sha256": "0addab736830e7b1dfb5ac9ed40e1f14db67bd4d0a2540c80b52728e4ae267c7",
+        "git_blob": "c9048f18bc4d121424646511510847f7922c976c"
+      }
+    ]
+  },
+  "baseline": {
+    "tests_passed": 192,
+    "cli_command_exit": 2,
+    "cli_command": "module-progress",
+    "command_available": false
+  },
+  "candidate": {
+    "tests_passed": 263,
+    "tests_failed": 0,
+    "tests_skipped": 0,
+    "new_tests": 71,
+    "ruff_exit": 0,
+    "git_diff_check_exit": 0
+  },
+  "retained_initial_failures": {
+    "focused_pass": 69,
+    "focused_fail": 2,
+    "cause": "Receiving harness assumed all stderr was JSON. Inherited HTTPX request logging precedes the final JSON error line on networked CLI failures. Failed reads still emitted no digest stdout. Tests now parse the final JSON error record and retain GET-only and failure assertions.",
+    "lint_findings": 4,
+    "lint_resolution": "Use an explicit ModuleProgressError(ValueError) domain error for invalid Canvas progress data, consistent with existing custom folder-browse errors."
+  },
+  "scope_limits": [
+    "Counts cover returned modules/items; collection_complete remains null.",
+    "Module state comes from Canvas; no percentage, prerequisite satisfaction, item access or student-wide completeness inferred.",
+    "Existing reader, token/broker pagination, authentication, dependencies and earlier owner regions unchanged.",
+    "Actual process qualification uses authored loopback HTTP and fictional records, not a school account.",
+    "No hosted CI, independent acceptance, source merge or installed runtime claim yet."
+  ]
+}

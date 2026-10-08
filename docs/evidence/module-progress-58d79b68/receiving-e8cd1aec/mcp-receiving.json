@@ -1,0 +1,359 @@
+{
+  "records": [
+    {
+      "arguments": {
+        "course_id": "42"
+      },
+      "result": {
+        "_meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"course_id\": \"42\",\n  \"mode\": \"token\",\n  \"module_id\": null,\n  \"modules_returned\": 4,\n  \"modules_included\": 4,\n  \"modules_omitted_by_selection\": 0,\n  \"collection_complete\": null,\n  \"count_scope\": \"returned_modules_and_items\",\n  \"state_source\": \"Canvas module.state for the authenticated caller\",\n  \"module_state_counts\": {\n    \"locked\": 1,\n    \"unlocked\": 0,\n    \"started\": 1,\n    \"completed\": 1,\n    \"unknown\": 1\n  },\n  \"modules\": [\n    {\n      \"id\": 7,\n      \"name\": \"Foundations\",\n      \"position\": 1,\n      \"published\": null,\n      \"state\": \"started\",\n      \"reported_state\": \"started\",\n      \"completed_at\": null,\n      \"unlock_at\": null,\n      \"requirement_type\": \"all\",\n      \"reported_requirement_type\": \"all\",\n      \"require_sequential_progress\": true,\n      \"prerequisite_module_ids\": [],\n      \"reported_prerequisite_module_ids\": [],\n      \"item_coverage\": {\n        \"reported_count\": 3,\n        \"returned_count\": 3,\n        \"status\": \"matches_reported_count\"\n      },\n      \"requirement_counts\": {\n        \"completed\": 1,\n        \"incomplete\": 1,\n        \"unknown\": 0,\n        \"not_reported\": 1\n      },\n      \"remaining_work\": {\n        \"scope\": \"reported_requirements_in_returned_items\",\n        \"rule\": \"all\",\n        \"incomplete_item_ids\": [\n          72\n        ],\n        \"unknown_completion_item_ids\": [],\n        \"module_locked\": false,\n        \"item_access\": \"not_assessed\"\n      },\n      \"items\": [\n        {\n          \"id\": 71,\n          \"module_id\": 7,\n          \"title\": \"Read Caf\\u00e9 notes\",\n          \"type\": \"Page\",\n          \"position\": 1,\n          \"indent\": null,\n          \"content_id\": null,\n          \"html_url\": \"https://canvas.invalid/courses/42/modules/items/71\",\n          \"published\": null,\n          \"completion_requirement\": {\n            \"type\": \"must_view\",\n            \"completed\": true\n          },\n          \"completion_status\": \"completed\",\n          \"requirement_type_supported\": true,\n          \"required_action\": \"View the item\"\n        },\n        {\n          \"id\": 72,\n          \"module_id\": 7,\n          \"title\": \"Preparation quiz\",\n          \"type\": \"Quiz\",\n          \"position\": 2,\n          \"indent\": null,\n          \"content_id\": null,\n          \"html_url\": \"https://canvas.invalid/courses/42/modules/items/72\",\n          \"published\": null,\n          \"completion_requirement\": {\n            \"type\": \"min_score\",\n            \"min_score\": 8,\n            \"completed\": false\n          },\n          \"completion_status\": \"incomplete\",\n          \"requirement_type_supported\": true,\n          \"required_action\": \"Meet the reported minimum score\"\n        },\n        {\n          \"id\": 73,\n          \"module_id\": 7,\n          \"title\": \"Additional material\",\n          \"type\": \"ExternalUrl\",\n          \"position\": 3,\n          \"indent\": null,\n          \"content_id\": null,\n          \"html_url\": null,\n          \"published\": null,\n          \"completion_requirement\": null,\n          \"completion_status\": \"not_reported\",\n          \"requirement_type_supported\": null,\n          \"required_action\": null\n        }\n      ],\n      \"diagnostics\": [\n        \"Some items have no reported requirement; this does not establish optionality.\"\n      ]\n    },\n    {\n      \"id\": 8,\n      \"name\": \"Choose one topic\",\n      \"position\": 2,\n      \"published\": null,\n      \"state\": \"completed\",\n      \"reported_state\": \"completed\",\n      \"completed_at\": null,\n      \"unlock_at\": null,\n      \"requirement_type\": \"one\",\n      \"reported_requirement_type\": \"one\",\n      \"require_sequential_progress\": false,\n      \"prerequisite_module_ids\": [],\n      \"reported_prerequisite_module_ids\": [],\n      \"item_coverage\": {\n        \"reported_count\": 2,\n        \"returned_count\": 2,\n        \"status\": \"matches_reported_count\"\n      },\n      \"requirement_counts\": {\n        \"completed\": 1,\n        \"incomplete\": 1,\n        \"unknown\": 0,\n        \"not_reported\": 0\n      },\n      \"remaining_work\": {\n        \"scope\": \"reported_requirements_in_returned_items\",\n        \"rule\": \"module_completed\",\n        \"incomplete_item_ids\": [],\n        \"unknown_completion_item_ids\": [],\n        \"module_locked\": false,\n        \"item_access\": \"not_assessed\"\n      },\n      \"items\": [\n        {\n          \"id\": 81,\n          \"module_id\": 8,\n          \"title\": \"Topic A\",\n          \"type\": \"Page\",\n          \"position\": null,\n          \"indent\": null,\n          \"content_id\": null,\n          \"html_url\": null,\n          \"published\": null,\n          \"completion_requirement\": {\n            \"type\": \"must_view\",\n            \"completed\": true\n          },\n          \"completion_status\": \"completed\",\n          \"requirement_type_supported\": true,\n          \"required_action\": \"View the item\"\n        },\n        {\n          \"id\": 82,\n          \"module_id\": 8,\n          \"title\": \"Topic B\",\n          \"type\": \"Page\",\n          \"position\": null,\n          \"indent\": null,\n          \"content_id\": null,\n          \"html_url\": null,\n          \"published\": null,\n          \"completion_requirement\": {\n            \"type\": \"must_view\",\n            \"completed\": false\n          },\n          \"completion_status\": \"incomplete\",\n          \"requirement_type_supported\": true,\n          \"required_action\": \"View the item\"\n        }\n      ],\n      \"diagnostics\": []\n    },\n    {\n      \"id\": 9,\n      \"name\": \"Later work\",\n      \"position\": 3,\n      \"published\": null,\n      \"state\": \"locked\",\n      \"reported_state\": \"locked\",\n      \"completed_at\": null,\n      \"unlock_at\": \"2026-10-10T10:00:00Z\",\n      \"requirement_type\": \"all\",\n      \"reported_requirement_type\": \"all\",\n      \"require_sequential_progress\": false,\n      \"prerequisite_module_ids\": [\n        7\n      ],\n      \"reported_prerequisite_module_ids\": [\n        7\n      ],\n      \"item_coverage\": {\n        \"reported_count\": 1,\n        \"returned_count\": 1,\n        \"status\": \"matches_reported_count\"\n      },\n      \"requirement_counts\": {\n        \"completed\": 0,\n        \"incomplete\": 1,\n        \"unknown\": 0,\n        \"not_reported\": 0\n      },\n      \"remaining_work\": {\n        \"scope\": \"reported_requirements_in_returned_items\",\n        \"rule\": \"all\",\n        \"incomplete_item_ids\": [\n          91\n        ],\n        \"unknown_completion_item_ids\": [],\n        \"module_locked\": true,\n        \"item_access\": \"not_assessed\"\n      },\n      \"items\": [\n        {\n          \"id\": 91,\n          \"module_id\": 9,\n          \"title\": \"Final draft\",\n          \"type\": \"Assignment\",\n          \"position\": null,\n          \"indent\": null,\n          \"content_id\": null,\n          \"html_url\": null,\n          \"published\": null,\n          \"completion_requirement\": {\n            \"type\": \"must_submit\",\n            \"completed\": false\n          },\n          \"completion_status\": \"incomplete\",\n          \"requirement_type_supported\": true,\n          \"required_action\": \"Submit the work\"\n        }\n      ],\n      \"diagnostics\": []\n    },\n    {\n      \"id\": 10,\n      \"name\": \"Progress unavailable\",\n      \"position\": 4,\n      \"published\": null,\n      \"state\": \"unknown\",\n      \"reported_state\": null,\n      \"completed_at\": null,\n      \"unlock_at\": null,\n      \"requirement_type\": \"unknown\",\n      \"reported_requirement_type\": null,\n      \"require_sequential_progress\": null,\n      \"prerequisite_module_ids\": null,\n      \"reported_prerequisite_module_ids\": null,\n      \"item_coverage\": {\n        \"reported_count\": 2,\n        \"returned_count\": 2,\n        \"status\": \"matches_reported_count\"\n      },\n      \"requirement_counts\": {\n        \"completed\": 0,\n        \"incomplete\": 0,\n        \"unknown\": 2,\n        \"not_reported\": 0\n      },\n      \"remaining_work\": {\n        \"scope\": \"reported_requirements_in_returned_items\",\n        \"rule\": \"unknown\",\n        \"incomplete_item_ids\": [],\n        \"unknown_completion_item_ids\": [\n          101,\n          102\n        ],\n        \"module_locked\": null,\n        \"item_access\": \"not_assessed\"\n      },\n      \"items\": [\n        {\n          \"id\": 101,\n          \"module_id\": 10,\n          \"title\": \"Readiness check\",\n          \"type\": \"Quiz\",\n          \"position\": null,\n          \"indent\": null,\n          \"content_id\": null,\n          \"html_url\": null,\n          \"published\": null,\n          \"completion_requirement\": {\n            \"type\": \"min_percentage\",\n            \"min_percentage\": 70\n          },\n          \"completion_status\": \"unknown\",\n          \"requirement_type_supported\": true,\n          \"required_action\": \"Meet the reported minimum percentage\"\n        },\n        {\n          \"id\": 102,\n          \"module_id\": 10,\n          \"title\": \"Future requirement\",\n          \"type\": \"Page\",\n          \"position\": null,\n          \"indent\": null,\n          \"content_id\": null,\n          \"html_url\": null,\n          \"published\": null,\n          \"completion_requirement\": {\n            \"type\": \"future_rule\",\n            \"completed\": true\n          },\n          \"completion_status\": \"unknown\",\n          \"requirement_type_supported\": false,\n          \"required_action\": null\n        }\n      ],\n      \"diagnostics\": [\n        \"Student-specific module state is missing or unsupported.\",\n        \"The all-versus-one requirement rule is missing or unsupported.\",\n        \"Sequential-progress policy was not reported as a boolean.\",\n        \"Prerequisite module IDs are missing or malformed.\",\n        \"Some reported requirements have unsupported types or unknown completion.\"\n      ]\n    }\n  ]\n}",
+            "annotations": null,
+            "_meta": null
+          }
+        ],
+        "structuredContent": null,
+        "isError": false,
+        "resultType": "complete"
+      }
+    },
+    {
+      "arguments": {
+        "course_id": "42",
+        "module_id": "9"
+      },
+      "result": {
+        "_meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"course_id\": \"42\",\n  \"mode\": \"token\",\n  \"module_id\": \"9\",\n  \"modules_returned\": 4,\n  \"modules_included\": 1,\n  \"modules_omitted_by_selection\": 3,\n  \"collection_complete\": null,\n  \"count_scope\": \"returned_modules_and_items\",\n  \"state_source\": \"Canvas module.state for the authenticated caller\",\n  \"module_state_counts\": {\n    \"locked\": 1,\n    \"unlocked\": 0,\n    \"started\": 0,\n    \"completed\": 0,\n    \"unknown\": 0\n  },\n  \"modules\": [\n    {\n      \"id\": 9,\n      \"name\": \"Later work\",\n      \"position\": 3,\n      \"published\": null,\n      \"state\": \"locked\",\n      \"reported_state\": \"locked\",\n      \"completed_at\": null,\n      \"unlock_at\": \"2026-10-10T10:00:00Z\",\n      \"requirement_type\": \"all\",\n      \"reported_requirement_type\": \"all\",\n      \"require_sequential_progress\": false,\n      \"prerequisite_module_ids\": [\n        7\n      ],\n      \"reported_prerequisite_module_ids\": [\n        7\n      ],\n      \"item_coverage\": {\n        \"reported_count\": 1,\n        \"returned_count\": 1,\n        \"status\": \"matches_reported_count\"\n      },\n      \"requirement_counts\": {\n        \"completed\": 0,\n        \"incomplete\": 1,\n        \"unknown\": 0,\n        \"not_reported\": 0\n      },\n      \"remaining_work\": {\n        \"scope\": \"reported_requirements_in_returned_items\",\n        \"rule\": \"all\",\n        \"incomplete_item_ids\": [\n          91\n        ],\n        \"unknown_completion_item_ids\": [],\n        \"module_locked\": true,\n        \"item_access\": \"not_assessed\"\n      },\n      \"items\": [\n        {\n          \"id\": 91,\n          \"module_id\": 9,\n          \"title\": \"Final draft\",\n          \"type\": \"Assignment\",\n          \"position\": null,\n          \"indent\": null,\n          \"content_id\": null,\n          \"html_url\": null,\n          \"published\": null,\n          \"completion_requirement\": {\n            \"type\": \"must_submit\",\n            \"completed\": false\n          },\n          \"completion_status\": \"incomplete\",\n          \"requirement_type_supported\": true,\n          \"required_action\": \"Submit the work\"\n        }\n      ],\n      \"diagnostics\": []\n    }\n  ]\n}",
+            "annotations": null,
+            "_meta": null
+          }
+        ],
+        "structuredContent": null,
+        "isError": false,
+        "resultType": "complete"
+      }
+    },
+    {
+      "arguments": {
+        "course_id": "42",
+        "module_id": "7"
+      },
+      "result": {
+        "_meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"course_id\": \"42\",\n  \"mode\": \"token\",\n  \"module_id\": \"7\",\n  \"modules_returned\": 4,\n  \"modules_included\": 1,\n  \"modules_omitted_by_selection\": 3,\n  \"collection_complete\": null,\n  \"count_scope\": \"returned_modules_and_items\",\n  \"state_source\": \"Canvas module.state for the authenticated caller\",\n  \"module_state_counts\": {\n    \"locked\": 0,\n    \"unlocked\": 0,\n    \"started\": 1,\n    \"completed\": 0,\n    \"unknown\": 0\n  },\n  \"modules\": [\n    {\n      \"id\": 7,\n      \"name\": \"Foundations\",\n      \"position\": 1,\n      \"published\": null,\n      \"state\": \"started\",\n      \"reported_state\": \"started\",\n      \"completed_at\": null,\n      \"unlock_at\": null,\n      \"requirement_type\": \"all\",\n      \"reported_requirement_type\": \"all\",\n      \"require_sequential_progress\": true,\n      \"prerequisite_module_ids\": [],\n      \"reported_prerequisite_module_ids\": [],\n      \"item_coverage\": {\n        \"reported_count\": 3,\n        \"returned_count\": 3,\n        \"status\": \"matches_reported_count\"\n      },\n      \"requirement_counts\": {\n        \"completed\": 2,\n        \"incomplete\": 0,\n        \"unknown\": 0,\n        \"not_reported\": 1\n      },\n      \"remaining_work\": {\n        \"scope\": \"reported_requirements_in_returned_items\",\n        \"rule\": \"all\",\n        \"incomplete_item_ids\": [],\n        \"unknown_completion_item_ids\": [],\n        \"module_locked\": false,\n        \"item_access\": \"not_assessed\"\n      },\n      \"items\": [\n        {\n          \"id\": 71,\n          \"module_id\": 7,\n          \"title\": \"Read Caf\\u00e9 notes\",\n          \"type\": \"Page\",\n          \"position\": 1,\n          \"indent\": null,\n          \"content_id\": null,\n          \"html_url\": \"https://canvas.invalid/courses/42/modules/items/71\",\n          \"published\": null,\n          \"completion_requirement\": {\n            \"type\": \"must_view\",\n            \"completed\": true\n          },\n          \"completion_status\": \"completed\",\n          \"requirement_type_supported\": true,\n          \"required_action\": \"View the item\"\n        },\n        {\n          \"id\": 72,\n          \"module_id\": 7,\n          \"title\": \"Preparation quiz\",\n          \"type\": \"Quiz\",\n          \"position\": 2,\n          \"indent\": null,\n          \"content_id\": null,\n          \"html_url\": \"https://canvas.invalid/courses/42/modules/items/72\",\n          \"published\": null,\n          \"completion_requirement\": {\n            \"type\": \"min_score\",\n            \"min_score\": 8,\n            \"completed\": true\n          },\n          \"completion_status\": \"completed\",\n          \"requirement_type_supported\": true,\n          \"required_action\": \"Meet the reported minimum score\"\n        },\n        {\n          \"id\": 73,\n          \"module_id\": 7,\n          \"title\": \"Additional material\",\n          \"type\": \"ExternalUrl\",\n          \"position\": 3,\n          \"indent\": null,\n          \"content_id\": null,\n          \"html_url\": null,\n          \"published\": null,\n          \"completion_requirement\": null,\n          \"completion_status\": \"not_reported\",\n          \"requirement_type_supported\": null,\n          \"required_action\": null\n        }\n      ],\n      \"diagnostics\": [\n        \"Some items have no reported requirement; this does not establish optionality.\"\n      ]\n    }\n  ]\n}",
+            "annotations": null,
+            "_meta": null
+          }
+        ],
+        "structuredContent": null,
+        "isError": false,
+        "resultType": "complete"
+      }
+    },
+    {
+      "arguments": {
+        "course_id": "42/../99"
+      },
+      "result": {
+        "_meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "Error executing tool canvas_module_progress",
+            "annotations": null,
+            "_meta": null
+          }
+        ],
+        "structuredContent": null,
+        "isError": true,
+        "resultType": "complete"
+      }
+    },
+    {
+      "arguments": {
+        "course_id": true
+      },
+      "result": {
+        "_meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "Error executing tool canvas_module_progress: 1 validation error for canvas_module_progressArguments\ncourse_id\n  Input should be a valid string [type=string_type, input_value=True, input_type=bool]\n    For further information visit https://errors.pydantic.dev/2.13/v/string_type",
+            "annotations": null,
+            "_meta": null
+          }
+        ],
+        "structuredContent": null,
+        "isError": true,
+        "resultType": "complete"
+      }
+    },
+    {
+      "arguments": {
+        "course_id": "42",
+        "module_id": "invalid"
+      },
+      "result": {
+        "_meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "Error executing tool canvas_module_progress",
+            "annotations": null,
+            "_meta": null
+          }
+        ],
+        "structuredContent": null,
+        "isError": true,
+        "resultType": "complete"
+      }
+    },
+    {
+      "arguments": {
+        "course_id": "42",
+        "module_id": false
+      },
+      "result": {
+        "_meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "Error executing tool canvas_module_progress: 1 validation error for canvas_module_progressArguments\nmodule_id\n  Input should be a valid string [type=string_type, input_value=False, input_type=bool]\n    For further information visit https://errors.pydantic.dev/2.13/v/string_type",
+            "annotations": null,
+            "_meta": null
+          }
+        ],
+        "structuredContent": null,
+        "isError": true,
+        "resultType": "complete"
+      }
+    },
+    {
+      "arguments": {
+        "course_id": "42",
+        "module_id": "999"
+      },
+      "result": {
+        "_meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "Error executing tool canvas_module_progress",
+            "annotations": null,
+            "_meta": null
+          }
+        ],
+        "structuredContent": null,
+        "isError": true,
+        "resultType": "complete"
+      }
+    },
+    {
+      "arguments": {
+        "course_id": "42"
+      },
+      "result": {
+        "_meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "Error executing tool canvas_module_progress",
+            "annotations": null,
+            "_meta": null
+          }
+        ],
+        "structuredContent": null,
+        "isError": true,
+        "resultType": "complete"
+      }
+    }
+  ],
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/42/modules",
+      "query": {
+        "include[]": [
+          "items"
+        ],
+        "per_page": [
+          "50"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/42/modules",
+      "query": {
+        "page": [
+          "2"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/42/modules/7/items",
+      "query": {
+        "per_page": [
+          "50"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/42/modules/7/items",
+      "query": {
+        "page": [
+          "2"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/42/modules",
+      "query": {
+        "include[]": [
+          "items"
+        ],
+        "per_page": [
+          "50"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/42/modules",
+      "query": {
+        "page": [
+          "2"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/42/modules/7/items",
+      "query": {
+        "per_page": [
+          "50"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/42/modules/7/items",
+      "query": {
+        "page": [
+          "2"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/42/modules",
+      "query": {
+        "include[]": [
+          "items"
+        ],
+        "per_page": [
+          "50"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/42/modules",
+      "query": {
+        "page": [
+          "2"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/42/modules/7/items",
+      "query": {
+        "per_page": [
+          "50"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/42/modules/7/items",
+      "query": {
+        "page": [
+          "2"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/42/modules",
+      "query": {
+        "include[]": [
+          "items"
+        ],
+        "per_page": [
+          "50"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/42/modules",
+      "query": {
+        "page": [
+          "2"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/42/modules/7/items",
+      "query": {
+        "per_page": [
+          "50"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/42/modules/7/items",
+      "query": {
+        "page": [
+          "2"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/42/modules",
+      "query": {
+        "include[]": [
+          "items"
+        ],
+        "per_page": [
+          "50"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/42/modules",
+      "query": {
+        "page": [
+          "2"
+        ]
+      }
+    }
+  ]
+}

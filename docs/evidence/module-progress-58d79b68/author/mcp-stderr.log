@@ -1,0 +1,160 @@
+HTTP Request: GET http://127.0.0.1:34067/api/v1/courses/42/modules?include%5B%5D=items&per_page=50 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:34067/api/v1/courses/42/modules?page=2 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:34067/api/v1/courses/42/modules/7/items?per_page=50 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:34067/api/v1/courses/42/modules/7/items?page=2 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:34067/api/v1/courses/42/modules?include%5B%5D=items&per_page=50 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:34067/api/v1/courses/42/modules?page=2 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:34067/api/v1/courses/42/modules/7/items?per_page=50 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:34067/api/v1/courses/42/modules/7/items?page=2 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:34067/api/v1/courses/42/modules?include%5B%5D=items&per_page=50 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:34067/api/v1/courses/42/modules?page=2 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:34067/api/v1/courses/42/modules/7/items?per_page=50 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:34067/api/v1/courses/42/modules/7/items?page=2 "HTTP/1.0 200 OK"
+Tool 'canvas_module_progress' raised an unexpected exception
+Traceback (most recent call last):
+  File "/home/jacob/canvaspilot-module-progress-proof-58d79b68/venv/lib/python3.14/site-packages/mcp/server/mcpserver/tools/base.py", line 179, in run
+    result = await self.fn_metadata.call_fn(self.fn, self.is_async, validated, pass_directly)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacob/canvaspilot-module-progress-proof-58d79b68/venv/lib/python3.14/site-packages/mcp/server/mcpserver/utilities/func_metadata.py", line 163, in call_fn
+    return await fn(**kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/jacob/canvaspilot-module-progress-58d79b68/src/canvaspilot/mcp_server.py", line 103, in canvas_module_progress
+    return _dump(_get_api().module_progress(course_id, module_id=module_id))
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacob/canvaspilot-module-progress-58d79b68/src/canvaspilot/api.py", line 291, in module_progress
+    return module_progress(self, course_id, module_id=module_id)
+  File "/home/jacob/canvaspilot-module-progress-58d79b68/src/canvaspilot/module_progress.py", line 158, in module_progress
+    course = _identity(course_id, "Course ID")
+  File "/home/jacob/canvaspilot-module-progress-58d79b68/src/canvaspilot/module_progress.py", line 31, in _identity
+    raise ModuleProgressError(f"{label} must be a positive numeric Canvas ID")
+canvaspilot.module_progress.ModuleProgressError: Course ID must be a positive numeric Canvas ID
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jacob/canvaspilot-module-progress-proof-58d79b68/venv/lib/python3.14/site-packages/mcp/server/mcpserver/server.py", line 442, in _handle_call_tool
+    return await self.call_tool(params.name, params.arguments or {}, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacob/canvaspilot-module-progress-proof-58d79b68/venv/lib/python3.14/site-packages/mcp/server/mcpserver/server.py", line 548, in call_tool
+    return await self._tool_manager.call_tool(name, arguments, context, convert_result=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacob/canvaspilot-module-progress-proof-58d79b68/venv/lib/python3.14/site-packages/mcp/server/mcpserver/tools/tool_manager.py", line 87, in call_tool
+    return await tool.run(arguments, context, convert_result=convert_result)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacob/canvaspilot-module-progress-proof-58d79b68/venv/lib/python3.14/site-packages/mcp/server/mcpserver/tools/base.py", line 213, in run
+    raise UnexpectedToolError(f"Error executing tool {self.name}") from exc
+mcp.server.mcpserver.exceptions.UnexpectedToolError: Error executing tool canvas_module_progress
+Tool 'canvas_module_progress' rejected arguments: ['course_id']
+Tool 'canvas_module_progress' raised an unexpected exception
+Traceback (most recent call last):
+  File "/home/jacob/canvaspilot-module-progress-proof-58d79b68/venv/lib/python3.14/site-packages/mcp/server/mcpserver/tools/base.py", line 179, in run
+    result = await self.fn_metadata.call_fn(self.fn, self.is_async, validated, pass_directly)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacob/canvaspilot-module-progress-proof-58d79b68/venv/lib/python3.14/site-packages/mcp/server/mcpserver/utilities/func_metadata.py", line 163, in call_fn
+    return await fn(**kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/jacob/canvaspilot-module-progress-58d79b68/src/canvaspilot/mcp_server.py", line 103, in canvas_module_progress
+    return _dump(_get_api().module_progress(course_id, module_id=module_id))
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacob/canvaspilot-module-progress-58d79b68/src/canvaspilot/api.py", line 291, in module_progress
+    return module_progress(self, course_id, module_id=module_id)
+  File "/home/jacob/canvaspilot-module-progress-58d79b68/src/canvaspilot/module_progress.py", line 159, in module_progress
+    selected_id = _identity(module_id, "Module ID") if module_id is not None else None
+                  ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacob/canvaspilot-module-progress-58d79b68/src/canvaspilot/module_progress.py", line 31, in _identity
+    raise ModuleProgressError(f"{label} must be a positive numeric Canvas ID")
+canvaspilot.module_progress.ModuleProgressError: Module ID must be a positive numeric Canvas ID
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jacob/canvaspilot-module-progress-proof-58d79b68/venv/lib/python3.14/site-packages/mcp/server/mcpserver/server.py", line 442, in _handle_call_tool
+    return await self.call_tool(params.name, params.arguments or {}, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacob/canvaspilot-module-progress-proof-58d79b68/venv/lib/python3.14/site-packages/mcp/server/mcpserver/server.py", line 548, in call_tool
+    return await self._tool_manager.call_tool(name, arguments, context, convert_result=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacob/canvaspilot-module-progress-proof-58d79b68/venv/lib/python3.14/site-packages/mcp/server/mcpserver/tools/tool_manager.py", line 87, in call_tool
+    return await tool.run(arguments, context, convert_result=convert_result)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacob/canvaspilot-module-progress-proof-58d79b68/venv/lib/python3.14/site-packages/mcp/server/mcpserver/tools/base.py", line 213, in run
+    raise UnexpectedToolError(f"Error executing tool {self.name}") from exc
+mcp.server.mcpserver.exceptions.UnexpectedToolError: Error executing tool canvas_module_progress
+Tool 'canvas_module_progress' rejected arguments: ['module_id']
+HTTP Request: GET http://127.0.0.1:34067/api/v1/courses/42/modules?include%5B%5D=items&per_page=50 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:34067/api/v1/courses/42/modules?page=2 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:34067/api/v1/courses/42/modules/7/items?per_page=50 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:34067/api/v1/courses/42/modules/7/items?page=2 "HTTP/1.0 200 OK"
+Tool 'canvas_module_progress' raised an unexpected exception
+Traceback (most recent call last):
+  File "/home/jacob/canvaspilot-module-progress-proof-58d79b68/venv/lib/python3.14/site-packages/mcp/server/mcpserver/tools/base.py", line 179, in run
+    result = await self.fn_metadata.call_fn(self.fn, self.is_async, validated, pass_directly)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacob/canvaspilot-module-progress-proof-58d79b68/venv/lib/python3.14/site-packages/mcp/server/mcpserver/utilities/func_metadata.py", line 163, in call_fn
+    return await fn(**kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/jacob/canvaspilot-module-progress-58d79b68/src/canvaspilot/mcp_server.py", line 103, in canvas_module_progress
+    return _dump(_get_api().module_progress(course_id, module_id=module_id))
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacob/canvaspilot-module-progress-58d79b68/src/canvaspilot/api.py", line 291, in module_progress
+    return module_progress(self, course_id, module_id=module_id)
+  File "/home/jacob/canvaspilot-module-progress-58d79b68/src/canvaspilot/module_progress.py", line 190, in module_progress
+    raise ModuleProgressError("Requested module was not present in the returned course modules")
+canvaspilot.module_progress.ModuleProgressError: Requested module was not present in the returned course modules
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jacob/canvaspilot-module-progress-proof-58d79b68/venv/lib/python3.14/site-packages/mcp/server/mcpserver/server.py", line 442, in _handle_call_tool
+    return await self.call_tool(params.name, params.arguments or {}, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacob/canvaspilot-module-progress-proof-58d79b68/venv/lib/python3.14/site-packages/mcp/server/mcpserver/server.py", line 548, in call_tool
+    return await self._tool_manager.call_tool(name, arguments, context, convert_result=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacob/canvaspilot-module-progress-proof-58d79b68/venv/lib/python3.14/site-packages/mcp/server/mcpserver/tools/tool_manager.py", line 87, in call_tool
+    return await tool.run(arguments, context, convert_result=convert_result)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacob/canvaspilot-module-progress-proof-58d79b68/venv/lib/python3.14/site-packages/mcp/server/mcpserver/tools/base.py", line 213, in run
+    raise UnexpectedToolError(f"Error executing tool {self.name}") from exc
+mcp.server.mcpserver.exceptions.UnexpectedToolError: Error executing tool canvas_module_progress
+HTTP Request: GET http://127.0.0.1:34067/api/v1/courses/42/modules?include%5B%5D=items&per_page=50 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:34067/api/v1/courses/42/modules?page=2 "HTTP/1.0 403 Forbidden"
+Tool 'canvas_module_progress' raised an unexpected exception
+Traceback (most recent call last):
+  File "/home/jacob/canvaspilot-module-progress-proof-58d79b68/venv/lib/python3.14/site-packages/mcp/server/mcpserver/tools/base.py", line 179, in run
+    result = await self.fn_metadata.call_fn(self.fn, self.is_async, validated, pass_directly)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacob/canvaspilot-module-progress-proof-58d79b68/venv/lib/python3.14/site-packages/mcp/server/mcpserver/utilities/func_metadata.py", line 163, in call_fn
+    return await fn(**kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/jacob/canvaspilot-module-progress-58d79b68/src/canvaspilot/mcp_server.py", line 103, in canvas_module_progress
+    return _dump(_get_api().module_progress(course_id, module_id=module_id))
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacob/canvaspilot-module-progress-58d79b68/src/canvaspilot/api.py", line 291, in module_progress
+    return module_progress(self, course_id, module_id=module_id)
+  File "/home/jacob/canvaspilot-module-progress-58d79b68/src/canvaspilot/module_progress.py", line 160, in module_progress
+    modules = api.list_modules(course, detail="full")
+  File "/home/jacob/canvaspilot-module-progress-58d79b68/src/canvaspilot/api.py", line 215, in list_modules
+    rows = self.client.get_paginated(
+        f"/api/v1/courses/{course_id}/modules",
+        params={"include[]": ["items"]},
+    )
+  File "/home/jacob/canvaspilot-module-progress-58d79b68/src/canvaspilot/client.py", line 283, in get_paginated
+    raise CanvasAuthError(f"Canvas auth failed ({r.status_code})")
+canvaspilot.client.CanvasAuthError: Canvas auth failed (403)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jacob/canvaspilot-module-progress-proof-58d79b68/venv/lib/python3.14/site-packages/mcp/server/mcpserver/server.py", line 442, in _handle_call_tool
+    return await self.call_tool(params.name, params.arguments or {}, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacob/canvaspilot-module-progress-proof-58d79b68/venv/lib/python3.14/site-packages/mcp/server/mcpserver/server.py", line 548, in call_tool
+    return await self._tool_manager.call_tool(name, arguments, context, convert_result=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacob/canvaspilot-module-progress-proof-58d79b68/venv/lib/python3.14/site-packages/mcp/server/mcpserver/tools/tool_manager.py", line 87, in call_tool
+    return await tool.run(arguments, context, convert_result=convert_result)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacob/canvaspilot-module-progress-proof-58d79b68/venv/lib/python3.14/site-packages/mcp/server/mcpserver/tools/base.py", line 213, in run
+    raise UnexpectedToolError(f"Error executing tool {self.name}") from exc
+mcp.server.mcpserver.exceptions.UnexpectedToolError: Error executing tool canvas_module_progress

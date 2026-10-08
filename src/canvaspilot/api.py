@@ -283,6 +283,14 @@ class CanvasAPI:
             )
         return out
 
+    def module_progress(
+        self, course_id: int | str, *, module_id: int | str | None = None,
+    ) -> dict[str, Any]:
+        """Read Canvas-declared module progress and a course study checklist."""
+        from canvaspilot.module_progress import module_progress
+
+        return module_progress(self, course_id, module_id=module_id)
+
     def list_pages(self, course_id: int | str) -> list[dict[str, Any]]:
         rows = self.client.get_paginated(f"/api/v1/courses/{course_id}/pages")
         return [

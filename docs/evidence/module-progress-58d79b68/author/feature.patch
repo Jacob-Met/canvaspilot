@@ -1,0 +1,975 @@
+commit a8ba4be26d09d287304ca12808a1867483efd040
+Author:     ChatGPT HAMON product worker <chatgpt-58d79b68c9e4@users.noreply.github.com>
+AuthorDate: Thu Oct 8 11:15:11 2026 +0000
+Commit:     ChatGPT HAMON product worker <chatgpt-58d79b68c9e4@users.noreply.github.com>
+CommitDate: Thu Oct 8 11:15:11 2026 +0000
+
+    feat: inspect Canvas module progress through CLI and MCP
+
+diff --git a/README.md b/README.md
+index f1a22d3..b2c5110 100644
+--- a/README.md
++++ b/README.md
+@@ -13,8 +13,9 @@ Same architecture as OpenCLI-style web agents (persistent browser session → si
+ - **Full REST surface** — courses, assignments, modules, pages, files, discussions, announcements, planner, inbox, calendar, activity stream, submissions, and **quizzes** (list/questions/submissions/start/complete)
+ - **Agent-shaped digests** — `assignment_brief` (cleaned prompt + rubric), `sync_summary` (courses + upcoming), `submission_status`
+ - **Fixture mode** — offline dict backend for tests and CI; no Canvas required
+-- **34 MCP tools**, one stdio server, one env var for the host (`CANVAS_BASE_URL`) plus either a PAT or a running session broker
++- **35 MCP tools**, one stdio server, one env var for the host (`CANVAS_BASE_URL`) plus either a PAT or a running session broker
+ - **Course folder browsing** — select nested folders and inspect bounded file-metadata pages through CLI, MCP or Python
++- **Module progress checklist** — review reported completion, remaining requirements and module locks through CLI, MCP or Python
+ 
+ ## Install
+ 
+@@ -106,7 +107,7 @@ Tools exposed (all prefixed `canvas_`):
+ | Area | Tools |
+ |------|-------|
+ | Identity | `whoami`, `sync_summary`, `planner_items`, `activity_stream`, `list_todo_items`, `list_enrollments` |
+-| Courses | `list_courses`, `get_course`, `list_modules`, `list_pages`, `get_page`, `list_files`, `browse_files`, `list_announcements` |
++| Courses | `list_courses`, `get_course`, `list_modules`, `module_progress`, `list_pages`, `get_page`, `list_files`, `browse_files`, `list_announcements` |
+ | Assignments | `list_assignments`, `get_assignment`, `assignment_brief`, `submission_status`, `submit_assignment_text` |
+ | Discussions | `list_discussion_topics`, `get_discussion`, `post_discussion_reply` |
+ | Quizzes | `list_quizzes`, `get_quiz`, `list_quiz_questions`, `list_quiz_submissions`, `start_quiz_submission`, `complete_quiz_submission` |
+@@ -131,6 +132,20 @@ contract. Requests use the selected client's existing fixture, token, or session
+ broker transport and pagination limits. Listing does not mark module items read
+ or complete.
+ 
++## Review module progress
++
++```bash
++canvaspilot module-progress 42
++canvaspilot module-progress 42 --module-id 7
++```
++
++Review Canvas-declared module states and completed, unfinished or unknown item
++requirements. The checklist keeps all-versus-one requirements, prerequisites and
++sequential-progress context. Missing student fields stay unknown; counts cover
++returned rows. This read-only workflow never marks items read or complete. See
++[the module-progress guide](docs/module-progress.md) for Python/MCP examples and
++coverage meanings.
++
+ ## Browse course folders
+ 
+ ```bash
+diff --git a/docs/module-progress.md b/docs/module-progress.md
+new file mode 100644
+index 0000000..52e9827
+--- /dev/null
++++ b/docs/module-progress.md
+@@ -0,0 +1,103 @@
++# Review course module progress
++
++`module-progress` turns Canvas's full module response into a study checklist for
++the authenticated caller. It shows the module state Canvas reports, the
++requirements on each returned item and their reported completion. It works
++through the existing token, session-broker and fixture clients.
++
++## Use it
++
++```bash
++canvaspilot module-progress 42
++canvaspilot module-progress 42 --module-id 7
++```
++
++The first command includes every module returned by the existing reader. The
++second keeps one module while reporting how many returned modules the selection
++omitted. It accepts a positive numeric module ID; an ID absent from the returned
++course data produces an error. IDs in the result retain their original Canvas
++representation and modules/items retain their returned order.
++
++Python:
++
++```python
++from canvaspilot.bundle import make_api
++
++with make_api() as api:
++    report = api.module_progress(42, module_id=7)
++    module = report["modules"][0]
++    print(module["name"], module["state"])
++    print(module["remaining_work"])
++```
++
++MCP clients can call `canvas_module_progress` with
++`{"course_id": "42", "module_id": "7"}`; omit `module_id` for the course view.
++The tool is annotated read-only. These calls only read the existing module and
++module-item routes. They never mark an item read/done, submit work or change a grade.
++
++## Read the checklist
++
++- `state` is Canvas's `locked`, `unlocked`, `started` or `completed`
++  module state. Missing and unsupported values become `unknown`, with the
++  original value retained in `reported_state`.
++- `requirement_type` preserves `all` versus `one`. A `one` rule describes
++  alternatives, so an incomplete alternative in a completed module does not
++  become an outstanding work item. Module completion is never inferred from
++  locally counted requirements.
++- `require_sequential_progress`, prerequisite IDs and `unlock_at` retain the
++  reported ordering context. The digest does not calculate prerequisite
++  satisfaction, item availability or unlock times.
++- Each item includes its identity, title, Canvas link, original
++  `completion_requirement` and a readable action for recognized requirements:
++  view, submit, contribute, mark done, minimum score or minimum percentage.
++  Score/percentage thresholds remain in the original requirement object.
++- `completion_status` is `completed` or `incomplete` only for a recognized
++  requirement with an actual boolean completion value. Unknown types, malformed
++  values and missing completion stay `unknown`. An absent/null requirement is
++  `not_reported`; it does not establish that the item is optional.
++- `remaining_work.incomplete_item_ids` identifies reported unfinished
++  requirements. `rule` gives their all-versus-one context; `module_locked`
++  comes only from the module state. It is a review list, not a claim that each
++  item can be opened now. A completed module has an empty remaining-work list.
++
++For example, a started module with a completed reading and an unfinished quiz
++shows the quiz in its remaining-work list. If the next read reports that the quiz
++is complete, it leaves that list. The module stays `started` until Canvas itself
++reports `completed`.
++
++## Coverage and errors
++
++All counts describe **returned modules/items**. `collection_complete` is always
++`null`, because this adapter does not establish completeness beyond the existing
++reader's pagination behavior. `item_coverage` compares the number of returned
++items with a reported integer `items_count`; it distinguishes a match, a shorter
++list, a larger list and an unknown count. A matching count is not a course-wide
++completeness claim. The current token reader follows Link pages up to its
++existing cap; broker behavior remains subject to its existing numeric-page and
++page-cap boundaries. This workflow changes neither transport.
++
++The existing full module reader fetches omitted or short inline item lists.
++Read failures remain failures. Invalid module/item identities, duplicate
++identities, or explicit course/module mismatches refuse the digest. The CLI
++returns exit 1 with a JSON error on stderr and no successful result on stdout;
++the MCP call returns a tool error. Empty returned courses remain an explicit
++zero-row view with unknown overall completeness.
++
++The Canvas contract distinguishes caller-specific state/completion from module
++structure and documents all/one and sequential rules:
++[Modules API](https://developerdocs.instructure.com/services/canvas/resources/modules).
++This implementation does not request another student's identity.
++
++## Native receiving
++
++```bash
++python -m pytest -q tests/test_module_progress.py tests/test_module_progress_process.py
++```
++
++The maintained suite includes actual loopback HTTP, CLI subprocesses and MCP
++stdio calls. Its fictional course covers explicit Link continuation for modules
++and item fallback, changed completion, locked and one-of modules, missing student
++fields, unsupported values, empty courses, malformed identities and denied later
++pages. It asserts that every HTTP operation is GET. No account or real learner
++record is used; fixture behavior is not evidence of a particular school's access
++or live session.
+diff --git a/src/canvaspilot/api.py b/src/canvaspilot/api.py
+index 336955b..8ba1367 100644
+--- a/src/canvaspilot/api.py
++++ b/src/canvaspilot/api.py
+@@ -282,6 +282,14 @@ class CanvasAPI:
+             )
+         return out
+ 
++    def module_progress(
++        self, course_id: int | str, *, module_id: int | str | None = None,
++    ) -> dict[str, Any]:
++        """Read Canvas-declared module progress and a course study checklist."""
++        from canvaspilot.module_progress import module_progress
++
++        return module_progress(self, course_id, module_id=module_id)
++
+     def list_pages(self, course_id: int | str) -> list[dict[str, Any]]:
+         rows = self.client.get_paginated(f"/api/v1/courses/{course_id}/pages")
+         return [
+diff --git a/src/canvaspilot/bundle.py b/src/canvaspilot/bundle.py
+index b347e64..da0faa7 100644
+--- a/src/canvaspilot/bundle.py
++++ b/src/canvaspilot/bundle.py
+@@ -20,6 +20,7 @@ CURATED_MCP_TOOLS: tuple[str, ...] = (
+     "canvas_assignment_brief",
+     "canvas_list_announcements",
+     "canvas_list_modules",
++    "canvas_module_progress",
+     "canvas_list_pages",
+     "canvas_get_page",
+     "canvas_list_discussion_topics",
+diff --git a/src/canvaspilot/cli.py b/src/canvaspilot/cli.py
+index bdd428e..4256efc 100644
+--- a/src/canvaspilot/cli.py
++++ b/src/canvaspilot/cli.py
+@@ -89,6 +89,11 @@ def main(argv: list[str] | None = None) -> None:
+     browse.add_argument("--files-page", type=int, default=1)
+     browse.add_argument("--per-page", type=int, default=50, help="Requested child-page size, 1–100")
+ 
++    progress = sub.add_parser("module-progress", help="Inspect reported module progress and requirements")
++    add_common(progress)
++    progress.add_argument("course_id", help="Positive numeric Canvas course ID")
++    progress.add_argument("--module-id", default=None, help="Inspect one returned module ID")
++
+     mcp = sub.add_parser("mcp", help="Run MCP stdio server")
+     add_common(mcp)
+ 
+@@ -145,6 +150,19 @@ def main(argv: list[str] | None = None) -> None:
+             print(json.dumps(api.list_discussion_topics(args.course_id), indent=2, default=str))
+         elif args.cmd == "files":
+             print(json.dumps(api.list_files(args.course_id), indent=2, default=str))
++        elif args.cmd == "module-progress":
++            import httpx
++
++            from canvaspilot.client import CanvasAuthError
++
++            try:
++                result = api.module_progress(args.course_id, module_id=args.module_id)
++            except (CanvasAuthError, httpx.HTTPError, ValueError) as error:
++                print(json.dumps({
++                    "ok": False, "error": type(error).__name__, "message": str(error),
++                }), file=sys.stderr)
++                raise SystemExit(1) from None
++            print(json.dumps(result, indent=2))
+         elif args.cmd == "browse-files":
+             import httpx
+ 
+diff --git a/src/canvaspilot/mcp_server.py b/src/canvaspilot/mcp_server.py
+index 6d9dcb8..1c5465c 100644
+--- a/src/canvaspilot/mcp_server.py
++++ b/src/canvaspilot/mcp_server.py
+@@ -90,6 +90,19 @@ async def canvas_list_modules(course_id: str, detail: str = "compact") -> str:
+     return _dump(_get_api().list_modules(course_id, detail=detail))
+ 
+ 
++@mcp.tool(
++    description=(
++        "Read Canvas-declared module progress and completed/unfinished/unknown requirements. "
++        "Optional module_id selects one returned module. Counts cover returned rows only; "
++        "missing student fields stay unknown. Does not mark items read or complete."
++    ),
++    annotations=ToolAnnotations(readOnlyHint=True, destructiveHint=False, idempotentHint=True),
++    structured_output=False,
++)
++async def canvas_module_progress(course_id: str, module_id: str | None = None) -> str:
++    return _dump(_get_api().module_progress(course_id, module_id=module_id))
++
++
+ @mcp.tool(description="List wiki pages for a course.", structured_output=False)
+ async def canvas_list_pages(course_id: str) -> str:
+     return _dump(_get_api().list_pages(course_id))
+diff --git a/src/canvaspilot/module_progress.py b/src/canvaspilot/module_progress.py
+new file mode 100644
+index 0000000..cc535d1
+--- /dev/null
++++ b/src/canvaspilot/module_progress.py
+@@ -0,0 +1,206 @@
++"""Read a course study checklist without inferring Canvas completion or access."""
++
++from __future__ import annotations
++
++from copy import deepcopy
++from typing import TYPE_CHECKING, Any
++
++if TYPE_CHECKING:
++    from canvaspilot.api import CanvasAPI
++
++_STATES = {"locked", "unlocked", "started", "completed"}
++_ACTIONS = {
++    "must_view": "View the item",
++    "must_submit": "Submit the work",
++    "must_contribute": "Contribute to the item",
++    "must_mark_done": "Mark the item done",
++    "min_score": "Meet the reported minimum score",
++    "min_percentage": "Meet the reported minimum percentage",
++}
++
++
++class ModuleProgressError(ValueError):
++    """Invalid query identity or unusable Canvas progress response."""
++
++
++def _identity(value: Any, label: str) -> str:
++    if type(value) is int and value > 0:
++        return str(value)
++    if isinstance(value, str) and value.isascii() and value.isdecimal() and int(value) > 0:
++        return str(int(value))
++    raise ModuleProgressError(f"{label} must be a positive numeric Canvas ID")
++
++
++def _item(item: dict[str, Any]) -> dict[str, Any]:
++    raw = item.get("completion_requirement")
++    requirement = raw if isinstance(raw, dict) else {}
++    kind = requirement.get("type")
++    supported = isinstance(kind, str) and kind in _ACTIONS
++    completed = requirement.get("completed")
++    if raw is None:
++        status = "not_reported"
++    elif supported and type(completed) is bool:
++        status = "completed" if completed else "incomplete"
++    else:
++        status = "unknown"
++    return {
++        "id": item["id"],
++        "module_id": item.get("module_id"),
++        "title": item.get("title"),
++        "type": item.get("type"),
++        "position": item.get("position"),
++        "indent": item.get("indent"),
++        "content_id": item.get("content_id"),
++        "html_url": item.get("html_url"),
++        "published": item.get("published"),
++        "completion_requirement": deepcopy(raw),
++        "completion_status": status,
++        "requirement_type_supported": supported if raw is not None else None,
++        "required_action": _ACTIONS.get(kind) if supported else None,
++    }
++
++
++def _module(module: dict[str, Any]) -> dict[str, Any]:
++    items = [_item(item) for item in module["items"]]
++    reported_state = module.get("state")
++    state = reported_state if isinstance(reported_state, str) and reported_state in _STATES else "unknown"
++    reported_rule = module.get("requirement_type")
++    rule = reported_rule if isinstance(reported_rule, str) and reported_rule in {"all", "one"} else "unknown"
++    counts = {
++        status: sum(item["completion_status"] == status for item in items)
++        for status in ("completed", "incomplete", "unknown", "not_reported")
++    }
++    count = module.get("items_count")
++    if type(count) is not int or count < 0:
++        coverage = "unknown"
++    elif len(items) < count:
++        coverage = "shorter_than_reported_count"
++    elif len(items) > count:
++        coverage = "more_than_reported_count"
++    else:
++        coverage = "matches_reported_count"
++    sequential = module.get("require_sequential_progress")
++    sequential = sequential if type(sequential) is bool else None
++    prerequisites = module.get("prerequisite_module_ids")
++    diagnostics = []
++    if state == "unknown":
++        diagnostics.append("Student-specific module state is missing or unsupported.")
++    if rule == "unknown":
++        diagnostics.append("The all-versus-one requirement rule is missing or unsupported.")
++    if sequential is None:
++        diagnostics.append("Sequential-progress policy was not reported as a boolean.")
++    if not isinstance(prerequisites, list):
++        diagnostics.append("Prerequisite module IDs are missing or malformed.")
++    else:
++        try:
++            for prerequisite in prerequisites:
++                _identity(prerequisite, "Prerequisite module ID")
++        except ValueError:
++            diagnostics.append("Prerequisite module IDs are missing or malformed.")
++            prerequisites = None
++    if not isinstance(prerequisites, list):
++        prerequisites = None
++    if coverage != "matches_reported_count":
++        diagnostics.append("Returned items do not establish a complete match to a reported item count.")
++    if counts["unknown"]:
++        diagnostics.append("Some reported requirements have unsupported types or unknown completion.")
++    if counts["not_reported"]:
++        diagnostics.append("Some items have no reported requirement; this does not establish optionality.")
++    # Canvas's module state is authoritative, including modules with a one-of
++    # rule or requirements edited after a student already unlocked/completed it.
++    kind = "module_completed" if state == "completed" else rule
++    remaining = [] if state == "completed" else [
++        item["id"] for item in items if item["completion_status"] == "incomplete"
++    ]
++    return {
++        "id": module["id"],
++        "name": module.get("name"),
++        "position": module.get("position"),
++        "published": module.get("published"),
++        "state": state,
++        "reported_state": deepcopy(reported_state),
++        "completed_at": module.get("completed_at"),
++        "unlock_at": module.get("unlock_at"),
++        "requirement_type": rule,
++        "reported_requirement_type": deepcopy(reported_rule),
++        "require_sequential_progress": sequential,
++        "prerequisite_module_ids": deepcopy(prerequisites),
++        "reported_prerequisite_module_ids": deepcopy(module.get("prerequisite_module_ids")),
++        "item_coverage": {
++            "reported_count": deepcopy(count),
++            "returned_count": len(items),
++            "status": coverage,
++        },
++        "requirement_counts": counts,
++        "remaining_work": {
++            "scope": "reported_requirements_in_returned_items",
++            "rule": kind,
++            "incomplete_item_ids": remaining,
++            "unknown_completion_item_ids": [
++                item["id"] for item in items if item["completion_status"] == "unknown"
++            ] if state != "completed" else [],
++            "module_locked": True if state == "locked" else False if state in _STATES else None,
++            "item_access": "not_assessed",
++        },
++        "items": items,
++        "diagnostics": diagnostics,
++    }
++
++
++def module_progress(
++    api: CanvasAPI, course_id: int | str, *, module_id: int | str | None = None,
++) -> dict[str, Any]:
++    """Project the existing full module reader for the authenticated caller.
++
++    All counts refer to returned rows. No mark-read, completion, grade or other
++    write is performed. Item access and whole-course completeness are not inferred.
++    """
++    course = _identity(course_id, "Course ID")
++    selected_id = _identity(module_id, "Module ID") if module_id is not None else None
++    modules = api.list_modules(course, detail="full")
++    if not isinstance(modules, list):
++        raise ModuleProgressError("Canvas returned a malformed module collection")
++    seen_modules: set[str] = set()
++    seen_items: set[str] = set()
++    selected = []
++    for module in modules:
++        if not isinstance(module, dict):
++            raise ModuleProgressError("Canvas returned a malformed module")
++        identity = _identity(module.get("id"), "Returned module ID")
++        if identity in seen_modules:
++            raise ModuleProgressError("Canvas returned duplicate module IDs")
++        seen_modules.add(identity)
++        if "course_id" in module and _identity(module["course_id"], "Returned course ID") != course:
++            raise ModuleProgressError("Canvas returned a module from a different course")
++        items = module.get("items")
++        if not isinstance(items, list):
++            raise ModuleProgressError("Canvas returned a malformed module-item collection")
++        for item in items:
++            if not isinstance(item, dict):
++                raise ModuleProgressError("Canvas returned a malformed module item")
++            item_id = _identity(item.get("id"), "Returned item ID")
++            if item_id in seen_items:
++                raise ModuleProgressError("Canvas returned duplicate module-item IDs")
++            seen_items.add(item_id)
++            if "module_id" in item and _identity(item["module_id"], "Returned item's module ID") != identity:
++                raise ModuleProgressError("Canvas returned an item from a different module")
++        if selected_id is None or identity == selected_id:
++            selected.append(_module(module))
++    if selected_id is not None and not selected:
++        raise ModuleProgressError("Requested module was not present in the returned course modules")
++    return {
++        "course_id": course,
++        "mode": api.client.mode,
++        "module_id": selected_id,
++        "modules_returned": len(modules),
++        "modules_included": len(selected),
++        "modules_omitted_by_selection": len(modules) - len(selected),
++        "collection_complete": None,
++        "count_scope": "returned_modules_and_items",
++        "state_source": "Canvas module.state for the authenticated caller",
++        "module_state_counts": {
++            state: sum(module["state"] == state for module in selected)
++            for state in ("locked", "unlocked", "started", "completed", "unknown")
++        },
++        "modules": selected,
++    }
+diff --git a/tests/module_progress_fixture.py b/tests/module_progress_fixture.py
+new file mode 100644
+index 0000000..cde6154
+--- /dev/null
++++ b/tests/module_progress_fixture.py
+@@ -0,0 +1,108 @@
++"""Disposable authored Canvas responses for module-progress receiving."""
++
++from __future__ import annotations
++
++import json
++import threading
++from copy import deepcopy
++from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
++from urllib.parse import parse_qs, urlsplit
++
++
++def course_fixture():
++    return {"routes": {
++        "GET /api/v1/courses/42/modules": [
++            {"id": 7, "name": "Foundations", "position": 1, "state": "started",
++             "requirement_type": "all", "require_sequential_progress": True,
++             "prerequisite_module_ids": [], "items_count": 3},
++            {"id": 8, "name": "Choose one topic", "position": 2, "state": "completed",
++             "requirement_type": "one", "require_sequential_progress": False,
++             "prerequisite_module_ids": [], "items_count": 2, "items": [
++                 {"id": 81, "module_id": 8, "title": "Topic A", "type": "Page",
++                  "completion_requirement": {"type": "must_view", "completed": True}},
++                 {"id": 82, "module_id": 8, "title": "Topic B", "type": "Page",
++                  "completion_requirement": {"type": "must_view", "completed": False}},
++             ]},
++            {"id": 9, "name": "Later work", "position": 3, "state": "locked",
++             "requirement_type": "all", "require_sequential_progress": False,
++             "prerequisite_module_ids": [7], "unlock_at": "2026-10-10T10:00:00Z",
++             "items_count": 1, "items": [
++                 {"id": 91, "module_id": 9, "title": "Final draft", "type": "Assignment",
++                  "completion_requirement": {"type": "must_submit", "completed": False}},
++             ]},
++            {"id": 10, "name": "Progress unavailable", "position": 4, "items_count": 2, "items": [
++                {"id": 101, "module_id": 10, "title": "Readiness check", "type": "Quiz",
++                 "completion_requirement": {"type": "min_percentage", "min_percentage": 70}},
++                {"id": 102, "module_id": 10, "title": "Future requirement", "type": "Page",
++                 "completion_requirement": {"type": "future_rule", "completed": True}},
++            ]},
++        ],
++        "GET /api/v1/courses/42/modules/7/items": [
++            {"id": 71, "module_id": 7, "title": "Read Café notes", "type": "Page", "position": 1,
++             "html_url": "https://canvas.invalid/courses/42/modules/items/71",
++             "completion_requirement": {"type": "must_view", "completed": True}},
++            {"id": 72, "module_id": 7, "title": "Preparation quiz", "type": "Quiz", "position": 2,
++             "html_url": "https://canvas.invalid/courses/42/modules/items/72",
++             "completion_requirement": {"type": "min_score", "min_score": 8, "completed": False}},
++            {"id": 73, "module_id": 7, "title": "Additional material", "type": "ExternalUrl",
++             "position": 3},
++        ],
++    }}
++
++
++class ModuleProgressHTTPFixture:
++    """Real loopback HTTP with a short first page and explicit Link continuation."""
++
++    def __init__(self):
++        self.fixture = course_fixture()
++        self.requests = []
++        self.overrides = {}
++        owner = self
++
++        class Handler(BaseHTTPRequestHandler):
++            def log_message(self, *args):
++                pass
++
++            def do_GET(self):
++                parsed = urlsplit(self.path)
++                query = parse_qs(parsed.query)
++                owner.requests.append({"method": "GET", "path": parsed.path, "query": query})
++                status, body, headers = owner.response(parsed.path, query)
++                encoded = json.dumps(body, ensure_ascii=False).encode()
++                self.send_response(status)
++                self.send_header("Content-Type", "application/json")
++                self.send_header("Content-Length", str(len(encoded)))
++                for name, value in headers.items():
++                    self.send_header(name, value)
++                self.end_headers()
++                self.wfile.write(encoded)
++
++            def do_POST(self):
++                owner.requests.append({"method": "POST", "path": self.path})
++                self.send_error(405)
++
++        self.server = ThreadingHTTPServer(("127.0.0.1", 0), Handler)
++        self.base_url = f"http://127.0.0.1:{self.server.server_port}"
++        self.thread = threading.Thread(target=self.server.serve_forever, daemon=True)
++        self.thread.start()
++
++    def response(self, path, query):
++        page = query.get("page", ["1"])[0]
++        if (path, page) in self.overrides:
++            return deepcopy(self.overrides[(path, page)])
++        if "GET " + path not in self.fixture["routes"]:
++            return 404, {"error": "unknown synthetic route"}, {}
++        rows = self.fixture["routes"]["GET " + path]
++        boundary = 2
++        if not isinstance(rows, list) or len(rows) <= boundary:
++            return 200, deepcopy(rows), {}
++        if page == "2":
++            return 200, deepcopy(rows[boundary:]), {}
++        return 200, deepcopy(rows[:boundary]), {
++            "Link": f'<{self.base_url}{path}?page=2>; rel="next"',
++        }
++
++    def close(self):
++        self.server.shutdown()
++        self.server.server_close()
++        self.thread.join(timeout=5)
+diff --git a/tests/test_module_progress.py b/tests/test_module_progress.py
+new file mode 100644
+index 0000000..97857eb
+--- /dev/null
++++ b/tests/test_module_progress.py
+@@ -0,0 +1,193 @@
++"""Behavior tests for a learner's Canvas-declared module-progress checklist."""
++
++from copy import deepcopy
++from types import SimpleNamespace
++
++import pytest
++from module_progress_fixture import course_fixture
++
++from canvaspilot.api import CanvasAPI
++from canvaspilot.client import CanvasClient
++from canvaspilot.module_progress import module_progress
++
++
++def read(fixture=None, **kwargs):
++    source = course_fixture() if fixture is None else fixture
++    with CanvasAPI(CanvasClient(token="", fixture=source)) as api:
++        return api.module_progress(42, **kwargs)
++
++
++def test_course_checklist_keeps_declared_progress_and_real_requirement_choices():
++    source = course_fixture()
++    before = deepcopy(source)
++    result = read(source)
++    assert source == before
++    assert result["collection_complete"] is None
++    assert result["count_scope"] == "returned_modules_and_items"
++    assert result["modules_returned"] == result["modules_included"] == 4
++    assert result["module_state_counts"] == {
++        "locked": 1, "unlocked": 0, "started": 1, "completed": 1, "unknown": 1,
++    }
++    a, b, c, d = result["modules"]
++    assert [module["id"] for module in result["modules"]] == [7, 8, 9, 10]
++    assert [item["id"] for item in a["items"]] == [71, 72, 73]
++    assert a["items"][0]["title"] == "Read Café notes"
++    assert a["requirement_counts"] == {"completed": 1, "incomplete": 1, "unknown": 0, "not_reported": 1}
++    assert a["remaining_work"]["incomplete_item_ids"] == [72]
++    assert a["items"][1]["completion_requirement"]["min_score"] == 8
++    assert a["require_sequential_progress"] is True
++    assert b["state"] == "completed" and b["requirement_type"] == "one"
++    assert b["requirement_counts"]["incomplete"] == 1
++    assert b["remaining_work"]["rule"] == "module_completed"
++    assert b["remaining_work"]["incomplete_item_ids"] == []
++    assert c["state"] == "locked" and c["prerequisite_module_ids"] == [7]
++    assert c["remaining_work"]["module_locked"] is True
++    assert c["remaining_work"]["item_access"] == "not_assessed"
++    assert d["state"] == "unknown" and d["reported_state"] is None
++    assert d["requirement_type"] == "unknown"
++    assert d["requirement_counts"]["unknown"] == 2
++    assert d["items"][1]["completion_requirement"]["type"] == "future_rule"
++    assert d["items"][1]["completion_status"] == "unknown"
++
++
++def test_changed_completion_changes_worklist_without_inventing_module_completion():
++    source = course_fixture()
++    first = read(source)["modules"][0]
++    source["routes"]["GET /api/v1/courses/42/modules/7/items"][1]["completion_requirement"]["completed"] = True
++    changed = read(source)["modules"][0]
++    assert first["remaining_work"]["incomplete_item_ids"] == [72]
++    assert changed["remaining_work"]["incomplete_item_ids"] == []
++    assert changed["requirement_counts"]["completed"] == 2
++    assert changed["state"] == "started"
++    source["routes"]["GET /api/v1/courses/42/modules"][0]["state"] = "completed"
++    completed = read(source)["modules"][0]
++    assert completed["state"] == "completed"
++    assert completed["remaining_work"]["rule"] == "module_completed"
++
++
++def test_one_of_rule_does_not_become_all_of_or_override_canvas_state():
++    source = course_fixture()
++    source["routes"]["GET /api/v1/courses/42/modules"][1]["state"] = "started"
++    module = read(source, module_id="8")["modules"][0]
++    assert module["state"] == "started"
++    assert module["remaining_work"]["rule"] == "one"
++    assert module["remaining_work"]["incomplete_item_ids"] == [82]
++    assert module["requirement_counts"]["completed"] == 1
++
++
++def test_selection_preserves_source_identity_and_reports_omitted_rows():
++    result = read(module_id="009")
++    assert result["module_id"] == "9"
++    assert result["modules_returned"] == 4 and result["modules_included"] == 1
++    assert result["modules_omitted_by_selection"] == 3
++    assert result["modules"][0]["id"] == 9
++    with pytest.raises(ValueError, match="not present"):
++        read(module_id="900")
++
++
++@pytest.mark.parametrize("completed,status", [(True, "completed"), (False, "incomplete"),
++                                                (None, "unknown"), (1, "unknown"), (0, "unknown"),
++                                                ("false", "unknown"), ([], "unknown")])
++def test_only_reported_boolean_completion_has_a_known_status(completed, status):
++    source = course_fixture()
++    source["routes"]["GET /api/v1/courses/42/modules/7/items"][1]["completion_requirement"]["completed"] = completed
++    item = read(source)["modules"][0]["items"][1]
++    assert item["completion_status"] == status
++    assert item["completion_requirement"]["completed"] == completed
++
++
++@pytest.mark.parametrize("raw,status", [(None, "not_reported"), ({}, "unknown"),
++                                        (False, "unknown"), ("must_view", "unknown"),
++                                        ({"type": ["must_view"], "completed": True}, "unknown"),
++                                        ({"type": "future", "completed": True}, "unknown")])
++def test_unavailable_and_unsupported_requirements_are_not_completed_or_optional(raw, status):
++    source = course_fixture()
++    source["routes"]["GET /api/v1/courses/42/modules/7/items"][0]["completion_requirement"] = raw
++    item = read(source)["modules"][0]["items"][0]
++    assert item["completion_status"] == status
++    assert item["completion_requirement"] == raw
++
++
++@pytest.mark.parametrize("state", [None, "future_state", True, 1, {}, []])
++def test_unknown_module_states_are_retained_without_computing_completion(state):
++    source = course_fixture()
++    source["routes"]["GET /api/v1/courses/42/modules"][0]["state"] = state
++    module = read(source)["modules"][0]
++    assert module["state"] == "unknown" and module["reported_state"] == state
++    assert module["remaining_work"]["module_locked"] is None
++
++
++@pytest.mark.parametrize("rule", [None, "some", True, [], {}])
++def test_missing_or_unsupported_requirement_rules_remain_unknown(rule):
++    source = course_fixture()
++    source["routes"]["GET /api/v1/courses/42/modules"][0]["requirement_type"] = rule
++    module = read(source)["modules"][0]
++    assert module["requirement_type"] == "unknown"
++    assert module["reported_requirement_type"] == rule
++    assert module["remaining_work"]["rule"] == "unknown"
++
++
++@pytest.mark.parametrize("count,expected", [(3, "matches_reported_count"), (4, "shorter_than_reported_count"),
++                                           (2, "more_than_reported_count"), (None, "unknown"),
++                                           (True, "unknown"), (-1, "unknown")])
++def test_item_count_is_an_observation_not_a_course_completeness_claim(count, expected):
++    source = course_fixture()
++    source["routes"]["GET /api/v1/courses/42/modules"][0]["items_count"] = count
++    result = read(source)
++    assert result["modules"][0]["item_coverage"] == {
++        "reported_count": count, "returned_count": 3, "status": expected,
++    }
++    assert result["collection_complete"] is None
++
++
++@pytest.mark.parametrize("value", [0, -1, True, 1.5, "", "../42", "42/1", "４２", [], {}])
++@pytest.mark.parametrize("argument", ["course_id", "module_id"])
++def test_query_identity_is_validated_before_reader_calls(value, argument):
++    class API:
++        def list_modules(self, *args, **kwargs):
++            pytest.fail("Invalid query must not reach the reader")
++
++    arguments = {"course_id": 42, "module_id": None}
++    arguments[argument] = value
++    with pytest.raises(ValueError, match="numeric Canvas ID"):
++        module_progress(API(), **arguments)
++
++
++def raw_reader(rows):
++    return SimpleNamespace(client=SimpleNamespace(mode="fixture"), list_modules=lambda *args, **kwargs: rows)
++
++
++@pytest.mark.parametrize("rows", [None, {}, [None], [{"id": 1, "items": None}],
++                                  [{"id": 1, "items": [None]}],
++                                  [{"id": 1, "items": []}, {"id": "01", "items": []}],
++                                  [{"id": 1, "course_id": 99, "items": []}],
++                                  [{"id": 1, "items": [{"id": 4, "module_id": 2}]}],
++                                  [{"id": 1, "items": [{"id": 4}, {"id": "04"}]}],
++                                  [{"id": 1, "items": [{"id": 4}]}, {"id": 2, "items": [{"id": 4}]}]])
++def test_malformed_or_conflicting_source_identities_cannot_produce_a_digest(rows):
++    with pytest.raises(ValueError):
++        module_progress(raw_reader(rows), 42)
++
++
++def test_reader_failures_propagate_without_an_empty_success():
++    def fail(*args, **kwargs):
++        raise RuntimeError("authored read failure")
++    with pytest.raises(RuntimeError, match="authored read failure"):
++        module_progress(SimpleNamespace(list_modules=fail), 42)
++
++
++def test_empty_course_and_declared_empty_module_do_not_infer_completion():
++    assert module_progress(raw_reader([]), 42)["modules"] == []
++    module = module_progress(raw_reader([{"id": 1, "items_count": 0, "items": []}]), 42)["modules"][0]
++    assert module["state"] == "unknown"
++    assert module["requirement_counts"] == {"completed": 0, "incomplete": 0, "unknown": 0, "not_reported": 0}
++
++
++def test_report_keeps_source_order_and_does_not_mutate_requirement_payloads():
++    source = course_fixture()
++    source["routes"]["GET /api/v1/courses/42/modules"].reverse()
++    before = deepcopy(source)
++    result = read(source)
++    assert [module["id"] for module in result["modules"]] == [10, 9, 8, 7]
++    result["modules"][-1]["items"][0]["completion_requirement"]["completed"] = False
++    assert source == before
+diff --git a/tests/test_module_progress_process.py b/tests/test_module_progress_process.py
+new file mode 100644
+index 0000000..c9048f1
+--- /dev/null
++++ b/tests/test_module_progress_process.py
+@@ -0,0 +1,191 @@
++"""Native HTTP, CLI and MCP receiving for the module-progress learner workflow."""
++
++from __future__ import annotations
++
++import asyncio
++import json
++import os
++import subprocess
++import sys
++from copy import deepcopy
++
++import pytest
++from module_progress_fixture import ModuleProgressHTTPFixture
++
++from canvaspilot.api import CanvasAPI
++from canvaspilot.client import CanvasClient
++
++
++@pytest.fixture
++def receiving(monkeypatch, tmp_path):
++    fixture = ModuleProgressHTTPFixture()
++    for name in list(os.environ):
++        if name.lower().endswith("_proxy"):
++            monkeypatch.delenv(name)
++    monkeypatch.setenv("CANVAS_BASE_URL", fixture.base_url)
++    monkeypatch.setenv("CANVAS_API_TOKEN", "synthetic-module-progress-token")
++    monkeypatch.setenv("CANVAS_PROFILE", str(tmp_path / "unused-profile"))
++    try:
++        yield fixture
++    finally:
++        fixture.close()
++
++
++def cli(*arguments):
++    return subprocess.run(
++        [sys.executable, "-m", "canvaspilot.cli", "module-progress", *arguments],
++        capture_output=True, text=True, timeout=15, check=False,
++    )
++
++
++def test_native_client_preserves_module_and_item_pages_with_changed_completion(receiving, tmp_path):
++    fixture = receiving
++    before = deepcopy(fixture.fixture)
++    with CanvasAPI(CanvasClient(base_url=fixture.base_url, token="synthetic")) as api:
++        result = api.module_progress(42)
++        assert [module["id"] for module in result["modules"]] == [7, 8, 9, 10]
++        assert [item["id"] for item in result["modules"][0]["items"]] == [71, 72, 73]
++        assert fixture.fixture == before
++        assert [(r["path"], r["query"].get("page", ["1"])[0]) for r in fixture.requests] == [
++            ("/api/v1/courses/42/modules", "1"),
++            ("/api/v1/courses/42/modules", "2"),
++            ("/api/v1/courses/42/modules/7/items", "1"),
++            ("/api/v1/courses/42/modules/7/items", "2"),
++        ]
++        assert fixture.requests[0]["query"]["include[]"] == ["items"]
++        fixture.fixture["routes"]["GET /api/v1/courses/42/modules/7/items"][1]["completion_requirement"]["completed"] = True
++        changed = api.module_progress(42, module_id=7)
++        assert changed["modules"][0]["remaining_work"]["incomplete_item_ids"] == []
++        assert changed["modules"][0]["state"] == "started"
++    assert {request["method"] for request in fixture.requests} == {"GET"}
++    (tmp_path / "native-http.json").write_text(json.dumps({
++        "initial": result, "changed": changed, "requests": fixture.requests,
++    }, indent=2))
++
++
++def test_real_cli_course_selection_empty_and_failure(receiving, tmp_path):
++    fixture = receiving
++    records = []
++
++    def run(*arguments):
++        process = cli(*arguments)
++        records.append({"arguments": arguments, "exit": process.returncode,
++                        "stdout": process.stdout, "stderr": process.stderr})
++        return process
++
++    full = run("42")
++    assert full.returncode == 0
++    report = json.loads(full.stdout)
++    assert report["module_state_counts"]["locked"] == 1
++    assert report["collection_complete"] is None
++    selected = run("42", "--module-id", "8")
++    assert selected.returncode == 0
++    selected_report = json.loads(selected.stdout)
++    assert selected_report["modules_included"] == 1
++    assert selected_report["modules"][0]["remaining_work"]["rule"] == "module_completed"
++    assert selected_report["modules"][0]["remaining_work"]["incomplete_item_ids"] == []
++
++    before = len(fixture.requests)
++    invalid = run("42/../99")
++    assert invalid.returncode == 1 and invalid.stdout == ""
++    assert json.loads(invalid.stderr)["ok"] is False
++    assert len(fixture.requests) == before
++    missing = run("42", "--module-id", "999")
++    assert missing.returncode == 1 and missing.stdout == ""
++    fixture.overrides[("/api/v1/courses/42/modules", "2")] = (403, {"error": "authored denial"}, {})
++    denied = run("42")
++    assert denied.returncode == 1 and denied.stdout == ""
++    assert json.loads(denied.stderr.splitlines()[-1])["ok"] is False
++    fixture.overrides.clear()
++    fixture.fixture["routes"]["GET /api/v1/courses/42/modules"] = []
++    empty = run("42")
++    assert empty.returncode == 0 and json.loads(empty.stdout)["modules_returned"] == 0
++    assert json.loads(empty.stdout)["collection_complete"] is None
++    assert {request["method"] for request in fixture.requests} == {"GET"}
++    (tmp_path / "cli-receiving.json").write_text(json.dumps({
++        "records": records, "requests": fixture.requests,
++    }, indent=2))
++
++
++def test_real_cli_short_fallback_and_foreign_identity(receiving):
++    fixture = receiving
++    fixture.overrides[("/api/v1/courses/42/modules/7/items", "2")] = (200, [], {})
++    short = cli("42")
++    assert short.returncode == 0
++    module = json.loads(short.stdout)["modules"][0]
++    assert module["item_coverage"] == {
++        "reported_count": 3, "returned_count": 2, "status": "shorter_than_reported_count",
++    }
++    assert json.loads(short.stdout)["collection_complete"] is None
++    fixture.overrides.clear()
++    fixture.fixture["routes"]["GET /api/v1/courses/42/modules/7/items"][0]["module_id"] = 900
++    foreign = cli("42")
++    assert foreign.returncode == 1 and foreign.stdout == ""
++    assert "different module" in json.loads(foreign.stderr.splitlines()[-1])["message"]
++
++
++def test_registered_mcp_stdio_progress_journey_and_refusals(receiving, tmp_path):
++    from mcp import ClientSession, StdioServerParameters
++    from mcp.client.stdio import stdio_client
++
++    fixture = receiving
++    records = []
++
++    async def run():
++        parameters = StdioServerParameters(
++            command=sys.executable, args=["-m", "canvaspilot.cli", "mcp"], env=dict(os.environ),
++        )
++        with (tmp_path / "mcp-stderr.log").open("w") as errlog:
++            async with (
++                stdio_client(parameters, errlog=errlog) as (read, write),
++                ClientSession(read, write, read_timeout_seconds=10) as session,
++            ):
++                await session.initialize()
++                catalog = await session.list_tools()
++                tool = next(tool for tool in catalog.tools if tool.name == "canvas_module_progress")
++                wire = tool.model_dump(by_alias=True)
++                assert wire["annotations"]["readOnlyHint"] is True
++                assert wire["annotations"]["destructiveHint"] is False
++                assert wire["inputSchema"]["properties"]["course_id"]["type"] == "string"
++                assert set(wire["inputSchema"]["required"]) == {"course_id"}
++
++                async def call(arguments):
++                    result = await session.call_tool("canvas_module_progress", arguments)
++                    wire_result = result.model_dump(by_alias=True)
++                    records.append({"arguments": arguments, "result": wire_result})
++                    text = "".join(row["text"] for row in wire_result["content"] if row["type"] == "text")
++                    return wire_result.get("isError", False), text
++
++                failed, text = await call({"course_id": "42"})
++                assert not failed
++                report = json.loads(text)
++                assert report["modules_returned"] == 4
++                assert report["modules"][0]["remaining_work"]["incomplete_item_ids"] == [72]
++                failed, text = await call({"course_id": "42", "module_id": "9"})
++                assert not failed and json.loads(text)["modules"][0]["state"] == "locked"
++                assert json.loads(text)["modules"][0]["prerequisite_module_ids"] == [7]
++                fixture.fixture["routes"]["GET /api/v1/courses/42/modules/7/items"][1]["completion_requirement"]["completed"] = True
++                failed, text = await call({"course_id": "42", "module_id": "7"})
++                assert not failed and json.loads(text)["modules"][0]["remaining_work"]["incomplete_item_ids"] == []
++                assert json.loads(text)["modules"][0]["state"] == "started"
++
++                before = len(fixture.requests)
++                for arguments in (
++                    {"course_id": "42/../99"}, {"course_id": True},
++                    {"course_id": "42", "module_id": "invalid"},
++                    {"course_id": "42", "module_id": False},
++                ):
++                    failed, _ = await call(arguments)
++                    assert failed
++                assert len(fixture.requests) == before
++                failed, _ = await call({"course_id": "42", "module_id": "999"})
++                assert failed
++                fixture.overrides[("/api/v1/courses/42/modules", "2")] = (403, {"error": "authored denial"}, {})
++                failed, _ = await call({"course_id": "42"})
++                assert failed
++
++    asyncio.run(run())
++    assert {request["method"] for request in fixture.requests} == {"GET"}
++    (tmp_path / "mcp-receiving.json").write_text(json.dumps({
++        "records": records, "requests": fixture.requests,
++    }, indent=2))

@@ -1,0 +1,12 @@
+{
+  "exit": 0,
+  "stdout": "",
+  "stderr": "",
+  "scope": [
+    "README.md",
+    "docs/module-progress.md",
+    "src",
+    "tests"
+  ],
+  "full_tree_result": "exit2 from unmodified raw patch/pytest evidence whitespace; retained in composed-diff.stdout.log"
+}

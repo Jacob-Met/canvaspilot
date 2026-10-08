@@ -1,0 +1,85 @@
+{
+  "source_commit": "51609ba3f93d20f69616b357c3c6bee19732dfd4",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 1667,
+      "sha256": "245df5b757e3a53280a81c4800e6362542151bdb75a3da713617edc4785c5937"
+    },
+    {
+      "path": "cli-receiving.json",
+      "bytes": 18958,
+      "sha256": "34914897f269293a690b5985eb5ced1cbe766c166a0ee3274db38163ece1c91f"
+    },
+    {
+      "path": "composed-diff.stdout.log",
+      "bytes": 4265,
+      "sha256": "f8efeb1a8648903d0e91639bf769d16496b3d98233b23b88372834fdc68e952b"
+    },
+    {
+      "path": "composed-results.json",
+      "bytes": 163,
+      "sha256": "fb9892b45d3833ad87f055e292413df997742d44d3cf77b4e2a163716f19ca3b"
+    },
+    {
+      "path": "composed-ruff.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "composed-ruff.stdout.log",
+      "bytes": 19,
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "path": "composed-source-whitespace.json",
+      "bytes": 259,
+      "sha256": "b33f069d1f6118ed5309a56618674a753c0b62caa753176de9477ce14038b4f6"
+    },
+    {
+      "path": "composed-suite.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "composed-suite.stdout.log",
+      "bytes": 351,
+      "sha256": "f64d72f913221d42c79c4368677605198765540e9fd7dc2ab4c977dce48bfd2d"
+    },
+    {
+      "path": "composed-suite.xml",
+      "bytes": 39072,
+      "sha256": "4b7b6f014bb7a2e9661057fbe1ef400b6aa7e2cf23425d821c283546e5d94565"
+    },
+    {
+      "path": "composition-merge.json",
+      "bytes": 346,
+      "sha256": "32dccfa83aac980fdb04095d0e5f4f5de9a71848578737d07122e76c1079fd12"
+    },
+    {
+      "path": "composition-preservation.json",
+      "bytes": 2657,
+      "sha256": "10aae9e4724d4795110e1dccf73c455936923502ad31c88b6f4ed93a7e90cc02"
+    },
+    {
+      "path": "current-composed-source.json",
+      "bytes": 228,
+      "sha256": "1c3a162efc4b42442b01132ea4bc62a829cf0ce7eb0b982d06b820315288b179"
+    },
+    {
+      "path": "mcp-receiving.json",
+      "bytes": 23508,
+      "sha256": "0a4b0ca4191e1511070de4227e2eedaded745217956962d47ebf737a4776e67a"
+    },
+    {
+      "path": "native-http.json",
+      "bytes": 14773,
+      "sha256": "eae45eb32cb3662f14a257430c11f70d6f530c5921001bf5be5181ff64d76ee3"
+    },
+    {
+      "path": "verify-composition.cjs",
+      "bytes": 3469,
+      "sha256": "bcf66f2e74bb30fbdce65dd765cb7be0fcd6f9216c84f67805d5753839bef4e4"
+    }
+  ]
+}

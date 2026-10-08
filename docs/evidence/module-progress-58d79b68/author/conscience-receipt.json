@@ -1,0 +1,13 @@
+{
+  "claim": {
+    "seq": 3913,
+    "event_id": "cev_78160b5cf3d04f2bb1c4965f",
+    "event_hash": "818bfc3524d5fdfffffc1aa5eb9398dc7a334f9f92d9dad41a64634959cbf4d8"
+  },
+  "native_qualification": {
+    "seq": 3933,
+    "event_id": "cev_ae0b4691288d42faa558e499",
+    "event_hash": "32a446b2e03bbc5925c31dd2485ebcc01afbb16b6a6af48b72735a4b04b9a9e7",
+    "state": "qualified-candidate-pending-independent-review"
+  }
+}
