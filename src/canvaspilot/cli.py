@@ -82,6 +82,15 @@ def main(argv: list[str] | None = None) -> None:
     add_common(grades)
     grades.add_argument("course_id", help="Positive numeric Canvas course ID")
 
+    grade_export = sub.add_parser(
+        "export-grade-review", help="Save reported course grades to a new offline HTML file",
+    )
+    add_common(grade_export)
+    grade_export.add_argument("course_id", type=_positive_int)
+    grade_export.add_argument(
+        "--out", required=True, type=Path, help="New HTML report; existing paths are protected",
+    )
+
     assigns = sub.add_parser("assignments", help="List assignments for a course")
     add_common(assigns)
     assigns.add_argument("course_id")
@@ -276,6 +285,30 @@ def main(argv: list[str] | None = None) -> None:
                 }), file=sys.stderr)
                 raise SystemExit(1) from None
             print(json.dumps(result, indent=2, allow_nan=False))
+        elif args.cmd == "export-grade-review":
+            import os
+
+            import httpx
+
+            from canvaspilot.calendar_export import write_calendar
+            from canvaspilot.grade_review_export import build_grade_review_report
+
+            http_log = logging.getLogger("httpx")
+            previous_level = http_log.level
+            http_log.setLevel(max(http_log.getEffectiveLevel(), logging.WARNING))
+            try:
+                if os.path.lexists(args.out):
+                    raise FileExistsError("Output path already exists; choose a new HTML file")
+                content, report = build_grade_review_report(api, args.course_id)
+                write_calendar(args.out, content)
+            except (RuntimeError, httpx.HTTPError, ValueError, TypeError, OSError) as error:
+                print(json.dumps({
+                    "ok": False, "error": type(error).__name__, "message": str(error),
+                }), file=sys.stderr)
+                raise SystemExit(1) from None
+            finally:
+                http_log.setLevel(previous_level)
+            print(json.dumps({"ok": True, "path": str(args.out), **report}, indent=2))
         elif args.cmd == "assignments":
             print(
                 json.dumps(

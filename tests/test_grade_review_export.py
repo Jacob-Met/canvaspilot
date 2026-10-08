@@ -1,0 +1,248 @@
+"""Offline grade export contracts with synthetic Canvas input and actual CLI reads."""
+
+from __future__ import annotations
+
+import base64
+import hashlib
+import json
+import os
+import subprocess
+import sys
+from copy import deepcopy
+from datetime import UTC, datetime
+from html.parser import HTMLParser
+from pathlib import Path
+from unittest.mock import Mock
+
+import pytest
+from grade_review_fixture import GradeReviewHTTPFixture, grade_fixture
+
+from canvaspilot.api import CanvasAPI
+from canvaspilot.client import CanvasClient
+from canvaspilot.grade_review_export import (
+    build_grade_review_report,
+    render_grade_review_report,
+)
+
+STAMP = datetime(2026, 10, 8, 17, 20, tzinfo=UTC)
+
+
+class ReportHTML(HTMLParser):
+    def __init__(self, content):
+        super().__init__(convert_charrefs=True)
+        self.tags = []
+        self.text = []
+        self.download = None
+        self.feed(content.decode("utf-8"))
+
+    def handle_starttag(self, tag, attrs):
+        values = dict(attrs)
+        self.tags.append((tag, values))
+        if values.get("id") == "download-report":
+            self.download = base64.b64decode(values["href"].split(",", 1)[1], validate=True)
+
+    def handle_data(self, data):
+        self.text.append(data)
+
+
+def normalized(data=None):
+    source = grade_fixture() if data is None else data
+    client = CanvasClient(fixture={"routes": {
+        "GET /api/v1/users/self/profile": source["profile"],
+        "GET /api/v1/courses/42": source["course"],
+        "GET /api/v1/courses/42/assignment_groups": source["groups"],
+    }})
+    with CanvasAPI(client) as api:
+        return api.grade_review(42)
+
+
+def test_complete_report_roundtrips_without_mutation_and_reads_once():
+    source = grade_fixture()
+    source["course"]["enrollments"].insert(0, {
+        "type": "teacher", "role": "TeacherEnrollment", "user_id": 7,
+        "computed_current_score": 105.25, "computed_final_grade": "",
+    })
+    source["groups"][1]["group_weight"] = 150
+    source["groups"][1]["assignments"][0]["points_possible"] = 0
+    source["groups"][1]["assignments"][0]["submission"] = {
+        "assignment_id": 201, "user_id": 7, "score": 7.5, "grade": "7.5",
+    }
+    report = normalized(source)
+    original = deepcopy(report)
+    api = Mock()
+    api.grade_review.return_value = report
+    content, receipt = build_grade_review_report(api, "0042", generated_at=STAMP)
+    api.grade_review.assert_called_once_with("0042")
+    assert report == original
+    page = ReportHTML(content)
+    assert json.loads(page.download) == report
+    assert receipt["json_sha256"] == hashlib.sha256(page.download).hexdigest()
+    assert receipt["sha256"] == hashlib.sha256(content).hexdigest()
+    assert receipt["assignments_returned"] == 4 and receipt["groups_returned"] == 2
+    text = "".join(page.text)
+    assert text.index("TeacherEnrollment") < text.index("StudentEnrollment")
+    assert "105.25" in text and "7.5" in text and "150" in text
+    assert "does not match the current submission" in text
+    assert "whole-course completeness remains unknown" in text
+    assert json.loads(page.download)["collection_complete"] is None
+
+
+@pytest.mark.parametrize("visibility", ["posted_at", "assignment_visible"])
+def test_reader_withheld_values_do_not_reappear_in_html_or_json(visibility):
+    source = grade_fixture()
+    source["course"]["hide_final_grades"] = True
+    source["course"]["enrollments"][0]["computed_current_score"] = 7654321
+    submission = source["groups"][0]["assignments"][0]["submission"]
+    submission[visibility] = None if visibility == "posted_at" else False
+    submission.update({"score": 8765432, "grade": "WITHHELD-SENTINEL"})
+    content, _ = render_grade_review_report(normalized(source), generated_at=STAMP)
+    assert b"7654321" not in content and b"8765432" not in content
+    assert b"WITHHELD-SENTINEL" not in content
+    page = ReportHTML(content)
+    data = json.loads(page.download)
+    assert data["enrollments"][0]["reported_totals"] == {}
+    assert "score" not in data["assignment_groups"][0]["assignments"][0]["submission"]["fields"]
+    assert "reader withheld enrollment totals" in "".join(page.text)
+    assert "Withheld by the reader" in "".join(page.text)
+
+
+@pytest.mark.parametrize("kind", ["absent", "null", "empty"])
+def test_missing_and_empty_enrollments_and_assignments_stay_distinct(kind):
+    source = grade_fixture()
+    if kind == "absent":
+        del source["course"]["enrollments"]
+        del source["groups"][0]["assignments"]
+    else:
+        source["course"]["enrollments"] = None if kind == "null" else []
+        source["groups"][0]["assignments"] = None if kind == "null" else []
+    report = normalized(source)
+    content, _ = render_grade_review_report(report, generated_at=STAMP)
+    page = ReportHTML(content)
+    assert json.loads(page.download) == report
+    text = "".join(page.text)
+    expected = {"absent": "Not returned by Canvas", "null": "Canvas returned null",
+                "empty": "empty enrollment list"}[kind]
+    assert expected in text
+    assert ("empty assignment list" in text) is (kind == "empty")
+
+
+def test_provider_markup_controls_and_unicode_are_literal_and_resources_inert():
+    source = grade_fixture()
+    malicious = '<script>window.injected=true</script><img src="https://invalid.example/a"> Ω\x00\ud800'
+    source["course"]["name"] = malicious
+    source["groups"][0]["name"] = malicious
+    source["groups"][0]["assignments"][0]["name"] = malicious
+    source["groups"][0]["assignments"][0]["html_url"] = "javascript:alert(1)"
+    report = normalized(source)
+    content, _ = render_grade_review_report(report, generated_at=STAMP)
+    page = ReportHTML(content)
+    assert json.loads(page.download) == report
+    assert '<script>window.injected=true</script>' in "".join(page.text)
+    assert "\\u0000" in "".join(page.text) and "\\ud800" in "".join(page.text)
+    assert not {"script", "img", "iframe", "link", "form", "object"} & {tag for tag, _ in page.tags}
+    for tag, attrs in page.tags:
+        assert not any(name.startswith("on") for name in attrs)
+        if tag == "a":
+            assert attrs["href"].startswith(("#", "data:application/json;base64,"))
+    assert b"default-src &#x27;none&#x27;" not in content
+    assert b"default-src 'none'" in content
+
+
+def test_creation_time_and_output_bounds_are_explicit(monkeypatch):
+    import canvaspilot.grade_review_export as exporter
+
+    report = normalized()
+    first, _ = render_grade_review_report(report, generated_at=STAMP)
+    second, _ = render_grade_review_report(report, generated_at=STAMP)
+    assert first == second
+    with pytest.raises(ValueError, match="timezone"):
+        render_grade_review_report(report, generated_at=datetime(2026, 10, 8))  # noqa: DTZ001 - exercises rejection of a naive time
+    monkeypatch.setattr(exporter, "MAX_REPORT_BYTES", 10)
+    with pytest.raises(ValueError, match="JSON"):
+        render_grade_review_report(report, generated_at=STAMP)
+    monkeypatch.setattr(exporter, "MAX_REPORT_BYTES", 4 * 1024 * 1024)
+    monkeypatch.setattr(exporter, "MAX_HTML_BYTES", 10)
+    with pytest.raises(ValueError, match="HTML"):
+        render_grade_review_report(report, generated_at=STAMP)
+
+
+def test_actual_cli_pagination_file_preservation_and_read_failure(tmp_path):
+    fixture = GradeReviewHTTPFixture()
+    source = deepcopy(fixture.data)
+    env = {name: os.environ[name] for name in (
+        "PATH", "SYSTEMROOT", "LANG", "TMPDIR", "PYTHONPATH", "PYTHONDONTWRITEBYTECODE",
+    ) if name in os.environ}
+    env.update({
+        "CANVAS_BASE_URL": fixture.base_url,
+        "CANVAS_API_TOKEN": "grade-review-synthetic-token",
+        "CANVAS_PROFILE": str(tmp_path / "unused-profile"),
+        "NO_PROXY": "127.0.0.1,localhost",
+    })
+    records = []
+    evidence = os.environ.get("CANVASPILOT_GRADE_EXPORT_EVIDENCE")
+
+    def run(path, course="42"):
+        process = subprocess.run(
+            [sys.executable, "-B", "-m", "canvaspilot.cli", "export-grade-review",
+             course, "--out", str(path)], env=env, capture_output=True, text=True,
+            timeout=20, check=False,
+        )
+        records.append({"returncode": process.returncode, "stdout": process.stdout,
+                        "stderr": process.stderr, "output_name": path.name})
+        return process
+
+    try:
+        output = tmp_path / "review.html"
+        success = run(output)
+        assert success.returncode == 0 and success.stderr == ""
+        content = output.read_bytes()
+        receipt = json.loads(success.stdout)
+        assert receipt["ok"] is True and receipt["sha256"] == hashlib.sha256(content).hexdigest()
+        page = ReportHTML(content)
+        assert json.loads(page.download) == normalized(source)
+        assert len(fixture.requests) == 4
+        assert fixture.requests[2]["query"]["include[]"] == ["assignments", "submission"]
+        assert fixture.requests[3]["query"] == {"cursor": ["last-page"]}
+        previous = deepcopy(fixture.requests)
+        exists = run(output)
+        assert exists.returncode == 1 and exists.stdout == ""
+        assert json.loads(exists.stderr)["error"] == "FileExistsError"
+        assert output.read_bytes() == content and fixture.requests == previous
+        symlink = tmp_path / "existing-link.html"
+        if hasattr(os, "symlink"):
+            try:
+                symlink.symlink_to(tmp_path / "absent-target")
+            except OSError:
+                pass
+            else:
+                linked = run(symlink)
+                assert linked.returncode == 1 and symlink.is_symlink()
+                assert fixture.requests == previous
+        fixture.overrides[("/api/v1/courses/42/assignment_groups", "last-page")] = (
+            403, {"error": "authored later-page failure"}, {},
+        )
+        refused_path = tmp_path / "refused.html"
+        refused = run(refused_path)
+        assert refused.returncode == 1 and refused.stdout == ""
+        assert json.loads(refused.stderr)["ok"] is False
+        assert "Traceback" not in refused.stderr and not refused_path.exists()
+        previous = deepcopy(fixture.requests)
+        invalid = run(tmp_path / "invalid.html", "0")
+        assert invalid.returncode == 2 and fixture.requests == previous
+        assert fixture.data == source and not (tmp_path / "unused-profile").exists()
+        assert {row["method"] for row in fixture.requests} == {"GET"}
+        if evidence:
+            directory = Path(evidence)
+            directory.mkdir(parents=True, exist_ok=True)
+            (directory / "synthetic-review.html").write_bytes(content)
+            (directory / "synthetic-normalized.json").write_bytes(page.download)
+            (directory / "synthetic-source.json").write_text(
+                json.dumps(source, ensure_ascii=True, indent=2) + "\n",
+            )
+            (directory / "cli-receipt.json").write_text(json.dumps({
+                "runtime": sys.version, "records": records, "requests": fixture.requests,
+                "report_sha256": hashlib.sha256(content).hexdigest(),
+                "synthetic": True, "all_assertions_passed": True,
+            }, indent=2) + "\n")
+    finally:
+        fixture.close()

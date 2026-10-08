@@ -1,0 +1,178 @@
+{
+  "synthetic": true,
+  "started_at": "2026-10-08T17:24:32.042Z",
+  "browser_profile": "/home/jacob/grade-export-browser-926c3dc2605e-VQXyaC",
+  "html_sha256": "8bc68c0e8db335a069afdeb29c8efbd00baa7d5d1ef583ceebede0a8f0927f11",
+  "normalized_sha256": "e55182d1fc34bf366ec4800dda85f128c616cfd28372360a5bdbd1093d71fe51",
+  "requests": [
+    {
+      "url": "file:///home/jacob/canvaspilot-grade-review-export-926c3dc2605e/docs/receiving/grade-review-export-926c3dc2605e/synthetic-review.html",
+      "method": "GET"
+    }
+  ],
+  "exceptions": [],
+  "checks": {
+    "desktop_content": {
+      "passed": true,
+      "detail": {
+        "title": "Synthetic Linear Algebra",
+        "cards": 4,
+        "scrollWidth": 1085,
+        "width": 1100,
+        "hasWarning": true,
+        "details": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "headings": [
+          "Reported course totals",
+          "Assignment groups",
+          "Problem sets",
+          "Exams",
+          "Report context"
+        ]
+      }
+    },
+    "desktop_width": {
+      "passed": true,
+      "detail": {
+        "title": "Synthetic Linear Algebra",
+        "cards": 4,
+        "scrollWidth": 1085,
+        "width": 1100,
+        "hasWarning": true,
+        "details": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "headings": [
+          "Reported course totals",
+          "Assignment groups",
+          "Problem sets",
+          "Exams",
+          "Report context"
+        ]
+      }
+    },
+    "details_initially_closed": {
+      "passed": true,
+      "detail": [
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    "keyboard_reaches_details": {
+      "passed": true,
+      "detail": {
+        "tag": "SUMMARY",
+        "text": "All returned assignment and submission fields"
+      }
+    },
+    "keyboard_opens_details": {
+      "passed": true,
+      "detail": true
+    },
+    "keyboard_closes_details": {
+      "passed": true
+    },
+    "mobile_width": {
+      "passed": true,
+      "detail": {
+        "width": 390,
+        "scrollWidth": 390
+      }
+    },
+    "actual_download_exact_report": {
+      "passed": true,
+      "detail": {
+        "download": "course-grade-review.json",
+        "bytes": 4881,
+        "sha256": "e55182d1fc34bf366ec4800dda85f128c616cfd28372360a5bdbd1093d71fe51"
+      }
+    },
+    "actual_download_matches_displayed_hash": {
+      "passed": true
+    },
+    "details_closed_before_print": {
+      "passed": true
+    },
+    "print_includes_closed_details": {
+      "passed": true,
+      "detail": {
+        "containsAssignment201": true,
+        "containsFullSubmission": true
+      }
+    },
+    "no_external_page_requests": {
+      "passed": true,
+      "detail": [
+        {
+          "url": "file:///home/jacob/canvaspilot-grade-review-export-926c3dc2605e/docs/receiving/grade-review-export-926c3dc2605e/synthetic-review.html",
+          "method": "GET"
+        }
+      ]
+    },
+    "no_runtime_exceptions": {
+      "passed": true,
+      "detail": []
+    }
+  },
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/153.0.8010.47",
+    "revision": "@73934a44f61e6b3878d1943064c141a5a820f5f7",
+    "userAgent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+    "jsVersion": "15.3.76.12"
+  },
+  "pdf_info": "Title:           Course grade review — CanvasPilot\nCreator:         Mozilla/5.0 (X11; Ubuntu; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36\nProducer:        Skia/PDF m153\nCreationDate:    Thu Oct  8 17:24:35 2026 UTC\nModDate:         Thu Oct  8 17:24:35 2026 UTC\nCustom Metadata: no\nMetadata Stream: no\nTagged:          yes\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           10\nEncrypted:       no\nPage size:       612 x 792 pts (letter)\nPage rot:        0\nFile size:       154409 bytes\nOptimized:       no\nPDF version:     1.4\n",
+  "passed": true,
+  "finished_at": "2026-10-08T17:24:35.989Z",
+  "artifacts": {
+    "synthetic-review.html": {
+      "bytes": 26586,
+      "sha256": "8bc68c0e8db335a069afdeb29c8efbd00baa7d5d1ef583ceebede0a8f0927f11"
+    },
+    "synthetic-normalized.json": {
+      "bytes": 4881,
+      "sha256": "e55182d1fc34bf366ec4800dda85f128c616cfd28372360a5bdbd1093d71fe51"
+    },
+    "desktop.png": {
+      "bytes": 112697,
+      "sha256": "5921b0dc71890e31f274ad9c4b0d32b4ea8529fe256ba3e687504eb20b9eb0a7"
+    },
+    "desktop-assignments.png": {
+      "bytes": 63946,
+      "sha256": "6ec598684f519958be5b37927c7deacf5013a9f0e6b41804048a8ff0c2ec542e"
+    },
+    "mobile.png": {
+      "bytes": 76913,
+      "sha256": "df75b7b0f8220c8a1edfc2d2d2aedfa464dc0a5d001f0a6aa7cadc4575a3561a"
+    },
+    "mobile-assignments.png": {
+      "bytes": 35881,
+      "sha256": "973bdef210dc99ef017f67272a76bc3b195455833992fb9f4055d6ee55260709"
+    },
+    "downloaded-course-grade-review.json": {
+      "bytes": 4881,
+      "sha256": "e55182d1fc34bf366ec4800dda85f128c616cfd28372360a5bdbd1093d71fe51"
+    },
+    "print-review.pdf": {
+      "bytes": 154409,
+      "sha256": "db8e0fb591e97769321b55ff8c425aece14cb4d9395b91b9b1f788029d9227e4"
+    },
+    "print-review.txt": {
+      "bytes": 11466,
+      "sha256": "a8948a2a7c6a3ca2602db15e801a53a4c1b14a721b3c222af6da3e84e9924b23"
+    },
+    "browser-receiving.mjs": {
+      "bytes": 11425,
+      "sha256": "0da537d5a0e8f197e5b4a7d0226425b8141d1f43aac503f949e0b0724564c6d8"
+    }
+  }
+}

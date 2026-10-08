@@ -117,6 +117,12 @@ The [grade review guide](docs/grade-review.md) explains the original Canvas fiel
 names, group/drop-rule context, visibility rules and returned-row limits. No
 replacement course grade or missing-work status is inferred.
 
+Save that same grade review for offline reading or printing with
+`canvaspilot export-grade-review 42 --out course-grades.html`. The
+[saved grade-review guide](docs/grade-review-export.md) explains reported totals,
+assignment context, withheld/unknown values, the complete JSON download and
+new-file protection.
+
 ## Assignment briefs
 
 `canvaspilot brief <course_id> <assignment_id>`, the Python

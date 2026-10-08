@@ -1,0 +1,115 @@
+{
+  "passed": true,
+  "checks": {
+    "desktop_content": {
+      "passed": true,
+      "detail": {
+        "title": "Synthetic Linear Algebra",
+        "cards": 4,
+        "scrollWidth": 1085,
+        "width": 1100,
+        "hasWarning": true,
+        "details": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "headings": [
+          "Reported course totals",
+          "Assignment groups",
+          "Problem sets",
+          "Exams",
+          "Report context"
+        ]
+      }
+    },
+    "desktop_width": {
+      "passed": true,
+      "detail": {
+        "title": "Synthetic Linear Algebra",
+        "cards": 4,
+        "scrollWidth": 1085,
+        "width": 1100,
+        "hasWarning": true,
+        "details": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "headings": [
+          "Reported course totals",
+          "Assignment groups",
+          "Problem sets",
+          "Exams",
+          "Report context"
+        ]
+      }
+    },
+    "details_initially_closed": {
+      "passed": true,
+      "detail": [
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    "keyboard_reaches_details": {
+      "passed": true,
+      "detail": {
+        "tag": "SUMMARY",
+        "text": "All returned assignment and submission fields"
+      }
+    },
+    "keyboard_opens_details": {
+      "passed": true,
+      "detail": true
+    },
+    "keyboard_closes_details": {
+      "passed": true
+    },
+    "mobile_width": {
+      "passed": true,
+      "detail": {
+        "width": 390,
+        "scrollWidth": 390
+      }
+    },
+    "actual_download_exact_report": {
+      "passed": true,
+      "detail": {
+        "download": "course-grade-review.json",
+        "bytes": 4881,
+        "sha256": "e55182d1fc34bf366ec4800dda85f128c616cfd28372360a5bdbd1093d71fe51"
+      }
+    },
+    "actual_download_matches_displayed_hash": {
+      "passed": true
+    },
+    "details_closed_before_print": {
+      "passed": true
+    },
+    "print_includes_closed_details": {
+      "passed": true,
+      "detail": {
+        "containsAssignment201": true,
+        "containsFullSubmission": true
+      }
+    },
+    "no_external_page_requests": {
+      "passed": true,
+      "detail": [
+        {
+          "url": "file:///home/jacob/canvaspilot-grade-review-export-926c3dc2605e/docs/receiving/grade-review-export-926c3dc2605e/synthetic-review.html",
+          "method": "GET"
+        }
+      ]
+    },
+    "no_runtime_exceptions": {
+      "passed": true,
+      "detail": []
+    }
+  }
+}

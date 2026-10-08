@@ -1,0 +1,72 @@
+{
+  "passed": false,
+  "checks": {
+    "desktop_content": {
+      "passed": true,
+      "detail": {
+        "title": "Synthetic Linear Algebra",
+        "cards": 4,
+        "scrollWidth": 1085,
+        "width": 1100,
+        "hasWarning": true,
+        "details": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "headings": [
+          "Reported course totals",
+          "Assignment groups",
+          "Problem sets",
+          "Exams",
+          "Report context"
+        ]
+      }
+    },
+    "desktop_width": {
+      "passed": true,
+      "detail": {
+        "title": "Synthetic Linear Algebra",
+        "cards": 4,
+        "scrollWidth": 1085,
+        "width": 1100,
+        "hasWarning": true,
+        "details": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "headings": [
+          "Reported course totals",
+          "Assignment groups",
+          "Problem sets",
+          "Exams",
+          "Report context"
+        ]
+      }
+    },
+    "details_initially_closed": {
+      "passed": true,
+      "detail": [
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    "keyboard_reaches_details": {
+      "passed": true,
+      "detail": {
+        "tag": "SUMMARY",
+        "text": "All returned assignment and submission fields"
+      }
+    },
+    "keyboard_opens_details": {
+      "passed": false,
+      "detail": false
+    }
+  },
+  "error": "Error: Receiving assertion: keyboard_opens_details\n    at check (file:///home/jacob/canvaspilot-grade-review-export-926c3dc2605e/docs/receiving/grade-review-export-926c3dc2605e/browser-receiving.mjs:27:25)\n    at file:///home/jacob/canvaspilot-grade-review-export-926c3dc2605e/docs/receiving/grade-review-export-926c3dc2605e/browser-receiving.mjs:93:3"
+}
