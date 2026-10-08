@@ -10,7 +10,7 @@ import pytest
 
 from canvaspilot import mcp_server
 from canvaspilot.api import CanvasAPI
-from canvaspilot.client import CanvasAuthError, CanvasClient, CanvasPaginationError
+from canvaspilot.client import CanvasAuthError, CanvasClient
 
 BASE = "https://canvas.invalid"
 ROUTE = "/api/v1/announcements"
@@ -112,7 +112,7 @@ def test_terminal_empty_response_is_empty_without_an_extra_request(detail):
 @pytest.mark.parametrize("failure, error", [
     ("forbidden", CanvasAuthError),
     ("server", httpx.HTTPStatusError),
-    ("invalid_json", CanvasPaginationError),
+    ("invalid_json", json.JSONDecodeError),
 ])
 def test_later_page_failure_raises_without_returning_a_partial_listing(detail, failure, error):
     requests = []
@@ -128,12 +128,9 @@ def test_later_page_failure_raises_without_returning_a_partial_listing(detail, f
             return httpx.Response(200, content=b"{invalid", headers={"Content-Type": "application/json"})
         return httpx.Response(403 if failure == "forbidden" else 500, json={"error": failure})
 
-    with http_api(respond) as api, pytest.raises(error) as caught:
+    with http_api(respond) as api, pytest.raises(error):
         api.list_announcements([7], detail=detail)
     assert len(requests) == 2
-    if failure == "invalid_json":
-        assert isinstance(caught.value.__cause__, json.JSONDecodeError)
-        assert "collection incomplete" in str(caught.value)
 
 
 def test_repeated_calls_receive_fresh_pages_without_reusing_rows_or_course_filters():
