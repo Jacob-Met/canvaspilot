@@ -1,0 +1,58 @@
+2026-10-08T16:27:42.5956113Z ##[group]Run ruff check src tests scripts
+2026-10-08T16:27:42.5956705Z [36;1mruff check src tests scripts[0m
+2026-10-08T16:27:42.6023781Z shell: /usr/bin/bash -e {0}
+2026-10-08T16:27:42.6024052Z env:
+2026-10-08T16:27:42.6024343Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T16:27:42.6024793Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-08T16:27:42.6025238Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T16:27:42.6025624Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T16:27:42.6026040Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T16:27:42.6026645Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-08T16:27:42.6027036Z ##[endgroup]
+2026-10-08T16:27:42.6327725Z I001 [*] Import block is un-sorted or un-formatted
+2026-10-08T16:27:42.6328347Z   --> tests/test_planner_cli.py:6:1
+2026-10-08T16:27:42.6328646Z    |
+2026-10-08T16:27:42.6329049Z  4 |   HTTPX, the native pagination implementation, or package/MCP bootstrap.
+2026-10-08T16:27:42.6329452Z  5 |   """
+2026-10-08T16:27:42.6329667Z  6 | / from __future__ import annotations
+2026-10-08T16:27:42.6329934Z  7 | |
+2026-10-08T16:27:42.6330115Z  8 | | import json
+2026-10-08T16:27:42.6330311Z  9 | | import os
+2026-10-08T16:27:42.6330522Z 10 | | from pathlib import Path
+2026-10-08T16:27:42.6330771Z 11 | | import subprocess
+2026-10-08T16:27:42.6330990Z 12 | | import sys
+2026-10-08T16:27:42.6331197Z 13 | | import tempfile
+2026-10-08T16:27:42.6331409Z 14 | | import threading
+2026-10-08T16:27:42.6331621Z 15 | | import unittest
+2026-10-08T16:27:42.6332180Z 16 | | from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+2026-10-08T16:27:42.6332611Z 17 | | from urllib.parse import parse_qs, urlsplit
+2026-10-08T16:27:42.6332927Z    | |___________________________________________^
+2026-10-08T16:27:42.6333182Z 18 |
+2026-10-08T16:27:42.6333396Z 19 |   ROOT = Path(__file__).resolve().parents[1]
+2026-10-08T16:27:42.6333672Z    |
+2026-10-08T16:27:42.6333859Z help: Organize imports
+2026-10-08T16:27:42.6334068Z    |
+2026-10-08T16:27:42.6334236Z 9  | import os
+2026-10-08T16:27:42.6334457Z    - from pathlib import Path
+2026-10-08T16:27:42.6334708Z 10 | import subprocess
+2026-10-08T16:27:42.6335008Z --------------------------------------------------------------------------------
+2026-10-08T16:27:42.6335473Z 15 | from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+2026-10-08T16:27:42.6335866Z 16 + from pathlib import Path
+2026-10-08T16:27:42.6336144Z 17 | from urllib.parse import parse_qs, urlsplit
+2026-10-08T16:27:42.6336702Z    |
+2026-10-08T16:27:42.6336819Z 
+2026-10-08T16:27:42.6336990Z PLW1510 `subprocess.run` without explicit `check` argument
+2026-10-08T16:27:42.6337346Z   --> tests/test_planner_cli.py:84:16
+2026-10-08T16:27:42.6337598Z    |
+2026-10-08T16:27:42.6337788Z 82 |             "LANG": "C.UTF-8",
+2026-10-08T16:27:42.6338024Z 83 |         }
+2026-10-08T16:27:42.6338234Z 84 |         return subprocess.run(
+2026-10-08T16:27:42.6338481Z    |                ^^^^^^^^^^^^^^
+2026-10-08T16:27:42.6338803Z 85 |             [sys.executable, "-B", "-m", "canvaspilot.cli", *arguments,
+2026-10-08T16:27:42.6339248Z 86 |              "--base-url", self.base, "--token", "synthetic-planner-token",
+2026-10-08T16:27:42.6339598Z    |
+2026-10-08T16:27:42.6339789Z help: Add explicit `check=False`
+2026-10-08T16:27:42.6339957Z 
+2026-10-08T16:27:42.6340041Z Found 2 errors.
+2026-10-08T16:27:42.6340258Z [*] 1 fixable with the `--fix` option.
+2026-10-08T16:27:42.6355357Z ##[error]Process completed with exit code 1.

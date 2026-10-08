@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-08T17:08:35.763Z",
+  "reviewed_candidate": "df01e112b3c7f525e99b3179176d57497391f16b",
+  "current_native_commit": "1bafdaa31f7789d8e561680cb6001bbe38b2da64",
+  "previous_native_commit": "d15de13fb6fa39d3cace04bec0e218b4a2ed2ffd",
+  "current_api_blob": "3ec81dee60bc67d7a80d40b78e85d5c005441b99",
+  "current_api_equals_previous_native_api": true,
+  "pins": {
+    "composed": {
+      "bytes": 25259,
+      "git_blob": "99247f6d57c4eda52a99e32683ed8d33c56b8d9b",
+      "sha256": "00e8ec35a93546623eba626e58e96f97d76c469cb9ce1ce3f37c7ff74ee18346"
+    },
+    "native": {
+      "bytes": 23937,
+      "git_blob": "8d6644d0e1b916ca38a578147db8392a2e92d226",
+      "sha256": "fddcedbe9ffb9736beb35e7959bc91b30a88176b60646a3fd2ab6cf9169d0fd4"
+    },
+    "previous": {
+      "bytes": 21956,
+      "git_blob": "9b9e00dcdb6e768c02a8cf9e23d1a56094970846",
+      "sha256": "205408caa8c22f34d0fb0a66b704db76f90f10a99eb9d3f3685f88ec4edbc1ae"
+    }
+  },
+  "remove_exact_original_planner_blocks_equals_native_cli": true,
+  "original_planner_blocks": [
+    "    planner = sub.add_parser(\n        \"planner\", help=\"Read your planner items without changing completion or visibility\",\n    )\n    add_common(planner)\n    planner.add_argument(\n        \"--start-date\", default=None, help=\"Native date filter: YYYY-MM-DD or ISO 8601 timestamp\",\n    )\n    planner.add_argument(\n        \"--end-date\", default=None, help=\"Native date filter: YYYY-MM-DD or ISO 8601 timestamp\",\n    )\n\n",
+    "        elif args.cmd == \"planner\":\n            import httpx\n\n            from canvaspilot.client import CanvasAuthError, CanvasPaginationError\n\n            http_log = logging.getLogger(\"httpx\")\n            previous_level = http_log.level\n            http_log.setLevel(max(http_log.getEffectiveLevel(), logging.WARNING))\n            try:\n                result = api.planner_items(\n                    start_date=args.start_date, end_date=args.end_date,\n                )\n            except (CanvasAuthError, CanvasPaginationError, httpx.HTTPError, ValueError) as error:\n                print(json.dumps({\n                    \"ok\": False, \"error\": type(error).__name__, \"message\": str(error),\n                }), file=sys.stderr)\n                raise SystemExit(1) from None\n            finally:\n                http_log.setLevel(previous_level)\n            print(json.dumps(result, indent=2, default=str))\n"
+  ],
+  "previous_to_current_native_cli_deltas": [
+    {
+      "operation": "insert",
+      "old": "",
+      "new": "    progress_export = sub.add_parser(\n        \"export-module-progress\", help=\"Save reported module progress to a new offline HTML file\",\n    )\n    add_common(progress_export)\n    progress_export.add_argument(\"course_id\", type=_positive_int)\n    progress_export.add_argument(\"--module-id\", type=_positive_int, default=None)\n    progress_export.add_argument(\n        \"--out\", required=True, type=Path, help=\"New HTML report; existing paths are protected\",\n    )\n\n"
+    },
+    {
+      "operation": "insert",
+      "old": "",
+      "new": "        elif args.cmd == \"export-module-progress\":\n            import os\n\n            import httpx\n\n            from canvaspilot.calendar_export import write_calendar\n            from canvaspilot.client import CanvasAuthError, CanvasPaginationError\n            from canvaspilot.module_progress_export import build_module_progress_report\n\n            http_log = logging.getLogger(\"httpx\")\n            previous_level = http_log.level\n            http_log.setLevel(max(http_log.getEffectiveLevel(), logging.WARNING))\n            try:\n                if os.path.lexists(args.out):\n                    raise FileExistsError(\"Output path already exists; choose a new HTML file\")\n                content, report = build_module_progress_report(\n                    api, args.course_id, module_id=args.module_id,\n                )\n                # The existing calendar publisher writes arbitrary complete bytes\n                # to a new file; it never replaces a path or follows its symlink.\n                write_calendar(args.out, content)\n            except (CanvasAuthError, CanvasPaginationError, httpx.HTTPError, ValueError, TypeError, OSError) as error:\n                print(json.dumps({\n                    \"ok\": False, \"error\": type(error).__name__, \"message\": str(error),\n                }), file=sys.stderr)\n                raise SystemExit(1) from None\n            finally:\n                http_log.setLevel(previous_level)\n            print(json.dumps({\"ok\": True, \"output\": str(args.out), **report}, indent=2))\n"
+    }
+  ],
+  "limit": "The nine-child independent fixture receiving run remains pinned to df01e112/cd17584b. This is a separate exact-byte composition proof, not a repeated current full-suite or hosted CI claim. The final composed branch still requires its actual configured hosted gate."
+}

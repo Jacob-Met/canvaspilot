@@ -1,0 +1,59 @@
+{
+  "format": "canvas-planner-current-native-preservation-v1",
+  "main": "6c4d5d2e7526cddc1aa6c90bfbef2d1188382ad3",
+  "tree": "50b0e4001ccad72078b073e2cc3606b619e064ff",
+  "protected_changes": "Current native quiz CLI and list_files collection-error behavior remain exact; API/client are not contribution paths.",
+  "planner_blocks_equal_original_received_version": true,
+  "cli": {
+    "bytes": 22586,
+    "sha256": "b8145ab7fdfb4f01784a45624d17cb5813b92cff6dc5812ad157a8bd357d97ab",
+    "git_blob": "df01e112b3c7f525e99b3179176d57497391f16b"
+  },
+  "native_cli": {
+    "bytes": 21264,
+    "sha256": "c6c93f855584c2e30e8e51cc33e52e7511a851af2d5201be83ee55c1ccee36bb",
+    "git_blob": "226f3f7d502dd61ad03c59cd8212289d133a0190"
+  },
+  "native_readme": {
+    "bytes": 23586,
+    "sha256": "1d7c48ee6927ef16019af08f4c129f6041a36a894b065be2a67cc8e04a13f7aa",
+    "git_blob": "ec4830e30ac59b7f0e02cc19e08c14475d32bedf"
+  },
+  "readme": {
+    "bytes": 23924,
+    "sha256": "b031154b28a37c2e18dba98ca583fc795127ce3c409f8787c04780a4ff071e1b",
+    "git_blob": "5a4dff0dfad82c26a94083f544949a582524beb1"
+  },
+  "only_two_cli_additions": true,
+  "only_readme_paragraph": true,
+  "api": {
+    "bytes": 29481,
+    "sha256": "1160b492217d300499e47e43549b1bf854914b4bf6a93bc1f192f543b1d1b1c6",
+    "git_blob": "cd17584bed618fb4a42d7128d204b2683b889600"
+  },
+  "old_api": {
+    "bytes": 29719,
+    "sha256": "784dd771c89b6cdac7005b1b7f6ebe00bdc47a39d2a9f022cac75f3b3b80e5b9",
+    "git_blob": "a9d16294a673f8f1df7b76b52f4b3ab059f69c64"
+  },
+  "native_api_only_changed_list_files": true,
+  "test": {
+    "bytes": 8717,
+    "sha256": "ccc61994c0725ab2b7e04c2186c55f0b3eb6f15cda784311fd3ace8712210833",
+    "git_blob": "d78606cdf761578e2d10ed55738a6eddac0b43e9"
+  },
+  "doc": {
+    "bytes": 4544,
+    "sha256": "bcb651c6a9402957442860ff621fa7ab13a693f8745490c4f271847a2492e9af",
+    "git_blob": "7d1d54d03face5afd51fc4be015ba10a927ad9ef"
+  },
+  "http_test_methods": [
+    "test_dates_and_all_native_fields_survive_complete_pagination",
+    "test_omitted_filters_keep_the_native_empty_result",
+    "test_first_terminal_object_keeps_the_existing_client_convention",
+    "test_native_errors_refuse_a_partial_success_document",
+    "test_missing_date_value_refuses_before_a_request",
+    "test_existing_identity_command_still_uses_its_native_route"
+  ],
+  "qualification": "Test source parses; real installed-package/HTTP execution is pending the existing CI environment"
+}

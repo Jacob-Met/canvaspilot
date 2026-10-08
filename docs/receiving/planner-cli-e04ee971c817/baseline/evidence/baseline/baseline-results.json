@@ -1,0 +1,89 @@
+{
+  "format": "canvaspilot-planner-original-receiver-v1",
+  "source": "/dev/shm/hamon-development-canvas-planner-e04-heuji486/baseline",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "source_sha256": {
+    "src/canvaspilot/cli.py": "9c6272fdfb4484eafc7a8ef9f35ffcdb9182f12f2a6d857fe2dfb420ce24870c",
+    "src/canvaspilot/api.py": "784dd771c89b6cdac7005b1b7f6ebe00bdc47a39d2a9f022cac75f3b3b80e5b9",
+    "src/canvaspilot/client.py": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797",
+    "src/canvaspilot/assignment_submission.py": "52fc732660b8844a2ee0801931a363f20db15b5309d148d01e3b618be487133d",
+    "src/canvaspilot/feedback.py": "55454598effea598474a21f67e36d5bc5bea84aaefeefc18e4d8c49804ab9869"
+  },
+  "cases": {
+    "original-help": {
+      "returncode": 0,
+      "stdout_bytes": 1895,
+      "stdout_sha256": "12b9a9d43f72b49b0f051f1dbb378eab79e90e38568c038ee7dc22216c60a4bd",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "original-planner": {
+      "returncode": 2,
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_bytes": 528,
+      "stderr_sha256": "07980f7dab03f53848bdb2d0586c609548f70f656976527a4ff5365bf2e7d7a5"
+    },
+    "native-fixture": {
+      "returncode": 0,
+      "stdout_bytes": 2208,
+      "stdout_sha256": "84e51720976307d23e25514aa438bcb4826c5d7678010e8b2914598dc2b6f4fd",
+      "stderr_bytes": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "conditions": [
+    {
+      "name": "original-help-succeeds",
+      "pass": true
+    },
+    {
+      "name": "existing-agenda-entry-present",
+      "pass": true
+    },
+    {
+      "name": "planner-command-absent",
+      "pass": true
+    },
+    {
+      "name": "actual-original-planner-refused",
+      "pass": true
+    },
+    {
+      "name": "native-api-fixture-succeeds",
+      "pass": true
+    },
+    {
+      "name": "all-original-values-retained",
+      "pass": true
+    },
+    {
+      "name": "native-default-selection-retained",
+      "pass": true
+    },
+    {
+      "name": "exact-native-get-and-date-forwarding",
+      "pass": true
+    },
+    {
+      "name": "fixture-mode-and-close-preserved",
+      "pass": true
+    },
+    {
+      "name": "no-httpx-behavior-needed",
+      "pass": true
+    },
+    {
+      "name": "source-unchanged",
+      "pass": true
+    }
+  ],
+  "passed": 11,
+  "failed": 0,
+  "limits": [
+    "Original CLI file executes native main; package/installed bootstrap is not exercised.",
+    "Positive control uses the exact native API and client fixture path with an import-only HTTPX tripwire.",
+    "No HTTPX behavior, HTTP/session pagination, MCP, school account, browser or provider is exercised.",
+    "Synthetic planner records are authored fixtures; native returned date/field behavior is retained."
+  ]
+}

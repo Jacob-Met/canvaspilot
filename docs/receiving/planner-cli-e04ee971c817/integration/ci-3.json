@@ -1,0 +1,150 @@
+{
+  "format": "canvas-planner-third-hosted-gate-v1",
+  "repository": "Jacob-Met/canvaspilot",
+  "run_id": 37816905848,
+  "job_id": 113447750388,
+  "url": "https://github.com/Jacob-Met/canvaspilot/actions/runs/37816905848",
+  "head": "16ddd61e4ed2bb971d84b8e9823890de145bc1b3",
+  "status": "completed",
+  "conclusion": "success",
+  "created_at": "2026-10-08T17:29:02Z",
+  "completed_at": "2026-10-08T17:32:37Z",
+  "checkout": {
+    "sha": "5381afe3fc83581923b2e9350bbd6741a3a88de9",
+    "parents": [
+      "1bafdaa31f7789d8e561680cb6001bbe38b2da64",
+      "16ddd61e4ed2bb971d84b8e9823890de145bc1b3"
+    ],
+    "tree": "3e2c280b6ab7130c825fc87d4402738ad790a1c8",
+    "head_tree": "3e2c280b6ab7130c825fc87d4402738ad790a1c8",
+    "equals_head_tree": true,
+    "method": "Read the exact output line after git log -1 --format=%H in the decoded job log; independently fetch that Git commit and compare its complete tree."
+  },
+  "steps": [
+    {
+      "name": "Set up job",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 1
+    },
+    {
+      "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 2
+    },
+    {
+      "name": "Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 3
+    },
+    {
+      "name": "Install package with dev extras",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 4
+    },
+    {
+      "name": "Lint",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 5
+    },
+    {
+      "name": "Run test suite",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 6
+    },
+    {
+      "name": "Post Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 11
+    },
+    {
+      "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 12
+    },
+    {
+      "name": "Complete job",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 13
+    }
+  ],
+  "environment": {
+    "python": "CPython 3.12.15",
+    "install_command": "pip install -e \".[dev]\"",
+    "lint_command": "ruff check src tests scripts",
+    "test_command": "pytest -q",
+    "workflow_blob": "ef7bbebe192c0db55dc4467e064ba44805c13446"
+  },
+  "test_summary": {
+    "passed": 871,
+    "skipped": 1,
+    "subtests_passed": 57,
+    "seconds": 190.95,
+    "exact_line": "2026-10-08T17:32:34.3575251Z 871 passed, 1 skipped, 57 subtests passed in 190.95s (0:03:10)"
+  },
+  "contribution_pins": [
+    {
+      "path": "src/canvaspilot/cli.py",
+      "bytes": 25259,
+      "sha256": "00e8ec35a93546623eba626e58e96f97d76c469cb9ce1ce3f37c7ff74ee18346",
+      "git_blob": "99247f6d57c4eda52a99e32683ed8d33c56b8d9b",
+      "mode": "100644",
+      "category": "contribution"
+    },
+    {
+      "path": "README.md",
+      "bytes": 25051,
+      "sha256": "67b211de13ccedad13250d6b0f411772e544bf6e3f6d7a70603a991f7a665fe5",
+      "git_blob": "88f76d780b3437807c570d696c5335cb5cac259f",
+      "mode": "100644",
+      "category": "contribution"
+    },
+    {
+      "path": "tests/test_planner_cli.py",
+      "bytes": 8730,
+      "sha256": "b4ef2333c663e46884150d302f458b7989cff0f83ba27b21ec3343eb1b67d08e",
+      "git_blob": "e41b4bcfec8103e333a3292776087e8ed84f8848",
+      "mode": "100644",
+      "category": "contribution"
+    },
+    {
+      "path": "docs/planner-cli.md",
+      "bytes": 4544,
+      "sha256": "bcb651c6a9402957442860ff621fa7ab13a693f8745490c4f271847a2492e9af",
+      "git_blob": "7d1d54d03face5afd51fc4be015ba10a927ad9ef",
+      "mode": "100644",
+      "category": "contribution"
+    }
+  ],
+  "decoded_log_excerpt": {
+    "path": "ci-3-excerpt.log",
+    "line_ranges_1_based": [
+      [
+        128,
+        131
+      ],
+      [
+        301,
+        337
+      ]
+    ],
+    "join": "One blank line separates exact slices of the tool-decoded log; no original GitHub archive byte identity is claimed.",
+    "bytes": 3430,
+    "git_blob": "33743d9c44a11e2d6996ca119ffe4e50ebf93e91",
+    "sha256": "bac5fa5315c46b26bce4a4010eb4aff9170bf4d1164cea347aa60765d8cbc578"
+  },
+  "limits": [
+    "This run qualifies head16ddd61e on native1b. The next page-export composition receives a new hosted gate; this receipt is not relabeled as its execution.",
+    "All fixture data and credentials are synthetic. No live Canvas or broker session was used.",
+    "The aggregate pytest log does not name the one skipped test; its identity is not inferred here.",
+    "Prior failed and passing source/hosted receipts remain unchanged."
+  ]
+}

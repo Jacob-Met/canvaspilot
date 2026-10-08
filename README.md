@@ -94,6 +94,11 @@ Read selected courses' calendar events and assignment deadlines together with
 timing, source identity and read limits. The same report is available through
 `canvas_course_agenda` in MCP.
 
+Read your own planner items with `canvaspilot planner --start-date 2026-10-08 --end-date 2026-10-15`.
+The [planner CLI guide](docs/planner-cli.md) explains native date filters,
+personal notes, supplied completion metadata and complete-list error behavior.
+The command uses the existing planner API and does not change any planner state.
+
 To take selected course deadlines into a calendar application, save an explicit
 local snapshot with `canvaspilot export-calendar 42 77 --out deadlines.ics`.
 The [calendar export guide](docs/calendar-export.md) explains selection,

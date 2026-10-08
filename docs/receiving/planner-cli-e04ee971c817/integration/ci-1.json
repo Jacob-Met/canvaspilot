@@ -1,0 +1,89 @@
+{
+  "format": "canvas-planner-cli-first-hosted-gate-v1",
+  "run_id": 37808909498,
+  "job_id": 113420361115,
+  "url": "https://github.com/Jacob-Met/canvaspilot/actions/runs/37808909498",
+  "head": "75e5d51f661a9165e1a494b47ef2433001d877ea",
+  "status": "failure",
+  "steps": [
+    {
+      "name": "Set up job",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 1
+    },
+    {
+      "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 2
+    },
+    {
+      "name": "Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 3
+    },
+    {
+      "name": "Install package with dev extras",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 4
+    },
+    {
+      "name": "Lint",
+      "status": "completed",
+      "conclusion": "failure",
+      "number": 5
+    },
+    {
+      "name": "Run test suite",
+      "status": "completed",
+      "conclusion": "skipped",
+      "number": 6
+    },
+    {
+      "name": "Post Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97",
+      "status": "completed",
+      "conclusion": "skipped",
+      "number": 11
+    },
+    {
+      "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 12
+    },
+    {
+      "name": "Complete job",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 13
+    }
+  ],
+  "finding": "Package and declared dev dependencies installed successfully. Lint rejected only import ordering and missing explicit subprocess check argument in the new test. The test suite was skipped; no HTTP execution is claimed by this failed run.",
+  "correction": {
+    "path": "tests/test_planner_cli.py",
+    "before": {
+      "path": "tests/test_planner_cli.py",
+      "bytes": 8717,
+      "sha256": "ccc61994c0725ab2b7e04c2186c55f0b3eb6f15cda784311fd3ace8712210833",
+      "git_blob": "d78606cdf761578e2d10ed55738a6eddac0b43e9",
+      "mode": "100644"
+    },
+    "after": {
+      "path": "tests/test_planner_cli.py",
+      "mode": "100644",
+      "bytes": 8730,
+      "git_blob": "e41b4bcfec8103e333a3292776087e8ed84f8848",
+      "sha256": "b4ef2333c663e46884150d302f458b7989cff0f83ba27b21ec3343eb1b67d08e"
+    },
+    "scope": "Move pathlib import into native from-import order and state existing subprocess default check=False explicitly. Test cases and all product/API/doc source remain unchanged."
+  },
+  "original_freeze": "The complete original commit, 27-file packet, local results, source manifests and initial test bytes remain immutable at75e5d51f.",
+  "pending": [
+    "Hosted real package/HTTP tests on corrected head",
+    "Independent receiving",
+    "Fresh current-source, expected-head merge and full-parent readback"
+  ]
+}

@@ -1,0 +1,192 @@
+{
+  "format": "canvas-planner-grade-export-composition-v1",
+  "repository": "Jacob-Met/canvaspilot",
+  "native_base": "543a81ef22cdb6996a83233e86c7fd887e0f977b",
+  "native_tree": "1efaf4d3fe14cb24cfe9f41d0fc7ff8ba1b4a821",
+  "native_pr": 79,
+  "previous_native": "f618c3ed13f191ea58642283c1f9cd45a0c1ca81",
+  "native_cli": {
+    "git_blob": "1206ba8d859894750e6a7997aff9732e42d1bdb5",
+    "bytes": 26992,
+    "sha256": "84b7e23acfc526579f45a775c870ce6aa893317c85daa00853782745fa2dc227"
+  },
+  "native_readme": {
+    "bytes": 25325,
+    "git_blob": "07d4e993c8993b4e78beb080f1f768f5de2cfc2c",
+    "sha256": "deb2d774085bd40a8013e0210c207882b414d74d2c4a0789fe4dd3cf2521ab1f"
+  },
+  "candidate": [
+    {
+      "path": "src/canvaspilot/cli.py",
+      "bytes": 28314,
+      "git_blob": "14d7edde66a0c1979bf79d9544d075b65c98d1f4",
+      "sha256": "0e80f11bd35e6d26bcb64698aa7ec5d625c30bba455ae8e0f1ce1224a7ce3524"
+    },
+    {
+      "path": "README.md",
+      "bytes": 25663,
+      "git_blob": "21b50a527973946bd77e3e883b4366798a922309",
+      "sha256": "a3f5e3d071bdcbe437baec0bc1f51977706b321fe878c05e4fd350175c9f0c4a"
+    }
+  ],
+  "checks": {
+    "planner_removal_recovers_current_native": true,
+    "planner_readme_removal_recovers_current_native": true,
+    "grade_export_removal_recovers_received_page_composition": true,
+    "grade_export_readme_removal_recovers_page_composition": true,
+    "current_api_retained": true
+  },
+  "exact_native_additions": {
+    "cli": [
+      {
+        "type": "add",
+        "before_line": 85,
+        "after_line": 85,
+        "text": "    grade_export = sub.add_parser(\n        \"export-grade-review\", help=\"Save reported course grades to a new offline HTML file\",\n    )\n    add_common(grade_export)\n    grade_export.add_argument(\"course_id\", type=_positive_int)\n    grade_export.add_argument(\n        \"--out\", required=True, type=Path, help=\"New HTML report; existing paths are protected\",\n    )\n\n"
+      },
+      {
+        "type": "add",
+        "before_line": 279,
+        "after_line": 288,
+        "text": "        elif args.cmd == \"export-grade-review\":\n            import os\n\n            import httpx\n\n            from canvaspilot.calendar_export import write_calendar\n            from canvaspilot.grade_review_export import build_grade_review_report\n\n            http_log = logging.getLogger(\"httpx\")\n            previous_level = http_log.level\n            http_log.setLevel(max(http_log.getEffectiveLevel(), logging.WARNING))\n            try:\n                if os.path.lexists(args.out):\n                    raise FileExistsError(\"Output path already exists; choose a new HTML file\")\n                content, report = build_grade_review_report(api, args.course_id)\n                write_calendar(args.out, content)\n            except (RuntimeError, httpx.HTTPError, ValueError, TypeError, OSError) as error:\n                print(json.dumps({\n                    \"ok\": False, \"error\": type(error).__name__, \"message\": str(error),\n                }), file=sys.stderr)\n                raise SystemExit(1) from None\n            finally:\n                http_log.setLevel(previous_level)\n            print(json.dumps({\"ok\": True, \"path\": str(args.out), **report}, indent=2))\n"
+      }
+    ],
+    "readme": [
+      {
+        "type": "add",
+        "before_line": 120,
+        "after_line": 120,
+        "text": "Save that same grade review for offline reading or printing with\n`canvaspilot export-grade-review 42 --out course-grades.html`. The\n[saved grade-review guide](docs/grade-review-export.md) explains reported totals,\nassignment context, withheld/unknown values, the complete JSON download and\nnew-file protection.\n\n"
+      }
+    ]
+  },
+  "planner_additions": {
+    "parser": "    planner = sub.add_parser(\n        \"planner\", help=\"Read your planner items without changing completion or visibility\",\n    )\n    add_common(planner)\n    planner.add_argument(\n        \"--start-date\", default=None, help=\"Native date filter: YYYY-MM-DD or ISO 8601 timestamp\",\n    )\n    planner.add_argument(\n        \"--end-date\", default=None, help=\"Native date filter: YYYY-MM-DD or ISO 8601 timestamp\",\n    )\n\n",
+    "dispatch": "        elif args.cmd == \"planner\":\n            import httpx\n\n            from canvaspilot.client import CanvasAuthError, CanvasPaginationError\n\n            http_log = logging.getLogger(\"httpx\")\n            previous_level = http_log.level\n            http_log.setLevel(max(http_log.getEffectiveLevel(), logging.WARNING))\n            try:\n                result = api.planner_items(\n                    start_date=args.start_date, end_date=args.end_date,\n                )\n            except (CanvasAuthError, CanvasPaginationError, httpx.HTTPError, ValueError) as error:\n                print(json.dumps({\n                    \"ok\": False, \"error\": type(error).__name__, \"message\": str(error),\n                }), file=sys.stderr)\n                raise SystemExit(1) from None\n            finally:\n                http_log.setLevel(previous_level)\n            print(json.dumps(result, indent=2, default=str))\n",
+    "readme": "Read your own planner items with `canvaspilot planner --start-date 2026-10-08 --end-date 2026-10-15`.\nThe [planner CLI guide](docs/planner-cli.md) explains native date filters,\npersonal notes, supplied completion metadata and complete-list error behavior.\nThe command uses the existing planner API and does not change any planner state.\n\n"
+  },
+  "protected_native_paths": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "git_blob": "ef7bbebe192c0db55dc4467e064ba44805c13446",
+      "mode": "100644"
+    },
+    {
+      "path": "pyproject.toml",
+      "git_blob": "76eba6d30696b4f2733539cd47df6e178bc0f585",
+      "mode": "100644"
+    },
+    {
+      "path": "src/canvaspilot/__init__.py",
+      "git_blob": "74a7a6087bf81fd7c75c15769b30408039618e0f",
+      "mode": "100644"
+    },
+    {
+      "path": "src/canvaspilot/agenda.py",
+      "git_blob": "82ab4fa8f9b92b8d9e5d4c74962d138e1d882ebd",
+      "mode": "100644"
+    },
+    {
+      "path": "src/canvaspilot/api.py",
+      "git_blob": "3ec81dee60bc67d7a80d40b78e85d5c005441b99",
+      "mode": "100644"
+    },
+    {
+      "path": "src/canvaspilot/assignment_submission.py",
+      "git_blob": "95b1f19927e4eecf99fc852325737c3cfe86cd0d",
+      "mode": "100644"
+    },
+    {
+      "path": "src/canvaspilot/bundle.py",
+      "git_blob": "c2544032a1cfcdc116725c6403ff09d7b0328f87",
+      "mode": "100644"
+    },
+    {
+      "path": "src/canvaspilot/calendar_export.py",
+      "git_blob": "ef74cfdf50fd894327dbe45a9a9d43042953bc31",
+      "mode": "100644"
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "git_blob": "1206ba8d859894750e6a7997aff9732e42d1bdb5",
+      "mode": "100644"
+    },
+    {
+      "path": "src/canvaspilot/client.py",
+      "git_blob": "1db4b1135305f7e410025ae7937f9a6cd349f020",
+      "mode": "100644"
+    },
+    {
+      "path": "src/canvaspilot/discussion_thread.py",
+      "git_blob": "2ed658fcf5cee996a02115742935716f1d039e25",
+      "mode": "100644"
+    },
+    {
+      "path": "src/canvaspilot/feedback.py",
+      "git_blob": "ec996f421a851d699a9ac7cb1f2a486f9ff7c4ea",
+      "mode": "100644"
+    },
+    {
+      "path": "src/canvaspilot/folder_browser.py",
+      "git_blob": "4b3078ddb00a4a34015710e49fa7b7806adebd23",
+      "mode": "100644"
+    },
+    {
+      "path": "src/canvaspilot/grade_review.py",
+      "git_blob": "24d93cb693af09cf5123f31fea90e77a589b023c",
+      "mode": "100644"
+    },
+    {
+      "path": "src/canvaspilot/grade_review_export.py",
+      "git_blob": "8a6281f62f99e18109f90a273a4c29da4929f3a3",
+      "mode": "100644"
+    },
+    {
+      "path": "src/canvaspilot/mcp_server.py",
+      "git_blob": "0f7130673b3a139abdacb588410edb23a01dc56d",
+      "mode": "100644"
+    },
+    {
+      "path": "src/canvaspilot/module_progress.py",
+      "git_blob": "a9d3e4bbea22067f76110f03a5f31a5bc9d8de05",
+      "mode": "100644"
+    },
+    {
+      "path": "src/canvaspilot/module_progress_export.py",
+      "git_blob": "8ccb9f1262790a744418d4212e072ee43031ab88",
+      "mode": "100644"
+    },
+    {
+      "path": "src/canvaspilot/offline_demo.py",
+      "git_blob": "9d2cfd260d8db052b8183e3ec4fc9626a5bb2b9a",
+      "mode": "100644"
+    },
+    {
+      "path": "src/canvaspilot/page_export.py",
+      "git_blob": "1b46af8af07d24e24cde54aba393d9f977e77136",
+      "mode": "100644"
+    },
+    {
+      "path": "src/canvaspilot/session_broker.py",
+      "git_blob": "cc706d5860489ec37cb2cf7f0b1cb4eee33b664f",
+      "mode": "100644"
+    },
+    {
+      "path": "src/canvaspilot/submission_history.py",
+      "git_blob": "9e71a0dc944bee71b0b5c61d7ff84cbb59119e1a",
+      "mode": "100644"
+    },
+    {
+      "path": "tests/test_grade_review_export.py",
+      "git_blob": "4fee10812dfaf1a5d3f2f34c29e3c6f7ca323441",
+      "mode": "100644"
+    }
+  ],
+  "method": "Each exact inserted block is required to occur once. Removing original planner blocks recovers the complete fresh native CLI/README. Removing the accepted grade-export blocks recovers the prior page-export composition; no normalization is used.",
+  "limits": [
+    "This is a pure exact-source composition and byte review. No new local Python child was run; the original author and independent execution receipts remain pinned to their executed sources.",
+    "The native grade-export command is a separate parser/dispatch path with lazy helper imports. API/client/other pre-existing native implementations remain unchanged.",
+    "The new composition must pass the unchanged real hosted package installation, Ruff and complete pytest gate before expected-head merge.",
+    "No live Canvas API, account, browser, course, student record, installed release or production state was used."
+  ]
+}

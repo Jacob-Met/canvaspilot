@@ -1,0 +1,12 @@
+{
+  "reviewed_head": "1425925f659efa2cf8199d9fcc9f44ea44d32fcf",
+  "current_native": "d15de13fb6fa39d3cace04bec0e218b4a2ed2ffd",
+  "composed_cli": "9344660cfef4a7e98af68ccc1d0f8ccba3c1bdc2",
+  "remove_exact_original_planner_blocks_equals_native_cli": true,
+  "native_api_before_deleted_span": "",
+  "native_api_added_span": "grade_review(self, course_id: int | str) -> dict[str, Any]:\n        \"\"\"Review only Canvas-reported current-user grades and group context.\"\"\"\n        from canvaspilot.grade_review import grade_review\n\n        return grade_review(self.client, course_id)\n\n    def ",
+  "native_api_prefix_context": "(\"name\"),\n            }\n            for c in rows\n            if isinstance(c, dict) and c.get(\"id\")\n        ]\n\n    def ",
+  "native_api_suffix_context": "list_assignments(\n        self,\n        course_id: int | str,\n        *,\n        bucket: str | None = \"upcoming\",\n      ",
+  "current_api_blob": "3ec81dee60bc67d7a80d40b78e85d5c005441b99",
+  "limit": "Compositional source receiving; full current package/bootstrap hosted result remains a final integration gate."
+}

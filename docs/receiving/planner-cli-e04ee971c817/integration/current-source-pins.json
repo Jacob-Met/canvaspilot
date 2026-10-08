@@ -1,0 +1,36 @@
+{
+  "format": "canvas-planner-cli-post-lint-pins-v1",
+  "previous_freeze": "75e5d51f661a9165e1a494b47ef2433001d877ea",
+  "contributions": [
+    {
+      "path": "src/canvaspilot/cli.py",
+      "bytes": 22586,
+      "sha256": "b8145ab7fdfb4f01784a45624d17cb5813b92cff6dc5812ad157a8bd357d97ab",
+      "git_blob": "df01e112b3c7f525e99b3179176d57497391f16b",
+      "mode": "100644"
+    },
+    {
+      "path": "README.md",
+      "bytes": 23924,
+      "sha256": "b031154b28a37c2e18dba98ca583fc795127ce3c409f8787c04780a4ff071e1b",
+      "git_blob": "5a4dff0dfad82c26a94083f544949a582524beb1",
+      "mode": "100644"
+    },
+    {
+      "path": "tests/test_planner_cli.py",
+      "bytes": 8730,
+      "sha256": "b4ef2333c663e46884150d302f458b7989cff0f83ba27b21ec3343eb1b67d08e",
+      "git_blob": "e41b4bcfec8103e333a3292776087e8ed84f8848",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/planner-cli.md",
+      "bytes": 4544,
+      "sha256": "bcb651c6a9402957442860ff621fa7ab13a693f8745490c4f271847a2492e9af",
+      "git_blob": "7d1d54d03face5afd51fc4be015ba10a927ad9ef",
+      "mode": "100644"
+    }
+  ],
+  "support": "Exact unchanged native source pins remain recorded in ../candidate-pins.json; only new test import order and explicit default check=False changed.",
+  "status": "Hosted test execution and independent receiving pending."
+}

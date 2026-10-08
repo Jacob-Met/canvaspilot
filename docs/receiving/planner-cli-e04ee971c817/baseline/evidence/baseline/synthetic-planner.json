@@ -1,0 +1,59 @@
+{
+  "start": "2026-10-08T09:10:11Z",
+  "end": "2026-10-12",
+  "rows": [
+    {
+      "context_type": "Course",
+      "course_id": 42,
+      "plannable_type": "assignment",
+      "plannable_id": "700",
+      "plannable_date": "2026-10-08T12:00:00Z",
+      "plannable": {
+        "id": 700,
+        "title": "Synthetic zero-point check",
+        "points_possible": 0
+      },
+      "submissions": {
+        "submitted": false,
+        "missing": true,
+        "score": null
+      },
+      "planner_override": {
+        "marked_complete": true,
+        "dismissed": false
+      },
+      "html_url": "/courses/42/assignments/700"
+    },
+    {
+      "context_type": "Course",
+      "course_id": 77,
+      "plannable_type": "discussion_topic",
+      "plannable_id": 801,
+      "plannable": {
+        "title": "Literal <b>\u8aad\u66f8</b>\n & conversation"
+      },
+      "submissions": false,
+      "planner_override": null,
+      "future_field": {
+        "kept": [
+          0,
+          false,
+          null
+        ]
+      }
+    },
+    {
+      "plannable_type": "planner_note",
+      "plannable_id": 902,
+      "plannable": {
+        "id": 902,
+        "title": "Bring a book",
+        "course_id": null,
+        "todo_date": "2026-10-12T06:00:00Z",
+        "details": "Fictional reminder"
+      },
+      "planner_override": null,
+      "submissions": false
+    }
+  ]
+}
