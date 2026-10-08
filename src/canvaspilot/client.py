@@ -57,16 +57,13 @@ def broker_fetch(
     timeout: float = 120.0,
 ) -> Any:
     """Call Canvas via the stay-open session broker (in-page fetch)."""
-    from urllib.parse import urlencode
-
     full = path
     if params:
-        if isinstance(params, list):
-            q = urlencode([(k, str(v)) for k, v in params])
-        else:
-            q = urlencode({k: str(v) for k, v in params.items()})
-        sep = "&" if "?" in full else "?"
-        full = f"{full}{sep}{q}"
+        # Match token-mode HTTPX encoding, including arrays and booleans.
+        q = str(httpx.QueryParams(params))
+        if q:
+            sep = "&" if "?" in full else "?"
+            full = f"{full}{sep}{q}"
 
     body: Any = None
     headers = {"Accept": "application/json"}
@@ -74,7 +71,7 @@ def broker_fetch(
         body = json_body
         headers["Content-Type"] = "application/json"
     elif data is not None:
-        body = urlencode({k: str(v) for k, v in data.items()})
+        body = str(httpx.QueryParams(data))
         headers["Content-Type"] = "application/x-www-form-urlencoded"
 
     r = _broker_request(
