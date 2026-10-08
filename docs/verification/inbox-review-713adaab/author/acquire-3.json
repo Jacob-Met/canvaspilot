@@ -1,0 +1,14 @@
+{
+  "command": [
+    "git",
+    "-C",
+    "/tmp/canvaspilot-inbox-713adaab",
+    "checkout",
+    "-b",
+    "chatgpt/inbox-713adaab",
+    "ca2318fe7c56d2e4ec1b363ff8a945ab78bf4a0c"
+  ],
+  "exit": 0,
+  "stdout": "",
+  "stderr": "Switched to a new branch 'chatgpt/inbox-713adaab'\n"
+}

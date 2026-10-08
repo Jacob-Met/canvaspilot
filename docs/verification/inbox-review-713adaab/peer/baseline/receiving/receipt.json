@@ -1,0 +1,220 @@
+{
+  "schema": "canvaspilot.inbox.independent_receiving.v1",
+  "stage": "baseline",
+  "reviewer": "chatgpt:/root/mac_execution",
+  "started_utc": "2026-10-08T13:13:34.873433+00:00",
+  "duration_seconds": 15.814,
+  "exit_code": 1,
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "executable": "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+  "dependencies": {
+    "httpx": "0.28.1",
+    "mcp": "2.3.0",
+    "pytest": "9.1.1"
+  },
+  "source_root": "/tmp/canvaspilot-inbox-independent-713adaab/baseline/src",
+  "source_before": {
+    "canvaspilot/__init__.py": {
+      "bytes": 561,
+      "sha256": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5"
+    },
+    "canvaspilot/api.py": {
+      "bytes": 27501,
+      "sha256": "fe147e5d3943e7299f400e7607385a7c8f02a68aeff07f72b3219f5c70c7bb5b"
+    },
+    "canvaspilot/bundle.py": {
+      "bytes": 2641,
+      "sha256": "7a5600680c22f3cce5d512ed96137de0171bcca7df6a8c46baa8c09143de3168"
+    },
+    "canvaspilot/calendar_export.py": {
+      "bytes": 9050,
+      "sha256": "f3e06eb68d7f74bb757a28f9cdc9a229f2af9476d4a93ba709698b54ffed82a8"
+    },
+    "canvaspilot/cli.py": {
+      "bytes": 12575,
+      "sha256": "34ca64ec5075a51fe3dfc4de15480fa2daf53c690c5490e01c65322eb809a9c4"
+    },
+    "canvaspilot/client.py": {
+      "bytes": 18934,
+      "sha256": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797"
+    },
+    "canvaspilot/feedback.py": {
+      "bytes": 3900,
+      "sha256": "55454598effea598474a21f67e36d5bc5bea84aaefeefc18e4d8c49804ab9869"
+    },
+    "canvaspilot/folder_browser.py": {
+      "bytes": 6293,
+      "sha256": "c6a67229b268c539e5edb581e3320b06229460adc3fbc01d72e4964e31c0348a"
+    },
+    "canvaspilot/mcp_server.py": {
+      "bytes": 12594,
+      "sha256": "9ca3a1733167217730eabb5a083fcc72d7d4273ddb36ef5c0306f22ee97c8257"
+    },
+    "canvaspilot/module_progress.py": {
+      "bytes": 9615,
+      "sha256": "974ee31925514a2e53b899888302a7fa357e280ab5f2461b754b814473653d99"
+    },
+    "canvaspilot/offline_demo.py": {
+      "bytes": 4124,
+      "sha256": "2389f3ccc1b6db5995be0d90e014ea9345e3029aa5546a5b2dcf12c1197e6d4d"
+    },
+    "canvaspilot/session_broker.py": {
+      "bytes": 12264,
+      "sha256": "749e11c92d6d56d54ccf208dda6784cb2d43ac3b837188f5d82bfe73c3129e8e"
+    }
+  },
+  "source_after": {
+    "canvaspilot/__init__.py": {
+      "bytes": 561,
+      "sha256": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5"
+    },
+    "canvaspilot/api.py": {
+      "bytes": 27501,
+      "sha256": "fe147e5d3943e7299f400e7607385a7c8f02a68aeff07f72b3219f5c70c7bb5b"
+    },
+    "canvaspilot/bundle.py": {
+      "bytes": 2641,
+      "sha256": "7a5600680c22f3cce5d512ed96137de0171bcca7df6a8c46baa8c09143de3168"
+    },
+    "canvaspilot/calendar_export.py": {
+      "bytes": 9050,
+      "sha256": "f3e06eb68d7f74bb757a28f9cdc9a229f2af9476d4a93ba709698b54ffed82a8"
+    },
+    "canvaspilot/cli.py": {
+      "bytes": 12575,
+      "sha256": "34ca64ec5075a51fe3dfc4de15480fa2daf53c690c5490e01c65322eb809a9c4"
+    },
+    "canvaspilot/client.py": {
+      "bytes": 18934,
+      "sha256": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797"
+    },
+    "canvaspilot/feedback.py": {
+      "bytes": 3900,
+      "sha256": "55454598effea598474a21f67e36d5bc5bea84aaefeefc18e4d8c49804ab9869"
+    },
+    "canvaspilot/folder_browser.py": {
+      "bytes": 6293,
+      "sha256": "c6a67229b268c539e5edb581e3320b06229460adc3fbc01d72e4964e31c0348a"
+    },
+    "canvaspilot/mcp_server.py": {
+      "bytes": 12594,
+      "sha256": "9ca3a1733167217730eabb5a083fcc72d7d4273ddb36ef5c0306f22ee97c8257"
+    },
+    "canvaspilot/module_progress.py": {
+      "bytes": 9615,
+      "sha256": "974ee31925514a2e53b899888302a7fa357e280ab5f2461b754b814473653d99"
+    },
+    "canvaspilot/offline_demo.py": {
+      "bytes": 4124,
+      "sha256": "2389f3ccc1b6db5995be0d90e014ea9345e3029aa5546a5b2dcf12c1197e6d4d"
+    },
+    "canvaspilot/session_broker.py": {
+      "bytes": 12264,
+      "sha256": "749e11c92d6d56d54ccf208dda6784cb2d43ac3b837188f5d82bfe73c3129e8e"
+    }
+  },
+  "receiver_sources": {
+    "test_inbox_receiving.py": {
+      "bytes": 19118,
+      "sha256": "1dbbb524d7f84d91fb8bb0000cf788a56f253f3fa1b1f3afe73efde369ad450b"
+    },
+    "loopback_guard.py": {
+      "bytes": 1089,
+      "sha256": "5735d720a75420616f1fe35c63f5ec6e7a22794b7a86582a7dfa2c284ab0ab12"
+    },
+    "base-tool-names.json": {
+      "bytes": 1017,
+      "sha256": "e5c7517ffe2bd7b7602a36713ff1cf473cc2dae5bf697f50df148d620e22fc22"
+    },
+    "run_receiving.py": {
+      "bytes": 3832,
+      "sha256": "fd04da45eedfd562f17ab871323d0a14c3bfbd8e476778ded0fe12915f7116af"
+    }
+  },
+  "command": [
+    "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "--tb=short",
+    "-p",
+    "no:cacheprovider",
+    "-o",
+    "addopts=",
+    "--basetemp",
+    "/tmp/canvaspilot-inbox-independent-713adaab/baseline/receiving/tmp",
+    "--junitxml",
+    "/tmp/canvaspilot-inbox-independent-713adaab/baseline/receiving/pytest.xml",
+    "/tmp/canvaspilot-inbox-independent-713adaab/test_inbox_receiving.py"
+  ],
+  "evidence": {
+    "cases/mcp-session-stderr.log": {
+      "bytes": 3876,
+      "sha256": "f4048cbe5ded55bb707dea9f41e0fd6d00f331294ddca2fd9c18ae9771270253"
+    },
+    "cases/mcp-token-stderr.log": {
+      "bytes": 3531,
+      "sha256": "ebebfdf3a5333f5023b39cc2f6fe7ea9dc1033642196dddcaf219d9f180faa04"
+    },
+    "cases/test_actual_cli_json_state_and_partial_failure_receiving[session].json": {
+      "bytes": 22725,
+      "sha256": "c9b56681e6c89ca0cde5bbbffa989c46c638f75c4f3713e1313c86416845ec08"
+    },
+    "cases/test_actual_cli_json_state_and_partial_failure_receiving[token].json": {
+      "bytes": 22721,
+      "sha256": "ec8bc48030461f18e8f517e2496f75f5c67b2ac47d3e24cdaec9df8c06f42354"
+    },
+    "cases/test_actual_mcp_registered_tools_preserve_messages_and_refuse_failure[session].json": {
+      "bytes": 59838,
+      "sha256": "7ba5c9e571d6572622542feddbf5234874d19abfcf4301c19e32b64e8a2a47f3"
+    },
+    "cases/test_actual_mcp_registered_tools_preserve_messages_and_refuse_failure[token].json": {
+      "bytes": 58570,
+      "sha256": "3b218f06c6a825faac5b535ba15350108082c2a79e7fd4a8f218a8fd3877d6a0"
+    },
+    "cases/test_details_preserve_all_states_nested_fields_and_order[session].json": {
+      "bytes": 23277,
+      "sha256": "eb4cdb4251a0b4b41875ecb12f495917bb812192dc2e10420461c6b0466b5421"
+    },
+    "cases/test_details_preserve_all_states_nested_fields_and_order[token].json": {
+      "bytes": 21614,
+      "sha256": "ea9064f0b6bc5a3ff4ee528c6ea6868177ce60e9281643263fe8d9d1e9c2051c"
+    },
+    "cases/test_incomplete_list_and_auth_failure_never_return_partial_success[session].json": {
+      "bytes": 21300,
+      "sha256": "72a57588a6efcc4f703268a56543cb4053a7b0e58d5cf27a7508c03b21fb47de"
+    },
+    "cases/test_incomplete_list_and_auth_failure_never_return_partial_success[token].json": {
+      "bytes": 20873,
+      "sha256": "89a4418b3c1b640b5f788274f28647762e142b8c367382f197b14b7e1ceafa39"
+    },
+    "cases/test_scope_mapping_ordered_opaque_pages_and_empty_list[session].json": {
+      "bytes": 21288,
+      "sha256": "613f140615f8a83961c58466c1714397d723229e8db478363052c3b81c2362b0"
+    },
+    "cases/test_scope_mapping_ordered_opaque_pages_and_empty_list[token].json": {
+      "bytes": 20861,
+      "sha256": "9bc802e2252b2135442cbe789e77193e1b0b2dc8592d9d5b9e3b413fa7c07e27"
+    },
+    "pytest.xml": {
+      "bytes": 19631,
+      "sha256": "533d3812b45f77c94c57d7658b78aa6e8051d929a22e6087b0d90ad7fd8d0509"
+    },
+    "stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stdout.log": {
+      "bytes": 15290,
+      "sha256": "c95e792d0dfb66f92aaf1e0ebe7ff6d86cfe0d0a5379b02ce46f23cb6d517816"
+    }
+  },
+  "limits": [
+    "Authored contract fixtures and real native token/session-envelope, CLI and MCP stdio paths.",
+    "No real Canvas, school account, browser, profile, cookies or attachment download.",
+    "Only the private loopback provider is admitted by parent and child socket guards.",
+    "Session receiving models the broker HTTP envelope; it does not claim Playwright or SSO receiving.",
+    "No edits to owner source or borrowed dependency environment; no dependencies installed."
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "base": "ca2318fe7c56d2e4ec1b363ff8a945ab78bf4a0c",
+  "tree": "ea775021cbf300367369a169f584f1092347cf5c",
+  "source_owner": "chatgpt:/root",
+  "reviewer": "chatgpt:/root/mac_execution",
+  "runtime_dependency_interpreter": "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+  "source_copy_bytes": 120052,
+  "files": [
+    {
+      "path": "src/canvaspilot/__init__.py",
+      "blob": "74a7a6087bf81fd7c75c15769b30408039618e0f",
+      "sha256": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5",
+      "bytes": 561
+    },
+    {
+      "path": "src/canvaspilot/api.py",
+      "blob": "140ced2576481a90b8319272714009d326835bf1",
+      "sha256": "fe147e5d3943e7299f400e7607385a7c8f02a68aeff07f72b3219f5c70c7bb5b",
+      "bytes": 27501
+    },
+    {
+      "path": "src/canvaspilot/bundle.py",
+      "blob": "383efb28dfdd0d3e1d9ce8e1e259468d7eb44586",
+      "sha256": "7a5600680c22f3cce5d512ed96137de0171bcca7df6a8c46baa8c09143de3168",
+      "bytes": 2641
+    },
+    {
+      "path": "src/canvaspilot/calendar_export.py",
+      "blob": "0b3b59edcefb0dda52f0de41252c1b7486201ffc",
+      "sha256": "f3e06eb68d7f74bb757a28f9cdc9a229f2af9476d4a93ba709698b54ffed82a8",
+      "bytes": 9050
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "blob": "8f58cbd70ec70f2b441b3ad8509396d4f2b57608",
+      "sha256": "34ca64ec5075a51fe3dfc4de15480fa2daf53c690c5490e01c65322eb809a9c4",
+      "bytes": 12575
+    },
+    {
+      "path": "src/canvaspilot/client.py",
+      "blob": "1db4b1135305f7e410025ae7937f9a6cd349f020",
+      "sha256": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797",
+      "bytes": 18934
+    },
+    {
+      "path": "src/canvaspilot/feedback.py",
+      "blob": "ec996f421a851d699a9ac7cb1f2a486f9ff7c4ea",
+      "sha256": "55454598effea598474a21f67e36d5bc5bea84aaefeefc18e4d8c49804ab9869",
+      "bytes": 3900
+    },
+    {
+      "path": "src/canvaspilot/folder_browser.py",
+      "blob": "4b3078ddb00a4a34015710e49fa7b7806adebd23",
+      "sha256": "c6a67229b268c539e5edb581e3320b06229460adc3fbc01d72e4964e31c0348a",
+      "bytes": 6293
+    },
+    {
+      "path": "src/canvaspilot/mcp_server.py",
+      "blob": "b6c52d710867a8c8cd3058f5476c22803a333501",
+      "sha256": "9ca3a1733167217730eabb5a083fcc72d7d4273ddb36ef5c0306f22ee97c8257",
+      "bytes": 12594
+    },
+    {
+      "path": "src/canvaspilot/module_progress.py",
+      "blob": "a9d3e4bbea22067f76110f03a5f31a5bc9d8de05",
+      "sha256": "974ee31925514a2e53b899888302a7fa357e280ab5f2461b754b814473653d99",
+      "bytes": 9615
+    },
+    {
+      "path": "src/canvaspilot/offline_demo.py",
+      "blob": "9d2cfd260d8db052b8183e3ec4fc9626a5bb2b9a",
+      "sha256": "2389f3ccc1b6db5995be0d90e014ea9345e3029aa5546a5b2dcf12c1197e6d4d",
+      "bytes": 4124
+    },
+    {
+      "path": "src/canvaspilot/session_broker.py",
+      "blob": "0e586bb933d517160bc3bfbd8ad86b3ba59ee92f",
+      "sha256": "749e11c92d6d56d54ccf208dda6784cb2d43ac3b837188f5d82bfe73c3129e8e",
+      "bytes": 12264
+    }
+  ],
+  "limits": "Private tmpfs receiver; no source mutation, dependencies, browser or live account/profile use."
+}

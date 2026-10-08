@@ -1,0 +1,1891 @@
+{
+  "case": "test_actual_mcp_registered_tools_preserve_messages_and_refuse_failure[token]",
+  "mode": "token",
+  "state_before": [
+    {
+      "id": 501,
+      "subject": "明日の予定 — Åsa 🧭",
+      "workflow_state": "unread",
+      "last_message": "é, שלום; <p>kept</p>",
+      "last_message_at": "2026-10-08T12:00:00Z",
+      "message_count": 2,
+      "subscribed": true,
+      "private": true,
+      "starred": false,
+      "properties": [
+        "attachments"
+      ],
+      "audience": [
+        17,
+        6
+      ],
+      "audience_contexts": {
+        "courses": {
+          "42": [
+            "StudentEnrollment"
+          ]
+        },
+        "groups": {}
+      },
+      "avatar_url": "https://media.example.invalid/avatars/17",
+      "participants": [
+        {
+          "id": 17,
+          "name": "Åsa 🧭",
+          "full_name": "Åsa Example",
+          "uuid": "fixture-17",
+          "extension": {
+            "roles": [
+              null,
+              false
+            ]
+          }
+        },
+        {
+          "id": 6,
+          "name": "李",
+          "full_name": "李 Example",
+          "avatar_url": "https://media.example.invalid/avatars/6"
+        }
+      ],
+      "visible": true,
+      "context_name": "Synthetic seminar",
+      "messages": [
+        {
+          "id": 5019,
+          "created_at": "2026-10-08T12:00:00Z",
+          "body": "<p>明日 09:00 — é / שלום 🧭</p>\n\"quoted\" & unchanged",
+          "author_id": 17,
+          "generated": false,
+          "media_comment": {
+            "display_name": "音声",
+            "content-type": "audio/ogg",
+            "media_id": "m1",
+            "media_type": "audio",
+            "url": "https://media.example.invalid/audio"
+          },
+          "forwarded_messages": [
+            {
+              "id": 4,
+              "body": "forwarded 👩🏽‍💻",
+              "author_id": 6,
+              "generated": false,
+              "forwarded_messages": [
+                {
+                  "id": 2,
+                  "body": "deeply forwarded",
+                  "forwarded_messages": [],
+                  "attachments": []
+                }
+              ],
+              "attachments": [
+                {
+                  "id": 71,
+                  "display_name": "résumé.pdf",
+                  "content-type": "application/pdf",
+                  "filename": "資料.pdf",
+                  "url": "https://files.example.invalid/71?download=1"
+                }
+              ]
+            }
+          ],
+          "attachments": [
+            {
+              "id": 72,
+              "display_name": "notes.txt",
+              "filename": "notes.txt",
+              "url": "https://files.example.invalid/72",
+              "extension": {
+                "retained": [
+                  0,
+                  false,
+                  null
+                ]
+              }
+            }
+          ],
+          "future_field": {
+            "preserve": [
+              "z",
+              "a"
+            ]
+          }
+        },
+        {
+          "id": 5011,
+          "created_at": "2026-10-07T09:00:00Z",
+          "body": "",
+          "author_id": 6,
+          "generated": true,
+          "media_comment": null,
+          "forwarded_messages": [],
+          "attachments": []
+        }
+      ],
+      "submissions": [],
+      "extension": {
+        "opaque": {
+          "b": 2,
+          "a": 1
+        },
+        "missing_is_not_false": null
+      }
+    },
+    {
+      "id": 303,
+      "subject": "明日の予定 — Åsa 🧭",
+      "workflow_state": "read",
+      "last_message": "é, שלום; <p>kept</p>",
+      "last_message_at": "2026-10-08T12:00:00Z",
+      "message_count": 2,
+      "subscribed": true,
+      "private": true,
+      "starred": true,
+      "properties": [
+        "attachments",
+        "last_author"
+      ],
+      "audience": [
+        17,
+        6
+      ],
+      "audience_contexts": {
+        "courses": {
+          "42": [
+            "StudentEnrollment"
+          ]
+        },
+        "groups": {}
+      },
+      "avatar_url": "https://media.example.invalid/avatars/17",
+      "participants": [
+        {
+          "id": 17,
+          "name": "Åsa 🧭",
+          "full_name": "Åsa Example",
+          "uuid": "fixture-17",
+          "extension": {
+            "roles": [
+              null,
+              false
+            ]
+          }
+        },
+        {
+          "id": 6,
+          "name": "李",
+          "full_name": "李 Example",
+          "avatar_url": "https://media.example.invalid/avatars/6"
+        }
+      ],
+      "visible": true,
+      "context_name": "Synthetic seminar",
+      "messages": [
+        {
+          "id": 3039,
+          "created_at": "2026-10-08T12:00:00Z",
+          "body": "<p>明日 09:00 — é / שלום 🧭</p>\n\"quoted\" & unchanged",
+          "author_id": 17,
+          "generated": false,
+          "media_comment": {
+            "display_name": "音声",
+            "content-type": "audio/ogg",
+            "media_id": "m1",
+            "media_type": "audio",
+            "url": "https://media.example.invalid/audio"
+          },
+          "forwarded_messages": [
+            {
+              "id": 4,
+              "body": "forwarded 👩🏽‍💻",
+              "author_id": 6,
+              "generated": false,
+              "forwarded_messages": [
+                {
+                  "id": 2,
+                  "body": "deeply forwarded",
+                  "forwarded_messages": [],
+                  "attachments": []
+                }
+              ],
+              "attachments": [
+                {
+                  "id": 71,
+                  "display_name": "résumé.pdf",
+                  "content-type": "application/pdf",
+                  "filename": "資料.pdf",
+                  "url": "https://files.example.invalid/71?download=1"
+                }
+              ]
+            }
+          ],
+          "attachments": [
+            {
+              "id": 72,
+              "display_name": "notes.txt",
+              "filename": "notes.txt",
+              "url": "https://files.example.invalid/72",
+              "extension": {
+                "retained": [
+                  0,
+                  false,
+                  null
+                ]
+              }
+            }
+          ],
+          "future_field": {
+            "preserve": [
+              "z",
+              "a"
+            ]
+          }
+        },
+        {
+          "id": 3031,
+          "created_at": "2026-10-07T09:00:00Z",
+          "body": "",
+          "author_id": 6,
+          "generated": true,
+          "media_comment": null,
+          "forwarded_messages": [],
+          "attachments": []
+        }
+      ],
+      "submissions": [],
+      "extension": {
+        "opaque": {
+          "b": 2,
+          "a": 1
+        },
+        "missing_is_not_false": null
+      }
+    },
+    {
+      "id": 88,
+      "subject": "明日の予定 — Åsa 🧭",
+      "workflow_state": "archived",
+      "last_message": "é, שלום; <p>kept</p>",
+      "last_message_at": "2026-10-08T12:00:00Z",
+      "message_count": 2,
+      "subscribed": false,
+      "private": true,
+      "starred": false,
+      "properties": [
+        "attachments"
+      ],
+      "audience": [
+        17,
+        6
+      ],
+      "audience_contexts": {
+        "courses": {
+          "42": [
+            "StudentEnrollment"
+          ]
+        },
+        "groups": {}
+      },
+      "avatar_url": "https://media.example.invalid/avatars/17",
+      "participants": [
+        {
+          "id": 17,
+          "name": "Åsa 🧭",
+          "full_name": "Åsa Example",
+          "uuid": "fixture-17",
+          "extension": {
+            "roles": [
+              null,
+              false
+            ]
+          }
+        },
+        {
+          "id": 6,
+          "name": "李",
+          "full_name": "李 Example",
+          "avatar_url": "https://media.example.invalid/avatars/6"
+        }
+      ],
+      "visible": false,
+      "context_name": "Synthetic seminar",
+      "messages": [
+        {
+          "id": 889,
+          "created_at": "2026-10-08T12:00:00Z",
+          "body": "<p>明日 09:00 — é / שלום 🧭</p>\n\"quoted\" & unchanged",
+          "author_id": 17,
+          "generated": false,
+          "media_comment": {
+            "display_name": "音声",
+            "content-type": "audio/ogg",
+            "media_id": "m1",
+            "media_type": "audio",
+            "url": "https://media.example.invalid/audio"
+          },
+          "forwarded_messages": [
+            {
+              "id": 4,
+              "body": "forwarded 👩🏽‍💻",
+              "author_id": 6,
+              "generated": false,
+              "forwarded_messages": [
+                {
+                  "id": 2,
+                  "body": "deeply forwarded",
+                  "forwarded_messages": [],
+                  "attachments": []
+                }
+              ],
+              "attachments": [
+                {
+                  "id": 71,
+                  "display_name": "résumé.pdf",
+                  "content-type": "application/pdf",
+                  "filename": "資料.pdf",
+                  "url": "https://files.example.invalid/71?download=1"
+                }
+              ]
+            }
+          ],
+          "attachments": [
+            {
+              "id": 72,
+              "display_name": "notes.txt",
+              "filename": "notes.txt",
+              "url": "https://files.example.invalid/72",
+              "extension": {
+                "retained": [
+                  0,
+                  false,
+                  null
+                ]
+              }
+            }
+          ],
+          "future_field": {
+            "preserve": [
+              "z",
+              "a"
+            ]
+          }
+        },
+        {
+          "id": 881,
+          "created_at": "2026-10-07T09:00:00Z",
+          "body": "",
+          "author_id": 6,
+          "generated": true,
+          "media_comment": null,
+          "forwarded_messages": [],
+          "attachments": []
+        }
+      ],
+      "submissions": [],
+      "extension": {
+        "opaque": {
+          "b": 2,
+          "a": 1
+        },
+        "missing_is_not_false": null
+      }
+    }
+  ],
+  "state_after": [
+    {
+      "id": 501,
+      "subject": "明日の予定 — Åsa 🧭",
+      "workflow_state": "read",
+      "last_message": "é, שלום; <p>kept</p>",
+      "last_message_at": "2026-10-08T12:00:00Z",
+      "message_count": 2,
+      "subscribed": true,
+      "private": true,
+      "starred": false,
+      "properties": [
+        "attachments"
+      ],
+      "audience": [
+        17,
+        6
+      ],
+      "audience_contexts": {
+        "courses": {
+          "42": [
+            "StudentEnrollment"
+          ]
+        },
+        "groups": {}
+      },
+      "avatar_url": "https://media.example.invalid/avatars/17",
+      "participants": [
+        {
+          "id": 17,
+          "name": "Åsa 🧭",
+          "full_name": "Åsa Example",
+          "uuid": "fixture-17",
+          "extension": {
+            "roles": [
+              null,
+              false
+            ]
+          }
+        },
+        {
+          "id": 6,
+          "name": "李",
+          "full_name": "李 Example",
+          "avatar_url": "https://media.example.invalid/avatars/6"
+        }
+      ],
+      "visible": true,
+      "context_name": "Synthetic seminar",
+      "messages": [
+        {
+          "id": 5019,
+          "created_at": "2026-10-08T12:00:00Z",
+          "body": "<p>明日 09:00 — é / שלום 🧭</p>\n\"quoted\" & unchanged",
+          "author_id": 17,
+          "generated": false,
+          "media_comment": {
+            "display_name": "音声",
+            "content-type": "audio/ogg",
+            "media_id": "m1",
+            "media_type": "audio",
+            "url": "https://media.example.invalid/audio"
+          },
+          "forwarded_messages": [
+            {
+              "id": 4,
+              "body": "forwarded 👩🏽‍💻",
+              "author_id": 6,
+              "generated": false,
+              "forwarded_messages": [
+                {
+                  "id": 2,
+                  "body": "deeply forwarded",
+                  "forwarded_messages": [],
+                  "attachments": []
+                }
+              ],
+              "attachments": [
+                {
+                  "id": 71,
+                  "display_name": "résumé.pdf",
+                  "content-type": "application/pdf",
+                  "filename": "資料.pdf",
+                  "url": "https://files.example.invalid/71?download=1"
+                }
+              ]
+            }
+          ],
+          "attachments": [
+            {
+              "id": 72,
+              "display_name": "notes.txt",
+              "filename": "notes.txt",
+              "url": "https://files.example.invalid/72",
+              "extension": {
+                "retained": [
+                  0,
+                  false,
+                  null
+                ]
+              }
+            }
+          ],
+          "future_field": {
+            "preserve": [
+              "z",
+              "a"
+            ]
+          }
+        },
+        {
+          "id": 5011,
+          "created_at": "2026-10-07T09:00:00Z",
+          "body": "",
+          "author_id": 6,
+          "generated": true,
+          "media_comment": null,
+          "forwarded_messages": [],
+          "attachments": []
+        }
+      ],
+      "submissions": [],
+      "extension": {
+        "opaque": {
+          "b": 2,
+          "a": 1
+        },
+        "missing_is_not_false": null
+      }
+    },
+    {
+      "id": 303,
+      "subject": "明日の予定 — Åsa 🧭",
+      "workflow_state": "read",
+      "last_message": "é, שלום; <p>kept</p>",
+      "last_message_at": "2026-10-08T12:00:00Z",
+      "message_count": 2,
+      "subscribed": true,
+      "private": true,
+      "starred": true,
+      "properties": [
+        "attachments",
+        "last_author"
+      ],
+      "audience": [
+        17,
+        6
+      ],
+      "audience_contexts": {
+        "courses": {
+          "42": [
+            "StudentEnrollment"
+          ]
+        },
+        "groups": {}
+      },
+      "avatar_url": "https://media.example.invalid/avatars/17",
+      "participants": [
+        {
+          "id": 17,
+          "name": "Åsa 🧭",
+          "full_name": "Åsa Example",
+          "uuid": "fixture-17",
+          "extension": {
+            "roles": [
+              null,
+              false
+            ]
+          }
+        },
+        {
+          "id": 6,
+          "name": "李",
+          "full_name": "李 Example",
+          "avatar_url": "https://media.example.invalid/avatars/6"
+        }
+      ],
+      "visible": true,
+      "context_name": "Synthetic seminar",
+      "messages": [
+        {
+          "id": 3039,
+          "created_at": "2026-10-08T12:00:00Z",
+          "body": "<p>明日 09:00 — é / שלום 🧭</p>\n\"quoted\" & unchanged",
+          "author_id": 17,
+          "generated": false,
+          "media_comment": {
+            "display_name": "音声",
+            "content-type": "audio/ogg",
+            "media_id": "m1",
+            "media_type": "audio",
+            "url": "https://media.example.invalid/audio"
+          },
+          "forwarded_messages": [
+            {
+              "id": 4,
+              "body": "forwarded 👩🏽‍💻",
+              "author_id": 6,
+              "generated": false,
+              "forwarded_messages": [
+                {
+                  "id": 2,
+                  "body": "deeply forwarded",
+                  "forwarded_messages": [],
+                  "attachments": []
+                }
+              ],
+              "attachments": [
+                {
+                  "id": 71,
+                  "display_name": "résumé.pdf",
+                  "content-type": "application/pdf",
+                  "filename": "資料.pdf",
+                  "url": "https://files.example.invalid/71?download=1"
+                }
+              ]
+            }
+          ],
+          "attachments": [
+            {
+              "id": 72,
+              "display_name": "notes.txt",
+              "filename": "notes.txt",
+              "url": "https://files.example.invalid/72",
+              "extension": {
+                "retained": [
+                  0,
+                  false,
+                  null
+                ]
+              }
+            }
+          ],
+          "future_field": {
+            "preserve": [
+              "z",
+              "a"
+            ]
+          }
+        },
+        {
+          "id": 3031,
+          "created_at": "2026-10-07T09:00:00Z",
+          "body": "",
+          "author_id": 6,
+          "generated": true,
+          "media_comment": null,
+          "forwarded_messages": [],
+          "attachments": []
+        }
+      ],
+      "submissions": [],
+      "extension": {
+        "opaque": {
+          "b": 2,
+          "a": 1
+        },
+        "missing_is_not_false": null
+      }
+    },
+    {
+      "id": 88,
+      "subject": "明日の予定 — Åsa 🧭",
+      "workflow_state": "archived",
+      "last_message": "é, שלום; <p>kept</p>",
+      "last_message_at": "2026-10-08T12:00:00Z",
+      "message_count": 2,
+      "subscribed": false,
+      "private": true,
+      "starred": false,
+      "properties": [
+        "attachments"
+      ],
+      "audience": [
+        17,
+        6
+      ],
+      "audience_contexts": {
+        "courses": {
+          "42": [
+            "StudentEnrollment"
+          ]
+        },
+        "groups": {}
+      },
+      "avatar_url": "https://media.example.invalid/avatars/17",
+      "participants": [
+        {
+          "id": 17,
+          "name": "Åsa 🧭",
+          "full_name": "Åsa Example",
+          "uuid": "fixture-17",
+          "extension": {
+            "roles": [
+              null,
+              false
+            ]
+          }
+        },
+        {
+          "id": 6,
+          "name": "李",
+          "full_name": "李 Example",
+          "avatar_url": "https://media.example.invalid/avatars/6"
+        }
+      ],
+      "visible": false,
+      "context_name": "Synthetic seminar",
+      "messages": [
+        {
+          "id": 889,
+          "created_at": "2026-10-08T12:00:00Z",
+          "body": "<p>明日 09:00 — é / שלום 🧭</p>\n\"quoted\" & unchanged",
+          "author_id": 17,
+          "generated": false,
+          "media_comment": {
+            "display_name": "音声",
+            "content-type": "audio/ogg",
+            "media_id": "m1",
+            "media_type": "audio",
+            "url": "https://media.example.invalid/audio"
+          },
+          "forwarded_messages": [
+            {
+              "id": 4,
+              "body": "forwarded 👩🏽‍💻",
+              "author_id": 6,
+              "generated": false,
+              "forwarded_messages": [
+                {
+                  "id": 2,
+                  "body": "deeply forwarded",
+                  "forwarded_messages": [],
+                  "attachments": []
+                }
+              ],
+              "attachments": [
+                {
+                  "id": 71,
+                  "display_name": "résumé.pdf",
+                  "content-type": "application/pdf",
+                  "filename": "資料.pdf",
+                  "url": "https://files.example.invalid/71?download=1"
+                }
+              ]
+            }
+          ],
+          "attachments": [
+            {
+              "id": 72,
+              "display_name": "notes.txt",
+              "filename": "notes.txt",
+              "url": "https://files.example.invalid/72",
+              "extension": {
+                "retained": [
+                  0,
+                  false,
+                  null
+                ]
+              }
+            }
+          ],
+          "future_field": {
+            "preserve": [
+              "z",
+              "a"
+            ]
+          }
+        },
+        {
+          "id": 881,
+          "created_at": "2026-10-07T09:00:00Z",
+          "body": "",
+          "author_id": 6,
+          "generated": true,
+          "media_comment": null,
+          "forwarded_messages": [],
+          "attachments": []
+        }
+      ],
+      "submissions": [],
+      "extension": {
+        "opaque": {
+          "b": 2,
+          "a": 1
+        },
+        "missing_is_not_false": null
+      }
+    }
+  ],
+  "requests": [
+    {
+      "transport": "canvas",
+      "mode": "token",
+      "method": "GET",
+      "path": "/api/v1/conversations/501",
+      "raw_query": "per_page=50",
+      "query": {
+        "per_page": [
+          "50"
+        ]
+      },
+      "synthetic_auth_ok": true
+    },
+    {
+      "transport": "canvas",
+      "mode": "token",
+      "method": "GET",
+      "path": "/api/v1/conversations",
+      "raw_query": "scope=archived&per_page=50",
+      "query": {
+        "scope": [
+          "archived"
+        ],
+        "per_page": [
+          "50"
+        ]
+      },
+      "synthetic_auth_ok": true
+    },
+    {
+      "transport": "canvas",
+      "mode": "token",
+      "method": "GET",
+      "path": "/api/v1/conversations",
+      "raw_query": "scope=inbox&per_page=50",
+      "query": {
+        "scope": [
+          "inbox"
+        ],
+        "per_page": [
+          "50"
+        ]
+      },
+      "synthetic_auth_ok": true
+    }
+  ],
+  "processes": [
+    {
+      "kind": "MCP catalog",
+      "tools": {
+        "canvas_whoami": {
+          "name": "canvas_whoami",
+          "title": null,
+          "description": "Confirm Canvas auth and return self profile.",
+          "inputSchema": {
+            "properties": {},
+            "type": "object",
+            "title": "canvas_whoamiArguments"
+          },
+          "execution": null,
+          "outputSchema": null,
+          "icons": null,
+          "annotations": null,
+          "_meta": null
+        },
+        "canvas_list_courses": {
+          "name": "canvas_list_courses",
+          "title": null,
+          "description": "List active Canvas courses.",
+          "inputSchema": {
+            "properties": {},
+            "type": "object",
+            "title": "canvas_list_coursesArguments"
+          },
+          "execution": null,
+          "outputSchema": null,
+          "icons": null,
+          "annotations": null,
+          "_meta": null
+        },
+        "canvas_get_course": {
+          "name": "canvas_get_course",
+          "title": null,
+          "description": "Get one course including syllabus body when available.",
+          "inputSchema": {
+            "properties": {
+              "course_id": {
+                "title": "Course Id",
+                "type": "string"
+              }
+            },
+            "required": [
+              "course_id"
+            ],
+            "type": "object",
+            "title": "canvas_get_courseArguments"
+          },
+          "execution": null,
+          "outputSchema": null,
+          "icons": null,
+          "annotations": null,
+          "_meta": null
+        },
+        "canvas_list_assignments": {
+          "name": "canvas_list_assignments",
+          "title": null,
+          "description": "List assignments for a course. Default detail=compact (no description bodies). Use detail=full or canvas_assignment_brief for prompts.",
+          "inputSchema": {
+            "properties": {
+              "course_id": {
+                "title": "Course Id",
+                "type": "string"
+              },
+              "bucket": {
+                "default": "upcoming",
+                "title": "Bucket",
+                "type": "string"
+              },
+              "detail": {
+                "default": "compact",
+                "title": "Detail",
+                "type": "string"
+              }
+            },
+            "required": [
+              "course_id"
+            ],
+            "type": "object",
+            "title": "canvas_list_assignmentsArguments"
+          },
+          "execution": null,
+          "outputSchema": null,
+          "icons": null,
+          "annotations": null,
+          "_meta": null
+        },
+        "canvas_get_assignment": {
+          "name": "canvas_get_assignment",
+          "title": null,
+          "description": "Get one assignment with cleaned prompt text.",
+          "inputSchema": {
+            "properties": {
+              "course_id": {
+                "title": "Course Id",
+                "type": "string"
+              },
+              "assignment_id": {
+                "title": "Assignment Id",
+                "type": "string"
+              }
+            },
+            "required": [
+              "course_id",
+              "assignment_id"
+            ],
+            "type": "object",
+            "title": "canvas_get_assignmentArguments"
+          },
+          "execution": null,
+          "outputSchema": null,
+          "icons": null,
+          "annotations": null,
+          "_meta": null
+        },
+        "canvas_assignment_brief": {
+          "name": "canvas_assignment_brief",
+          "title": null,
+          "description": "Digested assignment brief: prompt, due date, submission types, and supplied rubric with grading/display settings. Missing rubric data stays unknown; inspect rubric_warnings for omitted malformed data.",
+          "inputSchema": {
+            "properties": {
+              "course_id": {
+                "title": "Course Id",
+                "type": "string"
+              },
+              "assignment_id": {
+                "title": "Assignment Id",
+                "type": "string"
+              }
+            },
+            "required": [
+              "course_id",
+              "assignment_id"
+            ],
+            "type": "object",
+            "title": "canvas_assignment_briefArguments"
+          },
+          "execution": null,
+          "outputSchema": null,
+          "icons": null,
+          "annotations": null,
+          "_meta": null
+        },
+        "canvas_list_announcements": {
+          "name": "canvas_list_announcements",
+          "title": null,
+          "description": "List announcements (compact message_text by default). Pass detail=full for full bodies.",
+          "inputSchema": {
+            "properties": {
+              "course_ids": {
+                "title": "Course Ids",
+                "type": "string"
+              },
+              "detail": {
+                "default": "compact",
+                "title": "Detail",
+                "type": "string"
+              }
+            },
+            "required": [
+              "course_ids"
+            ],
+            "type": "object",
+            "title": "canvas_list_announcementsArguments"
+          },
+          "execution": null,
+          "outputSchema": null,
+          "icons": null,
+          "annotations": null,
+          "_meta": null
+        },
+        "canvas_list_modules": {
+          "name": "canvas_list_modules",
+          "title": null,
+          "description": "List modules with items (compact item fields by default). Pass detail=full for raw Canvas payloads.",
+          "inputSchema": {
+            "properties": {
+              "course_id": {
+                "title": "Course Id",
+                "type": "string"
+              },
+              "detail": {
+                "default": "compact",
+                "title": "Detail",
+                "type": "string"
+              }
+            },
+            "required": [
+              "course_id"
+            ],
+            "type": "object",
+            "title": "canvas_list_modulesArguments"
+          },
+          "execution": null,
+          "outputSchema": null,
+          "icons": null,
+          "annotations": null,
+          "_meta": null
+        },
+        "canvas_module_progress": {
+          "name": "canvas_module_progress",
+          "title": null,
+          "description": "Read Canvas-declared module progress and completed/unfinished/unknown requirements. Optional module_id selects one returned module. Counts cover returned rows only; missing student fields stay unknown. Does not mark items read or complete.",
+          "inputSchema": {
+            "properties": {
+              "course_id": {
+                "title": "Course Id",
+                "type": "string"
+              },
+              "module_id": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Module Id"
+              }
+            },
+            "required": [
+              "course_id"
+            ],
+            "type": "object",
+            "title": "canvas_module_progressArguments"
+          },
+          "execution": null,
+          "outputSchema": null,
+          "icons": null,
+          "annotations": {
+            "title": null,
+            "readOnlyHint": true,
+            "destructiveHint": false,
+            "idempotentHint": true,
+            "openWorldHint": null
+          },
+          "_meta": null
+        },
+        "canvas_list_pages": {
+          "name": "canvas_list_pages",
+          "title": null,
+          "description": "List wiki pages for a course.",
+          "inputSchema": {
+            "properties": {
+              "course_id": {
+                "title": "Course Id",
+                "type": "string"
+              }
+            },
+            "required": [
+              "course_id"
+            ],
+            "type": "object",
+            "title": "canvas_list_pagesArguments"
+          },
+          "execution": null,
+          "outputSchema": null,
+          "icons": null,
+          "annotations": null,
+          "_meta": null
+        },
+        "canvas_get_page": {
+          "name": "canvas_get_page",
+          "title": null,
+          "description": "Get a wiki page body by URL slug.",
+          "inputSchema": {
+            "properties": {
+              "course_id": {
+                "title": "Course Id",
+                "type": "string"
+              },
+              "page_url": {
+                "title": "Page Url",
+                "type": "string"
+              }
+            },
+            "required": [
+              "course_id",
+              "page_url"
+            ],
+            "type": "object",
+            "title": "canvas_get_pageArguments"
+          },
+          "execution": null,
+          "outputSchema": null,
+          "icons": null,
+          "annotations": null,
+          "_meta": null
+        },
+        "canvas_list_discussion_topics": {
+          "name": "canvas_list_discussion_topics",
+          "title": null,
+          "description": "List discussion topics for a course.",
+          "inputSchema": {
+            "properties": {
+              "course_id": {
+                "title": "Course Id",
+                "type": "string"
+              }
+            },
+            "required": [
+              "course_id"
+            ],
+            "type": "object",
+            "title": "canvas_list_discussion_topicsArguments"
+          },
+          "execution": null,
+          "outputSchema": null,
+          "icons": null,
+          "annotations": null,
+          "_meta": null
+        },
+        "canvas_get_discussion": {
+          "name": "canvas_get_discussion",
+          "title": null,
+          "description": "Get a discussion topic + view/entries.",
+          "inputSchema": {
+            "properties": {
+              "course_id": {
+                "title": "Course Id",
+                "type": "string"
+              },
+              "topic_id": {
+                "title": "Topic Id",
+                "type": "string"
+              }
+            },
+            "required": [
+              "course_id",
+              "topic_id"
+            ],
+            "type": "object",
+            "title": "canvas_get_discussionArguments"
+          },
+          "execution": null,
+          "outputSchema": null,
+          "icons": null,
+          "annotations": null,
+          "_meta": null
+        },
+        "canvas_post_discussion_reply": {
+          "name": "canvas_post_discussion_reply",
+          "title": null,
+          "description": "Post a reply to a discussion topic.",
+          "inputSchema": {
+            "properties": {
+              "course_id": {
+                "title": "Course Id",
+                "type": "string"
+              },
+              "topic_id": {
+                "title": "Topic Id",
+                "type": "string"
+              },
+              "message": {
+                "title": "Message",
+                "type": "string"
+              }
+            },
+            "required": [
+              "course_id",
+              "topic_id",
+              "message"
+            ],
+            "type": "object",
+            "title": "canvas_post_discussion_replyArguments"
+          },
+          "execution": null,
+          "outputSchema": null,
+          "icons": null,
+          "annotations": null,
+          "_meta": null
+        },
+        "canvas_list_files": {
+          "name": "canvas_list_files",
+          "title": null,
+          "description": "List files in a course.",
+          "inputSchema": {
+            "properties": {
+              "course_id": {
+                "title": "Course Id",
+                "type": "string"
+              }
+            },
+            "required": [
+              "course_id"
+            ],
+            "type": "object",
+            "title": "canvas_list_filesArguments"
+          },
+          "execution": null,
+          "outputSchema": null,
+          "icons": null,
+          "annotations": null,
+          "_meta": null
+        },
+        "canvas_browse_files": {
+          "name": "canvas_browse_files",
+          "title": null,
+          "description": "Browse metadata in one Canvas course folder. Start with folder_id=root, then choose a returned child folder ID. Requests one bounded folder page and one file page; no downloads or recursive inventory. has_more is unknown; next_page_to_try is an optional probe, not a confirmed next page.",
+          "inputSchema": {
+            "properties": {
+              "course_id": {
+                "title": "Course Id",
+                "type": "string"
+              },
+              "folder_id": {
+                "default": "root",
+                "title": "Folder Id",
+                "type": "string"
+              },
+              "folders_page": {
+                "default": 1,
+                "title": "Folders Page",
+                "type": "integer"
+              },
+              "files_page": {
+                "default": 1,
+                "title": "Files Page",
+                "type": "integer"
+              },
+              "per_page": {
+                "default": 50,
+                "title": "Per Page",
+                "type": "integer"
+              }
+            },
+            "required": [
+              "course_id"
+            ],
+            "type": "object",
+            "title": "canvas_browse_filesArguments"
+          },
+          "execution": null,
+          "outputSchema": null,
+          "icons": null,
+          "annotations": {
+            "title": null,
+            "readOnlyHint": true,
+            "destructiveHint": false,
+            "idempotentHint": null,
+            "openWorldHint": null
+          },
+          "_meta": null
+        },
+        "canvas_list_quizzes": {
+          "name": "canvas_list_quizzes",
+          "title": null,
+          "description": "List classic quizzes in a course.",
+          "inputSchema": {
+            "properties": {
+              "course_id": {
+                "title": "Course Id",
+                "type": "string"
+              }
+            },
+            "required": [
+              "course_id"
+            ],
+            "type": "object",
+            "title": "canvas_list_quizzesArguments"
+          },
+          "execution": null,
+          "outputSchema": null,
+          "icons": null,
+          "annotations": null,
+          "_meta": null
+        },
+        "canvas_get_quiz": {
+          "name": "canvas_get_quiz",
+          "title": null,
+          "description": "Get one classic quiz.",
+          "inputSchema": {
+            "properties": {
+              "course_id": {
+                "title": "Course Id",
+                "type": "string"
+              },
+              "quiz_id": {
+                "title": "Quiz Id",
+                "type": "string"
+              }
+            },
+            "required": [
+              "course_id",
+              "quiz_id"
+            ],
+            "type": "object",
+            "title": "canvas_get_quizArguments"
+          },
+          "execution": null,
+          "outputSchema": null,
+          "icons": null,
+          "annotations": null,
+          "_meta": null
+        },
+        "canvas_list_quiz_questions": {
+          "name": "canvas_list_quiz_questions",
+          "title": null,
+          "description": "List questions for a classic quiz (when API allows).",
+          "inputSchema": {
+            "properties": {
+              "course_id": {
+                "title": "Course Id",
+                "type": "string"
+              },
+              "quiz_id": {
+                "title": "Quiz Id",
+                "type": "string"
+              }
+            },
+            "required": [
+              "course_id",
+              "quiz_id"
+            ],
+            "type": "object",
+            "title": "canvas_list_quiz_questionsArguments"
+          },
+          "execution": null,
+          "outputSchema": null,
+          "icons": null,
+          "annotations": null,
+          "_meta": null
+        },
+        "canvas_list_quiz_submissions": {
+          "name": "canvas_list_quiz_submissions",
+          "title": null,
+          "description": "List quiz submissions for a classic quiz.",
+          "inputSchema": {
+            "properties": {
+              "course_id": {
+                "title": "Course Id",
+                "type": "string"
+              },
+              "quiz_id": {
+                "title": "Quiz Id",
+                "type": "string"
+              }
+            },
+            "required": [
+              "course_id",
+              "quiz_id"
+            ],
+            "type": "object",
+            "title": "canvas_list_quiz_submissionsArguments"
+          },
+          "execution": null,
+          "outputSchema": null,
+          "icons": null,
+          "annotations": null,
+          "_meta": null
+        },
+        "canvas_start_quiz_submission": {
+          "name": "canvas_start_quiz_submission",
+          "title": null,
+          "description": "Start a classic quiz submission (optional access_code).",
+          "inputSchema": {
+            "properties": {
+              "course_id": {
+                "title": "Course Id",
+                "type": "string"
+              },
+              "quiz_id": {
+                "title": "Quiz Id",
+                "type": "string"
+              },
+              "access_code": {
+                "default": "",
+                "title": "Access Code",
+                "type": "string"
+              }
+            },
+            "required": [
+              "course_id",
+              "quiz_id"
+            ],
+            "type": "object",
+            "title": "canvas_start_quiz_submissionArguments"
+          },
+          "execution": null,
+          "outputSchema": null,
+          "icons": null,
+          "annotations": null,
+          "_meta": null
+        },
+        "canvas_complete_quiz_submission": {
+          "name": "canvas_complete_quiz_submission",
+          "title": null,
+          "description": "Complete a classic quiz submission.",
+          "inputSchema": {
+            "properties": {
+              "course_id": {
+                "title": "Course Id",
+                "type": "string"
+              },
+              "quiz_id": {
+                "title": "Quiz Id",
+                "type": "string"
+              },
+              "submission_id": {
+                "title": "Submission Id",
+                "type": "string"
+              },
+              "attempt": {
+                "default": 0,
+                "title": "Attempt",
+                "type": "integer"
+              },
+              "validation_token": {
+                "default": "",
+                "title": "Validation Token",
+                "type": "string"
+              }
+            },
+            "required": [
+              "course_id",
+              "quiz_id",
+              "submission_id"
+            ],
+            "type": "object",
+            "title": "canvas_complete_quiz_submissionArguments"
+          },
+          "execution": null,
+          "outputSchema": null,
+          "icons": null,
+          "annotations": null,
+          "_meta": null
+        },
+        "canvas_list_conversations": {
+          "name": "canvas_list_conversations",
+          "title": null,
+          "description": "List Canvas Inbox conversations.",
+          "inputSchema": {
+            "properties": {
+              "scope": {
+                "default": "inbox",
+                "title": "Scope",
+                "type": "string"
+              }
+            },
+            "type": "object",
+            "title": "canvas_list_conversationsArguments"
+          },
+          "execution": null,
+          "outputSchema": null,
+          "icons": null,
+          "annotations": null,
+          "_meta": null
+        },
+        "canvas_get_conversation": {
+          "name": "canvas_get_conversation",
+          "title": null,
+          "description": "Get one Inbox conversation.",
+          "inputSchema": {
+            "properties": {
+              "conversation_id": {
+                "title": "Conversation Id",
+                "type": "string"
+              }
+            },
+            "required": [
+              "conversation_id"
+            ],
+            "type": "object",
+            "title": "canvas_get_conversationArguments"
+          },
+          "execution": null,
+          "outputSchema": null,
+          "icons": null,
+          "annotations": null,
+          "_meta": null
+        },
+        "canvas_list_calendar_events": {
+          "name": "canvas_list_calendar_events",
+          "title": null,
+          "description": "List calendar events (optional ISO start/end dates).",
+          "inputSchema": {
+            "properties": {
+              "start_date": {
+                "default": "",
+                "title": "Start Date",
+                "type": "string"
+              },
+              "end_date": {
+                "default": "",
+                "title": "End Date",
+                "type": "string"
+              }
+            },
+            "type": "object",
+            "title": "canvas_list_calendar_eventsArguments"
+          },
+          "execution": null,
+          "outputSchema": null,
+          "icons": null,
+          "annotations": null,
+          "_meta": null
+        },
+        "canvas_planner_items": {
+          "name": "canvas_planner_items",
+          "title": null,
+          "description": "Planner items (optional ISO start/end).",
+          "inputSchema": {
+            "properties": {
+              "start_date": {
+                "default": "",
+                "title": "Start Date",
+                "type": "string"
+              },
+              "end_date": {
+                "default": "",
+                "title": "End Date",
+                "type": "string"
+              }
+            },
+            "type": "object",
+            "title": "canvas_planner_itemsArguments"
+          },
+          "execution": null,
+          "outputSchema": null,
+          "icons": null,
+          "annotations": null,
+          "_meta": null
+        },
+        "canvas_activity_stream": {
+          "name": "canvas_activity_stream",
+          "title": null,
+          "description": "User activity stream.",
+          "inputSchema": {
+            "properties": {},
+            "type": "object",
+            "title": "canvas_activity_streamArguments"
+          },
+          "execution": null,
+          "outputSchema": null,
+          "icons": null,
+          "annotations": null,
+          "_meta": null
+        },
+        "canvas_list_todo_items": {
+          "name": "canvas_list_todo_items",
+          "title": null,
+          "description": "To-do items for the current user.",
+          "inputSchema": {
+            "properties": {},
+            "type": "object",
+            "title": "canvas_list_todo_itemsArguments"
+          },
+          "execution": null,
+          "outputSchema": null,
+          "icons": null,
+          "annotations": null,
+          "_meta": null
+        },
+        "canvas_list_enrollments": {
+          "name": "canvas_list_enrollments",
+          "title": null,
+          "description": "Self enrollments (default state=active).",
+          "inputSchema": {
+            "properties": {
+              "state": {
+                "default": "active",
+                "title": "State",
+                "type": "string"
+              }
+            },
+            "type": "object",
+            "title": "canvas_list_enrollmentsArguments"
+          },
+          "execution": null,
+          "outputSchema": null,
+          "icons": null,
+          "annotations": null,
+          "_meta": null
+        },
+        "canvas_sync_summary": {
+          "name": "canvas_sync_summary",
+          "title": null,
+          "description": "Read upcoming assignments ordered by deadline across courses, with selection counts and per-course read errors.",
+          "inputSchema": {
+            "properties": {
+              "limit_courses": {
+                "default": 10,
+                "exclusiveMinimum": 0,
+                "title": "Limit Courses",
+                "type": "integer"
+              },
+              "limit_assignments_per_course": {
+                "default": 5,
+                "exclusiveMinimum": 0,
+                "title": "Limit Assignments Per Course",
+                "type": "integer"
+              }
+            },
+            "type": "object",
+            "title": "canvas_sync_summaryArguments"
+          },
+          "execution": null,
+          "outputSchema": null,
+          "icons": null,
+          "annotations": null,
+          "_meta": null
+        },
+        "canvas_submission_status": {
+          "name": "canvas_submission_status",
+          "title": null,
+          "description": "Submission status for an assignment (self).",
+          "inputSchema": {
+            "properties": {
+              "course_id": {
+                "title": "Course Id",
+                "type": "string"
+              },
+              "assignment_id": {
+                "title": "Assignment Id",
+                "type": "string"
+              }
+            },
+            "required": [
+              "course_id",
+              "assignment_id"
+            ],
+            "type": "object",
+            "title": "canvas_submission_statusArguments"
+          },
+          "execution": null,
+          "outputSchema": null,
+          "icons": null,
+          "annotations": null,
+          "_meta": null
+        },
+        "canvas_submission_feedback": {
+          "name": "canvas_submission_feedback",
+          "title": null,
+          "description": "Read self submission comments and rubric feedback with original authors, criteria, and grade/attempt metadata. A false grade_matches_current_submission means grading preceded the latest resubmission. Does not calculate a grade.",
+          "inputSchema": {
+            "properties": {
+              "course_id": {
+                "title": "Course Id",
+                "type": "string"
+              },
+              "assignment_id": {
+                "title": "Assignment Id",
+                "type": "string"
+              }
+            },
+            "required": [
+              "course_id",
+              "assignment_id"
+            ],
+            "type": "object",
+            "title": "canvas_submission_feedbackArguments"
+          },
+          "execution": null,
+          "outputSchema": null,
+          "icons": null,
+          "annotations": null,
+          "_meta": null
+        },
+        "canvas_submit_assignment_text": {
+          "name": "canvas_submit_assignment_text",
+          "title": null,
+          "description": "Submit finished online_text_entry work.",
+          "inputSchema": {
+            "properties": {
+              "course_id": {
+                "title": "Course Id",
+                "type": "string"
+              },
+              "assignment_id": {
+                "title": "Assignment Id",
+                "type": "string"
+              },
+              "body": {
+                "title": "Body",
+                "type": "string"
+              }
+            },
+            "required": [
+              "course_id",
+              "assignment_id",
+              "body"
+            ],
+            "type": "object",
+            "title": "canvas_submit_assignment_textArguments"
+          },
+          "execution": null,
+          "outputSchema": null,
+          "icons": null,
+          "annotations": null,
+          "_meta": null
+        },
+        "canvas_reply_conversation": {
+          "name": "canvas_reply_conversation",
+          "title": null,
+          "description": "Reply to an Inbox conversation.",
+          "inputSchema": {
+            "properties": {
+              "conversation_id": {
+                "title": "Conversation Id",
+                "type": "string"
+              },
+              "body": {
+                "title": "Body",
+                "type": "string"
+              }
+            },
+            "required": [
+              "conversation_id",
+              "body"
+            ],
+            "type": "object",
+            "title": "canvas_reply_conversationArguments"
+          },
+          "execution": null,
+          "outputSchema": null,
+          "icons": null,
+          "annotations": null,
+          "_meta": null
+        },
+        "canvas_api_request": {
+          "name": "canvas_api_request",
+          "title": null,
+          "description": "Full Canvas REST escape hatch. method=GET|POST|PUT|DELETE|PATCH; path must start with /api/v1 (e.g. /api/v1/users/self). params_json / body_json / form_json are optional JSON objects. Use curated canvas_* tools when they exist; this covers everything else.",
+          "inputSchema": {
+            "properties": {
+              "method": {
+                "title": "Method",
+                "type": "string"
+              },
+              "path": {
+                "title": "Path",
+                "type": "string"
+              },
+              "params_json": {
+                "default": "",
+                "title": "Params Json",
+                "type": "string"
+              },
+              "body_json": {
+                "default": "",
+                "title": "Body Json",
+                "type": "string"
+              },
+              "form_json": {
+                "default": "",
+                "title": "Form Json",
+                "type": "string"
+              }
+            },
+            "required": [
+              "method",
+              "path"
+            ],
+            "type": "object",
+            "title": "canvas_api_requestArguments"
+          },
+          "execution": null,
+          "outputSchema": null,
+          "icons": null,
+          "annotations": null,
+          "_meta": null
+        },
+        "canvas_api_paginated": {
+          "name": "canvas_api_paginated",
+          "title": null,
+          "description": "Paginated GET escape hatch for /api/v1 list endpoints. path must start with /api/v1; params_json optional JSON object.",
+          "inputSchema": {
+            "properties": {
+              "path": {
+                "title": "Path",
+                "type": "string"
+              },
+              "params_json": {
+                "default": "",
+                "title": "Params Json",
+                "type": "string"
+              }
+            },
+            "required": [
+              "path"
+            ],
+            "type": "object",
+            "title": "canvas_api_paginatedArguments"
+          },
+          "execution": null,
+          "outputSchema": null,
+          "icons": null,
+          "annotations": null,
+          "_meta": null
+        }
+      }
+    },
+    {
+      "kind": "MCP call",
+      "name": "canvas_get_conversation",
+      "arguments": {
+        "conversation_id": "501"
+      },
+      "result": {
+        "_meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"id\": 501,\n  \"subject\": \"\\u660e\\u65e5\\u306e\\u4e88\\u5b9a \\u2014 \\u00c5sa \\ud83e\\udded\",\n  \"workflow_state\": \"read\",\n  \"last_message\": \"e\\u0301, \\u05e9\\u05dc\\u05d5\\u05dd; <p>kept</p>\",\n  \"last_message_at\": \"2026-10-08T12:00:00Z\",\n  \"message_count\": 2,\n  \"subscribed\": true,\n  \"private\": true,\n  \"starred\": false,\n  \"properties\": [\n    \"attachments\"\n  ],\n  \"audience\": [\n    17,\n    6\n  ],\n  \"audience_contexts\": {\n    \"courses\": {\n      \"42\": [\n        \"StudentEnrollment\"\n      ]\n    },\n    \"groups\": {}\n  },\n  \"avatar_url\": \"https://media.example.invalid/avatars/17\",\n  \"participants\": [\n    {\n      \"id\": 17,\n      \"name\": \"\\u00c5sa \\ud83e\\udded\",\n      \"full_name\": \"\\u00c5sa Example\",\n      \"uuid\": \"fixture-17\",\n      \"extension\": {\n        \"roles\": [\n          null,\n          false\n        ]\n      }\n    },\n    {\n      \"id\": 6,\n      \"name\": \"\\u674e\",\n      \"full_name\": \"\\u674e Example\",\n      \"avatar_url\": \"https://media.example.invalid/avatars/6\"\n    }\n  ],\n  \"visible\": true,\n  \"context_name\": \"Synthetic seminar\",\n  \"messages\": [\n    {\n      \"id\": 5019,\n      \"created_at\": \"2026-10-08T12:00:00Z\",\n      \"body\": \"<p>\\u660e\\u65e5 09:00 \\u2014 e\\u0301 / \\u05e9\\u05dc\\u05d5\\u05dd \\ud83e\\udded</p>\\n\\\"quoted\\\" & unchanged\",\n      \"author_id\": 17,\n      \"generated\": false,\n      \"media_comment\": {\n        \"display_name\": \"\\u97f3\\u58f0\",\n        \"content-type\": \"audio/ogg\",\n        \"media_id\": \"m1\",\n        \"media_type\": \"audio\",\n        \"url\": \"https://media.example.invalid/audio\"\n      },\n      \"forwarded_messages\": [\n        {\n          \"id\": 4,\n          \"body\": \"forwarded \\ud83d\\udc69\\ud83c\\udffd\\u200d\\ud83d\\udcbb\",\n          \"author_id\": 6,\n          \"generated\": false,\n          \"forwarded_messages\": [\n            {\n              \"id\": 2,\n              \"body\": \"deeply forwarded\",\n              \"forwarded_messages\": [],\n              \"attachments\": []\n            }\n          ],\n          \"attachments\": [\n            {\n              \"id\": 71,\n              \"display_name\": \"r\\u00e9sum\\u00e9.pdf\",\n              \"content-type\": \"application/pdf\",\n              \"filename\": \"\\u8cc7\\u6599.pdf\",\n              \"url\": \"https://files.example.invalid/71?download=1\"\n            }\n          ]\n        }\n      ],\n      \"attachments\": [\n        {\n          \"id\": 72,\n          \"display_name\": \"notes.txt\",\n          \"filename\": \"notes.txt\",\n          \"url\": \"https://files.example.invalid/72\",\n          \"extension\": {\n            \"retained\": [\n              0,\n              false,\n              null\n            ]\n          }\n        }\n      ],\n      \"future_field\": {\n        \"preserve\": [\n          \"z\",\n          \"a\"\n        ]\n      }\n    },\n    {\n      \"id\": 5011,\n      \"created_at\": \"2026-10-07T09:00:00Z\",\n      \"body\": \"\",\n      \"author_id\": 6,\n      \"generated\": true,\n      \"media_comment\": null,\n      \"forwarded_messages\": [],\n      \"attachments\": []\n    }\n  ],\n  \"submissions\": [],\n  \"extension\": {\n    \"opaque\": {\n      \"b\": 2,\n      \"a\": 1\n    },\n    \"missing_is_not_false\": null\n  }\n}",
+            "annotations": null,
+            "_meta": null
+          }
+        ],
+        "structuredContent": null,
+        "isError": false,
+        "resultType": "complete"
+      }
+    },
+    {
+      "kind": "MCP call",
+      "name": "canvas_list_conversations",
+      "arguments": {
+        "scope": "archived"
+      },
+      "result": {
+        "_meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "[\n  {\n    \"id\": 88,\n    \"subject\": \"\\u660e\\u65e5\\u306e\\u4e88\\u5b9a \\u2014 \\u00c5sa \\ud83e\\udded\",\n    \"workflow_state\": \"archived\",\n    \"last_message\": \"e\\u0301, \\u05e9\\u05dc\\u05d5\\u05dd; <p>kept</p>\",\n    \"last_message_at\": \"2026-10-08T12:00:00Z\",\n    \"message_count\": 2,\n    \"subscribed\": false,\n    \"private\": true,\n    \"starred\": false,\n    \"properties\": [\n      \"attachments\"\n    ],\n    \"audience\": [\n      17,\n      6\n    ],\n    \"audience_contexts\": {\n      \"courses\": {\n        \"42\": [\n          \"StudentEnrollment\"\n        ]\n      },\n      \"groups\": {}\n    },\n    \"avatar_url\": \"https://media.example.invalid/avatars/17\",\n    \"participants\": [\n      {\n        \"id\": 17,\n        \"name\": \"\\u00c5sa \\ud83e\\udded\",\n        \"full_name\": \"\\u00c5sa Example\",\n        \"uuid\": \"fixture-17\",\n        \"extension\": {\n          \"roles\": [\n            null,\n            false\n          ]\n        }\n      },\n      {\n        \"id\": 6,\n        \"name\": \"\\u674e\",\n        \"full_name\": \"\\u674e Example\",\n        \"avatar_url\": \"https://media.example.invalid/avatars/6\"\n      }\n    ],\n    \"visible\": false,\n    \"context_name\": \"Synthetic seminar\",\n    \"submissions\": [],\n    \"extension\": {\n      \"opaque\": {\n        \"b\": 2,\n        \"a\": 1\n      },\n      \"missing_is_not_false\": null\n    }\n  }\n]",
+            "annotations": null,
+            "_meta": null
+          }
+        ],
+        "structuredContent": null,
+        "isError": false,
+        "resultType": "complete"
+      }
+    },
+    {
+      "kind": "MCP call",
+      "name": "canvas_list_conversations",
+      "arguments": {},
+      "result": {
+        "_meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "Error executing tool canvas_list_conversations",
+            "annotations": null,
+            "_meta": null
+          }
+        ],
+        "structuredContent": null,
+        "isError": true,
+        "resultType": "complete"
+      }
+    }
+  ]
+}

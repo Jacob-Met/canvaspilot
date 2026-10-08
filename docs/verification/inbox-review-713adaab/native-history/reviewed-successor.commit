@@ -1,0 +1,6 @@
+tree 16e338cbcb783a57dad3357568a9539e1032c3f0
+parent d1032f1eb44167282ef47803a42a86e25fb69001
+author HAMON external contributor 713adaab <estate-713adaab@localhost> 1791466307 +0000
+committer HAMON external contributor 713adaab <estate-713adaab@localhost> 1791466307 +0000
+
+Validate conversation IDs before forming preserving read requests

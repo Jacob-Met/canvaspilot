@@ -1,0 +1,43 @@
+HTTP Request: GET http://127.0.0.1:33255/api/v1/conversations/501?auto_mark_as_read=false&per_page=50 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:33255/api/v1/conversations?scope=archived&per_page=50 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:33255/api/v1/conversations?per_page=50 "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:33255/api/v1/conversations?cursor=cursor%2B%2F1%2F%E2%98%83&view=a&view=b "HTTP/1.0 403 Forbidden"
+Tool 'canvas_list_conversations' raised an unexpected exception
+Traceback (most recent call last):
+  File "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/lib/python3.14/site-packages/mcp/server/mcpserver/tools/base.py", line 179, in run
+    result = await self.fn_metadata.call_fn(self.fn, self.is_async, validated, pass_directly)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/lib/python3.14/site-packages/mcp/server/mcpserver/utilities/func_metadata.py", line 163, in call_fn
+    return await fn(**kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/tmp/canvaspilot-inbox-713adaab/src/canvaspilot/mcp_server.py", line 217, in canvas_list_conversations
+    return _dump(_get_api().list_conversations(scope=scope))
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/tmp/canvaspilot-inbox-713adaab/src/canvaspilot/api.py", line 556, in list_conversations
+    return self.client.get_paginated(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        "/api/v1/conversations",
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+        params=None if scope == "inbox" else {"scope": scope},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/tmp/canvaspilot-inbox-713adaab/src/canvaspilot/client.py", line 274, in get_paginated
+    raise CanvasAuthError(f"Canvas auth failed ({r.status_code})")
+canvaspilot.client.CanvasAuthError: Canvas auth failed (403)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/lib/python3.14/site-packages/mcp/server/mcpserver/server.py", line 442, in _handle_call_tool
+    return await self.call_tool(params.name, params.arguments or {}, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/lib/python3.14/site-packages/mcp/server/mcpserver/server.py", line 548, in call_tool
+    return await self._tool_manager.call_tool(name, arguments, context, convert_result=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/lib/python3.14/site-packages/mcp/server/mcpserver/tools/tool_manager.py", line 87, in call_tool
+    return await tool.run(arguments, context, convert_result=convert_result)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/lib/python3.14/site-packages/mcp/server/mcpserver/tools/base.py", line 213, in run
+    raise UnexpectedToolError(f"Error executing tool {self.name}") from exc
+mcp.server.mcpserver.exceptions.UnexpectedToolError: Error executing tool canvas_list_conversations

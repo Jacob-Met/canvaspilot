@@ -1,0 +1,15 @@
+{
+  "command": [
+    "git",
+    "-c",
+    "user.name=HAMON external contributor 713adaab",
+    "-c",
+    "user.email=estate-713adaab@localhost",
+    "commit",
+    "-m",
+    "Add inbox review that preserves unread conversations"
+  ],
+  "exit": 0,
+  "stdout": "[chatgpt/inbox-713adaab d1032f1] Add inbox review that preserves unread conversations\n 6 files changed, 383 insertions(+), 4 deletions(-)\n create mode 100644 docs/inbox-review.md\n create mode 100644 tests/test_inbox_review.py\n",
+  "stderr": ""
+}

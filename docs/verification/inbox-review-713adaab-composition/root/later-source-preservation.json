@@ -1,0 +1,37 @@
+{
+  "schema": "canvaspilot.inbox.later-main-source-preservation.v1",
+  "created_utc": "2026-10-08T14:29:09.700507+00:00",
+  "incoming_main": "39d835c8becb04d81b65c90d1491d2d3a2727ffe",
+  "qualified_methods_commit": "db32bde55db5080ed7ee856faab5cf1a2b5c949a",
+  "independently_received_composition": "6b94efe9ff1f117fe4c2f1dfca595003a283d988",
+  "native_composed_commit": "fb1245d9ee743ef4b343ef063ff7b21341ba7a4a",
+  "native_composed_tree": "428308de0eea2eeaf37772c5892c939a09d553d7",
+  "checks": {
+    "owned_API_readers_exactly_match_qualified_source": true,
+    "all_other_API_AST_preserved_from_incoming_main": true,
+    "all_other_MCP_AST_preserved_from_incoming_main": true,
+    "owned_MCP_metadata_exactly_matches_qualified_source": true,
+    "all_other_CLI_AST_preserved_from_incoming_main": true,
+    "owned_CLI_additions_exactly_match_qualified_source": true,
+    "README_preserves_current_main_and_exact_inbox_section": true,
+    "only_owned_paths_differ_from_incoming_main": true
+  },
+  "ruff_exit": 0,
+  "runtime_sha256": {
+    "__init__.py": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5",
+    "api.py": "98859c82fd49d52040e371883c15708a4c86e83becc138bebe6e2ea5c56daf16",
+    "assignment_submission.py": "52fc732660b8844a2ee0801931a363f20db15b5309d148d01e3b618be487133d",
+    "bundle.py": "7c592252e190542706b779d48cdb62fc9b305be168bc011249fc42cc60f7d6ef",
+    "calendar_export.py": "b92948c438063438bf9b8ef01b0b0c067802ddb06354f00e8ee18749f3c5e2fa",
+    "cli.py": "86eefc46b94a127a51007295e073b621f64095d061615b950665dd985cf319f5",
+    "client.py": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797",
+    "feedback.py": "55454598effea598474a21f67e36d5bc5bea84aaefeefc18e4d8c49804ab9869",
+    "folder_browser.py": "c6a67229b268c539e5edb581e3320b06229460adc3fbc01d72e4964e31c0348a",
+    "mcp_server.py": "9140cb3dd86f0fd71541bf5428eef8ef075df14224b8da63b63b4a216978c9b3",
+    "module_progress.py": "974ee31925514a2e53b899888302a7fa357e280ab5f2461b754b814473653d99",
+    "offline_demo.py": "2389f3ccc1b6db5995be0d90e014ea9345e3029aa5546a5b2dcf12c1197e6d4d",
+    "session_broker.py": "a692cd2812cbc09536f1b60c84892bc8e87d2ae984c5a5aa25a13f6537ba6da2",
+    "submission_history.py": "b007234b9861a68504e36f005ae463943b36b5cd50a3d157532c1cab09fcf9da"
+  },
+  "runtime_gate": "Full hosted tests on the actual published head remain pending; prior native receipts retain their own exact source identities."
+}

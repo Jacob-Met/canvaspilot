@@ -1,0 +1,41 @@
+{
+  "schema": "canvaspilot.inbox.composition_owners.v1",
+  "reviewer": "chatgpt:/root/mac_execution",
+  "current_main": "0d1898544a90079e2dcc7ceb3fa4bc6bca88a2bc",
+  "tree": "de9fca025ebe325807bd53cd9b7f3b6be50c6d19",
+  "merged_incoming": [
+    {
+      "pr": 45,
+      "merge": "79a2f2b2cbb7e74128d731cf096c7e86f1942d4b",
+      "overlap": "CLI export-calendar exception import/catch only; keep CanvasPaginationError additions. Session broker/calendar implementation remains incoming-owned and lies outside the peer fixture's browser boundary."
+    },
+    {
+      "pr": 51,
+      "merge": "0d1898544a90079e2dcc7ceb3fa4bc6bca88a2bc",
+      "head": "60c6fbe118551626038cad7b10b7d74319098486",
+      "merged_at": "2026-10-08T13:50:04Z",
+      "overlap": "Preserve assignment_submission import and list_assignments projection hook in API, plus its README paragraph; the inbox readers and section occupy separate ranges."
+    }
+  ],
+  "active_owners": [
+    {
+      "issue": 47,
+      "pr": 50,
+      "head": "0bbb29a9eb04cca3a3a8b362c891ef6db7607d8e",
+      "draft": true,
+      "scope": "Grade review; additive API wrapper before list_assignments, CLI before assignments, MCP after get_course, and separate README feature/usage/inventory changes. Exact shared-path patches read; no overlap with inbox method bodies or insertion ranges."
+    },
+    {
+      "issue": 48,
+      "scope": "Submission-history projection and additive API/CLI/MCP/bundle/README hooks; active claim, no published PR in the refreshed open list, no issue comments. Its future concrete patch remains an integration check, not an unowned scope."
+    },
+    {
+      "issue": 49,
+      "scope": "Root's six-path inbox implementation; no dissent or overlap comment on the issue at this read."
+    }
+  ],
+  "admitted_composition": "Read-only three-way merge previews clean for API, CLI and README. MCP current blob is the original baseline, and both new inbox doc/test paths are absent. Preview does not edit any owner source or ref.",
+  "evidence": "current-main-composition.json",
+  "source_binding_limit": "The 14 native groups remain executions of db32bde5. Fresh current client blob 1db4b1135305f7e410025ae7937f9a6cd349f020 is unchanged; incoming browser/provider code was not executed by this authored broker-envelope receiver.",
+  "freshness_limit": "These are exact retrieved heads and source patches. Root retains the final current-ref and expected-head publication/integration checks."
+}

@@ -1,0 +1,153 @@
+{
+  "schema": "canvaspilot.inbox.independent_composition_supplement.v1",
+  "reviewer": "chatgpt:/root/mac_execution",
+  "created_utc": "2026-10-08T14:21:13.347682+00:00",
+  "source_commit": "6b94efe9ff1f117fe4c2f1dfca595003a283d988",
+  "source_tree": "2fbc6ac949bbdc5c3b048f93137197621ed81546",
+  "incoming_main": "0d1898544a90079e2dcc7ceb3fa4bc6bca88a2bc",
+  "verdict": "approved",
+  "counts": {
+    "tests": 14,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "original_peer_manifest_sha256": "988cc00f8c51d6fdeef57b5b77b53e28b4defd1c423b4f65ddba65e7414dfca5",
+  "payload_file_count": 33,
+  "payload_bytes": 545242,
+  "manifest_excludes_itself": true,
+  "files": {
+    "REVIEW.md": {
+      "bytes": 3687,
+      "sha256": "c430460179361d1dd50eb6dbcd5fc7c0e6e5bb811bc535bda673da8549c0c42e"
+    },
+    "cases/admission-mcp-session-stderr.log": {
+      "bytes": 25508,
+      "sha256": "e48516117f2d0267ec5636237c373ce78245dd1e32b9b1ad168306ffd158a167"
+    },
+    "cases/admission-mcp-token-stderr.log": {
+      "bytes": 25508,
+      "sha256": "e48516117f2d0267ec5636237c373ce78245dd1e32b9b1ad168306ffd158a167"
+    },
+    "cases/fragment-mcp-session-stderr.log": {
+      "bytes": 2494,
+      "sha256": "c130be1bae16bad85db55f7ac1a3217afb6bc212c5d559c6651088972a433a05"
+    },
+    "cases/fragment-mcp-token-stderr.log": {
+      "bytes": 2494,
+      "sha256": "c130be1bae16bad85db55f7ac1a3217afb6bc212c5d559c6651088972a433a05"
+    },
+    "cases/mcp-session-stderr.log": {
+      "bytes": 4032,
+      "sha256": "5530a636bb40be121dac00b83e3f988432c80ab7791f778523dd004aa1f1187c"
+    },
+    "cases/mcp-token-stderr.log": {
+      "bytes": 3316,
+      "sha256": "13616dbe4c6e510538769878c417d671efdbdb0de60a40a8f4c2724ba3e048f6"
+    },
+    "cases/test_actual_cli_json_state_and_partial_failure_receiving[session].json": {
+      "bytes": 33713,
+      "sha256": "bba23973268f965775130fcd27d178b6b7568d9ba0112ec6eaedfd092442b352"
+    },
+    "cases/test_actual_cli_json_state_and_partial_failure_receiving[token].json": {
+      "bytes": 31215,
+      "sha256": "0ee019011a1cb4c2ed68405952e0933e8bd6d699f124624a0dbdac45331023a4"
+    },
+    "cases/test_actual_mcp_registered_tools_preserve_messages_and_refuse_failure[session].json": {
+      "bytes": 61279,
+      "sha256": "d028cfb81a77606a702bbfeb922a66731579365247f209c2cdc215769d237b78"
+    },
+    "cases/test_actual_mcp_registered_tools_preserve_messages_and_refuse_failure[token].json": {
+      "bytes": 59620,
+      "sha256": "632465f43448ecd50b4830391206ab07dd73f0519b193029b4d37f43c9ee809b"
+    },
+    "cases/test_details_preserve_all_states_nested_fields_and_order[session].json": {
+      "bytes": 23711,
+      "sha256": "1bdb4f16bbbe5976b917b3f8988defd99797eefbe785b23aeac9794d845d46c5"
+    },
+    "cases/test_details_preserve_all_states_nested_fields_and_order[token].json": {
+      "bytes": 21952,
+      "sha256": "fd3edff06203dc676890d69106cd7278380f88503c0ce70b3bfdce6fffb3448a"
+    },
+    "cases/test_fragment_identifier_cannot_discard_read_preservation[session].json": {
+      "bytes": 32826,
+      "sha256": "2919288c1becfe21f46dcd1f3c7f8c47d7d44d64afdc27a850f46b6fa7421e61"
+    },
+    "cases/test_fragment_identifier_cannot_discard_read_preservation[token].json": {
+      "bytes": 32822,
+      "sha256": "d42580c25176498ce34cf0e01216eae0ab65d2178b673e143e3162f92c44eca8"
+    },
+    "cases/test_incomplete_list_and_auth_failure_never_return_partial_success[session].json": {
+      "bytes": 25616,
+      "sha256": "d28e6cd13553c4ee4d6a550af1340ea9b84184c045cbecbb7a704ed1851a45d5"
+    },
+    "cases/test_incomplete_list_and_auth_failure_never_return_partial_success[token].json": {
+      "bytes": 22803,
+      "sha256": "b6be10494243e298a4b027e90e16d96b62b41b8fdd66b6b1c0e55979cd7021b7"
+    },
+    "cases/test_invalid_ids_refuse_before_any_transport_and_positive_strings_remain_admitted[session].json": {
+      "bytes": 30960,
+      "sha256": "4a00ad249055f2c3719780ce21c52e62dd284b732b1f688c0ca735f0b0bfbedf"
+    },
+    "cases/test_invalid_ids_refuse_before_any_transport_and_positive_strings_remain_admitted[token].json": {
+      "bytes": 30956,
+      "sha256": "cc289d12a2108ebcf5459cddfdc923fae9c70bc8f7e741d2c2a268577c875abe"
+    },
+    "cases/test_scope_mapping_ordered_opaque_pages_and_empty_list[session].json": {
+      "bytes": 16897,
+      "sha256": "d4716e85315bc632c459f1cd4db63fb54724d0188fbd7a343074f688219b6fc1"
+    },
+    "cases/test_scope_mapping_ordered_opaque_pages_and_empty_list[token].json": {
+      "bytes": 13205,
+      "sha256": "105470b2dcae2f2a91e29b22cb988783198dd1ba6813a25f2de0e95292d6a2f8"
+    },
+    "composition-discovery/cli-composition.json": {
+      "bytes": 1102,
+      "sha256": "e048e7cd4c3c6f5cfab17017b8749ec5d46f295ea6f03e9c5cfba6d0e6140e42"
+    },
+    "composition-discovery/current-main-composition.json": {
+      "bytes": 3606,
+      "sha256": "bbd727641f58f06597f52fd14805625be2e76e60f083b6a60ea96b5d3c5139ca"
+    },
+    "composition-discovery/owner-context.json": {
+      "bytes": 2461,
+      "sha256": "7f24fe3f03a980aeb2bc7364c10d4b04849269cbe63e0c997a89a6f3ffc13d75"
+    },
+    "current-main-source-review.json": {
+      "bytes": 2561,
+      "sha256": "0dee4ad910f841c14b4f661b9e91ac7dcd82d6f692c58ada5dbb22b9a1bdee3b"
+    },
+    "pytest.xml": {
+      "bytes": 2164,
+      "sha256": "9ea41b0a46d7bee2a19a18fbe0a2c71f7ac8d63dd2ed7ce9127e76603c50c3ee"
+    },
+    "receipt.json": {
+      "bytes": 11244,
+      "sha256": "ff4b2974e74b4da3225ecba9bdd037067bdcd4cd8525cceccc22e803f894a4fc"
+    },
+    "review_current_source.py": {
+      "bytes": 5754,
+      "sha256": "1d67e41a659afb27567cf9062dda8d97206a759076372a1aa4c92bcb62eca082"
+    },
+    "run_composed_receiving.py": {
+      "bytes": 5256,
+      "sha256": "48325508dd0cd96964a5b18d188a7371f9eb974e3a64f09e4cd4dbdc5e5a47d4"
+    },
+    "setup-stops.json": {
+      "bytes": 2036,
+      "sha256": "3a25032f3f71b3991042d52873bce86375f18f3d9b87f5970c1ff4c1f560f1b5"
+    },
+    "source-before-after.json": {
+      "bytes": 4344,
+      "sha256": "1545fe3fa5f29d1b30a88f49ae1fadb6133e2421790ff96c2edcbd5d9af6eab2"
+    },
+    "stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stdout.log": {
+      "bytes": 100,
+      "sha256": "27d13cc911e69a3cac9878185a3d7504dcaa9503cde685342da9bbd01eeb471a"
+    }
+  }
+}

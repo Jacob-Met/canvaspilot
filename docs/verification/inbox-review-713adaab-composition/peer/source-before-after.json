@@ -1,0 +1,121 @@
+{
+  "schema": "canvaspilot.inbox.composed_source_identity.v1",
+  "reviewer": "chatgpt:/root/mac_execution",
+  "source_commit": "6b94efe9ff1f117fe4c2f1dfca595003a283d988",
+  "source_tree": "2fbc6ac949bbdc5c3b048f93137197621ed81546",
+  "source_root": "/tmp/canvaspilot-inbox-713adaab/src",
+  "source_before": {
+    "canvaspilot/__init__.py": {
+      "bytes": 561,
+      "sha256": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5"
+    },
+    "canvaspilot/api.py": {
+      "bytes": 28376,
+      "sha256": "f4255518fe2627b0f2cd9aeacf0b8662645899469f4ff3ce9963e4784874d8b8"
+    },
+    "canvaspilot/assignment_submission.py": {
+      "bytes": 1296,
+      "sha256": "52fc732660b8844a2ee0801931a363f20db15b5309d148d01e3b618be487133d"
+    },
+    "canvaspilot/bundle.py": {
+      "bytes": 2641,
+      "sha256": "7a5600680c22f3cce5d512ed96137de0171bcca7df6a8c46baa8c09143de3168"
+    },
+    "canvaspilot/calendar_export.py": {
+      "bytes": 9950,
+      "sha256": "b92948c438063438bf9b8ef01b0b0c067802ddb06354f00e8ee18749f3c5e2fa"
+    },
+    "canvaspilot/cli.py": {
+      "bytes": 13919,
+      "sha256": "e1c98acdbe462ed5db56eecd8ea5f66342ce259cc7243ed32e56224f09dea090"
+    },
+    "canvaspilot/client.py": {
+      "bytes": 18934,
+      "sha256": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797"
+    },
+    "canvaspilot/feedback.py": {
+      "bytes": 3900,
+      "sha256": "55454598effea598474a21f67e36d5bc5bea84aaefeefc18e4d8c49804ab9869"
+    },
+    "canvaspilot/folder_browser.py": {
+      "bytes": 6293,
+      "sha256": "c6a67229b268c539e5edb581e3320b06229460adc3fbc01d72e4964e31c0348a"
+    },
+    "canvaspilot/mcp_server.py": {
+      "bytes": 13171,
+      "sha256": "29c875d2ac1d534cca50624d1ee30fb2bc7b697ca34208fafff51b9c32054375"
+    },
+    "canvaspilot/module_progress.py": {
+      "bytes": 9615,
+      "sha256": "974ee31925514a2e53b899888302a7fa357e280ab5f2461b754b814473653d99"
+    },
+    "canvaspilot/offline_demo.py": {
+      "bytes": 4124,
+      "sha256": "2389f3ccc1b6db5995be0d90e014ea9345e3029aa5546a5b2dcf12c1197e6d4d"
+    },
+    "canvaspilot/session_broker.py": {
+      "bytes": 13944,
+      "sha256": "a692cd2812cbc09536f1b60c84892bc8e87d2ae984c5a5aa25a13f6537ba6da2"
+    }
+  },
+  "source_after": {
+    "canvaspilot/__init__.py": {
+      "bytes": 561,
+      "sha256": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5"
+    },
+    "canvaspilot/api.py": {
+      "bytes": 28376,
+      "sha256": "f4255518fe2627b0f2cd9aeacf0b8662645899469f4ff3ce9963e4784874d8b8"
+    },
+    "canvaspilot/assignment_submission.py": {
+      "bytes": 1296,
+      "sha256": "52fc732660b8844a2ee0801931a363f20db15b5309d148d01e3b618be487133d"
+    },
+    "canvaspilot/bundle.py": {
+      "bytes": 2641,
+      "sha256": "7a5600680c22f3cce5d512ed96137de0171bcca7df6a8c46baa8c09143de3168"
+    },
+    "canvaspilot/calendar_export.py": {
+      "bytes": 9950,
+      "sha256": "b92948c438063438bf9b8ef01b0b0c067802ddb06354f00e8ee18749f3c5e2fa"
+    },
+    "canvaspilot/cli.py": {
+      "bytes": 13919,
+      "sha256": "e1c98acdbe462ed5db56eecd8ea5f66342ce259cc7243ed32e56224f09dea090"
+    },
+    "canvaspilot/client.py": {
+      "bytes": 18934,
+      "sha256": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797"
+    },
+    "canvaspilot/feedback.py": {
+      "bytes": 3900,
+      "sha256": "55454598effea598474a21f67e36d5bc5bea84aaefeefc18e4d8c49804ab9869"
+    },
+    "canvaspilot/folder_browser.py": {
+      "bytes": 6293,
+      "sha256": "c6a67229b268c539e5edb581e3320b06229460adc3fbc01d72e4964e31c0348a"
+    },
+    "canvaspilot/mcp_server.py": {
+      "bytes": 13171,
+      "sha256": "29c875d2ac1d534cca50624d1ee30fb2bc7b697ca34208fafff51b9c32054375"
+    },
+    "canvaspilot/module_progress.py": {
+      "bytes": 9615,
+      "sha256": "974ee31925514a2e53b899888302a7fa357e280ab5f2461b754b814473653d99"
+    },
+    "canvaspilot/offline_demo.py": {
+      "bytes": 4124,
+      "sha256": "2389f3ccc1b6db5995be0d90e014ea9345e3029aa5546a5b2dcf12c1197e6d4d"
+    },
+    "canvaspilot/session_broker.py": {
+      "bytes": 13944,
+      "sha256": "a692cd2812cbc09536f1b60c84892bc8e87d2ae984c5a5aa25a13f6537ba6da2"
+    }
+  },
+  "all_source_bytes_unchanged": true,
+  "derived_from": {
+    "path": "receipt.json",
+    "bytes": 11244,
+    "sha256": "ff4b2974e74b4da3225ecba9bdd037067bdcd4cd8525cceccc22e803f894a4fc"
+  }
+}

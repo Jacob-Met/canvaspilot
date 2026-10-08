@@ -1,0 +1,198 @@
+FFFFFFFFFF                                                               [100%]
+=================================== FAILURES ===================================
+_______ test_details_preserve_all_states_nested_fields_and_order[token] ________
+test_inbox_receiving.py:260: in test_details_preserve_all_states_nested_fields_and_order
+    assert observed == before and repeated == before[0]
+E   AssertionError: assert ([{'id': 501, ...pt</p>', ...}] == [{'id': 501, ...pt</p>', ...}]
+E     
+E     At index 0 diff: {'id': 501, 'subject': '明日の予定 — Åsa 🧭', 'workflow_state': 'read', 'last_message': 'é, שלום; <p>kept</p>', 'last_message_at': '2026-10-08T12:00:00Z', 'message_count': 2, 'subscribed': True, 'private': True, 'starred': False, 'properties': ['attachments'], 'audience': [17, 6], 'audience_contexts': {'courses': {'42': ['StudentEnrollment']}, 'groups': {}}, 'avatar_url': 'https://media.example.invalid/avatars/17', 'participants': [{'id': 17, 'name': 'Åsa 🧭', 'full_name': 'Åsa Example', 'uuid': 'fixture-17', 'extension': {'roles': [None, False]}}, {'id': 6, ...
+E     
+E     ...Full output truncated (2 lines hidden), use '-vv' to show)
+______ test_details_preserve_all_states_nested_fields_and_order[session] _______
+test_inbox_receiving.py:260: in test_details_preserve_all_states_nested_fields_and_order
+    assert observed == before and repeated == before[0]
+E   AssertionError: assert ([{'id': 501, ...pt</p>', ...}] == [{'id': 501, ...pt</p>', ...}]
+E     
+E     At index 0 diff: {'id': 501, 'subject': '明日の予定 — Åsa 🧭', 'workflow_state': 'read', 'last_message': 'é, שלום; <p>kept</p>', 'last_message_at': '2026-10-08T12:00:00Z', 'message_count': 2, 'subscribed': True, 'private': True, 'starred': False, 'properties': ['attachments'], 'audience': [17, 6], 'audience_contexts': {'courses': {'42': ['StudentEnrollment']}, 'groups': {}}, 'avatar_url': 'https://media.example.invalid/avatars/17', 'participants': [{'id': 17, 'name': 'Åsa 🧭', 'full_name': 'Åsa Example', 'uuid': 'fixture-17', 'extension': {'roles': [None, False]}}, {'id': 6, ...
+E     
+E     ...Full output truncated (2 lines hidden), use '-vv' to show)
+________ test_scope_mapping_ordered_opaque_pages_and_empty_list[token] _________
+test_inbox_receiving.py:271: in test_scope_mapping_ordered_opaque_pages_and_empty_list
+    result = api.list_conversations() if scope is None else api.list_conversations(scope=scope)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+baseline/src/canvaspilot/api.py:551: in list_conversations
+    return self.client.get_paginated(
+baseline/src/canvaspilot/client.py:275: in get_paginated
+    r.raise_for_status()
+/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/lib/python3.14/site-packages/httpx/_models.py:829: in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+E   httpx.HTTPStatusError: Client error '400 Bad Request' for url 'http://127.0.0.1:33189/api/v1/conversations?scope=inbox&per_page=50'
+E   For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+_______ test_scope_mapping_ordered_opaque_pages_and_empty_list[session] ________
+test_inbox_receiving.py:271: in test_scope_mapping_ordered_opaque_pages_and_empty_list
+    result = api.list_conversations() if scope is None else api.list_conversations(scope=scope)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+baseline/src/canvaspilot/api.py:551: in list_conversations
+    return self.client.get_paginated(
+baseline/src/canvaspilot/client.py:255: in get_paginated
+    return self._get_broker_link_pages(
+baseline/src/canvaspilot/client.py:311: in _get_broker_link_pages
+    response = broker_fetch(
+baseline/src/canvaspilot/client.py:96: in broker_fetch
+    raise httpx.HTTPStatusError(
+E   httpx.HTTPStatusError: Canvas HTTP 400
+__ test_incomplete_list_and_auth_failure_never_return_partial_success[token] ___
+test_inbox_receiving.py:287: in test_incomplete_list_and_auth_failure_never_return_partial_success
+    api.list_conversations()
+baseline/src/canvaspilot/api.py:551: in list_conversations
+    return self.client.get_paginated(
+baseline/src/canvaspilot/client.py:275: in get_paginated
+    r.raise_for_status()
+/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/lib/python3.14/site-packages/httpx/_models.py:829: in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+E   httpx.HTTPStatusError: Client error '400 Bad Request' for url 'http://127.0.0.1:46039/api/v1/conversations?scope=inbox&per_page=50'
+E   For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400
+_ test_incomplete_list_and_auth_failure_never_return_partial_success[session] __
+test_inbox_receiving.py:287: in test_incomplete_list_and_auth_failure_never_return_partial_success
+    api.list_conversations()
+baseline/src/canvaspilot/api.py:551: in list_conversations
+    return self.client.get_paginated(
+baseline/src/canvaspilot/client.py:255: in get_paginated
+    return self._get_broker_link_pages(
+baseline/src/canvaspilot/client.py:311: in _get_broker_link_pages
+    response = broker_fetch(
+baseline/src/canvaspilot/client.py:96: in broker_fetch
+    raise httpx.HTTPStatusError(
+E   httpx.HTTPStatusError: Canvas HTTP 400
+_______ test_actual_cli_json_state_and_partial_failure_receiving[token] ________
+test_inbox_receiving.py:314: in test_actual_cli_json_state_and_partial_failure_receiving
+    assert full.returncode == detail.returncode == archived.returncode == 0
+E   assert 2 == 0
+E    +  where 2 = CompletedProcess(args=['/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python', '-B', '/tmp/canvaspilot-inbo...urses, sync, assignments, brief, feedback, discussions, files, browse-files, export-calendar, module-progress, mcp)\n").returncode
+______ test_actual_cli_json_state_and_partial_failure_receiving[session] _______
+test_inbox_receiving.py:314: in test_actual_cli_json_state_and_partial_failure_receiving
+    assert full.returncode == detail.returncode == archived.returncode == 0
+E   assert 2 == 0
+E    +  where 2 = CompletedProcess(args=['/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python', '-B', '/tmp/canvaspilot-inbo...urses, sync, assignments, brief, feedback, discussions, files, browse-files, export-calendar, module-progress, mcp)\n").returncode
+_ test_actual_mcp_registered_tools_preserve_messages_and_refuse_failure[token] _
+  + Exception Group Traceback (most recent call last):
+  |   File "/tmp/canvaspilot-inbox-independent-713adaab/test_inbox_receiving.py", line 363, in test_actual_mcp_registered_tools_preserve_messages_and_refuse_failure
+  |     asyncio.run(run())
+  |     ~~~~~~~~~~~^^^^^^^
+  |   File "/usr/lib/python3.14/asyncio/runners.py", line 204, in run
+  |     return runner.run(main)
+  |            ~~~~~~~~~~^^^^^^
+  |   File "/usr/lib/python3.14/asyncio/runners.py", line 127, in run
+  |     return self._loop.run_until_complete(task)
+  |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  |   File "/usr/lib/python3.14/asyncio/base_events.py", line 719, in run_until_complete
+  |     return future.result()
+  |            ~~~~~~~~~~~~~^^
+  |   File "/tmp/canvaspilot-inbox-independent-713adaab/test_inbox_receiving.py", line 333, in run
+  |     stdio_client(parameters, errlog=stderr) as (read, write),
+  |     ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/usr/lib/python3.14/contextlib.py", line 235, in __aexit__
+  |     await self.gen.athrow(value)
+  |   File "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/lib/python3.14/site-packages/mcp/client/stdio.py", line 201, in stdio_client
+  |     async with anyio.create_task_group() as tg:
+  |                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  |   File "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 847, in __aexit__
+  |     raise BaseExceptionGroup(
+  |         "unhandled errors in a TaskGroup", self._exceptions
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/lib/python3.14/site-packages/mcp/client/stdio.py", line 205, in stdio_client
+    |     yield read_stream, write_stream
+    |   File "/tmp/canvaspilot-inbox-independent-713adaab/test_inbox_receiving.py", line 334, in run
+    |     ClientSession(read, write, read_timeout_seconds=15) as session,
+    |     ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/lib/python3.14/site-packages/mcp/client/session.py", line 514, in __aexit__
+    |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 847, in __aexit__
+    |     raise BaseExceptionGroup(
+    |         "unhandled errors in a TaskGroup", self._exceptions
+    |     ) from None
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Traceback (most recent call last):
+      |   File "/tmp/canvaspilot-inbox-independent-713adaab/test_inbox_receiving.py", line 351, in run
+      |     assert not detail.get("isError", False) and json.loads(text) == fixture.before[0]
+      | AssertionError: assert (not False and {'id': 501, '...ept</p>', ...} == {'id': 501, '...ept</p>', ...}
+      |  +  where False = <built-in method get of dict object at 0x729cffe6b3c0>('isError', False)
+      |  +    where <built-in method get of dict object at 0x729cffe6b3c0> = {'_meta': None, 'content': [{'type': 'text', 'text': '{\n  "id": 501,\n  "subject": "\\u660e\\u65e5\\u306e\\u4e88\\u5b...g_is_not_false": null\n  }\n}', 'annotations': None, '_meta': None}], 'structuredContent': None, 'isError': False, ...}.get
+      |   
+      |   Omitting 18 identical items, use -vv to show
+      |   Differing items:
+      |   {'workflow_state': 'read'} != {'workflow_state': 'unread'}
+      |   Use -v to get more diff)
+      +------------------------------------
+_ test_actual_mcp_registered_tools_preserve_messages_and_refuse_failure[session] _
+  + Exception Group Traceback (most recent call last):
+  |   File "/tmp/canvaspilot-inbox-independent-713adaab/test_inbox_receiving.py", line 363, in test_actual_mcp_registered_tools_preserve_messages_and_refuse_failure
+  |     asyncio.run(run())
+  |     ~~~~~~~~~~~^^^^^^^
+  |   File "/usr/lib/python3.14/asyncio/runners.py", line 204, in run
+  |     return runner.run(main)
+  |            ~~~~~~~~~~^^^^^^
+  |   File "/usr/lib/python3.14/asyncio/runners.py", line 127, in run
+  |     return self._loop.run_until_complete(task)
+  |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  |   File "/usr/lib/python3.14/asyncio/base_events.py", line 719, in run_until_complete
+  |     return future.result()
+  |            ~~~~~~~~~~~~~^^
+  |   File "/tmp/canvaspilot-inbox-independent-713adaab/test_inbox_receiving.py", line 333, in run
+  |     stdio_client(parameters, errlog=stderr) as (read, write),
+  |     ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "/usr/lib/python3.14/contextlib.py", line 235, in __aexit__
+  |     await self.gen.athrow(value)
+  |   File "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/lib/python3.14/site-packages/mcp/client/stdio.py", line 201, in stdio_client
+  |     async with anyio.create_task_group() as tg:
+  |                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  |   File "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 847, in __aexit__
+  |     raise BaseExceptionGroup(
+  |         "unhandled errors in a TaskGroup", self._exceptions
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/lib/python3.14/site-packages/mcp/client/stdio.py", line 205, in stdio_client
+    |     yield read_stream, write_stream
+    |   File "/tmp/canvaspilot-inbox-independent-713adaab/test_inbox_receiving.py", line 334, in run
+    |     ClientSession(read, write, read_timeout_seconds=15) as session,
+    |     ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/lib/python3.14/site-packages/mcp/client/session.py", line 514, in __aexit__
+    |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 847, in __aexit__
+    |     raise BaseExceptionGroup(
+    |         "unhandled errors in a TaskGroup", self._exceptions
+    |     ) from None
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Traceback (most recent call last):
+      |   File "/tmp/canvaspilot-inbox-independent-713adaab/test_inbox_receiving.py", line 351, in run
+      |     assert not detail.get("isError", False) and json.loads(text) == fixture.before[0]
+      | AssertionError: assert (not False and {'id': 501, '...ept</p>', ...} == {'id': 501, '...ept</p>', ...}
+      |  +  where False = <built-in method get of dict object at 0x729cfeb6bdc0>('isError', False)
+      |  +    where <built-in method get of dict object at 0x729cfeb6bdc0> = {'_meta': None, 'content': [{'type': 'text', 'text': '{\n  "id": 501,\n  "subject": "\\u660e\\u65e5\\u306e\\u4e88\\u5b...g_is_not_false": null\n  }\n}', 'annotations': None, '_meta': None}], 'structuredContent': None, 'isError': False, ...}.get
+      |   
+      |   Omitting 18 identical items, use -vv to show
+      |   Differing items:
+      |   {'workflow_state': 'read'} != {'workflow_state': 'unread'}
+      |   Use -v to get more diff)
+      +------------------------------------
+=========================== short test summary info ============================
+FAILED test_inbox_receiving.py::test_details_preserve_all_states_nested_fields_and_order[token]
+FAILED test_inbox_receiving.py::test_details_preserve_all_states_nested_fields_and_order[session]
+FAILED test_inbox_receiving.py::test_scope_mapping_ordered_opaque_pages_and_empty_list[token]
+FAILED test_inbox_receiving.py::test_scope_mapping_ordered_opaque_pages_and_empty_list[session]
+FAILED test_inbox_receiving.py::test_incomplete_list_and_auth_failure_never_return_partial_success[token]
+FAILED test_inbox_receiving.py::test_incomplete_list_and_auth_failure_never_return_partial_success[session]
+FAILED test_inbox_receiving.py::test_actual_cli_json_state_and_partial_failure_receiving[token]
+FAILED test_inbox_receiving.py::test_actual_cli_json_state_and_partial_failure_receiving[session]
+FAILED test_inbox_receiving.py::test_actual_mcp_registered_tools_preserve_messages_and_refuse_failure[token]
+FAILED test_inbox_receiving.py::test_actual_mcp_registered_tools_preserve_messages_and_refuse_failure[session]
+10 failed in 15.33s
