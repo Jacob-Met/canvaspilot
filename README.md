@@ -108,6 +108,22 @@ Tools exposed (all prefixed `canvas_`):
 
 Programmatic API bundle: `from canvaspilot.bundle import make_api, tool_inventory`.
 
+### Module contents
+
+`canvas_list_modules` and `CanvasAPI.list_modules()` retrieve module items even
+when Canvas omits the optional inline `items` array. Missing, null, malformed, or
+shorter inline contents are fetched through the existing paginated module-items
+route; valid complete inline arrays and modules reporting an integer zero need no extra
+request. Compact output retains its existing item fields; `detail=full` preserves
+Canvas's module metadata and the retrieved item payloads. A failed secondary
+request or malformed item response is reported to the caller instead of being
+presented as an empty module.
+
+This follows the [Canvas Modules API](https://developerdocs.instructure.com/services/canvas/resources/modules)
+contract. Requests use the selected client's existing fixture, token, or session
+broker transport and pagination limits. Listing does not mark module items read
+or complete.
+
 ## Auth modes
 
 | Mode | How | When |
