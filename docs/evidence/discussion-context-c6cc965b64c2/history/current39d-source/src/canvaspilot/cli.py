@@ -86,19 +86,6 @@ def main(argv: list[str] | None = None) -> None:
     feedback.add_argument("course_id")
     feedback.add_argument("assignment_id")
 
-    inbox = sub.add_parser("inbox", help="List your inbox without changing conversation state")
-    add_common(inbox)
-    inbox.add_argument(
-        "--scope", choices=("inbox", "unread", "starred", "archived", "sent"),
-        default="inbox", help="inbox includes read and unread, non-archived conversations",
-    )
-
-    conversation = sub.add_parser(
-        "conversation", help="Read one conversation while preserving unread state",
-    )
-    add_common(conversation)
-    conversation.add_argument("conversation_id", type=_positive_int)
-
     disc = sub.add_parser("discussions", help="List discussion topics")
     add_common(disc)
     disc.add_argument("course_id")
@@ -229,22 +216,6 @@ def main(argv: list[str] | None = None) -> None:
             print(json.dumps(result, indent=2))
         elif args.cmd == "files":
             print(json.dumps(api.list_files(args.course_id), indent=2, default=str))
-        elif args.cmd in ("inbox", "conversation"):
-            import httpx
-
-            from canvaspilot.client import CanvasAuthError, CanvasPaginationError
-
-            try:
-                if args.cmd == "inbox":
-                    result = api.list_conversations(scope=args.scope)
-                else:
-                    result = api.get_conversation(args.conversation_id)
-            except (CanvasAuthError, CanvasPaginationError, httpx.HTTPError, ValueError) as error:
-                print(json.dumps({
-                    "ok": False, "error": type(error).__name__, "message": str(error),
-                }), file=sys.stderr)
-                raise SystemExit(1) from None
-            print(json.dumps(result, indent=2, ensure_ascii=False))
         elif args.cmd == "export-calendar":
             import os
 

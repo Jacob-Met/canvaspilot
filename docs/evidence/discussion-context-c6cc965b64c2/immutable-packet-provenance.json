@@ -1,0 +1,84 @@
+{
+  "schema": "hamon-canvas-discussion-immutable-packet-provenance-v1",
+  "author": {
+    "sha256": "7fb908dd153f6aed4f37576cc2eb6b5105d5045ba6ac8cb3163f01f9f4f999e4",
+    "bytes": 978163,
+    "files": 60,
+    "decoded_bytes": 873541,
+    "subject": "39d835c8becb04d81b65c90d1491d2d3a2727ffe",
+    "evidence_paths": 51,
+    "all_evidence_unchanged": true,
+    "product_reconstruction": [
+      {
+        "path": "src/canvaspilot/api.py",
+        "git_blob": "55a9b7c9d4d01c8c6a2447ae952b79d8ceed7c0d",
+        "retained_at": "docs/evidence/discussion-context-c6cc965b64c2/history/current39d-source/src/canvaspilot/api.py"
+      },
+      {
+        "path": "src/canvaspilot/cli.py",
+        "git_blob": "c4189865182af0d923a00166730cee575d541423",
+        "retained_at": "docs/evidence/discussion-context-c6cc965b64c2/history/current39d-source/src/canvaspilot/cli.py"
+      },
+      {
+        "path": "src/canvaspilot/mcp_server.py",
+        "git_blob": "51b203262db2d853e185385bb63c05bc484d60c5",
+        "retained_at": "docs/evidence/discussion-context-c6cc965b64c2/history/current39d-source/src/canvaspilot/mcp_server.py"
+      },
+      {
+        "path": "src/canvaspilot/bundle.py",
+        "git_blob": "cebeaa98440d745bb8f6bc3ae3ddf0d6cc1b83a8",
+        "retained_at": "src/canvaspilot/bundle.py"
+      },
+      {
+        "path": "src/canvaspilot/discussion_thread.py",
+        "git_blob": "2ed658fcf5cee996a02115742935716f1d039e25",
+        "retained_at": "src/canvaspilot/discussion_thread.py"
+      },
+      {
+        "path": "tests/test_discussion_thread.py",
+        "git_blob": "47cc390773c5e1f8a9d8c0297fad1f43cbcc7b7b",
+        "retained_at": "tests/test_discussion_thread.py"
+      },
+      {
+        "path": "tests/test_discussion_thread_native.py",
+        "git_blob": "8dd33f687ead0529d436be371d5d3c5ac446fca3",
+        "retained_at": "tests/test_discussion_thread_native.py"
+      },
+      {
+        "path": "docs/DISCUSSIONS.md",
+        "git_blob": "cbeab4607f322872351733639694890768a4521e",
+        "retained_at": "docs/DISCUSSIONS.md"
+      },
+      {
+        "path": "README.md",
+        "git_blob": "ad90e2ec17a3d2525f5f8ab89b7179a97d5cc493",
+        "retained_at": "docs/evidence/discussion-context-c6cc965b64c2/history/current39d-source/README.md"
+      }
+    ]
+  },
+  "independent_current39d": {
+    "compressed_sha256": "eda38bb0703993b8dea49f5a7b9f30c7026315211327af4e2267479ae6d1d1d8",
+    "compressed_bytes": 93438,
+    "sha256": "9219971360d6747fca0b70bf028e05bb317e90d0c5ea5597a539ca7e27d6803f",
+    "bytes": 543593,
+    "files": 43,
+    "all_file_bytes_sha256_git_blobs_exact": true,
+    "prefix": "docs/evidence/discussion-context-c6cc965b64c2/independent-current39d/",
+    "subject": "39d835c8becb04d81b65c90d1491d2d3a2727ffe"
+  },
+  "independent_currenta5": {
+    "sha256": "0ca7efef14b0b08b887ed1c5e9123bd3477ea8a8c1c00a584fb12458f9be1610",
+    "gzip_sha256": "1fecd110ea6ea49c691559631d4637b02a4e7d8ae15c6c14031bc1e547365711",
+    "bytes": 174337,
+    "files": 16,
+    "decoded_bytes": 154558,
+    "prefix": "docs/evidence/discussion-context-c6cc965b64c2/independent-currenta5/",
+    "subject": "a5ce672e5b3580c1f52e13c49eefee830f11346c"
+  },
+  "lead_review": {
+    "sha256": "10ac838d52aa1e927d6b53ca69578421653e7730911a5a16a86d0e523c62a33d",
+    "bytes": 5514,
+    "subject": "39d835c8becb04d81b65c90d1491d2d3a2727ffe",
+    "runtime_cases": 0
+  }
+}
