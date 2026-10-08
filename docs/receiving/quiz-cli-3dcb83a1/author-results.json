@@ -1,0 +1,253 @@
+{
+  "claim": "https://github.com/Jacob-Met/hamon/issues/140#issuecomment-6062294254",
+  "baseline_capability": {
+    "source_pins": "source-pins.json",
+    "runs": [
+      {
+        "command": [
+          "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+          "-B",
+          "-m",
+          "canvaspilot.cli",
+          "--help"
+        ],
+        "exit": 0,
+        "stdout": "usage: canvaspilot [-h]\n                   {login,session,whoami,courses,sync,assignments,brief,feedback,discussions,files,browse-files,export-calendar,module-progress,submission-history,mcp} ...\n\npositional arguments:\n  {login,session,whoami,courses,sync,assignments,brief,feedback,discussions,files,browse-files,export-calendar,module-progress,submission-history,mcp}\n    login               Open headed browser for Canvas SSO (one-shot)\n    session             Stay-open session broker\n    whoami              GET /users/self/profile\n    courses             List active courses\n    sync                Courses + upcoming assignments digest\n    assignments         List assignments for a course\n    brief               Assignment brief (cleaned prompt and supplied rubric)\n    feedback            Read self submission comments, rubric feedback, and\n                        grade/attempt metadata\n    discussions         List discussion topics\n    files               List course files\n    browse-files        Browse one course folder; metadata only\n    export-calendar     Save selected assignment deadlines to a new .ics file\n    module-progress     Inspect reported module progress and requirements\n    submission-history  Read your returned submission versions and their\n                        submitted content\n    mcp                 Run MCP stdio server\n\noptions:\n  -h, --help            show this help message and exit\n",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+          "-B",
+          "-m",
+          "canvaspilot.cli",
+          "quizzes",
+          "42"
+        ],
+        "exit": 2,
+        "stdout": "",
+        "stderr": "usage: canvaspilot [-h]\n                   {login,session,whoami,courses,sync,assignments,brief,feedback,discussions,files,browse-files,export-calendar,module-progress,submission-history,mcp} ...\ncanvaspilot: error: argument cmd: invalid choice: 'quizzes' (choose from login, session, whoami, courses, sync, assignments, brief, feedback, discussions, files, browse-files, export-calendar, module-progress, submission-history, mcp)\n"
+      },
+      {
+        "command": [
+          "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+          "-B",
+          "-m",
+          "canvaspilot.cli",
+          "quiz",
+          "42",
+          "9"
+        ],
+        "exit": 2,
+        "stdout": "",
+        "stderr": "usage: canvaspilot [-h]\n                   {login,session,whoami,courses,sync,assignments,brief,feedback,discussions,files,browse-files,export-calendar,module-progress,submission-history,mcp} ...\ncanvaspilot: error: argument cmd: invalid choice: 'quiz' (choose from login, session, whoami, courses, sync, assignments, brief, feedback, discussions, files, browse-files, export-calendar, module-progress, submission-history, mcp)\n"
+      }
+    ]
+  },
+  "initial_candidate": {
+    "at": "2026-10-08T14:42:09.718731+00:00",
+    "base": "39d835c8becb04d81b65c90d1491d2d3a2727ffe",
+    "python": "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+    "source": "/home/jacob/canvaspilot-quiz-cli-3dcb83a1/source",
+    "source_files": {
+      ".github/workflows/ci.yml": {
+        "bytes": 708,
+        "sha256": "62f17b95af03d1ff8a172f168282b405fefcab3a5f1094c70e618b44920bd0ff",
+        "git_blob": "ef7bbebe192c0db55dc4467e064ba44805c13446"
+      },
+      "README.md": {
+        "bytes": 21001,
+        "sha256": "d0f2770d8520e89de4e1e40e570ca63f5410fb598a3a736838d9ea41a9888b9b",
+        "git_blob": "fc333b2a7ee3d05d74d32bf23952fdce1469f3db"
+      },
+      "pyproject.toml": {
+        "bytes": 1353,
+        "sha256": "555ad3c7e338d38ae5feabc06c0c07503f22d9c732a9af153c7706c63d2b3c63",
+        "git_blob": "76eba6d30696b4f2733539cd47df6e178bc0f585"
+      },
+      "src/canvaspilot/__init__.py": {
+        "bytes": 561,
+        "sha256": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5",
+        "git_blob": "74a7a6087bf81fd7c75c15769b30408039618e0f"
+      },
+      "src/canvaspilot/api.py": {
+        "bytes": 28060,
+        "sha256": "cee0a68efd418e3bd647726dfbf51a6ee7d8aefe03d3ce902d6db0e5556005bb",
+        "git_blob": "79572cdc0391f46ad0b92ea199531371aeff2525"
+      },
+      "src/canvaspilot/assignment_submission.py": {
+        "bytes": 1296,
+        "sha256": "52fc732660b8844a2ee0801931a363f20db15b5309d148d01e3b618be487133d",
+        "git_blob": "95b1f19927e4eecf99fc852325737c3cfe86cd0d"
+      },
+      "src/canvaspilot/bundle.py": {
+        "bytes": 2674,
+        "sha256": "7c592252e190542706b779d48cdb62fc9b305be168bc011249fc42cc60f7d6ef",
+        "git_blob": "23badab9d8ea96b4ed30fb2b5f32f773c910c7f9"
+      },
+      "src/canvaspilot/cli.py": {
+        "bytes": 15669,
+        "sha256": "102f6ba99c4d65c0741f231420b3b42a7c3c4818fb9546d3947d60a4e969cb79",
+        "git_blob": "2b6a9b12b5f58b7b520e59dafbe8ad5f91de5f2f"
+      },
+      "src/canvaspilot/client.py": {
+        "bytes": 18934,
+        "sha256": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797",
+        "git_blob": "1db4b1135305f7e410025ae7937f9a6cd349f020"
+      },
+      "src/canvaspilot/feedback.py": {
+        "bytes": 3900,
+        "sha256": "55454598effea598474a21f67e36d5bc5bea84aaefeefc18e4d8c49804ab9869",
+        "git_blob": "ec996f421a851d699a9ac7cb1f2a486f9ff7c4ea"
+      },
+      "src/canvaspilot/mcp_server.py": {
+        "bytes": 13388,
+        "sha256": "75656082445acb1fc2959cab1e2de7473544702d478c3ab5f1574bfc9296db4f",
+        "git_blob": "f9c470b034a524609f4aedae51479ffd92bfaa8f"
+      },
+      "tests/test_quiz_cli.py": {
+        "bytes": 8914,
+        "sha256": "0e059a9449abb30fbcdbab26312b3ed07541f5e72aaca5928b96051c642c8e6d",
+        "git_blob": "b19e5649d990ea83aa57b7ce1012a06315977390"
+      }
+    },
+    "commands": [
+      {
+        "command": [
+          "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+          "-B",
+          "-m",
+          "pytest",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "tests/test_quiz_cli.py"
+        ],
+        "exit": 1,
+        "stdout": "author-0.stdout.log",
+        "stderr": "author-0.stderr.log",
+        "stdout_text": "...FF.                                                          [100%]\n=================================== FAILURES ===================================\n___ QuizCliTests.test_list_receives_every_page_and_keeps_existing_projection ___\n\nself = <test_quiz_cli.QuizCliTests testMethod=test_list_receives_every_page_and_keeps_existing_projection>\n\n    def test_list_receives_every_page_and_keeps_existing_projection(self):\n        def respond(path):\n            route = urlsplit(path)\n            self.assertEqual(route.path, \"/api/v1/courses/42/quizzes\")\n            if parse_qs(route.query).get(\"page\") == [\"2\"]:\n                self.assertEqual(route.query, \"page=2&cursor=A%2BB\")\n                return 200, [{\n                    \"id\": 102, \"title\": \"Essay \u2014 caf\u00e9\", \"due_at\": None,\n                    \"lock_at\": \"2026-10-31T23:59:00-05:00\", \"question_count\": 0,\n                    \"points_possible\": 0, \"published\": False, \"quiz_type\": \"survey\",\n                    \"html_url\": \"https://canvas.example.test/courses/42/quizzes/102\",\n                    \"not_in_existing_projection\": \"retained only by quiz detail\",\n                }], {}\n            self.assertEqual(parse_qs(route.query), {\"per_page\": [\"100\"]})\n            return 200, [{\n                \"id\": 101, \"title\": \"Practice <one>\", \"due_at\": \"2026-10-30T09:00:00+09:00\",\n            }], {\"Link\": '</api/v1/courses/42/quizzes?page=2&cursor=A%2BB>; rel=\"next\"'}\n    \n        with endpoint(respond) as (base, requests):\n            result = self.run_cli(base, \"quizzes\", \"42\")\n>       self.assertEqual(result.returncode, 0, result.stderr)\nE       AssertionError: 1 != 0 : {\"ok\": false, \"error\": \"RemoteProtocolError\", \"message\": \"Server disconnected without sending a response.\"}\n\ntests/test_quiz_cli.py:98: AssertionError\n----------------------------- Captured stderr call -----------------------------\n----------------------------------------\nException occurred during processing of request from ('127.0.0.1', 49278)\nTraceback (most recent call last):\n  File \"/usr/lib/python3.14/socketserver.py\", line 697, in process_request_thread\n    self.finish_request(request, client_address)\n    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.14/socketserver.py\", line 362, in finish_request\n    self.RequestHandlerClass(request, client_address, self)\n    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.14/socketserver.py\", line 766, in __init__\n    self.handle()\n    ~~~~~~~~~~~^^\n  File \"/usr/lib/python3.14/http/server.py\", line 496, in handle\n    self.handle_one_request()\n    ~~~~~~~~~~~~~~~~~~~~~~~^^\n  File \"/usr/lib/python3.14/http/server.py\", line 484, in handle_one_request\n    method()\n    ~~~~~~^^\n  File \"/home/jacob/canvaspilot-quiz-cli-3dcb83a1/source/tests/test_quiz_cli.py\", line 27, in do_GET\n    status, body, headers = respond(self.path)\n                            ~~~~~~~^^^^^^^^^^^\n  File \"/home/jacob/canvaspilot-quiz-cli-3dcb83a1/source/tests/test_quiz_cli.py\", line 91, in respond\n    self.assertEqual(parse_qs(route.query), {\"per_page\": [\"100\"]})\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.14/unittest/case.py\", line 925, in assertEqual\n    assertion_func(first, second, msg=msg)\n    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.14/unittest/case.py\", line 1224, in assertDictEqual\n    self.fail(self._formatMessage(msg, standardMsg))\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.14/unittest/case.py\", line 750, in fail\n    raise self.failureException(msg)\nAssertionError: {'per_page': ['50']} != {'per_page': ['100']}\n- {'per_page': ['50']}\n?                ^\n\n+ {'per_page': ['100']}\n?                ^^\n\n----------------------------------------\n__ QuizCliTests.test_quiz_preserves_supplied_policy_dates_and_unknown_fields ___\n\nself = <test_quiz_cli.QuizCliTests testMethod=test_quiz_preserves_supplied_policy_dates_and_unknown_fields>\n\n    def test_quiz_preserves_supplied_policy_dates_and_unknown_fields(self):\n        quiz = {\n            \"id\": 9, \"title\": \"Revision \\\"A\\\" \u2014 \u65e5\u672c\u8a9e\", \"description\": \"<p>Read first.</p>\",\n            \"time_limit\": None, \"allowed_attempts\": -1, \"published\": False,\n            \"locked_for_user\": True, \"lock_explanation\": \"Opens after the module.\",\n            \"due_at\": None, \"unlock_at\": \"2026-11-01T01:30:00-04:00\",\n            \"lock_at\": \"2026-11-01T01:30:00-05:00\",\n            \"all_dates\": [{\"due_at\": None, \"base\": True}],\n            \"permissions\": {\"read\": True, \"submit\": False},\n            \"future_metadata\": {\"literal\": \"<canvas> & ```\", \"score\": 0},\n        }\n        with endpoint(lambda _path: (200, quiz, {})) as (base, requests):\n            result = self.run_cli(base, \"quiz\", \"42\", \"9\")\n        self.assertEqual(result.returncode, 0, result.stderr)\n        self.assertEqual(result.stderr, \"\")\n        self.assertEqual(json.loads(result.stdout), quiz)\n>       self.assertEqual(requests, [{\"method\": \"GET\", \"path\": \"/api/v1/courses/42/quizzes/9?per_page=100\"}])\nE       AssertionError: Lists differ: [{'method': 'GET', 'path': '/api/v1/courses/42/quizzes/9?per_page=50'}] != [{'method': 'GET', 'path': '/api/v1/courses/42/quizzes/9?per_page=100'}]\nE       \nE       First differing element 0:\nE       {'method': 'GET', 'path': '/api/v1/courses/42/quizzes/9?per_page=50'}\nE       {'method': 'GET', 'path': '/api/v1/courses/42/quizzes/9?per_page=100'}\nE       \nE       - [{'method': 'GET', 'path': '/api/v1/courses/42/quizzes/9?per_page=50'}]\nE       ?                                                                   ^\nE       \nE       + [{'method': 'GET', 'path': '/api/v1/courses/42/quizzes/9?per_page=100'}]\nE       ?                                                                   ^^\n\ntests/test_quiz_cli.py:127: AssertionError\n=========================== short test summary info ============================\nFAILED tests/test_quiz_cli.py::QuizCliTests::test_list_receives_every_page_and_keeps_existing_projection\nFAILED tests/test_quiz_cli.py::QuizCliTests::test_quiz_preserves_supplied_policy_dates_and_unknown_fields\n2 failed, 4 passed, 9 subtests passed in 25.85s\n",
+        "stderr_text": ""
+      },
+      {
+        "command": [
+          "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+          "-B",
+          "-m",
+          "ruff",
+          "check",
+          "--no-cache",
+          "src/canvaspilot/cli.py",
+          "tests/test_quiz_cli.py"
+        ],
+        "exit": 1,
+        "stdout": "author-1.stdout.log",
+        "stderr": "author-1.stderr.log",
+        "stdout_text": "PLW1510 `subprocess.run` without explicit `check` argument\n  --> tests/test_quiz_cli.py:70:22\n   |\n68 |         with tempfile.TemporaryDirectory(prefix=\"canvas-quiz-cli-\") as scratch:\n69 |             profile = Path(scratch) / \"unused-profile\"\n70 |             result = subprocess.run(\n   |                      ^^^^^^^^^^^^^^\n71 |                 [sys.executable, \"-B\", \"-m\", \"canvaspilot.cli\", *args,\n72 |                  \"--base-url\", base_url, \"--profile\", str(profile)],\n   |\nhelp: Add explicit `check=False`\n\nFound 1 error.\n",
+        "stderr_text": ""
+      }
+    ],
+    "source_inputs_unchanged": true,
+    "reserve_bytes": 805306368,
+    "free_before": 42749018112,
+    "free_after": 42762248192
+  },
+  "corrected_test": {
+    "at": "2026-10-08T14:43:34.032937+00:00",
+    "source": "/home/jacob/canvaspilot-quiz-cli-3dcb83a1/source",
+    "commands": [
+      {
+        "command": [
+          "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+          "-B",
+          "-m",
+          "pytest",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "tests/test_quiz_cli.py::QuizCliTests::test_list_receives_every_page_and_keeps_existing_projection",
+          "tests/test_quiz_cli.py::QuizCliTests::test_quiz_preserves_supplied_policy_dates_and_unknown_fields"
+        ],
+        "exit": 0,
+        "stdout": "corrected-0.stdout.log",
+        "stderr": "corrected-0.stderr.log",
+        "stdout_text": "..                                                                       [100%]\n2 passed in 3.71s\n",
+        "stderr_text": ""
+      },
+      {
+        "command": [
+          "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+          "-B",
+          "-m",
+          "ruff",
+          "check",
+          "--no-cache",
+          "src/canvaspilot/cli.py",
+          "tests/test_quiz_cli.py"
+        ],
+        "exit": 0,
+        "stdout": "corrected-1.stdout.log",
+        "stderr": "corrected-1.stderr.log",
+        "stdout_text": "All checks passed!\n",
+        "stderr_text": ""
+      }
+    ],
+    "pins": {
+      "src/canvaspilot/cli.py": {
+        "bytes": 15669,
+        "sha256": "102f6ba99c4d65c0741f231420b3b42a7c3c4818fb9546d3947d60a4e969cb79",
+        "git_blob": "2b6a9b12b5f58b7b520e59dafbe8ad5f91de5f2f"
+      },
+      "tests/test_quiz_cli.py": {
+        "bytes": 8925,
+        "sha256": "43c55180e962c2f966e6a9a6b17d7ac7126180b7ebf72edb9ccaba43f8604ad2",
+        "git_blob": "527c57f3d66e4e167c96bbc51d1fcc8bd7e56fcf"
+      },
+      "README.md": {
+        "bytes": 21001,
+        "sha256": "d0f2770d8520e89de4e1e40e570ca63f5410fb598a3a736838d9ea41a9888b9b",
+        "git_blob": "fc333b2a7ee3d05d74d32bf23952fdce1469f3db"
+      }
+    },
+    "all_12_source_inputs_unchanged": true,
+    "prior_receipt": "native-results.json",
+    "prior_test": "test_quiz_cli.initial.py.txt",
+    "correction": "fixture-correction.diff",
+    "qualification": "Four methods and nine subtests passed before a test-only per_page oracle correction; both affected methods pass on corrected source. No product CLI changes or repeated broad native suite.",
+    "free_after": 42713161728
+  },
+  "source_correspondence": {
+    "at": "2026-10-08T14:45:07.785204+00:00",
+    "base": "39d835c8becb04d81b65c90d1491d2d3a2727ffe",
+    "tree": "53b67d3f06b4c780e508325ec42b2b435ec57e97",
+    "original_cli": {
+      "bytes": 14176,
+      "sha256": "77afdf37691ea2a74073bb4be2da280c2f4d794bd7d65afba2e6befcadf766aa",
+      "git_blob": "5a3ed7be7a24d6461641192a54c77a04b90cc910"
+    },
+    "candidate_cli_sha256": "102f6ba99c4d65c0741f231420b3b42a7c3c4818fb9546d3947d60a4e969cb79",
+    "cli_only_two_additive_blocks": true,
+    "cli_added_physical_lines": 30,
+    "readme_only_usage_insertion": true,
+    "unchanged_baseline_files": [
+      ".github/workflows/ci.yml",
+      "pyproject.toml",
+      "src/canvaspilot/__init__.py",
+      "src/canvaspilot/api.py",
+      "src/canvaspilot/assignment_submission.py",
+      "src/canvaspilot/bundle.py",
+      "src/canvaspilot/client.py",
+      "src/canvaspilot/feedback.py",
+      "src/canvaspilot/mcp_server.py"
+    ],
+    "new_path": "tests/test_quiz_cli.py",
+    "product_diff": {
+      "bytes": 12670,
+      "sha256": "18f5e82e0a27a6f4852ae0cccc2902c9043323365fb25550a016e2e54e962b34"
+    },
+    "guard_reserve_bytes": 805306368
+  },
+  "original_test_sha256": "0e059a9449abb30fbcdbab26312b3ed07541f5e72aaca5928b96051c642c8e6d",
+  "original_source_and_raw_logs_native": "/home/jacob/canvaspilot-quiz-cli-3dcb83a1",
+  "limits": "Synthetic loopback HTTP/process evidence only. No live school, browser session, real credentials, quiz attempt/submission, deployment or full current-head hosted CI is claimed."
+}

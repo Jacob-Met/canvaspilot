@@ -1,0 +1,61 @@
+{
+  "base": "39d835c8becb04d81b65c90d1491d2d3a2727ffe",
+  "tree": "53b67d3f06b4c780e508325ec42b2b435ec57e97",
+  "files": {
+    ".github/workflows/ci.yml": {
+      "bytes": 708,
+      "sha256": "62f17b95af03d1ff8a172f168282b405fefcab3a5f1094c70e618b44920bd0ff",
+      "git_blob": "ef7bbebe192c0db55dc4467e064ba44805c13446"
+    },
+    "README.md": {
+      "bytes": 20041,
+      "sha256": "bf4086cc36dbf4a92c12583d32cb983352a2827379bd73314dce0b03126b9bcc",
+      "git_blob": "083dc576676240d388921d292fedef7d7c8ccce3"
+    },
+    "pyproject.toml": {
+      "bytes": 1353,
+      "sha256": "555ad3c7e338d38ae5feabc06c0c07503f22d9c732a9af153c7706c63d2b3c63",
+      "git_blob": "76eba6d30696b4f2733539cd47df6e178bc0f585"
+    },
+    "src/canvaspilot/__init__.py": {
+      "bytes": 561,
+      "sha256": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5",
+      "git_blob": "74a7a6087bf81fd7c75c15769b30408039618e0f"
+    },
+    "src/canvaspilot/api.py": {
+      "bytes": 28060,
+      "sha256": "cee0a68efd418e3bd647726dfbf51a6ee7d8aefe03d3ce902d6db0e5556005bb",
+      "git_blob": "79572cdc0391f46ad0b92ea199531371aeff2525"
+    },
+    "src/canvaspilot/assignment_submission.py": {
+      "bytes": 1296,
+      "sha256": "52fc732660b8844a2ee0801931a363f20db15b5309d148d01e3b618be487133d",
+      "git_blob": "95b1f19927e4eecf99fc852325737c3cfe86cd0d"
+    },
+    "src/canvaspilot/bundle.py": {
+      "bytes": 2674,
+      "sha256": "7c592252e190542706b779d48cdb62fc9b305be168bc011249fc42cc60f7d6ef",
+      "git_blob": "23badab9d8ea96b4ed30fb2b5f32f773c910c7f9"
+    },
+    "src/canvaspilot/cli.py": {
+      "bytes": 14176,
+      "sha256": "77afdf37691ea2a74073bb4be2da280c2f4d794bd7d65afba2e6befcadf766aa",
+      "git_blob": "5a3ed7be7a24d6461641192a54c77a04b90cc910"
+    },
+    "src/canvaspilot/client.py": {
+      "bytes": 18934,
+      "sha256": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797",
+      "git_blob": "1db4b1135305f7e410025ae7937f9a6cd349f020"
+    },
+    "src/canvaspilot/feedback.py": {
+      "bytes": 3900,
+      "sha256": "55454598effea598474a21f67e36d5bc5bea84aaefeefc18e4d8c49804ab9869",
+      "git_blob": "ec996f421a851d699a9ac7cb1f2a486f9ff7c4ea"
+    },
+    "src/canvaspilot/mcp_server.py": {
+      "bytes": 13388,
+      "sha256": "75656082445acb1fc2959cab1e2de7473544702d478c3ab5f1574bfc9296db4f",
+      "git_blob": "f9c470b034a524609f4aedae51479ffd92bfaa8f"
+    }
+  }
+}

@@ -165,6 +165,26 @@ Tools exposed (all prefixed `canvas_`):
 
 Programmatic API bundle: `from canvaspilot.bundle import make_api, tool_inventory`.
 
+### Read classic quizzes from the terminal
+
+List a course’s classic quizzes, then inspect one returned quiz ID:
+
+```bash
+canvaspilot quizzes 42
+canvaspilot quiz 42 9
+```
+
+Both commands accept the existing `--base-url`, `--profile` and `--token` options.
+Course and quiz IDs must be positive numeric Canvas IDs. `quizzes` uses the existing
+paginated reader and compact list fields; `quiz` returns the original detail JSON,
+including any supplied timing, attempt-policy, lock and differentiated-date fields.
+Null dates and false/zero values keep their original meaning. A failed read exits
+nonzero with a JSON error on stderr and no partial success output.
+
+These commands call only the existing [classic-quiz GET endpoints](https://developerdocs.instructure.com/services/canvas/resources/quizzes).
+They do not start or complete an attempt, read questions, or change submissions.
+New Quizzes and LTI assessments retain the existing separate support boundary.
+
 ### Submission feedback
 
 Use `canvaspilot feedback <course_id> <assignment_id>`, the MCP tool
