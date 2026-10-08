@@ -151,6 +151,16 @@ def main(argv: list[str] | None = None) -> None:
     progress.add_argument("course_id", help="Positive numeric Canvas course ID")
     progress.add_argument("--module-id", default=None, help="Inspect one returned module ID")
 
+    progress_export = sub.add_parser(
+        "export-module-progress", help="Save reported module progress to a new offline HTML file",
+    )
+    add_common(progress_export)
+    progress_export.add_argument("course_id", type=_positive_int)
+    progress_export.add_argument("--module-id", type=_positive_int, default=None)
+    progress_export.add_argument(
+        "--out", required=True, type=Path, help="New HTML report; existing paths are protected",
+    )
+
     history = sub.add_parser(
         "submission-history",
         help="Read your returned submission versions and their submitted content",
@@ -365,6 +375,35 @@ def main(argv: list[str] | None = None) -> None:
             finally:
                 http_log.setLevel(previous_level)
             print(json.dumps(result, indent=2))
+        elif args.cmd == "export-module-progress":
+            import os
+
+            import httpx
+
+            from canvaspilot.calendar_export import write_calendar
+            from canvaspilot.client import CanvasAuthError, CanvasPaginationError
+            from canvaspilot.module_progress_export import build_module_progress_report
+
+            http_log = logging.getLogger("httpx")
+            previous_level = http_log.level
+            http_log.setLevel(max(http_log.getEffectiveLevel(), logging.WARNING))
+            try:
+                if os.path.lexists(args.out):
+                    raise FileExistsError("Output path already exists; choose a new HTML file")
+                content, report = build_module_progress_report(
+                    api, args.course_id, module_id=args.module_id,
+                )
+                # The existing calendar publisher writes arbitrary complete bytes
+                # to a new file; it never replaces a path or follows its symlink.
+                write_calendar(args.out, content)
+            except (CanvasAuthError, CanvasPaginationError, httpx.HTTPError, ValueError, TypeError, OSError) as error:
+                print(json.dumps({
+                    "ok": False, "error": type(error).__name__, "message": str(error),
+                }), file=sys.stderr)
+                raise SystemExit(1) from None
+            finally:
+                http_log.setLevel(previous_level)
+            print(json.dumps({"ok": True, "output": str(args.out), **report}, indent=2))
         elif args.cmd == "submission-history":
             import httpx
 

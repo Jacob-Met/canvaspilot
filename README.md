@@ -290,6 +290,18 @@ returned rows. This read-only workflow never marks items read or complete. See
 [the module-progress guide](docs/module-progress.md) for Python/MCP examples and
 coverage meanings.
 
+Save that same report for offline reading or printing:
+
+```bash
+canvaspilot export-module-progress 42 --out module-progress.html
+canvaspilot export-module-progress 42 --module-id 7 --out module-7-progress.html
+```
+
+The self-contained HTML keeps the reader's states, all-versus-one rules,
+thresholds, prerequisites, unknowns and coverage diagnostics visible. It includes
+the complete normalized report as a JSON download and protects existing output
+paths. See [offline module-progress reports](docs/module-progress-export.md).
+
 ## Course files
 
 `canvaspilot files COURSE_ID`, `CanvasAPI.list_files(COURSE_ID)`, and

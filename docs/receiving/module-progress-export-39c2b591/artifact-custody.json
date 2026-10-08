@@ -1,0 +1,346 @@
+{
+  "authorSeal": {
+    "createdAt": "2026-10-08T15:29:55.597319+00:00",
+    "packet": "/Users/me/hamon-canvas-module-export-39c2b591-v1/receiving-v1",
+    "artifactCommit": "270f49878dfd5cca5f7ea7ba6439884793027554",
+    "artifactTree": "c99dbf845c0ebd1c7983de474b3a3bf846f83200",
+    "trackedFiles": 113,
+    "productCommit": "dbb4a4fa04c25849a079f89a67b3049a2f55946f",
+    "productTree": "f17362750896b2834b4321151403b61e64429486",
+    "bundle": {
+      "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/receiving-v1.bundle",
+      "bytes": 645370,
+      "sha256": "937e606061029452247ada6dee26c6fb735013428ac04b987ca7890370c98edd",
+      "prerequisites": []
+    },
+    "manifestSha256": "a000916cb14cb255d438d4f5bb0448241cac40149af1a8149bb2532be45d81cc",
+    "verified": true,
+    "verificationStdout": "The bundle contains this ref:\n270f49878dfd5cca5f7ea7ba6439884793027554 HEAD\nThe bundle records a complete history.\nThe bundle uses this hash algorithm: sha1\n",
+    "verificationStderr": "/Users/me/hamon-canvas-module-export-39c2b591-v1/receiving-v1.bundle is okay\n"
+  },
+  "independentHandoff": {
+    "root": "/Users/me/hamon-canvas-module-independent-39c2b591-2gsod2r2",
+    "receiving_root": "/Users/me/hamon-canvas-module-independent-39c2b591-2gsod2r2/receiving-v1",
+    "namespace": "docs/receiving/module-progress-export-independent-39c2b591",
+    "receiving_commit": "6493d0e849c2240352e7aaad3079bd4c9467b7f1",
+    "receiving_tree": "360d9b4413336aaaa094d1f5b90fc3f3617abb1b",
+    "executed_product_head": "dbb4a4fa04c25849a079f89a67b3049a2f55946f",
+    "executed_product_tree": "f17362750896b2834b4321151403b61e64429486",
+    "full_source_leaves_preserved": 952,
+    "publication": {
+      "path": "/Users/me/hamon-canvas-module-independent-39c2b591-2gsod2r2/publication.json",
+      "entries": 29,
+      "bytes": 3660728,
+      "sha256": "e18039a24be52d5ab5cfcf05e33394441762bbd6b8a360c0f4847b5e9747a549"
+    },
+    "bundle": {
+      "path": "/Users/me/hamon-canvas-module-independent-39c2b591-2gsod2r2/canvas-module-independent-receiving.bundle",
+      "bytes": 5863498,
+      "sha256": "3ad73a8abdb666e30eed2daa76299ad1358773ab67982ee771b24c0787cf0a0d",
+      "ancestry": "Complete closed receiver snapshots; not a public-history replacement"
+    },
+    "raw": {
+      "files": 72,
+      "bytes": 3553811,
+      "container_sha256": "d75fa31486d40ab66fa219baceada16ca6ee0527a16cf1b9a1b9ac6f4c81e3b0",
+      "gzip_sha256": "7b239bcf6c2f89a89f9890ab17da2f984eedf70edd3cf2fe2c2a307f391e315a",
+      "parts": 19
+    },
+    "all_decoded_files_byte_exact": true,
+    "source_status_clean": true,
+    "test_reruns_during_sealing": 0
+  },
+  "independentPublicationSha256": "e18039a24be52d5ab5cfcf05e33394441762bbd6b8a360c0f4847b5e9747a549",
+  "all29IndependentEntriesExact": true,
+  "independentEntries": [
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/ACCEPTANCE.json",
+      "bytes": 4125,
+      "sha256": "e575ef01477a684d1a81f4bd1a9ae11b506d704d56ffaffb0eb976eeefeba544"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_000.b64",
+      "bytes": 196608,
+      "sha256": "3737f0ff5da36e653200602f3da63e548b24986e3f387aea650cbc7be04dbf5e"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_001.b64",
+      "bytes": 196608,
+      "sha256": "19af5deb9d550b5faf78d7547822e11ea848e033f585da893120cd789d47c542"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_002.b64",
+      "bytes": 196608,
+      "sha256": "00806b82332e881bfadef602366a52d327ba5991f24dfeb5cdbf11179ec4e357"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_003.b64",
+      "bytes": 196608,
+      "sha256": "a16400066a1620f00f81516214b01c356b737f6e17c6cb66fa239fcb359cf0c3"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_004.b64",
+      "bytes": 196608,
+      "sha256": "2380b2540261ae310468273c0c47c503d24a9e821b6cecfcd6f3e0f0e0902fa7"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_005.b64",
+      "bytes": 196608,
+      "sha256": "2b9f10a32b855cb0983f26fbc85a4c45c9a1960a16de7f4bd70f52371c981656"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_006.b64",
+      "bytes": 196608,
+      "sha256": "acab3b22a09ed9832986c24322db49770ea816a9c9d0951d8053696ac438f6bc"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_007.b64",
+      "bytes": 196608,
+      "sha256": "4ad93e763f7d64424c41f9af667b2e5079a40e911b686bd1b156d8f399673f22"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_008.b64",
+      "bytes": 196608,
+      "sha256": "b403531e00399dc1e63b04057a0974d0af87781aedc508497177e547f3f137f6"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_009.b64",
+      "bytes": 196608,
+      "sha256": "c7f44d3a978d8df7df766ee54722aeb4e26d0baafda30cb4302052fcc694b82b"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_010.b64",
+      "bytes": 196608,
+      "sha256": "86d0b6f2a6580d18ea4d447c33462a5f787a48d4924b651bfb505125af98f61e"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_011.b64",
+      "bytes": 196608,
+      "sha256": "f59ac63616246b5bbc3f064564dde8331e7c1cb892ba339ad9fa7df16bfbd197"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_012.b64",
+      "bytes": 196608,
+      "sha256": "57ffbfdc62aa01a983273be8c401e721dd3c477e2564888fc35ffa6a9f0fd0b8"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_013.b64",
+      "bytes": 196608,
+      "sha256": "164672fffab779d4e9c4782fe35da977dd1d07ef01f983661e586ca4d2b24668"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_014.b64",
+      "bytes": 196608,
+      "sha256": "2947f4b43b3b59c44912a552b35e28036334271c8c76a0e989dfbdbcf43e5788"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_015.b64",
+      "bytes": 196608,
+      "sha256": "4e6e45fef8c4520f632d4ca606e4c7b7a53edcfde3b4402f3ffac3b20ea227c8"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_016.b64",
+      "bytes": 196608,
+      "sha256": "4bc5beda4e9dff6501ecf4823052ec2dfb43091a4d7f81479e0c724b76d6aa4e"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_017.b64",
+      "bytes": 196608,
+      "sha256": "37d55522bb86b9b5ae9b9ebaf227dcb912134bf1b7a5afbd166ef8abb7a1ea0a"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_018.b64",
+      "bytes": 40112,
+      "sha256": "3b22a02615f88edbc83346657e93554ae81871280f0e5ee5c5bd330a9f7452c5"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_MANIFEST.json",
+      "bytes": 15751,
+      "sha256": "098baeeed3b70b0171a75b5876a5c5f90e1c52071a8779f162cd24183a58a04e"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/REPLAY.md",
+      "bytes": 2913,
+      "sha256": "61447c377d47e586cc3d355a38b7afd5174b73f5c8425e48eb7037ce6e70ba29"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/REVIEW.md",
+      "bytes": 6520,
+      "sha256": "e53600e7f05f37bb1d4ec5233c0a065508c706d5d434c7002fcfddcdbef5983d"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/SOURCE.json",
+      "bytes": 5403,
+      "sha256": "c838ca7040b1a10e60b66edb46d880dd0dfc343d1a52fe5efd27b4f5e9fa20ec"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/browser_receiver_v2.mjs",
+      "bytes": 14836,
+      "sha256": "77fb5f431c2eea547608e0ca56b40fffec94782d0aa52606f5e2a5cd14898ea0"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/candidate_receiver_v2.py",
+      "bytes": 7968,
+      "sha256": "f2236c502bf29ddc4e01fbcdd8df87a48c2846dc9c6f3e20418fae88d386a606"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/independent_fixture_v1.py",
+      "bytes": 8275,
+      "sha256": "cdb6ab08c5d261a2b6bd7529ebe70970b02c9c29c18c2e1d12f2fdbc4f740df0"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/producer_receiver_v1.py",
+      "bytes": 6960,
+      "sha256": "054dd31364d3cc945e1ac2f5af7fe25c51e3a55f193e9e073a9b8d84ed4261e2"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/unpack-receiving.py",
+      "bytes": 1613,
+      "sha256": "4a840dee4302421209220a107634e11b4cf91e8b516e3fcf13b16a7af23bc49b"
+    }
+  ],
+  "originalSourceFreeze": {
+    "frozenAt": "2026-10-08T15:27:06.004622+00:00",
+    "repository": "Jacob-Met/canvaspilot",
+    "issue": "https://github.com/Jacob-Met/canvaspilot/issues/59",
+    "publicBase": "a5ce672e5b3580c1f52e13c49eefee830f11346c",
+    "publicBaseTree": "0661a7005e577864cb87bc41e0e715409c92ee76",
+    "nativeCommit": "dbb4a4fa04c25849a079f89a67b3049a2f55946f",
+    "nativeTree": "f17362750896b2834b4321151403b61e64429486",
+    "nativeBranch": "chatgpt-39c2b591-module-progress-export",
+    "nativeRoot": "/Users/me/hamon-canvas-module-export-39c2b591-v1",
+    "nativeSource": "/Users/me/hamon-canvas-module-export-39c2b591-v1/source",
+    "deviceId": "0e3d582f-e25b-44b2-8418-9639fc4e4e33",
+    "leafCount": 952,
+    "baseLeafCount": 948,
+    "untouchedBaseLeaves": 946,
+    "cliInverseExact": true,
+    "readmeInverseExact": true,
+    "files": [
+      {
+        "path": "README.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b2831b4c996b63c2455978d6104aa0c5799db568",
+        "sha256": "a21c301c00b4e961eb32585c1ccd083a6e0684933736aa446a9bb8e3c8bea8db",
+        "bytes": 21025
+      },
+      {
+        "path": "docs/module-progress-export.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "fa650a6b9d8cd51f134b576eb4f40975edef1a4c",
+        "sha256": "80659a9c333c38d84ddea8c65b751e028a4a32c1d9b970d081d1c3917b18e31f",
+        "bytes": 5978
+      },
+      {
+        "path": "src/canvaspilot/cli.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d2cc746c8be14f3b10dcb42bb32d497b989980b4",
+        "sha256": "e06eec09ea3c23decb55b3b3e3f0644ee7cfe33ae333054ee3652c9c0ee03a04",
+        "bytes": 17455
+      },
+      {
+        "path": "src/canvaspilot/module_progress_export.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8ccb9f1262790a744418d4212e072ee43031ab88",
+        "sha256": "f723c06e551fae2cf50745460f9109867e6e0f9ebc3cc997d49d5e2173aa9f50",
+        "bytes": 12904
+      },
+      {
+        "path": "tests/test_module_progress_export.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "10ad56e53ecbdc7945471fe119a64a54cfd0c274",
+        "sha256": "75c7ff826494042183970d105690908b64935fdf7f847f692aeda85c194b5003",
+        "bytes": 10275
+      },
+      {
+        "path": "tests/test_module_progress_export_cli.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6c51c60c505bd3d76468d569f8b07e1952c47e87",
+        "sha256": "345c5c94a5b0b3c593b46922aef73e53b264bcc00ab66e40c2376650a353ceb5",
+        "bytes": 7567
+      }
+    ],
+    "sourceFreezeIncludesEvidence": false,
+    "publicationState": "Native source only; not a public commit or deployment.",
+    "bundle": {
+      "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/product.bundle",
+      "bytes": 14288,
+      "sha256": "2c124fd0218f4664f8aea8a23af3470d39940a64238f7a2a3e5e1eb0fc6cf704",
+      "requiresBase": "a5ce672e5b3580c1f52e13c49eefee830f11346c"
+    }
+  },
+  "currentSourceFreeze": {
+    "frozenAt": "2026-10-08T15:55:23.661682+00:00",
+    "nativeCommit": "2fada92331765b70a7c7ec3864d3ed261901c06f",
+    "nativeTree": "056e1f28301c0a9e0de497284aaf512d119f5a60",
+    "parents": [
+      "dbb4a4fa04c25849a079f89a67b3049a2f55946f",
+      "0480cbce421bae532e3e909899fc8fb83789e878"
+    ],
+    "publicBase": "0480cbce421bae532e3e909899fc8fb83789e878",
+    "publicBaseTree": "f9ecaa4311d93cfe3a1fd1c9cc140834e2449341",
+    "originalProduct": "dbb4a4fa04c25849a079f89a67b3049a2f55946f",
+    "originalProductTree": "f17362750896b2834b4321151403b61e64429486",
+    "source": "/Users/me/hamon-canvas-module-export-39c2b591-v1/composition-0480cbce/source",
+    "leafCount": 1111,
+    "files": [
+      {
+        "path": "README.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "518117ee19e74c86ed32743699ec3811faa6ea00",
+        "sha256": "68a1ee6bd8c7b308c2dc3e2dbb0ac5f479b391431a533f4370fa3388718db64e",
+        "bytes": 22567
+      },
+      {
+        "path": "docs/module-progress-export.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "fa650a6b9d8cd51f134b576eb4f40975edef1a4c",
+        "sha256": "80659a9c333c38d84ddea8c65b751e028a4a32c1d9b970d081d1c3917b18e31f",
+        "bytes": 5978
+      },
+      {
+        "path": "src/canvaspilot/cli.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "fc5701f67a53a0862ee7d26f817752a0ba79296e",
+        "sha256": "3f97deae063ef56babc4d7b4eb9622cc3500bdf77fb9e0f3af83a6564bee253e",
+        "bytes": 21752
+      },
+      {
+        "path": "src/canvaspilot/module_progress_export.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8ccb9f1262790a744418d4212e072ee43031ab88",
+        "sha256": "f723c06e551fae2cf50745460f9109867e6e0f9ebc3cc997d49d5e2173aa9f50",
+        "bytes": 12904
+      },
+      {
+        "path": "tests/test_module_progress_export.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "10ad56e53ecbdc7945471fe119a64a54cfd0c274",
+        "sha256": "75c7ff826494042183970d105690908b64935fdf7f847f692aeda85c194b5003",
+        "bytes": 10275
+      },
+      {
+        "path": "tests/test_module_progress_export_cli.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6c51c60c505bd3d76468d569f8b07e1952c47e87",
+        "sha256": "345c5c94a5b0b3c593b46922aef73e53b264bcc00ab66e40c2376650a353ceb5",
+        "bytes": 7567
+      }
+    ],
+    "currentCliReceipt": "evidence/current-cli/receipt.json",
+    "strictRuffReturncode": 0,
+    "sourcePreservation": "source-composition.json"
+  }
+}

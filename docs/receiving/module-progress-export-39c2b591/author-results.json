@@ -1,0 +1,1242 @@
+{
+  "originalProduct": {
+    "frozenAt": "2026-10-08T15:27:06.004622+00:00",
+    "repository": "Jacob-Met/canvaspilot",
+    "issue": "https://github.com/Jacob-Met/canvaspilot/issues/59",
+    "publicBase": "a5ce672e5b3580c1f52e13c49eefee830f11346c",
+    "publicBaseTree": "0661a7005e577864cb87bc41e0e715409c92ee76",
+    "nativeCommit": "dbb4a4fa04c25849a079f89a67b3049a2f55946f",
+    "nativeTree": "f17362750896b2834b4321151403b61e64429486",
+    "nativeBranch": "chatgpt-39c2b591-module-progress-export",
+    "nativeRoot": "/Users/me/hamon-canvas-module-export-39c2b591-v1",
+    "nativeSource": "/Users/me/hamon-canvas-module-export-39c2b591-v1/source",
+    "deviceId": "0e3d582f-e25b-44b2-8418-9639fc4e4e33",
+    "leafCount": 952,
+    "baseLeafCount": 948,
+    "untouchedBaseLeaves": 946,
+    "cliInverseExact": true,
+    "readmeInverseExact": true,
+    "files": [
+      {
+        "path": "README.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b2831b4c996b63c2455978d6104aa0c5799db568",
+        "sha256": "a21c301c00b4e961eb32585c1ccd083a6e0684933736aa446a9bb8e3c8bea8db",
+        "bytes": 21025
+      },
+      {
+        "path": "docs/module-progress-export.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "fa650a6b9d8cd51f134b576eb4f40975edef1a4c",
+        "sha256": "80659a9c333c38d84ddea8c65b751e028a4a32c1d9b970d081d1c3917b18e31f",
+        "bytes": 5978
+      },
+      {
+        "path": "src/canvaspilot/cli.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d2cc746c8be14f3b10dcb42bb32d497b989980b4",
+        "sha256": "e06eec09ea3c23decb55b3b3e3f0644ee7cfe33ae333054ee3652c9c0ee03a04",
+        "bytes": 17455
+      },
+      {
+        "path": "src/canvaspilot/module_progress_export.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8ccb9f1262790a744418d4212e072ee43031ab88",
+        "sha256": "f723c06e551fae2cf50745460f9109867e6e0f9ebc3cc997d49d5e2173aa9f50",
+        "bytes": 12904
+      },
+      {
+        "path": "tests/test_module_progress_export.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "10ad56e53ecbdc7945471fe119a64a54cfd0c274",
+        "sha256": "75c7ff826494042183970d105690908b64935fdf7f847f692aeda85c194b5003",
+        "bytes": 10275
+      },
+      {
+        "path": "tests/test_module_progress_export_cli.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6c51c60c505bd3d76468d569f8b07e1952c47e87",
+        "sha256": "345c5c94a5b0b3c593b46922aef73e53b264bcc00ab66e40c2376650a353ceb5",
+        "bytes": 7567
+      }
+    ],
+    "sourceFreezeIncludesEvidence": false,
+    "publicationState": "Native source only; not a public commit or deployment.",
+    "bundle": {
+      "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/product.bundle",
+      "bytes": 14288,
+      "sha256": "2c124fd0218f4664f8aea8a23af3470d39940a64238f7a2a3e5e1eb0fc6cf704",
+      "requiresBase": "a5ce672e5b3580c1f52e13c49eefee830f11346c"
+    }
+  },
+  "setup": {
+    "preparedAt": "2026-10-08T15:05:46.043439+00:00",
+    "root": "/Users/me/hamon-canvas-module-export-39c2b591-v1",
+    "source": "a5ce672e5b3580c1f52e13c49eefee830f11346c",
+    "tree": "0661a7005e577864cb87bc41e0e715409c92ee76",
+    "runtime": {
+      "python": "3.12.8 (main, Dec  3 2024, 18:42:41) [Clang 16.0.0 (clang-1600.0.26.4)]",
+      "prefix": "/Users/me/hamon-canvas-module-export-39c2b591-v1/runtime",
+      "httpx": "/Users/me/hamon-canvas-module-export-39c2b591-v1/runtime/lib/python3.12/site-packages/httpx/__init__.py",
+      "mcp": "/Users/me/hamon-canvas-module-export-39c2b591-v1/runtime/lib/python3.12/site-packages/mcp/__init__.py",
+      "pytest": "/Users/me/hamon-canvas-module-export-39c2b591-v1/runtime/lib/python3.12/site-packages/pytest/__init__.py",
+      "versions": {
+        "httpx": "0.28.1",
+        "mcp": "2.3.0",
+        "pytest": "9.1.1",
+        "ruff": "0.16.10"
+      }
+    },
+    "ownerSourceAndRuntimeUnmodified": true
+  },
+  "scopePreparation": {
+    "source": "a5ce672e5b3580c1f52e13c49eefee830f11346c",
+    "tree": "0661a7005e577864cb87bc41e0e715409c92ee76",
+    "claimText": "## Offline module-progress report — chatgpt:39c2b591d7e5/estate_coordination\n\nUnder Jacob's standing autonomous estate mandate, with root retaining independent receiving and normal source integration.\n\n### Learner outcome and current source\n\nAdd `canvaspilot export-module-progress COURSE_ID --out progress.html [--module-id ID]`. A learner can currently inspect the accepted module-progress digest as JSON through the CLI, Python or MCP, but cannot retain a readable, printable course-module progress report that opens without CanvasPilot or a network connection.\n\nCurrent main was read again at 2026-10-08 14:59 UTC: `a5ce672e5b3580c1f52e13c49eefee830f11346c`, tree `0661a7005e577864cb87bc41e0e715409c92ee76`, 948 complete leaves. There is no AGENTS.md in that tree. Existing CLI blob `545ec52f31b694a351e9a41a68e52a34c49db532` has no such command; the unchanged module-progress reader is `a9d3e4bbea22067f76110f03a5f31a5bc9d8de05`. A native baseline command witness will be preserved before implementation.\n\n### Exact source fence\n\n- New `src/canvaspilot/module_progress_export.py`: call the existing `CanvasAPI.module_progress` reader once, render one bounded self-contained HTML report, and create an explicitly selected new output file.\n- Separate additive parser/dispatch spans in `src/canvaspilot/cli.py`, preserving all existing commands byte-for-byte outside those spans.\n- Focused renderer/process/browser controls under distinctly named test/receiving files, `docs/module-progress-export.md`, and a small additive README usage paragraph.\n- Own native source and evidence under `/Users/me/hamon-canvas-module-export-39c2b591-v1`.\n\nThe visible HTML will preserve Canvas-reported module states, all-versus-one rules, sequential-progress setting, prerequisite identities, original item requirement types and thresholds, completed/incomplete/unknown/not-reported distinctions, remaining-work context, original order and source coverage diagnostics. It will also retain the complete normalized reader result as exact downloadable JSON, explicitly distinct from unobserved raw provider responses. No local percentage, access decision or module-completion inference will replace the upstream report.\n\nThe report opens and prints without scripts, external resources, browser storage, or a running service. It is a saved observation, not current Canvas state. It contains no learner-editable notes/checks, and performs no mark-read, completion, submission, grade or other provider write. Existing output entries are protected; a failed read or render produces no partial successful report.\n\n### Ownership and qualification\n\nFresh project issue/PR reads, the module-progress issue #39 discussion, current source and all 414 current HAMON #140 comments were inspected. No matching offline module-progress consumer was found. The integrated module-progress #39/#46 reader remains the source of truth. Page packet #54, assignment-study workspace #57, agenda #55, announcement CLI #58, grade review #47/#50, discussion #52, quiz CLI, inbox, client/broker/provider/pagination and authentication owners retain their exact spans. API/MCP/bundle/dependencies/workflows are outside this source fence.\n\nQualification will use authored module/course responses grounded in the current reader, real native CLI/client calls against disposable loopback HTTP, complete report and JSON readback, refusal/recovery controls and an actual offline desktop/phone browser. No school account, browser profile, real learner data, model call, paid service or live deployment will be used. Exact original failures and source pins remain retained; independent receiving and current-source hosted gates precede integration.\n\nThis is an external source-contribution reservation, not a resident goal, task, attempt or native lease. Existing owner checkouts are read/copy only.\n",
+    "transportFailure": {
+      "device": "d55b2499-5e82-4805-819a-d0d7ddea1efe",
+      "operation": "Read-only current commit presence and runtime directory inventory",
+      "result": "No PID or command output received; remote_desktop_commander.start_process returned Mcp error -32603: MCP request timed out.",
+      "sourceEdits": 0
+    },
+    "officialModulesReference": "https://developerdocs.instructure.com/services/canvas/resources/modules",
+    "recordedAt": "2026-10-08T15:05:46Z"
+  },
+  "baseline": {
+    "checkedAt": "2026-10-08T15:08:16.402183+00:00",
+    "source": "a5ce672e5b3580c1f52e13c49eefee830f11346c",
+    "cliSha256": "86eefc46b94a127a51007295e073b621f64095d061615b950665dd985cf319f5",
+    "cases": [
+      {
+        "case": "baseline-help",
+        "argv": [
+          "/Users/me/hamon-canvas-module-export-39c2b591-v1/runtime/bin/python",
+          "-B",
+          "-m",
+          "canvaspilot.cli",
+          "--help"
+        ],
+        "returncode": 0,
+        "stdoutBytes": 1638,
+        "stderrBytes": 0
+      },
+      {
+        "case": "baseline-command-absence",
+        "argv": [
+          "/Users/me/hamon-canvas-module-export-39c2b591-v1/runtime/bin/python",
+          "-B",
+          "-m",
+          "canvaspilot.cli",
+          "export-module-progress",
+          "42",
+          "--out",
+          "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/uncreated-progress.html"
+        ],
+        "returncode": 2,
+        "stdoutBytes": 0,
+        "stderrBytes": 505
+      }
+    ],
+    "outputCreated": false,
+    "meaning": "Native CLI absence only; no Canvas request was made and no production code was edited."
+  },
+  "baselineStreams": {
+    "baseline-command-absence.stdout": {
+      "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/baseline-command-absence.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text": ""
+    },
+    "baseline-help.stdout": {
+      "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/baseline-help.stdout",
+      "bytes": 1638,
+      "sha256": "4972093b9edaf5b2e76517c481892921515a9d11fe1d5ad26b4e8fc20defd88d",
+      "text": "usage: canvaspilot [-h]\n                   {login,session,whoami,courses,sync,assignments,brief,feedback,inbox,conversation,discussions,files,browse-files,export-calendar,module-progress,submission-history,mcp}\n                   ...\n\npositional arguments:\n  {login,session,whoami,courses,sync,assignments,brief,feedback,inbox,conversation,discussions,files,browse-files,export-calendar,module-progress,submission-history,mcp}\n    login               Open headed browser for Canvas SSO (one-shot)\n    session             Stay-open session broker\n    whoami              GET /users/self/profile\n    courses             List active courses\n    sync                Courses + upcoming assignments digest\n    assignments         List assignments for a course\n    brief               Assignment brief (cleaned prompt and supplied rubric)\n    feedback            Read self submission comments, rubric feedback, and\n                        grade/attempt metadata\n    inbox               List your inbox without changing conversation state\n    conversation        Read one conversation while preserving unread state\n    discussions         List discussion topics\n    files               List course files\n    browse-files        Browse one course folder; metadata only\n    export-calendar     Save selected assignment deadlines to a new .ics file\n    module-progress     Inspect reported module progress and requirements\n    submission-history  Read your returned submission versions and their\n                        submitted content\n    mcp                 Run MCP stdio server\n\noptions:\n  -h, --help            show this help message and exit\n"
+    },
+    "baseline-worktree.stdout": {
+      "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/baseline-worktree.stdout",
+      "bytes": 84,
+      "sha256": "2dc1b4d515635a0edde76813996a3faff184be339b11a6f6430f0a34a1b5a5be",
+      "text": "HEAD is now at a5ce672 Merge pull request #56 from Jacob-Met/chatgpt/inbox-713adaab\n"
+    }
+  },
+  "initialGate": {
+    "receipt": {
+      "base": "a5ce672e5b3580c1f52e13c49eefee830f11346c",
+      "results": [
+        {
+          "name": "focused-pytest",
+          "argv": [
+            "/Users/me/hamon-canvas-module-export-39c2b591-v1/runtime/bin/python",
+            "-B",
+            "-m",
+            "pytest",
+            "-q",
+            "-p",
+            "no:cacheprovider",
+            "--basetemp",
+            "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/candidate-v1/pytest-tmp",
+            "tests/test_module_progress_export.py",
+            "tests/test_module_progress_export_cli.py",
+            "tests/test_module_progress.py",
+            "tests/test_module_items.py",
+            "tests/test_calendar_export.py"
+          ],
+          "startedAt": "2026-10-08T15:18:06.572849+00:00",
+          "finishedAt": "2026-10-08T15:18:25.535709+00:00",
+          "returncode": 1,
+          "stdoutBytes": 1651,
+          "stderrBytes": 0
+        },
+        {
+          "name": "ruff",
+          "argv": [
+            "/Users/me/hamon-canvas-module-export-39c2b591-v1/runtime/bin/python",
+            "-B",
+            "-m",
+            "ruff",
+            "check",
+            "src/canvaspilot/module_progress_export.py",
+            "src/canvaspilot/cli.py",
+            "tests/test_module_progress_export.py",
+            "tests/test_module_progress_export_cli.py"
+          ],
+          "startedAt": "2026-10-08T15:18:25.535791+00:00",
+          "finishedAt": "2026-10-08T15:18:25.619360+00:00",
+          "returncode": 1,
+          "stdoutBytes": 6485,
+          "stderrBytes": 0
+        },
+        {
+          "name": "diff-check",
+          "argv": [
+            "git",
+            "diff",
+            "--check"
+          ],
+          "startedAt": "2026-10-08T15:18:25.619431+00:00",
+          "finishedAt": "2026-10-08T15:18:25.640798+00:00",
+          "returncode": 0,
+          "stdoutBytes": 0,
+          "stderrBytes": 0
+        }
+      ]
+    },
+    "streams": {
+      "diff-check.stderr": {
+        "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/candidate-v1/diff-check.stderr",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "text": ""
+      },
+      "diff-check.stdout": {
+        "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/candidate-v1/diff-check.stdout",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "text": ""
+      },
+      "focused-pytest.stderr": {
+        "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/candidate-v1/focused-pytest.stderr",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "text": ""
+      },
+      "focused-pytest.stdout": {
+        "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/candidate-v1/focused-pytest.stdout",
+        "bytes": 1651,
+        "sha256": "286bf2176eb99654f8ddb6f9200213c137c493c472aa893da5ce801b83d6fce8",
+        "text": ".........................F.............................................. [ 40%]\n........................................................................ [ 80%]\n..................................                                       [100%]\n=================================== FAILURES ===================================\n_ test_later_page_failure_never_publishes_partial_html[/api/v1/courses/42/modules-403] _\n\nserver = <module_progress_fixture.ModuleProgressHTTPFixture object at 0x10a88b2f0>\ntmp_path = PosixPath('/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/candidate-v1/pytest-tmp/test_later_page_failure_never_0')\npath = '/api/v1/courses/42/modules', status = 403\n\n    @pytest.mark.parametrize(\"path,status\", [\n        (\"/api/v1/courses/42/modules\", 403),\n        (\"/api/v1/courses/42/modules/7/items\", 503),\n    ])\n    def test_later_page_failure_never_publishes_partial_html(server, tmp_path, path, status):\n        server.overrides[(path, \"2\")] = (status, {\"error\": \"synthetic later-page refusal\"}, {})\n        result = command(server, tmp_path, \"42\")\n        assert result.returncode == 1 and result.stdout == \"\"\n>       assert json.loads(result.stderr)[\"error\"] == \"HTTPStatusError\"\nE       AssertionError: assert 'CanvasAuthError' == 'HTTPStatusError'\nE         \nE         - HTTPStatusError\nE         + CanvasAuthError\n\ntests/test_module_progress_export_cli.py:128: AssertionError\n=========================== short test summary info ============================\nFAILED tests/test_module_progress_export_cli.py::test_later_page_failure_never_publishes_partial_html[/api/v1/courses/42/modules-403]\n1 failed, 177 passed in 18.52s\n"
+      },
+      "ruff.stderr": {
+        "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/candidate-v1/ruff.stderr",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "text": ""
+      },
+      "ruff.stdout": {
+        "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/candidate-v1/ruff.stdout",
+        "bytes": 6485,
+        "sha256": "c76a26c8a99545fbf9a053f22a3306c0be1f4379e904776f3881578b5ef56681",
+        "text": "ISC004 Unparenthesized implicit string concatenation in collection\n   --> src/canvaspilot/module_progress_export.py:136:9\n    |\n134 |           _facts(module[\"requirement_counts\"]),\n135 |           \"<h3>Reported remaining work</h3>\",\n136 | /         '<p class=\"muted\">Read these IDs with the reported rule. Under a one-of rule, '\n137 | |         \"incomplete items are alternatives, not a count of required tasks. A completed \"\n138 | |         \"module can still contain incomplete alternatives. Item access is not assessed.</p>\",\n    | |____________________________________________________________________________________________^\n139 |           _facts(module[\"remaining_work\"]),\n140 |           \"<h3>Reader diagnostics</h3>\",\n    |\nhelp: Did you forget a comma?\nhelp: Wrap implicitly concatenated strings in parentheses\n\nISC004 Unparenthesized implicit string concatenation in collection\n   --> src/canvaspilot/module_progress_export.py:194:9\n    |\n192 |           '<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">',\n193 |           '<meta name=\"referrer\" content=\"no-referrer\">',\n194 | /         '<meta http-equiv=\"Content-Security-Policy\" content=\"default-src \\'none\\'; '\n195 | |         \"style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'\\\">\",\n    | |___________________________________________________________________________^\n196 |           \"<title>Module progress snapshot — CanvasPilot</title>\",\n197 |           \"<style>\", _STYLE, \"</style></head><body><main id=\\\"top\\\">\",\n    |\nhelp: Did you forget a comma?\nhelp: Wrap implicitly concatenated strings in parentheses\n\nISC004 Unparenthesized implicit string concatenation in collection\n   --> src/canvaspilot/module_progress_export.py:200:9\n    |\n198 |           '<header><p class=\"eyebrow\">CanvasPilot · Saved progress report</p>',\n199 |           \"<h1>Module progress snapshot</h1>\",\n200 | /         f'<p>Course {_escape(str(report[\"course_id\"]))} · Report created '\n201 | |         f'<time datetime=\"{created}\">{created}</time></p>',\n    | |__________________________________________________________^\n202 |           '<p class=\"notice\">This is a saved observation for the authenticated caller. '\n203 |           \"It does not refresh. Canvas supplies the module state; this report does not \"\n    |\nhelp: Did you forget a comma?\nhelp: Wrap implicitly concatenated strings in parentheses\n\nISC004 Unparenthesized implicit string concatenation in collection\n   --> src/canvaspilot/module_progress_export.py:202:9\n    |\n200 |           f'<p>Course {_escape(str(report[\"course_id\"]))} · Report created '\n201 |           f'<time datetime=\"{created}\">{created}</time></p>',\n202 | /         '<p class=\"notice\">This is a saved observation for the authenticated caller. '\n203 | |         \"It does not refresh. Canvas supplies the module state; this report does not \"\n204 | |         \"calculate completion, a percentage, or item access. Counts describe returned \"\n205 | |         \"rows, and whole-course completeness remains unknown.</p></header>\",\n    | |___________________________________________________________________________^\n206 |           '<section class=\"overview\" aria-labelledby=\"overview-title\">',\n207 |           '<h2 id=\"overview-title\">Report scope</h2>',\n    |\nhelp: Did you forget a comma?\nhelp: Wrap implicitly concatenated strings in parentheses\n\nISC004 Unparenthesized implicit string concatenation in collection\n   --> src/canvaspilot/module_progress_export.py:208:9\n    |\n206 |           '<section class=\"overview\" aria-labelledby=\"overview-title\">',\n207 |           '<h2 id=\"overview-title\">Report scope</h2>',\n208 | /         '<p class=\"muted\">Values use JSON notation so null, false, zero, empty text, '\n209 | |         \"and empty lists stay distinct. Unsupported original \"\n210 | |         \"values and thresholds stay visible.</p>\",\n    | |_________________________________________________^\n211 |           _facts(top),\n212 |           \"<h3>Module state counts in this selection</h3>\",\n    |\nhelp: Did you forget a comma?\nhelp: Wrap implicitly concatenated strings in parentheses\n\nISC004 Unparenthesized implicit string concatenation in collection\n   --> src/canvaspilot/module_progress_export.py:214:9\n    |\n212 |           \"<h3>Module state counts in this selection</h3>\",\n213 |           _facts(report[\"module_state_counts\"]),\n214 | /         f'<p><a class=\"download\" id=\"download-report\" download=\"module-progress.json\" '\n215 | |         f'href=\"data:application/json;base64,{encoded}\">Download complete report JSON</a></p>',\n    | |______________________________________________________________________________________________^\n216 |           '<p class=\"muted\">This download contains the complete normalized progress '\n217 |           \"report used below. It does not contain the original HTTP response pages.</p>\",\n    |\nhelp: Did you forget a comma?\nhelp: Wrap implicitly concatenated strings in parentheses\n\nISC004 Unparenthesized implicit string concatenation in collection\n   --> src/canvaspilot/module_progress_export.py:216:9\n    |\n214 |           f'<p><a class=\"download\" id=\"download-report\" download=\"module-progress.json\" '\n215 |           f'href=\"data:application/json;base64,{encoded}\">Download complete report JSON</a></p>',\n216 | /         '<p class=\"muted\">This download contains the complete normalized progress '\n217 | |         \"report used below. It does not contain the original HTTP response pages.</p>\",\n    | |______________________________________________________________________________________^\n218 |           f'<p class=\"muted\">JSON SHA-256: <code id=\"json-sha256\">{payload_hash}</code></p>',\n219 |       ]\n    |\nhelp: Did you forget a comma?\nhelp: Wrap implicitly concatenated strings in parentheses\n\nDTZ001 `datetime.datetime()` called without a `tzinfo` argument\n   --> tests/test_module_progress_export.py:224:60\n    |\n222 |     assert receipt[\"generated_at\"] == \"2026-10-08T15:00:00Z\"\n223 |     with pytest.raises(ValueError, match=\"timezone\"):\n224 |         render_module_progress_report(report, generated_at=datetime(2026, 10, 8))\n    |                                                            ^^^^^^^^^^^^^^^^^^^^^\n225 |     report[\"modules\"][0][\"items\"][0][\"completion_requirement\"][\"extension\"] = float(\"nan\")\n226 |     with pytest.raises(ValueError):\n    |\nhelp: Pass a `datetime.timezone` object to the `tzinfo` parameter\n\nFound 8 errors.\nNo fixes available (7 hidden fixes can be enabled with the `--unsafe-fixes` option).\n"
+      }
+    }
+  },
+  "correction": {
+    "originalResult": "177 passed, 1 failed; strict Ruff 8 findings; diff-check passed",
+    "corrections": [
+      "The existing token client reports a 403 as CanvasAuthError, not HTTPStatusError. Correct the authored expected error class only; retain refusal, empty stdout, no output and GET-only assertions.",
+      "Parenthesize seven implicit string groups; rendered content is unchanged.",
+      "Use explicit timezone removal for the deliberate naive-time rejection case."
+    ],
+    "productionBehaviorChanged": false,
+    "preservedSource": "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/candidate-v1/source-before-corrections"
+  },
+  "correctedGate": {
+    "receipt": {
+      "base": "a5ce672e5b3580c1f52e13c49eefee830f11346c",
+      "exporterAstIdenticalToFirstTestedSource": true,
+      "results": [
+        {
+          "name": "new-feature-pytest",
+          "argv": [
+            "/Users/me/hamon-canvas-module-export-39c2b591-v1/runtime/bin/python",
+            "-B",
+            "-m",
+            "pytest",
+            "-q",
+            "-p",
+            "no:cacheprovider",
+            "--basetemp",
+            "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/candidate-v2/pytest-tmp",
+            "tests/test_module_progress_export.py",
+            "tests/test_module_progress_export_cli.py"
+          ],
+          "startedAt": "2026-10-08T15:19:47.424635+00:00",
+          "finishedAt": "2026-10-08T15:20:02.053831+00:00",
+          "returncode": 0,
+          "stdoutBytes": 100,
+          "stderrBytes": 0
+        },
+        {
+          "name": "ruff",
+          "argv": [
+            "/Users/me/hamon-canvas-module-export-39c2b591-v1/runtime/bin/python",
+            "-B",
+            "-m",
+            "ruff",
+            "check",
+            "src/canvaspilot/module_progress_export.py",
+            "src/canvaspilot/cli.py",
+            "tests/test_module_progress_export.py",
+            "tests/test_module_progress_export_cli.py"
+          ],
+          "startedAt": "2026-10-08T15:20:02.053981+00:00",
+          "finishedAt": "2026-10-08T15:20:02.136564+00:00",
+          "returncode": 0,
+          "stdoutBytes": 19,
+          "stderrBytes": 0
+        },
+        {
+          "name": "diff-check",
+          "argv": [
+            "git",
+            "diff",
+            "--check"
+          ],
+          "startedAt": "2026-10-08T15:20:02.136629+00:00",
+          "finishedAt": "2026-10-08T15:20:02.157255+00:00",
+          "returncode": 0,
+          "stdoutBytes": 0,
+          "stderrBytes": 0
+        }
+      ]
+    },
+    "streams": {
+      "diff-check.stderr": {
+        "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/candidate-v2/diff-check.stderr",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "text": ""
+      },
+      "diff-check.stdout": {
+        "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/candidate-v2/diff-check.stdout",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "text": ""
+      },
+      "new-feature-pytest.stderr": {
+        "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/candidate-v2/new-feature-pytest.stderr",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "text": ""
+      },
+      "new-feature-pytest.stdout": {
+        "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/candidate-v2/new-feature-pytest.stdout",
+        "bytes": 100,
+        "sha256": "fe9f4cf33a8bed918e70826857cc8d81941fb8bd7b49385fd58d6e16de54a90a",
+        "text": "..................................                                       [100%]\n34 passed in 14.14s\n"
+      },
+      "ruff.stderr": {
+        "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/candidate-v2/ruff.stderr",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "text": ""
+      },
+      "ruff.stdout": {
+        "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/candidate-v2/ruff.stdout",
+        "bytes": 19,
+        "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+        "text": "All checks passed!\n"
+      }
+    }
+  },
+  "finalGate": {
+    "receipt": {
+      "base": "a5ce672e5b3580c1f52e13c49eefee830f11346c",
+      "changeFromPriorGate": "Module navigation moved before metadata; original report values and download bytes retained",
+      "results": [
+        {
+          "name": "new-feature-pytest",
+          "argv": [
+            "/Users/me/hamon-canvas-module-export-39c2b591-v1/runtime/bin/python",
+            "-B",
+            "-m",
+            "pytest",
+            "-q",
+            "-p",
+            "no:cacheprovider",
+            "--basetemp",
+            "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/candidate-v3/pytest-tmp",
+            "tests/test_module_progress_export.py",
+            "tests/test_module_progress_export_cli.py"
+          ],
+          "startedAt": "2026-10-08T15:24:36.498800+00:00",
+          "finishedAt": "2026-10-08T15:24:55.802661+00:00",
+          "returncode": 0,
+          "stdoutBytes": 100,
+          "stderrBytes": 0
+        },
+        {
+          "name": "ruff",
+          "argv": [
+            "/Users/me/hamon-canvas-module-export-39c2b591-v1/runtime/bin/python",
+            "-B",
+            "-m",
+            "ruff",
+            "check",
+            "src/canvaspilot/module_progress_export.py",
+            "src/canvaspilot/cli.py",
+            "tests/test_module_progress_export.py",
+            "tests/test_module_progress_export_cli.py"
+          ],
+          "startedAt": "2026-10-08T15:24:55.802828+00:00",
+          "finishedAt": "2026-10-08T15:24:55.887847+00:00",
+          "returncode": 0,
+          "stdoutBytes": 19,
+          "stderrBytes": 0
+        },
+        {
+          "name": "diff-check",
+          "argv": [
+            "git",
+            "diff",
+            "--check"
+          ],
+          "startedAt": "2026-10-08T15:24:55.887907+00:00",
+          "finishedAt": "2026-10-08T15:24:55.910149+00:00",
+          "returncode": 0,
+          "stdoutBytes": 0,
+          "stderrBytes": 0
+        }
+      ]
+    },
+    "streams": {
+      "diff-check.stderr": {
+        "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/candidate-v3/diff-check.stderr",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "text": ""
+      },
+      "diff-check.stdout": {
+        "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/candidate-v3/diff-check.stdout",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "text": ""
+      },
+      "new-feature-pytest.stderr": {
+        "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/candidate-v3/new-feature-pytest.stderr",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "text": ""
+      },
+      "new-feature-pytest.stdout": {
+        "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/candidate-v3/new-feature-pytest.stdout",
+        "bytes": 100,
+        "sha256": "deae62512ebe97afc6ab761d860638c0b40e8b103c681f871f78b01774eaf1b9",
+        "text": "..................................                                       [100%]\n34 passed in 18.84s\n"
+      },
+      "ruff.stderr": {
+        "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/candidate-v3/ruff.stderr",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "text": ""
+      },
+      "ruff.stdout": {
+        "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/candidate-v3/ruff.stdout",
+        "bytes": 19,
+        "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+        "text": "All checks passed!\n"
+      }
+    }
+  },
+  "initialBrowser": {
+    "receipt": {
+      "startedAt": "2026-10-08T15:22:10.035Z",
+      "browser": "Chrome/154.0.8037.98",
+      "node": "v26.3.0",
+      "groups": [
+        {
+          "name": "desktop readable report and inert resource closure",
+          "pass": true,
+          "title": "Module progress snapshot",
+          "moduleCount": 4,
+          "moduleTitles": [
+            "Foundations",
+            "Choose one topic",
+            "Later work",
+            "Progress unavailable"
+          ],
+          "links": [
+            {
+              "text": "Foundations",
+              "href": "#module-0"
+            },
+            {
+              "text": "Choose one topic",
+              "href": "#module-1"
+            },
+            {
+              "text": "Later work",
+              "href": "#module-2"
+            },
+            {
+              "text": "Progress unavailable",
+              "href": "#module-3"
+            }
+          ],
+          "scrollWidth": 1360,
+          "width": 1360,
+          "navTop": 1367.90625,
+          "firstModuleTop": 1595.125,
+          "scripts": 0,
+          "forms": 0,
+          "externalResources": 0,
+          "text": "CANVASPILOT · SAVED PROGRESS REPORT\n\nModule progress snapshot\n\nCourse 42 · Report created 2026-10-08T15:20:55Z\n\nThis is a saved observation for the authenticated caller. It does not refresh. Canvas supplies the module state; this report does not calculate completion, a percentage, or item access. Counts describe returned rows, and whole-course completeness remains unknown.\n\nReport scope\n\nValues use JSON notation so null, false, zero, empty text, and empty lists stay distinct. Unsupported original values and thresholds stay visible.\n\nCourse id\n\"42\"\nMode\n\"token\"\nModule id\nnull\nModules returned\n4\nModules included\n4\nModules omitted by selection\n0\nWhole collection complete\nnull\nCount scope\n\"returned_modules_and_items\"\nState source\n\"Canvas module.state for the authenticated caller\"\nReader source\n\"CanvasAPI.list_modules(detail=full)\"\nUpstream response shape\n\"not_observed\"\nModule state counts in this selection\nLocked\n1\nUnlocked\n0\nStarted\n1\nCompleted\n1\nUnknown\n1\n\nDownload complete report JSON\n\nThis download contains the complete normalized progress report used below. It does not contain the original HTTP response pages.\n\nJSON SHA-256: 5337f26754214199eb81664f73d36133814ab1e629ae1872d093d89ac61c875c\n\nJump to a module\nFoundations\nChoose one topic\nLater work\nProgress unavailable\nFoundations\n\nReported module state: started\n\nId\n7\nName\n\"Foundations\"\nPosition\n1\nPublished\nnull\nState from the progress reader\n\"started\"\nOriginal reported state\n\"started\"\nCompleted at\nnull\nUnlock at\nnull\nAll-versus-one requirement rule\n\"all\"\nOriginal reported requirement rule\n\"all\"\nSequential progress required\ntrue\nPrerequisite module IDs\n[]\nOriginal prerequisite module IDs\n[]\nReturned item coverage\nReported item count\n3\nReturned item count\n3\nStatus\n\"matches_reported_count\"\nRequirement counts in returned items\nCompleted\n1\nIncomplete\n1\nUnknown\n0\nNot reported\n1\nReported remaining work\n\nRead these IDs with the reported rule. Under a one-of rule, incomplete items are alternatives, not a count of required tasks. A completed module can still contain incomplete alternatives. Item access is not assessed.\n\nScope\n\"reported_requirements_in_returned_items\"\nRule\n\"all\"\nReported incomplete item IDs\n[\n  72\n]\nItem IDs with unknown completion\n[]\nModule locked\nfalse\nIndividual item access\n\"not_assessed\"\nReader diagnostics\nSome items have no reported requirement; this does not establish optionality.\nItems in returned order\nRead Café notes\nId\n71\nModule id\n7\nTitle\n\"Read Café notes\"\nType\n\"Page\"\nPosition\n1\nIndent\nnull\nContent id\nnull\nHtml url\n\"https://canvas.invalid/courses/42/modules/items/71\"\nPublished\nnull\nComplete reported requirement and thresholds\n{\n  \"type\": \"must_view\",\n  \"completed\": true\n}\nRequirement completion status\n\"completed\"\nRequirement type supported by the reader\ntrue\nReported required action\n\"View the item\"\nPreparation quiz\nId\n72\nModule id\n7\nTitle\n\"Preparation quiz\"\nType\n\"Quiz\"\nPosition\n2\nIndent\nnull\nContent id\nnull\nHtml url\n\"https://canvas.invalid/courses/42/modules/items/72\"\nPublished\nnull\nComplete reported requirement and thresholds\n{\n  \"type\": \"min_score\",\n  \"min_score\": 8,\n  \"completed\": false\n}\nRequirement completion status\n\"incomplete\"\nRequirement type supported by the reader\ntrue\nReported required action\n\"Meet the reported minimum score\"\nAdditional material\nId\n73\nModule id\n7\nTitle\n\"Additional material\"\nType\n\"ExternalUrl\"\nPosition\n3\nIndent\nnull\nContent id\nnull\nHtml url\nnull\nPublished\nnull\nComplete reported requirement and thresholds\nnull\nRequirement completion status\n\"not_reported\"\nRequirement type supported by the reader\nnull\nReported required action\nnull\nBack to report overview\nChoose one topic\n\nReported module state: completed\n\nId\n8\nName\n\"Choose one topic\"\nPosition\n2\nPublished\nnull\nState from the progress reader\n\"completed\"\nOriginal reported state\n\"completed\"\nCompleted at\nnull\nUnlock at\nnull\nAll-versus-one requirement rule\n\"one\"\nOriginal reported requirement rule\n\"one\"\nSequential progress required\nfalse\nPrerequisite module IDs\n[]\nOriginal prerequisite module IDs\n[]\nReturned item coverage\nReported item count\n2\nReturned item count\n2\nStatus\n\"matches_reported_count\"\nRequirement counts in returned items\nCompleted\n1\nIncomplete\n1\nUnknown\n0\nNot reported\n0\nReported remaining work\n\nRead these IDs with the reported rule. Under a one-of rule, incomplete items are alternatives, not a count of required tasks. A completed module can still contain incomplete alternatives. Item access is not assessed.\n\nScope\n\"reported_requirements_in_returned_items\"\nRule\n\"module_completed\"\nReported incomplete item IDs\n[]\nItem IDs with unknown completion\n[]\nModule locked\nfalse\nIndividual item access\n\"not_assessed\"\nReader diagnostics\n\nNo reader diagnostics were returned.\n\nItems in returned order\nTopic A\nId\n81\nModule id\n8\nTitle\n\"Topic A\"\nType\n\"Page\"\nPosition\nnull\nIndent\nnull\nContent id\nnull\nHtml url\nnull\nPublished\nnull\nComplete reported requirement and thresholds\n{\n  \"type\": \"must_view\",\n  \"completed\": true\n}\nRequirement completion status\n\"completed\"\nRequirement type supported by the reader\ntrue\nReported required action\n\"View the item\"\nTopic B\nId\n82\nModule id\n8\nTitle\n\"Topic B\"\nType\n\"Page\"\nPosition\nnull\nIndent\nnull\nContent id\nnull\nHtml url\nnull\nPublished\nnull\nComplete reported requirement and thresholds\n{\n  \"type\": \"must_view\",\n  \"completed\": false\n}\nRequirement completion status\n\"incomplete\"\nRequirement type supported by the reader\ntrue\nReported required action\n\"View the item\"\nBack to report overview\nLater work\n\nReported module state: locked\n\nId\n9\nName\n\"Later work\"\nPosition\n3\nPublished\nnull\nState from the progress reader\n\"locked\"\nOriginal reported state\n\"locked\"\nCompleted at\nnull\nUnlock at\n\"2026-10-10T10:00:00Z\"\nAll-versus-one requirement rule\n\"all\"\nOriginal reported requirement rule\n\"all\"\nSequential progress required\nfalse\nPrerequisite module IDs\n[\n  7\n]\nOriginal prerequisite module IDs\n[\n  7\n]\nReturned item coverage\nReported item count\n1\nReturned item count\n1\nStatus\n\"matches_reported_count\"\nRequirement counts in returned items\nCompleted\n0\nIncomplete\n1\nUnknown\n0\nNot reported\n0\nReported remaining work\n\nRead these IDs with the reported rule. Under a one-of rule, incomplete items are alternatives, not a count of required tasks. A completed module can still contain incomplete alternatives. Item access is not assessed.\n\nScope\n\"reported_requirements_in_returned_items\"\nRule\n\"all\"\nReported incomplete item IDs\n[\n  91\n]\nItem IDs with unknown completion\n[]\nModule locked\ntrue\nIndividual item access\n\"not_assessed\"\nReader diagnostics\n\nNo reader diagnostics were returned.\n\nItems in returned order\nFinal draft\nId\n91\nModule id\n9\nTitle\n\"Final draft\"\nType\n\"Assignment\"\nPosition\nnull\nIndent\nnull\nContent id\nnull\nHtml url\nnull\nPublished\nnull\nComplete reported requirement and thresholds\n{\n  \"type\": \"must_submit\",\n  \"completed\": false\n}\nRequirement completion status\n\"incomplete\"\nRequirement type supported by the reader\ntrue\nReported required action\n\"Submit the work\"\nBack to report overview\nProgress unavailable\n\nReported module state: unknown\n\nId\n10\nName\n\"Progress unavailable\"\nPosition\n4\nPublished\nnull\nState from the progress reader\n\"unknown\"\nOriginal reported state\nnull\nCompleted at\nnull\nUnlock at\nnull\nAll-versus-one requirement rule\n\"unknown\"\nOriginal reported requirement rule\nnull\nSequential progress required\nnull\nPrerequisite module IDs\nnull\nOriginal prerequisite module IDs\nnull\nReturned item coverage\nReported item count\n2\nReturned item count\n2\nStatus\n\"matches_reported_count\"\nRequirement counts in returned items\nCompleted\n0\nIncomplete\n0\nUnknown\n2\nNot reported\n0\nReported remaining work\n\nRead these IDs with the reported rule. Under a one-of rule, incomplete items are alternatives, not a count of required tasks. A completed module can still contain incomplete alternatives. Item access is not assessed.\n\nScope\n\"reported_requirements_in_returned_items\"\nRule\n\"unknown\"\nReported incomplete item IDs\n[]\nItem IDs with unknown completion\n[\n  101,\n  102\n]\nModule locked\nnull\nIndividual item access\n\"not_assessed\"\nReader diagnostics\nStudent-specific module state is missing or unsupported.\nThe all-versus-one requirement rule is missing or unsupported.\nSequential-progress policy was not reported as a boolean.\nPrerequisite module IDs are missing or malformed.\nSome reported requirements have unsupported types or unknown completion.\nItems in returned order\nReadiness check\nId\n101\nModule id\n10\nTitle\n\"Readiness check\"\nType\n\"Quiz\"\nPosition\nnull\nIndent\nnull\nContent id\nnull\nHtml url\nnull\nPublished\nnull\nComplete reported requirement and thresholds\n{\n  \"type\": \"min_percentage\",\n  \"min_percentage\": 70\n}\nRequirement completion status\n\"unknown\"\nRequirement type supported by the reader\ntrue\nReported required action\n\"Meet the reported minimum percentage\"\nFuture requirement\nId\n102\nModule id\n10\nTitle\n\"Future requirement\"\nType\n\"Page\"\nPosition\nnull\nIndent\nnull\nContent id\nnull\nHtml url\nnull\nPublished\nnull\nComplete reported requirement and thresholds\n{\n  \"type\": \"future_rule\",\n  \"completed\": true\n}\nRequirement completion status\n\"unknown\"\nRequirement type supported by the reader\nfalse\nReported required action\nnull\nBack to report overview\nOpen this file directly in a browser. Use the browser's Print command for a paper copy or PDF. The report has no scripts, external resources, or editable completion controls."
+        },
+        {
+          "name": "real JSON download equals existing original CLI observation",
+          "pass": true,
+          "bytes": 9446,
+          "sha256": "5337f26754214199eb81664f73d36133814ab1e629ae1872d093d89ac61c875c"
+        },
+        {
+          "name": "ordinary module link reaches preserved lock and prerequisite context",
+          "pass": true,
+          "hash": "#module-2",
+          "titleTop": 24.65625,
+          "text": "Later work\n\nReported module state: locked\n\nId\n9\nName\n\"Later work\"\nPosition\n3\nPublished\nnull\nState from the progress reader\n\"locked\"\nOriginal reported state\n\"locked\"\nCompleted at\nnull\nUnlock at\n\"2026-10-10T10:00:00Z\"\nAll-versus-one requirement rule\n\"all\"\nOriginal reported requirement rule\n\"all\"\nSequential progress required\nfalse\nPrerequisite module IDs\n[\n  7\n]\nOriginal prerequisite module IDs\n[\n  7\n]\nReturned item coverage\nReported item count\n1\nReturned item count\n1\nStatus\n\"matches_reported_count\"\nRequirement counts in returned items\nCompleted\n0\nIncomplete\n1\nUnknown\n0\nNot reported\n0\nReported remaining work\n\nRead these IDs with the reported rule. Under a one-of rule, incomplete items are alternatives, not a count of required tasks. A completed module can still contain incomplete alternatives. Item access is not assessed.\n\nScope\n\"reported_requirements_in_returned_items\"\nRule\n\"all\"\nReported incomplete item IDs\n[\n  91\n]\nItem IDs with unknown completion\n[]\nModule locked\ntrue\nIndividual item access\n\"not_assessed\"\nReader diagnostics\n\nNo reader diagnostics were returned.\n\nItems in returned order\nFinal draft\nId\n91\nModule id\n9\nTitle\n\"Final draft\"\nType\n\"Assignment\"\nPosition\nnull\nIndent\nnull\nContent id\nnull\nHtml url\nnull\nPublished\nnull\nComplete reported requirement and thresholds\n{\n  \"type\": \"must_submit\",\n  \"completed\": false\n}\nRequirement completion status\n\"incomplete\"\nRequirement type supported by the reader\ntrue\nReported required action\n\"Submit the work\"\nBack to report overview"
+        },
+        {
+          "name": "320px selected report preserves scope without horizontal overflow",
+          "pass": true,
+          "width": 320,
+          "scrollWidth": 320,
+          "moduleCount": 1,
+          "text": "CANVASPILOT · SAVED PROGRESS REPORT\n\nModule progress snapshot\n\nCourse 42 · Report created 2026-10-08T15:20:55Z\n\nThis is a saved observation for the authenticated caller. It does not refresh. Canvas supplies the module state; this report does not calculate completion, a percentage, or item access. Counts describe returned rows, and whole-course completeness remains unknown.\n\nReport scope\n\nValues use JSON notation so null, false, zero, empty text, and empty lists stay distinct. Unsupported original values and thresholds stay visible.\n\nCourse id\n\"42\"\nMode\n\"token\"\nModule id\n\"9\"\nModules returned\n4\nModules included\n1\nModules omitted by selection\n3\nWhole collection complete\nnull\nCount scope\n\"returned_modules_and_items\"\nState source\n\"Canvas module.state for the authenticated caller\"\nReader source\n\"CanvasAPI.list_modules(detail=full)\"\nUpstream response shape\n\"not_observed\"\nModule state counts in this selection\nLocked\n1\nUnlocked\n0\nStarted\n0\nCompleted\n0\nUnknown\n0\n\nDownload complete report JSON\n\nThis download contains the complete normalized progress report used below. It does not contain the original HTTP response pages.\n\nJSON SHA-256: 34168936d9d155decd4087be5e6d267c16ea6b1e3658fc30abea57379e5c494f\n\nJump to a module\nLater work\nLater work\n\nReported module state: locked\n\nId\n9\nName\n\"Later work\"\nPosition\n3\nPublished\nnull\nState from the progress reader\n\"locked\"\nOriginal reported state\n\"locked\"\nCompleted at\nnull\nUnlock at\n\"2026-10-10T10:00:00Z\"\nAll-versus-one requirement rule\n\"all\"\nOriginal reported requirement rule\n\"all\"\nSequential progress required\nfalse\nPrerequisite module IDs\n[\n  7\n]\nOriginal prerequisite module IDs\n[\n  7\n]\nReturned item coverage\nReported item count\n1\nReturned item count\n1\nStatus\n\"matches_reported_count\"\nRequirement counts in returned items\nCompleted\n0\nIncomplete\n1\nUnknown\n0\nNot reported\n0\nReported remaining work\n\nRead these IDs with the reported rule. Under a one-of rule, incomplete items are alternatives, not a count of required tasks. A completed module can still contain incomplete alternatives. Item access is not assessed.\n\nScope\n\"reported_requirements_in_returned_items\"\nRule\n\"all\"\nReported incomplete item IDs\n[\n  91\n]\nItem IDs with unknown completion\n[]\nModule locked\ntrue\nIndividual item access\n\"not_assessed\"\nReader diagnostics\n\nNo reader diagnostics were returned.\n\nItems in returned order\nFinal draft\nId\n91\nModule id\n9\nTitle\n\"Final draft\"\nType\n\"Assignment\"\nPosition\nnull\nIndent\nnull\nContent id\nnull\nHtml url\nnull\nPublished\nnull\nComplete reported requirement and thresholds\n{\n  \"type\": \"must_submit\",\n  \"completed\": false\n}\nRequirement completion status\n\"incomplete\"\nRequirement type supported by the reader\ntrue\nReported required action\n\"Submit the work\"\nBack to report overview\nOpen this file directly in a browser. Use the browser's Print command for a paper copy or PDF. The report has no scripts, external resources, or editable completion controls."
+        },
+        {
+          "name": "print media retains facts while hiding the data-download action",
+          "pass": true,
+          "downloadDisplay": "none",
+          "moduleDisplay": "block",
+          "hiddenFacts": 0,
+          "text": "CANVASPILOT · SAVED PROGRESS REPORT\n\nModule progress snapshot\n\nCourse 42 · Report created 2026-10-08T15:20:55Z\n\nThis is a saved observation for the authenticated caller. It does not refresh. Canvas supplies the module state; this report does not calculate completion, a percentage, or item access. Counts describe returned rows, and whole-course completeness remains unknown.\n\nReport scope\n\nValues use JSON notation so null, false, zero, empty text, and empty lists stay distinct. Unsupported original values and thresholds stay visible.\n\nCourse id\n\"42\"\nMode\n\"token\"\nModule id\n\"9\"\nModules returned\n4\nModules included\n1\nModules omitted by selection\n3\nWhole collection complete\nnull\nCount scope\n\"returned_modules_and_items\"\nState source\n\"Canvas module.state for the authenticated caller\"\nReader source\n\"CanvasAPI.list_modules(detail=full)\"\nUpstream response shape\n\"not_observed\"\nModule state counts in this selection\nLocked\n1\nUnlocked\n0\nStarted\n0\nCompleted\n0\nUnknown\n0\n\nThis download contains the complete normalized progress report used below. It does not contain the original HTTP response pages.\n\nJSON SHA-256: 34168936d9d155decd4087be5e6d267c16ea6b1e3658fc30abea57379e5c494f\n\nJump to a module\nLater work\nLater work\n\nReported module state: locked\n\nId\n9\nName\n\"Later work\"\nPosition\n3\nPublished\nnull\nState from the progress reader\n\"locked\"\nOriginal reported state\n\"locked\"\nCompleted at\nnull\nUnlock at\n\"2026-10-10T10:00:00Z\"\nAll-versus-one requirement rule\n\"all\"\nOriginal reported requirement rule\n\"all\"\nSequential progress required\nfalse\nPrerequisite module IDs\n[\n  7\n]\nOriginal prerequisite module IDs\n[\n  7\n]\nReturned item coverage\nReported item count\n1\nReturned item count\n1\nStatus\n\"matches_reported_count\"\nRequirement counts in returned items\nCompleted\n0\nIncomplete\n1\nUnknown\n0\nNot reported\n0\nReported remaining work\n\nRead these IDs with the reported rule. Under a one-of rule, incomplete items are alternatives, not a count of required tasks. A completed module can still contain incomplete alternatives. Item access is not assessed.\n\nScope\n\"reported_requirements_in_returned_items\"\nRule\n\"all\"\nReported incomplete item IDs\n[\n  91\n]\nItem IDs with unknown completion\n[]\nModule locked\ntrue\nIndividual item access\n\"not_assessed\"\nReader diagnostics\n\nNo reader diagnostics were returned.\n\nItems in returned order\nFinal draft\nId\n91\nModule id\n9\nTitle\n\"Final draft\"\nType\n\"Assignment\"\nPosition\nnull\nIndent\nnull\nContent id\nnull\nHtml url\nnull\nPublished\nnull\nComplete reported requirement and thresholds\n{\n  \"type\": \"must_submit\",\n  \"completed\": false\n}\nRequirement completion status\n\"incomplete\"\nRequirement type supported by the reader\ntrue\nReported required action\n\"Submit the work\"\nOpen this file directly in a browser. Use the browser's Print command for a paper copy or PDF. The report has no scripts, external resources, or editable completion controls."
+        }
+      ],
+      "requests": [
+        {
+          "url": "file:///Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/browser-v1/all.html",
+          "method": "GET"
+        },
+        {
+          "url": "file:///Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/browser-v1/selected.html",
+          "method": "GET"
+        }
+      ],
+      "finishedAt": "2026-10-08T15:22:10.999Z",
+      "allPass": true
+    },
+    "execution": {
+      "argv": [
+        "/opt/homebrew/bin/node",
+        "/Users/me/hamon-canvas-module-export-39c2b591-v1/tools/browser-check.cjs"
+      ],
+      "startedAt": "2026-10-08T15:22:09.850103+00:00",
+      "finishedAt": "2026-10-08T15:22:11.091824+00:00",
+      "returncode": 0
+    },
+    "nativeCli": {
+      "records": [
+        {
+          "label": "all",
+          "argv": [
+            "/Users/me/hamon-canvas-module-export-39c2b591-v1/runtime/bin/python",
+            "-B",
+            "-m",
+            "canvaspilot.cli",
+            "export-module-progress",
+            "42",
+            "--out",
+            "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/browser-v1/all.html",
+            "--base-url",
+            "http://127.0.0.1:63904",
+            "--token",
+            "synthetic-export-browser-only",
+            "--profile",
+            "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/browser-v1/unused-profile"
+          ],
+          "startedAt": "2026-10-08T15:20:54.633059+00:00",
+          "finishedAt": "2026-10-08T15:20:55.353063+00:00",
+          "returncode": 0
+        },
+        {
+          "label": "selected",
+          "argv": [
+            "/Users/me/hamon-canvas-module-export-39c2b591-v1/runtime/bin/python",
+            "-B",
+            "-m",
+            "canvaspilot.cli",
+            "export-module-progress",
+            "42",
+            "--module-id",
+            "9",
+            "--out",
+            "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/browser-v1/selected.html",
+            "--base-url",
+            "http://127.0.0.1:63904",
+            "--token",
+            "synthetic-export-browser-only",
+            "--profile",
+            "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/browser-v1/unused-profile"
+          ],
+          "startedAt": "2026-10-08T15:20:55.353109+00:00",
+          "finishedAt": "2026-10-08T15:20:55.846640+00:00",
+          "returncode": 0
+        },
+        {
+          "label": "original",
+          "argv": [
+            "/Users/me/hamon-canvas-module-export-39c2b591-v1/runtime/bin/python",
+            "-B",
+            "-m",
+            "canvaspilot.cli",
+            "module-progress",
+            "42",
+            "--base-url",
+            "http://127.0.0.1:63904",
+            "--token",
+            "synthetic-export-browser-only",
+            "--profile",
+            "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/browser-v1/unused-profile"
+          ],
+          "startedAt": "2026-10-08T15:20:55.846683+00:00",
+          "finishedAt": "2026-10-08T15:20:56.347022+00:00",
+          "returncode": 0
+        }
+      ],
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/modules",
+          "query": {
+            "include[]": [
+              "items"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/modules",
+          "query": {
+            "page": [
+              "2"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/modules/7/items",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/modules/7/items",
+          "query": {
+            "page": [
+              "2"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/modules",
+          "query": {
+            "include[]": [
+              "items"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/modules",
+          "query": {
+            "page": [
+              "2"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/modules/7/items",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/modules/7/items",
+          "query": {
+            "page": [
+              "2"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/modules",
+          "query": {
+            "include[]": [
+              "items"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/modules",
+          "query": {
+            "page": [
+              "2"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/modules/7/items",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/modules/7/items",
+          "query": {
+            "page": [
+              "2"
+            ]
+          }
+        }
+      ],
+      "serverClosedBeforeBrowser": true,
+      "htmlSha256": {
+        "all": "ce8a5004d5d428a1b835a08f382d7fe9cea5aecc97e2b78fc2ea5c71e89b829f",
+        "selected": "c3925b1d57ead065debd2423909387a38a2be889b4f5655fd5ef7bc4443b0181"
+      }
+    },
+    "streams": {
+      "all.stderr": {
+        "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/browser-v1/all.stderr",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "text": ""
+      },
+      "all.stdout": {
+        "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/browser-v1/all.stdout",
+        "bytes": 454,
+        "sha256": "288987db6bf0deaebd8df5613e8cc9adb74bfd08e9f0c425565a76555d7ecdf1",
+        "text": "{\n  \"ok\": true,\n  \"output\": \"/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/browser-v1/all.html\",\n  \"course_id\": \"42\",\n  \"module_id\": null,\n  \"modules_returned\": 4,\n  \"modules_included\": 4,\n  \"generated_at\": \"2026-10-08T15:20:55Z\",\n  \"html_bytes\": 40278,\n  \"sha256\": \"ce8a5004d5d428a1b835a08f382d7fe9cea5aecc97e2b78fc2ea5c71e89b829f\",\n  \"json_bytes\": 9446,\n  \"json_sha256\": \"5337f26754214199eb81664f73d36133814ab1e629ae1872d093d89ac61c875c\"\n}\n"
+      },
+      "browser.stderr": {
+        "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/browser-v1/browser.stderr",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "text": ""
+      },
+      "browser.stdout": {
+        "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/browser-v1/browser.stdout",
+        "bytes": 470,
+        "sha256": "1cd3c22fb64a80b7cf444b46eba735f69c8146efdfd92acd41594671c99f1320",
+        "text": "{\"allPass\":true,\"groups\":[{\"name\":\"desktop readable report and inert resource closure\",\"pass\":true},{\"name\":\"real JSON download equals existing original CLI observation\",\"pass\":true},{\"name\":\"ordinary module link reaches preserved lock and prerequisite context\",\"pass\":true},{\"name\":\"320px selected report preserves scope without horizontal overflow\",\"pass\":true},{\"name\":\"print media retains facts while hiding the data-download action\",\"pass\":true}],\"requestCount\":2}\n"
+      },
+      "original.stderr": {
+        "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/browser-v1/original.stderr",
+        "bytes": 414,
+        "sha256": "fd22bf8548eafc8741568bb7fede704dbcf1e4ca116976201c59bf4501e5e71e",
+        "text": "HTTP Request: GET http://127.0.0.1:63904/api/v1/courses/42/modules?include%5B%5D=items&per_page=50 \"HTTP/1.0 200 OK\"\nHTTP Request: GET http://127.0.0.1:63904/api/v1/courses/42/modules?page=2 \"HTTP/1.0 200 OK\"\nHTTP Request: GET http://127.0.0.1:63904/api/v1/courses/42/modules/7/items?per_page=50 \"HTTP/1.0 200 OK\"\nHTTP Request: GET http://127.0.0.1:63904/api/v1/courses/42/modules/7/items?page=2 \"HTTP/1.0 200 OK\"\n"
+      },
+      "original.stdout": {
+        "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/browser-v1/original.stdout",
+        "bytes": 9446,
+        "sha256": "5337f26754214199eb81664f73d36133814ab1e629ae1872d093d89ac61c875c",
+        "text": "{\n  \"course_id\": \"42\",\n  \"mode\": \"token\",\n  \"module_id\": null,\n  \"modules_returned\": 4,\n  \"modules_included\": 4,\n  \"modules_omitted_by_selection\": 0,\n  \"collection_complete\": null,\n  \"count_scope\": \"returned_modules_and_items\",\n  \"state_source\": \"Canvas module.state for the authenticated caller\",\n  \"reader_source\": \"CanvasAPI.list_modules(detail=full)\",\n  \"upstream_response_shape\": \"not_observed\",\n  \"module_state_counts\": {\n    \"locked\": 1,\n    \"unlocked\": 0,\n    \"started\": 1,\n    \"completed\": 1,\n    \"unknown\": 1\n  },\n  \"modules\": [\n    {\n      \"id\": 7,\n      \"name\": \"Foundations\",\n      \"position\": 1,\n      \"published\": null,\n      \"state\": \"started\",\n      \"reported_state\": \"started\",\n      \"completed_at\": null,\n      \"unlock_at\": null,\n      \"requirement_type\": \"all\",\n      \"reported_requirement_type\": \"all\",\n      \"require_sequential_progress\": true,\n      \"prerequisite_module_ids\": [],\n      \"reported_prerequisite_module_ids\": [],\n      \"item_coverage\": {\n        \"reported_count\": 3,\n        \"returned_count\": 3,\n        \"status\": \"matches_reported_count\"\n      },\n      \"requirement_counts\": {\n        \"completed\": 1,\n        \"incomplete\": 1,\n        \"unknown\": 0,\n        \"not_reported\": 1\n      },\n      \"remaining_work\": {\n        \"scope\": \"reported_requirements_in_returned_items\",\n        \"rule\": \"all\",\n        \"incomplete_item_ids\": [\n          72\n        ],\n        \"unknown_completion_item_ids\": [],\n        \"module_locked\": false,\n        \"item_access\": \"not_assessed\"\n      },\n      \"items\": [\n        {\n          \"id\": 71,\n          \"module_id\": 7,\n          \"title\": \"Read Caf\\u00e9 notes\",\n          \"type\": \"Page\",\n          \"position\": 1,\n          \"indent\": null,\n          \"content_id\": null,\n          \"html_url\": \"https://canvas.invalid/courses/42/modules/items/71\",\n          \"published\": null,\n          \"completion_requirement\": {\n            \"type\": \"must_view\",\n            \"completed\": true\n          },\n          \"completion_status\": \"completed\",\n          \"requirement_type_supported\": true,\n          \"required_action\": \"View the item\"\n        },\n        {\n          \"id\": 72,\n          \"module_id\": 7,\n          \"title\": \"Preparation quiz\",\n          \"type\": \"Quiz\",\n          \"position\": 2,\n          \"indent\": null,\n          \"content_id\": null,\n          \"html_url\": \"https://canvas.invalid/courses/42/modules/items/72\",\n          \"published\": null,\n          \"completion_requirement\": {\n            \"type\": \"min_score\",\n            \"min_score\": 8,\n            \"completed\": false\n          },\n          \"completion_status\": \"incomplete\",\n          \"requirement_type_supported\": true,\n          \"required_action\": \"Meet the reported minimum score\"\n        },\n        {\n          \"id\": 73,\n          \"module_id\": 7,\n          \"title\": \"Additional material\",\n          \"type\": \"ExternalUrl\",\n          \"position\": 3,\n          \"indent\": null,\n          \"content_id\": null,\n          \"html_url\": null,\n          \"published\": null,\n          \"completion_requirement\": null,\n          \"completion_status\": \"not_reported\",\n          \"requirement_type_supported\": null,\n          \"required_action\": null\n        }\n      ],\n      \"diagnostics\": [\n        \"Some items have no reported requirement; this does not establish optionality.\"\n      ]\n    },\n    {\n      \"id\": 8,\n      \"name\": \"Choose one topic\",\n      \"position\": 2,\n      \"published\": null,\n      \"state\": \"completed\",\n      \"reported_state\": \"completed\",\n      \"completed_at\": null,\n      \"unlock_at\": null,\n      \"requirement_type\": \"one\",\n      \"reported_requirement_type\": \"one\",\n      \"require_sequential_progress\": false,\n      \"prerequisite_module_ids\": [],\n      \"reported_prerequisite_module_ids\": [],\n      \"item_coverage\": {\n        \"reported_count\": 2,\n        \"returned_count\": 2,\n        \"status\": \"matches_reported_count\"\n      },\n      \"requirement_counts\": {\n        \"completed\": 1,\n        \"incomplete\": 1,\n        \"unknown\": 0,\n        \"not_reported\": 0\n      },\n      \"remaining_work\": {\n        \"scope\": \"reported_requirements_in_returned_items\",\n        \"rule\": \"module_completed\",\n        \"incomplete_item_ids\": [],\n        \"unknown_completion_item_ids\": [],\n        \"module_locked\": false,\n        \"item_access\": \"not_assessed\"\n      },\n      \"items\": [\n        {\n          \"id\": 81,\n          \"module_id\": 8,\n          \"title\": \"Topic A\",\n          \"type\": \"Page\",\n          \"position\": null,\n          \"indent\": null,\n          \"content_id\": null,\n          \"html_url\": null,\n          \"published\": null,\n          \"completion_requirement\": {\n            \"type\": \"must_view\",\n            \"completed\": true\n          },\n          \"completion_status\": \"completed\",\n          \"requirement_type_supported\": true,\n          \"required_action\": \"View the item\"\n        },\n        {\n          \"id\": 82,\n          \"module_id\": 8,\n          \"title\": \"Topic B\",\n          \"type\": \"Page\",\n          \"position\": null,\n          \"indent\": null,\n          \"content_id\": null,\n          \"html_url\": null,\n          \"published\": null,\n          \"completion_requirement\": {\n            \"type\": \"must_view\",\n            \"completed\": false\n          },\n          \"completion_status\": \"incomplete\",\n          \"requirement_type_supported\": true,\n          \"required_action\": \"View the item\"\n        }\n      ],\n      \"diagnostics\": []\n    },\n    {\n      \"id\": 9,\n      \"name\": \"Later work\",\n      \"position\": 3,\n      \"published\": null,\n      \"state\": \"locked\",\n      \"reported_state\": \"locked\",\n      \"completed_at\": null,\n      \"unlock_at\": \"2026-10-10T10:00:00Z\",\n      \"requirement_type\": \"all\",\n      \"reported_requirement_type\": \"all\",\n      \"require_sequential_progress\": false,\n      \"prerequisite_module_ids\": [\n        7\n      ],\n      \"reported_prerequisite_module_ids\": [\n        7\n      ],\n      \"item_coverage\": {\n        \"reported_count\": 1,\n        \"returned_count\": 1,\n        \"status\": \"matches_reported_count\"\n      },\n      \"requirement_counts\": {\n        \"completed\": 0,\n        \"incomplete\": 1,\n        \"unknown\": 0,\n        \"not_reported\": 0\n      },\n      \"remaining_work\": {\n        \"scope\": \"reported_requirements_in_returned_items\",\n        \"rule\": \"all\",\n        \"incomplete_item_ids\": [\n          91\n        ],\n        \"unknown_completion_item_ids\": [],\n        \"module_locked\": true,\n        \"item_access\": \"not_assessed\"\n      },\n      \"items\": [\n        {\n          \"id\": 91,\n          \"module_id\": 9,\n          \"title\": \"Final draft\",\n          \"type\": \"Assignment\",\n          \"position\": null,\n          \"indent\": null,\n          \"content_id\": null,\n          \"html_url\": null,\n          \"published\": null,\n          \"completion_requirement\": {\n            \"type\": \"must_submit\",\n            \"completed\": false\n          },\n          \"completion_status\": \"incomplete\",\n          \"requirement_type_supported\": true,\n          \"required_action\": \"Submit the work\"\n        }\n      ],\n      \"diagnostics\": []\n    },\n    {\n      \"id\": 10,\n      \"name\": \"Progress unavailable\",\n      \"position\": 4,\n      \"published\": null,\n      \"state\": \"unknown\",\n      \"reported_state\": null,\n      \"completed_at\": null,\n      \"unlock_at\": null,\n      \"requirement_type\": \"unknown\",\n      \"reported_requirement_type\": null,\n      \"require_sequential_progress\": null,\n      \"prerequisite_module_ids\": null,\n      \"reported_prerequisite_module_ids\": null,\n      \"item_coverage\": {\n        \"reported_count\": 2,\n        \"returned_count\": 2,\n        \"status\": \"matches_reported_count\"\n      },\n      \"requirement_counts\": {\n        \"completed\": 0,\n        \"incomplete\": 0,\n        \"unknown\": 2,\n        \"not_reported\": 0\n      },\n      \"remaining_work\": {\n        \"scope\": \"reported_requirements_in_returned_items\",\n        \"rule\": \"unknown\",\n        \"incomplete_item_ids\": [],\n        \"unknown_completion_item_ids\": [\n          101,\n          102\n        ],\n        \"module_locked\": null,\n        \"item_access\": \"not_assessed\"\n      },\n      \"items\": [\n        {\n          \"id\": 101,\n          \"module_id\": 10,\n          \"title\": \"Readiness check\",\n          \"type\": \"Quiz\",\n          \"position\": null,\n          \"indent\": null,\n          \"content_id\": null,\n          \"html_url\": null,\n          \"published\": null,\n          \"completion_requirement\": {\n            \"type\": \"min_percentage\",\n            \"min_percentage\": 70\n          },\n          \"completion_status\": \"unknown\",\n          \"requirement_type_supported\": true,\n          \"required_action\": \"Meet the reported minimum percentage\"\n        },\n        {\n          \"id\": 102,\n          \"module_id\": 10,\n          \"title\": \"Future requirement\",\n          \"type\": \"Page\",\n          \"position\": null,\n          \"indent\": null,\n          \"content_id\": null,\n          \"html_url\": null,\n          \"published\": null,\n          \"completion_requirement\": {\n            \"type\": \"future_rule\",\n            \"completed\": true\n          },\n          \"completion_status\": \"unknown\",\n          \"requirement_type_supported\": false,\n          \"required_action\": null\n        }\n      ],\n      \"diagnostics\": [\n        \"Student-specific module state is missing or unsupported.\",\n        \"The all-versus-one requirement rule is missing or unsupported.\",\n        \"Sequential-progress policy was not reported as a boolean.\",\n        \"Prerequisite module IDs are missing or malformed.\",\n        \"Some reported requirements have unsupported types or unknown completion.\"\n      ]\n    }\n  ]\n}\n"
+      },
+      "selected.stderr": {
+        "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/browser-v1/selected.stderr",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "text": ""
+      },
+      "selected.stdout": {
+        "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/browser-v1/selected.stdout",
+        "bytes": 458,
+        "sha256": "29c3ecbb4006008878656d6523d9158e608cf2086d3354c64763f7d7f34ed7e1",
+        "text": "{\n  \"ok\": true,\n  \"output\": \"/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/browser-v1/selected.html\",\n  \"course_id\": \"42\",\n  \"module_id\": \"9\",\n  \"modules_returned\": 4,\n  \"modules_included\": 1,\n  \"generated_at\": \"2026-10-08T15:20:55Z\",\n  \"html_bytes\": 12882,\n  \"sha256\": \"c3925b1d57ead065debd2423909387a38a2be889b4f5655fd5ef7bc4443b0181\",\n  \"json_bytes\": 2147,\n  \"json_sha256\": \"34168936d9d155decd4087be5e6d267c16ea6b1e3658fc30abea57379e5c494f\"\n}\n"
+      }
+    },
+    "screenshots": [
+      {
+        "name": "desktop-locked-module.png",
+        "bytes": 76659,
+        "sha256": "8c17ebd58cdbde2e7f915c9031115a1f61ec35456b2f2ff02a027d5827c6e67f"
+      },
+      {
+        "name": "desktop-overview.png",
+        "bytes": 114247,
+        "sha256": "0b57ac75809c0aa479ff8286918dee1c44c5d94f3d38328eea0916726128636a"
+      },
+      {
+        "name": "phone-module.png",
+        "bytes": 37470,
+        "sha256": "0897c862ba9dd9e9799dc09736a799a88c3cec2cf4381c25aff114bcf22ecb94"
+      },
+      {
+        "name": "phone-overview.png",
+        "bytes": 60131,
+        "sha256": "3b02b46c72454a6d01b6aef62b2d0d856278a4e21286230ff227ca8c7c211aa0"
+      }
+    ]
+  },
+  "visualReview": {
+    "allFiveBehaviorGroupsPassed": true,
+    "reviewedImages": [
+      "desktop-overview.png",
+      "phone-overview.png",
+      "phone-module.png"
+    ],
+    "finding": "The first viewport shows lengthy report metadata before a learner can reach the module links. Preserve every fact but put a module navigation panel, with the unchanged reader states, before that metadata.",
+    "change": "Move existing local navigation before the metadata panel and label each link with its reader state. All normalized facts, state/remaining-work logic, complete JSON bytes and file publication remain unchanged.",
+    "sourceBeforeChange": "qualified-exporter.py",
+    "initialEditPreparationFailure": {
+      "pid": 36704,
+      "exception": "SyntaxError: invalid syntax",
+      "phase": "Python parse before any statement",
+      "sourceChanged": false,
+      "cause": "Incorrect quotation in the native edit helper; corrected helper only."
+    }
+  },
+  "finalBrowser": {
+    "receipt": {
+      "startedAt": "2026-10-08T15:25:38.919Z",
+      "browser": "Chrome/154.0.8037.98",
+      "node": "v26.3.0",
+      "groups": [
+        {
+          "name": "desktop readable report and inert resource closure",
+          "pass": true,
+          "title": "Module progress snapshot",
+          "moduleCount": 4,
+          "moduleTitles": [
+            "Foundations",
+            "Choose one topic",
+            "Later work",
+            "Progress unavailable"
+          ],
+          "links": [
+            {
+              "text": "Foundations",
+              "href": "#module-0"
+            },
+            {
+              "text": "Choose one topic",
+              "href": "#module-1"
+            },
+            {
+              "text": "Later work",
+              "href": "#module-2"
+            },
+            {
+              "text": "Progress unavailable",
+              "href": "#module-3"
+            }
+          ],
+          "scrollWidth": 1360,
+          "width": 1360,
+          "navTop": 305.9375,
+          "firstModuleTop": 1676.5,
+          "scripts": 0,
+          "forms": 0,
+          "externalResources": 0,
+          "text": "CANVASPILOT · SAVED PROGRESS REPORT\n\nModule progress snapshot\n\nCourse 42 · Report created 2026-10-08T15:24:34Z\n\nThis is a saved observation for the authenticated caller. It does not refresh. Canvas supplies the module state; this report does not calculate completion, a percentage, or item access. Counts describe returned rows, and whole-course completeness remains unknown.\n\nModules in this report\nFoundations · started\nChoose one topic · completed\nLater work · locked\nProgress unavailable · unknown\nReport scope\n\nValues use JSON notation so null, false, zero, empty text, and empty lists stay distinct. Unsupported original values and thresholds stay visible.\n\nCourse id\n\"42\"\nMode\n\"token\"\nModule id\nnull\nModules returned\n4\nModules included\n4\nModules omitted by selection\n0\nWhole collection complete\nnull\nCount scope\n\"returned_modules_and_items\"\nState source\n\"Canvas module.state for the authenticated caller\"\nReader source\n\"CanvasAPI.list_modules(detail=full)\"\nUpstream response shape\n\"not_observed\"\nModule state counts in this selection\nLocked\n1\nUnlocked\n0\nStarted\n1\nCompleted\n1\nUnknown\n1\n\nDownload complete report JSON\n\nThis download contains the complete normalized progress report used below. It does not contain the original HTTP response pages.\n\nJSON SHA-256: 5337f26754214199eb81664f73d36133814ab1e629ae1872d093d89ac61c875c\n\nFoundations\n\nReported module state: started\n\nId\n7\nName\n\"Foundations\"\nPosition\n1\nPublished\nnull\nState from the progress reader\n\"started\"\nOriginal reported state\n\"started\"\nCompleted at\nnull\nUnlock at\nnull\nAll-versus-one requirement rule\n\"all\"\nOriginal reported requirement rule\n\"all\"\nSequential progress required\ntrue\nPrerequisite module IDs\n[]\nOriginal prerequisite module IDs\n[]\nReturned item coverage\nReported item count\n3\nReturned item count\n3\nStatus\n\"matches_reported_count\"\nRequirement counts in returned items\nCompleted\n1\nIncomplete\n1\nUnknown\n0\nNot reported\n1\nReported remaining work\n\nRead these IDs with the reported rule. Under a one-of rule, incomplete items are alternatives, not a count of required tasks. A completed module can still contain incomplete alternatives. Item access is not assessed.\n\nScope\n\"reported_requirements_in_returned_items\"\nRule\n\"all\"\nReported incomplete item IDs\n[\n  72\n]\nItem IDs with unknown completion\n[]\nModule locked\nfalse\nIndividual item access\n\"not_assessed\"\nReader diagnostics\nSome items have no reported requirement; this does not establish optionality.\nItems in returned order\nRead Café notes\nId\n71\nModule id\n7\nTitle\n\"Read Café notes\"\nType\n\"Page\"\nPosition\n1\nIndent\nnull\nContent id\nnull\nHtml url\n\"https://canvas.invalid/courses/42/modules/items/71\"\nPublished\nnull\nComplete reported requirement and thresholds\n{\n  \"type\": \"must_view\",\n  \"completed\": true\n}\nRequirement completion status\n\"completed\"\nRequirement type supported by the reader\ntrue\nReported required action\n\"View the item\"\nPreparation quiz\nId\n72\nModule id\n7\nTitle\n\"Preparation quiz\"\nType\n\"Quiz\"\nPosition\n2\nIndent\nnull\nContent id\nnull\nHtml url\n\"https://canvas.invalid/courses/42/modules/items/72\"\nPublished\nnull\nComplete reported requirement and thresholds\n{\n  \"type\": \"min_score\",\n  \"min_score\": 8,\n  \"completed\": false\n}\nRequirement completion status\n\"incomplete\"\nRequirement type supported by the reader\ntrue\nReported required action\n\"Meet the reported minimum score\"\nAdditional material\nId\n73\nModule id\n7\nTitle\n\"Additional material\"\nType\n\"ExternalUrl\"\nPosition\n3\nIndent\nnull\nContent id\nnull\nHtml url\nnull\nPublished\nnull\nComplete reported requirement and thresholds\nnull\nRequirement completion status\n\"not_reported\"\nRequirement type supported by the reader\nnull\nReported required action\nnull\nBack to report overview\nChoose one topic\n\nReported module state: completed\n\nId\n8\nName\n\"Choose one topic\"\nPosition\n2\nPublished\nnull\nState from the progress reader\n\"completed\"\nOriginal reported state\n\"completed\"\nCompleted at\nnull\nUnlock at\nnull\nAll-versus-one requirement rule\n\"one\"\nOriginal reported requirement rule\n\"one\"\nSequential progress required\nfalse\nPrerequisite module IDs\n[]\nOriginal prerequisite module IDs\n[]\nReturned item coverage\nReported item count\n2\nReturned item count\n2\nStatus\n\"matches_reported_count\"\nRequirement counts in returned items\nCompleted\n1\nIncomplete\n1\nUnknown\n0\nNot reported\n0\nReported remaining work\n\nRead these IDs with the reported rule. Under a one-of rule, incomplete items are alternatives, not a count of required tasks. A completed module can still contain incomplete alternatives. Item access is not assessed.\n\nScope\n\"reported_requirements_in_returned_items\"\nRule\n\"module_completed\"\nReported incomplete item IDs\n[]\nItem IDs with unknown completion\n[]\nModule locked\nfalse\nIndividual item access\n\"not_assessed\"\nReader diagnostics\n\nNo reader diagnostics were returned.\n\nItems in returned order\nTopic A\nId\n81\nModule id\n8\nTitle\n\"Topic A\"\nType\n\"Page\"\nPosition\nnull\nIndent\nnull\nContent id\nnull\nHtml url\nnull\nPublished\nnull\nComplete reported requirement and thresholds\n{\n  \"type\": \"must_view\",\n  \"completed\": true\n}\nRequirement completion status\n\"completed\"\nRequirement type supported by the reader\ntrue\nReported required action\n\"View the item\"\nTopic B\nId\n82\nModule id\n8\nTitle\n\"Topic B\"\nType\n\"Page\"\nPosition\nnull\nIndent\nnull\nContent id\nnull\nHtml url\nnull\nPublished\nnull\nComplete reported requirement and thresholds\n{\n  \"type\": \"must_view\",\n  \"completed\": false\n}\nRequirement completion status\n\"incomplete\"\nRequirement type supported by the reader\ntrue\nReported required action\n\"View the item\"\nBack to report overview\nLater work\n\nReported module state: locked\n\nId\n9\nName\n\"Later work\"\nPosition\n3\nPublished\nnull\nState from the progress reader\n\"locked\"\nOriginal reported state\n\"locked\"\nCompleted at\nnull\nUnlock at\n\"2026-10-10T10:00:00Z\"\nAll-versus-one requirement rule\n\"all\"\nOriginal reported requirement rule\n\"all\"\nSequential progress required\nfalse\nPrerequisite module IDs\n[\n  7\n]\nOriginal prerequisite module IDs\n[\n  7\n]\nReturned item coverage\nReported item count\n1\nReturned item count\n1\nStatus\n\"matches_reported_count\"\nRequirement counts in returned items\nCompleted\n0\nIncomplete\n1\nUnknown\n0\nNot reported\n0\nReported remaining work\n\nRead these IDs with the reported rule. Under a one-of rule, incomplete items are alternatives, not a count of required tasks. A completed module can still contain incomplete alternatives. Item access is not assessed.\n\nScope\n\"reported_requirements_in_returned_items\"\nRule\n\"all\"\nReported incomplete item IDs\n[\n  91\n]\nItem IDs with unknown completion\n[]\nModule locked\ntrue\nIndividual item access\n\"not_assessed\"\nReader diagnostics\n\nNo reader diagnostics were returned.\n\nItems in returned order\nFinal draft\nId\n91\nModule id\n9\nTitle\n\"Final draft\"\nType\n\"Assignment\"\nPosition\nnull\nIndent\nnull\nContent id\nnull\nHtml url\nnull\nPublished\nnull\nComplete reported requirement and thresholds\n{\n  \"type\": \"must_submit\",\n  \"completed\": false\n}\nRequirement completion status\n\"incomplete\"\nRequirement type supported by the reader\ntrue\nReported required action\n\"Submit the work\"\nBack to report overview\nProgress unavailable\n\nReported module state: unknown\n\nId\n10\nName\n\"Progress unavailable\"\nPosition\n4\nPublished\nnull\nState from the progress reader\n\"unknown\"\nOriginal reported state\nnull\nCompleted at\nnull\nUnlock at\nnull\nAll-versus-one requirement rule\n\"unknown\"\nOriginal reported requirement rule\nnull\nSequential progress required\nnull\nPrerequisite module IDs\nnull\nOriginal prerequisite module IDs\nnull\nReturned item coverage\nReported item count\n2\nReturned item count\n2\nStatus\n\"matches_reported_count\"\nRequirement counts in returned items\nCompleted\n0\nIncomplete\n0\nUnknown\n2\nNot reported\n0\nReported remaining work\n\nRead these IDs with the reported rule. Under a one-of rule, incomplete items are alternatives, not a count of required tasks. A completed module can still contain incomplete alternatives. Item access is not assessed.\n\nScope\n\"reported_requirements_in_returned_items\"\nRule\n\"unknown\"\nReported incomplete item IDs\n[]\nItem IDs with unknown completion\n[\n  101,\n  102\n]\nModule locked\nnull\nIndividual item access\n\"not_assessed\"\nReader diagnostics\nStudent-specific module state is missing or unsupported.\nThe all-versus-one requirement rule is missing or unsupported.\nSequential-progress policy was not reported as a boolean.\nPrerequisite module IDs are missing or malformed.\nSome reported requirements have unsupported types or unknown completion.\nItems in returned order\nReadiness check\nId\n101\nModule id\n10\nTitle\n\"Readiness check\"\nType\n\"Quiz\"\nPosition\nnull\nIndent\nnull\nContent id\nnull\nHtml url\nnull\nPublished\nnull\nComplete reported requirement and thresholds\n{\n  \"type\": \"min_percentage\",\n  \"min_percentage\": 70\n}\nRequirement completion status\n\"unknown\"\nRequirement type supported by the reader\ntrue\nReported required action\n\"Meet the reported minimum percentage\"\nFuture requirement\nId\n102\nModule id\n10\nTitle\n\"Future requirement\"\nType\n\"Page\"\nPosition\nnull\nIndent\nnull\nContent id\nnull\nHtml url\nnull\nPublished\nnull\nComplete reported requirement and thresholds\n{\n  \"type\": \"future_rule\",\n  \"completed\": true\n}\nRequirement completion status\n\"unknown\"\nRequirement type supported by the reader\nfalse\nReported required action\nnull\nBack to report overview\nOpen this file directly in a browser. Use the browser's Print command for a paper copy or PDF. The report has no scripts, external resources, or editable completion controls."
+        },
+        {
+          "name": "real JSON download equals existing original CLI observation",
+          "pass": true,
+          "bytes": 9446,
+          "sha256": "5337f26754214199eb81664f73d36133814ab1e629ae1872d093d89ac61c875c"
+        },
+        {
+          "name": "ordinary module link reaches preserved lock and prerequisite context",
+          "pass": true,
+          "hash": "#module-2",
+          "titleTop": 25.03125,
+          "text": "Later work\n\nReported module state: locked\n\nId\n9\nName\n\"Later work\"\nPosition\n3\nPublished\nnull\nState from the progress reader\n\"locked\"\nOriginal reported state\n\"locked\"\nCompleted at\nnull\nUnlock at\n\"2026-10-10T10:00:00Z\"\nAll-versus-one requirement rule\n\"all\"\nOriginal reported requirement rule\n\"all\"\nSequential progress required\nfalse\nPrerequisite module IDs\n[\n  7\n]\nOriginal prerequisite module IDs\n[\n  7\n]\nReturned item coverage\nReported item count\n1\nReturned item count\n1\nStatus\n\"matches_reported_count\"\nRequirement counts in returned items\nCompleted\n0\nIncomplete\n1\nUnknown\n0\nNot reported\n0\nReported remaining work\n\nRead these IDs with the reported rule. Under a one-of rule, incomplete items are alternatives, not a count of required tasks. A completed module can still contain incomplete alternatives. Item access is not assessed.\n\nScope\n\"reported_requirements_in_returned_items\"\nRule\n\"all\"\nReported incomplete item IDs\n[\n  91\n]\nItem IDs with unknown completion\n[]\nModule locked\ntrue\nIndividual item access\n\"not_assessed\"\nReader diagnostics\n\nNo reader diagnostics were returned.\n\nItems in returned order\nFinal draft\nId\n91\nModule id\n9\nTitle\n\"Final draft\"\nType\n\"Assignment\"\nPosition\nnull\nIndent\nnull\nContent id\nnull\nHtml url\nnull\nPublished\nnull\nComplete reported requirement and thresholds\n{\n  \"type\": \"must_submit\",\n  \"completed\": false\n}\nRequirement completion status\n\"incomplete\"\nRequirement type supported by the reader\ntrue\nReported required action\n\"Submit the work\"\nBack to report overview"
+        },
+        {
+          "name": "320px selected report preserves scope without horizontal overflow",
+          "pass": true,
+          "width": 320,
+          "scrollWidth": 320,
+          "moduleCount": 1,
+          "navTop": 480.34375,
+          "text": "CANVASPILOT · SAVED PROGRESS REPORT\n\nModule progress snapshot\n\nCourse 42 · Report created 2026-10-08T15:24:35Z\n\nThis is a saved observation for the authenticated caller. It does not refresh. Canvas supplies the module state; this report does not calculate completion, a percentage, or item access. Counts describe returned rows, and whole-course completeness remains unknown.\n\nModules in this report\nLater work · locked\nReport scope\n\nValues use JSON notation so null, false, zero, empty text, and empty lists stay distinct. Unsupported original values and thresholds stay visible.\n\nCourse id\n\"42\"\nMode\n\"token\"\nModule id\n\"9\"\nModules returned\n4\nModules included\n1\nModules omitted by selection\n3\nWhole collection complete\nnull\nCount scope\n\"returned_modules_and_items\"\nState source\n\"Canvas module.state for the authenticated caller\"\nReader source\n\"CanvasAPI.list_modules(detail=full)\"\nUpstream response shape\n\"not_observed\"\nModule state counts in this selection\nLocked\n1\nUnlocked\n0\nStarted\n0\nCompleted\n0\nUnknown\n0\n\nDownload complete report JSON\n\nThis download contains the complete normalized progress report used below. It does not contain the original HTTP response pages.\n\nJSON SHA-256: 34168936d9d155decd4087be5e6d267c16ea6b1e3658fc30abea57379e5c494f\n\nLater work\n\nReported module state: locked\n\nId\n9\nName\n\"Later work\"\nPosition\n3\nPublished\nnull\nState from the progress reader\n\"locked\"\nOriginal reported state\n\"locked\"\nCompleted at\nnull\nUnlock at\n\"2026-10-10T10:00:00Z\"\nAll-versus-one requirement rule\n\"all\"\nOriginal reported requirement rule\n\"all\"\nSequential progress required\nfalse\nPrerequisite module IDs\n[\n  7\n]\nOriginal prerequisite module IDs\n[\n  7\n]\nReturned item coverage\nReported item count\n1\nReturned item count\n1\nStatus\n\"matches_reported_count\"\nRequirement counts in returned items\nCompleted\n0\nIncomplete\n1\nUnknown\n0\nNot reported\n0\nReported remaining work\n\nRead these IDs with the reported rule. Under a one-of rule, incomplete items are alternatives, not a count of required tasks. A completed module can still contain incomplete alternatives. Item access is not assessed.\n\nScope\n\"reported_requirements_in_returned_items\"\nRule\n\"all\"\nReported incomplete item IDs\n[\n  91\n]\nItem IDs with unknown completion\n[]\nModule locked\ntrue\nIndividual item access\n\"not_assessed\"\nReader diagnostics\n\nNo reader diagnostics were returned.\n\nItems in returned order\nFinal draft\nId\n91\nModule id\n9\nTitle\n\"Final draft\"\nType\n\"Assignment\"\nPosition\nnull\nIndent\nnull\nContent id\nnull\nHtml url\nnull\nPublished\nnull\nComplete reported requirement and thresholds\n{\n  \"type\": \"must_submit\",\n  \"completed\": false\n}\nRequirement completion status\n\"incomplete\"\nRequirement type supported by the reader\ntrue\nReported required action\n\"Submit the work\"\nBack to report overview\nOpen this file directly in a browser. Use the browser's Print command for a paper copy or PDF. The report has no scripts, external resources, or editable completion controls."
+        },
+        {
+          "name": "print media retains facts while hiding the data-download action",
+          "pass": true,
+          "downloadDisplay": "none",
+          "moduleDisplay": "block",
+          "hiddenFacts": 0,
+          "text": "CANVASPILOT · SAVED PROGRESS REPORT\n\nModule progress snapshot\n\nCourse 42 · Report created 2026-10-08T15:24:35Z\n\nThis is a saved observation for the authenticated caller. It does not refresh. Canvas supplies the module state; this report does not calculate completion, a percentage, or item access. Counts describe returned rows, and whole-course completeness remains unknown.\n\nModules in this report\nLater work · locked\nReport scope\n\nValues use JSON notation so null, false, zero, empty text, and empty lists stay distinct. Unsupported original values and thresholds stay visible.\n\nCourse id\n\"42\"\nMode\n\"token\"\nModule id\n\"9\"\nModules returned\n4\nModules included\n1\nModules omitted by selection\n3\nWhole collection complete\nnull\nCount scope\n\"returned_modules_and_items\"\nState source\n\"Canvas module.state for the authenticated caller\"\nReader source\n\"CanvasAPI.list_modules(detail=full)\"\nUpstream response shape\n\"not_observed\"\nModule state counts in this selection\nLocked\n1\nUnlocked\n0\nStarted\n0\nCompleted\n0\nUnknown\n0\n\nThis download contains the complete normalized progress report used below. It does not contain the original HTTP response pages.\n\nJSON SHA-256: 34168936d9d155decd4087be5e6d267c16ea6b1e3658fc30abea57379e5c494f\n\nLater work\n\nReported module state: locked\n\nId\n9\nName\n\"Later work\"\nPosition\n3\nPublished\nnull\nState from the progress reader\n\"locked\"\nOriginal reported state\n\"locked\"\nCompleted at\nnull\nUnlock at\n\"2026-10-10T10:00:00Z\"\nAll-versus-one requirement rule\n\"all\"\nOriginal reported requirement rule\n\"all\"\nSequential progress required\nfalse\nPrerequisite module IDs\n[\n  7\n]\nOriginal prerequisite module IDs\n[\n  7\n]\nReturned item coverage\nReported item count\n1\nReturned item count\n1\nStatus\n\"matches_reported_count\"\nRequirement counts in returned items\nCompleted\n0\nIncomplete\n1\nUnknown\n0\nNot reported\n0\nReported remaining work\n\nRead these IDs with the reported rule. Under a one-of rule, incomplete items are alternatives, not a count of required tasks. A completed module can still contain incomplete alternatives. Item access is not assessed.\n\nScope\n\"reported_requirements_in_returned_items\"\nRule\n\"all\"\nReported incomplete item IDs\n[\n  91\n]\nItem IDs with unknown completion\n[]\nModule locked\ntrue\nIndividual item access\n\"not_assessed\"\nReader diagnostics\n\nNo reader diagnostics were returned.\n\nItems in returned order\nFinal draft\nId\n91\nModule id\n9\nTitle\n\"Final draft\"\nType\n\"Assignment\"\nPosition\nnull\nIndent\nnull\nContent id\nnull\nHtml url\nnull\nPublished\nnull\nComplete reported requirement and thresholds\n{\n  \"type\": \"must_submit\",\n  \"completed\": false\n}\nRequirement completion status\n\"incomplete\"\nRequirement type supported by the reader\ntrue\nReported required action\n\"Submit the work\"\nOpen this file directly in a browser. Use the browser's Print command for a paper copy or PDF. The report has no scripts, external resources, or editable completion controls."
+        }
+      ],
+      "requests": [
+        {
+          "url": "file:///Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/browser-v2/all.html",
+          "method": "GET"
+        },
+        {
+          "url": "file:///Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/browser-v2/selected.html",
+          "method": "GET"
+        }
+      ],
+      "finishedAt": "2026-10-08T15:25:39.675Z",
+      "allPass": true
+    },
+    "execution": {
+      "argv": [
+        "/opt/homebrew/bin/node",
+        "/Users/me/hamon-canvas-module-export-39c2b591-v1/tools/browser-check-v2.cjs"
+      ],
+      "startedAt": "2026-10-08T15:25:38.753447+00:00",
+      "finishedAt": "2026-10-08T15:25:39.742952+00:00",
+      "returncode": 0
+    },
+    "nativeCli": {
+      "records": [
+        {
+          "label": "all",
+          "argv": [
+            "/Users/me/hamon-canvas-module-export-39c2b591-v1/runtime/bin/python",
+            "-B",
+            "-m",
+            "canvaspilot.cli",
+            "export-module-progress",
+            "42",
+            "--out",
+            "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/browser-v2/all.html",
+            "--base-url",
+            "http://127.0.0.1:64427",
+            "--token",
+            "synthetic-export-browser-only",
+            "--profile",
+            "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/browser-v2/unused-profile"
+          ],
+          "startedAt": "2026-10-08T15:24:33.790267+00:00",
+          "finishedAt": "2026-10-08T15:24:34.853592+00:00",
+          "returncode": 0
+        },
+        {
+          "label": "selected",
+          "argv": [
+            "/Users/me/hamon-canvas-module-export-39c2b591-v1/runtime/bin/python",
+            "-B",
+            "-m",
+            "canvaspilot.cli",
+            "export-module-progress",
+            "42",
+            "--module-id",
+            "9",
+            "--out",
+            "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/browser-v2/selected.html",
+            "--base-url",
+            "http://127.0.0.1:64427",
+            "--token",
+            "synthetic-export-browser-only",
+            "--profile",
+            "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/browser-v2/unused-profile"
+          ],
+          "startedAt": "2026-10-08T15:24:34.853697+00:00",
+          "finishedAt": "2026-10-08T15:24:35.563227+00:00",
+          "returncode": 0
+        },
+        {
+          "label": "original",
+          "argv": [
+            "/Users/me/hamon-canvas-module-export-39c2b591-v1/runtime/bin/python",
+            "-B",
+            "-m",
+            "canvaspilot.cli",
+            "module-progress",
+            "42",
+            "--base-url",
+            "http://127.0.0.1:64427",
+            "--token",
+            "synthetic-export-browser-only",
+            "--profile",
+            "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/browser-v2/unused-profile"
+          ],
+          "startedAt": "2026-10-08T15:24:35.563281+00:00",
+          "finishedAt": "2026-10-08T15:24:36.273116+00:00",
+          "returncode": 0
+        }
+      ],
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/modules",
+          "query": {
+            "include[]": [
+              "items"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/modules",
+          "query": {
+            "page": [
+              "2"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/modules/7/items",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/modules/7/items",
+          "query": {
+            "page": [
+              "2"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/modules",
+          "query": {
+            "include[]": [
+              "items"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/modules",
+          "query": {
+            "page": [
+              "2"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/modules/7/items",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/modules/7/items",
+          "query": {
+            "page": [
+              "2"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/modules",
+          "query": {
+            "include[]": [
+              "items"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/modules",
+          "query": {
+            "page": [
+              "2"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/modules/7/items",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/modules/7/items",
+          "query": {
+            "page": [
+              "2"
+            ]
+          }
+        }
+      ],
+      "serverClosedBeforeBrowser": true,
+      "htmlSha256": {
+        "all": "e088d9c1b430f868f2a3577d5876c68b8d4a34f7da3e008211f5cc7f6682b3a6",
+        "selected": "3169dfe4d119770335b183624aa5a5ed67dc01e8282a5d415734249ec7d1c884"
+      }
+    },
+    "streams": {
+      "all.stderr": {
+        "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/browser-v2/all.stderr",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "text": ""
+      },
+      "all.stdout": {
+        "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/browser-v2/all.stdout",
+        "bytes": 454,
+        "sha256": "8308290377af2a3299a27cd9671b6239a7a5a90edf003551f17feff741502180",
+        "text": "{\n  \"ok\": true,\n  \"output\": \"/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/browser-v2/all.html\",\n  \"course_id\": \"42\",\n  \"module_id\": null,\n  \"modules_returned\": 4,\n  \"modules_included\": 4,\n  \"generated_at\": \"2026-10-08T15:24:34Z\",\n  \"html_bytes\": 40454,\n  \"sha256\": \"e088d9c1b430f868f2a3577d5876c68b8d4a34f7da3e008211f5cc7f6682b3a6\",\n  \"json_bytes\": 9446,\n  \"json_sha256\": \"5337f26754214199eb81664f73d36133814ab1e629ae1872d093d89ac61c875c\"\n}\n"
+      },
+      "browser.stderr": {
+        "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/browser-v2/browser.stderr",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "text": ""
+      },
+      "browser.stdout": {
+        "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/browser-v2/browser.stdout",
+        "bytes": 470,
+        "sha256": "1cd3c22fb64a80b7cf444b46eba735f69c8146efdfd92acd41594671c99f1320",
+        "text": "{\"allPass\":true,\"groups\":[{\"name\":\"desktop readable report and inert resource closure\",\"pass\":true},{\"name\":\"real JSON download equals existing original CLI observation\",\"pass\":true},{\"name\":\"ordinary module link reaches preserved lock and prerequisite context\",\"pass\":true},{\"name\":\"320px selected report preserves scope without horizontal overflow\",\"pass\":true},{\"name\":\"print media retains facts while hiding the data-download action\",\"pass\":true}],\"requestCount\":2}\n"
+      },
+      "original.stderr": {
+        "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/browser-v2/original.stderr",
+        "bytes": 414,
+        "sha256": "be4ed81a82ad3e8ffffe8a249a0961a910eeb169e010732d4bd02a6ae3c43382",
+        "text": "HTTP Request: GET http://127.0.0.1:64427/api/v1/courses/42/modules?include%5B%5D=items&per_page=50 \"HTTP/1.0 200 OK\"\nHTTP Request: GET http://127.0.0.1:64427/api/v1/courses/42/modules?page=2 \"HTTP/1.0 200 OK\"\nHTTP Request: GET http://127.0.0.1:64427/api/v1/courses/42/modules/7/items?per_page=50 \"HTTP/1.0 200 OK\"\nHTTP Request: GET http://127.0.0.1:64427/api/v1/courses/42/modules/7/items?page=2 \"HTTP/1.0 200 OK\"\n"
+      },
+      "original.stdout": {
+        "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/browser-v2/original.stdout",
+        "bytes": 9446,
+        "sha256": "5337f26754214199eb81664f73d36133814ab1e629ae1872d093d89ac61c875c",
+        "text": "{\n  \"course_id\": \"42\",\n  \"mode\": \"token\",\n  \"module_id\": null,\n  \"modules_returned\": 4,\n  \"modules_included\": 4,\n  \"modules_omitted_by_selection\": 0,\n  \"collection_complete\": null,\n  \"count_scope\": \"returned_modules_and_items\",\n  \"state_source\": \"Canvas module.state for the authenticated caller\",\n  \"reader_source\": \"CanvasAPI.list_modules(detail=full)\",\n  \"upstream_response_shape\": \"not_observed\",\n  \"module_state_counts\": {\n    \"locked\": 1,\n    \"unlocked\": 0,\n    \"started\": 1,\n    \"completed\": 1,\n    \"unknown\": 1\n  },\n  \"modules\": [\n    {\n      \"id\": 7,\n      \"name\": \"Foundations\",\n      \"position\": 1,\n      \"published\": null,\n      \"state\": \"started\",\n      \"reported_state\": \"started\",\n      \"completed_at\": null,\n      \"unlock_at\": null,\n      \"requirement_type\": \"all\",\n      \"reported_requirement_type\": \"all\",\n      \"require_sequential_progress\": true,\n      \"prerequisite_module_ids\": [],\n      \"reported_prerequisite_module_ids\": [],\n      \"item_coverage\": {\n        \"reported_count\": 3,\n        \"returned_count\": 3,\n        \"status\": \"matches_reported_count\"\n      },\n      \"requirement_counts\": {\n        \"completed\": 1,\n        \"incomplete\": 1,\n        \"unknown\": 0,\n        \"not_reported\": 1\n      },\n      \"remaining_work\": {\n        \"scope\": \"reported_requirements_in_returned_items\",\n        \"rule\": \"all\",\n        \"incomplete_item_ids\": [\n          72\n        ],\n        \"unknown_completion_item_ids\": [],\n        \"module_locked\": false,\n        \"item_access\": \"not_assessed\"\n      },\n      \"items\": [\n        {\n          \"id\": 71,\n          \"module_id\": 7,\n          \"title\": \"Read Caf\\u00e9 notes\",\n          \"type\": \"Page\",\n          \"position\": 1,\n          \"indent\": null,\n          \"content_id\": null,\n          \"html_url\": \"https://canvas.invalid/courses/42/modules/items/71\",\n          \"published\": null,\n          \"completion_requirement\": {\n            \"type\": \"must_view\",\n            \"completed\": true\n          },\n          \"completion_status\": \"completed\",\n          \"requirement_type_supported\": true,\n          \"required_action\": \"View the item\"\n        },\n        {\n          \"id\": 72,\n          \"module_id\": 7,\n          \"title\": \"Preparation quiz\",\n          \"type\": \"Quiz\",\n          \"position\": 2,\n          \"indent\": null,\n          \"content_id\": null,\n          \"html_url\": \"https://canvas.invalid/courses/42/modules/items/72\",\n          \"published\": null,\n          \"completion_requirement\": {\n            \"type\": \"min_score\",\n            \"min_score\": 8,\n            \"completed\": false\n          },\n          \"completion_status\": \"incomplete\",\n          \"requirement_type_supported\": true,\n          \"required_action\": \"Meet the reported minimum score\"\n        },\n        {\n          \"id\": 73,\n          \"module_id\": 7,\n          \"title\": \"Additional material\",\n          \"type\": \"ExternalUrl\",\n          \"position\": 3,\n          \"indent\": null,\n          \"content_id\": null,\n          \"html_url\": null,\n          \"published\": null,\n          \"completion_requirement\": null,\n          \"completion_status\": \"not_reported\",\n          \"requirement_type_supported\": null,\n          \"required_action\": null\n        }\n      ],\n      \"diagnostics\": [\n        \"Some items have no reported requirement; this does not establish optionality.\"\n      ]\n    },\n    {\n      \"id\": 8,\n      \"name\": \"Choose one topic\",\n      \"position\": 2,\n      \"published\": null,\n      \"state\": \"completed\",\n      \"reported_state\": \"completed\",\n      \"completed_at\": null,\n      \"unlock_at\": null,\n      \"requirement_type\": \"one\",\n      \"reported_requirement_type\": \"one\",\n      \"require_sequential_progress\": false,\n      \"prerequisite_module_ids\": [],\n      \"reported_prerequisite_module_ids\": [],\n      \"item_coverage\": {\n        \"reported_count\": 2,\n        \"returned_count\": 2,\n        \"status\": \"matches_reported_count\"\n      },\n      \"requirement_counts\": {\n        \"completed\": 1,\n        \"incomplete\": 1,\n        \"unknown\": 0,\n        \"not_reported\": 0\n      },\n      \"remaining_work\": {\n        \"scope\": \"reported_requirements_in_returned_items\",\n        \"rule\": \"module_completed\",\n        \"incomplete_item_ids\": [],\n        \"unknown_completion_item_ids\": [],\n        \"module_locked\": false,\n        \"item_access\": \"not_assessed\"\n      },\n      \"items\": [\n        {\n          \"id\": 81,\n          \"module_id\": 8,\n          \"title\": \"Topic A\",\n          \"type\": \"Page\",\n          \"position\": null,\n          \"indent\": null,\n          \"content_id\": null,\n          \"html_url\": null,\n          \"published\": null,\n          \"completion_requirement\": {\n            \"type\": \"must_view\",\n            \"completed\": true\n          },\n          \"completion_status\": \"completed\",\n          \"requirement_type_supported\": true,\n          \"required_action\": \"View the item\"\n        },\n        {\n          \"id\": 82,\n          \"module_id\": 8,\n          \"title\": \"Topic B\",\n          \"type\": \"Page\",\n          \"position\": null,\n          \"indent\": null,\n          \"content_id\": null,\n          \"html_url\": null,\n          \"published\": null,\n          \"completion_requirement\": {\n            \"type\": \"must_view\",\n            \"completed\": false\n          },\n          \"completion_status\": \"incomplete\",\n          \"requirement_type_supported\": true,\n          \"required_action\": \"View the item\"\n        }\n      ],\n      \"diagnostics\": []\n    },\n    {\n      \"id\": 9,\n      \"name\": \"Later work\",\n      \"position\": 3,\n      \"published\": null,\n      \"state\": \"locked\",\n      \"reported_state\": \"locked\",\n      \"completed_at\": null,\n      \"unlock_at\": \"2026-10-10T10:00:00Z\",\n      \"requirement_type\": \"all\",\n      \"reported_requirement_type\": \"all\",\n      \"require_sequential_progress\": false,\n      \"prerequisite_module_ids\": [\n        7\n      ],\n      \"reported_prerequisite_module_ids\": [\n        7\n      ],\n      \"item_coverage\": {\n        \"reported_count\": 1,\n        \"returned_count\": 1,\n        \"status\": \"matches_reported_count\"\n      },\n      \"requirement_counts\": {\n        \"completed\": 0,\n        \"incomplete\": 1,\n        \"unknown\": 0,\n        \"not_reported\": 0\n      },\n      \"remaining_work\": {\n        \"scope\": \"reported_requirements_in_returned_items\",\n        \"rule\": \"all\",\n        \"incomplete_item_ids\": [\n          91\n        ],\n        \"unknown_completion_item_ids\": [],\n        \"module_locked\": true,\n        \"item_access\": \"not_assessed\"\n      },\n      \"items\": [\n        {\n          \"id\": 91,\n          \"module_id\": 9,\n          \"title\": \"Final draft\",\n          \"type\": \"Assignment\",\n          \"position\": null,\n          \"indent\": null,\n          \"content_id\": null,\n          \"html_url\": null,\n          \"published\": null,\n          \"completion_requirement\": {\n            \"type\": \"must_submit\",\n            \"completed\": false\n          },\n          \"completion_status\": \"incomplete\",\n          \"requirement_type_supported\": true,\n          \"required_action\": \"Submit the work\"\n        }\n      ],\n      \"diagnostics\": []\n    },\n    {\n      \"id\": 10,\n      \"name\": \"Progress unavailable\",\n      \"position\": 4,\n      \"published\": null,\n      \"state\": \"unknown\",\n      \"reported_state\": null,\n      \"completed_at\": null,\n      \"unlock_at\": null,\n      \"requirement_type\": \"unknown\",\n      \"reported_requirement_type\": null,\n      \"require_sequential_progress\": null,\n      \"prerequisite_module_ids\": null,\n      \"reported_prerequisite_module_ids\": null,\n      \"item_coverage\": {\n        \"reported_count\": 2,\n        \"returned_count\": 2,\n        \"status\": \"matches_reported_count\"\n      },\n      \"requirement_counts\": {\n        \"completed\": 0,\n        \"incomplete\": 0,\n        \"unknown\": 2,\n        \"not_reported\": 0\n      },\n      \"remaining_work\": {\n        \"scope\": \"reported_requirements_in_returned_items\",\n        \"rule\": \"unknown\",\n        \"incomplete_item_ids\": [],\n        \"unknown_completion_item_ids\": [\n          101,\n          102\n        ],\n        \"module_locked\": null,\n        \"item_access\": \"not_assessed\"\n      },\n      \"items\": [\n        {\n          \"id\": 101,\n          \"module_id\": 10,\n          \"title\": \"Readiness check\",\n          \"type\": \"Quiz\",\n          \"position\": null,\n          \"indent\": null,\n          \"content_id\": null,\n          \"html_url\": null,\n          \"published\": null,\n          \"completion_requirement\": {\n            \"type\": \"min_percentage\",\n            \"min_percentage\": 70\n          },\n          \"completion_status\": \"unknown\",\n          \"requirement_type_supported\": true,\n          \"required_action\": \"Meet the reported minimum percentage\"\n        },\n        {\n          \"id\": 102,\n          \"module_id\": 10,\n          \"title\": \"Future requirement\",\n          \"type\": \"Page\",\n          \"position\": null,\n          \"indent\": null,\n          \"content_id\": null,\n          \"html_url\": null,\n          \"published\": null,\n          \"completion_requirement\": {\n            \"type\": \"future_rule\",\n            \"completed\": true\n          },\n          \"completion_status\": \"unknown\",\n          \"requirement_type_supported\": false,\n          \"required_action\": null\n        }\n      ],\n      \"diagnostics\": [\n        \"Student-specific module state is missing or unsupported.\",\n        \"The all-versus-one requirement rule is missing or unsupported.\",\n        \"Sequential-progress policy was not reported as a boolean.\",\n        \"Prerequisite module IDs are missing or malformed.\",\n        \"Some reported requirements have unsupported types or unknown completion.\"\n      ]\n    }\n  ]\n}\n"
+      },
+      "selected.stderr": {
+        "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/browser-v2/selected.stderr",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "text": ""
+      },
+      "selected.stdout": {
+        "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/browser-v2/selected.stdout",
+        "bytes": 458,
+        "sha256": "2a792b5de32bc481a951f75186a7709c9bda22bd4791136041b92c6d559849c7",
+        "text": "{\n  \"ok\": true,\n  \"output\": \"/Users/me/hamon-canvas-module-export-39c2b591-v1/evidence/browser-v2/selected.html\",\n  \"course_id\": \"42\",\n  \"module_id\": \"9\",\n  \"modules_returned\": 4,\n  \"modules_included\": 1,\n  \"generated_at\": \"2026-10-08T15:24:35Z\",\n  \"html_bytes\": 12942,\n  \"sha256\": \"3169dfe4d119770335b183624aa5a5ed67dc01e8282a5d415734249ec7d1c884\",\n  \"json_bytes\": 2147,\n  \"json_sha256\": \"34168936d9d155decd4087be5e6d267c16ea6b1e3658fc30abea57379e5c494f\"\n}\n"
+      }
+    },
+    "screenshots": [
+      {
+        "name": "desktop-locked-module.png",
+        "bytes": 76550,
+        "sha256": "2d7a871d6e4e7bf884f3bbaae5c48a7184a4fa501afa6884c9cf41ed9cf780a0"
+      },
+      {
+        "name": "desktop-overview.png",
+        "bytes": 102756,
+        "sha256": "af736a3cd7060a0284938b277cbd3b28c25940a25f350d724add67e230948524"
+      },
+      {
+        "name": "phone-module.png",
+        "bytes": 37469,
+        "sha256": "c907141dc2e68c781179c940601e93b919f622da512c2562c2dedb1d4c947a66"
+      },
+      {
+        "name": "phone-overview.png",
+        "bytes": 61291,
+        "sha256": "93fc44c01c50b8121a540069b8a2500b5d4f1742ddfaccf4870deca6ed75876a"
+      }
+    ]
+  },
+  "fullNativeArtifactSeal": {
+    "createdAt": "2026-10-08T15:29:55.597319+00:00",
+    "packet": "/Users/me/hamon-canvas-module-export-39c2b591-v1/receiving-v1",
+    "artifactCommit": "270f49878dfd5cca5f7ea7ba6439884793027554",
+    "artifactTree": "c99dbf845c0ebd1c7983de474b3a3bf846f83200",
+    "trackedFiles": 113,
+    "productCommit": "dbb4a4fa04c25849a079f89a67b3049a2f55946f",
+    "productTree": "f17362750896b2834b4321151403b61e64429486",
+    "bundle": {
+      "path": "/Users/me/hamon-canvas-module-export-39c2b591-v1/receiving-v1.bundle",
+      "bytes": 645370,
+      "sha256": "937e606061029452247ada6dee26c6fb735013428ac04b987ca7890370c98edd",
+      "prerequisites": []
+    },
+    "manifestSha256": "a000916cb14cb255d438d4f5bb0448241cac40149af1a8149bb2532be45d81cc",
+    "verified": true,
+    "verificationStdout": "The bundle contains this ref:\n270f49878dfd5cca5f7ea7ba6439884793027554 HEAD\nThe bundle records a complete history.\nThe bundle uses this hash algorithm: sha1\n",
+    "verificationStderr": "/Users/me/hamon-canvas-module-export-39c2b591-v1/receiving-v1.bundle is okay\n"
+  }
+}
