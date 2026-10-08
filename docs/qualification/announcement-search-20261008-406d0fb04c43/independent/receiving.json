@@ -1,0 +1,55 @@
+{
+  "schema": "canvaspilot74.independent-summary.v1",
+  "accepted": true,
+  "baselineCommit": "1bafdaa31f7789d8e561680cb6001bbe38b2da64",
+  "baselineZip": {
+    "bytes": 55194,
+    "sha256": "1f5348643f80eff13bee807df65cc23b697ae2f8af28be284636bff1da14f6fc",
+    "gitBlob": "ba09a921568880e960e5d2256011a15d2c027175"
+  },
+  "candidateCommit": "2239de20e604318feccd82b1eec3db4553e7c0e7",
+  "candidateTree": "aa8c890ed82177024cf9bf35a13635974ed59c26",
+  "candidateZip": {
+    "bytes": 62555,
+    "sha256": "fb96edaf741668547fb62e7bdbc06695d3a7642d42e3a3ac9d6b4b083004ef37",
+    "gitBlob": "f36fd968bb2f6684e41e049450b661f436c2fa72"
+  },
+  "originalOracle": {
+    "bytes": 13550,
+    "sha256": "57078cf95f740bbf40753f079ca75fd04b77881b309e796ad94b73a72c2a060e",
+    "gitBlob": "40b17951985cfc4a5d5787334644796137a38fa0"
+  },
+  "acceptedOracle": {
+    "bytes": 13444,
+    "sha256": "10b7c66d3e742b2ba04c6307f3529c2e4736270d5eb8e8a9704703cc9598654f",
+    "gitBlob": "26eb76d4ac934ec5e29379ce78e87ad7bb28f0e6"
+  },
+  "originalOracleFreezeUtc": "2026-10-08T19:08:14Z",
+  "amendment": {
+    "reason": "Published baseline canvaspilot.__init__ imports CanvasAPI/client and MCP module at package import; import absence was stricter than the declared no constructor/default/request effects.",
+    "changes": "Remove only two client-module-absence clauses. Keep zero client/default calls, zero writes, zero requests and all semantic assertions unchanged.",
+    "beforeCandidateInspection": true,
+    "firstFailurePreserved": true
+  },
+  "baseline": {
+    "cases": 4,
+    "checks": 35
+  },
+  "candidate": {
+    "cases": 23,
+    "checks": 220
+  },
+  "python": "3.12.14",
+  "runtime": "/workspace/scratch/ac386303dce2/runtime-execution/canvaspilot-env/bin/python",
+  "sourceImport": "Standard zipimport from an inherited sealed memfd; all source entries and every loaded canvaspilot module path checked; donor editable source excluded.",
+  "memfdSeals": 15,
+  "filesystemWrites": 0,
+  "forbiddenOperations": 0,
+  "externalNetworkRequests": 0,
+  "providerOrBrokerCalls": 0,
+  "limitations": [
+    "Qualifies the exact20-module candidate ZIP, not later composed CLI snapshots.",
+    "Uses authored loopback HTTP responses and an authored bearer-token value, not live Canvas account data.",
+    "The original oracle's no-client-import expectation was corrected from baseline evidence before candidate intake; zero client/default calls and side effects remained required."
+  ]
+}
