@@ -1,0 +1,113 @@
+{
+  "utc": "2026-10-08T15:37:42.712020+00:00",
+  "command": [
+    "/Users/me/canvaspilot-page-packet-20261008-5f566b5ec8ef/venv/bin/canvaspilot",
+    "export-pages",
+    "42",
+    "intro",
+    "7",
+    "page_id:7",
+    "--base-url",
+    "http://127.0.0.1:51076",
+    "--token",
+    "authored-page-packet-token",
+    "--profile",
+    "/Users/me/canvaspilot-page-packet-20261008-5f566b5ec8ef/evidence/offline-browser/unused-authored-profile",
+    "--out",
+    "/Users/me/canvaspilot-page-packet-20261008-5f566b5ec8ef/evidence/offline-browser/reading.html"
+  ],
+  "selection": [
+    "intro",
+    "7",
+    "page_id:7"
+  ],
+  "base_url": "http://127.0.0.1:51076",
+  "fixture_sha256": "c5d348db60489544c4c2291170d18528f617981a374326c6d3c9059e490fd82b",
+  "network_scope": "Authored GET-only loopback HTTP server; no Canvas account or broker",
+  "output": "/Users/me/canvaspilot-page-packet-20261008-5f566b5ec8ef/evidence/offline-browser/reading.html",
+  "exit_code": 0,
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/42",
+      "query": {
+        "per_page": [
+          "50"
+        ]
+      },
+      "authored_token": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/42/pages/intro",
+      "query": {
+        "per_page": [
+          "50"
+        ]
+      },
+      "authored_token": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/42/pages/7",
+      "query": {
+        "per_page": [
+          "50"
+        ]
+      },
+      "authored_token": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/42/pages/page_id%3A7",
+      "query": {
+        "per_page": [
+          "50"
+        ]
+      },
+      "authored_token": true
+    }
+  ],
+  "console_report": {
+    "ok": true,
+    "output": "/Users/me/canvaspilot-page-packet-20261008-5f566b5ec8ef/evidence/offline-browser/reading.html",
+    "source": "http://127.0.0.1:51076",
+    "course_id": "42",
+    "generated_at": "2026-10-08T15:37:43.462106+00:00",
+    "pages_exported": 3,
+    "original_body_bytes": 729,
+    "pages": [
+      {
+        "requested": "intro",
+        "page_id": 9007199254740993,
+        "url": "intro",
+        "title": "Reading one \u2014 \u96ea & <script>literal title</script>",
+        "body_sha256": "51398b8a771fb85e769ed07bcd3ddcda10682c65a981478dfd6a1cb5399834e7",
+        "body_bytes": 534
+      },
+      {
+        "requested": "7",
+        "page_id": 8,
+        "url": "7",
+        "title": "A numeric URL is still a URL",
+        "body_sha256": "3f3f9716b6f22281ace1de5d8874857eb7dabe930ff38bca711d527fa1844c6d",
+        "body_bytes": 137
+      },
+      {
+        "requested": "page_id:7",
+        "page_id": 7,
+        "url": "notes-\u96ea",
+        "title": "Explicit page ID seven",
+        "body_sha256": "452d9c2b3bf3f5fc05f43c7cd844c0fb1b843e8e65ad2e2421fd9c05c4acdc48",
+        "body_bytes": 58
+      }
+    ],
+    "sha256": "c9511af4f33ab4931a5b828131a82e625610ac4b5fd5eafbb8f30d8cb8c68aba",
+    "bytes": 9311
+  },
+  "passed": true,
+  "output_sha256": "c9511af4f33ab4931a5b828131a82e625610ac4b5fd5eafbb8f30d8cb8c68aba",
+  "output_bytes": 9311,
+  "fixture_unchanged": true,
+  "server_closed": true
+}

@@ -1,0 +1,136 @@
+{
+  "utc": "2026-10-08T15:36:30.600872+00:00",
+  "runs": [
+    {
+      "name": "wheel-build",
+      "command": [
+        "/Users/me/hamon-work-ledgerly-566d51f04b31-venv/bin/python",
+        "-B",
+        "-m",
+        "pip",
+        "--python",
+        "/Users/me/canvaspilot-page-packet-20261008-5f566b5ec8ef/venv/bin/python",
+        "wheel",
+        "--no-deps",
+        "--no-build-isolation",
+        "--no-cache-dir",
+        "--wheel-dir",
+        "/Users/me/canvaspilot-page-packet-20261008-5f566b5ec8ef/evidence/installed-wheel/wheels",
+        "/Users/me/canvaspilot-page-packet-20261008-5f566b5ec8ef/source"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "wheel-install",
+      "command": [
+        "/Users/me/hamon-work-ledgerly-566d51f04b31-venv/bin/python",
+        "-B",
+        "-m",
+        "pip",
+        "--python",
+        "/Users/me/canvaspilot-page-packet-20261008-5f566b5ec8ef/venv/bin/python",
+        "install",
+        "--no-deps",
+        "--no-compile",
+        "--no-cache-dir",
+        "/Users/me/canvaspilot-page-packet-20261008-5f566b5ec8ef/evidence/installed-wheel/wheels/canvaspilot-0.1.1-py3-none-any.whl"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "installed-origin",
+      "command": [
+        "/Users/me/canvaspilot-page-packet-20261008-5f566b5ec8ef/venv/bin/python",
+        "-B",
+        "-c",
+        "import canvaspilot,canvaspilot.cli,canvaspilot.page_export,json,sys,importlib.metadata\nfrom pathlib import Path\nimport hashlib\nroot=Path(canvaspilot.__file__).parent\nprint(json.dumps({\"python\":sys.version,\"prefix\":sys.prefix,\"package_path\":str(root),\n\"cli_path\":canvaspilot.cli.__file__,\"page_export_path\":canvaspilot.page_export.__file__,\n\"versions\":{p:importlib.metadata.version(p) for p in [\"canvaspilot\",\"httpx\",\"mcp\",\"pydantic\",\"hatchling\",\"pytest\",\"ruff\"]},\n\"package_sha256\":{str(p.relative_to(root.parent)):hashlib.sha256(p.read_bytes()).hexdigest() for p in root.rglob(\"*\") if p.is_file()}},indent=2))\n"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "full-suite",
+      "command": [
+        "/Users/me/canvaspilot-page-packet-20261008-5f566b5ec8ef/venv/bin/python",
+        "-B",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--junitxml",
+        "/Users/me/canvaspilot-page-packet-20261008-5f566b5ec8ef/evidence/installed-wheel/full-suite.xml"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "ruff",
+      "command": [
+        "/Users/me/canvaspilot-page-packet-20261008-5f566b5ec8ef/venv/bin/python",
+        "-B",
+        "-m",
+        "ruff",
+        "check",
+        "--no-cache",
+        "src",
+        "tests",
+        "scripts"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "environment_is_private": true,
+  "live_installation": false,
+  "source_sha256": {
+    "README.md": "86174db3566461df2af68bb39a742d4d568730bbdda5b96563dbfd3367d0493e",
+    "docs/page-export.md": "3976c1b5bfb80d1d196b0fa4ab0ba655a6193e2b15b1a8145e7ba197a44f23b8",
+    "src/canvaspilot/cli.py": "361b1dafb3c264900b393b2367a71b66fc8a6f2d8e78921372e87650bbbd6330",
+    "src/canvaspilot/page_export.py": "8800e959ee620438273c3291fd24c51b9ed567430b28093cd3f8bef52bff5015",
+    "tests/fixtures/page_packet.json": "c5d348db60489544c4c2291170d18528f617981a374326c6d3c9059e490fd82b",
+    "tests/test_page_export.py": "8b17008213e04441cbd97a5bd295c55c65edcc4f28bfc55cb5299fc633265d09",
+    "tests/test_page_export_process.py": "2d406b0a4dc1dc711dffd00094baa3fd574789263f8cc39dae82dc18fbf6b478"
+  },
+  "source_commit": "dbcad81ad35b685299a9f2981fbd509ab8d56f31",
+  "source_tree": "acd306b1965772c830737389598795bed179e669",
+  "wheel": {
+    "path": "/Users/me/canvaspilot-page-packet-20261008-5f566b5ec8ef/evidence/installed-wheel/wheels/canvaspilot-0.1.1-py3-none-any.whl",
+    "sha256": "6170b3e6b4b37e6fd055975309da6b99b207fb2da50fbcd17d7f5064d0240836",
+    "bytes": 57091
+  },
+  "all_wheel_package_leaves_match_source": 15,
+  "installed_origin": {
+    "python": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+    "prefix": "/Users/me/canvaspilot-page-packet-20261008-5f566b5ec8ef/venv",
+    "package_path": "/Users/me/canvaspilot-page-packet-20261008-5f566b5ec8ef/venv/lib/python3.13/site-packages/canvaspilot",
+    "cli_path": "/Users/me/canvaspilot-page-packet-20261008-5f566b5ec8ef/venv/lib/python3.13/site-packages/canvaspilot/cli.py",
+    "page_export_path": "/Users/me/canvaspilot-page-packet-20261008-5f566b5ec8ef/venv/lib/python3.13/site-packages/canvaspilot/page_export.py",
+    "versions": {
+      "canvaspilot": "0.1.1",
+      "httpx": "0.28.1",
+      "mcp": "2.3.0",
+      "pydantic": "2.14.0",
+      "hatchling": "1.32.4",
+      "pytest": "9.1.1",
+      "ruff": "0.16.10"
+    },
+    "package_sha256": {
+      "canvaspilot/module_progress.py": "974ee31925514a2e53b899888302a7fa357e280ab5f2461b754b814473653d99",
+      "canvaspilot/bundle.py": "7c592252e190542706b779d48cdb62fc9b305be168bc011249fc42cc60f7d6ef",
+      "canvaspilot/feedback.py": "55454598effea598474a21f67e36d5bc5bea84aaefeefc18e4d8c49804ab9869",
+      "canvaspilot/client.py": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797",
+      "canvaspilot/assignment_submission.py": "52fc732660b8844a2ee0801931a363f20db15b5309d148d01e3b618be487133d",
+      "canvaspilot/__init__.py": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5",
+      "canvaspilot/folder_browser.py": "c6a67229b268c539e5edb581e3320b06229460adc3fbc01d72e4964e31c0348a",
+      "canvaspilot/calendar_export.py": "b92948c438063438bf9b8ef01b0b0c067802ddb06354f00e8ee18749f3c5e2fa",
+      "canvaspilot/page_export.py": "8800e959ee620438273c3291fd24c51b9ed567430b28093cd3f8bef52bff5015",
+      "canvaspilot/offline_demo.py": "2389f3ccc1b6db5995be0d90e014ea9345e3029aa5546a5b2dcf12c1197e6d4d",
+      "canvaspilot/api.py": "98859c82fd49d52040e371883c15708a4c86e83becc138bebe6e2ea5c56daf16",
+      "canvaspilot/cli.py": "361b1dafb3c264900b393b2367a71b66fc8a6f2d8e78921372e87650bbbd6330",
+      "canvaspilot/submission_history.py": "b007234b9861a68504e36f005ae463943b36b5cd50a3d157532c1cab09fcf9da",
+      "canvaspilot/session_broker.py": "a692cd2812cbc09536f1b60c84892bc8e87d2ae984c5a5aa25a13f6537ba6da2",
+      "canvaspilot/mcp_server.py": "9140cb3dd86f0fd71541bf5428eef8ef075df14224b8da63b63b4a216978c9b3"
+    }
+  },
+  "all_installed_package_leaves_match_wheel_and_source": 15,
+  "full_suite_and_lint_passed": true,
+  "source_unchanged_during_qualification": true
+}

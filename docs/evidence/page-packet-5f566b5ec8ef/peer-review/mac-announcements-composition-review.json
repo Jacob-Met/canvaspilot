@@ -1,0 +1,59 @@
+{
+  "reviewer": "chatgpt:5f566b5ec8ef:mac_continuity",
+  "decision": "Accepted bounded current source composition; prior module/guide acceptance retains exact hashes",
+  "base": "0480cbce421bae532e3e909899fc8fb83789e878",
+  "observed_native_head": "b881d4acfb2a80f05842e86b25fdb499e576b745",
+  "pins": [
+    {
+      "path": "src/canvaspilot/page_export.py",
+      "sha256": "8800e959ee620438273c3291fd24c51b9ed567430b28093cd3f8bef52bff5015"
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "sha256": "811d141084dadde567b775c0bd75914e33ff7408c2fe8555c82829c16daee5a6"
+    },
+    {
+      "path": "README.md",
+      "sha256": "db724d01370a7615594ad09513f49d7fc8d00c74e7c5c657f72217b1494a6ad8"
+    },
+    {
+      "path": "docs/page-export.md",
+      "sha256": "3976c1b5bfb80d1d196b0fa4ab0ba655a6193e2b15b1a8145e7ba197a44f23b8"
+    }
+  ],
+  "insertions": {
+    "src/canvaspilot/cli.py": {
+      "block_lines": [
+        8,
+        21
+      ],
+      "current_base_bytes_restored_exactly": true
+    },
+    "README.md": {
+      "block_lines": [
+        5
+      ],
+      "current_base_bytes_restored_exactly": true
+    }
+  },
+  "unchanged_current_boundaries": [
+    "src/canvaspilot/client.py",
+    "src/canvaspilot/calendar_export.py",
+    "pyproject.toml",
+    ".github/workflows/ci.yml"
+  ],
+  "unowned_git_leaves_exact": 1105,
+  "read_receipts": {
+    "composition.json": "32f49dc7120cb4bcc04bf148ca3d05c99632ff279074b33ba9e01068ba3165be",
+    "contribution.diff": "6711b35e4542feda6314f43cae9b7bde0c60dafa71f04c51159394a28ff1b87e",
+    "upstream-functional.diff": "5aa483fa76de83e49a2229410f06ae93723b4c1ddc7d0076b1e92902d0732829"
+  },
+  "status": "",
+  "review_findings": [
+    "All new announcements, discussion and agenda parser/dispatch branches remain exact; removing only the previously reviewed page export blocks restores current CLI bytes.",
+    "Current README additions remain exact; removing the five-line page-guide insertion restores base bytes.",
+    "Upstream API changes add unrelated discussion_thread and course_agenda methods. No shared client, calendar helper, dependency or CI change intersects this page module.",
+    "No source blocker in this composition. No test, wheel, browser, provider, or native source write was performed by the reviewer."
+  ],
+  "limits": "This is source and Git-object preservation review, not an independent claim about the author's final wheel/test execution."
+}
