@@ -1,0 +1,17 @@
+{
+  "source": "b0655cfc6f298c956fcdd27fbba32e3c5609516f",
+  "expected_assignment_ids": [
+    1,
+    2,
+    3
+  ],
+  "actual_assignment_ids": [
+    1,
+    2
+  ],
+  "requests": [
+    "/api/v1/courses/7/assignments?order_by=due_at&include%5B%5D=submission&bucket=upcoming&per_page=50&page=1"
+  ],
+  "missed_opaque_next_link": "https://school.instructure.com/api/v1/courses/7/assignments?cursor=after%3A2&include%5B%5D=submission",
+  "simulation": "Authored broker HTTP envelopes, actual client and API; no live Canvas"
+}

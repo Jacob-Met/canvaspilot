@@ -2,15 +2,13 @@
 
 from __future__ import annotations
 
-import logging
 import os
 import re
 from pathlib import Path
 from typing import Any
+from urllib.parse import urljoin, urlsplit
 
 import httpx
-
-log = logging.getLogger(__name__)
 
 # Override with CANVAS_BASE_URL or --base-url (e.g. https://<school>.instructure.com).
 DEFAULT_BASE = "https://canvas.instructure.com"
@@ -20,6 +18,10 @@ BROKER_PORT = int(os.environ.get("CANVAS_SESSION_PORT", "18765"))
 
 class CanvasAuthError(RuntimeError):
     pass
+
+
+class CanvasPaginationError(RuntimeError):
+    """A collection could not be retrieved completely; no partial list is returned."""
 
 
 def broker_base() -> str:
@@ -57,6 +59,22 @@ def broker_fetch(
     timeout: float = 120.0,
 ) -> Any:
     """Call Canvas via the stay-open session broker (in-page fetch)."""
+    resp = _broker_fetch_response(
+        method, path, params=params, json_body=json_body, data=data, timeout=timeout
+    )
+    return resp["json"] if resp.get("json") is not None else resp.get("text")
+
+
+def _broker_fetch_response(
+    method: str,
+    path: str,
+    *,
+    params: dict[str, Any] | list[tuple[str, Any]] | None = None,
+    json_body: dict[str, Any] | None = None,
+    data: dict[str, Any] | None = None,
+    timeout: float = 120.0,
+) -> dict[str, Any]:
+    """Decode the existing broker envelope without discarding pagination metadata."""
     from urllib.parse import urlencode
 
     full = path
@@ -98,9 +116,7 @@ def broker_fetch(
             request=httpx.Request(method, full),
             response=httpx.Response(int(status), text=str(resp.get("text") or resp.get("json"))),
         )
-    if resp.get("json") is not None:
-        return resp["json"]
-    return resp.get("text")
+    return resp
 
 
 def default_profile() -> Path:
@@ -233,68 +249,62 @@ class CanvasClient:
         *,
         params: dict[str, Any] | list[tuple[str, Any]] | None = None,
     ) -> list[Any]:
-        """Follow Link rel=next until exhausted (cap pages)."""
+        """Follow opaque next links; raise if the complete collection is unavailable."""
         if self.fixture is not None:
             data = self.request("GET", path, params=params)
             return data if isinstance(data, list) else [data]
 
-        if not self.token and broker_health():
-            # The session broker's /fetch returns {status, json, text} with no
-            # response headers, so Link: rel=next following is impossible here.
-            # Use Canvas explicit pagination (?page=N&per_page=M) instead of
-            # silently returning only the first page.
-            params = _with_per_page(params)
-            if isinstance(params, list):
-                per_page = min(int(dict(params).get("per_page", 50)), 100)
-                params = [(k, v) for k, v in params if k != "per_page"]
-                params.append(("per_page", per_page))
-            else:
-                per_page = min(int(params.get("per_page", 50)), 100)
-                params = {**params, "per_page": per_page}
-            out: list[Any] = []
-            truncated = True
-            for page in range(1, 41):
-                data = broker_fetch(
-                    "GET", path, params=_with_page(params, page), timeout=self.timeout
-                )
-                if not isinstance(data, list):
-                    # Mirror the token path: keep the non-list chunk, then stop.
-                    out.append(data)
-                    truncated = False
-                    break
-                out.extend(data)
-                if len(data) < per_page:
-                    truncated = False
-                    break
-            if truncated:
-                log.warning(
-                    "get_paginated(%s): hit 40-page cap with %d rows; result truncated",
-                    path,
-                    len(out),
-                )
-            return out
-
-        http = self._ensure_http()
+        use_broker = not self.token and bool(broker_health())
+        http = None if use_broker else self._ensure_http()
         params = _with_per_page(params)
         out: list[Any] = []
-        url: str | None = path
-        pages = 0
-        while url and pages < 40:
-            pages += 1
-            r = http.get(url, params=params if pages == 1 and not str(url).startswith("http") else None)
-            if r.status_code in (401, 403):
-                raise CanvasAuthError(f"Canvas auth failed ({r.status_code})")
-            r.raise_for_status()
-            chunk = r.json()
-            if isinstance(chunk, list):
-                out.extend(chunk)
+        url = path
+        origin = None
+        seen: set[tuple[Any, ...]] = set()
+        for _ in range(40):
+            if use_broker:
+                resp = _broker_fetch_response("GET", url, params=params, timeout=self.timeout)
+                chunk = resp["json"] if resp.get("json") is not None else resp.get("text")
+                if isinstance(chunk, list) and ("link" not in resp or not resp.get("url")):
+                    raise CanvasPaginationError(
+                        "Restart the session broker from the updated CanvasPilot installation: "
+                        "this running broker lacks pagination metadata; the collection is incomplete."
+                    )
+                response_url, link = resp.get("url"), resp.get("link")
             else:
+                # httpx replaces an absolute URL's query when params is supplied.
+                # As before, an absolute Canvas URL carries its own query.
+                r = http.get(url, params=params if not url.startswith("http") else None)
+                if r.status_code in (401, 403):
+                    raise CanvasAuthError(f"Canvas auth failed ({r.status_code})")
+                r.raise_for_status()
+                chunk = r.json()
+                response_url, link = str(r.url), r.headers.get("link")
+            params = None  # Every next URL already includes its complete, opaque query.
+            if not isinstance(chunk, list):
                 out.append(chunk)
-                break
-            next_url = _link_next(r.headers.get("link") or r.headers.get("Link") or "")
-            url = next_url
-            params = None
-        return out
+                return out
+            response_origin, page_key = _pagination_identity(response_url)
+            if origin is None:
+                origin = response_origin
+            if response_origin != origin:
+                raise CanvasPaginationError("Canvas pagination response changed origin; collection incomplete.")
+            if page_key in seen:
+                raise CanvasPaginationError("Canvas pagination repeated a page; collection incomplete.")
+            seen.add(page_key)
+            out.extend(chunk)
+            next_url = _link_next(link)
+            if next_url is None:
+                return out
+            if any(ord(c) <= 32 or ord(c) == 127 or c == "\\" for c in next_url):
+                raise CanvasPaginationError("Canvas pagination URL is invalid; collection incomplete.")
+            url = urljoin(response_url, next_url)
+            next_origin, next_key = _pagination_identity(url)
+            if next_origin != origin:
+                raise CanvasPaginationError("Canvas pagination next link changed origin; collection incomplete.")
+            if next_key in seen:
+                raise CanvasPaginationError("Canvas pagination repeated a next link; collection incomplete.")
+        raise CanvasPaginationError("Canvas pagination reached the 40-page limit; collection incomplete.")
 
     def _fixture_request(
         self,
@@ -326,25 +336,70 @@ class CanvasClient:
         raise KeyError(f"fixture miss: {key}")
 
 
-def _with_page(
-    params: dict[str, Any] | list[tuple[str, Any]] | None,
-    page: int,
-) -> dict[str, Any] | list[tuple[str, Any]]:
-    """Return params with an explicit Canvas ?page=N for explicit pagination."""
-    if isinstance(params, list):
-        return [(k, v) for k, v in params if k != "page"] + [("page", page)]
-    out = dict(params or {})
-    out["page"] = page
-    return out
+def _pagination_identity(url: str) -> tuple[tuple[str, str, int], tuple[Any, ...]]:
+    """Validate without rewriting an opaque URL, and identify its origin/page."""
+    if not isinstance(url, str) or any(ord(c) <= 32 or ord(c) == 127 or c == "\\" for c in url):
+        raise CanvasPaginationError("Canvas pagination URL is invalid; collection incomplete.")
+    try:
+        parsed = urlsplit(url)
+        if (parsed.scheme not in ("http", "https") or not parsed.hostname
+                or parsed.username is not None or parsed.password is not None or parsed.fragment):
+            raise ValueError("invalid pagination URL")
+        port = parsed.port if parsed.port is not None else (443 if parsed.scheme == "https" else 80)
+    except ValueError as exc:
+        raise CanvasPaginationError("Canvas pagination URL is invalid; collection incomplete.") from exc
+    origin = (parsed.scheme, parsed.hostname, port)
+    return origin, (origin, parsed.path or "/", parsed.query)
 
 
-def _link_next(link_header: str) -> str | None:
-    for part in link_header.split(","):
-        if 'rel="next"' in part or "rel=next" in part:
-            m = re.search(r"<([^>]+)>", part)
-            if m:
-                return m.group(1)
-    return None
+# Commas/semicolons inside <URLs> and quoted parameters are not link separators.
+_LINK_TOKEN = r"[!#$%&'*+.^_`|~0-9A-Za-z-]+"
+_LINK_VALUE = rf'(?:"(?:[^"\\]|\\.)*"|{_LINK_TOKEN})'
+_LINK_PARAM = rf"\s*;\s*{_LINK_TOKEN}(?:\s*=\s*{_LINK_VALUE})?"
+_LINK = re.compile(rf"\s*<([^<>]*)>((?:{_LINK_PARAM})*)\s*(?:,|$)")
+_PARAM = re.compile(rf"\s*;\s*({_LINK_TOKEN})(?:\s*=\s*({_LINK_VALUE}))?")
+_RELATION = re.compile(
+    r"(?:[A-Za-z][A-Za-z0-9.-]*|"
+    r"[A-Za-z][A-Za-z0-9+.-]*:(?:[A-Za-z0-9._~:/?#\[\]@!$&'()*+,;=-]|%[0-9A-Fa-f]{2})*)"
+)
+
+
+def _link_next(link_header: str | None) -> str | None:
+    if link_header is None or link_header == "":
+        return None
+    if not isinstance(link_header, str):
+        raise CanvasPaginationError("Canvas pagination Link header is invalid; collection incomplete.")
+    pos = 0
+    next_url = None
+    while link_header[pos:].strip():
+        match = _LINK.match(link_header, pos)
+        if match is None:
+            raise CanvasPaginationError("Canvas pagination Link header is malformed; collection incomplete.")
+        has_relation = False
+        for param in _PARAM.finditer(match[2]):
+            if param[1].lower() == "anchor":
+                raise CanvasPaginationError("Canvas pagination Link header has an unsupported anchor context; collection incomplete.")
+            if param[1].lower() != "rel":
+                continue
+            if has_relation:
+                raise CanvasPaginationError("Canvas pagination Link header has repeated rel parameters; collection incomplete.")
+            has_relation = True
+            value = param[2] or ""
+            if value.startswith('"'):
+                value = re.sub(r"\\(.)", r"\1", value[1:-1])
+            if not value.strip():
+                raise CanvasPaginationError("Canvas pagination Link header has an empty relation; collection incomplete.")
+            relations = value.split(" ")
+            if any(_RELATION.fullmatch(item) is None for item in relations if item):
+                raise CanvasPaginationError("Canvas pagination Link header has an invalid relation; collection incomplete.")
+            if "next" in [item.lower() for item in relations]:
+                if next_url is not None:
+                    raise CanvasPaginationError("Canvas pagination Link header has multiple next links; collection incomplete.")
+                next_url = match[1]
+        if not has_relation:
+            raise CanvasPaginationError("Canvas pagination Link header has no relation; collection incomplete.")
+        pos = match.end()
+    return next_url
 
 
 def _with_per_page(

@@ -1,0 +1,68 @@
+{
+  "candidate": "fd3996aada3f34b7093fa361eb7e423c4c587d90",
+  "base": "874ad9c073fc5bab625e583849dbbe4eaf7fc6af",
+  "files": [
+    {
+      "path": "candidate/src/canvaspilot/client.py",
+      "bytes": 15820,
+      "sha256": "5f9668dccbacf760f2ade39135a227c00f9cdb1ea5c09bf4b0836bef29a0e24a",
+      "gitBlob": "397bcd71173b86048d53a5a47c12564d4c7c4b2d"
+    },
+    {
+      "path": "corrected/src/canvaspilot/client.py",
+      "bytes": 16562,
+      "sha256": "5eac822e4b2e6584b1d2e6a7ff24634cebfffd6635c859b6c075c9a3968c724a",
+      "gitBlob": "ab95d581541019f2c2fc4ba77f3f37b52f25a0a1"
+    },
+    {
+      "path": "link-metadata-review.patch",
+      "bytes": 2536,
+      "sha256": "9d0aff501a85feb25c5b3702e68638d71cde145291bc61b617725ff1a662d595",
+      "gitBlob": "4fee34f763c781d0f539b49a81e4b305f90d1e05"
+    },
+    {
+      "path": "test_independent_link_receiving.py",
+      "bytes": 7888,
+      "sha256": "fa54a90e76b4f294349e486eed254dc0c5097aa1535c8a7c1f89fdb937fcd7a4",
+      "gitBlob": "742b0144ae92505ae929e50ac9311e0763e4c748"
+    },
+    {
+      "path": "final-before.txt",
+      "bytes": 21470,
+      "sha256": "1acec488d4a3344bc834a8dfac343b9ff528511ca0248bd27f568cd0ead4f638",
+      "gitBlob": "12e2ea5244f387a112de9a06987baaaa55294905"
+    },
+    {
+      "path": "final-after.txt",
+      "bytes": 99,
+      "sha256": "9b38d33493613b66e79ff88d668c01f5fd8180a8669a16b54039343c4919f103",
+      "gitBlob": "ade42921223b682fc8dbad8555de20b4f3f417a7"
+    },
+    {
+      "path": "corrected-native-suite.txt",
+      "bytes": 191,
+      "sha256": "9603b1d09c1d312507e30fe1b5dc54d71c2fa31a2e2f8bacab42f302458fe3e3",
+      "gitBlob": "a7d5581d407a77358da886bf695cda3cd99b928b"
+    }
+  ],
+  "results": {
+    "candidate": {
+      "failed": 18,
+      "passed": 20
+    },
+    "corrected": {
+      "passed": 38,
+      "failed": 0
+    },
+    "nativeCorrected": {
+      "passed": 108,
+      "skipped": 2
+    }
+  },
+  "sources": [
+    "https://developerdocs.instructure.com/services/canvas/basics/file.pagination",
+    "https://www.rfc-editor.org/rfc/rfc8288.html#section-3",
+    "https://www.rfc-editor.org/rfc/rfc8288.html#section-3.2",
+    "https://www.rfc-editor.org/rfc/rfc8288.html#section-3.3"
+  ]
+}

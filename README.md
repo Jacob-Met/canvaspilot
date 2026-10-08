@@ -104,7 +104,7 @@ Tools exposed (all prefixed `canvas_`):
 | Discussions | `list_discussion_topics`, `get_discussion`, `post_discussion_reply` |
 | Quizzes | `list_quizzes`, `get_quiz`, `list_quiz_questions`, `list_quiz_submissions`, `start_quiz_submission`, `complete_quiz_submission` |
 | Inbox / Calendar | `list_conversations`, `get_conversation`, `reply_conversation`, `list_calendar_events` |
-| **Full REST** | `canvas_api_request`, `canvas_api_paginated` — any `/api/v1/...` path (escape hatch for everything else; in session-broker mode `api_paginated` returns a single page only — see Auth modes) |
+| **Full REST** | `canvas_api_request`, `canvas_api_paginated` — any `/api/v1/...` path (escape hatch for everything else; paginated reads follow Canvas's next links — see Auth modes) |
 
 Programmatic API bundle: `from canvaspilot.bundle import make_api, tool_inventory`.
 
@@ -118,7 +118,9 @@ Programmatic API bundle: `from canvaspilot.bundle import make_api, tool_inventor
 
 Mode resolution is fixture > token > live broker > session, decided at runtime: `CANVAS_API_TOKEN` always wins and skips the broker; otherwise a live `GET 127.0.0.1:18765/health` probe decides whether the session broker is used. Bare "session" mode with no running broker raises on every request — "session (default)" means "broker if it's up", not "works with no setup".
 
-Pagination follows response `Link` headers only in token mode (up to 40 pages). In session-broker mode the broker returns a single page (`per_page` ≤ 100); paginate by repeated calls.
+Paginated reads follow Canvas's response `Link` headers in both token and session-broker modes. Canvas can return fewer rows than requested and use opaque cursor URLs; a short or empty page does not establish that the collection is complete. Next links retain their exact query and must stay on the original response origin. Malformed links, unsupported anchored link contexts, cycles, changed origins or a continuing next link after 40 pages raise `CanvasPaginationError` instead of returning a partial list. Single-request tools keep their existing body-only result.
+
+After updating CanvasPilot, restart any running session broker before using paginated tools. Older broker processes omit pagination metadata, so the updated client explains that a restart is needed instead of presenting an incomplete course or assignment list as complete. This does not change the broker's authentication or write controls.
 
 The broker only listens on loopback — and `session_broker.main()` now refuses to start on any non-loopback bind address (fail-closed: a future host change cannot silently expose the unauthenticated `/fetch`/`/shutdown` endpoints to the network). Cookies never leave the Playwright profile directory; the MCP/CLI process never sees them — it asks the broker to make the request.
 
@@ -158,7 +160,15 @@ pip install -e ".[dev]"
 pytest
 ```
 
-Tests run entirely in fixture mode.
+Tests use synthetic provider data and isolated loopback listeners; no Canvas account is needed.
+
+An optional end-to-end pagination check uses a fresh Chromium context with every request intercepted, synthetic Canvas responses, the actual broker HTTP/queue and the high-level assignment API:
+
+```bash
+CANVASPILOT_TEST_CHROME=/path/to/chromium pytest -q -s tests/test_link_pagination_browser.py
+```
+
+The normal suite needs no installed browser. The optional check does not reuse a school session or contact Canvas.
 
 ## Responsible use
 

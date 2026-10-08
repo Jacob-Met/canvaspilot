@@ -1,0 +1,188 @@
+"""Independent receiving of Canvas pagination and legacy broker decoding.
+
+Token mode uses actual httpx requests over an authored MockTransport. Broker
+mode uses actual local HTTP and the unchanged _broker_request decoder against
+authored envelopes. No school, existing browser profile or provider is used.
+"""
+
+from __future__ import annotations
+
+from contextlib import contextmanager
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+import json
+import threading
+from urllib.parse import urljoin
+
+import httpx
+import pytest
+
+from canvaspilot import client as client_mod
+
+BASE = "https://school.instructure.com"
+PATH = "/api/v1/courses/29/assignments"
+NEXT = BASE + PATH + "?cursor=second"
+
+
+@contextmanager
+def collection(monkeypatch, mode, replies):
+    calls = []
+    queue = list(replies)
+
+    def response_for(request):
+        calls.append(request)
+        if not queue:
+            raise AssertionError("unplanned collection request")
+        return queue.pop(0)
+
+    if mode == "token":
+        def transport(request):
+            item = response_for(request)
+            headers = {"Link": item["link"]} if item.get("link") is not None else {}
+            return httpx.Response(item.get("status", 200), json=item.get("json"), headers=headers)
+
+        client = client_mod.CanvasClient(base_url=BASE, token="authored-token")
+        client._http = httpx.Client(base_url=BASE, transport=httpx.MockTransport(transport))
+        try:
+            yield client, calls
+        finally:
+            client.close()
+        return
+
+    class Handler(BaseHTTPRequestHandler):
+        def log_message(self, *args):
+            pass
+
+        def send_json(self, value):
+            body = json.dumps(value).encode()
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json")
+            self.send_header("Content-Length", str(len(body)))
+            self.end_headers()
+            self.wfile.write(body)
+
+        def do_GET(self):
+            if self.path != "/health":
+                raise AssertionError(self.path)
+            self.send_json({"ok": True, "ready": True})
+
+        def do_POST(self):
+            data = json.loads(self.rfile.read(int(self.headers["Content-Length"])))
+            request = httpx.Request(data["method"], urljoin(BASE + "/", data["path"]),
+                                    headers=data.get("headers"), json=data.get("body"))
+            item = response_for(request)
+            envelope = {"status": 200, "json": item.get("json"), "text": None,
+                        "link": item.get("link"), "url": str(request.url), **item}
+            if envelope.pop("legacy", False):
+                envelope.pop("url", None)
+                envelope.pop("link", None)
+            self.send_json({"ok": True, "response": envelope})
+
+    server = ThreadingHTTPServer(("127.0.0.1", 0), Handler)
+    thread = threading.Thread(target=lambda: server.serve_forever(poll_interval=0.02), daemon=True)
+    thread.start()
+    monkeypatch.setattr(client_mod, "BROKER_PORT", server.server_address[1])
+    client = client_mod.CanvasClient(base_url=BASE, token="", timeout=3)
+    try:
+        yield client, calls
+    finally:
+        client.close()
+        server.shutdown()
+        server.server_close()
+        thread.join(timeout=3)
+        assert not thread.is_alive()
+
+
+@pytest.mark.parametrize("mode", ["broker", "token"])
+@pytest.mark.parametrize("suffix", [
+    "",
+    "; rel=<next>",
+    "; rel=next/prev",
+    '; rel="<next>"',
+    '; rel="next/prev"',
+    '; rel="next\talternate"',
+    '; rel="next"; title=not=a=token',
+])
+def test_malformed_relation_metadata_cannot_assert_completion(monkeypatch, mode, suffix):
+    replies = [{"json": [{"id": 1}], "link": f"<{NEXT}>{suffix}"},
+               {"json": [{"id": 99}], "link": None}]
+    with collection(monkeypatch, mode, replies) as (client, calls):
+        with pytest.raises(RuntimeError, match="pagination.*Link"):
+            client.get_paginated(PATH)
+        assert len(calls) == 1
+
+
+@pytest.mark.parametrize("mode", ["broker", "token"])
+@pytest.mark.parametrize("suffix", [
+    '; rel="next"; anchor="https://elsewhere.example/other"',
+    '; ANCHOR="/another-collection"; rel="next"',
+])
+def test_unsupported_link_context_cannot_supply_next_collection(monkeypatch, mode, suffix):
+    replies = [{"json": [{"id": 1}], "link": f"<{NEXT}>{suffix}"},
+               {"json": [{"id": 99}], "link": None}]
+    with collection(monkeypatch, mode, replies) as (client, calls):
+        with pytest.raises(RuntimeError, match="pagination.*(context|anchor)"):
+            client.get_paginated(PATH)
+        assert len(calls) == 1
+
+
+@pytest.mark.parametrize("mode", ["broker", "token"])
+def test_opaque_query_and_quoted_valid_parameters_survive(monkeypatch, mode):
+    cursor = BASE + PATH + "?cursor=%2f%2F,a;b&include%5B%5D=a&include%5B%5D=b&empty=&literal=+"
+    header = f'<{cursor}>; title="quoted; words, here"; title*=utf-8\'\'next%20page; rel="alternate NEXT https://relations.example/opaque%2Ftype urn:example:relation"'
+    with collection(monkeypatch, mode, [
+        {"json": [], "link": header}, {"json": [{"id": 2}], "link": None},
+    ]) as (client, calls):
+        assert client.get_paginated(PATH) == [{"id": 2}]
+        assert str(calls[1].url) == cursor
+
+
+@pytest.mark.parametrize("mode", ["broker", "token"])
+def test_equivalent_origin_cycle_is_rejected_before_repeating_read(monkeypatch, mode):
+    link = f'<https://SCHOOL.INSTRUCTURE.COM:443{PATH}?per_page=50>; rel="next"'
+    with collection(monkeypatch, mode, [{"json": [{"id": 1}], "link": link}]) as (client, calls):
+        with pytest.raises(RuntimeError, match="pagination.*repeat"):
+            client.get_paginated(PATH)
+        assert len(calls) == 1
+
+
+@pytest.mark.parametrize("value,text,expected", [
+    (False, "false", False), (0, "0", 0), ("", '""', ""), ({}, None, {}),
+    ([], None, []), (None, "null", "null"), (None, "plain body", "plain body"), (None, None, None),
+])
+def test_public_broker_fetch_preserves_legacy_decoded_body(monkeypatch, value, text, expected):
+    with collection(monkeypatch, "broker", [{"json": value, "text": text, "legacy": True}]) as (_, calls):
+        actual = client_mod.broker_fetch("GET", PATH)
+        assert type(actual) is type(expected)
+        assert actual == expected
+        assert len(calls) == 1
+
+
+@pytest.mark.parametrize("mode", ["broker", "token"])
+def test_legacy_dictionary_after_list_keeps_original_contract(monkeypatch, mode):
+    with collection(monkeypatch, mode, [
+        {"json": [{"id": 1}], "link": f'<{NEXT}>; rel="next"'},
+        {"json": {"id": 2, "legacy": True}, "legacy": True},
+    ]) as (client, calls):
+        assert client.get_paginated(PATH) == [{"id": 1}, {"id": 2, "legacy": True}]
+        assert len(calls) == 2
+
+
+@pytest.mark.parametrize("response_url", [17, [], {}, "https://u:p@school.instructure.com/x", "https://school.instructure.com/x#secret"])
+def test_malformed_broker_response_url_refuses_collection(monkeypatch, response_url):
+    with collection(monkeypatch, "broker", [{"json": [{"id": 1}], "url": response_url}]) as (client, calls):
+        with pytest.raises(RuntimeError, match="(pagination|[Rr]estart)"):
+            client.get_paginated(PATH)
+        assert len(calls) == 1
+
+
+def test_pr26_broker_proxy_isolation_survives_collection_and_raw_fetch(monkeypatch):
+    monkeypatch.setenv("HTTP_PROXY", "http://127.0.0.1:1")
+    monkeypatch.setenv("HTTPS_PROXY", "http://127.0.0.1:1")
+    monkeypatch.setenv("ALL_PROXY", "http://127.0.0.1:1")
+    monkeypatch.setenv("NO_PROXY", "[::1]")
+    with collection(monkeypatch, "broker", [
+        {"json": [{"id": 1}]}, {"json": {"id": 2}, "legacy": True},
+    ]) as (client, calls):
+        assert client.get_paginated(PATH) == [{"id": 1}]
+        assert client_mod.broker_fetch("GET", PATH) == {"id": 2}
+        assert len(calls) == 2

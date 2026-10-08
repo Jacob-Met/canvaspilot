@@ -1,0 +1,21 @@
+.................{"status": "listening", "url": "http://127.0.0.1:18765"}
+.........................................................................s.s{
+  "browser": "153.0.8010.0",
+  "assignment_ids": [
+    1,
+    2,
+    3
+  ],
+  "canvas_requests": [
+    "https://school.instructure.com/api/v1/courses/7/assignments?order_by=due_at&include%5B%5D=submission&bucket=upcoming&per_page=50",
+    "https://school.instructure.com/api/v1/courses/7/assignments?cursor=a,b;c%2Fd&include%5B%5D=one&include%5B%5D=two",
+    "https://school.instructure.com/api/v1/courses/7/assignments?cursor=last%3D3"
+  ],
+  "unhandled_requests": [],
+  "boundary": "actual in-page fetch, broker Handler/queue, client decoder and CanvasAPI",
+  "data": "authored routes in a fresh browser; no network or school session"
+}
+..........Output not written: File exists
+.Output not written: No such file or directory
+......
+108 passed, 2 skipped in 8.52s

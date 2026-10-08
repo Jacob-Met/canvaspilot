@@ -1,0 +1,29 @@
+{
+  "_broker_request": {
+    "unchanged": true,
+    "sha256": "07404e63f07ee27d107e4897996813d20eea71462d197a87e077a840089d1d97"
+  },
+  "broker_health": {
+    "unchanged": true,
+    "sha256": "48b102e980f8fbd39e62f01498e25f2e781f45b28947e3078c5401d2260b11f6"
+  },
+  "CanvasAuthError": {
+    "unchanged": true,
+    "sha256": "7da0444c2c563f6f7ec0572dd0acfa96880faf1a0e174eef819edcfc4f51d420"
+  },
+  "default_profile": {
+    "unchanged": true,
+    "sha256": "d128113239ffd6117c513614121b7b40c66d235d1bc4cf49947ef44923f4a592"
+  },
+  "default_base_url": {
+    "unchanged": true,
+    "sha256": "9a9d718aa5c89d5a6a170c192427f7408a53635e148532c9f57ebeb4481c9325"
+  },
+  "_with_per_page": {
+    "unchanged": true,
+    "sha256": "87dae6bac89d41585a97190083bbd293320a94a6d72996467a0b47dbd75e48a7"
+  },
+  "cli.py": {
+    "unchanged": true
+  }
+}

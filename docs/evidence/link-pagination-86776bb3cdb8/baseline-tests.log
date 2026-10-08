@@ -1,0 +1,1321 @@
+F.FFF.....FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF.F.Fs.sF                      [100%]
+=================================== FAILURES ===================================
+_____ test_short_page_follows_opaque_link_in_actual_assignment_api[broker] _____
+
+collection = (<canvaspilot.client.CanvasClient object at 0x7fe39a919670>, [{'json': [{'id': 1}, {'id': 2}], 'link': '<https://schoo...api/v1/courses/7/assignments?order_by=due_at&include%5B%5D=submission&bucket=upcoming&per_page=50&page=1')>], 'broker')
+
+    def test_short_page_follows_opaque_link_in_actual_assignment_api(collection):
+        client, replies, calls, _ = collection
+        next_url = BASE + ASSIGNMENTS + "?cursor=after%3A2&include%5B%5D=submission"
+        replies.extend([
+            {"json": [{"id": 1}, {"id": 2}], "link": f'<{next_url}>; rel="next"'},
+            {"json": [{"id": 3, "name": "Final coursework"}], "link": None},
+        ])
+        rows = CanvasAPI(client).list_assignments(7)
+>       assert [row["id"] for row in rows] == [1, 2, 3]
+E       assert [1, 2] == [1, 2, 3]
+E         
+E         Right contains one more item: 3
+E         Use -v to get more diff
+
+tests/test_link_pagination.py:73: AssertionError
+__ test_empty_intermediate_page_and_opaque_punctuation_are_preserved[broker] ___
+
+collection = (<canvaspilot.client.CanvasClient object at 0x7fe39a91a1b0>, [{'json': [], 'link': '<https://school.instructure.com/ap...None}], [<Request('GET', 'https://school.instructure.com/api/v1/courses/7/assignments?per_page=50&page=1')>], 'broker')
+
+    def test_empty_intermediate_page_and_opaque_punctuation_are_preserved(collection):
+        client, replies, calls, _ = collection
+        next_url = BASE + ASSIGNMENTS + "?cursor=a,b;c%2Fd&include%5B%5D=one&include%5B%5D=two"
+        final_url = BASE + ASSIGNMENTS + "?cursor=end%3D3"
+        replies.extend([
+            {"json": [], "link": f'<{next_url}>; title="Page, two"; rel="next"'},
+            {"json": [{"id": 1}], "link": f'<{final_url}>; rel="next alternate"'},
+            {"json": [{"id": 2}], "link": None},
+        ])
+>       assert client.get_paginated(ASSIGNMENTS) == [{"id": 1}, {"id": 2}]
+E       AssertionError: assert [] == [{'id': 1}, {'id': 2}]
+E         
+E         Right contains 2 more items, first extra item: {'id': 1}
+E         Use -v to get more diff
+
+tests/test_link_pagination.py:89: AssertionError
+___ test_empty_intermediate_page_and_opaque_punctuation_are_preserved[token] ___
+
+collection = (<canvaspilot.client.CanvasClient object at 0x7fe39a91a5a0>, [{'json': [], 'link': '<https://school.instructure.com/ap...'link': None}], [<Request('GET', 'https://school.instructure.com/api/v1/courses/7/assignments?per_page=50')>], 'token')
+
+    def test_empty_intermediate_page_and_opaque_punctuation_are_preserved(collection):
+        client, replies, calls, _ = collection
+        next_url = BASE + ASSIGNMENTS + "?cursor=a,b;c%2Fd&include%5B%5D=one&include%5B%5D=two"
+        final_url = BASE + ASSIGNMENTS + "?cursor=end%3D3"
+        replies.extend([
+            {"json": [], "link": f'<{next_url}>; title="Page, two"; rel="next"'},
+            {"json": [{"id": 1}], "link": f'<{final_url}>; rel="next alternate"'},
+            {"json": [{"id": 2}], "link": None},
+        ])
+>       assert client.get_paginated(ASSIGNMENTS) == [{"id": 1}, {"id": 2}]
+E       AssertionError: assert [] == [{'id': 1}, {'id': 2}]
+E         
+E         Right contains 2 more items, first extra item: {'id': 1}
+E         Use -v to get more diff
+
+tests/test_link_pagination.py:89: AssertionError
+____________ test_full_last_page_stops_without_empty_probe[broker] _____________
+
+collection = (<canvaspilot.client.CanvasClient object at 0x7fe39a94d850>, [{'json': [{'id': 0}, {'id': 1}, {'id': 2}, {'id': 3}, {'...ge=1')>, <Request('GET', 'https://school.instructure.com/api/v1/courses/7/assignments?per_page=50&page=2')>], 'broker')
+
+    def test_full_last_page_stops_without_empty_probe(collection):
+        client, replies, calls, _ = collection
+        rows = [{"id": n} for n in range(50)]
+        replies.append({"json": rows, "link": None})
+>       assert client.get_paginated(ASSIGNMENTS) == rows
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_link_pagination.py:97: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/canvaspilot/client.py:257: in get_paginated
+    data = broker_fetch(
+src/canvaspilot/client.py:80: in broker_fetch
+    r = _broker_request(
+src/canvaspilot/client.py:37: in _broker_request
+    return httpx.request(method, url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_link_pagination.py:55: in broker_request
+    return post(url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+tests/test_link_pagination.py:51: in post
+    return respond(httpx.Request("GET", urljoin(BASE + "/", json["path"])))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+req = <Request('GET', 'https://school.instructure.com/api/v1/courses/7/assignments?per_page=50&page=2')>
+
+    def respond(req):
+        index = len(calls)
+        calls.append(req)
+>       assert index < len(replies), "pagination made an unrequested extra read"
+E       AssertionError: pagination made an unrequested extra read
+E       assert 1 < 1
+E        +  where 1 = len([{'json': [{'id': 0}, {'id': 1}, {'id': 2}, {'id': 3}, {'id': 4}, {'id': 5}, ...], 'link': None}])
+
+tests/test_link_pagination.py:32: AssertionError
+_ test_next_link_cannot_leave_the_response_origin[broker-https://elsewhere.example/api/v1/assignments?page=2] _
+
+collection = (<canvaspilot.client.CanvasClient object at 0x7fe39a94fa10>, [{'json': [{'id': 1}], 'link': '<https://elsewhere.exampl...xt"'}], [<Request('GET', 'https://school.instructure.com/api/v1/courses/7/assignments?per_page=50&page=1')>], 'broker')
+next_url = 'https://elsewhere.example/api/v1/assignments?page=2'
+
+    @pytest.mark.parametrize("next_url", [
+        "https://elsewhere.example/api/v1/assignments?page=2",
+        "https://school.instructure.com.evil.example/api/v1/assignments?page=2",
+        "http://school.instructure.com/api/v1/assignments?page=2",
+        "https://school.instructure.com:444/api/v1/assignments?page=2",
+        "https://school.instructure.com:0/api/v1/assignments?page=2",
+        "https://user:secret@school.instructure.com/api/v1/assignments?page=2",
+        "https://school.instructure.com\\@elsewhere.example/api/v1/assignments?page=2",
+    ])
+    def test_next_link_cannot_leave_the_response_origin(collection, next_url):
+        client, replies, calls, _ = collection
+        replies.append({"json": [{"id": 1}], "link": f'<{next_url}>; rel="next"'})
+>       with pytest.raises(RuntimeError, match="pagination.*(origin|URL)"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE RuntimeError
+
+tests/test_link_pagination.py:131: Failed
+_ test_next_link_cannot_leave_the_response_origin[broker-https://school.instructure.com.evil.example/api/v1/assignments?page=2] _
+
+collection = (<canvaspilot.client.CanvasClient object at 0x7fe39a94f3e0>, [{'json': [{'id': 1}], 'link': '<https://school.instructu...xt"'}], [<Request('GET', 'https://school.instructure.com/api/v1/courses/7/assignments?per_page=50&page=1')>], 'broker')
+next_url = 'https://school.instructure.com.evil.example/api/v1/assignments?page=2'
+
+    @pytest.mark.parametrize("next_url", [
+        "https://elsewhere.example/api/v1/assignments?page=2",
+        "https://school.instructure.com.evil.example/api/v1/assignments?page=2",
+        "http://school.instructure.com/api/v1/assignments?page=2",
+        "https://school.instructure.com:444/api/v1/assignments?page=2",
+        "https://school.instructure.com:0/api/v1/assignments?page=2",
+        "https://user:secret@school.instructure.com/api/v1/assignments?page=2",
+        "https://school.instructure.com\\@elsewhere.example/api/v1/assignments?page=2",
+    ])
+    def test_next_link_cannot_leave_the_response_origin(collection, next_url):
+        client, replies, calls, _ = collection
+        replies.append({"json": [{"id": 1}], "link": f'<{next_url}>; rel="next"'})
+>       with pytest.raises(RuntimeError, match="pagination.*(origin|URL)"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE RuntimeError
+
+tests/test_link_pagination.py:131: Failed
+_ test_next_link_cannot_leave_the_response_origin[broker-http://school.instructure.com/api/v1/assignments?page=2] _
+
+collection = (<canvaspilot.client.CanvasClient object at 0x7fe39a973b90>, [{'json': [{'id': 1}], 'link': '<http://school.instructur...xt"'}], [<Request('GET', 'https://school.instructure.com/api/v1/courses/7/assignments?per_page=50&page=1')>], 'broker')
+next_url = 'http://school.instructure.com/api/v1/assignments?page=2'
+
+    @pytest.mark.parametrize("next_url", [
+        "https://elsewhere.example/api/v1/assignments?page=2",
+        "https://school.instructure.com.evil.example/api/v1/assignments?page=2",
+        "http://school.instructure.com/api/v1/assignments?page=2",
+        "https://school.instructure.com:444/api/v1/assignments?page=2",
+        "https://school.instructure.com:0/api/v1/assignments?page=2",
+        "https://user:secret@school.instructure.com/api/v1/assignments?page=2",
+        "https://school.instructure.com\\@elsewhere.example/api/v1/assignments?page=2",
+    ])
+    def test_next_link_cannot_leave_the_response_origin(collection, next_url):
+        client, replies, calls, _ = collection
+        replies.append({"json": [{"id": 1}], "link": f'<{next_url}>; rel="next"'})
+>       with pytest.raises(RuntimeError, match="pagination.*(origin|URL)"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE RuntimeError
+
+tests/test_link_pagination.py:131: Failed
+_ test_next_link_cannot_leave_the_response_origin[broker-https://school.instructure.com:444/api/v1/assignments?page=2] _
+
+collection = (<canvaspilot.client.CanvasClient object at 0x7fe39a971520>, [{'json': [{'id': 1}], 'link': '<https://school.instructu...xt"'}], [<Request('GET', 'https://school.instructure.com/api/v1/courses/7/assignments?per_page=50&page=1')>], 'broker')
+next_url = 'https://school.instructure.com:444/api/v1/assignments?page=2'
+
+    @pytest.mark.parametrize("next_url", [
+        "https://elsewhere.example/api/v1/assignments?page=2",
+        "https://school.instructure.com.evil.example/api/v1/assignments?page=2",
+        "http://school.instructure.com/api/v1/assignments?page=2",
+        "https://school.instructure.com:444/api/v1/assignments?page=2",
+        "https://school.instructure.com:0/api/v1/assignments?page=2",
+        "https://user:secret@school.instructure.com/api/v1/assignments?page=2",
+        "https://school.instructure.com\\@elsewhere.example/api/v1/assignments?page=2",
+    ])
+    def test_next_link_cannot_leave_the_response_origin(collection, next_url):
+        client, replies, calls, _ = collection
+        replies.append({"json": [{"id": 1}], "link": f'<{next_url}>; rel="next"'})
+>       with pytest.raises(RuntimeError, match="pagination.*(origin|URL)"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE RuntimeError
+
+tests/test_link_pagination.py:131: Failed
+_ test_next_link_cannot_leave_the_response_origin[broker-https://school.instructure.com:0/api/v1/assignments?page=2] _
+
+collection = (<canvaspilot.client.CanvasClient object at 0x7fe39a972b40>, [{'json': [{'id': 1}], 'link': '<https://school.instructu...xt"'}], [<Request('GET', 'https://school.instructure.com/api/v1/courses/7/assignments?per_page=50&page=1')>], 'broker')
+next_url = 'https://school.instructure.com:0/api/v1/assignments?page=2'
+
+    @pytest.mark.parametrize("next_url", [
+        "https://elsewhere.example/api/v1/assignments?page=2",
+        "https://school.instructure.com.evil.example/api/v1/assignments?page=2",
+        "http://school.instructure.com/api/v1/assignments?page=2",
+        "https://school.instructure.com:444/api/v1/assignments?page=2",
+        "https://school.instructure.com:0/api/v1/assignments?page=2",
+        "https://user:secret@school.instructure.com/api/v1/assignments?page=2",
+        "https://school.instructure.com\\@elsewhere.example/api/v1/assignments?page=2",
+    ])
+    def test_next_link_cannot_leave_the_response_origin(collection, next_url):
+        client, replies, calls, _ = collection
+        replies.append({"json": [{"id": 1}], "link": f'<{next_url}>; rel="next"'})
+>       with pytest.raises(RuntimeError, match="pagination.*(origin|URL)"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE RuntimeError
+
+tests/test_link_pagination.py:131: Failed
+_ test_next_link_cannot_leave_the_response_origin[broker-https://user:secret@school.instructure.com/api/v1/assignments?page=2] _
+
+collection = (<canvaspilot.client.CanvasClient object at 0x7fe39a94dc70>, [{'json': [{'id': 1}], 'link': '<https://user:secret@scho...xt"'}], [<Request('GET', 'https://school.instructure.com/api/v1/courses/7/assignments?per_page=50&page=1')>], 'broker')
+next_url = 'https://user:secret@school.instructure.com/api/v1/assignments?page=2'
+
+    @pytest.mark.parametrize("next_url", [
+        "https://elsewhere.example/api/v1/assignments?page=2",
+        "https://school.instructure.com.evil.example/api/v1/assignments?page=2",
+        "http://school.instructure.com/api/v1/assignments?page=2",
+        "https://school.instructure.com:444/api/v1/assignments?page=2",
+        "https://school.instructure.com:0/api/v1/assignments?page=2",
+        "https://user:secret@school.instructure.com/api/v1/assignments?page=2",
+        "https://school.instructure.com\\@elsewhere.example/api/v1/assignments?page=2",
+    ])
+    def test_next_link_cannot_leave_the_response_origin(collection, next_url):
+        client, replies, calls, _ = collection
+        replies.append({"json": [{"id": 1}], "link": f'<{next_url}>; rel="next"'})
+>       with pytest.raises(RuntimeError, match="pagination.*(origin|URL)"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE RuntimeError
+
+tests/test_link_pagination.py:131: Failed
+_ test_next_link_cannot_leave_the_response_origin[broker-https://school.instructure.com\\@elsewhere.example/api/v1/assignments?page=2] _
+
+collection = (<canvaspilot.client.CanvasClient object at 0x7fe39a94e840>, [{'json': [{'id': 1}], 'link': '<https://school.instructu...xt"'}], [<Request('GET', 'https://school.instructure.com/api/v1/courses/7/assignments?per_page=50&page=1')>], 'broker')
+next_url = 'https://school.instructure.com\\@elsewhere.example/api/v1/assignments?page=2'
+
+    @pytest.mark.parametrize("next_url", [
+        "https://elsewhere.example/api/v1/assignments?page=2",
+        "https://school.instructure.com.evil.example/api/v1/assignments?page=2",
+        "http://school.instructure.com/api/v1/assignments?page=2",
+        "https://school.instructure.com:444/api/v1/assignments?page=2",
+        "https://school.instructure.com:0/api/v1/assignments?page=2",
+        "https://user:secret@school.instructure.com/api/v1/assignments?page=2",
+        "https://school.instructure.com\\@elsewhere.example/api/v1/assignments?page=2",
+    ])
+    def test_next_link_cannot_leave_the_response_origin(collection, next_url):
+        client, replies, calls, _ = collection
+        replies.append({"json": [{"id": 1}], "link": f'<{next_url}>; rel="next"'})
+>       with pytest.raises(RuntimeError, match="pagination.*(origin|URL)"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE RuntimeError
+
+tests/test_link_pagination.py:131: Failed
+_ test_next_link_cannot_leave_the_response_origin[token-https://elsewhere.example/api/v1/assignments?page=2] _
+
+collection = (<canvaspilot.client.CanvasClient object at 0x7fe39aa63d10>, [{'json': [{'id': 1}], 'link': '<https://elsewhere.exampl...ourses/7/assignments?per_page=50')>, <Request('GET', 'https://elsewhere.example/api/v1/assignments?page=2')>], 'token')
+next_url = 'https://elsewhere.example/api/v1/assignments?page=2'
+
+    @pytest.mark.parametrize("next_url", [
+        "https://elsewhere.example/api/v1/assignments?page=2",
+        "https://school.instructure.com.evil.example/api/v1/assignments?page=2",
+        "http://school.instructure.com/api/v1/assignments?page=2",
+        "https://school.instructure.com:444/api/v1/assignments?page=2",
+        "https://school.instructure.com:0/api/v1/assignments?page=2",
+        "https://user:secret@school.instructure.com/api/v1/assignments?page=2",
+        "https://school.instructure.com\\@elsewhere.example/api/v1/assignments?page=2",
+    ])
+    def test_next_link_cannot_leave_the_response_origin(collection, next_url):
+        client, replies, calls, _ = collection
+        replies.append({"json": [{"id": 1}], "link": f'<{next_url}>; rel="next"'})
+        with pytest.raises(RuntimeError, match="pagination.*(origin|URL)"):
+>           client.get_paginated(ASSIGNMENTS)
+
+tests/test_link_pagination.py:132: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/canvaspilot/client.py:284: in get_paginated
+    r = http.get(url, params=params if pages == 1 and not str(url).startswith("http") else None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../venv/lib/python3.12/site-packages/httpx/_client.py:1053: in get
+    return self.request(
+../venv/lib/python3.12/site-packages/httpx/_client.py:825: in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../venv/lib/python3.12/site-packages/httpx/_client.py:914: in send
+    response = self._send_handling_auth(
+../venv/lib/python3.12/site-packages/httpx/_client.py:942: in _send_handling_auth
+    response = self._send_handling_redirects(
+../venv/lib/python3.12/site-packages/httpx/_client.py:979: in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../venv/lib/python3.12/site-packages/httpx/_client.py:1014: in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../venv/lib/python3.12/site-packages/httpx/_transports/mock.py:24: in handle_request
+    response = self.handler(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+req = <Request('GET', 'https://elsewhere.example/api/v1/assignments?page=2')>
+
+    def respond(req):
+        index = len(calls)
+        calls.append(req)
+>       assert index < len(replies), "pagination made an unrequested extra read"
+E       AssertionError: pagination made an unrequested extra read
+E       assert 1 < 1
+E        +  where 1 = len([{'json': [{'id': 1}], 'link': '<https://elsewhere.example/api/v1/assignments?page=2>; rel="next"'}])
+
+tests/test_link_pagination.py:32: AssertionError
+_ test_next_link_cannot_leave_the_response_origin[token-https://school.instructure.com.evil.example/api/v1/assignments?page=2] _
+
+collection = (<canvaspilot.client.CanvasClient object at 0x7fe39a970c50>, [{'json': [{'id': 1}], 'link': '<https://school.instructu...ts?per_page=50')>, <Request('GET', 'https://school.instructure.com.evil.example/api/v1/assignments?page=2')>], 'token')
+next_url = 'https://school.instructure.com.evil.example/api/v1/assignments?page=2'
+
+    @pytest.mark.parametrize("next_url", [
+        "https://elsewhere.example/api/v1/assignments?page=2",
+        "https://school.instructure.com.evil.example/api/v1/assignments?page=2",
+        "http://school.instructure.com/api/v1/assignments?page=2",
+        "https://school.instructure.com:444/api/v1/assignments?page=2",
+        "https://school.instructure.com:0/api/v1/assignments?page=2",
+        "https://user:secret@school.instructure.com/api/v1/assignments?page=2",
+        "https://school.instructure.com\\@elsewhere.example/api/v1/assignments?page=2",
+    ])
+    def test_next_link_cannot_leave_the_response_origin(collection, next_url):
+        client, replies, calls, _ = collection
+        replies.append({"json": [{"id": 1}], "link": f'<{next_url}>; rel="next"'})
+        with pytest.raises(RuntimeError, match="pagination.*(origin|URL)"):
+>           client.get_paginated(ASSIGNMENTS)
+
+tests/test_link_pagination.py:132: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/canvaspilot/client.py:284: in get_paginated
+    r = http.get(url, params=params if pages == 1 and not str(url).startswith("http") else None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../venv/lib/python3.12/site-packages/httpx/_client.py:1053: in get
+    return self.request(
+../venv/lib/python3.12/site-packages/httpx/_client.py:825: in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../venv/lib/python3.12/site-packages/httpx/_client.py:914: in send
+    response = self._send_handling_auth(
+../venv/lib/python3.12/site-packages/httpx/_client.py:942: in _send_handling_auth
+    response = self._send_handling_redirects(
+../venv/lib/python3.12/site-packages/httpx/_client.py:979: in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../venv/lib/python3.12/site-packages/httpx/_client.py:1014: in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../venv/lib/python3.12/site-packages/httpx/_transports/mock.py:24: in handle_request
+    response = self.handler(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+req = <Request('GET', 'https://school.instructure.com.evil.example/api/v1/assignments?page=2')>
+
+    def respond(req):
+        index = len(calls)
+        calls.append(req)
+>       assert index < len(replies), "pagination made an unrequested extra read"
+E       AssertionError: pagination made an unrequested extra read
+E       assert 1 < 1
+E        +  where 1 = len([{'json': [{'id': 1}], 'link': '<https://school.instructure.com.evil.example/api/v1/assignments?page=2>; rel="next"'}])
+
+tests/test_link_pagination.py:32: AssertionError
+_ test_next_link_cannot_leave_the_response_origin[token-http://school.instructure.com/api/v1/assignments?page=2] _
+
+collection = (<canvaspilot.client.CanvasClient object at 0x7fe39a975e20>, [{'json': [{'id': 1}], 'link': '<http://school.instructur...es/7/assignments?per_page=50')>, <Request('GET', 'http://school.instructure.com/api/v1/assignments?page=2')>], 'token')
+next_url = 'http://school.instructure.com/api/v1/assignments?page=2'
+
+    @pytest.mark.parametrize("next_url", [
+        "https://elsewhere.example/api/v1/assignments?page=2",
+        "https://school.instructure.com.evil.example/api/v1/assignments?page=2",
+        "http://school.instructure.com/api/v1/assignments?page=2",
+        "https://school.instructure.com:444/api/v1/assignments?page=2",
+        "https://school.instructure.com:0/api/v1/assignments?page=2",
+        "https://user:secret@school.instructure.com/api/v1/assignments?page=2",
+        "https://school.instructure.com\\@elsewhere.example/api/v1/assignments?page=2",
+    ])
+    def test_next_link_cannot_leave_the_response_origin(collection, next_url):
+        client, replies, calls, _ = collection
+        replies.append({"json": [{"id": 1}], "link": f'<{next_url}>; rel="next"'})
+        with pytest.raises(RuntimeError, match="pagination.*(origin|URL)"):
+>           client.get_paginated(ASSIGNMENTS)
+
+tests/test_link_pagination.py:132: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/canvaspilot/client.py:284: in get_paginated
+    r = http.get(url, params=params if pages == 1 and not str(url).startswith("http") else None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../venv/lib/python3.12/site-packages/httpx/_client.py:1053: in get
+    return self.request(
+../venv/lib/python3.12/site-packages/httpx/_client.py:825: in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../venv/lib/python3.12/site-packages/httpx/_client.py:914: in send
+    response = self._send_handling_auth(
+../venv/lib/python3.12/site-packages/httpx/_client.py:942: in _send_handling_auth
+    response = self._send_handling_redirects(
+../venv/lib/python3.12/site-packages/httpx/_client.py:979: in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../venv/lib/python3.12/site-packages/httpx/_client.py:1014: in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../venv/lib/python3.12/site-packages/httpx/_transports/mock.py:24: in handle_request
+    response = self.handler(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+req = <Request('GET', 'http://school.instructure.com/api/v1/assignments?page=2')>
+
+    def respond(req):
+        index = len(calls)
+        calls.append(req)
+>       assert index < len(replies), "pagination made an unrequested extra read"
+E       AssertionError: pagination made an unrequested extra read
+E       assert 1 < 1
+E        +  where 1 = len([{'json': [{'id': 1}], 'link': '<http://school.instructure.com/api/v1/assignments?page=2>; rel="next"'}])
+
+tests/test_link_pagination.py:32: AssertionError
+_ test_next_link_cannot_leave_the_response_origin[token-https://school.instructure.com:444/api/v1/assignments?page=2] _
+
+collection = (<canvaspilot.client.CanvasClient object at 0x7fe39a977050>, [{'json': [{'id': 1}], 'link': '<https://school.instructu...assignments?per_page=50')>, <Request('GET', 'https://school.instructure.com:444/api/v1/assignments?page=2')>], 'token')
+next_url = 'https://school.instructure.com:444/api/v1/assignments?page=2'
+
+    @pytest.mark.parametrize("next_url", [
+        "https://elsewhere.example/api/v1/assignments?page=2",
+        "https://school.instructure.com.evil.example/api/v1/assignments?page=2",
+        "http://school.instructure.com/api/v1/assignments?page=2",
+        "https://school.instructure.com:444/api/v1/assignments?page=2",
+        "https://school.instructure.com:0/api/v1/assignments?page=2",
+        "https://user:secret@school.instructure.com/api/v1/assignments?page=2",
+        "https://school.instructure.com\\@elsewhere.example/api/v1/assignments?page=2",
+    ])
+    def test_next_link_cannot_leave_the_response_origin(collection, next_url):
+        client, replies, calls, _ = collection
+        replies.append({"json": [{"id": 1}], "link": f'<{next_url}>; rel="next"'})
+        with pytest.raises(RuntimeError, match="pagination.*(origin|URL)"):
+>           client.get_paginated(ASSIGNMENTS)
+
+tests/test_link_pagination.py:132: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/canvaspilot/client.py:284: in get_paginated
+    r = http.get(url, params=params if pages == 1 and not str(url).startswith("http") else None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../venv/lib/python3.12/site-packages/httpx/_client.py:1053: in get
+    return self.request(
+../venv/lib/python3.12/site-packages/httpx/_client.py:825: in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../venv/lib/python3.12/site-packages/httpx/_client.py:914: in send
+    response = self._send_handling_auth(
+../venv/lib/python3.12/site-packages/httpx/_client.py:942: in _send_handling_auth
+    response = self._send_handling_redirects(
+../venv/lib/python3.12/site-packages/httpx/_client.py:979: in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../venv/lib/python3.12/site-packages/httpx/_client.py:1014: in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../venv/lib/python3.12/site-packages/httpx/_transports/mock.py:24: in handle_request
+    response = self.handler(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+req = <Request('GET', 'https://school.instructure.com:444/api/v1/assignments?page=2')>
+
+    def respond(req):
+        index = len(calls)
+        calls.append(req)
+>       assert index < len(replies), "pagination made an unrequested extra read"
+E       AssertionError: pagination made an unrequested extra read
+E       assert 1 < 1
+E        +  where 1 = len([{'json': [{'id': 1}], 'link': '<https://school.instructure.com:444/api/v1/assignments?page=2>; rel="next"'}])
+
+tests/test_link_pagination.py:32: AssertionError
+_ test_next_link_cannot_leave_the_response_origin[token-https://school.instructure.com:0/api/v1/assignments?page=2] _
+
+collection = (<canvaspilot.client.CanvasClient object at 0x7fe39a970260>, [{'json': [{'id': 1}], 'link': '<https://school.instructu...7/assignments?per_page=50')>, <Request('GET', 'https://school.instructure.com:0/api/v1/assignments?page=2')>], 'token')
+next_url = 'https://school.instructure.com:0/api/v1/assignments?page=2'
+
+    @pytest.mark.parametrize("next_url", [
+        "https://elsewhere.example/api/v1/assignments?page=2",
+        "https://school.instructure.com.evil.example/api/v1/assignments?page=2",
+        "http://school.instructure.com/api/v1/assignments?page=2",
+        "https://school.instructure.com:444/api/v1/assignments?page=2",
+        "https://school.instructure.com:0/api/v1/assignments?page=2",
+        "https://user:secret@school.instructure.com/api/v1/assignments?page=2",
+        "https://school.instructure.com\\@elsewhere.example/api/v1/assignments?page=2",
+    ])
+    def test_next_link_cannot_leave_the_response_origin(collection, next_url):
+        client, replies, calls, _ = collection
+        replies.append({"json": [{"id": 1}], "link": f'<{next_url}>; rel="next"'})
+        with pytest.raises(RuntimeError, match="pagination.*(origin|URL)"):
+>           client.get_paginated(ASSIGNMENTS)
+
+tests/test_link_pagination.py:132: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/canvaspilot/client.py:284: in get_paginated
+    r = http.get(url, params=params if pages == 1 and not str(url).startswith("http") else None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../venv/lib/python3.12/site-packages/httpx/_client.py:1053: in get
+    return self.request(
+../venv/lib/python3.12/site-packages/httpx/_client.py:825: in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../venv/lib/python3.12/site-packages/httpx/_client.py:914: in send
+    response = self._send_handling_auth(
+../venv/lib/python3.12/site-packages/httpx/_client.py:942: in _send_handling_auth
+    response = self._send_handling_redirects(
+../venv/lib/python3.12/site-packages/httpx/_client.py:979: in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../venv/lib/python3.12/site-packages/httpx/_client.py:1014: in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../venv/lib/python3.12/site-packages/httpx/_transports/mock.py:24: in handle_request
+    response = self.handler(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+req = <Request('GET', 'https://school.instructure.com:0/api/v1/assignments?page=2')>
+
+    def respond(req):
+        index = len(calls)
+        calls.append(req)
+>       assert index < len(replies), "pagination made an unrequested extra read"
+E       AssertionError: pagination made an unrequested extra read
+E       assert 1 < 1
+E        +  where 1 = len([{'json': [{'id': 1}], 'link': '<https://school.instructure.com:0/api/v1/assignments?page=2>; rel="next"'}])
+
+tests/test_link_pagination.py:32: AssertionError
+_ test_next_link_cannot_leave_the_response_origin[token-https://user:secret@school.instructure.com/api/v1/assignments?page=2] _
+
+collection = (<canvaspilot.client.CanvasClient object at 0x7fe39a972ae0>, [{'json': [{'id': 1}], 'link': '<https://user:secret@scho...nts?per_page=50')>, <Request('GET', 'https://user:secret@school.instructure.com/api/v1/assignments?page=2')>], 'token')
+next_url = 'https://user:secret@school.instructure.com/api/v1/assignments?page=2'
+
+    @pytest.mark.parametrize("next_url", [
+        "https://elsewhere.example/api/v1/assignments?page=2",
+        "https://school.instructure.com.evil.example/api/v1/assignments?page=2",
+        "http://school.instructure.com/api/v1/assignments?page=2",
+        "https://school.instructure.com:444/api/v1/assignments?page=2",
+        "https://school.instructure.com:0/api/v1/assignments?page=2",
+        "https://user:secret@school.instructure.com/api/v1/assignments?page=2",
+        "https://school.instructure.com\\@elsewhere.example/api/v1/assignments?page=2",
+    ])
+    def test_next_link_cannot_leave_the_response_origin(collection, next_url):
+        client, replies, calls, _ = collection
+        replies.append({"json": [{"id": 1}], "link": f'<{next_url}>; rel="next"'})
+        with pytest.raises(RuntimeError, match="pagination.*(origin|URL)"):
+>           client.get_paginated(ASSIGNMENTS)
+
+tests/test_link_pagination.py:132: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/canvaspilot/client.py:284: in get_paginated
+    r = http.get(url, params=params if pages == 1 and not str(url).startswith("http") else None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../venv/lib/python3.12/site-packages/httpx/_client.py:1053: in get
+    return self.request(
+../venv/lib/python3.12/site-packages/httpx/_client.py:825: in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../venv/lib/python3.12/site-packages/httpx/_client.py:914: in send
+    response = self._send_handling_auth(
+../venv/lib/python3.12/site-packages/httpx/_client.py:942: in _send_handling_auth
+    response = self._send_handling_redirects(
+../venv/lib/python3.12/site-packages/httpx/_client.py:979: in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../venv/lib/python3.12/site-packages/httpx/_client.py:1014: in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../venv/lib/python3.12/site-packages/httpx/_transports/mock.py:24: in handle_request
+    response = self.handler(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+req = <Request('GET', 'https://user:secret@school.instructure.com/api/v1/assignments?page=2')>
+
+    def respond(req):
+        index = len(calls)
+        calls.append(req)
+>       assert index < len(replies), "pagination made an unrequested extra read"
+E       AssertionError: pagination made an unrequested extra read
+E       assert 1 < 1
+E        +  where 1 = len([{'json': [{'id': 1}], 'link': '<https://user:secret@school.instructure.com/api/v1/assignments?page=2>; rel="next"'}])
+
+tests/test_link_pagination.py:32: AssertionError
+_ test_next_link_cannot_leave_the_response_origin[token-https://school.instructure.com\\@elsewhere.example/api/v1/assignments?page=2] _
+
+collection = (<canvaspilot.client.CanvasClient object at 0x7fe39a94d6d0>, [{'json': [{'id': 1}], 'link': '<https://school.instructu...age=50')>, <Request('GET', 'https://school.instructure.com%5C@elsewhere.example/api/v1/assignments?page=2')>], 'token')
+next_url = 'https://school.instructure.com\\@elsewhere.example/api/v1/assignments?page=2'
+
+    @pytest.mark.parametrize("next_url", [
+        "https://elsewhere.example/api/v1/assignments?page=2",
+        "https://school.instructure.com.evil.example/api/v1/assignments?page=2",
+        "http://school.instructure.com/api/v1/assignments?page=2",
+        "https://school.instructure.com:444/api/v1/assignments?page=2",
+        "https://school.instructure.com:0/api/v1/assignments?page=2",
+        "https://user:secret@school.instructure.com/api/v1/assignments?page=2",
+        "https://school.instructure.com\\@elsewhere.example/api/v1/assignments?page=2",
+    ])
+    def test_next_link_cannot_leave_the_response_origin(collection, next_url):
+        client, replies, calls, _ = collection
+        replies.append({"json": [{"id": 1}], "link": f'<{next_url}>; rel="next"'})
+        with pytest.raises(RuntimeError, match="pagination.*(origin|URL)"):
+>           client.get_paginated(ASSIGNMENTS)
+
+tests/test_link_pagination.py:132: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/canvaspilot/client.py:284: in get_paginated
+    r = http.get(url, params=params if pages == 1 and not str(url).startswith("http") else None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../venv/lib/python3.12/site-packages/httpx/_client.py:1053: in get
+    return self.request(
+../venv/lib/python3.12/site-packages/httpx/_client.py:825: in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../venv/lib/python3.12/site-packages/httpx/_client.py:914: in send
+    response = self._send_handling_auth(
+../venv/lib/python3.12/site-packages/httpx/_client.py:942: in _send_handling_auth
+    response = self._send_handling_redirects(
+../venv/lib/python3.12/site-packages/httpx/_client.py:979: in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../venv/lib/python3.12/site-packages/httpx/_client.py:1014: in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../venv/lib/python3.12/site-packages/httpx/_transports/mock.py:24: in handle_request
+    response = self.handler(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+req = <Request('GET', 'https://school.instructure.com%5C@elsewhere.example/api/v1/assignments?page=2')>
+
+    def respond(req):
+        index = len(calls)
+        calls.append(req)
+>       assert index < len(replies), "pagination made an unrequested extra read"
+E       AssertionError: pagination made an unrequested extra read
+E       assert 1 < 1
+E        +  where 1 = len([{'json': [{'id': 1}], 'link': '<https://school.instructure.com\\@elsewhere.example/api/v1/assignments?page=2>; rel="next"'}])
+
+tests/test_link_pagination.py:32: AssertionError
+_ test_repeated_next_link_refuses_partial_list_without_duplicate_read[broker] __
+
+collection = (<canvaspilot.client.CanvasClient object at 0x7fe39a974d10>, [{'json': [{'id': 1}], 'link': '<https://school.instructu...xt"'}], [<Request('GET', 'https://school.instructure.com/api/v1/courses/7/assignments?per_page=50&page=1')>], 'broker')
+
+    def test_repeated_next_link_refuses_partial_list_without_duplicate_read(collection):
+        client, replies, calls, _ = collection
+        next_url = BASE + ASSIGNMENTS + "?cursor=second"
+        replies.extend([
+            {"json": [{"id": 1}], "link": f'<{next_url}>; rel="next"'},
+            {"json": [{"id": 2}], "link": f'<{next_url}>; rel="next"'},
+        ])
+>       with pytest.raises(RuntimeError, match="pagination.*repeat"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE RuntimeError
+
+tests/test_link_pagination.py:143: Failed
+__ test_repeated_next_link_refuses_partial_list_without_duplicate_read[token] __
+
+collection = (<canvaspilot.client.CanvasClient object at 0x7fe39a77fcb0>, [{'json': [{'id': 1}], 'link': '<https://school.instructu...sor=second')>, <Request('GET', 'https://school.instructure.com/api/v1/courses/7/assignments?cursor=second')>], 'token')
+
+    def test_repeated_next_link_refuses_partial_list_without_duplicate_read(collection):
+        client, replies, calls, _ = collection
+        next_url = BASE + ASSIGNMENTS + "?cursor=second"
+        replies.extend([
+            {"json": [{"id": 1}], "link": f'<{next_url}>; rel="next"'},
+            {"json": [{"id": 2}], "link": f'<{next_url}>; rel="next"'},
+        ])
+        with pytest.raises(RuntimeError, match="pagination.*repeat"):
+>           client.get_paginated(ASSIGNMENTS)
+
+tests/test_link_pagination.py:144: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/canvaspilot/client.py:284: in get_paginated
+    r = http.get(url, params=params if pages == 1 and not str(url).startswith("http") else None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../venv/lib/python3.12/site-packages/httpx/_client.py:1053: in get
+    return self.request(
+../venv/lib/python3.12/site-packages/httpx/_client.py:825: in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../venv/lib/python3.12/site-packages/httpx/_client.py:914: in send
+    response = self._send_handling_auth(
+../venv/lib/python3.12/site-packages/httpx/_client.py:942: in _send_handling_auth
+    response = self._send_handling_redirects(
+../venv/lib/python3.12/site-packages/httpx/_client.py:979: in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../venv/lib/python3.12/site-packages/httpx/_client.py:1014: in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../venv/lib/python3.12/site-packages/httpx/_transports/mock.py:24: in handle_request
+    response = self.handler(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+req = <Request('GET', 'https://school.instructure.com/api/v1/courses/7/assignments?cursor=second')>
+
+    def respond(req):
+        index = len(calls)
+        calls.append(req)
+>       assert index < len(replies), "pagination made an unrequested extra read"
+E       AssertionError: pagination made an unrequested extra read
+E       assert 2 < 2
+E        +  where 2 = len([{'json': [{'id': 1}], 'link': '<https://school.instructure.com/api/v1/courses/7/assignments?cursor=second>; rel="next...json': [{'id': 2}], 'link': '<https://school.instructure.com/api/v1/courses/7/assignments?cursor=second>; rel="next"'}])
+
+tests/test_link_pagination.py:32: AssertionError
+_ test_malformed_or_ambiguous_links_do_not_assert_completion[broker-not-a-link; rel="next"] _
+
+collection = (<canvaspilot.client.CanvasClient object at 0x7fe39a975fd0>, [{'json': [{'id': 1}], 'link': 'not-a-link; rel="next"'}], [<Request('GET', 'https://school.instructure.com/api/v1/courses/7/assignments?per_page=50&page=1')>], 'broker')
+header = 'not-a-link; rel="next"'
+
+    @pytest.mark.parametrize("header", [
+        'not-a-link; rel="next"',
+        '<https://school.instructure.com/api/v1/courses?page=2>; rel',
+        '<https://school.instructure.com/api/v1/courses?page=2>; rel=""',
+        '<https://school.instructure.com/api/v1/courses?page=2>; rel="next"; rel="prev"',
+        '<https://school.instructure.com/api/v1/courses?page=2>; rel="next", broken',
+        ('<https://school.instructure.com/api/v1/courses?a>; rel="next", '
+         '<https://school.instructure.com/api/v1/courses?b>; rel="next"'),
+    ])
+    def test_malformed_or_ambiguous_links_do_not_assert_completion(collection, header):
+        client, replies, calls, _ = collection
+        replies.append({"json": [{"id": 1}], "link": header})
+>       with pytest.raises(RuntimeError, match="pagination.*Link"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE RuntimeError
+
+tests/test_link_pagination.py:160: Failed
+_ test_malformed_or_ambiguous_links_do_not_assert_completion[broker-<https://school.instructure.com/api/v1/courses?page=2>; rel] _
+
+collection = (<canvaspilot.client.CanvasClient object at 0x7fe39a94ce90>, [{'json': [{'id': 1}], 'link': '<https://school.instructu...rel'}], [<Request('GET', 'https://school.instructure.com/api/v1/courses/7/assignments?per_page=50&page=1')>], 'broker')
+header = '<https://school.instructure.com/api/v1/courses?page=2>; rel'
+
+    @pytest.mark.parametrize("header", [
+        'not-a-link; rel="next"',
+        '<https://school.instructure.com/api/v1/courses?page=2>; rel',
+        '<https://school.instructure.com/api/v1/courses?page=2>; rel=""',
+        '<https://school.instructure.com/api/v1/courses?page=2>; rel="next"; rel="prev"',
+        '<https://school.instructure.com/api/v1/courses?page=2>; rel="next", broken',
+        ('<https://school.instructure.com/api/v1/courses?a>; rel="next", '
+         '<https://school.instructure.com/api/v1/courses?b>; rel="next"'),
+    ])
+    def test_malformed_or_ambiguous_links_do_not_assert_completion(collection, header):
+        client, replies, calls, _ = collection
+        replies.append({"json": [{"id": 1}], "link": header})
+>       with pytest.raises(RuntimeError, match="pagination.*Link"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE RuntimeError
+
+tests/test_link_pagination.py:160: Failed
+_ test_malformed_or_ambiguous_links_do_not_assert_completion[broker-<https://school.instructure.com/api/v1/courses?page=2>; rel=""] _
+
+collection = (<canvaspilot.client.CanvasClient object at 0x7fe39a9703e0>, [{'json': [{'id': 1}], 'link': '<https://school.instructu...=""'}], [<Request('GET', 'https://school.instructure.com/api/v1/courses/7/assignments?per_page=50&page=1')>], 'broker')
+header = '<https://school.instructure.com/api/v1/courses?page=2>; rel=""'
+
+    @pytest.mark.parametrize("header", [
+        'not-a-link; rel="next"',
+        '<https://school.instructure.com/api/v1/courses?page=2>; rel',
+        '<https://school.instructure.com/api/v1/courses?page=2>; rel=""',
+        '<https://school.instructure.com/api/v1/courses?page=2>; rel="next"; rel="prev"',
+        '<https://school.instructure.com/api/v1/courses?page=2>; rel="next", broken',
+        ('<https://school.instructure.com/api/v1/courses?a>; rel="next", '
+         '<https://school.instructure.com/api/v1/courses?b>; rel="next"'),
+    ])
+    def test_malformed_or_ambiguous_links_do_not_assert_completion(collection, header):
+        client, replies, calls, _ = collection
+        replies.append({"json": [{"id": 1}], "link": header})
+>       with pytest.raises(RuntimeError, match="pagination.*Link"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE RuntimeError
+
+tests/test_link_pagination.py:160: Failed
+_ test_malformed_or_ambiguous_links_do_not_assert_completion[broker-<https://school.instructure.com/api/v1/courses?page=2>; rel="next"; rel="prev"] _
+
+collection = (<canvaspilot.client.CanvasClient object at 0x7fe39a973d40>, [{'json': [{'id': 1}], 'link': '<https://school.instructu...ev"'}], [<Request('GET', 'https://school.instructure.com/api/v1/courses/7/assignments?per_page=50&page=1')>], 'broker')
+header = '<https://school.instructure.com/api/v1/courses?page=2>; rel="next"; rel="prev"'
+
+    @pytest.mark.parametrize("header", [
+        'not-a-link; rel="next"',
+        '<https://school.instructure.com/api/v1/courses?page=2>; rel',
+        '<https://school.instructure.com/api/v1/courses?page=2>; rel=""',
+        '<https://school.instructure.com/api/v1/courses?page=2>; rel="next"; rel="prev"',
+        '<https://school.instructure.com/api/v1/courses?page=2>; rel="next", broken',
+        ('<https://school.instructure.com/api/v1/courses?a>; rel="next", '
+         '<https://school.instructure.com/api/v1/courses?b>; rel="next"'),
+    ])
+    def test_malformed_or_ambiguous_links_do_not_assert_completion(collection, header):
+        client, replies, calls, _ = collection
+        replies.append({"json": [{"id": 1}], "link": header})
+>       with pytest.raises(RuntimeError, match="pagination.*Link"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE RuntimeError
+
+tests/test_link_pagination.py:160: Failed
+_ test_malformed_or_ambiguous_links_do_not_assert_completion[broker-<https://school.instructure.com/api/v1/courses?page=2>; rel="next", broken] _
+
+collection = (<canvaspilot.client.CanvasClient object at 0x7fe39a970e90>, [{'json': [{'id': 1}], 'link': '<https://school.instructu...ken'}], [<Request('GET', 'https://school.instructure.com/api/v1/courses/7/assignments?per_page=50&page=1')>], 'broker')
+header = '<https://school.instructure.com/api/v1/courses?page=2>; rel="next", broken'
+
+    @pytest.mark.parametrize("header", [
+        'not-a-link; rel="next"',
+        '<https://school.instructure.com/api/v1/courses?page=2>; rel',
+        '<https://school.instructure.com/api/v1/courses?page=2>; rel=""',
+        '<https://school.instructure.com/api/v1/courses?page=2>; rel="next"; rel="prev"',
+        '<https://school.instructure.com/api/v1/courses?page=2>; rel="next", broken',
+        ('<https://school.instructure.com/api/v1/courses?a>; rel="next", '
+         '<https://school.instructure.com/api/v1/courses?b>; rel="next"'),
+    ])
+    def test_malformed_or_ambiguous_links_do_not_assert_completion(collection, header):
+        client, replies, calls, _ = collection
+        replies.append({"json": [{"id": 1}], "link": header})
+>       with pytest.raises(RuntimeError, match="pagination.*Link"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE RuntimeError
+
+tests/test_link_pagination.py:160: Failed
+_ test_malformed_or_ambiguous_links_do_not_assert_completion[broker-<https://school.instructure.com/api/v1/courses?a>; rel="next", <https://school.instructure.com/api/v1/courses?b>; rel="next"] _
+
+collection = (<canvaspilot.client.CanvasClient object at 0x7fe39a77cb00>, [{'json': [{'id': 1}], 'link': '<https://school.instructu...xt"'}], [<Request('GET', 'https://school.instructure.com/api/v1/courses/7/assignments?per_page=50&page=1')>], 'broker')
+header = '<https://school.instructure.com/api/v1/courses?a>; rel="next", <https://school.instructure.com/api/v1/courses?b>; rel="next"'
+
+    @pytest.mark.parametrize("header", [
+        'not-a-link; rel="next"',
+        '<https://school.instructure.com/api/v1/courses?page=2>; rel',
+        '<https://school.instructure.com/api/v1/courses?page=2>; rel=""',
+        '<https://school.instructure.com/api/v1/courses?page=2>; rel="next"; rel="prev"',
+        '<https://school.instructure.com/api/v1/courses?page=2>; rel="next", broken',
+        ('<https://school.instructure.com/api/v1/courses?a>; rel="next", '
+         '<https://school.instructure.com/api/v1/courses?b>; rel="next"'),
+    ])
+    def test_malformed_or_ambiguous_links_do_not_assert_completion(collection, header):
+        client, replies, calls, _ = collection
+        replies.append({"json": [{"id": 1}], "link": header})
+>       with pytest.raises(RuntimeError, match="pagination.*Link"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE RuntimeError
+
+tests/test_link_pagination.py:160: Failed
+_ test_malformed_or_ambiguous_links_do_not_assert_completion[token-not-a-link; rel="next"] _
+
+collection = (<canvaspilot.client.CanvasClient object at 0x7fe39a77c290>, [{'json': [{'id': 1}], 'link': 'not-a-link; rel="next"'}], [<Request('GET', 'https://school.instructure.com/api/v1/courses/7/assignments?per_page=50')>], 'token')
+header = 'not-a-link; rel="next"'
+
+    @pytest.mark.parametrize("header", [
+        'not-a-link; rel="next"',
+        '<https://school.instructure.com/api/v1/courses?page=2>; rel',
+        '<https://school.instructure.com/api/v1/courses?page=2>; rel=""',
+        '<https://school.instructure.com/api/v1/courses?page=2>; rel="next"; rel="prev"',
+        '<https://school.instructure.com/api/v1/courses?page=2>; rel="next", broken',
+        ('<https://school.instructure.com/api/v1/courses?a>; rel="next", '
+         '<https://school.instructure.com/api/v1/courses?b>; rel="next"'),
+    ])
+    def test_malformed_or_ambiguous_links_do_not_assert_completion(collection, header):
+        client, replies, calls, _ = collection
+        replies.append({"json": [{"id": 1}], "link": header})
+>       with pytest.raises(RuntimeError, match="pagination.*Link"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE RuntimeError
+
+tests/test_link_pagination.py:160: Failed
+_ test_malformed_or_ambiguous_links_do_not_assert_completion[token-<https://school.instructure.com/api/v1/courses?page=2>; rel] _
+
+collection = (<canvaspilot.client.CanvasClient object at 0x7fe39a77e270>, [{'json': [{'id': 1}], 'link': '<https://school.instructu...age=2>; rel'}], [<Request('GET', 'https://school.instructure.com/api/v1/courses/7/assignments?per_page=50')>], 'token')
+header = '<https://school.instructure.com/api/v1/courses?page=2>; rel'
+
+    @pytest.mark.parametrize("header", [
+        'not-a-link; rel="next"',
+        '<https://school.instructure.com/api/v1/courses?page=2>; rel',
+        '<https://school.instructure.com/api/v1/courses?page=2>; rel=""',
+        '<https://school.instructure.com/api/v1/courses?page=2>; rel="next"; rel="prev"',
+        '<https://school.instructure.com/api/v1/courses?page=2>; rel="next", broken',
+        ('<https://school.instructure.com/api/v1/courses?a>; rel="next", '
+         '<https://school.instructure.com/api/v1/courses?b>; rel="next"'),
+    ])
+    def test_malformed_or_ambiguous_links_do_not_assert_completion(collection, header):
+        client, replies, calls, _ = collection
+        replies.append({"json": [{"id": 1}], "link": header})
+>       with pytest.raises(RuntimeError, match="pagination.*Link"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE RuntimeError
+
+tests/test_link_pagination.py:160: Failed
+_ test_malformed_or_ambiguous_links_do_not_assert_completion[token-<https://school.instructure.com/api/v1/courses?page=2>; rel=""] _
+
+collection = (<canvaspilot.client.CanvasClient object at 0x7fe39a918ef0>, [{'json': [{'id': 1}], 'link': '<https://school.instructu...=2>; rel=""'}], [<Request('GET', 'https://school.instructure.com/api/v1/courses/7/assignments?per_page=50')>], 'token')
+header = '<https://school.instructure.com/api/v1/courses?page=2>; rel=""'
+
+    @pytest.mark.parametrize("header", [
+        'not-a-link; rel="next"',
+        '<https://school.instructure.com/api/v1/courses?page=2>; rel',
+        '<https://school.instructure.com/api/v1/courses?page=2>; rel=""',
+        '<https://school.instructure.com/api/v1/courses?page=2>; rel="next"; rel="prev"',
+        '<https://school.instructure.com/api/v1/courses?page=2>; rel="next", broken',
+        ('<https://school.instructure.com/api/v1/courses?a>; rel="next", '
+         '<https://school.instructure.com/api/v1/courses?b>; rel="next"'),
+    ])
+    def test_malformed_or_ambiguous_links_do_not_assert_completion(collection, header):
+        client, replies, calls, _ = collection
+        replies.append({"json": [{"id": 1}], "link": header})
+>       with pytest.raises(RuntimeError, match="pagination.*Link"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE RuntimeError
+
+tests/test_link_pagination.py:160: Failed
+_ test_malformed_or_ambiguous_links_do_not_assert_completion[token-<https://school.instructure.com/api/v1/courses?page=2>; rel="next"; rel="prev"] _
+
+collection = (<canvaspilot.client.CanvasClient object at 0x7fe39a77f4a0>, [{'json': [{'id': 1}], 'link': '<https://school.instructu...urses/7/assignments?per_page=50')>, <Request('GET', 'https://school.instructure.com/api/v1/courses?page=2')>], 'token')
+header = '<https://school.instructure.com/api/v1/courses?page=2>; rel="next"; rel="prev"'
+
+    @pytest.mark.parametrize("header", [
+        'not-a-link; rel="next"',
+        '<https://school.instructure.com/api/v1/courses?page=2>; rel',
+        '<https://school.instructure.com/api/v1/courses?page=2>; rel=""',
+        '<https://school.instructure.com/api/v1/courses?page=2>; rel="next"; rel="prev"',
+        '<https://school.instructure.com/api/v1/courses?page=2>; rel="next", broken',
+        ('<https://school.instructure.com/api/v1/courses?a>; rel="next", '
+         '<https://school.instructure.com/api/v1/courses?b>; rel="next"'),
+    ])
+    def test_malformed_or_ambiguous_links_do_not_assert_completion(collection, header):
+        client, replies, calls, _ = collection
+        replies.append({"json": [{"id": 1}], "link": header})
+        with pytest.raises(RuntimeError, match="pagination.*Link"):
+>           client.get_paginated(ASSIGNMENTS)
+
+tests/test_link_pagination.py:161: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/canvaspilot/client.py:284: in get_paginated
+    r = http.get(url, params=params if pages == 1 and not str(url).startswith("http") else None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../venv/lib/python3.12/site-packages/httpx/_client.py:1053: in get
+    return self.request(
+../venv/lib/python3.12/site-packages/httpx/_client.py:825: in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../venv/lib/python3.12/site-packages/httpx/_client.py:914: in send
+    response = self._send_handling_auth(
+../venv/lib/python3.12/site-packages/httpx/_client.py:942: in _send_handling_auth
+    response = self._send_handling_redirects(
+../venv/lib/python3.12/site-packages/httpx/_client.py:979: in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../venv/lib/python3.12/site-packages/httpx/_client.py:1014: in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../venv/lib/python3.12/site-packages/httpx/_transports/mock.py:24: in handle_request
+    response = self.handler(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+req = <Request('GET', 'https://school.instructure.com/api/v1/courses?page=2')>
+
+    def respond(req):
+        index = len(calls)
+        calls.append(req)
+>       assert index < len(replies), "pagination made an unrequested extra read"
+E       AssertionError: pagination made an unrequested extra read
+E       assert 1 < 1
+E        +  where 1 = len([{'json': [{'id': 1}], 'link': '<https://school.instructure.com/api/v1/courses?page=2>; rel="next"; rel="prev"'}])
+
+tests/test_link_pagination.py:32: AssertionError
+_ test_malformed_or_ambiguous_links_do_not_assert_completion[token-<https://school.instructure.com/api/v1/courses?page=2>; rel="next", broken] _
+
+collection = (<canvaspilot.client.CanvasClient object at 0x7fe39a77e9f0>, [{'json': [{'id': 1}], 'link': '<https://school.instructu...urses/7/assignments?per_page=50')>, <Request('GET', 'https://school.instructure.com/api/v1/courses?page=2')>], 'token')
+header = '<https://school.instructure.com/api/v1/courses?page=2>; rel="next", broken'
+
+    @pytest.mark.parametrize("header", [
+        'not-a-link; rel="next"',
+        '<https://school.instructure.com/api/v1/courses?page=2>; rel',
+        '<https://school.instructure.com/api/v1/courses?page=2>; rel=""',
+        '<https://school.instructure.com/api/v1/courses?page=2>; rel="next"; rel="prev"',
+        '<https://school.instructure.com/api/v1/courses?page=2>; rel="next", broken',
+        ('<https://school.instructure.com/api/v1/courses?a>; rel="next", '
+         '<https://school.instructure.com/api/v1/courses?b>; rel="next"'),
+    ])
+    def test_malformed_or_ambiguous_links_do_not_assert_completion(collection, header):
+        client, replies, calls, _ = collection
+        replies.append({"json": [{"id": 1}], "link": header})
+        with pytest.raises(RuntimeError, match="pagination.*Link"):
+>           client.get_paginated(ASSIGNMENTS)
+
+tests/test_link_pagination.py:161: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/canvaspilot/client.py:284: in get_paginated
+    r = http.get(url, params=params if pages == 1 and not str(url).startswith("http") else None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../venv/lib/python3.12/site-packages/httpx/_client.py:1053: in get
+    return self.request(
+../venv/lib/python3.12/site-packages/httpx/_client.py:825: in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../venv/lib/python3.12/site-packages/httpx/_client.py:914: in send
+    response = self._send_handling_auth(
+../venv/lib/python3.12/site-packages/httpx/_client.py:942: in _send_handling_auth
+    response = self._send_handling_redirects(
+../venv/lib/python3.12/site-packages/httpx/_client.py:979: in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../venv/lib/python3.12/site-packages/httpx/_client.py:1014: in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../venv/lib/python3.12/site-packages/httpx/_transports/mock.py:24: in handle_request
+    response = self.handler(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+req = <Request('GET', 'https://school.instructure.com/api/v1/courses?page=2')>
+
+    def respond(req):
+        index = len(calls)
+        calls.append(req)
+>       assert index < len(replies), "pagination made an unrequested extra read"
+E       AssertionError: pagination made an unrequested extra read
+E       assert 1 < 1
+E        +  where 1 = len([{'json': [{'id': 1}], 'link': '<https://school.instructure.com/api/v1/courses?page=2>; rel="next", broken'}])
+
+tests/test_link_pagination.py:32: AssertionError
+_ test_malformed_or_ambiguous_links_do_not_assert_completion[token-<https://school.instructure.com/api/v1/courses?a>; rel="next", <https://school.instructure.com/api/v1/courses?b>; rel="next"] _
+
+collection = (<canvaspilot.client.CanvasClient object at 0x7fe39a8ceff0>, [{'json': [{'id': 1}], 'link': '<https://school.instructu...v1/courses/7/assignments?per_page=50')>, <Request('GET', 'https://school.instructure.com/api/v1/courses?a')>], 'token')
+header = '<https://school.instructure.com/api/v1/courses?a>; rel="next", <https://school.instructure.com/api/v1/courses?b>; rel="next"'
+
+    @pytest.mark.parametrize("header", [
+        'not-a-link; rel="next"',
+        '<https://school.instructure.com/api/v1/courses?page=2>; rel',
+        '<https://school.instructure.com/api/v1/courses?page=2>; rel=""',
+        '<https://school.instructure.com/api/v1/courses?page=2>; rel="next"; rel="prev"',
+        '<https://school.instructure.com/api/v1/courses?page=2>; rel="next", broken',
+        ('<https://school.instructure.com/api/v1/courses?a>; rel="next", '
+         '<https://school.instructure.com/api/v1/courses?b>; rel="next"'),
+    ])
+    def test_malformed_or_ambiguous_links_do_not_assert_completion(collection, header):
+        client, replies, calls, _ = collection
+        replies.append({"json": [{"id": 1}], "link": header})
+        with pytest.raises(RuntimeError, match="pagination.*Link"):
+>           client.get_paginated(ASSIGNMENTS)
+
+tests/test_link_pagination.py:161: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/canvaspilot/client.py:284: in get_paginated
+    r = http.get(url, params=params if pages == 1 and not str(url).startswith("http") else None)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../venv/lib/python3.12/site-packages/httpx/_client.py:1053: in get
+    return self.request(
+../venv/lib/python3.12/site-packages/httpx/_client.py:825: in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../venv/lib/python3.12/site-packages/httpx/_client.py:914: in send
+    response = self._send_handling_auth(
+../venv/lib/python3.12/site-packages/httpx/_client.py:942: in _send_handling_auth
+    response = self._send_handling_redirects(
+../venv/lib/python3.12/site-packages/httpx/_client.py:979: in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../venv/lib/python3.12/site-packages/httpx/_client.py:1014: in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../venv/lib/python3.12/site-packages/httpx/_transports/mock.py:24: in handle_request
+    response = self.handler(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+req = <Request('GET', 'https://school.instructure.com/api/v1/courses?a')>
+
+    def respond(req):
+        index = len(calls)
+        calls.append(req)
+>       assert index < len(replies), "pagination made an unrequested extra read"
+E       AssertionError: pagination made an unrequested extra read
+E       assert 1 < 1
+E        +  where 1 = len([{'json': [{'id': 1}], 'link': '<https://school.instructure.com/api/v1/courses?a>; rel="next", <https://school.instructure.com/api/v1/courses?b>; rel="next"'}])
+
+tests/test_link_pagination.py:32: AssertionError
+________ test_existing_page_ceiling_refuses_incomplete_success[broker] _________
+
+collection = (<canvaspilot.client.CanvasClient object at 0x7fe39a94df40>, [{'json': [{'id': 0}], 'link': '<https://school.instructu...')>, <Request('GET', 'https://school.instructure.com/api/v1/courses/7/assignments?per_page=1&page=6')>, ...], 'broker')
+
+    def test_existing_page_ceiling_refuses_incomplete_success(collection):
+        client, replies, calls, _ = collection
+        replies.extend({"json": [{"id": n}], "link": f'<{BASE}{ASSIGNMENTS}?cursor={n + 1}>; rel="next"'}
+                       for n in range(40))
+>       with pytest.raises(RuntimeError, match="40-page.*incomplete"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE RuntimeError
+
+tests/test_link_pagination.py:169: Failed
+------------------------------ Captured log call -------------------------------
+WARNING  canvaspilot.client:client.py:270 get_paginated(/api/v1/courses/7/assignments): hit 40-page cap with 40 rows; result truncated
+_________ test_existing_page_ceiling_refuses_incomplete_success[token] _________
+
+collection = (<canvaspilot.client.CanvasClient object at 0x7fe39a970290>, [{'json': [{'id': 0}], 'link': '<https://school.instructu...s?cursor=4')>, <Request('GET', 'https://school.instructure.com/api/v1/courses/7/assignments?cursor=5')>, ...], 'token')
+
+    def test_existing_page_ceiling_refuses_incomplete_success(collection):
+        client, replies, calls, _ = collection
+        replies.extend({"json": [{"id": n}], "link": f'<{BASE}{ASSIGNMENTS}?cursor={n + 1}>; rel="next"'}
+                       for n in range(40))
+>       with pytest.raises(RuntimeError, match="40-page.*incomplete"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE RuntimeError
+
+tests/test_link_pagination.py:169: Failed
+_ test_same_origin_relative_next_link_is_resolved_without_reusing_filters[broker] _
+
+collection = (<canvaspilot.client.CanvasClient object at 0x7fe39a7c8bc0>, [{'json': [{'id': 1}], 'link': '<?cursor=next%2Fone>; rel...None}], [<Request('GET', 'https://school.instructure.com/api/v1/courses/7/assignments?per_page=25&page=1')>], 'broker')
+
+    def test_same_origin_relative_next_link_is_resolved_without_reusing_filters(collection):
+        client, replies, calls, _ = collection
+        replies.extend([
+            {"json": [{"id": 1}], "link": '<?cursor=next%2Fone>; rel="next"'},
+            {"json": [{"id": 2}], "link": None},
+        ])
+>       assert client.get_paginated(ASSIGNMENTS, params={"per_page": 25}) == [{"id": 1}, {"id": 2}]
+E       AssertionError: assert [{'id': 1}] == [{'id': 1}, {'id': 2}]
+E         
+E         Right contains one more item: {'id': 2}
+E         Use -v to get more diff
+
+tests/test_link_pagination.py:180: AssertionError
+_ test_same_origin_relative_next_link_is_resolved_without_reusing_filters[token] _
+
+collection = (<canvaspilot.client.CanvasClient object at 0x7fe39a7c8950>, [{'json': [{'id': 1}], 'link': '<?cursor=next%2Fone>; rel.../courses/7/assignments?per_page=25')>, <Request('GET', 'https://school.instructure.com/?cursor=next%2Fone')>], 'token')
+
+    def test_same_origin_relative_next_link_is_resolved_without_reusing_filters(collection):
+        client, replies, calls, _ = collection
+        replies.extend([
+            {"json": [{"id": 1}], "link": '<?cursor=next%2Fone>; rel="next"'},
+            {"json": [{"id": 2}], "link": None},
+        ])
+        assert client.get_paginated(ASSIGNMENTS, params={"per_page": 25}) == [{"id": 1}, {"id": 2}]
+>       assert str(calls[1].url) == BASE + ASSIGNMENTS + "?cursor=next%2Fone"
+E       AssertionError: assert 'https://scho...or=next%2Fone' == 'https://scho...or=next%2Fone'
+E         
+E         - https://school.instructure.com/api/v1/courses/7/assignments?cursor=next%2Fone
+E         ?                                ----------------------------
+E         + https://school.instructure.com/?cursor=next%2Fone
+
+tests/test_link_pagination.py:181: AssertionError
+________________ test_exactly_forty_pages_can_complete[broker] _________________
+
+collection = (<canvaspilot.client.CanvasClient object at 0x7fe39a7c9070>, [{'json': [{'id': 0}], 'link': '<https://school.instructu..., ...], [<Request('GET', 'https://school.instructure.com/api/v1/courses/7/assignments?per_page=50&page=1')>], 'broker')
+
+    def test_exactly_forty_pages_can_complete(collection):
+        client, replies, calls, _ = collection
+        replies.extend({"json": [{"id": n}], "link": f'<{BASE}{ASSIGNMENTS}?cursor={n + 1}>; rel="next"'}
+                       for n in range(39))
+        replies.append({"json": [{"id": 39}], "link": None})
+>       assert len(client.get_paginated(ASSIGNMENTS)) == 40
+E       AssertionError: assert 1 == 40
+E        +  where 1 = len([{'id': 0}])
+E        +    where [{'id': 0}] = get_paginated('/api/v1/courses/7/assignments')
+E        +      where get_paginated = <canvaspilot.client.CanvasClient object at 0x7fe39a7c9070>.get_paginated
+
+tests/test_link_pagination.py:189: AssertionError
+___________ test_later_auth_failure_is_not_a_partial_success[broker] ___________
+
+collection = (<canvaspilot.client.CanvasClient object at 0x7fe39a877b60>, [{'json': [{'id': 1}], 'link': '<https://school.instructu...None}], [<Request('GET', 'https://school.instructure.com/api/v1/courses/7/assignments?per_page=50&page=1')>], 'broker')
+
+    def test_later_auth_failure_is_not_a_partial_success(collection):
+        client, replies, calls, _ = collection
+        replies.extend([
+            {"json": [{"id": 1}], "link": f'<{BASE}{ASSIGNMENTS}?cursor=2>; rel="next"'},
+            {"json": {"message": "login required"}, "status": 401, "link": None},
+        ])
+>       with pytest.raises(client_mod.CanvasAuthError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE CanvasAuthError
+
+tests/test_link_pagination.py:199: Failed
+_____________ test_legacy_running_broker_requires_restart[broker] ______________
+
+collection = (<canvaspilot.client.CanvasClient object at 0x7fe39a875fd0>, [{'json': [{'id': 1}], 'link': None, 'legacy': True}], [<Request('GET', 'https://school.instructure.com/api/v1/courses/7/assignments?per_page=50&page=1')>], 'broker')
+
+    def test_legacy_running_broker_requires_restart(collection):
+        client, replies, calls, mode = collection
+        if mode != "broker":
+            pytest.skip("running broker compatibility only")
+        replies.append({"json": [{"id": 1}], "link": None, "legacy": True})
+>       with pytest.raises(RuntimeError, match="[Rr]estart.*broker"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE RuntimeError
+
+tests/test_link_pagination.py:209: Failed
+________ test_actual_fetch_preserves_next_links_through_broker_and_api _________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fe39a8765d0>
+
+    @pytest.mark.skipif(not CHROME, reason="set CANVASPILOT_TEST_CHROME for isolated browser qualification")
+    def test_actual_fetch_preserves_next_links_through_broker_and_api(monkeypatch):
+        from playwright.sync_api import sync_playwright
+    
+        for name in ("HTTP_PROXY", "HTTPS_PROXY", "ALL_PROXY", "NO_PROXY",
+                     "http_proxy", "https_proxy", "all_proxy", "no_proxy", "CANVAS_API_TOKEN"):
+            monkeypatch.delenv(name, raising=False)
+        state = broker_mod._BrokerState()
+        state.base_url = BASE
+        monkeypatch.setattr(broker_mod, "STATE", state)
+        seen = []
+        blocked = []
+        versions = []
+        stop = threading.Event()
+        next_url = BASE + PATH + "?cursor=a,b;c%2Fd&include%5B%5D=one&include%5B%5D=two"
+        last_url = BASE + PATH + "?cursor=last%3D3"
+    
+        def worker():
+            try:
+                with sync_playwright() as playwright:
+                    browser = playwright.chromium.launch(
+                        executable_path=CHROME, headless=True, args=["--no-sandbox"]
+                    )
+                    versions.append(browser.version)
+                    context = browser.new_context(service_workers="block")
+    
+                    def route_request(route):
+                        url = route.request.url
+                        parsed = urlsplit(url)
+                        if url == BASE + "/":
+                            route.fulfill(status=200, content_type="text/html", body="<title>Synthetic Canvas</title>")
+                            return
+                        if parsed.netloc != "school.instructure.com" or parsed.path != PATH:
+                            blocked.append(url)
+                            route.abort()
+                            return
+                        seen.append(url)
+                        headers = {"Content-Type": "application/json"}
+                        if len(seen) == 1:
+                            rows = [{"id": 1}, {"id": 2}]
+                            headers["LiNk"] = f'<{next_url}>; title="Page, two"; rel="next"'
+                        elif url == next_url:
+                            rows = []
+                            headers["LINK"] = f'<{last_url}>; rel="next"'
+                        elif url == last_url:
+                            rows = [{"id": 3, "name": "Last coursework"}]
+                        else:
+                            route.fulfill(status=400, body="unexpected cursor")
+                            return
+                        route.fulfill(status=200, headers=headers, body=json.dumps(rows))
+    
+                    context.route("**/*", route_request)
+                    context.new_page().goto(BASE + "/")
+                    state.ready.set()
+                    while not stop.is_set():
+                        try:
+                            job, reply = state.jobs.get(timeout=0.1)
+                        except queue.Empty:
+                            continue
+                        try:
+                            result = broker_mod._run_job(context, job)
+                            reply.put({"ok": True, **result})
+                        except Exception as exc:  # noqa: BLE001 — report any worker failure instead of hanging the caller
+                            reply.put({"ok": False, "error": str(exc)})
+                    context.close()
+                    browser.close()
+            except Exception as exc:  # noqa: BLE001 — startup failure must settle the test's wait
+                state.error = str(exc)
+                state.ready.set()
+    
+        thread = threading.Thread(target=worker, daemon=True)
+        thread.start()
+        assert state.ready.wait(20), "isolated browser did not start"
+        assert state.error is None, state.error
+        server = ThreadingHTTPServer(("127.0.0.1", 0), broker_mod.Handler)
+        server_thread = threading.Thread(target=server.serve_forever, daemon=True)
+        server_thread.start()
+        monkeypatch.setattr(client_mod, "BROKER_PORT", server.server_address[1])
+        try:
+            with CanvasClient(base_url=BASE, token="", timeout=10) as client:
+                rows = CanvasAPI(client).list_assignments(7)
+>           assert [row["id"] for row in rows] == [1, 2, 3]
+E           assert [1, 2] == [1, 2, 3]
+E             
+E             Right contains one more item: 3
+E             Use -v to get more diff
+
+tests/test_link_pagination_browser.py:109: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_link_pagination.py::test_short_page_follows_opaque_link_in_actual_assignment_api[broker]
+FAILED tests/test_link_pagination.py::test_empty_intermediate_page_and_opaque_punctuation_are_preserved[broker]
+FAILED tests/test_link_pagination.py::test_empty_intermediate_page_and_opaque_punctuation_are_preserved[token]
+FAILED tests/test_link_pagination.py::test_full_last_page_stops_without_empty_probe[broker]
+FAILED tests/test_link_pagination.py::test_next_link_cannot_leave_the_response_origin[broker-https://elsewhere.example/api/v1/assignments?page=2]
+FAILED tests/test_link_pagination.py::test_next_link_cannot_leave_the_response_origin[broker-https://school.instructure.com.evil.example/api/v1/assignments?page=2]
+FAILED tests/test_link_pagination.py::test_next_link_cannot_leave_the_response_origin[broker-http://school.instructure.com/api/v1/assignments?page=2]
+FAILED tests/test_link_pagination.py::test_next_link_cannot_leave_the_response_origin[broker-https://school.instructure.com:444/api/v1/assignments?page=2]
+FAILED tests/test_link_pagination.py::test_next_link_cannot_leave_the_response_origin[broker-https://school.instructure.com:0/api/v1/assignments?page=2]
+FAILED tests/test_link_pagination.py::test_next_link_cannot_leave_the_response_origin[broker-https://user:secret@school.instructure.com/api/v1/assignments?page=2]
+FAILED tests/test_link_pagination.py::test_next_link_cannot_leave_the_response_origin[broker-https://school.instructure.com\\@elsewhere.example/api/v1/assignments?page=2]
+FAILED tests/test_link_pagination.py::test_next_link_cannot_leave_the_response_origin[token-https://elsewhere.example/api/v1/assignments?page=2]
+FAILED tests/test_link_pagination.py::test_next_link_cannot_leave_the_response_origin[token-https://school.instructure.com.evil.example/api/v1/assignments?page=2]
+FAILED tests/test_link_pagination.py::test_next_link_cannot_leave_the_response_origin[token-http://school.instructure.com/api/v1/assignments?page=2]
+FAILED tests/test_link_pagination.py::test_next_link_cannot_leave_the_response_origin[token-https://school.instructure.com:444/api/v1/assignments?page=2]
+FAILED tests/test_link_pagination.py::test_next_link_cannot_leave_the_response_origin[token-https://school.instructure.com:0/api/v1/assignments?page=2]
+FAILED tests/test_link_pagination.py::test_next_link_cannot_leave_the_response_origin[token-https://user:secret@school.instructure.com/api/v1/assignments?page=2]
+FAILED tests/test_link_pagination.py::test_next_link_cannot_leave_the_response_origin[token-https://school.instructure.com\\@elsewhere.example/api/v1/assignments?page=2]
+FAILED tests/test_link_pagination.py::test_repeated_next_link_refuses_partial_list_without_duplicate_read[broker]
+FAILED tests/test_link_pagination.py::test_repeated_next_link_refuses_partial_list_without_duplicate_read[token]
+FAILED tests/test_link_pagination.py::test_malformed_or_ambiguous_links_do_not_assert_completion[broker-not-a-link; rel="next"]
+FAILED tests/test_link_pagination.py::test_malformed_or_ambiguous_links_do_not_assert_completion[broker-<https://school.instructure.com/api/v1/courses?page=2>; rel]
+FAILED tests/test_link_pagination.py::test_malformed_or_ambiguous_links_do_not_assert_completion[broker-<https://school.instructure.com/api/v1/courses?page=2>; rel=""]
+FAILED tests/test_link_pagination.py::test_malformed_or_ambiguous_links_do_not_assert_completion[broker-<https://school.instructure.com/api/v1/courses?page=2>; rel="next"; rel="prev"]
+FAILED tests/test_link_pagination.py::test_malformed_or_ambiguous_links_do_not_assert_completion[broker-<https://school.instructure.com/api/v1/courses?page=2>; rel="next", broken]
+FAILED tests/test_link_pagination.py::test_malformed_or_ambiguous_links_do_not_assert_completion[broker-<https://school.instructure.com/api/v1/courses?a>; rel="next", <https://school.instructure.com/api/v1/courses?b>; rel="next"]
+FAILED tests/test_link_pagination.py::test_malformed_or_ambiguous_links_do_not_assert_completion[token-not-a-link; rel="next"]
+FAILED tests/test_link_pagination.py::test_malformed_or_ambiguous_links_do_not_assert_completion[token-<https://school.instructure.com/api/v1/courses?page=2>; rel]
+FAILED tests/test_link_pagination.py::test_malformed_or_ambiguous_links_do_not_assert_completion[token-<https://school.instructure.com/api/v1/courses?page=2>; rel=""]
+FAILED tests/test_link_pagination.py::test_malformed_or_ambiguous_links_do_not_assert_completion[token-<https://school.instructure.com/api/v1/courses?page=2>; rel="next"; rel="prev"]
+FAILED tests/test_link_pagination.py::test_malformed_or_ambiguous_links_do_not_assert_completion[token-<https://school.instructure.com/api/v1/courses?page=2>; rel="next", broken]
+FAILED tests/test_link_pagination.py::test_malformed_or_ambiguous_links_do_not_assert_completion[token-<https://school.instructure.com/api/v1/courses?a>; rel="next", <https://school.instructure.com/api/v1/courses?b>; rel="next"]
+FAILED tests/test_link_pagination.py::test_existing_page_ceiling_refuses_incomplete_success[broker]
+FAILED tests/test_link_pagination.py::test_existing_page_ceiling_refuses_incomplete_success[token]
+FAILED tests/test_link_pagination.py::test_same_origin_relative_next_link_is_resolved_without_reusing_filters[broker]
+FAILED tests/test_link_pagination.py::test_same_origin_relative_next_link_is_resolved_without_reusing_filters[token]
+FAILED tests/test_link_pagination.py::test_exactly_forty_pages_can_complete[broker]
+FAILED tests/test_link_pagination.py::test_later_auth_failure_is_not_a_partial_success[broker]
+FAILED tests/test_link_pagination.py::test_legacy_running_broker_requires_restart[broker]
+FAILED tests/test_link_pagination_browser.py::test_actual_fetch_preserves_next_links_through_broker_and_api
+40 failed, 9 passed, 2 skipped in 2.37s

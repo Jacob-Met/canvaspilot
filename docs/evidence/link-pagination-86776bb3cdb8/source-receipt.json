@@ -1,0 +1,85 @@
+{
+  "repository": "Jacob-Met/canvaspilot",
+  "base_commit": "874ad9c073fc5bab625e583849dbbe4eaf7fc6af",
+  "original_discovery_commit": "b0655cfc6f298c956fcdd27fbba32e3c5609516f",
+  "first_frozen_candidate": "fd3996aada3f34b7093fa361eb7e423c4c587d90",
+  "qualified_source_commit": "bb284ae3ddbf2e6918f009bf4f96552d9820b62e",
+  "branch": "estate/86776bb3cdb8-canvas-link-pagination",
+  "source_files": [
+    {
+      "path": "README.md",
+      "bytes": 9219,
+      "sha256": "1f1f0100b4e1dd5f03f06fdc05807fce79a1d734a03e9bd4efba8ba05c672acf",
+      "git_blob": "a84232efad6094bb7f25b93f82d12015c2997b50"
+    },
+    {
+      "path": "docs/API.md",
+      "bytes": 5919,
+      "sha256": "9325e181a7bf06c48c887e4e355d93b7c94a8e30559f6cd366cfb22959bfa2ab",
+      "git_blob": "4d4779355e3d96c66d24d85436425bfc1c38e35f"
+    },
+    {
+      "path": "src/canvaspilot/client.py",
+      "bytes": 16562,
+      "sha256": "5eac822e4b2e6584b1d2e6a7ff24634cebfffd6635c859b6c075c9a3968c724a",
+      "git_blob": "ab95d581541019f2c2fc4ba77f3f37b52f25a0a1"
+    },
+    {
+      "path": "src/canvaspilot/session_broker.py",
+      "bytes": 12214,
+      "sha256": "ee8b7ffa36e3da7d18ea91a359e5202f69ae9df0b59956d2275dcc9ae1a24b07",
+      "git_blob": "ece1e0ebf6e4828c5ae8e307c798d3f523ca0bc4"
+    },
+    {
+      "path": "tests/test_broker_pagination.py",
+      "bytes": 3890,
+      "sha256": "9808a7771e935f98281d2ba2268716d783784e05a5c9d7f19e01e21e50fc926a",
+      "git_blob": "2e201c3f5a7746f7209b54ec8353ec848d476229"
+    },
+    {
+      "path": "tests/test_independent_link_receiving.py",
+      "bytes": 7888,
+      "sha256": "bfdf09c6ab05c0bd343f46e7a5c1d4432130a05d05c27fce9afa47dcfd59ccba",
+      "git_blob": "82732ace434ba4d94418b729ca751bb14e6d68e6"
+    },
+    {
+      "path": "tests/test_link_pagination.py",
+      "bytes": 9225,
+      "sha256": "1e4681bc32f3b0358545a73d4bd075093d5b566bc9c3e17fecb79dff62cb4501",
+      "git_blob": "2b8b97015a8c97928d0a7b41838febfec65df30d"
+    },
+    {
+      "path": "tests/test_link_pagination_browser.py",
+      "bytes": 5432,
+      "sha256": "8f6a1b4192a6742b8f29f3f41ba41354e274f438477a99bd48b31c973e2a1e49",
+      "git_blob": "bcecc324b9563a52093138855865e54f6cc19777"
+    }
+  ],
+  "runtime": {
+    "python": "3.12.14",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+    "packages": {
+      "httpx": "0.28.1",
+      "pytest": "9.1.1",
+      "ruff": "0.16.10",
+      "playwright": "1.63.0",
+      "mcp": "2.3.0",
+      "pydantic": "2.13.5"
+    },
+    "node": "v24.19.0",
+    "chromium": "153.0.8010.0",
+    "chromium_path": "/workspace/scratch/86776bb3cdb8/product-delivery/browser-runtime/chromium"
+  },
+  "receiving_test_source": {
+    "original_sha256": "fa54a90e76b4f294349e486eed254dc0c5097aa1535c8a7c1f89fdb937fcd7a4",
+    "incorporated_sha256": "bfdf09c6ab05c0bd343f46e7a5c1d4432130a05d05c27fce9afa47dcfd59ccba",
+    "difference": "Native Ruff import ordering only: json and threading imports precede from imports."
+  },
+  "source_references": [
+    "https://developerdocs.instructure.com/services/canvas/basics/file.pagination",
+    "https://www.rfc-editor.org/rfc/rfc8288.html#section-3",
+    "https://www.rfc-editor.org/rfc/rfc8288.html#section-3.2",
+    "https://www.rfc-editor.org/rfc/rfc8288.html#section-3.3"
+  ],
+  "boundary": "Authored Canvas data; actual isolated browser fetch, native broker HTTP/queue, client and API; no existing profile, school session, provider call or production operation."
+}

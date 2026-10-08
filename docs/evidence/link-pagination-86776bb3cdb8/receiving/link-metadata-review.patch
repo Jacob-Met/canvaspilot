@@ -1,0 +1,46 @@
+diff --git a/src/canvaspilot/client.py b/src/canvaspilot/client.py
+index 397bcd7..ab95d58 100644
+--- a/src/canvaspilot/client.py
++++ b/src/canvaspilot/client.py
+@@ -354,10 +354,14 @@ def _pagination_identity(url: str) -> tuple[tuple[str, str, int], tuple[Any, ...
+ 
+ # Commas/semicolons inside <URLs> and quoted parameters are not link separators.
+ _LINK_TOKEN = r"[!#$%&'*+.^_`|~0-9A-Za-z-]+"
+-_LINK_VALUE = r'(?:"(?:[^"\\]|\\.)*"|[^,;\s"]+)'
++_LINK_VALUE = rf'(?:"(?:[^"\\]|\\.)*"|{_LINK_TOKEN})'
+ _LINK_PARAM = rf"\s*;\s*{_LINK_TOKEN}(?:\s*=\s*{_LINK_VALUE})?"
+ _LINK = re.compile(rf"\s*<([^<>]*)>((?:{_LINK_PARAM})*)\s*(?:,|$)")
+ _PARAM = re.compile(rf"\s*;\s*({_LINK_TOKEN})(?:\s*=\s*({_LINK_VALUE}))?")
++_RELATION = re.compile(
++    r"(?:[A-Za-z][A-Za-z0-9.-]*|"
++    r"[A-Za-z][A-Za-z0-9+.-]*:(?:[A-Za-z0-9._~:/?#\[\]@!$&'()*+,;=-]|%[0-9A-Fa-f]{2})*)"
++)
+ 
+ 
+ def _link_next(link_header: str | None) -> str | None:
+@@ -373,6 +377,8 @@ def _link_next(link_header: str | None) -> str | None:
+             raise CanvasPaginationError("Canvas pagination Link header is malformed; collection incomplete.")
+         has_relation = False
+         for param in _PARAM.finditer(match[2]):
++            if param[1].lower() == "anchor":
++                raise CanvasPaginationError("Canvas pagination Link header has an unsupported anchor context; collection incomplete.")
+             if param[1].lower() != "rel":
+                 continue
+             if has_relation:
+@@ -383,10 +389,15 @@ def _link_next(link_header: str | None) -> str | None:
+                 value = re.sub(r"\\(.)", r"\1", value[1:-1])
+             if not value.strip():
+                 raise CanvasPaginationError("Canvas pagination Link header has an empty relation; collection incomplete.")
+-            if "next" in value.lower().split():
++            relations = value.split(" ")
++            if any(_RELATION.fullmatch(item) is None for item in relations if item):
++                raise CanvasPaginationError("Canvas pagination Link header has an invalid relation; collection incomplete.")
++            if "next" in [item.lower() for item in relations]:
+                 if next_url is not None:
+                     raise CanvasPaginationError("Canvas pagination Link header has multiple next links; collection incomplete.")
+                 next_url = match[1]
++        if not has_relation:
++            raise CanvasPaginationError("Canvas pagination Link header has no relation; collection incomplete.")
+         pos = match.end()
+     return next_url
+ 

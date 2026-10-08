@@ -90,13 +90,19 @@ Response:
   "response": {
     "status": 200,
     "json": { "..." : "parsed body" },
-    "text": null
+    "text": null,
+    "link": null,
+    "url": "https://school.instructure.com/api/v1/courses?per_page=50"
   }
 }
 ```
 
 - `response.text` is populated (max 4000 chars) only when the body is **not**
   valid JSON; otherwise it is `null`.
+- `response.link` is the Canvas `Link` header, or `null` when absent;
+  `response.url` is the final response URL. Only these pagination fields are
+  added; other response headers and cookies are not exported. Existing
+  `broker_fetch()` callers still receive just the decoded body.
 - The fetch runs with `credentials: 'include'`, so Canvas session cookies ride
   along — no token needed.
 
@@ -124,10 +130,16 @@ The broker process exits ~0.3s after responding. Unknown paths return
 - Startup emits two JSON lines on stdout: `{"status": "session_ready", ...}`
   (browser + profile + port) and `{"status": "listening", "url": ...}`.
 - Job queue is a single in-page worker; concurrent `/fetch` calls serialize.
-- In-page fetch drops response headers, so Canvas `Link: rel=next` pagination is
-  invisible here. `CanvasClient.get_paginated()` compensates with explicit
-  `?page=N&per_page=M` requests (max 100 per page, 40-page cap, warns on
-  truncation). The token auth path follows `Link` headers normally.
+- In-page fetch includes the `link` and `url` response fields, so
+  `CanvasClient.get_paginated()` follows the same opaque next-link contract
+  in session and token modes. A short or empty intermediate page is still
+  followed when it has a next link; a full final page needs no empty probe.
+  Next links cannot change the first response's origin. Invalid/ambiguous
+  links, unsupported anchored link contexts, repeated pages or a next link after 40 responses raise
+  `CanvasPaginationError`; accumulated rows are not returned as complete.
+  Restart an older running broker after installing the new source: a list
+  response without the two metadata fields produces an explicit restart
+  error, while ordinary single-request body results stay compatible.
 - `POST` requests honor the `Content-Length` header (`{}` when absent); a
   missing body is treated as an empty object.
 - Logging is silenced (`log_message` no-op) — there is no access log on this
