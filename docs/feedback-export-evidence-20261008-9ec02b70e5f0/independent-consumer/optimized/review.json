@@ -1,0 +1,24 @@
+{
+  "browser_allocations": 0,
+  "errors": 0,
+  "failures": 0,
+  "github_writes": 0,
+  "live_accounts": 0,
+  "mode": "optimized",
+  "parent": "55fe1e0a3c4ad85e1065f295e49d44722c3be32b",
+  "probe": {
+    "bytes": 21275,
+    "git_blob": "30a4e2a9afb9e0199c5b624e48f934a4dbf4d1ea",
+    "sha256": "2f8b2293367f7bd2ae43558ac6e0527f208bc14ca5628550d5bfc705d43b05db"
+  },
+  "runtime_source_files": 25,
+  "schema": "independent-feedback-consumer.v1",
+  "skips": 0,
+  "source_before_after_identical": true,
+  "support": {
+    "bytes": 12144,
+    "git_blob": "3061c29862ec2339dda41fd5ba8438680d1f2756",
+    "sha256": "27b2851617939bdce42549cb5a0de2e663f66b7ceea6ee53e6ff24b88ec6089b"
+  },
+  "tests": 7
+}

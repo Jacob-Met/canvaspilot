@@ -1,0 +1,156 @@
+{
+  "schema": "independent-current0d-import-capsule.v1",
+  "status": "passed",
+  "parent": "0d1898544a90079e2dcc7ceb3fa4bc6bca88a2bc",
+  "tree": "de9fca025ebe325807bd53cd9b7f3b6be50c6d19",
+  "candidate_manifest_sha256": "7ff1ec504102adf538801b2cb6a17b451cad7b0699d4e08ff858aa121cbfb4a3",
+  "donor_files": 29,
+  "donor_before_after_identical": true,
+  "changed_source_since79": [
+    "README.md",
+    "src/canvaspilot/api.py",
+    "src/canvaspilot/assignment_submission.py"
+  ],
+  "failure": null,
+  "executions": [
+    {
+      "mode": "normal",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "/dev/estate-9ec02b70e5f0/runtime/canvas-feedback-current0d/verify_import_context.py",
+        "--source",
+        "/dev/estate-9ec02b70e5f0/runtime/canvas-feedback-current0d/repo",
+        "--support",
+        "/dev/estate-9ec02b70e5f0/runtime/canvas-feedback-current0d/support",
+        "--prior-html",
+        "/dev/estate-9ec02b70e5f0/runtime/canvas-feedback-current0d/prior-actual-export.html",
+        "--output",
+        "/dev/estate-9ec02b70e5f0/runtime/canvas-feedback-current0d/normal"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 1.395482254003582
+    },
+    {
+      "mode": "optimized",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "-O",
+        "/dev/estate-9ec02b70e5f0/runtime/canvas-feedback-current0d/verify_import_context.py",
+        "--source",
+        "/dev/estate-9ec02b70e5f0/runtime/canvas-feedback-current0d/repo",
+        "--support",
+        "/dev/estate-9ec02b70e5f0/runtime/canvas-feedback-current0d/support",
+        "--prior-html",
+        "/dev/estate-9ec02b70e5f0/runtime/canvas-feedback-current0d/prior-actual-export.html",
+        "--output",
+        "/dev/estate-9ec02b70e5f0/runtime/canvas-feedback-current0d/optimized"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 2.501463471002353
+    }
+  ],
+  "results": [
+    {
+      "actual_broker_processes": 0,
+      "actual_cli_processes": 1,
+      "actual_export": {
+        "bytes": 12466,
+        "git_blob": "b500e061f85137bccaf49cb8b3c533306bf13988",
+        "sha256": "cde044dccf276552199e12c332c00b4c78b501ef876f948e72ec7627fd2b743d"
+      },
+      "actual_html_files": 1,
+      "actual_loopback_GETs": 2,
+      "all_visible_feedback_equal_except_capture_time": true,
+      "browser_allocations": 0,
+      "elapsed_seconds": 1.3146221359929768,
+      "github_writes": 0,
+      "live_accounts": 0,
+      "mode": "normal",
+      "native_source_files": 14,
+      "new_assignment_list_helper_behavior_tested": false,
+      "parent": "0d1898544a90079e2dcc7ceb3fa4bc6bca88a2bc",
+      "passed": true,
+      "prior_actual_export": {
+        "bytes": 12466,
+        "git_blob": "9f79d8b03075e329029f2d153dcaee3e3dad22cd",
+        "sha256": "27ae70511395b7412359bdedd17baf0f5f499ef3550da104d5e6e882ce847e78"
+      },
+      "probe": {
+        "bytes": 5409,
+        "git_blob": "6248b1c59beb5f6e9aba95ef9434b769bc9b914e",
+        "sha256": "62c2de474b5a46c3e38405098fc72a0fdb999b9a83839261d074f078e7608ce0"
+      },
+      "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+      "schema": "independent-current0d-feedback-import.v1",
+      "source_before_after_identical": true,
+      "support": {
+        "bytes": 12144,
+        "git_blob": "3061c29862ec2339dda41fd5ba8438680d1f2756",
+        "sha256": "27b2851617939bdce42549cb5a0de2e663f66b7ceea6ee53e6ff24b88ec6089b"
+      },
+      "tree": "de9fca025ebe325807bd53cd9b7f3b6be50c6d19"
+    },
+    {
+      "actual_broker_processes": 0,
+      "actual_cli_processes": 1,
+      "actual_export": {
+        "bytes": 12466,
+        "git_blob": "6058dace4b47d6470320002b7cd68624f1bcc031",
+        "sha256": "defc346b3a7633746cdd604fd711e5327d0ee0e1d34c6c405e2375c65c33cdca"
+      },
+      "actual_html_files": 1,
+      "actual_loopback_GETs": 2,
+      "all_visible_feedback_equal_except_capture_time": true,
+      "browser_allocations": 0,
+      "elapsed_seconds": 2.1975181929956307,
+      "github_writes": 0,
+      "live_accounts": 0,
+      "mode": "optimized",
+      "native_source_files": 14,
+      "new_assignment_list_helper_behavior_tested": false,
+      "parent": "0d1898544a90079e2dcc7ceb3fa4bc6bca88a2bc",
+      "passed": true,
+      "prior_actual_export": {
+        "bytes": 12466,
+        "git_blob": "9f79d8b03075e329029f2d153dcaee3e3dad22cd",
+        "sha256": "27ae70511395b7412359bdedd17baf0f5f499ef3550da104d5e6e882ce847e78"
+      },
+      "probe": {
+        "bytes": 5409,
+        "git_blob": "6248b1c59beb5f6e9aba95ef9434b769bc9b914e",
+        "sha256": "62c2de474b5a46c3e38405098fc72a0fdb999b9a83839261d074f078e7608ce0"
+      },
+      "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+      "schema": "independent-current0d-feedback-import.v1",
+      "source_before_after_identical": true,
+      "support": {
+        "bytes": 12144,
+        "git_blob": "3061c29862ec2339dda41fd5ba8438680d1f2756",
+        "sha256": "27b2851617939bdce42549cb5a0de2e663f66b7ceea6ee53e6ff24b88ec6089b"
+      },
+      "tree": "de9fca025ebe325807bd53cd9b7f3b6be50c6d19"
+    }
+  ],
+  "archive": {
+    "files": 44,
+    "raw_bytes": 282805,
+    "compressed": {
+      "bytes": 58172,
+      "sha256": "01cfb3559d044b8d193b54a43c5e321a1e3c5aa4241e8f1d87b1bd21e47b4d4e",
+      "git_blob": "7bbcada26bb946a12f9118817a5b5392215c8d2b"
+    },
+    "encoded": {
+      "bytes": 78585,
+      "sha256": "b725c6ab4ba262f93fd4396dd429cb231a65698b58ca5e6afca5ae93e879a50a",
+      "git_blob": "b15f2be972e0f98f086d506e9faa9e144045d1e6"
+    },
+    "encoding": "base64(gzip(tar))",
+    "every_member_verified": true
+  },
+  "persisted_within_same_exec": true,
+  "reserved_bytes": 475136,
+  "github_writes": 0,
+  "branch_ref_reads": 0
+}

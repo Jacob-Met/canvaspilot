@@ -1,0 +1,566 @@
+{
+  "schema": "independent-exported-css-selector.v1",
+  "passed": true,
+  "node": "v24.19.0",
+  "parser": {
+    "name": "jsdom",
+    "version": "30.1.2",
+    "packagePath": "/workspace/scratch/d0441742433b/production-worker/qa-deps/node_modules/jsdom/package.json",
+    "packageSha256": "0cb4ee6567647431bc9d62263638314a4b857e0fc9a7eddebd7172a526b418aa"
+  },
+  "browserAllocations": 0,
+  "scriptsEnabled": false,
+  "subresourcesEnabled": false,
+  "renderedPrintLayoutClaim": false,
+  "onlyStylesheetDifference": "one leading plus removed",
+  "before": {
+    "file": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-css-review/run/predecessor-actual-export.html",
+    "bytes": 12467,
+    "sha256": "07cff2d7d85f583fd17264062e221112473be0be6efc8866e96ee6261d98d790",
+    "selectors": [
+      {
+        "selector": "+:root",
+        "context": [],
+        "accepted": false,
+        "error": {
+          "name": "SyntaxError",
+          "message": "Invalid selector +:root"
+        }
+      },
+      {
+        "selector": "*",
+        "context": [],
+        "accepted": true,
+        "matches": 312,
+        "matchesRoot": false
+      },
+      {
+        "selector": "body",
+        "context": [],
+        "accepted": true,
+        "matches": 1,
+        "matchesRoot": false
+      },
+      {
+        "selector": "main",
+        "context": [],
+        "accepted": true,
+        "matches": 1,
+        "matchesRoot": false
+      },
+      {
+        "selector": "header",
+        "context": [],
+        "accepted": true,
+        "matches": 1,
+        "matchesRoot": false
+      },
+      {
+        "selector": ".eyebrow",
+        "context": [],
+        "accepted": true,
+        "matches": 1,
+        "matchesRoot": false
+      },
+      {
+        "selector": "h1",
+        "context": [],
+        "accepted": true,
+        "matches": 1,
+        "matchesRoot": false
+      },
+      {
+        "selector": "h2",
+        "context": [],
+        "accepted": true,
+        "matches": 3,
+        "matchesRoot": false
+      },
+      {
+        "selector": "h3",
+        "context": [],
+        "accepted": true,
+        "matches": 7,
+        "matchesRoot": false
+      },
+      {
+        "selector": "p",
+        "context": [],
+        "accepted": true,
+        "matches": 18,
+        "matchesRoot": false
+      },
+      {
+        "selector": "section",
+        "context": [],
+        "accepted": true,
+        "matches": 3,
+        "matchesRoot": false
+      },
+      {
+        "selector": "article, .panel",
+        "context": [],
+        "accepted": true,
+        "matches": 8,
+        "matchesRoot": false
+      },
+      {
+        "selector": ".notice",
+        "context": [],
+        "accepted": true,
+        "matches": 2,
+        "matchesRoot": false
+      },
+      {
+        "selector": ".prior",
+        "context": [],
+        "accepted": true,
+        "matches": 1,
+        "matchesRoot": false
+      },
+      {
+        "selector": ".muted, dt, footer",
+        "context": [],
+        "accepted": true,
+        "matches": 104,
+        "matchesRoot": false
+      },
+      {
+        "selector": "dl",
+        "context": [],
+        "accepted": true,
+        "matches": 12,
+        "matchesRoot": false
+      },
+      {
+        "selector": "dl > div",
+        "context": [],
+        "accepted": true,
+        "matches": 71,
+        "matchesRoot": false
+      },
+      {
+        "selector": "dt",
+        "context": [],
+        "accepted": true,
+        "matches": 71,
+        "matchesRoot": false
+      },
+      {
+        "selector": "dd",
+        "context": [],
+        "accepted": true,
+        "matches": 71,
+        "matchesRoot": false
+      },
+      {
+        "selector": ".wide",
+        "context": [],
+        "accepted": true,
+        "matches": 6,
+        "matchesRoot": false
+      },
+      {
+        "selector": ".ratings",
+        "context": [],
+        "accepted": true,
+        "matches": 1,
+        "matchesRoot": false
+      },
+      {
+        "selector": ".ratings li",
+        "context": [],
+        "accepted": true,
+        "matches": 1,
+        "matchesRoot": false
+      },
+      {
+        "selector": ".ratings dl",
+        "context": [],
+        "accepted": true,
+        "matches": 1,
+        "matchesRoot": false
+      },
+      {
+        "selector": ".literal",
+        "context": [],
+        "accepted": true,
+        "matches": 2,
+        "matchesRoot": false
+      },
+      {
+        "selector": "a",
+        "context": [],
+        "accepted": true,
+        "matches": 1,
+        "matchesRoot": false
+      },
+      {
+        "selector": "a:focus-visible",
+        "context": [],
+        "accepted": true,
+        "matches": 0,
+        "matchesRoot": false
+      },
+      {
+        "selector": "footer",
+        "context": [],
+        "accepted": true,
+        "matches": 1,
+        "matchesRoot": false
+      },
+      {
+        "selector": "main",
+        "context": [
+          "(max-width: 36rem)"
+        ],
+        "accepted": true,
+        "matches": 1,
+        "matchesRoot": false
+      },
+      {
+        "selector": "article, .panel",
+        "context": [
+          "(max-width: 36rem)"
+        ],
+        "accepted": true,
+        "matches": 8,
+        "matchesRoot": false
+      },
+      {
+        "selector": "dl",
+        "context": [
+          "(max-width: 36rem)"
+        ],
+        "accepted": true,
+        "matches": 12,
+        "matchesRoot": false
+      },
+      {
+        "selector": ":root",
+        "context": [
+          "print"
+        ],
+        "accepted": true,
+        "matches": 1,
+        "matchesRoot": true
+      },
+      {
+        "selector": "main",
+        "context": [
+          "print"
+        ],
+        "accepted": true,
+        "matches": 1,
+        "matchesRoot": false
+      },
+      {
+        "selector": "h1, h2, h3",
+        "context": [
+          "print"
+        ],
+        "accepted": true,
+        "matches": 11,
+        "matchesRoot": false
+      },
+      {
+        "selector": "article, .panel",
+        "context": [
+          "print"
+        ],
+        "accepted": true,
+        "matches": 8,
+        "matchesRoot": false
+      },
+      {
+        "selector": "a",
+        "context": [
+          "print"
+        ],
+        "accepted": true,
+        "matches": 1,
+        "matchesRoot": false
+      }
+    ],
+    "diagnostics": [],
+    "declarations": {
+      "color": "rgb(24, 42, 58)",
+      "background": "rgb(243, 245, 246)",
+      "colorScheme": "light"
+    }
+  },
+  "after": {
+    "file": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-css-review/run/feedback.html",
+    "bytes": 12466,
+    "sha256": "27ae70511395b7412359bdedd17baf0f5f499ef3550da104d5e6e882ce847e78",
+    "selectors": [
+      {
+        "selector": ":root",
+        "context": [],
+        "accepted": true,
+        "matches": 1,
+        "matchesRoot": true
+      },
+      {
+        "selector": "*",
+        "context": [],
+        "accepted": true,
+        "matches": 312,
+        "matchesRoot": false
+      },
+      {
+        "selector": "body",
+        "context": [],
+        "accepted": true,
+        "matches": 1,
+        "matchesRoot": false
+      },
+      {
+        "selector": "main",
+        "context": [],
+        "accepted": true,
+        "matches": 1,
+        "matchesRoot": false
+      },
+      {
+        "selector": "header",
+        "context": [],
+        "accepted": true,
+        "matches": 1,
+        "matchesRoot": false
+      },
+      {
+        "selector": ".eyebrow",
+        "context": [],
+        "accepted": true,
+        "matches": 1,
+        "matchesRoot": false
+      },
+      {
+        "selector": "h1",
+        "context": [],
+        "accepted": true,
+        "matches": 1,
+        "matchesRoot": false
+      },
+      {
+        "selector": "h2",
+        "context": [],
+        "accepted": true,
+        "matches": 3,
+        "matchesRoot": false
+      },
+      {
+        "selector": "h3",
+        "context": [],
+        "accepted": true,
+        "matches": 7,
+        "matchesRoot": false
+      },
+      {
+        "selector": "p",
+        "context": [],
+        "accepted": true,
+        "matches": 18,
+        "matchesRoot": false
+      },
+      {
+        "selector": "section",
+        "context": [],
+        "accepted": true,
+        "matches": 3,
+        "matchesRoot": false
+      },
+      {
+        "selector": "article, .panel",
+        "context": [],
+        "accepted": true,
+        "matches": 8,
+        "matchesRoot": false
+      },
+      {
+        "selector": ".notice",
+        "context": [],
+        "accepted": true,
+        "matches": 2,
+        "matchesRoot": false
+      },
+      {
+        "selector": ".prior",
+        "context": [],
+        "accepted": true,
+        "matches": 1,
+        "matchesRoot": false
+      },
+      {
+        "selector": ".muted, dt, footer",
+        "context": [],
+        "accepted": true,
+        "matches": 104,
+        "matchesRoot": false
+      },
+      {
+        "selector": "dl",
+        "context": [],
+        "accepted": true,
+        "matches": 12,
+        "matchesRoot": false
+      },
+      {
+        "selector": "dl > div",
+        "context": [],
+        "accepted": true,
+        "matches": 71,
+        "matchesRoot": false
+      },
+      {
+        "selector": "dt",
+        "context": [],
+        "accepted": true,
+        "matches": 71,
+        "matchesRoot": false
+      },
+      {
+        "selector": "dd",
+        "context": [],
+        "accepted": true,
+        "matches": 71,
+        "matchesRoot": false
+      },
+      {
+        "selector": ".wide",
+        "context": [],
+        "accepted": true,
+        "matches": 6,
+        "matchesRoot": false
+      },
+      {
+        "selector": ".ratings",
+        "context": [],
+        "accepted": true,
+        "matches": 1,
+        "matchesRoot": false
+      },
+      {
+        "selector": ".ratings li",
+        "context": [],
+        "accepted": true,
+        "matches": 1,
+        "matchesRoot": false
+      },
+      {
+        "selector": ".ratings dl",
+        "context": [],
+        "accepted": true,
+        "matches": 1,
+        "matchesRoot": false
+      },
+      {
+        "selector": ".literal",
+        "context": [],
+        "accepted": true,
+        "matches": 2,
+        "matchesRoot": false
+      },
+      {
+        "selector": "a",
+        "context": [],
+        "accepted": true,
+        "matches": 1,
+        "matchesRoot": false
+      },
+      {
+        "selector": "a:focus-visible",
+        "context": [],
+        "accepted": true,
+        "matches": 0,
+        "matchesRoot": false
+      },
+      {
+        "selector": "footer",
+        "context": [],
+        "accepted": true,
+        "matches": 1,
+        "matchesRoot": false
+      },
+      {
+        "selector": "main",
+        "context": [
+          "(max-width: 36rem)"
+        ],
+        "accepted": true,
+        "matches": 1,
+        "matchesRoot": false
+      },
+      {
+        "selector": "article, .panel",
+        "context": [
+          "(max-width: 36rem)"
+        ],
+        "accepted": true,
+        "matches": 8,
+        "matchesRoot": false
+      },
+      {
+        "selector": "dl",
+        "context": [
+          "(max-width: 36rem)"
+        ],
+        "accepted": true,
+        "matches": 12,
+        "matchesRoot": false
+      },
+      {
+        "selector": ":root",
+        "context": [
+          "print"
+        ],
+        "accepted": true,
+        "matches": 1,
+        "matchesRoot": true
+      },
+      {
+        "selector": "main",
+        "context": [
+          "print"
+        ],
+        "accepted": true,
+        "matches": 1,
+        "matchesRoot": false
+      },
+      {
+        "selector": "h1, h2, h3",
+        "context": [
+          "print"
+        ],
+        "accepted": true,
+        "matches": 11,
+        "matchesRoot": false
+      },
+      {
+        "selector": "article, .panel",
+        "context": [
+          "print"
+        ],
+        "accepted": true,
+        "matches": 8,
+        "matchesRoot": false
+      },
+      {
+        "selector": "a",
+        "context": [
+          "print"
+        ],
+        "accepted": true,
+        "matches": 1,
+        "matchesRoot": false
+      }
+    ],
+    "diagnostics": [],
+    "declarations": {
+      "color": "rgb(24, 42, 58)",
+      "background": "rgb(243, 245, 246)",
+      "colorScheme": "light"
+    }
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "schema": "feedback-current0d-context-allowlist.v1",
+  "repository": "Jacob-Met/canvaspilot",
+  "parent": "0d1898544a90079e2dcc7ceb3fa4bc6bca88a2bc",
+  "tree": "de9fca025ebe325807bd53cd9b7f3b6be50c6d19",
+  "source_root": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/current0d/repo",
+  "source_pins": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/current0d/verification/candidate-pins.json",
+  "source_pins_sha256": "7ff1ec504102adf538801b2cb6a17b451cad7b0699d4e08ff858aa121cbfb4a3",
+  "status": "Frozen exact current0d source context. Bounded runtime import/export receiving is recorded separately; no97-case replay.",
+  "source_files": 29,
+  "native_runtime_modules": 14,
+  "owned_product_paths": 6,
+  "file_count": 11,
+  "bytes": 94801,
+  "binary_files": [],
+  "files": [
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/current0d/README.md",
+      "relative": "docs/qualification/feedback-export-9ec02b70e5f0/current0d/README.md",
+      "kind": "current0d-context",
+      "encoding": "utf-8",
+      "bytes": 2052,
+      "sha256": "4d74aa7ae3de75b7aa7da583470833397a3d0b26d834c190a673f6c27a19829e",
+      "git_blob": "fabd02c068f161ecbf4b727be23d28f8d306c7ae"
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/current0d/immutable-source.json",
+      "relative": "docs/qualification/feedback-export-9ec02b70e5f0/current0d/immutable-source.json",
+      "kind": "current0d-context",
+      "encoding": "utf-8",
+      "bytes": 1488,
+      "sha256": "cdb878963c1a03b08d5d9f8aeb59ee03c7a59e89c64023144b7b11351d2a385d",
+      "git_blob": "34a6e35580adb562245bc0b97ae93a78da56a42d"
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/current0d/verification/candidate-pins.json",
+      "relative": "docs/qualification/feedback-export-9ec02b70e5f0/current0d/verification/candidate-pins.json",
+      "kind": "exact-delta-receipt",
+      "encoding": "utf-8",
+      "bytes": 7966,
+      "sha256": "7ff1ec504102adf538801b2cb6a17b451cad7b0699d4e08ff858aa121cbfb4a3",
+      "git_blob": "70de2cc0eb552b36b089deef03d000bd1ae14f74"
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/current0d/verification/delta-proof.json",
+      "relative": "docs/qualification/feedback-export-9ec02b70e5f0/current0d/verification/delta-proof.json",
+      "kind": "exact-delta-receipt",
+      "encoding": "utf-8",
+      "bytes": 3222,
+      "sha256": "1fee5ca91e512409d8f2b28b8ce5980b6bf1faa2d439a032347d933e365c9cd6",
+      "git_blob": "1c31f42514d1464b3d18efb9796372e531b29f22"
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/current0d/verification/upstream-api.diff",
+      "relative": "docs/qualification/feedback-export-9ec02b70e5f0/current0d/verification/upstream-api.diff",
+      "kind": "exact-delta-receipt",
+      "encoding": "utf-8",
+      "bytes": 909,
+      "sha256": "eda6ef37430238589fd17406d9ab66cae184d5fbb49fdec3bafade9d31c9d3be",
+      "git_blob": "9e67f62483ce85c529619aba142a4907c38be81f"
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/current0d/verification/upstream-readme.diff",
+      "relative": "docs/qualification/feedback-export-9ec02b70e5f0/current0d/verification/upstream-readme.diff",
+      "kind": "exact-delta-receipt",
+      "encoding": "utf-8",
+      "bytes": 1036,
+      "sha256": "89bca34c6fa738e2727fe6557fff000ec9b3da52c971d01dc6bbec250a0054a8",
+      "git_blob": "f692e1c01ce0a7183b91fe6b4b2e099f34f1efc9"
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/current0d/verification/owned-readme.diff",
+      "relative": "docs/qualification/feedback-export-9ec02b70e5f0/current0d/verification/owned-readme.diff",
+      "kind": "exact-delta-receipt",
+      "encoding": "utf-8",
+      "bytes": 1844,
+      "sha256": "0b994cd656306d3dfe5bfd1c64a2b9fee47199d30b9f49f90d7ac18409eea3b6",
+      "git_blob": "1268c4d27dddf5f6177cf70044ef1bed256814f2"
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/current0d/before/README.md",
+      "relative": "docs/qualification/feedback-export-9ec02b70e5f0/current0d/before/README.md.source",
+      "kind": "incoming-native-before-image",
+      "encoding": "utf-8",
+      "bytes": 19769,
+      "sha256": "9243eeac04fd867cc111e1d0a95259aa266dae210d8eebc4da33287af28bfaae",
+      "git_blob": "f1740a512af81916490a27887141382d10469efa"
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/current0d/before/src/canvaspilot/api.py",
+      "relative": "docs/qualification/feedback-export-9ec02b70e5f0/current0d/before/src/canvaspilot/api.py.source",
+      "kind": "incoming-native-before-image",
+      "encoding": "utf-8",
+      "bytes": 27718,
+      "sha256": "00b65511b84a77d69312dbdc6abe21bfd62ef47ce0a5cdf8c1af2fd2d705c3e8",
+      "git_blob": "8de750525055991ca470fb4881d0368a07631818"
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/current0d/before/src/canvaspilot/assignment_submission.py",
+      "relative": "docs/qualification/feedback-export-9ec02b70e5f0/current0d/before/src/canvaspilot/assignment_submission.py.source",
+      "kind": "incoming-native-before-image",
+      "encoding": "utf-8",
+      "bytes": 1296,
+      "sha256": "52fc732660b8844a2ee0801931a363f20db15b5309d148d01e3b618be487133d",
+      "git_blob": "95b1f19927e4eecf99fc852325737c3cfe86cd0d"
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/current79/repo/src/canvaspilot/api.py",
+      "relative": "docs/qualification/feedback-export-9ec02b70e5f0/current0d/prior/api-79.py.source",
+      "kind": "prior-native-before-image",
+      "encoding": "utf-8",
+      "bytes": 27501,
+      "sha256": "fe147e5d3943e7299f400e7607385a7c8f02a68aeff07f72b3219f5c70c7bb5b",
+      "git_blob": "140ced2576481a90b8319272714009d326835bf1"
+    }
+  ]
+}

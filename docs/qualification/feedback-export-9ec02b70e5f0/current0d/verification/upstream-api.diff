@@ -1,0 +1,20 @@
+--- /dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/current79/repo/src/canvaspilot/api.py
++++ /dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/current0d/before/src/canvaspilot/api.py
+@@ -9,6 +9,7 @@
+ from math import isfinite
+ from typing import Any
+ 
++from canvaspilot.assignment_submission import project_assignment_submission
+ from canvaspilot.client import CanvasClient
+ from canvaspilot.feedback import build_submission_feedback
+ 
+@@ -200,6 +201,9 @@
+                 "html_url": a.get("html_url"),
+                 "has_submitted_submissions": a.get("has_submitted_submissions"),
+             }
++            row["submission"], row["submission_warnings"] = project_assignment_submission(
++                a.get("submission")
++            )
+             if full:
+                 row["description_text"] = strip_html(a.get("description"))
+             out.append(row)

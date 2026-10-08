@@ -1,0 +1,64 @@
+{
+  "source": {
+    "assignment": {
+      "id": 902,
+      "course_id": 41,
+      "name": "Synthetic research reflection",
+      "html_url": "https://canvas.example.invalid/courses/41/assignments/902",
+      "due_at": "2026-10-09T18:00:00Z",
+      "points_possible": 20,
+      "use_rubric_for_grading": false,
+      "rubric_settings": {
+        "title": "Revision guide",
+        "points_possible": 12
+      }
+    },
+    "submission": {
+      "id": 740,
+      "assignment_id": 902,
+      "user_id": 73,
+      "submission_type": "online_upload",
+      "attempt": 2,
+      "workflow_state": "submitted",
+      "submitted_at": "2026-10-08T17:00:00Z",
+      "graded_at": "2026-10-07T15:00:00Z",
+      "posted_at": "2026-10-07T15:10:00Z",
+      "grader_id": -19,
+      "score": null,
+      "grade": "0",
+      "grade_matches_current_submission": null
+    }
+  },
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/41/assignments/902",
+      "query": {
+        "per_page": [
+          "50"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/41/assignments/902/submissions/self",
+      "query": {
+        "include[]": [
+          "submission_comments",
+          "rubric_assessment"
+        ],
+        "per_page": [
+          "50"
+        ]
+      }
+    }
+  ],
+  "submission_status": 200,
+  "base_url": "http://127.0.0.1:44811",
+  "last_process": {
+    "returncode": 0,
+    "stdout": "{\n  \"ok\": true,\n  \"output\": \"/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/candidate-temp/test_cli_distinguishes_unretur0/unknown.html\",\n  \"course_id\": 41,\n  \"assignment_id\": 902,\n  \"captured_at\": \"2026-10-08T12:41:50.637024Z\",\n  \"sha256\": \"69d2e1bba7a34014b7e0440bcbf37fa4d9f156b53182e95dd43b762b5ed56e14\"\n}\n",
+    "stderr": "HTTP Request: GET http://127.0.0.1:44811/api/v1/courses/41/assignments/902?per_page=50 \"HTTP/1.0 200 OK\"\nHTTP Request: GET http://127.0.0.1:44811/api/v1/courses/41/assignments/902/submissions/self?include%5B%5D=submission_comments&include%5B%5D=rubric_assessment&per_page=50 \"HTTP/1.0 200 OK\"\n",
+    "output": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/candidate-temp/test_cli_distinguishes_unretur0/unknown.html"
+  }
+}

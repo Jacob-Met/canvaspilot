@@ -1,0 +1,7 @@
+test_current_broker_single_reads_need_no_collection_metadata_and_refusal_is_retained (__main__.CurrentReceiving.test_current_broker_single_reads_need_no_collection_metadata_and_refusal_is_retained) ... ok
+test_current_token_reader_and_export_preserve_projection_and_existing_file (__main__.CurrentReceiving.test_current_token_reader_and_export_preserve_projection_and_existing_file) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 14.985s
+
+OK

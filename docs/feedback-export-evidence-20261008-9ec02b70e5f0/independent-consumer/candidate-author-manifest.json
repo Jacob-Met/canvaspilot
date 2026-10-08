@@ -1,0 +1,190 @@
+{
+  "repository": "Jacob-Met/canvaspilot",
+  "parent": "55fe1e0a3c4ad85e1065f295e49d44722c3be32b",
+  "tree": "7c1bd0a858a3fda82a4d5e69076801ae65a73ea1",
+  "frozen_at": "2026-10-08T12:51:43.319860+00:00",
+  "files": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "bytes": 708,
+      "sha256": "62f17b95af03d1ff8a172f168282b405fefcab3a5f1094c70e618b44920bd0ff",
+      "git_blob": "ef7bbebe192c0db55dc4467e064ba44805c13446",
+      "changed": false
+    },
+    {
+      "path": "README.md",
+      "bytes": 18175,
+      "sha256": "ddd8f084090dfb6fad72e8bf351537ca8ad2c2e26689a7633dd11ee0637652b8",
+      "git_blob": "5cf5302636a2b3f06be68fcda8221d51f951a870",
+      "changed": true
+    },
+    {
+      "path": "docs/feedback-export.md",
+      "bytes": 8307,
+      "sha256": "6529840db890019b488539ca5b488395ea2d50b4ccd63d336a16437d77afb938",
+      "git_blob": "6e82c8249180aa4b4945ff21429512b571ba5030",
+      "changed": true
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 1353,
+      "sha256": "555ad3c7e338d38ae5feabc06c0c07503f22d9c732a9af153c7706c63d2b3c63",
+      "git_blob": "76eba6d30696b4f2733539cd47df6e178bc0f585",
+      "changed": false
+    },
+    {
+      "path": "src/canvaspilot/__init__.py",
+      "bytes": 561,
+      "sha256": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5",
+      "git_blob": "74a7a6087bf81fd7c75c15769b30408039618e0f",
+      "changed": false
+    },
+    {
+      "path": "src/canvaspilot/api.py",
+      "bytes": 27501,
+      "sha256": "fe147e5d3943e7299f400e7607385a7c8f02a68aeff07f72b3219f5c70c7bb5b",
+      "git_blob": "140ced2576481a90b8319272714009d326835bf1",
+      "changed": false
+    },
+    {
+      "path": "src/canvaspilot/bundle.py",
+      "bytes": 2641,
+      "sha256": "7a5600680c22f3cce5d512ed96137de0171bcca7df6a8c46baa8c09143de3168",
+      "git_blob": "383efb28dfdd0d3e1d9ce8e1e259468d7eb44586",
+      "changed": false
+    },
+    {
+      "path": "src/canvaspilot/calendar_export.py",
+      "bytes": 9050,
+      "sha256": "f3e06eb68d7f74bb757a28f9cdc9a229f2af9476d4a93ba709698b54ffed82a8",
+      "git_blob": "0b3b59edcefb0dda52f0de41252c1b7486201ffc",
+      "changed": false
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "bytes": 13992,
+      "sha256": "a29e755832cec76a07178d1afffd245c07b665bc990e8bb99c84cbfdc737bf16",
+      "git_blob": "a7c65b92cdeb671e650adfb1090a3eb1a544ea74",
+      "changed": true
+    },
+    {
+      "path": "src/canvaspilot/client.py",
+      "bytes": 12381,
+      "sha256": "6368329745216f473204995c101c912d9070fdd310def150bdbee927f9872de4",
+      "git_blob": "c06d24fa3d6ce9466caa633aff71207f59833bf4",
+      "changed": false
+    },
+    {
+      "path": "src/canvaspilot/feedback.py",
+      "bytes": 3900,
+      "sha256": "55454598effea598474a21f67e36d5bc5bea84aaefeefc18e4d8c49804ab9869",
+      "git_blob": "ec996f421a851d699a9ac7cb1f2a486f9ff7c4ea",
+      "changed": false
+    },
+    {
+      "path": "src/canvaspilot/feedback_export.py",
+      "bytes": 20918,
+      "sha256": "3bc3f44f9d8f682fbf8442fed88e05d6148ecbf889e41c941ce65f067f59904b",
+      "git_blob": "8f37da7c8092227f9c1a223038e087d57270f7ab",
+      "changed": true
+    },
+    {
+      "path": "src/canvaspilot/folder_browser.py",
+      "bytes": 6293,
+      "sha256": "c6a67229b268c539e5edb581e3320b06229460adc3fbc01d72e4964e31c0348a",
+      "git_blob": "4b3078ddb00a4a34015710e49fa7b7806adebd23",
+      "changed": false
+    },
+    {
+      "path": "src/canvaspilot/mcp_server.py",
+      "bytes": 12594,
+      "sha256": "9ca3a1733167217730eabb5a083fcc72d7d4273ddb36ef5c0306f22ee97c8257",
+      "git_blob": "b6c52d710867a8c8cd3058f5476c22803a333501",
+      "changed": false
+    },
+    {
+      "path": "src/canvaspilot/module_progress.py",
+      "bytes": 9615,
+      "sha256": "974ee31925514a2e53b899888302a7fa357e280ab5f2461b754b814473653d99",
+      "git_blob": "a9d3e4bbea22067f76110f03a5f31a5bc9d8de05",
+      "changed": false
+    },
+    {
+      "path": "src/canvaspilot/offline_demo.py",
+      "bytes": 4124,
+      "sha256": "2389f3ccc1b6db5995be0d90e014ea9345e3029aa5546a5b2dcf12c1197e6d4d",
+      "git_blob": "9d2cfd260d8db052b8183e3ec4fc9626a5bb2b9a",
+      "changed": false
+    },
+    {
+      "path": "src/canvaspilot/session_broker.py",
+      "bytes": 12151,
+      "sha256": "2a106130c344aefebb23b078cd93b5d3ca3afd7f5325ae5fac2fb8a7251780cc",
+      "git_blob": "ba23543f62e6be9f611ae06260b91f239206cb23",
+      "changed": false
+    },
+    {
+      "path": "tests/fixtures/assignment_rubric.json",
+      "bytes": 2057,
+      "sha256": "1c7eebf96e3a09b40b934fab219e9c8b7a6258fe881560f53a1c38a8e1b4bc4b",
+      "git_blob": "8298dc92458b2f4c0f5c2b6845e32c52395d9d46",
+      "changed": false
+    },
+    {
+      "path": "tests/fixtures/submission_feedback.json",
+      "bytes": 2380,
+      "sha256": "435038bef1e6147eb60f60a2269de49df8bfa2fea31736694a7ada4cddfeb95a",
+      "git_blob": "445d73ea1bf1db0b8bbbaeceaa3fb0b675f1ecdd",
+      "changed": false
+    },
+    {
+      "path": "tests/test_assignment_brief_rubric.py",
+      "bytes": 9514,
+      "sha256": "cc4bdb56034b32e08a63d4b1ae193e364bfc9b9b4b2a506cf2ef08f43000158c",
+      "git_blob": "1881a19e593c4fb095d1a4dc97fce53a8c13f02e",
+      "changed": false
+    },
+    {
+      "path": "tests/test_calendar_export.py",
+      "bytes": 11534,
+      "sha256": "0774869f562ab1bdff8d09df38216fab7cc44543ded02be620c2a4e5e3a9e17f",
+      "git_blob": "b6e926ab14ef4320ceeb23d174fc62399e2356a7",
+      "changed": false
+    },
+    {
+      "path": "tests/test_feedback_export.py",
+      "bytes": 6965,
+      "sha256": "046ce25f6bc03ae6ad23e65bb7f5cbe26a42a257f45cc9998701054fb1375de5",
+      "git_blob": "733453beb498103a52f696cd8c758bf7c0938804",
+      "changed": true
+    },
+    {
+      "path": "tests/test_feedback_export_native.py",
+      "bytes": 13105,
+      "sha256": "3bd9cec9c6bcef89395f392498e883c3882f6cdcbe4257d4d210b17d99da6045",
+      "git_blob": "4f474fea68ed2a1b79fe35ae16a6501a83c19734",
+      "changed": true
+    },
+    {
+      "path": "tests/test_module_progress_process.py",
+      "bytes": 12181,
+      "sha256": "21187c11a7bca557a8b37c0d61933e3532c8c69e628bd618fa62361e0f713826",
+      "git_blob": "e80d30bbd87a16dc469c9bc3409eb2be24a24307",
+      "changed": false
+    },
+    {
+      "path": "tests/test_submission_feedback.py",
+      "bytes": 6891,
+      "sha256": "d6669be101562d6d2c88e5e0a6a468f6c82d614960bee65cb294243ebf136be7",
+      "git_blob": "0d747c4866ddc87e77ed84caad877414c7be329b",
+      "changed": false
+    },
+    {
+      "path": "tests/test_submission_feedback_native.py",
+      "bytes": 9410,
+      "sha256": "8ad68b80e63d2d448c2b1b9e8821bb6ebf47adc0b5e1ccc9379633bb9495d5fb",
+      "git_blob": "bb5bce648386995732b08c098fb5d4249f6bc0c8",
+      "changed": false
+    }
+  ]
+}

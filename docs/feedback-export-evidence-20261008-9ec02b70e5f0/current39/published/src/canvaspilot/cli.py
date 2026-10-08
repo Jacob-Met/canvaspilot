@@ -86,15 +86,6 @@ def main(argv: list[str] | None = None) -> None:
     feedback.add_argument("course_id")
     feedback.add_argument("assignment_id")
 
-    feedback_export = sub.add_parser(
-        "export-feedback", help="Save self submission feedback to a new local HTML file",
-    )
-    add_common(feedback_export)
-    feedback_export.add_argument("course_id", type=_positive_int)
-    feedback_export.add_argument("assignment_id", type=_positive_int)
-    feedback_export.add_argument("--out", required=True, type=Path,
-                                 help="New HTML file; existing paths are protected")
-
     disc = sub.add_parser("discussions", help="List discussion topics")
     add_common(disc)
     disc.add_argument("course_id")
@@ -196,25 +187,6 @@ def main(argv: list[str] | None = None) -> None:
                     default=str,
                 )
             )
-        elif args.cmd == "export-feedback":
-            import os
-
-            import httpx
-
-            from canvaspilot.client import CanvasAuthError
-            from canvaspilot.feedback_export import build_feedback_document, write_feedback_document
-
-            try:
-                if os.path.lexists(args.out):
-                    raise FileExistsError("Output path already exists; choose a new HTML file")
-                content, report = build_feedback_document(api, args.course_id, args.assignment_id)
-                write_feedback_document(args.out, content)
-            except (CanvasAuthError, httpx.HTTPError, ValueError, TypeError, OSError) as error:
-                print(json.dumps({
-                    "ok": False, "error": type(error).__name__, "message": str(error),
-                }), file=sys.stderr)
-                raise SystemExit(1) from None
-            print(json.dumps({"ok": True, "output": str(args.out), **report}, indent=2))
         elif args.cmd == "discussions":
             print(json.dumps(api.list_discussion_topics(args.course_id), indent=2, default=str))
         elif args.cmd == "files":

@@ -1,0 +1,40 @@
+{
+  "schema": "independent-current0d-feedback-import.v1",
+  "passed": true,
+  "parent": "0d1898544a90079e2dcc7ceb3fa4bc6bca88a2bc",
+  "tree": "de9fca025ebe325807bd53cd9b7f3b6be50c6d19",
+  "mode": "optimized",
+  "actual_cli_processes": 1,
+  "actual_loopback_GETs": 2,
+  "actual_html_files": 1,
+  "native_source_files": 14,
+  "source_before_after_identical": true,
+  "all_visible_feedback_equal_except_capture_time": true,
+  "new_assignment_list_helper_behavior_tested": false,
+  "prior_actual_export": {
+    "bytes": 12466,
+    "sha256": "27ae70511395b7412359bdedd17baf0f5f499ef3550da104d5e6e882ce847e78",
+    "git_blob": "9f79d8b03075e329029f2d153dcaee3e3dad22cd"
+  },
+  "actual_export": {
+    "bytes": 12466,
+    "sha256": "defc346b3a7633746cdd604fd711e5327d0ee0e1d34c6c405e2375c65c33cdca",
+    "git_blob": "6058dace4b47d6470320002b7cd68624f1bcc031"
+  },
+  "elapsed_seconds": 2.1975181929956307,
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "probe": {
+    "bytes": 5409,
+    "sha256": "62c2de474b5a46c3e38405098fc72a0fdb999b9a83839261d074f078e7608ce0",
+    "git_blob": "6248b1c59beb5f6e9aba95ef9434b769bc9b914e"
+  },
+  "support": {
+    "bytes": 12144,
+    "sha256": "27b2851617939bdce42549cb5a0de2e663f66b7ceea6ee53e6ff24b88ec6089b",
+    "git_blob": "3061c29862ec2339dda41fd5ba8438680d1f2756"
+  },
+  "browser_allocations": 0,
+  "actual_broker_processes": 0,
+  "github_writes": 0,
+  "live_accounts": 0
+}

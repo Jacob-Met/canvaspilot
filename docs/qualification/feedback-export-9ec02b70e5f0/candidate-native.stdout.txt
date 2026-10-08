@@ -1,0 +1,472 @@
+........FFF...FFFFFF                                                     [100%]
+=================================== FAILURES ===================================
+_____________ test_cli_failed_read_creates_no_file_or_success[403] _____________
+
+provider = ({'source': {'assignment': {'id': 902, 'course_id': 41, 'name': 'Synthetic research reflection', 'html_url': 'https://...ission_status': 403, 'base_url': 'http://127.0.0.1:41097', ...}, <function provider.<locals>.invoke at 0x7fbc5f9bc720>)
+tmp_path = PosixPath('/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/candidate-temp/test_cli_failed_read_creates_n0')
+status = 403
+
+    @pytest.mark.parametrize("status", [403, 404, 500])
+    def test_cli_failed_read_creates_no_file_or_success(provider, tmp_path, status):
+        state, invoke = provider
+        state["submission_status"] = status
+        output = tmp_path / "refused.html"
+        result = invoke(output)
+        assert result.returncode == 1
+        assert result.stdout == ""
+>       error = json.loads(result.stderr)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_feedback_export_native.py:264: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/__init__.py:346: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/decoder.py:338: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <json.decoder.JSONDecoder object at 0x7fbc5ff1a420>
+s = 'HTTP Request: GET http://127.0.0.1:41097/api/v1/courses/41/assignments/902?per_page=50 "HTTP/1.0 200 OK"\nHTTP Reques...(403) for GET /api/v1/courses/41/assignments/902/submissions/self. Start session broker: canvaspilot session start"}\n'
+idx = 0
+
+    def raw_decode(self, s, idx=0):
+        """Decode a JSON document from ``s`` (a ``str`` beginning with
+        a JSON document) and return a 2-tuple of the Python
+        representation and the index in ``s`` where the document ended.
+    
+        This can be used to decode a JSON document from a string that may
+        have extraneous data at the end.
+    
+        """
+        try:
+            obj, end = self.scan_once(s, idx)
+        except StopIteration as err:
+>           raise JSONDecodeError("Expecting value", s, err.value) from None
+E           json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/decoder.py:356: JSONDecodeError
+_____________ test_cli_failed_read_creates_no_file_or_success[404] _____________
+
+provider = ({'source': {'assignment': {'id': 902, 'course_id': 41, 'name': 'Synthetic research reflection', 'html_url': 'https://...ission_status': 404, 'base_url': 'http://127.0.0.1:39701', ...}, <function provider.<locals>.invoke at 0x7fbc5f9bd080>)
+tmp_path = PosixPath('/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/candidate-temp/test_cli_failed_read_creates_n1')
+status = 404
+
+    @pytest.mark.parametrize("status", [403, 404, 500])
+    def test_cli_failed_read_creates_no_file_or_success(provider, tmp_path, status):
+        state, invoke = provider
+        state["submission_status"] = status
+        output = tmp_path / "refused.html"
+        result = invoke(output)
+        assert result.returncode == 1
+        assert result.stdout == ""
+>       error = json.loads(result.stderr)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_feedback_export_native.py:264: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/__init__.py:346: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/decoder.py:338: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <json.decoder.JSONDecoder object at 0x7fbc5ff1a420>
+s = 'HTTP Request: GET http://127.0.0.1:39701/api/v1/courses/41/assignments/902?per_page=50 "HTTP/1.0 200 OK"\nHTTP Reques...ssessment&per_page=50\'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404"}\n'
+idx = 0
+
+    def raw_decode(self, s, idx=0):
+        """Decode a JSON document from ``s`` (a ``str`` beginning with
+        a JSON document) and return a 2-tuple of the Python
+        representation and the index in ``s`` where the document ended.
+    
+        This can be used to decode a JSON document from a string that may
+        have extraneous data at the end.
+    
+        """
+        try:
+            obj, end = self.scan_once(s, idx)
+        except StopIteration as err:
+>           raise JSONDecodeError("Expecting value", s, err.value) from None
+E           json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/decoder.py:356: JSONDecodeError
+_____________ test_cli_failed_read_creates_no_file_or_success[500] _____________
+
+provider = ({'source': {'assignment': {'id': 902, 'course_id': 41, 'name': 'Synthetic research reflection', 'html_url': 'https://...ission_status': 500, 'base_url': 'http://127.0.0.1:34833', ...}, <function provider.<locals>.invoke at 0x7fbc5f9bd760>)
+tmp_path = PosixPath('/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/candidate-temp/test_cli_failed_read_creates_n2')
+status = 500
+
+    @pytest.mark.parametrize("status", [403, 404, 500])
+    def test_cli_failed_read_creates_no_file_or_success(provider, tmp_path, status):
+        state, invoke = provider
+        state["submission_status"] = status
+        output = tmp_path / "refused.html"
+        result = invoke(output)
+        assert result.returncode == 1
+        assert result.stdout == ""
+>       error = json.loads(result.stderr)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_feedback_export_native.py:264: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/__init__.py:346: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/decoder.py:338: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <json.decoder.JSONDecoder object at 0x7fbc5ff1a420>
+s = 'HTTP Request: GET http://127.0.0.1:34833/api/v1/courses/41/assignments/902?per_page=50 "HTTP/1.0 200 OK"\nHTTP Reques...ssessment&per_page=50\'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500"}\n'
+idx = 0
+
+    def raw_decode(self, s, idx=0):
+        """Decode a JSON document from ``s`` (a ``str`` beginning with
+        a JSON document) and return a 2-tuple of the Python
+        representation and the index in ``s`` where the document ended.
+    
+        This can be used to decode a JSON document from a string that may
+        have extraneous data at the end.
+    
+        """
+        try:
+            obj, end = self.scan_once(s, idx)
+        except StopIteration as err:
+>           raise JSONDecodeError("Expecting value", s, err.value) from None
+E           json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/decoder.py:356: JSONDecodeError
+_ test_cli_mismatched_or_unrenderable_feedback_is_not_saved[assignment-id-903] _
+
+provider = ({'source': {'assignment': {'id': 903, 'course_id': 41, 'name': 'Synthetic research reflection', 'html_url': 'https://...ission_status': 200, 'base_url': 'http://127.0.0.1:40433', ...}, <function provider.<locals>.invoke at 0x7fbc5f9bf880>)
+tmp_path = PosixPath('/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/candidate-temp/test_cli_mismatched_or_unrende0')
+part = 'assignment', field = 'id', value = 903
+
+    @pytest.mark.parametrize("part,field,value", [
+        ("assignment", "id", 903),
+        ("assignment", "course_id", 42),
+        ("submission", "assignment_id", 904),
+        ("submission", "rubric_assessment", []),
+        ("submission", "score", float("nan")),
+        ("assignment", "rubric_settings", {"hide_points": "false"}),
+    ])
+    def test_cli_mismatched_or_unrenderable_feedback_is_not_saved(provider, tmp_path, part, field, value):
+        state, invoke = provider
+        state["source"][part][field] = value
+        output = tmp_path / "invalid.html"
+        result = invoke(output)
+        assert result.returncode == 1 and result.stdout == ""
+>       assert json.loads(result.stderr)["ok"] is False
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_feedback_export_native.py:306: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/__init__.py:346: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/decoder.py:338: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <json.decoder.JSONDecoder object at 0x7fbc5ff1a420>
+s = 'HTTP Request: GET http://127.0.0.1:40433/api/v1/courses/41/assignments/902?per_page=50 "HTTP/1.0 200 OK"\nHTTP Reques..."\n{"ok": false, "error": "ValueError", "message": "Returned assignment.id does not match the requested assignment"}\n'
+idx = 0
+
+    def raw_decode(self, s, idx=0):
+        """Decode a JSON document from ``s`` (a ``str`` beginning with
+        a JSON document) and return a 2-tuple of the Python
+        representation and the index in ``s`` where the document ended.
+    
+        This can be used to decode a JSON document from a string that may
+        have extraneous data at the end.
+    
+        """
+        try:
+            obj, end = self.scan_once(s, idx)
+        except StopIteration as err:
+>           raise JSONDecodeError("Expecting value", s, err.value) from None
+E           json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/decoder.py:356: JSONDecodeError
+_ test_cli_mismatched_or_unrenderable_feedback_is_not_saved[assignment-course_id-42] _
+
+provider = ({'source': {'assignment': {'id': 902, 'course_id': 42, 'name': 'Synthetic research reflection', 'html_url': 'https://...ission_status': 200, 'base_url': 'http://127.0.0.1:35521', ...}, <function provider.<locals>.invoke at 0x7fbc5f9bf600>)
+tmp_path = PosixPath('/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/candidate-temp/test_cli_mismatched_or_unrende1')
+part = 'assignment', field = 'course_id', value = 42
+
+    @pytest.mark.parametrize("part,field,value", [
+        ("assignment", "id", 903),
+        ("assignment", "course_id", 42),
+        ("submission", "assignment_id", 904),
+        ("submission", "rubric_assessment", []),
+        ("submission", "score", float("nan")),
+        ("assignment", "rubric_settings", {"hide_points": "false"}),
+    ])
+    def test_cli_mismatched_or_unrenderable_feedback_is_not_saved(provider, tmp_path, part, field, value):
+        state, invoke = provider
+        state["source"][part][field] = value
+        output = tmp_path / "invalid.html"
+        result = invoke(output)
+        assert result.returncode == 1 and result.stdout == ""
+>       assert json.loads(result.stderr)["ok"] is False
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_feedback_export_native.py:306: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/__init__.py:346: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/decoder.py:338: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <json.decoder.JSONDecoder object at 0x7fbc5ff1a420>
+s = 'HTTP Request: GET http://127.0.0.1:35521/api/v1/courses/41/assignments/902?per_page=50 "HTTP/1.0 200 OK"\nHTTP Reques...": false, "error": "ValueError", "message": "Returned assignment.course_id does not match the requested assignment"}\n'
+idx = 0
+
+    def raw_decode(self, s, idx=0):
+        """Decode a JSON document from ``s`` (a ``str`` beginning with
+        a JSON document) and return a 2-tuple of the Python
+        representation and the index in ``s`` where the document ended.
+    
+        This can be used to decode a JSON document from a string that may
+        have extraneous data at the end.
+    
+        """
+        try:
+            obj, end = self.scan_once(s, idx)
+        except StopIteration as err:
+>           raise JSONDecodeError("Expecting value", s, err.value) from None
+E           json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/decoder.py:356: JSONDecodeError
+_ test_cli_mismatched_or_unrenderable_feedback_is_not_saved[submission-assignment_id-904] _
+
+provider = ({'source': {'assignment': {'id': 902, 'course_id': 41, 'name': 'Synthetic research reflection', 'html_url': 'https://...ission_status': 200, 'base_url': 'http://127.0.0.1:39193', ...}, <function provider.<locals>.invoke at 0x7fbc5f9be660>)
+tmp_path = PosixPath('/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/candidate-temp/test_cli_mismatched_or_unrende2')
+part = 'submission', field = 'assignment_id', value = 904
+
+    @pytest.mark.parametrize("part,field,value", [
+        ("assignment", "id", 903),
+        ("assignment", "course_id", 42),
+        ("submission", "assignment_id", 904),
+        ("submission", "rubric_assessment", []),
+        ("submission", "score", float("nan")),
+        ("assignment", "rubric_settings", {"hide_points": "false"}),
+    ])
+    def test_cli_mismatched_or_unrenderable_feedback_is_not_saved(provider, tmp_path, part, field, value):
+        state, invoke = provider
+        state["source"][part][field] = value
+        output = tmp_path / "invalid.html"
+        result = invoke(output)
+        assert result.returncode == 1 and result.stdout == ""
+>       assert json.loads(result.stderr)["ok"] is False
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_feedback_export_native.py:306: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/__init__.py:346: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/decoder.py:338: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <json.decoder.JSONDecoder object at 0x7fbc5ff1a420>
+s = 'HTTP Request: GET http://127.0.0.1:39193/api/v1/courses/41/assignments/902?per_page=50 "HTTP/1.0 200 OK"\nHTTP Reques...alse, "error": "ValueError", "message": "Returned submission.assignment_id does not match the requested assignment"}\n'
+idx = 0
+
+    def raw_decode(self, s, idx=0):
+        """Decode a JSON document from ``s`` (a ``str`` beginning with
+        a JSON document) and return a 2-tuple of the Python
+        representation and the index in ``s`` where the document ended.
+    
+        This can be used to decode a JSON document from a string that may
+        have extraneous data at the end.
+    
+        """
+        try:
+            obj, end = self.scan_once(s, idx)
+        except StopIteration as err:
+>           raise JSONDecodeError("Expecting value", s, err.value) from None
+E           json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/decoder.py:356: JSONDecodeError
+_ test_cli_mismatched_or_unrenderable_feedback_is_not_saved[submission-rubric_assessment-value3] _
+
+provider = ({'source': {'assignment': {'id': 902, 'course_id': 41, 'name': 'Synthetic research reflection', 'html_url': 'https://...ission_status': 200, 'base_url': 'http://127.0.0.1:38789', ...}, <function provider.<locals>.invoke at 0x7fbc5f9bcb80>)
+tmp_path = PosixPath('/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/candidate-temp/test_cli_mismatched_or_unrende3')
+part = 'submission', field = 'rubric_assessment', value = []
+
+    @pytest.mark.parametrize("part,field,value", [
+        ("assignment", "id", 903),
+        ("assignment", "course_id", 42),
+        ("submission", "assignment_id", 904),
+        ("submission", "rubric_assessment", []),
+        ("submission", "score", float("nan")),
+        ("assignment", "rubric_settings", {"hide_points": "false"}),
+    ])
+    def test_cli_mismatched_or_unrenderable_feedback_is_not_saved(provider, tmp_path, part, field, value):
+        state, invoke = provider
+        state["source"][part][field] = value
+        output = tmp_path / "invalid.html"
+        result = invoke(output)
+        assert result.returncode == 1 and result.stdout == ""
+>       assert json.loads(result.stderr)["ok"] is False
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_feedback_export_native.py:306: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/__init__.py:346: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/decoder.py:338: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <json.decoder.JSONDecoder object at 0x7fbc5ff1a420>
+s = 'HTTP Request: GET http://127.0.0.1:38789/api/v1/courses/41/assignments/902?per_page=50 "HTTP/1.0 200 OK"\nHTTP Reques...50 "HTTP/1.0 200 OK"\n{"ok": false, "error": "ValueError", "message": "Canvas returned malformed rubric assessment"}\n'
+idx = 0
+
+    def raw_decode(self, s, idx=0):
+        """Decode a JSON document from ``s`` (a ``str`` beginning with
+        a JSON document) and return a 2-tuple of the Python
+        representation and the index in ``s`` where the document ended.
+    
+        This can be used to decode a JSON document from a string that may
+        have extraneous data at the end.
+    
+        """
+        try:
+            obj, end = self.scan_once(s, idx)
+        except StopIteration as err:
+>           raise JSONDecodeError("Expecting value", s, err.value) from None
+E           json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/decoder.py:356: JSONDecodeError
+_ test_cli_mismatched_or_unrenderable_feedback_is_not_saved[submission-score-nan] _
+
+provider = ({'source': {'assignment': {'id': 902, 'course_id': 41, 'name': 'Synthetic research reflection', 'html_url': 'https://...ission_status': 200, 'base_url': 'http://127.0.0.1:38083', ...}, <function provider.<locals>.invoke at 0x7fbc5f9be0c0>)
+tmp_path = PosixPath('/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/candidate-temp/test_cli_mismatched_or_unrende4')
+part = 'submission', field = 'score', value = nan
+
+    @pytest.mark.parametrize("part,field,value", [
+        ("assignment", "id", 903),
+        ("assignment", "course_id", 42),
+        ("submission", "assignment_id", 904),
+        ("submission", "rubric_assessment", []),
+        ("submission", "score", float("nan")),
+        ("assignment", "rubric_settings", {"hide_points": "false"}),
+    ])
+    def test_cli_mismatched_or_unrenderable_feedback_is_not_saved(provider, tmp_path, part, field, value):
+        state, invoke = provider
+        state["source"][part][field] = value
+        output = tmp_path / "invalid.html"
+        result = invoke(output)
+        assert result.returncode == 1 and result.stdout == ""
+>       assert json.loads(result.stderr)["ok"] is False
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_feedback_export_native.py:306: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/__init__.py:346: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/decoder.py:338: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <json.decoder.JSONDecoder object at 0x7fbc5ff1a420>
+s = 'HTTP Request: GET http://127.0.0.1:38083/api/v1/courses/41/assignments/902?per_page=50 "HTTP/1.0 200 OK"\nHTTP Reques....0 200 OK"\n{"ok": false, "error": "ValueError", "message": "Out of range float values are not JSON compliant: nan"}\n'
+idx = 0
+
+    def raw_decode(self, s, idx=0):
+        """Decode a JSON document from ``s`` (a ``str`` beginning with
+        a JSON document) and return a 2-tuple of the Python
+        representation and the index in ``s`` where the document ended.
+    
+        This can be used to decode a JSON document from a string that may
+        have extraneous data at the end.
+    
+        """
+        try:
+            obj, end = self.scan_once(s, idx)
+        except StopIteration as err:
+>           raise JSONDecodeError("Expecting value", s, err.value) from None
+E           json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/decoder.py:356: JSONDecodeError
+_ test_cli_mismatched_or_unrenderable_feedback_is_not_saved[assignment-rubric_settings-value5] _
+
+provider = ({'source': {'assignment': {'id': 902, 'course_id': 41, 'name': 'Synthetic research reflection', 'html_url': 'https://...ission_status': 200, 'base_url': 'http://127.0.0.1:40655', ...}, <function provider.<locals>.invoke at 0x7fbc5f9bec00>)
+tmp_path = PosixPath('/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/candidate-temp/test_cli_mismatched_or_unrende5')
+part = 'assignment', field = 'rubric_settings', value = {'hide_points': 'false'}
+
+    @pytest.mark.parametrize("part,field,value", [
+        ("assignment", "id", 903),
+        ("assignment", "course_id", 42),
+        ("submission", "assignment_id", 904),
+        ("submission", "rubric_assessment", []),
+        ("submission", "score", float("nan")),
+        ("assignment", "rubric_settings", {"hide_points": "false"}),
+    ])
+    def test_cli_mismatched_or_unrenderable_feedback_is_not_saved(provider, tmp_path, part, field, value):
+        state, invoke = provider
+        state["source"][part][field] = value
+        output = tmp_path / "invalid.html"
+        result = invoke(output)
+        assert result.returncode == 1 and result.stdout == ""
+>       assert json.loads(result.stderr)["ok"] is False
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_feedback_export_native.py:306: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/__init__.py:346: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/decoder.py:338: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <json.decoder.JSONDecoder object at 0x7fbc5ff1a420>
+s = 'HTTP Request: GET http://127.0.0.1:40655/api/v1/courses/41/assignments/902?per_page=50 "HTTP/1.0 200 OK"\nHTTP Reques...HTTP/1.0 200 OK"\n{"ok": false, "error": "ValueError", "message": "Cannot interpret non-boolean rubric hide_points"}\n'
+idx = 0
+
+    def raw_decode(self, s, idx=0):
+        """Decode a JSON document from ``s`` (a ``str`` beginning with
+        a JSON document) and return a 2-tuple of the Python
+        representation and the index in ``s`` where the document ended.
+    
+        This can be used to decode a JSON document from a string that may
+        have extraneous data at the end.
+    
+        """
+        try:
+            obj, end = self.scan_once(s, idx)
+        except StopIteration as err:
+>           raise JSONDecodeError("Expecting value", s, err.value) from None
+E           json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/decoder.py:356: JSONDecodeError
+=========================== short test summary info ============================
+FAILED tests/test_feedback_export_native.py::test_cli_failed_read_creates_no_file_or_success[403]
+FAILED tests/test_feedback_export_native.py::test_cli_failed_read_creates_no_file_or_success[404]
+FAILED tests/test_feedback_export_native.py::test_cli_failed_read_creates_no_file_or_success[500]
+FAILED tests/test_feedback_export_native.py::test_cli_mismatched_or_unrenderable_feedback_is_not_saved[assignment-id-903]
+FAILED tests/test_feedback_export_native.py::test_cli_mismatched_or_unrenderable_feedback_is_not_saved[assignment-course_id-42]
+FAILED tests/test_feedback_export_native.py::test_cli_mismatched_or_unrenderable_feedback_is_not_saved[submission-assignment_id-904]
+FAILED tests/test_feedback_export_native.py::test_cli_mismatched_or_unrenderable_feedback_is_not_saved[submission-rubric_assessment-value3]
+FAILED tests/test_feedback_export_native.py::test_cli_mismatched_or_unrenderable_feedback_is_not_saved[submission-score-nan]
+FAILED tests/test_feedback_export_native.py::test_cli_mismatched_or_unrenderable_feedback_is_not_saved[assignment-rubric_settings-value5]
+9 failed, 11 passed in 24.41s

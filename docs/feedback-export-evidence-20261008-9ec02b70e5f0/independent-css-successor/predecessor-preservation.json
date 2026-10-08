@@ -1,0 +1,10 @@
+{
+  "original_review_allowlist": {
+    "bytes": 9373,
+    "sha256": "a8ed6e6c6da7fc51a5cee0367f687a08971e7da3f6d29714d02c1fd4ea4c59be",
+    "git_blob": "24b3936a5e281abab84b888dd4a8f52a54aa1876"
+  },
+  "verified_files": 21,
+  "all_exact": true,
+  "old_packet_edits": []
+}

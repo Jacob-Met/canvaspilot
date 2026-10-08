@@ -1,0 +1,187 @@
+{
+  "schema": "canvas-feedback-css-review-files.v1",
+  "status": "frozen",
+  "parent": "55fe1e0a3c4ad85e1065f295e49d44722c3be32b",
+  "formatter_sha256": "a0db41dca9cce28c9fb7594c88ea6dc103b0f3104d5ba4d061bd93aaed92a714",
+  "file_count": 22,
+  "total_bytes": 105879,
+  "binary_uploads": 0,
+  "files": [
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-css-review/README.md",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-css-successor/README.md",
+      "bytes": 3050,
+      "sha256": "2d37d21a43390c27129e7262173902aba21cc71940eb523c9cfdb944c347b3a5",
+      "git_blob": "84b59847dff325cd517c2333f55d316269d5dab3",
+      "encoding": "utf-8"
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-css-review/execution.json",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-css-successor/execution.json",
+      "bytes": 862,
+      "sha256": "657cf4f09206cddbcc1675bfb6817d9222c050f57307d19e1f4a74b5239ece46",
+      "git_blob": "e67f21f6d185baecc747fb087d2858319c851232",
+      "encoding": "utf-8"
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-css-review/materialization-note.json",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-css-successor/materialization-note.json",
+      "bytes": 461,
+      "sha256": "cb84e1d0d996213d755a31ed7c9d12b2755fb31a7274372a9182ce4ac56fe86a",
+      "git_blob": "4207bb0e1c491185649704151f2f4a1c9c7e84c3",
+      "encoding": "utf-8"
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-css-review/predecessor-preservation.json",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-css-successor/predecessor-preservation.json",
+      "bytes": 272,
+      "sha256": "8ec4773a96ffb034e6bcb61f19e4805cb0c4177894e193f4533f7eab879c385d",
+      "git_blob": "4317881bf0e6565dd3af0c4d91a1333798d9f315",
+      "encoding": "utf-8"
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-css-review/run/feedback.html",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-css-successor/run/feedback.html",
+      "bytes": 12466,
+      "sha256": "27ae70511395b7412359bdedd17baf0f5f499ef3550da104d5e6e882ce847e78",
+      "git_blob": "9f79d8b03075e329029f2d153dcaee3e3dad22cd",
+      "encoding": "utf-8"
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-css-review/run/native-command/authored-responses.json",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-css-successor/run/native-command/authored-responses.json",
+      "bytes": 2648,
+      "sha256": "5b039c1bd6ef22d33292bbf8c5997fb8c9df0652516f41af5e05318f84ef36a9",
+      "git_blob": "6bec94dd4dfcfb917dcf0e22d311b70f2eb868f2",
+      "encoding": "utf-8"
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-css-review/run/native-command/command-01.html",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-css-successor/run/native-command/command-01.html",
+      "bytes": 12466,
+      "sha256": "27ae70511395b7412359bdedd17baf0f5f499ef3550da104d5e6e882ce847e78",
+      "git_blob": "9f79d8b03075e329029f2d153dcaee3e3dad22cd",
+      "encoding": "utf-8"
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-css-review/run/native-command/command-01.json",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-css-successor/run/native-command/command-01.json",
+      "bytes": 2552,
+      "sha256": "e787181f4000024a9397e16349deda78bac55e339d1f9c0a8eaa32b0e1f0a381",
+      "git_blob": "87399ba434a60f9a47f23f7edd8610c045c0ddac",
+      "encoding": "utf-8"
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-css-review/run/native-command/commands.json",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-css-successor/run/native-command/commands.json",
+      "bytes": 2692,
+      "sha256": "16a684bb23df5aad1ba9836ad9fed557f88af3256bae0f10ab2dbb00e31cc2b3",
+      "git_blob": "e9c12bc4b534e893b29aa8928e0ddd83e7fe7a88",
+      "encoding": "utf-8"
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-css-review/run/native-command/requests.json",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-css-successor/run/native-command/requests.json",
+      "bytes": 920,
+      "sha256": "c5cd705205ec700fd7d1e4a62625b0ca64123d7d07057347458912aa5bae79c2",
+      "git_blob": "d432e213860e1f6735e3210ef63c6b75592062d1",
+      "encoding": "utf-8"
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-css-review/run/predecessor-actual-export.html",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-css-successor/run/predecessor-actual-export.html",
+      "bytes": 12467,
+      "sha256": "07cff2d7d85f583fd17264062e221112473be0be6efc8866e96ee6261d98d790",
+      "git_blob": "7ec848360e9bd460d8589bbab996f8e9c7945a12",
+      "encoding": "utf-8"
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-css-review/run/private-after.json",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-css-successor/run/private-after.json",
+      "bytes": 2633,
+      "sha256": "b26aa55e24f217bccabb38126433ced61272dea7d5c686a0a7401a9fa0d430be",
+      "git_blob": "45892f0997ce1b156d85e10d1162e66e248fdbc9",
+      "encoding": "utf-8"
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-css-review/run/private-before.json",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-css-successor/run/private-before.json",
+      "bytes": 2633,
+      "sha256": "b26aa55e24f217bccabb38126433ced61272dea7d5c686a0a7401a9fa0d430be",
+      "git_blob": "45892f0997ce1b156d85e10d1162e66e248fdbc9",
+      "encoding": "utf-8"
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-css-review/run/review.json",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-css-successor/run/review.json",
+      "bytes": 1883,
+      "sha256": "8fb83dde6b1525424780f73c2fe99f76a8f84e8671c1fa7125eeb86b7fbfa614",
+      "git_blob": "4158223e79d7b3feb521ca27f37c27ebc0925268",
+      "encoding": "utf-8"
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-css-review/run/selector-process.json",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-css-successor/run/selector-process.json",
+      "bytes": 497,
+      "sha256": "c03ca8c58993fa92c89e11a79480b196813e28e2135886e2d0e4b1e08ec03d78",
+      "git_blob": "c3a42411832ce93f3a77edcb9deedaf47b874529",
+      "encoding": "utf-8"
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-css-review/run/selector-stderr.log",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-css-successor/run/selector-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "encoding": "utf-8"
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-css-review/run/selector-stdout.json",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-css-successor/run/selector-stdout.json",
+      "bytes": 12260,
+      "sha256": "08d77e5c6459bc239eb44e81b5ce47cde02ae256e1828400e945c052edd1e845",
+      "git_blob": "868f7efc674c15d6db1e75d321a9c830efff2c98",
+      "encoding": "utf-8"
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-css-review/run/source-after.json",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-css-successor/run/source-after.json",
+      "bytes": 11052,
+      "sha256": "3f51c0b24d151a03c48c698c2caa4f58245687513e20e9a3f4ab3a75262c2db4",
+      "git_blob": "bcb4c9bbe4a85da786c2ec6ae6e7709e59d4ce2e",
+      "encoding": "utf-8"
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-css-review/run/source-before.json",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-css-successor/run/source-before.json",
+      "bytes": 11052,
+      "sha256": "3f51c0b24d151a03c48c698c2caa4f58245687513e20e9a3f4ab3a75262c2db4",
+      "git_blob": "bcb4c9bbe4a85da786c2ec6ae6e7709e59d4ce2e",
+      "encoding": "utf-8"
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-css-review/run.log",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-css-successor/run.log",
+      "bytes": 1883,
+      "sha256": "8fb83dde6b1525424780f73c2fe99f76a8f84e8671c1fa7125eeb86b7fbfa614",
+      "git_blob": "4158223e79d7b3feb521ca27f37c27ebc0925268",
+      "encoding": "utf-8"
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-css-review/verify_css_successor.py",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-css-successor/verify_css_successor.py",
+      "bytes": 7348,
+      "sha256": "3e10661447ea26babdc427164df6d4c4d08ab2b9d603920bad6cbd46df1b48e9",
+      "git_blob": "b90cf65c99254b8e5e59876a3b2aac8d9630a50c",
+      "encoding": "utf-8"
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-css-review/verify_exported_selectors.cjs",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-css-successor/verify_exported_selectors.cjs",
+      "bytes": 3782,
+      "sha256": "7845a550edbd96e72d9861d174e560821f5c5416caabd5f6a284ffa601bca13d",
+      "git_blob": "c81073c228a1cc44b5d60355fdbb150109c28711",
+      "encoding": "utf-8"
+    }
+  ]
+}

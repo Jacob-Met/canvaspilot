@@ -1,0 +1,47 @@
+{
+  "original_91_files_byte_exact": true,
+  "original_manifest_sha256": "341a2c20fe61d96419a5e3f67c7d6efb5f3f32c385b2a6e1bbdc6332dc0448ba",
+  "original_source_relocations": [
+    {
+      "original_path": "README.md",
+      "publication_path": "docs/qualification/feedback-export-9ec02b70e5f0/first-qualified-source/README.md.source",
+      "sha256": "ddd8f084090dfb6fad72e8bf351537ca8ad2c2e26689a7633dd11ee0637652b8",
+      "bytes": 18175
+    },
+    {
+      "original_path": "docs/feedback-export.md",
+      "publication_path": "docs/qualification/feedback-export-9ec02b70e5f0/first-qualified-source/docs/feedback-export.md.source",
+      "sha256": "6529840db890019b488539ca5b488395ea2d50b4ccd63d336a16437d77afb938",
+      "bytes": 8307
+    },
+    {
+      "original_path": "src/canvaspilot/cli.py",
+      "publication_path": "docs/qualification/feedback-export-9ec02b70e5f0/first-qualified-source/src/canvaspilot/cli.py.source",
+      "sha256": "a29e755832cec76a07178d1afffd245c07b665bc990e8bb99c84cbfdc737bf16",
+      "bytes": 13992
+    },
+    {
+      "original_path": "src/canvaspilot/feedback_export.py",
+      "publication_path": "docs/qualification/feedback-export-9ec02b70e5f0/first-qualified-source/src/canvaspilot/feedback_export.py.source",
+      "sha256": "3bc3f44f9d8f682fbf8442fed88e05d6148ecbf889e41c941ce65f067f59904b",
+      "bytes": 20918
+    },
+    {
+      "original_path": "tests/test_feedback_export.py",
+      "publication_path": "docs/qualification/feedback-export-9ec02b70e5f0/first-qualified-source/tests/test_feedback_export.py.source",
+      "sha256": "046ce25f6bc03ae6ad23e65bb7f5cbe26a42a257f45cc9998701054fb1375de5",
+      "bytes": 6965
+    },
+    {
+      "original_path": "tests/test_feedback_export_native.py",
+      "publication_path": "docs/qualification/feedback-export-9ec02b70e5f0/first-qualified-source/tests/test_feedback_export_native.py.source",
+      "sha256": "3bd9cec9c6bcef89395f392498e883c3882f6cdcbe4257d4d210b17d99da6045",
+      "bytes": 13105
+    }
+  ],
+  "original_85_receipt_paths_preserved": true,
+  "all_loaded_packet_files_checked_against_frozen_hashes": true,
+  "current_source_files_rechecked": 29,
+  "current_unowned_native_files_excluded_from_changes": 23,
+  "copy_policy": "Sparse allowlist over existing exact files; no full source/evidence duplication."
+}

@@ -1,0 +1,12 @@
+{
+  "initial_write": "Failed to write file /dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-css-review/verify_exported_selectors.cjs",
+  "observed_after_failure": {
+    "target_bytes": 0,
+    "tmpfs_free_bytes": 2211840,
+    "overlay_free_bytes": 0
+  },
+  "test_invocations_before_retry": 0,
+  "recovery": "completed the previously unwritten private probe after tmpfs headroom returned",
+  "qualified_native_invocations": 1,
+  "frozen_original_edits": []
+}

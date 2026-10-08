@@ -1,0 +1,15 @@
+{
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+    "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/css-qualified/verify_css_document.cjs",
+    "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/qualified-temp/test_cli_saves_readable_feedba0/feedback.html",
+    "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/css-qualified/verification/tmp/test_cli_saves_readable_feedba0/feedback.html",
+    "/workspace/scratch/d0441742433b/production-worker/qa-deps/node_modules/jsdom",
+    "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/css-qualified/verification/css-dom-report.json"
+  ],
+  "exit_code": 0,
+  "driver_sha256": "456c76510fc5c00d5b4b22bbbe29bdb83fd5b692b51e0612cbc90419ef8ab105",
+  "stdout": "css-dom.stdout.txt",
+  "stderr": "css-dom.stderr.txt",
+  "limitations": "Cached jsdom 30.1.2 DOM/CSS consumer; no physical browser layout or printer execution; default constructor disables automatic subresources."
+}

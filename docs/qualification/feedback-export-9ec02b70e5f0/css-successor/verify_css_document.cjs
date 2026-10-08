@@ -1,0 +1,74 @@
+/* Inspect the actual before/after CLI files with the existing cached DOM/CSS consumer. */
+const fs = require('node:fs');
+const crypto = require('node:crypto');
+const path = require('node:path');
+
+const [beforePath, afterPath, jsdomRoot, outputPath] = process.argv.slice(2);
+if (!beforePath || !afterPath || !jsdomRoot || !outputPath) {
+  throw new Error('Usage: node verify_css_document.cjs BEFORE_HTML AFTER_HTML JSDOM_ROOT REPORT_JSON');
+}
+const { JSDOM, VirtualConsole } = require(jsdomRoot);
+const version = require(path.join(jsdomRoot, 'package.json')).version;
+const hash = data => crypto.createHash('sha256').update(data).digest('hex');
+
+function inspect(file) {
+  const data = fs.readFileSync(file);
+  const messages = [];
+  const virtualConsole = new VirtualConsole();
+  virtualConsole.on('jsdomError', error => messages.push(error.message));
+  const dom = new JSDOM(data.toString('utf8'), {
+    // jsdom 30 constructor defaults disable scripts and automatic subresources.
+    virtualConsole,
+    url: 'file://' + path.resolve(file),
+  });
+  const document = dom.window.document;
+  const invalid = [];
+  let selectors = 0;
+  function checkRules(rules) {
+    for (const rule of rules) {
+      if (rule.type === 1) {
+        selectors += 1;
+        try { document.querySelectorAll(rule.selectorText); }
+        catch (error) { invalid.push({ selector: rule.selectorText, error: error.name, message: error.message }); }
+      }
+      if (rule.cssRules) checkRules(rule.cssRules);
+    }
+  }
+  for (const sheet of document.styleSheets) checkRules(sheet.cssRules);
+  let rootStyle = null;
+  let computedStyleError = null;
+  try {
+    const style = dom.window.getComputedStyle(document.documentElement);
+    rootStyle = { color: style.color, background: style.backgroundColor, colorScheme: style.colorScheme };
+  } catch (error) { computedStyleError = { name: error.name, message: error.message }; }
+  const result = { path: file, bytes: data.length, sha256: hash(data), selectors,
+    invalid, rootStyle, computedStyleError, resourcePolicy: 'constructor-default-disabled',
+    automaticResourceElements: document.querySelectorAll('script, link[rel~="stylesheet"], img, iframe, frame, object, embed, audio, video, source').length,
+    domMessages: messages, scriptElements: document.querySelectorAll('script').length };
+  dom.window.close();
+  return { result, text: data.toString('utf8') };
+}
+
+const before = inspect(beforePath);
+const after = inspect(afterPath);
+const withoutSavedAt = text => text.replace(
+  /(<dd data-field="captured_at">)[^<]*(<\/dd>)/,
+  '$1[SAME_CAPTURE_TIME]$2',
+);
+const afterExpected = withoutSavedAt(before.text.replace('<style>+:root', '<style>:root'));
+const checks = {
+  originalInvalidRootReproduced: before.result.invalid.length === 1 && before.result.invalid[0].selector === '+:root',
+  finalSelectorsAccepted: after.result.selectors > 0 && after.result.invalid.length === 0,
+  finalRootColorsApplied: after.result.rootStyle?.color === 'rgb(24, 42, 58)' &&
+    after.result.rootStyle?.background === 'rgb(243, 245, 246)',
+  finalLightColorSchemeApplied: after.result.rootStyle?.colorScheme === 'light',
+  onlyStyleAndCaptureTimeDiffer: afterExpected === withoutSavedAt(after.text),
+  noAutomaticResourceElements: before.result.automaticResourceElements === 0 && after.result.automaticResourceElements === 0,
+  noScriptElements: before.result.scriptElements === 0 && after.result.scriptElements === 0,
+};
+const report = { consumer: 'jsdom DOM/CSS receiver; no physical browser, layout or printer execution',
+  jsdomVersion: version, jsdomRoot, node: process.version, before: before.result,
+  after: after.result, checks, passed: Object.values(checks).every(Boolean) };
+fs.writeFileSync(outputPath, JSON.stringify(report, null, 2) + '\n');
+process.stdout.write(JSON.stringify(report, null, 2) + '\n');
+process.exitCode = report.passed ? 0 : 1;

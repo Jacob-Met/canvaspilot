@@ -1,0 +1,103 @@
+{
+  "assignment": {
+    "course_id": 77,
+    "due_at": null,
+    "html_url": "https://canvas.invalid/courses/77/assignments/314",
+    "id": 314,
+    "name": "Δοκιμή · 研究 <draft> & feedback",
+    "points_possible": 0,
+    "rubric": [
+      {
+        "description": "Outcome evidence Ω",
+        "id": "k-outcome",
+        "learning_outcome_id": 610,
+        "long_description": "Demonstrate the stated connection.",
+        "points": 8.75,
+        "ratings": [
+          {
+            "description": "Still developing",
+            "id": "rating-zero",
+            "points": 0
+          }
+        ]
+      },
+      {
+        "description": "Unassessed criterion 未",
+        "id": "k-unknown",
+        "points": null
+      }
+    ],
+    "rubric_settings": {
+      "hide_outcome_results": false,
+      "hide_points": false,
+      "hide_score_total": false,
+      "id": 891,
+      "points_possible": 47.25
+    },
+    "use_rubric_for_grading": false
+  },
+  "submission": {
+    "assignment_id": 314,
+    "attempt": 7,
+    "excused": false,
+    "grade": "0",
+    "grade_matches_current_submission": false,
+    "graded_at": "2026-10-01T10:02:03Z",
+    "grader_id": 202,
+    "id": 801,
+    "late": false,
+    "missing": null,
+    "posted_at": null,
+    "rubric_assessment": {
+      "k-outcome": {
+        "comments": "Keep the claimed outcome visible.",
+        "points": 0,
+        "rating_id": "rating-zero"
+      },
+      "orphan-criterion": {
+        "comments": "An unjoined assessment stays unjoined.",
+        "points": 2.125
+      }
+    },
+    "score": 0,
+    "submission_comments": [
+      {
+        "author": {
+          "display_name": "Nested supplied name 研",
+          "id": 203,
+          "role": "student"
+        },
+        "author_id": 202,
+        "author_name": "Kai <learner> & Ω",
+        "comment": "Literal <script>window.INJECTED=1</script> & 日本語\nSecond line.",
+        "created_at": "2026-10-03T15:16:17Z",
+        "id": 71
+      },
+      {
+        "attachments": [
+          {
+            "display_name": "voice <literal>.ogg",
+            "url": "https://media.invalid/voice.ogg"
+          }
+        ],
+        "author": {
+          "display_name": "Only nested author β",
+          "id": 204
+        },
+        "comment": "",
+        "id": 72,
+        "media_comment": {
+          "display_name": "Spoken response 日本語",
+          "url": "https://media.invalid/voice.ogg"
+        }
+      },
+      {
+        "comment": "No author supplied for this separate comment.",
+        "id": 73
+      }
+    ],
+    "submitted_at": "2026-10-02T12:00:00Z",
+    "user_id": 909,
+    "workflow_state": "graded"
+  }
+}

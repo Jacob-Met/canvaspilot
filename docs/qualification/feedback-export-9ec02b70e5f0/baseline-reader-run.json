@@ -1,0 +1,22 @@
+{
+  "kind": "preserved unified-exec stdout result",
+  "tool_session_id": 41283,
+  "completion_chunk_id": "9fb5c7",
+  "argv": [
+    "python",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "tests/test_submission_feedback.py",
+    "tests/test_submission_feedback_native.py"
+  ],
+  "cwd": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/before",
+  "PYTHONPATH": "src:/dev/shm/hamon-afe225d6c6be-product/canvas-deps",
+  "PYTHONDONTWRITEBYTECODE": "1",
+  "exit_code": 0,
+  "stdout": "baseline-reader.stdout.txt",
+  "note": "The baseline command was executed before exporter implementation. Its tool-returned stdout is preserved here; no rerun is implied."
+}

@@ -1,0 +1,181 @@
+{
+  "CLI_sha256": "a29e755832cec76a07178d1afffd245c07b665bc990e8bb99c84cbfdc737bf16",
+  "binary_uploads": 0,
+  "file_count": 21,
+  "files": [
+    {
+      "bytes": 7303,
+      "encoding": "utf-8",
+      "git_blob": "c87b4ff349c151a6cfbb0bf8daa718e7358ae3b4",
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-review/README.md",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-consumer/README.md",
+      "sha256": "d56e8d7e089d3a1689b72032bf83f3424a0776c105b5109963d7ef78f0f44d3b"
+    },
+    {
+      "bytes": 4859,
+      "encoding": "utf-8",
+      "git_blob": "79538b6a67cb2ba645f5dead2f869e0dc27ec155",
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-review/review.json",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-consumer/review.json",
+      "sha256": "08ca6eb24d0ad3c27071ca6e5880708630fae466d1de6ec89b7f40255a054254"
+    },
+    {
+      "bytes": 1721,
+      "encoding": "utf-8",
+      "git_blob": "4ede96c2d1e451192df14613483beb655603da06",
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-review/coordination-scope.json",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-consumer/coordination-scope.json",
+      "sha256": "154476229e16f832c9336436d007ca2b40f9986a6eef7dc7914d6d2992ba3152"
+    },
+    {
+      "bytes": 6733,
+      "encoding": "utf-8",
+      "git_blob": "b571eb38499491fadb0b234c22195a55639a247e",
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-review/candidate-author-manifest.json",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-consumer/candidate-author-manifest.json",
+      "sha256": "79e28c5bc7bc7f8953f0aa560000c655d832954a61fe84ec6c14c7834be3cc4d"
+    },
+    {
+      "bytes": 3672,
+      "encoding": "utf-8",
+      "git_blob": "c443548dd3f058d39f246be66412c9cd4cdf6e90",
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-review/candidate-pins.json",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-consumer/candidate-pins.json",
+      "sha256": "66deea864d8a34ce5a3d0518f94a7d5dacb8dc02d5a3aa5235415c7e1a2cfd19"
+    },
+    {
+      "bytes": 2927,
+      "encoding": "utf-8",
+      "git_blob": "6cd1d2eeedaec94556f844c1632742549d5d24b7",
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-review/before-pins.json",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-consumer/before-pins.json",
+      "sha256": "1e2b3ca85d3294007f1c933f0442e233c156c930d26f71710111047c18e46050"
+    },
+    {
+      "bytes": 2003,
+      "encoding": "utf-8",
+      "git_blob": "e8965b87365bbe635d3ca13d42b1d2fd4bfce6a8",
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-review/cli-preservation.patch",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-consumer/cli-preservation.patch",
+      "sha256": "6e70f6ca3c1db2dc434f79ee35d9ea7b096d9af3cc218669227c9a23f02938c3"
+    },
+    {
+      "bytes": 1327,
+      "encoding": "utf-8",
+      "git_blob": "d77f8ac4f80e4c2024cbf495585394f55ba46f14",
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-review/normal.log",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-consumer/normal.log",
+      "sha256": "6df2ea1e828c0b8346724093b1f45eb9e9ef005e66d18655d9c6698062c32a38"
+    },
+    {
+      "bytes": 1327,
+      "encoding": "utf-8",
+      "git_blob": "b9ddec983cc44a35c2091ecb7117b774f52a226b",
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-review/optimized.log",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-consumer/optimized.log",
+      "sha256": "362afd834d7f9b93abc0aac397fe904bc8eb392861cabedd4173eefe68b4c7de"
+    },
+    {
+      "bytes": 361,
+      "encoding": "utf-8",
+      "git_blob": "3155fd7289f19927bd8dcf8a365297489f4dca8a",
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-review/normal-execution.json",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-consumer/normal-execution.json",
+      "sha256": "3af8754a3ce45791709d241aa3d6d0571fecd2dfacbd5adfbf548271774c05ac"
+    },
+    {
+      "bytes": 373,
+      "encoding": "utf-8",
+      "git_blob": "328c54c04a94c05d5b1fe574aea0f6a60b2f4f7e",
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-review/optimized-execution.json",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-consumer/optimized-execution.json",
+      "sha256": "20b87588acce820ccf5192d087f60846195f997fcdf636be27e5a9635a8e90e7"
+    },
+    {
+      "bytes": 79450,
+      "encoding": "utf-8",
+      "git_blob": "523f07b8ff19ba79e3666d59f921e1a3434d5c6a",
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-review/raw-evidence-index.json",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-consumer/raw-evidence-index.json",
+      "sha256": "7ee6781c67ecc2b8552e528bedb413c7bf6a14d4e03ced843438988427dfd3b5"
+    },
+    {
+      "bytes": 209047,
+      "encoding": "utf-8",
+      "git_blob": "f179cb535011f405d2d392d431dd76c29cba573b",
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-review/raw-evidence.tar.gz.base64",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-consumer/raw-evidence.tar.gz.base64",
+      "sha256": "268d4343ef91d8ecf9cb63425dcee46ac48f42c05b47944a51c13daade4370e1"
+    },
+    {
+      "bytes": 2086,
+      "encoding": "utf-8",
+      "git_blob": "705e74e31ae38eefdac5b6d07ed805edd0410cd7",
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-review/unpack_evidence.py",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-consumer/unpack_evidence.py",
+      "sha256": "449a89c15de0589fc57c52c88b4a1afe2b51d99a6944b11e624f1316c528a411"
+    },
+    {
+      "bytes": 21275,
+      "encoding": "utf-8",
+      "git_blob": "30a4e2a9afb9e0199c5b624e48f934a4dbf4d1ea",
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-review/verify_feedback_consumption.py",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-consumer/verify_feedback_consumption.py",
+      "sha256": "2f8b2293367f7bd2ae43558ac6e0527f208bc14ca5628550d5bfc705d43b05db"
+    },
+    {
+      "bytes": 12144,
+      "encoding": "utf-8",
+      "git_blob": "3061c29862ec2339dda41fd5ba8438680d1f2756",
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-review/receiving_support.py",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-consumer/receiving_support.py",
+      "sha256": "27b2851617939bdce42549cb5a0de2e663f66b7ceea6ee53e6ff24b88ec6089b"
+    },
+    {
+      "bytes": 690,
+      "encoding": "utf-8",
+      "git_blob": "aec48624aec6cc684c03bce6c9ed2465b9a49eca",
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-review/normal/review.json",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-consumer/normal/review.json",
+      "sha256": "a7f6650ced0caa7f8e405cfbb139821df80cfaa9e014126b499888d2ff52915e"
+    },
+    {
+      "bytes": 693,
+      "encoding": "utf-8",
+      "git_blob": "e481e1517ef985fc737d9b0a4d063cf93246de2a",
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-review/optimized/review.json",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-consumer/optimized/review.json",
+      "sha256": "026aa48db7497966afaad1b6d1abd16f58e6f0fee273a3a0251ac0659a325439"
+    },
+    {
+      "bytes": 242,
+      "encoding": "utf-8",
+      "git_blob": "84fe69c072af4d2d4b83124c895c694059e87869",
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-review/normal/consumer-observations.json",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-consumer/normal/consumer-observations.json",
+      "sha256": "cfc5f434a55a063fbda7a3a31aebfc769350c510f6c8c34813a0c4baf8397972"
+    },
+    {
+      "bytes": 242,
+      "encoding": "utf-8",
+      "git_blob": "84fe69c072af4d2d4b83124c895c694059e87869",
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-review/optimized/consumer-observations.json",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-consumer/optimized/consumer-observations.json",
+      "sha256": "cfc5f434a55a063fbda7a3a31aebfc769350c510f6c8c34813a0c4baf8397972"
+    },
+    {
+      "bytes": 1475,
+      "encoding": "utf-8",
+      "git_blob": "afcddd2d0e40cb37dbfae00fd5dbb19652cb8968",
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-review/baseline-reader/verification.json",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-consumer/baseline-reader/verification.json",
+      "sha256": "ed716148754f17f1d7e60b3b9126e434503395d20adc274d343cd25c8719cf90"
+    }
+  ],
+  "formatter_sha256": "3bc3f44f9d8f682fbf8442fed88e05d6148ecbf889e41c941ce65f067f59904b",
+  "parent": "55fe1e0a3c4ad85e1065f295e49d44722c3be32b",
+  "product_edits": [],
+  "schema": "independent-feedback-review-allowlist.v1",
+  "status": "frozen original candidate semantic review; minor CSS typo and successor tracked separately",
+  "total_bytes": 359950
+}

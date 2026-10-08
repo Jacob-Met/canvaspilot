@@ -1,0 +1,96 @@
+{
+  "repository": "Jacob-Met/canvaspilot",
+  "parent": "0d1898544a90079e2dcc7ceb3fa4bc6bca88a2bc",
+  "tree": "de9fca025ebe325807bd53cd9b7f3b6be50c6d19",
+  "prior_parent": "79a2f2b2cbb7e74128d731cf096c7e86f1942d4b",
+  "moving_ref_refreshes_by_optimizer": 0,
+  "immutable_commit_fetches": 3,
+  "readme_insertions": 1,
+  "readme_section_verbatim_from_55fe_and_79": true,
+  "remove_only_our_readme_section_recovers_entire_0d_readme": true,
+  "readme_before": {
+    "bytes": 19769,
+    "sha256": "9243eeac04fd867cc111e1d0a95259aa266dae210d8eebc4da33287af28bfaae",
+    "git_blob": "f1740a512af81916490a27887141382d10469efa"
+  },
+  "readme_candidate": {
+    "bytes": 21107,
+    "sha256": "18567e59318ebbb55556962fcdb9c0e947cd3a6812ad552cbd9737031b24dc29",
+    "git_blob": "e096a6e47d12ea50d1a5de3dd7a58c5f868dee52"
+  },
+  "incoming_API_preserved": {
+    "bytes": 27718,
+    "sha256": "00b65511b84a77d69312dbdc6abe21bfd62ef47ce0a5cdf8c1af2fd2d705c3e8",
+    "git_blob": "8de750525055991ca470fb4881d0368a07631818"
+  },
+  "incoming_assignment_submission_preserved": {
+    "bytes": 1296,
+    "sha256": "52fc732660b8844a2ee0801931a363f20db15b5309d148d01e3b618be487133d",
+    "git_blob": "95b1f19927e4eecf99fc852325737c3cfe86cd0d"
+  },
+  "API_delta_from_79": {
+    "insertions": [
+      "from canvaspilot.assignment_submission import project_assignment_submission\n",
+      "            row[\"submission\"], row[\"submission_warnings\"] = project_assignment_submission(\n                a.get(\"submission\")\n            )\n"
+    ],
+    "remove_these_two_native_additions_recovers_entire_79_API": true,
+    "unchanged_methods": [
+      "__init__",
+      "close",
+      "__enter__",
+      "__exit__",
+      "whoami",
+      "get_course",
+      "list_courses",
+      "get_assignment",
+      "assignment_brief",
+      "list_announcements",
+      "list_modules",
+      "module_progress",
+      "list_pages",
+      "get_page",
+      "list_discussion_topics",
+      "get_discussion",
+      "post_discussion_reply",
+      "list_files",
+      "browse_files",
+      "list_quizzes",
+      "get_quiz",
+      "list_quiz_questions",
+      "list_quiz_submissions",
+      "start_quiz_submission",
+      "complete_quiz_submission",
+      "list_conversations",
+      "get_conversation",
+      "list_calendar_events",
+      "submission_status",
+      "submission_feedback",
+      "submit_assignment_text",
+      "planner_items",
+      "activity_stream",
+      "list_todo_items",
+      "list_enrollments",
+      "reply_conversation",
+      "api_request",
+      "api_paginated",
+      "sync_summary"
+    ],
+    "unchanged_method_count": 39,
+    "changed_methods": [
+      "list_assignments"
+    ]
+  },
+  "source_files": 29,
+  "owned_paths": [
+    "README.md",
+    "docs/feedback-export.md",
+    "src/canvaspilot/cli.py",
+    "src/canvaspilot/feedback_export.py",
+    "tests/test_feedback_export.py",
+    "tests/test_feedback_export_native.py"
+  ],
+  "native_context_files": 23,
+  "native_runtime_modules": 14,
+  "CLI_formatter_client_broker_calendar_and_feedback_projection_exact_79": true,
+  "qualification_plan": "No97-case rerun. Runtime owns one fresh actual export per normal/-O to verify new import context; prior79 and55fe receipts remain fixed."
+}

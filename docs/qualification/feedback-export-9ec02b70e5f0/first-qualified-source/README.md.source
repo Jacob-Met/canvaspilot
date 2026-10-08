@@ -13,9 +13,8 @@ Same architecture as OpenCLI-style web agents (persistent browser session → si
 - **Full REST surface** — courses, assignments, modules, pages, files, discussions, announcements, planner, inbox, calendar, activity stream, submissions, and **quizzes** (list/questions/submissions/start/complete)
 - **Agent-shaped digests** — `assignment_brief` (cleaned prompt + rubric), `sync_summary` (courses + upcoming), `submission_status`
 - **Submission feedback** — self submission comments and rubric assessments alongside current-attempt and grading metadata
-- **Submission history** — inspect returned attempts and submitted text/file metadata without assigning current grades or comments to earlier versions ([guide](docs/submission-history.md))
 - **Fixture mode** — offline dict backend for tests and CI; no Canvas required
-- **37 MCP tools**, one stdio server, one env var for the host (`CANVAS_BASE_URL`) plus either a PAT or a running session broker
+- **36 MCP tools**, one stdio server, one env var for the host (`CANVAS_BASE_URL`) plus either a PAT or a running session broker
 - **Course folder browsing** — select nested folders and inspect bounded file-metadata pages through CLI, MCP or Python
 - **Module progress checklist** — review reported completion, remaining requirements and module locks through CLI, MCP or Python
 
@@ -70,7 +69,6 @@ canvaspilot courses
 canvaspilot sync
 canvaspilot brief <course_id> <assignment_id>
 canvaspilot feedback <course_id> <assignment_id>
-canvaspilot submission-history <course_id> <assignment_id>
 ```
 
 `canvaspilot sync` orders upcoming assignments by deadline across the selected
@@ -78,13 +76,6 @@ courses. It includes up to 10 courses and 5 assignments per course by default,
 and reports omitted rows, unknown dates, and per-course read failures. Adjust
 the overview with `--limit-courses` and `--limit-assignments-per-course`; see
 [the sync guide](docs/SYNC.md) for CLI, Python, and MCP examples and count meanings.
-
-Assignment lists and sync rows also include the current user's reported
-submission state, attempt, and late/missing/excused flags when Canvas supplies
-them. Missing data remains unknown; the existing `has_submitted_submissions`
-flag describes submissions by any student. See the
-[assignment submission guide](docs/assignment-submission.md) for field meanings,
-selection examples and malformed-data warnings.
 
 To take selected course deadlines into a calendar application, save an explicit
 local snapshot with `canvaspilot export-calendar 42 77 --out deadlines.ics`.
@@ -157,11 +148,11 @@ Tools exposed (all prefixed `canvas_`):
 |------|-------|
 | Identity | `whoami`, `sync_summary`, `planner_items`, `activity_stream`, `list_todo_items`, `list_enrollments` |
 | Courses | `list_courses`, `get_course`, `list_modules`, `module_progress`, `list_pages`, `get_page`, `list_files`, `browse_files`, `list_announcements` |
-| Assignments | `list_assignments`, `get_assignment`, `assignment_brief`, `submission_status`, `submission_feedback`, `submission_history`, `submit_assignment_text` |
+| Assignments | `list_assignments`, `get_assignment`, `assignment_brief`, `submission_status`, `submission_feedback`, `submit_assignment_text` |
 | Discussions | `list_discussion_topics`, `get_discussion`, `post_discussion_reply` |
 | Quizzes | `list_quizzes`, `get_quiz`, `list_quiz_questions`, `list_quiz_submissions`, `start_quiz_submission`, `complete_quiz_submission` |
 | Inbox / Calendar | `list_conversations`, `get_conversation`, `reply_conversation`, `list_calendar_events` |
-| **Full REST** | `canvas_api_request`, `canvas_api_paginated` — any `/api/v1/...` path, including paginated reads through a current session broker (see Auth modes for collection requirements) |
+| **Full REST** | `canvas_api_request`, `canvas_api_paginated` — any `/api/v1/...` path (escape hatch for everything else; in session-broker mode `api_paginated` returns a single page only — see Auth modes) |
 
 Programmatic API bundle: `from canvaspilot.bundle import make_api, tool_inventory`.
 
@@ -295,36 +286,7 @@ MCP/Python interfaces, page limits and examples.
 
 Mode resolution is fixture > token > live broker > session, decided at runtime: `CANVAS_API_TOKEN` always wins and skips the broker; otherwise a live `GET 127.0.0.1:18765/health` probe decides whether the session broker is used. Bare "session" mode with no running broker raises on every request — "session (default)" means "broker if it's up", not "works with no setup".
 
-Pagination follows Canvas's response `Link` headers in token mode and in current
-session brokers. A session broker advertises `"link_pagination": true` in
-`GET /health` and forwards only the `Link` response header alongside each fetch
-result. The client follows an opaque `rel=next` URL even when a page is shorter
-than the requested `per_page`; it stops when no next link remains, without
-inventing a numeric page or requesting an extra empty page. Initial filters and
-repeated `include[]` values apply only to the first request; subsequent URLs
-retain the server's exact parameters. Ordinary single-request results keep their
-existing decoded JSON/text shape.
-
-Token collection reads validate both the initial URL and each next URL against
-the client's configured Canvas scheme, host and effective port before dispatch.
-Initial absolute URLs retain their authored query and receive the initial
-filters once. Session continuation stays on the broker's configured Canvas
-origin and retains the exact absolute continuation URL.
-
-Each applicable Link entry must carry a valid relation. Anchored links are
-ignored as whole entries because they change the context; registered relation
-names such as `next` are matched without regard to case. Quoted parameter values
-and absolute URI extension relations remain supported. Invalid or ambiguous
-metadata, repeated continuation URLs, a later-page error or non-list body, and
-a known continuation beyond the 40-page limit raise an error. A terminal first
-single-object response keeps its existing convention. `CanvasPaginationError`
-is available from `canvaspilot.client`.
-
-An older running broker without the capability flag produces an actionable
-incomplete-collection error. Restart it with the current CanvasPilot version and
-retry the read. Ordinary single requests remain compatible with older brokers.
-The [Canvas pagination contract](https://developerdocs.instructure.com/services/canvas/basics/file.pagination)
-explains why clients must check Link even when they request a page size.
+Pagination follows response `Link` headers only in token mode (up to 40 pages). In session-broker mode the broker returns a single page (`per_page` ≤ 100); paginate by repeated calls.
 
 The broker only listens on loopback — and `session_broker.main()` now refuses to start on any non-loopback bind address (fail-closed: a future host change cannot silently expose the unauthenticated `/fetch`/`/shutdown` endpoints to the network). Cookies never leave the Playwright profile directory; the MCP/CLI process never sees them — it asks the broker to make the request.
 
@@ -367,20 +329,6 @@ pytest
 Tests use offline fixtures and disposable loopback HTTP servers. Feedback tests
 also exercise CLI subprocesses and the real MCP stdio interface; no Canvas account
 or running browser is needed.
-
-The optional native-browser check executes the production in-page fetch against
-an authored loopback response in a fresh Chromium profile. It uses no school
-session and verifies that the fixture cookie remains in the browser while only
-Link metadata reaches the caller:
-
-```bash
-CANVASPILOT_CHROMIUM_BIN=/path/to/chromium python -m pytest -q tests/test_browser_link_metadata.py
-```
-
-`CANVASPILOT_CHROMIUM_PROFILE_ROOT` can select a writable parent for temporary
-profiles (useful for a confined browser package). The browser test skips only
-when `CANVASPILOT_CHROMIUM_BIN` is unset; an invalid configured executable fails.
-All regular HTTP/client tests run offline without a browser binary.
 
 ## Responsible use
 

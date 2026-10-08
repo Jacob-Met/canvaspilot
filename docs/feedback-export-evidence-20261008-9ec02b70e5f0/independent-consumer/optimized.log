@@ -1,0 +1,12 @@
+test_all_rubric_flag_combinations_preserve_independent_meanings (__main__.FeedbackConsumerReceiving.test_all_rubric_flag_combinations_preserve_independent_meanings) ... ok
+test_ambiguous_rubric_ids_remain_separate_in_the_actual_sheet (__main__.FeedbackConsumerReceiving.test_ambiguous_rubric_ids_remain_separate_in_the_actual_sheet) ... ok
+test_authorship_and_literal_text_survive_without_active_html_or_fetches (__main__.FeedbackConsumerReceiving.test_authorship_and_literal_text_survive_without_active_html_or_fetches) ... ok
+test_existing_locators_and_late_creation_win_without_overwrite (__main__.FeedbackConsumerReceiving.test_existing_locators_and_late_creation_win_without_overwrite) ... ok
+test_missing_empty_and_present_zero_have_separate_consumer_meanings (__main__.FeedbackConsumerReceiving.test_missing_empty_and_present_zero_have_separate_consumer_meanings) ... ok
+test_reader_validation_and_publication_failures_leave_no_partial_sheet (__main__.FeedbackConsumerReceiving.test_reader_validation_and_publication_failures_leave_no_partial_sheet) ... ok
+test_zero_prior_attempt_and_existing_reader_remain_truthful (__main__.FeedbackConsumerReceiving.test_zero_prior_attempt_and_existing_reader_remain_truthful) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 73.490s
+
+OK

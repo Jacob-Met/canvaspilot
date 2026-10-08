@@ -1,0 +1,15 @@
+{
+  "argv": [
+    "/dev/shm/estate-6267db2cfc6e-workspace/test-env/bin/ruff",
+    "check",
+    "--no-cache",
+    "src/canvaspilot/feedback_export.py",
+    "src/canvaspilot/cli.py",
+    "tests/test_feedback_export.py",
+    "tests/test_feedback_export_native.py"
+  ],
+  "cwd": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/current79/repo",
+  "exit_code": 0,
+  "stdout": "lint.stdout.txt",
+  "stderr": "lint.stderr.txt"
+}

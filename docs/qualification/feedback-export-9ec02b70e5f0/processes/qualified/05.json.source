@@ -1,0 +1,123 @@
+{
+  "source": {
+    "assignment": {
+      "id": 902,
+      "course_id": 41,
+      "name": "Synthetic research reflection",
+      "html_url": "https://canvas.example.invalid/courses/41/assignments/902",
+      "due_at": "2026-10-09T18:00:00Z",
+      "points_possible": 20,
+      "use_rubric_for_grading": false,
+      "rubric_settings": {
+        "title": "Revision guide",
+        "points_possible": 12
+      },
+      "rubric": [
+        {
+          "id": "evidence",
+          "description": "Support claims with evidence",
+          "long_description": "Connect each claim to an observed result.",
+          "points": 8,
+          "criterion_use_range": true,
+          "ratings": [
+            {
+              "id": "developing",
+              "points": 3,
+              "description": "Developing"
+            }
+          ]
+        },
+        {
+          "id": "reflection",
+          "description": "Reflect on limitations",
+          "points": 4,
+          "ignore_for_scoring": true,
+          "ratings": [
+            {
+              "id": "not-yet",
+              "points": 0,
+              "description": "Not yet"
+            }
+          ]
+        },
+        {
+          "id": "revision",
+          "description": "Plan the next revision",
+          "points": 0
+        }
+      ]
+    },
+    "submission": {
+      "id": 740,
+      "assignment_id": 902,
+      "user_id": 73,
+      "submission_type": "online_upload",
+      "attempt": 2,
+      "workflow_state": "submitted",
+      "submitted_at": "2026-10-08T17:00:00Z",
+      "graded_at": "2026-10-07T15:00:00Z",
+      "posted_at": "2026-10-07T15:10:00Z",
+      "grader_id": -19,
+      "score": 0,
+      "grade": "0",
+      "grade_matches_current_submission": false,
+      "rubric_assessment": {
+        "reflection": {
+          "points": 0,
+          "rating_id": "not-yet",
+          "comments": ""
+        },
+        "evidence": {
+          "points": 3,
+          "rating_id": "developing",
+          "comments": "Explain the source."
+        },
+        "removed": {
+          "points": 2,
+          "comments": "Earlier rubric criterion."
+        }
+      },
+      "submission_comments": [
+        {
+          "id": 601,
+          "author_id": 73,
+          "author_name": "Synthetic student",
+          "author": {
+            "id": 73,
+            "display_name": "Synthetic student"
+          },
+          "comment": "I have uploaded a revision.",
+          "created_at": "2026-10-08T17:01:00Z",
+          "edited_at": null
+        },
+        {
+          "id": 602,
+          "author_id": 84,
+          "author_name": "Synthetic reviewer",
+          "comment": "",
+          "created_at": "2026-10-08T17:05:00Z",
+          "edited_at": "2026-10-08T17:06:00Z",
+          "media_comment": {
+            "media_id": "synthetic-audio",
+            "media_type": "audio"
+          },
+          "attachments": [
+            {
+              "id": 801,
+              "display_name": "notes.txt"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "requests": [],
+  "submission_status": 200,
+  "base_url": "http://127.0.0.1:38805",
+  "last_process": {
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "{\"ok\": false, \"error\": \"FileExistsError\", \"message\": \"Output path already exists; choose a new HTML file\"}\n",
+    "output": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/qualified-temp/test_cli_existing_destination_2/keep.html"
+  }
+}

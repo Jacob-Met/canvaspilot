@@ -1,0 +1,124 @@
+{
+  "schema": "canvas-feedback-current0d-review-files.v1",
+  "status": "frozen",
+  "parent": "0d1898544a90079e2dcc7ceb3fa4bc6bca88a2bc",
+  "tree": "de9fca025ebe325807bd53cd9b7f3b6be50c6d19",
+  "file_count": 14,
+  "total_bytes": 120223,
+  "capsule_members": 44,
+  "binary_uploads": 0,
+  "files": [
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-current0d/README.md",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-current0d-import/README.md",
+      "bytes": 3286,
+      "sha256": "35b8bd4ed6034d60c4201d7cece4e72c484052d0d13ae730ef42f88bed001742",
+      "git_blob": "23d447efd619c81cd4a4f2e2cdcd3aacbf8872ab",
+      "encoding": "utf-8"
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-current0d/candidate-pins.json",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-current0d-import/candidate-pins.json",
+      "bytes": 7966,
+      "sha256": "7ff1ec504102adf538801b2cb6a17b451cad7b0699d4e08ff858aa121cbfb4a3",
+      "git_blob": "70de2cc0eb552b36b089deef03d000bd1ae14f74",
+      "encoding": "utf-8"
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-current0d/current79-delta.json",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-current0d-import/current79-delta.json",
+      "bytes": 302,
+      "sha256": "c3b81169a8e01faaaeaafd0a765f4059c9bd3915bc345ca3d9b086e568394bfa",
+      "git_blob": "67fffcd05477ba9ac87eea29dbfe21f245dfd179",
+      "encoding": "utf-8"
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-current0d/native-normal.log",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-current0d-import/native-normal.log",
+      "bytes": 1427,
+      "sha256": "49680f2baeea856bbf57a5d0e0dbac6e10bd632afa0b5d2e3831e0143cb32239",
+      "git_blob": "52c7425e979aea8d53832f3ede068ffce53f46c7",
+      "encoding": "utf-8"
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-current0d/native-optimized.log",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-current0d-import/native-optimized.log",
+      "bytes": 1430,
+      "sha256": "d67c8c67007125b3f6c9e87b1ec580d0ff4302fcdcbadf42b8d44bb11270ad26",
+      "git_blob": "a3375c32adbd65887c1c587e660202d9d3870356",
+      "encoding": "utf-8"
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-current0d/normal-result.json",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-current0d-import/normal-result.json",
+      "bytes": 1427,
+      "sha256": "705572e3941dc9d08822c23aeb218f31f53471cfdc761f8ecbffd38b172bb677",
+      "git_blob": "eff474e43cc641f30f0d74d5105c28bb3bcdab3b",
+      "encoding": "utf-8"
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-current0d/optimized-result.json",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-current0d-import/optimized-result.json",
+      "bytes": 1430,
+      "sha256": "bd1b5dd809e6e5d4a6da79d2b143654d05badf0f03083af587acb64e5af8cd38",
+      "git_blob": "2754b2ee26c588caf926f21304719df773ca2e2c",
+      "encoding": "utf-8"
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-current0d/receiving-capsule-index.json",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-current0d-import/receiving-capsule-index.json",
+      "bytes": 9850,
+      "sha256": "33c5fb1d5d0eb42a066290a87a8a402cc5d312eae330dc2da0e7420687560923",
+      "git_blob": "64af67cacabb376c58ef41f45a229e4b1b2ace16",
+      "encoding": "utf-8"
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-current0d/receiving-capsule.tar.gz.base64",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-current0d-import/receiving-capsule.tar.gz.base64",
+      "bytes": 78585,
+      "sha256": "b725c6ab4ba262f93fd4396dd429cb231a65698b58ca5e6afca5ae93e879a50a",
+      "git_blob": "b15f2be972e0f98f086d506e9faa9e144045d1e6",
+      "encoding": "utf-8"
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-current0d/receiving-summary.json",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-current0d-import/receiving-summary.json",
+      "bytes": 5837,
+      "sha256": "329c6b54f9f76833568e62c423d6b5302db0f48c915180e2b1c10384c80c0a4d",
+      "git_blob": "a8ebf39f6cd5b80316c35008d878c933f604189f",
+      "encoding": "utf-8"
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-current0d/resource-receipt.json",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-current0d-import/resource-receipt.json",
+      "bytes": 317,
+      "sha256": "16166c6d8068c50e86a6cedb94e5852c6c2ca9e821e7f724ce100f2a73ec0745",
+      "git_blob": "ae6b6bbc67c84bbca9942c29da2226fcdd7bf610",
+      "encoding": "utf-8"
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-current0d/unpack_receiving.py",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-current0d-import/unpack_receiving.py",
+      "bytes": 2554,
+      "sha256": "98695ec654eab517110edd92210aaeab04aed33d445347142d55eb4814893122",
+      "git_blob": "b14531aeae8f052a47bfa48c915e5eba574cb4ea",
+      "encoding": "utf-8"
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-current0d/verification.json",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-current0d-import/verification.json",
+      "bytes": 403,
+      "sha256": "f5ad8864e22b45a4fcbaaac627936f8c985b1d20ba0cf6316ad624bd729de9eb",
+      "git_blob": "791c7c13cdf245bea9daf6511f4afbc4c803d20c",
+      "encoding": "utf-8"
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-current0d/verify_import_context.py",
+      "relative": "docs/feedback-export-evidence-20261008-9ec02b70e5f0/independent-current0d-import/verify_import_context.py",
+      "bytes": 5409,
+      "sha256": "62c2de474b5a46c3e38405098fc72a0fdb999b9a83839261d074f078e7608ce0",
+      "git_blob": "6248b1c59beb5f6e9aba95ef9434b769bc9b914e",
+      "encoding": "utf-8"
+    }
+  ]
+}

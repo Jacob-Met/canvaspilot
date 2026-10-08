@@ -1,0 +1,13 @@
+{
+  "schema": "independent-current0d-freeze.v1",
+  "all29_author_files_exact": true,
+  "all44_persisted_archive_members_reverified_in_later_exec": true,
+  "probe": {
+    "bytes": 5409,
+    "sha256": "62c2de474b5a46c3e38405098fc72a0fdb999b9a83839261d074f078e7608ce0",
+    "git_blob": "6248b1c59beb5f6e9aba95ef9434b769bc9b914e"
+  },
+  "source_edits": [],
+  "GitHub_writes": 0,
+  "new_main_ref_reads": 0
+}
