@@ -7,13 +7,13 @@ from __future__ import annotations
 
 import json
 import os
-from pathlib import Path
 import subprocess
 import sys
 import tempfile
 import threading
 import unittest
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+from pathlib import Path
 from urllib.parse import parse_qs, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -85,7 +85,7 @@ class PlannerCLITests(unittest.TestCase):
             [sys.executable, "-B", "-m", "canvaspilot.cli", *arguments,
              "--base-url", self.base, "--token", "synthetic-planner-token",
              "--profile", str(Path(self.work.name) / "unused-profile")],
-            cwd=self.work.name, env=env, capture_output=True, timeout=20,
+            cwd=self.work.name, env=env, capture_output=True, timeout=20, check=False,
         )
 
     def assert_reads(self, count):
