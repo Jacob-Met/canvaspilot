@@ -1,0 +1,11 @@
+# Inbox review: composition and receiving supplement
+
+The independent receiver qualified native source `6b94efe9ff1f117fe4c2f1dfca595003a283d988`, tree `2fbc6ac949bbdc5c3b048f93137197621ed81546`, which receives main `0d1898544a90079e2dcc7ceb3fa4bc6bca88a2bc`. All 14 groups passed, with no skips/errors and all 13 runtime source files unchanged before and after. The complete immutable peer supplement is under `peer/`, including its own manifest, exact successful driver, raw cases, logs, JUnit and source review.
+
+The receiver used a small private /dev/shm result directory after two /tmp setup stops caused by the current user's tmpfs quota. Both stops occurred before tests. The successful run bound the frozen owner source read-only and retained the same test files and network/profile guards. It exercised actual token HTTP, session envelopes, CLI subprocesses and registered MCP stdio against authored loopback data. Its session fixture models the broker provider response; it does not execute a browser or SSO.
+
+After that replay, submission-history PR53 landed as main `39d835c8becb04d81b65c90d1491d2d3a2727ffe`. The final native source composition merges it cleanly. The source-preservation receipt under `root/` checks that the inbox methods, parser/dispatch additions, and MCP metadata remain exactly as qualified, and that all other API/CLI/MCP syntax, README bytes and current-main leaves are preserved. Ruff also passes on that later composition. The full hosted suite on the published head is its subsequent runtime integration gate; the earlier 14-group receipt retains its precise source identity.
+
+`root/` keeps the native Git checkpoints, merge previews, Ruff output and exact source-composition procedure. The original source/negative-run packet at `../inbox-review-713adaab/` remains unchanged, including its peer manifest `988cc00f8c51d6fdeef57b5b77b53e28b4defd1c423b4f65ddba65e7414dfca5`.
+
+The root inventory hashes every supplement payload except itself. The peer manifest remains byte-identical and inventories only its own peer subtree. Git binds each inventory's own bytes. Neither this supplement nor the original receipts claim live-school receiving, installation, service activation or migration/cutover.

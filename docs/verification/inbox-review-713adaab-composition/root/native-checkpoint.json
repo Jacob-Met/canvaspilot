@@ -1,0 +1,11 @@
+{
+  "native_commit": "4c850261e413af32fb78f4fa389247415f225d1c",
+  "native_tree": "dbc34d2cd1ac5460ad14bcf3f6f32fe2420d7bd2",
+  "qualified_source_commit": "db32bde55db5080ed7ee856faab5cf1a2b5c949a",
+  "packet_files": 158,
+  "source_paths_unchanged_from_qualified_successor": true,
+  "commit_output": [
+    "[chatgpt/inbox-713adaab 4c85026] docs: preserve inbox review native source and receiving evidence"
+  ],
+  "status": ""
+}

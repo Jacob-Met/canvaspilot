@@ -1,0 +1,138 @@
+diff --git a/docs/inbox-review.md b/docs/inbox-review.md
+index 267db82..30066a2 100644
+--- a/docs/inbox-review.md
++++ b/docs/inbox-review.md
+@@ -62,9 +62,15 @@ There is no new reply, subscription, archive or mark-read action.
+ ## Errors and qualification
+ 
+ The CLI accepts a positive numeric conversation ID. Invalid IDs or unsupported
+-CLI scopes exit 2 before requesting data. Authentication, HTTP, malformed JSON,
+-or pagination failures return a JSON error on stderr and exit 1, with no success
+-JSON on stdout. Successful reads exit 0; an empty list remains `[]`.
++CLI scopes exit 2 before requesting data. The shared Python/MCP reader also
++requires a positive decimal integer or digit string. It rejects route, query and
++fragment syntax before making a request, so URL parsing cannot hide the
++unread-preservation flag.
++
++Authentication, HTTP, malformed JSON or pagination failures append a JSON error
++line to stderr and exit 1, with no success JSON on stdout. Existing HTTP-client
++diagnostics may precede the error line. Successful reads exit 0 and return JSON
++on stdout; an empty list remains `[]`.
+ 
+ Behavior follows the official [Conversations API](https://developerdocs.instructure.com/services/canvas/resources/conversations),
+ including its list scopes and single-conversation `auto_mark_as_read` parameter.
+diff --git a/src/canvaspilot/api.py b/src/canvaspilot/api.py
+index aa2e1d2..20d82d4 100644
+--- a/src/canvaspilot/api.py
++++ b/src/canvaspilot/api.py
+@@ -556,9 +556,14 @@ class CanvasAPI:
+ 
+     def get_conversation(self, conversation_id: int | str) -> Any:
+         """Read a conversation without automatically clearing its unread state."""
++        if isinstance(conversation_id, bool) or not isinstance(conversation_id, (int, str)):
++            raise TypeError("conversation_id must be a positive decimal integer")
++        identifier = str(conversation_id)
++        if not re.fullmatch(r"[0-9]+", identifier) or not identifier.strip("0"):
++            raise ValueError("conversation_id must be a positive decimal integer")
+         return self.client.request(
+             "GET",
+-            f"/api/v1/conversations/{conversation_id}",
++            f"/api/v1/conversations/{identifier}",
+             params={"auto_mark_as_read": False},
+         )
+ 
+diff --git a/src/canvaspilot/mcp_server.py b/src/canvaspilot/mcp_server.py
+index 67f8951..c259387 100644
+--- a/src/canvaspilot/mcp_server.py
++++ b/src/canvaspilot/mcp_server.py
+@@ -219,7 +219,7 @@ async def canvas_list_conversations(scope: str = "inbox") -> str:
+ 
+ @mcp.tool(
+     description=(
+-        "Read one of your Canvas conversations, preserving unread state. "
++        "Read one of your Canvas conversations by positive decimal ID, preserving unread state. "
+         "Returns supplied messages, participants and attachment metadata; does not download links."
+     ),
+     annotations=ToolAnnotations(readOnlyHint=True, destructiveHint=False, idempotentHint=True),
+diff --git a/tests/test_inbox_review.py b/tests/test_inbox_review.py
+index 0697855..3f16edd 100644
+--- a/tests/test_inbox_review.py
++++ b/tests/test_inbox_review.py
+@@ -3,6 +3,7 @@
+ import copy
+ import json
+ import os
++import re
+ import subprocess
+ import sys
+ import threading
+@@ -142,6 +143,15 @@ def run_cli(base, *arguments):
+     )
+ 
+ 
++def cli_result_lines(stderr):
++    """Keep errors; admit only the existing loopback HTTPX INFO diagnostic."""
++    diagnostic = re.compile(
++        r'HTTP Request: GET http://127\.0\.0\.1:[0-9]+/api/v1/conversations'
++        r'(?:/[0-9]+)?(?:\?[^"\s]*)? "HTTP/1\.0 [1-5][0-9]{2} [^"]+"'
++    )
++    return [line for line in stderr.splitlines() if not diagnostic.fullmatch(line)]
++
++
+ @pytest.mark.parametrize("workflow_state", ["unread", "read", "archived"])
+ def test_conversation_preserves_state_and_complete_payload(inbox_http, workflow_state):
+     state, base = inbox_http
+@@ -190,7 +200,7 @@ def test_cli_inbox_selects_unread_and_preserves_returned_rows(inbox_http):
+     before = copy.deepcopy(state["conversations"][0])
+     completed = run_cli(base, "inbox", "--scope", "unread")
+     assert completed.returncode == 0, completed.stderr
+-    assert completed.stderr == ""
++    assert cli_result_lines(completed.stderr) == []
+     assert json.loads(completed.stdout) == [before]
+     assert state["conversations"][0] == before
+     assert state["requests"][0]["query"]["scope"] == ["unread"]
+@@ -201,7 +211,7 @@ def test_cli_conversation_preserves_unread_and_nested_text(inbox_http):
+     before = copy.deepcopy(state["conversations"][0])
+     completed = run_cli(base, "conversation", "901")
+     assert completed.returncode == 0, completed.stderr
+-    assert completed.stderr == ""
++    assert cli_result_lines(completed.stderr) == []
+     assert json.loads(completed.stdout) == before
+     assert state["conversations"][0] == before
+     assert state["requests"][0]["query"]["auto_mark_as_read"] == ["false"]
+@@ -224,7 +234,9 @@ def test_cli_read_errors_are_controlled_and_have_no_success_output(inbox_http, s
+     completed = run_cli(base, "conversation", "901")
+     assert completed.returncode == 1
+     assert completed.stdout == ""
+-    failure = json.loads(completed.stderr)
++    lines = cli_result_lines(completed.stderr)
++    assert len(lines) == 1
++    failure = json.loads(lines[0])
+     assert failure["ok"] is False
+     assert failure["error"] in ("CanvasAuthError", "HTTPStatusError")
+     assert state["conversations"][0]["workflow_state"] == "unread"
+@@ -236,5 +248,23 @@ def test_cli_inbox_later_page_error_never_prints_partial_success(inbox_http):
+     completed = run_cli(base, "inbox")
+     assert completed.returncode == 1
+     assert completed.stdout == ""
+-    assert json.loads(completed.stderr)["ok"] is False
++    lines = cli_result_lines(completed.stderr)
++    assert len(lines) == 1
++    assert json.loads(lines[0])["ok"] is False
+     assert len(state["requests"]) == 2
++
++
++@pytest.mark.parametrize("identifier", [
++    "901#fragment", "901?auto_mark_as_read=true", "901/..", "901%23fragment",
++    " 901", "901\n", "+901", "", "000", "not-an-id", 0, -1, True, None, 1.5,
++])
++def test_api_rejects_nonnumeric_ids_before_any_request(inbox_http, identifier):
++    state, base = inbox_http
++    before = copy.deepcopy(state["conversations"])
++    with (
++        CanvasAPI(CanvasClient(base_url=base, token=TOKEN)) as api,
++        pytest.raises((TypeError, ValueError), match="positive decimal integer"),
++    ):
++        api.get_conversation(identifier)
++    assert state["requests"] == []
++    assert state["conversations"] == before

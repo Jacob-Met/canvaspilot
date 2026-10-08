@@ -1,0 +1,15 @@
+{
+  "command": [
+    "git",
+    "add",
+    "README.md",
+    "docs/inbox-review.md",
+    "src/canvaspilot/api.py",
+    "src/canvaspilot/cli.py",
+    "src/canvaspilot/mcp_server.py",
+    "tests/test_inbox_review.py"
+  ],
+  "exit": 0,
+  "stdout": "",
+  "stderr": ""
+}

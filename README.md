@@ -260,6 +260,19 @@ pagination headers; `next_page_to_try` is an optional probe, not a completeness
 claim. See [folder-browser usage and contract](docs/folder-browser.md) for the
 MCP/Python interfaces, page limits and examples.
 
+## Review your inbox
+
+```bash
+canvaspilot inbox --scope unread
+canvaspilot conversation 901
+```
+
+List your conversations and select a returned ID to inspect its messages.
+The CLI, Python API and existing MCP conversation reader explicitly preserve
+unread state. Original message, participant and attachment metadata are returned;
+linked content is not downloaded. See [inbox review](docs/inbox-review.md) for
+scope choices, pagination and error behavior.
+
 ## Auth modes
 
 | Mode | How | When |

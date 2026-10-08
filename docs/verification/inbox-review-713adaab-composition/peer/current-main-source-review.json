@@ -1,0 +1,43 @@
+{
+  "schema": "canvaspilot.inbox.current_main_peer_review.v1",
+  "reviewer": "chatgpt:/root/mac_execution",
+  "current_main": "0d1898544a90079e2dcc7ceb3fa4bc6bca88a2bc",
+  "reviewed_commit": "6b94efe9ff1f117fe4c2f1dfca595003a283d988",
+  "reviewed_tree": "2fbc6ac949bbdc5c3b048f93137197621ed81546",
+  "checks": {
+    "API_outside_two_owned_reader_bodies_unchanged": true,
+    "MCP_functions_arguments_and_unowned_metadata_unchanged": true,
+    "other_runtime_files_byte_identical": true,
+    "CLI_preserves_current_main_after_only_owned_blocks_removed": true,
+    "README_preserves_incoming_assignment_submission_text": true,
+    "all_unrelated_current_main_leaves_and_modes_preserved": true,
+    "exact_six_feature_path_fence": true
+  },
+  "incoming_leaves": 719,
+  "preserved_unrelated_leaves": 715,
+  "feature_paths": [
+    "README.md",
+    "docs/inbox-review.md",
+    "src/canvaspilot/api.py",
+    "src/canvaspilot/cli.py",
+    "src/canvaspilot/mcp_server.py",
+    "tests/test_inbox_review.py"
+  ],
+  "evidence_files": 158,
+  "runtime_sha256": {
+    "src/canvaspilot/__init__.py": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5",
+    "src/canvaspilot/api.py": "f4255518fe2627b0f2cd9aeacf0b8662645899469f4ff3ce9963e4784874d8b8",
+    "src/canvaspilot/assignment_submission.py": "52fc732660b8844a2ee0801931a363f20db15b5309d148d01e3b618be487133d",
+    "src/canvaspilot/bundle.py": "7a5600680c22f3cce5d512ed96137de0171bcca7df6a8c46baa8c09143de3168",
+    "src/canvaspilot/calendar_export.py": "b92948c438063438bf9b8ef01b0b0c067802ddb06354f00e8ee18749f3c5e2fa",
+    "src/canvaspilot/cli.py": "e1c98acdbe462ed5db56eecd8ea5f66342ce259cc7243ed32e56224f09dea090",
+    "src/canvaspilot/client.py": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797",
+    "src/canvaspilot/feedback.py": "55454598effea598474a21f67e36d5bc5bea84aaefeefc18e4d8c49804ab9869",
+    "src/canvaspilot/folder_browser.py": "c6a67229b268c539e5edb581e3320b06229460adc3fbc01d72e4964e31c0348a",
+    "src/canvaspilot/mcp_server.py": "29c875d2ac1d534cca50624d1ee30fb2bc7b697ca34208fafff51b9c32054375",
+    "src/canvaspilot/module_progress.py": "974ee31925514a2e53b899888302a7fa357e280ab5f2461b754b814473653d99",
+    "src/canvaspilot/offline_demo.py": "2389f3ccc1b6db5995be0d90e014ea9345e3029aa5546a5b2dcf12c1197e6d4d",
+    "src/canvaspilot/session_broker.py": "a692cd2812cbc09536f1b60c84892bc8e87d2ae984c5a5aa25a13f6537ba6da2"
+  },
+  "limits": "Source/AST/tree review only; the separate receipt contains the actual 14-group replay and its authored provider boundary."
+}

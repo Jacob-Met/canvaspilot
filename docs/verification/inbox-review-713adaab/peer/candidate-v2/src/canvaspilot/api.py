@@ -9,7 +9,6 @@ from html import unescape
 from math import isfinite
 from typing import Any
 
-from canvaspilot.assignment_submission import project_assignment_submission
 from canvaspilot.client import CanvasClient
 from canvaspilot.feedback import build_submission_feedback
 
@@ -201,9 +200,6 @@ class CanvasAPI:
                 "html_url": a.get("html_url"),
                 "has_submitted_submissions": a.get("has_submitted_submissions"),
             }
-            row["submission"], row["submission_warnings"] = project_assignment_submission(
-                a.get("submission")
-            )
             if full:
                 row["description_text"] = strip_html(a.get("description"))
             out.append(row)
@@ -586,12 +582,6 @@ class CanvasAPI:
         for code in context_codes or []:
             params.append(("context_codes[]", code))
         return self.client.get_paginated("/api/v1/calendar_events", params=params or None)
-
-    def submission_history(self, course_id: int | str, assignment_id: int | str) -> dict[str, Any]:
-        """Read the current self submission and exactly the history Canvas returns."""
-        from canvaspilot.submission_history import read_submission_history
-
-        return read_submission_history(self.client, course_id, assignment_id)
 
     def submission_status(self, course_id: int | str, assignment_id: int | str) -> dict[str, Any]:
         return self.client.request(

@@ -6,7 +6,6 @@ import json
 from typing import Annotated, Any
 
 from mcp.server.mcpserver import MCPServer
-from mcp.server.mcpserver.exceptions import ToolError
 from mcp.types import ToolAnnotations
 from pydantic import Field, StrictInt
 
@@ -205,27 +204,12 @@ async def canvas_complete_quiz_submission(
     )
 
 
-@mcp.tool(
-    description=(
-        "List your Canvas conversations without changing their state. "
-        "Default inbox includes read and unread non-archived conversations; "
-        "other scopes are unread, starred, archived, and sent."
-    ),
-    annotations=ToolAnnotations(readOnlyHint=True, destructiveHint=False, idempotentHint=True),
-    structured_output=False,
-)
+@mcp.tool(description="List Canvas Inbox conversations.", structured_output=False)
 async def canvas_list_conversations(scope: str = "inbox") -> str:
     return _dump(_get_api().list_conversations(scope=scope))
 
 
-@mcp.tool(
-    description=(
-        "Read one of your Canvas conversations by positive decimal ID, preserving unread state. "
-        "Returns supplied messages, participants and attachment metadata; does not download links."
-    ),
-    annotations=ToolAnnotations(readOnlyHint=True, destructiveHint=False, idempotentHint=True),
-    structured_output=False,
-)
+@mcp.tool(description="Get one Inbox conversation.", structured_output=False)
 async def canvas_get_conversation(conversation_id: str) -> str:
     return _dump(_get_api().get_conversation(conversation_id))
 
@@ -292,23 +276,6 @@ async def canvas_submission_status(course_id: str, assignment_id: str) -> str:
 )
 async def canvas_submission_feedback(course_id: str, assignment_id: str) -> str:
     return _dump(_get_api().submission_feedback(course_id, assignment_id))
-
-
-@mcp.tool(
-    description=(
-        "Read your current assignment submission and returned history, including "
-        "submitted text, URLs and file/media metadata. Preserves attempt order, "
-        "unknown history, supplied grades and comment authors without assigning "
-        "a current grade or comment to another attempt. Does not mark work read."
-    ),
-    annotations=ToolAnnotations(readOnlyHint=True, destructiveHint=False, idempotentHint=True),
-    structured_output=False,
-)
-async def canvas_submission_history(course_id: str, assignment_id: str) -> str:
-    try:
-        return _dump(_get_api().submission_history(course_id, assignment_id))
-    except ValueError as error:
-        raise ToolError(str(error)) from error
 
 
 @mcp.tool(description="Submit finished online_text_entry work.", structured_output=False)

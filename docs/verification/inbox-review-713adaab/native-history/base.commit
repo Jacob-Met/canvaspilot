@@ -1,0 +1,26 @@
+tree ea775021cbf300367369a169f584f1092347cf5c
+parent 55fe1e0a3c4ad85e1065f295e49d44722c3be32b
+parent c79688a8a8cf93f02cc2b94bf088b0c7ac257560
+author Jacob Metoyer <150724801+Jacob-Met@users.noreply.github.com> 1791463241 -0700
+committer GitHub <noreply@github.com> 1791463241 -0700
+gpgsig -----BEGIN PGP SIGNATURE-----
+ 
+ wsFcBAABCAAQBQJqx49JCRC1aQ7uu5UhlAAAcM0QAAN+J56tBr2/Lz00o2rZ6Pgq
+ 6Of8+IF96smhsOQXtpm7H5MgHywwxPmTEqobCkjMZql8dvLihGDiFOSESSNAXG8W
+ LWKJXg8DD+1oHgtljiCqqYwQiDjC7IW9Ug8Ci5WKmQbtFqQDPmU0Klk+drtoxvEo
+ sptEkYvkBZStuDzA6MFAPxZrv7j3TpF1nEJfsYZo8p6eY4LoDZDAm7wt/atvvuUm
+ GB3teZcU9WsvGqbKFd1HCvlFPMTnE9UyCbVdH8XGcbwk4dGcSg7VCS30q/eNEqZy
+ NkoExz4GY2UhnQ+fAX3TO1EdFlU2+V9wgOJIon5lRC+kkCHEg+zX5IC6Ya+wubOQ
+ sd04iF0W9M1BD4khZ/vcFoiqK3luy5Z5A3aqrc99Ua/9U+BLgi4kEneXMZta7Zsf
+ tGyJNHPx7v0aLrA2FlIiQM7DkWUBMKmHq5QDQuriXh80M2jMoQ/sXlJGZ16mHxO3
+ mFTjeJEALf6ZysmMjhMCxaeISekJEH78e3FCLztd20rMdbdvybMbwzOQS+9IL/bh
+ pNT+1OQlECYpq8/0+tz9B2mg0C1lRV3I5owC3KSswo1XOqRYntTAZr2S7tWwsDsU
+ 0kOeIycMNeHccUqzfX8bPkoiWxVvkAYrBRc98H5RVJIobD3k39WeuYelPRdNAA5e
+ XXORzkkF/uphzLCbs+QC
+ =l7eY
+ -----END PGP SIGNATURE-----
+ 
+
+Merge pull request #35: complete opaque-link pagination across session and token transports
+
+Complete Canvas Link pagination across session and PAT reads

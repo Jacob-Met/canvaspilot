@@ -1,0 +1,87 @@
+{
+  "schema": "canvaspilot.inbox.independent_review.v1",
+  "reviewer": "chatgpt:/root/mac_execution",
+  "verdict": "approved",
+  "issue": "https://github.com/Jacob-Met/canvaspilot/issues/49",
+  "base": "ca2318fe7c56d2e4ec1b363ff8a945ab78bf4a0c",
+  "reviewed_commit": "db32bde55db5080ed7ee856faab5cf1a2b5c949a",
+  "reviewed_tree": "16e338cbcb783a57dad3357568a9539e1032c3f0",
+  "source_pins": {
+    "src/canvaspilot/api.py": "20a8c1cfc606aad5a289f2def35212296c115e40e83e88d7711f2019cd557bed",
+    "src/canvaspilot/cli.py": "f649ea4f19450221ca99ca5737bdc2f8caceafb26ad788b84117aa5790cf8ea7",
+    "src/canvaspilot/mcp_server.py": "29c875d2ac1d534cca50624d1ee30fb2bc7b697ca34208fafff51b9c32054375"
+  },
+  "stages": [
+    {
+      "source": "ca2318fe7c56d2e4ec1b363ff8a945ab78bf4a0c",
+      "case_groups": 10,
+      "passed": 0,
+      "failed": 10,
+      "errors": 0,
+      "skipped": 0,
+      "receipt": "baseline/receiving/receipt.json",
+      "receipt_sha256": "e20ba297f727c08ab2167c40ff40834432b3908e77342332df47ba0b4e195b83",
+      "meaning": "Missing CLI commands, undocumented inbox list scope, and observed synthetic unread-to-read changes through direct and MCP readers."
+    },
+    {
+      "source": "d1032f1eb44167282ef47803a42a86e25fb69001",
+      "case_groups": 10,
+      "passed": 10,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "receipt": "candidate/receiving/receipt.json",
+      "receipt_sha256": "9fd5877bb7e76032248a9e7e5b5471ba7c4cfb3f955a61ed84f18cbd9bd03b07"
+    },
+    {
+      "source": "d1032f1eb44167282ef47803a42a86e25fb69001",
+      "case_groups": 2,
+      "passed": 1,
+      "failed": 1,
+      "errors": 0,
+      "skipped": 0,
+      "evidence": "fragment-first/finding.json",
+      "meaning": "A string ID containing a fragment placed the false query flag in the fragment on the session path; direct Python and registered MCP calls returned read state after the synthetic unread state changed. Token mode preserved state."
+    },
+    {
+      "source": "db32bde55db5080ed7ee856faab5cf1a2b5c949a",
+      "case_groups": 14,
+      "passed": 14,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "receipt": "candidate-v2/receiving/receipt.json",
+      "receipt_sha256": "d164c3373f44c8ae720499d50840b865319350baa116f82e8fa4a182a8086733",
+      "meaning": "Same ten normal groups, same two fragment groups, plus two independent pre-transport admission groups. Each mode challenges 18 invalid Python values and the corresponding MCP inputs; no broker or provider request occurs. A narrow request-admission control preserves positive int/string and leading-zero strings without asserting server semantics for those spellings."
+    }
+  ],
+  "source_review": {
+    "receipt": "candidate-v2/source-preservation.json",
+    "sha256": "9d68691895035179d1def0dcf05714048dbcabd48a63c697dd82b7e60f570431",
+    "findings": [
+      "Only the six claimed paths differ from the pinned base.",
+      "All API syntax outside the two owned readers is unchanged.",
+      "MCP function bodies, signatures and all other metadata remain unchanged.",
+      "The CLI matches its original AST after removing exactly six added parser statements and one dispatch branch.",
+      "All other runtime source files are byte-identical.",
+      "The README retains all existing bytes around one added section."
+    ]
+  },
+  "reviewed_behavior": [
+    "Explicit false survives real token HTTPX and session-broker envelope encoding for admitted identifiers.",
+    "Synthetic unread, read and archived states and complete nested/Unicode JSON are preserved.",
+    "Default inbox mapping omits scope; all documented named scopes retain server-side selection.",
+    "Opaque continuation queries preserve order and are not rebuilt with first-page filters.",
+    "Later-page auth, shape and cycle errors never return partial lists as success.",
+    "Actual CLI JSON and registered MCP stdio deliver the expected payloads, errors and unchanged 36-tool inventory.",
+    "The fixed shared reader rejects malformed ID spelling/type before transport; descriptions explain positive decimal admission."
+  ],
+  "limits": [
+    "Authored loopback contract fixtures; not a real school, Canvas, browser, SSO, cookie or notification receiver.",
+    "The session fixture receives the actual broker HTTP envelope and models provider responses; no Playwright execution is claimed.",
+    "All remote connections in parent/child receiving are restricted to the fixture port; attachment URLs remain inert metadata.",
+    "No owner source, borrowed dependency environment, live profile or shared cache was modified; no dependency downloads.",
+    "Valid-ID v1 evidence remains valid for that frozen source, but its original fragment failure is preserved and resolved only by v2.",
+    "Root's separate author/inherited test results are not represented as independent replays here."
+  ]
+}

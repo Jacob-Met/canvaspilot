@@ -1,0 +1,13 @@
+{
+  "command": [
+    "git",
+    "clone",
+    "--shared",
+    "--no-checkout",
+    "/home/jacob/canvaspilot-module-progress-source-58d79b68",
+    "/tmp/canvaspilot-inbox-713adaab"
+  ],
+  "exit": 0,
+  "stdout": "",
+  "stderr": "Cloning into '/tmp/canvaspilot-inbox-713adaab'...\ndone.\n"
+}

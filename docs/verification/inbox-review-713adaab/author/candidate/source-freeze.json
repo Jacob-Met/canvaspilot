@@ -1,0 +1,32 @@
+{
+  "schema": "canvaspilot.inbox-source-freeze.v1",
+  "commit": "d1032f1eb44167282ef47803a42a86e25fb69001",
+  "tree": "f791b50bf1eb85d9a54c11d00f67d6cbcfcca2c7",
+  "base": "ca2318fe7c56d2e4ec1b363ff8a945ab78bf4a0c",
+  "files": {
+    "README.md": {
+      "sha256": "2c21599af415df72018b3c8e72414dcf29372c3735170a793fd7adb73dc1c976",
+      "bytes": 19816
+    },
+    "docs/inbox-review.md": {
+      "sha256": "65e2c5ef09d72d4f09d6a02988c4d684e3cdb8bc3ea09fb7688152dc54e5b292",
+      "bytes": 3500
+    },
+    "src/canvaspilot/api.py": {
+      "sha256": "f2513fb4e718c5c2b58ce589885650f3e41e7e9487eaa4d3cfc7b2bd3a24ea49",
+      "bytes": 27783
+    },
+    "src/canvaspilot/cli.py": {
+      "sha256": "f649ea4f19450221ca99ca5737bdc2f8caceafb26ad788b84117aa5790cf8ea7",
+      "bytes": 13873
+    },
+    "src/canvaspilot/mcp_server.py": {
+      "sha256": "4a997817e7939f8dd8f0076a60854fc5385b3025406676db7e3bbbee08906682",
+      "bytes": 13148
+    },
+    "tests/test_inbox_review.py": {
+      "sha256": "935f5cc0b82115fa76595ccc4a8d0849e241b8e9845065ecfd209e706850d805",
+      "bytes": 10152
+    }
+  }
+}

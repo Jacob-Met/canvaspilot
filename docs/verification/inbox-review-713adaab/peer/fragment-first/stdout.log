@@ -1,0 +1,14 @@
+.F                                                                       [100%]
+=================================== FAILURES ===================================
+______ test_fragment_identifier_cannot_discard_read_preservation[session] ______
+test_fragment_boundary.py:42: in test_fragment_identifier_cannot_discard_read_preservation
+    assert api_after == before, "Python string ID discarded the false flag and changed provider state"
+E   AssertionError: Python string ID discarded the false flag and changed provider state
+E   assert [{'id': 501, ...pt</p>', ...}] == [{'id': 501, ...pt</p>', ...}]
+E     
+E     At index 0 diff: {'id': 501, 'subject': '明日の予定 — Åsa 🧭', 'workflow_state': 'read', 'last_message': 'é, שלום; <p>kept</p>', 'last_message_at': '2026-10-08T12:00:00Z', 'message_count': 2, 'subscribed': True, 'private': True, 'starred': False, 'properties': ['attachments'], 'audience': [17, 6], 'audience_contexts': {'courses': {'42': ['StudentEnrollment']}, 'groups': {}}, 'avatar_url': 'https://media.example.invalid/avatars/17', 'participants': [{'id': 17, 'name': 'Åsa 🧭', 'full_name': 'Åsa Example', 'uuid': 'fixture-17', 'extension': {'roles': [None, False]}}, {'id': 6, ...
+E     
+E     ...Full output truncated (2 lines hidden), use '-vv' to show
+=========================== short test summary info ============================
+FAILED test_fragment_boundary.py::test_fragment_identifier_cannot_discard_read_preservation[session]
+1 failed, 1 passed in 4.71s

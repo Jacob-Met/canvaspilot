@@ -1,0 +1,23 @@
+{
+  "payload": {
+    "key": "claim:canvaspilot-inbox-review-713adaab",
+    "value": "active_source_implementation",
+    "text": "External source contributor estate-713adaab/root owns CanvasPilot issue49 inbox review. Isolated native source /tmp/canvaspilot-inbox-713adaab, commit d1032f1eb44167282ef47803a42a86e25fb69001 / tree f791b50bf1eb85d9a54c11d00f67d6cbcfcca2c7, parent ca2318fe7c56d2e4ec1b363ff8a945ab78bf4a0c. Source fence: two API inbox readers, separate additive CLI inbox/conversation blocks, existing inbox MCP descriptions/annotations, own tests/docs. Current contract explicitly disables auto_mark_as_read and uses default non-archived inbox. Native same-test baseline 5 pass/14 fail/0 errors preserved; candidate and separate mac_execution receiving are in progress, not yet qualified/integrated. Existing grade/history, assignment projection, calendar/provider, pagination, broker/auth and feedback owners retained. Initial /home capacity guard stopped before any write; actual small source and evidence use the separate /tmp tmpfs and must be published through Git for durable retention. Reuse existing dependencies read-only. No school/profile/browser data, service or task/goal lease. Public ownership https://github.com/Jacob-Met/canvaspilot/issues/49."
+  },
+  "event": {
+    "seq": 4122,
+    "event_id": "cev_dba54884ac9d4b6bac617d4e",
+    "event_type": "conscience.decision",
+    "actor": "chatgpt:/root/713adaab",
+    "payload": {
+      "key": "claim:canvaspilot-inbox-review-713adaab",
+      "value": "active_source_implementation",
+      "text": "External source contributor estate-713adaab/root owns CanvasPilot issue49 inbox review. Isolated native source /tmp/canvaspilot-inbox-713adaab, commit d1032f1eb44167282ef47803a42a86e25fb69001 / tree f791b50bf1eb85d9a54c11d00f67d6cbcfcca2c7, parent ca2318fe7c56d2e4ec1b363ff8a945ab78bf4a0c. Source fence: two API inbox readers, separate additive CLI inbox/conversation blocks, existing inbox MCP descriptions/annotations, own tests/docs. Current contract explicitly disables auto_mark_as_read and uses default non-archived inbox. Native same-test baseline 5 pass/14 fail/0 errors preserved; candidate and separate mac_execution receiving are in progress, not yet qualified/integrated. Existing grade/history, assignment projection, calendar/provider, pagination, broker/auth and feedback owners retained. Initial /home capacity guard stopped before any write; actual small source and evidence use the separate /tmp tmpfs and must be published through Git for durable retention. Reuse existing dependencies read-only. No school/profile/browser data, service or task/goal lease. Public ownership https://github.com/Jacob-Met/canvaspilot/issues/49."
+    },
+    "payload_sha256": "ad8615c66fcee4e01bd130be7f2ecb29b83ac1de2458e456bf4a39cc6238b427",
+    "branch": "main",
+    "prev_hash": "985e8656c1f0ba5ea6633a4a01349f7cfb014dfd4d7e10858fa2f50255c659a4",
+    "event_hash": "7ef01d6b14f452daa56ef8faec645fd3a8221151cc32a49ed48cf7107ee8e417",
+    "created_at": 1791465580.335101
+  }
+}

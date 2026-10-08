@@ -1,0 +1,42 @@
+{
+  "schema": "canvaspilot.inbox.composition_setup_stops.v1",
+  "reviewer": "chatgpt:/root/mac_execution",
+  "basis": "Contemporaneous tool observations and current read-only partial-file identity; no separate pytest log exists because these attempts stopped before tests.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "stage": "setup",
+      "observed_failure": "Immutable source-copy write encountered OSError 122 (Disk quota exceeded). The subsequent source admission check stopped on missing api.py before pytest. The partial __init__.py was zero bytes.",
+      "tests_started": 0,
+      "path": "/tmp/canvaspilot-inbox-independent-713adaab/composed/src/canvaspilot/__init__.py",
+      "readback": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "attempt": 2,
+      "stage": "setup",
+      "observed_failure": "Writing the attempted /tmp runner encountered OSError 122. A subsequent Python syntax preflight stopped at an unterminated string at line 79 before pytest. This incomplete file is not the successful driver.",
+      "tests_started": 0,
+      "path": "/tmp/canvaspilot-inbox-independent-713adaab/run_composed_receiving.py",
+      "readback": {
+        "bytes": 4096,
+        "sha256": "410dbb1767562d003ff056cee2bea12a335fe9c3069909ef640d36d2eaf8ca66"
+      }
+    }
+  ],
+  "recovery": "One subsequent actual pytest execution used the same UID, a small private /dev/shm result placement, the existing read-only interpreter, and the owner's frozen source directory bound read-only. No source copy, dependency download, shared cleanup, elevated identity, profile access or network-guard expansion was used.",
+  "successful_driver": "run_composed_receiving.py",
+  "successful_driver_pin": {
+    "bytes": 5256,
+    "sha256": "48325508dd0cd96964a5b18d188a7371f9eb974e3a64f09e4cd4dbdc5e5a47d4"
+  },
+  "successful_receipt": "receipt.json",
+  "successful_counts": {
+    "tests": 14,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  }
+}

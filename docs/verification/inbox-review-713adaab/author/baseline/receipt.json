@@ -1,0 +1,51 @@
+{
+  "schema": "canvaspilot.inbox-author-baseline.v1",
+  "base": "ca2318fe7c56d2e4ec1b363ff8a945ab78bf4a0c",
+  "command": [
+    "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+    "-B",
+    "-m",
+    "pytest",
+    "tests/test_inbox_review.py",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "--basetemp",
+    "/tmp/canvaspilot-inbox-evidence-713adaab/baseline/fixtures",
+    "--junitxml",
+    "/tmp/canvaspilot-inbox-evidence-713adaab/baseline/results.xml"
+  ],
+  "started": "2026-10-08T13:06:52.549567+00:00",
+  "finished": "2026-10-08T13:07:10.251271+00:00",
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "exit_code": 1,
+  "summary": {
+    "tests": 19,
+    "failures": 14,
+    "errors": 0,
+    "skipped": 0
+  },
+  "source_before": {
+    "src/canvaspilot/api.py": "fe147e5d3943e7299f400e7607385a7c8f02a68aeff07f72b3219f5c70c7bb5b",
+    "src/canvaspilot/cli.py": "34ca64ec5075a51fe3dfc4de15480fa2daf53c690c5490e01c65322eb809a9c4",
+    "src/canvaspilot/mcp_server.py": "9ca3a1733167217730eabb5a083fcc72d7d4273ddb36ef5c0306f22ee97c8257",
+    "src/canvaspilot/client.py": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797",
+    "src/canvaspilot/session_broker.py": "749e11c92d6d56d54ccf208dda6784cb2d43ac3b837188f5d82bfe73c3129e8e",
+    "src/canvaspilot/bundle.py": "7a5600680c22f3cce5d512ed96137de0171bcca7df6a8c46baa8c09143de3168",
+    "pyproject.toml": "555ad3c7e338d38ae5feabc06c0c07503f22d9c732a9af153c7706c63d2b3c63",
+    "tests/test_inbox_review.py": "935f5cc0b82115fa76595ccc4a8d0849e241b8e9845065ecfd209e706850d805"
+  },
+  "source_after": {
+    "src/canvaspilot/api.py": "fe147e5d3943e7299f400e7607385a7c8f02a68aeff07f72b3219f5c70c7bb5b",
+    "src/canvaspilot/cli.py": "34ca64ec5075a51fe3dfc4de15480fa2daf53c690c5490e01c65322eb809a9c4",
+    "src/canvaspilot/mcp_server.py": "9ca3a1733167217730eabb5a083fcc72d7d4273ddb36ef5c0306f22ee97c8257",
+    "src/canvaspilot/client.py": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797",
+    "src/canvaspilot/session_broker.py": "749e11c92d6d56d54ccf208dda6784cb2d43ac3b837188f5d82bfe73c3129e8e",
+    "src/canvaspilot/bundle.py": "7a5600680c22f3cce5d512ed96137de0171bcca7df6a8c46baa8c09143de3168",
+    "pyproject.toml": "555ad3c7e338d38ae5feabc06c0c07503f22d9c732a9af153c7706c63d2b3c63",
+    "tests/test_inbox_review.py": "935f5cc0b82115fa76595ccc4a8d0849e241b8e9845065ecfd209e706850d805"
+  },
+  "stdout_sha256": "27b27682fdbd36fb0a132f1be3c83a43484e91034925afe196845429a2023461",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "fixture_limit": "Authored loopback HTTP models the published Canvas default; no actual school, saved session or message state was contacted."
+}

@@ -1,0 +1,14 @@
+{
+  "command": [
+    "git",
+    "-C",
+    "/tmp/canvaspilot-inbox-713adaab",
+    "remote",
+    "set-url",
+    "origin",
+    "https://github.com/Jacob-Met/canvaspilot.git"
+  ],
+  "exit": 0,
+  "stdout": "",
+  "stderr": ""
+}

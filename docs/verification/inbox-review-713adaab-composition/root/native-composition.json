@@ -1,0 +1,25 @@
+{
+  "schema": "canvaspilot.inbox.current-main-native-composition.v1",
+  "created_utc": "2026-10-08T13:59:49.542537+00:00",
+  "source_commit": "6b94efe9ff1f117fe4c2f1dfca595003a283d988",
+  "tree": "2fbc6ac949bbdc5c3b048f93137197621ed81546",
+  "parents": [
+    "4c850261e413af32fb78f4fa389247415f225d1c",
+    "0d1898544a90079e2dcc7ceb3fa4bc6bca88a2bc"
+  ],
+  "received_main": "0d1898544a90079e2dcc7ceb3fa4bc6bca88a2bc",
+  "received_main_tree": "de9fca025ebe325807bd53cd9b7f3b6be50c6d19",
+  "changed_paths": 164,
+  "composed_source_sha256": {
+    "src/canvaspilot/api.py": "f4255518fe2627b0f2cd9aeacf0b8662645899469f4ff3ce9963e4784874d8b8",
+    "src/canvaspilot/cli.py": "e1c98acdbe462ed5db56eecd8ea5f66342ce259cc7243ed32e56224f09dea090",
+    "README.md": "72a2ecc022a52acf860502f28b67712aa4342727477ecb7eed2a7a2bad24c3bc"
+  },
+  "mcp_source_sha256": "29c875d2ac1d534cca50624d1ee30fb2bc7b697ca34208fafff51b9c32054375",
+  "tests_sha256": "b97139af7b9cc51c2c04238eb89d1059745510daf92d44267117ce3d037ff172",
+  "all_other_paths_preserved_from_current_main": true,
+  "ruff_exit": 0,
+  "ruff_stdout_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+  "ruff_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "status": ""
+}
