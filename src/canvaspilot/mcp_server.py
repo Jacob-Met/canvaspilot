@@ -52,6 +52,20 @@ async def canvas_get_course(course_id: str) -> str:
 
 
 @mcp.tool(
+    description=(
+        "Review current-user Canvas course totals, assignment-group weights/drop rules, "
+        "and reported assignment grades/status. Hidden, unposted and absent grades stay "
+        "unavailable. Current/final and current-period fields remain distinct; no grade "
+        "is recalculated. Counts cover returned rows, not proven complete collections."
+    ),
+    annotations=ToolAnnotations(readOnlyHint=True, destructiveHint=False, idempotentHint=True),
+    structured_output=False,
+)
+async def canvas_grade_review(course_id: str) -> str:
+    return _dump(_get_api().grade_review(course_id))
+
+
+@mcp.tool(
     description="List assignments for a course. Default detail=compact (no description bodies). Use detail=full or canvas_assignment_brief for prompts.",
     structured_output=False,
 )

@@ -13,8 +13,9 @@ Same architecture as OpenCLI-style web agents (persistent browser session → si
 - **Full REST surface** — courses, assignments, modules, pages, files, discussions, announcements, planner, inbox, calendar, activity stream, submissions, and **quizzes** (list/questions/submissions/start/complete)
 - **Agent-shaped digests** — `assignment_brief` (cleaned prompt + rubric), `sync_summary` (courses + upcoming), `submission_status`
 - **Submission feedback** — self submission comments and rubric assessments alongside current-attempt and grading metadata
+- **Course grade review** — reported totals, assignment-group rules and each returned assignment's own grade/status, with hidden and unknown values kept explicit
 - **Fixture mode** — offline dict backend for tests and CI; no Canvas required
-- **36 MCP tools**, one stdio server, one env var for the host (`CANVAS_BASE_URL`) plus either a PAT or a running session broker
+- **37 MCP tools**, one stdio server, one env var for the host (`CANVAS_BASE_URL`) plus either a PAT or a running session broker
 - **Course folder browsing** — select nested folders and inspect bounded file-metadata pages through CLI, MCP or Python
 - **Module progress checklist** — review reported completion, remaining requirements and module locks through CLI, MCP or Python
 
@@ -69,6 +70,7 @@ canvaspilot courses
 canvaspilot sync
 canvaspilot brief <course_id> <assignment_id>
 canvaspilot feedback <course_id> <assignment_id>
+canvaspilot grade-review <course_id>
 ```
 
 `canvaspilot sync` orders upcoming assignments by deadline across the selected
@@ -88,6 +90,12 @@ With a PAT instead:
 export CANVAS_API_TOKEN=...   # broker not needed
 canvaspilot courses
 ```
+
+To inspect Canvas-reported course totals and assignment grades together, run
+`canvaspilot grade-review 42` or call the read-only MCP `canvas_grade_review` tool.
+The [grade review guide](docs/grade-review.md) explains the original Canvas field
+names, group/drop-rule context, visibility rules and returned-row limits. No
+replacement course grade or missing-work status is inferred.
 
 ## Assignment briefs
 
@@ -147,7 +155,7 @@ Tools exposed (all prefixed `canvas_`):
 | Area | Tools |
 |------|-------|
 | Identity | `whoami`, `sync_summary`, `planner_items`, `activity_stream`, `list_todo_items`, `list_enrollments` |
-| Courses | `list_courses`, `get_course`, `list_modules`, `module_progress`, `list_pages`, `get_page`, `list_files`, `browse_files`, `list_announcements` |
+| Courses | `list_courses`, `get_course`, `grade_review`, `list_modules`, `module_progress`, `list_pages`, `get_page`, `list_files`, `browse_files`, `list_announcements` |
 | Assignments | `list_assignments`, `get_assignment`, `assignment_brief`, `submission_status`, `submission_feedback`, `submit_assignment_text` |
 | Discussions | `list_discussion_topics`, `get_discussion`, `post_discussion_reply` |
 | Quizzes | `list_quizzes`, `get_quiz`, `list_quiz_questions`, `list_quiz_submissions`, `start_quiz_submission`, `complete_quiz_submission` |

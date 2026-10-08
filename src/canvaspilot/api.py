@@ -170,6 +170,12 @@ class CanvasAPI:
             if isinstance(c, dict) and c.get("id")
         ]
 
+    def grade_review(self, course_id: int | str) -> dict[str, Any]:
+        """Review only Canvas-reported current-user grades and group context."""
+        from canvaspilot.grade_review import grade_review
+
+        return grade_review(self.client, course_id)
+
     def list_assignments(
         self,
         course_id: int | str,

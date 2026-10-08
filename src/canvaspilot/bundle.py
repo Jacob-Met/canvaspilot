@@ -15,6 +15,7 @@ CURATED_MCP_TOOLS: tuple[str, ...] = (
     "canvas_whoami",
     "canvas_list_courses",
     "canvas_get_course",
+    "canvas_grade_review",
     "canvas_list_assignments",
     "canvas_get_assignment",
     "canvas_assignment_brief",
