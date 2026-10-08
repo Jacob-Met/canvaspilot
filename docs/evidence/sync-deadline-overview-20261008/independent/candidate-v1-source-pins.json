@@ -1,0 +1,152 @@
+{
+  "candidate_local_commit": "770e289be705414ff305d2b99cec3633085e2356",
+  "candidate_tree": "e1ccc4d7a6eb1081092aab59382691a22c090ac5",
+  "upstream_base": "874ad9c073fc5bab625e583849dbbe4eaf7fc6af",
+  "upstream_base_tree": "de36f9d9ac3e8d93083b1ca8fba4ebc8b00fb62e",
+  "original_baseline": "b0655cfc6f298c956fcdd27fbba32e3c5609516f",
+  "files": {
+    ".github/dependabot.yml": {
+      "sha256": "883b95e3be554fbadd92b315e4a8c6ea6ca688b64924e22dd61222b07f683507",
+      "git_blob_sha": "5ace4600a1f26e6892982f3e2f069ebfab108d87",
+      "bytes": 118
+    },
+    ".github/workflows/ci.yml": {
+      "sha256": "62f17b95af03d1ff8a172f168282b405fefcab3a5f1094c70e618b44920bd0ff",
+      "git_blob_sha": "ef7bbebe192c0db55dc4467e064ba44805c13446",
+      "bytes": 708
+    },
+    ".gitignore": {
+      "sha256": "8acd3d428eb526e6dab777cb8911614c85a5d05a13c5e60066c6f61e0e24e0c2",
+      "git_blob_sha": "22c76241a0bda223ac64d3c9e25f0ed5c08594ca",
+      "bytes": 271
+    },
+    "LICENSE": {
+      "sha256": "85144488dcaf127ecd6842af9b19a72a2448c7b48ab831140ace32dac8090314",
+      "git_blob_sha": "49422571fde440401be167dfec1cdc46a89f62d2",
+      "bytes": 1075
+    },
+    "README.md": {
+      "sha256": "66fad20c1cc6dcd2ecb06f0ee99d0c19040f11dd3d2dc1e22e1d25cca1872c5a",
+      "git_blob_sha": "6fe037c3e8ed1bd514a2258e898aa366a6c1d8e0",
+      "bytes": 8440
+    },
+    "docs/API.md": {
+      "sha256": "c73735169bd03c148e2b1b9d93084c6e8bc1bc9bc7a3f87e39b91dbb34e74512",
+      "git_blob_sha": "727ce2347ec7925c9722ee8e939e2cb7a0e200f1",
+      "bytes": 5089
+    },
+    "docs/SYNC.md": {
+      "sha256": "670bf777a72fc56731a0e716a8cc606fd42eb69429de821028b98b0c6a67af7f",
+      "git_blob_sha": "239cb845dae34a476cb2a1aee91f054051ae99b6",
+      "bytes": 5588
+    },
+    "docs/evidence/offline-demo-20260909.json": {
+      "sha256": "04fd3c7b83dcace2ebe0436e5acaab3f3a135b690cab4a3e35f3067c75c77c5e",
+      "git_blob_sha": "ac5f20c872557a09ad6d179f67104c8a1377c032",
+      "bytes": 934
+    },
+    "pyproject.toml": {
+      "sha256": "555ad3c7e338d38ae5feabc06c0c07503f22d9c732a9af153c7706c63d2b3c63",
+      "git_blob_sha": "76eba6d30696b4f2733539cd47df6e178bc0f585",
+      "bytes": 1353
+    },
+    "scripts/inventory_pass.py": {
+      "sha256": "b2669747165f47b023f666bbb01657f47427d680ea8ff8cbf35203353ba05d06",
+      "git_blob_sha": "dda42bf3ac3679bc1936917ab1f981a8c6849811",
+      "bytes": 10515
+    },
+    "scripts/readonly_sweep.py": {
+      "sha256": "9176e6da49560ed19d55a454b3d552ca040a15412029b3940886266172fecb22",
+      "git_blob_sha": "53549cf6da463fc2c995bb012c00658d7fef8afe",
+      "bytes": 5828
+    },
+    "src/canvaspilot/__init__.py": {
+      "sha256": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5",
+      "git_blob_sha": "74a7a6087bf81fd7c75c15769b30408039618e0f",
+      "bytes": 561
+    },
+    "src/canvaspilot/api.py": {
+      "sha256": "0446e7ee34942d19cf93461a3f9fa9a43383dce4390b4bd037e94b0f33dff222",
+      "git_blob_sha": "ea831454f8e0a8d6754a72b8703b8bfd81c246fb",
+      "bytes": 20606
+    },
+    "src/canvaspilot/bundle.py": {
+      "sha256": "db1ca6da89ea4f1a07c327f56ab40a39fe89e22c91034ed2be8fb3e497a6e696",
+      "git_blob_sha": "5be38ec248d1e7efc54de9ee62e2e3be4c71f77c",
+      "bytes": 2550
+    },
+    "src/canvaspilot/cli.py": {
+      "sha256": "1af004e5d5e3ca4aa23ac1f4e3f49eae7ab9b290c1f250705e040af9d3421897",
+      "git_blob_sha": "fb04e882c966bca2845b1ef6ec06c78ef514c3d2",
+      "bytes": 8198
+    },
+    "src/canvaspilot/client.py": {
+      "sha256": "ff6b68ebee132e2cddb0c588d87927ba68cf158ca97e9074803d9769a5bc19f5",
+      "git_blob_sha": "ef2dd3f418242b02edae49a1d37a516101a30cf8",
+      "bytes": 12478
+    },
+    "src/canvaspilot/mcp_server.py": {
+      "sha256": "b765930008d1d1123f351771d6edab182af9228617a3b7a9791103a66ba43452",
+      "git_blob_sha": "c43ef611615a33b3178fe413f5d6254543b1f2e6",
+      "bytes": 10506
+    },
+    "src/canvaspilot/offline_demo.py": {
+      "sha256": "2389f3ccc1b6db5995be0d90e014ea9345e3029aa5546a5b2dcf12c1197e6d4d",
+      "git_blob_sha": "9d2cfd260d8db052b8183e3ec4fc9626a5bb2b9a",
+      "bytes": 4124
+    },
+    "src/canvaspilot/session_broker.py": {
+      "sha256": "2a106130c344aefebb23b078cd93b5d3ca3afd7f5325ae5fac2fb8a7251780cc",
+      "git_blob_sha": "ba23543f62e6be9f611ae06260b91f239206cb23",
+      "bytes": 12151
+    },
+    "tests/test_broker_loopback_bind.py": {
+      "sha256": "c889696ea86f73f0aa00b1b86f623855c92cd6eccef6b7764910e0df99b5c9e5",
+      "git_blob_sha": "fd8971cefe9da9bb8f7832d81c9a26c5725eda86",
+      "bytes": 3327
+    },
+    "tests/test_broker_pagination.py": {
+      "sha256": "da1824334f12fe1661e7c33404eef550642f366239ff1e6016b6868c38eabf7b",
+      "git_blob_sha": "131bc28eaaee50e931d87bee08554bd1287fbe44",
+      "bytes": 5217
+    },
+    "tests/test_broker_readonly.py": {
+      "sha256": "fd9baae5e8f176636eb5377fee753facd87c136416dcc2e3ec252090aad9d6c5",
+      "git_blob_sha": "fa609760903148b6d55623e6e3b79f6ffd3395b0",
+      "bytes": 4746
+    },
+    "tests/test_bundle_api.py": {
+      "sha256": "a3c200027083582815bcdacf8b19f68a2a7f2b10597e4ae3270c819c54639615",
+      "git_blob_sha": "d42f4cca2f1f08203d831f098aa1d9f82d3d9f78",
+      "bytes": 1657
+    },
+    "tests/test_fixture.py": {
+      "sha256": "3f53176abf7ee425b1ff8d62a0e4b7f84d2e47e0b0ff9f03adae152301bc23be",
+      "git_blob_sha": "fbee86133431fbe2b1eabaa598f8de094fc18b0c",
+      "bytes": 1497
+    },
+    "tests/test_offline_demo.py": {
+      "sha256": "ddc7a133e76f987decb5774b00e6d6c6b8973d5895d6c4a4ae5ea6d6e6bb1154",
+      "git_blob_sha": "96b0f352f9c8dfe4c268c32ddbf0027506a010e2",
+      "bytes": 2226
+    },
+    "tests/test_strip_html.py": {
+      "sha256": "3445579d5d8e0863e3331fd8fe54de7a45bc88db5546186eb60dc70865dce915",
+      "git_blob_sha": "9cac253f89820d36375b364daec9b34bb2d78e25",
+      "bytes": 1493
+    },
+    "tests/test_sync_summary.py": {
+      "sha256": "5e40e9207a53d423a139db7de9d43898cf95e26877f351baf15bdc129206a424",
+      "git_blob_sha": "f15e781cd0580324c668bec4181ed238b9cacb29",
+      "bytes": 10415
+    }
+  },
+  "scope": [
+    "README.md",
+    "docs/SYNC.md",
+    "src/canvaspilot/api.py",
+    "src/canvaspilot/cli.py",
+    "src/canvaspilot/mcp_server.py",
+    "tests/test_sync_summary.py"
+  ]
+}

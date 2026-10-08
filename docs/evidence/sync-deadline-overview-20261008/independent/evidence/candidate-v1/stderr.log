@@ -1,0 +1,17 @@
+test_cli_invalid_limits_do_not_construct_client (__main__.IndependentSyncReview.test_cli_invalid_limits_do_not_construct_client) ... ok
+test_cli_positive_limits_delegate_to_real_fixture_and_close (__main__.IndependentSyncReview.test_cli_positive_limits_delegate_to_real_fixture_and_close) ... ok
+test_course_lookup_failure_is_not_reported_as_empty_success (__main__.IndependentSyncReview.test_course_lookup_failure_is_not_reported_as_empty_success) ... ok
+test_default_limits_choose_earliest_then_merge_courses (__main__.IndependentSyncReview.test_default_limits_choose_earliest_then_merge_courses) ... ok
+test_direct_mcp_invalid_limits_reject_before_api_lookup (__main__.IndependentSyncReview.test_direct_mcp_invalid_limits_reject_before_api_lookup) ... ok
+test_extreme_valid_dates_and_microseconds_sort_without_float_loss (__main__.IndependentSyncReview.test_extreme_valid_dates_and_microseconds_sort_without_float_loss) ... ok
+test_invalid_api_limits_reject_before_lookup (__main__.IndependentSyncReview.test_invalid_api_limits_reject_before_lookup) ... ok
+test_offsets_same_instant_and_source_values_are_stable (__main__.IndependentSyncReview.test_offsets_same_instant_and_source_values_are_stable) ... ok
+test_registered_mcp_invalid_limits_reject_before_api_lookup (__main__.IndependentSyncReview.test_registered_mcp_invalid_limits_reject_before_api_lookup) ... ok
+test_registered_mcp_schema_and_explicit_limits (__main__.IndependentSyncReview.test_registered_mcp_schema_and_explicit_limits) ... ok
+test_returned_counts_distinguish_omissions_empty_and_failure (__main__.IndependentSyncReview.test_returned_counts_distinguish_omissions_empty_and_failure) ... ok
+test_unknown_due_values_remain_after_known_dates (__main__.IndependentSyncReview.test_unknown_due_values_remain_after_known_dates) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.044s
+
+OK
