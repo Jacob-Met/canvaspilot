@@ -1,0 +1,45 @@
+[Reading 41 lines from start (total: 41 lines, 0 remaining)]
+
+{
+  "utc": "2026-10-08T14:30:18.895907+00:00",
+  "python": "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+  "runs": [
+    {
+      "name": "focused",
+      "command": [
+        "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+        "-B",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_page_export.py",
+        "--junitxml",
+        "/tmp/canvaspilot-page-packet-5f566b5ec8ef/docs/evidence/page-packet-5f566b5ec8ef/first-candidate/focused.xml"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "ruff",
+      "command": [
+        "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+        "-B",
+        "-m",
+        "ruff",
+        "check",
+        "--no-cache",
+        "src/canvaspilot/page_export.py",
+        "src/canvaspilot/cli.py",
+        "tests/test_page_export.py"
+      ],
+      "exit_code": 1
+    }
+  ],
+  "source_sha256": {
+    "src/canvaspilot/page_export.py": "00e97527f7e395a19d2b1938e4985bbe54d6413e2dae71b3a5799931af6b7e2f",
+    "src/canvaspilot/cli.py": "0a6061396f6043960971dd0db8fef372710bbd9b6f77a63c474f3714dbfa0238",
+    "tests/test_page_export.py": "0dfd22e31c6fb4c350855e13aa4d6bd2f3f983c2b59e5cdb9c3c8936261263ac",
+    "tests/fixtures/page_packet.json": "c5d348db60489544c4c2291170d18528f617981a374326c6d3c9059e490fd82b"
+  }
+}
+
+[executed on device: hamon-thinkpad (d55b2499-5e82-4805-819a-d0d7ddea1efe)]

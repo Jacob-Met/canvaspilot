@@ -1,0 +1,7 @@
+Processing /Users/me/canvaspilot-page-packet-20261008-5f566b5ec8ef/evidence/announcements-receiving/wheels/canvaspilot-0.1.1-py3-none-any.whl
+Installing collected packages: canvaspilot
+  Attempting uninstall: canvaspilot
+    Found existing installation: canvaspilot 0.1.1
+    Uninstalling canvaspilot-0.1.1:
+      Successfully uninstalled canvaspilot-0.1.1
+Successfully installed canvaspilot-0.1.1

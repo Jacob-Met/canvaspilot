@@ -1,0 +1,179 @@
+{
+  "course": {
+    "id": 42,
+    "name": "Synthetic Linear Algebra",
+    "course_code": "FIX-MATH",
+    "hide_final_grades": false,
+    "apply_assignment_group_weights": true,
+    "has_grading_periods": true,
+    "has_weighted_grading_periods": false
+  },
+  "authenticated_user_id": 7,
+  "totals_visibility": "reported_fields_only",
+  "enrollments_state": "returned",
+  "enrollments": [
+    {
+      "context": {
+        "type": "student",
+        "role": "StudentEnrollment",
+        "user_id": 7,
+        "enrollment_state": "active",
+        "totals_for_all_grading_periods_option": false,
+        "current_grading_period_id": 5,
+        "current_grading_period_title": "Autumn"
+      },
+      "reported_totals": {
+        "computed_current_score": 0,
+        "computed_final_score": 0,
+        "computed_current_grade": null,
+        "computed_final_grade": null,
+        "current_period_computed_current_score": 12.5,
+        "current_period_computed_final_score": null
+      }
+    }
+  ],
+  "grading_periods_state": "returned",
+  "grading_periods": [
+    {
+      "id": 5,
+      "title": "Autumn",
+      "start_date": "2026-09-01"
+    }
+  ],
+  "assignment_scope": "all_returned_assignment_groups",
+  "assignment_groups": [
+    {
+      "id": 3,
+      "name": "Problem sets",
+      "position": 1,
+      "group_weight": 40,
+      "rules": {
+        "drop_lowest": 1,
+        "drop_highest": 0,
+        "never_drop": [
+          102
+        ]
+      },
+      "assignments_state": "returned",
+      "assignments": [
+        {
+          "fields": {
+            "id": 101,
+            "course_id": 42,
+            "assignment_group_id": 3,
+            "name": "Vector spaces",
+            "due_at": null,
+            "points_possible": 20,
+            "grading_type": "points",
+            "submission_types": [
+              "online_upload"
+            ],
+            "html_url": "https://school.invalid/courses/42/assignments/101"
+          },
+          "submission_state": "returned",
+          "submission": {
+            "grade_visibility": "reported_fields",
+            "fields": {
+              "id": 801,
+              "assignment_id": 101,
+              "user_id": 7,
+              "attempt": 1,
+              "workflow_state": "graded",
+              "posted_at": "2026-10-01T09:00:00Z",
+              "grade": "0",
+              "score": 0,
+              "entered_score": 1,
+              "points_deducted": 1,
+              "grade_matches_current_submission": true,
+              "assignment_visible": true,
+              "excused": false,
+              "missing": false,
+              "late": true
+            }
+          }
+        },
+        {
+          "fields": {
+            "id": 102,
+            "course_id": 42,
+            "assignment_group_id": 3,
+            "name": "Excused lab",
+            "points_possible": 0
+          },
+          "submission_state": "returned",
+          "submission": {
+            "grade_visibility": "not_posted",
+            "fields": {
+              "assignment_id": 102,
+              "user_id": 7,
+              "posted_at": null,
+              "excused": true
+            }
+          }
+        },
+        {
+          "fields": {
+            "id": 103,
+            "course_id": 42,
+            "assignment_group_id": 3,
+            "name": "Revised proof",
+            "points_possible": 100
+          },
+          "submission_state": "returned",
+          "submission": {
+            "grade_visibility": "reported_fields",
+            "fields": {
+              "assignment_id": 103,
+              "user_id": 7,
+              "attempt": 2,
+              "workflow_state": "submitted",
+              "posted_at": "2026-10-02T09:00:00Z",
+              "grade": "B",
+              "score": 85,
+              "grade_matches_current_submission": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Exams",
+      "position": 2,
+      "group_weight": 60,
+      "rules": null,
+      "assignments_state": "returned",
+      "assignments": [
+        {
+          "fields": {
+            "id": 201,
+            "course_id": 42,
+            "assignment_group_id": 4,
+            "name": "Future exam",
+            "due_at": "2026-12-01T12:00:00Z",
+            "points_possible": 100
+          },
+          "submission_state": "not_returned",
+          "submission": null
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "groups_returned": 2,
+    "assignments_returned": 4,
+    "groups_without_assignment_list": 0,
+    "submissions_not_returned": 1,
+    "submissions_null": 0,
+    "explicitly_not_posted": 1,
+    "explicitly_not_visible": 0,
+    "excused_true": 1,
+    "missing_true": 0,
+    "late_true": 1,
+    "grade_matches_current_submission_false": 1
+  },
+  "collection_complete": null,
+  "reader_source": "CanvasClient.get_paginated",
+  "upstream_response_shape": "not_observed",
+  "warnings": []
+}

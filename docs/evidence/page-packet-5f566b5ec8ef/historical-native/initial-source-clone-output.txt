@@ -1,0 +1,13 @@
+Process started with PID 3039347 (shell: /bin/bash)
+Initial output:
+{
+  "source": "/tmp/canvaspilot-page-packet-5f566b5ec8ef",
+  "head": "79a2f2b2cbb7e74128d731cf096c7e86f1942d4b",
+  "tree": "0114a6230c473c1ee1d01b99c7121c754b781d54",
+  "independent_objects": true,
+  "disk_free_after": 232165376,
+  "existing_qualified_python_candidates": []
+}
+
+
+[executed on device: hamon-thinkpad (d55b2499-5e82-4805-819a-d0d7ddea1efe)]

@@ -1,0 +1,109 @@
+{
+  "format": "canvas-comparison-current-main-composition-v2",
+  "worker": "estate-db371a37f4c8/canvas_integration",
+  "native_received_parent": "6c4d5d2e7526cddc1aa6c90bfbef2d1188382ad3",
+  "first_hosted_parent": "1bafdaa31f7789d8e561680cb6001bbe38b2da64",
+  "first_hosted_source_head": "e059cf8a8aa42dfc4b98f353bbfbbb79661ad7f0",
+  "current_main": "cf47942b395a6196e6f5dcb02b3865f64aa1c89b",
+  "current_main_tree": "0cd66bc6823a0dbdb98c3d88a3ab4677c6981e55",
+  "current_main_leaves": 1433,
+  "original_contribution_leaves": 13,
+  "only_shared_changed_paths": [
+    "README.md",
+    "src/canvaspilot/cli.py"
+  ],
+  "incoming_inherited_changes": {
+    "page_export_pr": 71,
+    "grade_export_pr": 79,
+    "planner_pr": 72,
+    "changed_leaves_from_first_parent": 230,
+    "shared_patches": [
+      {
+        "path": "README.md",
+        "status": "modified",
+        "additions": 16,
+        "deletions": 0,
+        "patch": "@@ -94,11 +94,21 @@ Read selected courses' calendar events and assignment deadlines together with\n timing, source identity and read limits. The same report is available through\n `canvas_course_agenda` in MCP.\n \n+Read your own planner items with `canvaspilot planner --start-date 2026-10-08 --end-date 2026-10-15`.\n+The [planner CLI guide](docs/planner-cli.md) explains native date filters,\n+personal notes, supplied completion metadata and complete-list error behavior.\n+The command uses the existing planner API and does not change any planner state.\n+\n To take selected course deadlines into a calendar application, save an explicit\n local snapshot with `canvaspilot export-calendar 42 77 --out deadlines.ics`.\n The [calendar export guide](docs/calendar-export.md) explains selection,\n undated omissions, snapshot limits and safe re-import expectations.\n \n+\n+To take explicitly selected course pages offline, use\n+`canvaspilot export-pages 42 course-introduction week-two-reading --out reading.html`.\n+The [page export guide](docs/page-export.md) explains numeric page IDs, the inert\n+original-source record, selection limits and protection of existing output.\n With a PAT instead:\n \n ```bash\n@@ -112,6 +122,12 @@ The [grade review guide](docs/grade-review.md) explains the original Canvas fiel\n names, group/drop-rule context, visibility rules and returned-row limits. No\n replacement course grade or missing-work status is inferred.\n \n+Save that same grade review for offline reading or printing with\n+`canvaspilot export-grade-review 42 --out course-grades.html`. The\n+[saved grade-review guide](docs/grade-review-export.md) explains reported totals,\n+assignment context, withheld/unknown values, the complete JSON download and\n+new-file protection.\n+\n ## Assignment briefs\n \n `canvaspilot brief <course_id> <assignment_id>`, the Python"
+      },
+      {
+        "path": "src/canvaspilot/cli.py",
+        "status": "modified",
+        "additions": 93,
+        "deletions": 0,
+        "patch": "@@ -82,6 +82,15 @@ def add_common(p: argparse.ArgumentParser) -> None:\n     add_common(grades)\n     grades.add_argument(\"course_id\", help=\"Positive numeric Canvas course ID\")\n \n+    grade_export = sub.add_parser(\n+        \"export-grade-review\", help=\"Save reported course grades to a new offline HTML file\",\n+    )\n+    add_common(grade_export)\n+    grade_export.add_argument(\"course_id\", type=_positive_int)\n+    grade_export.add_argument(\n+        \"--out\", required=True, type=Path, help=\"New HTML report; existing paths are protected\",\n+    )\n+\n     assigns = sub.add_parser(\"assignments\", help=\"List assignments for a course\")\n     add_common(assigns)\n     assigns.add_argument(\"course_id\")\n@@ -150,6 +159,14 @@ def add_common(p: argparse.ArgumentParser) -> None:\n     export.add_argument(\"--bucket\", choices=(\"upcoming\", \"past\", \"overdue\", \"undated\", \"ungraded\", \"unsubmitted\", \"all\"),\n                         default=\"upcoming\", help=\"Canvas assignment selection (default: upcoming)\")\n \n+\n+    page_export = sub.add_parser(\n+        \"export-pages\", help=\"Save explicitly selected course pages to a new offline HTML reading packet\"\n+    )\n+    add_common(page_export)\n+    page_export.add_argument(\"course_id\", help=\"Positive numeric Canvas course ID\")\n+    page_export.add_argument(\"pages\", nargs=\"+\", help=\"Page URL locators, or page_id:ID for an explicit numeric ID\")\n+    page_export.add_argument(\"--out\", required=True, type=Path, help=\"New HTML file; existing paths are protected\")\n     progress = sub.add_parser(\"module-progress\", help=\"Inspect reported module progress and requirements\")\n     add_common(progress)\n     progress.add_argument(\"course_id\", help=\"Positive numeric Canvas course ID\")\n@@ -199,6 +216,17 @@ def add_common(p: argparse.ArgumentParser) -> None:\n     quiz.add_argument(\"course_id\", type=_positive_int, help=\"Positive numeric Canvas course ID\")\n     quiz.add_argument(\"quiz_id\", type=_positive_int, help=\"Positive numeric Canvas quiz ID\")\n \n+    planner = sub.add_parser(\n+        \"planner\", help=\"Read your planner items without changing completion or visibility\",\n+    )\n+    add_common(planner)\n+    planner.add_argument(\n+        \"--start-date\", default=None, help=\"Native date filter: YYYY-MM-DD or ISO 8601 timestamp\",\n+    )\n+    planner.add_argument(\n+        \"--end-date\", default=None, help=\"Native date filter: YYYY-MM-DD or ISO 8601 timestamp\",\n+    )\n+\n     mcp = sub.add_parser(\"mcp\", help=\"Run MCP stdio server\")\n     add_common(mcp)\n \n@@ -268,6 +296,30 @@ def add_common(p: argparse.ArgumentParser) -> None:\n                 }), file=sys.stderr)\n                 raise SystemExit(1) from None\n             print(json.dumps(result, indent=2, allow_nan=False))\n+        elif args.cmd == \"export-grade-review\":\n+            import os\n+\n+            import httpx\n+\n+            from canvaspilot.calendar_export import write_calendar\n+            from canvaspilot.grade_review_export import build_grade_review_report\n+\n+            http_log = logging.getLogger(\"httpx\")\n+            previous_level = http_log.level\n+            http_log.setLevel(max(http_log.getEffectiveLevel(), logging.WARNING))\n+            try:\n+                if os.path.lexists(args.out):\n+                    raise FileExistsError(\"Output path already exists; choose a new HTML file\")\n+                content, report = build_grade_review_report(api, args.course_id)\n+                write_calendar(args.out, content)\n+            except (RuntimeError, httpx.HTTPError, ValueError, TypeError, OSError) as error:\n+                print(json.dumps({\n+                    \"ok\": False, \"error\": type(error).__name__, \"message\": str(error),\n+                }), file=sys.stderr)\n+                raise SystemExit(1) from None\n+            finally:\n+                http_log.setLevel(previous_level)\n+            print(json.dumps({\"ok\": True, \"path\": str(args.out), **report}, indent=2))\n         elif args.cmd == \"assignments\":\n             print(\n                 json.dumps(\n@@ -370,6 +422,26 @@ def add_common(p: argparse.ArgumentParser) -> None:\n                 }), file=sys.stderr)\n                 raise SystemExit(1) from None\n             print(json.dumps({\"ok\": True, \"output\": str(args.out), **report}, indent=2))\n+        elif args.cmd == \"planner\":\n+            import httpx\n+\n+            from canvaspilot.client import CanvasAuthError, CanvasPaginationError\n+\n+            http_log = logging.getLogger(\"httpx\")\n+            previous_level = http_log.level\n+            http_log.setLevel(max(http_log.getEffectiveLevel(), logging.WARNING))\n+            try:\n+                result = api.planner_items(\n+                    start_date=args.start_date, end_date=args.end_date,\n+                )\n+            except (CanvasAuthError, CanvasPaginationError, httpx.HTTPError, ValueError) as error:\n+                print(json.dumps({\n+                    \"ok\": False, \"error\": type(error).__name__, \"message\": str(error),\n+                }), file=sys.stderr)\n+                raise SystemExit(1) from None\n+            finally:\n+                http_log.setLevel(previous_level)\n+            print(json.dumps(result, indent=2, default=str))\n         elif args.cmd == \"agenda\":\n             import httpx\n \n@@ -439,6 +511,27 @@ def add_common(p: argparse.ArgumentParser) -> None:\n             finally:\n                 http_log.setLevel(previous_level)\n             print(json.dumps(result, indent=2))\n+        elif args.cmd == \"export-pages\":\n+            import os\n+\n+            import httpx\n+\n+            from canvaspilot.client import CanvasAuthError\n+            from canvaspilot.page_export import build_page_packet, write_page_packet\n+\n+            try:\n+                if os.path.lexists(args.out):\n+                    raise FileExistsError(\"Output path already exists; choose a new HTML file\")\n+                content, report = build_page_packet(api, args.course_id, args.pages)\n+                cleanup_warning = write_page_packet(args.out, content)\n+            except (CanvasAuthError, httpx.HTTPError, ValueError, TypeError, OSError) as error:\n+                print(json.dumps({\n+                    \"ok\": False, \"error\": type(error).__name__, \"message\": str(error),\n+                }), file=sys.stderr)\n+                raise SystemExit(1) from None\n+            if cleanup_warning:\n+                report[\"cleanup_warning\"] = cleanup_warning\n+            print(json.dumps({\"ok\": True, \"output\": str(args.out), **report}, indent=2))\n         elif args.cmd == \"module-progress\":\n             import httpx\n "
+      }
+    ]
+  },
+  "protected_source_exact": [
+    {
+      "path": "src/canvaspilot/api.py",
+      "git_blob": "3ec81dee60bc67d7a80d40b78e85d5c005441b99"
+    },
+    {
+      "path": "src/canvaspilot/client.py",
+      "git_blob": "1db4b1135305f7e410025ae7937f9a6cd349f020"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "git_blob": "ef7bbebe192c0db55dc4467e064ba44805c13446"
+    },
+    {
+      "path": "pyproject.toml",
+      "git_blob": "76eba6d30696b4f2733539cd47df6e178bc0f585"
+    }
+  ],
+  "comparison_spans": [
+    {
+      "part": "parser",
+      "sha256": "6ec0ba1a84cddf7b9a26e376b10c84e83c47de7929484da81e879737cd425b3e"
+    },
+    {
+      "part": "dispatch",
+      "sha256": "ba732683a45fa939a269b9bf2c7de33a705d7d7a24565351b5f0aaf801c88581"
+    },
+    {
+      "part": "README",
+      "sha256": "4b626965f95866ce245a6dbceaacf68df4c4ac53664fb18775e3fc13c9668402"
+    }
+  ],
+  "removing_only_exact_comparison_additions_reconstructs_current_cli_and_readme": true,
+  "standalone_product_files_exact": [
+    {
+      "path": "docs/submission-comparison.md",
+      "git_blob": "db1a10adf0d3b23ba88f4f0717b5a201f5470883"
+    },
+    {
+      "path": "src/canvaspilot/submission_comparison.py",
+      "git_blob": "f8e2b9bfef5bb799bd75c6c1f3c6e56366fcf9ad"
+    },
+    {
+      "path": "tests/fixtures/submission_comparison.json",
+      "git_blob": "d2b1002639523ee1d54843bbab016207dfcc2d75"
+    },
+    {
+      "path": "tests/test_submission_comparison.py",
+      "git_blob": "d064dc3512251052d6f0005e9a4774288ed0f8d4"
+    },
+    {
+      "path": "tests/test_submission_comparison_process.py",
+      "git_blob": "e06ecf06a889f587a9d17eb962d1fd6cc532342a"
+    }
+  ],
+  "composed_shared_files": [
+    {
+      "path": "src/canvaspilot/cli.py",
+      "bytes": 30290,
+      "sha256": "d2300120ccd5788e0781fa375010bae1765b7c6aa9c0b3ea75a86bbb5ea3b45e",
+      "git_blob": "728ca125aa39c7e66098f83ea2ed6b630e221422"
+    },
+    {
+      "path": "README.md",
+      "bytes": 25848,
+      "sha256": "de3671ffe4df167bd12bbaf7ae246b2bf371edd7292ce1f3bc911cbc2eef1e68",
+      "git_blob": "01f3e9ca6947171b5b40e650872bcff335e085c7"
+    }
+  ],
+  "no_product_execution_during_composition": true,
+  "native_boundary_unchanged": true,
+  "final_hosted_gate": "Required on this current-source composition before integration. Record exact actual checkout tree and full result in PR77; preserve the earlier native ENOSPC failure."
+}

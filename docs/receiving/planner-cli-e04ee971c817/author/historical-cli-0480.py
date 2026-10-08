@@ -78,19 +78,6 @@ def main(argv: list[str] | None = None) -> None:
         help="compact limits message text to 400 characters; full keeps the complete stripped text",
     )
 
-    grades = sub.add_parser("grade-review", help="Review Canvas-reported grades and assignment groups")
-    add_common(grades)
-    grades.add_argument("course_id", help="Positive numeric Canvas course ID")
-
-    grade_export = sub.add_parser(
-        "export-grade-review", help="Save reported course grades to a new offline HTML file",
-    )
-    add_common(grade_export)
-    grade_export.add_argument("course_id", type=_positive_int)
-    grade_export.add_argument(
-        "--out", required=True, type=Path, help="New HTML report; existing paths are protected",
-    )
-
     assigns = sub.add_parser("assignments", help="List assignments for a course")
     add_common(assigns)
     assigns.add_argument("course_id")
@@ -159,28 +146,10 @@ def main(argv: list[str] | None = None) -> None:
     export.add_argument("--bucket", choices=("upcoming", "past", "overdue", "undated", "ungraded", "unsubmitted", "all"),
                         default="upcoming", help="Canvas assignment selection (default: upcoming)")
 
-
-    page_export = sub.add_parser(
-        "export-pages", help="Save explicitly selected course pages to a new offline HTML reading packet"
-    )
-    add_common(page_export)
-    page_export.add_argument("course_id", help="Positive numeric Canvas course ID")
-    page_export.add_argument("pages", nargs="+", help="Page URL locators, or page_id:ID for an explicit numeric ID")
-    page_export.add_argument("--out", required=True, type=Path, help="New HTML file; existing paths are protected")
     progress = sub.add_parser("module-progress", help="Inspect reported module progress and requirements")
     add_common(progress)
     progress.add_argument("course_id", help="Positive numeric Canvas course ID")
     progress.add_argument("--module-id", default=None, help="Inspect one returned module ID")
-
-    progress_export = sub.add_parser(
-        "export-module-progress", help="Save reported module progress to a new offline HTML file",
-    )
-    add_common(progress_export)
-    progress_export.add_argument("course_id", type=_positive_int)
-    progress_export.add_argument("--module-id", type=_positive_int, default=None)
-    progress_export.add_argument(
-        "--out", required=True, type=Path, help="New HTML report; existing paths are protected",
-    )
 
     history = sub.add_parser(
         "submission-history",
@@ -195,21 +164,6 @@ def main(argv: list[str] | None = None) -> None:
     history.add_argument("course_id", help="Positive numeric Canvas course ID")
     history.add_argument("assignment_id", help="Positive numeric Canvas assignment ID")
 
-    comparison = sub.add_parser(
-        "compare-submissions", help="Compare two returned submission records in a new offline HTML report",
-        description=(
-            "Select current or history:N, where N is the one-based returned history position. "
-            "Before and after are labels, not a chronology inference. File metadata is compared; "
-            "file bytes are not downloaded."
-        ),
-    )
-    add_common(comparison)
-    comparison.add_argument("course_id", help="Positive numeric Canvas course ID")
-    comparison.add_argument("assignment_id", help="Positive numeric Canvas assignment ID")
-    comparison.add_argument("--before", required=True, help="current or history:N")
-    comparison.add_argument("--after", required=True, help="current or history:N")
-    comparison.add_argument("--out", required=True, type=Path, help="New HTML file; existing paths are protected")
-
     agenda = sub.add_parser(
         "agenda", help="Read selected course events and assignment deadlines together",
         description=(
@@ -221,15 +175,6 @@ def main(argv: list[str] | None = None) -> None:
     agenda.add_argument("course_ids", nargs="+", help="Positive numeric Canvas course IDs")
     agenda.add_argument("--start", dest="start_date", required=True, help="YYYY-MM-DD")
     agenda.add_argument("--end", dest="end_date", required=True, help="YYYY-MM-DD")
-
-    quizzes = sub.add_parser("quizzes", help="List classic quizzes for a course")
-    add_common(quizzes)
-    quizzes.add_argument("course_id", type=_positive_int, help="Positive numeric Canvas course ID")
-
-    quiz = sub.add_parser("quiz", help="Read one classic quiz without starting an attempt")
-    add_common(quiz)
-    quiz.add_argument("course_id", type=_positive_int, help="Positive numeric Canvas course ID")
-    quiz.add_argument("quiz_id", type=_positive_int, help="Positive numeric Canvas quiz ID")
 
     planner = sub.add_parser(
         "planner", help="Read your planner items without changing completion or visibility",
@@ -300,41 +245,6 @@ def main(argv: list[str] | None = None) -> None:
             finally:
                 http_log.setLevel(previous_level)
             print(json.dumps(result, indent=2))
-        elif args.cmd == "grade-review":
-            import httpx
-
-            try:
-                result = api.grade_review(args.course_id)
-            except (RuntimeError, httpx.HTTPError, ValueError) as error:
-                print(json.dumps({
-                    "ok": False, "error": type(error).__name__, "message": str(error),
-                }), file=sys.stderr)
-                raise SystemExit(1) from None
-            print(json.dumps(result, indent=2, allow_nan=False))
-        elif args.cmd == "export-grade-review":
-            import os
-
-            import httpx
-
-            from canvaspilot.calendar_export import write_calendar
-            from canvaspilot.grade_review_export import build_grade_review_report
-
-            http_log = logging.getLogger("httpx")
-            previous_level = http_log.level
-            http_log.setLevel(max(http_log.getEffectiveLevel(), logging.WARNING))
-            try:
-                if os.path.lexists(args.out):
-                    raise FileExistsError("Output path already exists; choose a new HTML file")
-                content, report = build_grade_review_report(api, args.course_id)
-                write_calendar(args.out, content)
-            except (RuntimeError, httpx.HTTPError, ValueError, TypeError, OSError) as error:
-                print(json.dumps({
-                    "ok": False, "error": type(error).__name__, "message": str(error),
-                }), file=sys.stderr)
-                raise SystemExit(1) from None
-            finally:
-                http_log.setLevel(previous_level)
-            print(json.dumps({"ok": True, "path": str(args.out), **report}, indent=2))
         elif args.cmd == "assignments":
             print(
                 json.dumps(
@@ -359,27 +269,6 @@ def main(argv: list[str] | None = None) -> None:
                     default=str,
                 )
             )
-        elif args.cmd in {"quizzes", "quiz"}:
-            import httpx
-
-            from canvaspilot.client import CanvasAuthError, CanvasPaginationError
-
-            http_log = logging.getLogger("httpx")
-            previous_level = http_log.level
-            http_log.setLevel(max(http_log.getEffectiveLevel(), logging.WARNING))
-            try:
-                if args.cmd == "quizzes":
-                    result = api.list_quizzes(args.course_id)
-                else:
-                    result = api.get_quiz(args.course_id, args.quiz_id)
-            except (CanvasAuthError, CanvasPaginationError, httpx.HTTPError, ValueError) as error:
-                print(json.dumps({
-                    "ok": False, "error": type(error).__name__, "message": str(error),
-                }), file=sys.stderr)
-                raise SystemExit(1) from None
-            finally:
-                http_log.setLevel(previous_level)
-            print(json.dumps(result, indent=2, default=str))
         elif args.cmd == "discussions":
             print(json.dumps(api.list_discussion_topics(args.course_id), indent=2, default=str))
         elif args.cmd == "discussion":
@@ -477,57 +366,6 @@ def main(argv: list[str] | None = None) -> None:
             finally:
                 http_log.setLevel(previous_level)
             print(json.dumps(result, indent=2))
-        elif args.cmd == "export-module-progress":
-            import os
-
-            import httpx
-
-            from canvaspilot.calendar_export import write_calendar
-            from canvaspilot.client import CanvasAuthError, CanvasPaginationError
-            from canvaspilot.module_progress_export import build_module_progress_report
-
-            http_log = logging.getLogger("httpx")
-            previous_level = http_log.level
-            http_log.setLevel(max(http_log.getEffectiveLevel(), logging.WARNING))
-            try:
-                if os.path.lexists(args.out):
-                    raise FileExistsError("Output path already exists; choose a new HTML file")
-                content, report = build_module_progress_report(
-                    api, args.course_id, module_id=args.module_id,
-                )
-                # The existing calendar publisher writes arbitrary complete bytes
-                # to a new file; it never replaces a path or follows its symlink.
-                write_calendar(args.out, content)
-            except (CanvasAuthError, CanvasPaginationError, httpx.HTTPError, ValueError, TypeError, OSError) as error:
-                print(json.dumps({
-                    "ok": False, "error": type(error).__name__, "message": str(error),
-                }), file=sys.stderr)
-                raise SystemExit(1) from None
-            finally:
-                http_log.setLevel(previous_level)
-            print(json.dumps({"ok": True, "output": str(args.out), **report}, indent=2))
-        elif args.cmd == "compare-submissions":
-            import httpx
-
-            from canvaspilot.client import CanvasAuthError
-            from canvaspilot.submission_comparison import export_submission_comparison
-
-            http_log = logging.getLogger("httpx")
-            previous_level = http_log.level
-            http_log.setLevel(max(http_log.getEffectiveLevel(), logging.WARNING))
-            try:
-                result = export_submission_comparison(
-                    api, args.course_id, args.assignment_id,
-                    before=args.before, after=args.after, out=args.out,
-                )
-            except (CanvasAuthError, httpx.HTTPError, ValueError, TypeError, OSError, RecursionError) as error:
-                print(json.dumps({
-                    "ok": False, "error": type(error).__name__, "message": str(error),
-                }), file=sys.stderr)
-                raise SystemExit(1) from None
-            finally:
-                http_log.setLevel(previous_level)
-            print(json.dumps({"ok": True, **result}, indent=2))
         elif args.cmd == "submission-history":
             import httpx
 
@@ -548,27 +386,6 @@ def main(argv: list[str] | None = None) -> None:
             finally:
                 http_log.setLevel(previous_level)
             print(json.dumps(result, indent=2))
-        elif args.cmd == "export-pages":
-            import os
-
-            import httpx
-
-            from canvaspilot.client import CanvasAuthError
-            from canvaspilot.page_export import build_page_packet, write_page_packet
-
-            try:
-                if os.path.lexists(args.out):
-                    raise FileExistsError("Output path already exists; choose a new HTML file")
-                content, report = build_page_packet(api, args.course_id, args.pages)
-                cleanup_warning = write_page_packet(args.out, content)
-            except (CanvasAuthError, httpx.HTTPError, ValueError, TypeError, OSError) as error:
-                print(json.dumps({
-                    "ok": False, "error": type(error).__name__, "message": str(error),
-                }), file=sys.stderr)
-                raise SystemExit(1) from None
-            if cleanup_warning:
-                report["cleanup_warning"] = cleanup_warning
-            print(json.dumps({"ok": True, "output": str(args.out), **report}, indent=2))
         elif args.cmd == "module-progress":
             import httpx
 

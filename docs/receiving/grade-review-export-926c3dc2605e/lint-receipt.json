@@ -1,0 +1,23 @@
+{
+  "created_at": "2026-10-08T17:26:53.791555+00:00",
+  "basis": "Full suite completed before these formatting-only changes; independent receiver uses the recorded pre-lint renderer.",
+  "changes": [
+    {
+      "path": "src/canvaspilot/grade_review_export.py",
+      "before_sha256": "7d8df22447642cb5ac2588b144c18b3b2dde14ab7ca4b7fc085b17d60eb874be",
+      "after_sha256": "0f16c805d57bf9aa8eba09b6bde2afde033bf09fe64b4525adf22de3b248c351",
+      "ast_unchanged": true,
+      "description": "Parenthesize seven intended multiline list strings for ISC004."
+    },
+    {
+      "path": "tests/test_grade_review_export.py",
+      "before_sha256": "810060eb644beb7c3e6a4ade7b6e77f8c11501f417422bbf3120691d5cafebd4",
+      "after_sha256": "5c73907f0a7f841dc683c9d276247d7e9e29ce1db2d2def83fa8c0b691f676d9",
+      "ast_unchanged": true,
+      "description": "Wrap import and document intentional naive datetime rejection test."
+    }
+  ],
+  "cli_sha256": "ecf9ba68b45591df9400932e4e982e84f060937c6d7957316de1e0102533d238",
+  "ruff_returncode": 0,
+  "diff_check_returncode": 0
+}

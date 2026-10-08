@@ -1,0 +1,11 @@
+{
+  "phase": "inconclusive",
+  "observed_error": "OSError errno28 during wrapper receipt write after full-suite child returned",
+  "pytest_exit_code": "not retained",
+  "pytest_summary": "not retained",
+  "junit_exists": false,
+  "partial_stdout_sha256": "80eceedab10b753ab8fd7673cfd7970b2a340d2ecb79c39e56edf066a140f851",
+  "wrapper_output_sha256": "efe2db57973f26ef650bd34cec4fe67f8943a3f6fd50fc90c59be5704a231a0a",
+  "free_bytes_at_replay_preflight": 1879789568,
+  "no_product_pass_or_failure_inferred": true
+}

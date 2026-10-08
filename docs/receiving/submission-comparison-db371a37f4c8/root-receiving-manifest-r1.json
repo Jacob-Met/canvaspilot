@@ -1,0 +1,135 @@
+{
+  "format": "hamon.root-receiving-archive.v1",
+  "scope": "CanvasPilot submission comparison independent root CLI and browser receiving",
+  "files": [
+    {
+      "path": "ROOT.md",
+      "bytes": 5783,
+      "sha256": "94ab4c7b6ad552882aa213b2e97f914c51a325635857e6ac8a39e544e34e6ef3"
+    },
+    {
+      "path": "browser-r1/browser-stderr.log",
+      "bytes": 3138,
+      "sha256": "13e14c72afc4fde71c7fb508f2dd2bcd54beb91e99bf214c23bcc6452339cd3f"
+    },
+    {
+      "path": "browser-r1/browser-stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "browser-r1/downloads-rich/selected-submission-records.json",
+      "bytes": 3032,
+      "sha256": "82e8b5cf166b6d0b96f4d71af212df0d698d9dd931e514491dc3cc8a11e0434d"
+    },
+    {
+      "path": "browser-r1/downloads-types/selected-submission-records.json",
+      "bytes": 1100,
+      "sha256": "8922f239ccb33916b685a7526080280f00834f6c722c2620387b855dfe2cd993"
+    },
+    {
+      "path": "browser-r1/receipt.json",
+      "bytes": 22194,
+      "sha256": "01383ca4e10ead0811f8c69a756d96d478834d769d14cf262ac769aa976ada67"
+    },
+    {
+      "path": "browser-r1/rich-desktop.png",
+      "bytes": 107641,
+      "sha256": "65aaaa371b15a77f122e2f68484e5a5ef1793e5aef13ead8c3e0414352e0fe12"
+    },
+    {
+      "path": "browser-r1/rich-phone-attachments.png",
+      "bytes": 40803,
+      "sha256": "89b2dc5cc13cbea844aed88af86377398fd4c99b484acdd236245c0964682e19"
+    },
+    {
+      "path": "browser-r1/rich-phone-top.png",
+      "bytes": 67121,
+      "sha256": "9a7db1e689c4e4c8e2ef1761c076c2911863e4e396f32fb62c71a9e1eebee35d"
+    },
+    {
+      "path": "browser-r1/rich-print-media.png",
+      "bytes": 143456,
+      "sha256": "2b805098b7606dabb155a732566797c3f0d74209c38549c591ba9382d15e28f5"
+    },
+    {
+      "path": "browser-r1/unsupported-value-states.png",
+      "bytes": 90306,
+      "sha256": "08a870e7f6782529b3a7117102c2a3354180ab1949686e70dc165ae564f7aa55"
+    },
+    {
+      "path": "input-transfer.json",
+      "bytes": 74241,
+      "sha256": "97cd10e6c3fbbc175ef1fcf6b5ba9c9b492dee8e5ba770400e90bf2553abbab5"
+    },
+    {
+      "path": "inputs/CONTRACT.md",
+      "bytes": 4265,
+      "sha256": "85a1459762c274066766e9bf8cf1083c22edc041e23714961d16c78ecdf4b6af"
+    },
+    {
+      "path": "inputs/cli-r1/receipt.json",
+      "bytes": 8368,
+      "sha256": "b6232f61cabcdab7c54f1115a03a5aadd027292e8d05c32ae9b6069daf5cefe2"
+    },
+    {
+      "path": "inputs/cli-r1/rich/comparison.html",
+      "bytes": 23749,
+      "sha256": "daf8d36a955ce135e5dbcae4b2c9db61a953a9f69e30c8c0fc8313f64d7f84d3"
+    },
+    {
+      "path": "inputs/cli-r1/rich/embedded-selected-records.json",
+      "bytes": 3032,
+      "sha256": "82e8b5cf166b6d0b96f4d71af212df0d698d9dd931e514491dc3cc8a11e0434d"
+    },
+    {
+      "path": "inputs/cli-r1/types/comparison.html",
+      "bytes": 14513,
+      "sha256": "6c5815d9c20f9ea650f7c88d359465f69746ec76bfdafdae9f9eca4d1f4d8d5a"
+    },
+    {
+      "path": "inputs/cli-r1/types/embedded-selected-records.json",
+      "bytes": 1100,
+      "sha256": "8922f239ccb33916b685a7526080280f00834f6c722c2620387b855dfe2cd993"
+    },
+    {
+      "path": "receive-browser-r1.mjs",
+      "bytes": 14385,
+      "sha256": "6ef94d4a53b9ac08cede0d52da3f2bb57ec275e6af8c05a566da26e7da7bf0de"
+    },
+    {
+      "path": "receive-cli-r1.py",
+      "bytes": 14800,
+      "sha256": "4fe4baf79707506ec79f76eb4d3794cc826a2fd27def411f0b708ce781d5588d"
+    },
+    {
+      "path": "seal-root-packet-r1.py",
+      "bytes": 4938,
+      "sha256": "27d6e4be6dd757bb5e9fcdedb870143681bb8e06da97e2667ca01aba70c87c76"
+    },
+    {
+      "path": "transport/browser-process-completion.json",
+      "bytes": 3249,
+      "sha256": "ea74033e7d61039ecf6e17a26ef5f5f4498271d9e3c805f328064a295ef1966f"
+    },
+    {
+      "path": "transport/browser-process-start.json",
+      "bytes": 362,
+      "sha256": "a3921c574ae5b3bf81da7c718f66bd77b0cf3c152544ef3f1e85f75df0b92af8"
+    },
+    {
+      "path": "transport/cli-process-completion.json",
+      "bytes": 2061,
+      "sha256": "0f610dd895d2306bdbef8ab2f09f655f90885d8d6ebe2616245783c751959494"
+    },
+    {
+      "path": "transport/cli-process-start.json",
+      "bytes": 352,
+      "sha256": "6560751b00576cba5731a54bd73e5ead13a513ba8090a273d97f7a0aba924e03"
+    }
+  ],
+  "payload_files": 25,
+  "payload_bytes": 653989,
+  "missing_mac_only_files_disclosed_in": "ROOT.md",
+  "all_payload_pins_checked": true
+}

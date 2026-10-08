@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-08T16:52:36.856690+00:00",
+  "exit_code": 0,
+  "wall_time_seconds": 0.571120011,
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "source_stable": {
+    "candidate-cli.py": true,
+    "src/canvaspilot/api.py": true,
+    "src/canvaspilot/client.py": true,
+    "src/canvaspilot/assignment_submission.py": true,
+    "src/canvaspilot/feedback.py": true,
+    "baseline-cli.py": true
+  },
+  "totals": {
+    "actual_children": 9,
+    "conditions": 123,
+    "failed": 0,
+    "harness_errors": 0
+  },
+  "boundary": "Nine actual Python children compile exact source CLI and use native API/client fixture implementation, with a bare package namespace and strict unavailable-HTTPX/broker tripwires. Native transport/MCP/package bootstrap are not exercised here; the separately observed hosted full-package HTTP tests cover that boundary.",
+  "fixture_storage": "One ordinary unique mode0700 directory on existing /dev tmpfs. All source setup, children, before/after pins and result capture occur in this one process; no cross-call path persistence is claimed.",
+  "driver_export_change": "Only p=PAYLOAD became a read of sys.argv[1] JSON; all cases, child source, checks and cleanup are identical."
+}

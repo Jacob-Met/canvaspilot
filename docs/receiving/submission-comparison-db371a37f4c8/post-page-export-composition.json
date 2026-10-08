@@ -1,0 +1,94 @@
+{
+  "format": "canvas-comparison-page-export-composition-v1",
+  "native_received_parent": "6c4d5d2e7526cddc1aa6c90bfbef2d1188382ad3",
+  "first_hosted_parent": "1bafdaa31f7789d8e561680cb6001bbe38b2da64",
+  "first_hosted_source_head": "e059cf8a8aa42dfc4b98f353bbfbbb79661ad7f0",
+  "current_main": "f618c3ed13f191ea58642283c1f9cd45a0c1ca81",
+  "current_main_tree": "1bcfff90694cdb8358684ada58ff349562244de7",
+  "current_main_leaves": 1333,
+  "incoming_change": {
+    "pr": 71,
+    "description": "Add independent export-pages renderer, guide, fixture, tests and evidence; two shared additive CLI/README spans.",
+    "changed_leaves": 130,
+    "modified_existing": 2,
+    "added": 128
+  },
+  "shared_patches": [
+    {
+      "path": "README.md",
+      "patch": "@@ -99,6 +99,11 @@ local snapshot with `canvaspilot export-calendar 42 77 --out deadlines.ics`.\n The [calendar export guide](docs/calendar-export.md) explains selection,\n undated omissions, snapshot limits and safe re-import expectations.\n \n+\n+To take explicitly selected course pages offline, use\n+`canvaspilot export-pages 42 course-introduction week-two-reading --out reading.html`.\n+The [page export guide](docs/page-export.md) explains numeric page IDs, the inert\n+original-source record, selection limits and protection of existing output.\n With a PAT instead:\n \n ```bash"
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "patch": "@@ -150,6 +150,14 @@ def add_common(p: argparse.ArgumentParser) -> None:\n     export.add_argument(\"--bucket\", choices=(\"upcoming\", \"past\", \"overdue\", \"undated\", \"ungraded\", \"unsubmitted\", \"all\"),\n                         default=\"upcoming\", help=\"Canvas assignment selection (default: upcoming)\")\n \n+\n+    page_export = sub.add_parser(\n+        \"export-pages\", help=\"Save explicitly selected course pages to a new offline HTML reading packet\"\n+    )\n+    add_common(page_export)\n+    page_export.add_argument(\"course_id\", help=\"Positive numeric Canvas course ID\")\n+    page_export.add_argument(\"pages\", nargs=\"+\", help=\"Page URL locators, or page_id:ID for an explicit numeric ID\")\n+    page_export.add_argument(\"--out\", required=True, type=Path, help=\"New HTML file; existing paths are protected\")\n     progress = sub.add_parser(\"module-progress\", help=\"Inspect reported module progress and requirements\")\n     add_common(progress)\n     progress.add_argument(\"course_id\", help=\"Positive numeric Canvas course ID\")\n@@ -439,6 +447,27 @@ def add_common(p: argparse.ArgumentParser) -> None:\n             finally:\n                 http_log.setLevel(previous_level)\n             print(json.dumps(result, indent=2))\n+        elif args.cmd == \"export-pages\":\n+            import os\n+\n+            import httpx\n+\n+            from canvaspilot.client import CanvasAuthError\n+            from canvaspilot.page_export import build_page_packet, write_page_packet\n+\n+            try:\n+                if os.path.lexists(args.out):\n+                    raise FileExistsError(\"Output path already exists; choose a new HTML file\")\n+                content, report = build_page_packet(api, args.course_id, args.pages)\n+                cleanup_warning = write_page_packet(args.out, content)\n+            except (CanvasAuthError, httpx.HTTPError, ValueError, TypeError, OSError) as error:\n+                print(json.dumps({\n+                    \"ok\": False, \"error\": type(error).__name__, \"message\": str(error),\n+                }), file=sys.stderr)\n+                raise SystemExit(1) from None\n+            if cleanup_warning:\n+                report[\"cleanup_warning\"] = cleanup_warning\n+            print(json.dumps({\"ok\": True, \"output\": str(args.out), **report}, indent=2))\n         elif args.cmd == \"module-progress\":\n             import httpx\n "
+    }
+  ],
+  "history_api_unchanged": true,
+  "client_unchanged": true,
+  "workflow_unchanged": true,
+  "insertion_proof": {
+    "parser_sha256": "6ec0ba1a84cddf7b9a26e376b10c84e83c47de7929484da81e879737cd425b3e",
+    "dispatch_sha256": "ba732683a45fa939a269b9bf2c7de33a705d7d7a24565351b5f0aaf801c88581",
+    "readme_sha256": "4b626965f95866ce245a6dbceaacf68df4c4ac53664fb18775e3fc13c9668402",
+    "removing_only_exact_comparison_additions_reconstructs_current_cli_and_readme": true
+  },
+  "product_files": [
+    {
+      "path": "src/canvaspilot/submission_comparison.py",
+      "bytes": 27015,
+      "sha256": "ab7445cadf2a22b31d8f8f837b816d90367d5295e90fe73615a459bc2d9101d4",
+      "git_blob": "f8e2b9bfef5bb799bd75c6c1f3c6e56366fcf9ad"
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "bytes": 27437,
+      "sha256": "7576af9ec4f2a42b6a34b2099f6bab1149b5d906c64538fa265c69a4b3700b25",
+      "git_blob": "64b4f5f8b6dc65f76cbe8b4857bfcef2b56a7f49"
+    },
+    {
+      "path": "README.md",
+      "bytes": 25198,
+      "sha256": "53b527127beda2ac05561386d4857d10275b454de4dc0ea9720a94b485167169",
+      "git_blob": "13a00aa89230d46877f905c352a818c724d7eb7b"
+    },
+    {
+      "path": "docs/submission-comparison.md",
+      "bytes": 6580,
+      "sha256": "80d83955ea364ec31442eebea1de3a769a60ee40fdfdace8f139956f8f8f2b66",
+      "git_blob": "db1a10adf0d3b23ba88f4f0717b5a201f5470883"
+    },
+    {
+      "path": "tests/fixtures/submission_comparison.json",
+      "bytes": 3203,
+      "sha256": "2ffc2d6db80b8dfcfd757df80b7b34ed15ef384bfac9ee087f312cf53fe3e7f7",
+      "git_blob": "d2b1002639523ee1d54843bbab016207dfcc2d75"
+    },
+    {
+      "path": "tests/test_submission_comparison.py",
+      "bytes": 14872,
+      "sha256": "72b1d9b814c38f0e198cf60210a20766c10116723b05e2fcc0b8303a0125eb21",
+      "git_blob": "d064dc3512251052d6f0005e9a4774288ed0f8d4"
+    },
+    {
+      "path": "tests/test_submission_comparison_process.py",
+      "bytes": 8725,
+      "sha256": "5f4b96f4a9aa2ba296e02a23650e80bb1cd6e30a05182f6b1eb97f35cc3a0f3e",
+      "git_blob": "e06ecf06a889f587a9d17eb962d1fd6cc532342a"
+    }
+  ],
+  "prepublication_receiver_refusals": [
+    {
+      "stage": "in-memory additive README recovery before any native or GitHub source mutation",
+      "reason": "Longest-common-prefix extraction included the shared list prefix at the opposite end; the established full-line hash guard refused it.",
+      "attempted_sha256": "7fc99180ae421c2785835b1233e8c65a815fa1409f011828276cf513dd3d4c99",
+      "expected_sha256": "4b626965f95866ce245a6dbceaacf68df4c4ac53664fb18775e3fc13c9668402",
+      "product_changed": false
+    },
+    {
+      "stage": "in-memory Git blob readback",
+      "reason": "Receiver supplied a JavaScript string to the existing bytes-only Git blob helper. The hash guard refused before composition. Correcting only the receiver to its established utf8-byte input.",
+      "product_changed": false
+    }
+  ],
+  "boundary": "Five standalone product files remain byte-exact to native and hosted receiving. The CLI/README contain the exact same comparison additions over separately inherited current source. The complete hosted run for the previous tree passed 923 tests plus 54 subtests; the ordinary final hosted gate will qualify this new current-main composition. No native whole-suite or browser replay is claimed."
+}

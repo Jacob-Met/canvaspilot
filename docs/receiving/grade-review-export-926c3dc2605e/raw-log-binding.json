@@ -1,0 +1,9 @@
+{
+  "raw_name": "chromium.log",
+  "raw_bytes": 3138,
+  "raw_sha256": "b51e9136848d0643f5a2caab9869d69179c66a8fb9281ec75e9d9731bced3e5d",
+  "stored_as": "chromium.log.gz",
+  "stored_sha256": "f8ede44e4eaa7b002853a934d679b9c7a6757495f44564d01536d6f8bc82122e",
+  "decoded_byte_identity_verified": true,
+  "reason": "Preserve Chromium native stderr byte-for-byte without importing its trailing whitespace into the text diff."
+}

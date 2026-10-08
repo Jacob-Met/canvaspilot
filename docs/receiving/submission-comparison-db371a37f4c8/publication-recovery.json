@@ -1,0 +1,33 @@
+{
+  "format": "canvas-comparison-publication-recovery-v1",
+  "recovered_at": "2026-10-08T18:40:19.899299+00:00",
+  "reconciled_state": {
+    "pr_open": true,
+    "pr_head_unchanged": true,
+    "comments_count": 0,
+    "root_archive_git_blob_lookup": "404 Not Found; no successful prior archive upload inferred",
+    "native_mac_offline": true,
+    "no_mac_calls_made": true,
+    "tests_repeated": false
+  },
+  "original_head": "e059cf8a8aa42dfc4b98f353bbfbbb79661ad7f0",
+  "current_main": "cf47942b395a6196e6f5dcb02b3865f64aa1c89b",
+  "current_tree": "0cd66bc6823a0dbdb98c3d88a3ab4677c6981e55",
+  "retained_preparation": "composition-f618-r1; all eight source/proof files match its original manifest",
+  "root_custody": {
+    "archive": {
+      "path": "root-receiving-r1.tar.gz",
+      "bytes": 476609,
+      "sha256": "49dab56fda4ef75d6ebffa5789148606dc298485974e7c4ed0fb975baf937f42",
+      "git_blob": "550dd5246c9a712f169ec01f820228f1e0788047"
+    },
+    "member_count": 26,
+    "payload_count": 25,
+    "all_members_exact": true,
+    "original_archive_exact": true,
+    "root_note_sha256": "94ab4c7b6ad552882aa213b2e97f914c51a325635857e6ac8a39e544e34e6ef3",
+    "root_note_unchanged": true
+  },
+  "previous_publication_state": "PR77 creation and first CI completed. No newer ref, current-source receipt, PR comment or root archive blob was found. No unobserved earlier mutation is claimed.",
+  "receiver_failures_preserved": "Earlier prepublication hash/type refusals remain in post-page-export-composition.json. No product tests were rerun. Mac offline scope remains unchanged."
+}
