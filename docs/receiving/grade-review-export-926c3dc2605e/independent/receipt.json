@@ -1,0 +1,1479 @@
+{
+  "schema": "hamon.canvaspilot_grade_export_receiving.v1",
+  "receiver": "chatgpt-926c3dc2605e/runtime_execution",
+  "verdict": "qualified",
+  "cases": 13,
+  "checks": [
+    "rich: build invokes current grade API once",
+    "rich: one JSON download",
+    "rich: static local data download",
+    "rich: download equals actual normalized API",
+    "rich: normalized original unchanged",
+    "rich: raw supplied records unchanged",
+    "rich: accurate digest",
+    "rich: no active payload elements",
+    "rich: no event attributes",
+    "rich: links all local",
+    "rich: no known hidden grade recovery",
+    "rich: read-only actual HTTP route",
+    "rich: actual pagination forwarded",
+    "rich: completeness stays unknown",
+    "rich: no user-session profile",
+    "three separate enrollments preserved",
+    "TeacherEnrollment remains attached to its enrollment",
+    "StudentEnrollment remains attached to its enrollment",
+    "ObserverEnrollment remains attached to its enrollment",
+    "teacher first does not select or replace student",
+    "over100 retained without arithmetic",
+    "raw identity spelling preserved",
+    "normalized enrollment keys preserve reader order",
+    "group order and original identifiers preserved",
+    "no weighting or drop selection",
+    "absent null empty assignment collections distinct",
+    "assignment count without dropped-work inference",
+    "zero and empty grade and zero attempt exact",
+    "false flags retained",
+    "hidden posting and visibility boundaries retained",
+    "hidden grades absent from normalized fields",
+    "latest-attempt mismatch retains reported score without promotion",
+    "submission absent null empty are distinct",
+    "unknown applicability stays unknown",
+    "explicit nulls remain null",
+    "invalid values remain omitted with warnings",
+    "visible control and surrogate characters safe",
+    "escaped original malicious title remains data",
+    "malicious source URL remains text",
+    "field-order: build invokes current grade API once",
+    "field-order: one JSON download",
+    "field-order: static local data download",
+    "field-order: download equals actual normalized API",
+    "field-order: normalized original unchanged",
+    "field-order: raw supplied records unchanged",
+    "field-order: accurate digest",
+    "field-order: no active payload elements",
+    "field-order: no event attributes",
+    "field-order: links all local",
+    "field-order: no known hidden grade recovery",
+    "field-order: read-only actual HTTP route",
+    "field-order: actual pagination forwarded",
+    "field-order: completeness stays unknown",
+    "field-order: no user-session profile",
+    "raw field-order changes cannot change normalized export",
+    "hidden-totals: build invokes current grade API once",
+    "hidden-totals: one JSON download",
+    "hidden-totals: static local data download",
+    "hidden-totals: download equals actual normalized API",
+    "hidden-totals: normalized original unchanged",
+    "hidden-totals: raw supplied records unchanged",
+    "hidden-totals: accurate digest",
+    "hidden-totals: no active payload elements",
+    "hidden-totals: no event attributes",
+    "hidden-totals: links all local",
+    "hidden-totals: no known hidden grade recovery",
+    "hidden-totals: read-only actual HTTP route",
+    "hidden-totals: actual pagination forwarded",
+    "hidden-totals: completeness stays unknown",
+    "hidden-totals: no user-session profile",
+    "all enrollment totals withheld when course hides grades",
+    "hidden-total explanation is present",
+    "enrollment-absent: build invokes current grade API once",
+    "enrollment-absent: one JSON download",
+    "enrollment-absent: static local data download",
+    "enrollment-absent: download equals actual normalized API",
+    "enrollment-absent: normalized original unchanged",
+    "enrollment-absent: raw supplied records unchanged",
+    "enrollment-absent: accurate digest",
+    "enrollment-absent: no active payload elements",
+    "enrollment-absent: no event attributes",
+    "enrollment-absent: links all local",
+    "enrollment-absent: no known hidden grade recovery",
+    "enrollment-absent: read-only actual HTTP route",
+    "enrollment-absent: actual pagination forwarded",
+    "enrollment-absent: completeness stays unknown",
+    "enrollment-absent: no user-session profile",
+    "enrollment absent remains explicit",
+    "enrollment-null: build invokes current grade API once",
+    "enrollment-null: one JSON download",
+    "enrollment-null: static local data download",
+    "enrollment-null: download equals actual normalized API",
+    "enrollment-null: normalized original unchanged",
+    "enrollment-null: raw supplied records unchanged",
+    "enrollment-null: accurate digest",
+    "enrollment-null: no active payload elements",
+    "enrollment-null: no event attributes",
+    "enrollment-null: links all local",
+    "enrollment-null: no known hidden grade recovery",
+    "enrollment-null: read-only actual HTTP route",
+    "enrollment-null: actual pagination forwarded",
+    "enrollment-null: completeness stays unknown",
+    "enrollment-null: no user-session profile",
+    "enrollment null remains explicit",
+    "enrollment-empty: build invokes current grade API once",
+    "enrollment-empty: one JSON download",
+    "enrollment-empty: static local data download",
+    "enrollment-empty: download equals actual normalized API",
+    "enrollment-empty: normalized original unchanged",
+    "enrollment-empty: raw supplied records unchanged",
+    "enrollment-empty: accurate digest",
+    "enrollment-empty: no active payload elements",
+    "enrollment-empty: no event attributes",
+    "enrollment-empty: links all local",
+    "enrollment-empty: no known hidden grade recovery",
+    "enrollment-empty: read-only actual HTTP route",
+    "enrollment-empty: actual pagination forwarded",
+    "enrollment-empty: completeness stays unknown",
+    "enrollment-empty: no user-session profile",
+    "enrollment empty remains explicit",
+    "period-absent: build invokes current grade API once",
+    "period-absent: one JSON download",
+    "period-absent: static local data download",
+    "period-absent: download equals actual normalized API",
+    "period-absent: normalized original unchanged",
+    "period-absent: raw supplied records unchanged",
+    "period-absent: accurate digest",
+    "period-absent: no active payload elements",
+    "period-absent: no event attributes",
+    "period-absent: links all local",
+    "period-absent: no known hidden grade recovery",
+    "period-absent: read-only actual HTTP route",
+    "period-absent: actual pagination forwarded",
+    "period-absent: completeness stays unknown",
+    "period-absent: no user-session profile",
+    "period absent remains explicit",
+    "period-null: build invokes current grade API once",
+    "period-null: one JSON download",
+    "period-null: static local data download",
+    "period-null: download equals actual normalized API",
+    "period-null: normalized original unchanged",
+    "period-null: raw supplied records unchanged",
+    "period-null: accurate digest",
+    "period-null: no active payload elements",
+    "period-null: no event attributes",
+    "period-null: links all local",
+    "period-null: no known hidden grade recovery",
+    "period-null: read-only actual HTTP route",
+    "period-null: actual pagination forwarded",
+    "period-null: completeness stays unknown",
+    "period-null: no user-session profile",
+    "period null remains explicit",
+    "period-empty: build invokes current grade API once",
+    "period-empty: one JSON download",
+    "period-empty: static local data download",
+    "period-empty: download equals actual normalized API",
+    "period-empty: normalized original unchanged",
+    "period-empty: raw supplied records unchanged",
+    "period-empty: accurate digest",
+    "period-empty: no active payload elements",
+    "period-empty: no event attributes",
+    "period-empty: links all local",
+    "period-empty: no known hidden grade recovery",
+    "period-empty: read-only actual HTTP route",
+    "period-empty: actual pagination forwarded",
+    "period-empty: completeness stays unknown",
+    "period-empty: no user-session profile",
+    "period empty remains explicit",
+    "no-groups: build invokes current grade API once",
+    "no-groups: one JSON download",
+    "no-groups: static local data download",
+    "no-groups: download equals actual normalized API",
+    "no-groups: normalized original unchanged",
+    "no-groups: raw supplied records unchanged",
+    "no-groups: accurate digest",
+    "no-groups: no active payload elements",
+    "no-groups: no event attributes",
+    "no-groups: links all local",
+    "no-groups: no known hidden grade recovery",
+    "no-groups: read-only actual HTTP route",
+    "no-groups: actual pagination forwarded",
+    "no-groups: completeness stays unknown",
+    "no-groups: no user-session profile",
+    "empty groups do not establish course absence",
+    "restricted-course: error is not rendered as a report",
+    "mismatched-user: error is not rendered as a report",
+    "invalid-visibility: error is not rendered as a report",
+    "producer source unchanged during receiving"
+  ],
+  "source_sha256": {
+    "src/canvaspilot/__init__.py": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5",
+    "src/canvaspilot/agenda.py": "cd9d9e027393ce21cff0b4d0a13098dca3a906af3e9803201655bca40d3c3fda",
+    "src/canvaspilot/api.py": "b6b770c2cdef9c9ce44a4a6aefd5b6d0876bc09e5aee29a4adb5a7c603b41c24",
+    "src/canvaspilot/assignment_submission.py": "52fc732660b8844a2ee0801931a363f20db15b5309d148d01e3b618be487133d",
+    "src/canvaspilot/bundle.py": "c8a1854b5c04715c1371c05f4c25ba867ec2d2daafc132b7ed8a973d3e55ddcf",
+    "src/canvaspilot/calendar_export.py": "b92948c438063438bf9b8ef01b0b0c067802ddb06354f00e8ee18749f3c5e2fa",
+    "src/canvaspilot/cli.py": "ecf9ba68b45591df9400932e4e982e84f060937c6d7957316de1e0102533d238",
+    "src/canvaspilot/client.py": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797",
+    "src/canvaspilot/discussion_thread.py": "11f955f827c29421143782518a1aaf1894d0892739c3b56c4d5e413da74555ff",
+    "src/canvaspilot/feedback.py": "55454598effea598474a21f67e36d5bc5bea84aaefeefc18e4d8c49804ab9869",
+    "src/canvaspilot/folder_browser.py": "c6a67229b268c539e5edb581e3320b06229460adc3fbc01d72e4964e31c0348a",
+    "src/canvaspilot/grade_review.py": "e550752a830ca9cf4c2ef5d5b06dbf464abd9dfed3a5252d310a4acf8e2411f5",
+    "src/canvaspilot/grade_review_export.py": "7d8df22447642cb5ac2588b144c18b3b2dde14ab7ca4b7fc085b17d60eb874be",
+    "src/canvaspilot/mcp_server.py": "52cfd5cbe167438762049f4c36feec822986f5e5e63aeaf494e07907235e1c98",
+    "src/canvaspilot/module_progress.py": "974ee31925514a2e53b899888302a7fa357e280ab5f2461b754b814473653d99",
+    "src/canvaspilot/module_progress_export.py": "f723c06e551fae2cf50745460f9109867e6e0f9ebc3cc997d49d5e2173aa9f50",
+    "src/canvaspilot/offline_demo.py": "2389f3ccc1b6db5995be0d90e014ea9345e3029aa5546a5b2dcf12c1197e6d4d",
+    "src/canvaspilot/session_broker.py": "a692cd2812cbc09536f1b60c84892bc8e87d2ae984c5a5aa25a13f6537ba6da2",
+    "src/canvaspilot/submission_history.py": "b007234b9861a68504e36f005ae463943b36b5cd50a3d157532c1cab09fcf9da"
+  },
+  "renderer_sha256": "7d8df22447642cb5ac2588b144c18b3b2dde14ab7ca4b7fc085b17d60eb874be",
+  "records": [
+    {
+      "case": "rich",
+      "api_grade_review_calls": 2,
+      "http_requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/users/self/profile",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84",
+          "query": {
+            "include[]": [
+              "total_scores",
+              "current_grading_period_scores",
+              "grading_periods"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84/assignment_groups",
+          "query": {
+            "include[]": [
+              "assignments",
+              "submission"
+            ],
+            "override_assignment_dates": [
+              "true"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84/assignment_groups",
+          "query": {
+            "cursor": [
+              "page-two"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/users/self/profile",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84",
+          "query": {
+            "include[]": [
+              "total_scores",
+              "current_grading_period_scores",
+              "grading_periods"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84/assignment_groups",
+          "query": {
+            "include[]": [
+              "assignments",
+              "submission"
+            ],
+            "override_assignment_dates": [
+              "true"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84/assignment_groups",
+          "query": {
+            "cursor": [
+              "page-two"
+            ]
+          }
+        }
+      ],
+      "html_sha256": "28db1f567033b599374aa0631a2c0fd59d59e3d446e79c1dbf19e6b0ca6e6d34",
+      "json_sha256": "6c5c5d29f93502254691013d1fc7731b7991655ede980fab96214ea4cc6e685b",
+      "metadata": {
+        "course_id": "00084",
+        "generated_at": "2026-10-08T16:00:00Z",
+        "groups_returned": 4,
+        "assignments_returned": 9,
+        "html_bytes": 42939,
+        "sha256": "28db1f567033b599374aa0631a2c0fd59d59e3d446e79c1dbf19e6b0ca6e6d34",
+        "json_bytes": 8014,
+        "json_sha256": "6c5c5d29f93502254691013d1fc7731b7991655ede980fab96214ea4cc6e685b"
+      }
+    },
+    {
+      "case": "field-order",
+      "api_grade_review_calls": 2,
+      "http_requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/users/self/profile",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84",
+          "query": {
+            "include[]": [
+              "total_scores",
+              "current_grading_period_scores",
+              "grading_periods"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84/assignment_groups",
+          "query": {
+            "include[]": [
+              "assignments",
+              "submission"
+            ],
+            "override_assignment_dates": [
+              "true"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84/assignment_groups",
+          "query": {
+            "cursor": [
+              "page-two"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/users/self/profile",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84",
+          "query": {
+            "include[]": [
+              "total_scores",
+              "current_grading_period_scores",
+              "grading_periods"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84/assignment_groups",
+          "query": {
+            "include[]": [
+              "assignments",
+              "submission"
+            ],
+            "override_assignment_dates": [
+              "true"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84/assignment_groups",
+          "query": {
+            "cursor": [
+              "page-two"
+            ]
+          }
+        }
+      ],
+      "html_sha256": "28db1f567033b599374aa0631a2c0fd59d59e3d446e79c1dbf19e6b0ca6e6d34",
+      "json_sha256": "6c5c5d29f93502254691013d1fc7731b7991655ede980fab96214ea4cc6e685b",
+      "metadata": {
+        "course_id": "00084",
+        "generated_at": "2026-10-08T16:00:00Z",
+        "groups_returned": 4,
+        "assignments_returned": 9,
+        "html_bytes": 42939,
+        "sha256": "28db1f567033b599374aa0631a2c0fd59d59e3d446e79c1dbf19e6b0ca6e6d34",
+        "json_bytes": 8014,
+        "json_sha256": "6c5c5d29f93502254691013d1fc7731b7991655ede980fab96214ea4cc6e685b"
+      }
+    },
+    {
+      "case": "hidden-totals",
+      "api_grade_review_calls": 2,
+      "http_requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/users/self/profile",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84",
+          "query": {
+            "include[]": [
+              "total_scores",
+              "current_grading_period_scores",
+              "grading_periods"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84/assignment_groups",
+          "query": {
+            "include[]": [
+              "assignments",
+              "submission"
+            ],
+            "override_assignment_dates": [
+              "true"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84/assignment_groups",
+          "query": {
+            "cursor": [
+              "page-two"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/users/self/profile",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84",
+          "query": {
+            "include[]": [
+              "total_scores",
+              "current_grading_period_scores",
+              "grading_periods"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84/assignment_groups",
+          "query": {
+            "include[]": [
+              "assignments",
+              "submission"
+            ],
+            "override_assignment_dates": [
+              "true"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84/assignment_groups",
+          "query": {
+            "cursor": [
+              "page-two"
+            ]
+          }
+        }
+      ],
+      "html_sha256": "9e95f602a3ac2fdba7faf06e1cd3979a9c0d70a0895c9faddec162f7940065a1",
+      "json_sha256": "2ed575c340183b9401ce83fee977d4de683722fc24826a157a6f9f42c6fe5676",
+      "metadata": {
+        "course_id": "00084",
+        "generated_at": "2026-10-08T16:00:00Z",
+        "groups_returned": 4,
+        "assignments_returned": 9,
+        "html_bytes": 40789,
+        "sha256": "9e95f602a3ac2fdba7faf06e1cd3979a9c0d70a0895c9faddec162f7940065a1",
+        "json_bytes": 7480,
+        "json_sha256": "2ed575c340183b9401ce83fee977d4de683722fc24826a157a6f9f42c6fe5676"
+      }
+    },
+    {
+      "case": "enrollment-absent",
+      "api_grade_review_calls": 2,
+      "http_requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/users/self/profile",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84",
+          "query": {
+            "include[]": [
+              "total_scores",
+              "current_grading_period_scores",
+              "grading_periods"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84/assignment_groups",
+          "query": {
+            "include[]": [
+              "assignments",
+              "submission"
+            ],
+            "override_assignment_dates": [
+              "true"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84/assignment_groups",
+          "query": {
+            "cursor": [
+              "page-two"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/users/self/profile",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84",
+          "query": {
+            "include[]": [
+              "total_scores",
+              "current_grading_period_scores",
+              "grading_periods"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84/assignment_groups",
+          "query": {
+            "include[]": [
+              "assignments",
+              "submission"
+            ],
+            "override_assignment_dates": [
+              "true"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84/assignment_groups",
+          "query": {
+            "cursor": [
+              "page-two"
+            ]
+          }
+        }
+      ],
+      "html_sha256": "b902b3c738678747b8dc2303bc2eeea8fc122110f115af464f74a329e45fd514",
+      "json_sha256": "07c1f7a9b249d8a4c9355b8295c142027477cb0258e3129bdf05f90ce6ed6126",
+      "metadata": {
+        "course_id": "00084",
+        "generated_at": "2026-10-08T16:00:00Z",
+        "groups_returned": 4,
+        "assignments_returned": 9,
+        "html_bytes": 38939,
+        "sha256": "b902b3c738678747b8dc2303bc2eeea8fc122110f115af464f74a329e45fd514",
+        "json_bytes": 7017,
+        "json_sha256": "07c1f7a9b249d8a4c9355b8295c142027477cb0258e3129bdf05f90ce6ed6126"
+      }
+    },
+    {
+      "case": "enrollment-null",
+      "api_grade_review_calls": 2,
+      "http_requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/users/self/profile",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84",
+          "query": {
+            "include[]": [
+              "total_scores",
+              "current_grading_period_scores",
+              "grading_periods"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84/assignment_groups",
+          "query": {
+            "include[]": [
+              "assignments",
+              "submission"
+            ],
+            "override_assignment_dates": [
+              "true"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84/assignment_groups",
+          "query": {
+            "cursor": [
+              "page-two"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/users/self/profile",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84",
+          "query": {
+            "include[]": [
+              "total_scores",
+              "current_grading_period_scores",
+              "grading_periods"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84/assignment_groups",
+          "query": {
+            "include[]": [
+              "assignments",
+              "submission"
+            ],
+            "override_assignment_dates": [
+              "true"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84/assignment_groups",
+          "query": {
+            "cursor": [
+              "page-two"
+            ]
+          }
+        }
+      ],
+      "html_sha256": "719781c42124244e48e9fa3916e56aaea2641ea7e342e2df20e888280be9f20d",
+      "json_sha256": "b0ada9408fefbef63639f9835654508ada6b1f192dfff6ec7a1171dc2fd81bd6",
+      "metadata": {
+        "course_id": "00084",
+        "generated_at": "2026-10-08T16:00:00Z",
+        "groups_returned": 4,
+        "assignments_returned": 9,
+        "html_bytes": 38921,
+        "sha256": "719781c42124244e48e9fa3916e56aaea2641ea7e342e2df20e888280be9f20d",
+        "json_bytes": 7009,
+        "json_sha256": "b0ada9408fefbef63639f9835654508ada6b1f192dfff6ec7a1171dc2fd81bd6"
+      }
+    },
+    {
+      "case": "enrollment-empty",
+      "api_grade_review_calls": 2,
+      "http_requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/users/self/profile",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84",
+          "query": {
+            "include[]": [
+              "total_scores",
+              "current_grading_period_scores",
+              "grading_periods"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84/assignment_groups",
+          "query": {
+            "include[]": [
+              "assignments",
+              "submission"
+            ],
+            "override_assignment_dates": [
+              "true"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84/assignment_groups",
+          "query": {
+            "cursor": [
+              "page-two"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/users/self/profile",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84",
+          "query": {
+            "include[]": [
+              "total_scores",
+              "current_grading_period_scores",
+              "grading_periods"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84/assignment_groups",
+          "query": {
+            "include[]": [
+              "assignments",
+              "submission"
+            ],
+            "override_assignment_dates": [
+              "true"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84/assignment_groups",
+          "query": {
+            "cursor": [
+              "page-two"
+            ]
+          }
+        }
+      ],
+      "html_sha256": "c3c45b8ebb29938541508a383c543be3675c274c6c369d76b8bcd07ffd691cb9",
+      "json_sha256": "32bbd613e79aff94b4e27d77f3fed764b026c21a091c2609f2b245e7173d62be",
+      "metadata": {
+        "course_id": "00084",
+        "generated_at": "2026-10-08T16:00:00Z",
+        "groups_returned": 4,
+        "assignments_returned": 9,
+        "html_bytes": 38932,
+        "sha256": "c3c45b8ebb29938541508a383c543be3675c274c6c369d76b8bcd07ffd691cb9",
+        "json_bytes": 7011,
+        "json_sha256": "32bbd613e79aff94b4e27d77f3fed764b026c21a091c2609f2b245e7173d62be"
+      }
+    },
+    {
+      "case": "period-absent",
+      "api_grade_review_calls": 2,
+      "http_requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/users/self/profile",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84",
+          "query": {
+            "include[]": [
+              "total_scores",
+              "current_grading_period_scores",
+              "grading_periods"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84/assignment_groups",
+          "query": {
+            "include[]": [
+              "assignments",
+              "submission"
+            ],
+            "override_assignment_dates": [
+              "true"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84/assignment_groups",
+          "query": {
+            "cursor": [
+              "page-two"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/users/self/profile",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84",
+          "query": {
+            "include[]": [
+              "total_scores",
+              "current_grading_period_scores",
+              "grading_periods"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84/assignment_groups",
+          "query": {
+            "include[]": [
+              "assignments",
+              "submission"
+            ],
+            "override_assignment_dates": [
+              "true"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84/assignment_groups",
+          "query": {
+            "cursor": [
+              "page-two"
+            ]
+          }
+        }
+      ],
+      "html_sha256": "a0fd041deeff47018746a4f372450110483b2119d5f3777b5d8adfd6a2347988",
+      "json_sha256": "e95e26e66ba0309fac4a52ee8e6392fd02fc193bcae50dc29c91d93c2532b7b3",
+      "metadata": {
+        "course_id": "00084",
+        "generated_at": "2026-10-08T16:00:00Z",
+        "groups_returned": 4,
+        "assignments_returned": 9,
+        "html_bytes": 42621,
+        "sha256": "a0fd041deeff47018746a4f372450110483b2119d5f3777b5d8adfd6a2347988",
+        "json_bytes": 7900,
+        "json_sha256": "e95e26e66ba0309fac4a52ee8e6392fd02fc193bcae50dc29c91d93c2532b7b3"
+      }
+    },
+    {
+      "case": "period-null",
+      "api_grade_review_calls": 2,
+      "http_requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/users/self/profile",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84",
+          "query": {
+            "include[]": [
+              "total_scores",
+              "current_grading_period_scores",
+              "grading_periods"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84/assignment_groups",
+          "query": {
+            "include[]": [
+              "assignments",
+              "submission"
+            ],
+            "override_assignment_dates": [
+              "true"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84/assignment_groups",
+          "query": {
+            "cursor": [
+              "page-two"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/users/self/profile",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84",
+          "query": {
+            "include[]": [
+              "total_scores",
+              "current_grading_period_scores",
+              "grading_periods"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84/assignment_groups",
+          "query": {
+            "include[]": [
+              "assignments",
+              "submission"
+            ],
+            "override_assignment_dates": [
+              "true"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84/assignment_groups",
+          "query": {
+            "cursor": [
+              "page-two"
+            ]
+          }
+        }
+      ],
+      "html_sha256": "fae7950c645a07cc4f00745742c8a6c73df8e45168842dca4af05bf65c189085",
+      "json_sha256": "60bf20ff83b46c55ad9dafa195e594c5893ae82a23dfae024d5372523f731d60",
+      "metadata": {
+        "course_id": "00084",
+        "generated_at": "2026-10-08T16:00:00Z",
+        "groups_returned": 4,
+        "assignments_returned": 9,
+        "html_bytes": 42593,
+        "sha256": "fae7950c645a07cc4f00745742c8a6c73df8e45168842dca4af05bf65c189085",
+        "json_bytes": 7892,
+        "json_sha256": "60bf20ff83b46c55ad9dafa195e594c5893ae82a23dfae024d5372523f731d60"
+      }
+    },
+    {
+      "case": "period-empty",
+      "api_grade_review_calls": 2,
+      "http_requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/users/self/profile",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84",
+          "query": {
+            "include[]": [
+              "total_scores",
+              "current_grading_period_scores",
+              "grading_periods"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84/assignment_groups",
+          "query": {
+            "include[]": [
+              "assignments",
+              "submission"
+            ],
+            "override_assignment_dates": [
+              "true"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84/assignment_groups",
+          "query": {
+            "cursor": [
+              "page-two"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/users/self/profile",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84",
+          "query": {
+            "include[]": [
+              "total_scores",
+              "current_grading_period_scores",
+              "grading_periods"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84/assignment_groups",
+          "query": {
+            "include[]": [
+              "assignments",
+              "submission"
+            ],
+            "override_assignment_dates": [
+              "true"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84/assignment_groups",
+          "query": {
+            "cursor": [
+              "page-two"
+            ]
+          }
+        }
+      ],
+      "html_sha256": "4876279031e8ddd4d44ee0ab29c3157b0eeefbdf70c57fbacea17ecf41730c93",
+      "json_sha256": "1527cb498dea392d74053522a03ab583b395a68492b4555cba8a2d1a0ce87587",
+      "metadata": {
+        "course_id": "00084",
+        "generated_at": "2026-10-08T16:00:00Z",
+        "groups_returned": 4,
+        "assignments_returned": 9,
+        "html_bytes": 42603,
+        "sha256": "4876279031e8ddd4d44ee0ab29c3157b0eeefbdf70c57fbacea17ecf41730c93",
+        "json_bytes": 7894,
+        "json_sha256": "1527cb498dea392d74053522a03ab583b395a68492b4555cba8a2d1a0ce87587"
+      }
+    },
+    {
+      "case": "no-groups",
+      "api_grade_review_calls": 2,
+      "http_requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/users/self/profile",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84",
+          "query": {
+            "include[]": [
+              "total_scores",
+              "current_grading_period_scores",
+              "grading_periods"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84/assignment_groups",
+          "query": {
+            "include[]": [
+              "assignments",
+              "submission"
+            ],
+            "override_assignment_dates": [
+              "true"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84/assignment_groups",
+          "query": {
+            "cursor": [
+              "page-two"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/users/self/profile",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84",
+          "query": {
+            "include[]": [
+              "total_scores",
+              "current_grading_period_scores",
+              "grading_periods"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84/assignment_groups",
+          "query": {
+            "include[]": [
+              "assignments",
+              "submission"
+            ],
+            "override_assignment_dates": [
+              "true"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84/assignment_groups",
+          "query": {
+            "cursor": [
+              "page-two"
+            ]
+          }
+        }
+      ],
+      "html_sha256": "cf845eab56e688f76b96641b1fb2b04b1c3c6620f9bda68205c301e45f9f8b56",
+      "json_sha256": "fc0ee0002608bdbaba295252dd139a5eb07fd48cefb9319f3f91719d2bb7faa9",
+      "metadata": {
+        "course_id": "00084",
+        "generated_at": "2026-10-08T16:00:00Z",
+        "groups_returned": 0,
+        "assignments_returned": 0,
+        "html_bytes": 13496,
+        "sha256": "cf845eab56e688f76b96641b1fb2b04b1c3c6620f9bda68205c301e45f9f8b56",
+        "json_bytes": 2153,
+        "json_sha256": "fc0ee0002608bdbaba295252dd139a5eb07fd48cefb9319f3f91719d2bb7faa9"
+      }
+    },
+    {
+      "case": "restricted-course",
+      "error_type": "GradeReviewError",
+      "error": "Canvas reports that this course is restricted by dates",
+      "http_requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/users/self/profile",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84",
+          "query": {
+            "include[]": [
+              "total_scores",
+              "current_grading_period_scores",
+              "grading_periods"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "case": "mismatched-user",
+      "error_type": "GradeReviewError",
+      "error": "course.enrollments[0].user_id: Canvas returned a different user_id",
+      "http_requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/users/self/profile",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84",
+          "query": {
+            "include[]": [
+              "total_scores",
+              "current_grading_period_scores",
+              "grading_periods"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "case": "invalid-visibility",
+      "error_type": "GradeReviewError",
+      "error": "assignment_groups[0].assignments[0].submission.assignment_visible: invalid visibility metadata",
+      "http_requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/users/self/profile",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84",
+          "query": {
+            "include[]": [
+              "total_scores",
+              "current_grading_period_scores",
+              "grading_periods"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84/assignment_groups",
+          "query": {
+            "include[]": [
+              "assignments",
+              "submission"
+            ],
+            "override_assignment_dates": [
+              "true"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/84/assignment_groups",
+          "query": {
+            "cursor": [
+              "page-two"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "boundary": "Actual CanvasAPI/CanvasClient HTTPX normalization and native renderer; independent fictional HTTP source",
+  "production_source_modified": false,
+  "live_canvas_called": false,
+  "browser_print_download_review": "Owned by production_execution; not duplicated"
+}

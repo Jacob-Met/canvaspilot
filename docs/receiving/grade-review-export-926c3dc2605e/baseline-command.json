@@ -1,0 +1,7 @@
+{
+  "command": "python -m canvaspilot.cli export-grade-review 42 --out baseline-should-not-exist.html",
+  "returncode": 2,
+  "output_exists": false,
+  "source_commit": "1bafdaa31f7789d8e561680cb6001bbe38b2da64",
+  "source_tree": "fc4c5cee949a3a15caf32111af9144cb7eb95b6d"
+}
