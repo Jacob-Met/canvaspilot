@@ -1,0 +1,211 @@
+FFFFFFFFFFF..F.                                                          [100%]
+=================================== FAILURES ===================================
+___ test_http_failure_keeps_course_scope_and_original_error[403-first-page] ____
+
+status = 403, later = False
+
+    @pytest.mark.parametrize("later", [False, True], ids=["first-page", "later-page"])
+    @pytest.mark.parametrize("status", [403, 404, 500])
+    def test_http_failure_keeps_course_scope_and_original_error(status, later):
+        api, requests = failed_listing(
+            lambda _request: httpx.Response(status, json={"error": "authored refusal"}),
+            later=later,
+        )
+        error = CanvasAuthError if status == 403 else httpx.HTTPStatusError
+>       with api, pytest.raises(error) as caught:
+E       Failed: DID NOT RAISE <class 'canvaspilot.client.CanvasAuthError'>
+
+tests/test_files_completeness.py:62: Failed
+___ test_http_failure_keeps_course_scope_and_original_error[403-later-page] ____
+
+status = 403, later = True
+
+    @pytest.mark.parametrize("later", [False, True], ids=["first-page", "later-page"])
+    @pytest.mark.parametrize("status", [403, 404, 500])
+    def test_http_failure_keeps_course_scope_and_original_error(status, later):
+        api, requests = failed_listing(
+            lambda _request: httpx.Response(status, json={"error": "authored refusal"}),
+            later=later,
+        )
+        error = CanvasAuthError if status == 403 else httpx.HTTPStatusError
+>       with api, pytest.raises(error) as caught:
+E       Failed: DID NOT RAISE <class 'canvaspilot.client.CanvasAuthError'>
+
+tests/test_files_completeness.py:62: Failed
+___ test_http_failure_keeps_course_scope_and_original_error[404-first-page] ____
+
+status = 404, later = False
+
+    @pytest.mark.parametrize("later", [False, True], ids=["first-page", "later-page"])
+    @pytest.mark.parametrize("status", [403, 404, 500])
+    def test_http_failure_keeps_course_scope_and_original_error(status, later):
+        api, requests = failed_listing(
+            lambda _request: httpx.Response(status, json={"error": "authored refusal"}),
+            later=later,
+        )
+        error = CanvasAuthError if status == 403 else httpx.HTTPStatusError
+>       with api, pytest.raises(error) as caught:
+E       Failed: DID NOT RAISE <class 'httpx.HTTPStatusError'>
+
+tests/test_files_completeness.py:62: Failed
+___ test_http_failure_keeps_course_scope_and_original_error[404-later-page] ____
+
+status = 404, later = True
+
+    @pytest.mark.parametrize("later", [False, True], ids=["first-page", "later-page"])
+    @pytest.mark.parametrize("status", [403, 404, 500])
+    def test_http_failure_keeps_course_scope_and_original_error(status, later):
+        api, requests = failed_listing(
+            lambda _request: httpx.Response(status, json={"error": "authored refusal"}),
+            later=later,
+        )
+        error = CanvasAuthError if status == 403 else httpx.HTTPStatusError
+>       with api, pytest.raises(error) as caught:
+E       Failed: DID NOT RAISE <class 'httpx.HTTPStatusError'>
+
+tests/test_files_completeness.py:62: Failed
+___ test_http_failure_keeps_course_scope_and_original_error[500-first-page] ____
+
+status = 500, later = False
+
+    @pytest.mark.parametrize("later", [False, True], ids=["first-page", "later-page"])
+    @pytest.mark.parametrize("status", [403, 404, 500])
+    def test_http_failure_keeps_course_scope_and_original_error(status, later):
+        api, requests = failed_listing(
+            lambda _request: httpx.Response(status, json={"error": "authored refusal"}),
+            later=later,
+        )
+        error = CanvasAuthError if status == 403 else httpx.HTTPStatusError
+>       with api, pytest.raises(error) as caught:
+E       Failed: DID NOT RAISE <class 'httpx.HTTPStatusError'>
+
+tests/test_files_completeness.py:62: Failed
+___ test_http_failure_keeps_course_scope_and_original_error[500-later-page] ____
+
+status = 500, later = True
+
+    @pytest.mark.parametrize("later", [False, True], ids=["first-page", "later-page"])
+    @pytest.mark.parametrize("status", [403, 404, 500])
+    def test_http_failure_keeps_course_scope_and_original_error(status, later):
+        api, requests = failed_listing(
+            lambda _request: httpx.Response(status, json={"error": "authored refusal"}),
+            later=later,
+        )
+        error = CanvasAuthError if status == 403 else httpx.HTTPStatusError
+>       with api, pytest.raises(error) as caught:
+E       Failed: DID NOT RAISE <class 'httpx.HTTPStatusError'>
+
+tests/test_files_completeness.py:62: Failed
+_______ test_transport_failure_is_not_replaced_by_root_files[first-page] _______
+
+later = False
+
+    @pytest.mark.parametrize("later", [False, True], ids=["first-page", "later-page"])
+    def test_transport_failure_is_not_replaced_by_root_files(later):
+        original = None
+    
+        def fail(request):
+            nonlocal original
+            original = httpx.ReadTimeout("authored unavailable file page", request=request)
+            raise original
+    
+        api, requests = failed_listing(fail, later=later)
+>       with api, pytest.raises(httpx.ReadTimeout) as caught:
+E       Failed: DID NOT RAISE <class 'httpx.ReadTimeout'>
+
+tests/test_files_completeness.py:81: Failed
+_______ test_transport_failure_is_not_replaced_by_root_files[later-page] _______
+
+later = True
+
+    @pytest.mark.parametrize("later", [False, True], ids=["first-page", "later-page"])
+    def test_transport_failure_is_not_replaced_by_root_files(later):
+        original = None
+    
+        def fail(request):
+            nonlocal original
+            original = httpx.ReadTimeout("authored unavailable file page", request=request)
+            raise original
+    
+        api, requests = failed_listing(fail, later=later)
+>       with api, pytest.raises(httpx.ReadTimeout) as caught:
+E       Failed: DID NOT RAISE <class 'httpx.ReadTimeout'>
+
+tests/test_files_completeness.py:81: Failed
+________ test_invalid_continuation_cannot_return_root_decoy[<lambda>0] _________
+
+failure = <function <lambda> at 0x7f7af481e160>
+
+    @pytest.mark.parametrize("failure", [
+        lambda _request: httpx.Response(200, content=b"{not-json"),
+        lambda _request: httpx.Response(200, json={"not": "a continuing list"}),
+        lambda _request: httpx.Response(200, json=[], headers={
+            "Link": '<https://foreign.invalid/files>; rel="next"',
+        }),
+    ])
+    def test_invalid_continuation_cannot_return_root_decoy(failure):
+        api, requests = failed_listing(failure, later=True)
+>       with api, pytest.raises(CanvasPaginationError):
+E       Failed: DID NOT RAISE <class 'canvaspilot.client.CanvasPaginationError'>
+
+tests/test_files_completeness.py:97: Failed
+________ test_invalid_continuation_cannot_return_root_decoy[<lambda>1] _________
+
+failure = <function <lambda> at 0x7f7af481e0c0>
+
+    @pytest.mark.parametrize("failure", [
+        lambda _request: httpx.Response(200, content=b"{not-json"),
+        lambda _request: httpx.Response(200, json={"not": "a continuing list"}),
+        lambda _request: httpx.Response(200, json=[], headers={
+            "Link": '<https://foreign.invalid/files>; rel="next"',
+        }),
+    ])
+    def test_invalid_continuation_cannot_return_root_decoy(failure):
+        api, requests = failed_listing(failure, later=True)
+>       with api, pytest.raises(CanvasPaginationError):
+E       Failed: DID NOT RAISE <class 'canvaspilot.client.CanvasPaginationError'>
+
+tests/test_files_completeness.py:97: Failed
+________ test_invalid_continuation_cannot_return_root_decoy[<lambda>2] _________
+
+failure = <function <lambda> at 0x7f7af481d4e0>
+
+    @pytest.mark.parametrize("failure", [
+        lambda _request: httpx.Response(200, content=b"{not-json"),
+        lambda _request: httpx.Response(200, json={"not": "a continuing list"}),
+        lambda _request: httpx.Response(200, json=[], headers={
+            "Link": '<https://foreign.invalid/files>; rel="next"',
+        }),
+    ])
+    def test_invalid_continuation_cannot_return_root_decoy(failure):
+        api, requests = failed_listing(failure, later=True)
+>       with api, pytest.raises(CanvasPaginationError):
+E       Failed: DID NOT RAISE <class 'canvaspilot.client.CanvasPaginationError'>
+
+tests/test_files_completeness.py:97: Failed
+________ test_mcp_propagates_file_read_failure_without_successful_json _________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f7af4795d90>
+
+    def test_mcp_propagates_file_read_failure_without_successful_json(monkeypatch):
+        api, requests = failed_listing(
+            lambda _request: httpx.Response(500, json={"error": "authored failure"}), later=True,
+        )
+>       with api, pytest.raises(httpx.HTTPStatusError):
+E       Failed: DID NOT RAISE <class 'httpx.HTTPStatusError'>
+
+tests/test_files_completeness.py:151: Failed
+=========================== short test summary info ============================
+FAILED tests/test_files_completeness.py::test_http_failure_keeps_course_scope_and_original_error[403-first-page]
+FAILED tests/test_files_completeness.py::test_http_failure_keeps_course_scope_and_original_error[403-later-page]
+FAILED tests/test_files_completeness.py::test_http_failure_keeps_course_scope_and_original_error[404-first-page]
+FAILED tests/test_files_completeness.py::test_http_failure_keeps_course_scope_and_original_error[404-later-page]
+FAILED tests/test_files_completeness.py::test_http_failure_keeps_course_scope_and_original_error[500-first-page]
+FAILED tests/test_files_completeness.py::test_http_failure_keeps_course_scope_and_original_error[500-later-page]
+FAILED tests/test_files_completeness.py::test_transport_failure_is_not_replaced_by_root_files[first-page]
+FAILED tests/test_files_completeness.py::test_transport_failure_is_not_replaced_by_root_files[later-page]
+FAILED tests/test_files_completeness.py::test_invalid_continuation_cannot_return_root_decoy[<lambda>0]
+FAILED tests/test_files_completeness.py::test_invalid_continuation_cannot_return_root_decoy[<lambda>1]
+FAILED tests/test_files_completeness.py::test_invalid_continuation_cannot_return_root_decoy[<lambda>2]
+FAILED tests/test_files_completeness.py::test_mcp_propagates_file_read_failure_without_successful_json
+12 failed, 3 passed in 0.71s
