@@ -145,6 +145,12 @@ and [Rubrics API](https://developerdocs.instructure.com/services/canvas/resource
 The public-path tests in `tests/test_assignment_brief_rubric.py` use a clearly
 synthetic assignment and forbid HTTP and broker access.
 
+To read selected briefs alongside your own notes, use
+`canvaspilot export-study 42 1001 1008 --out study.html`. The self-contained
+workspace supports local review checks, downloaded working copies, and printing.
+See the [assignment study workspace guide](docs/study-workspace.md) for the
+selection, source, and note-saving boundaries.
+
 ## MCP server
 
 ```bash

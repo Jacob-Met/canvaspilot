@@ -1,0 +1,108 @@
+{
+  "81": {
+    "id": 81,
+    "name": "Research plan & evidence map",
+    "description": "<p>Choose a focused question, compare two sources, and explain what evidence would change your conclusion.</p><p>Keep a record of uncertainty. Literal notation: &lt;claim&gt; → evidence.</p>",
+    "due_at": "2026-11-20T15:30:00-08:00",
+    "points_possible": 0,
+    "submission_types": [
+      "online_upload"
+    ],
+    "html_url": "https://canvas.fixture.invalid/courses/17/assignments/81",
+    "use_rubric_for_grading": true,
+    "rubric_settings": {
+      "title": "Research planning rubric",
+      "points_possible": "17.5",
+      "hide_score_total": true,
+      "hide_points": false,
+      "free_form_criterion_comments": false
+    },
+    "rubric": [
+      {
+        "id": "criterion-a",
+        "description": "Question and evidence",
+        "long_description": "The question is bounded, the sources are named, and the reasoning connects the evidence to the proposed answer.",
+        "points": 5.5,
+        "criterion_use_range": true,
+        "ignore_for_scoring": false,
+        "ratings": [
+          {
+            "id": "rating-full",
+            "description": "Clear connection",
+            "long_description": "Connects the evidence to the question and states at least one limitation.",
+            "points": 5.5
+          },
+          {
+            "id": "rating-partial",
+            "description": "Developing connection",
+            "long_description": "Identifies evidence, with some reasoning left implicit.",
+            "points": 2.5
+          },
+          {
+            "id": "rating-zero",
+            "description": "Connection not demonstrated",
+            "points": 0
+          }
+        ]
+      },
+      {
+        "id": "criterion-b",
+        "description": "Questions for discussion",
+        "long_description": "Identify what you want to clarify in class.",
+        "points": "malformed optional numeric field",
+        "ignore_for_scoring": true,
+        "ratings": []
+      }
+    ],
+    "submission": {
+      "body": "UNEXPORTED_SUBMISSION_SENTINEL",
+      "grade": "UNEXPORTED_GRADE_SENTINEL"
+    }
+  },
+  "82": {
+    "id": 82,
+    "name": "Systems reflection",
+    "description": "<p>Describe one system you interact with. Identify a feedback loop and a delay, then sketch an example in your own notes.</p>",
+    "due_at": null,
+    "points_possible": 10,
+    "submission_types": [
+      "online_text_entry"
+    ],
+    "html_url": "https://canvas.fixture.invalid/courses/17/assignments/82",
+    "use_rubric_for_grading": false,
+    "rubric_settings": {
+      "title": "Reflection prompts",
+      "points_possible": "987654.125",
+      "hide_points": true,
+      "hide_score_total": false,
+      "free_form_criterion_comments": true
+    },
+    "rubric": [
+      {
+        "id": "advisory",
+        "description": "Explain the feedback loop",
+        "long_description": "Follow cause and effect through one full cycle.",
+        "points": 876543.125,
+        "ratings": [
+          {
+            "id": "r",
+            "description": "Concrete example",
+            "long_description": "Use an example you can explain to another student.",
+            "points": 765432.125
+          }
+        ]
+      }
+    ]
+  },
+  "83": {
+    "id": 83,
+    "name": null,
+    "description": null,
+    "due_at": null,
+    "points_possible": null,
+    "submission_types": null,
+    "html_url": "javascript:window.__unexpected_execution=1",
+    "rubric": [],
+    "rubric_settings": null
+  }
+}
