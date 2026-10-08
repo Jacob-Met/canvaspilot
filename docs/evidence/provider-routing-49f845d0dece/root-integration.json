@@ -1,0 +1,123 @@
+{
+  "worker": "estate-49f845d0dece/root",
+  "observed_at_utc": "2026-10-08T13:19:52Z",
+  "repository": "Jacob-Met/canvaspilot",
+  "pull_request": 45,
+  "state": "integrated_source",
+  "head": "8c16428a294a9e88b3c6365a6480a445aa71ba22",
+  "native_product": "8f75e03121df061ff80f100ee276565d61fdb9c2",
+  "native_package": "71ae2f231fa173fa7135518cc4117cc733e28062",
+  "merge": "79a2f2b2cbb7e74128d731cf096c7e86f1942d4b",
+  "actual_parents": [
+    "ca2318fe7c56d2e4ec1b363ff8a945ab78bf4a0c",
+    "8c16428a294a9e88b3c6365a6480a445aa71ba22"
+  ],
+  "accepted_tree": "0114a6230c473c1ee1d01b99c7121c754b781d54",
+  "tested_merge": "5157edd3cc753335d164b07d1538c93407ced50b",
+  "verification": {
+    "published_native_tested_and_actual_merge_trees_identical": true,
+    "merged_tree_truncated": false,
+    "actual_merge_leaves": 708,
+    "every_accepted_head_leaf_and_mode_preserved": true,
+    "incoming_main_leaves": 580,
+    "incoming_main_unchanged_leaves": 576,
+    "changed_incoming_paths": [
+      {
+        "path": "docs/calendar-export.md",
+        "before": "985ec2d8d7159259f3d82316872aa8fc38a33752",
+        "after": "8e16dd191f128ed835cd39e1460620aec0ab902b",
+        "mode": "100644"
+      },
+      {
+        "path": "src/canvaspilot/calendar_export.py",
+        "before": "0b3b59edcefb0dda52f0de41252c1b7486201ffc",
+        "after": "ef74cfdf50fd894327dbe45a9a9d43042953bc31",
+        "mode": "100644"
+      },
+      {
+        "path": "src/canvaspilot/cli.py",
+        "before": "8f58cbd70ec70f2b441b3ad8509396d4f2b57608",
+        "after": "9b8eec6ea177d0fe69e3cb7776af185d2e7ad4a5",
+        "mode": "100644"
+      },
+      {
+        "path": "src/canvaspilot/session_broker.py",
+        "before": "0e586bb933d517160bc3bfbd8ad86b3ba59ee92f",
+        "after": "cc706d5860489ec37cb2cf7f0b1cb4eee33b664f",
+        "mode": "100644"
+      }
+    ],
+    "added_paths": 128,
+    "production_changes": [
+      "src/canvaspilot/calendar_export.py",
+      "src/canvaspilot/cli.py",
+      "src/canvaspilot/session_broker.py"
+    ],
+    "owner_pagination_client": "1db4b1135305f7e410025ae7937f9a6cd349f020",
+    "owner_api": "140ced2576481a90b8319272714009d326835bf1"
+  },
+  "hosted_gate": {
+    "run": 37782072362,
+    "job": 113327393372,
+    "url": "https://github.com/Jacob-Met/canvaspilot/actions/runs/37782072362/job/113327393372",
+    "head": "8c16428a294a9e88b3c6365a6480a445aa71ba22",
+    "status": "completed",
+    "conclusion": "success",
+    "lint_step": "success",
+    "test_suite_step": "success",
+    "reported_tests_passed": 536,
+    "reported_subtests_passed": 6,
+    "reported_optional_browser_skips": 1
+  },
+  "independent_receiving": {
+    "review_comment": "https://github.com/Jacob-Met/canvaspilot/pull/45#issuecomment-6060622015",
+    "final_packet_commit": "88b00da389adb26cc0ed20a90f677d2e1cd8dd13",
+    "path": "docs/evidence/provider-page-routing-49f845d0dece/pagination-composition/README.md",
+    "published_five_production_files_equal_qualified_native": true,
+    "actual_cli_two_page_witnesses_passed": 11,
+    "legacy_broker": {
+      "health_responses": 1,
+      "post_requests": 0,
+      "queued_jobs": 0,
+      "calendar_created": false,
+      "profile_created": false,
+      "error": "ValueError with updated-broker restart instruction"
+    },
+    "actual_chrome_origin_cases_passed": 5,
+    "actual_chrome_metadata_cases_passed": 4,
+    "final_expression_sha256": "10c759fc18d17167af671be400ee2aedc70357a04063a051420defa0e318f943",
+    "frozen_calendar_consumer_before": {
+      "passed": 26,
+      "failed": 1
+    },
+    "frozen_calendar_consumer_after": {
+      "passed": 27,
+      "failed": 0
+    },
+    "original_failure": "Later-page pagination metadata error refused the artifact but escaped the calendar CLI as a traceback."
+  },
+  "review": {
+    "configured_selected_requested_provider_agreement": "accepted",
+    "fetch_uses_checked_absolute_target": "accepted",
+    "strict_capability_required_for_session_calendar": "accepted",
+    "token_fixture_identity_return_precedes_session_probe": "preserved",
+    "link_health_and_response_envelope": "preserved from landed PR35",
+    "calendar_pagination_error_change": "Only the concrete CanvasPaginationError import and exception tuple in the existing export-calendar command arm."
+  },
+  "preserved_negative_evidence": [
+    "Original configured-provider-only source permitted configured A / selected B export.",
+    "Intermediate browser expression validated a URL but fetched relative to foreign document.baseURI.",
+    "Initial browser driver failed to invoke the expression; its zero-pass receipt remains a harness failure.",
+    "Standalone dump-dom browser probe timed out separately from successful Playwright controls.",
+    "Native ENOSPC and incomplete-launch receipts remain inconclusive or infrastructure failures.",
+    "Initial new CLI tests assumed stderr contained no preceding HTTPX logs; only that test parser was corrected."
+  ],
+  "limits": [
+    "Source integration and authored local receiving; no running broker was installed, activated or restarted.",
+    "No live Canvas school, login, calendar account, credential or existing browser profile was used.",
+    "Redirected foreign response data is refused after the browser may contact the redirect destination.",
+    "Provider observations do not lock the browser or create a transactional Canvas snapshot.",
+    "No additional post-merge behavioral run is claimed; the actual merge tree and parents exactly equal the accepted hosted checkout."
+  ],
+  "record_type": "source_integration_receipt"
+}
