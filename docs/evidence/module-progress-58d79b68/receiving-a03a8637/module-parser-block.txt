@@ -1,0 +1,5 @@
+    progress = sub.add_parser("module-progress", help="Inspect reported module progress and requirements")
+    add_common(progress)
+    progress.add_argument("course_id", help="Positive numeric Canvas course ID")
+    progress.add_argument("--module-id", default=None, help="Inspect one returned module ID")
+

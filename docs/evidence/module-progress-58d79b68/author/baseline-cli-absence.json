@@ -1,0 +1,5 @@
+{
+  "exit": 2,
+  "stdout": "",
+  "stderr": "usage: canvaspilot [-h]\n                   {login,session,whoami,courses,sync,assignments,brief,discussions,files,browse-files,mcp} ...\ncanvaspilot: error: argument cmd: invalid choice: 'module-progress' (choose from login, session, whoami, courses, sync, assignments, brief, discussions, files, browse-files, mcp)\n"
+}

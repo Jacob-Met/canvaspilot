@@ -1,0 +1,10 @@
+{
+  "observed_on": "2026-10-08",
+  "url": "https://developerdocs.instructure.com/services/canvas/resources/modules",
+  "contract": [
+    "Module state and requirement completed are caller-specific and can be absent.",
+    "Module requirement_type distinguishes all from one; sequential progress and prerequisite module IDs remain metadata.",
+    "Inline module items may be omitted; the existing full reader already fetches them.",
+    "Reading module progress does not invoke mark-read or mark-done endpoints."
+  ]
+}

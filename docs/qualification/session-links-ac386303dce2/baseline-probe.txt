@@ -1,0 +1,138 @@
+FFFF.                                                                    [100%]
+=================================== FAILURES ===================================
+________ test_assignment_list_follows_short_page_and_exact_opaque_link _________
+
+receiver = ([{'op': 'fetch', 'method': 'GET', 'path': '/api/v1/courses/42/assignments?order_by=due_at&include%5B%5D=submission&bu...'handler': <function test_assignment_list_follows_short_page_and_exact_opaque_link.<locals>.canvas at 0x7f05dfd46200>})
+
+    def test_assignment_list_follows_short_page_and_exact_opaque_link(receiver):
+        calls, response = receiver
+        rows = [{'id': n, 'name': 'Assignment %d' % n} for n in range(1, 4)]
+    
+        def canvas(job):
+            if 'cursor=' in job['path']:
+                assert job['path'] == NEXT
+                return page(rows[1:])
+            return page(rows[:1], NEXT, spelling='LiNk')
+    
+        response['handler'] = canvas
+        with CanvasAPI(CanvasClient(base_url=BASE, token='')) as api:
+            result = api.list_assignments(42)
+>       assert [row['id'] for row in result] == [1, 2, 3]
+E       assert [1] == [1, 2, 3]
+E         
+E         Right contains 2 more items, first extra item: 2
+E         Use -v to get more diff
+
+tests/test_broker_links.py:68: AssertionError
+___________ test_full_terminal_page_does_not_invent_another_request ____________
+
+receiver = ([{'op': 'fetch', 'method': 'GET', 'path': '/api/v1/courses/42/assignments?per_page=50&page=1', 'headers': {'Accept': ....}], {'handler': <function test_full_terminal_page_does_not_invent_another_request.<locals>.canvas at 0x7f05dfef7600>})
+
+    def test_full_terminal_page_does_not_invent_another_request(receiver):
+        calls, response = receiver
+        rows = [{'id': n} for n in range(50)]
+    
+        def canvas(job):
+            if len(calls) > 1:
+                return {'status': 400, 'json': {'error': 'numeric continuation is not supported'},
+                        'headers': {'link': ''}}
+            return page(rows)
+    
+        response['handler'] = canvas
+        with CanvasClient(base_url=BASE, token='') as client:
+>           assert client.get_paginated(PATH) == rows
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_broker_links.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/canvaspilot/client.py:254: in get_paginated
+    data = broker_fetch(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+method = 'GET', path = '/api/v1/courses/42/assignments'
+params = {'per_page': 50, 'page': 2}, json_body = None, data = None
+timeout = 60.0
+
+    def broker_fetch(
+        method: str,
+        path: str,
+        *,
+        params: dict[str, Any] | list[tuple[str, Any]] | None = None,
+        json_body: dict[str, Any] | None = None,
+        data: dict[str, Any] | None = None,
+        timeout: float = 120.0,
+    ) -> Any:
+        """Call Canvas via the stay-open session broker (in-page fetch)."""
+        full = path
+        if params:
+            # Match token-mode HTTPX encoding, including arrays and booleans.
+            q = str(httpx.QueryParams(params))
+            if q:
+                sep = "&" if "?" in full else "?"
+                full = f"{full}{sep}{q}"
+    
+        body: Any = None
+        headers = {"Accept": "application/json"}
+        if json_body is not None:
+            body = json_body
+            headers["Content-Type"] = "application/json"
+        elif data is not None:
+            body = str(httpx.QueryParams(data))
+            headers["Content-Type"] = "application/x-www-form-urlencoded"
+    
+        r = _broker_request(
+            "POST",
+            f"{broker_base()}/fetch",
+            json={"op": "fetch", "method": method, "path": full, "headers": headers, "body": body},
+            timeout=timeout,
+        )
+        payload = r.json()
+        if not payload.get("ok"):
+            raise CanvasAuthError(payload.get("error") or "broker fetch failed")
+        resp = payload.get("response") or {}
+        status = resp.get("status")
+        if status in (401, 403):
+            raise CanvasAuthError(
+                f"Canvas auth failed ({status}) via session broker. Log in in the broker window."
+            )
+        if status and int(status) >= 400:
+>           raise httpx.HTTPStatusError(
+                f"Canvas HTTP {status}",
+                request=httpx.Request(method, full),
+                response=httpx.Response(int(status), text=str(resp.get("text") or resp.get("json"))),
+            )
+E           httpx.HTTPStatusError: Canvas HTTP 400
+
+src/canvaspilot/client.py:93: HTTPStatusError
+______________ test_repeated_continuation_refuses_partial_success ______________
+
+receiver = ([{'op': 'fetch', 'method': 'GET', 'path': '/api/v1/courses/42/assignments?per_page=50&page=1', 'headers': {'Accept': ... ...}], {'handler': <function test_repeated_continuation_refuses_partial_success.<locals>.<lambda> at 0x7f05dfd460c0>})
+
+    def test_repeated_continuation_refuses_partial_success(receiver):
+        calls, response = receiver
+        response['handler'] = lambda job: page([{'id': len(calls)}], NEXT)
+        with CanvasClient(base_url=BASE, token='') as client:
+>           with pytest.raises(RuntimeError, match='repeat|cycle'):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           Failed: DID NOT RAISE RuntimeError
+
+tests/test_broker_links.py:94: Failed
+_________ test_foreign_continuation_is_refused_before_browser_dispatch _________
+
+receiver = ([{'op': 'fetch', 'method': 'GET', 'path': '/api/v1/courses/42/assignments?per_page=50&page=1', 'headers': {'Accept': ...handler': <function test_foreign_continuation_is_refused_before_browser_dispatch.<locals>.<lambda> at 0x7f05dfef7600>})
+
+    def test_foreign_continuation_is_refused_before_browser_dispatch(receiver):
+        calls, response = receiver
+        response['handler'] = lambda job: page([{'id': 1}], 'https://other.invalid/api/v1/courses')
+        with CanvasClient(base_url=BASE, token='') as client:
+>           with pytest.raises(RuntimeError, match='origin'):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           Failed: DID NOT RAISE RuntimeError
+
+tests/test_broker_links.py:103: Failed
+=========================== short test summary info ============================
+FAILED tests/test_broker_links.py::test_assignment_list_follows_short_page_and_exact_opaque_link
+FAILED tests/test_broker_links.py::test_full_terminal_page_does_not_invent_another_request
+FAILED tests/test_broker_links.py::test_repeated_continuation_refuses_partial_success
+FAILED tests/test_broker_links.py::test_foreign_continuation_is_refused_before_browser_dispatch
+4 failed, 1 passed in 1.23s

@@ -68,7 +68,7 @@ async def canvas_get_assignment(course_id: str, assignment_id: str) -> str:
     return _dump(_get_api().get_assignment(course_id, assignment_id))
 
 
-@mcp.tool(description="Digested assignment brief: prompt, due date, submission types.", structured_output=False)
+@mcp.tool(description="Digested assignment brief: prompt, due date, submission types, and supplied rubric with grading/display settings. Missing rubric data stays unknown; inspect rubric_warnings for omitted malformed data.", structured_output=False)
 async def canvas_assignment_brief(course_id: str, assignment_id: str) -> str:
     return _dump(_get_api().assignment_brief(course_id, assignment_id))
 
@@ -88,6 +88,19 @@ async def canvas_list_announcements(course_ids: str, detail: str = "compact") ->
 )
 async def canvas_list_modules(course_id: str, detail: str = "compact") -> str:
     return _dump(_get_api().list_modules(course_id, detail=detail))
+
+
+@mcp.tool(
+    description=(
+        "Read Canvas-declared module progress and completed/unfinished/unknown requirements. "
+        "Optional module_id selects one returned module. Counts cover returned rows only; "
+        "missing student fields stay unknown. Does not mark items read or complete."
+    ),
+    annotations=ToolAnnotations(readOnlyHint=True, destructiveHint=False, idempotentHint=True),
+    structured_output=False,
+)
+async def canvas_module_progress(course_id: str, module_id: str | None = None) -> str:
+    return _dump(_get_api().module_progress(course_id, module_id=module_id))
 
 
 @mcp.tool(description="List wiki pages for a course.", structured_output=False)

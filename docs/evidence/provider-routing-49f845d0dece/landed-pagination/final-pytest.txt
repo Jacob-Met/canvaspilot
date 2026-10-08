@@ -1,0 +1,156 @@
+........................................................................ [ 13%]
+........................................................................ [ 26%]
+................................................s....................... [ 40%]
+.....................FF................................................. [ 53%]
+..................................................................... [ 66%]
+........................................................................ [ 79%]
+............................................................................................................                                  [100%]
+=================================== FAILURES ===================================
+____ test_later_pagination_failure_has_structured_calendar_error[metadata] _____
+
+tmp_path = PosixPath('/private/tmp/pytest-of-me/pytest-80/test_later_pagination_failure_0')
+failure = 'metadata'
+
+    @pytest.mark.parametrize("failure", ["metadata", "shape"])
+    def test_later_pagination_failure_has_structured_calendar_error(tmp_path, failure):
+        requests = []
+    
+        class Handler(BaseHTTPRequestHandler):
+            def log_message(self, *_args):
+                pass
+    
+            def do_GET(self):
+                requests.append(self.path)
+                later = "cursor=" in self.path
+                rows = {"error": "authored wrong collection shape"} if later and failure == "shape" else [
+                    assignment(2 if later else 1),
+                ]
+                payload = json.dumps(rows).encode()
+                self.send_response(200)
+                self.send_header("Content-Type", "application/json")
+                self.send_header("Content-Length", str(len(payload)))
+                if not later:
+                    self.send_header("Link", f'<{server.url}/api/v1/courses/42/assignments?cursor=next%2Fopaque>; rel="next"')
+                elif failure == "metadata":
+                    self.send_header("Link", f'<{server.url}/api/v1/courses/42/assignments?cursor=invalid>')
+                self.end_headers()
+                self.wfile.write(payload)
+    
+        server = ThreadingHTTPServer(("127.0.0.1", 0), Handler)
+        server.url = f"http://127.0.0.1:{server.server_port}"
+        thread = threading.Thread(target=server.serve_forever, daemon=True)
+        thread.start()
+        try:
+            result = run_cli(server, tmp_path)
+            assert result.returncode == 1
+            assert not result.stdout
+            assert "Traceback" not in result.stderr
+>           error = json.loads(result.stderr)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_calendar_pagination_errors.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/__init__.py:346: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/decoder.py:345: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <json.decoder.JSONDecoder object at 0x105ff34d0>
+s = 'HTTP Request: GET http://127.0.0.1:54784/api/v1/courses/42/assignments?order_by=due_at&include%5B%5D=submission&bucke...200 OK"\n{"ok": false, "error": "CanvasPaginationError", "message": "session pagination Link relation is ambiguous"}\n'
+idx = 0
+
+    def raw_decode(self, s, idx=0):
+        """Decode a JSON document from ``s`` (a ``str`` beginning with
+        a JSON document) and return a 2-tuple of the Python
+        representation and the index in ``s`` where the document ended.
+    
+        This can be used to decode a JSON document from a string that may
+        have extraneous data at the end.
+    
+        """
+        try:
+            obj, end = self.scan_once(s, idx)
+        except StopIteration as err:
+>           raise JSONDecodeError("Expecting value", s, err.value) from None
+E           json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/decoder.py:363: JSONDecodeError
+______ test_later_pagination_failure_has_structured_calendar_error[shape] ______
+
+tmp_path = PosixPath('/private/tmp/pytest-of-me/pytest-80/test_later_pagination_failure_1')
+failure = 'shape'
+
+    @pytest.mark.parametrize("failure", ["metadata", "shape"])
+    def test_later_pagination_failure_has_structured_calendar_error(tmp_path, failure):
+        requests = []
+    
+        class Handler(BaseHTTPRequestHandler):
+            def log_message(self, *_args):
+                pass
+    
+            def do_GET(self):
+                requests.append(self.path)
+                later = "cursor=" in self.path
+                rows = {"error": "authored wrong collection shape"} if later and failure == "shape" else [
+                    assignment(2 if later else 1),
+                ]
+                payload = json.dumps(rows).encode()
+                self.send_response(200)
+                self.send_header("Content-Type", "application/json")
+                self.send_header("Content-Length", str(len(payload)))
+                if not later:
+                    self.send_header("Link", f'<{server.url}/api/v1/courses/42/assignments?cursor=next%2Fopaque>; rel="next"')
+                elif failure == "metadata":
+                    self.send_header("Link", f'<{server.url}/api/v1/courses/42/assignments?cursor=invalid>')
+                self.end_headers()
+                self.wfile.write(payload)
+    
+        server = ThreadingHTTPServer(("127.0.0.1", 0), Handler)
+        server.url = f"http://127.0.0.1:{server.server_port}"
+        thread = threading.Thread(target=server.serve_forever, daemon=True)
+        thread.start()
+        try:
+            result = run_cli(server, tmp_path)
+            assert result.returncode == 1
+            assert not result.stdout
+            assert "Traceback" not in result.stderr
+>           error = json.loads(result.stderr)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_calendar_pagination_errors.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/__init__.py:346: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/decoder.py:345: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <json.decoder.JSONDecoder object at 0x105ff34d0>
+s = 'HTTP Request: GET http://127.0.0.1:54788/api/v1/courses/42/assignments?order_by=due_at&include%5B%5D=submission&bucke...{"ok": false, "error": "CanvasPaginationError", "message": "Canvas pagination returned a non-list continuing page."}\n'
+idx = 0
+
+    def raw_decode(self, s, idx=0):
+        """Decode a JSON document from ``s`` (a ``str`` beginning with
+        a JSON document) and return a 2-tuple of the Python
+        representation and the index in ``s`` where the document ended.
+    
+        This can be used to decode a JSON document from a string that may
+        have extraneous data at the end.
+    
+        """
+        try:
+            obj, end = self.scan_once(s, idx)
+        except StopIteration as err:
+>           raise JSONDecodeError("Expecting value", s, err.value) from None
+E           json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/decoder.py:363: JSONDecodeError
+=========================== short test summary info ============================
+FAILED tests/test_calendar_pagination_errors.py::test_later_pagination_failure_has_structured_calendar_error[metadata]
+FAILED tests/test_calendar_pagination_errors.py::test_later_pagination_failure_has_structured_calendar_error[shape]
+2 failed, 534 passed, 1 skipped, 6 subtests passed in 50.77s

@@ -93,7 +93,13 @@ def _calendar_source(client: CanvasClient) -> str:
     health = broker_health()
     if not health or not health.get("base_url"):
         raise ValueError("Running session broker must identify its Canvas base URL before export")
-    return _source_identity(health["base_url"])
+    source = _source_identity(health["base_url"])
+    if health.get("provider_origin_checks") is not True:
+        raise ValueError(
+            "Running session broker lacks provider origin checks; "
+            "restart it with updated CanvasPilot before export"
+        )
+    return source
 
 
 def _instant(value: Any, label: str) -> datetime:

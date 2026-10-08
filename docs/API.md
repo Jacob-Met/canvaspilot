@@ -41,12 +41,15 @@ All responses are JSON. `GET` paths match by prefix (`/health...`).
   "title": "Dashboard",
   "headless": false,
   "error": null,
-  "base_url": "https://canvas.instructure.com"
+  "base_url": "https://canvas.instructure.com",
+  "link_pagination": true
 }
 ```
 
 - `ready` — Playwright context is up and a Canvas page is open.
 - `error` — set at startup only (e.g. `"playwright missing: ..."`); null when fine.
+- `link_pagination` — the broker forwards explicit `headers.link` metadata for
+  complete collection reads, including an empty string when no Link is present.
 
 The CLI's `broker_health()` probes this with a 2s timeout and treats any
 non-200 as "no broker".
@@ -90,13 +93,16 @@ Response:
   "response": {
     "status": 200,
     "json": { "..." : "parsed body" },
-    "text": null
+    "text": null,
+    "headers": { "link": "" }
   }
 }
 ```
 
 - `response.text` is populated (max 4000 chars) only when the body is **not**
   valid JSON; otherwise it is `null`.
+- `response.headers.link` contains the upstream Link header, or an empty string
+  when absent. Ordinary `CanvasClient.request()` results remain decoded JSON/text.
 - The fetch runs with `credentials: 'include'`, so Canvas session cookies ride
   along — no token needed.
 
@@ -124,10 +130,14 @@ The broker process exits ~0.3s after responding. Unknown paths return
 - Startup emits two JSON lines on stdout: `{"status": "session_ready", ...}`
   (browser + profile + port) and `{"status": "listening", "url": ...}`.
 - Job queue is a single in-page worker; concurrent `/fetch` calls serialize.
-- In-page fetch drops response headers, so Canvas `Link: rel=next` pagination is
-  invisible here. `CanvasClient.get_paginated()` compensates with explicit
-  `?page=N&per_page=M` requests (max 100 per page, 40-page cap, warns on
-  truncation). The token auth path follows `Link` headers normally.
+- Current brokers forward the Link metadata used by `CanvasClient.get_paginated()`.
+  The client follows valid opaque next links on the configured Canvas origin,
+  including after short or empty pages. Missing capability/metadata, malformed
+  applicable links, cycles, later-page failures or non-list bodies, and a next
+  link remaining after forty pages produce an incomplete-collection error.
+  An older broker needs a restart with the current version for collection reads;
+  its ordinary single-request decoding remains supported. Token collection reads
+  also validate initial/next origins and require complete traversal.
 - `POST` requests honor the `Content-Length` header (`{}` when absent); a
   missing body is treated as an empty object.
 - Logging is silenced (`log_message` no-op) — there is no access log on this

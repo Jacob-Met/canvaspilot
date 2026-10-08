@@ -1,0 +1,216 @@
+{
+  "schema": "canvaspilot.independent_receiving.v1",
+  "source_commit": "51609ba3f93d20f69616b357c3c6bee19732dfd4",
+  "tests": 2,
+  "failures": 1,
+  "errors": 0,
+  "skipped": 0,
+  "evidence": [
+    {
+      "control": "__main__.IndependentReceiving.test_mcp_selected_later_failure_keeps_protocol_and_tool_error",
+      "surface": "mcp-registration",
+      "tools_count": 36,
+      "tools": [
+        "canvas_whoami",
+        "canvas_list_courses",
+        "canvas_get_course",
+        "canvas_list_assignments",
+        "canvas_get_assignment",
+        "canvas_assignment_brief",
+        "canvas_list_announcements",
+        "canvas_list_modules",
+        "canvas_module_progress",
+        "canvas_list_pages",
+        "canvas_get_page",
+        "canvas_list_discussion_topics",
+        "canvas_get_discussion",
+        "canvas_post_discussion_reply",
+        "canvas_list_files",
+        "canvas_browse_files",
+        "canvas_list_quizzes",
+        "canvas_get_quiz",
+        "canvas_list_quiz_questions",
+        "canvas_list_quiz_submissions",
+        "canvas_start_quiz_submission",
+        "canvas_complete_quiz_submission",
+        "canvas_list_conversations",
+        "canvas_get_conversation",
+        "canvas_list_calendar_events",
+        "canvas_planner_items",
+        "canvas_activity_stream",
+        "canvas_list_todo_items",
+        "canvas_list_enrollments",
+        "canvas_sync_summary",
+        "canvas_submission_status",
+        "canvas_submission_feedback",
+        "canvas_submit_assignment_text",
+        "canvas_reply_conversation",
+        "canvas_api_request",
+        "canvas_api_paginated"
+      ],
+      "progress_annotations": {
+        "title": null,
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": null
+      }
+    },
+    {
+      "control": "__main__.IndependentReceiving.test_mcp_selected_later_failure_keeps_protocol_and_tool_error",
+      "surface": "mcp",
+      "arguments": {
+        "course_id": "204",
+        "module_id": "77"
+      },
+      "isError": true,
+      "content": "Error executing tool canvas_module_progress"
+    },
+    {
+      "control": "__main__.IndependentReceiving.test_mcp_selected_later_failure_keeps_protocol_and_tool_error",
+      "surface": "mcp-stderr",
+      "stderr": "<frozen runpy>:128: RuntimeWarning: 'canvaspilot.mcp_server' found in sys.modules after import of package 'canvaspilot', but prior to execution of 'canvaspilot.mcp_server'; this may result in unpredictable behaviour\nHTTP Request: GET http://127.0.0.1:45073/api/v1/courses/204/modules?include%5B%5D=items&per_page=50 \"HTTP/1.0 200 OK\"\nHTTP Request: GET http://127.0.0.1:45073/api/v1/courses/204/modules?cursor=denied \"HTTP/1.0 503 Service Unavailable\"\nTool 'canvas_module_progress' raised an unexpected exception\nTraceback (most recent call last):\n  File \"/home/jacob/canvaspilot-module-progress-proof-58d79b68/venv/lib/python3.14/site-packages/mcp/server/mcpserver/tools/base.py\", line 179, in run\n    result = await self.fn_metadata.call_fn(self.fn, self.is_async, validated, pass_directly)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jacob/canvaspilot-module-progress-proof-58d79b68/venv/lib/python3.14/site-packages/mcp/server/mcpserver/utilities/func_metadata.py\", line 163, in call_fn\n    return await fn(**kwargs)\n           ^^^^^^^^^^^^^^^^^^\n  File \"/srv/hamon-estate/canvaspilot-module-progress-independent-review-58d79b68c9e4/candidate/src/canvaspilot/mcp_server.py\", line 103, in canvas_module_progress\n    return _dump(_get_api().module_progress(course_id, module_id=module_id))\n                 ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/srv/hamon-estate/canvaspilot-module-progress-independent-review-58d79b68c9e4/candidate/src/canvaspilot/api.py\", line 292, in module_progress\n    return module_progress(self, course_id, module_id=module_id)\n  File \"/srv/hamon-estate/canvaspilot-module-progress-independent-review-58d79b68c9e4/candidate/src/canvaspilot/module_progress.py\", line 160, in module_progress\n    modules = api.list_modules(course, detail=\"full\")\n  File \"/srv/hamon-estate/canvaspilot-module-progress-independent-review-58d79b68c9e4/candidate/src/canvaspilot/api.py\", line 216, in list_modules\n    rows = self.client.get_paginated(\n        f\"/api/v1/courses/{course_id}/modules\",\n        params={\"include[]\": [\"items\"]},\n    )\n  File \"/srv/hamon-estate/canvaspilot-module-progress-independent-review-58d79b68c9e4/candidate/src/canvaspilot/client.py\", line 284, in get_paginated\n    r.raise_for_status()\n    ~~~~~~~~~~~~~~~~~~^^\n  File \"/home/jacob/canvaspilot-module-progress-proof-58d79b68/venv/lib/python3.14/site-packages/httpx/_models.py\", line 829, in raise_for_status\n    raise HTTPStatusError(message, request=request, response=self)\nhttpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'http://127.0.0.1:45073/api/v1/courses/204/modules?cursor=denied'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"/home/jacob/canvaspilot-module-progress-proof-58d79b68/venv/lib/python3.14/site-packages/mcp/server/mcpserver/server.py\", line 442, in _handle_call_tool\n    return await self.call_tool(params.name, params.arguments or {}, context)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jacob/canvaspilot-module-progress-proof-58d79b68/venv/lib/python3.14/site-packages/mcp/server/mcpserver/server.py\", line 548, in call_tool\n    return await self._tool_manager.call_tool(name, arguments, context, convert_result=True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jacob/canvaspilot-module-progress-proof-58d79b68/venv/lib/python3.14/site-packages/mcp/server/mcpserver/tools/tool_manager.py\", line 87, in call_tool\n    return await tool.run(arguments, context, convert_result=convert_result)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jacob/canvaspilot-module-progress-proof-58d79b68/venv/lib/python3.14/site-packages/mcp/server/mcpserver/tools/base.py\", line 213, in run\n    raise UnexpectedToolError(f\"Error executing tool {self.name}\") from exc\nmcp.server.mcpserver.exceptions.UnexpectedToolError: Error executing tool canvas_module_progress\n"
+    },
+    {
+      "control": "__main__.IndependentReceiving.test_mcp_selected_later_failure_keeps_protocol_and_tool_error",
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/204/modules",
+          "query": {
+            "include[]": [
+              "items"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/204/modules",
+          "query": {
+            "cursor": [
+              "denied"
+            ]
+          }
+        }
+      ],
+      "source_preserved": true,
+      "only_get": true
+    },
+    {
+      "control": "__main__.IndependentReceiving.test_original_contract_mcp_singletons_should_be_tool_errors",
+      "surface": "mcp-registration",
+      "tools_count": 36,
+      "tools": [
+        "canvas_whoami",
+        "canvas_list_courses",
+        "canvas_get_course",
+        "canvas_list_assignments",
+        "canvas_get_assignment",
+        "canvas_assignment_brief",
+        "canvas_list_announcements",
+        "canvas_list_modules",
+        "canvas_module_progress",
+        "canvas_list_pages",
+        "canvas_get_page",
+        "canvas_list_discussion_topics",
+        "canvas_get_discussion",
+        "canvas_post_discussion_reply",
+        "canvas_list_files",
+        "canvas_browse_files",
+        "canvas_list_quizzes",
+        "canvas_get_quiz",
+        "canvas_list_quiz_questions",
+        "canvas_list_quiz_submissions",
+        "canvas_start_quiz_submission",
+        "canvas_complete_quiz_submission",
+        "canvas_list_conversations",
+        "canvas_get_conversation",
+        "canvas_list_calendar_events",
+        "canvas_planner_items",
+        "canvas_activity_stream",
+        "canvas_list_todo_items",
+        "canvas_list_enrollments",
+        "canvas_sync_summary",
+        "canvas_submission_status",
+        "canvas_submission_feedback",
+        "canvas_submit_assignment_text",
+        "canvas_reply_conversation",
+        "canvas_api_request",
+        "canvas_api_paginated"
+      ],
+      "progress_annotations": {
+        "title": null,
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": null
+      }
+    },
+    {
+      "control": "__main__.IndependentReceiving.test_original_contract_mcp_singletons_should_be_tool_errors",
+      "surface": "mcp",
+      "arguments": {
+        "course_id": "201"
+      },
+      "isError": false,
+      "content": "{\n  \"course_id\": \"201\",\n  \"mode\": \"token\",\n  \"module_id\": null,\n  \"modules_returned\": 1,\n  \"modules_included\": 1,\n  \"modules_omitted_by_selection\": 0,\n  \"collection_complete\": null,\n  \"count_scope\": \"returned_modules_and_items\",\n  \"state_source\": \"Canvas module.state for the authenticated caller\",\n  \"module_state_counts\": {\n    \"locked\": 0,\n    \"unlocked\": 0,\n    \"started\": 1,\n    \"completed\": 0,\n    \"unknown\": 0\n  },\n  \"modules\": [\n    {\n      \"id\": 77,\n      \"name\": \"Independent synthetic module\",\n      \"position\": null,\n      \"published\": null,\n      \"state\": \"started\",\n      \"reported_state\": \"started\",\n      \"completed_at\": null,\n      \"unlock_at\": null,\n      \"requirement_type\": \"all\",\n      \"reported_requirement_type\": \"all\",\n      \"require_sequential_progress\": false,\n      \"prerequisite_module_ids\": [],\n      \"reported_prerequisite_module_ids\": [],\n      \"item_coverage\": {\n        \"reported_count\": 0,\n        \"returned_count\": 0,\n        \"status\": \"matches_reported_count\"\n      },\n      \"requirement_counts\": {\n        \"completed\": 0,\n        \"incomplete\": 0,\n        \"unknown\": 0,\n        \"not_reported\": 0\n      },\n      \"remaining_work\": {\n        \"scope\": \"reported_requirements_in_returned_items\",\n        \"rule\": \"all\",\n        \"incomplete_item_ids\": [],\n        \"unknown_completion_item_ids\": [],\n        \"module_locked\": false,\n        \"item_access\": \"not_assessed\"\n      },\n      \"items\": [],\n      \"diagnostics\": []\n    }\n  ]\n}"
+    },
+    {
+      "control": "__main__.IndependentReceiving.test_original_contract_mcp_singletons_should_be_tool_errors",
+      "surface": "mcp",
+      "arguments": {
+        "course_id": "202"
+      },
+      "isError": false,
+      "content": "{\n  \"course_id\": \"202\",\n  \"mode\": \"token\",\n  \"module_id\": null,\n  \"modules_returned\": 1,\n  \"modules_included\": 1,\n  \"modules_omitted_by_selection\": 0,\n  \"collection_complete\": null,\n  \"count_scope\": \"returned_modules_and_items\",\n  \"state_source\": \"Canvas module.state for the authenticated caller\",\n  \"module_state_counts\": {\n    \"locked\": 0,\n    \"unlocked\": 0,\n    \"started\": 1,\n    \"completed\": 0,\n    \"unknown\": 0\n  },\n  \"modules\": [\n    {\n      \"id\": 77,\n      \"name\": \"Independent synthetic module\",\n      \"position\": null,\n      \"published\": null,\n      \"state\": \"started\",\n      \"reported_state\": \"started\",\n      \"completed_at\": null,\n      \"unlock_at\": null,\n      \"requirement_type\": \"all\",\n      \"reported_requirement_type\": \"all\",\n      \"require_sequential_progress\": false,\n      \"prerequisite_module_ids\": [],\n      \"reported_prerequisite_module_ids\": [],\n      \"item_coverage\": {\n        \"reported_count\": 1,\n        \"returned_count\": 1,\n        \"status\": \"matches_reported_count\"\n      },\n      \"requirement_counts\": {\n        \"completed\": 0,\n        \"incomplete\": 1,\n        \"unknown\": 0,\n        \"not_reported\": 0\n      },\n      \"remaining_work\": {\n        \"scope\": \"reported_requirements_in_returned_items\",\n        \"rule\": \"all\",\n        \"incomplete_item_ids\": [\n          771\n        ],\n        \"unknown_completion_item_ids\": [],\n        \"module_locked\": false,\n        \"item_access\": \"not_assessed\"\n      },\n      \"items\": [\n        {\n          \"id\": 771,\n          \"module_id\": 77,\n          \"title\": \"Independent synthetic item\",\n          \"type\": \"Page\",\n          \"position\": null,\n          \"indent\": null,\n          \"content_id\": null,\n          \"html_url\": null,\n          \"published\": null,\n          \"completion_requirement\": {\n            \"type\": \"must_view\",\n            \"completed\": false\n          },\n          \"completion_status\": \"incomplete\",\n          \"requirement_type_supported\": true,\n          \"required_action\": \"View the item\"\n        }\n      ],\n      \"diagnostics\": []\n    }\n  ]\n}"
+    },
+    {
+      "control": "__main__.IndependentReceiving.test_original_contract_mcp_singletons_should_be_tool_errors",
+      "surface": "mcp-stderr",
+      "stderr": "<frozen runpy>:128: RuntimeWarning: 'canvaspilot.mcp_server' found in sys.modules after import of package 'canvaspilot', but prior to execution of 'canvaspilot.mcp_server'; this may result in unpredictable behaviour\nHTTP Request: GET http://127.0.0.1:37019/api/v1/courses/201/modules?include%5B%5D=items&per_page=50 \"HTTP/1.0 200 OK\"\nHTTP Request: GET http://127.0.0.1:37019/api/v1/courses/202/modules?include%5B%5D=items&per_page=50 \"HTTP/1.0 200 OK\"\nHTTP Request: GET http://127.0.0.1:37019/api/v1/courses/202/modules/77/items?per_page=50 \"HTTP/1.0 200 OK\"\n"
+    },
+    {
+      "control": "__main__.IndependentReceiving.test_original_contract_mcp_singletons_should_be_tool_errors",
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/201/modules",
+          "query": {
+            "include[]": [
+              "items"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/202/modules",
+          "query": {
+            "include[]": [
+              "items"
+            ],
+            "per_page": [
+              "50"
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/202/modules/77/items",
+          "query": {
+            "per_page": [
+              "50"
+            ]
+          }
+        }
+      ],
+      "source_preserved": true,
+      "only_get": true
+    }
+  ]
+}

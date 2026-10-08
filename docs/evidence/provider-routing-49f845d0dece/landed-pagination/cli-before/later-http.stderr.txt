@@ -1,0 +1,9 @@
+HTTP Request: GET http://127.0.0.1:54017/health "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:54017/health "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:54017/fetch "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:54017/fetch "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:54017/health "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:54017/health "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:54017/fetch "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:54017/fetch "HTTP/1.0 200 OK"
+{"ok": false, "error": "HTTPStatusError", "message": "Canvas HTTP 503"}

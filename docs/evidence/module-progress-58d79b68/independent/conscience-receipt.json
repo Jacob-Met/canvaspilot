@@ -1,0 +1,25 @@
+{
+  "schema": "hamon.independent_receiving_native_receipt.v1",
+  "recorded_at": "2026-10-08T12:02:52.359161Z",
+  "packet": "/srv/hamon-estate/custody/chatgpt-58d79b68c9e4/canvaspilot-module-progress-review",
+  "readable_copy": "/home/jacob/canvaspilot-module-progress-review-58d79b68",
+  "manifest_sha256": "5f46866aec2e48ef2204ebc167b7cd8109f215bc23192e44751f5fff37e6f9db",
+  "manifested_files": 50,
+  "review_result": {
+    "seq": 4016,
+    "event_id": "cev_977fa603f9ff4b2b91766a86",
+    "event_type": "conscience.decision",
+    "actor": "chatgpt:58d79b68c9e4:runtime_integrity"
+  },
+  "claim_completion": {
+    "seq": 4017,
+    "event_id": "cev_53a538948ac547db93b128f8",
+    "event_type": "conscience.decision",
+    "actor": "chatgpt:58d79b68c9e4:runtime_integrity"
+  },
+  "claim_key": "claim:canvaspilot-module-progress-review-58d79b68c9e4-20261008",
+  "source_owner": "chatgpt-58d79b68c9e4/product_work",
+  "current_composition": "5173b24285e9e3e2dda6b1d8158adea74e03bd52",
+  "verdict": "qualified_with_explicit_normalized_reader_boundary",
+  "hosted_ci_or_integration_accepted": false
+}

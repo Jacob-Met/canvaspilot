@@ -1,0 +1,36 @@
+{
+  "unchanged_named_definitions_from_e208": [
+    "CanvasAuthError",
+    "broker_base",
+    "_broker_request",
+    "broker_health",
+    "broker_fetch",
+    "default_profile",
+    "default_base_url",
+    "CanvasClient.__init__",
+    "CanvasClient.mode",
+    "CanvasClient.close",
+    "CanvasClient.__enter__",
+    "CanvasClient.__exit__",
+    "CanvasClient._ensure_http",
+    "CanvasClient.request",
+    "CanvasClient._get_broker_link_pages",
+    "CanvasClient._fixture_request",
+    "_assert_pagination_origin",
+    "_with_per_page"
+  ],
+  "changed_named_definitions_from_e208": [
+    "CanvasPaginationError",
+    "CanvasClient",
+    "CanvasClient.get_paginated",
+    "_with_page",
+    "_session_link_next",
+    "_link_next"
+  ],
+  "new_named_definitions": [
+    "_url_origin",
+    "_token_pagination_path"
+  ],
+  "pr37_parser_exact": true,
+  "broker_source_sha256": "749e11c92d6d56d54ccf208dda6784cb2d43ac3b837188f5d82bfe73c3129e8e"
+}

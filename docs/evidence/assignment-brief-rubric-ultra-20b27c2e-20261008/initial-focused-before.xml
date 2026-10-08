@@ -1,0 +1,847 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="66" skipped="0" tests="66" time="1.166" timestamp="2026-10-08T17:56:34.139246+09:00" hostname="05aaedaf3e50"><testcase classname="tests.test_assignment_brief_rubric" name="test_canonical_rubric_survives_each_public_receiver[api]" time="0.002"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd40cc540&gt;
+
+    def test_canonical_rubric_survives_each_public_receiver(read_brief):
+        original = copy.deepcopy(ASSIGNMENT)
+        result = read_brief(ASSIGNMENT)
+        assert {key: result[key] for key in ORDINARY_BRIEF} == ORDINARY_BRIEF
+&gt;       assert result["rubric"] == ASSIGNMENT["rubric"]
+               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:87: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_canonical_rubric_survives_each_public_receiver[cli]" time="0.003"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd40cd760&gt;
+
+    def test_canonical_rubric_survives_each_public_receiver(read_brief):
+        original = copy.deepcopy(ASSIGNMENT)
+        result = read_brief(ASSIGNMENT)
+        assert {key: result[key] for key in ORDINARY_BRIEF} == ORDINARY_BRIEF
+&gt;       assert result["rubric"] == ASSIGNMENT["rubric"]
+               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:87: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_canonical_rubric_survives_each_public_receiver[mcp]" time="0.002"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd671b560&gt;
+
+    def test_canonical_rubric_survives_each_public_receiver(read_brief):
+        original = copy.deepcopy(ASSIGNMENT)
+        result = read_brief(ASSIGNMENT)
+        assert {key: result[key] for key in ORDINARY_BRIEF} == ORDINARY_BRIEF
+&gt;       assert result["rubric"] == ASSIGNMENT["rubric"]
+               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:87: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_no_rubric_does_not_invent_requirements[api-absent]" time="0.001"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd41c4fe0&gt;
+supplied = 'absent'
+
+    @pytest.mark.parametrize("supplied", ["absent", None, []])
+    def test_no_rubric_does_not_invent_requirements(read_brief, supplied):
+        assignment = {key: value for key, value in ASSIGNMENT.items()
+                      if key not in {"rubric", "rubric_settings", "use_rubric_for_grading"}}
+        assignment["due_at"] = None
+        if supplied != "absent":
+            assignment["rubric"] = supplied
+        result = read_brief(assignment)
+        expected = [] if supplied == [] else None
+&gt;       assert result["rubric"] == expected
+               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:103: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_no_rubric_does_not_invent_requirements[api-None]" time="0.001"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd63b6a20&gt;
+supplied = None
+
+    @pytest.mark.parametrize("supplied", ["absent", None, []])
+    def test_no_rubric_does_not_invent_requirements(read_brief, supplied):
+        assignment = {key: value for key, value in ASSIGNMENT.items()
+                      if key not in {"rubric", "rubric_settings", "use_rubric_for_grading"}}
+        assignment["due_at"] = None
+        if supplied != "absent":
+            assignment["rubric"] = supplied
+        result = read_brief(assignment)
+        expected = [] if supplied == [] else None
+&gt;       assert result["rubric"] == expected
+               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:103: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_no_rubric_does_not_invent_requirements[api-supplied2]" time="0.001"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd40cc360&gt;
+supplied = []
+
+    @pytest.mark.parametrize("supplied", ["absent", None, []])
+    def test_no_rubric_does_not_invent_requirements(read_brief, supplied):
+        assignment = {key: value for key, value in ASSIGNMENT.items()
+                      if key not in {"rubric", "rubric_settings", "use_rubric_for_grading"}}
+        assignment["due_at"] = None
+        if supplied != "absent":
+            assignment["rubric"] = supplied
+        result = read_brief(assignment)
+        expected = [] if supplied == [] else None
+&gt;       assert result["rubric"] == expected
+               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:103: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_no_rubric_does_not_invent_requirements[cli-absent]" time="0.005"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd40cc4a0&gt;
+supplied = 'absent'
+
+    @pytest.mark.parametrize("supplied", ["absent", None, []])
+    def test_no_rubric_does_not_invent_requirements(read_brief, supplied):
+        assignment = {key: value for key, value in ASSIGNMENT.items()
+                      if key not in {"rubric", "rubric_settings", "use_rubric_for_grading"}}
+        assignment["due_at"] = None
+        if supplied != "absent":
+            assignment["rubric"] = supplied
+        result = read_brief(assignment)
+        expected = [] if supplied == [] else None
+&gt;       assert result["rubric"] == expected
+               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:103: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_no_rubric_does_not_invent_requirements[cli-None]" time="0.002"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd40cdda0&gt;
+supplied = None
+
+    @pytest.mark.parametrize("supplied", ["absent", None, []])
+    def test_no_rubric_does_not_invent_requirements(read_brief, supplied):
+        assignment = {key: value for key, value in ASSIGNMENT.items()
+                      if key not in {"rubric", "rubric_settings", "use_rubric_for_grading"}}
+        assignment["due_at"] = None
+        if supplied != "absent":
+            assignment["rubric"] = supplied
+        result = read_brief(assignment)
+        expected = [] if supplied == [] else None
+&gt;       assert result["rubric"] == expected
+               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:103: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_no_rubric_does_not_invent_requirements[cli-supplied2]" time="0.002"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd40cdbc0&gt;
+supplied = []
+
+    @pytest.mark.parametrize("supplied", ["absent", None, []])
+    def test_no_rubric_does_not_invent_requirements(read_brief, supplied):
+        assignment = {key: value for key, value in ASSIGNMENT.items()
+                      if key not in {"rubric", "rubric_settings", "use_rubric_for_grading"}}
+        assignment["due_at"] = None
+        if supplied != "absent":
+            assignment["rubric"] = supplied
+        result = read_brief(assignment)
+        expected = [] if supplied == [] else None
+&gt;       assert result["rubric"] == expected
+               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:103: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_no_rubric_does_not_invent_requirements[mcp-absent]" time="0.001"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd40ceac0&gt;
+supplied = 'absent'
+
+    @pytest.mark.parametrize("supplied", ["absent", None, []])
+    def test_no_rubric_does_not_invent_requirements(read_brief, supplied):
+        assignment = {key: value for key, value in ASSIGNMENT.items()
+                      if key not in {"rubric", "rubric_settings", "use_rubric_for_grading"}}
+        assignment["due_at"] = None
+        if supplied != "absent":
+            assignment["rubric"] = supplied
+        result = read_brief(assignment)
+        expected = [] if supplied == [] else None
+&gt;       assert result["rubric"] == expected
+               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:103: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_no_rubric_does_not_invent_requirements[mcp-None]" time="0.001"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd40cd580&gt;
+supplied = None
+
+    @pytest.mark.parametrize("supplied", ["absent", None, []])
+    def test_no_rubric_does_not_invent_requirements(read_brief, supplied):
+        assignment = {key: value for key, value in ASSIGNMENT.items()
+                      if key not in {"rubric", "rubric_settings", "use_rubric_for_grading"}}
+        assignment["due_at"] = None
+        if supplied != "absent":
+            assignment["rubric"] = supplied
+        result = read_brief(assignment)
+        expected = [] if supplied == [] else None
+&gt;       assert result["rubric"] == expected
+               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:103: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_no_rubric_does_not_invent_requirements[mcp-supplied2]" time="0.001"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd40ce700&gt;
+supplied = []
+
+    @pytest.mark.parametrize("supplied", ["absent", None, []])
+    def test_no_rubric_does_not_invent_requirements(read_brief, supplied):
+        assignment = {key: value for key, value in ASSIGNMENT.items()
+                      if key not in {"rubric", "rubric_settings", "use_rubric_for_grading"}}
+        assignment["due_at"] = None
+        if supplied != "absent":
+            assignment["rubric"] = supplied
+        result = read_brief(assignment)
+        expected = [] if supplied == [] else None
+&gt;       assert result["rubric"] == expected
+               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:103: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_malformed_optional_containers_preserve_the_brief[api-supplied0]" time="0.001"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd40ce8e0&gt;
+supplied = {'description': 'not a list'}
+
+    @pytest.mark.parametrize("supplied", [{"description": "not a list"}, "bad", False, 17])
+    def test_malformed_optional_containers_preserve_the_brief(read_brief, supplied):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        assignment.update(rubric=supplied, rubric_settings=["bad"], use_rubric_for_grading="false")
+        result = read_brief(assignment)
+        assert {key: result[key] for key in ORDINARY_BRIEF} == ORDINARY_BRIEF
+&gt;       assert result["rubric"] is None
+               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:118: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_malformed_optional_containers_preserve_the_brief[api-bad]" time="0.001"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd40cf060&gt;
+supplied = 'bad'
+
+    @pytest.mark.parametrize("supplied", [{"description": "not a list"}, "bad", False, 17])
+    def test_malformed_optional_containers_preserve_the_brief(read_brief, supplied):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        assignment.update(rubric=supplied, rubric_settings=["bad"], use_rubric_for_grading="false")
+        result = read_brief(assignment)
+        assert {key: result[key] for key in ORDINARY_BRIEF} == ORDINARY_BRIEF
+&gt;       assert result["rubric"] is None
+               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:118: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_malformed_optional_containers_preserve_the_brief[api-False]" time="0.001"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd40cf240&gt;
+supplied = False
+
+    @pytest.mark.parametrize("supplied", [{"description": "not a list"}, "bad", False, 17])
+    def test_malformed_optional_containers_preserve_the_brief(read_brief, supplied):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        assignment.update(rubric=supplied, rubric_settings=["bad"], use_rubric_for_grading="false")
+        result = read_brief(assignment)
+        assert {key: result[key] for key in ORDINARY_BRIEF} == ORDINARY_BRIEF
+&gt;       assert result["rubric"] is None
+               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:118: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_malformed_optional_containers_preserve_the_brief[api-17]" time="0.001"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd40ce2a0&gt;
+supplied = 17
+
+    @pytest.mark.parametrize("supplied", [{"description": "not a list"}, "bad", False, 17])
+    def test_malformed_optional_containers_preserve_the_brief(read_brief, supplied):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        assignment.update(rubric=supplied, rubric_settings=["bad"], use_rubric_for_grading="false")
+        result = read_brief(assignment)
+        assert {key: result[key] for key in ORDINARY_BRIEF} == ORDINARY_BRIEF
+&gt;       assert result["rubric"] is None
+               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:118: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_malformed_optional_containers_preserve_the_brief[cli-supplied0]" time="0.002"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd40ce020&gt;
+supplied = {'description': 'not a list'}
+
+    @pytest.mark.parametrize("supplied", [{"description": "not a list"}, "bad", False, 17])
+    def test_malformed_optional_containers_preserve_the_brief(read_brief, supplied):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        assignment.update(rubric=supplied, rubric_settings=["bad"], use_rubric_for_grading="false")
+        result = read_brief(assignment)
+        assert {key: result[key] for key in ORDINARY_BRIEF} == ORDINARY_BRIEF
+&gt;       assert result["rubric"] is None
+               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:118: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_malformed_optional_containers_preserve_the_brief[cli-bad]" time="0.002"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd40cfe20&gt;
+supplied = 'bad'
+
+    @pytest.mark.parametrize("supplied", [{"description": "not a list"}, "bad", False, 17])
+    def test_malformed_optional_containers_preserve_the_brief(read_brief, supplied):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        assignment.update(rubric=supplied, rubric_settings=["bad"], use_rubric_for_grading="false")
+        result = read_brief(assignment)
+        assert {key: result[key] for key in ORDINARY_BRIEF} == ORDINARY_BRIEF
+&gt;       assert result["rubric"] is None
+               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:118: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_malformed_optional_containers_preserve_the_brief[cli-False]" time="0.002"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd40ceac0&gt;
+supplied = False
+
+    @pytest.mark.parametrize("supplied", [{"description": "not a list"}, "bad", False, 17])
+    def test_malformed_optional_containers_preserve_the_brief(read_brief, supplied):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        assignment.update(rubric=supplied, rubric_settings=["bad"], use_rubric_for_grading="false")
+        result = read_brief(assignment)
+        assert {key: result[key] for key in ORDINARY_BRIEF} == ORDINARY_BRIEF
+&gt;       assert result["rubric"] is None
+               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:118: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_malformed_optional_containers_preserve_the_brief[cli-17]" time="0.002"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd40cfd80&gt;
+supplied = 17
+
+    @pytest.mark.parametrize("supplied", [{"description": "not a list"}, "bad", False, 17])
+    def test_malformed_optional_containers_preserve_the_brief(read_brief, supplied):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        assignment.update(rubric=supplied, rubric_settings=["bad"], use_rubric_for_grading="false")
+        result = read_brief(assignment)
+        assert {key: result[key] for key in ORDINARY_BRIEF} == ORDINARY_BRIEF
+&gt;       assert result["rubric"] is None
+               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:118: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_malformed_optional_containers_preserve_the_brief[mcp-supplied0]" time="0.001"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd40cf1a0&gt;
+supplied = {'description': 'not a list'}
+
+    @pytest.mark.parametrize("supplied", [{"description": "not a list"}, "bad", False, 17])
+    def test_malformed_optional_containers_preserve_the_brief(read_brief, supplied):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        assignment.update(rubric=supplied, rubric_settings=["bad"], use_rubric_for_grading="false")
+        result = read_brief(assignment)
+        assert {key: result[key] for key in ORDINARY_BRIEF} == ORDINARY_BRIEF
+&gt;       assert result["rubric"] is None
+               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:118: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_malformed_optional_containers_preserve_the_brief[mcp-bad]" time="0.001"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd40cdc60&gt;
+supplied = 'bad'
+
+    @pytest.mark.parametrize("supplied", [{"description": "not a list"}, "bad", False, 17])
+    def test_malformed_optional_containers_preserve_the_brief(read_brief, supplied):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        assignment.update(rubric=supplied, rubric_settings=["bad"], use_rubric_for_grading="false")
+        result = read_brief(assignment)
+        assert {key: result[key] for key in ORDINARY_BRIEF} == ORDINARY_BRIEF
+&gt;       assert result["rubric"] is None
+               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:118: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_malformed_optional_containers_preserve_the_brief[mcp-False]" time="0.001"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd40cef20&gt;
+supplied = False
+
+    @pytest.mark.parametrize("supplied", [{"description": "not a list"}, "bad", False, 17])
+    def test_malformed_optional_containers_preserve_the_brief(read_brief, supplied):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        assignment.update(rubric=supplied, rubric_settings=["bad"], use_rubric_for_grading="false")
+        result = read_brief(assignment)
+        assert {key: result[key] for key in ORDINARY_BRIEF} == ORDINARY_BRIEF
+&gt;       assert result["rubric"] is None
+               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:118: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_malformed_optional_containers_preserve_the_brief[mcp-17]" time="0.001"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd40cf380&gt;
+supplied = 17
+
+    @pytest.mark.parametrize("supplied", [{"description": "not a list"}, "bad", False, 17])
+    def test_malformed_optional_containers_preserve_the_brief(read_brief, supplied):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        assignment.update(rubric=supplied, rubric_settings=["bad"], use_rubric_for_grading="false")
+        result = read_brief(assignment)
+        assert {key: result[key] for key in ORDINARY_BRIEF} == ORDINARY_BRIEF
+&gt;       assert result["rubric"] is None
+               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:118: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_malformed_neighbors_and_fields_are_isolated[api]" time="0.001"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd3f6c360&gt;
+
+    def test_malformed_neighbors_and_fields_are_isolated(read_brief):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        healthy = copy.deepcopy(assignment["rubric"][0])
+        damaged = {
+            "id": "damaged", "description": "Keep this supplied description", "points": "twelve",
+            "criterion_use_range": "false", "ignore_for_scoring": False,
+            "ratings": [None, "broken", {"id": "bad", "description": ["wrong type"], "points": True},
+                        copy.deepcopy(healthy["ratings"][1])],
+        }
+        assignment["rubric"] = [None, "broken", {}, damaged, healthy]
+        original = copy.deepcopy(assignment)
+        result = read_brief(assignment)
+&gt;       assert result["rubric"][-1] == healthy
+               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:137: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_malformed_neighbors_and_fields_are_isolated[cli]" time="0.002"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd40cde40&gt;
+
+    def test_malformed_neighbors_and_fields_are_isolated(read_brief):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        healthy = copy.deepcopy(assignment["rubric"][0])
+        damaged = {
+            "id": "damaged", "description": "Keep this supplied description", "points": "twelve",
+            "criterion_use_range": "false", "ignore_for_scoring": False,
+            "ratings": [None, "broken", {"id": "bad", "description": ["wrong type"], "points": True},
+                        copy.deepcopy(healthy["ratings"][1])],
+        }
+        assignment["rubric"] = [None, "broken", {}, damaged, healthy]
+        original = copy.deepcopy(assignment)
+        result = read_brief(assignment)
+&gt;       assert result["rubric"][-1] == healthy
+               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:137: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_malformed_neighbors_and_fields_are_isolated[mcp]" time="0.001"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd40cf240&gt;
+
+    def test_malformed_neighbors_and_fields_are_isolated(read_brief):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        healthy = copy.deepcopy(assignment["rubric"][0])
+        damaged = {
+            "id": "damaged", "description": "Keep this supplied description", "points": "twelve",
+            "criterion_use_range": "false", "ignore_for_scoring": False,
+            "ratings": [None, "broken", {"id": "bad", "description": ["wrong type"], "points": True},
+                        copy.deepcopy(healthy["ratings"][1])],
+        }
+        assignment["rubric"] = [None, "broken", {}, damaged, healthy]
+        original = copy.deepcopy(assignment)
+        result = read_brief(assignment)
+&gt;       assert result["rubric"][-1] == healthy
+               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:137: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_missing_and_null_criterion_fields_stay_unknown[api]" time="0.001"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd40cd940&gt;
+
+    def test_missing_and_null_criterion_fields_stay_unknown(read_brief):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        assignment["rubric"] = [{"description": "A supplied qualitative requirement"},
+                                {"id": "optional", "points": None, "ratings": None}]
+        result = read_brief(assignment)
+&gt;       assert result["rubric"] == assignment["rubric"]
+               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:156: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_missing_and_null_criterion_fields_stay_unknown[cli]" time="0.002"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd40ce520&gt;
+
+    def test_missing_and_null_criterion_fields_stay_unknown(read_brief):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        assignment["rubric"] = [{"description": "A supplied qualitative requirement"},
+                                {"id": "optional", "points": None, "ratings": None}]
+        result = read_brief(assignment)
+&gt;       assert result["rubric"] == assignment["rubric"]
+               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:156: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_missing_and_null_criterion_fields_stay_unknown[mcp]" time="0.001"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd40cdc60&gt;
+
+    def test_missing_and_null_criterion_fields_stay_unknown(read_brief):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        assignment["rubric"] = [{"description": "A supplied qualitative requirement"},
+                                {"id": "optional", "points": None, "ratings": None}]
+        result = read_brief(assignment)
+&gt;       assert result["rubric"] == assignment["rubric"]
+               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:156: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_malformed_ratings_keep_the_criterion[api-ratings0]" time="0.001"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd40cf1a0&gt;
+ratings = {'id': 'not an array'}
+
+    @pytest.mark.parametrize("ratings", [{"id": "not an array"}, "broken", 4])
+    def test_malformed_ratings_keep_the_criterion(read_brief, ratings):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        assignment["rubric"][0]["ratings"] = ratings
+        result = read_brief(assignment)
+&gt;       assert result["rubric"][0]["id"] == "evidence"
+               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:165: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_malformed_ratings_keep_the_criterion[api-broken]" time="0.001"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd3f6cea0&gt;
+ratings = 'broken'
+
+    @pytest.mark.parametrize("ratings", [{"id": "not an array"}, "broken", 4])
+    def test_malformed_ratings_keep_the_criterion(read_brief, ratings):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        assignment["rubric"][0]["ratings"] = ratings
+        result = read_brief(assignment)
+&gt;       assert result["rubric"][0]["id"] == "evidence"
+               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:165: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_malformed_ratings_keep_the_criterion[api-4]" time="0.001"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd3f6cc20&gt;, ratings = 4
+
+    @pytest.mark.parametrize("ratings", [{"id": "not an array"}, "broken", 4])
+    def test_malformed_ratings_keep_the_criterion(read_brief, ratings):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        assignment["rubric"][0]["ratings"] = ratings
+        result = read_brief(assignment)
+&gt;       assert result["rubric"][0]["id"] == "evidence"
+               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:165: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_malformed_ratings_keep_the_criterion[cli-ratings0]" time="0.002"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd3f6c9a0&gt;
+ratings = {'id': 'not an array'}
+
+    @pytest.mark.parametrize("ratings", [{"id": "not an array"}, "broken", 4])
+    def test_malformed_ratings_keep_the_criterion(read_brief, ratings):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        assignment["rubric"][0]["ratings"] = ratings
+        result = read_brief(assignment)
+&gt;       assert result["rubric"][0]["id"] == "evidence"
+               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:165: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_malformed_ratings_keep_the_criterion[cli-broken]" time="0.002"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd3f6dd00&gt;
+ratings = 'broken'
+
+    @pytest.mark.parametrize("ratings", [{"id": "not an array"}, "broken", 4])
+    def test_malformed_ratings_keep_the_criterion(read_brief, ratings):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        assignment["rubric"][0]["ratings"] = ratings
+        result = read_brief(assignment)
+&gt;       assert result["rubric"][0]["id"] == "evidence"
+               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:165: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_malformed_ratings_keep_the_criterion[cli-4]" time="0.002"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd3f6e020&gt;, ratings = 4
+
+    @pytest.mark.parametrize("ratings", [{"id": "not an array"}, "broken", 4])
+    def test_malformed_ratings_keep_the_criterion(read_brief, ratings):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        assignment["rubric"][0]["ratings"] = ratings
+        result = read_brief(assignment)
+&gt;       assert result["rubric"][0]["id"] == "evidence"
+               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:165: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_malformed_ratings_keep_the_criterion[mcp-ratings0]" time="0.001"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd3f6e520&gt;
+ratings = {'id': 'not an array'}
+
+    @pytest.mark.parametrize("ratings", [{"id": "not an array"}, "broken", 4])
+    def test_malformed_ratings_keep_the_criterion(read_brief, ratings):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        assignment["rubric"][0]["ratings"] = ratings
+        result = read_brief(assignment)
+&gt;       assert result["rubric"][0]["id"] == "evidence"
+               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:165: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_malformed_ratings_keep_the_criterion[mcp-broken]" time="0.002"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd40cf100&gt;
+ratings = 'broken'
+
+    @pytest.mark.parametrize("ratings", [{"id": "not an array"}, "broken", 4])
+    def test_malformed_ratings_keep_the_criterion(read_brief, ratings):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        assignment["rubric"][0]["ratings"] = ratings
+        result = read_brief(assignment)
+&gt;       assert result["rubric"][0]["id"] == "evidence"
+               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:165: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_malformed_ratings_keep_the_criterion[mcp-4]" time="0.001"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd40cf9c0&gt;, ratings = 4
+
+    @pytest.mark.parametrize("ratings", [{"id": "not an array"}, "broken", 4])
+    def test_malformed_ratings_keep_the_criterion(read_brief, ratings):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        assignment["rubric"][0]["ratings"] = ratings
+        result = read_brief(assignment)
+&gt;       assert result["rubric"][0]["id"] == "evidence"
+               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:165: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_grading_and_display_flags_are_supplied_data[api-True]" time="0.001"><failure message="KeyError: 'use_rubric_for_grading'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd3f6e0c0&gt;
+use_for_grading = True
+
+    @pytest.mark.parametrize("use_for_grading", [True, False, None])
+    def test_grading_and_display_flags_are_supplied_data(read_brief, use_for_grading):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        assignment["use_rubric_for_grading"] = use_for_grading
+        assignment["rubric_settings"].update(hide_points=True, hide_score_total=False,
+                                            free_form_criterion_comments=True)
+        result = read_brief(assignment)
+&gt;       assert result["use_rubric_for_grading"] is use_for_grading
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'use_rubric_for_grading'
+
+../candidate/tests/test_assignment_brief_rubric.py:179: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_grading_and_display_flags_are_supplied_data[api-False]" time="0.001"><failure message="KeyError: 'use_rubric_for_grading'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd3f6cae0&gt;
+use_for_grading = False
+
+    @pytest.mark.parametrize("use_for_grading", [True, False, None])
+    def test_grading_and_display_flags_are_supplied_data(read_brief, use_for_grading):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        assignment["use_rubric_for_grading"] = use_for_grading
+        assignment["rubric_settings"].update(hide_points=True, hide_score_total=False,
+                                            free_form_criterion_comments=True)
+        result = read_brief(assignment)
+&gt;       assert result["use_rubric_for_grading"] is use_for_grading
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'use_rubric_for_grading'
+
+../candidate/tests/test_assignment_brief_rubric.py:179: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_grading_and_display_flags_are_supplied_data[api-None]" time="0.001"><failure message="KeyError: 'use_rubric_for_grading'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd3f6d760&gt;
+use_for_grading = None
+
+    @pytest.mark.parametrize("use_for_grading", [True, False, None])
+    def test_grading_and_display_flags_are_supplied_data(read_brief, use_for_grading):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        assignment["use_rubric_for_grading"] = use_for_grading
+        assignment["rubric_settings"].update(hide_points=True, hide_score_total=False,
+                                            free_form_criterion_comments=True)
+        result = read_brief(assignment)
+&gt;       assert result["use_rubric_for_grading"] is use_for_grading
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'use_rubric_for_grading'
+
+../candidate/tests/test_assignment_brief_rubric.py:179: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_grading_and_display_flags_are_supplied_data[cli-True]" time="0.002"><failure message="KeyError: 'use_rubric_for_grading'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd3f6e020&gt;
+use_for_grading = True
+
+    @pytest.mark.parametrize("use_for_grading", [True, False, None])
+    def test_grading_and_display_flags_are_supplied_data(read_brief, use_for_grading):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        assignment["use_rubric_for_grading"] = use_for_grading
+        assignment["rubric_settings"].update(hide_points=True, hide_score_total=False,
+                                            free_form_criterion_comments=True)
+        result = read_brief(assignment)
+&gt;       assert result["use_rubric_for_grading"] is use_for_grading
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'use_rubric_for_grading'
+
+../candidate/tests/test_assignment_brief_rubric.py:179: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_grading_and_display_flags_are_supplied_data[cli-False]" time="0.002"><failure message="KeyError: 'use_rubric_for_grading'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd3f6e700&gt;
+use_for_grading = False
+
+    @pytest.mark.parametrize("use_for_grading", [True, False, None])
+    def test_grading_and_display_flags_are_supplied_data(read_brief, use_for_grading):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        assignment["use_rubric_for_grading"] = use_for_grading
+        assignment["rubric_settings"].update(hide_points=True, hide_score_total=False,
+                                            free_form_criterion_comments=True)
+        result = read_brief(assignment)
+&gt;       assert result["use_rubric_for_grading"] is use_for_grading
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'use_rubric_for_grading'
+
+../candidate/tests/test_assignment_brief_rubric.py:179: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_grading_and_display_flags_are_supplied_data[cli-None]" time="0.002"><failure message="KeyError: 'use_rubric_for_grading'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd3f6ea20&gt;
+use_for_grading = None
+
+    @pytest.mark.parametrize("use_for_grading", [True, False, None])
+    def test_grading_and_display_flags_are_supplied_data(read_brief, use_for_grading):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        assignment["use_rubric_for_grading"] = use_for_grading
+        assignment["rubric_settings"].update(hide_points=True, hide_score_total=False,
+                                            free_form_criterion_comments=True)
+        result = read_brief(assignment)
+&gt;       assert result["use_rubric_for_grading"] is use_for_grading
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'use_rubric_for_grading'
+
+../candidate/tests/test_assignment_brief_rubric.py:179: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_grading_and_display_flags_are_supplied_data[mcp-True]" time="0.001"><failure message="KeyError: 'use_rubric_for_grading'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd3f6ed40&gt;
+use_for_grading = True
+
+    @pytest.mark.parametrize("use_for_grading", [True, False, None])
+    def test_grading_and_display_flags_are_supplied_data(read_brief, use_for_grading):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        assignment["use_rubric_for_grading"] = use_for_grading
+        assignment["rubric_settings"].update(hide_points=True, hide_score_total=False,
+                                            free_form_criterion_comments=True)
+        result = read_brief(assignment)
+&gt;       assert result["use_rubric_for_grading"] is use_for_grading
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'use_rubric_for_grading'
+
+../candidate/tests/test_assignment_brief_rubric.py:179: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_grading_and_display_flags_are_supplied_data[mcp-False]" time="0.001"><failure message="KeyError: 'use_rubric_for_grading'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd3f6eb60&gt;
+use_for_grading = False
+
+    @pytest.mark.parametrize("use_for_grading", [True, False, None])
+    def test_grading_and_display_flags_are_supplied_data(read_brief, use_for_grading):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        assignment["use_rubric_for_grading"] = use_for_grading
+        assignment["rubric_settings"].update(hide_points=True, hide_score_total=False,
+                                            free_form_criterion_comments=True)
+        result = read_brief(assignment)
+&gt;       assert result["use_rubric_for_grading"] is use_for_grading
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'use_rubric_for_grading'
+
+../candidate/tests/test_assignment_brief_rubric.py:179: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_grading_and_display_flags_are_supplied_data[mcp-None]" time="0.001"><failure message="KeyError: 'use_rubric_for_grading'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd3f6c4a0&gt;
+use_for_grading = None
+
+    @pytest.mark.parametrize("use_for_grading", [True, False, None])
+    def test_grading_and_display_flags_are_supplied_data(read_brief, use_for_grading):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        assignment["use_rubric_for_grading"] = use_for_grading
+        assignment["rubric_settings"].update(hide_points=True, hide_score_total=False,
+                                            free_form_criterion_comments=True)
+        result = read_brief(assignment)
+&gt;       assert result["use_rubric_for_grading"] is use_for_grading
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'use_rubric_for_grading'
+
+../candidate/tests/test_assignment_brief_rubric.py:179: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_invalid_points_do_not_poison_json_or_neighbor_ratings[api-True]" time="0.001"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd3f6c400&gt;
+points = True
+
+    @pytest.mark.parametrize("points", [True, float("inf"), float("nan"), "12"])
+    def test_invalid_points_do_not_poison_json_or_neighbor_ratings(read_brief, points):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        assignment["rubric"][0]["points"] = points
+        result = read_brief(assignment)
+&gt;       assert "points" not in result["rubric"][0]
+                               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:192: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_invalid_points_do_not_poison_json_or_neighbor_ratings[api-inf]" time="0.001"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd3f6d620&gt;, points = inf
+
+    @pytest.mark.parametrize("points", [True, float("inf"), float("nan"), "12"])
+    def test_invalid_points_do_not_poison_json_or_neighbor_ratings(read_brief, points):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        assignment["rubric"][0]["points"] = points
+        result = read_brief(assignment)
+&gt;       assert "points" not in result["rubric"][0]
+                               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:192: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_invalid_points_do_not_poison_json_or_neighbor_ratings[api-nan]" time="0.001"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd3f6c180&gt;, points = nan
+
+    @pytest.mark.parametrize("points", [True, float("inf"), float("nan"), "12"])
+    def test_invalid_points_do_not_poison_json_or_neighbor_ratings(read_brief, points):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        assignment["rubric"][0]["points"] = points
+        result = read_brief(assignment)
+&gt;       assert "points" not in result["rubric"][0]
+                               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:192: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_invalid_points_do_not_poison_json_or_neighbor_ratings[api-12]" time="0.001"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd3f6eac0&gt;
+points = '12'
+
+    @pytest.mark.parametrize("points", [True, float("inf"), float("nan"), "12"])
+    def test_invalid_points_do_not_poison_json_or_neighbor_ratings(read_brief, points):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        assignment["rubric"][0]["points"] = points
+        result = read_brief(assignment)
+&gt;       assert "points" not in result["rubric"][0]
+                               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:192: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_invalid_points_do_not_poison_json_or_neighbor_ratings[cli-True]" time="0.002"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd3f6eb60&gt;
+points = True
+
+    @pytest.mark.parametrize("points", [True, float("inf"), float("nan"), "12"])
+    def test_invalid_points_do_not_poison_json_or_neighbor_ratings(read_brief, points):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        assignment["rubric"][0]["points"] = points
+        result = read_brief(assignment)
+&gt;       assert "points" not in result["rubric"][0]
+                               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:192: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_invalid_points_do_not_poison_json_or_neighbor_ratings[cli-inf]" time="0.003"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd3f6e660&gt;, points = inf
+
+    @pytest.mark.parametrize("points", [True, float("inf"), float("nan"), "12"])
+    def test_invalid_points_do_not_poison_json_or_neighbor_ratings(read_brief, points):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        assignment["rubric"][0]["points"] = points
+        result = read_brief(assignment)
+&gt;       assert "points" not in result["rubric"][0]
+                               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:192: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_invalid_points_do_not_poison_json_or_neighbor_ratings[cli-nan]" time="0.003"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd3f6ee80&gt;, points = nan
+
+    @pytest.mark.parametrize("points", [True, float("inf"), float("nan"), "12"])
+    def test_invalid_points_do_not_poison_json_or_neighbor_ratings(read_brief, points):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        assignment["rubric"][0]["points"] = points
+        result = read_brief(assignment)
+&gt;       assert "points" not in result["rubric"][0]
+                               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:192: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_invalid_points_do_not_poison_json_or_neighbor_ratings[cli-12]" time="0.003"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd3f6c2c0&gt;
+points = '12'
+
+    @pytest.mark.parametrize("points", [True, float("inf"), float("nan"), "12"])
+    def test_invalid_points_do_not_poison_json_or_neighbor_ratings(read_brief, points):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        assignment["rubric"][0]["points"] = points
+        result = read_brief(assignment)
+&gt;       assert "points" not in result["rubric"][0]
+                               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:192: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_invalid_points_do_not_poison_json_or_neighbor_ratings[mcp-True]" time="0.002"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd3f6ede0&gt;
+points = True
+
+    @pytest.mark.parametrize("points", [True, float("inf"), float("nan"), "12"])
+    def test_invalid_points_do_not_poison_json_or_neighbor_ratings(read_brief, points):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        assignment["rubric"][0]["points"] = points
+        result = read_brief(assignment)
+&gt;       assert "points" not in result["rubric"][0]
+                               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:192: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_invalid_points_do_not_poison_json_or_neighbor_ratings[mcp-inf]" time="0.002"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd3f6f920&gt;, points = inf
+
+    @pytest.mark.parametrize("points", [True, float("inf"), float("nan"), "12"])
+    def test_invalid_points_do_not_poison_json_or_neighbor_ratings(read_brief, points):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        assignment["rubric"][0]["points"] = points
+        result = read_brief(assignment)
+&gt;       assert "points" not in result["rubric"][0]
+                               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:192: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_invalid_points_do_not_poison_json_or_neighbor_ratings[mcp-nan]" time="0.002"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd3f6ed40&gt;, points = nan
+
+    @pytest.mark.parametrize("points", [True, float("inf"), float("nan"), "12"])
+    def test_invalid_points_do_not_poison_json_or_neighbor_ratings(read_brief, points):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        assignment["rubric"][0]["points"] = points
+        result = read_brief(assignment)
+&gt;       assert "points" not in result["rubric"][0]
+                               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:192: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_invalid_points_do_not_poison_json_or_neighbor_ratings[mcp-12]" time="0.002"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd3f6f2e0&gt;
+points = '12'
+
+    @pytest.mark.parametrize("points", [True, float("inf"), float("nan"), "12"])
+    def test_invalid_points_do_not_poison_json_or_neighbor_ratings(read_brief, points):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        assignment["rubric"][0]["points"] = points
+        result = read_brief(assignment)
+&gt;       assert "points" not in result["rubric"][0]
+                               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:192: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_large_integer_points_are_not_forced_through_float[api]" time="0.001"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd3f6f9c0&gt;
+
+    def test_large_integer_points_are_not_forced_through_float(read_brief):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        assignment["rubric"][0]["points"] = 10 ** 400
+        result = read_brief(assignment)
+&gt;       assert result["rubric"][0]["points"] == 10 ** 400
+               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:201: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_large_integer_points_are_not_forced_through_float[cli]" time="0.003"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd3f6e020&gt;
+
+    def test_large_integer_points_are_not_forced_through_float(read_brief):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        assignment["rubric"][0]["points"] = 10 ** 400
+        result = read_brief(assignment)
+&gt;       assert result["rubric"][0]["points"] == 10 ** 400
+               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:201: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_large_integer_points_are_not_forced_through_float[mcp]" time="0.002"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd3f6eca0&gt;
+
+    def test_large_integer_points_are_not_forced_through_float(read_brief):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        assignment["rubric"][0]["points"] = 10 ** 400
+        result = read_brief(assignment)
+&gt;       assert result["rubric"][0]["points"] == 10 ** 400
+               ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:201: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_brief_rubric_and_settings_do_not_alias_the_input[api]" time="0.001"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd3f6e8e0&gt;
+
+    def test_brief_rubric_and_settings_do_not_alias_the_input(read_brief):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        original = copy.deepcopy(assignment)
+        result = read_brief(assignment)
+&gt;       result["rubric"][0]["ratings"][0]["description"] = "Caller edit"
+        ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:209: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_brief_rubric_and_settings_do_not_alias_the_input[cli]" time="0.003"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd3f6c180&gt;
+
+    def test_brief_rubric_and_settings_do_not_alias_the_input(read_brief):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        original = copy.deepcopy(assignment)
+        result = read_brief(assignment)
+&gt;       result["rubric"][0]["ratings"][0]["description"] = "Caller edit"
+        ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:209: KeyError</failure></testcase><testcase classname="tests.test_assignment_brief_rubric" name="test_brief_rubric_and_settings_do_not_alias_the_input[mcp]" time="0.002"><failure message="KeyError: 'rubric'">read_brief = &lt;function read_brief.&lt;locals&gt;.read at 0x7f7bd3f6fba0&gt;
+
+    def test_brief_rubric_and_settings_do_not_alias_the_input(read_brief):
+        assignment = copy.deepcopy(ASSIGNMENT)
+        original = copy.deepcopy(assignment)
+        result = read_brief(assignment)
+&gt;       result["rubric"][0]["ratings"][0]["description"] = "Caller edit"
+        ^^^^^^^^^^^^^^^^
+E       KeyError: 'rubric'
+
+../candidate/tests/test_assignment_brief_rubric.py:209: KeyError</failure></testcase></testsuite></testsuites>

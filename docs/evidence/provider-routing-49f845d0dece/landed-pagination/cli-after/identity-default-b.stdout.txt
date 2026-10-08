@@ -1,0 +1,21 @@
+{
+  "ok": true,
+  "output": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-provider-routing-receiving/landed-pagination/cli-after/identity-default-b.ics",
+  "source": "https://school-b.fixture.invalid",
+  "bucket": "upcoming",
+  "generated_at": "2026-10-08T13:01:23.898367+00:00",
+  "course_ids": [
+    "42"
+  ],
+  "course_summaries": [
+    {
+      "course_id": "42",
+      "assignments_returned": 1,
+      "events_exported": 1
+    }
+  ],
+  "events_exported": 1,
+  "assignments_omitted": [],
+  "coverage": "Returned assignment rows only; existing transport pagination limits apply.",
+  "sha256": "3a955dc2bb2cac08557d1d4576dec4af704dce8d5c660d28e94dfda62c433025"
+}

@@ -1,0 +1,94 @@
+{
+  "case": "singleton_fallback_item",
+  "upstream_fixture": {
+    "routes": {
+      "GET /api/v1/courses/42/modules": [
+        {
+          "id": 7,
+          "name": "Foundations",
+          "position": 1,
+          "state": "started",
+          "requirement_type": "all",
+          "require_sequential_progress": true,
+          "prerequisite_module_ids": [],
+          "items_count": 1
+        }
+      ],
+      "GET /api/v1/courses/42/modules/7/items": {
+        "id": 71,
+        "module_id": 7,
+        "title": "Read Caf\u00e9 notes",
+        "type": "Page",
+        "position": 1,
+        "html_url": "https://canvas.invalid/courses/42/modules/items/71",
+        "completion_requirement": {
+          "type": "must_view",
+          "completed": true
+        }
+      }
+    }
+  },
+  "cli": {
+    "exit": 0,
+    "stdout": "{\n  \"course_id\": \"42\",\n  \"mode\": \"token\",\n  \"module_id\": null,\n  \"modules_returned\": 1,\n  \"modules_included\": 1,\n  \"modules_omitted_by_selection\": 0,\n  \"collection_complete\": null,\n  \"count_scope\": \"returned_modules_and_items\",\n  \"state_source\": \"Canvas module.state for the authenticated caller\",\n  \"reader_source\": \"CanvasAPI.list_modules(detail=full)\",\n  \"upstream_response_shape\": \"not_observed\",\n  \"module_state_counts\": {\n    \"locked\": 0,\n    \"unlocked\": 0,\n    \"started\": 1,\n    \"completed\": 0,\n    \"unknown\": 0\n  },\n  \"modules\": [\n    {\n      \"id\": 7,\n      \"name\": \"Foundations\",\n      \"position\": 1,\n      \"published\": null,\n      \"state\": \"started\",\n      \"reported_state\": \"started\",\n      \"completed_at\": null,\n      \"unlock_at\": null,\n      \"requirement_type\": \"all\",\n      \"reported_requirement_type\": \"all\",\n      \"require_sequential_progress\": true,\n      \"prerequisite_module_ids\": [],\n      \"reported_prerequisite_module_ids\": [],\n      \"item_coverage\": {\n        \"reported_count\": 1,\n        \"returned_count\": 1,\n        \"status\": \"matches_reported_count\"\n      },\n      \"requirement_counts\": {\n        \"completed\": 1,\n        \"incomplete\": 0,\n        \"unknown\": 0,\n        \"not_reported\": 0\n      },\n      \"remaining_work\": {\n        \"scope\": \"reported_requirements_in_returned_items\",\n        \"rule\": \"all\",\n        \"incomplete_item_ids\": [],\n        \"unknown_completion_item_ids\": [],\n        \"module_locked\": false,\n        \"item_access\": \"not_assessed\"\n      },\n      \"items\": [\n        {\n          \"id\": 71,\n          \"module_id\": 7,\n          \"title\": \"Read Caf\\u00e9 notes\",\n          \"type\": \"Page\",\n          \"position\": 1,\n          \"indent\": null,\n          \"content_id\": null,\n          \"html_url\": \"https://canvas.invalid/courses/42/modules/items/71\",\n          \"published\": null,\n          \"completion_requirement\": {\n            \"type\": \"must_view\",\n            \"completed\": true\n          },\n          \"completion_status\": \"completed\",\n          \"requirement_type_supported\": true,\n          \"required_action\": \"View the item\"\n        }\n      ],\n      \"diagnostics\": []\n    }\n  ]\n}\n",
+    "stderr": "HTTP Request: GET http://127.0.0.1:38191/api/v1/courses/42/modules?include%5B%5D=items&per_page=50 \"HTTP/1.0 200 OK\"\nHTTP Request: GET http://127.0.0.1:38191/api/v1/courses/42/modules/7/items?per_page=50 \"HTTP/1.0 200 OK\"\n"
+  },
+  "mcp": {
+    "_meta": null,
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"course_id\": \"42\",\n  \"mode\": \"token\",\n  \"module_id\": null,\n  \"modules_returned\": 1,\n  \"modules_included\": 1,\n  \"modules_omitted_by_selection\": 0,\n  \"collection_complete\": null,\n  \"count_scope\": \"returned_modules_and_items\",\n  \"state_source\": \"Canvas module.state for the authenticated caller\",\n  \"reader_source\": \"CanvasAPI.list_modules(detail=full)\",\n  \"upstream_response_shape\": \"not_observed\",\n  \"module_state_counts\": {\n    \"locked\": 0,\n    \"unlocked\": 0,\n    \"started\": 1,\n    \"completed\": 0,\n    \"unknown\": 0\n  },\n  \"modules\": [\n    {\n      \"id\": 7,\n      \"name\": \"Foundations\",\n      \"position\": 1,\n      \"published\": null,\n      \"state\": \"started\",\n      \"reported_state\": \"started\",\n      \"completed_at\": null,\n      \"unlock_at\": null,\n      \"requirement_type\": \"all\",\n      \"reported_requirement_type\": \"all\",\n      \"require_sequential_progress\": true,\n      \"prerequisite_module_ids\": [],\n      \"reported_prerequisite_module_ids\": [],\n      \"item_coverage\": {\n        \"reported_count\": 1,\n        \"returned_count\": 1,\n        \"status\": \"matches_reported_count\"\n      },\n      \"requirement_counts\": {\n        \"completed\": 1,\n        \"incomplete\": 0,\n        \"unknown\": 0,\n        \"not_reported\": 0\n      },\n      \"remaining_work\": {\n        \"scope\": \"reported_requirements_in_returned_items\",\n        \"rule\": \"all\",\n        \"incomplete_item_ids\": [],\n        \"unknown_completion_item_ids\": [],\n        \"module_locked\": false,\n        \"item_access\": \"not_assessed\"\n      },\n      \"items\": [\n        {\n          \"id\": 71,\n          \"module_id\": 7,\n          \"title\": \"Read Caf\\u00e9 notes\",\n          \"type\": \"Page\",\n          \"position\": 1,\n          \"indent\": null,\n          \"content_id\": null,\n          \"html_url\": \"https://canvas.invalid/courses/42/modules/items/71\",\n          \"published\": null,\n          \"completion_requirement\": {\n            \"type\": \"must_view\",\n            \"completed\": true\n          },\n          \"completion_status\": \"completed\",\n          \"requirement_type_supported\": true,\n          \"required_action\": \"View the item\"\n        }\n      ],\n      \"diagnostics\": []\n    }\n  ]\n}",
+        "annotations": null,
+        "_meta": null
+      }
+    ],
+    "structuredContent": null,
+    "isError": false,
+    "resultType": "complete"
+  },
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/42/modules",
+      "query": {
+        "include[]": [
+          "items"
+        ],
+        "per_page": [
+          "50"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/42/modules/7/items",
+      "query": {
+        "per_page": [
+          "50"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/42/modules",
+      "query": {
+        "include[]": [
+          "items"
+        ],
+        "per_page": [
+          "50"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/42/modules/7/items",
+      "query": {
+        "per_page": [
+          "50"
+        ]
+      }
+    }
+  ]
+}

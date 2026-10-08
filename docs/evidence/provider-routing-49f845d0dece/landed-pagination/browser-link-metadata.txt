@@ -1,0 +1,111 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_ BrowserLinkMetadata.test_real_browser_returns_link_only_and_keeps_session_fetch _
+
+self = <test_browser_link_metadata.BrowserLinkMetadata testMethod=test_real_browser_returns_link_only_and_keeps_session_fetch>
+
+    @unittest.skipUnless('CANVASPILOT_CHROMIUM_BIN' in os.environ,
+                         'set CANVASPILOT_CHROMIUM_BIN for native Chromium qualification')
+    def test_real_browser_returns_link_only_and_keeps_session_fetch(self):
+        binary = os.environ['CANVASPILOT_CHROMIUM_BIN']
+        if not binary:
+            self.fail('CANVASPILOT_CHROMIUM_BIN is explicitly empty')
+        source_path = Path(os.environ.get(
+            'CANVASPILOT_BROKER_SOURCE',
+            str(Path(__file__).resolve().parents[1] / 'src/canvaspilot/session_broker.py'),
+        ))
+        tree = ast.parse(source_path.read_text())
+        functions = [call.args[0].value for call in ast.walk(tree)
+                     if isinstance(call, ast.Call) and isinstance(call.func, ast.Attribute)
+                     and call.func.attr == 'evaluate' and call.args
+                     and isinstance(call.args[0], ast.Constant)
+                     and isinstance(call.args[0].value, str)]
+        self.assertEqual(1, len(functions), 'identify the exact production fetch expression')
+        received = []
+        api_rows = [{'id': 17, 'name': 'Authored fixture assignment'}]
+    
+        class Provider(BaseHTTPRequestHandler):
+            def log_message(self, *args):
+                pass
+    
+            def do_GET(self):
+                if self.path == '/probe':
+                    args = {'method': 'GET', 'path': '/api/v1/courses',
+                            'headers': {'Accept': 'application/json'}, 'body': None}
+                    doc = ('<!doctype html><pre id="result">pending</pre><script>'
+                           f'({functions[0]})({json.dumps(args)}).then(value => {{'
+                           'document.getElementById("result").textContent=JSON.stringify(value);'
+                           '}).catch(error => {'
+                           'document.getElementById("result").textContent=JSON.stringify({error:String(error)});'
+                           '});</script>')
+                    self.send_response(200)
+                    self.send_header('Content-Type', 'text/html; charset=utf-8')
+                    self.send_header('Set-Cookie', 'canvas_fixture=authored; Path=/; HttpOnly; SameSite=Lax')
+                    self.end_headers()
+                    self.wfile.write(doc.encode())
+                elif self.path == '/api/v1/courses':
+                    received.append({'method': 'GET', 'session_present':
+                                     'canvas_fixture=authored' in self.headers.get('Cookie', ''),
+                                     'accept': self.headers.get('Accept')})
+                    self.send_response(200)
+                    self.send_header('Content-Type', 'application/json')
+                    self.send_header('LiNk', self.server.next_link)
+                    self.send_header('Set-Cookie', 'unrelated_fixture=not-forwarded; Path=/; HttpOnly')
+                    self.send_header('X-Unrelated-Fixture', 'not-forwarded')
+                    self.end_headers()
+                    self.wfile.write(json.dumps(api_rows).encode())
+                else:
+                    self.send_response(404)
+                    self.end_headers()
+    
+        server = ThreadingHTTPServer(('127.0.0.1', 0), Provider)
+        port = server.server_address[1]
+        server.next_link = f'<http://127.0.0.1:{port}/api/v1/courses?opaque=a%2Bb%3D>; rel="next"'
+        thread = threading.Thread(target=server.serve_forever,
+                                  kwargs={'poll_interval': 0.01}, daemon=True)
+        thread.start()
+        try:
+            with tempfile.TemporaryDirectory(
+                prefix='canvaspilot-links-', dir=os.environ.get('CANVASPILOT_CHROMIUM_PROFILE_ROOT'),
+            ) as profile:
+                command = [binary, '--headless', '--dump-dom', '--virtual-time-budget=3000',
+                           '--no-first-run', '--no-default-browser-check',
+                           '--disable-background-networking', '--disable-component-update',
+                           '--disable-domain-reliability', '--disable-features=MediaRouter,OptimizationHints',
+                           '--user-data-dir=' + profile, f'http://127.0.0.1:{port}/probe']
+                process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                                           text=True, start_new_session=True)
+                try:
+>                   output, errors = process.communicate(timeout=30)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_browser_link_metadata.py:115: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/subprocess.py:1222: in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/subprocess.py:2129: in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <Popen: returncode: 0 args: ['/Applications/Google Chrome.app/Contents/MacOS...>
+endtime = 1003827.428648166, orig_timeout = 30, stdout_seq = []
+stderr_seq = [b'[61329:59600961:1008/055710.846927:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDispla...5074:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670\n', ...]
+skip_check_and_raise = False
+
+    def _check_timeout(self, endtime, orig_timeout, stdout_seq, stderr_seq,
+                       skip_check_and_raise=False):
+        """Convenience for checking if a timeout has expired."""
+        if endtime is None:
+            return
+        if skip_check_and_raise or _time() > endtime:
+>           raise TimeoutExpired(
+                    self.args, orig_timeout,
+                    output=b''.join(stdout_seq) if stdout_seq else None,
+                    stderr=b''.join(stderr_seq) if stderr_seq else None)
+E           subprocess.TimeoutExpired: Command '['/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', '--headless', '--dump-dom', '--virtual-time-budget=3000', '--no-first-run', '--no-default-browser-check', '--disable-background-networking', '--disable-component-update', '--disable-domain-reliability', '--disable-features=MediaRouter,OptimizationHints', '--user-data-dir=/tmp/canvaspilot-links-6ul6pr3c', 'http://127.0.0.1:53033/probe']' timed out after 30 seconds
+
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/subprocess.py:1269: TimeoutExpired
+=========================== short test summary info ============================
+FAILED tests/test_browser_link_metadata.py::BrowserLinkMetadata::test_real_browser_returns_link_only_and_keeps_session_fetch
+1 failed in 30.34s

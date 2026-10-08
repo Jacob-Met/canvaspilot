@@ -1,0 +1,48 @@
+test_context_exclusion_is_independent_of_order_and_transport (__main__.ComposedReceiving.test_context_exclusion_is_independent_of_order_and_transport) ... HTTP Request: GET https://composition-campus.instructure.com/api/v1/courses/42/assignments?per_page=50 "HTTP/1.1 200 OK"
+HTTP Request: GET https://composition-campus.instructure.com/api/v1/courses/42/assignments?cursor=%2f%2F,a;b&include%5B%5D=one&include%5B%5D=two&empty=&literal=+ "HTTP/1.1 200 OK"
+HTTP Request: GET https://composition-campus.instructure.com/api/v1/courses/42/assignments?per_page=50 "HTTP/1.1 200 OK"
+HTTP Request: GET https://composition-campus.instructure.com/api/v1/courses/42/assignments?cursor=%2f%2F,a;b&include%5B%5D=one&include%5B%5D=two&empty=&literal=+ "HTTP/1.1 200 OK"
+HTTP Request: GET http://127.0.0.1:34851/health "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:34851/fetch "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:34851/fetch "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:45959/health "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:45959/fetch "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:45959/fetch "HTTP/1.0 200 OK"
+ok
+test_first_query_filters_and_opaque_continuation_have_the_same_wire_contract (__main__.ComposedReceiving.test_first_query_filters_and_opaque_continuation_have_the_same_wire_contract) ... HTTP Request: GET https://composition-campus.instructure.com/api/v1/courses/42/assignments?cursor=first%2f&tag=one&tag=two&search_term=rain+%2B+snow&include%5B%5D=submission&include%5B%5D=visibility&published=false&per_page=50 "HTTP/1.1 200 OK"
+HTTP Request: GET https://composition-campus.instructure.com/api/v1/courses/42/assignments?cursor=%2f%2F,a;b&include%5B%5D=one&include%5B%5D=two&empty=&literal=+ "HTTP/1.1 200 OK"
+HTTP Request: GET http://127.0.0.1:38795/health "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:38795/fetch "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:38795/fetch "HTTP/1.0 200 OK"
+ok
+test_initial_pat_target_admission_precedes_any_http_dispatch (__main__.ComposedReceiving.test_initial_pat_target_admission_precedes_any_http_dispatch) ... ok
+test_malformed_metadata_after_a_valid_page_never_returns_a_prefix (__main__.ComposedReceiving.test_malformed_metadata_after_a_valid_page_never_returns_a_prefix) ... HTTP Request: GET https://composition-campus.instructure.com/api/v1/courses/42/assignments?per_page=50 "HTTP/1.1 200 OK"
+HTTP Request: GET https://composition-campus.instructure.com/api/v1/courses/42/assignments?cursor=second "HTTP/1.1 200 OK"
+HTTP Request: GET https://composition-campus.instructure.com/api/v1/courses/42/assignments?per_page=50 "HTTP/1.1 200 OK"
+HTTP Request: GET https://composition-campus.instructure.com/api/v1/courses/42/assignments?cursor=second "HTTP/1.1 200 OK"
+HTTP Request: GET http://127.0.0.1:40941/health "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:40941/fetch "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:40941/fetch "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:37925/health "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:37925/fetch "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:37925/fetch "HTTP/1.0 200 OK"
+ok
+test_nonboolean_broker_capability_cannot_assert_collection_completeness (__main__.ComposedReceiving.test_nonboolean_broker_capability_cannot_assert_collection_completeness) ... HTTP Request: POST http://127.0.0.1:41005/fetch "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:38565/fetch "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:41297/fetch "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:44761/fetch "HTTP/1.0 200 OK"
+ok
+test_terminal_mapping_compatibility_does_not_admit_a_later_mapping (__main__.ComposedReceiving.test_terminal_mapping_compatibility_does_not_admit_a_later_mapping) ... HTTP Request: GET https://composition-campus.instructure.com/api/v1/courses/42/assignments?per_page=50 "HTTP/1.1 200 OK"
+HTTP Request: GET https://composition-campus.instructure.com/api/v1/courses/42/assignments?per_page=50 "HTTP/1.1 200 OK"
+HTTP Request: GET https://composition-campus.instructure.com/api/v1/courses/42/assignments?cursor=second "HTTP/1.1 200 OK"
+HTTP Request: GET http://127.0.0.1:35757/health "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:35757/fetch "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:40455/health "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:40455/fetch "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:40455/fetch "HTTP/1.0 200 OK"
+ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.337s
+
+OK

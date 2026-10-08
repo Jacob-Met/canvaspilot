@@ -1,0 +1,61 @@
+--- /srv/hamon-estate/custody/chatgpt-58d79b68c9e4/canvaspilot-module-progress-review/candidate/src/canvaspilot/module_progress.py	2026-10-08 11:33:38.981780818 +0000
++++ /srv/hamon-estate/custody/chatgpt-58d79b68c9e4/canvaspilot-module-progress-review/candidate-v2/src/canvaspilot/module_progress.py	2026-10-08 11:46:24.305780250 +0000
+@@ -20,7 +20,7 @@
+ 
+ 
+ class ModuleProgressError(ValueError):
+-    """Invalid query identity or unusable Canvas progress response."""
++    """Invalid query identity or unusable normalized module-reader response."""
+ 
+ 
+ def _identity(value: Any, label: str) -> str:
+@@ -152,20 +152,23 @@
+ ) -> dict[str, Any]:
+     """Project the existing full module reader for the authenticated caller.
+ 
+-    All counts refer to returned rows. No mark-read, completion, grade or other
+-    write is performed. Item access and whole-course completeness are not inferred.
++    Shape and identity checks apply to the normalized rows from list_modules,
++    not raw HTTP pages: the existing reader can wrap singleton objects and
++    replace unusable inline items with a fallback response. All counts refer to
++    returned rows. No mark-read, completion, grade or other write is performed.
++    Item access and whole-course completeness are not inferred.
+     """
+     course = _identity(course_id, "Course ID")
+     selected_id = _identity(module_id, "Module ID") if module_id is not None else None
+     modules = api.list_modules(course, detail="full")
+     if not isinstance(modules, list):
+-        raise ModuleProgressError("Canvas returned a malformed module collection")
++        raise ModuleProgressError("The module reader returned a malformed module collection")
+     seen_modules: set[str] = set()
+     seen_items: set[str] = set()
+     selected = []
+     for module in modules:
+         if not isinstance(module, dict):
+-            raise ModuleProgressError("Canvas returned a malformed module")
++            raise ModuleProgressError("The module reader returned a malformed module")
+         identity = _identity(module.get("id"), "Returned module ID")
+         if identity in seen_modules:
+             raise ModuleProgressError("Canvas returned duplicate module IDs")
+@@ -174,10 +177,10 @@
+             raise ModuleProgressError("Canvas returned a module from a different course")
+         items = module.get("items")
+         if not isinstance(items, list):
+-            raise ModuleProgressError("Canvas returned a malformed module-item collection")
++            raise ModuleProgressError("The module reader returned a malformed module-item collection")
+         for item in items:
+             if not isinstance(item, dict):
+-                raise ModuleProgressError("Canvas returned a malformed module item")
++                raise ModuleProgressError("The module reader returned a malformed module item")
+             item_id = _identity(item.get("id"), "Returned item ID")
+             if item_id in seen_items:
+                 raise ModuleProgressError("Canvas returned duplicate module-item IDs")
+@@ -198,6 +201,8 @@
+         "collection_complete": None,
+         "count_scope": "returned_modules_and_items",
+         "state_source": "Canvas module.state for the authenticated caller",
++        "reader_source": "CanvasAPI.list_modules(detail=full)",
++        "upstream_response_shape": "not_observed",
+         "module_state_counts": {
+             state: sum(module["state"] == state for module in selected)
+             for state in ("locked", "unlocked", "started", "completed", "unknown")

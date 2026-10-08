@@ -68,7 +68,7 @@ def main(argv: list[str] | None = None) -> None:
     assigns.add_argument("course_id")
     assigns.add_argument("--bucket", default="upcoming")
 
-    brief = sub.add_parser("brief", help="Assignment brief (cleaned prompt)")
+    brief = sub.add_parser("brief", help="Assignment brief (cleaned prompt and supplied rubric)")
     add_common(brief)
     brief.add_argument("course_id")
     brief.add_argument("assignment_id")
@@ -107,6 +107,11 @@ def main(argv: list[str] | None = None) -> None:
     export.add_argument("--out", required=True, type=Path, help="New calendar file; existing paths are protected")
     export.add_argument("--bucket", choices=("upcoming", "past", "overdue", "undated", "ungraded", "unsubmitted", "all"),
                         default="upcoming", help="Canvas assignment selection (default: upcoming)")
+
+    progress = sub.add_parser("module-progress", help="Inspect reported module progress and requirements")
+    add_common(progress)
+    progress.add_argument("course_id", help="Positive numeric Canvas course ID")
+    progress.add_argument("--module-id", default=None, help="Inspect one returned module ID")
 
     mcp = sub.add_parser("mcp", help="Run MCP stdio server")
     add_common(mcp)
@@ -181,19 +186,32 @@ def main(argv: list[str] | None = None) -> None:
                 build_assignment_calendar,
                 write_calendar,
             )
-            from canvaspilot.client import CanvasAuthError
+            from canvaspilot.client import CanvasAuthError, CanvasPaginationError
 
             try:
                 if os.path.lexists(args.out):
                     raise FileExistsError("Output path already exists; choose a new .ics file")
                 content, report = build_assignment_calendar(api, args.course_ids, bucket=args.bucket)
                 write_calendar(args.out, content)
-            except (CanvasAuthError, httpx.HTTPError, ValueError, TypeError, OSError) as error:
+            except (CanvasAuthError, CanvasPaginationError, httpx.HTTPError, ValueError, TypeError, OSError) as error:
                 print(json.dumps({
                     "ok": False, "error": type(error).__name__, "message": str(error),
                 }), file=sys.stderr)
                 raise SystemExit(1) from None
             print(json.dumps({"ok": True, "output": str(args.out), **report}, indent=2))
+        elif args.cmd == "module-progress":
+            import httpx
+
+            from canvaspilot.client import CanvasAuthError
+
+            try:
+                result = api.module_progress(args.course_id, module_id=args.module_id)
+            except (CanvasAuthError, httpx.HTTPError, ValueError) as error:
+                print(json.dumps({
+                    "ok": False, "error": type(error).__name__, "message": str(error),
+                }), file=sys.stderr)
+                raise SystemExit(1) from None
+            print(json.dumps(result, indent=2))
         elif args.cmd == "browse-files":
             import httpx
 

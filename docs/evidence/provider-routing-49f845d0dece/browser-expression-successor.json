@@ -1,0 +1,8 @@
+[
+  {
+    "pin": "8e1a1b87a1f7379b884310cf05cbad8129ea1bb8",
+    "broker_sha256": "a80904e0b1f882acb32770e805ed711bbed8a2e3999196a96e5a395dd4e186fe",
+    "expression": "async ({method, path, headers, body, providerOrigin}) => {\n              const origin = providerOrigin || location.origin;\n              const target = new URL(path, location.href);\n              if (location.origin !== origin || target.origin !== origin) {\n                throw new Error('Canvas provider mismatch before fetch');\n              }\n              const opts = {method, credentials: 'include', headers: headers || {}};\n              if (body != null && method !== 'GET' && method !== 'HEAD') {\n                if (typeof body === 'string') opts.body = body;\n                else {\n                  opts.headers = Object.assign({'Content-Type': 'application/json'}, opts.headers);\n                  opts.body = JSON.stringify(body);\n                }\n              }\n              const r = await fetch(target.href, opts);\n              if (new URL(r.url).origin !== origin || location.origin !== origin) {\n                throw new Error('Canvas provider mismatch after fetch');\n              }\n              const text = await r.text();\n              let json = null;\n              try { json = JSON.parse(text); } catch (e) {}\n              return {status: r.status, json, text: json ? null : text.slice(0, 4000)};\n            }",
+    "expression_sha256": "11190219dc24f939d0fcf31d65482e0a628c58b738809de2d8a0562bac7ce54e"
+  }
+]

@@ -3,8 +3,10 @@
 from __future__ import annotations
 
 import re
+from copy import deepcopy
 from datetime import datetime
 from html import unescape
+from math import isfinite
 from typing import Any
 
 from canvaspilot.client import CanvasClient
@@ -55,6 +57,68 @@ def strip_html(html: str | None) -> str:
     # for a tag and deleted.
     text = TAG_RE.sub(" ", html)
     return WS_RE.sub(" ", unescape(text)).strip()
+
+
+def _brief_rubric(rubric: Any, warnings: list[str]) -> list[dict[str, Any]] | None:
+    """Project supplied rubric details without inventing missing grading data."""
+    if rubric is None:
+        return None
+    if not isinstance(rubric, list):
+        warnings.append("rubric: expected a list; rubric unavailable")
+        return None
+
+    def record_fields(value: Any, path: str, *, criterion: bool) -> dict[str, Any] | None:
+        if not isinstance(value, dict):
+            warnings.append(f"{path}: expected an object; entry omitted")
+            return None
+        fields = {"id", "description", "long_description", "points"}
+        if criterion:
+            fields |= {
+                "criterion_use_range", "ignore_for_scoring", "learning_outcome_id",
+                "outcome_id", "vendor_guid",
+            }
+        result: dict[str, Any] = {}
+        for key, field in value.items():
+            if key not in fields:
+                continue
+            if field is None:
+                valid = True
+            elif key == "points":
+                valid = type(field) is int or (type(field) is float and isfinite(field))
+            elif key in {"criterion_use_range", "ignore_for_scoring"}:
+                valid = isinstance(field, bool)
+            elif key in {"id", "learning_outcome_id", "outcome_id"}:
+                valid = type(field) in (str, int)
+            else:
+                valid = isinstance(field, str)
+            if valid:
+                result[key] = field
+            else:
+                warnings.append(f"{path}.{key}: invalid value; field omitted")
+        if criterion and "ratings" in value:
+            ratings = value["ratings"]
+            if ratings is None:
+                result["ratings"] = None
+            elif isinstance(ratings, list):
+                result["ratings"] = []
+                for index, rating in enumerate(ratings):
+                    item = record_fields(rating, f"{path}.ratings[{index}]", criterion=False)
+                    if item is not None:
+                        result["ratings"].append(item)
+            else:
+                warnings.append(f"{path}.ratings: expected a list; ratings unavailable")
+                result["ratings"] = None
+        if not result:
+            warnings.append(f"{path}: no usable rubric fields; entry omitted")
+            return None
+        return result
+
+    result = []
+    for index, criterion in enumerate(rubric):
+        item = record_fields(criterion, f"rubric[{index}]", criterion=True)
+        if item is not None:
+            result.append(item)
+    return result
 
 
 class CanvasAPI:
@@ -158,11 +222,23 @@ class CanvasAPI:
             "description_html": a.get("description"),
             "description_text": strip_html(a.get("description")),
             "rubric": a.get("rubric"),
+            "rubric_settings": a.get("rubric_settings"),
+            "use_rubric_for_grading": a.get("use_rubric_for_grading"),
             "submission": a.get("submission"),
         }
 
     def assignment_brief(self, course_id: int | str, assignment_id: int | str) -> dict[str, Any]:
         a = self.get_assignment(course_id, assignment_id)
+        warnings: list[str] = []
+        rubric = _brief_rubric(a.get("rubric"), warnings)
+        settings = a.get("rubric_settings")
+        if settings is not None and not isinstance(settings, dict):
+            warnings.append("rubric_settings: expected an object; settings unavailable")
+            settings = None
+        use_for_grading = a.get("use_rubric_for_grading")
+        if use_for_grading is not None and not isinstance(use_for_grading, bool):
+            warnings.append("use_rubric_for_grading: expected a boolean; grading use unknown")
+            use_for_grading = None
         return {
             "title": a.get("name"),
             "due_at": a.get("due_at"),
@@ -172,6 +248,10 @@ class CanvasAPI:
             "html_url": a.get("html_url"),
             "course_id": course_id,
             "assignment_id": assignment_id,
+            "rubric": rubric,
+            "rubric_settings": deepcopy(settings),
+            "use_rubric_for_grading": use_for_grading,
+            "rubric_warnings": warnings,
         }
 
     def list_announcements(
@@ -189,7 +269,7 @@ class CanvasAPI:
             params.append(("context_codes[]", f"course_{cid}"))
         if start_date:
             params.append(("start_date", start_date))
-        rows = self.client.request("GET", "/api/v1/announcements", params=params)
+        rows = self.client.get_paginated("/api/v1/announcements", params=params)
         if not isinstance(rows, list):
             rows = [rows] if rows else []
         full = str(detail or "compact").lower() in {"full", "verbose", "all"}
@@ -282,6 +362,14 @@ class CanvasAPI:
                 }
             )
         return out
+
+    def module_progress(
+        self, course_id: int | str, *, module_id: int | str | None = None,
+    ) -> dict[str, Any]:
+        """Read Canvas-declared module progress and a course study checklist."""
+        from canvaspilot.module_progress import module_progress
+
+        return module_progress(self, course_id, module_id=module_id)
 
     def list_pages(self, course_id: int | str) -> list[dict[str, Any]]:
         rows = self.client.get_paginated(f"/api/v1/courses/{course_id}/pages")

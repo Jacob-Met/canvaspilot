@@ -1,0 +1,69 @@
+{
+  "current_parent": "e8cd1aecf8e5ca9ede0313b2576ddd71303b82ad",
+  "current_native_commit": "51609ba3f93d20f69616b357c3c6bee19732dfd4",
+  "current_native_tree": "e1120adc155072673e69f26282d315aa00326583",
+  "original_feature": "a8ba4be26d09d287304ca12808a1867483efd040",
+  "source_files": [
+    {
+      "path": "README.md",
+      "sha256": "7f960eae30393163912cb208e7f9d2433c3667cc67972dd0463a37cdeea94600",
+      "git_blob": "5f944bcde53df612687c87b4804c97c9d5ba6706"
+    },
+    {
+      "path": "src/canvaspilot/api.py",
+      "sha256": "9c8325499296bc6563c1804676a47462b396c853ec860dbdbe6579280df6588f",
+      "git_blob": "3bae6ea7939f56e4b3f64e8d1ba26ad4fc31d90b"
+    },
+    {
+      "path": "src/canvaspilot/bundle.py",
+      "sha256": "7a5600680c22f3cce5d512ed96137de0171bcca7df6a8c46baa8c09143de3168",
+      "git_blob": "383efb28dfdd0d3e1d9ce8e1e259468d7eb44586"
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "sha256": "35256c690fbb82b9f35cb231b0560afab907c9ceffd9c26e960627f9d640322a",
+      "git_blob": "0e8ed94f5668bf8aba308cf0797969d2adcd5b63"
+    },
+    {
+      "path": "src/canvaspilot/mcp_server.py",
+      "sha256": "70a4ad0950cba12149aba205fcae43d54ad3688a12f96904b3f88c860caf83a2",
+      "git_blob": "8f46df27c363c1a946576d63911cd7c1710d69ec"
+    },
+    {
+      "path": "src/canvaspilot/module_progress.py",
+      "sha256": "42aee00dbc05e37b28942f6022e5eb23516589b7f07289f0d725e1d6c66e51d1",
+      "git_blob": "cc535d1dd4d44148653697eb5f3096782beb8ffa"
+    },
+    {
+      "path": "docs/module-progress.md",
+      "sha256": "2680578420d9f65fa7884348756f59487edcd0d4787f90a42ff745fb58acf04f",
+      "git_blob": "52e98278eb8208d31078dd9e740c443fa046d17a"
+    },
+    {
+      "path": "tests/module_progress_fixture.py",
+      "sha256": "d7c724cd5147ff03321247728d99af19039e05d4a4d56d32feaa4303d68260b9",
+      "git_blob": "cde6154c03f5987a31e30f3cefaeb97247fd0198"
+    },
+    {
+      "path": "tests/test_module_progress.py",
+      "sha256": "bdbcf205666ede901fd012764cf009dd90611c1a18089c2e6ce13b242ed081c2",
+      "git_blob": "97857eb7723ac9460cb38d791d883df9ddc4a449"
+    },
+    {
+      "path": "tests/test_module_progress_process.py",
+      "sha256": "0addab736830e7b1dfb5ac9ed40e1f14db67bd4d0a2540c80b52728e4ae267c7",
+      "git_blob": "c9048f18bc4d121424646511510847f7922c976c"
+    }
+  ],
+  "unchanged_authored_leaves": 5,
+  "parent_shared_bodies_preserved": [
+    "src/canvaspilot/api.py",
+    "src/canvaspilot/cli.py",
+    "src/canvaspilot/mcp_server.py",
+    "src/canvaspilot/bundle.py"
+  ],
+  "readme_preserves_feedback": true,
+  "actual_tool_count": 36,
+  "parent_leaves": 187,
+  "unrelated_parent_leaves_preserved": 182
+}

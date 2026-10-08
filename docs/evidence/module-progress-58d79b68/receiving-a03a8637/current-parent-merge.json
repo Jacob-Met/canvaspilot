@@ -1,0 +1,9 @@
+{
+  "worktree": "/home/jacob/canvaspilot-module-progress-current-58d79b68",
+  "currentParent": "a03a8637efad8ff22103a0c5018c93f7ecbb7d8d",
+  "featureParent": "96e4f3d37b4e2e222e30ff34a0bab96bed95b8cd",
+  "mergeExit": 1,
+  "mergeStdout": "Auto-merging README.md\nAuto-merging src/canvaspilot/cli.py\nCONFLICT (content): Merge conflict in src/canvaspilot/cli.py\nAutomatic merge failed; fix conflicts and then commit the result.\n",
+  "mergeStderr": "",
+  "unmerged": "src/canvaspilot/cli.py"
+}

@@ -14,8 +14,9 @@ Same architecture as OpenCLI-style web agents (persistent browser session → si
 - **Agent-shaped digests** — `assignment_brief` (cleaned prompt + rubric), `sync_summary` (courses + upcoming), `submission_status`
 - **Submission feedback** — self submission comments and rubric assessments alongside current-attempt and grading metadata
 - **Fixture mode** — offline dict backend for tests and CI; no Canvas required
-- **35 MCP tools**, one stdio server, one env var for the host (`CANVAS_BASE_URL`) plus either a PAT or a running session broker
+- **36 MCP tools**, one stdio server, one env var for the host (`CANVAS_BASE_URL`) plus either a PAT or a running session broker
 - **Course folder browsing** — select nested folders and inspect bounded file-metadata pages through CLI, MCP or Python
+- **Module progress checklist** — review reported completion, remaining requirements and module locks through CLI, MCP or Python
 
 ## Install
 
@@ -88,6 +89,39 @@ export CANVAS_API_TOKEN=...   # broker not needed
 canvaspilot courses
 ```
 
+## Assignment briefs
+
+`canvaspilot brief <course_id> <assignment_id>`, the Python
+`CanvasAPI.assignment_brief()` method, and the MCP `canvas_assignment_brief` tool
+return the same JSON brief: the cleaned prompt, due date, assignment points,
+submission types, Canvas link, and the rubric supplied with the assignment.
+
+- `rubric` preserves the supplied criterion and rating order, IDs, descriptions,
+  long descriptions, points (including zero), range/scoring flags, and outcome
+  identifiers. Rubric text is not rewritten. Only these canonical rubric fields
+  are projected; `get_assignment()` retains the complete original rubric payload.
+- `rubric_settings` preserves the supplied settings object, including any display
+  flags such as `hide_points`, `hide_score_total`, and free-form criterion comments.
+  The CLI and MCP return data, without rendering a Canvas rubric UI. Consumers
+  should honor the distinct display flags when rendering it.
+- `use_rubric_for_grading` preserves Canvas's boolean: `false` means the rubric is
+  advisory; `null` means the assignment response did not supply a usable value.
+- `rubric_warnings` is normally empty. Malformed optional containers, entries, or
+  canonical field values are omitted locally with a warning that names their
+  location, while the ordinary brief and usable neighboring entries remain.
+
+A missing or `null` rubric remains `null`; a supplied empty list remains `[]`.
+Missing criterion fields are not filled in, and missing ratings remain unknown.
+No criteria, score totals, or grading requirements are inferred. Assignment
+`points_possible` and rubric settings' `points_possible` remain separate supplied
+values. This uses the existing assignment GET request, without another rubric
+request or a change to authentication.
+
+The field meanings follow Canvas's [Assignments API](https://developerdocs.instructure.com/services/canvas/resources/assignments)
+and [Rubrics API](https://developerdocs.instructure.com/services/canvas/resources/rubrics).
+The public-path tests in `tests/test_assignment_brief_rubric.py` use a clearly
+synthetic assignment and forbid HTTP and broker access.
+
 ## MCP server
 
 ```bash
@@ -113,12 +147,12 @@ Tools exposed (all prefixed `canvas_`):
 | Area | Tools |
 |------|-------|
 | Identity | `whoami`, `sync_summary`, `planner_items`, `activity_stream`, `list_todo_items`, `list_enrollments` |
-| Courses | `list_courses`, `get_course`, `list_modules`, `list_pages`, `get_page`, `list_files`, `browse_files`, `list_announcements` |
+| Courses | `list_courses`, `get_course`, `list_modules`, `module_progress`, `list_pages`, `get_page`, `list_files`, `browse_files`, `list_announcements` |
 | Assignments | `list_assignments`, `get_assignment`, `assignment_brief`, `submission_status`, `submission_feedback`, `submit_assignment_text` |
 | Discussions | `list_discussion_topics`, `get_discussion`, `post_discussion_reply` |
 | Quizzes | `list_quizzes`, `get_quiz`, `list_quiz_questions`, `list_quiz_submissions`, `start_quiz_submission`, `complete_quiz_submission` |
 | Inbox / Calendar | `list_conversations`, `get_conversation`, `reply_conversation`, `list_calendar_events` |
-| **Full REST** | `canvas_api_request`, `canvas_api_paginated` — any `/api/v1/...` path (escape hatch for everything else; in session-broker mode `api_paginated` returns a single page only — see Auth modes) |
+| **Full REST** | `canvas_api_request`, `canvas_api_paginated` — any `/api/v1/...` path, including paginated reads through a current session broker (see Auth modes for collection requirements) |
 
 Programmatic API bundle: `from canvaspilot.bundle import make_api, tool_inventory`.
 
@@ -161,6 +195,16 @@ omitted. An inaccessible submission or malformed response is reported as an erro
 so it cannot be mistaken for a submission with no feedback. This operation performs
 two GETs and does not mark comments read, submit work, or change a grade.
 
+### Announcements
+
+`canvas_list_announcements` and `CanvasAPI.list_announcements()` use the existing
+client paginator in both compact and full detail modes. Course and optional start-date
+filters are retained, and results keep Canvas's page order and announcement metadata.
+Compact message text remains limited to 400 characters plus an ellipsis; full detail
+retains the complete stripped text. A failed page request raises an error instead of
+returning the announcements collected before the failure. The selected client's
+existing transport and pagination limits still apply.
+
 ### Module contents
 
 `canvas_list_modules` and `CanvasAPI.list_modules()` retrieve module items even
@@ -176,6 +220,20 @@ This follows the [Canvas Modules API](https://developerdocs.instructure.com/serv
 contract. Requests use the selected client's existing fixture, token, or session
 broker transport and pagination limits. Listing does not mark module items read
 or complete.
+
+## Review module progress
+
+```bash
+canvaspilot module-progress 42
+canvaspilot module-progress 42 --module-id 7
+```
+
+Review Canvas-declared module states and completed, unfinished or unknown item
+requirements. The checklist keeps all-versus-one requirements, prerequisites and
+sequential-progress context. Missing student fields stay unknown; counts cover
+returned rows. This read-only workflow never marks items read or complete. See
+[the module-progress guide](docs/module-progress.md) for Python/MCP examples and
+coverage meanings.
 
 ## Browse course folders
 
@@ -203,7 +261,36 @@ MCP/Python interfaces, page limits and examples.
 
 Mode resolution is fixture > token > live broker > session, decided at runtime: `CANVAS_API_TOKEN` always wins and skips the broker; otherwise a live `GET 127.0.0.1:18765/health` probe decides whether the session broker is used. Bare "session" mode with no running broker raises on every request — "session (default)" means "broker if it's up", not "works with no setup".
 
-Pagination follows response `Link` headers only in token mode (up to 40 pages). In session-broker mode the broker returns a single page (`per_page` ≤ 100); paginate by repeated calls.
+Pagination follows Canvas's response `Link` headers in token mode and in current
+session brokers. A session broker advertises `"link_pagination": true` in
+`GET /health` and forwards only the `Link` response header alongside each fetch
+result. The client follows an opaque `rel=next` URL even when a page is shorter
+than the requested `per_page`; it stops when no next link remains, without
+inventing a numeric page or requesting an extra empty page. Initial filters and
+repeated `include[]` values apply only to the first request; subsequent URLs
+retain the server's exact parameters. Ordinary single-request results keep their
+existing decoded JSON/text shape.
+
+Token collection reads validate both the initial URL and each next URL against
+the client's configured Canvas scheme, host and effective port before dispatch.
+Initial absolute URLs retain their authored query and receive the initial
+filters once. Session continuation stays on the broker's configured Canvas
+origin and retains the exact absolute continuation URL.
+
+Each applicable Link entry must carry a valid relation. Anchored links are
+ignored as whole entries because they change the context; registered relation
+names such as `next` are matched without regard to case. Quoted parameter values
+and absolute URI extension relations remain supported. Invalid or ambiguous
+metadata, repeated continuation URLs, a later-page error or non-list body, and
+a known continuation beyond the 40-page limit raise an error. A terminal first
+single-object response keeps its existing convention. `CanvasPaginationError`
+is available from `canvaspilot.client`.
+
+An older running broker without the capability flag produces an actionable
+incomplete-collection error. Restart it with the current CanvasPilot version and
+retry the read. Ordinary single requests remain compatible with older brokers.
+The [Canvas pagination contract](https://developerdocs.instructure.com/services/canvas/basics/file.pagination)
+explains why clients must check Link even when they request a page size.
 
 The broker only listens on loopback — and `session_broker.main()` now refuses to start on any non-loopback bind address (fail-closed: a future host change cannot silently expose the unauthenticated `/fetch`/`/shutdown` endpoints to the network). Cookies never leave the Playwright profile directory; the MCP/CLI process never sees them — it asks the broker to make the request.
 
@@ -246,6 +333,20 @@ pytest
 Tests use offline fixtures and disposable loopback HTTP servers. Feedback tests
 also exercise CLI subprocesses and the real MCP stdio interface; no Canvas account
 or running browser is needed.
+
+The optional native-browser check executes the production in-page fetch against
+an authored loopback response in a fresh Chromium profile. It uses no school
+session and verifies that the fixture cookie remains in the browser while only
+Link metadata reaches the caller:
+
+```bash
+CANVASPILOT_CHROMIUM_BIN=/path/to/chromium python -m pytest -q tests/test_browser_link_metadata.py
+```
+
+`CANVASPILOT_CHROMIUM_PROFILE_ROOT` can select a writable parent for temporary
+profiles (useful for a confined browser package). The browser test skips only
+when `CANVASPILOT_CHROMIUM_BIN` is unset; an invalid configured executable fails.
+All regular HTTP/client tests run offline without a browser binary.
 
 ## Responsible use
 

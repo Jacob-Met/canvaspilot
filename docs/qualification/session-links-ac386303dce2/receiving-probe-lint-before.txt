@@ -1,0 +1,95 @@
+I001 [*] Import block is un-sorted or un-formatted
+  --> tests/test_link_context_receiving.py:2:1
+   |
+ 1 |   """Independent HTTP receiving checks for PR35, with authored browser responses."""
+ 2 | / import contextlib
+ 3 | | import copy
+ 4 | | from http.server import ThreadingHTTPServer
+ 5 | | import threading
+ 6 | | import unittest
+ 7 | | from unittest.mock import patch
+ 8 | |
+ 9 | | from canvaspilot import client as cm
+10 | | from canvaspilot import session_broker as broker
+   | |________________________________________________^
+help: Organize imports
+   |
+3  | import copy
+   - from http.server import ThreadingHTTPServer
+4  | import threading
+5  | import unittest
+6  + from http.server import ThreadingHTTPServer
+7  | from unittest.mock import patch
+8  |
+9  | from canvaspilot import client as cm
+10 | from canvaspilot import session_broker as broker
+   -
+11 |
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+ --> tests/test_terminal_page_shape_receiving.py:2:1
+  |
+1 |   """Independent replay of author's later-page shape question, at frozen PR35."""
+2 | / import unittest
+3 | |
+4 | | from canvaspilot import client as cm
+5 | | from canvaspilot import session_broker as broker
+6 | | from test_link_context_receiving import BASE, PATH, GOOD, server_for
+  | |____________________________________________________________________^
+help: Organize imports
+  |
+3 |
+4 + from test_link_context_receiving import BASE, GOOD, PATH, server_for
+5 +
+6 | from canvaspilot import client as cm
+7 | from canvaspilot import session_broker as broker
+  - from test_link_context_receiving import BASE, PATH, GOOD, server_for
+8 |
+  |
+
+B023 Function definition does not bind loop variable `original`
+  --> tests/test_terminal_page_shape_receiving.py:20:32
+   |
+19 |                 def browser(job):
+20 |                     response = original(job)
+   |                                ^^^^^^^^
+21 |                     if len(calls) == 2:
+22 |                         response['response']['json'] = json_value
+   |
+
+B023 Function definition does not bind loop variable `json_value`
+  --> tests/test_terminal_page_shape_receiving.py:22:56
+   |
+20 |                     response = original(job)
+21 |                     if len(calls) == 2:
+22 |                         response['response']['json'] = json_value
+   |                                                        ^^^^^^^^^^
+23 |                         response['response']['text'] = text
+24 |                     return response
+   |
+
+B023 Function definition does not bind loop variable `text`
+  --> tests/test_terminal_page_shape_receiving.py:23:56
+   |
+21 |                     if len(calls) == 2:
+22 |                         response['response']['json'] = json_value
+23 |                         response['response']['text'] = text
+   |                                                        ^^^^
+24 |                     return response
+   |
+
+SIM117 Use a single `with` statement with multiple contexts instead of nested `with` statements
+  --> tests/test_terminal_page_shape_receiving.py:27:17
+   |
+26 |                   broker._call.side_effect = browser
+27 | /                 with cm.CanvasClient(token='') as client:
+28 | |                     with self.assertRaisesRegex(RuntimeError, 'non-list|collection|shape|list'):
+   | |________________________________________________________________________________________________^
+29 |                           client.get_paginated(PATH)
+30 |                   self.assertEqual(len(calls), 2)
+   |
+help: Combine `with` statements
+
+Found 6 errors.
+[*] 2 fixable with the `--fix` option.

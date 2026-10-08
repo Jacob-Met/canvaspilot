@@ -1,0 +1,56 @@
+{
+  "source": "/home/jacob/canvaspilot-module-progress-current-58d79b68",
+  "head": "5173b24285e9e3e2dda6b1d8158adea74e03bd52",
+  "sourceStatus": "",
+  "scope": "Only current-parent conflict routing: two actual CLI/MCP groups, inherited calendar parser, repository Ruff; no repeat of settled full suites",
+  "runs": [
+    {
+      "name": "resolved-cli-mcp",
+      "command": [
+        "/home/jacob/canvaspilot-module-progress-proof-58d79b68/venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_module_progress_process.py::test_real_cli_course_selection_empty_and_failure",
+        "tests/test_module_progress_process.py::test_real_cli_and_mcp_report_the_normalized_reader_boundary[singleton_module]",
+        "--basetemp=/home/jacob/canvaspilot-module-progress-proof-58d79b68/current-parent/pytest-tmp",
+        "--junitxml=/home/jacob/canvaspilot-module-progress-proof-58d79b68/current-parent/pytest.xml"
+      ],
+      "started": "2026-10-08T11:50:14.980Z",
+      "finished": "2026-10-08T11:50:39.894Z",
+      "exit": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "calendar-parser",
+      "command": [
+        "/home/jacob/canvaspilot-module-progress-proof-58d79b68/venv/bin/python",
+        "-m",
+        "canvaspilot.cli",
+        "export-calendar",
+        "--help"
+      ],
+      "started": "2026-10-08T11:50:39.894Z",
+      "finished": "2026-10-08T11:50:41.676Z",
+      "exit": 0,
+      "signal": null,
+      "error": null
+    },
+    {
+      "name": "ruff",
+      "command": [
+        "/home/jacob/canvaspilot-module-progress-proof-58d79b68/venv/bin/ruff",
+        "check",
+        "src",
+        "tests",
+        "scripts"
+      ],
+      "started": "2026-10-08T11:50:41.676Z",
+      "finished": "2026-10-08T11:50:41.790Z",
+      "exit": 0,
+      "signal": null,
+      "error": null
+    }
+  ]
+}

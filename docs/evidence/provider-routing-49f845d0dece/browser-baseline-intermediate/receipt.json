@@ -1,0 +1,291 @@
+{
+  "receiver_sha256": "c400109a9fcf8a120b9f974d28d29150f2424b5652d7fb911c6474fbdd5234e9",
+  "browser": "154.0.8037.98",
+  "executable": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+  "input": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-provider-routing-receiving/browser-expressions-initial.json",
+  "input_sha256": "02b857499c9a793a0bf1f8d310efd6f6eade01990cfb7299feb660005231aece",
+  "origins": {
+    "a": "http://127.0.0.1:64163",
+    "b": "http://127.0.0.1:64164"
+  },
+  "boundary": "Exact production JavaScript expression in a fresh actual Chrome context; authored loopback HTTP only; no Python broker/browser startup claim",
+  "redirect_limit": "Response-origin guard refuses foreign redirected data after the browser follows the redirect; no prevention of the redirect network request is claimed.",
+  "runs": [
+    {
+      "pin": "3e251e5e1de71d56042daa76e2109cdd977b97a6",
+      "broker_sha256": "2a106130c344aefebb23b078cd93b5d3ca3afd7f5325ae5fac2fb8a7251780cc",
+      "expression_sha256": "610a4267c7e71092b877456ccc0dd8df4eca3871a24aba6b90d238de21ebfe83",
+      "passed": 1,
+      "failed": 4,
+      "results": [
+        {
+          "name": "matching",
+          "pass": true,
+          "documentState": {
+            "href": "http://127.0.0.1:64163/courses",
+            "origin": "http://127.0.0.1:64163",
+            "baseURI": "http://127.0.0.1:64163/courses"
+          },
+          "request": "/api/assignments",
+          "value": {
+            "status": 200,
+            "json": [
+              {
+                "id": 1,
+                "name": "Authored a",
+                "provider": "http://127.0.0.1:64163"
+              }
+            ],
+            "text": null
+          },
+          "error": null,
+          "requests": [
+            {
+              "server": "a",
+              "method": "GET",
+              "path": "/api/assignments",
+              "origin": null
+            }
+          ]
+        },
+        {
+          "name": "wrong-selected-page",
+          "pass": false,
+          "documentState": {
+            "href": "http://127.0.0.1:64164/courses",
+            "origin": "http://127.0.0.1:64164",
+            "baseURI": "http://127.0.0.1:64164/courses"
+          },
+          "request": "/api/assignments",
+          "value": {
+            "status": 200,
+            "json": [
+              {
+                "id": 1,
+                "name": "Authored b",
+                "provider": "http://127.0.0.1:64164"
+              }
+            ],
+            "text": null
+          },
+          "error": null,
+          "requests": [
+            {
+              "server": "b",
+              "method": "GET",
+              "path": "/api/assignments",
+              "origin": null
+            }
+          ]
+        },
+        {
+          "name": "foreign-base-element",
+          "pass": false,
+          "documentState": {
+            "href": "http://127.0.0.1:64163/foreign-base",
+            "origin": "http://127.0.0.1:64163",
+            "baseURI": "http://127.0.0.1:64164/courses"
+          },
+          "request": "/api/assignments",
+          "value": {
+            "status": 200,
+            "json": [
+              {
+                "id": 1,
+                "name": "Authored b",
+                "provider": "http://127.0.0.1:64164"
+              }
+            ],
+            "text": null
+          },
+          "error": null,
+          "requests": [
+            {
+              "server": "b",
+              "method": "GET",
+              "path": "/api/assignments",
+              "origin": "http://127.0.0.1:64163"
+            }
+          ]
+        },
+        {
+          "name": "foreign-request-url",
+          "pass": false,
+          "documentState": {
+            "href": "http://127.0.0.1:64163/courses",
+            "origin": "http://127.0.0.1:64163",
+            "baseURI": "http://127.0.0.1:64163/courses"
+          },
+          "request": "http://127.0.0.1:64164/api/assignments",
+          "value": {
+            "status": 200,
+            "json": [
+              {
+                "id": 1,
+                "name": "Authored b",
+                "provider": "http://127.0.0.1:64164"
+              }
+            ],
+            "text": null
+          },
+          "error": null,
+          "requests": [
+            {
+              "server": "b",
+              "method": "GET",
+              "path": "/api/assignments",
+              "origin": "http://127.0.0.1:64163"
+            }
+          ]
+        },
+        {
+          "name": "foreign-redirect-response",
+          "pass": false,
+          "documentState": {
+            "href": "http://127.0.0.1:64163/courses",
+            "origin": "http://127.0.0.1:64163",
+            "baseURI": "http://127.0.0.1:64163/courses"
+          },
+          "request": "/api/redirect",
+          "value": {
+            "status": 200,
+            "json": [
+              {
+                "id": 1,
+                "name": "Authored b",
+                "provider": "http://127.0.0.1:64164"
+              }
+            ],
+            "text": null
+          },
+          "error": null,
+          "requests": [
+            {
+              "server": "a",
+              "method": "GET",
+              "path": "/api/redirect",
+              "origin": null
+            },
+            {
+              "server": "b",
+              "method": "GET",
+              "path": "/api/assignments",
+              "origin": "http://127.0.0.1:64163"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pin": "b6661032ca5654e6e672d287b86d99a7fe1e01ee",
+      "broker_sha256": "7a9b1fd8c8828834b0f12f48eb5e92cd4beea17a17566219540d5d93ab83e07e",
+      "expression_sha256": "9583b9952482b42da97aa82f99600984e67aaa87c70c549fe6652f2cd16f5c61",
+      "passed": 4,
+      "failed": 1,
+      "results": [
+        {
+          "name": "matching",
+          "pass": true,
+          "documentState": {
+            "href": "http://127.0.0.1:64163/courses",
+            "origin": "http://127.0.0.1:64163",
+            "baseURI": "http://127.0.0.1:64163/courses"
+          },
+          "request": "/api/assignments",
+          "value": {
+            "status": 200,
+            "json": [
+              {
+                "id": 1,
+                "name": "Authored a",
+                "provider": "http://127.0.0.1:64163"
+              }
+            ],
+            "text": null
+          },
+          "error": null,
+          "requests": [
+            {
+              "server": "a",
+              "method": "GET",
+              "path": "/api/assignments",
+              "origin": null
+            }
+          ]
+        },
+        {
+          "name": "wrong-selected-page",
+          "pass": true,
+          "documentState": {
+            "href": "http://127.0.0.1:64164/courses",
+            "origin": "http://127.0.0.1:64164",
+            "baseURI": "http://127.0.0.1:64164/courses"
+          },
+          "request": "/api/assignments",
+          "value": null,
+          "error": "Error: page.evaluate: Error: Canvas provider mismatch before fetch\n    at eval (eval at <anonymous> (eval at evaluate (:311:30)), <anonymous>:4:23)\n    at eval (eval at evaluate (:311:30), <anonymous>:1:58)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+          "requests": []
+        },
+        {
+          "name": "foreign-base-element",
+          "pass": false,
+          "documentState": {
+            "href": "http://127.0.0.1:64163/foreign-base",
+            "origin": "http://127.0.0.1:64163",
+            "baseURI": "http://127.0.0.1:64164/courses"
+          },
+          "request": "/api/assignments",
+          "value": null,
+          "error": "Error: page.evaluate: Error: Canvas provider mismatch after fetch\n    at eval (eval at <anonymous> (eval at evaluate (:311:30)), <anonymous>:16:23)\n    at async <anonymous>:337:30",
+          "requests": [
+            {
+              "server": "b",
+              "method": "GET",
+              "path": "/api/assignments",
+              "origin": "http://127.0.0.1:64163"
+            }
+          ]
+        },
+        {
+          "name": "foreign-request-url",
+          "pass": true,
+          "documentState": {
+            "href": "http://127.0.0.1:64163/courses",
+            "origin": "http://127.0.0.1:64163",
+            "baseURI": "http://127.0.0.1:64163/courses"
+          },
+          "request": "http://127.0.0.1:64164/api/assignments",
+          "value": null,
+          "error": "Error: page.evaluate: Error: Canvas provider mismatch before fetch\n    at eval (eval at <anonymous> (eval at evaluate (:311:30)), <anonymous>:4:23)\n    at eval (eval at evaluate (:311:30), <anonymous>:1:58)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+          "requests": []
+        },
+        {
+          "name": "foreign-redirect-response",
+          "pass": true,
+          "documentState": {
+            "href": "http://127.0.0.1:64163/courses",
+            "origin": "http://127.0.0.1:64163",
+            "baseURI": "http://127.0.0.1:64163/courses"
+          },
+          "request": "/api/redirect",
+          "value": null,
+          "error": "Error: page.evaluate: Error: Canvas provider mismatch after fetch\n    at eval (eval at <anonymous> (eval at evaluate (:311:30)), <anonymous>:16:23)\n    at async <anonymous>:337:30",
+          "requests": [
+            {
+              "server": "a",
+              "method": "GET",
+              "path": "/api/redirect",
+              "origin": null
+            },
+            {
+              "server": "b",
+              "method": "GET",
+              "path": "/api/assignments",
+              "origin": "http://127.0.0.1:64163"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

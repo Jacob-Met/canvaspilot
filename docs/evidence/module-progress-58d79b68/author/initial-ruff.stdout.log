@@ -1,0 +1,45 @@
+TRY004 Prefer `TypeError` exception for invalid type
+   --> src/canvaspilot/module_progress.py:157:9
+    |
+155 |     modules = api.list_modules(course, detail="full")
+156 |     if not isinstance(modules, list):
+157 |         raise ValueError("Canvas returned a malformed module collection")
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+158 |     seen_modules: set[str] = set()
+159 |     seen_items: set[str] = set()
+    |
+
+TRY004 Prefer `TypeError` exception for invalid type
+   --> src/canvaspilot/module_progress.py:163:13
+    |
+161 |     for module in modules:
+162 |         if not isinstance(module, dict):
+163 |             raise ValueError("Canvas returned a malformed module")
+    |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+164 |         identity = _identity(module.get("id"), "Returned module ID")
+165 |         if identity in seen_modules:
+    |
+
+TRY004 Prefer `TypeError` exception for invalid type
+   --> src/canvaspilot/module_progress.py:172:13
+    |
+170 |         items = module.get("items")
+171 |         if not isinstance(items, list):
+172 |             raise ValueError("Canvas returned a malformed module-item collection")
+    |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+173 |         for item in items:
+174 |             if not isinstance(item, dict):
+    |
+
+TRY004 Prefer `TypeError` exception for invalid type
+   --> src/canvaspilot/module_progress.py:175:17
+    |
+173 |         for item in items:
+174 |             if not isinstance(item, dict):
+175 |                 raise ValueError("Canvas returned a malformed module item")
+    |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+176 |             item_id = _identity(item.get("id"), "Returned item ID")
+177 |             if item_id in seen_items:
+    |
+
+Found 4 errors.

@@ -1,0 +1,27 @@
+[
+  {
+    "name": "metadata-playwright",
+    "exit": 0,
+    "seconds": 2.21
+  },
+  {
+    "name": "cli-after",
+    "exit": 0,
+    "seconds": 5.56
+  },
+  {
+    "name": "final-ruff",
+    "exit": 0,
+    "seconds": 0.08
+  },
+  {
+    "name": "final-pytest",
+    "exit": 1,
+    "seconds": 51.23
+  },
+  {
+    "name": "final-whitespace",
+    "exit": 0,
+    "seconds": 0.04
+  }
+]

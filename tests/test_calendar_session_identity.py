@@ -44,7 +44,7 @@ def test_unknown_or_invalid_session_provider_refuses_before_course_read(monkeypa
 
 
 def test_provider_change_refuses_before_reading_next_course(monkeypatch):
-    states = iter([{"base_url": SCHOOL}, {"base_url": "https://other.fixture.invalid"}])
+    states = iter([{"base_url": SCHOOL, "provider_origin_checks": True}, {"base_url": "https://other.fixture.invalid", "provider_origin_checks": True}])
     api, calls = api_for_session(monkeypatch, lambda: next(states))
     with pytest.raises(ValueError, match="provider changed"):
         calendar_export.build_assignment_calendar(api, [42, 77], generated_at=NOW)
@@ -52,8 +52,8 @@ def test_provider_change_refuses_before_reading_next_course(monkeypatch):
 
 
 def test_equivalent_provider_spelling_keeps_identity(monkeypatch):
-    states = iter([{"base_url": "https://SCHOOL.fixture.invalid:443/"},
-                   {"base_url": SCHOOL}])
+    states = iter([{"base_url": "https://SCHOOL.fixture.invalid:443/", "provider_origin_checks": True},
+                   {"base_url": SCHOOL, "provider_origin_checks": True}])
     api, calls = api_for_session(monkeypatch, lambda: next(states))
     _, report = calendar_export.build_assignment_calendar(api, [42], generated_at=NOW)
     assert report["source"] == SCHOOL
@@ -132,3 +132,14 @@ def test_real_cli_provider_guard_leaves_no_artifact(monkeypatch, tmp_path, trans
         stop.set()
         serving.join(timeout=3)
         worker.join(timeout=3)
+
+
+@pytest.mark.parametrize("capability", ["missing", False, None, "true", 1])
+def test_old_or_ambiguous_broker_capability_requires_restart_before_read(monkeypatch, capability):
+    health = {"base_url": SCHOOL}
+    if capability != "missing":
+        health["provider_origin_checks"] = capability
+    api, calls = api_for_session(monkeypatch, lambda: health)
+    with pytest.raises(ValueError, match="restart.*updated CanvasPilot"):
+        calendar_export.build_assignment_calendar(api, [42], generated_at=NOW)
+    assert calls == []

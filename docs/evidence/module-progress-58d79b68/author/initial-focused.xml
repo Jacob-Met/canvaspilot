@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="71" time="13.096" timestamp="2026-10-08T11:11:21.804041+00:00" hostname="hamon-thinkpad"><testcase classname="tests.test_module_progress" name="test_course_checklist_keeps_declared_progress_and_real_requirement_choices" time="0.001" /><testcase classname="tests.test_module_progress" name="test_changed_completion_changes_worklist_without_inventing_module_completion" time="0.001" /><testcase classname="tests.test_module_progress" name="test_one_of_rule_does_not_become_all_of_or_override_canvas_state" time="0.001" /><testcase classname="tests.test_module_progress" name="test_selection_preserves_source_identity_and_reports_omitted_rows" time="0.001" /><testcase classname="tests.test_module_progress" name="test_only_reported_boolean_completion_has_a_known_status[True-completed]" time="0.001" /><testcase classname="tests.test_module_progress" name="test_only_reported_boolean_completion_has_a_known_status[False-incomplete]" time="0.001" /><testcase classname="tests.test_module_progress" name="test_only_reported_boolean_completion_has_a_known_status[None-unknown]" time="0.001" /><testcase classname="tests.test_module_progress" name="test_only_reported_boolean_completion_has_a_known_status[1-unknown]" time="0.001" /><testcase classname="tests.test_module_progress" name="test_only_reported_boolean_completion_has_a_known_status[0-unknown]" time="0.001" /><testcase classname="tests.test_module_progress" name="test_only_reported_boolean_completion_has_a_known_status[false-unknown]" time="0.001" /><testcase classname="tests.test_module_progress" name="test_only_reported_boolean_completion_has_a_known_status[completed6-unknown]" time="0.001" /><testcase classname="tests.test_module_progress" name="test_unavailable_and_unsupported_requirements_are_not_completed_or_optional[None-not_reported]" time="0.001" /><testcase classname="tests.test_module_progress" name="test_unavailable_and_unsupported_requirements_are_not_completed_or_optional[raw1-unknown]" time="0.001" /><testcase classname="tests.test_module_progress" name="test_unavailable_and_unsupported_requirements_are_not_completed_or_optional[False-unknown]" time="0.001" /><testcase classname="tests.test_module_progress" name="test_unavailable_and_unsupported_requirements_are_not_completed_or_optional[must_view-unknown]" time="0.001" /><testcase classname="tests.test_module_progress" name="test_unavailable_and_unsupported_requirements_are_not_completed_or_optional[raw4-unknown]" time="0.001" /><testcase classname="tests.test_module_progress" name="test_unavailable_and_unsupported_requirements_are_not_completed_or_optional[raw5-unknown]" time="0.001" /><testcase classname="tests.test_module_progress" name="test_unknown_module_states_are_retained_without_computing_completion[None]" time="0.001" /><testcase classname="tests.test_module_progress" name="test_unknown_module_states_are_retained_without_computing_completion[future_state]" time="0.001" /><testcase classname="tests.test_module_progress" name="test_unknown_module_states_are_retained_without_computing_completion[True]" time="0.001" /><testcase classname="tests.test_module_progress" name="test_unknown_module_states_are_retained_without_computing_completion[1]" time="0.001" /><testcase classname="tests.test_module_progress" name="test_unknown_module_states_are_retained_without_computing_completion[state4]" time="0.001" /><testcase classname="tests.test_module_progress" name="test_unknown_module_states_are_retained_without_computing_completion[state5]" time="0.001" /><testcase classname="tests.test_module_progress" name="test_missing_or_unsupported_requirement_rules_remain_unknown[None]" time="0.001" /><testcase classname="tests.test_module_progress" name="test_missing_or_unsupported_requirement_rules_remain_unknown[some]" time="0.001" /><testcase classname="tests.test_module_progress" name="test_missing_or_unsupported_requirement_rules_remain_unknown[True]" time="0.001" /><testcase classname="tests.test_module_progress" name="test_missing_or_unsupported_requirement_rules_remain_unknown[rule3]" time="0.001" /><testcase classname="tests.test_module_progress" name="test_missing_or_unsupported_requirement_rules_remain_unknown[rule4]" time="0.001" /><testcase classname="tests.test_module_progress" name="test_item_count_is_an_observation_not_a_course_completeness_claim[3-matches_reported_count]" time="0.001" /><testcase classname="tests.test_module_progress" name="test_item_count_is_an_observation_not_a_course_completeness_claim[4-shorter_than_reported_count]" time="0.001" /><testcase classname="tests.test_module_progress" name="test_item_count_is_an_observation_not_a_course_completeness_claim[2-more_than_reported_count]" time="0.001" /><testcase classname="tests.test_module_progress" name="test_item_count_is_an_observation_not_a_course_completeness_claim[None-unknown]" time="0.001" /><testcase classname="tests.test_module_progress" name="test_item_count_is_an_observation_not_a_course_completeness_claim[True-unknown]" time="0.001" /><testcase classname="tests.test_module_progress" name="test_item_count_is_an_observation_not_a_course_completeness_claim[-1-unknown]" time="0.001" /><testcase classname="tests.test_module_progress" name="test_query_identity_is_validated_before_reader_calls[course_id-0]" time="0.001" /><testcase classname="tests.test_module_progress" name="test_query_identity_is_validated_before_reader_calls[course_id--1]" time="0.001" /><testcase classname="tests.test_module_progress" name="test_query_identity_is_validated_before_reader_calls[course_id-True]" time="0.001" /><testcase classname="tests.test_module_progress" name="test_query_identity_is_validated_before_reader_calls[course_id-1.5]" time="0.001" /><testcase classname="tests.test_module_progress" name="test_query_identity_is_validated_before_reader_calls[course_id-]" time="0.001" /><testcase classname="tests.test_module_progress" name="test_query_identity_is_validated_before_reader_calls[course_id-../42]" time="0.001" /><testcase classname="tests.test_module_progress" name="test_query_identity_is_validated_before_reader_calls[course_id-42/1]" time="0.001" /><testcase classname="tests.test_module_progress" name="test_query_identity_is_validated_before_reader_calls[course_id-\uff14\uff12]" time="0.001" /><testcase classname="tests.test_module_progress" name="test_query_identity_is_validated_before_reader_calls[course_id-value8]" time="0.001" /><testcase classname="tests.test_module_progress" name="test_query_identity_is_validated_before_reader_calls[course_id-value9]" time="0.001" /><testcase classname="tests.test_module_progress" name="test_query_identity_is_validated_before_reader_calls[module_id-0]" time="0.001" /><testcase classname="tests.test_module_progress" name="test_query_identity_is_validated_before_reader_calls[module_id--1]" time="0.001" /><testcase classname="tests.test_module_progress" name="test_query_identity_is_validated_before_reader_calls[module_id-True]" time="0.001" /><testcase classname="tests.test_module_progress" name="test_query_identity_is_validated_before_reader_calls[module_id-1.5]" time="0.001" /><testcase classname="tests.test_module_progress" name="test_query_identity_is_validated_before_reader_calls[module_id-]" time="0.001" /><testcase classname="tests.test_module_progress" name="test_query_identity_is_validated_before_reader_calls[module_id-../42]" time="0.001" /><testcase classname="tests.test_module_progress" name="test_query_identity_is_validated_before_reader_calls[module_id-42/1]" time="0.000" /><testcase classname="tests.test_module_progress" name="test_query_identity_is_validated_before_reader_calls[module_id-\uff14\uff12]" time="0.001" /><testcase classname="tests.test_module_progress" name="test_query_identity_is_validated_before_reader_calls[module_id-value8]" time="0.000" /><testcase classname="tests.test_module_progress" name="test_query_identity_is_validated_before_reader_calls[module_id-value9]" time="0.001" /><testcase classname="tests.test_module_progress" name="test_malformed_or_conflicting_source_identities_cannot_produce_a_digest[None]" time="0.000" /><testcase classname="tests.test_module_progress" name="test_malformed_or_conflicting_source_identities_cannot_produce_a_digest[rows1]" time="0.000" /><testcase classname="tests.test_module_progress" name="test_malformed_or_conflicting_source_identities_cannot_produce_a_digest[rows2]" time="0.000" /><testcase classname="tests.test_module_progress" name="test_malformed_or_conflicting_source_identities_cannot_produce_a_digest[rows3]" time="0.000" /><testcase classname="tests.test_module_progress" name="test_malformed_or_conflicting_source_identities_cannot_produce_a_digest[rows4]" time="0.000" /><testcase classname="tests.test_module_progress" name="test_malformed_or_conflicting_source_identities_cannot_produce_a_digest[rows5]" time="0.001" /><testcase classname="tests.test_module_progress" name="test_malformed_or_conflicting_source_identities_cannot_produce_a_digest[rows6]" time="0.000" /><testcase classname="tests.test_module_progress" name="test_malformed_or_conflicting_source_identities_cannot_produce_a_digest[rows7]" time="0.000" /><testcase classname="tests.test_module_progress" name="test_malformed_or_conflicting_source_identities_cannot_produce_a_digest[rows8]" time="0.000" /><testcase classname="tests.test_module_progress" name="test_malformed_or_conflicting_source_identities_cannot_produce_a_digest[rows9]" time="0.000" /><testcase classname="tests.test_module_progress" name="test_reader_failures_propagate_without_an_empty_success" time="0.000" /><testcase classname="tests.test_module_progress" name="test_empty_course_and_declared_empty_module_do_not_infer_completion" time="0.000" /><testcase classname="tests.test_module_progress" name="test_report_keeps_source_order_and_does_not_mutate_requirement_payloads" time="0.001" /><testcase classname="tests.test_module_progress_process" name="test_native_client_preserves_module_and_item_pages_with_changed_completion" time="0.566" /><testcase classname="tests.test_module_progress_process" name="test_real_cli_course_selection_empty_and_failure" time="6.011"><failure message="json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)">receiving = &lt;module_progress_fixture.ModuleProgressHTTPFixture object at 0x7ce0e56134d0&gt;
+tmp_path = PosixPath('/home/jacob/canvaspilot-module-progress-proof-58d79b68/focused-tmp/test_real_cli_course_selection0')
+
+    def test_real_cli_course_selection_empty_and_failure(receiving, tmp_path):
+        fixture = receiving
+        records = []
+    
+        def run(*arguments):
+            process = cli(*arguments)
+            records.append({"arguments": arguments, "exit": process.returncode,
+                            "stdout": process.stdout, "stderr": process.stderr})
+            return process
+    
+        full = run("42")
+        assert full.returncode == 0
+        report = json.loads(full.stdout)
+        assert report["module_state_counts"]["locked"] == 1
+        assert report["collection_complete"] is None
+        selected = run("42", "--module-id", "8")
+        assert selected.returncode == 0
+        selected_report = json.loads(selected.stdout)
+        assert selected_report["modules_included"] == 1
+        assert selected_report["modules"][0]["remaining_work"]["rule"] == "module_completed"
+        assert selected_report["modules"][0]["remaining_work"]["incomplete_item_ids"] == []
+    
+        before = len(fixture.requests)
+        invalid = run("42/../99")
+        assert invalid.returncode == 1 and invalid.stdout == ""
+        assert json.loads(invalid.stderr)["ok"] is False
+        assert len(fixture.requests) == before
+        missing = run("42", "--module-id", "999")
+        assert missing.returncode == 1 and missing.stdout == ""
+        fixture.overrides[("/api/v1/courses/42/modules", "2")] = (403, {"error": "authored denial"}, {})
+        denied = run("42")
+        assert denied.returncode == 1 and denied.stdout == ""
+&gt;       assert json.loads(denied.stderr)["ok"] is False
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_module_progress_process.py:98: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.14/json/__init__.py:352: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.14/json/decoder.py:345: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;json.decoder.JSONDecoder object at 0x7ce0e92878c0&gt;
+s = 'HTTP Request: GET http://127.0.0.1:43149/api/v1/courses/42/modules?include%5B%5D=items&amp;per_page=50 "HTTP/1.0 200 OK"\...es?page=2 "HTTP/1.0 403 Forbidden"\n{"ok": false, "error": "CanvasAuthError", "message": "Canvas auth failed (403)"}\n'
+idx = 0
+
+    def raw_decode(self, s, idx=0):
+        """Decode a JSON document from ``s`` (a ``str`` beginning with
+        a JSON document) and return a 2-tuple of the Python
+        representation and the index in ``s`` where the document ended.
+    
+        This can be used to decode a JSON document from a string that may
+        have extraneous data at the end.
+    
+        """
+        try:
+            obj, end = self.scan_once(s, idx)
+        except StopIteration as err:
+&gt;           raise JSONDecodeError("Expecting value", s, err.value) from None
+E           json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+/usr/lib/python3.14/json/decoder.py:363: JSONDecodeError</failure></testcase><testcase classname="tests.test_module_progress_process" name="test_real_cli_short_fallback_and_foreign_identity" time="3.229"><failure message="json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)">receiving = &lt;module_progress_fixture.ModuleProgressHTTPFixture object at 0x7ce0e55f4410&gt;
+
+    def test_real_cli_short_fallback_and_foreign_identity(receiving):
+        fixture = receiving
+        fixture.overrides[("/api/v1/courses/42/modules/7/items", "2")] = (200, [], {})
+        short = cli("42")
+        assert short.returncode == 0
+        module = json.loads(short.stdout)["modules"][0]
+        assert module["item_coverage"] == {
+            "reported_count": 3, "returned_count": 2, "status": "shorter_than_reported_count",
+        }
+        assert json.loads(short.stdout)["collection_complete"] is None
+        fixture.overrides.clear()
+        fixture.fixture["routes"]["GET /api/v1/courses/42/modules/7/items"][0]["module_id"] = 900
+        foreign = cli("42")
+        assert foreign.returncode == 1 and foreign.stdout == ""
+&gt;       assert "different module" in json.loads(foreign.stderr)["message"]
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_module_progress_process.py:124: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.14/json/__init__.py:352: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.14/json/decoder.py:345: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;json.decoder.JSONDecoder object at 0x7ce0e92878c0&gt;
+s = 'HTTP Request: GET http://127.0.0.1:43403/api/v1/courses/42/modules?include%5B%5D=items&amp;per_page=50 "HTTP/1.0 200 OK"\...HTTP/1.0 200 OK"\n{"ok": false, "error": "ValueError", "message": "Canvas returned an item from a different module"}\n'
+idx = 0
+
+    def raw_decode(self, s, idx=0):
+        """Decode a JSON document from ``s`` (a ``str`` beginning with
+        a JSON document) and return a 2-tuple of the Python
+        representation and the index in ``s`` where the document ended.
+    
+        This can be used to decode a JSON document from a string that may
+        have extraneous data at the end.
+    
+        """
+        try:
+            obj, end = self.scan_once(s, idx)
+        except StopIteration as err:
+&gt;           raise JSONDecodeError("Expecting value", s, err.value) from None
+E           json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+/usr/lib/python3.14/json/decoder.py:363: JSONDecodeError</failure></testcase><testcase classname="tests.test_module_progress_process" name="test_registered_mcp_stdio_progress_journey_and_refusals" time="1.832" /></testsuite></testsuites>
