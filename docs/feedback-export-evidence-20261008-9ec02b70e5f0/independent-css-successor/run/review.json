@@ -1,0 +1,53 @@
+{
+  "schema": "independent-feedback-css-successor.v1",
+  "passed": true,
+  "parent": "55fe1e0a3c4ad85e1065f295e49d44722c3be32b",
+  "tree": "7c1bd0a858a3fda82a4d5e69076801ae65a73ea1",
+  "original_formatter": "3bc3f44f9d8f682fbf8442fed88e05d6148ecbf889e41c941ce65f067f59904b",
+  "successor_formatter": "a0db41dca9cce28c9fb7594c88ea6dc103b0f3104d5ba4d061bd93aaed92a714",
+  "deletion": {
+    "offset": 392,
+    "byte": "+",
+    "before_bytes": 20918,
+    "after_bytes": 20917
+  },
+  "other_received_files_byte_identical": 25,
+  "source_before_after_identical": true,
+  "private_runtime_files": 13,
+  "actual_cli_processes": 1,
+  "actual_loopback_gets": 2,
+  "successful_html_files": 1,
+  "predecessor_actual_file": {
+    "bytes": 12467,
+    "sha256": "07cff2d7d85f583fd17264062e221112473be0be6efc8866e96ee6261d98d790",
+    "git_blob": "7ec848360e9bd460d8589bbab996f8e9c7945a12"
+  },
+  "successor_actual_file": {
+    "bytes": 12466,
+    "sha256": "27ae70511395b7412359bdedd17baf0f5f499ef3550da104d5e6e882ce847e78",
+    "git_blob": "9f79d8b03075e329029f2d153dcaee3e3dad22cd"
+  },
+  "semantic_fields_equal_except_capture_timestamp": true,
+  "css_selector_count": 35,
+  "predecessor_invalid_selectors": [
+    "+:root"
+  ],
+  "successor_invalid_selectors": [],
+  "elapsed_seconds": 2.8513898679957492,
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "browser_allocations": 0,
+  "live_accounts": 0,
+  "github_writes": 0,
+  "rendered_print_layout_claim": false,
+  "current79_parent_qualification": false,
+  "probe": {
+    "bytes": 7348,
+    "sha256": "3e10661447ea26babdc427164df6d4c4d08ab2b9d603920bad6cbd46df1b48e9",
+    "git_blob": "b90cf65c99254b8e5e59876a3b2aac8d9630a50c"
+  },
+  "selector_probe": {
+    "bytes": 3782,
+    "sha256": "7845a550edbd96e72d9861d174e560821f5c5416caabd5f6a284ffa601bca13d",
+    "git_blob": "c81073c228a1cc44b5d60355fdbb150109c28711"
+  }
+}

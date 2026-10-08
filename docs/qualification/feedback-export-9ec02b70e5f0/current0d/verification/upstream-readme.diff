@@ -1,0 +1,16 @@
+--- /dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/current79/before/README.md
++++ /dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/current0d/before/README.md
+@@ -76,6 +76,13 @@
+ and reports omitted rows, unknown dates, and per-course read failures. Adjust
+ the overview with `--limit-courses` and `--limit-assignments-per-course`; see
+ [the sync guide](docs/SYNC.md) for CLI, Python, and MCP examples and count meanings.
++
++Assignment lists and sync rows also include the current user's reported
++submission state, attempt, and late/missing/excused flags when Canvas supplies
++them. Missing data remains unknown; the existing `has_submitted_submissions`
++flag describes submissions by any student. See the
++[assignment submission guide](docs/assignment-submission.md) for field meanings,
++selection examples and malformed-data warnings.
+ 
+ To take selected course deadlines into a calendar application, save an explicit
+ local snapshot with `canvaspilot export-calendar 42 77 --out deadlines.ics`.

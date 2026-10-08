@@ -1,0 +1,35 @@
+{
+  "parent": "39d835c8becb04d81b65c90d1491d2d3a2727ffe",
+  "tree": "53b67d3f06b4c780e508325ec42b2b435ec57e97",
+  "source_root": "/dev/shm/estate-9ec02b70e5f0/lead/canvas-current39/repo",
+  "changes": [
+    {
+      "path": "README.md",
+      "insertions": [
+        {
+          "anchor_before": "omitted. An inaccessible submission or malformed response is reported as an error,\nso it cannot be mistaken for a submission with no feedback. This operation performs\ntwo GETs and does not mark comments read, submit work, or change a grade.\n\n",
+          "inserted": "### Save a readable feedback sheet\n\n```bash\ncanvaspilot export-feedback 41 902 --out feedback.html\n```\n\nSave the selected assignment's self-submission feedback as one HTML file you can\nopen locally or print. The sheet keeps reported grades beside their attempt\ncontext, including a prominent warning when grading preceded a resubmission.\nRubric criteria retain their returned order and assessments; unmatched entries\nstay separate. Comments keep supplied author names, timestamps and literal text,\nincluding media-only entries. Attachment names and media identifiers are listed\nwhen returned; their contents remain in Canvas.\n\nThe export uses the same reader and authentication as `feedback`. It distinguishes\nzero, unknown values and explicitly empty feedback. Rubric point visibility and\nrubric total visibility are applied separately, without changing the separately\nreported submission grade. It calculates no grade or rubric total.\n\nChoose a new output path: existing files, directories and symlinks are protected,\nincluding a destination created while the feedback is being read. The completed\nfile contains its own styling, no scripts or automatic network resources, and\ndoes not refresh. See [the feedback export guide](docs/feedback-export.md) for the\nfile's contents, exact display rules, local-file behavior and Python usage.\n\n"
+        }
+      ],
+      "inverse_recovers_complete_incoming": true,
+      "before_git_blob": "083dc576676240d388921d292fedef7d7c8ccce3",
+      "qualified_git_blob": "89d92db5fe99b2beeeaa0d3efaabe83765db96a0"
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "insertions": [
+        {
+          "anchor_before": "    )\n    add_common(feedback)\n    feedback.add_argument(\"course_id\")\n    feedback.add_argument(\"assignment_id\")\n",
+          "inserted": "\n    feedback_export = sub.add_parser(\n        \"export-feedback\", help=\"Save self submission feedback to a new local HTML file\",\n    )\n    add_common(feedback_export)\n    feedback_export.add_argument(\"course_id\", type=_positive_int)\n    feedback_export.add_argument(\"assignment_id\", type=_positive_int)\n    feedback_export.add_argument(\"--out\", required=True, type=Path,\n                                 help=\"New HTML file; existing paths are protected\")\n"
+        },
+        {
+          "anchor_before": "                    api.submission_feedback(args.course_id, args.assignment_id),\n                    indent=2,\n                    default=str,\n                )\n            )\n",
+          "inserted": "        elif args.cmd == \"export-feedback\":\n            import os\n\n            import httpx\n\n            from canvaspilot.client import CanvasAuthError\n            from canvaspilot.feedback_export import build_feedback_document, write_feedback_document\n\n            try:\n                if os.path.lexists(args.out):\n                    raise FileExistsError(\"Output path already exists; choose a new HTML file\")\n                content, report = build_feedback_document(api, args.course_id, args.assignment_id)\n                write_feedback_document(args.out, content)\n            except (CanvasAuthError, httpx.HTTPError, ValueError, TypeError, OSError) as error:\n                print(json.dumps({\n                    \"ok\": False, \"error\": type(error).__name__, \"message\": str(error),\n                }), file=sys.stderr)\n                raise SystemExit(1) from None\n            print(json.dumps({\"ok\": True, \"output\": str(args.out), **report}, indent=2))\n"
+        }
+      ],
+      "inverse_recovers_complete_incoming": true,
+      "before_git_blob": "5a3ed7be7a24d6461641192a54c77a04b90cc910",
+      "qualified_git_blob": "f915d544fb8b31a6eb1dcf573bf36ee510aedcf9"
+    }
+  ]
+}

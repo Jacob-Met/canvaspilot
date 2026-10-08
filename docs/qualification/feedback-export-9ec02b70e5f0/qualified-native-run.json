@@ -1,0 +1,33 @@
+{
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "--basetemp=/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/qualified-temp",
+    "tests/test_feedback_export.py",
+    "tests/test_feedback_export_native.py",
+    "tests/test_submission_feedback.py",
+    "tests/test_submission_feedback_native.py"
+  ],
+  "cwd": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/repo",
+  "exit_code": 0,
+  "source_before": {
+    "src/canvaspilot/feedback_export.py": "3bc3f44f9d8f682fbf8442fed88e05d6148ecbf889e41c941ce65f067f59904b",
+    "src/canvaspilot/cli.py": "a29e755832cec76a07178d1afffd245c07b665bc990e8bb99c84cbfdc737bf16",
+    "tests/test_feedback_export.py": "046ce25f6bc03ae6ad23e65bb7f5cbe26a42a257f45cc9998701054fb1375de5",
+    "tests/test_feedback_export_native.py": "3bd9cec9c6bcef89395f392498e883c3882f6cdcbe4257d4d210b17d99da6045"
+  },
+  "source_after": {
+    "src/canvaspilot/feedback_export.py": "3bc3f44f9d8f682fbf8442fed88e05d6148ecbf889e41c941ce65f067f59904b",
+    "src/canvaspilot/cli.py": "a29e755832cec76a07178d1afffd245c07b665bc990e8bb99c84cbfdc737bf16",
+    "tests/test_feedback_export.py": "046ce25f6bc03ae6ad23e65bb7f5cbe26a42a257f45cc9998701054fb1375de5",
+    "tests/test_feedback_export_native.py": "3bd9cec9c6bcef89395f392498e883c3882f6cdcbe4257d4d210b17d99da6045"
+  },
+  "unchanged": true,
+  "stdout": "qualified-native.stdout.txt",
+  "stderr": "qualified-native.stderr.txt"
+}

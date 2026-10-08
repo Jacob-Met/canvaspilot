@@ -1,0 +1,27 @@
+{
+  "before_source_root": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/repo",
+  "after_source_root": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/css-qualified/repo",
+  "changed_files": [
+    "src/canvaspilot/feedback_export.py"
+  ],
+  "unchanged_files": 25,
+  "byte_change": {
+    "removed_byte": "+",
+    "offset": 392,
+    "before": {
+      "bytes": 20918,
+      "sha256": "3bc3f44f9d8f682fbf8442fed88e05d6148ecbf889e41c941ce65f067f59904b",
+      "git_blob": "8f37da7c8092227f9c1a223038e087d57270f7ab"
+    },
+    "after": {
+      "bytes": 20917,
+      "sha256": "a0db41dca9cce28c9fb7594c88ea6dc103b0f3104d5ba4d061bd93aaed92a714",
+      "git_blob": "d8c514e6b93506cc5cd045512898910ef2b457c7"
+    }
+  },
+  "python_ast_identical_except_style_constant": true,
+  "all_91_original_publication_files_exact": true,
+  "original_publication_manifest": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/publication-manifest.json",
+  "original_publication_manifest_sha256": "341a2c20fe61d96419a5e3f67c7d6efb5f3f32c385b2a6e1bbdc6332dc0448ba",
+  "current_main_status": "Separate 79a2 receiving composition authorized by parent; this packet remains 55fe."
+}

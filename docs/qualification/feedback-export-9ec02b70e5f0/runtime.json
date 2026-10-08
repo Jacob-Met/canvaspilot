@@ -1,0 +1,20 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "python_executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+  "dependencies": {
+    "httpx": "0.28.1",
+    "mcp": "2.3.0",
+    "pydantic": "2.13.5",
+    "pytest": "9.1.1"
+  },
+  "dependency_root": "/dev/shm/hamon-afe225d6c6be-product/canvas-deps",
+  "dependencies_installed_by_this_contribution": false,
+  "source_root": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/repo",
+  "ruff": {
+    "version": "0.12.12",
+    "executable": "/dev/shm/estate-6267db2cfc6e-workspace/test-env/bin/ruff"
+  },
+  "browser_run": false,
+  "printer_run": false,
+  "reason": "Shared cgroup measured 8584323072 bytes of8589934592 at the qualification boundary; no browser/profile was allocated."
+}

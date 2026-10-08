@@ -1,0 +1,750 @@
+{
+  "repository": "Jacob-Met/canvaspilot",
+  "parent": "55fe1e0a3c4ad85e1065f295e49d44722c3be32b",
+  "parent_tree": "7c1bd0a858a3fda82a4d5e69076801ae65a73ea1",
+  "source_root": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/publication",
+  "product_pins": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/candidate-pins.json",
+  "product_pins_sha256": "79e28c5bc7bc7f8953f0aa560000c655d832954a61fe84ec6c14c7834be3cc4d",
+  "files": [
+    {
+      "path": "README.md",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/repo/README.md",
+      "kind": "owned-source",
+      "bytes": 18175,
+      "sha256": "ddd8f084090dfb6fad72e8bf351537ca8ad2c2e26689a7633dd11ee0637652b8",
+      "git_blob": "5cf5302636a2b3f06be68fcda8221d51f951a870"
+    },
+    {
+      "path": "docs/feedback-export.md",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/repo/docs/feedback-export.md",
+      "kind": "owned-source",
+      "bytes": 8307,
+      "sha256": "6529840db890019b488539ca5b488395ea2d50b4ccd63d336a16437d77afb938",
+      "git_blob": "6e82c8249180aa4b4945ff21429512b571ba5030"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/README.md",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/README.md",
+      "kind": "authored-receiving",
+      "bytes": 7484,
+      "sha256": "b8c48f422b8a705fd55e1185cc00edad406a1471bf4ece64c1e13beaf19b6938",
+      "git_blob": "9d914545f1338987d4c87294dae119346cc43af4"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/baseline-reader-run.json",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/baseline-reader-run.json",
+      "kind": "authored-receiving",
+      "bytes": 708,
+      "sha256": "807b8da74b26db6dd7a43c9e47e35442a7c62074caf0aa7b38cb6684b8632a5b",
+      "git_blob": "84b617a4ffd4899a9ecf69929abf65fa752487e5"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/baseline-reader.stdout.txt",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/baseline-reader.stdout.txt",
+      "kind": "authored-receiving",
+      "bytes": 99,
+      "sha256": "52acb8a2e61509951d88ac10af896667ee7d1e0f296b3a1a1839594621cfa36c",
+      "git_blob": "9f68451a2339f4388e3f34a5e0cd778af49f0514"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/baseline/cli.py.source",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/before/src/canvaspilot/cli.py",
+      "kind": "baseline-source",
+      "bytes": 12575,
+      "sha256": "34ca64ec5075a51fe3dfc4de15480fa2daf53c690c5490e01c65322eb809a9c4",
+      "git_blob": "8f58cbd70ec70f2b441b3ad8509396d4f2b57608"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/before-export-run.json",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/before-export-run.json",
+      "kind": "authored-receiving",
+      "bytes": 694,
+      "sha256": "5ddab3ec942f8e3dfd0453cf78b479695d8ce9b0559ebab5af8d9d2e773fa81b",
+      "git_blob": "20a80635f0882a569475fa5dbb333047f676a773"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/before-export.stderr.txt",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/before-export.stderr.txt",
+      "kind": "authored-receiving",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/before-export.stdout.txt",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/before-export.stdout.txt",
+      "kind": "authored-receiving",
+      "bytes": 1992,
+      "sha256": "a68b95f746c5bf8c4fe227e09c3898fc61a718d5b17b20ef1b11223e0baaab45",
+      "git_blob": "cad551468061854eae6e8452a481dac1ecb6b0b8"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/candidate-native-run.json",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/candidate-native-run.json",
+      "kind": "authored-receiving",
+      "bytes": 522,
+      "sha256": "342d60dea559b24411537274931b00941c7b72cf93ce0b31833af0bfc69a79e0",
+      "git_blob": "10b9b8d2add9fbe0f1e867698cb43a5d5e487011"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/candidate-native.stderr.txt",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/candidate-native.stderr.txt",
+      "kind": "authored-receiving",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/candidate-native.stdout.txt",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/candidate-native.stdout.txt",
+      "kind": "authored-receiving",
+      "bytes": 27115,
+      "sha256": "63ca89297be85fb8f30b45adf27261c649d3a3d629261a04259d22ced80c7862",
+      "git_blob": "fb11ca5ade397232c3841d86b7ae3b2aa4ac0966"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/candidate-pins.json",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/candidate-pins.json",
+      "kind": "authored-receiving",
+      "bytes": 6733,
+      "sha256": "79e28c5bc7bc7f8953f0aa560000c655d832954a61fe84ec6c14c7834be3cc4d",
+      "git_blob": "b571eb38499491fadb0b234c22195a55639a247e"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/first-source/cli.py.source",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/first-native-source/cli.py.source",
+      "kind": "historical-source",
+      "bytes": 13992,
+      "sha256": "a29e755832cec76a07178d1afffd245c07b665bc990e8bb99c84cbfdc737bf16",
+      "git_blob": "a7c65b92cdeb671e650adfb1090a3eb1a544ea74"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/first-source/feedback_export.py.source",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/first-native-source/feedback_export.py.source",
+      "kind": "historical-source",
+      "bytes": 20256,
+      "sha256": "19edaa1c63e691ca53de0e6b1acb3e11f71bd1d7a8afc65d29a537b63159d2ea",
+      "git_blob": "aa8c314751dee990a655c95233e51c1701cdc0cb"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/first-source/manifest.json",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/first-native-source/manifest.json",
+      "kind": "historical-source",
+      "bytes": 456,
+      "sha256": "0553175dee701f06c0e0dec53bb47b281cf8370891fd1d83da839c66f8c7920f",
+      "git_blob": "55412f76f14782c7b72fc5e3eb7bf03f9b6f802e"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/first-source/test_feedback_export_native.py.source",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/first-native-source/test_feedback_export_native.py.source",
+      "kind": "historical-source",
+      "bytes": 12885,
+      "sha256": "0a4392a11741db80488d669e27bd36f87f49d640162f4e4a07e214296c42265b",
+      "git_blob": "2e5e9d02c0e67b14bd870e47c74a1c3542b1dd52"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/lint-run.json",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/lint-run.json",
+      "kind": "authored-receiving",
+      "bytes": 431,
+      "sha256": "e469b1884346b5c5b75efcd73ff79b6168a81a41233aca0924697a3edb366258",
+      "git_blob": "bfb69f0469fc53e15182baa655b72f160b6f1bd9"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/lint.stderr.txt",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/lint.stderr.txt",
+      "kind": "authored-receiving",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/lint.stdout.txt",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/lint.stdout.txt",
+      "kind": "authored-receiving",
+      "bytes": 19,
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "git_blob": "1f5f344d054fae10f39140fb7199c99321d9190a"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/native-source-pins.json",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/native-source-pins.json",
+      "kind": "primary-source-receipt",
+      "bytes": 4720,
+      "sha256": "6edb7fc45e1c0f55f644af093a1c9a900db15d06a9b83d1ed8f84008e12886ea",
+      "git_blob": "f33fc64e717e5c1ee841c3933a9cdf6d1f08cef5"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/ownership-verification.json",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/ownership-verification.json",
+      "kind": "authored-receiving",
+      "bytes": 1602,
+      "sha256": "9c8490ff4273d8a9a1f0ec5bd9b69d69d1bf5e1266ea1fab7e5321e8ef61f6af",
+      "git_blob": "6c2a7888396f288827396704e1ff6b1e2d5b1b5e"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/primary-source.json",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/primary-source.json",
+      "kind": "primary-source-receipt",
+      "bytes": 106353,
+      "sha256": "da5a5067c3db01364b5d7b1bc77ccefaf9ddc6a5e0d2293cb46d63630c7a5881",
+      "git_blob": "60bc01b50ac559c8465fc0bea6888c382cf249e5"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/process-index.json",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/process-index.json",
+      "kind": "artifact-index",
+      "bytes": 23472,
+      "sha256": "ae7b112ff9c40bf6f76cf90437cc5c731a11aba5f9888df9c0053402c6a554b5",
+      "git_blob": "4e43e0d641aea49291e7dcfc4ec71cfe49f00aeb"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/before/01.json.source",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/before-processes/test_cli_saves_readable_feedback_from_real_reader.json",
+      "kind": "raw-native-process",
+      "bytes": 3753,
+      "sha256": "134212fa88f329326eef81a307c349636350ba154599c3c5bde19a315eace7fd",
+      "git_blob": "bd3cb2feea3c1538efc8010f6a376b7d5ada207d"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/first-author/01-export.html",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/candidate-temp/test_cli_distinguishes_unretur2/unknown.html",
+      "kind": "actual-html-export",
+      "bytes": 6723,
+      "sha256": "9d43217bc4569f230ea867538dcf6529c693f67a68317a3d571018caa02ee605",
+      "git_blob": "70ad71d4f469875bea6765fdeecdec95df10767b"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/first-author/01.json.source",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/candidate-processes/test_cli_distinguishes_unreturned_and_empty_feedback[empty].json",
+      "kind": "raw-native-process",
+      "bytes": 2370,
+      "sha256": "ecdfb613438e7e0928e768e85087908cb4fb163de4d5b43bdaf4416ec7062829",
+      "git_blob": "bc06d887b4289dcd22335596934620d5856693b5"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/first-author/02-export.html",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/candidate-temp/test_cli_distinguishes_unretur0/unknown.html",
+      "kind": "actual-html-export",
+      "bytes": 6781,
+      "sha256": "69d2e1bba7a34014b7e0440bcbf37fa4d9f156b53182e95dd43b762b5ed56e14",
+      "git_blob": "c4e0037bea4f6626466508dc2526ecc283541e9a"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/first-author/02.json.source",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/candidate-processes/test_cli_distinguishes_unreturned_and_empty_feedback[missing].json",
+      "kind": "raw-native-process",
+      "bytes": 2286,
+      "sha256": "843d2349b0dfaeb48a4d3ccb3552adfc6ac26b14e5084088567641cbf0832f20",
+      "git_blob": "6642f6326776934fe64232558fda9fc72600ada1"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/first-author/03-export.html",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/candidate-temp/test_cli_distinguishes_unretur1/unknown.html",
+      "kind": "actual-html-export",
+      "bytes": 6781,
+      "sha256": "67bb3e3040a66859802819ac66af6580503297f64e382c6614483188783f033f",
+      "git_blob": "4dfa8d5c70c9f584511b93aaa935c3c970274d80"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/first-author/03.json.source",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/candidate-processes/test_cli_distinguishes_unreturned_and_empty_feedback[null].json",
+      "kind": "raw-native-process",
+      "bytes": 2376,
+      "sha256": "36cdbd4db90c585e25fdc112a5dddbf9fca110a14b352b5d93c0cd5cbbbf7253",
+      "git_blob": "f6452311e340014b19f8dde6f75ff17b94f55869"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/first-author/04.json.source",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/candidate-processes/test_cli_existing_destination_is_preserved_before_read[dangling-symlink].json",
+      "kind": "raw-native-process",
+      "bytes": 3447,
+      "sha256": "3ec86dc22b3ccdf39b10b9378766fece96682a4b5e5873c1400b452037a04447",
+      "git_blob": "8ceecfd9d4b59433179f93c80c3ff9f493031671"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/first-author/05.json.source",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/candidate-processes/test_cli_existing_destination_is_preserved_before_read[directory].json",
+      "kind": "raw-native-process",
+      "bytes": 3447,
+      "sha256": "1f8142838b4b112598d0e0c7fa3f49081d426d4c924c070487c10b5530e60a16",
+      "git_blob": "ec428294702de598b12e151703e38a83a99ab96e"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/first-author/06-preexisting.txt",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/candidate-temp/test_cli_existing_destination_0/keep.html",
+      "kind": "preserved-existing-file",
+      "bytes": 23,
+      "sha256": "8fd94fd6bd19ea4fba52721205d3cd29cd32a76757b296fc268192c4c8af889f",
+      "git_blob": "725e364bf26087a63adaba991020a57a88c9f999"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/first-author/06.json.source",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/candidate-processes/test_cli_existing_destination_is_preserved_before_read[ordinary].json",
+      "kind": "raw-native-process",
+      "bytes": 3447,
+      "sha256": "f3d0b5501073037e7762761882995c4a77be8b42886a655df2ddfff91e40e882",
+      "git_blob": "269f30b4c95fa4ce88fe0611b2c322552a8855a7"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/first-author/07.json.source",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/candidate-processes/test_cli_failed_read_creates_no_file_or_success[403].json",
+      "kind": "raw-native-process",
+      "bytes": 4275,
+      "sha256": "e474550af38694e166ad43c1832af226401cdb7a4ed52cc118ead7195987562b",
+      "git_blob": "cdf47b523206b5637608ea1830fd77b839d716c5"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/first-author/08.json.source",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/candidate-processes/test_cli_failed_read_creates_no_file_or_success[404].json",
+      "kind": "raw-native-process",
+      "bytes": 4423,
+      "sha256": "3186d33abd27461f30948cadfeff4c490768d5ff186b1ef39b9f92acac8babaa",
+      "git_blob": "700ff2294bf6ea4040271edf07650108abb7ccfa"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/first-author/09.json.source",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/candidate-processes/test_cli_failed_read_creates_no_file_or_success[500].json",
+      "kind": "raw-native-process",
+      "bytes": 4447,
+      "sha256": "fbe68b92e834838f9cc73516966b6765b392a7a433a13df27c2bf649953d97f1",
+      "git_blob": "8e26d570b8ed4662cb7b26bcdd0673b4e73cdf47"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/first-author/10-export.html",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/candidate-temp/test_cli_keeps_rubric_display_2/display.html",
+      "kind": "actual-html-export",
+      "bytes": 11816,
+      "sha256": "e09c972f8ec21317f3efbde2bbae2929f0f7d69b559dfa5b2e31e45682e6c3b3",
+      "git_blob": "24c443c4464a8b183ec0153bbaa255cd199a7290"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/first-author/10.json.source",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/candidate-processes/test_cli_keeps_rubric_display_flags_distinct[hide_outcome_results].json",
+      "kind": "raw-native-process",
+      "bytes": 4474,
+      "sha256": "c8240b29f57898759de5d6340ac5999259ea99f2965e881054674913366d4852",
+      "git_blob": "aac9f4bb7c1555115289677a80b2e5e430acbfed"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/first-author/11-export.html",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/candidate-temp/test_cli_keeps_rubric_display_0/display.html",
+      "kind": "actual-html-export",
+      "bytes": 11096,
+      "sha256": "20f1ec0dd703dc4429a45cbcadde32f9b8b04177abc601bcbf2b0d0e99fc8936",
+      "git_blob": "36aa0880568c9041c41e48cab87d63df24944b3e"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/first-author/11.json.source",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/candidate-processes/test_cli_keeps_rubric_display_flags_distinct[hide_points].json",
+      "kind": "raw-native-process",
+      "bytes": 4465,
+      "sha256": "984b481b22215808630c8195ac98b71b056d5137320b8233e0e59414924b23a2",
+      "git_blob": "8e458d8e1017d0bbf3069d0a6bc7132c5944eca2"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/first-author/12-export.html",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/candidate-temp/test_cli_keeps_rubric_display_1/display.html",
+      "kind": "actual-html-export",
+      "bytes": 11813,
+      "sha256": "00dc3d34a3e47e2e22b42d11358f720a03fad334235d85bcd227d1aebbb8b732",
+      "git_blob": "97feea93d127e20f0edd444ccf67d67559100c93"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/first-author/12.json.source",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/candidate-processes/test_cli_keeps_rubric_display_flags_distinct[hide_score_total].json",
+      "kind": "raw-native-process",
+      "bytes": 4470,
+      "sha256": "a534a1ed1ac4068184add4c124d10f30df040b85dd10a25d868ea3c9d0bfdd56",
+      "git_blob": "8ffd7d382ab014084f7b9de2376081751370869f"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/first-author/13-export.html",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/candidate-temp/test_cli_literal_unicode_marku0/literal.html",
+      "kind": "actual-html-export",
+      "bytes": 11975,
+      "sha256": "099875bfa67c2b5c8b1fe8377b09fdd3721ab2f6e8266b674113ea6947363d6a",
+      "git_blob": "4ec81eda802c2301788d959f0f4eba7cf421fa6e"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/first-author/13.json.source",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/candidate-processes/test_cli_literal_unicode_markup_and_media_only_comment.json",
+      "kind": "raw-native-process",
+      "bytes": 4506,
+      "sha256": "db209674c412be33e080379426667e52c8a5b80dfba57976afe2f95684708a49",
+      "git_blob": "04bf1354bf48423b929b6d85b1a6615f5483a607"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/first-author/14.json.source",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/candidate-processes/test_cli_mismatched_or_unrenderable_feedback_is_not_saved[assignment-course_id-42].json",
+      "kind": "raw-native-process",
+      "bytes": 4199,
+      "sha256": "a41d502f185d5a49324ad061fa0c39f4c9b50dedae5de85c8a7699ac863b47da",
+      "git_blob": "e194248a12bea7d81868883f063ce71d4ab2c503"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/first-author/15.json.source",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/candidate-processes/test_cli_mismatched_or_unrenderable_feedback_is_not_saved[assignment-id-903].json",
+      "kind": "raw-native-process",
+      "bytes": 4192,
+      "sha256": "6cdfe600267af7e7315afd0cb0bc199eb563a5dbc4df93fc9725aa9e704c01fb",
+      "git_blob": "d2f38283f81e1819140fd9b5356f22ee73d4e8a7"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/first-author/16.json.source",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/candidate-processes/test_cli_mismatched_or_unrenderable_feedback_is_not_saved[assignment-rubric_settings-value5].json",
+      "kind": "raw-native-process",
+      "bytes": 4143,
+      "sha256": "7c36fb5cdf7f1dfab9fcdd8759d0c6a5eb8b529f170968f202f77ee1c9ec54d2",
+      "git_blob": "19cc8c8c008fccd1cb0678357bda74c16b019ff1"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/first-author/17.json.source",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/candidate-processes/test_cli_mismatched_or_unrenderable_feedback_is_not_saved[submission-assignment_id-904].json",
+      "kind": "raw-native-process",
+      "bytes": 4203,
+      "sha256": "b3f52f4376c27eaf1f1451c0f02c114a79dcb0dff30d59bde5a84939ebddd735",
+      "git_blob": "1c8d5c84bd4c6274c982a73e2f706f33edec5e16"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/first-author/18.json.source",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/candidate-processes/test_cli_mismatched_or_unrenderable_feedback_is_not_saved[submission-rubric_assessment-value3].json",
+      "kind": "raw-native-process",
+      "bytes": 3808,
+      "sha256": "965c9ce31e2f7d81ed3837931d2fa37d0d02783f2a73ad1544571a4eab9e0d72",
+      "git_blob": "3e1f2be831fdbe53d5588a375fd265890ffee4d3"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/first-author/19.json.source",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/candidate-processes/test_cli_mismatched_or_unrenderable_feedback_is_not_saved[submission-score-nan].json",
+      "kind": "raw-native-process",
+      "bytes": 4185,
+      "sha256": "65478ec957a57db8af3fcef94bb9346b34c9a9bb1d4c764fd915e6564b9662d0",
+      "git_blob": "618f72be4d030f2750e13e45359ddb4251e17ece"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/first-author/20-export.html",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/candidate-temp/test_cli_saves_readable_feedba0/feedback.html",
+      "kind": "actual-html-export",
+      "bytes": 11851,
+      "sha256": "674e9f3626da24dfe554247cf395a66002719813e1daad662bf4f4954ad05f3c",
+      "git_blob": "8bd57851b05a9cc04342f2545ef77233cc4769fe"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/first-author/20.json.source",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/candidate-processes/test_cli_saves_readable_feedback_from_real_reader.json",
+      "kind": "raw-native-process",
+      "bytes": 4438,
+      "sha256": "89641b927089097f9c23f5864d68cf9e6967799601df47f86f278d5a41159e44",
+      "git_blob": "98e77881a3f33b58aee176ec6f11b09c5f89cd00"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/qualified/01-export.html",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/qualified-temp/test_cli_distinguishes_unretur2/unknown.html",
+      "kind": "actual-html-export",
+      "bytes": 6744,
+      "sha256": "3178899b5968dfa6c30cbf3b2cfebecd79babe1ce3600034efe135026ad47212",
+      "git_blob": "762ff5d37bfb20592dd29f74add4c66936565bbe"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/qualified/01.json.source",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/qualified-processes/test_cli_distinguishes_unreturned_and_empty_feedback[empty].json",
+      "kind": "raw-native-process",
+      "bytes": 2370,
+      "sha256": "87466fca291612979977c9e0308553c73488022775b1aa8ebcdb7a66b2f30b6a",
+      "git_blob": "e341e9ed5db9b5be76649812e4fe425e2f4557f5"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/qualified/02-export.html",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/qualified-temp/test_cli_distinguishes_unretur0/unknown.html",
+      "kind": "actual-html-export",
+      "bytes": 6802,
+      "sha256": "27e5014060834c03a167414f5fcc980c7cd64d2444c302a72327bbd2145ed205",
+      "git_blob": "1ac6bcc51e8af49909535b4ca5d1d2c7ac9799e0"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/qualified/02.json.source",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/qualified-processes/test_cli_distinguishes_unreturned_and_empty_feedback[missing].json",
+      "kind": "raw-native-process",
+      "bytes": 2286,
+      "sha256": "8aa511c86a6d37c1dfd3f70da7c70dbbc10db8fd716c8efd1b4229a86943038a",
+      "git_blob": "96fb3bdbd4874ad66499a2643a139f6135a37f1e"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/qualified/03-export.html",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/qualified-temp/test_cli_distinguishes_unretur1/unknown.html",
+      "kind": "actual-html-export",
+      "bytes": 6802,
+      "sha256": "46910bed5c8e8f60da0e508f9195c464fe9fd70b59b4ef580fa75d640a444b7d",
+      "git_blob": "0947cf51926ddd0d3e77c35e79db144355331b0d"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/qualified/03.json.source",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/qualified-processes/test_cli_distinguishes_unreturned_and_empty_feedback[null].json",
+      "kind": "raw-native-process",
+      "bytes": 2376,
+      "sha256": "7670d70d0ffebc9af5eb8ac377bf67ec62a3fa7b0aa59308e19c20e3be77042b",
+      "git_blob": "9f7188d25360e9d771a9907a065aadd16bc82941"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/qualified/04.json.source",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/qualified-processes/test_cli_existing_destination_is_preserved_before_read[dangling-symlink].json",
+      "kind": "raw-native-process",
+      "bytes": 3447,
+      "sha256": "04f7be7e55597d1c3abb5e8f7714cef1bbf781fd1d74e2dfb506b7da0fa9118f",
+      "git_blob": "473d4807af0b6c46a3e01b6e48fd2902cc55575c"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/qualified/05.json.source",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/qualified-processes/test_cli_existing_destination_is_preserved_before_read[directory].json",
+      "kind": "raw-native-process",
+      "bytes": 3447,
+      "sha256": "582875baa86e01aa3666d488efcbeb3521aab945cb5af7dfb29ae2d654ed4dc2",
+      "git_blob": "b83761aa1fb645826e7795f3d6be831c7a60acbf"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/qualified/06-preexisting.txt",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/qualified-temp/test_cli_existing_destination_0/keep.html",
+      "kind": "preserved-existing-file",
+      "bytes": 23,
+      "sha256": "8fd94fd6bd19ea4fba52721205d3cd29cd32a76757b296fc268192c4c8af889f",
+      "git_blob": "725e364bf26087a63adaba991020a57a88c9f999"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/qualified/06.json.source",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/qualified-processes/test_cli_existing_destination_is_preserved_before_read[ordinary].json",
+      "kind": "raw-native-process",
+      "bytes": 3447,
+      "sha256": "5c0e81cbfa2cab8d88cf22e4e66e5656528965bb4d23c5ab676b829e33a5e412",
+      "git_blob": "90d2ea090a440c9ccfc9b292e2ab38e06fffbe78"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/qualified/07.json.source",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/qualified-processes/test_cli_failed_read_creates_no_file_or_success[403].json",
+      "kind": "raw-native-process",
+      "bytes": 4275,
+      "sha256": "fd02d39179f09a2eb69f05738b9718fd2910641301fb01d3628d6657bbe06eea",
+      "git_blob": "2ff9d5dde2fd7f4b46dbe17e45df6e55557c54a0"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/qualified/08.json.source",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/qualified-processes/test_cli_failed_read_creates_no_file_or_success[404].json",
+      "kind": "raw-native-process",
+      "bytes": 4423,
+      "sha256": "84f7ef6f6db153faa75bca5dffab16c62bf51efbb5b0f944347be698be72cd80",
+      "git_blob": "e6cb7c53af0778e86c92aa9db5684f5538b116cc"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/qualified/09.json.source",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/qualified-processes/test_cli_failed_read_creates_no_file_or_success[500].json",
+      "kind": "raw-native-process",
+      "bytes": 4447,
+      "sha256": "2cdc9430628670a300fdf4387f50af9091c63e0c27242c26d99d8624a90417a6",
+      "git_blob": "5d02661d757a8fcdc60ef0a5954c4b863b823586"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/qualified/10-export.html",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/qualified-temp/test_cli_keeps_rubric_display_2/display.html",
+      "kind": "actual-html-export",
+      "bytes": 11837,
+      "sha256": "ace648c9e4fce71eb165095f2a8a78fad3670ecff6a367778da241469aef940b",
+      "git_blob": "3c86b752d0570aee6cbb1812ce37a4034a8b1b96"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/qualified/10.json.source",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/qualified-processes/test_cli_keeps_rubric_display_flags_distinct[hide_outcome_results].json",
+      "kind": "raw-native-process",
+      "bytes": 4474,
+      "sha256": "88948f37165378a94b6a5fecb297a6bce766a9c5a8bda57027c06ed2473bff58",
+      "git_blob": "1f8b3c34b689f8b591a89d2e506b90c7071a76fe"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/qualified/11-export.html",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/qualified-temp/test_cli_keeps_rubric_display_0/display.html",
+      "kind": "actual-html-export",
+      "bytes": 11117,
+      "sha256": "7a1d0adc495614414422a11011928af122ab4ae65dd2e459e95de345c293dd70",
+      "git_blob": "e1b79033b03bfe8d7b09e63f7855ca0cc52770ca"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/qualified/11.json.source",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/qualified-processes/test_cli_keeps_rubric_display_flags_distinct[hide_points].json",
+      "kind": "raw-native-process",
+      "bytes": 4465,
+      "sha256": "5dd0c299e559f1e9ae9dfbce7b3bd205264e68bfd5191cf88727fd7801ae0742",
+      "git_blob": "9321884812ecdf9c0ab2c51b9213028db88fb948"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/qualified/12-export.html",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/qualified-temp/test_cli_keeps_rubric_display_1/display.html",
+      "kind": "actual-html-export",
+      "bytes": 11834,
+      "sha256": "f741df0556615c5cf743ae0644c8905ce8c2ceebae90bb92d50dd8e9dea9402c",
+      "git_blob": "16398c90877ba37859aeeaed5087f26159f27755"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/qualified/12.json.source",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/qualified-processes/test_cli_keeps_rubric_display_flags_distinct[hide_score_total].json",
+      "kind": "raw-native-process",
+      "bytes": 4470,
+      "sha256": "1a65c92fc05135dc81abe1d69fcd2d244c12a5f04e3a0484858978676e11b363",
+      "git_blob": "e73274b389557284ad7bbeb028e06c4fcdb059a7"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/qualified/13-export.html",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/qualified-temp/test_cli_literal_unicode_marku0/literal.html",
+      "kind": "actual-html-export",
+      "bytes": 11996,
+      "sha256": "db928ea952a6eef8fd1cda7fc1f2aa527bdf531266df20695cafc0ad6f2a2f2d",
+      "git_blob": "a8d7f9d9cf7d6a19c91203e1714844e3cb9813a9"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/qualified/13.json.source",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/qualified-processes/test_cli_literal_unicode_markup_and_media_only_comment.json",
+      "kind": "raw-native-process",
+      "bytes": 4506,
+      "sha256": "b991c87ad277832492fc0877ef2b31d4a5477e322f3d68ceecc93c13f407cfb9",
+      "git_blob": "847e961b28664f1217115e856ddb01a9041230eb"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/qualified/14.json.source",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/qualified-processes/test_cli_mismatched_or_unrenderable_feedback_is_not_saved[assignment-course_id-42].json",
+      "kind": "raw-native-process",
+      "bytes": 4199,
+      "sha256": "8585f51796ddb897d16d287caa1ef5bc306836ab2bb76adb407a2f9751fca694",
+      "git_blob": "5064f465b8c0f3e939523e1b4ffa48077ef24852"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/qualified/15.json.source",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/qualified-processes/test_cli_mismatched_or_unrenderable_feedback_is_not_saved[assignment-id-903].json",
+      "kind": "raw-native-process",
+      "bytes": 4192,
+      "sha256": "7a2e5ddbe121516d859c050164f0dc0b49fd4bc891e2f82b182fc1e58303e289",
+      "git_blob": "6ead539d9f784d0b937cce40956f2d5d44dc043a"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/qualified/16.json.source",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/qualified-processes/test_cli_mismatched_or_unrenderable_feedback_is_not_saved[assignment-rubric_settings-value5].json",
+      "kind": "raw-native-process",
+      "bytes": 4143,
+      "sha256": "a241d9738f7e367018458c0710f8d4510978b8ca710d899f10aec7f06443a8a0",
+      "git_blob": "c5e2bb5bf02af8756b40adfbeb55346c6e0af5b0"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/qualified/17.json.source",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/qualified-processes/test_cli_mismatched_or_unrenderable_feedback_is_not_saved[submission-assignment_id-904].json",
+      "kind": "raw-native-process",
+      "bytes": 4203,
+      "sha256": "149a569ffa74d2b5f97c5f41c15ebf4c4b76b9274e1fbacb0a225026681da5fc",
+      "git_blob": "86a8e17b8ef576abb91b71a9d6a9e69baec3bff4"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/qualified/18.json.source",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/qualified-processes/test_cli_mismatched_or_unrenderable_feedback_is_not_saved[submission-rubric_assessment-value3].json",
+      "kind": "raw-native-process",
+      "bytes": 3808,
+      "sha256": "328c500f22b950a23feef0240809e1dc8d144bb1a66d5a0f478d32e6328d7582",
+      "git_blob": "c10adf82144dc86a102e575e7de11ddaad472ed4"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/qualified/19.json.source",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/qualified-processes/test_cli_mismatched_or_unrenderable_feedback_is_not_saved[submission-score-nan].json",
+      "kind": "raw-native-process",
+      "bytes": 4185,
+      "sha256": "d4e65025bea424c56112905af5b5fce79359ea09497253d94fa024d6c91e24fd",
+      "git_blob": "fcc849aacfb1fbc3eb2f10b7ebd7978eac133ce2"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/qualified/20-export.html",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/qualified-temp/test_cli_saves_readable_feedba0/feedback.html",
+      "kind": "actual-html-export",
+      "bytes": 11872,
+      "sha256": "d0b2e12f8ae7ffe3bbd0aebfce14cf885937b74a95e24c8297c2b48f9d2f8cb9",
+      "git_blob": "3f240268c69fad479aea62d02a5d1e2c833baeb7"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/processes/qualified/20.json.source",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/qualified-processes/test_cli_saves_readable_feedback_from_real_reader.json",
+      "kind": "raw-native-process",
+      "bytes": 4438,
+      "sha256": "788cb2dc3a4dd26f5cc9bfcafb15b40c76d6668a1295804fec988900b5552947",
+      "git_blob": "6cd090c3d0e73ed3965eff7adda0ba4f897ec51d"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/qualified-native-run.json",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/qualified-native-run.json",
+      "kind": "authored-receiving",
+      "bytes": 1568,
+      "sha256": "5be781c8e2b8b6da21ad57079ebf8b3bd0973430fa1a04954c2595a265310b4d",
+      "git_blob": "c498f55d9ad5fa50e7e7b5281a807dab01e85e55"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/qualified-native.stderr.txt",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/qualified-native.stderr.txt",
+      "kind": "authored-receiving",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/qualified-native.stdout.txt",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/qualified-native.stdout.txt",
+      "kind": "authored-receiving",
+      "bytes": 100,
+      "sha256": "c52c9b4b2ec4ee070520dc98a7051851ba5cec6019a0b33525532db035afdd48",
+      "git_blob": "d520da95070c6b3d93e05b9f7cd267a58092273b"
+    },
+    {
+      "path": "docs/qualification/feedback-export-9ec02b70e5f0/runtime.json",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/runtime.json",
+      "kind": "authored-receiving",
+      "bytes": 808,
+      "sha256": "2dee241422ddce5476a2deb5c3db861ef5afd7e0adbcf62ba93d8a20c168b554",
+      "git_blob": "801527283b69f9a279620bd9b27f324f2beb8d41"
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/repo/src/canvaspilot/cli.py",
+      "kind": "owned-source",
+      "bytes": 13992,
+      "sha256": "a29e755832cec76a07178d1afffd245c07b665bc990e8bb99c84cbfdc737bf16",
+      "git_blob": "a7c65b92cdeb671e650adfb1090a3eb1a544ea74"
+    },
+    {
+      "path": "src/canvaspilot/feedback_export.py",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/repo/src/canvaspilot/feedback_export.py",
+      "kind": "owned-source",
+      "bytes": 20918,
+      "sha256": "3bc3f44f9d8f682fbf8442fed88e05d6148ecbf889e41c941ce65f067f59904b",
+      "git_blob": "8f37da7c8092227f9c1a223038e087d57270f7ab"
+    },
+    {
+      "path": "tests/test_feedback_export.py",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/repo/tests/test_feedback_export.py",
+      "kind": "owned-source",
+      "bytes": 6965,
+      "sha256": "046ce25f6bc03ae6ad23e65bb7f5cbe26a42a257f45cc9998701054fb1375de5",
+      "git_blob": "733453beb498103a52f696cd8c758bf7c0938804"
+    },
+    {
+      "path": "tests/test_feedback_export_native.py",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/repo/tests/test_feedback_export_native.py",
+      "kind": "owned-source",
+      "bytes": 13105,
+      "sha256": "3bd9cec9c6bcef89395f392498e883c3882f6cdcbe4257d4d210b17d99da6045",
+      "git_blob": "4f474fea68ed2a1b79fe35ae16a6501a83c19734"
+    }
+  ],
+  "owned_source_files": 6,
+  "file_count": 91,
+  "bytes": 642887,
+  "binary_files": [],
+  "all_files_utf8": true,
+  "pr_body": {
+    "path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/PR_BODY.md",
+    "bytes": 2377,
+    "sha256": "3580270246d3d502370edf9561ff41db47d8d7ff38d7d2c8c50b2cfef160f5ee",
+    "git_blob": "319210e7328d9ed788bbd4223fb5993d573eaf76"
+  },
+  "independent_review": "Separate runtime-owned source-pinned packet; pending at this author freeze."
+}

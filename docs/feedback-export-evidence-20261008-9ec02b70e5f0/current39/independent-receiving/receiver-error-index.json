@@ -1,0 +1,58 @@
+{
+  "archive": "receiver-error-evidence.tar.gz.base64",
+  "bytes": 16829,
+  "sha256": "451bd24c3e4636767ff699e7435ea5b32f6f6f8c981fe4ff582e504dcaa5661c",
+  "compressed_bytes": 12620,
+  "compressed_sha256": "e9a9927f07a98da20e02168a6a3e16b972a9244edb8a211ed65de47e5cbef15b",
+  "member_count": 11,
+  "uncompressed_member_bytes": 64389,
+  "members": {
+    "candidate-pins.json": {
+      "bytes": 7040,
+      "sha256": "560196c2439531be7d988b10b7a9f5a41a2e3d207b3336649410f810c50d659b"
+    },
+    "normal/result.json": {
+      "bytes": 14218,
+      "sha256": "4b3dbf48ab662810c3eec1501a86e1cead7e397a4eded4fa1459c36b6f19eee7"
+    },
+    "normal.execution.json": {
+      "bytes": 1212,
+      "sha256": "1b0c2bc2f126e742fb9dfc32e20f84ae4ba52b814a9e69275ba7a6072231aecb"
+    },
+    "normal.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "normal.stdout.log": {
+      "bytes": 952,
+      "sha256": "84c21863e15b1775471d0af2be962b28a16d55df82a8e1a470c76e9fd70548ac"
+    },
+    "optimized/result.json": {
+      "bytes": 14221,
+      "sha256": "7bc209effebe3cde4fe1e0dcc86531af3acaf55eb3b8254129043235c3a5d9b1"
+    },
+    "optimized.execution.json": {
+      "bytes": 1228,
+      "sha256": "dfa6b7053f69ca2955b19c4de2bd28473dbcded9c547abda01f26ce71d07f04c"
+    },
+    "optimized.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "optimized.stdout.log": {
+      "bytes": 955,
+      "sha256": "0cb380b6e60c709a962425907e165f68534984ddb9f18958b04fe804afa75be0"
+    },
+    "receiver.py.source": {
+      "bytes": 12419,
+      "sha256": "69c7da24a695e9815683b8ae4a46924e0754ae6c7c8f6808b3b50b9895b5ab53"
+    },
+    "support.py.source": {
+      "bytes": 12144,
+      "sha256": "27b2851617939bdce42549cb5a0de2e663f66b7ceea6ee53e6ff24b88ec6089b"
+    }
+  },
+  "verified_against_original_private_files_before_wrapper_failure": true,
+  "reconstructed_from_complete_verified_persisted_capsule": true,
+  "wrapper_failure": "TypeError: PosixPath object is not subscriptable in final concatenation check; occurred after complete one-part capsule write and readback, before metadata commit."
+}

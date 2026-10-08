@@ -1,0 +1,12 @@
+{
+  "predecessor_source": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/repo",
+  "candidate_source": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/css-qualified/repo",
+  "changed_path": "src/canvaspilot/feedback_export.py",
+  "predecessor_sha256": "3bc3f44f9d8f682fbf8442fed88e05d6148ecbf889e41c941ce65f067f59904b",
+  "candidate_sha256": "a0db41dca9cce28c9fb7594c88ea6dc103b0f3104d5ba4d061bd93aaed92a714",
+  "removed_byte": "+",
+  "removed_byte_offset": 392,
+  "before_bytes": 20918,
+  "after_bytes": 20917,
+  "only_difference": "Remove the leading + from the top-level :root selector in the static CSS string."
+}

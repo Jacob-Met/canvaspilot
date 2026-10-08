@@ -1,0 +1,59 @@
+{
+  "repository": "Jacob-Met/RecallWeave",
+  "durable_commit": "3cdebd86e69506709bcaeaeff4026deb3d1fc208",
+  "root_git_verification": "Root confirmed all 27 picker packet files among all 250 contributed merge records.",
+  "frozen_allowlist": "/dev/shm/estate-9ec02b70e5f0/memory/recallweave-picker-review/review-files.json",
+  "frozen_allowlist_sha256": "c8346c92495d6feb8446591c78a1022e7abaddef4ebe6127fde680a669fd0615",
+  "current_bytes_verified_before_transfer": true,
+  "transferred_allocations": [
+    {
+      "former_path": "/dev/shm/estate-9ec02b70e5f0/memory/recallweave-picker-review/verify_course_notebook_receiving.mjs",
+      "bytes": 54559,
+      "sha256": "e0db2e464d63fbdfe70a182082af2ebcfaafd62759f6393444831a851c01ea15",
+      "git_path": "docs/reflections-20261008-9ec02b70e5f0/independent-current-picker-d8a9/verify_course_notebook_receiving.mjs",
+      "allocated_bytes": 57344,
+      "destination": "/dev/shm/estate-9ec02b70e5f0/memory/canvas39-review/native-evidence.tar.gz.base64"
+    },
+    {
+      "former_path": "/dev/shm/estate-9ec02b70e5f0/memory/recallweave-picker-review/browser-evidence.tar.gz.base64",
+      "bytes": 46709,
+      "sha256": "7645c49ba7b8a4cd68aadec42b813a4708928b8c078f3742d656becd454b0527",
+      "git_path": "docs/reflections-20261008-9ec02b70e5f0/independent-current-picker-d8a9/browser-evidence.tar.gz.base64",
+      "allocated_bytes": 49152,
+      "destination": "/dev/shm/estate-9ec02b70e5f0/memory/canvas39-review/native-overflow.reserve"
+    },
+    {
+      "former_path": "/dev/shm/estate-9ec02b70e5f0/memory/recallweave-picker-review/course-scenarios.mjs.part",
+      "bytes": 13371,
+      "sha256": "a427f61f3be6691e94b936cf1617f34c51d2b10c8066da4be142b8444d1599b2",
+      "git_path": "docs/reflections-20261008-9ec02b70e5f0/independent-current-picker-d8a9/course-scenarios.mjs.part",
+      "allocated_bytes": 16384,
+      "destination": "/dev/shm/estate-9ec02b70e5f0/memory/canvas39-review/native-evidence-index.json"
+    },
+    {
+      "former_path": "/dev/shm/estate-9ec02b70e5f0/memory/recallweave-picker-review/course-helpers.mjs.part",
+      "bytes": 10042,
+      "sha256": "e1d37dc6c69aeef0077234d83e27cfa3eed19b6fe2cf990ff1fdd39e58971cb6",
+      "git_path": "docs/reflections-20261008-9ec02b70e5f0/independent-current-picker-d8a9/course-helpers.mjs.part",
+      "allocated_bytes": 12288,
+      "destination": "/dev/shm/estate-9ec02b70e5f0/memory/canvas39-review/native-results.json"
+    },
+    {
+      "former_path": "/dev/shm/estate-9ec02b70e5f0/memory/recallweave-picker-review/landed-app-source.mjs.source",
+      "bytes": 18468,
+      "sha256": "ea0926d962c23715ae885d81f1ab2075b3598692393210197e357bb88f18a7bb",
+      "git_path": "docs/reflections-20261008-9ec02b70e5f0/independent-current-picker-d8a9/landed-app-source.mjs.source",
+      "allocated_bytes": 20480,
+      "destination": "/dev/shm/estate-9ec02b70e5f0/memory/canvas39-review/published-recall-reclaim.json"
+    }
+  ],
+  "preserved_preexecution_failure": {
+    "tool_chunk": "c42ab4",
+    "error": "OSError: [Errno 28] No space left on device",
+    "phase": "new capsule reservation before any CLI or loopback",
+    "cli_processes_started": 0,
+    "placeholder_bytes": 0
+  },
+  "ScopeSignal_source_receipts_and_reservations_touched": false,
+  "peer_paths_modified": false
+}

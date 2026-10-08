@@ -1,0 +1,43 @@
+## Why
+
+The existing feedback command returns useful Canvas evidence as JSON. Students
+revising work need a readable copy they can keep, search or print with the grade's
+attempt context and original rubric/comment associations intact.
+
+## Change
+
+Add `canvaspilot export-feedback COURSE ASSIGNMENT --out feedback.html`. It uses
+the unchanged native feedback reader to prepare one self-contained HTML file and
+publishes only to a new destination. The sheet preserves reported grade context,
+zero/unknown/empty distinctions, rubric ordering and existing exact-ID joins,
+unmatched assessments, supplied comment authors and media/attachment references.
+Rubric point, total and outcome-posting settings remain distinct. It calculates
+no grade and does not infer which earlier attempt was graded.
+
+Only the new formatter, a separate CLI parser/dispatch pair, two native tests and
+focused documentation change. Removing the new CLI blocks reproduces the full
+parent CLI byte for byte. API, feedback projection, client/broker, MCP, calendar,
+authentication, dependencies and workflow stay at the receiving parent's bytes.
+
+## Qualification
+
+- Original real CLI: missing command, exit 2, zero GETs and no output.
+- Final focused native run: **65 passed, zero skipped**, including 40 export
+  controls and the 25 existing API/HTTP/CLI/MCP feedback cases.
+- Actual new-command receiver: 20 CLI processes, 34 synthetic loopback GETs,
+  eight new HTML files, exact non-overwrite and refusal controls. The protected
+  earlier file is recorded separately from successful exports.
+- Ruff passes. Original first-driver stderr-parsing failures, exact archived
+  source and the qualified receiver are retained without relabeling them.
+
+This is local source qualification with authored fixtures. It does not exercise
+a school account, browser/printer device, deployment or learner outcomes.
+
+## Ownership and receiving parent
+
+Coordinated in [issue34 comment6059831651](https://github.com/Jacob-Met/canvaspilot/issues/34#issuecomment-6059831651),
+as a distinct follow-on to merged feedback PR40. Qualified parent is
+`55fe1e0a3c4ad85e1065f295e49d44722c3be32b`, tree
+`7c1bd0a858a3fda82a4d5e69076801ae65a73ea1`. Reader/pagination PR35 and calendar
+provider-identity PR45 retain their source scopes. Current-parent composition,
+independent receiving and publication are handled by the execution lead.

@@ -1,0 +1,10 @@
+{
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+    "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-css-review/verify_exported_selectors.cjs",
+    "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-css-review/run/predecessor-actual-export.html",
+    "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-css-review/run/feedback.html",
+    "/workspace/scratch/d0441742433b/production-worker/qa-deps/node_modules/jsdom"
+  ],
+  "returncode": 0
+}

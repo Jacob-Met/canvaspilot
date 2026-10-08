@@ -1,0 +1,6 @@
+{
+  "stage": "composition before qualification",
+  "exception": "AssertionError: dispatcher prefix matched three places",
+  "product_execution": false,
+  "disposition": "derive a longer unique native prefix; all inserted blocks remain unchanged"
+}

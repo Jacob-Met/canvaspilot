@@ -1,0 +1,18 @@
+{
+  "dev_free_bytes": 5225730048,
+  "shared_free_after_reservation": 1191936,
+  "scope": "/dev/estate-9ec02b70e5f0/runtime/canvas-feedback-current79-review",
+  "reserved_bytes": 1212416,
+  "mounts": [
+    "455 438 0:31 / /dev rw,nosuid,nodev - tmpfs tmpfs rw,size=65536k,mode=755",
+    "458 455 0:26 / /dev/shm rw,nosuid,nodev,relatime - tmpfs shm rw",
+    "462 455 0:64 / /dev rw,nosuid,nodev,relatime - tmpfs tmpfs rw,mode=755",
+    "471 462 0:26 / /dev/shm rw,nosuid,nodev,relatime - tmpfs shm rw"
+  ],
+  "limits": {
+    "memory.max": "8589934592",
+    "memory.current": "8589811712",
+    "pids.max": "max",
+    "pids.current": "148"
+  }
+}

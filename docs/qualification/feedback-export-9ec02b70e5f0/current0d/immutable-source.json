@@ -1,0 +1,31 @@
+{
+  "repository": "Jacob-Met/canvaspilot",
+  "parent": "0d1898544a90079e2dcc7ceb3fa4bc6bca88a2bc",
+  "tree": "de9fca025ebe325807bd53cd9b7f3b6be50c6d19",
+  "main_ref_refreshes": 0,
+  "immutable_commit_files_fetched": 3,
+  "source_of_relevant_path_comparison": "Root single publication-parent observation and immutable79-to-0d tree comparison, delivered through collaboration; no second moving-main read.",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 19769,
+      "git_blob": "f1740a512af81916490a27887141382d10469efa",
+      "sha256": "9243eeac04fd867cc111e1d0a95259aa266dae210d8eebc4da33287af28bfaae",
+      "fetch_url": "https://github.com/Jacob-Met/canvaspilot/blob/0d1898544a90079e2dcc7ceb3fa4bc6bca88a2bc/README.md"
+    },
+    {
+      "path": "src/canvaspilot/api.py",
+      "bytes": 27718,
+      "git_blob": "8de750525055991ca470fb4881d0368a07631818",
+      "sha256": "00b65511b84a77d69312dbdc6abe21bfd62ef47ce0a5cdf8c1af2fd2d705c3e8",
+      "fetch_url": "https://github.com/Jacob-Met/canvaspilot/blob/0d1898544a90079e2dcc7ceb3fa4bc6bca88a2bc/src/canvaspilot/api.py"
+    },
+    {
+      "path": "src/canvaspilot/assignment_submission.py",
+      "bytes": 1296,
+      "git_blob": "95b1f19927e4eecf99fc852325737c3cfe86cd0d",
+      "sha256": "52fc732660b8844a2ee0801931a363f20db15b5309d148d01e3b618be487133d",
+      "fetch_url": "https://github.com/Jacob-Met/canvaspilot/blob/0d1898544a90079e2dcc7ceb3fa4bc6bca88a2bc/src/canvaspilot/assignment_submission.py"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "schema": "independent-current79-freeze.v1",
+  "frozen_at": "2026-10-08T14:02:24.682401+00:00",
+  "predecessor_packets": [
+    {
+      "allowlist": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-review/review-files.json",
+      "sha256": "a8ed6e6c6da7fc51a5cee0367f687a08971e7da3f6d29714d02c1fd4ea4c59be",
+      "files": 21,
+      "all_exact": true
+    },
+    {
+      "allowlist": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-css-review/review-files.json",
+      "sha256": "d569b4b656793025ef2c10ad1cbf96837258c0b346cf388fb8d1cf14ac63c9d0",
+      "files": 22,
+      "all_exact": true
+    }
+  ],
+  "current_author_files": 28,
+  "current_author_files_exact": true,
+  "capsule_members_reverified_in_later_exec": 83,
+  "probe_sha256": "1765305f423ada01cd15931ea6bb6f585d0b9c8f7be817453033ab1fe15394a2",
+  "github_writes": 0,
+  "branch_ref_reads": 1,
+  "publication_parent_refreshes": 0,
+  "current0d_qualification": false
+}

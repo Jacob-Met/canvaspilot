@@ -1,0 +1,32 @@
+{
+  "schema": "independent-current79-feedback.v1",
+  "parent": "79a2f2b2cbb7e74128d731cf096c7e86f1942d4b",
+  "tree": "0114a6230c473c1ee1d01b99c7121c754b781d54",
+  "tests": 2,
+  "failures": 0,
+  "errors": 0,
+  "skips": 0,
+  "success": true,
+  "source_before_after_identical": true,
+  "private_runtime_files": 25,
+  "commands": 8,
+  "HTTP_GETs": 13,
+  "HTTP_POSTs_to_authored_broker_only": 7,
+  "synthetic_broker_GET_intents": 7,
+  "actual_new_html_files": 2,
+  "browser_allocations": 0,
+  "actual_broker_processes": 0,
+  "live_accounts": 0,
+  "github_writes": 0,
+  "probe": {
+    "bytes": 13376,
+    "sha256": "1765305f423ada01cd15931ea6bb6f585d0b9c8f7be817453033ab1fe15394a2",
+    "git_blob": "8aff44f61861df8417d831361ce2c9ffd1730f2c"
+  },
+  "support": {
+    "bytes": 12144,
+    "sha256": "27b2851617939bdce42549cb5a0de2e663f66b7ceea6ee53e6ff24b88ec6089b",
+    "git_blob": "3061c29862ec2339dda41fd5ba8438680d1f2756"
+  },
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]"
+}

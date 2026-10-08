@@ -1,0 +1,14 @@
+{
+  "all_requests_loopback_authored": true,
+  "command_count": 33,
+  "exit_code_counts": {
+    "0": 21,
+    "1": 12
+  },
+  "methods": [
+    "GET"
+  ],
+  "native_json_reader_commands": 8,
+  "requests": 57,
+  "successful_export_commands": 13
+}

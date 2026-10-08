@@ -1,0 +1,211 @@
+{
+  "summary": {
+    "processes": 20,
+    "canvas_gets": 34,
+    "new_exports": 8,
+    "refusals": 12
+  },
+  "processes": [
+    {
+      "case": "test_cli_distinguishes_unreturned_and_empty_feedback[empty]",
+      "receipt": "docs/qualification/feedback-export-9ec02b70e5f0/current79/verification/processes/01.json.source",
+      "exit_code": 0,
+      "canvas_gets": 2,
+      "original_output_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/current79/verification/tmp/test_cli_distinguishes_unretur2/unknown.html",
+      "new_export": true,
+      "artifact": "docs/qualification/feedback-export-9ec02b70e5f0/current79/verification/processes/01-export.html",
+      "sha256": "2c4305d4da66fcdd6e6878f10c812bb116a4700243299b87c98b179b522e0886",
+      "bytes": 6743
+    },
+    {
+      "case": "test_cli_distinguishes_unreturned_and_empty_feedback[missing]",
+      "receipt": "docs/qualification/feedback-export-9ec02b70e5f0/current79/verification/processes/02.json.source",
+      "exit_code": 0,
+      "canvas_gets": 2,
+      "original_output_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/current79/verification/tmp/test_cli_distinguishes_unretur0/unknown.html",
+      "new_export": true,
+      "artifact": "docs/qualification/feedback-export-9ec02b70e5f0/current79/verification/processes/02-export.html",
+      "sha256": "97008ba89b1eab7d04e400c081d697557979f4c6d2a69be1498fa26bd5fa0a8c",
+      "bytes": 6801
+    },
+    {
+      "case": "test_cli_distinguishes_unreturned_and_empty_feedback[null]",
+      "receipt": "docs/qualification/feedback-export-9ec02b70e5f0/current79/verification/processes/03.json.source",
+      "exit_code": 0,
+      "canvas_gets": 2,
+      "original_output_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/current79/verification/tmp/test_cli_distinguishes_unretur1/unknown.html",
+      "new_export": true,
+      "artifact": "docs/qualification/feedback-export-9ec02b70e5f0/current79/verification/processes/03-export.html",
+      "sha256": "20fc83f5733adf1c76936b3b48f8b66472fb2f2a71d5ae2856aadaf2d7e406d0",
+      "bytes": 6801
+    },
+    {
+      "case": "test_cli_existing_destination_is_preserved_before_read[dangling-symlink]",
+      "receipt": "docs/qualification/feedback-export-9ec02b70e5f0/current79/verification/processes/04.json.source",
+      "exit_code": 1,
+      "canvas_gets": 0,
+      "original_output_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/current79/verification/tmp/test_cli_existing_destination_1/keep.html",
+      "new_export": false,
+      "preserved_locator": "dangling-symlink",
+      "link_text": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/current79/verification/tmp/test_cli_existing_destination_1/absent-target",
+      "target_exists": false
+    },
+    {
+      "case": "test_cli_existing_destination_is_preserved_before_read[directory]",
+      "receipt": "docs/qualification/feedback-export-9ec02b70e5f0/current79/verification/processes/05.json.source",
+      "exit_code": 1,
+      "canvas_gets": 0,
+      "original_output_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/current79/verification/tmp/test_cli_existing_destination_2/keep.html",
+      "new_export": false,
+      "preserved_locator": "directory",
+      "entries": 0
+    },
+    {
+      "case": "test_cli_existing_destination_is_preserved_before_read[ordinary]",
+      "receipt": "docs/qualification/feedback-export-9ec02b70e5f0/current79/verification/processes/06.json.source",
+      "exit_code": 1,
+      "canvas_gets": 0,
+      "original_output_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/current79/verification/tmp/test_cli_existing_destination_0/keep.html",
+      "new_export": false,
+      "artifact": "docs/qualification/feedback-export-9ec02b70e5f0/current79/verification/processes/06-preexisting.txt",
+      "sha256": "8fd94fd6bd19ea4fba52721205d3cd29cd32a76757b296fc268192c4c8af889f",
+      "bytes": 23
+    },
+    {
+      "case": "test_cli_failed_read_creates_no_file_or_success[403]",
+      "receipt": "docs/qualification/feedback-export-9ec02b70e5f0/current79/verification/processes/07.json.source",
+      "exit_code": 1,
+      "canvas_gets": 2,
+      "original_output_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/current79/verification/tmp/test_cli_failed_read_creates_n0/refused.html",
+      "new_export": false,
+      "output_absent": true
+    },
+    {
+      "case": "test_cli_failed_read_creates_no_file_or_success[404]",
+      "receipt": "docs/qualification/feedback-export-9ec02b70e5f0/current79/verification/processes/08.json.source",
+      "exit_code": 1,
+      "canvas_gets": 2,
+      "original_output_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/current79/verification/tmp/test_cli_failed_read_creates_n1/refused.html",
+      "new_export": false,
+      "output_absent": true
+    },
+    {
+      "case": "test_cli_failed_read_creates_no_file_or_success[500]",
+      "receipt": "docs/qualification/feedback-export-9ec02b70e5f0/current79/verification/processes/09.json.source",
+      "exit_code": 1,
+      "canvas_gets": 2,
+      "original_output_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/current79/verification/tmp/test_cli_failed_read_creates_n2/refused.html",
+      "new_export": false,
+      "output_absent": true
+    },
+    {
+      "case": "test_cli_keeps_rubric_display_flags_distinct[hide_outcome_results]",
+      "receipt": "docs/qualification/feedback-export-9ec02b70e5f0/current79/verification/processes/10.json.source",
+      "exit_code": 0,
+      "canvas_gets": 2,
+      "original_output_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/current79/verification/tmp/test_cli_keeps_rubric_display_2/display.html",
+      "new_export": true,
+      "artifact": "docs/qualification/feedback-export-9ec02b70e5f0/current79/verification/processes/10-export.html",
+      "sha256": "4bd892bdb1b7b204ea87eea355efb01fa5b4e37ae64977a1e8616cbdec8e2a35",
+      "bytes": 11836
+    },
+    {
+      "case": "test_cli_keeps_rubric_display_flags_distinct[hide_points]",
+      "receipt": "docs/qualification/feedback-export-9ec02b70e5f0/current79/verification/processes/11.json.source",
+      "exit_code": 0,
+      "canvas_gets": 2,
+      "original_output_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/current79/verification/tmp/test_cli_keeps_rubric_display_0/display.html",
+      "new_export": true,
+      "artifact": "docs/qualification/feedback-export-9ec02b70e5f0/current79/verification/processes/11-export.html",
+      "sha256": "f0854271972660cf9c9ece0e519e5c43cd83f78a98873368cfd3c08b8dea7fab",
+      "bytes": 11116
+    },
+    {
+      "case": "test_cli_keeps_rubric_display_flags_distinct[hide_score_total]",
+      "receipt": "docs/qualification/feedback-export-9ec02b70e5f0/current79/verification/processes/12.json.source",
+      "exit_code": 0,
+      "canvas_gets": 2,
+      "original_output_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/current79/verification/tmp/test_cli_keeps_rubric_display_1/display.html",
+      "new_export": true,
+      "artifact": "docs/qualification/feedback-export-9ec02b70e5f0/current79/verification/processes/12-export.html",
+      "sha256": "d381194154d75b8803909bbe839d2b31af64b46450e7cb75ae72bf91568ecad4",
+      "bytes": 11833
+    },
+    {
+      "case": "test_cli_literal_unicode_markup_and_media_only_comment",
+      "receipt": "docs/qualification/feedback-export-9ec02b70e5f0/current79/verification/processes/13.json.source",
+      "exit_code": 0,
+      "canvas_gets": 2,
+      "original_output_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/current79/verification/tmp/test_cli_literal_unicode_marku0/literal.html",
+      "new_export": true,
+      "artifact": "docs/qualification/feedback-export-9ec02b70e5f0/current79/verification/processes/13-export.html",
+      "sha256": "af4c2638efb0f9785d9918d83ce5c385539b05b2999fa76283878ebbd3687553",
+      "bytes": 11995
+    },
+    {
+      "case": "test_cli_mismatched_or_unrenderable_feedback_is_not_saved[assignment-course_id-42]",
+      "receipt": "docs/qualification/feedback-export-9ec02b70e5f0/current79/verification/processes/14.json.source",
+      "exit_code": 1,
+      "canvas_gets": 2,
+      "original_output_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/current79/verification/tmp/test_cli_mismatched_or_unrende1/invalid.html",
+      "new_export": false,
+      "output_absent": true
+    },
+    {
+      "case": "test_cli_mismatched_or_unrenderable_feedback_is_not_saved[assignment-id-903]",
+      "receipt": "docs/qualification/feedback-export-9ec02b70e5f0/current79/verification/processes/15.json.source",
+      "exit_code": 1,
+      "canvas_gets": 2,
+      "original_output_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/current79/verification/tmp/test_cli_mismatched_or_unrende0/invalid.html",
+      "new_export": false,
+      "output_absent": true
+    },
+    {
+      "case": "test_cli_mismatched_or_unrenderable_feedback_is_not_saved[assignment-rubric_settings-value5]",
+      "receipt": "docs/qualification/feedback-export-9ec02b70e5f0/current79/verification/processes/16.json.source",
+      "exit_code": 1,
+      "canvas_gets": 2,
+      "original_output_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/current79/verification/tmp/test_cli_mismatched_or_unrende5/invalid.html",
+      "new_export": false,
+      "output_absent": true
+    },
+    {
+      "case": "test_cli_mismatched_or_unrenderable_feedback_is_not_saved[submission-assignment_id-904]",
+      "receipt": "docs/qualification/feedback-export-9ec02b70e5f0/current79/verification/processes/17.json.source",
+      "exit_code": 1,
+      "canvas_gets": 2,
+      "original_output_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/current79/verification/tmp/test_cli_mismatched_or_unrende2/invalid.html",
+      "new_export": false,
+      "output_absent": true
+    },
+    {
+      "case": "test_cli_mismatched_or_unrenderable_feedback_is_not_saved[submission-rubric_assessment-value3]",
+      "receipt": "docs/qualification/feedback-export-9ec02b70e5f0/current79/verification/processes/18.json.source",
+      "exit_code": 1,
+      "canvas_gets": 2,
+      "original_output_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/current79/verification/tmp/test_cli_mismatched_or_unrende3/invalid.html",
+      "new_export": false,
+      "output_absent": true
+    },
+    {
+      "case": "test_cli_mismatched_or_unrenderable_feedback_is_not_saved[submission-score-nan]",
+      "receipt": "docs/qualification/feedback-export-9ec02b70e5f0/current79/verification/processes/19.json.source",
+      "exit_code": 1,
+      "canvas_gets": 2,
+      "original_output_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/current79/verification/tmp/test_cli_mismatched_or_unrende4/invalid.html",
+      "new_export": false,
+      "output_absent": true
+    },
+    {
+      "case": "test_cli_saves_readable_feedback_from_real_reader",
+      "receipt": "docs/qualification/feedback-export-9ec02b70e5f0/current79/verification/processes/20.json.source",
+      "exit_code": 0,
+      "canvas_gets": 2,
+      "original_output_path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/current79/verification/tmp/test_cli_saves_readable_feedba0/feedback.html",
+      "new_export": true,
+      "artifact": "docs/qualification/feedback-export-9ec02b70e5f0/current79/verification/processes/20-export.html",
+      "sha256": "34fb313c088efcb4e93385a93639174a88bdb0bc69f5732e8559f1993cbbf564",
+      "bytes": 11871
+    }
+  ]
+}

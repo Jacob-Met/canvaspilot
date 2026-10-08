@@ -1,0 +1,89 @@
+{
+  "repository": "Jacob-Met/canvaspilot",
+  "current_parent": "79a2f2b2cbb7e74128d731cf096c7e86f1942d4b",
+  "current_tree": "0114a6230c473c1ee1d01b99c7121c754b781d54",
+  "main_ref_refreshes_by_optimizer": 0,
+  "immutable_commit_files_fetched": 7,
+  "inherited_complete_native_modules": 12,
+  "new_native_modules": [
+    "src/canvaspilot/feedback_export.py"
+  ],
+  "owned_paths": [
+    "README.md",
+    "docs/feedback-export.md",
+    "src/canvaspilot/cli.py",
+    "src/canvaspilot/feedback_export.py",
+    "tests/test_feedback_export.py",
+    "tests/test_feedback_export_native.py"
+  ],
+  "unchanged_current_native_paths": [
+    ".github/workflows/ci.yml",
+    "pyproject.toml",
+    "src/canvaspilot/__init__.py",
+    "src/canvaspilot/api.py",
+    "src/canvaspilot/bundle.py",
+    "src/canvaspilot/calendar_export.py",
+    "src/canvaspilot/client.py",
+    "src/canvaspilot/feedback.py",
+    "src/canvaspilot/folder_browser.py",
+    "src/canvaspilot/mcp_server.py",
+    "src/canvaspilot/module_progress.py",
+    "src/canvaspilot/offline_demo.py",
+    "src/canvaspilot/session_broker.py",
+    "tests/fixtures/assignment_rubric.json",
+    "tests/fixtures/submission_feedback.json",
+    "tests/test_assignment_brief_rubric.py",
+    "tests/test_broker_provider_routing.py",
+    "tests/test_calendar_export.py",
+    "tests/test_calendar_session_identity.py",
+    "tests/test_module_progress_process.py",
+    "tests/test_submission_feedback.py",
+    "tests/test_submission_feedback_native.py"
+  ],
+  "exact_upstream_native_files": 22,
+  "insertions": [
+    {
+      "path": "src/canvaspilot/cli.py",
+      "insertions": 2,
+      "inserted_blocks": [
+        "\n    feedback_export = sub.add_parser(\n        \"export-feedback\", help=\"Save self submission feedback to a new local HTML file\",\n    )\n    add_common(feedback_export)\n    feedback_export.add_argument(\"course_id\", type=_positive_int)\n    feedback_export.add_argument(\"assignment_id\", type=_positive_int)\n    feedback_export.add_argument(\"--out\", required=True, type=Path,\n                                 help=\"New HTML file; existing paths are protected\")\n",
+        "        elif args.cmd == \"export-feedback\":\n            import os\n\n            import httpx\n\n            from canvaspilot.client import CanvasAuthError\n            from canvaspilot.feedback_export import build_feedback_document, write_feedback_document\n\n            try:\n                if os.path.lexists(args.out):\n                    raise FileExistsError(\"Output path already exists; choose a new HTML file\")\n                content, report = build_feedback_document(api, args.course_id, args.assignment_id)\n                write_feedback_document(args.out, content)\n            except (CanvasAuthError, httpx.HTTPError, ValueError, TypeError, OSError) as error:\n                print(json.dumps({\n                    \"ok\": False, \"error\": type(error).__name__, \"message\": str(error),\n                }), file=sys.stderr)\n                raise SystemExit(1) from None\n            print(json.dumps({\"ok\": True, \"output\": str(args.out), **report}, indent=2))\n"
+      ],
+      "before": {
+        "bytes": 12621,
+        "sha256": "a6029296bba4e84b3889bd62487b966d7bc1832a8b1b1e0fd928dfb9b9ab68a8",
+        "git_blob": "9b8eec6ea177d0fe69e3cb7776af185d2e7ad4a5"
+      },
+      "candidate": {
+        "bytes": 14038,
+        "sha256": "223654cbd53c539b327dfb7399ed01953381044f387c205bb1a7eb21f6c1808f",
+        "git_blob": "f4fff58e9a41103b4bfa563baf23fcbc23c4002e"
+      },
+      "remove_only_insertions_recovers_entire_current_before_image": true
+    },
+    {
+      "path": "README.md",
+      "insertions": 1,
+      "inserted_blocks": [
+        "### Save a readable feedback sheet\n\n```bash\ncanvaspilot export-feedback 41 902 --out feedback.html\n```\n\nSave the selected assignment's self-submission feedback as one HTML file you can\nopen locally or print. The sheet keeps reported grades beside their attempt\ncontext, including a prominent warning when grading preceded a resubmission.\nRubric criteria retain their returned order and assessments; unmatched entries\nstay separate. Comments keep supplied author names, timestamps and literal text,\nincluding media-only entries. Attachment names and media identifiers are listed\nwhen returned; their contents remain in Canvas.\n\nThe export uses the same reader and authentication as `feedback`. It distinguishes\nzero, unknown values and explicitly empty feedback. Rubric point visibility and\nrubric total visibility are applied separately, without changing the separately\nreported submission grade. It calculates no grade or rubric total.\n\nChoose a new output path: existing files, directories and symlinks are protected,\nincluding a destination created while the feedback is being read. The completed\nfile contains its own styling, no scripts or automatic network resources, and\ndoes not refresh. See [the feedback export guide](docs/feedback-export.md) for the\nfile's contents, exact display rules, local-file behavior and Python usage.\n\n"
+      ],
+      "before": {
+        "bytes": 19360,
+        "sha256": "b41aab90aacc390f31462a26c6cfbbcc4bacb0c9a7090c64002f004e3a26974b",
+        "git_blob": "f06fdc3090679d61953951eac6328b91cb674650"
+      },
+      "candidate": {
+        "bytes": 20698,
+        "sha256": "c3c598988952bcd6dfb3731e2fe106add2512cb5d9436c8c7638a86ef5e57630",
+        "git_blob": "964f9d2ce8ac6f98663b542da43e261149639b9c"
+      },
+      "remove_only_insertions_recovers_entire_current_before_image": true
+    }
+  ],
+  "direct_dependencies_retained": [
+    "src/canvaspilot/client.py",
+    "src/canvaspilot/session_broker.py",
+    "src/canvaspilot/calendar_export.py"
+  ],
+  "source_reuse": "All materialized unchanged before-images verified against runtime observed immutable tree. Independent source copies for the only two edited existing files."
+}

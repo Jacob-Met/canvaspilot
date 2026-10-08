@@ -1,0 +1,124 @@
+{
+  "parent": "728d2d8b67b6f0812956fecdeeb50e25ee32e979",
+  "tree": "7a659089347c983e79106b505e63981f91986507",
+  "independently_qualified_parent": "17d63dc43fde30efd8d3454ef09b1d1a8c5bcd0d",
+  "source_only_composition": true,
+  "native_execution": false,
+  "full_repository_CI": "Final PR head must pass the existing CI workflow before integration",
+  "incoming_additions": {
+    "README.md": [
+      {
+        "pin": {
+          "bytes": 960,
+          "sha256": "b7707b2a13350894e0be57ae5712d6236ee260a466233d275111eea679f6059b",
+          "git_blob": "e54b4651e1ddb76da62d954a63a84fd4a9083c2b"
+        },
+        "block": "### Read classic quizzes from the terminal\n\nList a course’s classic quizzes, then inspect one returned quiz ID:\n\n```bash\ncanvaspilot quizzes 42\ncanvaspilot quiz 42 9\n```\n\nBoth commands accept the existing `--base-url`, `--profile` and `--token` options.\nCourse and quiz IDs must be positive numeric Canvas IDs. `quizzes` uses the existing\npaginated reader and compact list fields; `quiz` returns the original detail JSON,\nincluding any supplied timing, attempt-policy, lock and differentiated-date fields.\nNull dates and false/zero values keep their original meaning. A failed read exits\nnonzero with a JSON error on stderr and no partial success output.\n\nThese commands call only the existing [classic-quiz GET endpoints](https://developerdocs.instructure.com/services/canvas/resources/quizzes).\nThey do not start or complete an attempt, read questions, or change submissions.\nNew Quizzes and LTI assessments retain the existing separate support boundary.\n\n"
+      },
+      {
+        "pin": {
+          "bytes": 375,
+          "sha256": "16ea505ce07add00748bde82200d955dbf457d8bad423a969a2a287bd539aebe",
+          "git_blob": "bbf50b9fa367efe9cb290f07668c488fe3ce2727"
+        },
+        "block": "\nRead selected courses from the terminal with `canvaspilot announcements 42 77`.\nChoose `--detail full` for complete cleaned message text and optionally supply\n`--start-date 2026-10-01`. The command preserves the existing course context,\npagination and date-window rules; see [terminal announcement review](docs/announcements-cli.md)\nfor fields, defaults and error behavior.\n"
+      }
+    ],
+    "src/canvaspilot/cli.py": [
+      {
+        "pin": {
+          "bytes": 608,
+          "sha256": "c18a38abb929a0b7d4374a1c6676ba63c7ed2d00d0f7cf977d5114ef93479664",
+          "git_blob": "9c39ce45cba5a615863a1babb8ac01fa0e917a1e"
+        },
+        "block": "\n    announcements = sub.add_parser(\n        \"announcements\", help=\"Read active announcements for selected courses\",\n    )\n    add_common(announcements)\n    announcements.add_argument(\"course_ids\", nargs=\"+\", type=_positive_int)\n    announcements.add_argument(\n        \"--start-date\", default=None,\n        help=\"Canvas start_date filter (YYYY-MM-DD or ISO 8601); omitted uses Canvas defaults\",\n    )\n    announcements.add_argument(\n        \"--detail\", choices=(\"compact\", \"full\"), default=\"compact\",\n        help=\"compact limits message text to 400 characters; full keeps the complete stripped text\",\n    )\n"
+      },
+      {
+        "pin": {
+          "bytes": 511,
+          "sha256": "a7408dca79c007c41e138775ad6ee595e7b8e5bee95c8cab219d5651329cdb95",
+          "git_blob": "810dec5b7dd4169dbc006437b808767a9cb71e4f"
+        },
+        "block": "    quizzes = sub.add_parser(\"quizzes\", help=\"List classic quizzes for a course\")\n    add_common(quizzes)\n    quizzes.add_argument(\"course_id\", type=_positive_int, help=\"Positive numeric Canvas course ID\")\n\n    quiz = sub.add_parser(\"quiz\", help=\"Read one classic quiz without starting an attempt\")\n    add_common(quiz)\n    quiz.add_argument(\"course_id\", type=_positive_int, help=\"Positive numeric Canvas course ID\")\n    quiz.add_argument(\"quiz_id\", type=_positive_int, help=\"Positive numeric Canvas quiz ID\")\n\n"
+      },
+      {
+        "pin": {
+          "bytes": 1077,
+          "sha256": "aa7217719499b4ac149df5f87852e607db37386f2878858580d40c18c4585576",
+          "git_blob": "38a5e254542a962193d7a036cd6fbecad8fe64b1"
+        },
+        "block": "        elif args.cmd == \"announcements\":\n            import httpx\n\n            from canvaspilot.client import CanvasAuthError, CanvasPaginationError\n\n            # Keep the terminal result structured when MCP initialization has\n            # enabled HTTPX request logging; restore the caller's logger level.\n            http_log = logging.getLogger(\"httpx\")\n            previous_level = http_log.level\n            http_log.setLevel(max(http_log.getEffectiveLevel(), logging.WARNING))\n            try:\n                result = api.list_announcements(\n                    args.course_ids, start_date=args.start_date, detail=args.detail,\n                )\n            except (CanvasAuthError, CanvasPaginationError, httpx.HTTPError, ValueError) as error:\n                print(json.dumps({\n                    \"ok\": False, \"error\": type(error).__name__, \"message\": str(error),\n                }), file=sys.stderr)\n                raise SystemExit(1) from None\n            finally:\n                http_log.setLevel(previous_level)\n            print(json.dumps(result, indent=2))\n"
+      },
+      {
+        "pin": {
+          "bytes": 982,
+          "sha256": "a5d7f5e8cdbc22a6d99945b3f418cf5b5db01d82b7914f2485ea545e44b5c819",
+          "git_blob": "247535b342206360912046a531eb0d4bfeacbdc9"
+        },
+        "block": "        elif args.cmd in {\"quizzes\", \"quiz\"}:\n            import httpx\n\n            from canvaspilot.client import CanvasAuthError, CanvasPaginationError\n\n            http_log = logging.getLogger(\"httpx\")\n            previous_level = http_log.level\n            http_log.setLevel(max(http_log.getEffectiveLevel(), logging.WARNING))\n            try:\n                if args.cmd == \"quizzes\":\n                    result = api.list_quizzes(args.course_id)\n                else:\n                    result = api.get_quiz(args.course_id, args.quiz_id)\n            except (CanvasAuthError, CanvasPaginationError, httpx.HTTPError, ValueError) as error:\n                print(json.dumps({\n                    \"ok\": False, \"error\": type(error).__name__, \"message\": str(error),\n                }), file=sys.stderr)\n                raise SystemExit(1) from None\n            finally:\n                http_log.setLevel(previous_level)\n            print(json.dumps(result, indent=2, default=str))\n"
+      }
+    ]
+  },
+  "export_insertions": {
+    "README.md": {
+      "complete_native_before": {
+        "bytes": 22999,
+        "sha256": "5429aa112913cbc5fef2f1632a17b7195a812f5d793c07e51fc8366ccab8cd49",
+        "git_blob": "92a5e57ff04c941bfc57e8674324dd811f7c9fcb"
+      },
+      "candidate": {
+        "bytes": 24337,
+        "sha256": "d4bf2655eb82376100d73ad920ad8ee5b1ad9a7992679f0434f64c8bd0ca2283",
+        "git_blob": "577a012ae457157cc2cad8567e2b7b0a55d4fdfe"
+      },
+      "inverse_exact": true,
+      "blocks": [
+        {
+          "block": "### Save a readable feedback sheet\n\n```bash\ncanvaspilot export-feedback 41 902 --out feedback.html\n```\n\nSave the selected assignment's self-submission feedback as one HTML file you can\nopen locally or print. The sheet keeps reported grades beside their attempt\ncontext, including a prominent warning when grading preceded a resubmission.\nRubric criteria retain their returned order and assessments; unmatched entries\nstay separate. Comments keep supplied author names, timestamps and literal text,\nincluding media-only entries. Attachment names and media identifiers are listed\nwhen returned; their contents remain in Canvas.\n\nThe export uses the same reader and authentication as `feedback`. It distinguishes\nzero, unknown values and explicitly empty feedback. Rubric point visibility and\nrubric total visibility are applied separately, without changing the separately\nreported submission grade. It calculates no grade or rubric total.\n\nChoose a new output path: existing files, directories and symlinks are protected,\nincluding a destination created while the feedback is being read. The completed\nfile contains its own styling, no scripts or automatic network resources, and\ndoes not refresh. See [the feedback export guide](docs/feedback-export.md) for the\nfile's contents, exact display rules, local-file behavior and Python usage.\n\n",
+          "pin": {
+            "bytes": 1338,
+            "sha256": "97f7449c31197c1f5b409f823f4639d864b29810552813d1f86f7c527c6da70c",
+            "git_blob": "1e931328edd6ccd4bdbdc60aba33f32b1a34c343"
+          },
+          "anchor_lines": 1,
+          "anchor_sha256": "d6407c60c7634b6459daae54035517b093f184ba8095639ee2af4986fe0186f9"
+        }
+      ]
+    },
+    "src/canvaspilot/cli.py": {
+      "complete_native_before": {
+        "bytes": 21264,
+        "sha256": "c6c93f855584c2e30e8e51cc33e52e7511a851af2d5201be83ee55c1ccee36bb",
+        "git_blob": "226f3f7d502dd61ad03c59cd8212289d133a0190"
+      },
+      "candidate": {
+        "bytes": 22681,
+        "sha256": "4cc22dfbd5336b09aac84c831512b954cea04eeb1ddc5c1b887cbbe07f8c2d7b",
+        "git_blob": "596127daccd6c129a3b5e9a4fe29c62c63b6a76b"
+      },
+      "inverse_exact": true,
+      "blocks": [
+        {
+          "block": "\n    feedback_export = sub.add_parser(\n        \"export-feedback\", help=\"Save self submission feedback to a new local HTML file\",\n    )\n    add_common(feedback_export)\n    feedback_export.add_argument(\"course_id\", type=_positive_int)\n    feedback_export.add_argument(\"assignment_id\", type=_positive_int)\n    feedback_export.add_argument(\"--out\", required=True, type=Path,\n                                 help=\"New HTML file; existing paths are protected\")\n",
+          "pin": {
+            "bytes": 456,
+            "sha256": "f99a4b355927e3d6a737a02d108d279aa70a0feef513c1b76a3b59ffb0aeedb7",
+            "git_blob": "d896ff88489732e553601b285f21cc7cff962ac4"
+          },
+          "anchor_lines": 2,
+          "anchor_sha256": "f7fbc9b89d4f40e51ab3fa6f25145fa4a4cc2ddbb3b1940bb06e0aaaf93839e0"
+        },
+        {
+          "block": "        elif args.cmd == \"export-feedback\":\n            import os\n\n            import httpx\n\n            from canvaspilot.client import CanvasAuthError\n            from canvaspilot.feedback_export import build_feedback_document, write_feedback_document\n\n            try:\n                if os.path.lexists(args.out):\n                    raise FileExistsError(\"Output path already exists; choose a new HTML file\")\n                content, report = build_feedback_document(api, args.course_id, args.assignment_id)\n                write_feedback_document(args.out, content)\n            except (CanvasAuthError, httpx.HTTPError, ValueError, TypeError, OSError) as error:\n                print(json.dumps({\n                    \"ok\": False, \"error\": type(error).__name__, \"message\": str(error),\n                }), file=sys.stderr)\n                raise SystemExit(1) from None\n            print(json.dumps({\"ok\": True, \"output\": str(args.out), **report}, indent=2))\n",
+          "pin": {
+            "bytes": 961,
+            "sha256": "f4cbd200b3ae8f72a1cebb29cd1b8e392d658589e4428ffc2444e9525a3024a1",
+            "git_blob": "98558b7cc840fb7a171804308fd3bad6e4f7951f"
+          },
+          "anchor_lines": 1,
+          "anchor_sha256": "dc24b4729ba6e1cc70dfa8673304cf2e6dfa7abce29cefd84889fba35421a56f"
+        }
+      ]
+    }
+  }
+}

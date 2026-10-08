@@ -1,0 +1,18 @@
+{
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "--basetemp=/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/before-temp",
+    "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/repo/tests/test_feedback_export_native.py::test_cli_saves_readable_feedback_from_real_reader"
+  ],
+  "cwd": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/before",
+  "source": "55fe1e0a3c4ad85e1065f295e49d44722c3be32b",
+  "exit_code": 1,
+  "stdout": "before-export.stdout.txt",
+  "stderr": "before-export.stderr.txt"
+}

@@ -1,0 +1,12 @@
+{
+  "status": "receiver failure before any native CLI command",
+  "normal": "Traceback (most recent call last):\n  File \"/dev/shm/estate-9ec02b70e5f0/memory/canvas39-review/verify_canvas39_composition.py\", line 84, in main\n    insertions = independent_insertions(before, current, count)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/dev/shm/estate-9ec02b70e5f0/memory/canvas39-review/verify_canvas39_composition.py\", line 45, in independent_insertions\n    recovered = b\"\".join(b[k:l] for tag, i, j, k, l in operations if tag == \"equal\")\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: sequence item 0: expected a bytes-like object, list found\n",
+  "optimized": "Traceback (most recent call last):\n  File \"/dev/shm/estate-9ec02b70e5f0/memory/canvas39-review/verify_canvas39_composition.py\", line 84, in main\n    insertions = independent_insertions(before, current, count)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/dev/shm/estate-9ec02b70e5f0/memory/canvas39-review/verify_canvas39_composition.py\", line 45, in independent_insertions\n    recovered = b\"\".join(b[k:l] for tag, i, j, k, l in operations if tag == \"equal\")\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: sequence item 0: expected a bytes-like object, list found\n",
+  "native_cli_commands": 0,
+  "source_files": 30,
+  "source_unchanged": true,
+  "original_receiver_sha256": "69c7da24a695e9815683b8ae4a46924e0754ae6c7c8f6808b3b50b9895b5ab53",
+  "archive": "receiver-error-evidence.tar.gz.base64",
+  "archive_sha256": "451bd24c3e4636767ff699e7435ea5b32f6f6f8c981fe4ff582e504dcaa5661c",
+  "wrapper_failure": "TypeError: PosixPath object is not subscriptable in final concatenation check; occurred after complete one-part capsule write and readback, before metadata commit."
+}

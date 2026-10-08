@@ -1,0 +1,300 @@
+{
+  "qualified_parent": "17d63dc43fde30efd8d3454ef09b1d1a8c5bcd0d",
+  "publication_parent": "728d2d8b67b6f0812956fecdeeb50e25ee32e979",
+  "publication_tree": "7a659089347c983e79106b505e63981f91986507",
+  "changes": [
+    {
+      "path": "README.md",
+      "before": "0917519e0302a4fca25e44fe9e104c3ca398d9c8",
+      "after": "92a5e57ff04c941bfc57e8674324dd811f7c9fcb"
+    },
+    {
+      "path": "docs/announcements-cli.md",
+      "before": null,
+      "after": "9f0c53ff7f53177c198c445634b977efb2c6a492"
+    },
+    {
+      "path": "docs/receiving/announcements-cli-ae0a1ea0b247/README.md",
+      "before": null,
+      "after": "87aebe90d38ddff7f8aa9e53ca1b2e8d7473bd40"
+    },
+    {
+      "path": "docs/receiving/announcements-cli-ae0a1ea0b247/author-packet.tar.gz",
+      "before": null,
+      "after": "a26be29ead9d81b33d5659bf424ef6a89f65103e"
+    },
+    {
+      "path": "docs/receiving/announcements-cli-ae0a1ea0b247/current-discussion-join.tar.gz",
+      "before": null,
+      "after": "08175ef018bb0dde0a3d079b95a2310623af4396"
+    },
+    {
+      "path": "docs/receiving/announcements-cli-ae0a1ea0b247/independent-accepted.tar.gz",
+      "before": null,
+      "after": "7fde3565d88212c72ec138671e0861202561dede"
+    },
+    {
+      "path": "docs/receiving/announcements-cli-ae0a1ea0b247/independent-proxy-startup.tar.gz",
+      "before": null,
+      "after": "feec4ed0c03a321496b198f31641f43c05e7bbda"
+    },
+    {
+      "path": "docs/receiving/announcements-cli-ae0a1ea0b247/source-overlay.json",
+      "before": null,
+      "after": "a1b84c35181d13a89bfccf363ba3425eeea315ca"
+    },
+    {
+      "path": "docs/receiving/quiz-cli-3dcb83a1/README.md",
+      "before": null,
+      "after": "6e95d360403668897435355ff5c570ae09e9427b"
+    },
+    {
+      "path": "docs/receiving/quiz-cli-3dcb83a1/author-results.json",
+      "before": null,
+      "after": "966278c81872fd8deeea9573568db9d71d58fb99"
+    },
+    {
+      "path": "docs/receiving/quiz-cli-3dcb83a1/current-owner-source-composition.json",
+      "before": null,
+      "after": "c9b2cc1ecba5bfd8a45c67e07c9290ef2478c6d5"
+    },
+    {
+      "path": "docs/receiving/quiz-cli-3dcb83a1/current-source-correspondence.json",
+      "before": null,
+      "after": "6202ec172fc32b675386f23b2502c78236154492"
+    },
+    {
+      "path": "docs/receiving/quiz-cli-3dcb83a1/environment.json",
+      "before": null,
+      "after": "7cd956fa3c5868213de4b95cd5c67fb3edb29d10"
+    },
+    {
+      "path": "docs/receiving/quiz-cli-3dcb83a1/fixture-correction.diff",
+      "before": null,
+      "after": "44096d5346c128b1cc4c29185cfe481c4fd2f561"
+    },
+    {
+      "path": "docs/receiving/quiz-cli-3dcb83a1/independent/REVIEW.md",
+      "before": null,
+      "after": "29524946633e6e3a0c1d97e817ddc556deef1b73"
+    },
+    {
+      "path": "docs/receiving/quiz-cli-3dcb83a1/independent/broker-results.json",
+      "before": null,
+      "after": "0f3bb19fe4f301bf07041e1861d3e6f3725ceb64"
+    },
+    {
+      "path": "docs/receiving/quiz-cli-3dcb83a1/independent/contract.json",
+      "before": null,
+      "after": "5245284bf5745615c9a431a4e15267ff09d433ea"
+    },
+    {
+      "path": "docs/receiving/quiz-cli-3dcb83a1/independent/files-manifest.json",
+      "before": null,
+      "after": "05299469cfd67d0e24a7a6ceadd8e349b92c1c9f"
+    },
+    {
+      "path": "docs/receiving/quiz-cli-3dcb83a1/independent/receive_broker.py",
+      "before": null,
+      "after": "0b99bda52dc03e8b33b29ee1adf97f39f119903b"
+    },
+    {
+      "path": "docs/receiving/quiz-cli-3dcb83a1/source-correspondence.json",
+      "before": null,
+      "after": "f392cb6b694735c2424edc1dd88d9fab310bf35f"
+    },
+    {
+      "path": "docs/receiving/quiz-cli-3dcb83a1/source-pins.json",
+      "before": null,
+      "after": "a25127f3c2d53fc4d45a735a37353b34eb1eaf57"
+    },
+    {
+      "path": "docs/receiving/quiz-cli-3dcb83a1/submission-source-correspondence.json",
+      "before": null,
+      "after": "41afdf88031decaec0b31f7fb0411ca667757383"
+    },
+    {
+      "path": "docs/receiving/quiz-cli-3dcb83a1/test_quiz_cli.initial.py.txt",
+      "before": null,
+      "after": "b19e5649d990ea83aa57b7ce1012a06315977390"
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "before": "b638134ea6b7ecfccaaa6d5cc6834d52b0f0892c",
+      "after": "226f3f7d502dd61ad03c59cd8212289d133a0190"
+    },
+    {
+      "path": "tests/test_announcements_cli.py",
+      "before": null,
+      "after": "f91468be7dc046d0be5c4c10a285fb806496e0b3"
+    },
+    {
+      "path": "tests/test_quiz_cli.py",
+      "before": null,
+      "after": "527c57f3d66e4e167c96bbc51d1fcc8bd7e56fcf"
+    }
+  ],
+  "native_checks": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "qualified_blob": "ef7bbebe192c0db55dc4467e064ba44805c13446",
+      "current_blob": "ef7bbebe192c0db55dc4467e064ba44805c13446",
+      "unchanged": true
+    },
+    {
+      "path": "pyproject.toml",
+      "qualified_blob": "76eba6d30696b4f2733539cd47df6e178bc0f585",
+      "current_blob": "76eba6d30696b4f2733539cd47df6e178bc0f585",
+      "unchanged": true
+    },
+    {
+      "path": "src/canvaspilot/__init__.py",
+      "qualified_blob": "74a7a6087bf81fd7c75c15769b30408039618e0f",
+      "current_blob": "74a7a6087bf81fd7c75c15769b30408039618e0f",
+      "unchanged": true
+    },
+    {
+      "path": "src/canvaspilot/agenda.py",
+      "qualified_blob": "82ab4fa8f9b92b8d9e5d4c74962d138e1d882ebd",
+      "current_blob": "82ab4fa8f9b92b8d9e5d4c74962d138e1d882ebd",
+      "unchanged": true
+    },
+    {
+      "path": "src/canvaspilot/api.py",
+      "qualified_blob": "a9d16294a673f8f1df7b76b52f4b3ab059f69c64",
+      "current_blob": "a9d16294a673f8f1df7b76b52f4b3ab059f69c64",
+      "unchanged": true
+    },
+    {
+      "path": "src/canvaspilot/assignment_submission.py",
+      "qualified_blob": "95b1f19927e4eecf99fc852325737c3cfe86cd0d",
+      "current_blob": "95b1f19927e4eecf99fc852325737c3cfe86cd0d",
+      "unchanged": true
+    },
+    {
+      "path": "src/canvaspilot/bundle.py",
+      "qualified_blob": "293c02dc86520d9d11907d47d014d2f73aa56fc0",
+      "current_blob": "293c02dc86520d9d11907d47d014d2f73aa56fc0",
+      "unchanged": true
+    },
+    {
+      "path": "src/canvaspilot/calendar_export.py",
+      "qualified_blob": "ef74cfdf50fd894327dbe45a9a9d43042953bc31",
+      "current_blob": "ef74cfdf50fd894327dbe45a9a9d43042953bc31",
+      "unchanged": true
+    },
+    {
+      "path": "src/canvaspilot/client.py",
+      "qualified_blob": "1db4b1135305f7e410025ae7937f9a6cd349f020",
+      "current_blob": "1db4b1135305f7e410025ae7937f9a6cd349f020",
+      "unchanged": true
+    },
+    {
+      "path": "src/canvaspilot/discussion_thread.py",
+      "qualified_blob": "2ed658fcf5cee996a02115742935716f1d039e25",
+      "current_blob": "2ed658fcf5cee996a02115742935716f1d039e25",
+      "unchanged": true
+    },
+    {
+      "path": "src/canvaspilot/feedback.py",
+      "qualified_blob": "ec996f421a851d699a9ac7cb1f2a486f9ff7c4ea",
+      "current_blob": "ec996f421a851d699a9ac7cb1f2a486f9ff7c4ea",
+      "unchanged": true
+    },
+    {
+      "path": "src/canvaspilot/folder_browser.py",
+      "qualified_blob": "4b3078ddb00a4a34015710e49fa7b7806adebd23",
+      "current_blob": "4b3078ddb00a4a34015710e49fa7b7806adebd23",
+      "unchanged": true
+    },
+    {
+      "path": "src/canvaspilot/mcp_server.py",
+      "qualified_blob": "34e9a2fad9d361718f5a9d4f3a89a3a42537b8fc",
+      "current_blob": "34e9a2fad9d361718f5a9d4f3a89a3a42537b8fc",
+      "unchanged": true
+    },
+    {
+      "path": "src/canvaspilot/module_progress.py",
+      "qualified_blob": "a9d3e4bbea22067f76110f03a5f31a5bc9d8de05",
+      "current_blob": "a9d3e4bbea22067f76110f03a5f31a5bc9d8de05",
+      "unchanged": true
+    },
+    {
+      "path": "src/canvaspilot/offline_demo.py",
+      "qualified_blob": "9d2cfd260d8db052b8183e3ec4fc9626a5bb2b9a",
+      "current_blob": "9d2cfd260d8db052b8183e3ec4fc9626a5bb2b9a",
+      "unchanged": true
+    },
+    {
+      "path": "src/canvaspilot/session_broker.py",
+      "qualified_blob": "cc706d5860489ec37cb2cf7f0b1cb4eee33b664f",
+      "current_blob": "cc706d5860489ec37cb2cf7f0b1cb4eee33b664f",
+      "unchanged": true
+    },
+    {
+      "path": "src/canvaspilot/submission_history.py",
+      "qualified_blob": "9e71a0dc944bee71b0b5c61d7ff84cbb59119e1a",
+      "current_blob": "9e71a0dc944bee71b0b5c61d7ff84cbb59119e1a",
+      "unchanged": true
+    },
+    {
+      "path": "tests/fixtures/assignment_rubric.json",
+      "qualified_blob": "8298dc92458b2f4c0f5c2b6845e32c52395d9d46",
+      "current_blob": "8298dc92458b2f4c0f5c2b6845e32c52395d9d46",
+      "unchanged": true
+    },
+    {
+      "path": "tests/fixtures/submission_feedback.json",
+      "qualified_blob": "445d73ea1bf1db0b8bbbaeceaa3fb0b675f1ecdd",
+      "current_blob": "445d73ea1bf1db0b8bbbaeceaa3fb0b675f1ecdd",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_assignment_brief_rubric.py",
+      "qualified_blob": "1881a19e593c4fb095d1a4dc97fce53a8c13f02e",
+      "current_blob": "1881a19e593c4fb095d1a4dc97fce53a8c13f02e",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_broker_provider_routing.py",
+      "qualified_blob": "7fc17ef832057d1090f742a0c3c85f0d67e80752",
+      "current_blob": "7fc17ef832057d1090f742a0c3c85f0d67e80752",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_calendar_export.py",
+      "qualified_blob": "b6e926ab14ef4320ceeb23d174fc62399e2356a7",
+      "current_blob": "b6e926ab14ef4320ceeb23d174fc62399e2356a7",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_calendar_session_identity.py",
+      "qualified_blob": "fcad9a69739aa859f399ed0c37712fa10bf3f7c6",
+      "current_blob": "fcad9a69739aa859f399ed0c37712fa10bf3f7c6",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_module_progress_process.py",
+      "qualified_blob": "e80d30bbd87a16dc469c9bc3409eb2be24a24307",
+      "current_blob": "e80d30bbd87a16dc469c9bc3409eb2be24a24307",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_submission_feedback.py",
+      "qualified_blob": "0d747c4866ddc87e77ed84caad877414c7be329b",
+      "current_blob": "0d747c4866ddc87e77ed84caad877414c7be329b",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_submission_feedback_native.py",
+      "qualified_blob": "bb5bce648386995732b08c098fb5d4249f6bc0c8",
+      "current_blob": "bb5bce648386995732b08c098fb5d4249f6bc0c8",
+      "unchanged": true
+    }
+  ],
+  "all_26_native_dependencies_unchanged": true,
+  "README_and_CLI": "Exact original qualified export insertions composed over complete current before-images; inverse recovers every current byte",
+  "formatter_sha256": "a0db41dca9cce28c9fb7594c88ea6dc103b0f3104d5ba4d061bd93aaed92a714",
+  "receiving_scope": "Independent native actual CLI/JSON/HTML qualification remains bound to current17; final additive CLI composition is gated by the existing full repository CI at its published head",
+  "local_native_replay": false
+}

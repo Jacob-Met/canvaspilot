@@ -1,0 +1,7 @@
+# Agenda, discussion and inbox receiving
+
+This composition is based on `17d63dc43fde30efd8d3454ef09b1d1a8c5bcd0d`, tree `9818539d6444ef43a72d6540c2ba3817c758d9c8`. All 32 inputs are pinned by `candidate-pins.json`. Complete incoming API, bundle, MCP, history, agenda and discussion modules remain exact. The native API adds two lazy methods and updates its two conversation methods; the other 39 method bodies remain unchanged.
+
+The same two export CLI blocks and same README section are composed into the native before-images, with a complete byte-exact inverse. The [independent successor](independent-receiving/README.md) reuses every transport, HTML/JSON oracle and behavioral assertion from current39. Both Python modes pass: two actual CLI processes, four GETs and one HTML file per mode; JSON exact and full HTML exact except its uniquely identified capture timestamp. All 32 pins remain unchanged. Its 35-member capsule was independently reopened and verified by root.
+
+`qualified-source/` preserves the qualified CLI and README. `published/` holds all incoming source images. The first source-only composition stopped before execution on a no-longer-contiguous four-line CLI anchor. A shortest unique complete-line anchor retained the same inserted blocks; the failure and an executor process-creation transport failure remain recorded. Exact owned duplicate bytes were preserved through hardlinks during storage recovery. The new agenda, discussion and inbox operation behavior was not separately tested by this receiver.

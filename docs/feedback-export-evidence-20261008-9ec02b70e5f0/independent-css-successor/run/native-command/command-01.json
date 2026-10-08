@@ -1,0 +1,68 @@
+{
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-B",
+    "-m",
+    "canvaspilot.cli",
+    "export-feedback",
+    "77",
+    "314",
+    "--base-url",
+    "http://127.0.0.1:37207",
+    "--token",
+    "independent-local-fixture-only",
+    "--profile",
+    "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-css-review/run/native-command/unused-profile",
+    "--out",
+    "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-css-review/run/feedback.html"
+  ],
+  "cwd": "/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-css-review/run/repo",
+  "elapsed_seconds": 1.1525918560000719,
+  "output_file": {
+    "bytes": 12466,
+    "git_blob": "9f79d8b03075e329029f2d153dcaee3e3dad22cd",
+    "sha256": "27ae70511395b7412359bdedd17baf0f5f499ef3550da104d5e6e882ce847e78"
+  },
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/77/assignments/314",
+      "query": {
+        "per_page": [
+          "50"
+        ]
+      },
+      "response": {
+        "bytes": 871,
+        "git_blob": "656ef06a26e13280cd5d6a7f223d80d111153b1d",
+        "sha256": "995ee6fc5a9847be7a986a2f291c88cac095e69d445e6d6372f982997bdfa9cd"
+      },
+      "response_status": 200,
+      "synthetic_authorization_matches": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/77/assignments/314/submissions/self",
+      "query": {
+        "include[]": [
+          "submission_comments",
+          "rubric_assessment"
+        ],
+        "per_page": [
+          "50"
+        ]
+      },
+      "response": {
+        "bytes": 1542,
+        "git_blob": "2b17e49a814e37bedb94a291c185b009ce183c6b",
+        "sha256": "1e1b983d0694eaad1bcc66c04e35a84c351193e4c936b4157c5e29ddf1743619"
+      },
+      "response_status": 200,
+      "synthetic_authorization_matches": true
+    }
+  ],
+  "returncode": 0,
+  "started_at_utc": "2026-10-08T13:37:56.928293+00:00",
+  "stderr": "HTTP Request: GET http://127.0.0.1:37207/api/v1/courses/77/assignments/314?per_page=50 \"HTTP/1.0 200 OK\"\nHTTP Request: GET http://127.0.0.1:37207/api/v1/courses/77/assignments/314/submissions/self?include%5B%5D=submission_comments&include%5B%5D=rubric_assessment&per_page=50 \"HTTP/1.0 200 OK\"\n",
+  "stdout": "{\n  \"ok\": true,\n  \"output\": \"/dev/shm/estate-9ec02b70e5f0/runtime/canvas-feedback-css-review/run/feedback.html\",\n  \"course_id\": 77,\n  \"assignment_id\": 314,\n  \"captured_at\": \"2026-10-08T13:37:57.851306Z\",\n  \"sha256\": \"27ae70511395b7412359bdedd17baf0f5f499ef3550da104d5e6e882ce847e78\"\n}\n"
+}

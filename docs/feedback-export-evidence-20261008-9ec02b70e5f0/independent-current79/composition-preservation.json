@@ -1,0 +1,32 @@
+{
+  "src/canvaspilot/cli.py": {
+    "published_before": {
+      "bytes": 12621,
+      "sha256": "a6029296bba4e84b3889bd62487b966d7bc1832a8b1b1e0fd928dfb9b9ab68a8",
+      "git_blob": "9b8eec6ea177d0fe69e3cb7776af185d2e7ad4a5"
+    },
+    "composed": {
+      "bytes": 14038,
+      "sha256": "223654cbd53c539b327dfb7399ed01953381044f387c205bb1a7eb21f6c1808f",
+      "git_blob": "f4fff58e9a41103b4bfa563baf23fcbc23c4002e"
+    },
+    "insertions": 2,
+    "all_inserted_blocks_equal_original": true,
+    "removal_recovers_entire_current_parent": true
+  },
+  "README.md": {
+    "published_before": {
+      "bytes": 19360,
+      "sha256": "b41aab90aacc390f31462a26c6cfbbcc4bacb0c9a7090c64002f004e3a26974b",
+      "git_blob": "f06fdc3090679d61953951eac6328b91cb674650"
+    },
+    "composed": {
+      "bytes": 20698,
+      "sha256": "c3c598988952bcd6dfb3731e2fe106add2512cb5d9436c8c7638a86ef5e57630",
+      "git_blob": "964f9d2ce8ac6f98663b542da43e261149639b9c"
+    },
+    "insertions": 1,
+    "all_inserted_blocks_equal_original": true,
+    "removal_recovers_entire_current_parent": true
+  }
+}

@@ -1,0 +1,375 @@
+{
+  "qualified_parent": "0d1898544a90079e2dcc7ceb3fa4bc6bca88a2bc",
+  "publication_parent": "39d835c8becb04d81b65c90d1491d2d3a2727ffe",
+  "publication_parent_tree": "53b67d3f06b4c780e508325ec42b2b435ec57e97",
+  "changes": [
+    {
+      "path": "README.md",
+      "before": "f1740a512af81916490a27887141382d10469efa",
+      "after": "083dc576676240d388921d292fedef7d7c8ccce3"
+    },
+    {
+      "path": "src/canvaspilot/api.py",
+      "before": "8de750525055991ca470fb4881d0368a07631818",
+      "after": "79572cdc0391f46ad0b92ea199531371aeff2525"
+    },
+    {
+      "path": "src/canvaspilot/bundle.py",
+      "before": "383efb28dfdd0d3e1d9ce8e1e259468d7eb44586",
+      "after": "23badab9d8ea96b4ed30fb2b5f32f773c910c7f9"
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "before": "9b8eec6ea177d0fe69e3cb7776af185d2e7ad4a5",
+      "after": "5a3ed7be7a24d6461641192a54c77a04b90cc910"
+    },
+    {
+      "path": "src/canvaspilot/mcp_server.py",
+      "before": "b6c52d710867a8c8cd3058f5476c22803a333501",
+      "after": "f9c470b034a524609f4aedae51479ffd92bfaa8f"
+    },
+    {
+      "path": "docs/receiving/submission-history-7a9310dad255/author/README.md",
+      "before": null,
+      "after": "085461617a395fe7279b6ceefb3c3602dcb4ac28"
+    },
+    {
+      "path": "docs/receiving/submission-history-7a9310dad255/author/archive-manifest.json",
+      "before": null,
+      "after": "756e3db532e86d56f4f8e061869846c942832156"
+    },
+    {
+      "path": "docs/receiving/submission-history-7a9310dad255/author/author-evidence.tar.gz",
+      "before": null,
+      "after": "9ce56081983a44cba044a82dad886df0919a2bfd"
+    },
+    {
+      "path": "docs/receiving/submission-history-7a9310dad255/author/qualification.json",
+      "before": null,
+      "after": "f94d6c8cbb9d825852b8d088c0e068344d6fd525"
+    },
+    {
+      "path": "docs/receiving/submission-history-7a9310dad255/independent-current-79a/README.md",
+      "before": null,
+      "after": "84f604cda487021c897de05e9de35b39d60786f9"
+    },
+    {
+      "path": "docs/receiving/submission-history-7a9310dad255/independent-current-79a/acceptance.json",
+      "before": null,
+      "after": "6b95087fadee7a6843975059d550c84cabafd30e"
+    },
+    {
+      "path": "docs/receiving/submission-history-7a9310dad255/independent-current-79a/archive-manifest.json",
+      "before": null,
+      "after": "a4ce3d5a03c09b31d9d54311369d36cdb27a33dc"
+    },
+    {
+      "path": "docs/receiving/submission-history-7a9310dad255/independent-current-79a/evidence.tar.gz",
+      "before": null,
+      "after": "40e1f17ba6d60c6beedc8933a9524f919e27c682"
+    },
+    {
+      "path": "docs/receiving/submission-history-7a9310dad255/independent/README.md",
+      "before": null,
+      "after": "99dca2da7eaf8dbf54e07feda70c16ce6eb5c141"
+    },
+    {
+      "path": "docs/receiving/submission-history-7a9310dad255/independent/acceptance.json",
+      "before": null,
+      "after": "8237c4dbf6b3d00a173b7057b13bc53b95383138"
+    },
+    {
+      "path": "docs/receiving/submission-history-7a9310dad255/independent/archive-manifest.json",
+      "before": null,
+      "after": "b50ea72df27a0a6cd0e395e92e1f44bce8b56896"
+    },
+    {
+      "path": "docs/receiving/submission-history-7a9310dad255/independent/contract.json",
+      "before": null,
+      "after": "c5e0094bf3e17b15b9ae697653ed9cd449a0e59c"
+    },
+    {
+      "path": "docs/receiving/submission-history-7a9310dad255/independent/evidence.tar.gz",
+      "before": null,
+      "after": "5358ba536b69af05cd2c808d642f51ca87c361a6"
+    },
+    {
+      "path": "docs/receiving/submission-history-7a9310dad255/independent/fixture.json",
+      "before": null,
+      "after": "fd0fab25023bd1be950406d43d2acb2d930439ab"
+    },
+    {
+      "path": "docs/receiving/submission-history-7a9310dad255/independent/receive_history.py",
+      "before": null,
+      "after": "ccb55d3fdafdcf1068a53d245757501387ae39af"
+    },
+    {
+      "path": "docs/receiving/submission-history-7a9310dad255/independent/receive_history_selected.py",
+      "before": null,
+      "after": "98eb3644737a6f8dae5bc483a08fa5299ed76f25"
+    },
+    {
+      "path": "docs/submission-history.md",
+      "before": null,
+      "after": "9ee07d6ab3eb5806835c5c3ad443e05e3cdb2369"
+    },
+    {
+      "path": "src/canvaspilot/submission_history.py",
+      "before": null,
+      "after": "9e71a0dc944bee71b0b5c61d7ff84cbb59119e1a"
+    },
+    {
+      "path": "tests/test_submission_history.py",
+      "before": null,
+      "after": "70cf93168d1f20519b241a4c3493ebdad501ffb3"
+    },
+    {
+      "path": "tests/test_submission_history_process.py",
+      "before": null,
+      "after": "9f05811f742ef7278b1db4216f05b85fe6240a60"
+    }
+  ],
+  "checks": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "before": "ef7bbebe192c0db55dc4467e064ba44805c13446",
+      "after": "ef7bbebe192c0db55dc4467e064ba44805c13446",
+      "mode_before": "100644",
+      "mode_after": "100644",
+      "unchanged": true
+    },
+    {
+      "path": "README.md",
+      "before": "f1740a512af81916490a27887141382d10469efa",
+      "after": "083dc576676240d388921d292fedef7d7c8ccce3",
+      "mode_before": "100644",
+      "mode_after": "100644",
+      "unchanged": false
+    },
+    {
+      "path": "docs/feedback-export.md",
+      "before": null,
+      "after": null,
+      "mode_before": null,
+      "mode_after": null,
+      "unchanged": true
+    },
+    {
+      "path": "pyproject.toml",
+      "before": "76eba6d30696b4f2733539cd47df6e178bc0f585",
+      "after": "76eba6d30696b4f2733539cd47df6e178bc0f585",
+      "mode_before": "100644",
+      "mode_after": "100644",
+      "unchanged": true
+    },
+    {
+      "path": "src/canvaspilot/__init__.py",
+      "before": "74a7a6087bf81fd7c75c15769b30408039618e0f",
+      "after": "74a7a6087bf81fd7c75c15769b30408039618e0f",
+      "mode_before": "100644",
+      "mode_after": "100644",
+      "unchanged": true
+    },
+    {
+      "path": "src/canvaspilot/api.py",
+      "before": "8de750525055991ca470fb4881d0368a07631818",
+      "after": "79572cdc0391f46ad0b92ea199531371aeff2525",
+      "mode_before": "100644",
+      "mode_after": "100644",
+      "unchanged": false
+    },
+    {
+      "path": "src/canvaspilot/assignment_submission.py",
+      "before": "95b1f19927e4eecf99fc852325737c3cfe86cd0d",
+      "after": "95b1f19927e4eecf99fc852325737c3cfe86cd0d",
+      "mode_before": "100644",
+      "mode_after": "100644",
+      "unchanged": true
+    },
+    {
+      "path": "src/canvaspilot/bundle.py",
+      "before": "383efb28dfdd0d3e1d9ce8e1e259468d7eb44586",
+      "after": "23badab9d8ea96b4ed30fb2b5f32f773c910c7f9",
+      "mode_before": "100644",
+      "mode_after": "100644",
+      "unchanged": false
+    },
+    {
+      "path": "src/canvaspilot/calendar_export.py",
+      "before": "ef74cfdf50fd894327dbe45a9a9d43042953bc31",
+      "after": "ef74cfdf50fd894327dbe45a9a9d43042953bc31",
+      "mode_before": "100644",
+      "mode_after": "100644",
+      "unchanged": true
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "before": "9b8eec6ea177d0fe69e3cb7776af185d2e7ad4a5",
+      "after": "5a3ed7be7a24d6461641192a54c77a04b90cc910",
+      "mode_before": "100644",
+      "mode_after": "100644",
+      "unchanged": false
+    },
+    {
+      "path": "src/canvaspilot/client.py",
+      "before": "1db4b1135305f7e410025ae7937f9a6cd349f020",
+      "after": "1db4b1135305f7e410025ae7937f9a6cd349f020",
+      "mode_before": "100644",
+      "mode_after": "100644",
+      "unchanged": true
+    },
+    {
+      "path": "src/canvaspilot/feedback.py",
+      "before": "ec996f421a851d699a9ac7cb1f2a486f9ff7c4ea",
+      "after": "ec996f421a851d699a9ac7cb1f2a486f9ff7c4ea",
+      "mode_before": "100644",
+      "mode_after": "100644",
+      "unchanged": true
+    },
+    {
+      "path": "src/canvaspilot/feedback_export.py",
+      "before": null,
+      "after": null,
+      "mode_before": null,
+      "mode_after": null,
+      "unchanged": true
+    },
+    {
+      "path": "src/canvaspilot/folder_browser.py",
+      "before": "4b3078ddb00a4a34015710e49fa7b7806adebd23",
+      "after": "4b3078ddb00a4a34015710e49fa7b7806adebd23",
+      "mode_before": "100644",
+      "mode_after": "100644",
+      "unchanged": true
+    },
+    {
+      "path": "src/canvaspilot/mcp_server.py",
+      "before": "b6c52d710867a8c8cd3058f5476c22803a333501",
+      "after": "f9c470b034a524609f4aedae51479ffd92bfaa8f",
+      "mode_before": "100644",
+      "mode_after": "100644",
+      "unchanged": false
+    },
+    {
+      "path": "src/canvaspilot/module_progress.py",
+      "before": "a9d3e4bbea22067f76110f03a5f31a5bc9d8de05",
+      "after": "a9d3e4bbea22067f76110f03a5f31a5bc9d8de05",
+      "mode_before": "100644",
+      "mode_after": "100644",
+      "unchanged": true
+    },
+    {
+      "path": "src/canvaspilot/offline_demo.py",
+      "before": "9d2cfd260d8db052b8183e3ec4fc9626a5bb2b9a",
+      "after": "9d2cfd260d8db052b8183e3ec4fc9626a5bb2b9a",
+      "mode_before": "100644",
+      "mode_after": "100644",
+      "unchanged": true
+    },
+    {
+      "path": "src/canvaspilot/session_broker.py",
+      "before": "cc706d5860489ec37cb2cf7f0b1cb4eee33b664f",
+      "after": "cc706d5860489ec37cb2cf7f0b1cb4eee33b664f",
+      "mode_before": "100644",
+      "mode_after": "100644",
+      "unchanged": true
+    },
+    {
+      "path": "tests/fixtures/assignment_rubric.json",
+      "before": "8298dc92458b2f4c0f5c2b6845e32c52395d9d46",
+      "after": "8298dc92458b2f4c0f5c2b6845e32c52395d9d46",
+      "mode_before": "100644",
+      "mode_after": "100644",
+      "unchanged": true
+    },
+    {
+      "path": "tests/fixtures/submission_feedback.json",
+      "before": "445d73ea1bf1db0b8bbbaeceaa3fb0b675f1ecdd",
+      "after": "445d73ea1bf1db0b8bbbaeceaa3fb0b675f1ecdd",
+      "mode_before": "100644",
+      "mode_after": "100644",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_assignment_brief_rubric.py",
+      "before": "1881a19e593c4fb095d1a4dc97fce53a8c13f02e",
+      "after": "1881a19e593c4fb095d1a4dc97fce53a8c13f02e",
+      "mode_before": "100644",
+      "mode_after": "100644",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_broker_provider_routing.py",
+      "before": "7fc17ef832057d1090f742a0c3c85f0d67e80752",
+      "after": "7fc17ef832057d1090f742a0c3c85f0d67e80752",
+      "mode_before": "100644",
+      "mode_after": "100644",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_calendar_export.py",
+      "before": "b6e926ab14ef4320ceeb23d174fc62399e2356a7",
+      "after": "b6e926ab14ef4320ceeb23d174fc62399e2356a7",
+      "mode_before": "100644",
+      "mode_after": "100644",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_calendar_session_identity.py",
+      "before": "fcad9a69739aa859f399ed0c37712fa10bf3f7c6",
+      "after": "fcad9a69739aa859f399ed0c37712fa10bf3f7c6",
+      "mode_before": "100644",
+      "mode_after": "100644",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_feedback_export.py",
+      "before": null,
+      "after": null,
+      "mode_before": null,
+      "mode_after": null,
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_feedback_export_native.py",
+      "before": null,
+      "after": null,
+      "mode_before": null,
+      "mode_after": null,
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_module_progress_process.py",
+      "before": "e80d30bbd87a16dc469c9bc3409eb2be24a24307",
+      "after": "e80d30bbd87a16dc469c9bc3409eb2be24a24307",
+      "mode_before": "100644",
+      "mode_after": "100644",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_submission_feedback.py",
+      "before": "0d747c4866ddc87e77ed84caad877414c7be329b",
+      "after": "0d747c4866ddc87e77ed84caad877414c7be329b",
+      "mode_before": "100644",
+      "mode_after": "100644",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_submission_feedback_native.py",
+      "before": "bb5bce648386995732b08c098fb5d4249f6bc0c8",
+      "after": "bb5bce648386995732b08c098fb5d4249f6bc0c8",
+      "mode_before": "100644",
+      "mode_after": "100644",
+      "unchanged": true
+    }
+  ],
+  "overlaps": [],
+  "unchanged": false,
+  "api_delta": {
+    "only_one_new_method_block": true,
+    "removed_block": "    def submission_history(self, course_id: int | str, assignment_id: int | str) -> dict[str, Any]:\n        \"\"\"Read the current self submission and exactly the history Canvas returns.\"\"\"\n        from canvaspilot.submission_history import read_submission_history\n\n        return read_submission_history(self.client, course_id, assignment_id)\n\n",
+    "inverse_recovers_complete_0d_api": true
+  },
+  "source_generation": "same qualified formatter, same two CLI blocks and README section inserted over the complete incoming39 source",
+  "earlier_packets_preserved": true
+}

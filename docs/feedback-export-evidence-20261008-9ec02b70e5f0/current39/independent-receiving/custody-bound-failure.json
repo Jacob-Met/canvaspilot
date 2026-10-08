@@ -1,0 +1,14 @@
+{
+  "archive_encoded_bytes": 72057,
+  "combined_tool_output": "Traceback (most recent call last):\n  File \"<stdin>\", line 39, in <module>\nRuntimeError: Evidence bound exceeded /dev/shm/estate-9ec02b70e5f0/memory/canvas39-review/native-evidence.tar.gz.base64 72057\n{\"status\": \"passed\", \"mode\": \"normal\", \"actual_cli_processes\": 2, \"actual_loopback_GETs\": 4, \"actual_html_files\": 1, \"feedback_json_byte_identical\": true, \"html_byte_identical_except_unique_capture_time\": true, \"elapsed_seconds\": 2.3452697550019366, \"error\": null, \"source_error\": null}\n{\"status\": \"passed\", \"mode\": \"optimized\", \"actual_cli_processes\": 2, \"actual_loopback_GETs\": 4, \"actual_html_files\": 1, \"feedback_json_byte_identical\": true, \"html_byte_identical_except_unique_capture_time\": true, \"elapsed_seconds\": 4.770940527996572, \"error\": null, \"source_error\": null}\n",
+  "exit_code": 1,
+  "native_session_id": 9871,
+  "next_attempt": "One unchanged-driver rerun after expanding only the ordinary evidence allocation; no test or native source changes.",
+  "private_output_survived_next_exec": false,
+  "product_assertions": "Both native modes returned passed, but output files were not retained after the explicit archive bound stopped custody. This is not the qualified receiving packet.",
+  "receiver_sha256": "20227d258e5d0d2bdbdf6d98c253ef2619b0e7ce206500467f5dd50f9b451819",
+  "reserved_bytes": 65536,
+  "schema": "canvas39-custody-failure.v1",
+  "source_manifest_sha256": "560196c2439531be7d988b10b7a9f5a41a2e3d207b3336649410f810c50d659b",
+  "tool_chunk": "1c5ab1"
+}

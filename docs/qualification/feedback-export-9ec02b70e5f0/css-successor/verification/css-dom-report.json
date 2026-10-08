@@ -1,0 +1,56 @@
+{
+  "consumer": "jsdom DOM/CSS receiver; no physical browser, layout or printer execution",
+  "jsdomVersion": "30.1.2",
+  "jsdomRoot": "/workspace/scratch/d0441742433b/production-worker/qa-deps/node_modules/jsdom",
+  "node": "v24.19.0",
+  "before": {
+    "path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/qualified-temp/test_cli_saves_readable_feedba0/feedback.html",
+    "bytes": 11872,
+    "sha256": "d0b2e12f8ae7ffe3bbd0aebfce14cf885937b74a95e24c8297c2b48f9d2f8cb9",
+    "selectors": 35,
+    "invalid": [
+      {
+        "selector": "+:root",
+        "error": "SyntaxError",
+        "message": "Invalid selector +:root"
+      }
+    ],
+    "rootStyle": {
+      "color": "rgb(0, 0, 0)",
+      "background": "rgba(0, 0, 0, 0)",
+      "colorScheme": "normal"
+    },
+    "computedStyleError": null,
+    "resourcePolicy": "constructor-default-disabled",
+    "automaticResourceElements": 0,
+    "domMessages": [],
+    "scriptElements": 0
+  },
+  "after": {
+    "path": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/css-qualified/verification/tmp/test_cli_saves_readable_feedba0/feedback.html",
+    "bytes": 11871,
+    "sha256": "6addbb11f417b8cbc12786d459802d760d5ffac3224987e8cf0e1ecc467364f9",
+    "selectors": 35,
+    "invalid": [],
+    "rootStyle": {
+      "color": "rgb(24, 42, 58)",
+      "background": "rgb(243, 245, 246)",
+      "colorScheme": "light"
+    },
+    "computedStyleError": null,
+    "resourcePolicy": "constructor-default-disabled",
+    "automaticResourceElements": 0,
+    "domMessages": [],
+    "scriptElements": 0
+  },
+  "checks": {
+    "originalInvalidRootReproduced": true,
+    "finalSelectorsAccepted": true,
+    "finalRootColorsApplied": true,
+    "finalLightColorSchemeApplied": true,
+    "onlyStyleAndCaptureTimeDiffer": true,
+    "noAutomaticResourceElements": true,
+    "noScriptElements": true
+  },
+  "passed": true
+}

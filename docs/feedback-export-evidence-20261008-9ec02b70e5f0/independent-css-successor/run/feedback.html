@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<title>CanvasPilot · Feedback review</title><style>:root { color-scheme: light; color: #182a3a; background: #f3f5f6; }
+* { box-sizing: border-box; }
+body { margin: 0; font: 16px/1.55 system-ui, -apple-system, sans-serif; }
+main { max-width: 72rem; margin: 3rem auto; padding: 0 1.5rem; }
+header { padding: 0 0 1.8rem; border-bottom: 2px solid #23465c; }
+.eyebrow { margin: 0 0 .5rem; font-size: .78rem; font-weight: 700;
+  letter-spacing: .12em; text-transform: uppercase; color: #3e637b; }
+h1 { margin: 0 0 .8rem; font: 700 clamp(2rem, 5vw, 3rem)/1.15 Georgia, serif; }
+h2 { margin: 0 0 1rem; font-size: 1.35rem; }
+h3 { margin: 0 0 .8rem; font-size: 1.05rem; }
+p { margin: .6rem 0; }
+section { margin: 1.8rem 0; }
+article, .panel { padding: 1.3rem; margin: 1rem 0; background: white;
+  border: 1px solid #d6dfe4; border-radius: .6rem; }
+.notice { padding: 1rem 1.2rem; background: #e7f0f5; border-left: 4px solid #44718b; }
+.prior { background: #fff3d9; border-color: #a16a12; }
+.muted, dt, footer { color: #506370; }
+dl { display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: .8rem 1.5rem; margin: .8rem 0; }
+dl > div { min-width: 0; }
+dt { font-size: .8rem; font-weight: 650; }
+dd { margin: .2rem 0 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+.wide { grid-column: 1 / -1; }
+.ratings { padding-left: 1.2rem; }
+.ratings li { margin: .7rem 0; }
+.ratings dl { margin: .3rem 0; }
+.literal { white-space: pre-wrap; overflow-wrap: anywhere; }
+a { color: #164e75; overflow-wrap: anywhere; }
+a:focus-visible { outline: 3px solid #b16b11; outline-offset: 3px; }
+footer { border-top: 1px solid #c4d0d8; padding: 1.2rem 0; font-size: .85rem; }
+@media (max-width: 36rem) {
+  main { margin: 1.5rem auto; padding: 0 1rem; }
+  article, .panel { padding: 1rem; }
+  dl { grid-template-columns: 1fr; }
+}
+@media print {
+  @page { margin: 16mm; }
+  :root { background: white; }
+  main { margin: 0; padding: 0; max-width: none; }
+  h1, h2, h3 { break-after: avoid; }
+  article, .panel { border-radius: 0; }
+  a { color: inherit; }
+}
+</style></head>
+<body><main>
+<header><p class="eyebrow">CanvasPilot · Saved feedback</p><h1 class="literal">Δοκιμή · 研究 &lt;draft&gt; &amp; feedback</h1>
+<p>Submission comments, rubric feedback and the attempt context returned by Canvas.</p>
+<dl><div><dt>Requested course ID</dt><dd data-field="requested.course_id">77</dd></div><div><dt>Requested assignment ID</dt><dd data-field="requested.assignment_id">314</dd></div><div><dt>Returned course ID</dt><dd data-field="assignment.course_id">77</dd></div><div><dt>Returned assignment ID</dt><dd data-field="assignment.id">314</dd></div><div><dt>Assignment due</dt><dd data-field="assignment.due_at"><span class="muted">Not returned</span></dd></div><div><dt>Saved at (UTC)</dt><dd data-field="captured_at">2026-10-08T13:37:57.851306Z</dd></div></dl><p>Assignment link returned by Canvas: <a href="https://canvas.invalid/courses/77/assignments/314" rel="noreferrer noopener">https://canvas.invalid/courses/77/assignments/314</a></p></header>
+<section aria-labelledby="submission-heading"><h2 id="submission-heading">Submission and grading</h2>
+<p class="notice prior">Canvas reports that grading preceded the latest resubmission. The displayed grade must not be treated as a grade for the current attempt.</p><div class="panel"><dl><div><dt>Current submission attempt</dt><dd data-field="submission.attempt">7</dd></div><div><dt>Submission state</dt><dd data-field="submission.workflow_state">graded</dd></div><div><dt>Reported submission score</dt><dd data-field="submission.score">0</dd></div><div><dt>Reported submission grade</dt><dd data-field="submission.grade">0</dd></div><div><dt>Submitted</dt><dd data-field="submission.submitted_at">2026-10-02T12:00:00Z</dd></div><div><dt>Graded</dt><dd data-field="submission.graded_at">2026-10-01T10:02:03Z</dd></div><div><dt>Grade posted</dt><dd data-field="submission.posted_at"><span class="muted">Not returned</span></dd></div><div><dt>Submission type</dt><dd data-field="submission.submission_type"><span class="muted">Not returned</span></dd></div><div><dt>Submitting user ID</dt><dd data-field="submission.user_id">909</dd></div><div><dt>Reported grader ID</dt><dd data-field="submission.grader_id">202</dd></div><div><dt>Excused</dt><dd data-field="submission.excused">false</dd></div><div><dt>Late</dt><dd data-field="submission.late">false</dd></div><div><dt>Missing</dt><dd data-field="submission.missing"><span class="muted">Not returned</span></dd></div><div><dt>Revision requested</dt><dd data-field="submission.redo_request"><span class="muted">Not returned</span></dd></div><div><dt>Assignment possible points</dt><dd data-field="assignment.points_possible">0</dd></div></dl></div></section>
+<section aria-labelledby="rubric-heading"><h2 id="rubric-heading">Rubric feedback</h2>
+<p class="notice">Advisory rubric: Canvas says it is not used for grading.</p><div class="panel"><p class="muted"></p><dl><div><dt>Rubric title</dt><dd data-field="rubric.title"><span class="muted">Not returned</span></dd></div><div><dt>Rubric possible points (as supplied)</dt><dd data-field="rubric.points_possible">47.25</dd></div><div><dt>Free-form criterion comments</dt><dd data-field="rubric.free_form_criterion_comments"><span class="muted">Not returned</span></dd></div><div><dt>Assessment object returned</dt><dd data-field="rubric.assessment_returned">true</dd></div><div><dt>Withhold outcome results from Learning Mastery Gradebook</dt><dd data-field="rubric.hide_outcome_results">false</dd></div></dl>
+<p class="muted">No rubric score is summed or used to calculate a grade in this sheet.</p></div><article id="criterion-1"><h3>1. Outcome evidence Ω</h3><dl><div><dt>Criterion ID</dt><dd data-field="criterion.1.id">k-outcome</dd></div><div><dt>Criterion possible points</dt><dd data-field="criterion.1.points">8.75</dd></div><div><dt>Range-based ratings</dt><dd data-field="criterion.1.criterion_use_range"><span class="muted">Not returned</span></dd></div><div><dt>Excluded from scoring</dt><dd data-field="criterion.1.ignore_for_scoring"><span class="muted">Not returned</span></dd></div><div><dt>Learning outcome ID</dt><dd data-field="criterion.1.learning_outcome_id">610</dd></div><div class="wide"><dt>Criterion detail</dt><dd data-field="criterion.1.long_description">Demonstrate the stated connection.</dd></div></dl><h4>Returned rating scale</h4><ul class="ratings"><li><div class="literal">Still developing</div><dl><div><dt>Rating ID</dt><dd data-field="criterion.1.rating.1.id">rating-zero</dd></div><div><dt>Rating points</dt><dd data-field="criterion.1.rating.1.points">0</dd></div></dl></li></ul><h4>Returned assessment</h4><dl><div><dt>Reported assessment points</dt><dd data-field="criterion.1.assessment.points">0</dd></div><div><dt>Reported rating ID</dt><dd data-field="criterion.1.assessment.rating_id">rating-zero</dd></div><div class="wide"><dt>Criterion feedback</dt><dd data-field="criterion.1.assessment.comments">Keep the claimed outcome visible.</dd></div></dl></article><article id="criterion-2"><h3>2. Unassessed criterion 未</h3><dl><div><dt>Criterion ID</dt><dd data-field="criterion.2.id">k-unknown</dd></div><div><dt>Criterion possible points</dt><dd data-field="criterion.2.points"><span class="muted">Not returned</span></dd></div><div><dt>Range-based ratings</dt><dd data-field="criterion.2.criterion_use_range"><span class="muted">Not returned</span></dd></div><div><dt>Excluded from scoring</dt><dd data-field="criterion.2.ignore_for_scoring"><span class="muted">Not returned</span></dd></div></dl><h4>Returned rating scale</h4><p class="muted">Rating scale was not returned.</p><h4>Returned assessment</h4><p class="muted">No assessment was returned for this criterion.</p></article>
+<h3>Unmatched assessments</h3><p>These entries have no unique matching rubric criterion. They remain separate.</p><article><h3>Unmatched assessment: orphan-criterion</h3><dl><div><dt>Reported assessment points</dt><dd data-field="unmatched.1.points">2.125</dd></div><div><dt>Reported rating ID</dt><dd data-field="unmatched.1.rating_id"><span class="muted">Not returned</span></dd></div><div class="wide"><dt>Criterion feedback</dt><dd data-field="unmatched.1.comments">An unjoined assessment stays unjoined.</dd></div></dl></article></section>
+<section aria-labelledby="comments-heading"><h2 id="comments-heading">Submission comments</h2>
+<p>Authors are shown as returned; comments are not assumed to come from an instructor.</p><p>3 returned comments, in Canvas response order.</p><article id="comment-1"><h3>Comment 1</h3><dl><div><dt>Comment ID</dt><dd data-field="comment.1.id">71</dd></div><div><dt>Reported author name</dt><dd data-field="comment.1.author_name">Kai &lt;learner&gt; &amp; Ω</dd></div><div><dt>Author ID</dt><dd data-field="comment.1.author_id">202</dd></div><div><dt>Created</dt><dd data-field="comment.1.created_at">2026-10-03T15:16:17Z</dd></div><div><dt>Edited</dt><dd data-field="comment.1.edited_at"><span class="muted">Not returned</span></dd></div><div><dt>Author record display name</dt><dd data-field="comment.1.author.display_name">Nested supplied name 研</dd></div><div><dt>Author record ID</dt><dd data-field="comment.1.author.id">203</dd></div><div class="wide"><dt>Comment</dt><dd data-field="comment.1.comment">Literal &lt;script&gt;window.INJECTED=1&lt;/script&gt; &amp; 日本語
+Second line.</dd></div></dl><p class="muted">Attachment list was not returned.</p></article><article id="comment-2"><h3>Comment 2</h3><dl><div><dt>Comment ID</dt><dd data-field="comment.2.id">72</dd></div><div><dt>Reported author name</dt><dd data-field="comment.2.author_name"><span class="muted">Not returned</span></dd></div><div><dt>Author ID</dt><dd data-field="comment.2.author_id"><span class="muted">Not returned</span></dd></div><div><dt>Created</dt><dd data-field="comment.2.created_at"><span class="muted">Not returned</span></dd></div><div><dt>Edited</dt><dd data-field="comment.2.edited_at"><span class="muted">Not returned</span></dd></div><div><dt>Author record display name</dt><dd data-field="comment.2.author.display_name">Only nested author β</dd></div><div><dt>Author record ID</dt><dd data-field="comment.2.author.id">204</dd></div><div class="wide"><dt>Comment</dt><dd data-field="comment.2.comment"><span class="muted">Returned empty text</span></dd></div><div><dt>Media type (not downloaded)</dt><dd data-field="comment.2.media.type"><span class="muted">Not returned</span></dd></div><div><dt>Media ID</dt><dd data-field="comment.2.media.id"><span class="muted">Not returned</span></dd></div><div><dt>Media name</dt><dd data-field="comment.2.media.name">Spoken response 日本語</dd></div></dl><p>Attachments (not downloaded):</p><ul><li><dl><div><dt>Attachment ID</dt><dd data-field="comment.2.attachment.1.id"><span class="muted">Not returned</span></dd></div><div><dt>File name</dt><dd data-field="comment.2.attachment.1.name">voice &lt;literal&gt;.ogg</dd></div></dl></li></ul></article><article id="comment-3"><h3>Comment 3</h3><dl><div><dt>Comment ID</dt><dd data-field="comment.3.id">73</dd></div><div><dt>Reported author name</dt><dd data-field="comment.3.author_name"><span class="muted">Not returned</span></dd></div><div><dt>Author ID</dt><dd data-field="comment.3.author_id"><span class="muted">Not returned</span></dd></div><div><dt>Created</dt><dd data-field="comment.3.created_at"><span class="muted">Not returned</span></dd></div><div><dt>Edited</dt><dd data-field="comment.3.edited_at"><span class="muted">Not returned</span></dd></div><div class="wide"><dt>Comment</dt><dd data-field="comment.3.comment">No author supplied for this separate comment.</dd></div></dl><p class="muted">Attachment list was not returned.</p></article></section>
+<footer><p>This is a saved copy of the returned feedback. It does not refresh. Source timestamps retain their reported timezone notation.</p>
+<p>Media and attachments are listed when returned, but their contents are not downloaded. Open the assignment in Canvas to review them.</p>
+<p>Open this file in a browser to read it, or use the browser’s Print command.</p></footer>
+</main></body></html>

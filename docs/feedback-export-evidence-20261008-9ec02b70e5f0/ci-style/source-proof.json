@@ -1,0 +1,63 @@
+{
+  "schema": "canvaspilot-feedback-export-ci-style/1",
+  "previous_head": "01774ea46b07d01a56e6b4f42f33ad83029ad9f9",
+  "failed_run": "https://github.com/Jacob-Met/canvaspilot/actions/runs/37807974111",
+  "job_id": 113417144546,
+  "checked_merge": "d52cf294dd64054caee07f1df85079f1c3e2cad4",
+  "observed_failure": "Lint failed: two I001 imports and four TRY004 exceptions in the new feature. Test step was skipped.",
+  "lint_command": "ruff check src tests scripts",
+  "ruff_version": "0.16.10",
+  "python_version": "3.12.15",
+  "full_failed_job_log_sha256": "158d7f06b7a970c6dbdfd1a2493edb69c275650b2a0ab0ea867be0e6b4295eae",
+  "files": [
+    {
+      "path": "src/canvaspilot/cli.py",
+      "before": {
+        "sha256": "4cc22dfbd5336b09aac84c831512b954cea04eeb1ddc5c1b887cbbe07f8c2d7b",
+        "git_blob": "596127daccd6c129a3b5e9a4fe29c62c63b6a76b",
+        "bytes": 22681
+      },
+      "after": {
+        "sha256": "ca8dc57d5c4fe69b9011e6039c2dd10706441be8901b6f1aebbf3c16338685af",
+        "git_blob": "350e40574627311786f52d63bcc6540d81646ff5",
+        "bytes": 22730
+      },
+      "production_AST_equal": true,
+      "change": "Wrap one existing lazy import; identifiers and order unchanged."
+    },
+    {
+      "path": "src/canvaspilot/feedback_export.py",
+      "before": {
+        "sha256": "a0db41dca9cce28c9fb7594c88ea6dc103b0f3104d5ba4d061bd93aaed92a714",
+        "git_blob": "d8c514e6b93506cc5cd045512898910ef2b457c7",
+        "bytes": 20917
+      },
+      "after": {
+        "sha256": "3b0d685031ec6d9a364200c11bd265fb642e686c5de4d0cb249c041c5a6b177f",
+        "git_blob": "9cab55d141484309f5511b857957888d7b040dda",
+        "bytes": 21290
+      },
+      "production_AST_equal": true,
+      "inverse_exact": true,
+      "change": "Four narrowly explained TRY004 comments; exception classes, messages and behavior unchanged."
+    },
+    {
+      "path": "tests/test_feedback_export.py",
+      "before": {
+        "sha256": "046ce25f6bc03ae6ad23e65bb7f5cbe26a42a257f45cc9998701054fb1375de5",
+        "git_blob": "733453beb498103a52f696cd8c758bf7c0938804",
+        "bytes": 6965
+      },
+      "after": {
+        "sha256": "ca82d2eb17884ead835aaa33ec565d134ab7032aa29fabd3661ec2fe3b3909d7",
+        "git_blob": "3032d17555757be4dd289322b440850d08efe453",
+        "bytes": 6965
+      },
+      "all_non_import_AST_equal": true,
+      "import_multiset_equal": true,
+      "change": "Move existing test helper import to the group required by CI; all assertions unchanged."
+    }
+  ],
+  "qualification": "Production AST equality is proven; no new behavioral run is claimed. The successor must pass the hosted repository lint and test gate before merge. The historical current728 and all previous source/evidence remain immutable.",
+  "unresolved_cause": "Prior local Ruff success does not establish why this hosted lint differed. No root Ruff config was found in the compared source trees."
+}

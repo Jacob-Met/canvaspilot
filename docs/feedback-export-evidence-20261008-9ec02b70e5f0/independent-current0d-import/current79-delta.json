@@ -1,0 +1,10 @@
+{
+  "changed_paths": [
+    "README.md",
+    "src/canvaspilot/api.py",
+    "src/canvaspilot/assignment_submission.py"
+  ],
+  "all_other26_files_identical": true,
+  "reviewed_API_git_blob": "8de750525055991ca470fb4881d0368a07631818",
+  "new_import_git_blob": "95b1f19927e4eecf99fc852325737c3cfe86cd0d"
+}

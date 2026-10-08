@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+    "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/css-qualified/verify_css_document.cjs",
+    "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/qualified-temp/test_cli_saves_readable_feedba0/feedback.html",
+    "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/css-qualified/verification/tmp/test_cli_saves_readable_feedba0/feedback.html",
+    "/workspace/scratch/d0441742433b/production-worker/qa-deps/node_modules/jsdom",
+    "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/css-qualified/verification/css-before-driver-report.json"
+  ],
+  "exit_code": 1,
+  "driver_sha256": "7258ec2e9a51be96b3fdad69001e4751e5c0b04fdf70422f18fae033b08ff6c2",
+  "source_status": "Frozen product source unchanged; driver failed before document inspection.",
+  "initial_attempt": "Same driver previously failed with ResourceLoader undefined in tool chunk d6fbf4; this unchanged reproduction captures complete stdout/stderr.",
+  "stdout": "css-resource-loader.stdout.txt",
+  "stderr": "css-resource-loader.stderr.txt"
+}

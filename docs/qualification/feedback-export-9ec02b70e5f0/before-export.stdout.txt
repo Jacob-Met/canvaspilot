@@ -1,0 +1,25 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+______________ test_cli_saves_readable_feedback_from_real_reader _______________
+
+provider = ({'source': {'assignment': {'id': 902, 'course_id': 41, 'name': 'Synthetic research reflection', 'html_url': 'https://...ission_status': 200, 'base_url': 'http://127.0.0.1:41513', ...}, <function provider.<locals>.invoke at 0x7f4d92fdf600>)
+tmp_path = PosixPath('/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/before-temp/test_cli_saves_readable_feedba0')
+
+    def test_cli_saves_readable_feedback_from_real_reader(provider, tmp_path):
+        state, invoke = provider
+        original = copy.deepcopy(state["source"])
+        output = tmp_path / "feedback.html"
+        completed = invoke(output)
+>       assert completed.returncode == 0, completed.stderr
+E       AssertionError: usage: canvaspilot [-h]
+E                            {login,session,whoami,courses,sync,assignments,brief,feedback,discussions,files,browse-files,export-calendar,module-progress,mcp}
+E                            ...
+E         canvaspilot: error: argument cmd: invalid choice: 'export-feedback' (choose from login, session, whoami, courses, sync, assignments, brief, feedback, discussions, files, browse-files, export-calendar, module-progress, mcp)
+E         
+E       assert 2 == 0
+E        +  where 2 = CompletedProcess(args=['/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', '-B', '-m', 'canvas...urses, sync, assignments, brief, feedback, discussions, files, browse-files, export-calendar, module-progress, mcp)\n").returncode
+
+../repo/tests/test_feedback_export_native.py:157: AssertionError
+=========================== short test summary info ============================
+FAILED ../repo/tests/test_feedback_export_native.py::test_cli_saves_readable_feedback_from_real_reader
+1 failed in 1.06s

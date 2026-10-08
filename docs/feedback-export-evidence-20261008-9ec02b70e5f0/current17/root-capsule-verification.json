@@ -1,0 +1,11 @@
+{
+  "schema": "root-canvas17-capsule-verification.v1",
+  "native_execution": false,
+  "execution": {
+    "chunk_id": "15a221",
+    "wall_time_seconds": 0.000022444,
+    "exit_code": 0,
+    "original_token_count": 230,
+    "output": "{\"index_keys\": [\"archive\", \"bytes\", \"compressed_bytes\", \"compressed_sha256\", \"local_archive_source_path\", \"member_count\", \"members\", \"schema\", \"sha256\", \"uncompressed_member_bytes\", \"verified_against_original_private_files\"], \"archive_metadata\": {\"archive\": \"native-evidence.tar.gz.base64\", \"bytes\": 93509, \"compressed_bytes\": 70130, \"compressed_sha256\": \"f2d9b3d9d1377bc9249f109d0a3332468fed1dec99f08a0cba7c4059b68cd013\", \"local_archive_source_path\": \"/dev/shm/estate-9ec02b70e5f0/lead/canvas-current17/native-evidence.reserved\", \"member_count\": 35, \"schema\": \"independent-receiving-capsule.v1\", \"sha256\": \"96f0479ab998f67f8a47370a313957581ee868b45b5e272b9d0057b53c8e4df6\", \"uncompressed_member_bytes\": 298919, \"verified_against_original_private_files\": true}}\n{\"verified_members\": 35, \"raw_bytes\": 298919, \"capsule_bytes\": 93509, \"capsule_sha256\": \"96f0479ab998f67f8a47370a313957581ee868b45b5e272b9d0057b53c8e4df6\"}\n"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "scope": "/dev/estate-9ec02b70e5f0/runtime/canvas-feedback-current0d",
+  "dev_free_bytes": 5225730048,
+  "shared_free_after_reservation": 16273408,
+  "reserved_bytes": 475136,
+  "limits": {
+    "memory.max": "8589934592",
+    "memory.current": "8589713408",
+    "pids.max": "max",
+    "pids.current": "133"
+  }
+}

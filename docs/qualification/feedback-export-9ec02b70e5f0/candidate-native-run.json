@@ -1,0 +1,17 @@
+{
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "--basetemp=/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/verification/candidate-temp",
+    "tests/test_feedback_export_native.py"
+  ],
+  "cwd": "/dev/shm/estate-9ec02b70e5f0/optimizer/canvaspilot-feedback-export/repo",
+  "exit_code": 1,
+  "stdout": "candidate-native.stdout.txt",
+  "stderr": "candidate-native.stderr.txt"
+}
