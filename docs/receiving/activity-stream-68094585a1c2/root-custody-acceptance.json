@@ -1,0 +1,310 @@
+{
+  "schema": "hamon.canvaspilot.activity-source-custody-acceptance/1",
+  "actor": "chatgpt:68094585a1c2 / root",
+  "at": "2026-10-08 21:54:14 UTC",
+  "reviewedSourceCommit": "0040087519c304b11d3c5486c180c6e1856efc85",
+  "reviewedTree": "39d815c1ea8987801b94a9cbd750204122dafcc2",
+  "soleParent": "56a72a2e2cee5ec04671d12ebe5bc2484afb8026",
+  "originalTree": "a07c3e941219ff80968e1ff20528a63541bb7400",
+  "treeReview": {
+    "source": "0040087519c304b11d3c5486c180c6e1856efc85",
+    "tree": "39d815c1ea8987801b94a9cbd750204122dafcc2",
+    "parent": "56a72a2e2cee5ec04671d12ebe5bc2484afb8026",
+    "baseTree": "a07c3e941219ff80968e1ff20528a63541bb7400",
+    "expectedChanged": 23,
+    "changed": [
+      {
+        "path": "README.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "09eedad6e9d98b42fbaaa849b951f7c25a9a8aa8",
+        "size": 28545,
+        "url": "https://api.github.com/repos/Jacob-Met/canvaspilot/git/blobs/09eedad6e9d98b42fbaaa849b951f7c25a9a8aa8"
+      },
+      {
+        "path": "docs/activity-stream.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2e7ebd7fcbc74f26f9d96e4b6412a97c63c62a20",
+        "size": 5304,
+        "url": "https://api.github.com/repos/Jacob-Met/canvaspilot/git/blobs/2e7ebd7fcbc74f26f9d96e4b6412a97c63c62a20"
+      },
+      {
+        "path": "docs/receiving/activity-stream-68094585a1c2/README.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d545c40908866231086848dcbddfd0a90f6f2e78",
+        "size": 3398,
+        "url": "https://api.github.com/repos/Jacob-Met/canvaspilot/git/blobs/d545c40908866231086848dcbddfd0a90f6f2e78"
+      },
+      {
+        "path": "docs/receiving/activity-stream-68094585a1c2/activity-stream-v1.patch",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2f26d4e685414eb1de0c864c103c16b08be4c97a",
+        "size": 23781,
+        "url": "https://api.github.com/repos/Jacob-Met/canvaspilot/git/blobs/2f26d4e685414eb1de0c864c103c16b08be4c97a"
+      },
+      {
+        "path": "docs/receiving/activity-stream-68094585a1c2/author/CAPSULE.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "76d4c787b1b738739243edfcb8e12e027aaad2ce",
+        "size": 1490,
+        "url": "https://api.github.com/repos/Jacob-Met/canvaspilot/git/blobs/76d4c787b1b738739243edfcb8e12e027aaad2ce"
+      },
+      {
+        "path": "docs/receiving/activity-stream-68094585a1c2/author/MANIFEST.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b290cb95c63961242e937b11f3de638e3c53e458",
+        "size": 43302,
+        "url": "https://api.github.com/repos/Jacob-Met/canvaspilot/git/blobs/b290cb95c63961242e937b11f3de638e3c53e458"
+      },
+      {
+        "path": "docs/receiving/activity-stream-68094585a1c2/author/canvaspilot-activity-author-capsule.tar.gz",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "fcd6d888a034fd60d79fe29948e820df38d14b12",
+        "size": 496743,
+        "url": "https://api.github.com/repos/Jacob-Met/canvaspilot/git/blobs/fcd6d888a034fd60d79fe29948e820df38d14b12"
+      },
+      {
+        "path": "docs/receiving/activity-stream-68094585a1c2/author/lint-receipt.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6e321373f027ba77058eff8993467b9a41cc9dce",
+        "size": 29650,
+        "url": "https://api.github.com/repos/Jacob-Met/canvaspilot/git/blobs/6e321373f027ba77058eff8993467b9a41cc9dce"
+      },
+      {
+        "path": "docs/receiving/activity-stream-68094585a1c2/author/native-receipt.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6373d85d632e23bf0f3c53c1c8acd4ca6d8a7915",
+        "size": 60843,
+        "url": "https://api.github.com/repos/Jacob-Met/canvaspilot/git/blobs/6373d85d632e23bf0f3c53c1c8acd4ca6d8a7915"
+      },
+      {
+        "path": "docs/receiving/activity-stream-68094585a1c2/author/original-baseline.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7c5d4ca265070a69b64e11c7c8a50dd785bb4b4a",
+        "size": 65955,
+        "url": "https://api.github.com/repos/Jacob-Met/canvaspilot/git/blobs/7c5d4ca265070a69b64e11c7c8a50dd785bb4b4a"
+      },
+      {
+        "path": "docs/receiving/activity-stream-68094585a1c2/author/original-regression.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5de22946095dc3601d0463783a0321550001eab2",
+        "size": 29501,
+        "url": "https://api.github.com/repos/Jacob-Met/canvaspilot/git/blobs/5de22946095dc3601d0463783a0321550001eab2"
+      },
+      {
+        "path": "docs/receiving/activity-stream-68094585a1c2/git-transfer-ledger.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "943a64f2a9988c85d9490911fdf626b840725208",
+        "size": 26573,
+        "url": "https://api.github.com/repos/Jacob-Met/canvaspilot/git/blobs/943a64f2a9988c85d9490911fdf626b840725208"
+      },
+      {
+        "path": "docs/receiving/activity-stream-68094585a1c2/independent/CAPSULE.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8280479862cee51d3f568951079a290c118d086c",
+        "size": 1612,
+        "url": "https://api.github.com/repos/Jacob-Met/canvaspilot/git/blobs/8280479862cee51d3f568951079a290c118d086c"
+      },
+      {
+        "path": "docs/receiving/activity-stream-68094585a1c2/independent/MANIFEST.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ac7c4333559c5e41290db0f03bbacfb45725b12b",
+        "size": 21317,
+        "url": "https://api.github.com/repos/Jacob-Met/canvaspilot/git/blobs/ac7c4333559c5e41290db0f03bbacfb45725b12b"
+      },
+      {
+        "path": "docs/receiving/activity-stream-68094585a1c2/independent/canvaspilot-activity-independent-capsule.tar.gz",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "54bae2efe95dc22a11a927b3657b1798ffd1f758",
+        "size": 252340,
+        "url": "https://api.github.com/repos/Jacob-Met/canvaspilot/git/blobs/54bae2efe95dc22a11a927b3657b1798ffd1f758"
+      },
+      {
+        "path": "docs/receiving/activity-stream-68094585a1c2/independent/native-receipt.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "19f8996f70666d1a832ebd2905bd0b1959ba0f8d",
+        "size": 34466,
+        "url": "https://api.github.com/repos/Jacob-Met/canvaspilot/git/blobs/19f8996f70666d1a832ebd2905bd0b1959ba0f8d"
+      },
+      {
+        "path": "docs/receiving/activity-stream-68094585a1c2/independent/source-review-v1.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d566c898f96ccb9832bdd7e0bd9e5afd9522c452",
+        "size": 6491,
+        "url": "https://api.github.com/repos/Jacob-Met/canvaspilot/git/blobs/d566c898f96ccb9832bdd7e0bd9e5afd9522c452"
+      },
+      {
+        "path": "docs/receiving/activity-stream-68094585a1c2/patch-manifest-v1.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "fe6506368037ab4140e04db631841ed26d94aa85",
+        "size": 3193,
+        "url": "https://api.github.com/repos/Jacob-Met/canvaspilot/git/blobs/fe6506368037ab4140e04db631841ed26d94aa85"
+      },
+      {
+        "path": "docs/receiving/activity-stream-68094585a1c2/public-contract.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "983f912f820efb50aeb320fa589f76cd4a425056",
+        "size": 7933,
+        "url": "https://api.github.com/repos/Jacob-Met/canvaspilot/git/blobs/983f912f820efb50aeb320fa589f76cd4a425056"
+      },
+      {
+        "path": "docs/receiving/activity-stream-68094585a1c2/workflow-guard-v1.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ec32711d4bbae6cbbdce16b48bfae2381ac5a2e4",
+        "size": 5655,
+        "url": "https://api.github.com/repos/Jacob-Met/canvaspilot/git/blobs/ec32711d4bbae6cbbdce16b48bfae2381ac5a2e4"
+      },
+      {
+        "path": "src/canvaspilot/api.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f0e25c38f8ed521fae3dfbcbf7c9f1757a9fbba0",
+        "size": 29741,
+        "url": "https://api.github.com/repos/Jacob-Met/canvaspilot/git/blobs/f0e25c38f8ed521fae3dfbcbf7c9f1757a9fbba0"
+      },
+      {
+        "path": "src/canvaspilot/cli.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "786a2dedac34942bd320964ba19edeede88c537e",
+        "size": 40978,
+        "url": "https://api.github.com/repos/Jacob-Met/canvaspilot/git/blobs/786a2dedac34942bd320964ba19edeede88c537e"
+      },
+      {
+        "path": "tests/test_activity_stream.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c4e1a65336e411dac04e289438a8627d319ed345",
+        "size": 14700,
+        "url": "https://api.github.com/repos/Jacob-Met/canvaspilot/git/blobs/c4e1a65336e411dac04e289438a8627d319ed345"
+      }
+    ],
+    "mismatches": [],
+    "absent": [],
+    "deleted": [],
+    "unownedExact": 1613
+  },
+  "nativeQualification": {
+    "author": "chatgpt:68094585a1c2 / levenshtein_receiving",
+    "authorTests": 69,
+    "newAuthoredTests": 30,
+    "existingRepeatedTests": 39,
+    "existingSubtests": 14,
+    "nativeLint": "Ruff0.16.10 on src/tests/scripts passed",
+    "rootBaselineGroups": 3,
+    "rootCandidateGroups": 13,
+    "rootRealLoopbackGetRequests": 27,
+    "rootCandidatePid": 1880962,
+    "rootCandidateExit": 0,
+    "rootCandidateStartedAt": "2026-10-08T21:31:29.143763+00:00",
+    "rootCandidateEndedAt": "2026-10-08T21:31:41.703222+00:00",
+    "nativePython": "3.14.4",
+    "httpx": "0.28.1",
+    "mcp": "2.3.0",
+    "rootReceiverBlob": "4782b50ea7cb94d1e818cc07d0a9b6260a9fd101",
+    "rootReceiptBlob": "19f8996f70666d1a832ebd2905bd0b1959ba0f8d",
+    "rootSourceReviewBlob": "d566c898f96ccb9832bdd7e0bd9e5afd9522c452",
+    "sameReceiverFrozenBeforeCandidate": true,
+    "authorTestsOpenedOnlyAfterIndependentCandidateCompleted": true
+  },
+  "sourceFence": {
+    "apiBodyReplacements": 1,
+    "cliAdditions": 2,
+    "readmeAdditions": 1,
+    "fullInverseVerifiedByRoot": true,
+    "clientMcpDependenciesWorkflowsUnchanged": true,
+    "changedProductPaths": [
+      "README.md",
+      "docs/activity-stream.md",
+      "src/canvaspilot/api.py",
+      "src/canvaspilot/cli.py",
+      "tests/test_activity_stream.py"
+    ]
+  },
+  "custody": {
+    "rootArchive": {
+      "blob": "54bae2efe95dc22a11a927b3657b1798ffd1f758",
+      "bytes": 252340,
+      "sha256": "e6193f434a46169bab9e0d925477f077c87be84332dec5562d5d1e9bdb3ddefa",
+      "members": 83,
+      "rootNativeMembersBytesAndModesVerified": true
+    },
+    "authorArchive": {
+      "blob": "fcd6d888a034fd60d79fe29948e820df38d14b12",
+      "bytes": 496743,
+      "sha256": "fe428c39c0086a10bb92ed12c5b2e3e563cb9f2a18bae7fdc52be6472a46c1e1",
+      "members": 166
+    },
+    "all22NativeInputIdentitiesMatchActualTree": true,
+    "all20TextReadbacksByAuthorExact": true,
+    "binaryPostCommitReadback": {
+      "actor": "chatgpt:68094585a1c2 / levenshtein_receiving",
+      "method": "github_fetch_file with explicit encoding=base64 at reviewedSourceCommit",
+      "bothEntireNativeArchivesMatch": true,
+      "rootScope": "Root checked actual commit paths, sizes, modes and Git blob identities against independently computed native pins; archive byte readback was performed by the transferring author."
+    },
+    "transferLedgerBlob": "943a64f2a9988c85d9490911fdf626b840725208",
+    "ledgerPendingBinaryNote": "Historical precommit note is satisfied by the subsequent exact-commit explicit-base64 receiving reported above; original ledger is retained unchanged."
+  },
+  "workflowGuard": {
+    "main": "56a72a2e2cee5ec04671d12ebe5bc2484afb8026",
+    "completeWorkflowCount": 2,
+    "definitions": [
+      {
+        "path": ".github/workflows/ci.yml",
+        "blob": "ef7bbebe192c0db55dc4467e064ba44805c13446",
+        "triggers": "push main; pull_request main"
+      },
+      {
+        "path": ".github/workflows/agenda-view-browser.yml",
+        "blob": "a06b862c23dccc61d5da9eea99d82b76668f78c8",
+        "triggers": "path-filtered pull_request main; workflow_dispatch"
+      }
+    ],
+    "noCreateIssueOrCommentTrigger": true,
+    "decision": "The planned fresh nondefault branch with no PR matches neither workflow. No required gate is waived. Recheck current main and actual workflow identities immediately before the ref write.",
+    "branch": "estate/68094585a1c2/canvas-activity-native-qualified-20261008",
+    "initialExactRefLookup": "404 NOT_FOUND"
+  },
+  "preservedFailures": [
+    "Root initial SDK introspection used obsolete FastMCP on installed MCPServer2.3; corrected observer only, no product failure.",
+    "Author native transfer-ledger write returned ENOSPC; exact readback found a zero-byte file. It remains intact and no write was retried.",
+    "Author blob-readback observer first expected REST JSON where helper returns decoded text; corrected actual response handling.",
+    "UTF-8-only blob helper refused the gzip archive; explicit base64 file readback at the unattached commit succeeded. No archive was regenerated."
+  ],
+  "state": {
+    "nativeQualified": true,
+    "sourceReviewed": true,
+    "immutableGitObjectsPrepared": true,
+    "branchPublished": false,
+    "prOpened": false,
+    "integrated": false,
+    "fullMaintainedSuiteRun": false,
+    "hostedPython312Run": false,
+    "hostedWheelBrowserRun": false,
+    "liveCanvasUsed": false,
+    "mcpStdioReceived": false,
+    "requiredGatesWaived": false,
+    "actionsTriggered": false
+  },
+  "next": "Record a nontriggering branch and exact run-count readback in issue94. Future source integration needs fresh current-parent composition plus the still-required gates once Actions are authorized. Preserve adjacent quiz-attempt96 and all other API/CLI owners."
+}
