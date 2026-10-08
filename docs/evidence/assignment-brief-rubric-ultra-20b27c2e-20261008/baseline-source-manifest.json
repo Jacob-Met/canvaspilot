@@ -1,0 +1,217 @@
+{
+  "commit": "5b1780ca4fcdce3d5f997cee401c86806ece822a",
+  "tree": "5d3b9b7b8f3cca5f3940f31e020ad4310078dd70",
+  "truncated": false,
+  "blobs": [
+    {
+      "path": ".github/dependabot.yml",
+      "mode": "100644",
+      "sha": "5ace4600a1f26e6892982f3e2f069ebfab108d87"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "mode": "100644",
+      "sha": "ef7bbebe192c0db55dc4467e064ba44805c13446"
+    },
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "sha": "22c76241a0bda223ac64d3c9e25f0ed5c08594ca"
+    },
+    {
+      "path": "LICENSE",
+      "mode": "100644",
+      "sha": "49422571fde440401be167dfec1cdc46a89f62d2"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "sha": "2ef75414e13cf0d6177036d8ce0c2b4554d9dfe2"
+    },
+    {
+      "path": "docs/API.md",
+      "mode": "100644",
+      "sha": "727ce2347ec7925c9722ee8e939e2cb7a0e200f1"
+    },
+    {
+      "path": "docs/evidence/broker-proxy-native-20261008/.gitignore",
+      "mode": "100644",
+      "sha": "7f45d7a9fc9364bac3d50561f5aad2d3cc5a3c1b"
+    },
+    {
+      "path": "docs/evidence/broker-proxy-native-20261008/README.md",
+      "mode": "100644",
+      "sha": "aec038669ee2b2c05196a39b844024d6d59bd62f"
+    },
+    {
+      "path": "docs/evidence/broker-proxy-native-20261008/base-source-manifest.json",
+      "mode": "100644",
+      "sha": "17717d5da827f12b61af8c30b0ee35a42c915616"
+    },
+    {
+      "path": "docs/evidence/broker-proxy-native-20261008/baseline-receipt.json",
+      "mode": "100644",
+      "sha": "d8a913344eab697b3ebbb2c4461695351a22c881"
+    },
+    {
+      "path": "docs/evidence/broker-proxy-native-20261008/candidate-receipt.json",
+      "mode": "100644",
+      "sha": "4f8307d6e0a8763dcae40b675481a717f6b1236c"
+    },
+    {
+      "path": "docs/evidence/broker-proxy-native-20261008/head-source-manifest.json",
+      "mode": "100644",
+      "sha": "e9ac718d35eba5899d98088d9f50d5cd77388f6a"
+    },
+    {
+      "path": "docs/evidence/broker-proxy-native-20261008/native_broker_fixture.py",
+      "mode": "100644",
+      "sha": "a550ffb600b5870b238b65b06a0867c11724435c"
+    },
+    {
+      "path": "docs/evidence/broker-proxy-native-20261008/prepare_sources.py",
+      "mode": "100644",
+      "sha": "da115e374a5f1c4520462ce36679dcd1bfb672c8"
+    },
+    {
+      "path": "docs/evidence/broker-proxy-native-20261008/process-receipt.json",
+      "mode": "100644",
+      "sha": "faa878b9e2d2f61bb15314320ea71dddab6991f8"
+    },
+    {
+      "path": "docs/evidence/broker-proxy-native-20261008/requirements-receiving.txt",
+      "mode": "100644",
+      "sha": "4508c500185632bde31d972fd13ddfcaa2d3ec18"
+    },
+    {
+      "path": "docs/evidence/broker-proxy-native-20261008/review_broker_proxy.py",
+      "mode": "100644",
+      "sha": "1a93da59fae56689782e7c735534a25ffb7e7b28"
+    },
+    {
+      "path": "docs/evidence/broker-proxy-native-20261008/runtime-receipt.json",
+      "mode": "100644",
+      "sha": "4166228129ad2451d44747108cb09f5eed4d7be1"
+    },
+    {
+      "path": "docs/evidence/broker-proxy-native-20261008/verify_receiving.py",
+      "mode": "100644",
+      "sha": "484b69e5968f2e2b5eaa62f5ef003d0d59311711"
+    },
+    {
+      "path": "docs/evidence/module-items-20261008/receiving.json",
+      "mode": "100644",
+      "sha": "dfb8dc7443260d59f3d0635c73502dcae2dcc74f"
+    },
+    {
+      "path": "docs/evidence/module-items-20261008/test_independent_module_receiving.py",
+      "mode": "100644",
+      "sha": "50da9ee593f69d52516309b4af98668949e51499"
+    },
+    {
+      "path": "docs/evidence/offline-demo-20260909.json",
+      "mode": "100644",
+      "sha": "ac5f20c872557a09ad6d179f67104c8a1377c032"
+    },
+    {
+      "path": "pyproject.toml",
+      "mode": "100644",
+      "sha": "76eba6d30696b4f2733539cd47df6e178bc0f585"
+    },
+    {
+      "path": "scripts/inventory_pass.py",
+      "mode": "100644",
+      "sha": "dda42bf3ac3679bc1936917ab1f981a8c6849811"
+    },
+    {
+      "path": "scripts/readonly_sweep.py",
+      "mode": "100644",
+      "sha": "c273fdbcc495c5283422bcb7ee94664eb9a32230"
+    },
+    {
+      "path": "src/canvaspilot/__init__.py",
+      "mode": "100644",
+      "sha": "74a7a6087bf81fd7c75c15769b30408039618e0f"
+    },
+    {
+      "path": "src/canvaspilot/api.py",
+      "mode": "100644",
+      "sha": "5807bd4c7bbe23aaacedfa7281fed3ce94256432"
+    },
+    {
+      "path": "src/canvaspilot/bundle.py",
+      "mode": "100644",
+      "sha": "5be38ec248d1e7efc54de9ee62e2e3be4c71f77c"
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "mode": "100644",
+      "sha": "c00f7d12f52ba162b10930b965298b6364d4dab3"
+    },
+    {
+      "path": "src/canvaspilot/client.py",
+      "mode": "100644",
+      "sha": "c06d24fa3d6ce9466caa633aff71207f59833bf4"
+    },
+    {
+      "path": "src/canvaspilot/mcp_server.py",
+      "mode": "100644",
+      "sha": "346f6a2653b5027b271e1fe1d69f2b78c7e2635f"
+    },
+    {
+      "path": "src/canvaspilot/offline_demo.py",
+      "mode": "100644",
+      "sha": "9d2cfd260d8db052b8183e3ec4fc9626a5bb2b9a"
+    },
+    {
+      "path": "src/canvaspilot/session_broker.py",
+      "mode": "100644",
+      "sha": "ba23543f62e6be9f611ae06260b91f239206cb23"
+    },
+    {
+      "path": "tests/test_broker_encoding.py",
+      "mode": "100644",
+      "sha": "767484e032273b094fb620a61eb5ed49c9a23af1"
+    },
+    {
+      "path": "tests/test_broker_loopback_bind.py",
+      "mode": "100644",
+      "sha": "fd8971cefe9da9bb8f7832d81c9a26c5725eda86"
+    },
+    {
+      "path": "tests/test_broker_pagination.py",
+      "mode": "100644",
+      "sha": "131bc28eaaee50e931d87bee08554bd1287fbe44"
+    },
+    {
+      "path": "tests/test_broker_readonly.py",
+      "mode": "100644",
+      "sha": "fa609760903148b6d55623e6e3b79f6ffd3395b0"
+    },
+    {
+      "path": "tests/test_bundle_api.py",
+      "mode": "100644",
+      "sha": "d42f4cca2f1f08203d831f098aa1d9f82d3d9f78"
+    },
+    {
+      "path": "tests/test_fixture.py",
+      "mode": "100644",
+      "sha": "fbee86133431fbe2b1eabaa598f8de094fc18b0c"
+    },
+    {
+      "path": "tests/test_module_items.py",
+      "mode": "100644",
+      "sha": "f41fea3b6697a994225c1ecd4a84869951c00779"
+    },
+    {
+      "path": "tests/test_offline_demo.py",
+      "mode": "100644",
+      "sha": "96b0f352f9c8dfe4c268c32ddbf0027506a010e2"
+    },
+    {
+      "path": "tests/test_strip_html.py",
+      "mode": "100644",
+      "sha": "9cac253f89820d36375b364daec9b34bb2d78e25"
+    }
+  ]
+}

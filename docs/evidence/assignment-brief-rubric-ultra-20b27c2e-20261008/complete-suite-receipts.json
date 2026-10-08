@@ -1,0 +1,68 @@
+[
+  {
+    "label": "baseline",
+    "command": [
+      "/workspace/scratch/20b27c2ea29e/workers/runtime-integration/product-discovery/canvaspilot/venv/bin/python",
+      "-m",
+      "pytest",
+      "-q",
+      "-p",
+      "no:cacheprovider",
+      "--capture=sys",
+      "--basetemp=/dev/shm/ultra-20b27c2e-runtime-integration-canvaspilot/temp-baseline/pytest",
+      "--junitxml=/dev/shm/ultra-20b27c2e-runtime-integration-canvaspilot/complete-baseline.xml",
+      "tests"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 7.821,
+    "stop_reason": null,
+    "peak_namespace_allocated_bytes": 724992,
+    "temporary_budget_bytes": 31457280,
+    "guard_threshold_bytes": 8388608,
+    "per_child_file_limit_bytes": 1048576,
+    "output_sha256": "2f045e16f38709b75850fffb72b802f6f252481c63730aeeab72e7f2a389af73",
+    "suite": {
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "tests": "112",
+      "time": "7.289",
+      "timestamp": "2026-10-08T18:37:59.855872+09:00",
+      "hostname": "05aaedaf3e50"
+    }
+  },
+  {
+    "label": "candidate",
+    "command": [
+      "/workspace/scratch/20b27c2ea29e/workers/runtime-integration/product-discovery/canvaspilot/venv/bin/python",
+      "-m",
+      "pytest",
+      "-q",
+      "-p",
+      "no:cacheprovider",
+      "--capture=sys",
+      "--basetemp=/dev/shm/ultra-20b27c2e-runtime-integration-canvaspilot/temp-candidate/pytest",
+      "--junitxml=/dev/shm/ultra-20b27c2e-runtime-integration-canvaspilot/complete-candidate.xml",
+      "tests"
+    ],
+    "exit_code": 0,
+    "duration_seconds": 8.463,
+    "stop_reason": null,
+    "peak_namespace_allocated_bytes": 757760,
+    "temporary_budget_bytes": 31457280,
+    "guard_threshold_bytes": 8388608,
+    "per_child_file_limit_bytes": 1048576,
+    "output_sha256": "4d18171d925ad6a20f710b97e0f83a07ce9e2a3959d91d4308abc91b04c6115b",
+    "suite": {
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "tests": "178",
+      "time": "7.915",
+      "timestamp": "2026-10-08T18:38:07.665085+09:00",
+      "hostname": "05aaedaf3e50"
+    }
+  }
+]

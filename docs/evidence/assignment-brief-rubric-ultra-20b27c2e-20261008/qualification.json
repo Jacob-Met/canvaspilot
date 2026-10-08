@@ -1,0 +1,42 @@
+{
+  "baseline_commit": "5b1780ca4fcdce3d5f997cee401c86806ece822a",
+  "api_sha256": "e35290d0899a88cd5fe03178218b2d7e9f8318cb800a09c18180efef33a1150c",
+  "full_baseline": {
+    "passed": 112,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "exit_code": 0
+  },
+  "full_candidate": {
+    "passed": 178,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "exit_code": 0
+  },
+  "lint": {
+    "command": "ruff check --no-cache src tests scripts",
+    "exit_code": 0,
+    "stdout": "All checks passed!\n"
+  },
+  "receiving_boundaries": [
+    "Real native CanvasClient fixture input",
+    "Actual CLI parsing and JSON output",
+    "Registered MCPServer.call_tool dispatch",
+    "Ephemeral local listeners only in inherited broker tests",
+    "No Canvas account or installed estate-host qualification"
+  ],
+  "independent_review": "pending memory_improvement review; candidate frozen",
+  "coordination_claim": {
+    "repository": "Jacob-Met/hamon",
+    "issue": 140,
+    "comment": 6057160009
+  },
+  "source_paths_changed": [
+    "src/canvaspilot/api.py",
+    "src/canvaspilot/cli.py",
+    "src/canvaspilot/mcp_server.py"
+  ],
+  "existing_unowned_files_preserved": 38
+}
