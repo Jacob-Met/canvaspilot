@@ -1,0 +1,106 @@
+{
+  "repository": "Jacob-Met/canvaspilot",
+  "commit": "b0655cfc6f298c956fcdd27fbba32e3c5609516f",
+  "files": [
+    {
+      "path": ".github/dependabot.yml",
+      "sha": "5ace4600a1f26e6892982f3e2f069ebfab108d87"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha": "ef7bbebe192c0db55dc4467e064ba44805c13446"
+    },
+    {
+      "path": ".gitignore",
+      "sha": "22c76241a0bda223ac64d3c9e25f0ed5c08594ca"
+    },
+    {
+      "path": "LICENSE",
+      "sha": "49422571fde440401be167dfec1cdc46a89f62d2"
+    },
+    {
+      "path": "README.md",
+      "sha": "9d6e7b8d39ddcd0c675cfd761f84fe5db72d97ec"
+    },
+    {
+      "path": "docs/API.md",
+      "sha": "727ce2347ec7925c9722ee8e939e2cb7a0e200f1"
+    },
+    {
+      "path": "docs/evidence/offline-demo-20260909.json",
+      "sha": "ac5f20c872557a09ad6d179f67104c8a1377c032"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha": "76eba6d30696b4f2733539cd47df6e178bc0f585"
+    },
+    {
+      "path": "scripts/inventory_pass.py",
+      "sha": "dda42bf3ac3679bc1936917ab1f981a8c6849811"
+    },
+    {
+      "path": "scripts/readonly_sweep.py",
+      "sha": "53549cf6da463fc2c995bb012c00658d7fef8afe"
+    },
+    {
+      "path": "src/canvaspilot/__init__.py",
+      "sha": "74a7a6087bf81fd7c75c15769b30408039618e0f"
+    },
+    {
+      "path": "src/canvaspilot/api.py",
+      "sha": "a769e521144a578e1069b27482c879fb4b42f78e"
+    },
+    {
+      "path": "src/canvaspilot/bundle.py",
+      "sha": "5be38ec248d1e7efc54de9ee62e2e3be4c71f77c"
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "sha": "cd9717962c9f07d2537b9c45e02e8222ff74e443"
+    },
+    {
+      "path": "src/canvaspilot/client.py",
+      "sha": "813cf09dffb434558cc40fb720ec0d4a7944c75f"
+    },
+    {
+      "path": "src/canvaspilot/mcp_server.py",
+      "sha": "346f6a2653b5027b271e1fe1d69f2b78c7e2635f"
+    },
+    {
+      "path": "src/canvaspilot/offline_demo.py",
+      "sha": "9d2cfd260d8db052b8183e3ec4fc9626a5bb2b9a"
+    },
+    {
+      "path": "src/canvaspilot/session_broker.py",
+      "sha": "ba23543f62e6be9f611ae06260b91f239206cb23"
+    },
+    {
+      "path": "tests/test_broker_loopback_bind.py",
+      "sha": "fd8971cefe9da9bb8f7832d81c9a26c5725eda86"
+    },
+    {
+      "path": "tests/test_broker_pagination.py",
+      "sha": "131bc28eaaee50e931d87bee08554bd1287fbe44"
+    },
+    {
+      "path": "tests/test_broker_readonly.py",
+      "sha": "fa609760903148b6d55623e6e3b79f6ffd3395b0"
+    },
+    {
+      "path": "tests/test_bundle_api.py",
+      "sha": "d42f4cca2f1f08203d831f098aa1d9f82d3d9f78"
+    },
+    {
+      "path": "tests/test_fixture.py",
+      "sha": "fbee86133431fbe2b1eabaa598f8de094fc18b0c"
+    },
+    {
+      "path": "tests/test_offline_demo.py",
+      "sha": "96b0f352f9c8dfe4c268c32ddbf0027506a010e2"
+    },
+    {
+      "path": "tests/test_strip_html.py",
+      "sha": "9cac253f89820d36375b364daec9b34bb2d78e25"
+    }
+  ]
+}
