@@ -269,7 +269,7 @@ class CanvasAPI:
             params.append(("context_codes[]", f"course_{cid}"))
         if start_date:
             params.append(("start_date", start_date))
-        rows = self.client.request("GET", "/api/v1/announcements", params=params)
+        rows = self.client.get_paginated("/api/v1/announcements", params=params)
         if not isinstance(rows, list):
             rows = [rows] if rows else []
         full = str(detail or "compact").lower() in {"full", "verbose", "all"}

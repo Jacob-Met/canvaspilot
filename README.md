@@ -194,6 +194,16 @@ omitted. An inaccessible submission or malformed response is reported as an erro
 so it cannot be mistaken for a submission with no feedback. This operation performs
 two GETs and does not mark comments read, submit work, or change a grade.
 
+### Announcements
+
+`canvas_list_announcements` and `CanvasAPI.list_announcements()` use the existing
+client paginator in both compact and full detail modes. Course and optional start-date
+filters are retained, and results keep Canvas's page order and announcement metadata.
+Compact message text remains limited to 400 characters plus an ellipsis; full detail
+retains the complete stripped text. A failed page request raises an error instead of
+returning the announcements collected before the failure. The selected client's
+existing transport and pagination limits still apply.
+
 ### Module contents
 
 `canvas_list_modules` and `CanvasAPI.list_modules()` retrieve module items even

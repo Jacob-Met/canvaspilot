@@ -1,0 +1,311 @@
+{
+  "repository": "Jacob-Met/canvaspilot",
+  "base": "72357053a1629c349f700030013559fa6d8130f2",
+  "python": "/workspace/scratch/3dab0b9d2ce9/canvaspilot-product/test-env/bin/python",
+  "source_before": {
+    "README.md": {
+      "git_blob": "8d60623cfebc0a844fe167386722dedde5c0cd54",
+      "sha256": "af2e07f66614def8aeae76034ae28ead5068e91ba9f39f13aa22bfb7eee3ff54"
+    },
+    "pyproject.toml": {
+      "git_blob": "76eba6d30696b4f2733539cd47df6e178bc0f585",
+      "sha256": "555ad3c7e338d38ae5feabc06c0c07503f22d9c732a9af153c7706c63d2b3c63"
+    },
+    "scripts/inventory_pass.py": {
+      "git_blob": "dda42bf3ac3679bc1936917ab1f981a8c6849811",
+      "sha256": "b2669747165f47b023f666bbb01657f47427d680ea8ff8cbf35203353ba05d06"
+    },
+    "scripts/readonly_sweep.py": {
+      "git_blob": "c273fdbcc495c5283422bcb7ee94664eb9a32230",
+      "sha256": "30667032bc21a62db780d07bfbf0b48cc6c4aca63e9ea30a3953b78749603b06"
+    },
+    "src/canvaspilot/__init__.py": {
+      "git_blob": "74a7a6087bf81fd7c75c15769b30408039618e0f",
+      "sha256": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5"
+    },
+    "src/canvaspilot/api.py": {
+      "git_blob": "3b9b16b211393f4da4be5a7fde2b49ae81ccf263",
+      "sha256": "4da6a2cec80ce71abc69d9e4a9df80e8e13715258b3a5068a1cccc1563487260"
+    },
+    "src/canvaspilot/bundle.py": {
+      "git_blob": "b347e64bca073e8dc6a721bbeae1ca07f253dd89",
+      "sha256": "05239bf39f2df9e3dc749462fc97d15f3aafa884a6e3593f4d40c5878540ce6f"
+    },
+    "src/canvaspilot/cli.py": {
+      "git_blob": "bdd428e804fea968348f782075b0a44185ceccfc",
+      "sha256": "e7f2b7ca748b75ba8e2080250ee69ce20a6f7f018b9e32874cfb6e4f55247547"
+    },
+    "src/canvaspilot/client.py": {
+      "git_blob": "c06d24fa3d6ce9466caa633aff71207f59833bf4",
+      "sha256": "6368329745216f473204995c101c912d9070fdd310def150bdbee927f9872de4"
+    },
+    "src/canvaspilot/folder_browser.py": {
+      "git_blob": "4b3078ddb00a4a34015710e49fa7b7806adebd23",
+      "sha256": "c6a67229b268c539e5edb581e3320b06229460adc3fbc01d72e4964e31c0348a"
+    },
+    "src/canvaspilot/mcp_server.py": {
+      "git_blob": "6d9dcb8312140f20e164407cb3d5ae99c805af87",
+      "sha256": "ef54176c2611dcd573eb0e03619140b1f8925a9ee780c35f58922fdc6e983335"
+    },
+    "src/canvaspilot/offline_demo.py": {
+      "git_blob": "9d2cfd260d8db052b8183e3ec4fc9626a5bb2b9a",
+      "sha256": "2389f3ccc1b6db5995be0d90e014ea9345e3029aa5546a5b2dcf12c1197e6d4d"
+    },
+    "src/canvaspilot/session_broker.py": {
+      "git_blob": "ba23543f62e6be9f611ae06260b91f239206cb23",
+      "sha256": "2a106130c344aefebb23b078cd93b5d3ca3afd7f5325ae5fac2fb8a7251780cc"
+    },
+    "tests/folder_http_fixture.py": {
+      "git_blob": "454a761a6557daad73234b2f5801839a7db460a2",
+      "sha256": "c7e29a633e66020b9440bbff54ee636889a022fc5a92d4ee2dae193314d72944"
+    },
+    "tests/test_announcements_pagination.py": {
+      "git_blob": "a2c03bfa853867a6a491b7b5b08b67cbc92037be",
+      "sha256": "209ff27f2243deccadb67577e5c335c51e9a3917a095246bd40644ac91b050d2"
+    },
+    "tests/test_broker_encoding.py": {
+      "git_blob": "767484e032273b094fb620a61eb5ed49c9a23af1",
+      "sha256": "00aa672c31fe1985fe6a2ce43d3001879376b1ef2af1a7f18675c7fb27275255"
+    },
+    "tests/test_broker_loopback_bind.py": {
+      "git_blob": "fd8971cefe9da9bb8f7832d81c9a26c5725eda86",
+      "sha256": "c889696ea86f73f0aa00b1b86f623855c92cd6eccef6b7764910e0df99b5c9e5"
+    },
+    "tests/test_broker_pagination.py": {
+      "git_blob": "131bc28eaaee50e931d87bee08554bd1287fbe44",
+      "sha256": "da1824334f12fe1661e7c33404eef550642f366239ff1e6016b6868c38eabf7b"
+    },
+    "tests/test_broker_readonly.py": {
+      "git_blob": "fa609760903148b6d55623e6e3b79f6ffd3395b0",
+      "sha256": "fd9baae5e8f176636eb5377fee753facd87c136416dcc2e3ec252090aad9d6c5"
+    },
+    "tests/test_bundle_api.py": {
+      "git_blob": "d42f4cca2f1f08203d831f098aa1d9f82d3d9f78",
+      "sha256": "a3c200027083582815bcdacf8b19f68a2a7f2b10597e4ae3270c819c54639615"
+    },
+    "tests/test_fixture.py": {
+      "git_blob": "fbee86133431fbe2b1eabaa598f8de094fc18b0c",
+      "sha256": "3f53176abf7ee425b1ff8d62a0e4b7f84d2e47e0b0ff9f03adae152301bc23be"
+    },
+    "tests/test_folder_browser.py": {
+      "git_blob": "f2aacab375da0976bcbbb3d50f0231a1db54eeb7",
+      "sha256": "4068912fe7d32953c576b1278c28c47c3697592e6a194a230400be13b9cae95c"
+    },
+    "tests/test_module_items.py": {
+      "git_blob": "f41fea3b6697a994225c1ecd4a84869951c00779",
+      "sha256": "c66fa26999b5c75a6628eb373985f619486c15f9ea2ee2b2885d133877b32239"
+    },
+    "tests/test_offline_demo.py": {
+      "git_blob": "96b0f352f9c8dfe4c268c32ddbf0027506a010e2",
+      "sha256": "ddc7a133e76f987decb5774b00e6d6c6b8973d5895d6c4a4ae5ea6d6e6bb1154"
+    },
+    "tests/test_strip_html.py": {
+      "git_blob": "9cac253f89820d36375b364daec9b34bb2d78e25",
+      "sha256": "3445579d5d8e0863e3331fd8fe54de7a45bc88db5546186eb60dc70865dce915"
+    },
+    "tests/test_sync_summary.py": {
+      "git_blob": "f15e781cd0580324c668bec4181ed238b9cacb29",
+      "sha256": "5e40e9207a53d423a139db7de9d43898cf95e26877f351baf15bdc129206a424"
+    }
+  },
+  "commands": [
+    {
+      "name": "focused",
+      "command": [
+        "/workspace/scratch/3dab0b9d2ce9/canvaspilot-product/test-env/bin/python",
+        "-B",
+        "-m",
+        "pytest",
+        "tests/test_announcements_pagination.py",
+        "-p",
+        "no:cacheprovider",
+        "-q"
+      ],
+      "cwd": "/workspace/scratch/0ee86eaeaf8d/coordination/canvas-announcements/candidate",
+      "exit": 0,
+      "seconds": 3.013,
+      "log": "focused.log",
+      "log_sha256": "5ae3a0fe93252ba215702f5e93dfb24553615662bc406c2970fbb9670308546a",
+      "tail": [
+        ".................                                                        [100%]",
+        "17 passed in 1.87s"
+      ]
+    },
+    {
+      "name": "full",
+      "command": [
+        "/workspace/scratch/3dab0b9d2ce9/canvaspilot-product/test-env/bin/python",
+        "-B",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp",
+        "/dev/canvas-announcements-19854cyo/pytest",
+        "-q"
+      ],
+      "cwd": "/workspace/scratch/0ee86eaeaf8d/coordination/canvas-announcements/candidate",
+      "exit": 0,
+      "seconds": 29.73,
+      "log": "full.log",
+      "log_sha256": "9d82d34f5d5cfb4cdbf07ecff4fc3afad0f2ca8edcfbf9f99bbe6b1ff04ad8c6",
+      "tail": [
+        "........................................................................ [ 34%]",
+        "........................................................................ [ 68%]",
+        ".................................................................        [100%]",
+        "209 passed in 28.67s"
+      ]
+    },
+    {
+      "name": "ruff",
+      "command": [
+        "/workspace/scratch/3dab0b9d2ce9/canvaspilot-product/test-env/bin/python",
+        "-B",
+        "-m",
+        "ruff",
+        "check",
+        "src",
+        "tests",
+        "scripts",
+        "--no-cache"
+      ],
+      "cwd": "/workspace/scratch/0ee86eaeaf8d/coordination/canvas-announcements/candidate",
+      "exit": 1,
+      "seconds": 0.028,
+      "log": "ruff.log",
+      "log_sha256": "516594d73656f6f29f1b56e339b5668d0b4817fa46120f1b3f093a6b4f6f6e6b",
+      "tail": [
+        "  File \"/workspace/scratch/3dab0b9d2ce9/canvaspilot-product/test-env/lib/python3.12/site-packages/ruff/_find_ruff.py\", line 53, in find_ruff_bin",
+        "    raise RuffNotFound(",
+        "ruff._find_ruff.RuffNotFound: Could not find the ruff binary in any of the following locations:",
+        " - /workspace/scratch/3dab0b9d2ce9/canvaspilot-product/test-env/bin",
+        " - /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin",
+        " - /workspace/scratch/3dab0b9d2ce9/canvaspilot-product/test-env/lib/python3.12/site-packages/bin",
+        " - /root/.local/bin",
+        ""
+      ]
+    }
+  ],
+  "source_after": {
+    "README.md": {
+      "git_blob": "8d60623cfebc0a844fe167386722dedde5c0cd54",
+      "sha256": "af2e07f66614def8aeae76034ae28ead5068e91ba9f39f13aa22bfb7eee3ff54"
+    },
+    "pyproject.toml": {
+      "git_blob": "76eba6d30696b4f2733539cd47df6e178bc0f585",
+      "sha256": "555ad3c7e338d38ae5feabc06c0c07503f22d9c732a9af153c7706c63d2b3c63"
+    },
+    "scripts/inventory_pass.py": {
+      "git_blob": "dda42bf3ac3679bc1936917ab1f981a8c6849811",
+      "sha256": "b2669747165f47b023f666bbb01657f47427d680ea8ff8cbf35203353ba05d06"
+    },
+    "scripts/readonly_sweep.py": {
+      "git_blob": "c273fdbcc495c5283422bcb7ee94664eb9a32230",
+      "sha256": "30667032bc21a62db780d07bfbf0b48cc6c4aca63e9ea30a3953b78749603b06"
+    },
+    "src/canvaspilot/__init__.py": {
+      "git_blob": "74a7a6087bf81fd7c75c15769b30408039618e0f",
+      "sha256": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5"
+    },
+    "src/canvaspilot/api.py": {
+      "git_blob": "3b9b16b211393f4da4be5a7fde2b49ae81ccf263",
+      "sha256": "4da6a2cec80ce71abc69d9e4a9df80e8e13715258b3a5068a1cccc1563487260"
+    },
+    "src/canvaspilot/bundle.py": {
+      "git_blob": "b347e64bca073e8dc6a721bbeae1ca07f253dd89",
+      "sha256": "05239bf39f2df9e3dc749462fc97d15f3aafa884a6e3593f4d40c5878540ce6f"
+    },
+    "src/canvaspilot/cli.py": {
+      "git_blob": "bdd428e804fea968348f782075b0a44185ceccfc",
+      "sha256": "e7f2b7ca748b75ba8e2080250ee69ce20a6f7f018b9e32874cfb6e4f55247547"
+    },
+    "src/canvaspilot/client.py": {
+      "git_blob": "c06d24fa3d6ce9466caa633aff71207f59833bf4",
+      "sha256": "6368329745216f473204995c101c912d9070fdd310def150bdbee927f9872de4"
+    },
+    "src/canvaspilot/folder_browser.py": {
+      "git_blob": "4b3078ddb00a4a34015710e49fa7b7806adebd23",
+      "sha256": "c6a67229b268c539e5edb581e3320b06229460adc3fbc01d72e4964e31c0348a"
+    },
+    "src/canvaspilot/mcp_server.py": {
+      "git_blob": "6d9dcb8312140f20e164407cb3d5ae99c805af87",
+      "sha256": "ef54176c2611dcd573eb0e03619140b1f8925a9ee780c35f58922fdc6e983335"
+    },
+    "src/canvaspilot/offline_demo.py": {
+      "git_blob": "9d2cfd260d8db052b8183e3ec4fc9626a5bb2b9a",
+      "sha256": "2389f3ccc1b6db5995be0d90e014ea9345e3029aa5546a5b2dcf12c1197e6d4d"
+    },
+    "src/canvaspilot/session_broker.py": {
+      "git_blob": "ba23543f62e6be9f611ae06260b91f239206cb23",
+      "sha256": "2a106130c344aefebb23b078cd93b5d3ca3afd7f5325ae5fac2fb8a7251780cc"
+    },
+    "tests/folder_http_fixture.py": {
+      "git_blob": "454a761a6557daad73234b2f5801839a7db460a2",
+      "sha256": "c7e29a633e66020b9440bbff54ee636889a022fc5a92d4ee2dae193314d72944"
+    },
+    "tests/test_announcements_pagination.py": {
+      "git_blob": "a2c03bfa853867a6a491b7b5b08b67cbc92037be",
+      "sha256": "209ff27f2243deccadb67577e5c335c51e9a3917a095246bd40644ac91b050d2"
+    },
+    "tests/test_broker_encoding.py": {
+      "git_blob": "767484e032273b094fb620a61eb5ed49c9a23af1",
+      "sha256": "00aa672c31fe1985fe6a2ce43d3001879376b1ef2af1a7f18675c7fb27275255"
+    },
+    "tests/test_broker_loopback_bind.py": {
+      "git_blob": "fd8971cefe9da9bb8f7832d81c9a26c5725eda86",
+      "sha256": "c889696ea86f73f0aa00b1b86f623855c92cd6eccef6b7764910e0df99b5c9e5"
+    },
+    "tests/test_broker_pagination.py": {
+      "git_blob": "131bc28eaaee50e931d87bee08554bd1287fbe44",
+      "sha256": "da1824334f12fe1661e7c33404eef550642f366239ff1e6016b6868c38eabf7b"
+    },
+    "tests/test_broker_readonly.py": {
+      "git_blob": "fa609760903148b6d55623e6e3b79f6ffd3395b0",
+      "sha256": "fd9baae5e8f176636eb5377fee753facd87c136416dcc2e3ec252090aad9d6c5"
+    },
+    "tests/test_bundle_api.py": {
+      "git_blob": "d42f4cca2f1f08203d831f098aa1d9f82d3d9f78",
+      "sha256": "a3c200027083582815bcdacf8b19f68a2a7f2b10597e4ae3270c819c54639615"
+    },
+    "tests/test_fixture.py": {
+      "git_blob": "fbee86133431fbe2b1eabaa598f8de094fc18b0c",
+      "sha256": "3f53176abf7ee425b1ff8d62a0e4b7f84d2e47e0b0ff9f03adae152301bc23be"
+    },
+    "tests/test_folder_browser.py": {
+      "git_blob": "f2aacab375da0976bcbbb3d50f0231a1db54eeb7",
+      "sha256": "4068912fe7d32953c576b1278c28c47c3697592e6a194a230400be13b9cae95c"
+    },
+    "tests/test_module_items.py": {
+      "git_blob": "f41fea3b6697a994225c1ecd4a84869951c00779",
+      "sha256": "c66fa26999b5c75a6628eb373985f619486c15f9ea2ee2b2885d133877b32239"
+    },
+    "tests/test_offline_demo.py": {
+      "git_blob": "96b0f352f9c8dfe4c268c32ddbf0027506a010e2",
+      "sha256": "ddc7a133e76f987decb5774b00e6d6c6b8973d5895d6c4a4ae5ea6d6e6bb1154"
+    },
+    "tests/test_strip_html.py": {
+      "git_blob": "9cac253f89820d36375b364daec9b34bb2d78e25",
+      "sha256": "3445579d5d8e0863e3331fd8fe54de7a45bc88db5546186eb60dc70865dce915"
+    },
+    "tests/test_sync_summary.py": {
+      "git_blob": "f15e781cd0580324c668bec4181ed238b9cacb29",
+      "sha256": "5e40e9207a53d423a139db7de9d43898cf95e26877f351baf15bdc129206a424"
+    }
+  },
+  "source_unchanged_by_validation": true,
+  "behavior_gate_passed": true,
+  "focused_cases": 17,
+  "full_cases": 209,
+  "inherited_cases": 192,
+  "local_lint": {
+    "status": "environment_unavailable_before_analysis",
+    "reason": "Ruff 0.16.10 package metadata and Python wrapper are installed, but no executable survives in the shared runtime; the wrapper raises RuffNotFound before analysis. No source-level lint finding was produced.",
+    "remaining_gate": "Existing repository exact-head hosted Ruff CI after root publication."
+  },
+  "scope": "25 exact current-main source/test/script/build inputs hydrated; 23 inherited inputs unchanged, one API call and README span changed, one dedicated test file added.",
+  "limits": [
+    "No live Canvas account or API operation. HTTP tests use httpx.MockTransport; fixture tests use the existing MCP tool wrapper.",
+    "Shared paginator client/broker behavior and its 40-page cap are unchanged; this does not claim unbounded completeness or adopt pending client/broker contributions.",
+    "All source bytes remained unchanged throughout native validation; shared runtime was read-only."
+  ]
+}
