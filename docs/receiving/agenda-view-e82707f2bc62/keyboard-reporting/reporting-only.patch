@@ -1,0 +1,17 @@
+--- a/scripts/receive_agenda_view.mjs
++++ b/scripts/receive_agenda_view.mjs
+@@ -236,13 +236,13 @@
+     focus.push(await view.evaluate(`(() => {const e=document.activeElement,s=getComputedStyle(e);return {tag:e.tagName,id:e.id,text:e.textContent.trim().slice(0,80),outline:s.outlineStyle,width:parseFloat(s.outlineWidth)};})()`));
+     if (focus.at(-1).text === 'Reset view') break;
+   }
++  receipt.keyboard = focus;
+   // Native date widgets may expose multiple keyboard segments inside one input.
+   const stops = focus.filter((entry, i) => !i || entry.id !== focus[i - 1].id || entry.text !== focus[i - 1].text);
+   assert.equal(stops[0].text, 'Skip to agenda');
+   assert.deepEqual(stops.slice(1,6).map(e => e.id), ['download-native', 'print-agenda', 'course-filter', 'date-filter', 'search-filter']);
+   assert.equal(stops[6].text, 'Reset view'); assert.equal(stops.length, 7);
+   assert.ok(focus.every(e => e.width >= 2 && e.outline !== 'none'));
+-  receipt.keyboard = focus;
+   await view.key('Tab', 'Tab', 9);
+   assert.equal(await view.evaluate('document.activeElement.tagName'), 'SUMMARY');
+   await view.key('Enter', 'Enter', 13);
