@@ -12,7 +12,6 @@ from canvaspilot import mcp_server
 from canvaspilot.api import CanvasAPI
 from canvaspilot.client import CanvasAuthError, CanvasClient
 
-
 BASE = "https://canvas.invalid"
 ROUTE = "/api/v1/announcements"
 NEXT = BASE + ROUTE + "?cursor=after%2B50%2Fkeep%3D&per_page=11&view=first&view=second"
