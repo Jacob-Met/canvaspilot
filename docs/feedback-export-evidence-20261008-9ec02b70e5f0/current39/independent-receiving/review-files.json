@@ -1,0 +1,72 @@
+{
+  "file_count": 12,
+  "files": [
+    {
+      "bytes": 5997,
+      "path": "README.md",
+      "sha256": "9ba7a8010f5dbb72405f3406bed745c7bc7e18f2f18a26b452e16e22cb2a9b57"
+    },
+    {
+      "bytes": 1600,
+      "path": "custody-bound-failure.json",
+      "sha256": "8683fb938cd582687090967b28d3e5b28f9d5f7a478c5e98d83bca8def975fe3"
+    },
+    {
+      "bytes": 5098,
+      "path": "native-evidence-index.json",
+      "sha256": "896443c9744e09f50d5c985044cbe32a2163c67e35e58400bd54af8af8b4d1bc"
+    },
+    {
+      "bytes": 72085,
+      "path": "native-evidence.tar.gz.base64",
+      "sha256": "b8e26364b129d029c393fddec8a231b3ce8dc26c9d10632b8424c5ea497b5a61"
+    },
+    {
+      "bytes": 2130,
+      "path": "native-results.json",
+      "sha256": "f6391e07da9a2b123aa0f18b6fd7916664290d7fe2144fb8d2879d9a58b52892"
+    },
+    {
+      "bytes": 3307,
+      "path": "published-recall-reclaim.json",
+      "sha256": "31c15180ae5e6968a9f7d1e2c13975833ec8a694dd745d78677c35c282500b5b"
+    },
+    {
+      "bytes": 16829,
+      "path": "receiver-error-evidence.tar.gz.base64",
+      "sha256": "451bd24c3e4636767ff699e7435ea5b32f6f6f8c981fe4ff582e504dcaa5661c"
+    },
+    {
+      "bytes": 2221,
+      "path": "receiver-error-index.json",
+      "sha256": "771ed5a2e1c61d30e0001d4d1b08aa558160b731f3d79b9cef73cead084b6425"
+    },
+    {
+      "bytes": 1918,
+      "path": "receiver-error-results.json",
+      "sha256": "0b5a8c9633cd692ed0da06ccbe983901bfbe338030042083cbf0380f9a46e61b"
+    },
+    {
+      "bytes": 3027,
+      "path": "unpack_receiving.py",
+      "sha256": "ac4cdf9aee757f6a289605be77900a4ab44b0af58bf9f13775911c746d5d0097"
+    },
+    {
+      "bytes": 12419,
+      "path": "verify_canvas39_composition.py",
+      "sha256": "69c7da24a695e9815683b8ae4a46924e0754ae6c7c8f6808b3b50b9895b5ab53"
+    },
+    {
+      "bytes": 12429,
+      "path": "verify_canvas39_composition_fixed.py",
+      "sha256": "20227d258e5d0d2bdbdf6d98c253ef2619b0e7ce206500467f5dd50f9b451819"
+    }
+  ],
+  "parent": "39d835c8becb04d81b65c90d1491d2d3a2727ffe",
+  "purpose": "Bounded CanvasPilot current39 native export and JSON receiving; no implementation contribution",
+  "schema": "independent-review-allowlist.v1",
+  "source_manifest_sha256": "560196c2439531be7d988b10b7a9f5a41a2e3d207b3336649410f810c50d659b",
+  "source_root": "/dev/shm/estate-9ec02b70e5f0/memory/canvas39-review",
+  "status": "qualified normal and optimized; earlier receiver/storage failures retained separately",
+  "total_bytes": 139060
+}

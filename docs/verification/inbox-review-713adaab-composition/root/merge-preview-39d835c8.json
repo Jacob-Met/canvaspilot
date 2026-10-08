@@ -1,0 +1,22 @@
+{
+  "main": "39d835c8becb04d81b65c90d1491d2d3a2727ffe",
+  "previous_received_main": "0d1898544a90079e2dcc7ceb3fa4bc6bca88a2bc",
+  "head": "6b94efe9ff1f117fe4c2f1dfca595003a283d988",
+  "fetch_exit": 0,
+  "merge_tree_exit": 0,
+  "merge_tree_stdout": "428308de0eea2eeaf37772c5892c939a09d553d7\n",
+  "merge_tree_stderr": "",
+  "upstream_runtime_changes": [
+    "M\tREADME.md",
+    "M\tsrc/canvaspilot/api.py",
+    "M\tsrc/canvaspilot/bundle.py",
+    "M\tsrc/canvaspilot/cli.py",
+    "M\tsrc/canvaspilot/mcp_server.py",
+    "A\tsrc/canvaspilot/submission_history.py",
+    "A\ttests/test_submission_history.py",
+    "A\ttests/test_submission_history_process.py"
+  ],
+  "tree": "428308de0eea2eeaf37772c5892c939a09d553d7",
+  "changed_paths": 164,
+  "only_owned_paths_differ_from_current_main": true
+}

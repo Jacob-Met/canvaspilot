@@ -1,0 +1,16 @@
+{
+  "execution": {
+    "chunk_id": "d0db4b",
+    "wall_time_seconds": 0.000020812,
+    "exit_code": 1,
+    "original_token_count": 36,
+    "output": "Traceback (most recent call last):\n  File \"<string>\", line 34, in <module>\nValueError: No unique receiving anchor for src/canvaspilot/cli.py\n"
+  },
+  "transport": {
+    "native_execution_started": false,
+    "error": "CreateProcess rejected: exec-server transport disconnected; failed to resume exec-server session; executor key changed during session recovery",
+    "stage": "process creation for source preparation only"
+  },
+  "native_execution_started": false,
+  "reason": "The incoming discussion branch interrupts the original four-line following anchor. The successor selects a unique complete-line anchor; exact qualified insertions and complete incoming bytes are preserved."
+}

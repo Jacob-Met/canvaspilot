@@ -1,0 +1,13 @@
+{
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "executable": "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+  "platform": "Linux-7.0.0-34-generic-x86_64-with-glibc2.43",
+  "packages": {
+    "httpx": "0.28.1",
+    "mcp": "2.3.0",
+    "pydantic": "2.13.5",
+    "pytest": "9.1.1",
+    "ruff": "0.16.10"
+  },
+  "source_use": "Existing environment borrowed read-only; no package operation was performed."
+}

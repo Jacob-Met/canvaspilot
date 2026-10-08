@@ -1,0 +1,104 @@
+{
+  "kind": "publication-source-correspondence",
+  "contributor": "estate-continuity-3dcb83a1",
+  "native_receiving_base": "a5ce672e5b3580c1f52e13c49eefee830f11346c",
+  "submission_base": "c744bb5b79f23457f4dd9070f762100bc6ad91ad",
+  "submission_base_tree": "abec51ddc40ab44d9e405857469736550d08b4f2",
+  "claim": "https://github.com/Jacob-Met/hamon/issues/140#issuecomment-6062294254",
+  "scope": "Retain the integrated inbox and discussion owners. Add the identical accepted quiz parser/dispatch and usage blocks. No repeated native run is claimed for this later source composition.",
+  "source_pins": [
+    {
+      "path": "src/canvaspilot/__init__.py",
+      "native_receiving_parent_blob": "74a7a6087bf81fd7c75c15769b30408039618e0f",
+      "submission_parent_blob": "74a7a6087bf81fd7c75c15769b30408039618e0f",
+      "submitted_blob": "74a7a6087bf81fd7c75c15769b30408039618e0f"
+    },
+    {
+      "path": "src/canvaspilot/api.py",
+      "native_receiving_parent_blob": "73e47f1354fc5bab44e9f030c5bf5d29c12d065f",
+      "submission_parent_blob": "258efbfc5eb8c08274763af01b10189d9f024e17",
+      "submitted_blob": "258efbfc5eb8c08274763af01b10189d9f024e17"
+    },
+    {
+      "path": "src/canvaspilot/assignment_submission.py",
+      "native_receiving_parent_blob": "95b1f19927e4eecf99fc852325737c3cfe86cd0d",
+      "submission_parent_blob": "95b1f19927e4eecf99fc852325737c3cfe86cd0d",
+      "submitted_blob": "95b1f19927e4eecf99fc852325737c3cfe86cd0d"
+    },
+    {
+      "path": "src/canvaspilot/bundle.py",
+      "native_receiving_parent_blob": "23badab9d8ea96b4ed30fb2b5f32f773c910c7f9",
+      "submission_parent_blob": "cebeaa98440d745bb8f6bc3ae3ddf0d6cc1b83a8",
+      "submitted_blob": "cebeaa98440d745bb8f6bc3ae3ddf0d6cc1b83a8"
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "native_receiving_parent_blob": "545ec52f31b694a351e9a41a68e52a34c49db532",
+      "submission_parent_blob": "e29baec3a184006d90f70c879880ceb4d1de2a3c",
+      "submitted_blob": "cfb2e4e184e7fe5d8e9593e36fdeadd089147f98"
+    },
+    {
+      "path": "src/canvaspilot/client.py",
+      "native_receiving_parent_blob": "1db4b1135305f7e410025ae7937f9a6cd349f020",
+      "submission_parent_blob": "1db4b1135305f7e410025ae7937f9a6cd349f020",
+      "submitted_blob": "1db4b1135305f7e410025ae7937f9a6cd349f020"
+    },
+    {
+      "path": "src/canvaspilot/discussion_thread.py",
+      "native_receiving_parent_blob": null,
+      "submission_parent_blob": "2ed658fcf5cee996a02115742935716f1d039e25",
+      "submitted_blob": "2ed658fcf5cee996a02115742935716f1d039e25"
+    },
+    {
+      "path": "src/canvaspilot/feedback.py",
+      "native_receiving_parent_blob": "ec996f421a851d699a9ac7cb1f2a486f9ff7c4ea",
+      "submission_parent_blob": "ec996f421a851d699a9ac7cb1f2a486f9ff7c4ea",
+      "submitted_blob": "ec996f421a851d699a9ac7cb1f2a486f9ff7c4ea"
+    },
+    {
+      "path": "src/canvaspilot/mcp_server.py",
+      "native_receiving_parent_blob": "a35800c496fcab6f28dd11fca0fedfc944be46c7",
+      "submission_parent_blob": "2a29f82105b18ca8e95342510811e1590442de50",
+      "submitted_blob": "2a29f82105b18ca8e95342510811e1590442de50"
+    },
+    {
+      "path": "pyproject.toml",
+      "native_receiving_parent_blob": "76eba6d30696b4f2733539cd47df6e178bc0f585",
+      "submission_parent_blob": "76eba6d30696b4f2733539cd47df6e178bc0f585",
+      "submitted_blob": "76eba6d30696b4f2733539cd47df6e178bc0f585"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "native_receiving_parent_blob": "ef7bbebe192c0db55dc4467e064ba44805c13446",
+      "submission_parent_blob": "ef7bbebe192c0db55dc4467e064ba44805c13446",
+      "submitted_blob": "ef7bbebe192c0db55dc4467e064ba44805c13446"
+    },
+    {
+      "path": "README.md",
+      "native_receiving_parent_blob": "4a61c3a5c4b219ec3aaa6cf3b64f19338856ca1f",
+      "submission_parent_blob": "c193b910f10d8a17ebab5a0e4f4fcde4588578c1",
+      "submitted_blob": "df7e92f6f19acdd18b6bb1a030981e6ca4668fb8"
+    }
+  ],
+  "checks": {
+    "cli_stripped_to_current_parent_exact": true,
+    "readme_stripped_to_current_parent_exact": true,
+    "added_cli_physical_lines": 30,
+    "original_accepted_parser_block_exact": true,
+    "original_accepted_dispatch_block_exact": true,
+    "api_list_quizzes_body_exact": true,
+    "api_get_quiz_body_exact": true,
+    "mcp_canvas_list_quizzes_body_exact": true,
+    "mcp_canvas_get_quiz_body_exact": true,
+    "client_exact": true,
+    "unchanged_pytest_configuration": true,
+    "unchanged_workflow": true,
+    "no_new_AGENTS_file": true
+  },
+  "owned_blocks": {
+    "cli_parser": "    quizzes = sub.add_parser(\"quizzes\", help=\"List classic quizzes for a course\")\n    add_common(quizzes)\n    quizzes.add_argument(\"course_id\", type=_positive_int, help=\"Positive numeric Canvas course ID\")\n\n    quiz = sub.add_parser(\"quiz\", help=\"Read one classic quiz without starting an attempt\")\n    add_common(quiz)\n    quiz.add_argument(\"course_id\", type=_positive_int, help=\"Positive numeric Canvas course ID\")\n    quiz.add_argument(\"quiz_id\", type=_positive_int, help=\"Positive numeric Canvas quiz ID\")\n\n",
+    "cli_dispatch": "        elif args.cmd in {\"quizzes\", \"quiz\"}:\n            import httpx\n\n            from canvaspilot.client import CanvasAuthError, CanvasPaginationError\n\n            http_log = logging.getLogger(\"httpx\")\n            previous_level = http_log.level\n            http_log.setLevel(max(http_log.getEffectiveLevel(), logging.WARNING))\n            try:\n                if args.cmd == \"quizzes\":\n                    result = api.list_quizzes(args.course_id)\n                else:\n                    result = api.get_quiz(args.course_id, args.quiz_id)\n            except (CanvasAuthError, CanvasPaginationError, httpx.HTTPError, ValueError) as error:\n                print(json.dumps({\n                    \"ok\": False, \"error\": type(error).__name__, \"message\": str(error),\n                }), file=sys.stderr)\n                raise SystemExit(1) from None\n            finally:\n                http_log.setLevel(previous_level)\n            print(json.dumps(result, indent=2, default=str))\n",
+    "readme_usage": "### Read classic quizzes from the terminal\n\nList a course’s classic quizzes, then inspect one returned quiz ID:\n\n```bash\ncanvaspilot quizzes 42\ncanvaspilot quiz 42 9\n```\n\nBoth commands accept the existing `--base-url`, `--profile` and `--token` options.\nCourse and quiz IDs must be positive numeric Canvas IDs. `quizzes` uses the existing\npaginated reader and compact list fields; `quiz` returns the original detail JSON,\nincluding any supplied timing, attempt-policy, lock and differentiated-date fields.\nNull dates and false/zero values keep their original meaning. A failed read exits\nnonzero with a JSON error on stderr and no partial success output.\n\nThese commands call only the existing [classic-quiz GET endpoints](https://developerdocs.instructure.com/services/canvas/resources/quizzes).\nThey do not start or complete an attempt, read questions, or change submissions.\nNew Quizzes and LTI assessments retain the existing separate support boundary.\n\n"
+  },
+  "qualification": "The frozen independent broker receipt remains on a5ce672e / CLI 9c067193. Current submission has direct exact-source correspondence, followed by a separate required final-head hosted CI gate."
+}

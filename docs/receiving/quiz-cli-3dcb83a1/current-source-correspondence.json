@@ -1,0 +1,82 @@
+{
+  "at": "2026-10-08T14:48:59.470769+00:00",
+  "current_main": "a5ce672e5b3580c1f52e13c49eefee830f11346c",
+  "current_tree": "0661a7005e577864cb87bc41e0e715409c92ee76",
+  "source": "/home/jacob/canvaspilot-quiz-cli-3dcb83a1/current-source",
+  "baseline": "/home/jacob/canvaspilot-quiz-cli-3dcb83a1/current-baseline",
+  "all_current_cli_text_exact_after_removing_two_owned_blocks": true,
+  "owned_blocks_identical_to_first_candidate": true,
+  "api_methods_exact_to_original": {
+    "list_quizzes": true,
+    "get_quiz": true
+  },
+  "mcp_wrappers_exact_to_original": {
+    "canvas_list_quizzes": true,
+    "canvas_get_quiz": true
+  },
+  "client_exact": true,
+  "inherited_change": "Owning inbox PR56 CLI/API/MCP/README, all source bytes retained from current main",
+  "tests": "Final test source unchanged. No repeated author execution was used for this source composition.",
+  "files": {
+    ".github/workflows/ci.yml": {
+      "bytes": 708,
+      "sha256": "62f17b95af03d1ff8a172f168282b405fefcab3a5f1094c70e618b44920bd0ff",
+      "git_blob": "ef7bbebe192c0db55dc4467e064ba44805c13446"
+    },
+    "README.md": {
+      "bytes": 21457,
+      "sha256": "36bd0f44cdc909a8fece7568ac4fc3dc6f9e9617251fa507f5683ef4fcfcca1f",
+      "git_blob": "91ac02d2b5d6ca1d15f3a22c6c031bf80a395488"
+    },
+    "pyproject.toml": {
+      "bytes": 1353,
+      "sha256": "555ad3c7e338d38ae5feabc06c0c07503f22d9c732a9af153c7706c63d2b3c63",
+      "git_blob": "76eba6d30696b4f2733539cd47df6e178bc0f585"
+    },
+    "src/canvaspilot/__init__.py": {
+      "bytes": 561,
+      "sha256": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5",
+      "git_blob": "74a7a6087bf81fd7c75c15769b30408039618e0f"
+    },
+    "src/canvaspilot/api.py": {
+      "bytes": 28718,
+      "sha256": "98859c82fd49d52040e371883c15708a4c86e83becc138bebe6e2ea5c56daf16",
+      "git_blob": "73e47f1354fc5bab44e9f030c5bf5d29c12d065f"
+    },
+    "src/canvaspilot/assignment_submission.py": {
+      "bytes": 1296,
+      "sha256": "52fc732660b8844a2ee0801931a363f20db15b5309d148d01e3b618be487133d",
+      "git_blob": "95b1f19927e4eecf99fc852325737c3cfe86cd0d"
+    },
+    "src/canvaspilot/bundle.py": {
+      "bytes": 2674,
+      "sha256": "7c592252e190542706b779d48cdb62fc9b305be168bc011249fc42cc60f7d6ef",
+      "git_blob": "23badab9d8ea96b4ed30fb2b5f32f773c910c7f9"
+    },
+    "src/canvaspilot/cli.py": {
+      "bytes": 16967,
+      "sha256": "2c951207cf42ca0ddee33629c84eb561fab64ad1f62d552a059a6637b6c612fe",
+      "git_blob": "9c0671937280e6830a58ea96b95bad2f25ea5a82"
+    },
+    "src/canvaspilot/client.py": {
+      "bytes": 18934,
+      "sha256": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797",
+      "git_blob": "1db4b1135305f7e410025ae7937f9a6cd349f020"
+    },
+    "src/canvaspilot/feedback.py": {
+      "bytes": 3900,
+      "sha256": "55454598effea598474a21f67e36d5bc5bea84aaefeefc18e4d8c49804ab9869",
+      "git_blob": "ec996f421a851d699a9ac7cb1f2a486f9ff7c4ea"
+    },
+    "src/canvaspilot/mcp_server.py": {
+      "bytes": 13965,
+      "sha256": "9140cb3dd86f0fd71541bf5428eef8ef075df14224b8da63b63b4a216978c9b3",
+      "git_blob": "a35800c496fcab6f28dd11fca0fedfc944be46c7"
+    },
+    "tests/test_quiz_cli.py": {
+      "bytes": 8925,
+      "sha256": "43c55180e962c2f966e6a9a6b17d7ac7126180b7ebf72edb9ccaba43f8604ad2",
+      "git_blob": "527c57f3d66e4e167c96bbc51d1fcc8bd7e56fcf"
+    }
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "receiving_parent": "17d63dc43fde30efd8d3454ef09b1d1a8c5bcd0d",
+  "receiving_tree": "9818539d6444ef43a72d6540c2ba3817c758d9c8",
+  "qualified_parent": "39d835c8becb04d81b65c90d1491d2d3a2727ffe",
+  "insertions": {
+    "README.md": {
+      "prior_qualified": {
+        "bytes": 21379,
+        "sha256": "6676e5dc15edc56a254eff3ff843de19c55f4a46f45ebe5051351519f1f57eb4",
+        "git_blob": "89d92db5fe99b2beeeaa0d3efaabe83765db96a0"
+      },
+      "incoming": {
+        "bytes": 21664,
+        "sha256": "d956c47bc8446dd44d4fb704d31290e650f31d5b63d01db8704b0d4b024c2e37",
+        "git_blob": "0917519e0302a4fca25e44fe9e104c3ca398d9c8"
+      },
+      "candidate": {
+        "bytes": 23002,
+        "sha256": "67120d616fcc0ab174315d8a8773727ce6643b8479d7d860bcada0a357734dc3",
+        "git_blob": "3ec8d4cae1ee61a61fbc0152113681b5cfc6c869"
+      },
+      "inverse_exact": true,
+      "blocks": [
+        {
+          "block": "### Save a readable feedback sheet\n\n```bash\ncanvaspilot export-feedback 41 902 --out feedback.html\n```\n\nSave the selected assignment's self-submission feedback as one HTML file you can\nopen locally or print. The sheet keeps reported grades beside their attempt\ncontext, including a prominent warning when grading preceded a resubmission.\nRubric criteria retain their returned order and assessments; unmatched entries\nstay separate. Comments keep supplied author names, timestamps and literal text,\nincluding media-only entries. Attachment names and media identifiers are listed\nwhen returned; their contents remain in Canvas.\n\nThe export uses the same reader and authentication as `feedback`. It distinguishes\nzero, unknown values and explicitly empty feedback. Rubric point visibility and\nrubric total visibility are applied separately, without changing the separately\nreported submission grade. It calculates no grade or rubric total.\n\nChoose a new output path: existing files, directories and symlinks are protected,\nincluding a destination created while the feedback is being read. The completed\nfile contains its own styling, no scripts or automatic network resources, and\ndoes not refresh. See [the feedback export guide](docs/feedback-export.md) for the\nfile's contents, exact display rules, local-file behavior and Python usage.\n\n",
+          "pin": {
+            "bytes": 1338,
+            "sha256": "97f7449c31197c1f5b409f823f4639d864b29810552813d1f86f7c527c6da70c",
+            "git_blob": "1e931328edd6ccd4bdbdc60aba33f32b1a34c343"
+          },
+          "following_anchor_sha256": "d6407c60c7634b6459daae54035517b093f184ba8095639ee2af4986fe0186f9",
+          "following_anchor_lines": 1
+        }
+      ]
+    },
+    "src/canvaspilot/cli.py": {
+      "prior_qualified": {
+        "bytes": 15593,
+        "sha256": "53ab0e1587154b86e3a186765506b42673dc085e24e19b54de0aaf42b9f80b91",
+        "git_blob": "f915d544fb8b31a6eb1dcf573bf36ee510aedcf9"
+      },
+      "incoming": {
+        "bytes": 18086,
+        "sha256": "9c6272fdfb4484eafc7a8ef9f35ffcdb9182f12f2a6d857fe2dfb420ce24870c",
+        "git_blob": "b638134ea6b7ecfccaaa6d5cc6834d52b0f0892c"
+      },
+      "candidate": {
+        "bytes": 19503,
+        "sha256": "37a4a952fc9d6cdf3216d440a2082570dfc955e98cb6d95761871853de5b5551",
+        "git_blob": "b655a8cfe738335052134eb10b71184dbf27a659"
+      },
+      "inverse_exact": true,
+      "blocks": [
+        {
+          "block": "\n    feedback_export = sub.add_parser(\n        \"export-feedback\", help=\"Save self submission feedback to a new local HTML file\",\n    )\n    add_common(feedback_export)\n    feedback_export.add_argument(\"course_id\", type=_positive_int)\n    feedback_export.add_argument(\"assignment_id\", type=_positive_int)\n    feedback_export.add_argument(\"--out\", required=True, type=Path,\n                                 help=\"New HTML file; existing paths are protected\")\n",
+          "pin": {
+            "bytes": 456,
+            "sha256": "f99a4b355927e3d6a737a02d108d279aa70a0feef513c1b76a3b59ffb0aeedb7",
+            "git_blob": "d896ff88489732e553601b285f21cc7cff962ac4"
+          },
+          "following_anchor_sha256": "f7fbc9b89d4f40e51ab3fa6f25145fa4a4cc2ddbb3b1940bb06e0aaaf93839e0",
+          "following_anchor_lines": 2
+        },
+        {
+          "block": "        elif args.cmd == \"export-feedback\":\n            import os\n\n            import httpx\n\n            from canvaspilot.client import CanvasAuthError\n            from canvaspilot.feedback_export import build_feedback_document, write_feedback_document\n\n            try:\n                if os.path.lexists(args.out):\n                    raise FileExistsError(\"Output path already exists; choose a new HTML file\")\n                content, report = build_feedback_document(api, args.course_id, args.assignment_id)\n                write_feedback_document(args.out, content)\n            except (CanvasAuthError, httpx.HTTPError, ValueError, TypeError, OSError) as error:\n                print(json.dumps({\n                    \"ok\": False, \"error\": type(error).__name__, \"message\": str(error),\n                }), file=sys.stderr)\n                raise SystemExit(1) from None\n            print(json.dumps({\"ok\": True, \"output\": str(args.out), **report}, indent=2))\n",
+          "pin": {
+            "bytes": 961,
+            "sha256": "f4cbd200b3ae8f72a1cebb29cd1b8e392d658589e4428ffc2444e9525a3024a1",
+            "git_blob": "98558b7cc840fb7a171804308fd3bad6e4f7951f"
+          },
+          "following_anchor_sha256": "dc24b4729ba6e1cc70dfa8673304cf2e6dfa7abce29cefd84889fba35421a56f",
+          "following_anchor_lines": 1
+        }
+      ]
+    }
+  },
+  "native_changes": {
+    "README.md": "--- current39/README.md\n+++ current17/README.md\n@@ -15,7 +15,7 @@\n - **Submission feedback** — self submission comments and rubric assessments alongside current-attempt and grading metadata\n - **Submission history** — inspect returned attempts and submitted text/file metadata without assigning current grades or comments to earlier versions ([guide](docs/submission-history.md))\n - **Fixture mode** — offline dict backend for tests and CI; no Canvas required\n-- **37 MCP tools**, one stdio server, one env var for the host (`CANVAS_BASE_URL`) plus either a PAT or a running session broker\n+- **39 MCP tools**, one stdio server, one env var for the host (`CANVAS_BASE_URL`) plus either a PAT or a running session broker\n - **Course folder browsing** — select nested folders and inspect bounded file-metadata pages through CLI, MCP or Python\n - **Module progress checklist** — review reported completion, remaining requirements and module locks through CLI, MCP or Python\n \n@@ -85,6 +85,12 @@\n flag describes submissions by any student. See the\n [assignment submission guide](docs/assignment-submission.md) for field meanings,\n selection examples and malformed-data warnings.\n+\n+Read selected courses' calendar events and assignment deadlines together with\n+`canvaspilot agenda 42 77 --start 2026-10-08 --end 2026-10-15`. The\n+[course agenda guide](docs/course-agenda.md) explains timed, all-day and unavailable\n+timing, source identity and read limits. The same report is available through\n+`canvas_course_agenda` in MCP.\n \n To take selected course deadlines into a calendar application, save an explicit\n local snapshot with `canvaspilot export-calendar 42 77 --out deadlines.ics`.\n@@ -158,9 +164,9 @@\n | Identity | `whoami`, `sync_summary`, `planner_items`, `activity_stream`, `list_todo_items`, `list_enrollments` |\n | Courses | `list_courses`, `get_course`, `list_modules`, `module_progress`, `list_pages`, `get_page`, `list_files`, `browse_files`, `list_announcements` |\n | Assignments | `list_assignments`, `get_assignment`, `assignment_brief`, `submission_status`, `submission_feedback`, `submission_history`, `submit_assignment_text` |\n-| Discussions | `list_discussion_topics`, `get_discussion`, `post_discussion_reply` |\n+| Discussions | `list_discussion_topics`, `get_discussion`, `discussion_thread`, `post_discussion_reply` |\n | Quizzes | `list_quizzes`, `get_quiz`, `list_quiz_questions`, `list_quiz_submissions`, `start_quiz_submission`, `complete_quiz_submission` |\n-| Inbox / Calendar | `list_conversations`, `get_conversation`, `reply_conversation`, `list_calendar_events` |\n+| Inbox / Calendar | `list_conversations`, `get_conversation`, `reply_conversation`, `list_calendar_events`, `course_agenda` |\n | **Full REST** | `canvas_api_request`, `canvas_api_paginated` — any `/api/v1/...` path, including paginated reads through a current session broker (see Auth modes for collection requirements) |\n \n Programmatic API bundle: `from canvaspilot.bundle import make_api, tool_inventory`.\n@@ -204,6 +210,20 @@\n so it cannot be mistaken for a submission with no feedback. This operation performs\n two GETs and does not mark comments read, submit work, or change a grade.\n \n+### Read a discussion\n+\n+After choosing a topic with `canvaspilot discussions <course_id>`, open it with\n+`canvaspilot discussion <course_id> <topic_id>`. Add `--unread-only` to keep known\n+unread replies together with their parent context. The same report is available\n+through `CanvasAPI.discussion_thread()` and `canvas_discussion_thread` in MCP.\n+\n+The report keeps original entry fields and the returned reply structure, alongside\n+cleaned text, unambiguous author attribution and reported read markers. Missing\n+facts remain unknown; absent or ambiguous unread metadata does not become a\n+false empty result. Canvas's cached-view boundary and unmatched unread identifiers\n+remain visible. See [the discussion reader guide](docs/DISCUSSIONS.md) for fields,\n+selection rules and error behavior.\n+\n ### Announcements\n \n `canvas_list_announcements` and `CanvasAPI.list_announcements()` use the existing\n@@ -259,6 +279,19 @@\n pagination headers; `next_page_to_try` is an optional probe, not a completeness\n claim. See [folder-browser usage and contract](docs/folder-browser.md) for the\n MCP/Python interfaces, page limits and examples.\n+\n+## Review your inbox\n+\n+```bash\n+canvaspilot inbox --scope unread\n+canvaspilot conversation 901\n+```\n+\n+List your conversations and select a returned ID to inspect its messages.\n+The CLI, Python API and existing MCP conversation reader explicitly preserve\n+unread state. Original message, participant and attachment metadata are returned;\n+linked content is not downloaded. See [inbox review](docs/inbox-review.md) for\n+scope choices, pagination and error behavior.\n \n ## Auth modes\n \n",
+    "src/canvaspilot/api.py": "--- current39/src/canvaspilot/api.py\n+++ current17/src/canvaspilot/api.py\n@@ -428,6 +428,19 @@\n         )\n         return {\"topic\": topic, \"view\": view}\n \n+    def discussion_thread(\n+        self, course_id: int | str, topic_id: int | str, *, unread_only: bool = False\n+    ) -> dict[str, Any]:\n+        \"\"\"Read the cached discussion tree with explicit read state and reply context.\"\"\"\n+        from canvaspilot.discussion_thread import (\n+            build_discussion_thread,\n+            validate_discussion_selection,\n+        )\n+\n+        course, topic = validate_discussion_selection(course_id, topic_id, unread_only)\n+        result = self.get_discussion(course, topic)\n+        return build_discussion_thread(result[\"topic\"], result[\"view\"], unread_only=unread_only)\n+\n     def post_discussion_reply(\n         self,\n         course_id: int | str,\n@@ -552,13 +565,34 @@\n         )\n \n     def list_conversations(self, *, scope: str = \"inbox\") -> list[Any]:\n+        \"\"\"List current-user conversations; inbox means the non-archived default.\"\"\"\n         return self.client.get_paginated(\n             \"/api/v1/conversations\",\n-            params={\"scope\": scope},\n+            params=None if scope == \"inbox\" else {\"scope\": scope},\n         )\n \n     def get_conversation(self, conversation_id: int | str) -> Any:\n-        return self.client.request(\"GET\", f\"/api/v1/conversations/{conversation_id}\")\n+        \"\"\"Read a conversation without automatically clearing its unread state.\"\"\"\n+        if isinstance(conversation_id, bool) or not isinstance(conversation_id, (int, str)):\n+            raise TypeError(\"conversation_id must be a positive decimal integer\")\n+        identifier = str(conversation_id)\n+        if not re.fullmatch(r\"[0-9]+\", identifier) or not identifier.strip(\"0\"):\n+            raise ValueError(\"conversation_id must be a positive decimal integer\")\n+        return self.client.request(\n+            \"GET\",\n+            f\"/api/v1/conversations/{identifier}\",\n+            params={\"auto_mark_as_read\": False},\n+        )\n+\n+    def course_agenda(\n+        self, course_ids: list[int | str], *, start_date: str, end_date: str,\n+    ) -> dict[str, Any]:\n+        \"\"\"Read selected course events and assignment deadlines in one agenda.\"\"\"\n+        from canvaspilot.agenda import read_course_agenda\n+\n+        return read_course_agenda(\n+            self.client, course_ids, start_date=start_date, end_date=end_date,\n+        )\n \n     def list_calendar_events(\n         self,\n",
+    "src/canvaspilot/cli.py": "--- current39/src/canvaspilot/cli.py\n+++ current17/src/canvaspilot/cli.py\n@@ -86,9 +86,32 @@\n     feedback.add_argument(\"course_id\")\n     feedback.add_argument(\"assignment_id\")\n \n+    inbox = sub.add_parser(\"inbox\", help=\"List your inbox without changing conversation state\")\n+    add_common(inbox)\n+    inbox.add_argument(\n+        \"--scope\", choices=(\"inbox\", \"unread\", \"starred\", \"archived\", \"sent\"),\n+        default=\"inbox\", help=\"inbox includes read and unread, non-archived conversations\",\n+    )\n+\n+    conversation = sub.add_parser(\n+        \"conversation\", help=\"Read one conversation while preserving unread state\",\n+    )\n+    add_common(conversation)\n+    conversation.add_argument(\"conversation_id\", type=_positive_int)\n+\n     disc = sub.add_parser(\"discussions\", help=\"List discussion topics\")\n     add_common(disc)\n     disc.add_argument(\"course_id\")\n+\n+    discussion = sub.add_parser(\n+        \"discussion\", help=\"Read one cached discussion; unread focus retains reply context\"\n+    )\n+    add_common(discussion)\n+    discussion.add_argument(\"course_id\", help=\"Positive numeric Canvas course ID\")\n+    discussion.add_argument(\"topic_id\", help=\"Positive numeric Canvas discussion topic ID\")\n+    discussion.add_argument(\n+        \"--unread-only\", action=\"store_true\", help=\"Keep known unread entries and their ancestors\"\n+    )\n \n     files = sub.add_parser(\"files\", help=\"List course files\")\n     add_common(files)\n@@ -126,6 +149,18 @@\n     add_common(history)\n     history.add_argument(\"course_id\", help=\"Positive numeric Canvas course ID\")\n     history.add_argument(\"assignment_id\", help=\"Positive numeric Canvas assignment ID\")\n+\n+    agenda = sub.add_parser(\n+        \"agenda\", help=\"Read selected course events and assignment deadlines together\",\n+        description=(\n+            \"Read 1-10 course calendars for an explicit inclusive Canvas date range. \"\n+            \"Known timed, declared all-day, and unavailable timing remain separate.\"\n+        ),\n+    )\n+    add_common(agenda)\n+    agenda.add_argument(\"course_ids\", nargs=\"+\", help=\"Positive numeric Canvas course IDs\")\n+    agenda.add_argument(\"--start\", dest=\"start_date\", required=True, help=\"YYYY-MM-DD\")\n+    agenda.add_argument(\"--end\", dest=\"end_date\", required=True, help=\"YYYY-MM-DD\")\n \n     mcp = sub.add_parser(\"mcp\", help=\"Run MCP stdio server\")\n     add_common(mcp)\n@@ -189,8 +224,39 @@\n             )\n         elif args.cmd == \"discussions\":\n             print(json.dumps(api.list_discussion_topics(args.course_id), indent=2, default=str))\n+        elif args.cmd == \"discussion\":\n+            import httpx\n+\n+            from canvaspilot.client import CanvasAuthError\n+\n+            try:\n+                result = api.discussion_thread(\n+                    args.course_id, args.topic_id, unread_only=args.unread_only\n+                )\n+            except (CanvasAuthError, httpx.HTTPError, ValueError) as error:\n+                print(json.dumps({\n+                    \"ok\": False, \"error\": type(error).__name__, \"message\": str(error),\n+                }), file=sys.stderr)\n+                raise SystemExit(1) from None\n+            print(json.dumps(result, indent=2))\n         elif args.cmd == \"files\":\n             print(json.dumps(api.list_files(args.course_id), indent=2, default=str))\n+        elif args.cmd in (\"inbox\", \"conversation\"):\n+            import httpx\n+\n+            from canvaspilot.client import CanvasAuthError, CanvasPaginationError\n+\n+            try:\n+                if args.cmd == \"inbox\":\n+                    result = api.list_conversations(scope=args.scope)\n+                else:\n+                    result = api.get_conversation(args.conversation_id)\n+            except (CanvasAuthError, CanvasPaginationError, httpx.HTTPError, ValueError) as error:\n+                print(json.dumps({\n+                    \"ok\": False, \"error\": type(error).__name__, \"message\": str(error),\n+                }), file=sys.stderr)\n+                raise SystemExit(1) from None\n+            print(json.dumps(result, indent=2, ensure_ascii=False))\n         elif args.cmd == \"export-calendar\":\n             import os\n \n@@ -213,6 +279,26 @@\n                 }), file=sys.stderr)\n                 raise SystemExit(1) from None\n             print(json.dumps({\"ok\": True, \"output\": str(args.out), **report}, indent=2))\n+        elif args.cmd == \"agenda\":\n+            import httpx\n+\n+            from canvaspilot.client import CanvasAuthError, CanvasPaginationError\n+\n+            http_log = logging.getLogger(\"httpx\")\n+            previous_level = http_log.level\n+            http_log.setLevel(max(http_log.getEffectiveLevel(), logging.WARNING))\n+            try:\n+                result = api.course_agenda(\n+                    args.course_ids, start_date=args.start_date, end_date=args.end_date,\n+                )\n+            except (CanvasAuthError, CanvasPaginationError, httpx.HTTPError, ValueError) as error:\n+                print(json.dumps({\n+                    \"ok\": False, \"error\": type(error).__name__, \"message\": str(error),\n+                }), file=sys.stderr)\n+                raise SystemExit(1) from None\n+            finally:\n+                http_log.setLevel(previous_level)\n+            print(json.dumps(result, indent=2))\n         elif args.cmd == \"submission-history\":\n             import httpx\n \n",
+    "src/canvaspilot/bundle.py": "--- current39/src/canvaspilot/bundle.py\n+++ current17/src/canvaspilot/bundle.py\n@@ -25,6 +25,7 @@\n     \"canvas_get_page\",\n     \"canvas_list_discussion_topics\",\n     \"canvas_get_discussion\",\n+    \"canvas_discussion_thread\",\n     \"canvas_post_discussion_reply\",\n     \"canvas_list_files\",\n     \"canvas_browse_files\",\n@@ -37,6 +38,7 @@\n     \"canvas_list_conversations\",\n     \"canvas_get_conversation\",\n     \"canvas_reply_conversation\",\n+    \"canvas_course_agenda\",\n     \"canvas_list_calendar_events\",\n     \"canvas_planner_items\",\n     \"canvas_activity_stream\",\n",
+    "src/canvaspilot/mcp_server.py": "--- current39/src/canvaspilot/mcp_server.py\n+++ current17/src/canvaspilot/mcp_server.py\n@@ -8,7 +8,7 @@\n from mcp.server.mcpserver import MCPServer\n from mcp.server.mcpserver.exceptions import ToolError\n from mcp.types import ToolAnnotations\n-from pydantic import Field, StrictInt\n+from pydantic import Field, StrictBool, StrictInt\n \n from canvaspilot.api import CanvasAPI, _validate_sync_limits\n from canvaspilot.client import CanvasClient\n@@ -124,6 +124,22 @@\n     return _dump(_get_api().get_discussion(course_id, topic_id))\n \n \n+@mcp.tool(\n+    description=(\n+        \"Read a Canvas cached discussion tree with source entry fields, author attribution \"\n+        \"and reported read markers. unread_only retains known unread entries and their \"\n+        \"ancestors as context. The cached view is eventually consistent; unknown or \"\n+        \"unlocated read markers remain explicit. Does not post or mark entries read.\"\n+    ),\n+    annotations=ToolAnnotations(readOnlyHint=True, destructiveHint=False),\n+    structured_output=False,\n+)\n+async def canvas_discussion_thread(\n+    course_id: str, topic_id: str, unread_only: StrictBool = False\n+) -> str:\n+    return _dump(_get_api().discussion_thread(course_id, topic_id, unread_only=unread_only))\n+\n+\n @mcp.tool(description=\"Post a reply to a discussion topic.\", structured_output=False)\n async def canvas_post_discussion_reply(course_id: str, topic_id: str, message: str) -> str:\n     return _dump(_get_api().post_discussion_reply(course_id, topic_id, message))\n@@ -205,12 +221,27 @@\n     )\n \n \n-@mcp.tool(description=\"List Canvas Inbox conversations.\", structured_output=False)\n+@mcp.tool(\n+    description=(\n+        \"List your Canvas conversations without changing their state. \"\n+        \"Default inbox includes read and unread non-archived conversations; \"\n+        \"other scopes are unread, starred, archived, and sent.\"\n+    ),\n+    annotations=ToolAnnotations(readOnlyHint=True, destructiveHint=False, idempotentHint=True),\n+    structured_output=False,\n+)\n async def canvas_list_conversations(scope: str = \"inbox\") -> str:\n     return _dump(_get_api().list_conversations(scope=scope))\n \n \n-@mcp.tool(description=\"Get one Inbox conversation.\", structured_output=False)\n+@mcp.tool(\n+    description=(\n+        \"Read one of your Canvas conversations by positive decimal ID, preserving unread state. \"\n+        \"Returns supplied messages, participants and attachment metadata; does not download links.\"\n+    ),\n+    annotations=ToolAnnotations(readOnlyHint=True, destructiveHint=False, idempotentHint=True),\n+    structured_output=False,\n+)\n async def canvas_get_conversation(conversation_id: str) -> str:\n     return _dump(_get_api().get_conversation(conversation_id))\n \n@@ -223,6 +254,31 @@\n             end_date=end_date or None,\n         )\n     )\n+\n+\n+@mcp.tool(\n+    description=(\n+        \"Read events and assignment calendar rows for 1-10 selected course IDs and \"\n+        \"inclusive YYYY-MM-DD start_date/end_date. Known instants are sorted; \"\n+        \"all-day and unavailable timing stay separate. Preserves returned records. \"\n+        \"Reads are sequential; this does not infer learner state or expand recurrence.\"\n+    ),\n+    annotations=ToolAnnotations(readOnlyHint=True, destructiveHint=False, idempotentHint=True),\n+    structured_output=False,\n+)\n+async def canvas_course_agenda(\n+    course_ids: list[StrictInt | str], start_date: str, end_date: str,\n+) -> str:\n+    import httpx\n+\n+    from canvaspilot.client import CanvasAuthError, CanvasPaginationError\n+\n+    try:\n+        return _dump(_get_api().course_agenda(\n+            course_ids, start_date=start_date, end_date=end_date,\n+        ))\n+    except (CanvasAuthError, CanvasPaginationError, httpx.HTTPError, ValueError) as error:\n+        raise ToolError(str(error)) from error\n \n \n @mcp.tool(description=\"Planner items (optional ISO start/end).\", structured_output=False)\n"
+  },
+  "api": {
+    "prior_method_count": 41,
+    "current_method_count": 43,
+    "unchanged": [
+      "__init__",
+      "close",
+      "__enter__",
+      "__exit__",
+      "whoami",
+      "get_course",
+      "list_courses",
+      "list_assignments",
+      "get_assignment",
+      "assignment_brief",
+      "list_announcements",
+      "list_modules",
+      "module_progress",
+      "list_pages",
+      "get_page",
+      "list_discussion_topics",
+      "get_discussion",
+      "post_discussion_reply",
+      "list_files",
+      "browse_files",
+      "list_quizzes",
+      "get_quiz",
+      "list_quiz_questions",
+      "list_quiz_submissions",
+      "start_quiz_submission",
+      "complete_quiz_submission",
+      "list_calendar_events",
+      "submission_history",
+      "submission_status",
+      "submission_feedback",
+      "submit_assignment_text",
+      "planner_items",
+      "activity_stream",
+      "list_todo_items",
+      "list_enrollments",
+      "reply_conversation",
+      "api_request",
+      "api_paginated",
+      "sync_summary"
+    ],
+    "changed": {
+      "list_conversations": {
+        "before": "def list_conversations(self, *, scope: str = \"inbox\") -> list[Any]:\n        return self.client.get_paginated(\n            \"/api/v1/conversations\",\n            params={\"scope\": scope},\n        )",
+        "after": "def list_conversations(self, *, scope: str = \"inbox\") -> list[Any]:\n        \"\"\"List current-user conversations; inbox means the non-archived default.\"\"\"\n        return self.client.get_paginated(\n            \"/api/v1/conversations\",\n            params=None if scope == \"inbox\" else {\"scope\": scope},\n        )"
+      },
+      "get_conversation": {
+        "before": "def get_conversation(self, conversation_id: int | str) -> Any:\n        return self.client.request(\"GET\", f\"/api/v1/conversations/{conversation_id}\")",
+        "after": "def get_conversation(self, conversation_id: int | str) -> Any:\n        \"\"\"Read a conversation without automatically clearing its unread state.\"\"\"\n        if isinstance(conversation_id, bool) or not isinstance(conversation_id, (int, str)):\n            raise TypeError(\"conversation_id must be a positive decimal integer\")\n        identifier = str(conversation_id)\n        if not re.fullmatch(r\"[0-9]+\", identifier) or not identifier.strip(\"0\"):\n            raise ValueError(\"conversation_id must be a positive decimal integer\")\n        return self.client.request(\n            \"GET\",\n            f\"/api/v1/conversations/{identifier}\",\n            params={\"auto_mark_as_read\": False},\n        )"
+      }
+    },
+    "added": {
+      "discussion_thread": "def discussion_thread(\n        self, course_id: int | str, topic_id: int | str, *, unread_only: bool = False\n    ) -> dict[str, Any]:\n        \"\"\"Read the cached discussion tree with explicit read state and reply context.\"\"\"\n        from canvaspilot.discussion_thread import (\n            build_discussion_thread,\n            validate_discussion_selection,\n        )\n\n        course, topic = validate_discussion_selection(course_id, topic_id, unread_only)\n        result = self.get_discussion(course, topic)\n        return build_discussion_thread(result[\"topic\"], result[\"view\"], unread_only=unread_only)",
+      "course_agenda": "def course_agenda(\n        self, course_ids: list[int | str], *, start_date: str, end_date: str,\n    ) -> dict[str, Any]:\n        \"\"\"Read selected course events and assignment deadlines in one agenda.\"\"\"\n        from canvaspilot.agenda import read_course_agenda\n\n        return read_course_agenda(\n            self.client, course_ids, start_date=start_date, end_date=end_date,\n        )"
+    }
+  }
+}

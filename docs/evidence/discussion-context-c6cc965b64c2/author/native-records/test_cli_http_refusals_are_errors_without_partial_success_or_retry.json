@@ -1,0 +1,164 @@
+{
+  "case": "test_discussion_thread_native.DiscussionThreadNativeTests.test_cli_http_refusals_are_errors_without_partial_success_or_retry",
+  "records": [
+    {
+      "surface": "cli",
+      "course": "63",
+      "topic": "81",
+      "extra": [
+        "--unread-only"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "HTTP Request: GET http://127.0.0.1:41565/api/v1/courses/63/discussion_topics/81?per_page=50 \"HTTP/1.0 200 OK\"\nHTTP Request: GET http://127.0.0.1:41565/api/v1/courses/63/discussion_topics/81/view?per_page=50 \"HTTP/1.0 403 Forbidden\"\n{\"ok\": false, \"error\": \"CanvasAuthError\", \"message\": \"Canvas auth failed (403) for GET /api/v1/courses/63/discussion_topics/81/view. Start session broker: canvaspilot session start\"}\n"
+    },
+    {
+      "surface": "cli",
+      "course": "63",
+      "topic": "81",
+      "extra": [
+        "--unread-only"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "HTTP Request: GET http://127.0.0.1:41565/api/v1/courses/63/discussion_topics/81?per_page=50 \"HTTP/1.0 200 OK\"\nHTTP Request: GET http://127.0.0.1:41565/api/v1/courses/63/discussion_topics/81/view?per_page=50 \"HTTP/1.0 404 Not Found\"\n{\"ok\": false, \"error\": \"HTTPStatusError\", \"message\": \"Client error '404 Not Found' for url 'http://127.0.0.1:41565/api/v1/courses/63/discussion_topics/81/view?per_page=50'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404\"}\n"
+    },
+    {
+      "surface": "cli",
+      "course": "63",
+      "topic": "81",
+      "extra": [
+        "--unread-only"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "HTTP Request: GET http://127.0.0.1:41565/api/v1/courses/63/discussion_topics/81?per_page=50 \"HTTP/1.0 200 OK\"\nHTTP Request: GET http://127.0.0.1:41565/api/v1/courses/63/discussion_topics/81/view?per_page=50 \"HTTP/1.0 503 Service Unavailable\"\n{\"ok\": false, \"error\": \"HTTPStatusError\", \"message\": \"Server error '503 Service Unavailable' for url 'http://127.0.0.1:41565/api/v1/courses/63/discussion_topics/81/view?per_page=50'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503\"}\n"
+    }
+  ],
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/63/discussion_topics/81",
+      "query": {
+        "per_page": [
+          "50"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/63/discussion_topics/81/view",
+      "query": {
+        "per_page": [
+          "50"
+        ]
+      }
+    }
+  ],
+  "fixture_before": [
+    {
+      "id": 81,
+      "title": "Synthetic station design",
+      "message": "<p>Read both options.</p>",
+      "unread_count": 2,
+      "discussion_subentry_count": 70,
+      "user_can_see_posts": true
+    },
+    {
+      "unread_entries": [
+        13,
+        27
+      ],
+      "forced_entries": [
+        13
+      ],
+      "participants": [
+        {
+          "id": 5,
+          "display_name": "Fixture author"
+        }
+      ],
+      "view": [
+        {
+          "id": 11,
+          "user_id": 5,
+          "parent_id": null,
+          "message": "<p>Platform location?</p>",
+          "replies": [
+            {
+              "id": 13,
+              "user_id": 5,
+              "parent_id": 11,
+              "message": "<p>Near the ramp.</p>"
+            },
+            {
+              "id": 14,
+              "user_id": 5,
+              "parent_id": 11,
+              "message": "<p>Read neighbor.</p>"
+            }
+          ]
+        },
+        {
+          "id": 21,
+          "user_id": 5,
+          "parent_id": null,
+          "message": "<p>Read root.</p>"
+        }
+      ]
+    }
+  ],
+  "fixture_after": [
+    {
+      "id": 81,
+      "title": "Synthetic station design",
+      "message": "<p>Read both options.</p>",
+      "unread_count": 2,
+      "discussion_subentry_count": 70,
+      "user_can_see_posts": true
+    },
+    {
+      "unread_entries": [
+        13,
+        27
+      ],
+      "forced_entries": [
+        13
+      ],
+      "participants": [
+        {
+          "id": 5,
+          "display_name": "Fixture author"
+        }
+      ],
+      "view": [
+        {
+          "id": 11,
+          "user_id": 5,
+          "parent_id": null,
+          "message": "<p>Platform location?</p>",
+          "replies": [
+            {
+              "id": 13,
+              "user_id": 5,
+              "parent_id": 11,
+              "message": "<p>Near the ramp.</p>"
+            },
+            {
+              "id": 14,
+              "user_id": 5,
+              "parent_id": 11,
+              "message": "<p>Read neighbor.</p>"
+            }
+          ]
+        },
+        {
+          "id": 21,
+          "user_id": 5,
+          "parent_id": null,
+          "message": "<p>Read root.</p>"
+        }
+      ]
+    }
+  ]
+}

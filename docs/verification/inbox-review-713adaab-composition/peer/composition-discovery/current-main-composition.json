@@ -1,0 +1,57 @@
+{
+  "current_main": "0d1898544a90079e2dcc7ceb3fa4bc6bca88a2bc",
+  "current_tree": "de9fca025ebe325807bd53cd9b7f3b6be50c6d19",
+  "main_leaf_count": 719,
+  "reviewed_candidate": "db32bde55db5080ed7ee856faab5cf1a2b5c949a",
+  "merge_previews": {
+    "api.py": {
+      "merge_preview_exit": 0,
+      "input_sha256": {
+        "/tmp/canvaspilot-inbox-independent-713adaab/candidate-v2/src/canvaspilot/api.py": "20a8c1cfc606aad5a289f2def35212296c115e40e83e88d7711f2019cd557bed",
+        "/tmp/canvaspilot-inbox-independent-713adaab/baseline/src/canvaspilot/api.py": "fe147e5d3943e7299f400e7607385a7c8f02a68aeff07f72b3219f5c70c7bb5b",
+        "/tmp/canvaspilot-inbox-independent-713adaab/composition-current/current-api.py": "00b65511b84a77d69312dbdc6abe21bfd62ef47ce0a5cdf8c1af2fd2d705c3e8"
+      },
+      "input_bytes_unchanged": true,
+      "incoming_outside_inbox_preserved": true,
+      "merged_bytes": 28376,
+      "merged_sha256": "f4255518fe2627b0f2cd9aeacf0b8662645899469f4ff3ce9963e4784874d8b8",
+      "merged_git_blob": "3d661ca71b0d2c898091be5613ad8dff6c7c53ef"
+    },
+    "README.md": {
+      "merge_preview_exit": 0,
+      "input_sha256": {
+        "/tmp/canvaspilot-inbox-independent-713adaab/composition-current/candidate-README.md": "2c21599af415df72018b3c8e72414dcf29372c3735170a793fd7adb73dc1c976",
+        "/tmp/canvaspilot-inbox-independent-713adaab/composition-current/baseline-README.md": "b41aab90aacc390f31462a26c6cfbbcc4bacb0c9a7090c64002f004e3a26974b",
+        "/tmp/canvaspilot-inbox-independent-713adaab/composition-current/current-README.md": "9243eeac04fd867cc111e1d0a95259aa266dae210d8eebc4da33287af28bfaae"
+      },
+      "input_bytes_unchanged": true,
+      "incoming_outside_inbox_preserved": true,
+      "merged_bytes": 20225,
+      "merged_sha256": "72a2ecc022a52acf860502f28b67712aa4342727477ecb7eed2a7a2bad24c3bc",
+      "merged_git_blob": "c0bf8aaa39957f174c029278fbd5945584acae2b"
+    },
+    "cli.py": {
+      "base": "ca2318fe7c56d2e4ec1b363ff8a945ab78bf4a0c",
+      "incoming_main": "79a2f2b2cbb7e74128d731cf096c7e86f1942d4b",
+      "reviewed_candidate": "db32bde55db5080ed7ee856faab5cf1a2b5c949a",
+      "incoming_cli_blob": "9b8eec6ea177d0fe69e3cb7776af185d2e7ad4a5",
+      "input_sha256": {
+        "/tmp/canvaspilot-inbox-independent-713adaab/candidate-v2/src/canvaspilot/cli.py": "f649ea4f19450221ca99ca5737bdc2f8caceafb26ad788b84117aa5790cf8ea7",
+        "/tmp/canvaspilot-inbox-independent-713adaab/baseline/src/canvaspilot/cli.py": "34ca64ec5075a51fe3dfc4de15480fa2daf53c690c5490e01c65322eb809a9c4",
+        "/tmp/canvaspilot-inbox-independent-713adaab/composition-current/current-cli.py": "a6029296bba4e84b3889bd62487b966d7bc1832a8b1b1e0fd928dfb9b9ab68a8"
+      },
+      "input_bytes_unchanged": true,
+      "read_only_merge_preview_exit": 0,
+      "merged_cli_bytes": 13919,
+      "merged_cli_sha256": "e1c98acdbe462ed5db56eecd8ea5f66342ce259cc7243ed32e56224f09dea090",
+      "merged_cli_git_blob": "cac1e88aa5b1e72580578aa0d933cb2c52c22d20",
+      "limits": "git merge-file -p only; no owner source or ref edits, no publication, no preview replay."
+    }
+  },
+  "other_paths": {
+    "src/canvaspilot/mcp_server.py": "current blob b6c52d710867a8c8cd3058f5476c22803a333501 equals original base; reuse approved candidate metadata changes",
+    "docs/inbox-review.md": "absent on current main",
+    "tests/test_inbox_review.py": "absent on current main"
+  },
+  "limits": "Read-only three-way previews; no owner source/ref edits, no publication and no new native replay. Current browser/provider implementation is outside this receiver's authored terminal seam."
+}

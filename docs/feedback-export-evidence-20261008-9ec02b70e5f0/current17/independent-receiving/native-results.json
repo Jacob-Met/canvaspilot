@@ -1,0 +1,74 @@
+{
+  "TMPDIR": "/dev/estate-9ec02b70e5f0/memory/canvas17/tmp",
+  "browser_allocations": 0,
+  "github_writes": 0,
+  "incoming_API": {
+    "added": [
+      "discussion_thread",
+      "course_agenda"
+    ],
+    "changed": [
+      "list_conversations",
+      "get_conversation"
+    ],
+    "current": 43,
+    "prior": 41,
+    "unchanged": 39
+  },
+  "live_accounts": 0,
+  "native_behavior_tail_byte_identical": true,
+  "new_context_behavior_tested": false,
+  "output_root": "/dev/estate-9ec02b70e5f0/memory/canvas17",
+  "parent": "17d63dc43fde30efd8d3454ef09b1d1a8c5bcd0d",
+  "physical_capacity_before_execution": 196608,
+  "predecessor_receiver": {
+    "bytes": 12429,
+    "sha256": "20227d258e5d0d2bdbdf6d98c253ef2619b0e7ce206500467f5dd50f9b451819"
+  },
+  "product_source_edits": 0,
+  "receiver": {
+    "bytes": 13474,
+    "sha256": "981c1fb7cd0b5cf1f73ccc5abf1179f84288136b7839cf4a5fa773a658b91fa9"
+  },
+  "reserved_capsule_path": "/dev/shm/estate-9ec02b70e5f0/lead/canvas-current17/native-evidence.reserved",
+  "results": {
+    "normal": {
+      "actual_cli_processes": 2,
+      "actual_export": {
+        "bytes": 12466,
+        "git_blob": "69ce0a3d59f8f21d1c7950c2b9c7b56dea46ea3e",
+        "sha256": "6adbb698e703772cbc5fb1a83293bb42c4171912ff24dbb41e76e2f53f18649c"
+      },
+      "actual_html_files": 1,
+      "actual_loopback_GETs": 4,
+      "elapsed_seconds": 2.092625521996524,
+      "error": null,
+      "feedback_json_byte_identical": true,
+      "html_byte_identical_except_unique_capture_time": true,
+      "source_error": null,
+      "status": "passed"
+    },
+    "optimized": {
+      "actual_cli_processes": 2,
+      "actual_export": {
+        "bytes": 12466,
+        "git_blob": "64a74f8ba792e7d71bbd7b8aed33a92d587e710e",
+        "sha256": "a3c5aa5ac717638ddf98d8a47fb09cef5d5c2a54d5201a50c8dc6a179e66b636"
+      },
+      "actual_html_files": 1,
+      "actual_loopback_GETs": 4,
+      "elapsed_seconds": 3.826666914996167,
+      "error": null,
+      "feedback_json_byte_identical": true,
+      "html_byte_identical_except_unique_capture_time": true,
+      "source_error": null,
+      "status": "passed"
+    }
+  },
+  "schema": "canvas17-independent-native-receiving.v1",
+  "source_files": 32,
+  "source_manifest_sha256": "e3897327e7e1471275167eea5a9245c7babe2972094c816cb9afeccb1d39f3a6",
+  "source_unchanged": true,
+  "status": "qualified",
+  "tree": "9818539d6444ef43a72d6540c2ba3817c758d9c8"
+}

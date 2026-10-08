@@ -1,0 +1,951 @@
+--- a/src/canvaspilot/api.py
++++ b/src/canvaspilot/api.py
+@@ -428,6 +428,19 @@
+         )
+         return {"topic": topic, "view": view}
+ 
++    def discussion_thread(
++        self, course_id: int | str, topic_id: int | str, *, unread_only: bool = False
++    ) -> dict[str, Any]:
++        """Read the cached discussion tree with explicit read state and reply context."""
++        from canvaspilot.discussion_thread import (
++            build_discussion_thread,
++            validate_discussion_selection,
++        )
++
++        course, topic = validate_discussion_selection(course_id, topic_id, unread_only)
++        result = self.get_discussion(course, topic)
++        return build_discussion_thread(result["topic"], result["view"], unread_only=unread_only)
++
+     def post_discussion_reply(
+         self,
+         course_id: int | str,
+--- a/src/canvaspilot/cli.py
++++ b/src/canvaspilot/cli.py
+@@ -89,6 +89,16 @@
+     disc = sub.add_parser("discussions", help="List discussion topics")
+     add_common(disc)
+     disc.add_argument("course_id")
++
++    discussion = sub.add_parser(
++        "discussion", help="Read one cached discussion; unread focus retains reply context"
++    )
++    add_common(discussion)
++    discussion.add_argument("course_id", help="Positive numeric Canvas course ID")
++    discussion.add_argument("topic_id", help="Positive numeric Canvas discussion topic ID")
++    discussion.add_argument(
++        "--unread-only", action="store_true", help="Keep known unread entries and their ancestors"
++    )
+ 
+     files = sub.add_parser("files", help="List course files")
+     add_common(files)
+@@ -189,6 +199,21 @@
+             )
+         elif args.cmd == "discussions":
+             print(json.dumps(api.list_discussion_topics(args.course_id), indent=2, default=str))
++        elif args.cmd == "discussion":
++            import httpx
++
++            from canvaspilot.client import CanvasAuthError
++
++            try:
++                result = api.discussion_thread(
++                    args.course_id, args.topic_id, unread_only=args.unread_only
++                )
++            except (CanvasAuthError, httpx.HTTPError, ValueError) as error:
++                print(json.dumps({
++                    "ok": False, "error": type(error).__name__, "message": str(error),
++                }), file=sys.stderr)
++                raise SystemExit(1) from None
++            print(json.dumps(result, indent=2))
+         elif args.cmd == "files":
+             print(json.dumps(api.list_files(args.course_id), indent=2, default=str))
+         elif args.cmd == "export-calendar":
+--- a/src/canvaspilot/mcp_server.py
++++ b/src/canvaspilot/mcp_server.py
+@@ -8,7 +8,7 @@
+ from mcp.server.mcpserver import MCPServer
+ from mcp.server.mcpserver.exceptions import ToolError
+ from mcp.types import ToolAnnotations
+-from pydantic import Field, StrictInt
++from pydantic import Field, StrictBool, StrictInt
+ 
+ from canvaspilot.api import CanvasAPI, _validate_sync_limits
+ from canvaspilot.client import CanvasClient
+@@ -124,6 +124,22 @@
+     return _dump(_get_api().get_discussion(course_id, topic_id))
+ 
+ 
++@mcp.tool(
++    description=(
++        "Read a Canvas cached discussion tree with source entry fields, author attribution "
++        "and reported read markers. unread_only retains known unread entries and their "
++        "ancestors as context. The cached view is eventually consistent; unknown or "
++        "unlocated read markers remain explicit. Does not post or mark entries read."
++    ),
++    annotations=ToolAnnotations(readOnlyHint=True, destructiveHint=False),
++    structured_output=False,
++)
++async def canvas_discussion_thread(
++    course_id: str, topic_id: str, unread_only: StrictBool = False
++) -> str:
++    return _dump(_get_api().discussion_thread(course_id, topic_id, unread_only=unread_only))
++
++
+ @mcp.tool(description="Post a reply to a discussion topic.", structured_output=False)
+ async def canvas_post_discussion_reply(course_id: str, topic_id: str, message: str) -> str:
+     return _dump(_get_api().post_discussion_reply(course_id, topic_id, message))
+--- a/src/canvaspilot/bundle.py
++++ b/src/canvaspilot/bundle.py
+@@ -25,6 +25,7 @@
+     "canvas_get_page",
+     "canvas_list_discussion_topics",
+     "canvas_get_discussion",
++    "canvas_discussion_thread",
+     "canvas_post_discussion_reply",
+     "canvas_list_files",
+     "canvas_browse_files",
+--- a/src/canvaspilot/discussion_thread.py
++++ b/src/canvaspilot/discussion_thread.py
+@@ -0,0 +1,183 @@
++"""Read Canvas's cached discussion tree without marking its entries read.
++
++The report keeps source entry fields separately from derived reading aids. Paths
++identify positions in this returned view only; they are not persistent entry IDs.
++"""
++from __future__ import annotations
++
++from collections import Counter
++from copy import deepcopy
++from typing import Any
++
++from canvaspilot.api import strip_html
++
++
++def _identity(value: Any) -> tuple[type, Any] | None:
++    # Preserve JSON number/string identity; bool is not an integer identifier.
++    if type(value) is int or (isinstance(value, str) and value):
++        return (type(value), value)
++    return None
++
++
++def validate_discussion_selection(
++    course_id: int | str, topic_id: int | str, unread_only: bool
++) -> tuple[str, str]:
++    if type(unread_only) is not bool:
++        raise ValueError("unread_only must be a boolean")
++    result = []
++    for name, value in (("course_id", course_id), ("topic_id", topic_id)):
++        if type(value) is int:
++            valid = value > 0
++            text = str(value)
++        elif isinstance(value, str):
++            valid = bool(value) and value.isascii() and value.isdigit() and any(char != "0" for char in value)
++            text = value
++        else:
++            valid = False
++            text = ""
++        if not valid:
++            raise ValueError(f"{name} must be a positive numeric Canvas ID")
++        result.append(text)
++    return result[0], result[1]
++
++
++def _optional_list(view: dict[str, Any], name: str) -> list[Any] | None:
++    value = view.get(name)
++    if value is not None and not isinstance(value, list):
++        raise ValueError(f"Canvas returned malformed discussion {name}")
++    return value
++
++
++def _marker_keys(view: dict[str, Any], name: str) -> set[tuple[type, Any]] | None:
++    values = _optional_list(view, name)
++    if values is None:
++        return None
++    keys = [_identity(value) for value in values]
++    if any(key is None for key in keys):
++        raise ValueError(f"Canvas returned malformed discussion {name} identifier")
++    return set(keys)
++
++
++def build_discussion_thread(
++    topic: dict[str, Any], view: dict[str, Any], *, unread_only: bool = False
++) -> dict[str, Any]:
++    """Flatten the returned tree in source order and optionally retain unread paths.
++
++    An unread selection contains known unread entries and the ancestors needed
++    for their context. Unlocated read markers and unknown facts remain explicit.
++    No request, entry merge, read marking or source-data mutation occurs here.
++    """
++    if type(unread_only) is not bool:
++        raise ValueError("unread_only must be a boolean")
++    if not isinstance(topic, dict) or not isinstance(view, dict):
++        raise ValueError("Canvas returned a malformed discussion topic or view")  # noqa: TRY004 - malformed response value
++    roots = view.get("view")
++    if not isinstance(roots, list):
++        raise ValueError("Canvas returned a malformed discussion entry tree")  # noqa: TRY004 - malformed response value
++    participants = _optional_list(view, "participants")
++    if participants is not None and any(not isinstance(p, dict) for p in participants):
++        raise ValueError("Canvas returned malformed discussion participants")
++    unread = _marker_keys(view, "unread_entries")
++    forced = _marker_keys(view, "forced_entries")
++    if unread_only and unread is None:
++        raise ValueError("Unread selection is unavailable: Canvas did not supply unread_entries")
++
++    # Iterative traversal also gives every occurrence its own structural address.
++    # Repeated object references cannot occur in a JSON tree; refuse them rather
++    # than looping on an aliased/cyclic object supplied to the pure Python helper.
++    flattened: list[tuple[tuple[int, ...], dict[str, Any]]] = []
++    stack = [((index,), entry) for index, entry in reversed(list(enumerate(roots)))]
++    seen = set()
++    while stack:
++        path, entry = stack.pop()
++        if not isinstance(entry, dict):
++            raise ValueError("Canvas returned a malformed discussion entry")  # noqa: TRY004 - malformed response value
++        if id(entry) in seen:
++            raise ValueError("Canvas returned an aliased or cyclic discussion entry tree")
++        seen.add(id(entry))
++        flattened.append((path, entry))
++        replies = entry.get("replies", [])
++        if not isinstance(replies, list):
++            raise ValueError("Canvas returned malformed discussion replies")  # noqa: TRY004 - malformed response value
++        stack.extend(((*path, index), reply) for index, reply in reversed(list(enumerate(replies))))
++
++    entry_counts = Counter(_identity(entry.get("id")) for _, entry in flattened)
++    participant_counts = Counter(_identity(p.get("id")) for p in participants or [])
++    participant_by_id = {
++        _identity(p.get("id")): p
++        for p in participants or []
++        if _identity(p.get("id")) is not None and participant_counts[_identity(p.get("id"))] == 1
++    }
++    ambiguous_unread = {
++        key for key in unread or set()
++        if entry_counts[key] > 1
++    }
++    if unread_only and ambiguous_unread:
++        raise ValueError("Unread selection is ambiguous: a returned entry ID is repeated")
++
++    rows = []
++    for path, entry in flattened:
++        key = _identity(entry.get("id"))
++        identifiable = key is not None and entry_counts[key] == 1
++        state = "unknown"
++        if identifiable and unread is not None:
++            state = "unread" if key in unread else "read"
++        body = entry.get("message")
++        author = participant_by_id.get(_identity(entry.get("user_id")))
++        rows.append({
++            "path": list(path),
++            "parent_path": list(path[:-1]) if len(path) > 1 else None,
++            "entry": deepcopy({field: value for field, value in entry.items() if field != "replies"}),
++            "replies_supplied": "replies" in entry,
++            "reply_count": len(entry.get("replies", [])),
++            "message_text": strip_html(body) if isinstance(body, str) and entry.get("deleted") is not True else None,
++            "author": deepcopy(author) if entry.get("deleted") is not True else None,
++            "read_state": state,
++            "forced_read_state": key in forced if identifiable and forced is not None else None,
++            "context_only": False,
++        })
++    selected = {tuple(row["path"]) for row in rows if row["read_state"] == "unread"}
++    if unread_only:
++        retained = {path[:size] for path in selected for size in range(1, len(path) + 1)}
++        returned = [row for row in rows if tuple(row["path"]) in retained]
++        for row in returned:
++            row["context_only"] = tuple(row["path"]) not in selected
++    else:
++        returned = rows
++
++    unmatched = [
++        value for value in view.get("unread_entries") or []
++        if entry_counts[_identity(value)] == 0
++    ]
++    warnings = []
++    if unread is None:
++        warnings.append("Canvas did not supply unread_entries; entry read states are unknown.")
++    if any(row["read_state"] == "unknown" for row in rows):
++        warnings.append("Some returned entries have an unknown read state; they are not inferred read or unread.")
++    if unmatched:
++        warnings.append("Some supplied unread identifiers are absent from this cached entry tree.")
++    if any(key is not None and count > 1 for key, count in participant_counts.items()):
++        warnings.append("Repeated participant identifiers are not used to attribute entries.")
++    if any(key is not None and count > 1 for key, count in entry_counts.items()):
++        warnings.append("Repeated entry identifiers do not establish a unique read-state association.")
++    body = topic.get("message")
++    return {
++        "topic": deepcopy(topic),
++        "topic_message_text": strip_html(body) if isinstance(body, str) else None,
++        "source": {
++            "kind": "canvas_cached_discussion_view",
++            "eventually_consistent": True,
++            "new_entries_requested": False,
++        },
++        "selection": "unread_with_ancestors" if unread_only else "all",
++        "view_metadata": deepcopy({key: value for key, value in view.items() if key != "view"}),
++        "entries": returned,
++        "unmatched_unread_entries": deepcopy(unmatched),
++        "counts": {
++            "observed_entries": len(rows),
++            "returned_entries": len(returned),
++            "known_unread_entries": len(selected) if unread is not None else None,
++            "unknown_read_state_entries": sum(row["read_state"] == "unknown" for row in rows),
++        },
++        "warnings": warnings,
++    }
+--- a/tests/test_discussion_thread.py
++++ b/tests/test_discussion_thread.py
+@@ -0,0 +1,249 @@
++"""Authored reader tests use only synthetic Canvas discussion data."""
++from __future__ import annotations
++
++import asyncio
++import json
++import unittest
++from copy import deepcopy
++from unittest.mock import patch
++
++from canvaspilot.api import CanvasAPI
++from canvaspilot.client import CanvasClient
++from canvaspilot.discussion_thread import build_discussion_thread
++
++
++def fixture():
++    topic = {"id": 7, "title": "Synthetic river planning", "message": "<p>Compare A &amp; B.</p>",
++             "discussion_subentry_count": 99, "read_state": "unread", "user_can_see_posts": True,
++             "attachments": [{"filename": "synthetic.txt", "url": "https://synthetic.example/file"}]}
++    view = {"participants": [{"id": 9, "display_name": "Fixture reader α"},
++                             {"id": 10, "display_name": "Fixture reader β"}],
++            "unread_entries": [3, 5, 404], "forced_entries": [3],
++            "entry_ratings": {"3": 1}, "server_extra": {"retained": True},
++            "view": [
++                {"id": 1, "user_id": 9, "parent_id": None, "message": "<p>Outer &lt;topic&gt;.</p>",
++                 "replies": [
++                     {"id": 2, "user_id": 10, "parent_id": 1, "message": "<p>Middle.</p>",
++                      "replies": [{"id": 3, "user_id": 9, "parent_id": 2,
++                                   "message": "<p>Unread answer.</p>", "opaque": {"x": 1}}]},
++                     {"id": 4, "user_id": 10, "parent_id": 1, "message": "<p>Read sibling.</p>"}]},
++                {"id": 5, "user_id": 10, "parent_id": None, "message": "<p>Unread root.</p>", "replies": []},
++                {"id": 6, "user_id": 9, "parent_id": None, "message": "<p>Read root.</p>"}]}
++    return topic, view
++
++
++class DiscussionThreadTests(unittest.TestCase):
++    def test_all_entries_keep_original_fields_order_and_exact_tree_reconstruction(self):
++        topic, view = fixture()
++        result = build_discussion_thread(topic, view)
++        self.assertEqual([r["entry"]["id"] for r in result["entries"]], [1, 2, 3, 4, 5, 6])
++        self.assertEqual(result["topic"], topic)
++        self.assertEqual(result["topic_message_text"], "Compare A & B.")
++        self.assertEqual(result["view_metadata"], {k: v for k, v in view.items() if k != "view"})
++        reconstructed = []
++        by_path = {}
++        for row in result["entries"]:
++            path = tuple(row["path"])
++            entry = deepcopy(row["entry"])
++            if row["replies_supplied"]:
++                entry["replies"] = []
++            by_path[path] = entry
++            if row["parent_path"] is None:
++                reconstructed.append(entry)
++            else:
++                by_path[tuple(row["parent_path"])]["replies"].append(entry)
++        self.assertEqual(reconstructed, view["view"])
++        self.assertEqual(result["counts"]["observed_entries"], 6)
++        self.assertEqual(result["topic"]["discussion_subentry_count"], 99)
++        self.assertEqual(result["source"], {"kind": "canvas_cached_discussion_view",
++                                           "eventually_consistent": True,
++                                           "new_entries_requested": False})
++
++    def test_unread_focus_keeps_each_ancestor_once_in_source_order(self):
++        result = build_discussion_thread(*fixture(), unread_only=True)
++        self.assertEqual([r["entry"]["id"] for r in result["entries"]], [1, 2, 3, 5])
++        self.assertEqual([r["context_only"] for r in result["entries"]], [True, True, False, False])
++        self.assertEqual([r["path"] for r in result["entries"]], [[0], [0, 0], [0, 0, 0], [1]])
++        self.assertEqual(result["counts"], {"observed_entries": 6, "returned_entries": 4,
++                                          "known_unread_entries": 2, "unknown_read_state_entries": 0})
++        self.assertEqual(result["unmatched_unread_entries"], [404])
++
++    def test_read_and_forced_markers_use_separate_supplied_facts(self):
++        result = build_discussion_thread(*fixture())
++        rows = {r["entry"]["id"]: r for r in result["entries"]}
++        self.assertEqual(rows[3]["read_state"], "unread")
++        self.assertIs(rows[3]["forced_read_state"], True)
++        self.assertEqual(rows[5]["read_state"], "unread")
++        self.assertIs(rows[5]["forced_read_state"], False)
++        self.assertEqual(rows[1]["message_text"], "Outer <topic>.")
++        self.assertEqual(rows[3]["author"]["display_name"], "Fixture reader α")
++
++    def test_empty_read_marker_list_is_distinct_from_missing_or_null(self):
++        for empty_tree in (False, True):
++            for value in ("missing", None, []):
++                with self.subTest(empty_tree=empty_tree, value=value):
++                    topic, view = fixture()
++                    if empty_tree:
++                        view["view"] = []
++                    if value == "missing":
++                        del view["unread_entries"]
++                    else:
++                        view["unread_entries"] = value
++                    result = build_discussion_thread(topic, view)
++                    if value == []:
++                        self.assertEqual(result["counts"]["known_unread_entries"], 0)
++                        self.assertEqual(build_discussion_thread(topic, view, unread_only=True)["entries"], [])
++                    else:
++                        self.assertIsNone(result["counts"]["known_unread_entries"])
++                        self.assertTrue(all(r["read_state"] == "unknown" for r in result["entries"]))
++                        with self.assertRaisesRegex(ValueError, "did not supply unread_entries"):
++                            build_discussion_thread(topic, view, unread_only=True)
++
++    def test_missing_and_ambiguous_authors_are_not_invented(self):
++        topic, view = fixture()
++        view["participants"].append({"id": 9, "display_name": "Different fixture author"})
++        view["view"][0]["replies"][0]["user_id"] = 12345
++        result = build_discussion_thread(topic, view)
++        rows = {r["entry"]["id"]: r for r in result["entries"]}
++        self.assertIsNone(rows[1]["author"])
++        self.assertIsNone(rows[2]["author"])
++        self.assertEqual(rows[5]["author"], view["participants"][1])
++        self.assertEqual(result["view_metadata"]["participants"], view["participants"])
++
++    def test_deleted_and_media_only_entries_remain_present_without_invented_body(self):
++        topic, view = fixture()
++        view["view"][0]["replies"][0] = {"id": 2, "deleted": True, "replies": [
++            {"id": 3, "user_id": 10, "parent_id": 2, "attachment": {"filename": "synthetic.wav"}}]}
++        result = build_discussion_thread(topic, view, unread_only=True)
++        rows = {r["entry"]["id"]: r for r in result["entries"]}
++        self.assertIsNone(rows[2]["message_text"])
++        self.assertTrue(rows[2]["context_only"])
++        self.assertIsNone(rows[3]["message_text"])
++        self.assertEqual(rows[3]["entry"]["attachment"], {"filename": "synthetic.wav"})
++
++    def test_identifier_types_remain_distinct_and_boolean_ids_are_unknown(self):
++        topic = {"id": 7}
++        view = {"participants": [{"id": 1, "display_name": "Integer"}, {"id": "1", "display_name": "String"}],
++                "unread_entries": ["1"], "view": [{"id": 1, "user_id": 1},
++                                                    {"id": "1", "user_id": "1"}, {"id": True}]}
++        result = build_discussion_thread(topic, view)
++        self.assertEqual([r["read_state"] for r in result["entries"]], ["read", "unread", "unknown"])
++        self.assertEqual([r["author"]["display_name"] for r in result["entries"][:2]], ["Integer", "String"])
++        focused = build_discussion_thread(topic, view, unread_only=True)
++        self.assertEqual([r["entry"]["id"] for r in focused["entries"]], ["1"])
++
++    def test_duplicate_entry_ids_keep_occurrences_but_refuse_ambiguous_unread_focus(self):
++        topic, view = fixture()
++        view["view"][2]["id"] = 3
++        result = build_discussion_thread(topic, view)
++        self.assertEqual(len(result["entries"]), 6)
++        self.assertEqual([r["read_state"] for r in result["entries"] if r["entry"]["id"] == 3],
++                         ["unknown", "unknown"])
++        with self.assertRaisesRegex(ValueError, "ambiguous"):
++            build_discussion_thread(topic, view, unread_only=True)
++
++    def test_original_parent_ids_do_not_reparent_the_returned_tree(self):
++        topic, view = fixture()
++        view["view"][0]["replies"][0]["parent_id"] = 999
++        result = build_discussion_thread(topic, view, unread_only=True)
++        row = result["entries"][1]
++        self.assertEqual(row["entry"]["parent_id"], 999)
++        self.assertEqual(row["parent_path"], [0])
++        self.assertEqual(row["path"], [0, 0])
++
++    def test_original_and_returned_data_are_independently_mutable(self):
++        topic, view = fixture()
++        before = deepcopy((topic, view))
++        result = build_discussion_thread(topic, view)
++        self.assertEqual((topic, view), before)
++        result["topic"]["attachments"][0]["filename"] = "edited"
++        result["entries"][2]["entry"]["opaque"]["x"] = 12
++        result["entries"][2]["author"]["display_name"] = "edited"
++        result["view_metadata"]["server_extra"]["retained"] = False
++        self.assertEqual((topic, view), before)
++
++    def test_new_entry_stream_and_unknown_metadata_are_retained_without_merging(self):
++        topic, view = fixture()
++        view["new_entries"] = [{"id": 3, "message": "Newer, separate version"}]
++        result = build_discussion_thread(topic, view)
++        self.assertEqual(result["view_metadata"]["new_entries"], view["new_entries"])
++        self.assertEqual(result["entries"][2]["entry"]["message"], "<p>Unread answer.</p>")
++        self.assertEqual(result["counts"]["observed_entries"], 6)
++
++    def test_malformed_containers_refuse_instead_of_becoming_empty(self):
++        cases = [
++            (None, {}), ({}, []), ({}, {}), ({}, {"view": None}),
++            ({}, {"view": [None]}), ({}, {"view": [{"id": 1, "replies": None}]}),
++            ({}, {"view": [], "participants": {}}),
++            ({}, {"view": [], "participants": [None]}),
++            ({}, {"view": [], "unread_entries": {}}),
++            ({}, {"view": [], "unread_entries": [True]}),
++            ({}, {"view": [], "forced_entries": [None]}),
++        ]
++        for topic, view in cases:
++            with self.subTest(topic=topic, view=view), self.assertRaises(ValueError):
++                build_discussion_thread(topic, view)
++
++    def test_cyclic_tree_refuses_and_deep_flat_output_keeps_paths(self):
++        root = {"id": 0, "replies": []}
++        root["replies"].append(root)
++        with self.assertRaisesRegex(ValueError, "cyclic"):
++            build_discussion_thread({}, {"view": [root]})
++        root = {"id": 0}
++        cursor = root
++        for ident in range(1, 130):
++            child = {"id": ident}
++            cursor["replies"] = [child]
++            cursor = child
++        result = build_discussion_thread({}, {"view": [root], "unread_entries": [129]}, unread_only=True)
++        self.assertEqual(len(result["entries"]), 130)
++        self.assertEqual(result["entries"][-1]["path"], [0] * 130)
++        self.assertFalse(result["entries"][-1]["context_only"])
++        json.dumps(result)
++
++    def test_api_validates_before_requests_and_preserves_original_raw_reader(self):
++        topic, view = fixture()
++        routes = {"GET /api/v1/courses/42/discussion_topics/7": topic,
++                  "GET /api/v1/courses/42/discussion_topics/7/view": view}
++        client = CanvasClient(fixture={"routes": routes}, token="", base_url="https://synthetic.example")
++        api = CanvasAPI(client)
++        with patch.object(client, "request", wraps=client.request) as calls:
++            expected = build_discussion_thread(topic, view, unread_only=True)
++            self.assertEqual(api.discussion_thread("42", "7", unread_only=True), expected)
++            self.assertEqual(calls.call_args_list[0].args, ("GET", "/api/v1/courses/42/discussion_topics/7"))
++            self.assertEqual(calls.call_args_list[1].args, ("GET", "/api/v1/courses/42/discussion_topics/7/view"))
++            self.assertEqual(calls.call_count, 2)
++            for bad in ("../7", "7?read=true", " 7", "", "0", 0, -1, True, 1.5, None, "١"):
++                with self.subTest(bad=bad):
++                    calls.reset_mock()
++                    with self.assertRaises(ValueError):
++                        api.discussion_thread(bad, 7)
++                    calls.assert_not_called()
++            for bad in (0, 1, "false", None):
++                calls.reset_mock()
++                with self.assertRaises(ValueError):
++                    api.discussion_thread(42, 7, unread_only=bad)
++                calls.assert_not_called()
++            self.assertEqual(api.get_discussion(42, 7), {"topic": topic, "view": view})
++        api.close()
++
++    def test_registered_mcp_wrapper_calls_the_same_method_and_is_read_only(self):
++        from canvaspilot import mcp_server
++        from canvaspilot.bundle import tool_inventory
++        topic, view = fixture()
++        api = CanvasAPI(CanvasClient(fixture={"routes": {
++            "GET /api/v1/courses/42/discussion_topics/7": topic,
++            "GET /api/v1/courses/42/discussion_topics/7/view": view}}, token=""))
++        with patch.object(mcp_server, "_api", api):
++            returned = asyncio.run(mcp_server.canvas_discussion_thread("42", "7", unread_only=True))
++        self.assertEqual(json.loads(returned), build_discussion_thread(topic, view, unread_only=True))
++        self.assertIn("canvas_discussion_thread", tool_inventory()["curated"])
++        tool = mcp_server.mcp._tool_manager.get_tool("canvas_discussion_thread")
++        annotations = tool.annotations.model_dump(by_alias=True)
++        self.assertTrue(annotations["readOnlyHint"])
++        self.assertFalse(annotations["destructiveHint"])
++        api.close()
++
++
++if __name__ == "__main__":
++    unittest.main()
+--- a/tests/test_discussion_thread_native.py
++++ b/tests/test_discussion_thread_native.py
+@@ -0,0 +1,259 @@
++"""Actual CLI, MCP stdio and HTTP receiving for the synthetic discussion reader."""
++from __future__ import annotations
++
++import asyncio
++import json
++import os
++import subprocess
++import sys
++import threading
++import unittest
++from copy import deepcopy
++from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
++from pathlib import Path
++from urllib.parse import parse_qs, urlsplit
++
++from mcp.client.session import ClientSession
++from mcp.client.stdio import StdioServerParameters, stdio_client
++
++ROOT = Path(__file__).resolve().parents[1]
++TOPIC_PATH = "/api/v1/courses/63/discussion_topics/81"
++
++
++class DiscussionThreadNativeTests(unittest.TestCase):
++    def setUp(self):
++        self.topic = {"id": 81, "title": "Synthetic station design", "message": "<p>Read both options.</p>",
++                      "unread_count": 2, "discussion_subentry_count": 70, "user_can_see_posts": True}
++        self.view = {
++            "unread_entries": [13, 27], "forced_entries": [13],
++            "participants": [{"id": 5, "display_name": "Fixture author"}],
++            "view": [{"id": 11, "user_id": 5, "parent_id": None, "message": "<p>Platform location?</p>",
++                      "replies": [{"id": 13, "user_id": 5, "parent_id": 11, "message": "<p>Near the ramp.</p>"},
++                                  {"id": 14, "user_id": 5, "parent_id": 11, "message": "<p>Read neighbor.</p>"}]},
++                     {"id": 21, "user_id": 5, "parent_id": None, "message": "<p>Read root.</p>"}]}
++        self.requests = []
++        self.records = []
++        self.view_status = 200
++        self.view_raw = None
++        self.before = deepcopy((self.topic, self.view))
++        owner = self
++
++        class Handler(BaseHTTPRequestHandler):
++            def do_GET(self):
++                url = urlsplit(self.path)
++                owner.requests.append({"method": "GET", "path": url.path, "query": parse_qs(url.query)})
++                status = 200
++                if url.path == TOPIC_PATH:
++                    value = owner.topic
++                elif url.path == TOPIC_PATH + "/view":
++                    status = owner.view_status
++                    value = owner.view if status == 200 else {"error": "Synthetic discussion unavailable"}
++                else:
++                    status, value = 404, {"error": "Unexpected fixture path"}
++                raw = owner.view_raw if url.path.endswith("/view") and owner.view_raw is not None else json.dumps(value).encode()
++                self.send_response(status)
++                self.send_header("Content-Type", "application/json")
++                self.send_header("Content-Length", str(len(raw)))
++                self.end_headers()
++                self.wfile.write(raw)
++
++            def do_POST(self):
++                owner.requests.append({"method": "POST", "path": self.path})
++                self.send_error(405)
++
++            def do_PUT(self):
++                owner.requests.append({"method": "PUT", "path": self.path})
++                self.send_error(405)
++
++            def do_DELETE(self):
++                owner.requests.append({"method": "DELETE", "path": self.path})
++                self.send_error(405)
++
++            def log_message(self, *args):
++                pass
++
++        self.server = ThreadingHTTPServer(("127.0.0.1", 0), Handler)
++        self.thread = threading.Thread(target=self.server.serve_forever, daemon=True)
++        self.thread.start()
++        self.base = f"http://127.0.0.1:{self.server.server_port}"
++        self.env = {
++            "PATH": os.environ.get("PATH", ""),
++            "PYTHONPATH": os.pathsep.join([str(ROOT / "src"), os.environ.get("PYTHONPATH", "")]),
++            "PYTHONDONTWRITEBYTECODE": "1",
++            "CANVAS_BASE_URL": self.base,
++            "CANVAS_API_TOKEN": "disposable-discussion-fixture",
++            "CANVAS_PROFILE": str(ROOT / "unused-discussion-profile"),
++            "NO_PROXY": "127.0.0.1",
++            "no_proxy": "127.0.0.1",
++        }
++
++    def tearDown(self):
++        self.server.shutdown()
++        self.server.server_close()
++        self.thread.join(timeout=3)
++        self.assertFalse((ROOT / "unused-discussion-profile").exists())
++        custody = os.environ.get("CANVAS_DISCUSSION_TEST_RECEIPTS")
++        if custody:
++            destination = Path(custody)
++            destination.mkdir(parents=True, exist_ok=True)
++            (destination / (self._testMethodName + ".json")).write_text(
++                json.dumps({"case": self.id(), "records": self.records,
++                            "requests": self.requests, "fixture_before": self.before,
++                            "fixture_after": (self.topic, self.view)}, ensure_ascii=False, indent=2) + "\n",
++                encoding="utf-8",
++            )
++
++    def cli(self, *extra, course="63", topic="81"):
++        result = subprocess.run(
++            [sys.executable, "-B", "-m", "canvaspilot.cli", "discussion", course, topic, *extra],
++            cwd=ROOT, env=self.env, capture_output=True, text=True, timeout=20, check=False,
++        )
++        self.records.append({"surface": "cli", "course": course, "topic": topic,
++                             "extra": extra, "returncode": result.returncode,
++                             "stdout": result.stdout, "stderr": result.stderr})
++        return result
++
++    def assert_cli_stderr(self, result, *, error=False):
++        # The installed MCP setup enables HTTPX request logging on stderr.
++        # Retain and admit those real request logs; inspect the final semantic
++        # diagnostic without changing production logging to fit this test.
++        lines = result.stderr.splitlines()
++        message = None
++        if error:
++            self.assertTrue(lines, "The failed read needs a visible diagnostic")
++            message = json.loads(lines.pop())
++            self.assertIs(message["ok"], False)
++        for line in lines:
++            self.assertTrue(any(
++                line.startswith(f"HTTP Request: GET {self.base}{path}?per_page=50 ")
++                for path in (TOPIC_PATH, TOPIC_PATH + "/view")
++            ), "Unexpected stderr content: " + line)
++        return message
++
++    def assert_reads(self, count=1):
++        self.assertEqual([x["path"] for x in self.requests], [TOPIC_PATH, TOPIC_PATH + "/view"] * count)
++        self.assertTrue(all(x["method"] == "GET" and x["query"] == {"per_page": ["50"]} for x in self.requests))
++
++    def assert_report(self, result, *, focused):
++        self.assertEqual(result["topic"], self.topic)
++        self.assertEqual(result["view_metadata"]["unread_entries"], [13, 27])
++        self.assertEqual(result["unmatched_unread_entries"], [27])
++        self.assertEqual([x["entry"]["id"] for x in result["entries"]], [11, 13] if focused else [11, 13, 14, 21])
++        self.assertEqual([x["context_only"] for x in result["entries"]], [True, False] if focused else [False] * 4)
++        self.assertEqual(result["entries"][1]["parent_path"], [0])
++        self.assertEqual(result["entries"][1]["message_text"], "Near the ramp.")
++        self.assertIs(result["entries"][1]["forced_read_state"], True)
++        self.assertEqual(result["counts"]["observed_entries"], 4)
++        self.assertEqual(result["counts"]["known_unread_entries"], 1)
++        self.assertEqual(result["source"]["kind"], "canvas_cached_discussion_view")
++        self.assertTrue(result["source"]["eventually_consistent"])
++
++    def test_cli_all_and_unread_focus_use_exact_two_read_requests_each(self):
++        for focused in (False, True):
++            result = self.cli(*(["--unread-only"] if focused else []))
++            self.assertEqual(result.returncode, 0, result.stderr)
++            self.assert_cli_stderr(result)
++            self.assert_report(json.loads(result.stdout), focused=focused)
++        self.assert_reads(count=2)
++        self.assertEqual((self.topic, self.view), self.before)
++
++    def test_cli_http_refusals_are_errors_without_partial_success_or_retry(self):
++        for status in (403, 404, 503):
++            with self.subTest(status=status):
++                self.requests.clear()
++                self.view_status = status
++                result = self.cli("--unread-only")
++                self.assertEqual(result.returncode, 1, result.stderr)
++                self.assertEqual(result.stdout, "")
++                error = self.assert_cli_stderr(result, error=True)
++                self.assertIs(error["ok"], False)
++                self.assertIn(str(status), error["message"])
++                self.assert_reads()
++        self.assertEqual((self.topic, self.view), self.before)
++
++    def test_cli_malformed_or_unavailable_view_is_not_an_empty_discussion(self):
++        for raw in (b"{broken", b"null", b'{"view": null}', b'{"view": [], "unread_entries": null}'):
++            with self.subTest(raw=raw):
++                self.requests.clear()
++                self.view_raw = raw
++                result = self.cli("--unread-only")
++                self.assertEqual(result.returncode, 1)
++                self.assertEqual(result.stdout, "")
++                self.assertIs(self.assert_cli_stderr(result, error=True)["ok"], False)
++                self.assert_reads()
++
++    def test_cli_invalid_route_and_unknown_flag_make_no_http_requests(self):
++        for course, topic, extra in (("../63", "81", ()), ("63", "81?read=true", ()),
++                                     ("63", "81", ("--read",)), ("63", "81", ("--unread-only=false",))):
++            with self.subTest(course=course, topic=topic, extra=extra):
++                result = self.cli(*extra, course=course, topic=topic)
++                self.assertIn(result.returncode, (1, 2))
++                self.assertEqual(result.stdout, "")
++                self.assertTrue(result.stderr)
++        self.assertEqual(self.requests, [])
++
++    def test_cli_second_read_reflects_supplied_changes_without_retaining_old_unread_rows(self):
++        first = self.cli("--unread-only")
++        self.assertEqual(first.returncode, 0, first.stderr)
++        self.assert_report(json.loads(first.stdout), focused=True)
++        self.view["unread_entries"] = []
++        self.view["forced_entries"] = []
++        second = self.cli("--unread-only")
++        self.assertEqual(second.returncode, 0, second.stderr)
++        data = json.loads(second.stdout)
++        self.assertEqual(data["entries"], [])
++        self.assertEqual(data["counts"]["observed_entries"], 4)
++        self.assertEqual(data["view_metadata"]["unread_entries"], [])
++        self.assert_reads(count=2)
++
++    async def exchange(self, *, errors=False):
++        parameters = StdioServerParameters(
++            command=sys.executable, args=["-B", "-m", "canvaspilot.cli", "mcp"],
++            cwd=ROOT, env=self.env,
++        )
++        async with stdio_client(parameters) as (read, write), ClientSession(read, write) as session:
++            await session.initialize()
++            inventory = await session.list_tools()
++            tool = next(item for item in inventory.tools if item.name == "canvas_discussion_thread")
++            wire = tool.model_dump(by_alias=True)
++            self.records.append({"surface": "mcp", "tool": wire})
++            self.assertTrue(wire["annotations"]["readOnlyHint"])
++            self.assertFalse(wire["annotations"]["destructiveHint"])
++            self.assertEqual(wire["inputSchema"]["properties"]["unread_only"]["type"], "boolean")
++            if errors:
++                for arguments in ({"course_id": "63", "topic_id": "81", "unread_only": "false"},
++                                  {"course_id": "63/../2", "topic_id": "81"}):
++                    response = await session.call_tool("canvas_discussion_thread", arguments)
++                    self.records.append({"surface": "mcp", "arguments": arguments, "response": response.model_dump(by_alias=True)})
++                    self.assertTrue(response.model_dump(by_alias=True)["isError"])
++                self.assertEqual(self.requests, [])
++                self.view_status = 503
++                response = await session.call_tool(
++                    "canvas_discussion_thread", {"course_id": "63", "topic_id": "81", "unread_only": True}
++                )
++                self.records.append({"surface": "mcp", "response": response.model_dump(by_alias=True)})
++                self.assertTrue(response.model_dump(by_alias=True)["isError"])
++                self.assert_reads()
++            else:
++                for focused in (False, True):
++                    response = await session.call_tool(
++                        "canvas_discussion_thread", {"course_id": "63", "topic_id": "81", "unread_only": focused}
++                    )
++                    body = response.model_dump(by_alias=True)
++                    self.records.append({"surface": "mcp", "unread_only": focused, "response": body})
++                    self.assertFalse(body.get("isError"))
++                    result = json.loads("".join(x["text"] for x in body["content"] if x["type"] == "text"))
++                    self.assert_report(result, focused=focused)
++
++    def test_mcp_actual_stdio_and_http_share_the_same_reading_contract(self):
++        asyncio.run(asyncio.wait_for(self.exchange(), timeout=25))
++        self.assert_reads(count=2)
++        self.assertEqual((self.topic, self.view), self.before)
++
++    def test_mcp_actual_errors_do_not_dispatch_invalid_inputs_or_retry_refusals(self):
++        asyncio.run(asyncio.wait_for(self.exchange(errors=True), timeout=25))
++        self.assertEqual((self.topic, self.view), self.before)
++
++
++if __name__ == "__main__":
++    unittest.main()
+--- a/docs/DISCUSSIONS.md
++++ b/docs/DISCUSSIONS.md
+@@ -0,0 +1,100 @@
++# Read a discussion with its reply context
++
++Use the existing topic list to select a discussion, then open that topic:
++
++```bash
++canvaspilot discussions 42
++canvaspilot discussion 42 71
++canvaspilot discussion 42 71 --unread-only
++```
++
++The commands use the same configured Canvas client as the other CLI operations.
++The new reader is also available as
++`CanvasAPI.discussion_thread(course_id, topic_id, unread_only=False)` and the MCP
++tool `canvas_discussion_thread`. The MCP flag is a JSON boolean.
++
++## Reading the result
++
++The JSON response keeps the topic and lists entries in the order of Canvas's
++returned reply tree. Each entry has a cleaned `message_text` beside its original
++fields, and a participant record when its author ID has one unambiguous match.
++
++| Field | Meaning |
++| --- | --- |
++| `topic` | The original topic response, including its declared counts, visibility, locks, attachments and source HTML when supplied. |
++| `topic_message_text` | The topic body through CanvasPilot's existing HTML-to-text helper; missing/non-text bodies stay null. |
++| `entries[].entry` | Original entry fields, with the nested `replies` array represented by separate rows. No entry IDs, parent IDs, timestamps or source messages are rewritten. |
++| `entries[].path` / `parent_path` | Positions in this returned tree. For example, `[0, 1]` is the second reply to the first root entry. These positions identify this view only. |
++| `replies_supplied` / `reply_count` | Whether the source entry supplied a replies array and how many direct children that array contained. Together with paths, these retain the original tree structure, including an explicit empty replies array. |
++| `read_state` | Read, unread or unknown, derived from the supplied unread identifiers and an unambiguous entry ID. |
++| `forced_read_state` | Whether the entry is in the supplied forced-state list; null when this association is unknown. |
++| `context_only` | True when an entry is included solely to explain a descendant selected by unread focus. |
++| `view_metadata` | All original view fields other than the reply tree, including participants, unread/forced identifiers, ratings and any separate new-entry stream. |
++| `counts` | Entries actually observed in this tree, returned rows, known unread entries, and entries whose read state is unknown. |
++| `unmatched_unread_entries` | Supplied unread identifiers that could not be located in the cached tree. |
++| `warnings` | Missing or ambiguous read/author associations. |
++
++The returned tree positions and the original `parent_id` serve different purposes.
++A conflicting source parent ID remains visible; it does not move an entry to a
++different branch. Deleted and media-only entries remain present. The reader does
++not invent body text or author attribution for deleted entries.
++
++## Focus unread replies
++
++`--unread-only` keeps entries known to be unread and every ancestor needed for
++their context. Each ancestor appears once, in the original tree order. Read
++siblings and unrelated read roots are omitted. Counts continue to describe the
++whole observed tree as well as the selected rows.
++
++An explicitly empty unread list produces an empty selection. A missing or null
++unread list is unknown and makes unread focus unavailable; the full reader still
++shows the entries with unknown read states. An entry whose ID cannot establish a
++unique association remains unknown. Such an entry can appear as an ancestor, but
++it is not itself selected as known unread. If a supplied unread identifier matches
++multiple returned entries, unread focus refuses the ambiguous selection.
++
++Identifier matching preserves numeric versus string values. Duplicate participant
++IDs cannot establish an author. Original lists and identifiers remain in
++`view_metadata` so these conditions are inspectable.
++
++## What the view represents
++
++Canvas's [full-topic API](https://developerdocs.instructure.com/services/canvas/resources/discussion_topics#method.discussion_topics_api.view)
++returns a cached, eventually consistent tree. It describes `unread_entries` as
++the current user's unread entry identifiers and `forced_entries` as manually
++forced read-state markers. The report identifies its source as
++`canvas_cached_discussion_view`.
++
++The reader reuses the existing raw `get_discussion()` operation: one topic GET
++and one view GET. It does not request a separate new-entry stream or merge one
++into the tree. If the server supplies such metadata anyway, it remains separate
++in `view_metadata`. Topic counts and tree counts can differ; neither is rewritten
++to agree with the other. Unread filtering happens locally after the view is read.
++
++An access refusal, an unavailable cache or malformed response is an error, not an
++empty discussion. The CLI exits nonzero and writes its error to stderr without a
++success report; MCP returns a tool error. The existing client's error
++classification is retained, including its treatment of HTTP 403. No automatic
++retry or initial discussion post is made. Reading does not send any post,
++mark-read, rating or subscription request.
++
++Qualification uses synthetic fixture data, actual CLI/MCP processes and local HTTP.
++It does not establish access to a particular school, browser session or live
++discussion, or guarantee that a server cache contains its latest changes.
++
++## Development
++
++The new tests are collected by the existing test command:
++
++```bash
++pytest -q
++```
++
++Focused checks:
++
++```bash
++pytest -q tests/test_discussion_thread.py tests/test_discussion_thread_native.py
++```
++
++The existing raw discussion API, topic-list method, posting method, client,
++authentication and session-broker source are preserved by this contribution.
+--- a/README.md
++++ b/README.md
+@@ -15,7 +15,7 @@
+ - **Submission feedback** — self submission comments and rubric assessments alongside current-attempt and grading metadata
+ - **Submission history** — inspect returned attempts and submitted text/file metadata without assigning current grades or comments to earlier versions ([guide](docs/submission-history.md))
+ - **Fixture mode** — offline dict backend for tests and CI; no Canvas required
+-- **37 MCP tools**, one stdio server, one env var for the host (`CANVAS_BASE_URL`) plus either a PAT or a running session broker
++- **38 MCP tools**, one stdio server, one env var for the host (`CANVAS_BASE_URL`) plus either a PAT or a running session broker
+ - **Course folder browsing** — select nested folders and inspect bounded file-metadata pages through CLI, MCP or Python
+ - **Module progress checklist** — review reported completion, remaining requirements and module locks through CLI, MCP or Python
+ 
+@@ -158,7 +158,7 @@
+ | Identity | `whoami`, `sync_summary`, `planner_items`, `activity_stream`, `list_todo_items`, `list_enrollments` |
+ | Courses | `list_courses`, `get_course`, `list_modules`, `module_progress`, `list_pages`, `get_page`, `list_files`, `browse_files`, `list_announcements` |
+ | Assignments | `list_assignments`, `get_assignment`, `assignment_brief`, `submission_status`, `submission_feedback`, `submission_history`, `submit_assignment_text` |
+-| Discussions | `list_discussion_topics`, `get_discussion`, `post_discussion_reply` |
++| Discussions | `list_discussion_topics`, `get_discussion`, `discussion_thread`, `post_discussion_reply` |
+ | Quizzes | `list_quizzes`, `get_quiz`, `list_quiz_questions`, `list_quiz_submissions`, `start_quiz_submission`, `complete_quiz_submission` |
+ | Inbox / Calendar | `list_conversations`, `get_conversation`, `reply_conversation`, `list_calendar_events` |
+ | **Full REST** | `canvas_api_request`, `canvas_api_paginated` — any `/api/v1/...` path, including paginated reads through a current session broker (see Auth modes for collection requirements) |
+@@ -204,6 +204,20 @@
+ so it cannot be mistaken for a submission with no feedback. This operation performs
+ two GETs and does not mark comments read, submit work, or change a grade.
+ 
++### Read a discussion
++
++After choosing a topic with `canvaspilot discussions <course_id>`, open it with
++`canvaspilot discussion <course_id> <topic_id>`. Add `--unread-only` to keep known
++unread replies together with their parent context. The same report is available
++through `CanvasAPI.discussion_thread()` and `canvas_discussion_thread` in MCP.
++
++The report keeps original entry fields and the returned reply structure, alongside
++cleaned text, unambiguous author attribution and reported read markers. Missing
++facts remain unknown; absent or ambiguous unread metadata does not become a
++false empty result. Canvas's cached-view boundary and unmatched unread identifiers
++remain visible. See [the discussion reader guide](docs/DISCUSSIONS.md) for fields,
++selection rules and error behavior.
++
+ ### Announcements
+ 
+ `canvas_list_announcements` and `CanvasAPI.list_announcements()` use the existing

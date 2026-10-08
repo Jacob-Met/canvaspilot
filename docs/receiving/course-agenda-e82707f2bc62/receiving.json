@@ -1,0 +1,87 @@
+{
+  "issue": "https://github.com/Jacob-Met/canvaspilot/issues/55",
+  "observed_at": "2026-10-08T14:52:12.378154+00:00",
+  "baseline_commit": "39d835c8becb04d81b65c90d1491d2d3a2727ffe",
+  "baseline_tree": "53b67d3f06b4c780e508325ec42b2b435ec57e97",
+  "composed_parent": "a5ce672e5b3580c1f52e13c49eefee830f11346c",
+  "composed_parent_tree": "0661a7005e577864cb87bc41e0e715409c92ee76",
+  "new_reader_blob": "82ab4fa8f9b92b8d9e5d4c74962d138e1d882ebd",
+  "source_freeze": "source-freeze-v1.json",
+  "runtime": {
+    "python": "3.12.14",
+    "httpx": "0.28.1",
+    "mcp": "2.3.0",
+    "pydantic": "2.13.5",
+    "pytest": "9.1.1",
+    "ruff": "0.16.10"
+  },
+  "original_module_witness": {
+    "raw_reader_and_mcp_catalog_exit": 0,
+    "cli_help_exit": 0,
+    "missing_agenda_exit": 2
+  },
+  "author_original": {
+    "tests": 45,
+    "baseline": {
+      "passed": 1,
+      "failed": 44,
+      "errors": 0,
+      "skipped": 0
+    },
+    "candidate": {
+      "passed": 38,
+      "failed": 7,
+      "errors": 0,
+      "skipped": 0
+    },
+    "seven_candidate_failures": "One shared test helper asserted per_page100 instead of the unchanged client default50."
+  },
+  "author_affected_successor": {
+    "tests": 7,
+    "baseline": {
+      "failed": 7,
+      "errors": 0,
+      "skipped": 0
+    },
+    "candidate": {
+      "passed": 7,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "production_changed": false,
+    "test_sha256": "a3701f5d0751e93659c5469a505a84ae33586cea0e3ee977e1783b41d613bd9e"
+  },
+  "native_effects": [
+    "Actual CLI report interleaves event/assignment rows by exact UTC time while preserving full literal records and source index.",
+    "Native paginator follows two pages per collection with initial course/date/type filters and unchanged opaque continuation query.",
+    "Late permission/nonlist/repeated-link/foreign-context/invalid-JSON failures emit no successful partial report.",
+    "Registered MCP tool reads successfully, refuses a later permission error, rejects invalid typed selection before a request, then recovers in the same process.",
+    "Authored HTTP records and unused profile remain unchanged; only GETs target the authored loopback server."
+  ],
+  "scope_limits": [
+    "API value cases use native CanvasAPI and CanvasClient with HTTPX MockTransport; process cases use real loopback HTTP and MCP stdio.",
+    "Original candidate receiving is bound to the initial39d source composition; the current inbox-parent composition has only source/Ruff proof so far.",
+    "Terminal singleton-object convention, sequential snapshot boundary, caller access and Canvas date selection semantics are preserved.",
+    "No live school account, browser, actual PAT, provider mutation or measured learner outcome was used or claimed."
+  ],
+  "remaining_gate": "Independent root receiving and full existing hosted pytest/Ruff on the final actual PR composition.",
+  "archive": {
+    "path": "author-evidence-final.zip",
+    "bytes": 206200,
+    "sha256": "1873273037ad0e842d4363d66f0a78ec48f3038384c7a6c1716fc9520bf5e6c5",
+    "payloads": 95
+  },
+  "receipt_successor_at": "2026-10-08T14:59:14.595730+00:00",
+  "timestamp_correction": {
+    "source_reference": "https://www.rfc-editor.org/info/rfc3339/ section4.3",
+    "reason": "-00:00 identifies a known UTC instant while local offset is unknown; retain the marker and sort the row by its supplied UTC instant.",
+    "original_source_blob": "24d1e37a1031a05162c28ba89c9566df76d539fc",
+    "final_source_blob": "82ab4fa8f9b92b8d9e5d4c74962d138e1d882ebd",
+    "same_focused_test_sha256": "c4352b2765b4b6348836749fc5dae706a3a2cb98fd71205f922535230f4bdff0",
+    "original_test_result": "1 failed",
+    "successor_test_result": "1 passed",
+    "production_delta": "Only explicit -00:00 rejection removed; comment corrected. Existing wrapper/process/fixture bytes unchanged.",
+    "old_negative_assertion": "Retained in original source/test archive; replaced in final value test by the focused positive case. Final suite still45 cases; full final-source hosted run remains required."
+  }
+}

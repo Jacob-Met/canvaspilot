@@ -15,7 +15,7 @@ Same architecture as OpenCLI-style web agents (persistent browser session → si
 - **Submission feedback** — self submission comments and rubric assessments alongside current-attempt and grading metadata
 - **Submission history** — inspect returned attempts and submitted text/file metadata without assigning current grades or comments to earlier versions ([guide](docs/submission-history.md))
 - **Fixture mode** — offline dict backend for tests and CI; no Canvas required
-- **37 MCP tools**, one stdio server, one env var for the host (`CANVAS_BASE_URL`) plus either a PAT or a running session broker
+- **39 MCP tools**, one stdio server, one env var for the host (`CANVAS_BASE_URL`) plus either a PAT or a running session broker
 - **Course folder browsing** — select nested folders and inspect bounded file-metadata pages through CLI, MCP or Python
 - **Module progress checklist** — review reported completion, remaining requirements and module locks through CLI, MCP or Python
 
@@ -85,6 +85,12 @@ them. Missing data remains unknown; the existing `has_submitted_submissions`
 flag describes submissions by any student. See the
 [assignment submission guide](docs/assignment-submission.md) for field meanings,
 selection examples and malformed-data warnings.
+
+Read selected courses' calendar events and assignment deadlines together with
+`canvaspilot agenda 42 77 --start 2026-10-08 --end 2026-10-15`. The
+[course agenda guide](docs/course-agenda.md) explains timed, all-day and unavailable
+timing, source identity and read limits. The same report is available through
+`canvas_course_agenda` in MCP.
 
 To take selected course deadlines into a calendar application, save an explicit
 local snapshot with `canvaspilot export-calendar 42 77 --out deadlines.ics`.
@@ -158,12 +164,32 @@ Tools exposed (all prefixed `canvas_`):
 | Identity | `whoami`, `sync_summary`, `planner_items`, `activity_stream`, `list_todo_items`, `list_enrollments` |
 | Courses | `list_courses`, `get_course`, `list_modules`, `module_progress`, `list_pages`, `get_page`, `list_files`, `browse_files`, `list_announcements` |
 | Assignments | `list_assignments`, `get_assignment`, `assignment_brief`, `submission_status`, `submission_feedback`, `submission_history`, `submit_assignment_text` |
-| Discussions | `list_discussion_topics`, `get_discussion`, `post_discussion_reply` |
+| Discussions | `list_discussion_topics`, `get_discussion`, `discussion_thread`, `post_discussion_reply` |
 | Quizzes | `list_quizzes`, `get_quiz`, `list_quiz_questions`, `list_quiz_submissions`, `start_quiz_submission`, `complete_quiz_submission` |
-| Inbox / Calendar | `list_conversations`, `get_conversation`, `reply_conversation`, `list_calendar_events` |
+| Inbox / Calendar | `list_conversations`, `get_conversation`, `reply_conversation`, `list_calendar_events`, `course_agenda` |
 | **Full REST** | `canvas_api_request`, `canvas_api_paginated` — any `/api/v1/...` path, including paginated reads through a current session broker (see Auth modes for collection requirements) |
 
 Programmatic API bundle: `from canvaspilot.bundle import make_api, tool_inventory`.
+
+### Read classic quizzes from the terminal
+
+List a course’s classic quizzes, then inspect one returned quiz ID:
+
+```bash
+canvaspilot quizzes 42
+canvaspilot quiz 42 9
+```
+
+Both commands accept the existing `--base-url`, `--profile` and `--token` options.
+Course and quiz IDs must be positive numeric Canvas IDs. `quizzes` uses the existing
+paginated reader and compact list fields; `quiz` returns the original detail JSON,
+including any supplied timing, attempt-policy, lock and differentiated-date fields.
+Null dates and false/zero values keep their original meaning. A failed read exits
+nonzero with a JSON error on stderr and no partial success output.
+
+These commands call only the existing [classic-quiz GET endpoints](https://developerdocs.instructure.com/services/canvas/resources/quizzes).
+They do not start or complete an attempt, read questions, or change submissions.
+New Quizzes and LTI assessments retain the existing separate support boundary.
 
 ### Submission feedback
 
@@ -204,6 +230,20 @@ omitted. An inaccessible submission or malformed response is reported as an erro
 so it cannot be mistaken for a submission with no feedback. This operation performs
 two GETs and does not mark comments read, submit work, or change a grade.
 
+### Read a discussion
+
+After choosing a topic with `canvaspilot discussions <course_id>`, open it with
+`canvaspilot discussion <course_id> <topic_id>`. Add `--unread-only` to keep known
+unread replies together with their parent context. The same report is available
+through `CanvasAPI.discussion_thread()` and `canvas_discussion_thread` in MCP.
+
+The report keeps original entry fields and the returned reply structure, alongside
+cleaned text, unambiguous author attribution and reported read markers. Missing
+facts remain unknown; absent or ambiguous unread metadata does not become a
+false empty result. Canvas's cached-view boundary and unmatched unread identifiers
+remain visible. See [the discussion reader guide](docs/DISCUSSIONS.md) for fields,
+selection rules and error behavior.
+
 ### Save a readable feedback sheet
 
 ```bash
@@ -230,6 +270,12 @@ does not refresh. See [the feedback export guide](docs/feedback-export.md) for t
 file's contents, exact display rules, local-file behavior and Python usage.
 
 ### Announcements
+
+Read selected courses from the terminal with `canvaspilot announcements 42 77`.
+Choose `--detail full` for complete cleaned message text and optionally supply
+`--start-date 2026-10-01`. The command preserves the existing course context,
+pagination and date-window rules; see [terminal announcement review](docs/announcements-cli.md)
+for fields, defaults and error behavior.
 
 `canvas_list_announcements` and `CanvasAPI.list_announcements()` use the existing
 client paginator in both compact and full detail modes. Course and optional start-date
@@ -284,6 +330,19 @@ listing. `has_more` is unknown because the existing request interface omits
 pagination headers; `next_page_to_try` is an optional probe, not a completeness
 claim. See [folder-browser usage and contract](docs/folder-browser.md) for the
 MCP/Python interfaces, page limits and examples.
+
+## Review your inbox
+
+```bash
+canvaspilot inbox --scope unread
+canvaspilot conversation 901
+```
+
+List your conversations and select a returned ID to inspect its messages.
+The CLI, Python API and existing MCP conversation reader explicitly preserve
+unread state. Original message, participant and attachment metadata are returned;
+linked content is not downloaded. See [inbox review](docs/inbox-review.md) for
+scope choices, pagination and error behavior.
 
 ## Auth modes
 

@@ -1,0 +1,48 @@
+{
+  "file_count": 6,
+  "files": [
+    {
+      "bytes": 93509,
+      "path": "native-evidence.tar.gz.base64",
+      "sha256": "96f0479ab998f67f8a47370a313957581ee868b45b5e272b9d0057b53c8e4df6",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/lead/canvas-current17/native-evidence.reserved"
+    },
+    {
+      "bytes": 3860,
+      "path": "README.md",
+      "sha256": "8372cf51fee802215914a67d601148d5d181339672aec82a4e13130ac4cdd8ab",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/memory/canvas17-review/README.md"
+    },
+    {
+      "bytes": 2410,
+      "path": "native-results.json",
+      "sha256": "7184d3d879c19de4a227b1e5ad94963ab1b746b9d138339257c6518244b29ced",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/memory/canvas17-review/native-results.json"
+    },
+    {
+      "bytes": 7100,
+      "path": "receiver-delta.json",
+      "sha256": "d6fbb15219e4894a5b51099fe629125720758980f3ac63ea9aefa37b317b78ec",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/memory/canvas17-review/receiver-delta.json"
+    },
+    {
+      "bytes": 13474,
+      "path": "verify_canvas17_composition.py",
+      "sha256": "981c1fb7cd0b5cf1f73ccc5abf1179f84288136b7839cf4a5fa773a658b91fa9",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/memory/canvas17-review/verify_canvas17_composition.py"
+    },
+    {
+      "bytes": 5693,
+      "path": "evidence-index.json",
+      "sha256": "680e06b52a029d0b88019b534b98e3e371be68cdd2ad493d62fc71cf69bfb319",
+      "source_path": "/dev/shm/estate-9ec02b70e5f0/memory/canvas17-review/evidence-index.json"
+    }
+  ],
+  "metadata_write_errors": {},
+  "parent": "17d63dc43fde30efd8d3454ef09b1d1a8c5bcd0d",
+  "predecessor_packet_manifest_sha256": "8633064d55310fe313aa73ef0375d034952b61bb8b734a4de231e7e5b55cad3c",
+  "schema": "independent-review-allowlist.v1",
+  "source_manifest_sha256": "e3897327e7e1471275167eea5a9245c7babe2972094c816cb9afeccb1d39f3a6",
+  "status": "qualified",
+  "total_bytes": 126046
+}

@@ -1,0 +1,64 @@
+{
+  "TMPDIR": "/dev/estate-9ec02b70e5f0/memory/canvas39-retained/tmp",
+  "archive": {
+    "bytes": 72085,
+    "sha256": "b8e26364b129d029c393fddec8a231b3ce8dc26c9d10632b8424c5ea497b5a61"
+  },
+  "browser_allocations": 0,
+  "capsule_allocated_before_execution": 98304,
+  "github_writes": 0,
+  "live_accounts": 0,
+  "member_count": 31,
+  "new_submission_history_behavior_tested": false,
+  "output_root": "/dev/estate-9ec02b70e5f0/memory/canvas39-retained",
+  "parent": "39d835c8becb04d81b65c90d1491d2d3a2727ffe",
+  "prior_failures_preserved": [
+    "receiver-error-results.json",
+    "custody-bound-failure.json",
+    "published-recall-reclaim.json"
+  ],
+  "profile": null,
+  "receiver": {
+    "bytes": 12429,
+    "sha256": "20227d258e5d0d2bdbdf6d98c253ef2619b0e7ce206500467f5dd50f9b451819"
+  },
+  "results": {
+    "normal": {
+      "actual_cli_processes": 2,
+      "actual_export": {
+        "bytes": 12466,
+        "git_blob": "37930f39656c3b8249d706345af815a7ecb28ac5",
+        "sha256": "d276ff6aee7d8d61d6189bb16a936f8e7874ce5e1e9f9261abfc822ac046f0c7"
+      },
+      "actual_html_files": 1,
+      "actual_loopback_GETs": 4,
+      "elapsed_seconds": 2.119534064004256,
+      "error": null,
+      "feedback_json_byte_identical": true,
+      "html_byte_identical_except_unique_capture_time": true,
+      "source_error": null,
+      "status": "passed"
+    },
+    "optimized": {
+      "actual_cli_processes": 2,
+      "actual_export": {
+        "bytes": 12466,
+        "git_blob": "07eeb432021ff4ee7bb053eff6eb47e6dce5c4dd",
+        "sha256": "51c52bdb67c61697ac9aba95df231978506798759b62fcfef38351337e636f77"
+      },
+      "actual_html_files": 1,
+      "actual_loopback_GETs": 4,
+      "elapsed_seconds": 4.556205091001175,
+      "error": null,
+      "feedback_json_byte_identical": true,
+      "html_byte_identical_except_unique_capture_time": true,
+      "source_error": null,
+      "status": "passed"
+    }
+  },
+  "schema": "canvas39-retained-receiving.v1",
+  "source_files": 30,
+  "source_manifest_sha256": "560196c2439531be7d988b10b7a9f5a41a2e3d207b3336649410f810c50d659b",
+  "source_unchanged": true,
+  "status": "passed"
+}

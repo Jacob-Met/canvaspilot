@@ -1,0 +1,34 @@
+{
+  "schema": "canvaspilot.inbox.native-acceptance.v1",
+  "issue": "https://github.com/Jacob-Met/canvaspilot/issues/49",
+  "source_commit": "db32bde55db5080ed7ee856faab5cf1a2b5c949a",
+  "native_author_feature": {
+    "tests": 34,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "native_inherited": {
+    "tests": 96,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "native_independent": {
+    "groups": 14,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "author_receipt_sha256": "da25e2d9b0a512867064ade969c90759009449b3df3175518b459c4f7a418f32",
+  "peer_receipt_sha256": "d164c3373f44c8ae720499d50840b865319350baa116f82e8fa4a182a8086733",
+  "peer_manifest_sha256": "988cc00f8c51d6fdeef57b5b77b53e28b4defd1c423b4f65ddba65e7414dfca5",
+  "source_unchanged": true,
+  "independent_review": "approved",
+  "hosted_gate": "pending on actual published head",
+  "qualification_scope": "Authored native loopback contract checks; no live school or browser receiving.",
+  "official_contract": "https://developerdocs.instructure.com/services/canvas/resources/conversations",
+  "contract_observed_utc_date": "2026-10-08",
+  "installed": false,
+  "live_account_modified": false
+}

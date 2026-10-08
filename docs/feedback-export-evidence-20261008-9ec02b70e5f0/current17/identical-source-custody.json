@@ -1,0 +1,77 @@
+{
+  "reason": "Replace exact owned duplicate native before-images with hardlinks to identical owned source; all native bytes retained; no product execution",
+  "files": [
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/lead/canvas-current17/published/src/canvaspilot/api.py",
+      "identical_source": "/dev/shm/estate-9ec02b70e5f0/lead/canvas-current17/repo/src/canvaspilot/api.py",
+      "bytes": 29719,
+      "sha256": "784dd771c89b6cdac7005b1b7f6ebe00bdc47a39d2a9f022cac75f3b3b80e5b9",
+      "already_same_inode": false,
+      "prior_links": 1
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/lead/canvas-current17/published/src/canvaspilot/bundle.py",
+      "identical_source": "/dev/shm/estate-9ec02b70e5f0/lead/canvas-current17/repo/src/canvaspilot/bundle.py",
+      "bytes": 2734,
+      "sha256": "a0fa14d84a65693d5e5122964da3325e801c2eb1a245924d68b0dc87a46013ac",
+      "already_same_inode": false,
+      "prior_links": 1
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/lead/canvas-current17/published/src/canvaspilot/mcp_server.py",
+      "identical_source": "/dev/shm/estate-9ec02b70e5f0/lead/canvas-current17/repo/src/canvaspilot/mcp_server.py",
+      "bytes": 15661,
+      "sha256": "cc47d11ffe5a67c3d0f36b63640b4d84e785e87114229e3aa74fb7b646c0334d",
+      "already_same_inode": false,
+      "prior_links": 1
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/lead/canvas-current17/published/src/canvaspilot/agenda.py",
+      "identical_source": "/dev/shm/estate-9ec02b70e5f0/lead/canvas-current17/repo/src/canvaspilot/agenda.py",
+      "bytes": 8455,
+      "sha256": "cd9d9e027393ce21cff0b4d0a13098dca3a906af3e9803201655bca40d3c3fda",
+      "already_same_inode": false,
+      "prior_links": 1
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/lead/canvas-current17/published/src/canvaspilot/discussion_thread.py",
+      "identical_source": "/dev/shm/estate-9ec02b70e5f0/lead/canvas-current17/repo/src/canvaspilot/discussion_thread.py",
+      "bytes": 8547,
+      "sha256": "11f955f827c29421143782518a1aaf1894d0892739c3b56c4d5e413da74555ff",
+      "already_same_inode": false,
+      "prior_links": 1
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/lead/canvas-current39/published/src/canvaspilot/api.py",
+      "identical_source": "/dev/shm/estate-9ec02b70e5f0/lead/canvas-current39/repo/src/canvaspilot/api.py",
+      "bytes": 28060,
+      "sha256": "cee0a68efd418e3bd647726dfbf51a6ee7d8aefe03d3ce902d6db0e5556005bb",
+      "already_same_inode": false,
+      "prior_links": 1
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/lead/canvas-current39/published/src/canvaspilot/bundle.py",
+      "identical_source": "/dev/shm/estate-9ec02b70e5f0/lead/canvas-current39/repo/src/canvaspilot/bundle.py",
+      "bytes": 2674,
+      "sha256": "7c592252e190542706b779d48cdb62fc9b305be168bc011249fc42cc60f7d6ef",
+      "already_same_inode": false,
+      "prior_links": 1
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/lead/canvas-current39/published/src/canvaspilot/mcp_server.py",
+      "identical_source": "/dev/shm/estate-9ec02b70e5f0/lead/canvas-current39/repo/src/canvaspilot/mcp_server.py",
+      "bytes": 13388,
+      "sha256": "75656082445acb1fc2959cab1e2de7473544702d478c3ab5f1574bfc9296db4f",
+      "already_same_inode": false,
+      "prior_links": 1
+    },
+    {
+      "path": "/dev/shm/estate-9ec02b70e5f0/lead/canvas-current39/published/src/canvaspilot/submission_history.py",
+      "identical_source": "/dev/shm/estate-9ec02b70e5f0/lead/canvas-current39/repo/src/canvaspilot/submission_history.py",
+      "bytes": 2853,
+      "sha256": "b007234b9861a68504e36f005ae463943b36b5cd50a3d157532c1cab09fcf9da",
+      "already_same_inode": false,
+      "prior_links": 1
+    }
+  ]
+}

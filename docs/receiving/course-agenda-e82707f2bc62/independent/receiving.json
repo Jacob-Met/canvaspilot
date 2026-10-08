@@ -1,0 +1,325 @@
+{
+  "schema": "canvaspilot.course-agenda.independent-receiving.v1",
+  "recorded_at": "2026-10-08T15:14:33.330104+00:00",
+  "owner": "estate-e82707f2bc62/root",
+  "issue": "https://github.com/Jacob-Met/canvaspilot/issues/55",
+  "protocol": {
+    "bytes": 8613,
+    "sha256": "acbf7f33be5373de6befb47ae4a5ba0a67d11094f6ec88b0bef63366ef1f167e",
+    "git_blob": "95a6e04cfa0c11bd427b7a06150981fd89168815"
+  },
+  "protocol_frozen_at": "2026-10-08T14:45:54Z",
+  "original_test": {
+    "bytes": 17777,
+    "sha256": "8a45c8d65c6c0d7cfc80fe36a0dc7c821fe1c9c8e49327813213b74a078f954c",
+    "git_blob": "05bb18e158967421eef5ec867e1089f3d4be7e0f"
+  },
+  "original_test_frozen_at": "2026-10-08T14:52:24Z",
+  "candidate_access_after_protocol_and_test_freeze": true,
+  "active_successor_test": {
+    "bytes": 17893,
+    "sha256": "ead389195c7b8c225151e5a29e732ba8c9839456e89560af64d1b446922832ab",
+    "git_blob": "40419af8c12367843c1ac861fe5e7cf62499ebd8"
+  },
+  "phases": [
+    {
+      "name": "baseline-v1",
+      "result": "12 failed: agenda CLI and MCP entry point absent",
+      "receipt": {
+        "command": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+          "-B",
+          "-m",
+          "pytest",
+          "/workspace/scratch/e82707f2bc62/canvaspilot-agenda-independent/test_course_agenda_peer.py",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--tb=short",
+          "--junitxml=/workspace/scratch/e82707f2bc62/canvaspilot-agenda-independent/baseline-v1/junit.xml"
+        ],
+        "source": "/workspace/scratch/e82707f2bc62/canvaspilot-agenda/baseline",
+        "source_commit": "39d835c8becb04d81b65c90d1491d2d3a2727ffe",
+        "started_at": "2026-10-08T14:54:58.892599+00:00",
+        "finished_at": "2026-10-08T14:55:14.371651+00:00",
+        "returncode": 1,
+        "test_sha256": "8a45c8d65c6c0d7cfc80fe36a0dc7c821fe1c9c8e49327813213b74a078f954c",
+        "log_sha256": "8d5e78533e40ea2d5502945539ec1be0f5ce5ed8cd1d9421fc2ad34310bed14d"
+      },
+      "source_guard": "The frozen test fixture executes before/after package source hash assertions in finally, including failed tests; no teardown source-change failure occurred. The original outer receipt does not contain a separate source map."
+    },
+    {
+      "name": "candidate-rfc-v1-tests",
+      "result": "11 passed; 1 receiver AttributeError after real MCP success",
+      "receipt": {
+        "command": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+          "-B",
+          "-m",
+          "pytest",
+          "/workspace/scratch/e82707f2bc62/canvaspilot-agenda-independent/test_course_agenda_peer.py",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--tb=short",
+          "--junitxml=/workspace/scratch/e82707f2bc62/canvaspilot-agenda-independent/candidate-rfc-v1-tests/junit.xml"
+        ],
+        "source": "/workspace/scratch/e82707f2bc62/canvaspilot-agenda/candidate-rfc",
+        "started_at": "2026-10-08T14:58:05.106028+00:00",
+        "finished_at": "2026-10-08T14:58:22.329801+00:00",
+        "returncode": 1,
+        "test_sha256": "8a45c8d65c6c0d7cfc80fe36a0dc7c821fe1c9c8e49327813213b74a078f954c",
+        "log_sha256": "b50a63a54325f103b444802750acebe1a9f0b2e42ebb88b3178a4ed4753baec0",
+        "source_before": {
+          "src/canvaspilot/__init__.py": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5",
+          "src/canvaspilot/agenda.py": "cd9d9e027393ce21cff0b4d0a13098dca3a906af3e9803201655bca40d3c3fda",
+          "src/canvaspilot/api.py": "4eb9e2c3f9ed8babe439fd23d2388bec4ce7e0c55dae5f548e6ecf8e668c0003",
+          "src/canvaspilot/assignment_submission.py": "52fc732660b8844a2ee0801931a363f20db15b5309d148d01e3b618be487133d",
+          "src/canvaspilot/bundle.py": "1eacc1058f12649b7aa8127355f2ce45d0b8617938675479bc45215cb91803dc",
+          "src/canvaspilot/cli.py": "ee5b791a805ff3c8830b4015791411d62fb7dc53250f9e4c8e9300383f19ee6e",
+          "src/canvaspilot/client.py": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797",
+          "src/canvaspilot/feedback.py": "55454598effea598474a21f67e36d5bc5bea84aaefeefc18e4d8c49804ab9869",
+          "src/canvaspilot/mcp_server.py": "4b6fbf7d254ee2b885e3bf830d09a6cd32e2e5d35d1c3d2a8531578e49bad5e0"
+        },
+        "source_after": {
+          "src/canvaspilot/__init__.py": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5",
+          "src/canvaspilot/agenda.py": "cd9d9e027393ce21cff0b4d0a13098dca3a906af3e9803201655bca40d3c3fda",
+          "src/canvaspilot/api.py": "4eb9e2c3f9ed8babe439fd23d2388bec4ce7e0c55dae5f548e6ecf8e668c0003",
+          "src/canvaspilot/assignment_submission.py": "52fc732660b8844a2ee0801931a363f20db15b5309d148d01e3b618be487133d",
+          "src/canvaspilot/bundle.py": "1eacc1058f12649b7aa8127355f2ce45d0b8617938675479bc45215cb91803dc",
+          "src/canvaspilot/cli.py": "ee5b791a805ff3c8830b4015791411d62fb7dc53250f9e4c8e9300383f19ee6e",
+          "src/canvaspilot/client.py": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797",
+          "src/canvaspilot/feedback.py": "55454598effea598474a21f67e36d5bc5bea84aaefeefc18e4d8c49804ab9869",
+          "src/canvaspilot/mcp_server.py": "4b6fbf7d254ee2b885e3bf830d09a6cd32e2e5d35d1c3d2a8531578e49bad5e0"
+        },
+        "source_unchanged": true
+      }
+    },
+    {
+      "name": "baseline-alias-mcp",
+      "result": "1 failed on absent MCP tool; 11 deselected",
+      "receipt": {
+        "command": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+          "-B",
+          "-m",
+          "pytest",
+          "/workspace/scratch/e82707f2bc62/canvaspilot-agenda-independent/test_course_agenda_peer.py",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--tb=short",
+          "-k",
+          "test_peer_registered_mcp_stdio_refusal_and_recovery",
+          "--junitxml=/workspace/scratch/e82707f2bc62/canvaspilot-agenda-independent/baseline-alias-mcp/junit.xml"
+        ],
+        "cwd": "/workspace/scratch/e82707f2bc62/canvaspilot-agenda/baseline",
+        "source": "/workspace/scratch/e82707f2bc62/canvaspilot-agenda/baseline",
+        "started_at": "2026-10-08T15:09:01.000632+00:00",
+        "finished_at": "2026-10-08T15:09:03.324220+00:00",
+        "returncode": 1,
+        "test_sha256": "ead389195c7b8c225151e5a29e732ba8c9839456e89560af64d1b446922832ab",
+        "log_sha256": "a262d5a1e25c78f4044b9c204e4c9deaffc6801ede7253ddffde366818ce6078",
+        "versions": {
+          "pytest": "9.1.1",
+          "mcp": "2.3.0",
+          "httpx": "0.28.1",
+          "pydantic": "2.13.5"
+        },
+        "source_before": {
+          "src/canvaspilot/__init__.py": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5",
+          "src/canvaspilot/api.py": "cee0a68efd418e3bd647726dfbf51a6ee7d8aefe03d3ce902d6db0e5556005bb",
+          "src/canvaspilot/assignment_submission.py": "52fc732660b8844a2ee0801931a363f20db15b5309d148d01e3b618be487133d",
+          "src/canvaspilot/bundle.py": "7c592252e190542706b779d48cdb62fc9b305be168bc011249fc42cc60f7d6ef",
+          "src/canvaspilot/cli.py": "77afdf37691ea2a74073bb4be2da280c2f4d794bd7d65afba2e6befcadf766aa",
+          "src/canvaspilot/client.py": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797",
+          "src/canvaspilot/feedback.py": "55454598effea598474a21f67e36d5bc5bea84aaefeefc18e4d8c49804ab9869",
+          "src/canvaspilot/mcp_server.py": "75656082445acb1fc2959cab1e2de7473544702d478c3ab5f1574bfc9296db4f"
+        },
+        "source_after": {
+          "src/canvaspilot/__init__.py": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5",
+          "src/canvaspilot/api.py": "cee0a68efd418e3bd647726dfbf51a6ee7d8aefe03d3ce902d6db0e5556005bb",
+          "src/canvaspilot/assignment_submission.py": "52fc732660b8844a2ee0801931a363f20db15b5309d148d01e3b618be487133d",
+          "src/canvaspilot/bundle.py": "7c592252e190542706b779d48cdb62fc9b305be168bc011249fc42cc60f7d6ef",
+          "src/canvaspilot/cli.py": "77afdf37691ea2a74073bb4be2da280c2f4d794bd7d65afba2e6befcadf766aa",
+          "src/canvaspilot/client.py": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797",
+          "src/canvaspilot/feedback.py": "55454598effea598474a21f67e36d5bc5bea84aaefeefc18e4d8c49804ab9869",
+          "src/canvaspilot/mcp_server.py": "75656082445acb1fc2959cab1e2de7473544702d478c3ab5f1574bfc9296db4f"
+        },
+        "source_unchanged": true
+      }
+    },
+    {
+      "name": "candidate-rfc-alias-mcp",
+      "result": "1 passed (success, late403, invalid boolean, recovery); 11 deselected",
+      "receipt": {
+        "command": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+          "-B",
+          "-m",
+          "pytest",
+          "/workspace/scratch/e82707f2bc62/canvaspilot-agenda-independent/test_course_agenda_peer.py",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--tb=short",
+          "-k",
+          "test_peer_registered_mcp_stdio_refusal_and_recovery",
+          "--junitxml=/workspace/scratch/e82707f2bc62/canvaspilot-agenda-independent/candidate-rfc-alias-mcp/junit.xml"
+        ],
+        "cwd": "/workspace/scratch/e82707f2bc62/canvaspilot-agenda/candidate-rfc",
+        "source": "/workspace/scratch/e82707f2bc62/canvaspilot-agenda/candidate-rfc",
+        "started_at": "2026-10-08T15:09:01.040078+00:00",
+        "finished_at": "2026-10-08T15:09:03.711614+00:00",
+        "returncode": 0,
+        "test_sha256": "ead389195c7b8c225151e5a29e732ba8c9839456e89560af64d1b446922832ab",
+        "log_sha256": "732b1f4b07f01b2a61f374763a54ff95fbea7747465bfe302afbf2af11b146f4",
+        "versions": {
+          "pytest": "9.1.1",
+          "mcp": "2.3.0",
+          "httpx": "0.28.1",
+          "pydantic": "2.13.5"
+        },
+        "source_before": {
+          "src/canvaspilot/__init__.py": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5",
+          "src/canvaspilot/agenda.py": "cd9d9e027393ce21cff0b4d0a13098dca3a906af3e9803201655bca40d3c3fda",
+          "src/canvaspilot/api.py": "4eb9e2c3f9ed8babe439fd23d2388bec4ce7e0c55dae5f548e6ecf8e668c0003",
+          "src/canvaspilot/assignment_submission.py": "52fc732660b8844a2ee0801931a363f20db15b5309d148d01e3b618be487133d",
+          "src/canvaspilot/bundle.py": "1eacc1058f12649b7aa8127355f2ce45d0b8617938675479bc45215cb91803dc",
+          "src/canvaspilot/cli.py": "ee5b791a805ff3c8830b4015791411d62fb7dc53250f9e4c8e9300383f19ee6e",
+          "src/canvaspilot/client.py": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797",
+          "src/canvaspilot/feedback.py": "55454598effea598474a21f67e36d5bc5bea84aaefeefc18e4d8c49804ab9869",
+          "src/canvaspilot/mcp_server.py": "4b6fbf7d254ee2b885e3bf830d09a6cd32e2e5d35d1c3d2a8531578e49bad5e0"
+        },
+        "source_after": {
+          "src/canvaspilot/__init__.py": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5",
+          "src/canvaspilot/agenda.py": "cd9d9e027393ce21cff0b4d0a13098dca3a906af3e9803201655bca40d3c3fda",
+          "src/canvaspilot/api.py": "4eb9e2c3f9ed8babe439fd23d2388bec4ce7e0c55dae5f548e6ecf8e668c0003",
+          "src/canvaspilot/assignment_submission.py": "52fc732660b8844a2ee0801931a363f20db15b5309d148d01e3b618be487133d",
+          "src/canvaspilot/bundle.py": "1eacc1058f12649b7aa8127355f2ce45d0b8617938675479bc45215cb91803dc",
+          "src/canvaspilot/cli.py": "ee5b791a805ff3c8830b4015791411d62fb7dc53250f9e4c8e9300383f19ee6e",
+          "src/canvaspilot/client.py": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797",
+          "src/canvaspilot/feedback.py": "55454598effea598474a21f67e36d5bc5bea84aaefeefc18e4d8c49804ab9869",
+          "src/canvaspilot/mcp_server.py": "4b6fbf7d254ee2b885e3bf830d09a6cd32e2e5d35d1c3d2a8531578e49bad5e0"
+        },
+        "source_unchanged": true
+      }
+    }
+  ],
+  "source_review": {
+    "observed_at": "2026-10-08T15:13:20.579904+00:00",
+    "reviewer": "estate-e82707f2bc62/root",
+    "original_base": "39d835c8becb04d81b65c90d1491d2d3a2727ffe",
+    "publication_parent": "a5ce672e5b3580c1f52e13c49eefee830f11346c",
+    "publication_parent_tree": "0661a7005e577864cb87bc41e0e715409c92ee76",
+    "wrapper_composition": [
+      {
+        "path": "src/canvaspilot/api.py",
+        "parent": {
+          "bytes": 28718,
+          "sha256": "98859c82fd49d52040e371883c15708a4c86e83becc138bebe6e2ea5c56daf16",
+          "git_blob": "73e47f1354fc5bab44e9f030c5bf5d29c12d065f"
+        },
+        "composed": {
+          "bytes": 29110,
+          "sha256": "43f8b737855e55b2903973e9b14d4160d71fce27d29b66bc8bf43134fd65f8e6",
+          "git_blob": "72bf08b751a466b9e2b32858f901b7fe60995122"
+        },
+        "same_exact_additions_as_received_original_base": true,
+        "existing_parent_bytes_preserved": true,
+        "added_blocks_sha256": [
+          "6caece82cfac24a7da98b100f533c2f1a67003e14db43a0a5f7f57192d1091f2"
+        ]
+      },
+      {
+        "path": "src/canvaspilot/cli.py",
+        "parent": {
+          "bytes": 15474,
+          "sha256": "86eefc46b94a127a51007295e073b621f64095d061615b950665dd985cf319f5",
+          "git_blob": "545ec52f31b694a351e9a41a68e52a34c49db532"
+        },
+        "composed": {
+          "bytes": 17001,
+          "sha256": "db6e21a1bb4b91a8b4e5f512a7e3f9a5fddd8ca1ef0dd6b27893648e7f0dfdf2",
+          "git_blob": "d22cba693db9896168efb56b21be32797f4cab3a"
+        },
+        "same_exact_additions_as_received_original_base": true,
+        "existing_parent_bytes_preserved": true,
+        "added_blocks_sha256": [
+          "74302e25f962e08c283ba07ea5bde084741e4fd2ce8fc289a59df38eee5872a5",
+          "6f8800107105275709c7ce6a2a251535cae999bd410b3ebf1f9df63a1e6d74f8"
+        ]
+      },
+      {
+        "path": "src/canvaspilot/mcp_server.py",
+        "parent": {
+          "bytes": 13965,
+          "sha256": "9140cb3dd86f0fd71541bf5428eef8ef075df14224b8da63b63b4a216978c9b3",
+          "git_blob": "a35800c496fcab6f28dd11fca0fedfc944be46c7"
+        },
+        "composed": {
+          "bytes": 14945,
+          "sha256": "446e52c02a6999cfa80fbae0525a1fb26e69c5951f2a24c0f6fb86be0595a755",
+          "git_blob": "4bbaf0e741abc29a3b973aef8dd633ecdbf4f956"
+        },
+        "same_exact_additions_as_received_original_base": true,
+        "existing_parent_bytes_preserved": true,
+        "added_blocks_sha256": [
+          "1e8ab38eb1f2c71d46a89173520afd1ceea571d0091c91ed95217ec08656c0ee"
+        ]
+      }
+    ],
+    "exact_tested_payloads": {
+      "src/canvaspilot/agenda.py": {
+        "bytes": 8455,
+        "sha256": "cd9d9e027393ce21cff0b4d0a13098dca3a906af3e9803201655bca40d3c3fda",
+        "git_blob": "82ab4fa8f9b92b8d9e5d4c74962d138e1d882ebd"
+      },
+      "src/canvaspilot/bundle.py": {
+        "bytes": 2702,
+        "sha256": "1eacc1058f12649b7aa8127355f2ce45d0b8617938675479bc45215cb91803dc",
+        "git_blob": "8f078e4b9cee172249491a4e7c93305ab3b2b166"
+      },
+      "docs/course-agenda.md": {
+        "bytes": 6575,
+        "sha256": "73d328c763bbc990fd21ce841472bc391d5ca8e14f2ed6eabefa9b51ed8f05b4",
+        "git_blob": "622e5799d939370670ba7b18373b3382bc474173"
+      }
+    },
+    "readme_review": {
+      "parent": {
+        "bytes": 20497,
+        "sha256": "f5dbb04a64b41bf9b129d06e454d37c989af3d791117d00aa02311d27e166c0c",
+        "git_blob": "4a61c3a5c4b219ec3aaa6cf3b64f19338856ca1f"
+      },
+      "composed": {
+        "bytes": 20855,
+        "sha256": "6f1ae1b5f622d0032b4e265409608c90ee0353854a95187681dd808d09c460ce",
+        "git_blob": "24a90ca09f0b53e336a087bf8f0d740886de5e8c"
+      },
+      "review": "Read complete delta: one MCP tool count increment, agenda usage/guide paragraph, one API inventory entry. Existing inbox prose preserved."
+    },
+    "reviewed_semantics": [
+      "Separate complete native Calendar Events collections for event and assignment; original client/auth/broker/paginator unchanged.",
+      "Whole-report refusal on malformed/foreign/conflicting context and late provider/pagination errors; no successful partial response.",
+      "Full raw record/type/nested override/identity preservation; repeated returned identity retained by collection/index.",
+      "Exact UTC ordering including arbitrary timestamp fractions and known UTC -00:00; explicit all-day and unknown timing remain separate.",
+      "Additive CLI/API/registered read-only MCP entry points and inventory; no current assignment export or mutation path edits."
+    ],
+    "qualification": "Source composition accepted for publication with the peer test and evidence. Full existing hosted CI on the actual composed PR merge remains required before integration."
+  },
+  "archive": {
+    "bytes": 113146,
+    "sha256": "605d303ff7155d4f7adf157075742b4007ae1c4f95dbe16700475cbf2541f82c",
+    "git_blob": "9358d7746c10a17e73fc34044c198250f635d3e6",
+    "member_count": 62,
+    "all_members_read_back_equal": true
+  },
+  "boundaries": [
+    "Authored loopback provider data, actual HTTPX/paginator and installed MCP2.3.0 stdio server; no live Canvas account, token, browser broker, or learner-state claim.",
+    "Original baseline12 failures and original candidate11 pass/1 receiver error are retained exactly; the latter is not relabelled a12-pass run.",
+    "Only the affected MCP case was rerun after four alias-access receiver corrections. The11 unchanged CLI cases were not repeated locally.",
+    "Local receiving binds the original39d835c8-based final RFC candidate. Current a5ce672e inbox composition is independently source-reviewed but awaits full existing hosted CI.",
+    "The inherited MCP runpy warning is retained in failed-run raw logs; no warning cleanup or production change was made for it."
+  ]
+}

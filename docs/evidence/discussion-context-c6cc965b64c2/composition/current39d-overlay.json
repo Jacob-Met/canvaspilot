@@ -1,0 +1,66 @@
+{
+  "base_commit": "39d835c8becb04d81b65c90d1491d2d3a2727ffe",
+  "base_tree": "53b67d3f06b4c780e508325ec42b2b435ec57e97",
+  "product_tree": "5be45a6d8625f3d6331ed0f3d4222467eaf8af7b",
+  "base_leaves": 739,
+  "product_leaves": 743,
+  "preserved_original_leaves": 734,
+  "all_unowned_leaf_mode_type_sha_exact": true,
+  "source_paths": [
+    {
+      "path": "src/canvaspilot/api.py",
+      "bytes": 28669,
+      "sha256": "1760e4ef1060dbf932e1d55d427e8ce57446e24cbebba0760df3fc4b4bf5b055",
+      "git_blob": "55a9b7c9d4d01c8c6a2447ae952b79d8ceed7c0d"
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "bytes": 15261,
+      "sha256": "1787673902c05df2dc826fe937efb956df9342d982f6f54bfaaa0f3144b5625f",
+      "git_blob": "c4189865182af0d923a00166730cee575d541423"
+    },
+    {
+      "path": "src/canvaspilot/mcp_server.py",
+      "bytes": 14104,
+      "sha256": "69437b00220b81e0d933b5bd01e16800c0ad880799dff8104d407031d94b33d1",
+      "git_blob": "51b203262db2d853e185385bb63c05bc484d60c5"
+    },
+    {
+      "path": "src/canvaspilot/bundle.py",
+      "bytes": 2706,
+      "sha256": "43b5eb431f4d785e7e2561310a2f0ef5b8af15edfbd6594136182d54f53d753a",
+      "git_blob": "cebeaa98440d745bb8f6bc3ae3ddf0d6cc1b83a8"
+    },
+    {
+      "path": "src/canvaspilot/discussion_thread.py",
+      "bytes": 8547,
+      "sha256": "11f955f827c29421143782518a1aaf1894d0892739c3b56c4d5e413da74555ff",
+      "git_blob": "2ed658fcf5cee996a02115742935716f1d039e25"
+    },
+    {
+      "path": "tests/test_discussion_thread.py",
+      "bytes": 13887,
+      "sha256": "22274853b6dfa5f377f9d42b7d9da9fabcf42ac2fdb1248285725148f7f84698",
+      "git_blob": "47cc390773c5e1f8a9d8c0297fad1f43cbcc7b7b"
+    },
+    {
+      "path": "tests/test_discussion_thread_native.py",
+      "bytes": 13404,
+      "sha256": "2793e3f3a09c031e99aa735b487f324fb828671691320bca8481465fc7fccc5b",
+      "git_blob": "8dd33f687ead0529d436be371d5d3c5ac446fca3"
+    },
+    {
+      "path": "docs/DISCUSSIONS.md",
+      "bytes": 5645,
+      "sha256": "b1f82d30fd9c275fc73f2dc86298849f881eec7e1d4d510c1d5e80565483490e",
+      "git_blob": "cbeab4607f322872351733639694890768a4521e"
+    },
+    {
+      "path": "README.md",
+      "bytes": 20850,
+      "sha256": "0f22033f2c14c519e45fdb74c9a0894b306a90c0929f78730fca5f05f926bf30",
+      "git_blob": "ad90e2ec17a3d2525f5f8ab89b7179a97d5cc493"
+    }
+  ],
+  "not_published": true
+}

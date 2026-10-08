@@ -1,0 +1,210 @@
+[
+  {
+    "shape": "missing",
+    "refusal": {
+      "type": "ValueError",
+      "message": "Unread selection is unavailable: Canvas did not supply unread_entries"
+    }
+  },
+  {
+    "shape": "null",
+    "refusal": {
+      "type": "ValueError",
+      "message": "Unread selection is unavailable: Canvas did not supply unread_entries"
+    }
+  },
+  {
+    "shape": "empty",
+    "focus": {
+      "topic": {
+        "id": 19,
+        "title": "Independent cached view boundary",
+        "message": "<p>Boundary &amp; context</p>",
+        "discussion_subentry_count": 904,
+        "unread_count": 8,
+        "locked": false,
+        "opaque": {
+          "empty": [],
+          "flag": true,
+          "large": 9007199254741009
+        }
+      },
+      "topic_message_text": "Boundary & context",
+      "source": {
+        "kind": "canvas_cached_discussion_view",
+        "eventually_consistent": true,
+        "new_entries_requested": false
+      },
+      "selection": "unread_with_ancestors",
+      "view_metadata": {
+        "participants": [
+          {
+            "id": 5,
+            "display_name": "Numeric author",
+            "opaque": {
+              "tag": "n"
+            }
+          },
+          {
+            "id": "5",
+            "display_name": "String author",
+            "opaque": {
+              "tag": "s"
+            }
+          },
+          {
+            "id": 6,
+            "display_name": "Duplicate one"
+          },
+          {
+            "id": 6,
+            "display_name": "Duplicate two"
+          },
+          {
+            "id": true,
+            "display_name": "Boolean is not an ID"
+          },
+          {
+            "display_name": "Missing ID"
+          }
+        ],
+        "unread_entries": [],
+        "forced_entries": [
+          100,
+          9007199254741009,
+          201
+        ],
+        "new_entries": [
+          {
+            "id": 9007199254741009,
+            "parent_id": 100,
+            "message": "A newer flat version; do not merge"
+          }
+        ],
+        "opaque_view": {
+          "cached_generation": "independent-v1",
+          "ratings": {
+            "100": 4
+          }
+        }
+      },
+      "entries": [],
+      "unmatched_unread_entries": [],
+      "counts": {
+        "observed_entries": 10,
+        "returned_entries": 0,
+        "known_unread_entries": 0,
+        "unknown_read_state_entries": 4
+      },
+      "warnings": [
+        "Some returned entries have an unknown read state; they are not inferred read or unread.",
+        "Repeated participant identifiers are not used to attribute entries.",
+        "Repeated entry identifiers do not establish a unique read-state association."
+      ]
+    }
+  },
+  {
+    "shape": "unmatched",
+    "focus": {
+      "topic": {
+        "id": 19,
+        "title": "Independent cached view boundary",
+        "message": "<p>Boundary &amp; context</p>",
+        "discussion_subentry_count": 904,
+        "unread_count": 8,
+        "locked": false,
+        "opaque": {
+          "empty": [],
+          "flag": true,
+          "large": 9007199254741009
+        }
+      },
+      "topic_message_text": "Boundary & context",
+      "source": {
+        "kind": "canvas_cached_discussion_view",
+        "eventually_consistent": true,
+        "new_entries_requested": false
+      },
+      "selection": "unread_with_ancestors",
+      "view_metadata": {
+        "participants": [
+          {
+            "id": 5,
+            "display_name": "Numeric author",
+            "opaque": {
+              "tag": "n"
+            }
+          },
+          {
+            "id": "5",
+            "display_name": "String author",
+            "opaque": {
+              "tag": "s"
+            }
+          },
+          {
+            "id": 6,
+            "display_name": "Duplicate one"
+          },
+          {
+            "id": 6,
+            "display_name": "Duplicate two"
+          },
+          {
+            "id": true,
+            "display_name": "Boolean is not an ID"
+          },
+          {
+            "display_name": "Missing ID"
+          }
+        ],
+        "unread_entries": [
+          404404,
+          404404
+        ],
+        "forced_entries": [
+          100,
+          9007199254741009,
+          201
+        ],
+        "new_entries": [
+          {
+            "id": 9007199254741009,
+            "parent_id": 100,
+            "message": "A newer flat version; do not merge"
+          }
+        ],
+        "opaque_view": {
+          "cached_generation": "independent-v1",
+          "ratings": {
+            "100": 4
+          }
+        }
+      },
+      "entries": [],
+      "unmatched_unread_entries": [
+        404404,
+        404404
+      ],
+      "counts": {
+        "observed_entries": 10,
+        "returned_entries": 0,
+        "known_unread_entries": 0,
+        "unknown_read_state_entries": 4
+      },
+      "warnings": [
+        "Some returned entries have an unknown read state; they are not inferred read or unread.",
+        "Some supplied unread identifiers are absent from this cached entry tree.",
+        "Repeated participant identifiers are not used to attribute entries.",
+        "Repeated entry identifiers do not establish a unique read-state association."
+      ]
+    }
+  },
+  {
+    "shape": "ambiguous",
+    "refusal": {
+      "type": "ValueError",
+      "message": "Unread selection is ambiguous: a returned entry ID is repeated"
+    }
+  }
+]
