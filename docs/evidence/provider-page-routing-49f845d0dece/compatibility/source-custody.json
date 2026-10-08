@@ -1,0 +1,37 @@
+{
+  "verdict": "accept_old_broker_capability_guard_and_final_composed_source",
+  "source_native_commit": "7452703ec4f55e7f63c11276a92dbfd647f6e718",
+  "source_sha256": {
+    "src/canvaspilot/client.py": "6368329745216f473204995c101c912d9070fdd310def150bdbee927f9872de4",
+    "src/canvaspilot/api.py": "fe147e5d3943e7299f400e7607385a7c8f02a68aeff07f72b3219f5c70c7bb5b",
+    "src/canvaspilot/cli.py": "34ca64ec5075a51fe3dfc4de15480fa2daf53c690c5490e01c65322eb809a9c4",
+    "src/canvaspilot/calendar_export.py": "b92948c438063438bf9b8ef01b0b0c067802ddb06354f00e8ee18749f3c5e2fa",
+    "src/canvaspilot/session_broker.py": "e6f550988cfa3882e8b5b4a711bdf9bb10d958a1bbb5d85a1f6006c3dbf695f1"
+  },
+  "source_pin_file_sha256": "f320a265121e52a5c742ccf8ad600c2756d7d09d92b60b2c0b33158ca616400c",
+  "javascript_expression_sha256": "11190219dc24f939d0fcf31d65482e0a628c58b738809de2d8a0562bac7ce54e",
+  "browser_receiving_repeated": false,
+  "compatible_receiver_sha256": "e48456f822ca8861374641f4fa698f62d15c099e955cef2de354c26f78c6b75f",
+  "composition_receiver_sha256": "f2684d1046843da7533a41086da73421e4a1cb1abc84da1b417bb7be799ca587",
+  "legacy_broker_sha256": "2a106130c344aefebb23b078cd93b5d3ca3afd7f5325ae5fac2fb8a7251780cc",
+  "legacy_broker_git_blob": "ba23543f62e6be9f611ae06260b91f239206cb23",
+  "receiver_native_freeze_commit": "8700c4260a1b7eb4b906f0f780b188e25a6462c9",
+  "pin_native_freeze_commit": "1b821a493851a3ae1f22932dda5c16ca8ab68bbc",
+  "receipts": {
+    "compatibility-baseline-qualified": {
+      "sha256": "04925f2f174ebd24730ad3f77113aeae88544b0341064c03de1c4bca5e902949",
+      "status": "legacy_broker_fetch_reached"
+    },
+    "compatibility-candidate-qualified": {
+      "sha256": "fbd6f18d5c67c3f5cf8010343bff02d3ac2a2549651200ad9bf98302ae7f6346",
+      "status": "legacy_broker_restart_refusal_passed"
+    },
+    "capable-composition-qualified": {
+      "sha256": "b245a0108a57b28de783ed335dd8de61311d8282df0864726d7eb954ae051fcf",
+      "status": "candidate_contract_passed"
+    }
+  },
+  "blocked_launch_record": "compatibility-shell-enospc/receipt.json",
+  "earlier_inconclusive_record": "replay-absolute-enospc/receipt.json",
+  "limits": "Mixed-version receiving stops any forbidden fetch at the queue responder. Final capable composition uses an authored terminal Page; unchanged production JS relies on separately accepted actual Chrome evidence."
+}

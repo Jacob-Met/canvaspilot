@@ -1,0 +1,90 @@
+{
+  "status": "legacy_broker_fetch_reached",
+  "expected_contract": "baseline",
+  "source": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-provider-routing-baseline",
+  "source_pins": "/Users/me/workspace/estate/estate-49f845d0dece/canvas-provider-pr45-receiving/replay/baseline-source-pins.json",
+  "source_pins_sha256": "4cca16d999163fadd440ed65f62b95f0d45c4dc29dc33d9369e312038cc766aa",
+  "source_native_head": "3e251e5e1de71d56042daa76e2109cdd977b97a6",
+  "source_sha256_before": {
+    "src/canvaspilot/client.py": "6368329745216f473204995c101c912d9070fdd310def150bdbee927f9872de4",
+    "src/canvaspilot/api.py": "546fd973330ffb3c95c81ba670b5ae2add751a23362c83a370254ea702eee1a0",
+    "src/canvaspilot/cli.py": "173df7056f7d86084aa2dc00ba129bf8c36aaf109cdbf9497e24ec436d90d47b",
+    "src/canvaspilot/calendar_export.py": "d0bfe685bc14375cf202e38a55ee64381a1fd75cd38edb2774091d9610f99d90",
+    "src/canvaspilot/session_broker.py": "2a106130c344aefebb23b078cd93b5d3ca3afd7f5325ae5fac2fb8a7251780cc"
+  },
+  "source_sha256_after": {
+    "src/canvaspilot/client.py": "6368329745216f473204995c101c912d9070fdd310def150bdbee927f9872de4",
+    "src/canvaspilot/api.py": "546fd973330ffb3c95c81ba670b5ae2add751a23362c83a370254ea702eee1a0",
+    "src/canvaspilot/cli.py": "173df7056f7d86084aa2dc00ba129bf8c36aaf109cdbf9497e24ec436d90d47b",
+    "src/canvaspilot/calendar_export.py": "d0bfe685bc14375cf202e38a55ee64381a1fd75cd38edb2774091d9610f99d90",
+    "src/canvaspilot/session_broker.py": "2a106130c344aefebb23b078cd93b5d3ca3afd7f5325ae5fac2fb8a7251780cc"
+  },
+  "legacy_source": "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-provider-routing-baseline",
+  "legacy_broker_sha256": "2a106130c344aefebb23b078cd93b5d3ca3afd7f5325ae5fac2fb8a7251780cc",
+  "legacy_native_head": "3e251e5e1de71d56042daa76e2109cdd977b97a6",
+  "receiver_sha256": "e48456f822ca8861374641f4fa698f62d15c099e955cef2de354c26f78c6b75f",
+  "python": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "boundary": "Actual CLI/client/calendar plus exact legacy Handler/_call/queue; observation-only Handler wrapper and fail-fast responder for forbidden fetches",
+  "actual_browser_or_live_account_used": false,
+  "external_requests": 0,
+  "legacy_health_responses": [
+    {
+      "ok": true,
+      "ready": true,
+      "url": "https://school-b.instructure.com/courses",
+      "title": "",
+      "headless": false,
+      "read_only": true,
+      "error": null,
+      "base_url": "https://school-a.instructure.com"
+    },
+    {
+      "ok": true,
+      "ready": true,
+      "url": "https://school-b.instructure.com/courses",
+      "title": "",
+      "headless": false,
+      "read_only": true,
+      "error": null,
+      "base_url": "https://school-a.instructure.com"
+    }
+  ],
+  "post_requests": [
+    {
+      "method": "POST",
+      "path": "/fetch"
+    }
+  ],
+  "queued_jobs": [
+    {
+      "op": "fetch",
+      "method": "GET",
+      "path": "/api/v1/courses/42/assignments?order_by=due_at&include%5B%5D=submission&bucket=upcoming&per_page=50&page=1",
+      "headers": {
+        "Accept": "application/json"
+      },
+      "body": null
+    }
+  ],
+  "command": [
+    "/Users/me/workspace/estate/production-evidence-49f845d0dece/calendar-venv/bin/python",
+    "-m",
+    "canvaspilot.cli",
+    "export-calendar",
+    "42",
+    "--token",
+    "",
+    "--profile",
+    "/Users/me/workspace/estate/estate-49f845d0dece/canvas-provider-pr45-receiving/compatibility-baseline-qualified/unused-profile",
+    "--out",
+    "/Users/me/workspace/estate/estate-49f845d0dece/canvas-provider-pr45-receiving/compatibility-baseline-qualified/legacy-broker.ics"
+  ],
+  "cli_exit": 1,
+  "error_report": {
+    "ok": false,
+    "error": "CanvasAuthError",
+    "message": "Independent receiver observed forbidden legacy broker fetch"
+  },
+  "artifact_exists": false,
+  "profile_exists": false
+}

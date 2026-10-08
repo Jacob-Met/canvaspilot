@@ -1,0 +1,60 @@
+{
+  "status": "infrastructure_blocked_before_receiver_execution",
+  "classification": "All three shell launches failed creating their heredoc temporary file. Python and the receiving scripts did not execute; no product or receiving verdict is claimed.",
+  "source_native_commit": "7452703ec4f55e7f63c11276a92dbfd647f6e718",
+  "launches": [
+    {
+      "case": "compatibility-baseline",
+      "tool_result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Process started with PID 75915 (shell: /bin/zsh)\nInitial output:\nzsh:1: can't create temp file for here document: no space left on device\n"
+          },
+          {
+            "type": "text",
+            "text": "\n[executed on device: Mac.lan (0e3d582f-e25b-44b2-8418-9639fc4e4e33)]"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "case": "compatibility-candidate",
+      "tool_result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Process started with PID 75549 (shell: /bin/zsh)\nInitial output:\nzsh:1: can't create temp file for here document: no space left on device\n"
+          },
+          {
+            "type": "text",
+            "text": "\n[executed on device: Mac.lan (0e3d582f-e25b-44b2-8418-9639fc4e4e33)]"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "case": "capable-composition",
+      "tool_result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Process started with PID 75759 (shell: /bin/zsh)\nInitial output:\nzsh:1: can't create temp file for here document: no space left on device\n"
+          },
+          {
+            "type": "text",
+            "text": "\n[executed on device: Mac.lan (0e3d582f-e25b-44b2-8418-9639fc4e4e33)]"
+          }
+        ],
+        "isError": false
+      }
+    }
+  ],
+  "original_output_directories_exist": {
+    "compatibility-baseline": false,
+    "compatibility-candidate": false,
+    "capable-composition": false
+  }
+}

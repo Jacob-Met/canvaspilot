@@ -1,0 +1,4 @@
+HTTP Request: GET http://127.0.0.1:51420/health "HTTP/1.0 200 OK"
+HTTP Request: GET http://127.0.0.1:51420/health "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:51420/fetch "HTTP/1.0 200 OK"
+{"ok": false, "error": "CanvasAuthError", "message": "Independent receiver observed forbidden legacy broker fetch"}

@@ -1,0 +1,31 @@
+diff --git a/src/canvaspilot/calendar_export.py b/src/canvaspilot/calendar_export.py
+index 0cba1c8bd2fddac1d6babbf7c2e51e5e6d66e323..ef74cfdf50fd894327dbe45a9a9d43042953bc31 100644
+--- a/src/canvaspilot/calendar_export.py
++++ b/src/canvaspilot/calendar_export.py
+@@ -93,7 +93,13 @@ def _calendar_source(client: CanvasClient) -> str:
+     health = broker_health()
+     if not health or not health.get("base_url"):
+         raise ValueError("Running session broker must identify its Canvas base URL before export")
+-    return _source_identity(health["base_url"])
++    source = _source_identity(health["base_url"])
++    if health.get("provider_origin_checks") is not True:
++        raise ValueError(
++            "Running session broker lacks provider origin checks; "
++            "restart it with updated CanvasPilot before export"
++        )
++    return source
+ 
+ 
+ def _instant(value: Any, label: str) -> datetime:
+diff --git a/src/canvaspilot/session_broker.py b/src/canvaspilot/session_broker.py
+index 42537e323550e8b0a2da4cbbb3a6b94bfaf16ddc..d2c85da01308acc08a4c8dc02e8738f1a19c3f87 100644
+--- a/src/canvaspilot/session_broker.py
++++ b/src/canvaspilot/session_broker.py
+@@ -259,6 +259,7 @@ class Handler(BaseHTTPRequestHandler):
+                     "read_only": STATE.read_only,
+                     "error": STATE.error,
+                     "base_url": STATE.base_url,
++                    "provider_origin_checks": True,
+                 },
+             )
+             return
