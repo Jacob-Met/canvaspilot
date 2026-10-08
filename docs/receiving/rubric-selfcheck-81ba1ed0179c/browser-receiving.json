@@ -1,0 +1,101 @@
+{
+  "schema": "canvaspilot.rubric-selfcheck-browser/1",
+  "started_at": "2026-10-08T22:35:51.850Z",
+  "groups": [
+    {
+      "name": "actual CLI captures exactly four selected normalized briefs without writes",
+      "requests": 4,
+      "html_sha256": "416508d0b4e59e80665d440793a99a5ea5b7252950f07f4170acb38ea827c222"
+    },
+    {
+      "name": "initial unreviewed controls, empty/unavailable rubric and hidden point labels remain literal"
+    },
+    {
+      "name": "actual keyboard changes keep duplicate-ID criteria independent and notes literal"
+    },
+    {
+      "name": "first actual working-copy download reopens exact source, statuses and multiline Unicode notes",
+      "sha256": "10c98145127aeee605b6c9075e1b79cbbccdbd20337d5e34eb9b85e46a107a47"
+    },
+    {
+      "name": "second saved generation preserves earlier work and both input files"
+    },
+    {
+      "name": "desktop and390px reflow; criterion controls stay within viewport"
+    },
+    {
+      "name": "actual PDF includes closed rating details, complete notes and local statuses without hidden point labels",
+      "pdf_sha256": "2df6299dd0de38c130408ef3054609f4871733aea78ee1e6cf12b11ac50c9842"
+    },
+    {
+      "name": "controlled download preparation failure preserves current work"
+    },
+    {
+      "name": "oversized controlled note refuses download without truncation"
+    },
+    {
+      "name": "six malformed or foreign saved states refuse opening and preserve files",
+      "cases": [
+        "damaged-source",
+        "foreign-key",
+        "bad-status",
+        "wrong-binding",
+        "bad-note",
+        "oversized-state"
+      ]
+    },
+    {
+      "name": "all received pages stay offline with zero runtime exceptions",
+      "document_requests": 10
+    }
+  ],
+  "downloads": [
+    {
+      "sha256": "10c98145127aeee605b6c9075e1b79cbbccdbd20337d5e34eb9b85e46a107a47",
+      "bytes": 29977,
+      "name": "rubric-selfcheck-working.html",
+      "path": "/home/jacob/canvas-study-selfcheck-81ba1ed0179c/evidence/browser-r3/browser/downloads/e74fdd9b-eaab-4878-8225-64548347db72"
+    },
+    {
+      "sha256": "90a7c6fd9c23fcbfd0c733974f128f8381545516c50fa1e4448160a07c84cab3",
+      "bytes": 30053,
+      "name": "rubric-selfcheck-working.html",
+      "path": "/home/jacob/canvas-study-selfcheck-81ba1ed0179c/evidence/browser-r3/browser/downloads/c164f15e-5550-4db0-8322-1af181049f29"
+    }
+  ],
+  "captures": [
+    {
+      "path": "/home/jacob/canvas-study-selfcheck-81ba1ed0179c/evidence/browser-r3/browser/desktop.png",
+      "sha256": "13c51439db20c533c86c2d2537bb444c38afaf640608a11babb8f125e4f7399a",
+      "bytes": 577049
+    },
+    {
+      "path": "/home/jacob/canvas-study-selfcheck-81ba1ed0179c/evidence/browser-r3/browser/phone.png",
+      "sha256": "65bb52d82c0edf38f0d428557f42883cee771456cd3d3c029367249bce996e76",
+      "bytes": 515782
+    }
+  ],
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/153.0.8010.47",
+    "revision": "@73934a44f61e6b3878d1943064c141a5a820f5f7",
+    "userAgent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+    "jsVersion": "15.3.76.12"
+  },
+  "accepted": true,
+  "finished_at": "2026-10-08T22:36:19.243Z",
+  "requests": [
+    "file:///home/jacob/canvas-study-selfcheck-81ba1ed0179c/evidence/browser-r3/selfcheck.html",
+    "file:///home/jacob/canvas-study-selfcheck-81ba1ed0179c/evidence/browser-r3/working-copy-1.html",
+    "file:///home/jacob/canvas-study-selfcheck-81ba1ed0179c/evidence/browser-r3/working-copy-2.html",
+    "file:///home/jacob/canvas-study-selfcheck-81ba1ed0179c/evidence/browser-r3/damaged-source.html",
+    "file:///home/jacob/canvas-study-selfcheck-81ba1ed0179c/evidence/browser-r3/foreign-key.html",
+    "file:///home/jacob/canvas-study-selfcheck-81ba1ed0179c/evidence/browser-r3/bad-status.html",
+    "file:///home/jacob/canvas-study-selfcheck-81ba1ed0179c/evidence/browser-r3/wrong-binding.html",
+    "file:///home/jacob/canvas-study-selfcheck-81ba1ed0179c/evidence/browser-r3/bad-note.html",
+    "file:///home/jacob/canvas-study-selfcheck-81ba1ed0179c/evidence/browser-r3/oversized-state.html",
+    "file:///home/jacob/canvas-study-selfcheck-81ba1ed0179c/evidence/browser-r3/working-copy-2.html",
+    "file:///home/jacob/canvas-study-selfcheck-81ba1ed0179c/evidence/browser-r3/working-copy-2.html"
+  ],
+  "runtime_errors": []
+}

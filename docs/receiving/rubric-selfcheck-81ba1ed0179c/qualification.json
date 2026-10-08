@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-08T22:43:12.942824+00:00",
+  "source": {
+    "path": "/home/jacob/canvas-study-selfcheck-81ba1ed0179c/evidence/final-source-manifest.json",
+    "bytes": 5186,
+    "sha256": "61359aee1d74c0b2505f6a7040a714e105d01d5775e42278510c5abc06ba9315"
+  },
+  "partial_native_head": "a49c177ced1c37914a92641b276f96bbb1197ea0",
+  "partial_native_tree": "6261c39f575fce373c640c1daa7e3cac4683dc6b",
+  "source_bundle": {
+    "path": "/home/jacob/canvas-study-selfcheck-81ba1ed0179c/delivery/rubric-selfcheck-source.bundle",
+    "bytes": 162893,
+    "sha256": "b55854c5e987debf23d63e574e7c4e34ca96f31a1427f0cf795e5567eda13c76"
+  },
+  "accepted": [
+    "140 native tests",
+    "13 candidate-blind original-derived independent groups",
+    "6 actual built/installed wheel groups",
+    "11 actual Chromium groups and2 working-copy downloads",
+    "desktop390px screenshot inspection",
+    "actual PDF text/full notes/hidden labels",
+    "independent exact lifecycle source review"
+  ],
+  "not_claimed": [
+    "live school authentication",
+    "Canvas write or submission",
+    "instructor acceptance or learning outcomes",
+    "GitHub source publication or deployment",
+    "hosted CI or Actions"
+  ],
+  "retained_negatives": [
+    "receiver setup missing scripts directory",
+    "Chrome startup45s timeout",
+    "ruff import/alias findings",
+    "wheel receiver RECORD rewrite comparison correction"
+  ],
+  "no_actions": "Primary HAMON143comment6067592767; native work only. GitHub read403 at22:05:25 further freezes reads; no alternate route."
+}

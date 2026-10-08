@@ -1,0 +1,130 @@
+{
+  "schema": "hamon.native_source_freeze.v1",
+  "at": "2026-10-08T22:43:12.881842+00:00",
+  "repository": "Jacob-Met/canvaspilot",
+  "issue": "https://github.com/Jacob-Met/canvaspilot/issues/97",
+  "canonical_base": "56a72a2e2cee5ec04671d12ebe5bc2484afb8026",
+  "canonical_tree": "a07c3e941219ff80968e1ff20528a63541bb7400",
+  "partial_native_baseline": "65314cfb6327087e95c046df55dff33cd979fed8",
+  "partial_native_head": "a49c177ced1c37914a92641b276f96bbb1197ea0",
+  "partial_native_tree": "6261c39f575fce373c640c1daa7e3cac4683dc6b",
+  "partial_history": true,
+  "canonical_ancestry_claimed": false,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 28672,
+      "sha256": "e49b3d4d71cd867f92dcde7d11a7cbe9b3f6e9398ad0c26d7e89f4ce08ffdb95",
+      "git_blob": "2ac125c0248c931852b238b6fbedf281da8d69aa"
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "bytes": 40493,
+      "sha256": "774a47e42e9ff2e257408dfaa5042672092b85396ae3f5241973823005389180",
+      "git_blob": "da06857ba328aa2cfe2652a8474ea766ca5c46ff"
+    },
+    {
+      "path": "src/canvaspilot/rubric_selfcheck.py",
+      "bytes": 12520,
+      "sha256": "de04899f0aa2ca4b30a82ebb66df8417edc931ff90504fb5766cb536b00273f1",
+      "git_blob": "eb22035aee83e33995151507c3e4e790aa888898"
+    },
+    {
+      "path": "src/canvaspilot/rubric_selfcheck.html",
+      "bytes": 2736,
+      "sha256": "a612deb970ba1693c03b9d99f998d2f951d03ce1845ae8d0be01b41cef1bcbf1",
+      "git_blob": "e49241c30f071b322a99ac5bfb42b6283e7d47cc"
+    },
+    {
+      "path": "src/canvaspilot/rubric_selfcheck.css",
+      "bytes": 4828,
+      "sha256": "b66b2a2d73eaf95c9f6df2e0b82014f203a66cf714722842da3db409c639b528",
+      "git_blob": "43bf2876a7544cd293457116b4aaddc6d79c30df"
+    },
+    {
+      "path": "src/canvaspilot/rubric_selfcheck.js",
+      "bytes": 8990,
+      "sha256": "3db608657a334d969a3c7cb00aa1eab30b615f37192380642f29a5a5236d9df6",
+      "git_blob": "96da693d48065b4eb149df6ebfe3b8d3182851fb"
+    },
+    {
+      "path": "tests/test_rubric_selfcheck.py",
+      "bytes": 8038,
+      "sha256": "37558de89e3f063c21f3452e8ad0d6cff8783486531678c435feb1011013b73c",
+      "git_blob": "093ecca906c0be51fefca777d7dd50c2aae3ddf1"
+    },
+    {
+      "path": "tests/test_rubric_selfcheck_cli.py",
+      "bytes": 2982,
+      "sha256": "a0b7614aec380fdb733423ee523cb818ddf810c4e87dd12a7d79426bdc718a09",
+      "git_blob": "91643c2e21dce8d9d83877b57d2e9240e0a2789f"
+    },
+    {
+      "path": "scripts/receive_rubric_selfcheck.mjs",
+      "bytes": 20219,
+      "sha256": "58b96a0a28b8d8a438ae4a1718061125e7b8b81017218c804369e23a37ca9aac",
+      "git_blob": "cd4a711784b083210a528e9535c6c781709ca1b8"
+    },
+    {
+      "path": "docs/rubric-selfcheck.md",
+      "bytes": 6571,
+      "sha256": "67e16c1efcb6e50cd40add110170789cf3bde1abfcba4f6c54ea69b6aa7e586b",
+      "git_blob": "c2f3c71cb654eb7c8839efcaf1cc208f21313c2c"
+    }
+  ],
+  "baseline_inputs": 41,
+  "unchanged_original_inputs": [
+    ".gitignore",
+    "LICENSE",
+    "docs/study-workspace.md",
+    "pyproject.toml",
+    "src/canvaspilot/__init__.py",
+    "src/canvaspilot/agenda.py",
+    "src/canvaspilot/agenda_export.py",
+    "src/canvaspilot/agenda_view/controls.js",
+    "src/canvaspilot/agenda_view/style.css",
+    "src/canvaspilot/announcement_search.py",
+    "src/canvaspilot/api.py",
+    "src/canvaspilot/assignment_submission.py",
+    "src/canvaspilot/bundle.py",
+    "src/canvaspilot/calendar_export.py",
+    "src/canvaspilot/client.py",
+    "src/canvaspilot/discussion_thread.py",
+    "src/canvaspilot/feedback.py",
+    "src/canvaspilot/folder_browser.py",
+    "src/canvaspilot/grade_review.py",
+    "src/canvaspilot/grade_review_export.py",
+    "src/canvaspilot/mcp_server.py",
+    "src/canvaspilot/module_progress.py",
+    "src/canvaspilot/module_progress_export.py",
+    "src/canvaspilot/offline_demo.py",
+    "src/canvaspilot/page_export.py",
+    "src/canvaspilot/session_broker.py",
+    "src/canvaspilot/study_workspace.css",
+    "src/canvaspilot/study_workspace.html",
+    "src/canvaspilot/study_workspace.js",
+    "src/canvaspilot/study_workspace.py",
+    "src/canvaspilot/submission_comparison.py",
+    "src/canvaspilot/submission_history.py",
+    "src/canvaspilot/submission_history_export.py",
+    "src/canvaspilot/syllabus_packet.py",
+    "tests/fixtures/assignment_rubric.json",
+    "tests/fixtures/study_workspace_assignments.json",
+    "tests/test_assignment_brief_rubric.py",
+    "tests/test_study_workspace.py",
+    "tests/test_study_workspace_cli.py"
+  ],
+  "shared_files_additive_only": {
+    "path": "/home/jacob/canvas-study-selfcheck-81ba1ed0179c/evidence/additive-shared-files.patch",
+    "bytes": 1715,
+    "sha256": "81e1baa2c9d8d59aaca68547531fe8e7f5e632f62866ac8de72131669ab7fcba"
+  },
+  "product_source_pins_unchanged_since_independent_reviews": true,
+  "native_tests": "140 passed; subsequent test delta only import formatting",
+  "browser_groups": 11,
+  "actual_downloads": 2,
+  "independent_native_groups": 13,
+  "independent_installed_wheel_groups": 6,
+  "publication_state": "native_received_source_frozen_publication_held_no_actions",
+  "remote_head_after_rate_limit": "not read; no source ref/branch/PR write requested"
+}

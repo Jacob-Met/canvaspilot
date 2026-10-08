@@ -529,3 +529,10 @@ canvaspilot find-announcements 42 77 --text "room change" --start-date 2026-10-0
 
 The result preserves ordered full announcement rows and identifies which fields matched.
 See [announcement text search](docs/announcement-search.md) for matching, output, and complete-read behavior.
+
+## Prepare a rubric self-check
+
+Keep your own criterion-by-criterion status and evidence notes in a portable working
+copy with `canvaspilot export-selfcheck 42 1001 1008 --out selfcheck.html`.
+Read the [rubric self-check guide](docs/rubric-selfcheck.md) for saved-copy and print
+behavior. This local preparation never calculates a grade or submits to Canvas.

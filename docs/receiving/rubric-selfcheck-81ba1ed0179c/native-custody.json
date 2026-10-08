@@ -1,0 +1,27 @@
+{
+  "at": "2026-10-08T22:43:13.111931+00:00",
+  "state": "native_received_source_frozen_publication_held_no_actions",
+  "source_head": "a49c177ced1c37914a92641b276f96bbb1197ea0",
+  "source_tree": "6261c39f575fce373c640c1daa7e3cac4683dc6b",
+  "archive": {
+    "path": "/home/jacob/canvas-study-selfcheck-81ba1ed0179c/delivery/canvas-rubric-selfcheck-native-receiving.zip",
+    "bytes": 1982715,
+    "sha256": "66ca294356ae0337b56d19345ac2e6edd0a6c2bde30c3072761225d1e1d12545"
+  },
+  "members": 125,
+  "packet_manifest": {
+    "path": "/home/jacob/canvas-study-selfcheck-81ba1ed0179c/delivery/packet-manifest.json",
+    "bytes": 21302,
+    "sha256": "2ceb36e0549aca492e307e5355ef67b7e041d595f3956732b9a9b42627d13f1e"
+  },
+  "source_manifest": {
+    "path": "/home/jacob/canvas-study-selfcheck-81ba1ed0179c/evidence/final-source-manifest.json",
+    "bytes": 5186,
+    "sha256": "61359aee1d74c0b2505f6a7040a714e105d01d5775e42278510c5abc06ba9315"
+  },
+  "qualification": {
+    "path": "/home/jacob/canvas-study-selfcheck-81ba1ed0179c/delivery/qualification.json",
+    "bytes": 1546,
+    "sha256": "9699bf65f47a6ed47b0f700ac5b1ef836e994ce96848e0776d3371244b266687"
+  }
+}

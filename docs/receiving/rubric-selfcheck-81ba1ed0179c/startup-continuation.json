@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-08T22:35:34.646550+00:00",
+  "r2_remaining_profiles": [],
+  "r2_active_profile_pids": [],
+  "before_sha256": "df93c6efb8617b25283a6b02ec69d721ff54d126fe7afbb5e39c13aa5f16f390",
+  "after_sha256": "58b96a0a28b8d8a438ae4a1718061125e7b8b81017218c804369e23a37ca9aac",
+  "change": "receiver startup wait only:45s to90s; product unchanged",
+  "node_check": {
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+}

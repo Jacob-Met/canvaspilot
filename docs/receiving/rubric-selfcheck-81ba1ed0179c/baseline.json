@@ -1,0 +1,48 @@
+{
+  "at": "2026-10-08T22:01:28.392745+00:00",
+  "positive": {
+    "exit": 0,
+    "stdout": "{\n  \"ok\": true,\n  \"output\": \"/home/jacob/canvas-study-selfcheck-81ba1ed0179c/evidence/baseline-study.html\",\n  \"course_id\": \"17\",\n  \"assignment_ids\": [\n    \"81\",\n    \"82\",\n    \"83\"\n  ],\n  \"assignment_count\": 3,\n  \"snapshot_sha256\": \"523a33f207d311973b423417a09143fe5e0de323cf7ccdabda7da764270055ff\",\n  \"reader\": \"CanvasAPI.assignment_brief\",\n  \"upstream_response_identity\": \"not_observed\"\n}\n",
+    "stderr": "",
+    "html_bytes": 29349,
+    "sha256": "0ccabd82004d815ba64e8cae3498bd749e3ae88218cc89b3805d0e3b2ca7b9dd",
+    "state": {
+      "assignments": {
+        "17:81": {
+          "notes": "",
+          "reviewed": false
+        },
+        "17:82": {
+          "notes": "",
+          "reviewed": false
+        },
+        "17:83": {
+          "notes": "",
+          "reviewed": false
+        }
+      },
+      "source_sha256": "523a33f207d311973b423417a09143fe5e0de323cf7ccdabda7da764270055ff"
+    }
+  },
+  "absent_command": {
+    "exit": 2,
+    "stdout": "",
+    "stderr": "usage: canvaspilot [-h]\n                   {login,session,whoami,courses,sync,find-announcements,announcements,grade-review,export-grade-review,assignments,brief,feedback,inbox,conversation,discussions,discussion,files,browse-files,export-calendar,export-pages,export-study,export-syllabus,module-progress,export-module-progress,submission-history,export-submission-history,compare-submissions,agenda,quizzes,quiz,planner,export-agenda,enrollments,mcp} ...\ncanvaspilot: error: argument cmd: invalid choice: 'export-selfcheck' (choose from login, session, whoami, courses, sync, find-announcements, announcements, grade-review, export-grade-review, assignments, brief, feedback, inbox, conversation, discussions, discussion, files, browse-files, export-calendar, export-pages, export-study, export-syllabus, module-progress, export-module-progress, submission-history, export-submission-history, compare-submissions, agenda, quizzes, quiz, planner, export-agenda, enrollments, mcp)\n"
+  },
+  "actual_loopback_requests": [
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/17/assignments/81?include%5B%5D=submission&per_page=50"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/17/assignments/82?include%5B%5D=submission&per_page=50"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/17/assignments/83?include%5B%5D=submission&per_page=50"
+    }
+  ],
+  "no_external_requests_or_Canvas_writes": true,
+  "existing_state_has_only_assignment_notes_and_reviewed": true
+}

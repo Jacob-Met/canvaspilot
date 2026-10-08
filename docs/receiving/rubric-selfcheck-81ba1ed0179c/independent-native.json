@@ -1,0 +1,232 @@
+{
+  "at": "2026-10-08T22:23:22.311020+00:00",
+  "reviewer": "estate-81ba1ed0179c/estate_production",
+  "expectations_sha256": "6a8bae56c162523ec1438148a508f4311d4b034bed6f006aef9ac66533b8fcab",
+  "candidate_manifest_sha256": "25170c2fcf2fb6ca40341a5fb6466ea5e57cb194a66ce0c8a2b9015277391667",
+  "source": [
+    {
+      "path": "src/canvaspilot/rubric_selfcheck.py",
+      "bytes": 12520,
+      "sha256": "de04899f0aa2ca4b30a82ebb66df8417edc931ff90504fb5766cb536b00273f1",
+      "git_blob": "eb22035aee83e33995151507c3e4e790aa888898"
+    },
+    {
+      "path": "src/canvaspilot/rubric_selfcheck.html",
+      "bytes": 2736,
+      "sha256": "a612deb970ba1693c03b9d99f998d2f951d03ce1845ae8d0be01b41cef1bcbf1",
+      "git_blob": "e49241c30f071b322a99ac5bfb42b6283e7d47cc"
+    },
+    {
+      "path": "src/canvaspilot/rubric_selfcheck.css",
+      "bytes": 4828,
+      "sha256": "b66b2a2d73eaf95c9f6df2e0b82014f203a66cf714722842da3db409c639b528",
+      "git_blob": "43bf2876a7544cd293457116b4aaddc6d79c30df"
+    },
+    {
+      "path": "src/canvaspilot/rubric_selfcheck.js",
+      "bytes": 8990,
+      "sha256": "3db608657a334d969a3c7cb00aa1eab30b615f37192380642f29a5a5236d9df6",
+      "git_blob": "96da693d48065b4eb149df6ebfe3b8d3182851fb"
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "bytes": 40493,
+      "sha256": "774a47e42e9ff2e257408dfaa5042672092b85396ae3f5241973823005389180",
+      "git_blob": "da06857ba328aa2cfe2652a8474ea766ca5c46ff"
+    },
+    {
+      "path": "README.md",
+      "bytes": 28672,
+      "sha256": "e49b3d4d71cd867f92dcde7d11a7cbe9b3f6e9398ad0c26d7e89f4ce08ffdb95",
+      "git_blob": "2ac125c0248c931852b238b6fbedf281da8d69aa"
+    },
+    {
+      "path": "docs/rubric-selfcheck.md",
+      "bytes": 6005,
+      "sha256": "ed55d4afc1104a30c851824a35319cfedd2c2942b0e3f99b599b2d132e80e6a0",
+      "git_blob": "60aa75c39a3ad7b9e95bbfbec39168f5817ec024"
+    }
+  ],
+  "groups": [
+    {
+      "name": "Frozen six-assignment source, exact labels, hidden policies and eight distinct ordinal states",
+      "passed": true,
+      "detail": {
+        "source_sha256": "fdc5ab81466b0b09a3ff9a438498268aec5ae5baf7775d305e4cd4891231d825",
+        "criteria": 8,
+        "ratings": 6,
+        "requested_identity_only": true
+      }
+    },
+    {
+      "name": "Selection and URL refusal happen before all reads",
+      "passed": true,
+      "detail": [
+        {
+          "exception": "ValueError",
+          "reads": 0
+        },
+        {
+          "exception": "ValueError",
+          "reads": 0
+        },
+        {
+          "exception": "ValueError",
+          "reads": 0
+        },
+        {
+          "exception": "ValueError",
+          "reads": 0
+        },
+        {
+          "exception": "ValueError",
+          "reads": 0
+        }
+      ]
+    },
+    {
+      "name": "Exact500criterion/5000rating boundary admitted without truncation",
+      "passed": true,
+      "detail": {
+        "criteria": 500,
+        "ratings": 5000,
+        "source_bytes": 218660,
+        "html_sha256": "4630a4398fbf174cefa953851a30ddfcb1f73e7a2534cf5810926d6d02454fa7"
+      }
+    },
+    {
+      "name": "Aggregate501criterion selection refused whole",
+      "passed": true,
+      "detail": {
+        "exception": "ValueError",
+        "message": "Self-check limit: 500 criteria and 5000 ratings; no partial export",
+        "reads": [
+          [
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "2"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "Aggregate5001rating selection refused whole",
+      "passed": true,
+      "detail": {
+        "exception": "ValueError",
+        "message": "Self-check limit: 500 criteria and 5000 ratings; no partial export",
+        "reads": [
+          [
+            "1",
+            "1"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "UTF-8 source above4MiB refused without mutation",
+      "passed": true,
+      "detail": {
+        "exception": "ValueError",
+        "message": "Selected assignment snapshot exceeds the 4 MiB limit",
+        "reads": [
+          [
+            "1",
+            "1"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "Later selected identity mismatch refuses whole export",
+      "passed": true,
+      "detail": {
+        "exception": "ValueError",
+        "message": "The normalized brief does not match the requested selection",
+        "reads": [
+          [
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "2"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "Reused mutable earlier brief frozen before next API call",
+      "passed": true,
+      "detail": {
+        "reads": [
+          [
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "2"
+          ]
+        ],
+        "first_preserved": true
+      }
+    },
+    {
+      "name": "Actual CLI publishes complete authored selection with six reads and closes client",
+      "passed": true,
+      "detail": {
+        "exit": 0,
+        "reads": 6,
+        "html_sha256": "04fad3152adb0c6cfcfa73c2f17282a37f3a3e0ee0e55ed7278b5c90967f3b61"
+      }
+    },
+    {
+      "name": "Existing output refused before client construction",
+      "passed": true,
+      "detail": {
+        "exit": 1,
+        "client_constructions": 0
+      }
+    },
+    {
+      "name": "Dangling output link preserved before client construction",
+      "passed": true,
+      "detail": {
+        "exit": 1,
+        "symlink_preserved": true
+      }
+    },
+    {
+      "name": "Duplicate canonical CLI IDs refused before client construction",
+      "passed": true,
+      "detail": {
+        "exit": 1,
+        "client_constructions": 0
+      }
+    },
+    {
+      "name": "Publication race preserves winning neighbor and cleans owned stage",
+      "passed": true,
+      "detail": {
+        "exit": 1,
+        "neighbor_preserved": true,
+        "owned_stage_clean": true
+      }
+    }
+  ],
+  "limitations": [
+    "Native source/export acceptance only. Browser digest/state/working-copy/print lifecycle belongs to the author receiver.",
+    "The source normalization authenticates requested selection IDs, not raw REST response identity.",
+    "Inherited writer uses complete new-file hard-link publication; no overwrite or multi-file transaction claim."
+  ],
+  "input_sha256": {
+    "raw-fixtures.json": "eac2a86801c5fa2621ba45ce7274868d339e40fc449481936cbb64e5f56bdf8a",
+    "original-normalized-briefs.json": "5f38d9588f03d38913797bfa2bb50e1a1e4b5a88906b32bbb58281116ca97e83",
+    "expectations-frozen.json": "6a8bae56c162523ec1438148a508f4311d4b034bed6f006aef9ac66533b8fcab"
+  },
+  "passed": true
+}

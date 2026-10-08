@@ -1,0 +1,26 @@
+{
+  "at": "2026-10-08T22:43:12.577973+00:00",
+  "receipt": {
+    "path": "/home/jacob/canvas-study-selfcheck-81ba1ed0179c/evidence/browser-r3/receipt.json",
+    "bytes": 4386,
+    "sha256": "fc5509e4572117ce726b5a4f37268f0a899a04b12066e3c38e8be4b9cdc5a2c5"
+  },
+  "visual_review": "Both actual desktop and390px phone captures inspected: ordered criteria, local status/note controls, literal hostile text, separate empty/missing sections, source boundaries and responsive layout coherent. No clipping observed.",
+  "screenshots": [
+    {
+      "path": "/home/jacob/canvas-study-selfcheck-81ba1ed0179c/evidence/browser-r3/browser/desktop.png",
+      "sha256": "13c51439db20c533c86c2d2537bb444c38afaf640608a11babb8f125e4f7399a",
+      "bytes": 577049
+    },
+    {
+      "path": "/home/jacob/canvas-study-selfcheck-81ba1ed0179c/evidence/browser-r3/browser/phone.png",
+      "sha256": "65bb52d82c0edf38f0d428557f42883cee771456cd3d3c029367249bce996e76",
+      "bytes": 515782
+    }
+  ],
+  "cleanup": {
+    "remaining_profiles": [],
+    "active_profile_pids": []
+  },
+  "negative_retained": "R1 receiver-directory setup failure; R2 45s startup timeout before page assertions. R3 differs only90s receiver startup allowance; product unchanged."
+}

@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-08T22:13:34.269143+00:00",
+  "command": [
+    "/home/jacob/canvaspilot-enrollments-env-65ae877160f6/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_rubric_selfcheck.py",
+    "tests/test_rubric_selfcheck_cli.py",
+    "tests/test_study_workspace.py",
+    "tests/test_assignment_brief_rubric.py"
+  ],
+  "exit": 0,
+  "log_sha256": "8a0aad94d3558f1fdbda1728163699a95417fda93c0799560441c9a8f09c51f1"
+}

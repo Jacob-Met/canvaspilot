@@ -314,7 +314,22 @@ def main(argv: list[str] | None = None) -> None:
     mcp = sub.add_parser("mcp", help="Run MCP stdio server")
     add_common(mcp)
 
+    selfcheck = sub.add_parser(
+        "export-selfcheck", help="Keep a local rubric self-check with criterion evidence notes",
+    )
+    add_common(selfcheck)
+    selfcheck.add_argument("course_id")
+    selfcheck.add_argument("assignment_ids", nargs="+")
+    selfcheck.add_argument("--out", type=Path, required=True)
+
     args = parser.parse_args(argv)
+
+    if args.cmd == "export-selfcheck":
+        from canvaspilot.rubric_selfcheck import run_export_selfcheck
+
+        run_export_selfcheck(args)
+        return
+
 
     if args.cmd == "login":
         _login(base_url=args.base_url, profile=args.profile)

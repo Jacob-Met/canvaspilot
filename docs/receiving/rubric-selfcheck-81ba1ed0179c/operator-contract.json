@@ -1,0 +1,50 @@
+{
+  "schema": "hamon.product_operator_contract.v1",
+  "at": "2026-10-08T22:00:50.551Z",
+  "worker_id": "estate-81ba1ed0179c/estate_coordination",
+  "repository": "Jacob-Met/canvaspilot",
+  "canonical_commit": "56a72a2e2cee5ec04671d12ebe5bc2484afb8026",
+  "canonical_tree": "a07c3e941219ff80968e1ff20528a63541bb7400",
+  "beneficiary": "A learner preparing an assignment against its supplied rubric can keep a distinct local self-check status and supporting notes for every retained criterion, then save/reopen/print that work.",
+  "new_paths": [
+    "src/canvaspilot/rubric_selfcheck.py",
+    "src/canvaspilot/rubric_selfcheck.html",
+    "src/canvaspilot/rubric_selfcheck.css",
+    "src/canvaspilot/rubric_selfcheck.js",
+    "tests/test_rubric_selfcheck.py",
+    "tests/test_rubric_selfcheck_cli.py",
+    "scripts/receive_rubric_selfcheck.mjs",
+    "docs/rubric-selfcheck.md"
+  ],
+  "additive_seams": [
+    "src/canvaspilot/cli.py: export-selfcheck parser/dispatch only",
+    "README.md: discovery pointer"
+  ],
+  "contract": [
+    "New canvaspilot export-selfcheck COURSE ASSIGNMENT... --out NEW.html reuses existing selection, normalized brief admission and new-only atomic writer; original brief source and current study-workspace files remain byte-exact.",
+    "Every explicit selection is admitted before requests/output, then read exactly once through CanvasAPI.assignment_brief. Preserve its cleaned-text and requested-ID identity limitation; no raw REST identity claim.",
+    "Read-only source retained in original assignment/criterion/rating order. Duplicate or absent criterion IDs remain distinct by ordinal position bound to the exact source hash. All numeric source labels are rendered by Python before browser JSON parsing so large integer metadata is never rounded for display.",
+    "Per-criterion local state is one of unreviewed/needs-work/checked plus literal evidence notes. No default rating selection, scoring, computed grade or Canvas completion/submission/write.",
+    "Source rubric null, empty list and missing/malformed optional data stay distinguishable. Respect native hide_points and hide_score_total conservatively; no redaction claim. Show reader warnings.",
+    "At most25 assignments,4MiB canonical source,500 criteria and5000 ratings total; refuse whole export above caps. Per-criterion notes max5000 UTF-16 units; total local state max2MiB. No silent truncation.",
+    "One portable HTML contains source, own CSS/JS, immutable literal brief/rubric cards and local state. Verify exact UTF-8 source SHA256 and state binding before enabling controls. Wrong schema, foreign/extraneous keys, invalid statuses/notes or digest mismatch refuse opening.",
+    "Save working copy prepares a separate HTML download from current exact source and validated local state. Reopen restores choices/notes; failed preparation preserves current work. No autosave/storage or original-file mutation. Stable ASCII download name.",
+    "Print includes every supplied criterion, rating text, local status and complete literal notes. Source links only explicit same-origin HTTP(S) Canvas links; no external assets/network calls.",
+    "New-only atomic CLI publication; destination existence/aliases/races preserve existing output. Native fixture/actual browser checks, independent source review and durable source bundle; no live Canvas session or student efficacy claim."
+  ],
+  "preserved_owners": [
+    "b47 Canvas study-workspace All/Still-to-review (no study_workspace.* edit)",
+    "965d group API/CLI/MCP methods",
+    "current quiz96/page92-95/assignment93/discussion85-91/inbox88/feedback60 owners",
+    "all client/auth/broker/API/MCP/shared writers/workflows"
+  ],
+  "no_actions": {
+    "primary": "https://github.com/Jacob-Met/hamon/issues/143#issuecomment-6067592767",
+    "configured_workflows": [
+      "ci.yml push(main),pull_request(main)",
+      "agenda-view-browser.yml pull_request(paths),workflow_dispatch"
+    ],
+    "allowed": "Native source/evidence work and a nontriggering issue claim only.",
+    "held": "No source refs, PR, merge, dispatch, rerun, workflow/gate change or bypass."
+  }
+}

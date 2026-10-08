@@ -1,0 +1,119 @@
+{
+  "at": "2026-10-08T22:34:26.965551+00:00",
+  "wheel": {
+    "name": "canvaspilot-0.1.1-py3-none-any.whl",
+    "bytes": 138593,
+    "sha256": "d976e26556eeecdc0ce3b4714e1d75771a66517540fa8983d0b38b16fab09584"
+  },
+  "groups": [
+    {
+      "name": "Actual wheel RECORD hashes and every installed payload exact",
+      "passed": true,
+      "detail": {
+        "members": 40,
+        "wheel_record_hashes": 39,
+        "selfcheck_four_assets_exact": true,
+        "native_helpers_exact": true
+      }
+    },
+    {
+      "name": "Installed API emits byte-identical authored source capture",
+      "passed": true,
+      "detail": {
+        "byte_identical_to_frozen_source_capture": true,
+        "bytes": 41502,
+        "sha256": "0fe0106c12599164ec1bbddf6bea43a2796fae3367a5d3258751d5441e715194"
+      }
+    },
+    {
+      "name": "Installed console entrypoint consumes six genuine loopback HTTP responses",
+      "passed": true,
+      "detail": {
+        "exit": 0,
+        "http_reads": 6,
+        "source_sha256": "12ac9293833cd3561104d64b05cdeddb065c0487af614b5ae4c4e0e1c1a40e09",
+        "html_sha256": "f4736d4ea31c6d0cbb6c3d13d85484646bc3dd249994453a6e496a157c56d051",
+        "profile_absent": true,
+        "entrypoint_sha256": "9701a39d2ddba5b41b85655d2187ef000f468ca3e4d66b653acd017cef3951cc"
+      }
+    },
+    {
+      "name": "Installed existing-file refusal preserves output before HTTP",
+      "passed": true,
+      "detail": {
+        "exit": 1,
+        "reads": 0,
+        "preserved": true
+      }
+    },
+    {
+      "name": "Installed dangling-link refusal preserves link before HTTP",
+      "passed": true,
+      "detail": {
+        "exit": 1,
+        "reads": 0,
+        "symlink_preserved": true
+      }
+    },
+    {
+      "name": "Installed duplicate canonical-ID refusal happens before HTTP",
+      "passed": true,
+      "detail": {
+        "exit": 1,
+        "reads": 0,
+        "output_absent": true
+      }
+    }
+  ],
+  "source_guard": {
+    "src/canvaspilot/rubric_selfcheck.py": "de04899f0aa2ca4b30a82ebb66df8417edc931ff90504fb5766cb536b00273f1",
+    "src/canvaspilot/rubric_selfcheck.html": "a612deb970ba1693c03b9d99f998d2f951d03ce1845ae8d0be01b41cef1bcbf1",
+    "src/canvaspilot/rubric_selfcheck.css": "b66b2a2d73eaf95c9f6df2e0b82014f203a66cf714722842da3db409c639b528",
+    "src/canvaspilot/rubric_selfcheck.js": "3db608657a334d969a3c7cb00aa1eab30b615f37192380642f29a5a5236d9df6",
+    "src/canvaspilot/cli.py": "774a47e42e9ff2e257408dfaa5042672092b85396ae3f5241973823005389180",
+    "README.md": "e49b3d4d71cd867f92dcde7d11a7cbe9b3f6e9398ad0c26d7e89f4ce08ffdb95",
+    "docs/rubric-selfcheck.md": "ed55d4afc1104a30c851824a35319cfedd2c2942b0e3f99b599b2d132e80e6a0",
+    "pyproject.toml": "555ad3c7e338d38ae5feabc06c0c07503f22d9c732a9af153c7706c63d2b3c63",
+    "LICENSE": "85144488dcaf127ecd6842af9b19a72a2448c7b48ab831140ace32dac8090314"
+  },
+  "installed_module": "/home/jacob/canvas-study-selfcheck-81ba1ed0179c/evidence/independent-production/wheel/installed/canvaspilot/rubric_selfcheck.py",
+  "installed_api": "/home/jacob/canvas-study-selfcheck-81ba1ed0179c/evidence/independent-production/wheel/installed/canvaspilot/api.py",
+  "limitations": [
+    "Private target installation uses the already qualified borrowed interpreter/runtime dependencies read-only. No shared environment or product source mutation.",
+    "Real HTTP is loopback only with authored fixture records and a synthetic fixture token; no real Canvas/account/session is accessed.",
+    "Native installed API/CLI receiving only; the author owns browser editing/working-copy/print acceptance."
+  ],
+  "passed": true,
+  "http_calls": [
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/9223372036854775807/assignments/9007199254740993"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/9223372036854775807/assignments/102"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/9223372036854775807/assignments/103"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/9223372036854775807/assignments/104"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/9223372036854775807/assignments/105"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/9223372036854775807/assignments/106"
+    }
+  ],
+  "server_stopped": true,
+  "original_input_sha256": {
+    "expectations-frozen.json": "6a8bae56c162523ec1438148a508f4311d4b034bed6f006aef9ac66533b8fcab",
+    "raw-fixtures.json": "eac2a86801c5fa2621ba45ce7274868d339e40fc449481936cbb64e5f56bdf8a",
+    "original-normalized-briefs.json": "5f38d9588f03d38913797bfa2bb50e1a1e4b5a88906b32bbb58281116ca97e83"
+  }
+}
