@@ -1,0 +1,2156 @@
+﻿2026-10-08T20:50:16.8141319Z Current runner version: '2.337.0'
+2026-10-08T20:50:16.8169103Z ##[group]Runner Image Provisioner
+2026-10-08T20:50:16.8170531Z Hosted Compute Agent
+2026-10-08T20:50:16.8171220Z Version: 20261002.596
+2026-10-08T20:50:16.8171975Z Commit: c3d12f3313a95f25162a1503be624f3b0617f8c0
+2026-10-08T20:50:16.8172749Z Build Date: 2026-10-02T22:28:27Z
+2026-10-08T20:50:16.8173450Z Worker ID: {46080688-9579-48c9-b72c-40e291d734aa}
+2026-10-08T20:50:16.8174304Z Region: eastus
+2026-10-08T20:50:16.8174898Z Cloud: Azure
+2026-10-08T20:50:16.8175591Z ##[endgroup]
+2026-10-08T20:50:16.8177261Z ##[group]Operating System
+2026-10-08T20:50:16.8178006Z Ubuntu
+2026-10-08T20:50:16.8178843Z 24.04.5
+2026-10-08T20:50:16.8179450Z LTS
+2026-10-08T20:50:16.8180320Z ##[endgroup]
+2026-10-08T20:50:16.8181050Z ##[group]Runner Image
+2026-10-08T20:50:16.8181741Z Image: ubuntu-24.04
+2026-10-08T20:50:16.8182480Z Version: 20261004.327.1
+2026-10-08T20:50:16.8183878Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261004.327/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-08T20:50:16.8185668Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261004.327
+2026-10-08T20:50:16.8186792Z ##[endgroup]
+2026-10-08T20:50:16.8188096Z ##[group]GITHUB_TOKEN Permissions
+2026-10-08T20:50:16.8190598Z Contents: read
+2026-10-08T20:50:16.8191376Z Metadata: read
+2026-10-08T20:50:16.8191963Z ##[endgroup]
+2026-10-08T20:50:16.8194248Z Secret source: Actions
+2026-10-08T20:50:16.8195291Z Cache mode: write
+2026-10-08T20:50:16.8196323Z Prepare workflow directory
+2026-10-08T20:50:16.8537440Z Prepare all required actions
+2026-10-08T20:50:16.8586183Z Getting action download info
+2026-10-08T20:50:17.0849756Z Download action repository 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+2026-10-08T20:50:17.1870386Z Download action repository 'actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97' (SHA:5fda3b95a4ea91299a34e894583c3862153e4b97)
+2026-10-08T20:50:17.2657136Z Download action repository 'actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-10-08T20:50:17.3690892Z Download action repository 'actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-10-08T20:50:17.7896787Z Complete job name: installed-chrome
+2026-10-08T20:50:17.8882628Z ##[group]Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+2026-10-08T20:50:17.8884360Z with:
+2026-10-08T20:50:17.8885193Z   fetch-depth: 0
+2026-10-08T20:50:17.8886124Z   persist-credentials: false
+2026-10-08T20:50:17.8887173Z   repository: Jacob-Met/canvaspilot
+2026-10-08T20:50:17.8896162Z   token: ***
+2026-10-08T20:50:17.8897046Z   ssh-strict: true
+2026-10-08T20:50:17.8897940Z   ssh-user: git
+2026-10-08T20:50:17.8898793Z   clean: true
+2026-10-08T20:50:17.8899696Z   sparse-checkout-cone-mode: true
+2026-10-08T20:50:17.8900875Z   fetch-tags: false
+2026-10-08T20:50:17.8901780Z   show-progress: true
+2026-10-08T20:50:17.8902722Z   lfs: false
+2026-10-08T20:50:17.8903559Z   submodules: false
+2026-10-08T20:50:17.8904469Z   set-safe-directory: true
+2026-10-08T20:50:17.8905485Z   allow-unsafe-pr-checkout: false
+2026-10-08T20:50:17.8906795Z ##[endgroup]
+2026-10-08T20:50:17.9966913Z Syncing repository: Jacob-Met/canvaspilot
+2026-10-08T20:50:17.9971697Z ##[group]Getting Git version info
+2026-10-08T20:50:17.9974067Z Working directory is '/home/runner/work/canvaspilot/canvaspilot'
+2026-10-08T20:50:17.9977530Z [command]/usr/bin/git version
+2026-10-08T20:50:18.0020598Z git version 2.55.0
+2026-10-08T20:50:18.0046248Z ##[endgroup]
+2026-10-08T20:50:18.0063469Z Temporarily overriding HOME='/home/runner/work/_temp/2c49d9f6-515f-4966-808d-d2c8bb884016' before making global git config changes
+2026-10-08T20:50:18.0068157Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-08T20:50:18.0080942Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/canvaspilot/canvaspilot
+2026-10-08T20:50:18.0159416Z Deleting the contents of '/home/runner/work/canvaspilot/canvaspilot'
+2026-10-08T20:50:18.0162013Z ##[group]Determining repository object format
+2026-10-08T20:50:18.0165039Z ##[endgroup]
+2026-10-08T20:50:18.0166597Z ##[group]Initializing the repository
+2026-10-08T20:50:18.0168029Z [command]/usr/bin/git init /home/runner/work/canvaspilot/canvaspilot
+2026-10-08T20:50:18.0294899Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-08T20:50:18.0300521Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-08T20:50:18.0304830Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-08T20:50:18.0307610Z hint: call:
+2026-10-08T20:50:18.0309021Z hint:
+2026-10-08T20:50:18.0310973Z hint: 	git config --global init.defaultBranch <name>
+2026-10-08T20:50:18.0312396Z hint:
+2026-10-08T20:50:18.0314321Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-08T20:50:18.0317226Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-08T20:50:18.0318974Z hint:
+2026-10-08T20:50:18.0319819Z hint: 	git branch -m <name>
+2026-10-08T20:50:18.0321142Z hint:
+2026-10-08T20:50:18.0322352Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-08T20:50:18.0324984Z Initialized empty Git repository in /home/runner/work/canvaspilot/canvaspilot/.git/
+2026-10-08T20:50:18.0330431Z [command]/usr/bin/git remote add origin https://github.com/Jacob-Met/canvaspilot
+2026-10-08T20:50:18.0384346Z ##[endgroup]
+2026-10-08T20:50:18.0385923Z ##[group]Disabling automatic garbage collection
+2026-10-08T20:50:18.0391015Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-08T20:50:18.0431478Z ##[endgroup]
+2026-10-08T20:50:18.0433614Z ##[group]Setting up auth
+2026-10-08T20:50:18.0436468Z Removing SSH command configuration
+2026-10-08T20:50:18.0438672Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-08T20:50:18.0573476Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-08T20:50:18.0897834Z Removing HTTP extra header
+2026-10-08T20:50:18.0904292Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-08T20:50:18.0943042Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-08T20:50:18.1169892Z Removing includeIf entries pointing to credentials config files
+2026-10-08T20:50:18.1174363Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-08T20:50:18.1213117Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-08T20:50:18.1452086Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-3f65dd63-6bf9-43ba-a866-bcb1821bf06e.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-08T20:50:18.1495860Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/canvaspilot/canvaspilot/.git.path /home/runner/work/_temp/git-credentials-3f65dd63-6bf9-43ba-a866-bcb1821bf06e.config
+2026-10-08T20:50:18.1534973Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/canvaspilot/canvaspilot/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-3f65dd63-6bf9-43ba-a866-bcb1821bf06e.config
+2026-10-08T20:50:18.1576971Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-3f65dd63-6bf9-43ba-a866-bcb1821bf06e.config
+2026-10-08T20:50:18.1615344Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-3f65dd63-6bf9-43ba-a866-bcb1821bf06e.config
+2026-10-08T20:50:18.1650407Z ##[endgroup]
+2026-10-08T20:50:18.1653958Z ##[group]Fetching the repository
+2026-10-08T20:50:18.1661511Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/* +17a368885b7c4d579ecd9b80dda5afe560091cf2:refs/remotes/pull/91/merge
+2026-10-08T20:50:18.7677716Z From https://github.com/Jacob-Met/canvaspilot
+2026-10-08T20:50:18.7679939Z  * [new branch]      ci/dependabot-actions                    -> origin/ci/dependabot-actions
+2026-10-08T20:50:18.7681880Z  * [new branch]      config/dependabot-actions                -> origin/config/dependabot-actions
+2026-10-08T20:50:18.7683447Z  * [new branch]      estate-3dab-grade-value-receiving-0444c639 -> origin/estate-3dab-grade-value-receiving-0444c639
+2026-10-08T20:50:18.7685258Z  * [new branch]      estate-e827/agenda-integration-receipt   -> origin/estate-e827/agenda-integration-receipt
+2026-10-08T20:50:18.7687525Z  * [new branch]      estate/49f845d0dece-provider-page-routing-receiving -> origin/estate/49f845d0dece-provider-page-routing-receiving
+2026-10-08T20:50:18.7689607Z  * [new branch]      estate/86776bb3cdb8-canvas-link-pagination -> origin/estate/86776bb3cdb8-canvas-link-pagination
+2026-10-08T20:50:18.7691759Z  * [new branch]      estate/87eaaf0fdf63-canvas-collection-transfer -> origin/estate/87eaaf0fdf63-canvas-collection-transfer
+2026-10-08T20:50:18.7693514Z  * [new branch]      estate/canvaspilot-broker-auth           -> origin/estate/canvaspilot-broker-auth
+2026-10-08T20:50:18.7694521Z  * [new branch]      estate/canvaspilot-ci                    -> origin/estate/canvaspilot-ci
+2026-10-08T20:50:18.7695435Z  * [new branch]      estate/canvaspilot-docs-fixes            -> origin/estate/canvaspilot-docs-fixes
+2026-10-08T20:50:18.7696365Z  * [new branch]      feat/broker-token-auth                   -> origin/feat/broker-token-auth
+2026-10-08T20:50:18.7697126Z  * [new branch]      main                                     -> origin/main
+2026-10-08T20:50:18.7698057Z  * [new branch]      presence/offline-demo-20260909           -> origin/presence/offline-demo-20260909
+2026-10-08T20:50:18.7699210Z  * [new branch]      receiving/discussion-export-71826f7aa69e -> origin/receiving/discussion-export-71826f7aa69e
+2026-10-08T20:50:18.7700793Z  * [new branch]      receiving/feedback-heading-wrap-b890f0b1bfcd -> origin/receiving/feedback-heading-wrap-b890f0b1bfcd
+2026-10-08T20:50:18.7701908Z  * [new branch]      receiving/provider-routing-integration-49f845d0dece -> origin/receiving/provider-routing-integration-49f845d0dece
+2026-10-08T20:50:18.7703022Z  * [new branch]      receiving/rubric-current-main-7879c2abc07f-20261008 -> origin/receiving/rubric-current-main-7879c2abc07f-20261008
+2026-10-08T20:50:18.7704086Z  * [new branch]      review/aster82r-announcement-boundary-20261008 -> origin/review/aster82r-announcement-boundary-20261008
+2026-10-08T20:50:18.7704981Z  * [new branch]      sec/broker-token-file-auth               -> origin/sec/broker-token-file-auth
+2026-10-08T20:50:18.7705701Z  * [new branch]      t133-agent-operations                    -> origin/t133-agent-operations
+2026-10-08T20:50:18.7706372Z  * [new branch]      t156-pypi-lockfile                       -> origin/t156-pypi-lockfile
+2026-10-08T20:50:18.7707073Z  * [new branch]      t158/gitleaks-secret-scan                -> origin/t158/gitleaks-secret-scan
+2026-10-08T20:50:18.7707750Z  * [new branch]      t164/demo-coverage                       -> origin/t164/demo-coverage
+2026-10-08T20:50:18.7708420Z  * [new branch]      t164/diff-cover-gate                     -> origin/t164/diff-cover-gate
+2026-10-08T20:50:18.7709179Z  * [new branch]      work/71826f7aa69e-discussion-export      -> origin/work/71826f7aa69e-discussion-export
+2026-10-08T20:50:18.7710489Z  * [new branch]      work/feedback-export-9ec02b70e5f0-20261008 -> origin/work/feedback-export-9ec02b70e5f0-20261008
+2026-10-08T20:50:18.7711302Z  * [new ref]         17a368885b7c4d579ecd9b80dda5afe560091cf2 -> pull/91/merge
+2026-10-08T20:50:18.7713252Z ##[endgroup]
+2026-10-08T20:50:18.7713747Z ##[group]Determining the checkout info
+2026-10-08T20:50:18.7714335Z ##[endgroup]
+2026-10-08T20:50:18.7714667Z [command]/usr/bin/git sparse-checkout disable
+2026-10-08T20:50:18.7749600Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-08T20:50:18.7786339Z ##[group]Checking out the ref
+2026-10-08T20:50:18.7792699Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/91/merge
+2026-10-08T20:50:18.9267020Z Note: switching to 'refs/remotes/pull/91/merge'.
+2026-10-08T20:50:18.9267977Z 
+2026-10-08T20:50:18.9268806Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-10-08T20:50:18.9269934Z changes and commit them, and you can discard any commits you make in this
+2026-10-08T20:50:18.9270951Z state without impacting any branches by switching back to a branch.
+2026-10-08T20:50:18.9271407Z 
+2026-10-08T20:50:18.9271725Z If you want to create a new branch to retain commits you create, you may
+2026-10-08T20:50:18.9272498Z do so (now or later) by using -c with the switch command. Example:
+2026-10-08T20:50:18.9272930Z 
+2026-10-08T20:50:18.9273122Z   git switch -c <new-branch-name>
+2026-10-08T20:50:18.9273424Z 
+2026-10-08T20:50:18.9273603Z Or undo this operation with:
+2026-10-08T20:50:18.9273875Z 
+2026-10-08T20:50:18.9274031Z   git switch -
+2026-10-08T20:50:18.9274257Z 
+2026-10-08T20:50:18.9274618Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-10-08T20:50:18.9275116Z 
+2026-10-08T20:50:18.9275684Z HEAD is now at 17a3688 Merge 8548037fe4f6b9e1a640cdabdd288a0c3f8751b1 into b6d73588887ce57a2637ab72ee424a5eb29e543f
+2026-10-08T20:50:18.9286401Z ##[endgroup]
+2026-10-08T20:50:18.9339214Z [command]/usr/bin/git log -1 --format=%H
+2026-10-08T20:50:18.9371663Z 17a368885b7c4d579ecd9b80dda5afe560091cf2
+2026-10-08T20:50:18.9386622Z ##[group]Removing auth
+2026-10-08T20:50:18.9387145Z Removing SSH command configuration
+2026-10-08T20:50:18.9387890Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-08T20:50:18.9428232Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-08T20:50:18.9664661Z Removing HTTP extra header
+2026-10-08T20:50:18.9669708Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-08T20:50:18.9714542Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-08T20:50:18.9950224Z Removing includeIf entries pointing to credentials config files
+2026-10-08T20:50:18.9954246Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-08T20:50:18.9988726Z includeif.gitdir:/home/runner/work/canvaspilot/canvaspilot/.git.path
+2026-10-08T20:50:18.9989656Z includeif.gitdir:/home/runner/work/canvaspilot/canvaspilot/.git/worktrees/*.path
+2026-10-08T20:50:18.9990792Z includeif.gitdir:/github/workspace/.git.path
+2026-10-08T20:50:18.9991398Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-08T20:50:18.9998684Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/canvaspilot/canvaspilot/.git.path
+2026-10-08T20:50:19.0026581Z /home/runner/work/_temp/git-credentials-3f65dd63-6bf9-43ba-a866-bcb1821bf06e.config
+2026-10-08T20:50:19.0047715Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/canvaspilot/canvaspilot/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-3f65dd63\-6bf9\-43ba\-a866\-bcb1821bf06e\.config
+2026-10-08T20:50:19.0078305Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/canvaspilot/canvaspilot/.git/worktrees/*.path
+2026-10-08T20:50:19.0108914Z /home/runner/work/_temp/git-credentials-3f65dd63-6bf9-43ba-a866-bcb1821bf06e.config
+2026-10-08T20:50:19.0118173Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/canvaspilot/canvaspilot/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-3f65dd63\-6bf9\-43ba\-a866\-bcb1821bf06e\.config
+2026-10-08T20:50:19.0158094Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-10-08T20:50:19.0187293Z /github/runner_temp/git-credentials-3f65dd63-6bf9-43ba-a866-bcb1821bf06e.config
+2026-10-08T20:50:19.0198305Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-3f65dd63\-6bf9\-43ba\-a866\-bcb1821bf06e\.config
+2026-10-08T20:50:19.0237462Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-08T20:50:19.0264874Z /github/runner_temp/git-credentials-3f65dd63-6bf9-43ba-a866-bcb1821bf06e.config
+2026-10-08T20:50:19.0276051Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-3f65dd63\-6bf9\-43ba\-a866\-bcb1821bf06e\.config
+2026-10-08T20:50:19.0316982Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-08T20:50:19.0543797Z Removing credentials config '/home/runner/work/_temp/git-credentials-3f65dd63-6bf9-43ba-a866-bcb1821bf06e.config'
+2026-10-08T20:50:19.0553413Z ##[endgroup]
+2026-10-08T20:50:19.0832326Z ##[group]Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+2026-10-08T20:50:19.0832862Z with:
+2026-10-08T20:50:19.0833151Z   python-version: 3.12
+2026-10-08T20:50:19.0833465Z   check-latest: false
+2026-10-08T20:50:19.0836716Z   token: ***
+2026-10-08T20:50:19.0837019Z   update-environment: true
+2026-10-08T20:50:19.0837368Z   allow-prereleases: false
+2026-10-08T20:50:19.0837693Z   freethreaded: false
+2026-10-08T20:50:19.0837990Z ##[endgroup]
+2026-10-08T20:50:19.2054808Z ##[group]Installed versions
+2026-10-08T20:50:19.2137734Z Successfully set up CPython (3.12.15)
+2026-10-08T20:50:19.2138805Z ##[endgroup]
+2026-10-08T20:50:19.2351541Z ##[group]Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+2026-10-08T20:50:19.2352058Z with:
+2026-10-08T20:50:19.2352320Z   node-version: 22
+2026-10-08T20:50:19.2352599Z   always-auth: false
+2026-10-08T20:50:19.2352877Z   check-latest: false
+2026-10-08T20:50:19.2355879Z   token: ***
+2026-10-08T20:50:19.2356139Z env:
+2026-10-08T20:50:19.2356468Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T20:50:19.2357689Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-08T20:50:19.2359177Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T20:50:19.2360725Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T20:50:19.2361601Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T20:50:19.2362460Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-08T20:50:19.2363241Z ##[endgroup]
+2026-10-08T20:50:19.4014627Z Found in cache @ /opt/hostedtoolcache/node/22.23.3/x64
+2026-10-08T20:50:19.4018560Z (node:2411) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-08T20:50:19.4019828Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-08T20:50:19.4022822Z ##[group]Environment details
+2026-10-08T20:50:19.8298444Z node: v22.23.3
+2026-10-08T20:50:19.8299206Z npm: 10.9.9
+2026-10-08T20:50:19.8299723Z yarn: 1.22.22
+2026-10-08T20:50:19.8301335Z ##[endgroup]
+2026-10-08T20:50:19.8451270Z ##[group]Run pip install -e .
+2026-10-08T20:50:19.8451654Z [36;1mpip install -e .[0m
+2026-10-08T20:50:19.8731090Z shell: /usr/bin/bash -e {0}
+2026-10-08T20:50:19.8731556Z env:
+2026-10-08T20:50:19.8732035Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T20:50:19.8732843Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-08T20:50:19.8733646Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T20:50:19.8734566Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T20:50:19.8735286Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T20:50:19.8735999Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-08T20:50:19.8736608Z ##[endgroup]
+2026-10-08T20:50:20.6952924Z Obtaining file:///home/runner/work/canvaspilot/canvaspilot
+2026-10-08T20:50:20.6968118Z   Installing build dependencies: started
+2026-10-08T20:50:21.5076747Z   Installing build dependencies: finished with status 'done'
+2026-10-08T20:50:21.5083869Z   Checking if build backend supports build_editable: started
+2026-10-08T20:50:21.5704577Z   Checking if build backend supports build_editable: finished with status 'done'
+2026-10-08T20:50:21.5713546Z   Getting requirements to build editable: started
+2026-10-08T20:50:21.7256145Z   Getting requirements to build editable: finished with status 'done'
+2026-10-08T20:50:21.7276607Z   Installing backend dependencies: started
+2026-10-08T20:50:22.2536414Z   Installing backend dependencies: finished with status 'done'
+2026-10-08T20:50:22.2545604Z   Preparing editable metadata (pyproject.toml): started
+2026-10-08T20:50:22.4812279Z   Preparing editable metadata (pyproject.toml): finished with status 'done'
+2026-10-08T20:50:22.5675446Z Collecting httpx>=0.27 (from canvaspilot==0.1.1)
+2026-10-08T20:50:22.6336693Z   Downloading httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+2026-10-08T20:50:22.6649176Z Collecting mcp<3,>=1.0.0 (from canvaspilot==0.1.1)
+2026-10-08T20:50:22.6750203Z   Downloading mcp-2.3.0-py3-none-any.whl.metadata (6.6 kB)
+2026-10-08T20:50:22.8139516Z Collecting pydantic>=2.0 (from canvaspilot==0.1.1)
+2026-10-08T20:50:22.8241229Z   Downloading pydantic-2.14.0-py3-none-any.whl.metadata (131 kB)
+2026-10-08T20:50:22.8714860Z Collecting anyio>=4.9 (from mcp<3,>=1.0.0->canvaspilot==0.1.1)
+2026-10-08T20:50:22.8811557Z   Downloading anyio-4.15.1-py3-none-any.whl.metadata (4.7 kB)
+2026-10-08T20:50:22.8988742Z Collecting httpx2>=2.10.0 (from mcp<3,>=1.0.0->canvaspilot==0.1.1)
+2026-10-08T20:50:22.9087000Z   Downloading httpx2-2.13.1-py3-none-any.whl.metadata (9.8 kB)
+2026-10-08T20:50:22.9383697Z Collecting jsonschema>=4.20.0 (from mcp<3,>=1.0.0->canvaspilot==0.1.1)
+2026-10-08T20:50:22.9485706Z   Downloading jsonschema-4.26.0-py3-none-any.whl.metadata (7.6 kB)
+2026-10-08T20:50:22.9724948Z Collecting mcp-types==2.3.0 (from mcp<3,>=1.0.0->canvaspilot==0.1.1)
+2026-10-08T20:50:22.9827995Z   Downloading mcp_types-2.3.0-py3-none-any.whl.metadata (1.9 kB)
+2026-10-08T20:50:23.0090343Z Collecting opentelemetry-api>=1.28.0 (from mcp<3,>=1.0.0->canvaspilot==0.1.1)
+2026-10-08T20:50:23.0188972Z   Downloading opentelemetry_api-1.45.1-py3-none-any.whl.metadata (1.4 kB)
+2026-10-08T20:50:23.0423094Z Collecting pyjwt>=2.10.1 (from pyjwt[crypto]>=2.10.1->mcp<3,>=1.0.0->canvaspilot==0.1.1)
+2026-10-08T20:50:23.0523278Z   Downloading pyjwt-2.15.1-py3-none-any.whl.metadata (3.5 kB)
+2026-10-08T20:50:23.0756514Z Collecting python-multipart>=0.0.9 (from mcp<3,>=1.0.0->canvaspilot==0.1.1)
+2026-10-08T20:50:23.0854143Z   Downloading python_multipart-0.0.32-py3-none-any.whl.metadata (2.1 kB)
+2026-10-08T20:50:23.1092040Z Collecting sse-starlette>=3.0.0 (from mcp<3,>=1.0.0->canvaspilot==0.1.1)
+2026-10-08T20:50:23.1189643Z   Downloading sse_starlette-3.5.0-py3-none-any.whl.metadata (15 kB)
+2026-10-08T20:50:23.1527362Z Collecting starlette>=0.27 (from mcp<3,>=1.0.0->canvaspilot==0.1.1)
+2026-10-08T20:50:23.1624428Z   Downloading starlette-1.7.0-py3-none-any.whl.metadata (6.6 kB)
+2026-10-08T20:50:23.1843798Z Collecting typing-extensions>=4.13.0 (from mcp<3,>=1.0.0->canvaspilot==0.1.1)
+2026-10-08T20:50:23.1942315Z   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+2026-10-08T20:50:23.2104540Z Collecting typing-inspection>=0.4.1 (from mcp<3,>=1.0.0->canvaspilot==0.1.1)
+2026-10-08T20:50:23.2202610Z   Downloading typing_inspection-0.4.4-py3-none-any.whl.metadata (2.6 kB)
+2026-10-08T20:50:23.2488206Z Collecting uvicorn>=0.31.1 (from mcp<3,>=1.0.0->canvaspilot==0.1.1)
+2026-10-08T20:50:23.2586710Z   Downloading uvicorn-0.54.0-py3-none-any.whl.metadata (6.6 kB)
+2026-10-08T20:50:23.2797231Z Collecting idna>=2.8 (from anyio>=4.9->mcp<3,>=1.0.0->canvaspilot==0.1.1)
+2026-10-08T20:50:23.2896963Z   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+2026-10-08T20:50:23.3159153Z Collecting certifi (from httpx>=0.27->canvaspilot==0.1.1)
+2026-10-08T20:50:23.3259822Z   Downloading certifi-2026.7.22-py3-none-any.whl.metadata (2.5 kB)
+2026-10-08T20:50:23.3473838Z Collecting httpcore==1.* (from httpx>=0.27->canvaspilot==0.1.1)
+2026-10-08T20:50:23.3570369Z   Downloading httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+2026-10-08T20:50:23.3778187Z Collecting h11>=0.16 (from httpcore==1.*->httpx>=0.27->canvaspilot==0.1.1)
+2026-10-08T20:50:23.3873191Z   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+2026-10-08T20:50:23.4062470Z Collecting httpcore2==2.13.1 (from httpx2>=2.10.0->mcp<3,>=1.0.0->canvaspilot==0.1.1)
+2026-10-08T20:50:23.4157232Z   Downloading httpcore2-2.13.1-py3-none-any.whl.metadata (26 kB)
+2026-10-08T20:50:23.4368582Z Collecting truststore>=0.10 (from httpx2>=2.10.0->mcp<3,>=1.0.0->canvaspilot==0.1.1)
+2026-10-08T20:50:23.4464477Z   Downloading truststore-0.10.4-py3-none-any.whl.metadata (4.4 kB)
+2026-10-08T20:50:23.4676456Z Collecting attrs>=22.2.0 (from jsonschema>=4.20.0->mcp<3,>=1.0.0->canvaspilot==0.1.1)
+2026-10-08T20:50:23.4773084Z   Downloading attrs-26.1.0-py3-none-any.whl.metadata (8.8 kB)
+2026-10-08T20:50:23.4961095Z Collecting jsonschema-specifications>=2023.03.6 (from jsonschema>=4.20.0->mcp<3,>=1.0.0->canvaspilot==0.1.1)
+2026-10-08T20:50:23.5058858Z   Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl.metadata (2.9 kB)
+2026-10-08T20:50:23.5367370Z Collecting referencing>=0.28.4 (from jsonschema>=4.20.0->mcp<3,>=1.0.0->canvaspilot==0.1.1)
+2026-10-08T20:50:23.5467461Z   Downloading referencing-0.37.0-py3-none-any.whl.metadata (2.8 kB)
+2026-10-08T20:50:23.8211808Z Collecting rpds-py>=0.25.0 (from jsonschema>=4.20.0->mcp<3,>=1.0.0->canvaspilot==0.1.1)
+2026-10-08T20:50:23.8314226Z   Downloading rpds_py-2026.9.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.1 kB)
+2026-10-08T20:50:23.8516963Z Collecting annotated-types>=0.6.0 (from pydantic>=2.0->canvaspilot==0.1.1)
+2026-10-08T20:50:23.8613411Z   Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+2026-10-08T20:50:24.5518735Z Collecting pydantic-core==2.50.0 (from pydantic>=2.0->canvaspilot==0.1.1)
+2026-10-08T20:50:24.5621824Z   Downloading pydantic_core-2.50.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.5 kB)
+2026-10-08T20:50:24.7522728Z Collecting cryptography>=3.4.0 (from pyjwt[crypto]>=2.10.1->mcp<3,>=1.0.0->canvaspilot==0.1.1)
+2026-10-08T20:50:24.7624108Z   Downloading cryptography-50.0.2-cp311-abi3-manylinux_2_34_x86_64.whl.metadata (4.4 kB)
+2026-10-08T20:50:24.8998560Z Collecting cffi>=2.0.0 (from cryptography>=3.4.0->pyjwt[crypto]>=2.10.1->mcp<3,>=1.0.0->canvaspilot==0.1.1)
+2026-10-08T20:50:24.9099383Z   Downloading cffi-2.1.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.5 kB)
+2026-10-08T20:50:24.9304766Z Collecting pycparser (from cffi>=2.0.0->cryptography>=3.4.0->pyjwt[crypto]>=2.10.1->mcp<3,>=1.0.0->canvaspilot==0.1.1)
+2026-10-08T20:50:24.9399165Z   Downloading pycparser-3.1-py3-none-any.whl.metadata (8.2 kB)
+2026-10-08T20:50:24.9746629Z Collecting click>=7.0 (from uvicorn>=0.31.1->mcp<3,>=1.0.0->canvaspilot==0.1.1)
+2026-10-08T20:50:24.9850784Z   Downloading click-8.5.0-py3-none-any.whl.metadata (2.6 kB)
+2026-10-08T20:50:25.0003757Z Downloading mcp-2.3.0-py3-none-any.whl (368 kB)
+2026-10-08T20:50:25.0424543Z Downloading mcp_types-2.3.0-py3-none-any.whl (69 kB)
+2026-10-08T20:50:25.0577124Z Downloading anyio-4.15.1-py3-none-any.whl (132 kB)
+2026-10-08T20:50:25.0792977Z Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+2026-10-08T20:50:25.0951283Z Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+2026-10-08T20:50:25.1105061Z Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+2026-10-08T20:50:25.1237221Z Downloading httpx2-2.13.1-py3-none-any.whl (95 kB)
+2026-10-08T20:50:25.1400885Z Downloading httpcore2-2.13.1-py3-none-any.whl (83 kB)
+2026-10-08T20:50:25.1554600Z Downloading idna-3.20-py3-none-any.whl (69 kB)
+2026-10-08T20:50:25.1701361Z Downloading jsonschema-4.26.0-py3-none-any.whl (90 kB)
+2026-10-08T20:50:25.1857450Z Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
+2026-10-08T20:50:25.2004058Z Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+2026-10-08T20:50:25.2128610Z Downloading opentelemetry_api-1.45.1-py3-none-any.whl (60 kB)
+2026-10-08T20:50:25.2266418Z Downloading pydantic-2.14.0-py3-none-any.whl (487 kB)
+2026-10-08T20:50:25.2726017Z Downloading pydantic_core-2.50.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.2 MB)
+2026-10-08T20:50:25.3732278Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.2/2.2 MB 22.5 MB/s  0:00:00
+2026-10-08T20:50:25.3832254Z Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+2026-10-08T20:50:25.3950393Z Downloading pyjwt-2.15.1-py3-none-any.whl (33 kB)
+2026-10-08T20:50:25.4077465Z Downloading cryptography-50.0.2-cp311-abi3-manylinux_2_34_x86_64.whl (4.8 MB)
+2026-10-08T20:50:25.5272416Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.8/4.8 MB 41.1 MB/s  0:00:00
+2026-10-08T20:50:25.5378062Z Downloading cffi-2.1.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (221 kB)
+2026-10-08T20:50:25.5518371Z Downloading python_multipart-0.0.32-py3-none-any.whl (30 kB)
+2026-10-08T20:50:25.5641509Z Downloading referencing-0.37.0-py3-none-any.whl (26 kB)
+2026-10-08T20:50:25.5760419Z Downloading rpds_py-2026.9.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (371 kB)
+2026-10-08T20:50:25.5923551Z Downloading sse_starlette-3.5.0-py3-none-any.whl (17 kB)
+2026-10-08T20:50:25.6047221Z Downloading starlette-1.7.0-py3-none-any.whl (78 kB)
+2026-10-08T20:50:25.6166343Z Downloading truststore-0.10.4-py3-none-any.whl (18 kB)
+2026-10-08T20:50:25.6283731Z Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+2026-10-08T20:50:25.6404464Z Downloading typing_inspection-0.4.4-py3-none-any.whl (14 kB)
+2026-10-08T20:50:25.6524196Z Downloading uvicorn-0.54.0-py3-none-any.whl (87 kB)
+2026-10-08T20:50:25.6652064Z Downloading click-8.5.0-py3-none-any.whl (125 kB)
+2026-10-08T20:50:25.6788784Z Downloading certifi-2026.7.22-py3-none-any.whl (136 kB)
+2026-10-08T20:50:25.6919064Z Downloading pycparser-3.1-py3-none-any.whl (48 kB)
+2026-10-08T20:50:25.7727740Z Building wheels for collected packages: canvaspilot
+2026-10-08T20:50:25.7735917Z   Building editable for canvaspilot (pyproject.toml): started
+2026-10-08T20:50:25.8107359Z   Building editable for canvaspilot (pyproject.toml): finished with status 'done'
+2026-10-08T20:50:25.8113828Z   Created wheel for canvaspilot: filename=canvaspilot-0.1.1-py3-none-any.whl size=12934 sha256=ee5bd1ef101b3c8cb5f4cf30250eca8df95e7e70758f64f20d6c6fc05aac5473
+2026-10-08T20:50:25.8116084Z   Stored in directory: /tmp/pip-ephem-wheel-cache-urmqr8oe/wheels/f2/3e/33/fba0aeb886abc1311ba665e0f8a03eaba40e2e3bfec70ee434
+2026-10-08T20:50:25.8144739Z Successfully built canvaspilot
+2026-10-08T20:50:25.8723303Z Installing collected packages: typing-extensions, truststore, rpds-py, python-multipart, pyjwt, pycparser, idna, h11, click, certifi, attrs, annotated-types, uvicorn, typing-inspection, referencing, pydantic-core, opentelemetry-api, httpcore2, httpcore, cffi, anyio, starlette, pydantic, jsonschema-specifications, httpx2, httpx, cryptography, sse-starlette, mcp-types, jsonschema, mcp, canvaspilot
+2026-10-08T20:50:27.8118475Z 
+2026-10-08T20:50:27.8154878Z Successfully installed annotated-types-0.8.0 anyio-4.15.1 attrs-26.1.0 canvaspilot-0.1.1 certifi-2026.7.22 cffi-2.1.1 click-8.5.0 cryptography-50.0.2 h11-0.16.0 httpcore-1.0.9 httpcore2-2.13.1 httpx-0.28.1 httpx2-2.13.1 idna-3.20 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 mcp-2.3.0 mcp-types-2.3.0 opentelemetry-api-1.45.1 pycparser-3.1 pydantic-2.14.0 pydantic-core-2.50.0 pyjwt-2.15.1 python-multipart-0.0.32 referencing-0.37.0 rpds-py-2026.9.1 sse-starlette-3.5.0 starlette-1.7.0 truststore-0.10.4 typing-extensions-4.16.0 typing-inspection-0.4.4 uvicorn-0.54.0
+2026-10-08T20:50:27.9583009Z ##[group]Run pip wheel --no-deps --wheel-dir "$RUNNER_TEMP/agenda-view-wheel" .
+2026-10-08T20:50:27.9583748Z [36;1mpip wheel --no-deps --wheel-dir "$RUNNER_TEMP/agenda-view-wheel" .[0m
+2026-10-08T20:50:27.9584318Z [36;1mpython -B - "$RUNNER_TEMP/agenda-view-wheel" <<'PY'[0m
+2026-10-08T20:50:27.9584732Z [36;1mimport hashlib[0m
+2026-10-08T20:50:27.9584997Z [36;1mimport json[0m
+2026-10-08T20:50:27.9585247Z [36;1mimport sys[0m
+2026-10-08T20:50:27.9585493Z [36;1mimport zipfile[0m
+2026-10-08T20:50:27.9585772Z [36;1mfrom pathlib import Path[0m
+2026-10-08T20:50:27.9586078Z [36;1m[0m
+2026-10-08T20:50:27.9586310Z [36;1moutput = Path(sys.argv[1])[0m
+2026-10-08T20:50:27.9586679Z [36;1mwheels = list(output.glob("canvaspilot-*.whl"))[0m
+2026-10-08T20:50:27.9587069Z [36;1massert len(wheels) == 1, wheels[0m
+2026-10-08T20:50:27.9587392Z [36;1mwheel = wheels[0][0m
+2026-10-08T20:50:27.9587685Z [36;1mreceived = [][0m
+2026-10-08T20:50:27.9588024Z [36;1mwith zipfile.ZipFile(wheel) as archive:[0m
+2026-10-08T20:50:27.9588407Z [36;1m    assert archive.testzip() is None[0m
+2026-10-08T20:50:27.9588751Z [36;1m    for relative in ([0m
+2026-10-08T20:50:27.9589070Z [36;1m        "canvaspilot/agenda_export.py",[0m
+2026-10-08T20:50:27.9589458Z [36;1m        "canvaspilot/agenda_view/style.css",[0m
+2026-10-08T20:50:27.9589852Z [36;1m        "canvaspilot/agenda_view/controls.js",[0m
+2026-10-08T20:50:27.9590460Z [36;1m    ):[0m
+2026-10-08T20:50:27.9590743Z [36;1m        packaged = archive.read(relative)[0m
+2026-10-08T20:50:27.9591145Z [36;1m        source = (Path("src") / relative).read_bytes()[0m
+2026-10-08T20:50:27.9591557Z [36;1m        assert packaged == source, relative[0m
+2026-10-08T20:50:27.9591963Z [36;1m        received.append({"path": relative, "bytes": len(packaged),[0m
+2026-10-08T20:50:27.9592416Z [36;1m                         "sha256": hashlib.sha256(packaged).hexdigest()})[0m
+2026-10-08T20:50:27.9592913Z [36;1mreceipt = {"schema": "canvaspilot-agenda-wheel/1", "accepted": True,[0m
+2026-10-08T20:50:27.9593397Z [36;1m           "wheel": wheel.name, "wheel_bytes": wheel.stat().st_size,[0m
+2026-10-08T20:50:27.9593868Z [36;1m           "wheel_sha256": hashlib.sha256(wheel.read_bytes()).hexdigest(),[0m
+2026-10-08T20:50:27.9594349Z [36;1m           "packaged_assets_equal_actual_checkout": received}[0m
+2026-10-08T20:50:27.9594832Z [36;1m(output / "receiving.json").write_text(json.dumps(receipt, indent=2) + "\n")[0m
+2026-10-08T20:50:27.9595280Z [36;1mprint(json.dumps(receipt, indent=2))[0m
+2026-10-08T20:50:27.9595569Z [36;1mPY[0m
+2026-10-08T20:50:27.9661119Z shell: /usr/bin/bash -e {0}
+2026-10-08T20:50:27.9661417Z env:
+2026-10-08T20:50:27.9661729Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T20:50:27.9662255Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-08T20:50:27.9662778Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T20:50:27.9663239Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T20:50:27.9663704Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T20:50:27.9664162Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-08T20:50:27.9664548Z ##[endgroup]
+2026-10-08T20:50:28.3404569Z Processing ./.
+2026-10-08T20:50:28.3424452Z   Installing build dependencies: started
+2026-10-08T20:50:28.9346168Z   Installing build dependencies: finished with status 'done'
+2026-10-08T20:50:28.9352223Z   Getting requirements to build wheel: started
+2026-10-08T20:50:29.0956341Z   Getting requirements to build wheel: finished with status 'done'
+2026-10-08T20:50:29.0967205Z   Preparing metadata (pyproject.toml): started
+2026-10-08T20:50:29.2956963Z   Preparing metadata (pyproject.toml): finished with status 'done'
+2026-10-08T20:50:29.2993103Z Building wheels for collected packages: canvaspilot
+2026-10-08T20:50:29.3001107Z   Building wheel for canvaspilot (pyproject.toml): started
+2026-10-08T20:50:29.3341351Z   Building wheel for canvaspilot (pyproject.toml): finished with status 'done'
+2026-10-08T20:50:29.3349023Z   Created wheel for canvaspilot: filename=canvaspilot-0.1.1-py3-none-any.whl size=124382 sha256=60d92d6fa891bd10976037e2d1c87a51368ea95149ca0f9fa8b36b3a457404a5
+2026-10-08T20:50:29.3351122Z   Stored in directory: /tmp/pip-ephem-wheel-cache-gqhhnd5e/wheels/f2/3e/33/fba0aeb886abc1311ba665e0f8a03eaba40e2e3bfec70ee434
+2026-10-08T20:50:29.3387008Z Successfully built canvaspilot
+2026-10-08T20:50:29.4338998Z {
+2026-10-08T20:50:29.4339796Z   "schema": "canvaspilot-agenda-wheel/1",
+2026-10-08T20:50:29.4340973Z   "accepted": true,
+2026-10-08T20:50:29.4341851Z   "wheel": "canvaspilot-0.1.1-py3-none-any.whl",
+2026-10-08T20:50:29.4342787Z   "wheel_bytes": 124382,
+2026-10-08T20:50:29.4343859Z   "wheel_sha256": "60d92d6fa891bd10976037e2d1c87a51368ea95149ca0f9fa8b36b3a457404a5",
+2026-10-08T20:50:29.4344747Z   "packaged_assets_equal_actual_checkout": [
+2026-10-08T20:50:29.4345291Z     {
+2026-10-08T20:50:29.4345743Z       "path": "canvaspilot/agenda_export.py",
+2026-10-08T20:50:29.4346271Z       "bytes": 15270,
+2026-10-08T20:50:29.4346988Z       "sha256": "4e55a0c16e76286130f01e81f04685da1a3ecd9bb5a7a0493ccbfe97c0fcd3ce"
+2026-10-08T20:50:29.4347713Z     },
+2026-10-08T20:50:29.4348023Z     {
+2026-10-08T20:50:29.4348467Z       "path": "canvaspilot/agenda_view/style.css",
+2026-10-08T20:50:29.4349004Z       "bytes": 7435,
+2026-10-08T20:50:29.4349712Z       "sha256": "ed5f86e62198a9a0b13cbcd87db0bdae9cb2e5732358bf6eb684da47f45610d0"
+2026-10-08T20:50:29.4350728Z     },
+2026-10-08T20:50:29.4351041Z     {
+2026-10-08T20:50:29.4351495Z       "path": "canvaspilot/agenda_view/controls.js",
+2026-10-08T20:50:29.4352033Z       "bytes": 2823,
+2026-10-08T20:50:29.4352724Z       "sha256": "98474fb98fff0027e26fabd024c33a186715b5ac612979c4ef8b1d84b181d172"
+2026-10-08T20:50:29.4353424Z     }
+2026-10-08T20:50:29.4353732Z   ]
+2026-10-08T20:50:29.4354048Z }
+2026-10-08T20:50:29.4429784Z ##[group]Run git worktree add --detach "$RUNNER_TEMP/agenda-view-baseline" 0480cbce421bae532e3e909899fc8fb83789e878
+2026-10-08T20:50:29.4431178Z [36;1mgit worktree add --detach "$RUNNER_TEMP/agenda-view-baseline" 0480cbce421bae532e3e909899fc8fb83789e878[0m
+2026-10-08T20:50:29.4432219Z [36;1mnode scripts/receive_agenda_view.mjs "$RUNNER_TEMP/agenda-view-receiving" "$RUNNER_TEMP/agenda-view-baseline"[0m
+2026-10-08T20:50:29.4499865Z shell: /usr/bin/bash -e {0}
+2026-10-08T20:50:29.4500383Z env:
+2026-10-08T20:50:29.4500803Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T20:50:29.4501503Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-08T20:50:29.4502195Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T20:50:29.4502806Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T20:50:29.4503420Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T20:50:29.4504089Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-08T20:50:29.4504621Z ##[endgroup]
+2026-10-08T20:50:29.4613112Z Preparing worktree (detached HEAD 0480cbc)
+2026-10-08T20:50:29.5452351Z HEAD is now at 0480cbc Read selected-course announcements through the native CLI
+2026-10-08T20:50:49.2931976Z AGENDA_VIEW_MAIN_RESULT
+2026-10-08T20:50:49.2932484Z {
+2026-10-08T20:50:49.2932907Z   "schema": "canvaspilot-agenda-view-browser/1",
+2026-10-08T20:50:49.2933658Z   "accepted": true,
+2026-10-08T20:50:49.2934143Z   "artifacts": [
+2026-10-08T20:50:49.2934586Z     {
+2026-10-08T20:50:49.2935119Z       "name": "source-before.json",
+2026-10-08T20:50:49.2935733Z       "bytes": 242049,
+2026-10-08T20:50:49.2936628Z       "sha256": "f6cc884c2c1be423514045e54be3e5cc21cb8494dad05fd256c9912c638aaef3"
+2026-10-08T20:50:49.2937756Z     },
+2026-10-08T20:50:49.2938162Z     {
+2026-10-08T20:50:49.2938724Z       "name": "baseline-source-before.json",
+2026-10-08T20:50:49.2939411Z       "bytes": 173232,
+2026-10-08T20:50:49.2941014Z       "sha256": "aefdd90fa152c0aa344f3b71656404591dc1af21db753ee8775b4e0847cfd1e3"
+2026-10-08T20:50:49.2941882Z     },
+2026-10-08T20:50:49.2942270Z     {
+2026-10-08T20:50:49.2942685Z       "name": "original-native.stdout",
+2026-10-08T20:50:49.2943172Z       "bytes": 2828,
+2026-10-08T20:50:49.2943915Z       "sha256": "1d47bb539939336ab70bea45068635d57196a5e45d1660abddd5bcfcc17811ce"
+2026-10-08T20:50:49.2944678Z     },
+2026-10-08T20:50:49.2945004Z     {
+2026-10-08T20:50:49.2945425Z       "name": "original-native.stderr",
+2026-10-08T20:50:49.2945951Z       "bytes": 0,
+2026-10-08T20:50:49.2946733Z       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+2026-10-08T20:50:49.2947548Z     },
+2026-10-08T20:50:49.2947856Z     {
+2026-10-08T20:50:49.2948333Z       "name": "original-missing-view.stdout",
+2026-10-08T20:50:49.2948919Z       "bytes": 0,
+2026-10-08T20:50:49.2949701Z       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+2026-10-08T20:50:49.2950808Z     },
+2026-10-08T20:50:49.2951209Z     {
+2026-10-08T20:50:49.2951931Z       "name": "original-missing-view.stderr",
+2026-10-08T20:50:49.2952571Z       "bytes": 563,
+2026-10-08T20:50:49.3010996Z       "sha256": "b66f7edd240b925d4f031d4a30b165f19e1d34c49a3adee12ec856dbc0cbb9ed"
+2026-10-08T20:50:49.3011868Z     },
+2026-10-08T20:50:49.3012412Z     {
+2026-10-08T20:50:49.3012825Z       "name": "current-native.stdout",
+2026-10-08T20:50:49.3013300Z       "bytes": 2828,
+2026-10-08T20:50:49.3014005Z       "sha256": "1d47bb539939336ab70bea45068635d57196a5e45d1660abddd5bcfcc17811ce"
+2026-10-08T20:50:49.3014695Z     },
+2026-10-08T20:50:49.3015003Z     {
+2026-10-08T20:50:49.3015381Z       "name": "current-native.stderr",
+2026-10-08T20:50:49.3015837Z       "bytes": 0,
+2026-10-08T20:50:49.3016484Z       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+2026-10-08T20:50:49.3017189Z     },
+2026-10-08T20:50:49.3017500Z     {
+2026-10-08T20:50:49.3017913Z       "name": "current-export.stdout",
+2026-10-08T20:50:49.3019098Z       "bytes": 366,
+2026-10-08T20:50:49.3019841Z       "sha256": "7f9b630f9694c13bf354f5750c7087b752b25b04b04d7040736988d616581f0b"
+2026-10-08T20:50:49.3020759Z     },
+2026-10-08T20:50:49.3021074Z     {
+2026-10-08T20:50:49.3021467Z       "name": "current-export.stderr",
+2026-10-08T20:50:49.3021926Z       "bytes": 0,
+2026-10-08T20:50:49.3022588Z       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+2026-10-08T20:50:49.3023256Z     },
+2026-10-08T20:50:49.3023552Z     {
+2026-10-08T20:50:49.3023948Z       "name": "desktop-complete.png",
+2026-10-08T20:50:49.3024440Z       "bytes": 126908,
+2026-10-08T20:50:49.3025164Z       "sha256": "e5bd74c459f5c7e428b34611cc4190fde018c5663de561286d407f8e59ea6bf9"
+2026-10-08T20:50:49.3025851Z     },
+2026-10-08T20:50:49.3026194Z     {
+2026-10-08T20:50:49.3026679Z       "name": "narrow-complete.png",
+2026-10-08T20:50:49.3027105Z       "bytes": 74983,
+2026-10-08T20:50:49.3027751Z       "sha256": "958db6263d9f83027461ed58d76ee2cfe5c46d8954c571155243c2c68f5a95af"
+2026-10-08T20:50:49.3028394Z     },
+2026-10-08T20:50:49.3028837Z     {
+2026-10-08T20:50:49.3029237Z       "name": "narrow-filtered.png",
+2026-10-08T20:50:49.3029670Z       "bytes": 76531,
+2026-10-08T20:50:49.3030548Z       "sha256": "57ba01ff221e54fb1ff9b0d91f7efe5a4e651bcae4ae5b30efa8a31235c7da19"
+2026-10-08T20:50:49.3031218Z     },
+2026-10-08T20:50:49.3031487Z     {
+2026-10-08T20:50:49.3031844Z       "name": "filtered-print.pdf",
+2026-10-08T20:50:49.3032241Z       "bytes": 129098,
+2026-10-08T20:50:49.3032844Z       "sha256": "042e7e590d40da6d84b14809aa03911b813062a35a2d71920f9eea631b6ba33b"
+2026-10-08T20:50:49.3033485Z     },
+2026-10-08T20:50:49.3033752Z     {
+2026-10-08T20:50:49.3034089Z       "name": "source-after.json",
+2026-10-08T20:50:49.3034489Z       "bytes": 242049,
+2026-10-08T20:50:49.3035104Z       "sha256": "f6cc884c2c1be423514045e54be3e5cc21cb8494dad05fd256c9912c638aaef3"
+2026-10-08T20:50:49.3035769Z     }
+2026-10-08T20:50:49.3036138Z   ],
+2026-10-08T20:50:49.3036741Z   "native": [
+2026-10-08T20:50:49.3037078Z     {
+2026-10-08T20:50:49.3037451Z       "name": "original-native",
+2026-10-08T20:50:49.3037902Z       "command": "agenda",
+2026-10-08T20:50:49.3038278Z       "exit": 0,
+2026-10-08T20:50:49.3039000Z       "stdoutSHA256": "1d47bb539939336ab70bea45068635d57196a5e45d1660abddd5bcfcc17811ce",
+2026-10-08T20:50:49.3070449Z       "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+2026-10-08T20:50:49.3071356Z     },
+2026-10-08T20:50:49.3071681Z     {
+2026-10-08T20:50:49.3072079Z       "name": "original-missing-view",
+2026-10-08T20:50:49.3072668Z       "command": "export-agenda",
+2026-10-08T20:50:49.3073105Z       "exit": 2,
+2026-10-08T20:50:49.3073841Z       "stdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+2026-10-08T20:50:49.3074979Z       "stderrSHA256": "b66f7edd240b925d4f031d4a30b165f19e1d34c49a3adee12ec856dbc0cbb9ed"
+2026-10-08T20:50:49.3075718Z     },
+2026-10-08T20:50:49.3076021Z     {
+2026-10-08T20:50:49.3076421Z       "name": "current-native",
+2026-10-08T20:50:49.3076859Z       "command": "agenda",
+2026-10-08T20:50:49.3077245Z       "exit": 0,
+2026-10-08T20:50:49.3078046Z       "stdoutSHA256": "1d47bb539939336ab70bea45068635d57196a5e45d1660abddd5bcfcc17811ce",
+2026-10-08T20:50:49.3079235Z       "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+2026-10-08T20:50:49.3080216Z     },
+2026-10-08T20:50:49.3080509Z     {
+2026-10-08T20:50:49.3080880Z       "name": "current-export",
+2026-10-08T20:50:49.3081364Z       "command": "export-agenda",
+2026-10-08T20:50:49.3081783Z       "exit": 0,
+2026-10-08T20:50:49.3082426Z       "stdoutSHA256": "7f9b630f9694c13bf354f5750c7087b752b25b04b04d7040736988d616581f0b",
+2026-10-08T20:50:49.3083527Z       "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+2026-10-08T20:50:49.3084224Z     }
+2026-10-08T20:50:49.3084508Z   ],
+2026-10-08T20:50:49.3084907Z   "browser": [
+2026-10-08T20:50:49.3085271Z     {
+2026-10-08T20:50:49.3086412Z       "label": "complete offline saved agenda",
+2026-10-08T20:50:49.3087047Z       "count": "Showing 4 of 4 saved entries",
+2026-10-08T20:50:49.3088198Z       "context": "All selected courses · All source dates · No text filter",
+2026-10-08T20:50:49.3088816Z       "entries": [
+2026-10-08T20:50:49.3089122Z         {
+2026-10-08T20:50:49.3089484Z           "course": "77",
+2026-10-08T20:50:49.3089884Z           "group": "timed",
+2026-10-08T20:50:49.3090591Z           "date": "2026-10-08",
+2026-10-08T20:50:49.3091205Z           "title": "Draft submission",
+2026-10-08T20:50:49.3091689Z           "source": {
+2026-10-08T20:50:49.3092071Z             "kind": "assignment",
+2026-10-08T20:50:49.3092508Z             "course_id": "77",
+2026-10-08T20:50:49.3093034Z             "source": {
+2026-10-08T20:50:49.3093488Z               "collection": "assignment",
+2026-10-08T20:50:49.3093964Z               "index": 0
+2026-10-08T20:50:49.3094385Z             },
+2026-10-08T20:50:49.3094745Z             "record": {
+2026-10-08T20:50:49.3095160Z               "id": 901,
+2026-10-08T20:50:49.3095879Z               "context_code": "course_section_5",
+2026-10-08T20:50:49.3096610Z               "effective_context_code": "course_77",
+2026-10-08T20:50:49.3097189Z               "title": "Draft submission",
+2026-10-08T20:50:49.3097700Z               "all_day": false,
+2026-10-08T20:50:49.3098202Z               "start_at": "2026-10-08T10:00:00-05:00",
+2026-10-08T20:50:49.3098734Z               "end_at": null,
+2026-10-08T20:50:49.3099294Z               "assignment": {
+2026-10-08T20:50:49.3099807Z                 "id": "23",
+2026-10-08T20:50:49.3103058Z                 "course_id": 77,
+2026-10-08T20:50:49.3103613Z                 "due_at": "2026-10-08T10:00:00-05:00",
+2026-10-08T20:50:49.3104383Z                 "points_possible": 0,
+2026-10-08T20:50:49.3104895Z                 "overrides": [
+2026-10-08T20:50:49.3105409Z                   {
+2026-10-08T20:50:49.3105862Z                     "id": "override-0",
+2026-10-08T20:50:49.3106695Z                     "title": "Section A",
+2026-10-08T20:50:49.3107204Z                     "due_at": null
+2026-10-08T20:50:49.3107649Z                   }
+2026-10-08T20:50:49.3108091Z                 ]
+2026-10-08T20:50:49.3108491Z               }
+2026-10-08T20:50:49.3108899Z             }
+2026-10-08T20:50:49.3109319Z           }
+2026-10-08T20:50:49.3109673Z         },
+2026-10-08T20:50:49.3110236Z         {
+2026-10-08T20:50:49.3110635Z           "course": "42",
+2026-10-08T20:50:49.3111080Z           "group": "timed",
+2026-10-08T20:50:49.3111854Z           "date": "2026-10-08",
+2026-10-08T20:50:49.3122130Z           "title": "Studio critique — bring <poster> & notes",
+2026-10-08T20:50:49.3122598Z           "source": {
+2026-10-08T20:50:49.3122920Z             "kind": "event",
+2026-10-08T20:50:49.3123280Z             "course_id": "42",
+2026-10-08T20:50:49.3123618Z             "source": {
+2026-10-08T20:50:49.3123946Z               "collection": "event",
+2026-10-08T20:50:49.3124308Z               "index": 0
+2026-10-08T20:50:49.3124618Z             },
+2026-10-08T20:50:49.3124877Z             "record": {
+2026-10-08T20:50:49.3125161Z               "id": "evt-07",
+2026-10-08T20:50:49.3125528Z               "context_code": "course_42",
+2026-10-08T20:50:49.3126110Z               "title": "Studio critique — bring <poster> & notes",
+2026-10-08T20:50:49.3126567Z               "all_day": false,
+2026-10-08T20:50:49.3126993Z               "start_at": "2026-10-08T15:00:00.0000000002+00:00",
+2026-10-08T20:50:49.3127462Z               "end_at": "2026-10-08T16:00:00Z",
+2026-10-08T20:50:49.3128040Z               "description": "<p>Discuss the draft &amp; its sources.</p>",
+2026-10-08T20:50:49.3128610Z               "location_name": "Room 0",
+2026-10-08T20:50:49.3129220Z               "html_url": "https://school.example.invalid/calendar?event=evt-07"
+2026-10-08T20:50:49.3129717Z             }
+2026-10-08T20:50:49.3130207Z           }
+2026-10-08T20:50:49.3130620Z         },
+2026-10-08T20:50:49.3130941Z         {
+2026-10-08T20:50:49.3131630Z           "course": "77",
+2026-10-08T20:50:49.3131985Z           "group": "all_day",
+2026-10-08T20:50:49.3132370Z           "date": "2026-10-09",
+2026-10-08T20:50:49.3132703Z           "title": "Reading day",
+2026-10-08T20:50:49.3133012Z           "source": {
+2026-10-08T20:50:49.3133270Z             "kind": "event",
+2026-10-08T20:50:49.3133599Z             "course_id": "77",
+2026-10-08T20:50:49.3133886Z             "source": {
+2026-10-08T20:50:49.3134185Z               "collection": "event",
+2026-10-08T20:50:49.3134524Z               "index": 1
+2026-10-08T20:50:49.3134782Z             },
+2026-10-08T20:50:49.3135025Z             "record": {
+2026-10-08T20:50:49.3135301Z               "id": 0,
+2026-10-08T20:50:49.3135771Z               "context_code": "course_77",
+2026-10-08T20:50:49.3136393Z               "title": "Reading day",
+2026-10-08T20:50:49.3136969Z               "all_day": true,
+2026-10-08T20:50:49.3137494Z               "all_day_date": "2026-10-09",
+2026-10-08T20:50:49.3138112Z               "start_at": null,
+2026-10-08T20:50:49.3138634Z               "end_at": null,
+2026-10-08T20:50:49.3139197Z               "description": "",
+2026-10-08T20:50:49.3139628Z               "cancelled": false
+2026-10-08T20:50:49.3139914Z             }
+2026-10-08T20:50:49.3140398Z           }
+2026-10-08T20:50:49.3140618Z         },
+2026-10-08T20:50:49.3140834Z         {
+2026-10-08T20:50:49.3141072Z           "course": "42",
+2026-10-08T20:50:49.3141392Z           "group": "timing_unavailable",
+2026-10-08T20:50:49.3141718Z           "date": "",
+2026-10-08T20:50:49.3142029Z           "title": "Room and time pending",
+2026-10-08T20:50:49.3142350Z           "source": {
+2026-10-08T20:50:49.3142577Z             "kind": "event",
+2026-10-08T20:50:49.3142848Z             "course_id": "42",
+2026-10-08T20:50:49.3143095Z             "source": {
+2026-10-08T20:50:49.3143350Z               "collection": "event",
+2026-10-08T20:50:49.3143630Z               "index": 2
+2026-10-08T20:50:49.3143867Z             },
+2026-10-08T20:50:49.3144300Z             "record": {
+2026-10-08T20:50:49.3144564Z               "id": "pending",
+2026-10-08T20:50:49.3144857Z               "context_code": "course_42",
+2026-10-08T20:50:49.3145197Z               "title": "Room and time pending",
+2026-10-08T20:50:49.3145532Z               "all_day": false,
+2026-10-08T20:50:49.3145814Z               "start_at": null,
+2026-10-08T20:50:49.3146283Z               "description": "</script><img src=x onerror=alert(1)> remains supplied source",
+2026-10-08T20:50:49.3146759Z               "cancelled": true
+2026-10-08T20:50:49.3147001Z             },
+2026-10-08T20:50:49.3147215Z             "timing_issue": {
+2026-10-08T20:50:49.3147502Z               "field": "start_at",
+2026-10-08T20:50:49.3147997Z               "reason": "expected a valid timestamp with a known UTC offset; no instant inferred"
+2026-10-08T20:50:49.3148449Z             }
+2026-10-08T20:50:49.3148653Z           }
+2026-10-08T20:50:49.3148844Z         }
+2026-10-08T20:50:49.3149036Z       ]
+2026-10-08T20:50:49.3149231Z     },
+2026-10-08T20:50:49.3149419Z     {
+2026-10-08T20:50:49.3149626Z       "label": "Course 42",
+2026-10-08T20:50:49.3149933Z       "count": "Showing 2 of 4 saved entries",
+2026-10-08T20:50:49.3150742Z       "context": "Course 42 · All source dates · No text filter",
+2026-10-08T20:50:49.3151105Z       "entries": [
+2026-10-08T20:50:49.3151318Z         {
+2026-10-08T20:50:49.3151528Z           "course": "42",
+2026-10-08T20:50:49.3151792Z           "group": "timed",
+2026-10-08T20:50:49.3152071Z           "date": "2026-10-08",
+2026-10-08T20:50:49.3152474Z           "title": "Studio critique — bring <poster> & notes",
+2026-10-08T20:50:49.3152819Z           "source": {
+2026-10-08T20:50:49.3153055Z             "kind": "event",
+2026-10-08T20:50:49.3153330Z             "course_id": "42",
+2026-10-08T20:50:49.3153584Z             "source": {
+2026-10-08T20:50:49.3153853Z               "collection": "event",
+2026-10-08T20:50:49.3154130Z               "index": 0
+2026-10-08T20:50:49.3154359Z             },
+2026-10-08T20:50:49.3154731Z             "record": {
+2026-10-08T20:50:49.3154974Z               "id": "evt-07",
+2026-10-08T20:50:49.3155265Z               "context_code": "course_42",
+2026-10-08T20:50:49.3155712Z               "title": "Studio critique — bring <poster> & notes",
+2026-10-08T20:50:49.3156076Z               "all_day": false,
+2026-10-08T20:50:49.3156405Z               "start_at": "2026-10-08T15:00:00.0000000002+00:00",
+2026-10-08T20:50:49.3156812Z               "end_at": "2026-10-08T16:00:00Z",
+2026-10-08T20:50:49.3157251Z               "description": "<p>Discuss the draft &amp; its sources.</p>",
+2026-10-08T20:50:49.3157681Z               "location_name": "Room 0",
+2026-10-08T20:50:49.3158127Z               "html_url": "https://school.example.invalid/calendar?event=evt-07"
+2026-10-08T20:50:49.3158534Z             }
+2026-10-08T20:50:49.3158734Z           }
+2026-10-08T20:50:49.3158927Z         },
+2026-10-08T20:50:49.3159115Z         {
+2026-10-08T20:50:49.3159327Z           "course": "42",
+2026-10-08T20:50:49.3159627Z           "group": "timing_unavailable",
+2026-10-08T20:50:49.3159910Z           "date": "",
+2026-10-08T20:50:49.3162367Z           "title": "Room and time pending",
+2026-10-08T20:50:49.3162667Z           "source": {
+2026-10-08T20:50:49.3162942Z             "kind": "event",
+2026-10-08T20:50:49.3163217Z             "course_id": "42",
+2026-10-08T20:50:49.3163495Z             "source": {
+2026-10-08T20:50:49.3163762Z               "collection": "event",
+2026-10-08T20:50:49.3164034Z               "index": 2
+2026-10-08T20:50:49.3164280Z             },
+2026-10-08T20:50:49.3164484Z             "record": {
+2026-10-08T20:50:49.3164741Z               "id": "pending",
+2026-10-08T20:50:49.3165056Z               "context_code": "course_42",
+2026-10-08T20:50:49.3165398Z               "title": "Room and time pending",
+2026-10-08T20:50:49.3165743Z               "all_day": false,
+2026-10-08T20:50:49.3166014Z               "start_at": null,
+2026-10-08T20:50:49.3166506Z               "description": "</script><img src=x onerror=alert(1)> remains supplied source",
+2026-10-08T20:50:49.3167299Z               "cancelled": true
+2026-10-08T20:50:49.3167674Z             },
+2026-10-08T20:50:49.3168132Z             "timing_issue": {
+2026-10-08T20:50:49.3168650Z               "field": "start_at",
+2026-10-08T20:50:49.3169709Z               "reason": "expected a valid timestamp with a known UTC offset; no instant inferred"
+2026-10-08T20:50:49.3170913Z             }
+2026-10-08T20:50:49.3171331Z           }
+2026-10-08T20:50:49.3171713Z         }
+2026-10-08T20:50:49.3172059Z       ]
+2026-10-08T20:50:49.3172340Z     },
+2026-10-08T20:50:49.3172672Z     {
+2026-10-08T20:50:49.3173092Z       "label": "Course 42 unknown timing retained through date",
+2026-10-08T20:50:49.3173584Z       "count": "Showing 1 of 4 saved entries",
+2026-10-08T20:50:49.3174522Z       "context": "Course 42 · Source date 2026-10-09; unavailable timing retained · No text filter",
+2026-10-08T20:50:49.3175120Z       "entries": [
+2026-10-08T20:50:49.3192076Z         {
+2026-10-08T20:50:49.3192447Z           "course": "42",
+2026-10-08T20:50:49.3192801Z           "group": "timing_unavailable",
+2026-10-08T20:50:49.3193133Z           "date": "",
+2026-10-08T20:50:49.3193448Z           "title": "Room and time pending",
+2026-10-08T20:50:49.3193784Z           "source": {
+2026-10-08T20:50:49.3194031Z             "kind": "event",
+2026-10-08T20:50:49.3194325Z             "course_id": "42",
+2026-10-08T20:50:49.3194594Z             "source": {
+2026-10-08T20:50:49.3194884Z               "collection": "event",
+2026-10-08T20:50:49.3195171Z               "index": 2
+2026-10-08T20:50:49.3195412Z             },
+2026-10-08T20:50:49.3195644Z             "record": {
+2026-10-08T20:50:49.3195909Z               "id": "pending",
+2026-10-08T20:50:49.3196214Z               "context_code": "course_42",
+2026-10-08T20:50:49.3196572Z               "title": "Room and time pending",
+2026-10-08T20:50:49.3196913Z               "all_day": false,
+2026-10-08T20:50:49.3197204Z               "start_at": null,
+2026-10-08T20:50:49.3197924Z               "description": "</script><img src=x onerror=alert(1)> remains supplied source",
+2026-10-08T20:50:49.3198443Z               "cancelled": true
+2026-10-08T20:50:49.3198715Z             },
+2026-10-08T20:50:49.3198941Z             "timing_issue": {
+2026-10-08T20:50:49.3199237Z               "field": "start_at",
+2026-10-08T20:50:49.3199771Z               "reason": "expected a valid timestamp with a known UTC offset; no instant inferred"
+2026-10-08T20:50:49.3200516Z             }
+2026-10-08T20:50:49.3200725Z           }
+2026-10-08T20:50:49.3200928Z         }
+2026-10-08T20:50:49.3201124Z       ]
+2026-10-08T20:50:49.3201317Z     },
+2026-10-08T20:50:49.3201514Z     {
+2026-10-08T20:50:49.3201788Z       "label": "Course 77 all-day source date",
+2026-10-08T20:50:49.3202169Z       "count": "Showing 1 of 4 saved entries",
+2026-10-08T20:50:49.3202908Z       "context": "Course 77 · Source date 2026-10-09; unavailable timing retained · No text filter",
+2026-10-08T20:50:49.3203428Z       "entries": [
+2026-10-08T20:50:49.3203667Z         {
+2026-10-08T20:50:49.3203897Z           "course": "77",
+2026-10-08T20:50:49.3204160Z           "group": "all_day",
+2026-10-08T20:50:49.3204450Z           "date": "2026-10-09",
+2026-10-08T20:50:49.3204751Z           "title": "Reading day",
+2026-10-08T20:50:49.3205034Z           "source": {
+2026-10-08T20:50:49.3205279Z             "kind": "event",
+2026-10-08T20:50:49.3205572Z             "course_id": "77",
+2026-10-08T20:50:49.3205829Z             "source": {
+2026-10-08T20:50:49.3206103Z               "collection": "event",
+2026-10-08T20:50:49.3206388Z               "index": 1
+2026-10-08T20:50:49.3206665Z             },
+2026-10-08T20:50:49.3206880Z             "record": {
+2026-10-08T20:50:49.3207120Z               "id": 0,
+2026-10-08T20:50:49.3207530Z               "context_code": "course_77",
+2026-10-08T20:50:49.3208022Z               "title": "Reading day",
+2026-10-08T20:50:49.3208398Z               "all_day": true,
+2026-10-08T20:50:49.3208708Z               "all_day_date": "2026-10-09",
+2026-10-08T20:50:49.3209198Z               "start_at": null,
+2026-10-08T20:50:49.3209471Z               "end_at": null,
+2026-10-08T20:50:49.3209763Z               "description": "",
+2026-10-08T20:50:49.3210298Z               "cancelled": false
+2026-10-08T20:50:49.3210562Z             }
+2026-10-08T20:50:49.3210773Z           }
+2026-10-08T20:50:49.3210974Z         }
+2026-10-08T20:50:49.3211180Z       ]
+2026-10-08T20:50:49.3211377Z     },
+2026-10-08T20:50:49.3211573Z     {
+2026-10-08T20:50:49.3211838Z       "label": "Course 77 timed source date",
+2026-10-08T20:50:49.3212215Z       "count": "Showing 1 of 4 saved entries",
+2026-10-08T20:50:49.3212932Z       "context": "Course 77 · Source date 2026-10-08; unavailable timing retained · No text filter",
+2026-10-08T20:50:49.3213503Z       "entries": [
+2026-10-08T20:50:49.3213737Z         {
+2026-10-08T20:50:49.3213981Z           "course": "77",
+2026-10-08T20:50:49.3214296Z           "group": "timed",
+2026-10-08T20:50:49.3214617Z           "date": "2026-10-08",
+2026-10-08T20:50:49.3214992Z           "title": "Draft submission",
+2026-10-08T20:50:49.3215281Z           "source": {
+2026-10-08T20:50:49.3215609Z             "kind": "assignment",
+2026-10-08T20:50:49.3215913Z             "course_id": "77",
+2026-10-08T20:50:49.3216192Z             "source": {
+2026-10-08T20:50:49.3216474Z               "collection": "assignment",
+2026-10-08T20:50:49.3216768Z               "index": 0
+2026-10-08T20:50:49.3217007Z             },
+2026-10-08T20:50:49.3217221Z             "record": {
+2026-10-08T20:50:49.3217455Z               "id": 901,
+2026-10-08T20:50:49.3217776Z               "context_code": "course_section_5",
+2026-10-08T20:50:49.3218303Z               "effective_context_code": "course_77",
+2026-10-08T20:50:49.3218769Z               "title": "Draft submission",
+2026-10-08T20:50:49.3219095Z               "all_day": false,
+2026-10-08T20:50:49.3219407Z               "start_at": "2026-10-08T10:00:00-05:00",
+2026-10-08T20:50:49.3219736Z               "end_at": null,
+2026-10-08T20:50:49.3220626Z               "assignment": {
+2026-10-08T20:50:49.3220900Z                 "id": "23",
+2026-10-08T20:50:49.3221176Z                 "course_id": 77,
+2026-10-08T20:50:49.3221562Z                 "due_at": "2026-10-08T10:00:00-05:00",
+2026-10-08T20:50:49.3221934Z                 "points_possible": 0,
+2026-10-08T20:50:49.3222240Z                 "overrides": [
+2026-10-08T20:50:49.3222488Z                   {
+2026-10-08T20:50:49.3222740Z                     "id": "override-0",
+2026-10-08T20:50:49.3223061Z                     "title": "Section A",
+2026-10-08T20:50:49.3223371Z                     "due_at": null
+2026-10-08T20:50:49.3223628Z                   }
+2026-10-08T20:50:49.3223838Z                 ]
+2026-10-08T20:50:49.3224044Z               }
+2026-10-08T20:50:49.3224244Z             }
+2026-10-08T20:50:49.3224445Z           }
+2026-10-08T20:50:49.3224633Z         }
+2026-10-08T20:50:49.3224818Z       ]
+2026-10-08T20:50:49.3225006Z     },
+2026-10-08T20:50:49.3225191Z     {
+2026-10-08T20:50:49.3225460Z       "label": "explicit empty matching view",
+2026-10-08T20:50:49.3225819Z       "count": "Showing 0 of 4 saved entries",
+2026-10-08T20:50:49.3226487Z       "context": "Course 77 · Source date 2026-10-15; unavailable timing retained · No text filter",
+2026-10-08T20:50:49.3226965Z       "entries": []
+2026-10-08T20:50:49.3227178Z     },
+2026-10-08T20:50:49.3227363Z     {
+2026-10-08T20:50:49.3227589Z       "label": "literal text search",
+2026-10-08T20:50:49.3227926Z       "count": "Showing 1 of 4 saved entries",
+2026-10-08T20:50:49.3228450Z       "context": "All selected courses · All source dates · Text: <poster>",
+2026-10-08T20:50:49.3228850Z       "entries": [
+2026-10-08T20:50:49.3229067Z         {
+2026-10-08T20:50:49.3229273Z           "course": "42",
+2026-10-08T20:50:49.3229517Z           "group": "timed",
+2026-10-08T20:50:49.3229795Z           "date": "2026-10-08",
+2026-10-08T20:50:49.3230469Z           "title": "Studio critique — bring <poster> & notes",
+2026-10-08T20:50:49.3230829Z           "source": {
+2026-10-08T20:50:49.3231220Z             "kind": "event",
+2026-10-08T20:50:49.3231494Z             "course_id": "42",
+2026-10-08T20:50:49.3231737Z             "source": {
+2026-10-08T20:50:49.3232005Z               "collection": "event",
+2026-10-08T20:50:49.3232311Z               "index": 0
+2026-10-08T20:50:49.3232539Z             },
+2026-10-08T20:50:49.3232740Z             "record": {
+2026-10-08T20:50:49.3232966Z               "id": "evt-07",
+2026-10-08T20:50:49.3233241Z               "context_code": "course_42",
+2026-10-08T20:50:49.3233678Z               "title": "Studio critique — bring <poster> & notes",
+2026-10-08T20:50:49.3234031Z               "all_day": false,
+2026-10-08T20:50:49.3234350Z               "start_at": "2026-10-08T15:00:00.0000000002+00:00",
+2026-10-08T20:50:49.3234700Z               "end_at": "2026-10-08T16:00:00Z",
+2026-10-08T20:50:49.3235128Z               "description": "<p>Discuss the draft &amp; its sources.</p>",
+2026-10-08T20:50:49.3235550Z               "location_name": "Room 0",
+2026-10-08T20:50:49.3236004Z               "html_url": "https://school.example.invalid/calendar?event=evt-07"
+2026-10-08T20:50:49.3236398Z             }
+2026-10-08T20:50:49.3236591Z           }
+2026-10-08T20:50:49.3236774Z         }
+2026-10-08T20:50:49.3237007Z       ]
+2026-10-08T20:50:49.3237310Z     },
+2026-10-08T20:50:49.3237592Z     {
+2026-10-08T20:50:49.3238023Z       "label": "intersecting course and search",
+2026-10-08T20:50:49.3238611Z       "count": "Showing 0 of 4 saved entries",
+2026-10-08T20:50:49.3239453Z       "context": "Course 77 · All source dates · Text: <poster>",
+2026-10-08T20:50:49.3240245Z       "entries": []
+2026-10-08T20:50:49.3240657Z     },
+2026-10-08T20:50:49.3240947Z     {
+2026-10-08T20:50:49.3241304Z       "label": "desktop-complete",
+2026-10-08T20:50:49.3241720Z       "layout": {
+2026-10-08T20:50:49.3242403Z         "width": 1280,
+2026-10-08T20:50:49.3242807Z         "scrollWidth": 1265,
+2026-10-08T20:50:49.3243296Z         "panels": [
+2026-10-08T20:50:49.3243619Z           {
+2026-10-08T20:50:49.3244204Z             "left": 100.5,
+2026-10-08T20:50:49.3244616Z             "right": 1164.5,
+2026-10-08T20:50:49.3245022Z             "width": 1064
+2026-10-08T20:50:49.3245414Z           },
+2026-10-08T20:50:49.3245758Z           {
+2026-10-08T20:50:49.3246101Z             "left": 100.5,
+2026-10-08T20:50:49.3246484Z             "right": 1164.5,
+2026-10-08T20:50:49.3246851Z             "width": 1064
+2026-10-08T20:50:49.3247213Z           },
+2026-10-08T20:50:49.3247507Z           {
+2026-10-08T20:50:49.3247811Z             "left": 100.5,
+2026-10-08T20:50:49.3248206Z             "right": 1164.5,
+2026-10-08T20:50:49.3248612Z             "width": 1064
+2026-10-08T20:50:49.3249028Z           },
+2026-10-08T20:50:49.3249331Z           {
+2026-10-08T20:50:49.3249637Z             "left": 100.5,
+2026-10-08T20:50:49.3250232Z             "right": 1164.5,
+2026-10-08T20:50:49.3250629Z             "width": 1064
+2026-10-08T20:50:49.3250994Z           },
+2026-10-08T20:50:49.3251314Z           {
+2026-10-08T20:50:49.3251681Z             "left": 100.5,
+2026-10-08T20:50:49.3252047Z             "right": 1164.5,
+2026-10-08T20:50:49.3252410Z             "width": 1064
+2026-10-08T20:50:49.3252747Z           },
+2026-10-08T20:50:49.3253041Z           {
+2026-10-08T20:50:49.3253337Z             "left": 100.5,
+2026-10-08T20:50:49.3253696Z             "right": 1164.5,
+2026-10-08T20:50:49.3254058Z             "width": 1064
+2026-10-08T20:50:49.3254397Z           }
+2026-10-08T20:50:49.3254677Z         ],
+2026-10-08T20:50:49.3254979Z         "controls": [
+2026-10-08T20:50:49.3255334Z           {
+2026-10-08T20:50:49.3255672Z             "height": 44
+2026-10-08T20:50:49.3256030Z           },
+2026-10-08T20:50:49.3256346Z           {
+2026-10-08T20:50:49.3256659Z             "height": 44
+2026-10-08T20:50:49.3256988Z           },
+2026-10-08T20:50:49.3257307Z           {
+2026-10-08T20:50:49.3257611Z             "height": 44
+2026-10-08T20:50:49.3257966Z           },
+2026-10-08T20:50:49.3258263Z           {
+2026-10-08T20:50:49.3258807Z             "height": 44
+2026-10-08T20:50:49.3259164Z           },
+2026-10-08T20:50:49.3259459Z           {
+2026-10-08T20:50:49.3259777Z             "height": 44
+2026-10-08T20:50:49.3290717Z           }
+2026-10-08T20:50:49.3291098Z         ]
+2026-10-08T20:50:49.3291400Z       }
+2026-10-08T20:50:49.3291685Z     },
+2026-10-08T20:50:49.3291987Z     {
+2026-10-08T20:50:49.3292391Z       "label": "narrow-complete",
+2026-10-08T20:50:49.3292855Z       "layout": {
+2026-10-08T20:50:49.3293235Z         "width": 390,
+2026-10-08T20:50:49.3293599Z         "scrollWidth": 375,
+2026-10-08T20:50:49.3294023Z         "panels": [
+2026-10-08T20:50:49.3294410Z           {
+2026-10-08T20:50:49.3294749Z             "left": 16,
+2026-10-08T20:50:49.3295116Z             "right": 359,
+2026-10-08T20:50:49.3295404Z             "width": 343
+2026-10-08T20:50:49.3295664Z           },
+2026-10-08T20:50:49.3295886Z           {
+2026-10-08T20:50:49.3296115Z             "left": 16,
+2026-10-08T20:50:49.3296378Z             "right": 359,
+2026-10-08T20:50:49.3296678Z             "width": 343
+2026-10-08T20:50:49.3296951Z           },
+2026-10-08T20:50:49.3297173Z           {
+2026-10-08T20:50:49.3297413Z             "left": 16,
+2026-10-08T20:50:49.3297690Z             "right": 359,
+2026-10-08T20:50:49.3297970Z             "width": 343
+2026-10-08T20:50:49.3298232Z           },
+2026-10-08T20:50:49.3298458Z           {
+2026-10-08T20:50:49.3298705Z             "left": 16,
+2026-10-08T20:50:49.3298974Z             "right": 359,
+2026-10-08T20:50:49.3299247Z             "width": 343
+2026-10-08T20:50:49.3299502Z           },
+2026-10-08T20:50:49.3299719Z           {
+2026-10-08T20:50:49.3300251Z             "left": 16,
+2026-10-08T20:50:49.3300711Z             "right": 359,
+2026-10-08T20:50:49.3301094Z             "width": 343
+2026-10-08T20:50:49.3301355Z           },
+2026-10-08T20:50:49.3301570Z           {
+2026-10-08T20:50:49.3301855Z             "left": 16,
+2026-10-08T20:50:49.3302250Z             "right": 359,
+2026-10-08T20:50:49.3302680Z             "width": 343
+2026-10-08T20:50:49.3303356Z           }
+2026-10-08T20:50:49.3303700Z         ],
+2026-10-08T20:50:49.3304008Z         "controls": [
+2026-10-08T20:50:49.3304331Z           {
+2026-10-08T20:50:49.3304673Z             "height": 44
+2026-10-08T20:50:49.3305029Z           },
+2026-10-08T20:50:49.3305343Z           {
+2026-10-08T20:50:49.3305636Z             "height": 44
+2026-10-08T20:50:49.3305989Z           },
+2026-10-08T20:50:49.3306321Z           {
+2026-10-08T20:50:49.3306630Z             "height": 44
+2026-10-08T20:50:49.3307072Z           },
+2026-10-08T20:50:49.3307395Z           {
+2026-10-08T20:50:49.3307732Z             "height": 44
+2026-10-08T20:50:49.3308113Z           },
+2026-10-08T20:50:49.3308430Z           {
+2026-10-08T20:50:49.3308761Z             "height": 44
+2026-10-08T20:50:49.3309122Z           }
+2026-10-08T20:50:49.3309453Z         ]
+2026-10-08T20:50:49.3309795Z       }
+2026-10-08T20:50:49.3311002Z     },
+2026-10-08T20:50:49.3311331Z     {
+2026-10-08T20:50:49.3311828Z       "label": "narrow filtered unknown timing",
+2026-10-08T20:50:49.3312500Z       "count": "Showing 1 of 4 saved entries",
+2026-10-08T20:50:49.3313748Z       "context": "Course 42 · Source date 2026-10-09; unavailable timing retained · No text filter",
+2026-10-08T20:50:49.3314570Z       "entries": [
+2026-10-08T20:50:49.3314918Z         {
+2026-10-08T20:50:49.3315255Z           "course": "42",
+2026-10-08T20:50:49.3315732Z           "group": "timing_unavailable",
+2026-10-08T20:50:49.3316209Z           "date": "",
+2026-10-08T20:50:49.3316662Z           "title": "Room and time pending",
+2026-10-08T20:50:49.3317132Z           "source": {
+2026-10-08T20:50:49.3317507Z             "kind": "event",
+2026-10-08T20:50:49.3317947Z             "course_id": "42",
+2026-10-08T20:50:49.3318357Z             "source": {
+2026-10-08T20:50:49.3318825Z               "collection": "event",
+2026-10-08T20:50:49.3319422Z               "index": 2
+2026-10-08T20:50:49.3319849Z             },
+2026-10-08T20:50:49.3320458Z             "record": {
+2026-10-08T20:50:49.3321252Z               "id": "pending",
+2026-10-08T20:50:49.3321833Z               "context_code": "course_42",
+2026-10-08T20:50:49.3322582Z               "title": "Room and time pending",
+2026-10-08T20:50:49.3323180Z               "all_day": false,
+2026-10-08T20:50:49.3323633Z               "start_at": null,
+2026-10-08T20:50:49.3324457Z               "description": "</script><img src=x onerror=alert(1)> remains supplied source",
+2026-10-08T20:50:49.3325355Z               "cancelled": true
+2026-10-08T20:50:49.3325874Z             },
+2026-10-08T20:50:49.3326259Z             "timing_issue": {
+2026-10-08T20:50:49.3326907Z               "field": "start_at",
+2026-10-08T20:50:49.3327741Z               "reason": "expected a valid timestamp with a known UTC offset; no instant inferred"
+2026-10-08T20:50:49.3328508Z             }
+2026-10-08T20:50:49.3328830Z           }
+2026-10-08T20:50:49.3329138Z         }
+2026-10-08T20:50:49.3329452Z       ]
+2026-10-08T20:50:49.3329750Z     },
+2026-10-08T20:50:49.3330246Z     {
+2026-10-08T20:50:49.3330668Z       "label": "narrow-filtered",
+2026-10-08T20:50:49.3331097Z       "layout": {
+2026-10-08T20:50:49.3331440Z         "width": 390,
+2026-10-08T20:50:49.3331803Z         "scrollWidth": 375,
+2026-10-08T20:50:49.3332199Z         "panels": [
+2026-10-08T20:50:49.3332549Z           {
+2026-10-08T20:50:49.3332869Z             "left": 16,
+2026-10-08T20:50:49.3333239Z             "right": 359,
+2026-10-08T20:50:49.3333624Z             "width": 343
+2026-10-08T20:50:49.3334034Z           },
+2026-10-08T20:50:49.3334354Z           {
+2026-10-08T20:50:49.3334668Z             "left": 16,
+2026-10-08T20:50:49.3335038Z             "right": 359,
+2026-10-08T20:50:49.3335450Z             "width": 343
+2026-10-08T20:50:49.3335805Z           },
+2026-10-08T20:50:49.3336115Z           {
+2026-10-08T20:50:49.3336436Z             "left": 16,
+2026-10-08T20:50:49.3336797Z             "right": 359,
+2026-10-08T20:50:49.3337168Z             "width": 343
+2026-10-08T20:50:49.3337522Z           }
+2026-10-08T20:50:49.3337825Z         ],
+2026-10-08T20:50:49.3338405Z         "controls": [
+2026-10-08T20:50:49.3338769Z           {
+2026-10-08T20:50:49.3339088Z             "height": 44
+2026-10-08T20:50:49.3339441Z           },
+2026-10-08T20:50:49.3339738Z           {
+2026-10-08T20:50:49.3340900Z             "height": 44
+2026-10-08T20:50:49.3341277Z           },
+2026-10-08T20:50:49.3341581Z           {
+2026-10-08T20:50:49.3341906Z             "height": 44
+2026-10-08T20:50:49.3342322Z           },
+2026-10-08T20:50:49.3342658Z           {
+2026-10-08T20:50:49.3342980Z             "height": 44
+2026-10-08T20:50:49.3343341Z           },
+2026-10-08T20:50:49.3343648Z           {
+2026-10-08T20:50:49.3343950Z             "height": 44
+2026-10-08T20:50:49.3344306Z           }
+2026-10-08T20:50:49.3344612Z         ]
+2026-10-08T20:50:49.3344915Z       }
+2026-10-08T20:50:49.3345227Z     }
+2026-10-08T20:50:49.3345523Z   ],
+2026-10-08T20:50:49.3345849Z   "pageErrors": [],
+2026-10-08T20:50:49.3346228Z   "externalRequests": [],
+2026-10-08T20:50:49.3346616Z   "source": {
+2026-10-08T20:50:49.3347097Z     "head": "17a368885b7c4d579ecd9b80dda5afe560091cf2",
+2026-10-08T20:50:49.3347746Z     "tree": "73c7373186df76e1b26be5a3c0a492889b61e938",
+2026-10-08T20:50:49.3348265Z     "parents": [
+2026-10-08T20:50:49.3348770Z       "b6d73588887ce57a2637ab72ee424a5eb29e543f",
+2026-10-08T20:50:49.3349362Z       "8548037fe4f6b9e1a640cdabdd288a0c3f8751b1"
+2026-10-08T20:50:49.3349829Z     ],
+2026-10-08T20:50:49.3350508Z     "githubSHA": "17a368885b7c4d579ecd9b80dda5afe560091cf2"
+2026-10-08T20:50:49.3351053Z   },
+2026-10-08T20:50:49.3351367Z   "nativeRequests": [
+2026-10-08T20:50:49.3351727Z     {
+2026-10-08T20:50:49.3352053Z       "method": "GET",
+2026-10-08T20:50:49.3352527Z       "path": "/api/v1/calendar_events",
+2026-10-08T20:50:49.3352976Z       "query": [
+2026-10-08T20:50:49.3353318Z         [
+2026-10-08T20:50:49.3353630Z           "type",
+2026-10-08T20:50:49.3353974Z           "event"
+2026-10-08T20:50:49.3354294Z         ],
+2026-10-08T20:50:49.3354607Z         [
+2026-10-08T20:50:49.3355205Z           "start_date",
+2026-10-08T20:50:49.3355600Z           "2026-10-08"
+2026-10-08T20:50:49.3355958Z         ],
+2026-10-08T20:50:49.3356327Z         [
+2026-10-08T20:50:49.3356649Z           "end_date",
+2026-10-08T20:50:49.3357005Z           "2026-10-15"
+2026-10-08T20:50:49.3357347Z         ],
+2026-10-08T20:50:49.3357648Z         [
+2026-10-08T20:50:49.3357980Z           "context_codes[]",
+2026-10-08T20:50:49.3358395Z           "course_42"
+2026-10-08T20:50:49.3358774Z         ],
+2026-10-08T20:50:49.3359083Z         [
+2026-10-08T20:50:49.3359415Z           "context_codes[]",
+2026-10-08T20:50:49.3359838Z           "course_77"
+2026-10-08T20:50:49.3361365Z         ],
+2026-10-08T20:50:49.3361708Z         [
+2026-10-08T20:50:49.3362062Z           "per_page",
+2026-10-08T20:50:49.3362707Z           "50"
+2026-10-08T20:50:49.3363053Z         ]
+2026-10-08T20:50:49.3363371Z       ]
+2026-10-08T20:50:49.3363707Z     },
+2026-10-08T20:50:49.3364247Z     {
+2026-10-08T20:50:49.3364709Z       "method": "GET",
+2026-10-08T20:50:49.3365201Z       "path": "/api/v1/calendar_events",
+2026-10-08T20:50:49.3365682Z       "query": [
+2026-10-08T20:50:49.3366037Z         [
+2026-10-08T20:50:49.3366377Z           "type",
+2026-10-08T20:50:49.3366728Z           "assignment"
+2026-10-08T20:50:49.3367082Z         ],
+2026-10-08T20:50:49.3367394Z         [
+2026-10-08T20:50:49.3367713Z           "start_date",
+2026-10-08T20:50:49.3368069Z           "2026-10-08"
+2026-10-08T20:50:49.3368409Z         ],
+2026-10-08T20:50:49.3368753Z         [
+2026-10-08T20:50:49.3369060Z           "end_date",
+2026-10-08T20:50:49.3369414Z           "2026-10-15"
+2026-10-08T20:50:49.3369751Z         ],
+2026-10-08T20:50:49.3370403Z         [
+2026-10-08T20:50:49.3370726Z           "context_codes[]",
+2026-10-08T20:50:49.3371114Z           "course_42"
+2026-10-08T20:50:49.3371431Z         ],
+2026-10-08T20:50:49.3371721Z         [
+2026-10-08T20:50:49.3372018Z           "context_codes[]",
+2026-10-08T20:50:49.3372398Z           "course_77"
+2026-10-08T20:50:49.3372708Z         ],
+2026-10-08T20:50:49.3373200Z         [
+2026-10-08T20:50:49.3373506Z           "per_page",
+2026-10-08T20:50:49.3373830Z           "50"
+2026-10-08T20:50:49.3374186Z         ]
+2026-10-08T20:50:49.3374486Z       ]
+2026-10-08T20:50:49.3374777Z     }
+2026-10-08T20:50:49.3375061Z   ],
+2026-10-08T20:50:49.3375358Z   "savedFile": {
+2026-10-08T20:50:49.3375700Z     "bytes": 31707,
+2026-10-08T20:50:49.3376382Z     "sha256": "1c45b9ee7fea81a4ddb438d90cad07e48719832f54308de86de5c8899c37d044",
+2026-10-08T20:50:49.3377085Z     "nativeBytes": 2828,
+2026-10-08T20:50:49.3377803Z     "nativeSHA256": "1d47bb539939336ab70bea45068635d57196a5e45d1660abddd5bcfcc17811ce"
+2026-10-08T20:50:49.3378547Z   },
+2026-10-08T20:50:49.3378883Z   "runtime": {
+2026-10-08T20:50:49.3379248Z     "node": "v22.23.3",
+2026-10-08T20:50:49.3379718Z     "chrome": "Google Chrome 154.0.8037.97",
+2026-10-08T20:50:49.3380542Z     "executable": "/usr/bin/google-chrome"
+2026-10-08T20:50:49.3381017Z   },
+2026-10-08T20:50:49.3381330Z   "download": {
+2026-10-08T20:50:49.3381863Z     "actualFile": "downloads/course-agenda.json",
+2026-10-08T20:50:49.3382395Z     "bytes": 2828,
+2026-10-08T20:50:49.3383082Z     "sha256": "1d47bb539939336ab70bea45068635d57196a5e45d1660abddd5bcfcc17811ce"
+2026-10-08T20:50:49.3383783Z   },
+2026-10-08T20:50:49.3384148Z   "keyboard": [
+2026-10-08T20:50:49.3384543Z     {
+2026-10-08T20:50:49.3385092Z       "tag": "A",
+2026-10-08T20:50:49.3385465Z       "id": "",
+2026-10-08T20:50:49.3386015Z       "text": "Skip to agenda",
+2026-10-08T20:50:49.3386446Z       "outline": "solid",
+2026-10-08T20:50:49.3386834Z       "width": 3
+2026-10-08T20:50:49.3387307Z     },
+2026-10-08T20:50:49.3387743Z     {
+2026-10-08T20:50:49.3388062Z       "tag": "A",
+2026-10-08T20:50:49.3388497Z       "id": "download-native",
+2026-10-08T20:50:49.3389261Z       "text": "Download original agenda JSON",
+2026-10-08T20:50:49.3389794Z       "outline": "solid",
+2026-10-08T20:50:49.3390419Z       "width": 3
+2026-10-08T20:50:49.3390772Z     },
+2026-10-08T20:50:49.3391097Z     {
+2026-10-08T20:50:49.3391679Z       "tag": "BUTTON",
+2026-10-08T20:50:49.3392368Z       "id": "print-agenda",
+2026-10-08T20:50:49.3392996Z       "text": "Print this view",
+2026-10-08T20:50:49.3393584Z       "outline": "solid",
+2026-10-08T20:50:49.3393996Z       "width": 3
+2026-10-08T20:50:49.3394347Z     },
+2026-10-08T20:50:49.3394866Z     {
+2026-10-08T20:50:49.3395353Z       "tag": "SELECT",
+2026-10-08T20:50:49.3395772Z       "id": "course-filter",
+2026-10-08T20:50:49.3396500Z       "text": "All selected coursesCourse 42Course 77",
+2026-10-08T20:50:49.3397075Z       "outline": "solid",
+2026-10-08T20:50:49.3397460Z       "width": 3
+2026-10-08T20:50:49.3397823Z     },
+2026-10-08T20:50:49.3398289Z     {
+2026-10-08T20:50:49.3398646Z       "tag": "INPUT",
+2026-10-08T20:50:49.3399185Z       "id": "date-filter",
+2026-10-08T20:50:49.3399600Z       "text": "",
+2026-10-08T20:50:49.3400537Z       "outline": "solid",
+2026-10-08T20:50:49.3400940Z       "width": 3
+2026-10-08T20:50:49.3401306Z     },
+2026-10-08T20:50:49.3401887Z     {
+2026-10-08T20:50:49.3402251Z       "tag": "INPUT",
+2026-10-08T20:50:49.3402648Z       "id": "date-filter",
+2026-10-08T20:50:49.3403044Z       "text": "",
+2026-10-08T20:50:49.3403414Z       "outline": "solid",
+2026-10-08T20:50:49.3403818Z       "width": 3
+2026-10-08T20:50:49.3404151Z     },
+2026-10-08T20:50:49.3404458Z     {
+2026-10-08T20:50:49.3404796Z       "tag": "INPUT",
+2026-10-08T20:50:49.3405181Z       "id": "date-filter",
+2026-10-08T20:50:49.3405599Z       "text": "",
+2026-10-08T20:50:49.3405951Z       "outline": "solid",
+2026-10-08T20:50:49.3406510Z       "width": 3
+2026-10-08T20:50:49.3406877Z     },
+2026-10-08T20:50:49.3407198Z     {
+2026-10-08T20:50:49.3407517Z       "tag": "INPUT",
+2026-10-08T20:50:49.3407850Z       "id": "date-filter",
+2026-10-08T20:50:49.3408242Z       "text": "",
+2026-10-08T20:50:49.3408583Z       "outline": "solid",
+2026-10-08T20:50:49.3409041Z       "width": 3
+2026-10-08T20:50:49.3409373Z     },
+2026-10-08T20:50:49.3409702Z     {
+2026-10-08T20:50:49.3410523Z       "tag": "INPUT",
+2026-10-08T20:50:49.3411004Z       "id": "search-filter",
+2026-10-08T20:50:49.3411391Z       "text": "",
+2026-10-08T20:50:49.3411788Z       "outline": "solid",
+2026-10-08T20:50:49.3412238Z       "width": 3
+2026-10-08T20:50:49.3412604Z     },
+2026-10-08T20:50:49.3412918Z     {
+2026-10-08T20:50:49.3413199Z       "tag": "BUTTON",
+2026-10-08T20:50:49.3413596Z       "id": "",
+2026-10-08T20:50:49.3413924Z       "text": "Reset view",
+2026-10-08T20:50:49.3414279Z       "outline": "solid",
+2026-10-08T20:50:49.3414675Z       "width": 3
+2026-10-08T20:50:49.3415081Z     }
+2026-10-08T20:50:49.3415370Z   ],
+2026-10-08T20:50:49.3415597Z   "print": {
+2026-10-08T20:50:49.3415959Z     "tools": "none",
+2026-10-08T20:50:49.3416398Z     "actions": "none",
+2026-10-08T20:50:49.3416808Z     "visible": [
+2026-10-08T20:50:49.3417182Z       "pending"
+2026-10-08T20:50:49.3417555Z     ],
+2026-10-08T20:50:49.3418690Z     "context": "Course 42 · Source date 2026-10-09; unavailable timing retained · No text filter",
+2026-10-08T20:50:49.3419522Z     "preOverflow": "visible",
+2026-10-08T20:50:49.3420345Z     "beforePrint": [
+2026-10-08T20:50:49.3420720Z       {
+2026-10-08T20:50:49.3421047Z         "id": "pending",
+2026-10-08T20:50:49.3421430Z         "sourceOpen": true
+2026-10-08T20:50:49.3421810Z       }
+2026-10-08T20:50:49.3422128Z     ]
+2026-10-08T20:50:49.3422452Z   },
+2026-10-08T20:50:49.3422789Z   "scriptDisabled": {
+2026-10-08T20:50:49.3423177Z     "visible": 4,
+2026-10-08T20:50:49.3423541Z     "toolsHidden": true,
+2026-10-08T20:50:49.3423968Z     "exactOriginalJSON": true
+2026-10-08T20:50:49.3424399Z   },
+2026-10-08T20:50:49.3424751Z   "sourcePreservation": {
+2026-10-08T20:50:49.3425188Z     "currentFiles": 1592,
+2026-10-08T20:50:49.3425590Z     "baselineFiles": 1107,
+2026-10-08T20:50:49.3426809Z     "clean": true,
+2026-10-08T20:50:49.3427230Z     "unchanged": true,
+2026-10-08T20:50:49.3427790Z     "htmlUnchanged": true
+2026-10-08T20:50:49.3428197Z   },
+2026-10-08T20:50:49.3428880Z   "protocolCommands": 151
+2026-10-08T20:50:49.3429716Z }
+2026-10-08T20:50:49.3463514Z AGENDA_VIEW_FINAL_RESULT
+2026-10-08T20:50:49.3464161Z {
+2026-10-08T20:50:49.3464644Z   "schema": "canvaspilot-agenda-view-browser/1",
+2026-10-08T20:50:49.3465181Z   "accepted": true,
+2026-10-08T20:50:49.3465481Z   "artifacts": [
+2026-10-08T20:50:49.3465699Z     {
+2026-10-08T20:50:49.3466045Z       "name": "source-before.json",
+2026-10-08T20:50:49.3466519Z       "bytes": 242049,
+2026-10-08T20:50:49.3467300Z       "sha256": "f6cc884c2c1be423514045e54be3e5cc21cb8494dad05fd256c9912c638aaef3"
+2026-10-08T20:50:49.3468041Z     },
+2026-10-08T20:50:49.3468380Z     {
+2026-10-08T20:50:49.3468823Z       "name": "baseline-source-before.json",
+2026-10-08T20:50:49.3469329Z       "bytes": 173232,
+2026-10-08T20:50:49.3470294Z       "sha256": "aefdd90fa152c0aa344f3b71656404591dc1af21db753ee8775b4e0847cfd1e3"
+2026-10-08T20:50:49.3470991Z     },
+2026-10-08T20:50:49.3471367Z     {
+2026-10-08T20:50:49.3471757Z       "name": "original-native.stdout",
+2026-10-08T20:50:49.3472237Z       "bytes": 2828,
+2026-10-08T20:50:49.3472911Z       "sha256": "1d47bb539939336ab70bea45068635d57196a5e45d1660abddd5bcfcc17811ce"
+2026-10-08T20:50:49.3473405Z     },
+2026-10-08T20:50:49.3473589Z     {
+2026-10-08T20:50:49.3473819Z       "name": "original-native.stderr",
+2026-10-08T20:50:49.3474098Z       "bytes": 0,
+2026-10-08T20:50:49.3474490Z       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+2026-10-08T20:50:49.3474901Z     },
+2026-10-08T20:50:49.3475090Z     {
+2026-10-08T20:50:49.3475349Z       "name": "original-missing-view.stdout",
+2026-10-08T20:50:49.3475655Z       "bytes": 0,
+2026-10-08T20:50:49.3476053Z       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+2026-10-08T20:50:49.3476458Z     },
+2026-10-08T20:50:49.3476637Z     {
+2026-10-08T20:50:49.3476890Z       "name": "original-missing-view.stderr",
+2026-10-08T20:50:49.3477183Z       "bytes": 563,
+2026-10-08T20:50:49.3477780Z       "sha256": "b66f7edd240b925d4f031d4a30b165f19e1d34c49a3adee12ec856dbc0cbb9ed"
+2026-10-08T20:50:49.3478211Z     },
+2026-10-08T20:50:49.3478392Z     {
+2026-10-08T20:50:49.3478631Z       "name": "current-native.stdout",
+2026-10-08T20:50:49.3478909Z       "bytes": 2828,
+2026-10-08T20:50:49.3479309Z       "sha256": "1d47bb539939336ab70bea45068635d57196a5e45d1660abddd5bcfcc17811ce"
+2026-10-08T20:50:49.3479715Z     },
+2026-10-08T20:50:49.3479896Z     {
+2026-10-08T20:50:49.3480421Z       "name": "current-native.stderr",
+2026-10-08T20:50:49.3480722Z       "bytes": 0,
+2026-10-08T20:50:49.3481128Z       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+2026-10-08T20:50:49.3481543Z     },
+2026-10-08T20:50:49.3481726Z     {
+2026-10-08T20:50:49.3481959Z       "name": "current-export.stdout",
+2026-10-08T20:50:49.3482237Z       "bytes": 366,
+2026-10-08T20:50:49.3482640Z       "sha256": "7f9b630f9694c13bf354f5750c7087b752b25b04b04d7040736988d616581f0b"
+2026-10-08T20:50:49.3483031Z     },
+2026-10-08T20:50:49.3483206Z     {
+2026-10-08T20:50:49.3483433Z       "name": "current-export.stderr",
+2026-10-08T20:50:49.3483696Z       "bytes": 0,
+2026-10-08T20:50:49.3484177Z       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+2026-10-08T20:50:49.3484565Z     },
+2026-10-08T20:50:49.3484739Z     {
+2026-10-08T20:50:49.3484964Z       "name": "desktop-complete.png",
+2026-10-08T20:50:49.3485235Z       "bytes": 126908,
+2026-10-08T20:50:49.3485626Z       "sha256": "e5bd74c459f5c7e428b34611cc4190fde018c5663de561286d407f8e59ea6bf9"
+2026-10-08T20:50:49.3486019Z     },
+2026-10-08T20:50:49.3486191Z     {
+2026-10-08T20:50:49.3486412Z       "name": "narrow-complete.png",
+2026-10-08T20:50:49.3486673Z       "bytes": 74983,
+2026-10-08T20:50:49.3487056Z       "sha256": "958db6263d9f83027461ed58d76ee2cfe5c46d8954c571155243c2c68f5a95af"
+2026-10-08T20:50:49.3487437Z     },
+2026-10-08T20:50:49.3487620Z     {
+2026-10-08T20:50:49.3487838Z       "name": "narrow-filtered.png",
+2026-10-08T20:50:49.3488098Z       "bytes": 76531,
+2026-10-08T20:50:49.3488488Z       "sha256": "57ba01ff221e54fb1ff9b0d91f7efe5a4e651bcae4ae5b30efa8a31235c7da19"
+2026-10-08T20:50:49.3489036Z     },
+2026-10-08T20:50:49.3489209Z     {
+2026-10-08T20:50:49.3489433Z       "name": "filtered-print.pdf",
+2026-10-08T20:50:49.3489697Z       "bytes": 129098,
+2026-10-08T20:50:49.3491092Z       "sha256": "042e7e590d40da6d84b14809aa03911b813062a35a2d71920f9eea631b6ba33b"
+2026-10-08T20:50:49.3491503Z     },
+2026-10-08T20:50:49.3491685Z     {
+2026-10-08T20:50:49.3491900Z       "name": "source-after.json",
+2026-10-08T20:50:49.3492170Z       "bytes": 242049,
+2026-10-08T20:50:49.3492566Z       "sha256": "f6cc884c2c1be423514045e54be3e5cc21cb8494dad05fd256c9912c638aaef3"
+2026-10-08T20:50:49.3492960Z     },
+2026-10-08T20:50:49.3493135Z     {
+2026-10-08T20:50:49.3493397Z       "name": "receiving-before-cleanup.json",
+2026-10-08T20:50:49.3493708Z       "bytes": 22004,
+2026-10-08T20:50:49.3494110Z       "sha256": "07bac0e72a5f5b2223a2679abd157c39140f95566b2e9549192327dfcce8bd8d"
+2026-10-08T20:50:49.3494502Z     },
+2026-10-08T20:50:49.3494688Z     {
+2026-10-08T20:50:49.3494912Z       "name": "chrome-stderr.log",
+2026-10-08T20:50:49.3495180Z       "bytes": 4077,
+2026-10-08T20:50:49.3495592Z       "sha256": "f6fa4efcda130f67911bfbf338751b8fdef4e5546a21e5bc1b402e124e57f132"
+2026-10-08T20:50:49.3496018Z     },
+2026-10-08T20:50:49.3496200Z     {
+2026-10-08T20:50:49.3496423Z       "name": "receiving.json",
+2026-10-08T20:50:49.3496679Z       "bytes": 22321,
+2026-10-08T20:50:49.3497079Z       "sha256": "c73a2506c6129cddab683abff6a1f78efd0c7d57e4a7ed1d049f37aa80c7c169"
+2026-10-08T20:50:49.3497483Z     }
+2026-10-08T20:50:49.3497663Z   ],
+2026-10-08T20:50:49.3497846Z   "native": [
+2026-10-08T20:50:49.3498039Z     {
+2026-10-08T20:50:49.3498258Z       "name": "original-native",
+2026-10-08T20:50:49.3498514Z       "command": "agenda",
+2026-10-08T20:50:49.3498744Z       "exit": 0,
+2026-10-08T20:50:49.3499173Z       "stdoutSHA256": "1d47bb539939336ab70bea45068635d57196a5e45d1660abddd5bcfcc17811ce",
+2026-10-08T20:50:49.3500223Z       "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+2026-10-08T20:50:49.3500739Z     },
+2026-10-08T20:50:49.3500929Z     {
+2026-10-08T20:50:49.3501284Z       "name": "original-missing-view",
+2026-10-08T20:50:49.3501730Z       "command": "export-agenda",
+2026-10-08T20:50:49.3502166Z       "exit": 2,
+2026-10-08T20:50:49.3502771Z       "stdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+2026-10-08T20:50:49.3503549Z       "stderrSHA256": "b66f7edd240b925d4f031d4a30b165f19e1d34c49a3adee12ec856dbc0cbb9ed"
+2026-10-08T20:50:49.3504099Z     },
+2026-10-08T20:50:49.3520109Z     {
+2026-10-08T20:50:49.3520397Z       "name": "current-native",
+2026-10-08T20:50:49.3520806Z       "command": "agenda",
+2026-10-08T20:50:49.3521074Z       "exit": 0,
+2026-10-08T20:50:49.3521510Z       "stdoutSHA256": "1d47bb539939336ab70bea45068635d57196a5e45d1660abddd5bcfcc17811ce",
+2026-10-08T20:50:49.3522160Z       "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+2026-10-08T20:50:49.3522617Z     },
+2026-10-08T20:50:49.3522815Z     {
+2026-10-08T20:50:49.3523046Z       "name": "current-export",
+2026-10-08T20:50:49.3523348Z       "command": "export-agenda",
+2026-10-08T20:50:49.3523627Z       "exit": 0,
+2026-10-08T20:50:49.3524057Z       "stdoutSHA256": "7f9b630f9694c13bf354f5750c7087b752b25b04b04d7040736988d616581f0b",
+2026-10-08T20:50:49.3525059Z       "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+2026-10-08T20:50:49.3525504Z     }
+2026-10-08T20:50:49.3525686Z   ],
+2026-10-08T20:50:49.3525885Z   "browser": [
+2026-10-08T20:50:49.3526089Z     {
+2026-10-08T20:50:49.3526343Z       "label": "complete offline saved agenda",
+2026-10-08T20:50:49.3526696Z       "count": "Showing 4 of 4 saved entries",
+2026-10-08T20:50:49.3527334Z       "context": "All selected courses · All source dates · No text filter",
+2026-10-08T20:50:49.3527732Z       "entries": [
+2026-10-08T20:50:49.3527953Z         {
+2026-10-08T20:50:49.3528156Z           "course": "77",
+2026-10-08T20:50:49.3528628Z           "group": "timed",
+2026-10-08T20:50:49.3528898Z           "date": "2026-10-08",
+2026-10-08T20:50:49.3529186Z           "title": "Draft submission",
+2026-10-08T20:50:49.3529461Z           "source": {
+2026-10-08T20:50:49.3529733Z             "kind": "assignment",
+2026-10-08T20:50:49.3530323Z             "course_id": "77",
+2026-10-08T20:50:49.3530578Z             "source": {
+2026-10-08T20:50:49.3530854Z               "collection": "assignment",
+2026-10-08T20:50:49.3531144Z               "index": 0
+2026-10-08T20:50:49.3531379Z             },
+2026-10-08T20:50:49.3531602Z             "record": {
+2026-10-08T20:50:49.3531832Z               "id": 901,
+2026-10-08T20:50:49.3532125Z               "context_code": "course_section_5",
+2026-10-08T20:50:49.3532507Z               "effective_context_code": "course_77",
+2026-10-08T20:50:49.3532859Z               "title": "Draft submission",
+2026-10-08T20:50:49.3533166Z               "all_day": false,
+2026-10-08T20:50:49.3533493Z               "start_at": "2026-10-08T10:00:00-05:00",
+2026-10-08T20:50:49.3533796Z               "end_at": null,
+2026-10-08T20:50:49.3534045Z               "assignment": {
+2026-10-08T20:50:49.3534287Z                 "id": "23",
+2026-10-08T20:50:49.3534551Z                 "course_id": 77,
+2026-10-08T20:50:49.3534863Z                 "due_at": "2026-10-08T10:00:00-05:00",
+2026-10-08T20:50:49.3535193Z                 "points_possible": 0,
+2026-10-08T20:50:49.3535492Z                 "overrides": [
+2026-10-08T20:50:49.3535743Z                   {
+2026-10-08T20:50:49.3535996Z                     "id": "override-0",
+2026-10-08T20:50:49.3536310Z                     "title": "Section A",
+2026-10-08T20:50:49.3536618Z                     "due_at": null
+2026-10-08T20:50:49.3536859Z                   }
+2026-10-08T20:50:49.3537054Z                 ]
+2026-10-08T20:50:49.3537251Z               }
+2026-10-08T20:50:49.3537441Z             }
+2026-10-08T20:50:49.3537628Z           }
+2026-10-08T20:50:49.3537815Z         },
+2026-10-08T20:50:49.3538137Z         {
+2026-10-08T20:50:49.3538333Z           "course": "42",
+2026-10-08T20:50:49.3538565Z           "group": "timed",
+2026-10-08T20:50:49.3538815Z           "date": "2026-10-08",
+2026-10-08T20:50:49.3539228Z           "title": "Studio critique — bring <poster> & notes",
+2026-10-08T20:50:49.3539558Z           "source": {
+2026-10-08T20:50:49.3539778Z             "kind": "event",
+2026-10-08T20:50:49.3540346Z             "course_id": "42",
+2026-10-08T20:50:49.3540607Z             "source": {
+2026-10-08T20:50:49.3540864Z               "collection": "event",
+2026-10-08T20:50:49.3541126Z               "index": 0
+2026-10-08T20:50:49.3541349Z             },
+2026-10-08T20:50:49.3541548Z             "record": {
+2026-10-08T20:50:49.3541770Z               "id": "evt-07",
+2026-10-08T20:50:49.3542042Z               "context_code": "course_42",
+2026-10-08T20:50:49.3542479Z               "title": "Studio critique — bring <poster> & notes",
+2026-10-08T20:50:49.3542828Z               "all_day": false,
+2026-10-08T20:50:49.3543177Z               "start_at": "2026-10-08T15:00:00.0000000002+00:00",
+2026-10-08T20:50:49.3543530Z               "end_at": "2026-10-08T16:00:00Z",
+2026-10-08T20:50:49.3543948Z               "description": "<p>Discuss the draft &amp; its sources.</p>",
+2026-10-08T20:50:49.3544350Z               "location_name": "Room 0",
+2026-10-08T20:50:49.3544778Z               "html_url": "https://school.example.invalid/calendar?event=evt-07"
+2026-10-08T20:50:49.3545162Z             }
+2026-10-08T20:50:49.3545360Z           }
+2026-10-08T20:50:49.3545544Z         },
+2026-10-08T20:50:49.3545723Z         {
+2026-10-08T20:50:49.3545918Z           "course": "77",
+2026-10-08T20:50:49.3546155Z           "group": "all_day",
+2026-10-08T20:50:49.3546423Z           "date": "2026-10-09",
+2026-10-08T20:50:49.3546715Z           "title": "Reading day",
+2026-10-08T20:50:49.3546970Z           "source": {
+2026-10-08T20:50:49.3547196Z             "kind": "event",
+2026-10-08T20:50:49.3547453Z             "course_id": "77",
+2026-10-08T20:50:49.3547851Z             "source": {
+2026-10-08T20:50:49.3548114Z               "collection": "event",
+2026-10-08T20:50:49.3548206Z               "index": 1
+2026-10-08T20:50:49.3548290Z             },
+2026-10-08T20:50:49.3548378Z             "record": {
+2026-10-08T20:50:49.3548469Z               "id": 0,
+2026-10-08T20:50:49.3548602Z               "context_code": "course_77",
+2026-10-08T20:50:49.3548722Z               "title": "Reading day",
+2026-10-08T20:50:49.3548838Z               "all_day": true,
+2026-10-08T20:50:49.3548972Z               "all_day_date": "2026-10-09",
+2026-10-08T20:50:49.3549083Z               "start_at": null,
+2026-10-08T20:50:49.3549180Z               "end_at": null,
+2026-10-08T20:50:49.3549306Z               "description": "",
+2026-10-08T20:50:49.3549421Z               "cancelled": false
+2026-10-08T20:50:49.3549508Z             }
+2026-10-08T20:50:49.3549587Z           }
+2026-10-08T20:50:49.3549673Z         },
+2026-10-08T20:50:49.3549756Z         {
+2026-10-08T20:50:49.3549853Z           "course": "42",
+2026-10-08T20:50:49.3550253Z           "group": "timing_unavailable",
+2026-10-08T20:50:49.3550384Z           "date": "",
+2026-10-08T20:50:49.3550524Z           "title": "Room and time pending",
+2026-10-08T20:50:49.3550618Z           "source": {
+2026-10-08T20:50:49.3550720Z             "kind": "event",
+2026-10-08T20:50:49.3550832Z             "course_id": "42",
+2026-10-08T20:50:49.3550927Z             "source": {
+2026-10-08T20:50:49.3551045Z               "collection": "event",
+2026-10-08T20:50:49.3551139Z               "index": 2
+2026-10-08T20:50:49.3551227Z             },
+2026-10-08T20:50:49.3551313Z             "record": {
+2026-10-08T20:50:49.3551430Z               "id": "pending",
+2026-10-08T20:50:49.3551568Z               "context_code": "course_42",
+2026-10-08T20:50:49.3551710Z               "title": "Room and time pending",
+2026-10-08T20:50:49.3551829Z               "all_day": false,
+2026-10-08T20:50:49.3551942Z               "start_at": null,
+2026-10-08T20:50:49.3552383Z               "description": "</script><img src=x onerror=alert(1)> remains supplied source",
+2026-10-08T20:50:49.3552512Z               "cancelled": true
+2026-10-08T20:50:49.3552596Z             },
+2026-10-08T20:50:49.3552695Z             "timing_issue": {
+2026-10-08T20:50:49.3552819Z               "field": "start_at",
+2026-10-08T20:50:49.3553126Z               "reason": "expected a valid timestamp with a known UTC offset; no instant inferred"
+2026-10-08T20:50:49.3553211Z             }
+2026-10-08T20:50:49.3553296Z           }
+2026-10-08T20:50:49.3553373Z         }
+2026-10-08T20:50:49.3553458Z       ]
+2026-10-08T20:50:49.3553543Z     },
+2026-10-08T20:50:49.3553622Z     {
+2026-10-08T20:50:49.3553726Z       "label": "Course 42",
+2026-10-08T20:50:49.3553869Z       "count": "Showing 2 of 4 saved entries",
+2026-10-08T20:50:49.3554157Z       "context": "Course 42 · All source dates · No text filter",
+2026-10-08T20:50:49.3554253Z       "entries": [
+2026-10-08T20:50:49.3554331Z         {
+2026-10-08T20:50:49.3554436Z           "course": "42",
+2026-10-08T20:50:49.3554540Z           "group": "timed",
+2026-10-08T20:50:49.3554648Z           "date": "2026-10-08",
+2026-10-08T20:50:49.3554883Z           "title": "Studio critique — bring <poster> & notes",
+2026-10-08T20:50:49.3554978Z           "source": {
+2026-10-08T20:50:49.3555071Z             "kind": "event",
+2026-10-08T20:50:49.3555187Z             "course_id": "42",
+2026-10-08T20:50:49.3555279Z             "source": {
+2026-10-08T20:50:49.3555399Z               "collection": "event",
+2026-10-08T20:50:49.3555494Z               "index": 0
+2026-10-08T20:50:49.3555578Z             },
+2026-10-08T20:50:49.3555672Z             "record": {
+2026-10-08T20:50:49.3555770Z               "id": "evt-07",
+2026-10-08T20:50:49.3555896Z               "context_code": "course_42",
+2026-10-08T20:50:49.3556137Z               "title": "Studio critique — bring <poster> & notes",
+2026-10-08T20:50:49.3556251Z               "all_day": false,
+2026-10-08T20:50:49.3556421Z               "start_at": "2026-10-08T15:00:00.0000000002+00:00",
+2026-10-08T20:50:49.3556688Z               "end_at": "2026-10-08T16:00:00Z",
+2026-10-08T20:50:49.3556924Z               "description": "<p>Discuss the draft &amp; its sources.</p>",
+2026-10-08T20:50:49.3557047Z               "location_name": "Room 0",
+2026-10-08T20:50:49.3557303Z               "html_url": "https://school.example.invalid/calendar?event=evt-07"
+2026-10-08T20:50:49.3557391Z             }
+2026-10-08T20:50:49.3557470Z           }
+2026-10-08T20:50:49.3557556Z         },
+2026-10-08T20:50:49.3557636Z         {
+2026-10-08T20:50:49.3557741Z           "course": "42",
+2026-10-08T20:50:49.3557883Z           "group": "timing_unavailable",
+2026-10-08T20:50:49.3557970Z           "date": "",
+2026-10-08T20:50:49.3558107Z           "title": "Room and time pending",
+2026-10-08T20:50:49.3558199Z           "source": {
+2026-10-08T20:50:49.3558292Z             "kind": "event",
+2026-10-08T20:50:49.3558410Z             "course_id": "42",
+2026-10-08T20:50:49.3558505Z             "source": {
+2026-10-08T20:50:49.3558634Z               "collection": "event",
+2026-10-08T20:50:49.3558731Z               "index": 2
+2026-10-08T20:50:49.3558812Z             },
+2026-10-08T20:50:49.3558903Z             "record": {
+2026-10-08T20:50:49.3559020Z               "id": "pending",
+2026-10-08T20:50:49.3559148Z               "context_code": "course_42",
+2026-10-08T20:50:49.3559300Z               "title": "Room and time pending",
+2026-10-08T20:50:49.3559416Z               "all_day": false,
+2026-10-08T20:50:49.3559525Z               "start_at": null,
+2026-10-08T20:50:49.3559830Z               "description": "</script><img src=x onerror=alert(1)> remains supplied source",
+2026-10-08T20:50:49.3560249Z               "cancelled": true
+2026-10-08T20:50:49.3560413Z             },
+2026-10-08T20:50:49.3560536Z             "timing_issue": {
+2026-10-08T20:50:49.3560668Z               "field": "start_at",
+2026-10-08T20:50:49.3560989Z               "reason": "expected a valid timestamp with a known UTC offset; no instant inferred"
+2026-10-08T20:50:49.3561339Z             }
+2026-10-08T20:50:49.3561428Z           }
+2026-10-08T20:50:49.3561516Z         }
+2026-10-08T20:50:49.3561603Z       ]
+2026-10-08T20:50:49.3561684Z     },
+2026-10-08T20:50:49.3561771Z     {
+2026-10-08T20:50:49.3561978Z       "label": "Course 42 unknown timing retained through date",
+2026-10-08T20:50:49.3562131Z       "count": "Showing 1 of 4 saved entries",
+2026-10-08T20:50:49.3562583Z       "context": "Course 42 · Source date 2026-10-09; unavailable timing retained · No text filter",
+2026-10-08T20:50:49.3562670Z       "entries": [
+2026-10-08T20:50:49.3562758Z         {
+2026-10-08T20:50:49.3562859Z           "course": "42",
+2026-10-08T20:50:49.3562993Z           "group": "timing_unavailable",
+2026-10-08T20:50:49.3563086Z           "date": "",
+2026-10-08T20:50:49.3563226Z           "title": "Room and time pending",
+2026-10-08T20:50:49.3563315Z           "source": {
+2026-10-08T20:50:49.3563420Z             "kind": "event",
+2026-10-08T20:50:49.3563552Z             "course_id": "42",
+2026-10-08T20:50:49.3563652Z             "source": {
+2026-10-08T20:50:49.3563783Z               "collection": "event",
+2026-10-08T20:50:49.3563873Z               "index": 2
+2026-10-08T20:50:49.3563960Z             },
+2026-10-08T20:50:49.3564054Z             "record": {
+2026-10-08T20:50:49.3564170Z               "id": "pending",
+2026-10-08T20:50:49.3564306Z               "context_code": "course_42",
+2026-10-08T20:50:49.3564454Z               "title": "Room and time pending",
+2026-10-08T20:50:49.3564565Z               "all_day": false,
+2026-10-08T20:50:49.3564680Z               "start_at": null,
+2026-10-08T20:50:49.3564978Z               "description": "</script><img src=x onerror=alert(1)> remains supplied source",
+2026-10-08T20:50:49.3565091Z               "cancelled": true
+2026-10-08T20:50:49.3565184Z             },
+2026-10-08T20:50:49.3565279Z             "timing_issue": {
+2026-10-08T20:50:49.3565405Z               "field": "start_at",
+2026-10-08T20:50:49.3565724Z               "reason": "expected a valid timestamp with a known UTC offset; no instant inferred"
+2026-10-08T20:50:49.3565932Z             }
+2026-10-08T20:50:49.3566016Z           }
+2026-10-08T20:50:49.3566109Z         }
+2026-10-08T20:50:49.3566193Z       ]
+2026-10-08T20:50:49.3566280Z     },
+2026-10-08T20:50:49.3566366Z     {
+2026-10-08T20:50:49.3566514Z       "label": "Course 77 all-day source date",
+2026-10-08T20:50:49.3566662Z       "count": "Showing 1 of 4 saved entries",
+2026-10-08T20:50:49.3567078Z       "context": "Course 77 · Source date 2026-10-09; unavailable timing retained · No text filter",
+2026-10-08T20:50:49.3567169Z       "entries": [
+2026-10-08T20:50:49.3567253Z         {
+2026-10-08T20:50:49.3567346Z           "course": "77",
+2026-10-08T20:50:49.3567452Z           "group": "all_day",
+2026-10-08T20:50:49.3567574Z           "date": "2026-10-09",
+2026-10-08T20:50:49.3567691Z           "title": "Reading day",
+2026-10-08T20:50:49.3567790Z           "source": {
+2026-10-08T20:50:49.3567892Z             "kind": "event",
+2026-10-08T20:50:49.3568015Z             "course_id": "77",
+2026-10-08T20:50:49.3568107Z             "source": {
+2026-10-08T20:50:49.3568233Z               "collection": "event",
+2026-10-08T20:50:49.3568323Z               "index": 1
+2026-10-08T20:50:49.3568411Z             },
+2026-10-08T20:50:49.3568496Z             "record": {
+2026-10-08T20:50:49.3568588Z               "id": 0,
+2026-10-08T20:50:49.3568725Z               "context_code": "course_77",
+2026-10-08T20:50:49.3568846Z               "title": "Reading day",
+2026-10-08T20:50:49.3568965Z               "all_day": true,
+2026-10-08T20:50:49.3569095Z               "all_day_date": "2026-10-09",
+2026-10-08T20:50:49.3569204Z               "start_at": null,
+2026-10-08T20:50:49.3569302Z               "end_at": null,
+2026-10-08T20:50:49.3569425Z               "description": "",
+2026-10-08T20:50:49.3569535Z               "cancelled": false
+2026-10-08T20:50:49.3569623Z             }
+2026-10-08T20:50:49.3569705Z           }
+2026-10-08T20:50:49.3569792Z         }
+2026-10-08T20:50:49.3570134Z       ]
+2026-10-08T20:50:49.3570226Z     },
+2026-10-08T20:50:49.3570312Z     {
+2026-10-08T20:50:49.3570467Z       "label": "Course 77 timed source date",
+2026-10-08T20:50:49.3570610Z       "count": "Showing 1 of 4 saved entries",
+2026-10-08T20:50:49.3571025Z       "context": "Course 77 · Source date 2026-10-08; unavailable timing retained · No text filter",
+2026-10-08T20:50:49.3571119Z       "entries": [
+2026-10-08T20:50:49.3571232Z         {
+2026-10-08T20:50:49.3571337Z           "course": "77",
+2026-10-08T20:50:49.3571433Z           "group": "timed",
+2026-10-08T20:50:49.3571547Z           "date": "2026-10-08",
+2026-10-08T20:50:49.3571681Z           "title": "Draft submission",
+2026-10-08T20:50:49.3571769Z           "source": {
+2026-10-08T20:50:49.3571892Z             "kind": "assignment",
+2026-10-08T20:50:49.3572008Z             "course_id": "77",
+2026-10-08T20:50:49.3572095Z             "source": {
+2026-10-08T20:50:49.3572229Z               "collection": "assignment",
+2026-10-08T20:50:49.3572336Z               "index": 0
+2026-10-08T20:50:49.3572419Z             },
+2026-10-08T20:50:49.3572511Z             "record": {
+2026-10-08T20:50:49.3572598Z               "id": 901,
+2026-10-08T20:50:49.3572758Z               "context_code": "course_section_5",
+2026-10-08T20:50:49.3572915Z               "effective_context_code": "course_77",
+2026-10-08T20:50:49.3573045Z               "title": "Draft submission",
+2026-10-08T20:50:49.3573163Z               "all_day": false,
+2026-10-08T20:50:49.3573316Z               "start_at": "2026-10-08T10:00:00-05:00",
+2026-10-08T20:50:49.3573411Z               "end_at": null,
+2026-10-08T20:50:49.3573513Z               "assignment": {
+2026-10-08T20:50:49.3573610Z                 "id": "23",
+2026-10-08T20:50:49.3573726Z                 "course_id": 77,
+2026-10-08T20:50:49.3573876Z                 "due_at": "2026-10-08T10:00:00-05:00",
+2026-10-08T20:50:49.3574011Z                 "points_possible": 0,
+2026-10-08T20:50:49.3574123Z                 "overrides": [
+2026-10-08T20:50:49.3574397Z                   {
+2026-10-08T20:50:49.3574526Z                     "id": "override-0",
+2026-10-08T20:50:49.3574664Z                     "title": "Section A",
+2026-10-08T20:50:49.3574788Z                     "due_at": null
+2026-10-08T20:50:49.3574875Z                   }
+2026-10-08T20:50:49.3574964Z                 ]
+2026-10-08T20:50:49.3575056Z               }
+2026-10-08T20:50:49.3575140Z             }
+2026-10-08T20:50:49.3575227Z           }
+2026-10-08T20:50:49.3575315Z         }
+2026-10-08T20:50:49.3575399Z       ]
+2026-10-08T20:50:49.3575489Z     },
+2026-10-08T20:50:49.3575571Z     {
+2026-10-08T20:50:49.3575729Z       "label": "explicit empty matching view",
+2026-10-08T20:50:49.3575875Z       "count": "Showing 0 of 4 saved entries",
+2026-10-08T20:50:49.3576290Z       "context": "Course 77 · Source date 2026-10-15; unavailable timing retained · No text filter",
+2026-10-08T20:50:49.3576390Z       "entries": []
+2026-10-08T20:50:49.3576481Z     },
+2026-10-08T20:50:49.3576561Z     {
+2026-10-08T20:50:49.3576708Z       "label": "literal text search",
+2026-10-08T20:50:49.3576864Z       "count": "Showing 1 of 4 saved entries",
+2026-10-08T20:50:49.3577173Z       "context": "All selected courses · All source dates · Text: <poster>",
+2026-10-08T20:50:49.3577270Z       "entries": [
+2026-10-08T20:50:49.3577351Z         {
+2026-10-08T20:50:49.3577453Z           "course": "42",
+2026-10-08T20:50:49.3577552Z           "group": "timed",
+2026-10-08T20:50:49.3577665Z           "date": "2026-10-08",
+2026-10-08T20:50:49.3577906Z           "title": "Studio critique — bring <poster> & notes",
+2026-10-08T20:50:49.3578002Z           "source": {
+2026-10-08T20:50:49.3578096Z             "kind": "event",
+2026-10-08T20:50:49.3578213Z             "course_id": "42",
+2026-10-08T20:50:49.3578307Z             "source": {
+2026-10-08T20:50:49.3578429Z               "collection": "event",
+2026-10-08T20:50:49.3578524Z               "index": 0
+2026-10-08T20:50:49.3578611Z             },
+2026-10-08T20:50:49.3578700Z             "record": {
+2026-10-08T20:50:49.3578929Z               "id": "evt-07",
+2026-10-08T20:50:49.3579063Z               "context_code": "course_42",
+2026-10-08T20:50:49.3579317Z               "title": "Studio critique — bring <poster> & notes",
+2026-10-08T20:50:49.3579436Z               "all_day": false,
+2026-10-08T20:50:49.3579608Z               "start_at": "2026-10-08T15:00:00.0000000002+00:00",
+2026-10-08T20:50:49.3579749Z               "end_at": "2026-10-08T16:00:00Z",
+2026-10-08T20:50:49.3580269Z               "description": "<p>Discuss the draft &amp; its sources.</p>",
+2026-10-08T20:50:49.3580424Z               "location_name": "Room 0",
+2026-10-08T20:50:49.3580698Z               "html_url": "https://school.example.invalid/calendar?event=evt-07"
+2026-10-08T20:50:49.3580797Z             }
+2026-10-08T20:50:49.3580880Z           }
+2026-10-08T20:50:49.3580970Z         }
+2026-10-08T20:50:49.3581057Z       ]
+2026-10-08T20:50:49.3581139Z     },
+2026-10-08T20:50:49.3581226Z     {
+2026-10-08T20:50:49.3581394Z       "label": "intersecting course and search",
+2026-10-08T20:50:49.3581550Z       "count": "Showing 0 of 4 saved entries",
+2026-10-08T20:50:49.3581835Z       "context": "Course 77 · All source dates · Text: <poster>",
+2026-10-08T20:50:49.3581926Z       "entries": []
+2026-10-08T20:50:49.3582014Z     },
+2026-10-08T20:50:49.3582105Z     {
+2026-10-08T20:50:49.3582236Z       "label": "desktop-complete",
+2026-10-08T20:50:49.3582330Z       "layout": {
+2026-10-08T20:50:49.3582428Z         "width": 1280,
+2026-10-08T20:50:49.3582527Z         "scrollWidth": 1265,
+2026-10-08T20:50:49.3582626Z         "panels": [
+2026-10-08T20:50:49.3582710Z           {
+2026-10-08T20:50:49.3582812Z             "left": 100.5,
+2026-10-08T20:50:49.3582911Z             "right": 1164.5,
+2026-10-08T20:50:49.3583003Z             "width": 1064
+2026-10-08T20:50:49.3583095Z           },
+2026-10-08T20:50:49.3583185Z           {
+2026-10-08T20:50:49.3583281Z             "left": 100.5,
+2026-10-08T20:50:49.3583377Z             "right": 1164.5,
+2026-10-08T20:50:49.3583631Z             "width": 1064
+2026-10-08T20:50:49.3583722Z           },
+2026-10-08T20:50:49.3583808Z           {
+2026-10-08T20:50:49.3583895Z             "left": 100.5,
+2026-10-08T20:50:49.3583997Z             "right": 1164.5,
+2026-10-08T20:50:49.3584092Z             "width": 1064
+2026-10-08T20:50:49.3584173Z           },
+2026-10-08T20:50:49.3584261Z           {
+2026-10-08T20:50:49.3584358Z             "left": 100.5,
+2026-10-08T20:50:49.3584450Z             "right": 1164.5,
+2026-10-08T20:50:49.3584549Z             "width": 1064
+2026-10-08T20:50:49.3584637Z           },
+2026-10-08T20:50:49.3584727Z           {
+2026-10-08T20:50:49.3584822Z             "left": 100.5,
+2026-10-08T20:50:49.3584914Z             "right": 1164.5,
+2026-10-08T20:50:49.3585012Z             "width": 1064
+2026-10-08T20:50:49.3585101Z           },
+2026-10-08T20:50:49.3585181Z           {
+2026-10-08T20:50:49.3585329Z             "left": 100.5,
+2026-10-08T20:50:49.3585495Z             "right": 1164.5,
+2026-10-08T20:50:49.3585664Z             "width": 1064
+2026-10-08T20:50:49.3585828Z           }
+2026-10-08T20:50:49.3585982Z         ],
+2026-10-08T20:50:49.3586154Z         "controls": [
+2026-10-08T20:50:49.3586522Z           {
+2026-10-08T20:50:49.3586850Z             "height": 44
+2026-10-08T20:50:49.3587174Z           },
+2026-10-08T20:50:49.3587388Z           {
+2026-10-08T20:50:49.3587589Z             "height": 44
+2026-10-08T20:50:49.3587819Z           },
+2026-10-08T20:50:49.3588014Z           {
+2026-10-08T20:50:49.3588211Z             "height": 44
+2026-10-08T20:50:49.3588431Z           },
+2026-10-08T20:50:49.3588633Z           {
+2026-10-08T20:50:49.3588829Z             "height": 44
+2026-10-08T20:50:49.3589048Z           },
+2026-10-08T20:50:49.3589244Z           {
+2026-10-08T20:50:49.3589441Z             "height": 44
+2026-10-08T20:50:49.3589765Z           }
+2026-10-08T20:50:49.3590304Z         ]
+2026-10-08T20:50:49.3590511Z       }
+2026-10-08T20:50:49.3590737Z     },
+2026-10-08T20:50:49.3590926Z     {
+2026-10-08T20:50:49.3591337Z       "label": "narrow-complete",
+2026-10-08T20:50:49.3591639Z       "layout": {
+2026-10-08T20:50:49.3591862Z         "width": 390,
+2026-10-08T20:50:49.3592115Z         "scrollWidth": 375,
+2026-10-08T20:50:49.3592370Z         "panels": [
+2026-10-08T20:50:49.3592596Z           {
+2026-10-08T20:50:49.3592798Z             "left": 16,
+2026-10-08T20:50:49.3593035Z             "right": 359,
+2026-10-08T20:50:49.3593284Z             "width": 343
+2026-10-08T20:50:49.3593525Z           },
+2026-10-08T20:50:49.3593728Z           {
+2026-10-08T20:50:49.3593933Z             "left": 16,
+2026-10-08T20:50:49.3594166Z             "right": 359,
+2026-10-08T20:50:49.3594405Z             "width": 343
+2026-10-08T20:50:49.3594638Z           },
+2026-10-08T20:50:49.3594852Z           {
+2026-10-08T20:50:49.3595056Z             "left": 16,
+2026-10-08T20:50:49.3595280Z             "right": 359,
+2026-10-08T20:50:49.3595514Z             "width": 343
+2026-10-08T20:50:49.3595742Z           },
+2026-10-08T20:50:49.3595940Z           {
+2026-10-08T20:50:49.3596165Z             "left": 16,
+2026-10-08T20:50:49.3596400Z             "right": 359,
+2026-10-08T20:50:49.3596631Z             "width": 343
+2026-10-08T20:50:49.3596853Z           },
+2026-10-08T20:50:49.3597042Z           {
+2026-10-08T20:50:49.3597264Z             "left": 16,
+2026-10-08T20:50:49.3597504Z             "right": 359,
+2026-10-08T20:50:49.3597757Z             "width": 343
+2026-10-08T20:50:49.3597982Z           },
+2026-10-08T20:50:49.3598172Z           {
+2026-10-08T20:50:49.3598374Z             "left": 16,
+2026-10-08T20:50:49.3598594Z             "right": 359,
+2026-10-08T20:50:49.3598827Z             "width": 343
+2026-10-08T20:50:49.3599048Z           }
+2026-10-08T20:50:49.3599242Z         ],
+2026-10-08T20:50:49.3599440Z         "controls": [
+2026-10-08T20:50:49.3599660Z           {
+2026-10-08T20:50:49.3599865Z             "height": 44
+2026-10-08T20:50:49.3600321Z           },
+2026-10-08T20:50:49.3600607Z           {
+2026-10-08T20:50:49.3600812Z             "height": 44
+2026-10-08T20:50:49.3601181Z           },
+2026-10-08T20:50:49.3601371Z           {
+2026-10-08T20:50:49.3601570Z             "height": 44
+2026-10-08T20:50:49.3601790Z           },
+2026-10-08T20:50:49.3601987Z           {
+2026-10-08T20:50:49.3602188Z             "height": 44
+2026-10-08T20:50:49.3602420Z           },
+2026-10-08T20:50:49.3602616Z           {
+2026-10-08T20:50:49.3602835Z             "height": 44
+2026-10-08T20:50:49.3603071Z           }
+2026-10-08T20:50:49.3603268Z         ]
+2026-10-08T20:50:49.3603470Z       }
+2026-10-08T20:50:49.3603677Z     },
+2026-10-08T20:50:49.3603877Z     {
+2026-10-08T20:50:49.3604150Z       "label": "narrow filtered unknown timing",
+2026-10-08T20:50:49.3604534Z       "count": "Showing 1 of 4 saved entries",
+2026-10-08T20:50:49.3605235Z       "context": "Course 42 · Source date 2026-10-09; unavailable timing retained · No text filter",
+2026-10-08T20:50:49.3605739Z       "entries": [
+2026-10-08T20:50:49.3605966Z         {
+2026-10-08T20:50:49.3606180Z           "course": "42",
+2026-10-08T20:50:49.3606499Z           "group": "timing_unavailable",
+2026-10-08T20:50:49.3606806Z           "date": "",
+2026-10-08T20:50:49.3607084Z           "title": "Room and time pending",
+2026-10-08T20:50:49.3607383Z           "source": {
+2026-10-08T20:50:49.3607651Z             "kind": "event",
+2026-10-08T20:50:49.3607935Z             "course_id": "42",
+2026-10-08T20:50:49.3608209Z             "source": {
+2026-10-08T20:50:49.3608484Z               "collection": "event",
+2026-10-08T20:50:49.3608766Z               "index": 2
+2026-10-08T20:50:49.3609055Z             },
+2026-10-08T20:50:49.3609428Z             "record": {
+2026-10-08T20:50:49.3609818Z               "id": "pending",
+2026-10-08T20:50:49.3610308Z               "context_code": "course_42",
+2026-10-08T20:50:49.3610661Z               "title": "Room and time pending",
+2026-10-08T20:50:49.3610992Z               "all_day": false,
+2026-10-08T20:50:49.3611397Z               "start_at": null,
+2026-10-08T20:50:49.3612285Z               "description": "</script><img src=x onerror=alert(1)> remains supplied source",
+2026-10-08T20:50:49.3612857Z               "cancelled": true
+2026-10-08T20:50:49.3613278Z             },
+2026-10-08T20:50:49.3613620Z             "timing_issue": {
+2026-10-08T20:50:49.3613976Z               "field": "start_at",
+2026-10-08T20:50:49.3614598Z               "reason": "expected a valid timestamp with a known UTC offset; no instant inferred"
+2026-10-08T20:50:49.3615055Z             }
+2026-10-08T20:50:49.3615252Z           }
+2026-10-08T20:50:49.3615439Z         }
+2026-10-08T20:50:49.3615620Z       ]
+2026-10-08T20:50:49.3615803Z     },
+2026-10-08T20:50:49.3615993Z     {
+2026-10-08T20:50:49.3616217Z       "label": "narrow-filtered",
+2026-10-08T20:50:49.3616483Z       "layout": {
+2026-10-08T20:50:49.3616715Z         "width": 390,
+2026-10-08T20:50:49.3616953Z         "scrollWidth": 375,
+2026-10-08T20:50:49.3617206Z         "panels": [
+2026-10-08T20:50:49.3617421Z           {
+2026-10-08T20:50:49.3617623Z             "left": 16,
+2026-10-08T20:50:49.3617862Z             "right": 359,
+2026-10-08T20:50:49.3618102Z             "width": 343
+2026-10-08T20:50:49.3618321Z           },
+2026-10-08T20:50:49.3618509Z           {
+2026-10-08T20:50:49.3618706Z             "left": 16,
+2026-10-08T20:50:49.3618935Z             "right": 359,
+2026-10-08T20:50:49.3619166Z             "width": 343
+2026-10-08T20:50:49.3619397Z           },
+2026-10-08T20:50:49.3619588Z           {
+2026-10-08T20:50:49.3619786Z             "left": 16,
+2026-10-08T20:50:49.3620442Z             "right": 359,
+2026-10-08T20:50:49.3620828Z             "width": 343
+2026-10-08T20:50:49.3621056Z           }
+2026-10-08T20:50:49.3621248Z         ],
+2026-10-08T20:50:49.3621456Z         "controls": [
+2026-10-08T20:50:49.3621666Z           {
+2026-10-08T20:50:49.3621864Z             "height": 44
+2026-10-08T20:50:49.3622084Z           },
+2026-10-08T20:50:49.3622276Z           {
+2026-10-08T20:50:49.3622473Z             "height": 44
+2026-10-08T20:50:49.3622700Z           },
+2026-10-08T20:50:49.3622886Z           {
+2026-10-08T20:50:49.3623277Z             "height": 44
+2026-10-08T20:50:49.3623507Z           },
+2026-10-08T20:50:49.3623710Z           {
+2026-10-08T20:50:49.3623910Z             "height": 44
+2026-10-08T20:50:49.3624144Z           },
+2026-10-08T20:50:49.3624351Z           {
+2026-10-08T20:50:49.3624551Z             "height": 44
+2026-10-08T20:50:49.3624780Z           }
+2026-10-08T20:50:49.3624975Z         ]
+2026-10-08T20:50:49.3625168Z       }
+2026-10-08T20:50:49.3625359Z     }
+2026-10-08T20:50:49.3625559Z   ],
+2026-10-08T20:50:49.3625766Z   "pageErrors": [],
+2026-10-08T20:50:49.3626005Z   "externalRequests": [],
+2026-10-08T20:50:49.3626256Z   "source": {
+2026-10-08T20:50:49.3626552Z     "head": "17a368885b7c4d579ecd9b80dda5afe560091cf2",
+2026-10-08T20:50:49.3626948Z     "tree": "73c7373186df76e1b26be5a3c0a492889b61e938",
+2026-10-08T20:50:49.3627264Z     "parents": [
+2026-10-08T20:50:49.3627541Z       "b6d73588887ce57a2637ab72ee424a5eb29e543f",
+2026-10-08T20:50:49.3627914Z       "8548037fe4f6b9e1a640cdabdd288a0c3f8751b1"
+2026-10-08T20:50:49.3628224Z     ],
+2026-10-08T20:50:49.3628516Z     "githubSHA": "17a368885b7c4d579ecd9b80dda5afe560091cf2"
+2026-10-08T20:50:49.3628847Z   },
+2026-10-08T20:50:49.3629059Z   "nativeRequests": [
+2026-10-08T20:50:49.3629283Z     {
+2026-10-08T20:50:49.3629630Z       "method": "GET",
+2026-10-08T20:50:49.3630233Z       "path": "/api/v1/calendar_events",
+2026-10-08T20:50:49.3630607Z       "query": [
+2026-10-08T20:50:49.3630821Z         [
+2026-10-08T20:50:49.3631033Z           "type",
+2026-10-08T20:50:49.3631253Z           "event"
+2026-10-08T20:50:49.3631652Z         ],
+2026-10-08T20:50:49.3631935Z         [
+2026-10-08T20:50:49.3632137Z           "start_date",
+2026-10-08T20:50:49.3632373Z           "2026-10-08"
+2026-10-08T20:50:49.3632592Z         ],
+2026-10-08T20:50:49.3632881Z         [
+2026-10-08T20:50:49.3633085Z           "end_date",
+2026-10-08T20:50:49.3633309Z           "2026-10-15"
+2026-10-08T20:50:49.3633521Z         ],
+2026-10-08T20:50:49.3633703Z         [
+2026-10-08T20:50:49.3634081Z           "context_codes[]",
+2026-10-08T20:50:49.3634345Z           "course_42"
+2026-10-08T20:50:49.3634552Z         ],
+2026-10-08T20:50:49.3634741Z         [
+2026-10-08T20:50:49.3634938Z           "context_codes[]",
+2026-10-08T20:50:49.3635177Z           "course_77"
+2026-10-08T20:50:49.3635384Z         ],
+2026-10-08T20:50:49.3635571Z         [
+2026-10-08T20:50:49.3635764Z           "per_page",
+2026-10-08T20:50:49.3635978Z           "50"
+2026-10-08T20:50:49.3636169Z         ]
+2026-10-08T20:50:49.3636354Z       ]
+2026-10-08T20:50:49.3636540Z     },
+2026-10-08T20:50:49.3636725Z     {
+2026-10-08T20:50:49.3636935Z       "method": "GET",
+2026-10-08T20:50:49.3637209Z       "path": "/api/v1/calendar_events",
+2026-10-08T20:50:49.3637488Z       "query": [
+2026-10-08T20:50:49.3637695Z         [
+2026-10-08T20:50:49.3637889Z           "type",
+2026-10-08T20:50:49.3638104Z           "assignment"
+2026-10-08T20:50:49.3638325Z         ],
+2026-10-08T20:50:49.3638508Z         [
+2026-10-08T20:50:49.3638714Z           "start_date",
+2026-10-08T20:50:49.3638947Z           "2026-10-08"
+2026-10-08T20:50:49.3639162Z         ],
+2026-10-08T20:50:49.3639349Z         [
+2026-10-08T20:50:49.3639552Z           "end_date",
+2026-10-08T20:50:49.3639775Z           "2026-10-15"
+2026-10-08T20:50:49.3640283Z         ],
+2026-10-08T20:50:49.3640585Z         [
+2026-10-08T20:50:49.3640801Z           "context_codes[]",
+2026-10-08T20:50:49.3641059Z           "course_42"
+2026-10-08T20:50:49.3641276Z         ],
+2026-10-08T20:50:49.3641469Z         [
+2026-10-08T20:50:49.3641667Z           "context_codes[]",
+2026-10-08T20:50:49.3641910Z           "course_77"
+2026-10-08T20:50:49.3642119Z         ],
+2026-10-08T20:50:49.3642301Z         [
+2026-10-08T20:50:49.3642495Z           "per_page",
+2026-10-08T20:50:49.3642717Z           "50"
+2026-10-08T20:50:49.3642913Z         ]
+2026-10-08T20:50:49.3643098Z       ]
+2026-10-08T20:50:49.3643282Z     }
+2026-10-08T20:50:49.3643464Z   ],
+2026-10-08T20:50:49.3643660Z   "savedFile": {
+2026-10-08T20:50:49.3643873Z     "bytes": 31707,
+2026-10-08T20:50:49.3644466Z     "sha256": "1c45b9ee7fea81a4ddb438d90cad07e48719832f54308de86de5c8899c37d044",
+2026-10-08T20:50:49.3644912Z     "nativeBytes": 2828,
+2026-10-08T20:50:49.3645369Z     "nativeSHA256": "1d47bb539939336ab70bea45068635d57196a5e45d1660abddd5bcfcc17811ce"
+2026-10-08T20:50:49.3645806Z   },
+2026-10-08T20:50:49.3645996Z   "runtime": {
+2026-10-08T20:50:49.3646217Z     "node": "v22.23.3",
+2026-10-08T20:50:49.3646491Z     "chrome": "Google Chrome 154.0.8037.97",
+2026-10-08T20:50:49.3646830Z     "executable": "/usr/bin/google-chrome"
+2026-10-08T20:50:49.3647110Z   },
+2026-10-08T20:50:49.3647299Z   "download": {
+2026-10-08T20:50:49.3647580Z     "actualFile": "downloads/course-agenda.json",
+2026-10-08T20:50:49.3647902Z     "bytes": 2828,
+2026-10-08T20:50:49.3648307Z     "sha256": "1d47bb539939336ab70bea45068635d57196a5e45d1660abddd5bcfcc17811ce"
+2026-10-08T20:50:49.3648717Z   },
+2026-10-08T20:50:49.3648907Z   "keyboard": [
+2026-10-08T20:50:49.3649108Z     {
+2026-10-08T20:50:49.3649298Z       "tag": "A",
+2026-10-08T20:50:49.3649535Z       "id": "",
+2026-10-08T20:50:49.3649778Z       "text": "Skip to agenda",
+2026-10-08T20:50:49.3650196Z       "outline": "solid",
+2026-10-08T20:50:49.3650439Z       "width": 3
+2026-10-08T20:50:49.3650648Z     },
+2026-10-08T20:50:49.3650834Z     {
+2026-10-08T20:50:49.3651036Z       "tag": "A",
+2026-10-08T20:50:49.3651280Z       "id": "download-native",
+2026-10-08T20:50:49.3651593Z       "text": "Download original agenda JSON",
+2026-10-08T20:50:49.3651901Z       "outline": "solid",
+2026-10-08T20:50:49.3652132Z       "width": 3
+2026-10-08T20:50:49.3652331Z     },
+2026-10-08T20:50:49.3652518Z     {
+2026-10-08T20:50:49.3652706Z       "tag": "BUTTON",
+2026-10-08T20:50:49.3652936Z       "id": "print-agenda",
+2026-10-08T20:50:49.3653210Z       "text": "Print this view",
+2026-10-08T20:50:49.3653465Z       "outline": "solid",
+2026-10-08T20:50:49.3653688Z       "width": 3
+2026-10-08T20:50:49.3653881Z     },
+2026-10-08T20:50:49.3654059Z     {
+2026-10-08T20:50:49.3654243Z       "tag": "SELECT",
+2026-10-08T20:50:49.3654591Z       "id": "course-filter",
+2026-10-08T20:50:49.3654915Z       "text": "All selected coursesCourse 42Course 77",
+2026-10-08T20:50:49.3655229Z       "outline": "solid",
+2026-10-08T20:50:49.3655452Z       "width": 3
+2026-10-08T20:50:49.3655653Z     },
+2026-10-08T20:50:49.3655832Z     {
+2026-10-08T20:50:49.3656018Z       "tag": "INPUT",
+2026-10-08T20:50:49.3656239Z       "id": "date-filter",
+2026-10-08T20:50:49.3656465Z       "text": "",
+2026-10-08T20:50:49.3656672Z       "outline": "solid",
+2026-10-08T20:50:49.3656901Z       "width": 3
+2026-10-08T20:50:49.3657093Z     },
+2026-10-08T20:50:49.3657270Z     {
+2026-10-08T20:50:49.3657461Z       "tag": "INPUT",
+2026-10-08T20:50:49.3657683Z       "id": "date-filter",
+2026-10-08T20:50:49.3657914Z       "text": "",
+2026-10-08T20:50:49.3658133Z       "outline": "solid",
+2026-10-08T20:50:49.3658360Z       "width": 3
+2026-10-08T20:50:49.3658549Z     },
+2026-10-08T20:50:49.3658735Z     {
+2026-10-08T20:50:49.3658920Z       "tag": "INPUT",
+2026-10-08T20:50:49.3659155Z       "id": "date-filter",
+2026-10-08T20:50:49.3659384Z       "text": "",
+2026-10-08T20:50:49.3659605Z       "outline": "solid",
+2026-10-08T20:50:49.3659828Z       "width": 3
+2026-10-08T20:50:49.3660277Z     },
+2026-10-08T20:50:49.3660471Z     {
+2026-10-08T20:50:49.3660670Z       "tag": "INPUT",
+2026-10-08T20:50:49.3661137Z       "id": "date-filter",
+2026-10-08T20:50:49.3661373Z       "text": "",
+2026-10-08T20:50:49.3661580Z       "outline": "solid",
+2026-10-08T20:50:49.3661801Z       "width": 3
+2026-10-08T20:50:49.3661996Z     },
+2026-10-08T20:50:49.3662176Z     {
+2026-10-08T20:50:49.3662362Z       "tag": "INPUT",
+2026-10-08T20:50:49.3662592Z       "id": "search-filter",
+2026-10-08T20:50:49.3662944Z       "text": "",
+2026-10-08T20:50:49.3663283Z       "outline": "solid",
+2026-10-08T20:50:49.3663643Z       "width": 3
+2026-10-08T20:50:49.3663846Z     },
+2026-10-08T20:50:49.3664031Z     {
+2026-10-08T20:50:49.3664231Z       "tag": "BUTTON",
+2026-10-08T20:50:49.3664445Z       "id": "",
+2026-10-08T20:50:49.3664865Z       "text": "Reset view",
+2026-10-08T20:50:49.3665107Z       "outline": "solid",
+2026-10-08T20:50:49.3665499Z       "width": 3
+2026-10-08T20:50:49.3665826Z     }
+2026-10-08T20:50:49.3666110Z   ],
+2026-10-08T20:50:49.3666428Z   "print": {
+2026-10-08T20:50:49.3666799Z     "tools": "none",
+2026-10-08T20:50:49.3667241Z     "actions": "none",
+2026-10-08T20:50:49.3667618Z     "visible": [
+2026-10-08T20:50:49.3667973Z       "pending"
+2026-10-08T20:50:49.3668196Z     ],
+2026-10-08T20:50:49.3671028Z     "context": "Course 42 · Source date 2026-10-09; unavailable timing retained · No text filter",
+2026-10-08T20:50:49.3671720Z     "preOverflow": "visible",
+2026-10-08T20:50:49.3671986Z     "beforePrint": [
+2026-10-08T20:50:49.3672202Z       {
+2026-10-08T20:50:49.3672399Z         "id": "pending",
+2026-10-08T20:50:49.3672639Z         "sourceOpen": true
+2026-10-08T20:50:49.3672884Z       }
+2026-10-08T20:50:49.3673067Z     ]
+2026-10-08T20:50:49.3673247Z   },
+2026-10-08T20:50:49.3673455Z   "scriptDisabled": {
+2026-10-08T20:50:49.3673687Z     "visible": 4,
+2026-10-08T20:50:49.3673906Z     "toolsHidden": true,
+2026-10-08T20:50:49.3674156Z     "exactOriginalJSON": true
+2026-10-08T20:50:49.3674500Z   },
+2026-10-08T20:50:49.3674703Z   "sourcePreservation": {
+2026-10-08T20:50:49.3674954Z     "currentFiles": 1592,
+2026-10-08T20:50:49.3675186Z     "baselineFiles": 1107,
+2026-10-08T20:50:49.3675415Z     "clean": true,
+2026-10-08T20:50:49.3675720Z     "unchanged": true,
+2026-10-08T20:50:49.3676046Z     "htmlUnchanged": true
+2026-10-08T20:50:49.3676270Z   },
+2026-10-08T20:50:49.3678533Z   "protocolCommands": 151,
+2026-10-08T20:50:49.3678909Z   "cleanupErrors": []
+2026-10-08T20:50:49.3679324Z }
+2026-10-08T20:50:49.4156688Z ##[group]Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+2026-10-08T20:50:49.4157163Z with:
+2026-10-08T20:50:49.4157404Z   name: agenda-view-browser-37838072609-2
+2026-10-08T20:50:49.4157941Z   path: /home/runner/work/_temp/agenda-view-receiving
+/home/runner/work/_temp/agenda-view-wheel
+
+2026-10-08T20:50:49.4158488Z   if-no-files-found: error
+2026-10-08T20:50:49.4158745Z   retention-days: 14
+2026-10-08T20:50:49.4158978Z   compression-level: 6
+2026-10-08T20:50:49.4159212Z   overwrite: false
+2026-10-08T20:50:49.4159442Z   include-hidden-files: false
+2026-10-08T20:50:49.4159702Z env:
+2026-10-08T20:50:49.4160352Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T20:50:49.4160875Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-08T20:50:49.4161366Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T20:50:49.4161793Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T20:50:49.4162255Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T20:50:49.4162689Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-08T20:50:49.4163051Z ##[endgroup]
+2026-10-08T20:50:49.5913949Z (node:2790) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-08T20:50:49.5915648Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-08T20:50:49.6032929Z Multiple search paths detected. Calculating the least common ancestor of all paths
+2026-10-08T20:50:49.6034942Z The least common ancestor is /home/runner/work/_temp. This will be the root directory of the artifact
+2026-10-08T20:50:49.6036093Z With the provided path, there will be 22 files uploaded
+2026-10-08T20:50:49.6037105Z Artifact name is valid!
+2026-10-08T20:50:49.6040935Z Root directory input is valid!
+2026-10-08T20:50:49.8026063Z Beginning upload of artifact content to blob storage
+2026-10-08T20:50:49.8804805Z (node:2790) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-08T20:50:49.9566579Z Uploaded bytes 690081
+2026-10-08T20:50:49.9755271Z Finished uploading artifact content to blob storage!
+2026-10-08T20:50:49.9757355Z SHA256 digest of uploaded artifact zip is 7a2f5849a3af5605673b66011c80b024680b13da29db2ae4778175f691ab9f38
+2026-10-08T20:50:49.9758768Z Finalizing artifact upload
+2026-10-08T20:50:50.1847228Z Artifact agenda-view-browser-37838072609-2.zip successfully finalized. Artifact ID 11578800466
+2026-10-08T20:50:50.1849052Z Artifact agenda-view-browser-37838072609-2 has been successfully uploaded! Final size is 690081 bytes. Artifact ID is 11578800466
+2026-10-08T20:50:50.1856263Z Artifact download URL: https://github.com/Jacob-Met/canvaspilot/actions/runs/37838072609/artifacts/11578800466
+2026-10-08T20:50:50.2065276Z Post job cleanup.
+2026-10-08T20:50:50.3372385Z (node:2802) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-08T20:50:50.3373868Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-08T20:50:50.3552723Z Post job cleanup.
+2026-10-08T20:50:50.5035922Z Post job cleanup.
+2026-10-08T20:50:50.5950087Z [command]/usr/bin/git version
+2026-10-08T20:50:50.5999189Z git version 2.55.0
+2026-10-08T20:50:50.6043772Z Temporarily overriding HOME='/home/runner/work/_temp/529a5d9e-5dc5-4db5-8964-144e1936a732' before making global git config changes
+2026-10-08T20:50:50.6045217Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-08T20:50:50.6052240Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/canvaspilot/canvaspilot
+2026-10-08T20:50:50.6088215Z Removing SSH command configuration
+2026-10-08T20:50:50.6096387Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-08T20:50:50.6138461Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-08T20:50:50.6424996Z Removing HTTP extra header
+2026-10-08T20:50:50.6426079Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-08T20:50:50.6479902Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-08T20:50:50.6771424Z Removing includeIf entries pointing to credentials config files
+2026-10-08T20:50:50.6779117Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-08T20:50:50.6822919Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-08T20:50:50.7248564Z Cleaning up orphan processes
+2026-10-08T20:50:50.7624575Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020, actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

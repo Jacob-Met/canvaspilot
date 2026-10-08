@@ -1,0 +1,47 @@
+{
+  "state": "not_executed",
+  "reason": "Accept any explicit timezone-bearing ISO8601 creation timestamp, instead of requiring the cosmetic Z suffix; current creation time remains checked.",
+  "previous_driver": "receiver-v1.py",
+  "executable_driver": "receiver-v2.py",
+  "initial_checkpoint": {
+    "start": {
+      "content": [
+        {
+          "type": "text",
+          "text": "Process started with PID 768855 (shell: /bin/bash)\nInitial output:\n"
+        },
+        {
+          "type": "text",
+          "text": "\n[executed on device: hamon-thinkpad (d55b2499-5e82-4805-819a-d0d7ddea1efe)]"
+        }
+      ],
+      "isError": false
+    },
+    "completion": {
+      "content": [
+        {
+          "type": "text",
+          "text": "[Reading 0 new lines (total: 0 lines)]\n\n(No output in requested range)\n✅ Process completed with exit code 1 (runtime: 2.76s)"
+        },
+        {
+          "type": "text",
+          "text": "\n[executed on device: hamon-thinkpad (d55b2499-5e82-4805-819a-d0d7ddea1efe)]"
+        }
+      ],
+      "isError": false
+    },
+    "readback": {
+      "content": [
+        {
+          "type": "text",
+          "text": "/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/criteria-v1.json: Error - ENOENT: no such file or directory, stat '/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/criteria-v1.json'\n/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/fixtures-v1.json: Error - ENOENT: no such file or directory, stat '/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/fixtures-v1.json'\n/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/freeze-custody.json: Error - ENOENT: no such file or directory, stat '/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/freeze-custody.json'"
+        },
+        {
+          "type": "text",
+          "text": "\n[executed on device: hamon-thinkpad (d55b2499-5e82-4805-819a-d0d7ddea1efe)]"
+        }
+      ],
+      "isError": false
+    }
+  }
+}

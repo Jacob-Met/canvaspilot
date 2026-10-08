@@ -1,0 +1,196 @@
+{
+  "topic": {
+    "id": 71,
+    "title": "Topic <em>literal markup</em> — LongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitle",
+    "message": "<p>Read <strong>first</strong> &amp; then discuss.</p>",
+    "discussion_subentry_count": 42,
+    "locked": false,
+    "published": true,
+    "permissions": {
+      "attach": false,
+      "read": true
+    }
+  },
+  "view": {
+    "participants": [
+      {
+        "id": 1,
+        "display_name": "Reader <b>A</b>"
+      },
+      {
+        "id": 3,
+        "display_name": "Numeric Three"
+      },
+      {
+        "id": "3",
+        "display_name": "String Three"
+      },
+      {
+        "id": 5,
+        "display_name": "Ambiguous One"
+      },
+      {
+        "id": 5,
+        "display_name": "Ambiguous Two"
+      }
+    ],
+    "unread_entries": [
+      "103",
+      104,
+      999
+    ],
+    "forced_entries": [
+      101,
+      104
+    ],
+    "new_entries": [
+      {
+        "id": 999,
+        "message": "Separate stream remains metadata"
+      }
+    ],
+    "rating_count": 0,
+    "unknown_metadata": null,
+    "view": [
+      {
+        "id": 101,
+        "user_id": 1,
+        "message": "<p>Root A — α &amp; β.</p>",
+        "parent_id": null,
+        "replies": [
+          {
+            "id": 102,
+            "user_id": 1,
+            "message": "WITHHELD_DELETED_TEXT",
+            "deleted": true,
+            "parent_id": 101,
+            "replies": []
+          },
+          {
+            "id": "103",
+            "user_id": "3",
+            "message": "<p>Unread string-ID reply.</p>",
+            "parent_id": 101,
+            "replies": []
+          }
+        ]
+      },
+      {
+        "id": 104,
+        "user_id": 4,
+        "message": "<p><img alt=\"source-only\" src=\"https://example.invalid/source-image\"></p>",
+        "parent_id": 101
+      },
+      {
+        "id": 105,
+        "user_id": 5,
+        "message": "",
+        "parent_id": null,
+        "replies": []
+      },
+      {
+        "id": 106,
+        "user_id": 6,
+        "message": "First duplicate ID",
+        "parent_id": null,
+        "replies": []
+      },
+      {
+        "id": 106,
+        "user_id": 6,
+        "message": "Second duplicate ID",
+        "parent_id": null,
+        "replies": []
+      },
+      {
+        "id": 107,
+        "user_id": 1,
+        "parent_id": null,
+        "replies": []
+      }
+    ]
+  },
+  "expected": {
+    "all_paths": [
+      [
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        5
+      ]
+    ],
+    "all_entry_ids": [
+      101,
+      102,
+      "103",
+      104,
+      105,
+      106,
+      106,
+      107
+    ],
+    "unread_paths": [
+      [
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1
+      ]
+    ],
+    "context_only_paths": [
+      [
+        0
+      ]
+    ],
+    "observed_entries": 8,
+    "returned_all": 8,
+    "returned_unread": 3,
+    "known_unread_entries": 2,
+    "unknown_read_state_entries": 2,
+    "unmatched_unread_entries": [
+      999
+    ],
+    "deleted_path": [
+      0,
+      0
+    ],
+    "ambiguous_author_path": [
+      2
+    ],
+    "duplicate_id_paths": [
+      [
+        3
+      ],
+      [
+        4
+      ]
+    ],
+    "separate_new_entries_not_in_tree": [
+      999
+    ]
+  }
+}

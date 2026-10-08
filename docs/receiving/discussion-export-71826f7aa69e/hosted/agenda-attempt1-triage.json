@@ -1,0 +1,73 @@
+{
+  "schema": "canvaspilot.agenda-hosted-failure-triage.v1",
+  "run": {
+    "id": 37838072609,
+    "attempt": 1,
+    "event": "pull_request",
+    "status": "completed",
+    "conclusion": "failure",
+    "head": "8548037fe4f6b9e1a640cdabdd288a0c3f8751b1",
+    "url": "https://github.com/Jacob-Met/canvaspilot/actions/runs/37838072609",
+    "job": 113520137848
+  },
+  "checkout": {
+    "commit": "17a368885b7c4d579ecd9b80dda5afe560091cf2",
+    "tree": "73c7373186df76e1b26be5a3c0a492889b61e938",
+    "parents": [
+      "b6d73588887ce57a2637ab72ee424a5eb29e543f",
+      "8548037fe4f6b9e1a640cdabdd288a0c3f8751b1"
+    ],
+    "evidence": "checkout git log -1 and receiver source receipt"
+  },
+  "unchangedFromBase": [
+    {
+      "path": "scripts/receive_agenda_view.mjs",
+      "git": "4af4230560adf0d035f168a46855e8c54c613164"
+    },
+    {
+      "path": ".github/workflows/agenda-view-browser.yml",
+      "git": "a06b862c23dccc61d5da9eea99d82b76668f78c8"
+    }
+  ],
+  "passedBeforeFailure": {
+    "wheelBytes": 124382,
+    "wheelSha256": "60d92d6fa891bd10976037e2d1c87a51368ea95149ca0f9fa8b36b3a457404a5",
+    "packagedAgendaAssetsEqualCheckout": true,
+    "baselineAgendaExit": 0,
+    "currentAgendaExit": 0,
+    "baselineMissingExportExit": 2,
+    "currentExportExit": 0,
+    "baselineAndCurrentNativeSha256": "1d47bb539939336ab70bea45068635d57196a5e45d1660abddd5bcfcc17811ce",
+    "savedHtmlSha256": "1c45b9ee7fea81a4ddb438d90cad07e48719832f54308de86de5c8899c37d044"
+  },
+  "failure": {
+    "message": "Timed out: installed Chrome startup",
+    "sourceLine": 159,
+    "waitingFor": "DevToolsActivePort in newly created browser profile",
+    "timeoutMilliseconds": 8000,
+    "node": "v22.23.3",
+    "chrome": "Google Chrome 154.0.8037.97",
+    "executable": "/usr/bin/google-chrome",
+    "browserAssertions": [],
+    "protocolCommands": 0,
+    "chromeStderrBytes": 0,
+    "cleanupErrors": []
+  },
+  "artifact": {
+    "id": 11577010678,
+    "bytes": 249711,
+    "sha256": "7fdf67e6fbfd0b7703a478afebff5cdcf8eb9c67cfd0b207ebc521ace1598248",
+    "url": "https://github.com/Jacob-Met/canvaspilot/actions/runs/37838072609/artifacts/11577010678"
+  },
+  "limits": [
+    "No browser page assertion ran and no source regression is established by this failure.",
+    "The cause of the missing startup endpoint is not diagnosed by the empty Chrome stderr and timeout alone; no ENOSPC/OOM inference.",
+    "No manual rerun, browser reproduction, source edit or peer workflow change was performed."
+  ],
+  "log": {
+    "path": "hosted-agenda-37838072609-attempt1.log",
+    "bytes": 67164,
+    "sha256": "85b24c6f9b2d63869a7830e6052e29122a1b27d5bf2f1b13ad5e58102d4f41d5",
+    "gitBlob": "6883679b385fa5c3853ed8f4a2140191d698f80a"
+  }
+}

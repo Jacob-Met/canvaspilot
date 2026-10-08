@@ -1,0 +1,6 @@
+{
+  "reason": "Existing unchanged client.request applies _with_per_page(None) -> per_page=50 to both GETs. Correct the receiver transport oracle to require that exact query, preserving two read-only routes. Initial real full export succeeded; receiver stopped before content checks.",
+  "failed_attempt": "cli-cut1/receiving.json",
+  "product_changed": false,
+  "source_client_git_blob": "1db4b1135305f7e410025ae7937f9a6cd349f020"
+}

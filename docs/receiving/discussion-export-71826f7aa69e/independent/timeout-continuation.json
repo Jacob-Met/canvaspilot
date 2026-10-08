@@ -1,0 +1,6 @@
+{
+  "reason": "Continue from independently accepted full artifact after unread child30s timeout; production concurrently ran its single full maintained suite. Preserve unknown timing cause; wait until that suite exits before remaining13cases. Bound each real CLI child at120s and explicitly retain/reap timeout result. No product or semantic oracle change.",
+  "previous_receipt": "cli-cut2/receiving.json",
+  "accepted_full": "cli-cut2/full.html",
+  "product_changed": false
+}

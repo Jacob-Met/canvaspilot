@@ -1,0 +1,867 @@
+﻿2026-10-08T20:15:28.9403448Z Current runner version: '2.337.0'
+2026-10-08T20:15:28.9437716Z ##[group]Runner Image Provisioner
+2026-10-08T20:15:28.9439012Z Hosted Compute Agent
+2026-10-08T20:15:28.9440016Z Version: 20261002.596
+2026-10-08T20:15:28.9441027Z Commit: c3d12f3313a95f25162a1503be624f3b0617f8c0
+2026-10-08T20:15:28.9442293Z Build Date: 2026-10-02T22:28:27Z
+2026-10-08T20:15:28.9443693Z Worker ID: {9f3b786e-3760-4362-bf08-55ce01601232}
+2026-10-08T20:15:28.9445008Z Region: eastus
+2026-10-08T20:15:28.9445984Z Cloud: Azure
+2026-10-08T20:15:28.9446872Z ##[endgroup]
+2026-10-08T20:15:28.9449622Z ##[group]Operating System
+2026-10-08T20:15:28.9450672Z Ubuntu
+2026-10-08T20:15:28.9451601Z 24.04.5
+2026-10-08T20:15:28.9452437Z LTS
+2026-10-08T20:15:28.9453593Z ##[endgroup]
+2026-10-08T20:15:28.9454641Z ##[group]Runner Image
+2026-10-08T20:15:28.9455582Z Image: ubuntu-24.04
+2026-10-08T20:15:28.9456555Z Version: 20261004.327.1
+2026-10-08T20:15:28.9458694Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261004.327/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-08T20:15:28.9461334Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261004.327
+2026-10-08T20:15:28.9463223Z ##[endgroup]
+2026-10-08T20:15:28.9465216Z ##[group]GITHUB_TOKEN Permissions
+2026-10-08T20:15:28.9468205Z Contents: read
+2026-10-08T20:15:28.9469158Z Metadata: read
+2026-10-08T20:15:28.9470011Z ##[endgroup]
+2026-10-08T20:15:28.9473227Z Secret source: Actions
+2026-10-08T20:15:28.9474800Z Cache mode: write
+2026-10-08T20:15:28.9476482Z Prepare workflow directory
+2026-10-08T20:15:28.9944884Z Prepare all required actions
+2026-10-08T20:15:29.0014796Z Getting action download info
+2026-10-08T20:15:29.2285320Z Download action repository 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+2026-10-08T20:15:29.3533833Z Download action repository 'actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97' (SHA:5fda3b95a4ea91299a34e894583c3862153e4b97)
+2026-10-08T20:15:29.4451019Z Download action repository 'actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-10-08T20:15:29.5332802Z Download action repository 'actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-10-08T20:15:29.7434291Z Complete job name: installed-chrome
+2026-10-08T20:15:29.8219577Z ##[group]Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+2026-10-08T20:15:29.8220661Z with:
+2026-10-08T20:15:29.8221087Z   fetch-depth: 0
+2026-10-08T20:15:29.8221551Z   persist-credentials: false
+2026-10-08T20:15:29.8222080Z   repository: Jacob-Met/canvaspilot
+2026-10-08T20:15:29.8226094Z   token: ***
+2026-10-08T20:15:29.8226580Z   ssh-strict: true
+2026-10-08T20:15:29.8227067Z   ssh-user: git
+2026-10-08T20:15:29.8227540Z   clean: true
+2026-10-08T20:15:29.8228042Z   sparse-checkout-cone-mode: true
+2026-10-08T20:15:29.8228627Z   fetch-tags: false
+2026-10-08T20:15:29.8229138Z   show-progress: true
+2026-10-08T20:15:29.8229670Z   lfs: false
+2026-10-08T20:15:29.8230150Z   submodules: false
+2026-10-08T20:15:29.8230602Z   set-safe-directory: true
+2026-10-08T20:15:29.8231106Z   allow-unsafe-pr-checkout: false
+2026-10-08T20:15:29.8231885Z ##[endgroup]
+2026-10-08T20:15:29.9245739Z Syncing repository: Jacob-Met/canvaspilot
+2026-10-08T20:15:29.9248310Z ##[group]Getting Git version info
+2026-10-08T20:15:29.9249138Z Working directory is '/home/runner/work/canvaspilot/canvaspilot'
+2026-10-08T20:15:29.9250208Z [command]/usr/bin/git version
+2026-10-08T20:15:29.9376619Z git version 2.55.0
+2026-10-08T20:15:29.9416443Z ##[endgroup]
+2026-10-08T20:15:29.9423562Z Temporarily overriding HOME='/home/runner/work/_temp/03866f52-d908-46f2-8e84-a1ef470d8913' before making global git config changes
+2026-10-08T20:15:29.9426077Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-08T20:15:29.9428447Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/canvaspilot/canvaspilot
+2026-10-08T20:15:29.9514464Z Deleting the contents of '/home/runner/work/canvaspilot/canvaspilot'
+2026-10-08T20:15:29.9517096Z ##[group]Determining repository object format
+2026-10-08T20:15:29.9518949Z ##[endgroup]
+2026-10-08T20:15:29.9520466Z ##[group]Initializing the repository
+2026-10-08T20:15:29.9523211Z [command]/usr/bin/git init /home/runner/work/canvaspilot/canvaspilot
+2026-10-08T20:15:29.9668757Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-08T20:15:29.9670646Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-08T20:15:29.9671842Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-08T20:15:29.9672608Z hint: call:
+2026-10-08T20:15:29.9673412Z hint:
+2026-10-08T20:15:29.9674322Z hint: 	git config --global init.defaultBranch <name>
+2026-10-08T20:15:29.9675363Z hint:
+2026-10-08T20:15:29.9676333Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-08T20:15:29.9677842Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-08T20:15:29.9678658Z hint:
+2026-10-08T20:15:29.9679368Z hint: 	git branch -m <name>
+2026-10-08T20:15:29.9680188Z hint:
+2026-10-08T20:15:29.9681244Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-08T20:15:29.9685361Z Initialized empty Git repository in /home/runner/work/canvaspilot/canvaspilot/.git/
+2026-10-08T20:15:29.9698434Z [command]/usr/bin/git remote add origin https://github.com/Jacob-Met/canvaspilot
+2026-10-08T20:15:29.9771601Z ##[endgroup]
+2026-10-08T20:15:29.9772859Z ##[group]Disabling automatic garbage collection
+2026-10-08T20:15:29.9774371Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-08T20:15:29.9827086Z ##[endgroup]
+2026-10-08T20:15:29.9832841Z ##[group]Setting up auth
+2026-10-08T20:15:29.9838049Z Removing SSH command configuration
+2026-10-08T20:15:29.9841749Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-08T20:15:29.9977649Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-08T20:15:30.0439900Z Removing HTTP extra header
+2026-10-08T20:15:30.0449202Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-08T20:15:30.0525543Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-08T20:15:30.0825301Z Removing includeIf entries pointing to credentials config files
+2026-10-08T20:15:30.0826349Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-08T20:15:30.0859883Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-08T20:15:30.1084530Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-b31ab55c-d6d6-4548-90c2-c7521cdcaeb6.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-08T20:15:30.1125577Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/canvaspilot/canvaspilot/.git.path /home/runner/work/_temp/git-credentials-b31ab55c-d6d6-4548-90c2-c7521cdcaeb6.config
+2026-10-08T20:15:30.1158725Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/canvaspilot/canvaspilot/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-b31ab55c-d6d6-4548-90c2-c7521cdcaeb6.config
+2026-10-08T20:15:30.1198465Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-b31ab55c-d6d6-4548-90c2-c7521cdcaeb6.config
+2026-10-08T20:15:30.1233666Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-b31ab55c-d6d6-4548-90c2-c7521cdcaeb6.config
+2026-10-08T20:15:30.1265535Z ##[endgroup]
+2026-10-08T20:15:30.1266734Z ##[group]Fetching the repository
+2026-10-08T20:15:30.1272515Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/* +17a368885b7c4d579ecd9b80dda5afe560091cf2:refs/remotes/pull/91/merge
+2026-10-08T20:15:30.6608782Z From https://github.com/Jacob-Met/canvaspilot
+2026-10-08T20:15:30.6614645Z  * [new branch]      ci/dependabot-actions                    -> origin/ci/dependabot-actions
+2026-10-08T20:15:30.6616688Z  * [new branch]      config/dependabot-actions                -> origin/config/dependabot-actions
+2026-10-08T20:15:30.6619093Z  * [new branch]      estate-3dab-grade-value-receiving-0444c639 -> origin/estate-3dab-grade-value-receiving-0444c639
+2026-10-08T20:15:30.6621829Z  * [new branch]      estate-e827/agenda-integration-receipt   -> origin/estate-e827/agenda-integration-receipt
+2026-10-08T20:15:30.6625262Z  * [new branch]      estate/49f845d0dece-provider-page-routing-receiving -> origin/estate/49f845d0dece-provider-page-routing-receiving
+2026-10-08T20:15:30.6628454Z  * [new branch]      estate/86776bb3cdb8-canvas-link-pagination -> origin/estate/86776bb3cdb8-canvas-link-pagination
+2026-10-08T20:15:30.6631754Z  * [new branch]      estate/87eaaf0fdf63-canvas-collection-transfer -> origin/estate/87eaaf0fdf63-canvas-collection-transfer
+2026-10-08T20:15:30.6634966Z  * [new branch]      estate/canvaspilot-broker-auth           -> origin/estate/canvaspilot-broker-auth
+2026-10-08T20:15:30.6636590Z  * [new branch]      estate/canvaspilot-ci                    -> origin/estate/canvaspilot-ci
+2026-10-08T20:15:30.6638097Z  * [new branch]      estate/canvaspilot-docs-fixes            -> origin/estate/canvaspilot-docs-fixes
+2026-10-08T20:15:30.6639720Z  * [new branch]      estate/enrollments-cli-65ae877160f6      -> origin/estate/enrollments-cli-65ae877160f6
+2026-10-08T20:15:30.6641553Z  * [new branch]      estate/syllabus-reading-packet-cd1df0f1ee24 -> origin/estate/syllabus-reading-packet-cd1df0f1ee24
+2026-10-08T20:15:30.6643544Z  * [new branch]      feat/broker-token-auth                   -> origin/feat/broker-token-auth
+2026-10-08T20:15:30.6644860Z  * [new branch]      main                                     -> origin/main
+2026-10-08T20:15:30.6647160Z  * [new branch]      presence/offline-demo-20260909           -> origin/presence/offline-demo-20260909
+2026-10-08T20:15:30.6649481Z  * [new branch]      receiving/926c3dc2605e-syllabus-author-current -> origin/receiving/926c3dc2605e-syllabus-author-current
+2026-10-08T20:15:30.6651453Z  * [new branch]      receiving/feedback-heading-wrap-b890f0b1bfcd -> origin/receiving/feedback-heading-wrap-b890f0b1bfcd
+2026-10-08T20:15:30.6653725Z  * [new branch]      receiving/provider-routing-integration-49f845d0dece -> origin/receiving/provider-routing-integration-49f845d0dece
+2026-10-08T20:15:30.6655762Z  * [new branch]      receiving/rubric-current-main-7879c2abc07f-20261008 -> origin/receiving/rubric-current-main-7879c2abc07f-20261008
+2026-10-08T20:15:30.6657706Z  * [new branch]      review/aster82r-announcement-boundary-20261008 -> origin/review/aster82r-announcement-boundary-20261008
+2026-10-08T20:15:30.6659347Z  * [new branch]      sec/broker-token-file-auth               -> origin/sec/broker-token-file-auth
+2026-10-08T20:15:30.6660645Z  * [new branch]      t133-agent-operations                    -> origin/t133-agent-operations
+2026-10-08T20:15:30.6661864Z  * [new branch]      t156-pypi-lockfile                       -> origin/t156-pypi-lockfile
+2026-10-08T20:15:30.6663431Z  * [new branch]      t158/gitleaks-secret-scan                -> origin/t158/gitleaks-secret-scan
+2026-10-08T20:15:30.6664681Z  * [new branch]      t164/demo-coverage                       -> origin/t164/demo-coverage
+2026-10-08T20:15:30.6665877Z  * [new branch]      t164/diff-cover-gate                     -> origin/t164/diff-cover-gate
+2026-10-08T20:15:30.6667253Z  * [new branch]      work/71826f7aa69e-discussion-export      -> origin/work/71826f7aa69e-discussion-export
+2026-10-08T20:15:30.6669153Z  * [new branch]      work/feedback-export-9ec02b70e5f0-20261008 -> origin/work/feedback-export-9ec02b70e5f0-20261008
+2026-10-08T20:15:30.6670636Z  * [new ref]         17a368885b7c4d579ecd9b80dda5afe560091cf2 -> pull/91/merge
+2026-10-08T20:15:30.6672900Z ##[endgroup]
+2026-10-08T20:15:30.6674063Z ##[group]Determining the checkout info
+2026-10-08T20:15:30.6674958Z ##[endgroup]
+2026-10-08T20:15:30.6675491Z [command]/usr/bin/git sparse-checkout disable
+2026-10-08T20:15:30.6707842Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-08T20:15:30.6739933Z ##[group]Checking out the ref
+2026-10-08T20:15:30.6751558Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/91/merge
+2026-10-08T20:15:30.8087818Z Note: switching to 'refs/remotes/pull/91/merge'.
+2026-10-08T20:15:30.8088972Z 
+2026-10-08T20:15:30.8089548Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-10-08T20:15:30.8090843Z changes and commit them, and you can discard any commits you make in this
+2026-10-08T20:15:30.8092196Z state without impacting any branches by switching back to a branch.
+2026-10-08T20:15:30.8093209Z 
+2026-10-08T20:15:30.8093776Z If you want to create a new branch to retain commits you create, you may
+2026-10-08T20:15:30.8094997Z do so (now or later) by using -c with the switch command. Example:
+2026-10-08T20:15:30.8095712Z 
+2026-10-08T20:15:30.8096071Z   git switch -c <new-branch-name>
+2026-10-08T20:15:30.8096626Z 
+2026-10-08T20:15:30.8096986Z Or undo this operation with:
+2026-10-08T20:15:30.8097490Z 
+2026-10-08T20:15:30.8097798Z   git switch -
+2026-10-08T20:15:30.8098216Z 
+2026-10-08T20:15:30.8098933Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-10-08T20:15:30.8099883Z 
+2026-10-08T20:15:30.8101049Z HEAD is now at 17a3688 Merge 8548037fe4f6b9e1a640cdabdd288a0c3f8751b1 into b6d73588887ce57a2637ab72ee424a5eb29e543f
+2026-10-08T20:15:30.8105567Z ##[endgroup]
+2026-10-08T20:15:30.8154561Z [command]/usr/bin/git log -1 --format=%H
+2026-10-08T20:15:30.8184690Z 17a368885b7c4d579ecd9b80dda5afe560091cf2
+2026-10-08T20:15:30.8196296Z ##[group]Removing auth
+2026-10-08T20:15:30.8197844Z Removing SSH command configuration
+2026-10-08T20:15:30.8201153Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-08T20:15:30.8241437Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-08T20:15:30.8469635Z Removing HTTP extra header
+2026-10-08T20:15:30.8473293Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-08T20:15:30.8517045Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-08T20:15:30.8744525Z Removing includeIf entries pointing to credentials config files
+2026-10-08T20:15:30.8746926Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-08T20:15:30.8775714Z includeif.gitdir:/home/runner/work/canvaspilot/canvaspilot/.git.path
+2026-10-08T20:15:30.8778710Z includeif.gitdir:/home/runner/work/canvaspilot/canvaspilot/.git/worktrees/*.path
+2026-10-08T20:15:30.8781395Z includeif.gitdir:/github/workspace/.git.path
+2026-10-08T20:15:30.8784089Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-08T20:15:30.8788691Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/canvaspilot/canvaspilot/.git.path
+2026-10-08T20:15:30.8813520Z /home/runner/work/_temp/git-credentials-b31ab55c-d6d6-4548-90c2-c7521cdcaeb6.config
+2026-10-08T20:15:30.8827336Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/canvaspilot/canvaspilot/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-b31ab55c\-d6d6\-4548\-90c2\-c7521cdcaeb6\.config
+2026-10-08T20:15:30.8865726Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/canvaspilot/canvaspilot/.git/worktrees/*.path
+2026-10-08T20:15:30.8890624Z /home/runner/work/_temp/git-credentials-b31ab55c-d6d6-4548-90c2-c7521cdcaeb6.config
+2026-10-08T20:15:30.8899470Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/canvaspilot/canvaspilot/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-b31ab55c\-d6d6\-4548\-90c2\-c7521cdcaeb6\.config
+2026-10-08T20:15:30.8935197Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-10-08T20:15:30.8961765Z /github/runner_temp/git-credentials-b31ab55c-d6d6-4548-90c2-c7521cdcaeb6.config
+2026-10-08T20:15:30.8974341Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-b31ab55c\-d6d6\-4548\-90c2\-c7521cdcaeb6\.config
+2026-10-08T20:15:30.9016618Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-08T20:15:30.9049983Z /github/runner_temp/git-credentials-b31ab55c-d6d6-4548-90c2-c7521cdcaeb6.config
+2026-10-08T20:15:30.9059281Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-b31ab55c\-d6d6\-4548\-90c2\-c7521cdcaeb6\.config
+2026-10-08T20:15:30.9097375Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-08T20:15:30.9316865Z Removing credentials config '/home/runner/work/_temp/git-credentials-b31ab55c-d6d6-4548-90c2-c7521cdcaeb6.config'
+2026-10-08T20:15:30.9326184Z ##[endgroup]
+2026-10-08T20:15:30.9678410Z ##[group]Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+2026-10-08T20:15:30.9679948Z with:
+2026-10-08T20:15:30.9680798Z   python-version: 3.12
+2026-10-08T20:15:30.9681769Z   check-latest: false
+2026-10-08T20:15:30.9690530Z   token: ***
+2026-10-08T20:15:30.9691459Z   update-environment: true
+2026-10-08T20:15:30.9692506Z   allow-prereleases: false
+2026-10-08T20:15:30.9693660Z   freethreaded: false
+2026-10-08T20:15:30.9694601Z ##[endgroup]
+2026-10-08T20:15:31.0859334Z ##[group]Installed versions
+2026-10-08T20:15:31.0960112Z Successfully set up CPython (3.12.15)
+2026-10-08T20:15:31.0962528Z ##[endgroup]
+2026-10-08T20:15:31.1268896Z ##[group]Run actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+2026-10-08T20:15:31.1271309Z with:
+2026-10-08T20:15:31.1272659Z   node-version: 22
+2026-10-08T20:15:31.1274355Z   always-auth: false
+2026-10-08T20:15:31.1275906Z   check-latest: false
+2026-10-08T20:15:31.1287533Z   token: ***
+2026-10-08T20:15:31.1288405Z env:
+2026-10-08T20:15:31.1289439Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T20:15:31.1291068Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-08T20:15:31.1292667Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T20:15:31.1294475Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T20:15:31.1295962Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T20:15:31.1297453Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-08T20:15:31.1298721Z ##[endgroup]
+2026-10-08T20:15:31.2771203Z Found in cache @ /opt/hostedtoolcache/node/22.23.3/x64
+2026-10-08T20:15:31.2774968Z (node:2538) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-08T20:15:31.2778211Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-08T20:15:31.2780317Z ##[group]Environment details
+2026-10-08T20:15:31.7218212Z node: v22.23.3
+2026-10-08T20:15:31.7218745Z npm: 10.9.9
+2026-10-08T20:15:31.7219070Z yarn: 1.22.22
+2026-10-08T20:15:31.7219878Z ##[endgroup]
+2026-10-08T20:15:31.7367279Z ##[group]Run pip install -e .
+2026-10-08T20:15:31.7367644Z [36;1mpip install -e .[0m
+2026-10-08T20:15:31.7673508Z shell: /usr/bin/bash -e {0}
+2026-10-08T20:15:31.7673793Z env:
+2026-10-08T20:15:31.7674079Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T20:15:31.7674545Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-08T20:15:31.7675001Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T20:15:31.7675427Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T20:15:31.7675855Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T20:15:31.7676283Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-08T20:15:31.7676631Z ##[endgroup]
+2026-10-08T20:15:32.6476918Z Obtaining file:///home/runner/work/canvaspilot/canvaspilot
+2026-10-08T20:15:32.6487806Z   Installing build dependencies: started
+2026-10-08T20:15:33.3924901Z   Installing build dependencies: finished with status 'done'
+2026-10-08T20:15:33.3932512Z   Checking if build backend supports build_editable: started
+2026-10-08T20:15:33.4865484Z   Checking if build backend supports build_editable: finished with status 'done'
+2026-10-08T20:15:33.4873489Z   Getting requirements to build editable: started
+2026-10-08T20:15:33.6380197Z   Getting requirements to build editable: finished with status 'done'
+2026-10-08T20:15:33.6393959Z   Installing backend dependencies: started
+2026-10-08T20:15:34.1512579Z   Installing backend dependencies: finished with status 'done'
+2026-10-08T20:15:34.1520326Z   Preparing editable metadata (pyproject.toml): started
+2026-10-08T20:15:34.4628046Z   Preparing editable metadata (pyproject.toml): finished with status 'done'
+2026-10-08T20:15:34.5322588Z Collecting httpx>=0.27 (from canvaspilot==0.1.1)
+2026-10-08T20:15:34.5948527Z   Downloading httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+2026-10-08T20:15:34.6184441Z Collecting mcp<3,>=1.0.0 (from canvaspilot==0.1.1)
+2026-10-08T20:15:34.6288683Z   Downloading mcp-2.3.0-py3-none-any.whl.metadata (6.6 kB)
+2026-10-08T20:15:34.7458747Z Collecting pydantic>=2.0 (from canvaspilot==0.1.1)
+2026-10-08T20:15:34.7550850Z   Downloading pydantic-2.14.0-py3-none-any.whl.metadata (131 kB)
+2026-10-08T20:15:34.7938019Z Collecting anyio>=4.9 (from mcp<3,>=1.0.0->canvaspilot==0.1.1)
+2026-10-08T20:15:34.8031582Z   Downloading anyio-4.15.1-py3-none-any.whl.metadata (4.7 kB)
+2026-10-08T20:15:34.8148551Z Collecting httpx2>=2.10.0 (from mcp<3,>=1.0.0->canvaspilot==0.1.1)
+2026-10-08T20:15:34.8240953Z   Downloading httpx2-2.13.1-py3-none-any.whl.metadata (9.8 kB)
+2026-10-08T20:15:34.8450021Z Collecting jsonschema>=4.20.0 (from mcp<3,>=1.0.0->canvaspilot==0.1.1)
+2026-10-08T20:15:34.8540919Z   Downloading jsonschema-4.26.0-py3-none-any.whl.metadata (7.6 kB)
+2026-10-08T20:15:34.8664190Z Collecting mcp-types==2.3.0 (from mcp<3,>=1.0.0->canvaspilot==0.1.1)
+2026-10-08T20:15:34.8758832Z   Downloading mcp_types-2.3.0-py3-none-any.whl.metadata (1.9 kB)
+2026-10-08T20:15:34.8947745Z Collecting opentelemetry-api>=1.28.0 (from mcp<3,>=1.0.0->canvaspilot==0.1.1)
+2026-10-08T20:15:34.9051978Z   Downloading opentelemetry_api-1.45.1-py3-none-any.whl.metadata (1.4 kB)
+2026-10-08T20:15:34.9241359Z Collecting pyjwt>=2.10.1 (from pyjwt[crypto]>=2.10.1->mcp<3,>=1.0.0->canvaspilot==0.1.1)
+2026-10-08T20:15:34.9335166Z   Downloading pyjwt-2.15.1-py3-none-any.whl.metadata (3.5 kB)
+2026-10-08T20:15:34.9485213Z Collecting python-multipart>=0.0.9 (from mcp<3,>=1.0.0->canvaspilot==0.1.1)
+2026-10-08T20:15:34.9582397Z   Downloading python_multipart-0.0.32-py3-none-any.whl.metadata (2.1 kB)
+2026-10-08T20:15:34.9795816Z Collecting sse-starlette>=3.0.0 (from mcp<3,>=1.0.0->canvaspilot==0.1.1)
+2026-10-08T20:15:34.9887825Z   Downloading sse_starlette-3.5.0-py3-none-any.whl.metadata (15 kB)
+2026-10-08T20:15:35.0146238Z Collecting starlette>=0.27 (from mcp<3,>=1.0.0->canvaspilot==0.1.1)
+2026-10-08T20:15:35.0238314Z   Downloading starlette-1.7.0-py3-none-any.whl.metadata (6.6 kB)
+2026-10-08T20:15:35.0401993Z Collecting typing-extensions>=4.13.0 (from mcp<3,>=1.0.0->canvaspilot==0.1.1)
+2026-10-08T20:15:35.0493600Z   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+2026-10-08T20:15:35.0593475Z Collecting typing-inspection>=0.4.1 (from mcp<3,>=1.0.0->canvaspilot==0.1.1)
+2026-10-08T20:15:35.0707230Z   Downloading typing_inspection-0.4.4-py3-none-any.whl.metadata (2.6 kB)
+2026-10-08T20:15:35.0938007Z Collecting uvicorn>=0.31.1 (from mcp<3,>=1.0.0->canvaspilot==0.1.1)
+2026-10-08T20:15:35.1029063Z   Downloading uvicorn-0.54.0-py3-none-any.whl.metadata (6.6 kB)
+2026-10-08T20:15:35.1198528Z Collecting idna>=2.8 (from anyio>=4.9->mcp<3,>=1.0.0->canvaspilot==0.1.1)
+2026-10-08T20:15:35.1289243Z   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+2026-10-08T20:15:35.1521135Z Collecting certifi (from httpx>=0.27->canvaspilot==0.1.1)
+2026-10-08T20:15:35.1612054Z   Downloading certifi-2026.7.22-py3-none-any.whl.metadata (2.5 kB)
+2026-10-08T20:15:35.1767762Z Collecting httpcore==1.* (from httpx>=0.27->canvaspilot==0.1.1)
+2026-10-08T20:15:35.1858507Z   Downloading httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+2026-10-08T20:15:35.2003895Z Collecting h11>=0.16 (from httpcore==1.*->httpx>=0.27->canvaspilot==0.1.1)
+2026-10-08T20:15:35.2097678Z   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+2026-10-08T20:15:35.2229505Z Collecting httpcore2==2.13.1 (from httpx2>=2.10.0->mcp<3,>=1.0.0->canvaspilot==0.1.1)
+2026-10-08T20:15:35.2330698Z   Downloading httpcore2-2.13.1-py3-none-any.whl.metadata (26 kB)
+2026-10-08T20:15:35.2461895Z Collecting truststore>=0.10 (from httpx2>=2.10.0->mcp<3,>=1.0.0->canvaspilot==0.1.1)
+2026-10-08T20:15:35.2561238Z   Downloading truststore-0.10.4-py3-none-any.whl.metadata (4.4 kB)
+2026-10-08T20:15:35.2720025Z Collecting attrs>=22.2.0 (from jsonschema>=4.20.0->mcp<3,>=1.0.0->canvaspilot==0.1.1)
+2026-10-08T20:15:35.2838552Z   Downloading attrs-26.1.0-py3-none-any.whl.metadata (8.8 kB)
+2026-10-08T20:15:35.2963916Z Collecting jsonschema-specifications>=2023.03.6 (from jsonschema>=4.20.0->mcp<3,>=1.0.0->canvaspilot==0.1.1)
+2026-10-08T20:15:35.3081170Z   Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl.metadata (2.9 kB)
+2026-10-08T20:15:35.3278251Z Collecting referencing>=0.28.4 (from jsonschema>=4.20.0->mcp<3,>=1.0.0->canvaspilot==0.1.1)
+2026-10-08T20:15:35.3370102Z   Downloading referencing-0.37.0-py3-none-any.whl.metadata (2.8 kB)
+2026-10-08T20:15:35.5964740Z Collecting rpds-py>=0.25.0 (from jsonschema>=4.20.0->mcp<3,>=1.0.0->canvaspilot==0.1.1)
+2026-10-08T20:15:35.6069012Z   Downloading rpds_py-2026.9.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.1 kB)
+2026-10-08T20:15:35.6213687Z Collecting annotated-types>=0.6.0 (from pydantic>=2.0->canvaspilot==0.1.1)
+2026-10-08T20:15:35.6335442Z   Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+2026-10-08T20:15:36.2848218Z Collecting pydantic-core==2.50.0 (from pydantic>=2.0->canvaspilot==0.1.1)
+2026-10-08T20:15:36.2946618Z   Downloading pydantic_core-2.50.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.5 kB)
+2026-10-08T20:15:36.4749695Z Collecting cryptography>=3.4.0 (from pyjwt[crypto]>=2.10.1->mcp<3,>=1.0.0->canvaspilot==0.1.1)
+2026-10-08T20:15:36.4854196Z   Downloading cryptography-50.0.2-cp311-abi3-manylinux_2_34_x86_64.whl.metadata (4.4 kB)
+2026-10-08T20:15:36.6039501Z Collecting cffi>=2.0.0 (from cryptography>=3.4.0->pyjwt[crypto]>=2.10.1->mcp<3,>=1.0.0->canvaspilot==0.1.1)
+2026-10-08T20:15:36.6135154Z   Downloading cffi-2.1.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.5 kB)
+2026-10-08T20:15:36.6256703Z Collecting pycparser (from cffi>=2.0.0->cryptography>=3.4.0->pyjwt[crypto]>=2.10.1->mcp<3,>=1.0.0->canvaspilot==0.1.1)
+2026-10-08T20:15:36.6382016Z   Downloading pycparser-3.1-py3-none-any.whl.metadata (8.2 kB)
+2026-10-08T20:15:36.6658928Z Collecting click>=7.0 (from uvicorn>=0.31.1->mcp<3,>=1.0.0->canvaspilot==0.1.1)
+2026-10-08T20:15:36.6751934Z   Downloading click-8.5.0-py3-none-any.whl.metadata (2.6 kB)
+2026-10-08T20:15:36.6895823Z Downloading mcp-2.3.0-py3-none-any.whl (368 kB)
+2026-10-08T20:15:36.7163044Z Downloading mcp_types-2.3.0-py3-none-any.whl (69 kB)
+2026-10-08T20:15:36.7278261Z Downloading anyio-4.15.1-py3-none-any.whl (132 kB)
+2026-10-08T20:15:36.7426274Z Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+2026-10-08T20:15:36.7550079Z Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+2026-10-08T20:15:36.7672768Z Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+2026-10-08T20:15:36.7786227Z Downloading httpx2-2.13.1-py3-none-any.whl (95 kB)
+2026-10-08T20:15:36.7925322Z Downloading httpcore2-2.13.1-py3-none-any.whl (83 kB)
+2026-10-08T20:15:36.8048256Z Downloading idna-3.20-py3-none-any.whl (69 kB)
+2026-10-08T20:15:36.8169653Z Downloading jsonschema-4.26.0-py3-none-any.whl (90 kB)
+2026-10-08T20:15:36.8312334Z Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
+2026-10-08T20:15:36.8437664Z Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+2026-10-08T20:15:36.8546926Z Downloading opentelemetry_api-1.45.1-py3-none-any.whl (60 kB)
+2026-10-08T20:15:36.8670469Z Downloading pydantic-2.14.0-py3-none-any.whl (487 kB)
+2026-10-08T20:15:36.8957739Z Downloading pydantic_core-2.50.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.2 MB)
+2026-10-08T20:15:36.9639885Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.2/2.2 MB 33.2 MB/s  0:00:00
+2026-10-08T20:15:36.9734038Z Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+2026-10-08T20:15:36.9845849Z Downloading pyjwt-2.15.1-py3-none-any.whl (33 kB)
+2026-10-08T20:15:36.9955523Z Downloading cryptography-50.0.2-cp311-abi3-manylinux_2_34_x86_64.whl (4.8 MB)
+2026-10-08T20:15:37.0889180Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.8/4.8 MB 51.4 MB/s  0:00:00
+2026-10-08T20:15:37.0986497Z Downloading cffi-2.1.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (221 kB)
+2026-10-08T20:15:37.1109193Z Downloading python_multipart-0.0.32-py3-none-any.whl (30 kB)
+2026-10-08T20:15:37.1220889Z Downloading referencing-0.37.0-py3-none-any.whl (26 kB)
+2026-10-08T20:15:37.1333955Z Downloading rpds_py-2026.9.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (371 kB)
+2026-10-08T20:15:37.1474563Z Downloading sse_starlette-3.5.0-py3-none-any.whl (17 kB)
+2026-10-08T20:15:37.1590648Z Downloading starlette-1.7.0-py3-none-any.whl (78 kB)
+2026-10-08T20:15:37.1709720Z Downloading truststore-0.10.4-py3-none-any.whl (18 kB)
+2026-10-08T20:15:37.1841524Z Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+2026-10-08T20:15:37.1954064Z Downloading typing_inspection-0.4.4-py3-none-any.whl (14 kB)
+2026-10-08T20:15:37.2063947Z Downloading uvicorn-0.54.0-py3-none-any.whl (87 kB)
+2026-10-08T20:15:37.2177295Z Downloading click-8.5.0-py3-none-any.whl (125 kB)
+2026-10-08T20:15:37.2292492Z Downloading certifi-2026.7.22-py3-none-any.whl (136 kB)
+2026-10-08T20:15:37.2410154Z Downloading pycparser-3.1-py3-none-any.whl (48 kB)
+2026-10-08T20:15:37.3209165Z Building wheels for collected packages: canvaspilot
+2026-10-08T20:15:37.3217720Z   Building editable for canvaspilot (pyproject.toml): started
+2026-10-08T20:15:37.3571610Z   Building editable for canvaspilot (pyproject.toml): finished with status 'done'
+2026-10-08T20:15:37.3577888Z   Created wheel for canvaspilot: filename=canvaspilot-0.1.1-py3-none-any.whl size=12934 sha256=ee5bd1ef101b3c8cb5f4cf30250eca8df95e7e70758f64f20d6c6fc05aac5473
+2026-10-08T20:15:37.3580366Z   Stored in directory: /tmp/pip-ephem-wheel-cache-8ox9lzj2/wheels/f2/3e/33/fba0aeb886abc1311ba665e0f8a03eaba40e2e3bfec70ee434
+2026-10-08T20:15:37.3606685Z Successfully built canvaspilot
+2026-10-08T20:15:37.4177499Z Installing collected packages: typing-extensions, truststore, rpds-py, python-multipart, pyjwt, pycparser, idna, h11, click, certifi, attrs, annotated-types, uvicorn, typing-inspection, referencing, pydantic-core, opentelemetry-api, httpcore2, httpcore, cffi, anyio, starlette, pydantic, jsonschema-specifications, httpx2, httpx, cryptography, sse-starlette, mcp-types, jsonschema, mcp, canvaspilot
+2026-10-08T20:15:39.2905350Z 
+2026-10-08T20:15:39.2939837Z Successfully installed annotated-types-0.8.0 anyio-4.15.1 attrs-26.1.0 canvaspilot-0.1.1 certifi-2026.7.22 cffi-2.1.1 click-8.5.0 cryptography-50.0.2 h11-0.16.0 httpcore-1.0.9 httpcore2-2.13.1 httpx-0.28.1 httpx2-2.13.1 idna-3.20 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 mcp-2.3.0 mcp-types-2.3.0 opentelemetry-api-1.45.1 pycparser-3.1 pydantic-2.14.0 pydantic-core-2.50.0 pyjwt-2.15.1 python-multipart-0.0.32 referencing-0.37.0 rpds-py-2026.9.1 sse-starlette-3.5.0 starlette-1.7.0 truststore-0.10.4 typing-extensions-4.16.0 typing-inspection-0.4.4 uvicorn-0.54.0
+2026-10-08T20:15:39.4029624Z ##[group]Run pip wheel --no-deps --wheel-dir "$RUNNER_TEMP/agenda-view-wheel" .
+2026-10-08T20:15:39.4030297Z [36;1mpip wheel --no-deps --wheel-dir "$RUNNER_TEMP/agenda-view-wheel" .[0m
+2026-10-08T20:15:39.4030785Z [36;1mpython -B - "$RUNNER_TEMP/agenda-view-wheel" <<'PY'[0m
+2026-10-08T20:15:39.4031146Z [36;1mimport hashlib[0m
+2026-10-08T20:15:39.4031372Z [36;1mimport json[0m
+2026-10-08T20:15:39.4031577Z [36;1mimport sys[0m
+2026-10-08T20:15:39.4031784Z [36;1mimport zipfile[0m
+2026-10-08T20:15:39.4032019Z [36;1mfrom pathlib import Path[0m
+2026-10-08T20:15:39.4032283Z [36;1m[0m
+2026-10-08T20:15:39.4032478Z [36;1moutput = Path(sys.argv[1])[0m
+2026-10-08T20:15:39.4032788Z [36;1mwheels = list(output.glob("canvaspilot-*.whl"))[0m
+2026-10-08T20:15:39.4033421Z [36;1massert len(wheels) == 1, wheels[0m
+2026-10-08T20:15:39.4033688Z [36;1mwheel = wheels[0][0m
+2026-10-08T20:15:39.4033920Z [36;1mreceived = [][0m
+2026-10-08T20:15:39.4034202Z [36;1mwith zipfile.ZipFile(wheel) as archive:[0m
+2026-10-08T20:15:39.4034520Z [36;1m    assert archive.testzip() is None[0m
+2026-10-08T20:15:39.4034798Z [36;1m    for relative in ([0m
+2026-10-08T20:15:39.4035063Z [36;1m        "canvaspilot/agenda_export.py",[0m
+2026-10-08T20:15:39.4035375Z [36;1m        "canvaspilot/agenda_view/style.css",[0m
+2026-10-08T20:15:39.4035698Z [36;1m        "canvaspilot/agenda_view/controls.js",[0m
+2026-10-08T20:15:39.4035987Z [36;1m    ):[0m
+2026-10-08T20:15:39.4036210Z [36;1m        packaged = archive.read(relative)[0m
+2026-10-08T20:15:39.4036546Z [36;1m        source = (Path("src") / relative).read_bytes()[0m
+2026-10-08T20:15:39.4036898Z [36;1m        assert packaged == source, relative[0m
+2026-10-08T20:15:39.4037290Z [36;1m        received.append({"path": relative, "bytes": len(packaged),[0m
+2026-10-08T20:15:39.4037721Z [36;1m                         "sha256": hashlib.sha256(packaged).hexdigest()})[0m
+2026-10-08T20:15:39.4038184Z [36;1mreceipt = {"schema": "canvaspilot-agenda-wheel/1", "accepted": True,[0m
+2026-10-08T20:15:39.4038640Z [36;1m           "wheel": wheel.name, "wheel_bytes": wheel.stat().st_size,[0m
+2026-10-08T20:15:39.4039086Z [36;1m           "wheel_sha256": hashlib.sha256(wheel.read_bytes()).hexdigest(),[0m
+2026-10-08T20:15:39.4039534Z [36;1m           "packaged_assets_equal_actual_checkout": received}[0m
+2026-10-08T20:15:39.4040024Z [36;1m(output / "receiving.json").write_text(json.dumps(receipt, indent=2) + "\n")[0m
+2026-10-08T20:15:39.4040455Z [36;1mprint(json.dumps(receipt, indent=2))[0m
+2026-10-08T20:15:39.4040734Z [36;1mPY[0m
+2026-10-08T20:15:39.4108444Z shell: /usr/bin/bash -e {0}
+2026-10-08T20:15:39.4108697Z env:
+2026-10-08T20:15:39.4108974Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T20:15:39.4109418Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-08T20:15:39.4109848Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T20:15:39.4110235Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T20:15:39.4110623Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T20:15:39.4111002Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-08T20:15:39.4111318Z ##[endgroup]
+2026-10-08T20:15:39.7725047Z Processing ./.
+2026-10-08T20:15:39.7743119Z   Installing build dependencies: started
+2026-10-08T20:15:40.3410197Z   Installing build dependencies: finished with status 'done'
+2026-10-08T20:15:40.3417825Z   Getting requirements to build wheel: started
+2026-10-08T20:15:40.5002789Z   Getting requirements to build wheel: finished with status 'done'
+2026-10-08T20:15:40.5013624Z   Preparing metadata (pyproject.toml): started
+2026-10-08T20:15:40.6874393Z   Preparing metadata (pyproject.toml): finished with status 'done'
+2026-10-08T20:15:40.6910304Z Building wheels for collected packages: canvaspilot
+2026-10-08T20:15:40.6918768Z   Building wheel for canvaspilot (pyproject.toml): started
+2026-10-08T20:15:40.7251146Z   Building wheel for canvaspilot (pyproject.toml): finished with status 'done'
+2026-10-08T20:15:40.7259736Z   Created wheel for canvaspilot: filename=canvaspilot-0.1.1-py3-none-any.whl size=124382 sha256=60d92d6fa891bd10976037e2d1c87a51368ea95149ca0f9fa8b36b3a457404a5
+2026-10-08T20:15:40.7261942Z   Stored in directory: /tmp/pip-ephem-wheel-cache-tc92cuk6/wheels/f2/3e/33/fba0aeb886abc1311ba665e0f8a03eaba40e2e3bfec70ee434
+2026-10-08T20:15:40.7296369Z Successfully built canvaspilot
+2026-10-08T20:15:40.8112894Z {
+2026-10-08T20:15:40.8113621Z   "schema": "canvaspilot-agenda-wheel/1",
+2026-10-08T20:15:40.8114081Z   "accepted": true,
+2026-10-08T20:15:40.8114482Z   "wheel": "canvaspilot-0.1.1-py3-none-any.whl",
+2026-10-08T20:15:40.8114834Z   "wheel_bytes": 124382,
+2026-10-08T20:15:40.8115333Z   "wheel_sha256": "60d92d6fa891bd10976037e2d1c87a51368ea95149ca0f9fa8b36b3a457404a5",
+2026-10-08T20:15:40.8115881Z   "packaged_assets_equal_actual_checkout": [
+2026-10-08T20:15:40.8116195Z     {
+2026-10-08T20:15:40.8116495Z       "path": "canvaspilot/agenda_export.py",
+2026-10-08T20:15:40.8116833Z       "bytes": 15270,
+2026-10-08T20:15:40.8117282Z       "sha256": "4e55a0c16e76286130f01e81f04685da1a3ecd9bb5a7a0493ccbfe97c0fcd3ce"
+2026-10-08T20:15:40.8117740Z     },
+2026-10-08T20:15:40.8117944Z     {
+2026-10-08T20:15:40.8118235Z       "path": "canvaspilot/agenda_view/style.css",
+2026-10-08T20:15:40.8118574Z       "bytes": 7435,
+2026-10-08T20:15:40.8119018Z       "sha256": "ed5f86e62198a9a0b13cbcd87db0bdae9cb2e5732358bf6eb684da47f45610d0"
+2026-10-08T20:15:40.8119464Z     },
+2026-10-08T20:15:40.8119660Z     {
+2026-10-08T20:15:40.8119953Z       "path": "canvaspilot/agenda_view/controls.js",
+2026-10-08T20:15:40.8120310Z       "bytes": 2823,
+2026-10-08T20:15:40.8120740Z       "sha256": "98474fb98fff0027e26fabd024c33a186715b5ac612979c4ef8b1d84b181d172"
+2026-10-08T20:15:40.8121171Z     }
+2026-10-08T20:15:40.8121363Z   ]
+2026-10-08T20:15:40.8121554Z }
+2026-10-08T20:15:40.8210480Z ##[group]Run git worktree add --detach "$RUNNER_TEMP/agenda-view-baseline" 0480cbce421bae532e3e909899fc8fb83789e878
+2026-10-08T20:15:40.8211309Z [36;1mgit worktree add --detach "$RUNNER_TEMP/agenda-view-baseline" 0480cbce421bae532e3e909899fc8fb83789e878[0m
+2026-10-08T20:15:40.8212089Z [36;1mnode scripts/receive_agenda_view.mjs "$RUNNER_TEMP/agenda-view-receiving" "$RUNNER_TEMP/agenda-view-baseline"[0m
+2026-10-08T20:15:40.8275522Z shell: /usr/bin/bash -e {0}
+2026-10-08T20:15:40.8275767Z env:
+2026-10-08T20:15:40.8276026Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T20:15:40.8276459Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-08T20:15:40.8276888Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T20:15:40.8277263Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T20:15:40.8277641Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T20:15:40.8278054Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-08T20:15:40.8278371Z ##[endgroup]
+2026-10-08T20:15:40.8379407Z Preparing worktree (detached HEAD 0480cbc)
+2026-10-08T20:15:40.9196902Z HEAD is now at 0480cbc Read selected-course announcements through the native CLI
+2026-10-08T20:16:01.3612891Z AGENDA_VIEW_MAIN_RESULT
+2026-10-08T20:16:01.3613655Z {
+2026-10-08T20:16:01.3614198Z   "schema": "canvaspilot-agenda-view-browser/1",
+2026-10-08T20:16:01.3614780Z   "accepted": false,
+2026-10-08T20:16:01.3615166Z   "artifacts": [
+2026-10-08T20:16:01.3615469Z     {
+2026-10-08T20:16:01.3615748Z       "name": "source-before.json",
+2026-10-08T20:16:01.3616069Z       "bytes": 242049,
+2026-10-08T20:16:01.3617070Z       "sha256": "f6cc884c2c1be423514045e54be3e5cc21cb8494dad05fd256c9912c638aaef3"
+2026-10-08T20:16:01.3617564Z     },
+2026-10-08T20:16:01.3617775Z     {
+2026-10-08T20:16:01.3618069Z       "name": "baseline-source-before.json",
+2026-10-08T20:16:01.3618419Z       "bytes": 173232,
+2026-10-08T20:16:01.3618917Z       "sha256": "aefdd90fa152c0aa344f3b71656404591dc1af21db753ee8775b4e0847cfd1e3"
+2026-10-08T20:16:01.3619401Z     },
+2026-10-08T20:16:01.3619616Z     {
+2026-10-08T20:16:01.3619889Z       "name": "original-native.stdout",
+2026-10-08T20:16:01.3620215Z       "bytes": 2828,
+2026-10-08T20:16:01.3620681Z       "sha256": "1d47bb539939336ab70bea45068635d57196a5e45d1660abddd5bcfcc17811ce"
+2026-10-08T20:16:01.3621150Z     },
+2026-10-08T20:16:01.3621358Z     {
+2026-10-08T20:16:01.3621629Z       "name": "original-native.stderr",
+2026-10-08T20:16:01.3621945Z       "bytes": 0,
+2026-10-08T20:16:01.3622409Z       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+2026-10-08T20:16:01.3622871Z     },
+2026-10-08T20:16:01.3623382Z     {
+2026-10-08T20:16:01.3623678Z       "name": "original-missing-view.stdout",
+2026-10-08T20:16:01.3624026Z       "bytes": 0,
+2026-10-08T20:16:01.3624475Z       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+2026-10-08T20:16:01.3624946Z     },
+2026-10-08T20:16:01.3625157Z     {
+2026-10-08T20:16:01.3625442Z       "name": "original-missing-view.stderr",
+2026-10-08T20:16:01.3625784Z       "bytes": 563,
+2026-10-08T20:16:01.3626243Z       "sha256": "b66f7edd240b925d4f031d4a30b165f19e1d34c49a3adee12ec856dbc0cbb9ed"
+2026-10-08T20:16:01.3626712Z     },
+2026-10-08T20:16:01.3626917Z     {
+2026-10-08T20:16:01.3627178Z       "name": "current-native.stdout",
+2026-10-08T20:16:01.3627493Z       "bytes": 2828,
+2026-10-08T20:16:01.3627954Z       "sha256": "1d47bb539939336ab70bea45068635d57196a5e45d1660abddd5bcfcc17811ce"
+2026-10-08T20:16:01.3628414Z     },
+2026-10-08T20:16:01.3628618Z     {
+2026-10-08T20:16:01.3628879Z       "name": "current-native.stderr",
+2026-10-08T20:16:01.3629195Z       "bytes": 0,
+2026-10-08T20:16:01.3629639Z       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+2026-10-08T20:16:01.3630113Z     },
+2026-10-08T20:16:01.3630319Z     {
+2026-10-08T20:16:01.3630618Z       "name": "current-export.stdout",
+2026-10-08T20:16:01.3631159Z       "bytes": 366,
+2026-10-08T20:16:01.3631538Z       "sha256": "7f9b630f9694c13bf354f5750c7087b752b25b04b04d7040736988d616581f0b"
+2026-10-08T20:16:01.3631919Z     },
+2026-10-08T20:16:01.3632094Z     {
+2026-10-08T20:16:01.3632316Z       "name": "current-export.stderr",
+2026-10-08T20:16:01.3632578Z       "bytes": 0,
+2026-10-08T20:16:01.3633090Z       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+2026-10-08T20:16:01.3633479Z     }
+2026-10-08T20:16:01.3633652Z   ],
+2026-10-08T20:16:01.3633834Z   "native": [
+2026-10-08T20:16:01.3634016Z     {
+2026-10-08T20:16:01.3634226Z       "name": "original-native",
+2026-10-08T20:16:01.3634476Z       "command": "agenda",
+2026-10-08T20:16:01.3634702Z       "exit": 0,
+2026-10-08T20:16:01.3635102Z       "stdoutSHA256": "1d47bb539939336ab70bea45068635d57196a5e45d1660abddd5bcfcc17811ce",
+2026-10-08T20:16:01.3635722Z       "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+2026-10-08T20:16:01.3636130Z     },
+2026-10-08T20:16:01.3636302Z     {
+2026-10-08T20:16:01.3636540Z       "name": "original-missing-view",
+2026-10-08T20:16:01.3636982Z       "command": "export-agenda",
+2026-10-08T20:16:01.3637223Z       "exit": 2,
+2026-10-08T20:16:01.3637617Z       "stdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+2026-10-08T20:16:01.3638228Z       "stderrSHA256": "b66f7edd240b925d4f031d4a30b165f19e1d34c49a3adee12ec856dbc0cbb9ed"
+2026-10-08T20:16:01.3638635Z     },
+2026-10-08T20:16:01.3638805Z     {
+2026-10-08T20:16:01.3639012Z       "name": "current-native",
+2026-10-08T20:16:01.3639257Z       "command": "agenda",
+2026-10-08T20:16:01.3639475Z       "exit": 0,
+2026-10-08T20:16:01.3640009Z       "stdoutSHA256": "1d47bb539939336ab70bea45068635d57196a5e45d1660abddd5bcfcc17811ce",
+2026-10-08T20:16:01.3640619Z       "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+2026-10-08T20:16:01.3641019Z     },
+2026-10-08T20:16:01.3641189Z     {
+2026-10-08T20:16:01.3641399Z       "name": "current-export",
+2026-10-08T20:16:01.3642035Z       "command": "export-agenda",
+2026-10-08T20:16:01.3642427Z       "exit": 0,
+2026-10-08T20:16:01.3643285Z       "stdoutSHA256": "7f9b630f9694c13bf354f5750c7087b752b25b04b04d7040736988d616581f0b",
+2026-10-08T20:16:01.3644341Z       "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+2026-10-08T20:16:01.3645024Z     }
+2026-10-08T20:16:01.3645302Z   ],
+2026-10-08T20:16:01.3645595Z   "browser": [],
+2026-10-08T20:16:01.3645968Z   "pageErrors": [],
+2026-10-08T20:16:01.3646202Z   "externalRequests": [],
+2026-10-08T20:16:01.3646431Z   "source": {
+2026-10-08T20:16:01.3646713Z     "head": "17a368885b7c4d579ecd9b80dda5afe560091cf2",
+2026-10-08T20:16:01.3647095Z     "tree": "73c7373186df76e1b26be5a3c0a492889b61e938",
+2026-10-08T20:16:01.3647390Z     "parents": [
+2026-10-08T20:16:01.3647652Z       "b6d73588887ce57a2637ab72ee424a5eb29e543f",
+2026-10-08T20:16:01.3647995Z       "8548037fe4f6b9e1a640cdabdd288a0c3f8751b1"
+2026-10-08T20:16:01.3648282Z     ],
+2026-10-08T20:16:01.3648559Z     "githubSHA": "17a368885b7c4d579ecd9b80dda5afe560091cf2"
+2026-10-08T20:16:01.3648861Z   },
+2026-10-08T20:16:01.3649064Z   "nativeRequests": [
+2026-10-08T20:16:01.3649270Z     {
+2026-10-08T20:16:01.3649458Z       "method": "GET",
+2026-10-08T20:16:01.3649712Z       "path": "/api/v1/calendar_events",
+2026-10-08T20:16:01.3649973Z       "query": [
+2026-10-08T20:16:01.3650165Z         [
+2026-10-08T20:16:01.3650353Z           "type",
+2026-10-08T20:16:01.3650663Z           "event"
+2026-10-08T20:16:01.3651008Z         ],
+2026-10-08T20:16:01.3651308Z         [
+2026-10-08T20:16:01.3651627Z           "start_date",
+2026-10-08T20:16:01.3651999Z           "2026-10-08"
+2026-10-08T20:16:01.3652355Z         ],
+2026-10-08T20:16:01.3652662Z         [
+2026-10-08T20:16:01.3653699Z           "end_date",
+2026-10-08T20:16:01.3654094Z           "2026-10-15"
+2026-10-08T20:16:01.3654445Z         ],
+2026-10-08T20:16:01.3654750Z         [
+2026-10-08T20:16:01.3655296Z           "context_codes[]",
+2026-10-08T20:16:01.3655714Z           "course_42"
+2026-10-08T20:16:01.3656054Z         ],
+2026-10-08T20:16:01.3656358Z         [
+2026-10-08T20:16:01.3656685Z           "context_codes[]",
+2026-10-08T20:16:01.3657078Z           "course_77"
+2026-10-08T20:16:01.3657422Z         ],
+2026-10-08T20:16:01.3657734Z         [
+2026-10-08T20:16:01.3658056Z           "per_page",
+2026-10-08T20:16:01.3658412Z           "50"
+2026-10-08T20:16:01.3658735Z         ]
+2026-10-08T20:16:01.3659040Z       ]
+2026-10-08T20:16:01.3659341Z     },
+2026-10-08T20:16:01.3659642Z     {
+2026-10-08T20:16:01.3659968Z       "method": "GET",
+2026-10-08T20:16:01.3660445Z       "path": "/api/v1/calendar_events",
+2026-10-08T20:16:01.3660900Z       "query": [
+2026-10-08T20:16:01.3661227Z         [
+2026-10-08T20:16:01.3661536Z           "type",
+2026-10-08T20:16:01.3661882Z           "assignment"
+2026-10-08T20:16:01.3662242Z         ],
+2026-10-08T20:16:01.3662542Z         [
+2026-10-08T20:16:01.3662852Z           "start_date",
+2026-10-08T20:16:01.3663427Z           "2026-10-08"
+2026-10-08T20:16:01.3663748Z         ],
+2026-10-08T20:16:01.3664026Z         [
+2026-10-08T20:16:01.3664325Z           "end_date",
+2026-10-08T20:16:01.3664665Z           "2026-10-15"
+2026-10-08T20:16:01.3664984Z         ],
+2026-10-08T20:16:01.3665269Z         [
+2026-10-08T20:16:01.3665571Z           "context_codes[]",
+2026-10-08T20:16:01.3665934Z           "course_42"
+2026-10-08T20:16:01.3666249Z         ],
+2026-10-08T20:16:01.3666536Z         [
+2026-10-08T20:16:01.3666839Z           "context_codes[]",
+2026-10-08T20:16:01.3667209Z           "course_77"
+2026-10-08T20:16:01.3667575Z         ],
+2026-10-08T20:16:01.3667885Z         [
+2026-10-08T20:16:01.3668209Z           "per_page",
+2026-10-08T20:16:01.3668747Z           "50"
+2026-10-08T20:16:01.3669063Z         ]
+2026-10-08T20:16:01.3669357Z       ]
+2026-10-08T20:16:01.3669644Z     }
+2026-10-08T20:16:01.3669936Z   ],
+2026-10-08T20:16:01.3670235Z   "savedFile": {
+2026-10-08T20:16:01.3670577Z     "bytes": 31707,
+2026-10-08T20:16:01.3671280Z     "sha256": "1c45b9ee7fea81a4ddb438d90cad07e48719832f54308de86de5c8899c37d044",
+2026-10-08T20:16:01.3672002Z     "nativeBytes": 2828,
+2026-10-08T20:16:01.3672747Z     "nativeSHA256": "1d47bb539939336ab70bea45068635d57196a5e45d1660abddd5bcfcc17811ce"
+2026-10-08T20:16:01.3673673Z   },
+2026-10-08T20:16:01.3673986Z   "runtime": {
+2026-10-08T20:16:01.3674348Z     "node": "v22.23.3",
+2026-10-08T20:16:01.3674778Z     "chrome": "Google Chrome 154.0.8037.97",
+2026-10-08T20:16:01.3675300Z     "executable": "/usr/bin/google-chrome"
+2026-10-08T20:16:01.3675754Z   },
+2026-10-08T20:16:01.3676058Z   "error": {
+2026-10-08T20:16:01.3676392Z     "name": "Error",
+2026-10-08T20:16:01.3676925Z     "message": "Timed out: installed Chrome startup",
+2026-10-08T20:16:01.3679065Z     "stack": "Error: Timed out: installed Chrome startup\n    at until (file:///home/runner/work/canvaspilot/canvaspilot/scripts/receive_agenda_view.mjs:36:9)\n    at async main (file:///home/runner/work/canvaspilot/canvaspilot/scripts/receive_agenda_view.mjs:159:3)"
+2026-10-08T20:16:01.3680837Z   },
+2026-10-08T20:16:01.3681162Z   "protocolCommands": 0
+2026-10-08T20:16:01.3681533Z }
+2026-10-08T20:16:01.3682088Z AGENDA_VIEW_FINAL_RESULT
+2026-10-08T20:16:01.3682793Z {
+2026-10-08T20:16:01.3683553Z   "schema": "canvaspilot-agenda-view-browser/1",
+2026-10-08T20:16:01.3697306Z   "accepted": false,
+2026-10-08T20:16:01.3697736Z   "artifacts": [
+2026-10-08T20:16:01.3698085Z     {
+2026-10-08T20:16:01.3698485Z       "name": "source-before.json",
+2026-10-08T20:16:01.3698930Z       "bytes": 242049,
+2026-10-08T20:16:01.3699676Z       "sha256": "f6cc884c2c1be423514045e54be3e5cc21cb8494dad05fd256c9912c638aaef3"
+2026-10-08T20:16:01.3700419Z     },
+2026-10-08T20:16:01.3700763Z     {
+2026-10-08T20:16:01.3701221Z       "name": "baseline-source-before.json",
+2026-10-08T20:16:01.3701756Z       "bytes": 173232,
+2026-10-08T20:16:01.3702420Z       "sha256": "aefdd90fa152c0aa344f3b71656404591dc1af21db753ee8775b4e0847cfd1e3"
+2026-10-08T20:16:01.3702877Z     },
+2026-10-08T20:16:01.3703637Z     {
+2026-10-08T20:16:01.3703897Z       "name": "original-native.stdout",
+2026-10-08T20:16:01.3704183Z       "bytes": 2828,
+2026-10-08T20:16:01.3704575Z       "sha256": "1d47bb539939336ab70bea45068635d57196a5e45d1660abddd5bcfcc17811ce"
+2026-10-08T20:16:01.3704964Z     },
+2026-10-08T20:16:01.3705138Z     {
+2026-10-08T20:16:01.3705369Z       "name": "original-native.stderr",
+2026-10-08T20:16:01.3705637Z       "bytes": 0,
+2026-10-08T20:16:01.3706015Z       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+2026-10-08T20:16:01.3706401Z     },
+2026-10-08T20:16:01.3706575Z     {
+2026-10-08T20:16:01.3706817Z       "name": "original-missing-view.stdout",
+2026-10-08T20:16:01.3707112Z       "bytes": 0,
+2026-10-08T20:16:01.3707478Z       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+2026-10-08T20:16:01.3708008Z     },
+2026-10-08T20:16:01.3708186Z     {
+2026-10-08T20:16:01.3708433Z       "name": "original-missing-view.stderr",
+2026-10-08T20:16:01.3708735Z       "bytes": 563,
+2026-10-08T20:16:01.3709153Z       "sha256": "b66f7edd240b925d4f031d4a30b165f19e1d34c49a3adee12ec856dbc0cbb9ed"
+2026-10-08T20:16:01.3709568Z     },
+2026-10-08T20:16:01.3709743Z     {
+2026-10-08T20:16:01.3709998Z       "name": "current-native.stdout",
+2026-10-08T20:16:01.3710285Z       "bytes": 2828,
+2026-10-08T20:16:01.3710710Z       "sha256": "1d47bb539939336ab70bea45068635d57196a5e45d1660abddd5bcfcc17811ce"
+2026-10-08T20:16:01.3711131Z     },
+2026-10-08T20:16:01.3711305Z     {
+2026-10-08T20:16:01.3711547Z       "name": "current-native.stderr",
+2026-10-08T20:16:01.3711827Z       "bytes": 0,
+2026-10-08T20:16:01.3712219Z       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+2026-10-08T20:16:01.3712823Z     },
+2026-10-08T20:16:01.3713256Z     {
+2026-10-08T20:16:01.3713520Z       "name": "current-export.stdout",
+2026-10-08T20:16:01.3713803Z       "bytes": 366,
+2026-10-08T20:16:01.3714197Z       "sha256": "7f9b630f9694c13bf354f5750c7087b752b25b04b04d7040736988d616581f0b"
+2026-10-08T20:16:01.3714608Z     },
+2026-10-08T20:16:01.3714801Z     {
+2026-10-08T20:16:01.3715036Z       "name": "current-export.stderr",
+2026-10-08T20:16:01.3715324Z       "bytes": 0,
+2026-10-08T20:16:01.3715723Z       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+2026-10-08T20:16:01.3716127Z     },
+2026-10-08T20:16:01.3716316Z     {
+2026-10-08T20:16:01.3716592Z       "name": "receiving-before-cleanup.json",
+2026-10-08T20:16:01.3716906Z       "bytes": 4948,
+2026-10-08T20:16:01.3717304Z       "sha256": "0d3fa2522540b14261f3520cbc95682e7a71daa4de088dde17005497d0b136f8"
+2026-10-08T20:16:01.3717718Z     },
+2026-10-08T20:16:01.3717886Z     {
+2026-10-08T20:16:01.3718128Z       "name": "chrome-stderr.log",
+2026-10-08T20:16:01.3718429Z       "bytes": 0,
+2026-10-08T20:16:01.3718826Z       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+2026-10-08T20:16:01.3719246Z     },
+2026-10-08T20:16:01.3719441Z     {
+2026-10-08T20:16:01.3719671Z       "name": "receiving.json",
+2026-10-08T20:16:01.3719943Z       "bytes": 5261,
+2026-10-08T20:16:01.3720365Z       "sha256": "67d1a9ac3e6679e5f34c043f6a1ae75d4b8313054addfef577fc497bf0264d3e"
+2026-10-08T20:16:01.3720806Z     }
+2026-10-08T20:16:01.3720977Z   ],
+2026-10-08T20:16:01.3721179Z   "native": [
+2026-10-08T20:16:01.3721368Z     {
+2026-10-08T20:16:01.3721590Z       "name": "original-native",
+2026-10-08T20:16:01.3721851Z       "command": "agenda",
+2026-10-08T20:16:01.3722101Z       "exit": 0,
+2026-10-08T20:16:01.3722507Z       "stdoutSHA256": "1d47bb539939336ab70bea45068635d57196a5e45d1660abddd5bcfcc17811ce",
+2026-10-08T20:16:01.3724215Z       "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+2026-10-08T20:16:01.3725056Z     },
+2026-10-08T20:16:01.3725372Z     {
+2026-10-08T20:16:01.3725792Z       "name": "original-missing-view",
+2026-10-08T20:16:01.3726343Z       "command": "export-agenda",
+2026-10-08T20:16:01.3726606Z       "exit": 2,
+2026-10-08T20:16:01.3727230Z       "stdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+2026-10-08T20:16:01.3727933Z       "stderrSHA256": "b66f7edd240b925d4f031d4a30b165f19e1d34c49a3adee12ec856dbc0cbb9ed"
+2026-10-08T20:16:01.3728354Z     },
+2026-10-08T20:16:01.3728534Z     {
+2026-10-08T20:16:01.3728746Z       "name": "current-native",
+2026-10-08T20:16:01.3728994Z       "command": "agenda",
+2026-10-08T20:16:01.3729214Z       "exit": 0,
+2026-10-08T20:16:01.3729619Z       "stdoutSHA256": "1d47bb539939336ab70bea45068635d57196a5e45d1660abddd5bcfcc17811ce",
+2026-10-08T20:16:01.3730233Z       "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+2026-10-08T20:16:01.3730636Z     },
+2026-10-08T20:16:01.3730820Z     {
+2026-10-08T20:16:01.3731034Z       "name": "current-export",
+2026-10-08T20:16:01.3731313Z       "command": "export-agenda",
+2026-10-08T20:16:01.3731563Z       "exit": 0,
+2026-10-08T20:16:01.3731962Z       "stdoutSHA256": "7f9b630f9694c13bf354f5750c7087b752b25b04b04d7040736988d616581f0b",
+2026-10-08T20:16:01.3732561Z       "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+2026-10-08T20:16:01.3733234Z     }
+2026-10-08T20:16:01.3733429Z   ],
+2026-10-08T20:16:01.3733612Z   "browser": [],
+2026-10-08T20:16:01.3733822Z   "pageErrors": [],
+2026-10-08T20:16:01.3734043Z   "externalRequests": [],
+2026-10-08T20:16:01.3734271Z   "source": {
+2026-10-08T20:16:01.3734551Z     "head": "17a368885b7c4d579ecd9b80dda5afe560091cf2",
+2026-10-08T20:16:01.3734949Z     "tree": "73c7373186df76e1b26be5a3c0a492889b61e938",
+2026-10-08T20:16:01.3735244Z     "parents": [
+2026-10-08T20:16:01.3735501Z       "b6d73588887ce57a2637ab72ee424a5eb29e543f",
+2026-10-08T20:16:01.3735841Z       "8548037fe4f6b9e1a640cdabdd288a0c3f8751b1"
+2026-10-08T20:16:01.3736303Z     ],
+2026-10-08T20:16:01.3736655Z     "githubSHA": "17a368885b7c4d579ecd9b80dda5afe560091cf2"
+2026-10-08T20:16:01.3737055Z   },
+2026-10-08T20:16:01.3737342Z   "nativeRequests": [
+2026-10-08T20:16:01.3737755Z     {
+2026-10-08T20:16:01.3738079Z       "method": "GET",
+2026-10-08T20:16:01.3738524Z       "path": "/api/v1/calendar_events",
+2026-10-08T20:16:01.3738888Z       "query": [
+2026-10-08T20:16:01.3739157Z         [
+2026-10-08T20:16:01.3739525Z           "type",
+2026-10-08T20:16:01.3739818Z           "event"
+2026-10-08T20:16:01.3740127Z         ],
+2026-10-08T20:16:01.3740460Z         [
+2026-10-08T20:16:01.3755109Z           "start_date",
+2026-10-08T20:16:01.3755496Z           "2026-10-08"
+2026-10-08T20:16:01.3755868Z         ],
+2026-10-08T20:16:01.3756185Z         [
+2026-10-08T20:16:01.3756481Z           "end_date",
+2026-10-08T20:16:01.3756828Z           "2026-10-15"
+2026-10-08T20:16:01.3757161Z         ],
+2026-10-08T20:16:01.3757462Z         [
+2026-10-08T20:16:01.3757771Z           "context_codes[]",
+2026-10-08T20:16:01.3758172Z           "course_42"
+2026-10-08T20:16:01.3758497Z         ],
+2026-10-08T20:16:01.3758784Z         [
+2026-10-08T20:16:01.3759097Z           "context_codes[]",
+2026-10-08T20:16:01.3759471Z           "course_77"
+2026-10-08T20:16:01.3759803Z         ],
+2026-10-08T20:16:01.3760083Z         [
+2026-10-08T20:16:01.3760385Z           "per_page",
+2026-10-08T20:16:01.3760757Z           "50"
+2026-10-08T20:16:01.3761081Z         ]
+2026-10-08T20:16:01.3761388Z       ]
+2026-10-08T20:16:01.3761694Z     },
+2026-10-08T20:16:01.3762007Z     {
+2026-10-08T20:16:01.3762341Z       "method": "GET",
+2026-10-08T20:16:01.3762779Z       "path": "/api/v1/calendar_events",
+2026-10-08T20:16:01.3763440Z       "query": [
+2026-10-08T20:16:01.3763765Z         [
+2026-10-08T20:16:01.3764067Z           "type",
+2026-10-08T20:16:01.3764397Z           "assignment"
+2026-10-08T20:16:01.3764734Z         ],
+2026-10-08T20:16:01.3765017Z         [
+2026-10-08T20:16:01.3765316Z           "start_date",
+2026-10-08T20:16:01.3765647Z           "2026-10-08"
+2026-10-08T20:16:01.3765954Z         ],
+2026-10-08T20:16:01.3766225Z         [
+2026-10-08T20:16:01.3766511Z           "end_date",
+2026-10-08T20:16:01.3766837Z           "2026-10-15"
+2026-10-08T20:16:01.3767353Z         ],
+2026-10-08T20:16:01.3767649Z         [
+2026-10-08T20:16:01.3767954Z           "context_codes[]",
+2026-10-08T20:16:01.3768314Z           "course_42"
+2026-10-08T20:16:01.3768624Z         ],
+2026-10-08T20:16:01.3768905Z         [
+2026-10-08T20:16:01.3769199Z           "context_codes[]",
+2026-10-08T20:16:01.3769558Z           "course_77"
+2026-10-08T20:16:01.3769867Z         ],
+2026-10-08T20:16:01.3770147Z         [
+2026-10-08T20:16:01.3770443Z           "per_page",
+2026-10-08T20:16:01.3770773Z           "50"
+2026-10-08T20:16:01.3771063Z         ]
+2026-10-08T20:16:01.3771353Z       ]
+2026-10-08T20:16:01.3771637Z     }
+2026-10-08T20:16:01.3771932Z   ],
+2026-10-08T20:16:01.3772237Z   "savedFile": {
+2026-10-08T20:16:01.3772563Z     "bytes": 31707,
+2026-10-08T20:16:01.3773479Z     "sha256": "1c45b9ee7fea81a4ddb438d90cad07e48719832f54308de86de5c8899c37d044",
+2026-10-08T20:16:01.3774210Z     "nativeBytes": 2828,
+2026-10-08T20:16:01.3774965Z     "nativeSHA256": "1d47bb539939336ab70bea45068635d57196a5e45d1660abddd5bcfcc17811ce"
+2026-10-08T20:16:01.3775684Z   },
+2026-10-08T20:16:01.3775983Z   "runtime": {
+2026-10-08T20:16:01.3776321Z     "node": "v22.23.3",
+2026-10-08T20:16:01.3776776Z     "chrome": "Google Chrome 154.0.8037.97",
+2026-10-08T20:16:01.3777318Z     "executable": "/usr/bin/google-chrome"
+2026-10-08T20:16:01.3777755Z   },
+2026-10-08T20:16:01.3778046Z   "error": {
+2026-10-08T20:16:01.3778368Z     "name": "Error",
+2026-10-08T20:16:01.3778854Z     "message": "Timed out: installed Chrome startup",
+2026-10-08T20:16:01.3780966Z     "stack": "Error: Timed out: installed Chrome startup\n    at until (file:///home/runner/work/canvaspilot/canvaspilot/scripts/receive_agenda_view.mjs:36:9)\n    at async main (file:///home/runner/work/canvaspilot/canvaspilot/scripts/receive_agenda_view.mjs:159:3)"
+2026-10-08T20:16:01.3783249Z   },
+2026-10-08T20:16:01.3783606Z   "protocolCommands": 0,
+2026-10-08T20:16:01.3783873Z   "cleanupErrors": []
+2026-10-08T20:16:01.3784092Z }
+2026-10-08T20:16:01.3797097Z ##[error]Process completed with exit code 1.
+2026-10-08T20:16:01.3902807Z ##[group]Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+2026-10-08T20:16:01.3903542Z with:
+2026-10-08T20:16:01.3903767Z   name: agenda-view-browser-37838072609-1
+2026-10-08T20:16:01.3904248Z   path: /home/runner/work/_temp/agenda-view-receiving
+/home/runner/work/_temp/agenda-view-wheel
+
+2026-10-08T20:16:01.3904725Z   if-no-files-found: error
+2026-10-08T20:16:01.3904956Z   retention-days: 14
+2026-10-08T20:16:01.3905166Z   compression-level: 6
+2026-10-08T20:16:01.3905376Z   overwrite: false
+2026-10-08T20:16:01.3905587Z   include-hidden-files: false
+2026-10-08T20:16:01.3905810Z env:
+2026-10-08T20:16:01.3906071Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T20:16:01.3906496Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-08T20:16:01.3906919Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T20:16:01.3907299Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T20:16:01.3907694Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-08T20:16:01.3908080Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-08T20:16:01.3908398Z ##[endgroup]
+2026-10-08T20:16:01.5529262Z (node:2763) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-08T20:16:01.5530084Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-08T20:16:01.5614786Z Multiple search paths detected. Calculating the least common ancestor of all paths
+2026-10-08T20:16:01.5617118Z The least common ancestor is /home/runner/work/_temp. This will be the root directory of the artifact
+2026-10-08T20:16:01.5618217Z With the provided path, there will be 16 files uploaded
+2026-10-08T20:16:01.5623515Z Artifact name is valid!
+2026-10-08T20:16:01.5624401Z Root directory input is valid!
+2026-10-08T20:16:01.7810168Z Beginning upload of artifact content to blob storage
+2026-10-08T20:16:01.8315301Z (node:2763) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-08T20:16:01.8679828Z Uploaded bytes 249711
+2026-10-08T20:16:01.8821778Z Finished uploading artifact content to blob storage!
+2026-10-08T20:16:01.8823405Z SHA256 digest of uploaded artifact zip is 7fdf67e6fbfd0b7703a478afebff5cdcf8eb9c67cfd0b207ebc521ace1598248
+2026-10-08T20:16:01.8825394Z Finalizing artifact upload
+2026-10-08T20:16:02.3288387Z Artifact agenda-view-browser-37838072609-1.zip successfully finalized. Artifact ID 11577010678
+2026-10-08T20:16:02.3289829Z Artifact agenda-view-browser-37838072609-1 has been successfully uploaded! Final size is 249711 bytes. Artifact ID is 11577010678
+2026-10-08T20:16:02.3294994Z Artifact download URL: https://github.com/Jacob-Met/canvaspilot/actions/runs/37838072609/artifacts/11577010678
+2026-10-08T20:16:02.3492737Z Post job cleanup.
+2026-10-08T20:16:02.4384041Z [command]/usr/bin/git version
+2026-10-08T20:16:02.4415016Z git version 2.55.0
+2026-10-08T20:16:02.4451907Z Temporarily overriding HOME='/home/runner/work/_temp/6ca04e24-2a53-4dbf-acec-c894dd1d73e4' before making global git config changes
+2026-10-08T20:16:02.4453871Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-08T20:16:02.4458135Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/canvaspilot/canvaspilot
+2026-10-08T20:16:02.4490994Z Removing SSH command configuration
+2026-10-08T20:16:02.4497803Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-08T20:16:02.4534712Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-08T20:16:02.4796424Z Removing HTTP extra header
+2026-10-08T20:16:02.4802378Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-08T20:16:02.4862111Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-08T20:16:02.5111973Z Removing includeIf entries pointing to credentials config files
+2026-10-08T20:16:02.5120016Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-08T20:16:02.5158833Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-08T20:16:02.5572225Z Cleaning up orphan processes
+2026-10-08T20:16:02.5852268Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020, actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

@@ -1,0 +1,37 @@
+{
+  "state": "staged_syntax_pass_only",
+  "browser_executed": false,
+  "product_cli_executed": false,
+  "files": [
+    {
+      "path": "criteria-v1.json",
+      "bytes": 3814,
+      "sha256": "f706faf4a838dc1f9e7c4dab4972a832a188e9278caae5cfea93e9db51b7e8dd",
+      "git_blob": "077060f558f7a13e9b68195c68a77aaea659e080"
+    },
+    {
+      "path": "fixtures-v1.json",
+      "bytes": 3513,
+      "sha256": "458f8d8b3a6fae5da5358fa1f83ed8c3c9b095abb2781e103260082197dbb435",
+      "git_blob": "696cc45e48c5466d94fcfa18b1c341ef9a630634"
+    },
+    {
+      "path": "receiver-v1.py",
+      "bytes": 12440,
+      "sha256": "f24701b4bb107b4abeb1cb00022f4af4cf0ff9fa9295ba85f730446292136fd9",
+      "git_blob": "dbeb1f36447dc66741dfd8cb2d0b8c9c687b6e4a"
+    },
+    {
+      "path": "receiver-v2.py",
+      "bytes": 12722,
+      "sha256": "96c19814a7f24bc78408c513b4fd135ab423090722f6534e23b6d3587553cfdc",
+      "git_blob": "332931ca26b2ba47cfb0300dd7b4ede0ad24d62f"
+    },
+    {
+      "path": "preexecution-revision.json",
+      "bytes": 1992,
+      "sha256": "07be499326b740fe3f583a9ec6afa4a94a8d60efb446237b1fbf1b98d3bd3c11",
+      "git_blob": "7ce0f7674c660c852bd1f479005da5d44cc22d02"
+    }
+  ]
+}

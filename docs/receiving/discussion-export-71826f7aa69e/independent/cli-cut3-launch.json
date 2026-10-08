@@ -1,0 +1,30 @@
+{
+  "started": "2026-10-08T20:41:21.532615+00:00",
+  "command": [
+    "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+    "-B",
+    "/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/receiver-v4.py",
+    "--source",
+    "/home/jacob/hamon-canvas-discussion-export-71826f7aa69e/source",
+    "--fixtures",
+    "/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/fixtures-v1.json",
+    "--out",
+    "/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/cli-cut3",
+    "--accepted-full",
+    "/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/cli-cut2"
+  ],
+  "adopted_cases": 1,
+  "new_cases_planned": 13,
+  "product_changed": false,
+  "state": "finished",
+  "returncode": 0,
+  "finished": "2026-10-08T20:41:48.295079+00:00",
+  "cli-cut3.stdout.log": {
+    "bytes": 158,
+    "sha256": "1e81d4709c5f4288a2dbe8542871ed00f5aa6f119783dbb0ec9aad2686cb719d"
+  },
+  "cli-cut3.stderr.log": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

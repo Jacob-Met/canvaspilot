@@ -1,0 +1,98 @@
+{
+  "schema": 1,
+  "repository": "Jacob-Met/canvaspilot",
+  "pr": 91,
+  "state": "qualified before integration",
+  "sourceHead": "8548037fe4f6b9e1a640cdabdd288a0c3f8751b1",
+  "hostedSynthetic": "17a368885b7c4d579ecd9b80dda5afe560091cf2",
+  "hostedTree": "73c7373186df76e1b26be5a3c0a492889b61e938",
+  "sourceReview": {
+    "authorSixSourcePinsIndependentlyRehashed": true,
+    "unchangedNativeInputs": 95,
+    "allNativeInputsExactAtRecovery": 101,
+    "unrelatedCurrentTargetLeavesPreserved": 1581,
+    "allSharedAdditionsReversible": true,
+    "independentReviewerAgrees": true
+  },
+  "native": {
+    "focusedRendererPassed": 9,
+    "ruffPassed": true,
+    "completeProject": {
+      "timeoutSeconds": 1200.299,
+      "passed": false,
+      "partialFailureMarkers": true,
+      "tracebacksAvailable": false,
+      "finalReceiptMissing": true,
+      "causeUnresolved": true,
+      "rerun": false,
+      "ownedProcessesEnded": true
+    }
+  },
+  "independent": {
+    "acceptedCliCases": 14,
+    "continuationCasesExecuted": 13,
+    "previousFullCaseReexecuted": false,
+    "all63PublishedPayloadsRehashed": true,
+    "payloadBytes": 235939,
+    "full": {
+      "rows": 8,
+      "htmlSha256": "5255e430919e65eb33c4114a27e4bd7702e961c10c5e6d159ed58dc81465f084",
+      "jsonSha256": "0fb98cac015d190ff3a10eea7e3643c2d981234cc58bb7ffc8921e2d40d8d638",
+      "browserPassed": true,
+      "printedPages": 6
+    },
+    "unread": {
+      "rows": 3,
+      "contextAncestors": 1,
+      "htmlSha256": "e65786ab57b0172ba87b9b3b6f9b1ffe54a86660e5fa35db586b5dcb65503e29",
+      "jsonSha256": "bce517fa832eaa1fe8bf0fb911001b352c7832bdf9e4f22a028de38c35f74966",
+      "browserPassed": true,
+      "printedPages": 4
+    },
+    "browserWidths": [
+      390,
+      320
+    ],
+    "actualDownloadsEqualOracles": true,
+    "sourceInputsUnchanged": true,
+    "externalPageRequests": 0,
+    "pageErrors": 0,
+    "consoleErrors": 0,
+    "rootVisuallyInspectedFullPrintPage1": true
+  },
+  "hosted": {
+    "ci": {
+      "run": 37838072533,
+      "attempt": 1,
+      "job": 113520138551,
+      "passed": 1167,
+      "skipped": 1,
+      "subtestsPassed": 93,
+      "seconds": 337.36,
+      "ruffPassed": true
+    },
+    "agendaBrowser": {
+      "run": 37838072609,
+      "firstAttempt": {
+        "job": 113520137848,
+        "conclusion": "failure",
+        "boundary": "Eight-second installed Chrome startup timeout before protocol commands or page assertions; cause unresolved."
+      },
+      "singleUnchangedSourceRetry": {
+        "attempt": 2,
+        "job": 113534799441,
+        "conclusion": "success",
+        "protocolCommands": 151,
+        "wheelAssetsAccepted": true,
+        "browserCases": 12,
+        "sourceTreeUnchanged": true
+      }
+    }
+  },
+  "limitations": [
+    "Synthetic discussion data and local HTTP only; no live account, posting or mark-read operation.",
+    "Complete normalized JSON equality, not raw HTTP byte preservation or cache freshness.",
+    "Browser network observation is page-context scope, not operating-system-wide telemetry.",
+    "The native whole-project timeout is not relabeled by the hosted or independent feature passes."
+  ]
+}

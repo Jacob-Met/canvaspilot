@@ -1,0 +1,298 @@
+{
+  "schema": 1,
+  "repository": "Jacob-Met/canvaspilot",
+  "issue": 85,
+  "authorBase": "92e9f1b500a15dd61d4c74539dedbf880afde30b",
+  "authorBaseTree": "13ad8dabadb259983fb568dd35e65f2762f3ee3b",
+  "payloadFiles": 41,
+  "payloadBytes": 148340,
+  "files": [
+    {
+      "path": "README.md",
+      "nativePath": "/home/jacob/hamon-canvas-discussion-export-71826f7aa69e/publication-author/README.md",
+      "bytes": 4836,
+      "sha256": "94ca649a33e2f264b6cec92d2596c4aeedcfc86da5ace5abefc195aaaaa4fdbc",
+      "git": "60335b4220ac04f3031356e9f38e01cfd3be408d"
+    },
+    {
+      "path": "evidence/additive-shared-source.patch",
+      "nativePath": "/home/jacob/hamon-canvas-discussion-export-71826f7aa69e/evidence/additive-shared-source.patch",
+      "bytes": 3414,
+      "sha256": "dded54c4e03eece40f3cdc718933ec6d3125175ba0c8211557cc3e22df60382d",
+      "git": "bf1f24adca122289fc3d428c4082cc2cb995a331"
+    },
+    {
+      "path": "evidence/author/focused-lint.stderr.txt",
+      "nativePath": "/home/jacob/hamon-canvas-discussion-export-71826f7aa69e/evidence/author/focused-lint.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "evidence/author/focused-lint.stdout.txt",
+      "nativePath": "/home/jacob/hamon-canvas-discussion-export-71826f7aa69e/evidence/author/focused-lint.stdout.txt",
+      "bytes": 1395,
+      "sha256": "fb76a47cc336328bad2f595edfb2b094001634abf37b34ed8642042c6b161db7",
+      "git": "fe47e9890158448b7429a9e031d726f1321c5aa1"
+    },
+    {
+      "path": "evidence/author/focused-receiving.json",
+      "nativePath": "/home/jacob/hamon-canvas-discussion-export-71826f7aa69e/evidence/author/focused-receiving.json",
+      "bytes": 1026,
+      "sha256": "4fd5910025454c3b23ebdb7eac74e33b30ce047532267546505c149d4685537e",
+      "git": "54128b9cd77de25619e363b352078947467f14f8"
+    },
+    {
+      "path": "evidence/author/focused-tests.stderr.txt",
+      "nativePath": "/home/jacob/hamon-canvas-discussion-export-71826f7aa69e/evidence/author/focused-tests.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "evidence/author/focused-tests.stdout.txt",
+      "nativePath": "/home/jacob/hamon-canvas-discussion-export-71826f7aa69e/evidence/author/focused-tests.stdout.txt",
+      "bytes": 99,
+      "sha256": "755bbed8497ff65cda5def99408c5c97603b399f1ce567fd5fca7cb6912f53f4",
+      "git": "3c36efcf84ce3218872246cd84902ec13791b442"
+    },
+    {
+      "path": "evidence/author/initial-lint.json",
+      "nativePath": "/home/jacob/hamon-canvas-discussion-export-71826f7aa69e/evidence/author/initial-lint.json",
+      "bytes": 204,
+      "sha256": "d109615d1abbc6fcf9aa8b5fc7ee2ae4de8402e839dac474a02d2b6fddbb43a6",
+      "git": "aa42dfe31842bbd79cd4c7761178f3d313ceaa96"
+    },
+    {
+      "path": "evidence/author/initial-lint.stderr.txt",
+      "nativePath": "/home/jacob/hamon-canvas-discussion-export-71826f7aa69e/evidence/author/initial-lint.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "evidence/author/initial-lint.stdout.txt",
+      "nativePath": "/home/jacob/hamon-canvas-discussion-export-71826f7aa69e/evidence/author/initial-lint.stdout.txt",
+      "bytes": 8557,
+      "sha256": "16baa2e59adac44afd61255b052332661d4fa3cdd3bbed1c686b1c71305e64f4",
+      "git": "5435e183dfbf86fd83d96e69de3cf480690057f5"
+    },
+    {
+      "path": "evidence/baseline-source.json",
+      "nativePath": "/home/jacob/hamon-canvas-discussion-export-71826f7aa69e/evidence/baseline-source.json",
+      "bytes": 21825,
+      "sha256": "a171271abfcdd5ef1f78d5767c472efa31ea0ebd4e31c4742f9aa4dc34cbd801",
+      "git": "bb85717e52ba5b8de511b676b3aa0c6e7b3bd9a7"
+    },
+    {
+      "path": "evidence/candidate-cut1.json",
+      "nativePath": "/home/jacob/hamon-canvas-discussion-export-71826f7aa69e/evidence/candidate-cut1.json",
+      "bytes": 423,
+      "sha256": "bd81d4e95736d2c7ed82e0bdba1bb86d3bec3c6c05df279eaeca798f3b01ab32",
+      "git": "722051c2007f360a9bbd07bc8b95ba78265b9c44"
+    },
+    {
+      "path": "evidence/qualification-1/lint.stderr.txt",
+      "nativePath": "/home/jacob/hamon-canvas-discussion-export-71826f7aa69e/evidence/qualification-1/lint.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "evidence/qualification-1/lint.stdout.txt",
+      "nativePath": "/home/jacob/hamon-canvas-discussion-export-71826f7aa69e/evidence/qualification-1/lint.stdout.txt",
+      "bytes": 19,
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "git": "1f5f344d054fae10f39140fb7199c99321d9190a"
+    },
+    {
+      "path": "evidence/qualification-1/progress.json",
+      "nativePath": "/home/jacob/hamon-canvas-discussion-export-71826f7aa69e/evidence/qualification-1/progress.json",
+      "bytes": 1148,
+      "sha256": "af2a3c9094b09dc04c805aa195a51d8c8e17f3720d78c5ca5b47dc1aacbf5dc6",
+      "git": "71b80ec17abaf6c7521c6064b1a7902b84b64aee"
+    },
+    {
+      "path": "evidence/qualification-1/project.stderr.txt",
+      "nativePath": "/home/jacob/hamon-canvas-discussion-export-71826f7aa69e/evidence/qualification-1/project.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "evidence/qualification-1/project.stdout.txt",
+      "nativePath": "/home/jacob/hamon-canvas-discussion-export-71826f7aa69e/evidence/qualification-1/project.stdout.txt",
+      "bytes": 499,
+      "sha256": "6a9d6b4cde6e2a5b70b75fa380a51aa0eda447c0475a55e1a146af42a68305fd",
+      "git": "d9ca110a5be9648471633b25460319f49998fac3"
+    },
+    {
+      "path": "evidence/resume-stage-05.json",
+      "nativePath": "/home/jacob/hamon-canvas-discussion-export-71826f7aa69e/evidence/resume-stage-05.json",
+      "bytes": 603,
+      "sha256": "40079b75a638eba7ae94da887fa23aa1aa1b966040c737fdff6681c4bf2f852a",
+      "git": "4d881afdd1da4ffe720db9fbcc19a9e03e2bb495"
+    },
+    {
+      "path": "evidence/resume-stage-06.json",
+      "nativePath": "/home/jacob/hamon-canvas-discussion-export-71826f7aa69e/evidence/resume-stage-06.json",
+      "bytes": 602,
+      "sha256": "e162ba6eb3570e5f9889ff1931c3840adc95807cd1e5c8464c87cdff61264b26",
+      "git": "d8a65a2c7c7b910c75b15164f2dd6bfece07138c"
+    },
+    {
+      "path": "evidence/resume-stage-07.json",
+      "nativePath": "/home/jacob/hamon-canvas-discussion-export-71826f7aa69e/evidence/resume-stage-07.json",
+      "bytes": 464,
+      "sha256": "94ead39a02d2c6ab91b023cc9d310b21547f8445b703aefa17f997b2aff894fd",
+      "git": "7a3557d2e806ac6da482e12e776c889970aa2efb"
+    },
+    {
+      "path": "evidence/resume-stage-08.json",
+      "nativePath": "/home/jacob/hamon-canvas-discussion-export-71826f7aa69e/evidence/resume-stage-08.json",
+      "bytes": 1634,
+      "sha256": "db4ae0b4a7f99d3d7c0d462eb11f900f342df34769925ae8b3f4b88d54c5174c",
+      "git": "684f1f811dd16def465c28fe16c0c739db709ba7"
+    },
+    {
+      "path": "evidence/resume-stage-09.json",
+      "nativePath": "/home/jacob/hamon-canvas-discussion-export-71826f7aa69e/evidence/resume-stage-09.json",
+      "bytes": 745,
+      "sha256": "47eb643cf7155612078afa2bb0baf886a211ffd09466099755201112956a745c",
+      "git": "dea7eeb989ad8e91f19c3645052492f66f96f451"
+    },
+    {
+      "path": "evidence/resume-stage-10.json",
+      "nativePath": "/home/jacob/hamon-canvas-discussion-export-71826f7aa69e/evidence/resume-stage-10.json",
+      "bytes": 1309,
+      "sha256": "7da4d0539e24466fb6b9f5cbad458969e49ef74a5c7fe0e5b63bf7c0d54079f9",
+      "git": "40b47fc454524b69d64604240a09ebc2b987d080"
+    },
+    {
+      "path": "evidence/resume-stage-11.json",
+      "nativePath": "/home/jacob/hamon-canvas-discussion-export-71826f7aa69e/evidence/resume-stage-11.json",
+      "bytes": 584,
+      "sha256": "f52c485f30970c83ec92b3795f3d438bd1b1f733c5535bc57c4c8e655f73c2b0",
+      "git": "711fe16b6bb3ca1af17e7b7fae9052bf446a22cd"
+    },
+    {
+      "path": "evidence/resume-stage-12.json",
+      "nativePath": "/home/jacob/hamon-canvas-discussion-export-71826f7aa69e/evidence/resume-stage-12.json",
+      "bytes": 713,
+      "sha256": "0f333fbb8bd99afb4184dfd931bdcc720aa8c6303074885411e09d81ce51d130",
+      "git": "b52c74876ea495a7b6b23b7cc6bb9b5786dd14d7"
+    },
+    {
+      "path": "evidence/resume-stage-13.json",
+      "nativePath": "/home/jacob/hamon-canvas-discussion-export-71826f7aa69e/evidence/resume-stage-13.json",
+      "bytes": 866,
+      "sha256": "f276f9450719b769f82df4f857d2e2bcd560dd142dad616d5f8516e571860c3a",
+      "git": "3ad1f13bfac90d0fbe6322f6b032ee5e31d7af7d"
+    },
+    {
+      "path": "evidence/resume-stage-14.json",
+      "nativePath": "/home/jacob/hamon-canvas-discussion-export-71826f7aa69e/evidence/resume-stage-14.json",
+      "bytes": 869,
+      "sha256": "3d668c01ec2589f1b2db73ee352ad8f2ae18e669fb9568afb1e20cc9f303b284",
+      "git": "7149c251e18b3b55ccdaeafe1138d611261e197c"
+    },
+    {
+      "path": "evidence/resume-stage-15.json",
+      "nativePath": "/home/jacob/hamon-canvas-discussion-export-71826f7aa69e/evidence/resume-stage-15.json",
+      "bytes": 833,
+      "sha256": "31423fdebc7dd9f5cb997dffd495153388cfafde5a99981f514d92b2311e9d31",
+      "git": "14e43d8da210561dd9f251d69966c270d5fbfd3b"
+    },
+    {
+      "path": "evidence/resume-stage-16.json",
+      "nativePath": "/home/jacob/hamon-canvas-discussion-export-71826f7aa69e/evidence/resume-stage-16.json",
+      "bytes": 747,
+      "sha256": "b8aff03dd20e00c62f702280c8f63d7d1fe8ca7adfe1ee0ddc961254828967a6",
+      "git": "0358f213d69c9a3c456cf957558fce169b46b272"
+    },
+    {
+      "path": "evidence/resume-stage-17.json",
+      "nativePath": "/home/jacob/hamon-canvas-discussion-export-71826f7aa69e/evidence/resume-stage-17.json",
+      "bytes": 886,
+      "sha256": "7df2e5b336a0fdc914f206b3d6d69954ce6ecc3f3334cf3f8c115f83468f5604",
+      "git": "9f9cedf8cf5e2fb7c99f1fdbbbe246fa3f1788e0"
+    },
+    {
+      "path": "evidence/run-author-qualification.py",
+      "nativePath": "/home/jacob/hamon-canvas-discussion-export-71826f7aa69e/evidence/run-author-qualification.py",
+      "bytes": 2735,
+      "sha256": "cc9fcb4ddb0f6c165e313457cf84cf8ba2f4350d963c5d6c072cb2bd312960d1",
+      "git": "4d03cc78146c484998f29015428888c707b37db8"
+    },
+    {
+      "path": "evidence/source-cut.json",
+      "nativePath": "/home/jacob/hamon-canvas-discussion-export-71826f7aa69e/evidence/source-cut.json",
+      "bytes": 24317,
+      "sha256": "afcc1cc95dce8a2642c95a93433e9c392a788834b7e986e0705df894cf8dec43",
+      "git": "ede3445a36b4d9f38695c745ebb4e4a824548639"
+    },
+    {
+      "path": "evidence/source-cut1.json",
+      "nativePath": "/home/jacob/hamon-canvas-discussion-export-71826f7aa69e/evidence/source-cut1.json",
+      "bytes": 24317,
+      "sha256": "f3ee218685269299bbb4bc41a3041cf585c7a11c60c35cae5285a3e35f164aee",
+      "git": "559a48b223001ba9a8c6542db908fe9773ab1a5e"
+    },
+    {
+      "path": "evidence/stage-00.json",
+      "nativePath": "/home/jacob/hamon-canvas-discussion-export-71826f7aa69e/evidence/stage-00.json",
+      "bytes": 1970,
+      "sha256": "829d46b26e16d946e9f723e7be7b659b30459b55ccfab73ca5c8f070e2ea737a",
+      "git": "077ff23f9d580b66ad8140a83bf110b33c51c15e"
+    },
+    {
+      "path": "evidence/stage-01.json",
+      "nativePath": "/home/jacob/hamon-canvas-discussion-export-71826f7aa69e/evidence/stage-01.json",
+      "bytes": 757,
+      "sha256": "a8e0cdb5ddbad556147a1e29e284481af73ffd2c9d8739023df5ee7304817a8e",
+      "git": "4bd2e835923653fb3d09d1e049bf2ed4d1c9e391"
+    },
+    {
+      "path": "evidence/stage-02.json",
+      "nativePath": "/home/jacob/hamon-canvas-discussion-export-71826f7aa69e/evidence/stage-02.json",
+      "bytes": 978,
+      "sha256": "f82b7c479241e73145404933139dfd05a9141de34ff42e704b424fdb70769afa",
+      "git": "22e93a8c4f14eb03221d0cff4d81ba85eab81979"
+    },
+    {
+      "path": "evidence/stage-03.json",
+      "nativePath": "/home/jacob/hamon-canvas-discussion-export-71826f7aa69e/evidence/stage-03.json",
+      "bytes": 521,
+      "sha256": "22186a2f7d23894626792362f260e3072156255f6a18248ab414b37376ff6284",
+      "git": "43f26f3a3bd2adfcca15cdecfce3e7458259be85"
+    },
+    {
+      "path": "evidence/stage-04.json",
+      "nativePath": "/home/jacob/hamon-canvas-discussion-export-71826f7aa69e/evidence/stage-04.json",
+      "bytes": 1215,
+      "sha256": "32bdf3d0188a70f932623ed4c580edd2d5ed602ba0578706a4d7f71b7cc504f6",
+      "git": "6d2b64872e2c60de80c21f870227bb1882ac05ae"
+    },
+    {
+      "path": "evidence/staging-enospc.json",
+      "nativePath": "/home/jacob/hamon-canvas-discussion-export-71826f7aa69e/evidence/staging-enospc.json",
+      "bytes": 4896,
+      "sha256": "60f9c083d801cd56d248152a8e03eb35c14ebd3fe207cbcc76a57dfd26e352d8",
+      "git": "b32db141d2acc8b6d70212b8b0886ce178718776"
+    },
+    {
+      "path": "evidence/staging-reconciliation.json",
+      "nativePath": "/home/jacob/hamon-canvas-discussion-export-71826f7aa69e/evidence/staging-reconciliation.json",
+      "bytes": 11858,
+      "sha256": "6cafe60f098b6f1c8f1f06b311c57ea7cf49eb7986c8eb295d31b824a2e54e4b",
+      "git": "e968c2c23dbf51102d366af93157ae2a82fd1860"
+    },
+    {
+      "path": "recovery.json",
+      "nativePath": "/home/jacob/hamon-canvas-discussion-export-71826f7aa69e/publication-author/recovery.json",
+      "bytes": 20476,
+      "sha256": "989a75660949b871dc16b44c63fed2a7207a49fa7958de8fcec7d8b1741432a7",
+      "git": "e9cb7cbd17f118f7684c9f415e9b114c82c0e00a"
+    }
+  ]
+}

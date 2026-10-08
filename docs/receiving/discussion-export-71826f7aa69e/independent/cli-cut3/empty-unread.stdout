@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "output": "/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/cli-cut3/empty-unread.html",
+  "course_id": "42",
+  "topic_id": "71",
+  "selection": "unread_with_ancestors",
+  "entries_included": 0,
+  "generated_at": "2026-10-08T20:41:28Z",
+  "html_bytes": 10452,
+  "sha256": "12dd46a2f4ad115d85576c2db86a660a999db00d7d0279d49995849df395d168",
+  "json_bytes": 1859,
+  "json_sha256": "fdc9b2484511784e03964c9db8dc181763b0dfdb7485b4d4c7eb0e8812ff5609"
+}

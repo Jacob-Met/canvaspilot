@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "output": "/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/cli-cut2/full.html",
+  "course_id": "42",
+  "topic_id": "71",
+  "selection": "all",
+  "entries_included": 8,
+  "generated_at": "2026-10-08T19:52:25Z",
+  "html_bytes": 27790,
+  "sha256": "5255e430919e65eb33c4114a27e4bd7702e961c10c5e6d159ed58dc81465f084",
+  "json_bytes": 5606,
+  "json_sha256": "0fb98cac015d190ff3a10eea7e3643c2d981234cc58bb7ffc8921e2d40d8d638"
+}

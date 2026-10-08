@@ -1,0 +1,559 @@
+{
+  "schema": "canvaspilot.discussion-export.independent-cli.v1",
+  "state": "passed",
+  "source": "/home/jacob/hamon-canvas-discussion-export-71826f7aa69e/source",
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "started": 1791492084.326316,
+  "source_before": {
+    "src/canvaspilot/discussion_thread.py": {
+      "sha256": "11f955f827c29421143782518a1aaf1894d0892739c3b56c4d5e413da74555ff",
+      "git_blob": "2ed658fcf5cee996a02115742935716f1d039e25"
+    },
+    "src/canvaspilot/api.py": {
+      "sha256": "b6b770c2cdef9c9ce44a4a6aefd5b6d0876bc09e5aee29a4adb5a7c603b41c24",
+      "git_blob": "3ec81dee60bc67d7a80d40b78e85d5c005441b99"
+    },
+    "src/canvaspilot/cli.py": {
+      "sha256": "11215a327e206cef6326c2cfa06feb8e68107dafda0aa835618d83dceac5563f",
+      "git_blob": "22c5fedb5a5aad714400f159f32dc86ec7ef9711"
+    },
+    "src/canvaspilot/discussion_export.py": {
+      "sha256": "95e8d7078462a60d4d3f1c4bd46b302bb69598563675f44d5d0326edf69d8cde",
+      "git_blob": "3e6ab7731ce72cdedaef084d3cee6e3f5f539133"
+    },
+    "src/canvaspilot/page_export.py": {
+      "sha256": "8800e959ee620438273c3291fd24c51b9ed567430b28093cd3f8bef52bff5015",
+      "git_blob": "1b46af8af07d24e24cde54aba393d9f977e77136"
+    },
+    "src/canvaspilot/client.py": {
+      "sha256": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797",
+      "git_blob": "1db4b1135305f7e410025ae7937f9a6cd349f020"
+    }
+  },
+  "cases": [
+    {
+      "case": "full",
+      "argv": [
+        "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+        "-B",
+        "-m",
+        "canvaspilot.cli",
+        "export-discussion",
+        "42",
+        "71",
+        "--out",
+        "/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/cli-cut2/full.html",
+        "--base-url",
+        "http://127.0.0.1:39899",
+        "--token",
+        "synthetic-owned-fixture"
+      ],
+      "returncode": 0,
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/discussion_topics/71",
+          "query": "per_page=50"
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/discussion_topics/71/view",
+          "query": "per_page=50"
+        }
+      ],
+      "stdout_sha256": "2f028c6bebdcd7035c476d8fe47b519e9ea6efe598414c141585baba39af3bc2",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output": "/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/cli-cut2/full.html",
+      "html_bytes": 27790,
+      "html_sha256": "5255e430919e65eb33c4114a27e4bd7702e961c10c5e6d159ed58dc81465f084",
+      "json_bytes": 5606,
+      "json_sha256": "0fb98cac015d190ff3a10eea7e3643c2d981234cc58bb7ffc8921e2d40d8d638",
+      "metadata": {
+        "ok": true,
+        "output": "/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/cli-cut2/full.html",
+        "course_id": "42",
+        "topic_id": "71",
+        "selection": "all",
+        "entries_included": 8,
+        "generated_at": "2026-10-08T19:52:25Z",
+        "html_bytes": 27790,
+        "sha256": "5255e430919e65eb33c4114a27e4bd7702e961c10c5e6d159ed58dc81465f084",
+        "json_bytes": 5606,
+        "json_sha256": "0fb98cac015d190ff3a10eea7e3643c2d981234cc58bb7ffc8921e2d40d8d638"
+      },
+      "accepted_from": "/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/cli-cut2/receiving.json",
+      "execution_repeated": false
+    },
+    {
+      "case": "unread",
+      "argv": [
+        "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+        "-B",
+        "-m",
+        "canvaspilot.cli",
+        "export-discussion",
+        "42",
+        "71",
+        "--out",
+        "/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/cli-cut3/unread.html",
+        "--base-url",
+        "http://127.0.0.1:39111",
+        "--token",
+        "synthetic-owned-fixture",
+        "--unread-only"
+      ],
+      "returncode": 0,
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/discussion_topics/71",
+          "query": "per_page=50"
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/discussion_topics/71/view",
+          "query": "per_page=50"
+        }
+      ],
+      "stdout_sha256": "a5063094e7c5457680d81c1ebb247dcfbcd7e59eecdb1037b92325f916a2624f",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output": "/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/cli-cut3/unread.html",
+      "html_bytes": 17527,
+      "html_sha256": "e65786ab57b0172ba87b9b3b6f9b1ffe54a86660e5fa35db586b5dcb65503e29",
+      "json_bytes": 3504,
+      "json_sha256": "bce517fa832eaa1fe8bf0fb911001b352c7832bdf9e4f22a028de38c35f74966",
+      "metadata": {
+        "ok": true,
+        "output": "/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/cli-cut3/unread.html",
+        "course_id": "42",
+        "topic_id": "71",
+        "selection": "unread_with_ancestors",
+        "entries_included": 3,
+        "generated_at": "2026-10-08T20:41:25Z",
+        "html_bytes": 17527,
+        "sha256": "e65786ab57b0172ba87b9b3b6f9b1ffe54a86660e5fa35db586b5dcb65503e29",
+        "json_bytes": 3504,
+        "json_sha256": "bce517fa832eaa1fe8bf0fb911001b352c7832bdf9e4f22a028de38c35f74966"
+      }
+    },
+    {
+      "case": "empty-unread",
+      "argv": [
+        "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+        "-B",
+        "-m",
+        "canvaspilot.cli",
+        "export-discussion",
+        "42",
+        "71",
+        "--out",
+        "/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/cli-cut3/empty-unread.html",
+        "--base-url",
+        "http://127.0.0.1:39111",
+        "--token",
+        "synthetic-owned-fixture",
+        "--unread-only"
+      ],
+      "returncode": 0,
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/discussion_topics/71",
+          "query": "per_page=50"
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/discussion_topics/71/view",
+          "query": "per_page=50"
+        }
+      ],
+      "stdout_sha256": "47498518bcc89ed06fb63540a11c264fd585f2129a3f9472ff2d33a0d91678ba",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output": "/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/cli-cut3/empty-unread.html",
+      "html_bytes": 10452,
+      "html_sha256": "12dd46a2f4ad115d85576c2db86a660a999db00d7d0279d49995849df395d168",
+      "json_bytes": 1859,
+      "json_sha256": "fdc9b2484511784e03964c9db8dc181763b0dfdb7485b4d4c7eb0e8812ff5609",
+      "metadata": {
+        "ok": true,
+        "output": "/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/cli-cut3/empty-unread.html",
+        "course_id": "42",
+        "topic_id": "71",
+        "selection": "unread_with_ancestors",
+        "entries_included": 0,
+        "generated_at": "2026-10-08T20:41:28Z",
+        "html_bytes": 10452,
+        "sha256": "12dd46a2f4ad115d85576c2db86a660a999db00d7d0279d49995849df395d168",
+        "json_bytes": 1859,
+        "json_sha256": "fdc9b2484511784e03964c9db8dc181763b0dfdb7485b4d4c7eb0e8812ff5609"
+      }
+    },
+    {
+      "case": "missing-unread-refused",
+      "argv": [
+        "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+        "-B",
+        "-m",
+        "canvaspilot.cli",
+        "export-discussion",
+        "42",
+        "71",
+        "--out",
+        "/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/cli-cut3/missing-unread-refused.html",
+        "--base-url",
+        "http://127.0.0.1:39111",
+        "--token",
+        "synthetic-owned-fixture",
+        "--unread-only"
+      ],
+      "returncode": 1,
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/discussion_topics/71",
+          "query": "per_page=50"
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/discussion_topics/71/view",
+          "query": "per_page=50"
+        }
+      ],
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "b6fef4f6a3e15e49cb40aa5ecf02bc8aa233a83e2d369d0c66469196569c3b34",
+      "output": "/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/cli-cut3/missing-unread-refused.html",
+      "accepted_refusal": true
+    },
+    {
+      "case": "ambiguous-unread-refused",
+      "argv": [
+        "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+        "-B",
+        "-m",
+        "canvaspilot.cli",
+        "export-discussion",
+        "42",
+        "71",
+        "--out",
+        "/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/cli-cut3/ambiguous-unread-refused.html",
+        "--base-url",
+        "http://127.0.0.1:39111",
+        "--token",
+        "synthetic-owned-fixture",
+        "--unread-only"
+      ],
+      "returncode": 1,
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/discussion_topics/71",
+          "query": "per_page=50"
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/discussion_topics/71/view",
+          "query": "per_page=50"
+        }
+      ],
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "6ff5ccf22f8262519ada10d507bd480ba89f1aaf2cea9e813d1fc5089919f1a8",
+      "output": "/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/cli-cut3/ambiguous-unread-refused.html",
+      "accepted_refusal": true
+    },
+    {
+      "case": "malformed-view-refused",
+      "argv": [
+        "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+        "-B",
+        "-m",
+        "canvaspilot.cli",
+        "export-discussion",
+        "42",
+        "71",
+        "--out",
+        "/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/cli-cut3/malformed-view-refused.html",
+        "--base-url",
+        "http://127.0.0.1:39111",
+        "--token",
+        "synthetic-owned-fixture"
+      ],
+      "returncode": 1,
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/discussion_topics/71",
+          "query": "per_page=50"
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/discussion_topics/71/view",
+          "query": "per_page=50"
+        }
+      ],
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "fd41e6369d03612ecb12889976362bdd19702a583ff9683c14a43b492962a757",
+      "output": "/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/cli-cut3/malformed-view-refused.html",
+      "accepted_refusal": true
+    },
+    {
+      "case": "topic-unavailable",
+      "argv": [
+        "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+        "-B",
+        "-m",
+        "canvaspilot.cli",
+        "export-discussion",
+        "42",
+        "71",
+        "--out",
+        "/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/cli-cut3/topic-unavailable.html",
+        "--base-url",
+        "http://127.0.0.1:39111",
+        "--token",
+        "synthetic-owned-fixture"
+      ],
+      "returncode": 1,
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/discussion_topics/71",
+          "query": "per_page=50"
+        }
+      ],
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "20ce24b0956a51cce38644e1defe27c233bb57c4906df16650923363c94ec5b4",
+      "output": "/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/cli-cut3/topic-unavailable.html",
+      "accepted_refusal": true
+    },
+    {
+      "case": "existing-refused",
+      "argv": [
+        "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+        "-B",
+        "-m",
+        "canvaspilot.cli",
+        "export-discussion",
+        "42",
+        "71",
+        "--out",
+        "/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/cli-cut3/existing.html",
+        "--base-url",
+        "http://127.0.0.1:39111",
+        "--token",
+        "synthetic-owned-fixture"
+      ],
+      "returncode": 1,
+      "requests": [],
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "1d9a91e72cd18a89592fbe06e66d953216e780f0107bf6f455818329feab9456",
+      "output": "/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/cli-cut3/existing.html",
+      "accepted_refusal": true
+    },
+    {
+      "case": "directory-refused",
+      "argv": [
+        "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+        "-B",
+        "-m",
+        "canvaspilot.cli",
+        "export-discussion",
+        "42",
+        "71",
+        "--out",
+        "/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/cli-cut3/existing-directory",
+        "--base-url",
+        "http://127.0.0.1:39111",
+        "--token",
+        "synthetic-owned-fixture"
+      ],
+      "returncode": 1,
+      "requests": [],
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "1d9a91e72cd18a89592fbe06e66d953216e780f0107bf6f455818329feab9456",
+      "output": "/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/cli-cut3/existing-directory",
+      "accepted_refusal": true
+    },
+    {
+      "case": "symlink-refused",
+      "argv": [
+        "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+        "-B",
+        "-m",
+        "canvaspilot.cli",
+        "export-discussion",
+        "42",
+        "71",
+        "--out",
+        "/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/cli-cut3/existing-link",
+        "--base-url",
+        "http://127.0.0.1:39111",
+        "--token",
+        "synthetic-owned-fixture"
+      ],
+      "returncode": 1,
+      "requests": [],
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "1d9a91e72cd18a89592fbe06e66d953216e780f0107bf6f455818329feab9456",
+      "output": "/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/cli-cut3/existing-link",
+      "accepted_refusal": true
+    },
+    {
+      "case": "dangling-refused",
+      "argv": [
+        "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+        "-B",
+        "-m",
+        "canvaspilot.cli",
+        "export-discussion",
+        "42",
+        "71",
+        "--out",
+        "/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/cli-cut3/dangling-link",
+        "--base-url",
+        "http://127.0.0.1:39111",
+        "--token",
+        "synthetic-owned-fixture"
+      ],
+      "returncode": 1,
+      "requests": [],
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "1d9a91e72cd18a89592fbe06e66d953216e780f0107bf6f455818329feab9456",
+      "output": "/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/cli-cut3/dangling-link",
+      "accepted_refusal": true
+    },
+    {
+      "case": "missing-parent",
+      "argv": [
+        "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+        "-B",
+        "-m",
+        "canvaspilot.cli",
+        "export-discussion",
+        "42",
+        "71",
+        "--out",
+        "/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/cli-cut3/absent-parent/report.html",
+        "--base-url",
+        "http://127.0.0.1:39111",
+        "--token",
+        "synthetic-owned-fixture"
+      ],
+      "returncode": 1,
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/discussion_topics/71",
+          "query": "per_page=50"
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/discussion_topics/71/view",
+          "query": "per_page=50"
+        }
+      ],
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "fbc2386a0a6cbff269c25c2614f23c8e5b1dc7551f9e53aa840f9f0e20f703ed",
+      "output": "/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/cli-cut3/absent-parent/report.html",
+      "accepted_refusal": true
+    },
+    {
+      "case": "race-refused",
+      "argv": [
+        "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+        "-B",
+        "-m",
+        "canvaspilot.cli",
+        "export-discussion",
+        "42",
+        "71",
+        "--out",
+        "/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/cli-cut3/race-target.html",
+        "--base-url",
+        "http://127.0.0.1:39111",
+        "--token",
+        "synthetic-owned-fixture"
+      ],
+      "returncode": 1,
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/discussion_topics/71",
+          "query": "per_page=50"
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/discussion_topics/71/view",
+          "query": "per_page=50"
+        }
+      ],
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "09cb8a0c8aaddf4de0265ca3da9f1f2cce671bd3750b7a641edd74c6e165bb55",
+      "output": "/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/cli-cut3/race-target.html",
+      "accepted_refusal": true
+    },
+    {
+      "case": "oversized-report-refused",
+      "argv": [
+        "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+        "-B",
+        "-m",
+        "canvaspilot.cli",
+        "export-discussion",
+        "42",
+        "71",
+        "--out",
+        "/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/cli-cut3/oversized-report-refused.html",
+        "--base-url",
+        "http://127.0.0.1:39111",
+        "--token",
+        "synthetic-owned-fixture"
+      ],
+      "returncode": 1,
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/discussion_topics/71",
+          "query": "per_page=50"
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/discussion_topics/71/view",
+          "query": "per_page=50"
+        }
+      ],
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "1d7058f56ab47fd423e37d66ba8e3e0bf621f19a785f7627384774609e2f0864",
+      "output": "/home/jacob/hamon-canvas-discussion-independent-71826f7aa69e/cli-cut3/oversized-report-refused.html",
+      "accepted_refusal": true
+    }
+  ],
+  "browser_executed": false,
+  "source_after": {
+    "src/canvaspilot/discussion_thread.py": {
+      "sha256": "11f955f827c29421143782518a1aaf1894d0892739c3b56c4d5e413da74555ff",
+      "git_blob": "2ed658fcf5cee996a02115742935716f1d039e25"
+    },
+    "src/canvaspilot/api.py": {
+      "sha256": "b6b770c2cdef9c9ce44a4a6aefd5b6d0876bc09e5aee29a4adb5a7c603b41c24",
+      "git_blob": "3ec81dee60bc67d7a80d40b78e85d5c005441b99"
+    },
+    "src/canvaspilot/cli.py": {
+      "sha256": "11215a327e206cef6326c2cfa06feb8e68107dafda0aa835618d83dceac5563f",
+      "git_blob": "22c5fedb5a5aad714400f159f32dc86ec7ef9711"
+    },
+    "src/canvaspilot/discussion_export.py": {
+      "sha256": "95e8d7078462a60d4d3f1c4bd46b302bb69598563675f44d5d0326edf69d8cde",
+      "git_blob": "3e6ab7731ce72cdedaef084d3cee6e3f5f539133"
+    },
+    "src/canvaspilot/page_export.py": {
+      "sha256": "8800e959ee620438273c3291fd24c51b9ed567430b28093cd3f8bef52bff5015",
+      "git_blob": "1b46af8af07d24e24cde54aba393d9f977e77136"
+    },
+    "src/canvaspilot/client.py": {
+      "sha256": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797",
+      "git_blob": "1db4b1135305f7e410025ae7937f9a6cd349f020"
+    }
+  },
+  "source_unchanged": true,
+  "finished": 1791492108.0479093
+}

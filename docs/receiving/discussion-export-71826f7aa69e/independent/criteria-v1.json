@@ -1,0 +1,50 @@
+{
+  "schema": "canvaspilot.discussion-export.independent-contract.v1",
+  "reviewer": "estate-71826f7aa69e/coordination",
+  "claim": "https://github.com/Jacob-Met/canvaspilot/issues/85",
+  "frozen_before_candidate": true,
+  "discovery": {
+    "commit": "92e9f1b500a15dd61d4c74539dedbf880afde30b",
+    "tree": "13ad8dabadb259983fb568dd35e65f2762f3ee3b",
+    "report_blob": "2ed658fcf5cee996a02115742935716f1d039e25"
+  },
+  "families": [
+    {
+      "id": "ordered-context",
+      "accept": "Full export preserves all eight returned rows in native structural order. Unread export contains paths [0],[0,1],[1], with only [0] labeled ancestor context; all-source counts remain visible and are not relabeled as selected counts. Conflicting original parent_id does not reparent a row."
+    },
+    {
+      "id": "meaning",
+      "accept": "Deleted body/author stay unavailable even if raw fields contain text and an attributable user. Missing body, empty text and media-only cleaned text are not invented. Duplicate entry IDs have unknown read state, duplicate participant IDs do not identify an author, numeric/string IDs stay distinct. Unmatched unread999 and all native warnings survive."
+    },
+    {
+      "id": "exact-source",
+      "accept": "The local JSON download decodes to the complete normalized API report without projection loss, retains null/false/zero/empty/Unicode/sourceHTML/order/metadata, and its actual SHA256/byte count match the displayed and CLI receipts. Native report and authored inputs stay unchanged."
+    },
+    {
+      "id": "inert-browser",
+      "accept": "Open actual exported HTML in a fresh offline browser; topic/entry/participant HTML is inert escaped text, no scripts/forms/iframes/remote assets, no automatic request, no storage write, no executable sourceURL. Only internal navigation and explicit local JSON download are active. Check actual desktop/narrow/print DOM with long title, word and deep-context paths."
+    },
+    {
+      "id": "read-only-cli",
+      "accept": "Actual installed-package CLI invokes the unchanged report reader once, producing exactly the raw reader's topic/view GETs on synthetic loopback fixtures in either mode. No POST/PUT/PATCH/DELETE/mark-read or attachment request. Captured timestamp is report creation, source cached/eventually-consistent/no freshness guarantee is visible."
+    },
+    {
+      "id": "refusal-output",
+      "accept": "Existing regular file, directory and symlink targets survive byte/identity unchanged and return nonzero without success stdout. Missing parents and output failure follow the existing native writer contract. HTTP/read/malformed/unavailable-unread/render/size refusal leaves no new successful artifact. Bound exact JSON/HTML thresholds and complete refusal above them without truncation."
+    },
+    {
+      "id": "empty-and-ambiguity",
+      "accept": "Explicit empty unread list yields an honest empty selection with observed counts/cache limits; missing unread list refuses focused export; duplicated unread ID refuses ambiguity. Full reports preserve unknown markers. No disagreement is silently reinterpreted as a complete fresh empty discussion."
+    },
+    {
+      "id": "preservation",
+      "accept": "Source composition changes only claimed paths/additive CLI/README spans. Existing report/API/transport/MCP/readers/writers/dependencies and peer enrollment/group/other export commands remain exact. Tests use authored data, no school/session/provider operation."
+    }
+  ],
+  "limits": [
+    "No claim of raw HTTP response byte preservation: embedded JSON is the complete normalized report.",
+    "No independent live Canvas access or server-cache freshness is inferred.",
+    "Late filesystem failure follows unchanged writer cleanup semantics; no stronger crash-durability promise is added."
+  ]
+}

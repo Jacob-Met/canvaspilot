@@ -1,0 +1,1 @@
+{"ok": false, "error": "ValueError", "message": "Unread selection is ambiguous: a returned entry ID is repeated"}

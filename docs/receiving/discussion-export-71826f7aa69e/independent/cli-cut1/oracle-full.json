@@ -1,0 +1,246 @@
+{
+  "topic": {
+    "id": 71,
+    "title": "Topic <em>literal markup</em> \u2014 LongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitleLongTitle",
+    "message": "<p>Read <strong>first</strong> &amp; then discuss.</p>",
+    "discussion_subentry_count": 42,
+    "locked": false,
+    "published": true,
+    "permissions": {
+      "attach": false,
+      "read": true
+    }
+  },
+  "topic_message_text": "Read first & then discuss.",
+  "source": {
+    "kind": "canvas_cached_discussion_view",
+    "eventually_consistent": true,
+    "new_entries_requested": false
+  },
+  "selection": "all",
+  "view_metadata": {
+    "participants": [
+      {
+        "id": 1,
+        "display_name": "Reader <b>A</b>"
+      },
+      {
+        "id": 3,
+        "display_name": "Numeric Three"
+      },
+      {
+        "id": "3",
+        "display_name": "String Three"
+      },
+      {
+        "id": 5,
+        "display_name": "Ambiguous One"
+      },
+      {
+        "id": 5,
+        "display_name": "Ambiguous Two"
+      }
+    ],
+    "unread_entries": [
+      "103",
+      104,
+      999
+    ],
+    "forced_entries": [
+      101,
+      104
+    ],
+    "new_entries": [
+      {
+        "id": 999,
+        "message": "Separate stream remains metadata"
+      }
+    ],
+    "rating_count": 0,
+    "unknown_metadata": null
+  },
+  "entries": [
+    {
+      "path": [
+        0
+      ],
+      "parent_path": null,
+      "entry": {
+        "id": 101,
+        "user_id": 1,
+        "message": "<p>Root A \u2014 \u03b1 &amp; \u03b2.</p>",
+        "parent_id": null
+      },
+      "replies_supplied": true,
+      "reply_count": 2,
+      "message_text": "Root A \u2014 \u03b1 & \u03b2.",
+      "author": {
+        "id": 1,
+        "display_name": "Reader <b>A</b>"
+      },
+      "read_state": "read",
+      "forced_read_state": true,
+      "context_only": false
+    },
+    {
+      "path": [
+        0,
+        0
+      ],
+      "parent_path": [
+        0
+      ],
+      "entry": {
+        "id": 102,
+        "user_id": 1,
+        "message": "WITHHELD_DELETED_TEXT",
+        "deleted": true,
+        "parent_id": 101
+      },
+      "replies_supplied": true,
+      "reply_count": 0,
+      "message_text": null,
+      "author": null,
+      "read_state": "read",
+      "forced_read_state": false,
+      "context_only": false
+    },
+    {
+      "path": [
+        0,
+        1
+      ],
+      "parent_path": [
+        0
+      ],
+      "entry": {
+        "id": "103",
+        "user_id": "3",
+        "message": "<p>Unread string-ID reply.</p>",
+        "parent_id": 101
+      },
+      "replies_supplied": true,
+      "reply_count": 0,
+      "message_text": "Unread string-ID reply.",
+      "author": {
+        "id": "3",
+        "display_name": "String Three"
+      },
+      "read_state": "unread",
+      "forced_read_state": false,
+      "context_only": false
+    },
+    {
+      "path": [
+        1
+      ],
+      "parent_path": null,
+      "entry": {
+        "id": 104,
+        "user_id": 4,
+        "message": "<p><img alt=\"source-only\" src=\"https://example.invalid/source-image\"></p>",
+        "parent_id": 101
+      },
+      "replies_supplied": false,
+      "reply_count": 0,
+      "message_text": "",
+      "author": null,
+      "read_state": "unread",
+      "forced_read_state": true,
+      "context_only": false
+    },
+    {
+      "path": [
+        2
+      ],
+      "parent_path": null,
+      "entry": {
+        "id": 105,
+        "user_id": 5,
+        "message": "",
+        "parent_id": null
+      },
+      "replies_supplied": true,
+      "reply_count": 0,
+      "message_text": "",
+      "author": null,
+      "read_state": "read",
+      "forced_read_state": false,
+      "context_only": false
+    },
+    {
+      "path": [
+        3
+      ],
+      "parent_path": null,
+      "entry": {
+        "id": 106,
+        "user_id": 6,
+        "message": "First duplicate ID",
+        "parent_id": null
+      },
+      "replies_supplied": true,
+      "reply_count": 0,
+      "message_text": "First duplicate ID",
+      "author": null,
+      "read_state": "unknown",
+      "forced_read_state": null,
+      "context_only": false
+    },
+    {
+      "path": [
+        4
+      ],
+      "parent_path": null,
+      "entry": {
+        "id": 106,
+        "user_id": 6,
+        "message": "Second duplicate ID",
+        "parent_id": null
+      },
+      "replies_supplied": true,
+      "reply_count": 0,
+      "message_text": "Second duplicate ID",
+      "author": null,
+      "read_state": "unknown",
+      "forced_read_state": null,
+      "context_only": false
+    },
+    {
+      "path": [
+        5
+      ],
+      "parent_path": null,
+      "entry": {
+        "id": 107,
+        "user_id": 1,
+        "parent_id": null
+      },
+      "replies_supplied": true,
+      "reply_count": 0,
+      "message_text": null,
+      "author": {
+        "id": 1,
+        "display_name": "Reader <b>A</b>"
+      },
+      "read_state": "read",
+      "forced_read_state": false,
+      "context_only": false
+    }
+  ],
+  "unmatched_unread_entries": [
+    999
+  ],
+  "counts": {
+    "observed_entries": 8,
+    "returned_entries": 8,
+    "known_unread_entries": 2,
+    "unknown_read_state_entries": 2
+  },
+  "warnings": [
+    "Some returned entries have an unknown read state; they are not inferred read or unread.",
+    "Some supplied unread identifiers are absent from this cached entry tree.",
+    "Repeated participant identifiers are not used to attribute entries.",
+    "Repeated entry identifiers do not establish a unique read-state association."
+  ]
+}

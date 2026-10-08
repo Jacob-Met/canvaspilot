@@ -1,0 +1,504 @@
+{
+  "schema": 1,
+  "kind": "read-only recovery of original native author qualification",
+  "runnerPid": 1013228,
+  "pytestPid": 1013649,
+  "observedLastChild": 1201420,
+  "originalFinalReceiptMissing": true,
+  "recoveredSteps": [
+    {
+      "name": "lint",
+      "command": [
+        "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+        "-B",
+        "-m",
+        "ruff",
+        "check",
+        "--no-cache",
+        "src",
+        "tests",
+        "scripts"
+      ],
+      "exitCode": 0,
+      "timeout": false,
+      "seconds": 1.153,
+      "stdoutBytes": 19,
+      "stderrBytes": 0,
+      "stdoutSha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "project",
+      "command": [
+        "/home/jacob/canvaspilot-announcements-3dcb83a1/.venv/bin/python",
+        "-B",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--junitxml=/home/jacob/hamon-canvas-discussion-export-71826f7aa69e/evidence/qualification-1/pytest.xml"
+      ],
+      "exitCode": null,
+      "timeout": true,
+      "seconds": 1200.299,
+      "stdoutBytes": 499,
+      "stderrBytes": 0,
+      "stdoutSha256": "6a9d6b4cde6e2a5b70b75fa380a51aa0eda447c0475a55e1a146af42a68305fd",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "processCheck": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Process started with PID 1395898 (shell: /bin/bash)\nInitial output:\n{\"ownedProcesses\": [], \"knownPriorChild\": []}\n{\"sourceFiles\": 101, \"changed\": [], \"evidenceFiles\": [{\"path\": \"evidence/additive-shared-source.patch\", \"bytes\": 3414}, {\"path\": \"evidence/author/focused-lint.stderr.txt\", \"bytes\": 0}, {\"path\": \"evidence/author/focused-lint.stdout.txt\", \"bytes\": 1395}, {\"path\": \"evidence/author/focused-receiving.json\", \"bytes\": 1026}, {\"path\": \"evidence/author/focused-tests.stderr.txt\", \"bytes\": 0}, {\"path\": \"evidence/author/focused-tests.stdout.txt\", \"bytes\": 99}, {\"path\": \"evidence/author/initial-lint.json\", \"bytes\": 204}, {\"path\": \"evidence/author/initial-lint.stderr.txt\", \"bytes\": 0}, {\"path\": \"evidence/author/initial-lint.stdout.txt\", \"bytes\": 8557}, {\"path\": \"evidence/baseline-source.json\", \"bytes\": 21825}, {\"path\": \"evidence/candidate-cut1.json\", \"bytes\": 423}, {\"path\": \"evidence/qualification-1/lint.stderr.txt\", \"bytes\": 0}, {\"path\": \"evidence/qualification-1/lint.stdout.txt\", \"bytes\": 19}, {\"path\": \"evidence/qualification-1/progress.json\", \"bytes\": 1148}, {\"path\": \"evidence/qualification-1/project.stderr.txt\", \"bytes\": 0}, {\"path\": \"evidence/qualification-1/project.stdout.txt\", \"bytes\": 499}, {\"path\": \"evidence/resume-stage-05.json\", \"bytes\": 603}, {\"path\": \"evidence/resume-stage-06.json\", \"bytes\": 602}, {\"path\": \"evidence/resume-stage-07.json\", \"bytes\": 464}, {\"path\": \"evidence/resume-stage-08.json\", \"bytes\": 1634}, {\"path\": \"evidence/resume-stage-09.json\", \"bytes\": 745}, {\"path\": \"evidence/resume-stage-10.json\", \"bytes\": 1309}, {\"path\": \"evidence/resume-stage-11.json\", \"bytes\": 584}, {\"path\": \"evidence/resume-stage-12.json\", \"bytes\": 713}, {\"path\": \"evidence/resume-stage-13.json\", \"bytes\": 866}, {\"path\": \"evidence/resume-stage-14.json\", \"bytes\": 869}, {\"path\": \"evidence/resume-stage-15.json\", \"bytes\": 833}, {\"path\": \"evidence/resume-stage-16.json\", \"bytes\": 747}, {\"path\": \"evidence/resume-stage-17.json\", \"bytes\": 886}, {\"path\": \"evidence/run-author-qualification.py\", \"bytes\": 2735}, {\"path\": \"evidence/source-cut.json\", \"bytes\": 24317}, {\"path\": \"evidence/source-cut1.json\", \"bytes\": 24317}, {\"path\": \"evidence/stage-00.json\", \"bytes\": 1970}, {\"path\": \"evidence/stage-01.json\", \"bytes\": 757}, {\"path\": \"evidence/stage-02.json\", \"bytes\": 978}, {\"path\": \"evidence/stage-03.json\", \"bytes\": 521}, {\"path\": \"evidence/stage-04.json\", \"bytes\": 1215}, {\"path\": \"evidence/staging-enospc.json\", \"bytes\": 4896}, {\"path\": \"evidence/staging-reconciliation.json\", \"bytes\": 11858}]}\n"
+      },
+      {
+        "type": "text",
+        "text": "\n[executed on device: hamon-thinkpad (d55b2499-5e82-4805-819a-d0d7ddea1efe)]"
+      }
+    ],
+    "isError": false
+  },
+  "ownedCwdCheck": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Process started with PID 1407203 (shell: /bin/bash)\nInitial output:\n{\"ownedRoot\": \"/home/jacob/hamon-canvas-discussion-export-71826f7aa69e\", \"processesWithOwnedCwd\": []}\n"
+      },
+      {
+        "type": "text",
+        "text": "\n[executed on device: hamon-thinkpad (d55b2499-5e82-4805-819a-d0d7ddea1efe)]"
+      }
+    ],
+    "isError": false
+  },
+  "receiptRead": {
+    "status": "fulfilled",
+    "value": {
+      "content": [
+        {
+          "type": "text",
+          "text": "Error: ENOENT: no such file or directory, stat '/home/jacob/hamon-canvas-discussion-export-71826f7aa69e/evidence/qualification-1/receiving.json'"
+        },
+        {
+          "type": "text",
+          "text": "\n[executed on device: hamon-thinkpad (d55b2499-5e82-4805-819a-d0d7ddea1efe)]"
+        }
+      ],
+      "structuredContent": {
+        "error_code": "INVALID_ARGUMENT"
+      },
+      "isError": true
+    }
+  },
+  "scope": "No test/browser rerun, source mutation, process termination, cleanup or peer access was performed by recovery. Tool registry state was not treated as process state. Original project timeout is not reclassified as success.",
+  "sourceRecheckedAtRecovery": [
+    {
+      "path": ".github/dependabot.yml",
+      "sha256": "883b95e3be554fbadd92b315e4a8c6ea6ca688b64924e22dd61222b07f683507"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "62f17b95af03d1ff8a172f168282b405fefcab3a5f1094c70e618b44920bd0ff"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "8acd3d428eb526e6dab777cb8911614c85a5d05a13c5e60066c6f61e0e24e0c2"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "85144488dcaf127ecd6842af9b19a72a2448c7b48ab831140ace32dac8090314"
+    },
+    {
+      "path": "README.md",
+      "sha256": "c69db37f83b4efeeeae5578ff426aeb87b87df8debaef7affb22294aa17bbf3d"
+    },
+    {
+      "path": "docs/DISCUSSIONS.md",
+      "sha256": "b1f82d30fd9c275fc73f2dc86298849f881eec7e1d4d510c1d5e80565483490e"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "555ad3c7e338d38ae5feabc06c0c07503f22d9c732a9af153c7706c63d2b3c63"
+    },
+    {
+      "path": "scripts/inventory_pass.py",
+      "sha256": "b2669747165f47b023f666bbb01657f47427d680ea8ff8cbf35203353ba05d06"
+    },
+    {
+      "path": "scripts/readonly_sweep.py",
+      "sha256": "30667032bc21a62db780d07bfbf0b48cc6c4aca63e9ea30a3953b78749603b06"
+    },
+    {
+      "path": "scripts/verify_study_workspace_browser.py",
+      "sha256": "ee9146f32524d7f537b86a15fec1d562470accecb57ee08c60b4133ae576ba0d"
+    },
+    {
+      "path": "src/canvaspilot/__init__.py",
+      "sha256": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5"
+    },
+    {
+      "path": "src/canvaspilot/agenda.py",
+      "sha256": "cd9d9e027393ce21cff0b4d0a13098dca3a906af3e9803201655bca40d3c3fda"
+    },
+    {
+      "path": "src/canvaspilot/api.py",
+      "sha256": "b6b770c2cdef9c9ce44a4a6aefd5b6d0876bc09e5aee29a4adb5a7c603b41c24"
+    },
+    {
+      "path": "src/canvaspilot/assignment_submission.py",
+      "sha256": "52fc732660b8844a2ee0801931a363f20db15b5309d148d01e3b618be487133d"
+    },
+    {
+      "path": "src/canvaspilot/bundle.py",
+      "sha256": "c8a1854b5c04715c1371c05f4c25ba867ec2d2daafc132b7ed8a973d3e55ddcf"
+    },
+    {
+      "path": "src/canvaspilot/calendar_export.py",
+      "sha256": "b92948c438063438bf9b8ef01b0b0c067802ddb06354f00e8ee18749f3c5e2fa"
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "sha256": "11215a327e206cef6326c2cfa06feb8e68107dafda0aa835618d83dceac5563f"
+    },
+    {
+      "path": "src/canvaspilot/client.py",
+      "sha256": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797"
+    },
+    {
+      "path": "src/canvaspilot/discussion_thread.py",
+      "sha256": "11f955f827c29421143782518a1aaf1894d0892739c3b56c4d5e413da74555ff"
+    },
+    {
+      "path": "src/canvaspilot/feedback.py",
+      "sha256": "55454598effea598474a21f67e36d5bc5bea84aaefeefc18e4d8c49804ab9869"
+    },
+    {
+      "path": "src/canvaspilot/folder_browser.py",
+      "sha256": "c6a67229b268c539e5edb581e3320b06229460adc3fbc01d72e4964e31c0348a"
+    },
+    {
+      "path": "src/canvaspilot/grade_review.py",
+      "sha256": "e550752a830ca9cf4c2ef5d5b06dbf464abd9dfed3a5252d310a4acf8e2411f5"
+    },
+    {
+      "path": "src/canvaspilot/grade_review_export.py",
+      "sha256": "0f16c805d57bf9aa8eba09b6bde2afde033bf09fe64b4525adf22de3b248c351"
+    },
+    {
+      "path": "src/canvaspilot/mcp_server.py",
+      "sha256": "52cfd5cbe167438762049f4c36feec822986f5e5e63aeaf494e07907235e1c98"
+    },
+    {
+      "path": "src/canvaspilot/module_progress.py",
+      "sha256": "974ee31925514a2e53b899888302a7fa357e280ab5f2461b754b814473653d99"
+    },
+    {
+      "path": "src/canvaspilot/module_progress_export.py",
+      "sha256": "f723c06e551fae2cf50745460f9109867e6e0f9ebc3cc997d49d5e2173aa9f50"
+    },
+    {
+      "path": "src/canvaspilot/offline_demo.py",
+      "sha256": "2389f3ccc1b6db5995be0d90e014ea9345e3029aa5546a5b2dcf12c1197e6d4d"
+    },
+    {
+      "path": "src/canvaspilot/page_export.py",
+      "sha256": "8800e959ee620438273c3291fd24c51b9ed567430b28093cd3f8bef52bff5015"
+    },
+    {
+      "path": "src/canvaspilot/session_broker.py",
+      "sha256": "a692cd2812cbc09536f1b60c84892bc8e87d2ae984c5a5aa25a13f6537ba6da2"
+    },
+    {
+      "path": "src/canvaspilot/study_workspace.css",
+      "sha256": "aa77aeba7b1400eeccde7430e77eb0de0d5fd9791c4f1960c930309ba574fe2b"
+    },
+    {
+      "path": "src/canvaspilot/study_workspace.html",
+      "sha256": "1181415863ceef48a6238ce1588a722f1ae914be6d8125f04553fe2321110c1e"
+    },
+    {
+      "path": "src/canvaspilot/study_workspace.js",
+      "sha256": "62dcac599d6cf7f880a08a2297d2880c238e8a758843ec790a365b18a88bc38c"
+    },
+    {
+      "path": "src/canvaspilot/study_workspace.py",
+      "sha256": "fb791929a7322850d4a92fbf2a7d54a71780e2dd54a0737b84258de09abd0515"
+    },
+    {
+      "path": "src/canvaspilot/submission_comparison.py",
+      "sha256": "ab7445cadf2a22b31d8f8f837b816d90367d5295e90fe73615a459bc2d9101d4"
+    },
+    {
+      "path": "src/canvaspilot/submission_history.py",
+      "sha256": "b007234b9861a68504e36f005ae463943b36b5cd50a3d157532c1cab09fcf9da"
+    },
+    {
+      "path": "tests/course_agenda_fixture.py",
+      "sha256": "ec08ad62bd1a845378514154d2a828e22ee9642bb7af327990e8d3f6899a0d4c"
+    },
+    {
+      "path": "tests/fixtures/assignment_rubric.json",
+      "sha256": "1c7eebf96e3a09b40b934fab219e9c8b7a6258fe881560f53a1c38a8e1b4bc4b"
+    },
+    {
+      "path": "tests/fixtures/page_packet.json",
+      "sha256": "c5d348db60489544c4c2291170d18528f617981a374326c6d3c9059e490fd82b"
+    },
+    {
+      "path": "tests/fixtures/study_workspace_assignments.json",
+      "sha256": "d5d856a6322693388c23369389d1e0249572dcedcaf029c169ca2ef757bbd179"
+    },
+    {
+      "path": "tests/fixtures/submission_comparison.json",
+      "sha256": "2ffc2d6db80b8dfcfd757df80b7b34ed15ef384bfac9ee087f312cf53fe3e7f7"
+    },
+    {
+      "path": "tests/fixtures/submission_feedback.json",
+      "sha256": "435038bef1e6147eb60f60a2269de49df8bfa2fea31736694a7ada4cddfeb95a"
+    },
+    {
+      "path": "tests/folder_http_fixture.py",
+      "sha256": "c7e29a633e66020b9440bbff54ee636889a022fc5a92d4ee2dae193314d72944"
+    },
+    {
+      "path": "tests/grade_review_fixture.py",
+      "sha256": "b09005f728662b346f1a4d8779e6cb3d98d5fcf3ee70abcc2c2a16470038b269"
+    },
+    {
+      "path": "tests/module_progress_fixture.py",
+      "sha256": "d7c724cd5147ff03321247728d99af19039e05d4a4d56d32feaa4303d68260b9"
+    },
+    {
+      "path": "tests/test_announcements_cli.py",
+      "sha256": "40a3b31619b9c364c94d5a261ff63b09ac3ac72ebfcbb79969bd5d2fe374f695"
+    },
+    {
+      "path": "tests/test_announcements_pagination.py",
+      "sha256": "da3393b733f4cc141bfe6ae1c3f3933398519b4ecd77f0ad44017b10a3b48064"
+    },
+    {
+      "path": "tests/test_assignment_brief_rubric.py",
+      "sha256": "cc4bdb56034b32e08a63d4b1ae193e364bfc9b9b4b2a506cf2ef08f43000158c"
+    },
+    {
+      "path": "tests/test_assignment_submission.py",
+      "sha256": "ccf038f9e1fb0bd6c8658041d88bf90d11404ef32baeff3e937b2b514a44e4a5"
+    },
+    {
+      "path": "tests/test_assignment_submission_process.py",
+      "sha256": "6cb60d1ffe02875999ef54ac8770984086b760afbc43ac10aa43fd3139820935"
+    },
+    {
+      "path": "tests/test_broker_encoding.py",
+      "sha256": "1fd19dd35025c9201b2349f565c25932b7f3cd6cc0eff8259eddb0fdc2046b09"
+    },
+    {
+      "path": "tests/test_broker_link_metadata_receiving.py",
+      "sha256": "5b92def5254d9a00a73f6e268903b367664763d440bbfafd3861a570ce2c3ace"
+    },
+    {
+      "path": "tests/test_broker_links.py",
+      "sha256": "a65ea84914e8afe13bdf2c88c9a6107fbc448ed46f00db50ae1d92f5de427028"
+    },
+    {
+      "path": "tests/test_broker_loopback_bind.py",
+      "sha256": "c889696ea86f73f0aa00b1b86f623855c92cd6eccef6b7764910e0df99b5c9e5"
+    },
+    {
+      "path": "tests/test_broker_provider_routing.py",
+      "sha256": "b3b896259c9c0c264988bfe532a66c3ffe4f36033e28597b25367fa76c5c865f"
+    },
+    {
+      "path": "tests/test_broker_readonly.py",
+      "sha256": "fd9baae5e8f176636eb5377fee753facd87c136416dcc2e3ec252090aad9d6c5"
+    },
+    {
+      "path": "tests/test_browser_link_metadata.py",
+      "sha256": "e7bb134adebdaaf9fda596f79b853d0c42bd42ff9aafb4958c1e07a6a0de90d3"
+    },
+    {
+      "path": "tests/test_bundle_api.py",
+      "sha256": "a3c200027083582815bcdacf8b19f68a2a7f2b10597e4ae3270c819c54639615"
+    },
+    {
+      "path": "tests/test_calendar_export.py",
+      "sha256": "0774869f562ab1bdff8d09df38216fab7cc44543ded02be620c2a4e5e3a9e17f"
+    },
+    {
+      "path": "tests/test_calendar_pagination_errors.py",
+      "sha256": "f3738ecd6addd7cd877de90746c0a9e5c64845a2c3a7e8617ad0d3ca4bc4c8a6"
+    },
+    {
+      "path": "tests/test_calendar_session_identity.py",
+      "sha256": "54571e3486e670669a19ac5fa1c10c46136435773487f5b566752bd5ef1e5605"
+    },
+    {
+      "path": "tests/test_course_agenda.py",
+      "sha256": "c4352b2765b4b6348836749fc5dae706a3a2cb98fd71205f922535230f4bdff0"
+    },
+    {
+      "path": "tests/test_course_agenda_peer.py",
+      "sha256": "ead389195c7b8c225151e5a29e732ba8c9839456e89560af64d1b446922832ab"
+    },
+    {
+      "path": "tests/test_course_agenda_process.py",
+      "sha256": "a3701f5d0751e93659c5469a505a84ae33586cea0e3ee977e1783b41d613bd9e"
+    },
+    {
+      "path": "tests/test_discussion_thread.py",
+      "sha256": "22274853b6dfa5f377f9d42b7d9da9fabcf42ac2fdb1248285725148f7f84698"
+    },
+    {
+      "path": "tests/test_discussion_thread_native.py",
+      "sha256": "2793e3f3a09c031e99aa735b487f324fb828671691320bca8481465fc7fccc5b"
+    },
+    {
+      "path": "tests/test_files_completeness.py",
+      "sha256": "71c49d482e18a498dc230b12b9fbacf723d42c1ffe9803f9a1b2f5328a5ad59b"
+    },
+    {
+      "path": "tests/test_fixture.py",
+      "sha256": "3f53176abf7ee425b1ff8d62a0e4b7f84d2e47e0b0ff9f03adae152301bc23be"
+    },
+    {
+      "path": "tests/test_folder_browser.py",
+      "sha256": "4068912fe7d32953c576b1278c28c47c3697592e6a194a230400be13b9cae95c"
+    },
+    {
+      "path": "tests/test_grade_review.py",
+      "sha256": "8341921a36daaacd044e245401e9889bea61100516c5339fb091097b13f21f2e"
+    },
+    {
+      "path": "tests/test_grade_review_export.py",
+      "sha256": "5c73907f0a7f841dc683c9d276247d7e9e29ce1db2d2def83fa8c0b691f676d9"
+    },
+    {
+      "path": "tests/test_grade_review_process.py",
+      "sha256": "a32e69a7b2de05ea38cd87cbe64f3e1731b7c17d1b08949158afdfc4aa3b4969"
+    },
+    {
+      "path": "tests/test_inbox_review.py",
+      "sha256": "b97139af7b9cc51c2c04238eb89d1059745510daf92d44267117ce3d037ff172"
+    },
+    {
+      "path": "tests/test_legacy_metadata_policy.py",
+      "sha256": "9e66b4a135ab4cb70123aad962bec5afb8a18bebe82b7063d39055521235ea93"
+    },
+    {
+      "path": "tests/test_link_context_receiving.py",
+      "sha256": "54c35e25c55e9c19b24f35680bcb2c4aa22e191f197b3894e26de1c730895d6f"
+    },
+    {
+      "path": "tests/test_module_items.py",
+      "sha256": "fd70a1a0f1e880c9c9075633ece8d83a710a47136e102ad675dce55bc844aad6"
+    },
+    {
+      "path": "tests/test_module_progress.py",
+      "sha256": "bdbcf205666ede901fd012764cf009dd90611c1a18089c2e6ce13b242ed081c2"
+    },
+    {
+      "path": "tests/test_module_progress_export.py",
+      "sha256": "75c7ff826494042183970d105690908b64935fdf7f847f692aeda85c194b5003"
+    },
+    {
+      "path": "tests/test_module_progress_export_cli.py",
+      "sha256": "345c5c94a5b0b3c593b46922aef73e53b264bcc00ab66e40c2376650a353ceb5"
+    },
+    {
+      "path": "tests/test_module_progress_process.py",
+      "sha256": "21187c11a7bca557a8b37c0d61933e3532c8c69e628bd618fa62361e0f713826"
+    },
+    {
+      "path": "tests/test_offline_demo.py",
+      "sha256": "ddc7a133e76f987decb5774b00e6d6c6b8973d5895d6c4a4ae5ea6d6e6bb1154"
+    },
+    {
+      "path": "tests/test_page_export.py",
+      "sha256": "8b17008213e04441cbd97a5bd295c55c65edcc4f28bfc55cb5299fc633265d09"
+    },
+    {
+      "path": "tests/test_page_export_process.py",
+      "sha256": "2d406b0a4dc1dc711dffd00094baa3fd574789263f8cc39dae82dc18fbf6b478"
+    },
+    {
+      "path": "tests/test_planner_cli.py",
+      "sha256": "b4ef2333c663e46884150d302f458b7989cff0f83ba27b21ec3343eb1b67d08e"
+    },
+    {
+      "path": "tests/test_quiz_cli.py",
+      "sha256": "43c55180e962c2f966e6a9a6b17d7ac7126180b7ebf72edb9ccaba43f8604ad2"
+    },
+    {
+      "path": "tests/test_strip_html.py",
+      "sha256": "3445579d5d8e0863e3331fd8fe54de7a45bc88db5546186eb60dc70865dce915"
+    },
+    {
+      "path": "tests/test_study_workspace.py",
+      "sha256": "5f1fd04d0b19417cacd9080c00604292cec3fe1a3ed3928a52194981d6ee3ae2"
+    },
+    {
+      "path": "tests/test_study_workspace_cli.py",
+      "sha256": "fd5107115b1036ee13be4357ebab122d091d31ecfa883a7cb898da87544afef7"
+    },
+    {
+      "path": "tests/test_submission_comparison.py",
+      "sha256": "72b1d9b814c38f0e198cf60210a20766c10116723b05e2fcc0b8303a0125eb21"
+    },
+    {
+      "path": "tests/test_submission_comparison_process.py",
+      "sha256": "5f4b96f4a9aa2ba296e02a23650e80bb1cd6e30a05182f6b1eb97f35cc3a0f3e"
+    },
+    {
+      "path": "tests/test_submission_feedback.py",
+      "sha256": "d6669be101562d6d2c88e5e0a6a468f6c82d614960bee65cb294243ebf136be7"
+    },
+    {
+      "path": "tests/test_submission_feedback_native.py",
+      "sha256": "8ad68b80e63d2d448c2b1b9e8821bb6ebf47adc0b5e1ccc9379633bb9495d5fb"
+    },
+    {
+      "path": "tests/test_submission_history.py",
+      "sha256": "a21d440d0a2228972e3d7d6ba1ae85a8b102fdb61319f7b153e37c084cfaea46"
+    },
+    {
+      "path": "tests/test_submission_history_process.py",
+      "sha256": "256bd51e89832be07bab255aeb69fd0bda234fc078e0f89d049463da92950407"
+    },
+    {
+      "path": "tests/test_sync_summary.py",
+      "sha256": "5e40e9207a53d423a139db7de9d43898cf95e26877f351baf15bdc129206a424"
+    },
+    {
+      "path": "tests/test_terminal_page_shape_receiving.py",
+      "sha256": "86d8d4e3556aa436b2eaf8021e67073bdfc44cac4c202791a1bb8608ff53280e"
+    },
+    {
+      "path": "tests/test_token_collection_receiving.py",
+      "sha256": "7ea5e0d80612a532cbe9829851e9c8c065a33f3b2d4a69a871142d46324faa3e"
+    },
+    {
+      "path": "tests/test_token_pagination.py",
+      "sha256": "7845205886f73ab3e8efdb783733a27be6e076c313089689117e5ed612e7923a"
+    },
+    {
+      "path": "src/canvaspilot/discussion_export.py",
+      "sha256": "95e8d7078462a60d4d3f1c4bd46b302bb69598563675f44d5d0326edf69d8cde"
+    },
+    {
+      "path": "tests/test_discussion_export.py",
+      "sha256": "511c0539f7fd507cd1b1d93c362e47bd188538358a1c0548b7125f5fd7510cb4"
+    },
+    {
+      "path": "tests/test_discussion_export_cli.py",
+      "sha256": "59f548a76461608aa2085b6805586d35f9baf66949c3f3f305b5d336cfc357a2"
+    },
+    {
+      "path": "docs/discussion-export.md",
+      "sha256": "b537d5b59673042397e75791e9a42512b881cbdb8e9776e1bde0405e4c53ea91"
+    }
+  ],
+  "all101SourcePinsExact": true
+}

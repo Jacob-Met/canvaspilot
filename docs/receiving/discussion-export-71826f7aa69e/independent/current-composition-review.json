@@ -1,0 +1,94 @@
+{
+  "source_head": "8548037fe4f6b9e1a640cdabdd288a0c3f8751b1",
+  "receiving_target": "b6d73588887ce57a2637ab72ee424a5eb29e543f",
+  "tested_merge": "17a368885b7c4d579ecd9b80dda5afe560091cf2",
+  "tested_tree": "73c7373186df76e1b26be5a3c0a492889b61e938",
+  "target_leaves": 1583,
+  "merge_leaves": 1592,
+  "contribution_delta": [
+    {
+      "path": "README.md",
+      "before": "4ca7211dfb55f21ef94642141a92bde28a3dfca6",
+      "after": "d97e2647390e87db120fc6f37c3bf2f77e486e3a",
+      "source": "61d85c80ced54dbddf289afda4c47cdd80c457aa"
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "before": "2c437f9b76858fa98f06df2ad628270481b15324",
+      "after": "eb123a8b05160bd52f45931e4345898d3acbb78b",
+      "source": "6557cfe0105490a617fdc9da6a33eb902e218d8b"
+    },
+    {
+      "path": "docs/discussion-export.md",
+      "after": "540e37d3f6e4bdb81f28dca525428ccfae533bc2",
+      "source": "540e37d3f6e4bdb81f28dca525428ccfae533bc2"
+    },
+    {
+      "path": "docs/receiving/discussion-export-71826f7aa69e/source/README.md",
+      "after": "5fd9664fdfee821d8a577bd63e54ed5aa6ffd936",
+      "source": "5fd9664fdfee821d8a577bd63e54ed5aa6ffd936"
+    },
+    {
+      "path": "docs/receiving/discussion-export-71826f7aa69e/source/additive-shared-source.patch",
+      "after": "bf1f24adca122289fc3d428c4082cc2cb995a331",
+      "source": "bf1f24adca122289fc3d428c4082cc2cb995a331"
+    },
+    {
+      "path": "docs/receiving/discussion-export-71826f7aa69e/source/author-source-bundle.json",
+      "after": "ee54656fcfe78fe464baf0b4965fae28b45b8a8c",
+      "source": "ee54656fcfe78fe464baf0b4965fae28b45b8a8c"
+    },
+    {
+      "path": "docs/receiving/discussion-export-71826f7aa69e/source/composition.json",
+      "after": "5b077843354bc1633c4af6d933b45d2db0141455",
+      "source": "5b077843354bc1633c4af6d933b45d2db0141455"
+    },
+    {
+      "path": "docs/receiving/discussion-export-71826f7aa69e/source/native-source-cut.received.json",
+      "after": "83df39383dd9acfaf78517ec88436b70b7bece3d",
+      "source": "83df39383dd9acfaf78517ec88436b70b7bece3d"
+    },
+    {
+      "path": "src/canvaspilot/discussion_export.py",
+      "after": "3e6ab7731ce72cdedaef084d3cee6e3f5f539133",
+      "source": "3e6ab7731ce72cdedaef084d3cee6e3f5f539133"
+    },
+    {
+      "path": "tests/test_discussion_export.py",
+      "after": "bedb511d9e2f41da95c56c6caa31bd8cf0e76731",
+      "source": "bedb511d9e2f41da95c56c6caa31bd8cf0e76731"
+    },
+    {
+      "path": "tests/test_discussion_export_cli.py",
+      "after": "18821ea094dc6f295f4294bb6bf3de1c89ad3218",
+      "source": "18821ea094dc6f295f4294bb6bf3de1c89ad3218"
+    }
+  ],
+  "untouched_target_leaves": 1581,
+  "shared_source_reversal": [
+    {
+      "path": "README.md",
+      "addition_blocks": 1,
+      "reverses_exactly_to_target": true,
+      "target_blob": "4ca7211dfb55f21ef94642141a92bde28a3dfca6",
+      "merged_blob": "d97e2647390e87db120fc6f37c3bf2f77e486e3a"
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "addition_blocks": 2,
+      "reverses_exactly_to_target": true,
+      "target_blob": "2c437f9b76858fa98f06df2ad628270481b15324",
+      "merged_blob": "eb123a8b05160bd52f45931e4345898d3acbb78b"
+    }
+  ],
+  "renderer_native_git": "3e6ab7731ce72cdedaef084d3cee6e3f5f539133",
+  "no_execution_repeated": true,
+  "native_dependency_closure": {
+    "reader": "2ed658fcf5cee996a02115742935716f1d039e25",
+    "api": "3ec81dee60bc67d7a80d40b78e85d5c005441b99",
+    "client": "1db4b1135305f7e410025ae7937f9a6cd349f020",
+    "writer": "1b46af8af07d24e24cde54aba393d9f977e77136",
+    "pyproject": "76eba6d30696b4f2733539cd47df6e178bc0f585",
+    "all_exact_in_tested_merge": true
+  }
+}
