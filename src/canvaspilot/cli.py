@@ -195,6 +195,21 @@ def main(argv: list[str] | None = None) -> None:
     history.add_argument("course_id", help="Positive numeric Canvas course ID")
     history.add_argument("assignment_id", help="Positive numeric Canvas assignment ID")
 
+    comparison = sub.add_parser(
+        "compare-submissions", help="Compare two returned submission records in a new offline HTML report",
+        description=(
+            "Select current or history:N, where N is the one-based returned history position. "
+            "Before and after are labels, not a chronology inference. File metadata is compared; "
+            "file bytes are not downloaded."
+        ),
+    )
+    add_common(comparison)
+    comparison.add_argument("course_id", help="Positive numeric Canvas course ID")
+    comparison.add_argument("assignment_id", help="Positive numeric Canvas assignment ID")
+    comparison.add_argument("--before", required=True, help="current or history:N")
+    comparison.add_argument("--after", required=True, help="current or history:N")
+    comparison.add_argument("--out", required=True, type=Path, help="New HTML file; existing paths are protected")
+
     agenda = sub.add_parser(
         "agenda", help="Read selected course events and assignment deadlines together",
         description=(
@@ -491,6 +506,28 @@ def main(argv: list[str] | None = None) -> None:
             finally:
                 http_log.setLevel(previous_level)
             print(json.dumps({"ok": True, "output": str(args.out), **report}, indent=2))
+        elif args.cmd == "compare-submissions":
+            import httpx
+
+            from canvaspilot.client import CanvasAuthError
+            from canvaspilot.submission_comparison import export_submission_comparison
+
+            http_log = logging.getLogger("httpx")
+            previous_level = http_log.level
+            http_log.setLevel(max(http_log.getEffectiveLevel(), logging.WARNING))
+            try:
+                result = export_submission_comparison(
+                    api, args.course_id, args.assignment_id,
+                    before=args.before, after=args.after, out=args.out,
+                )
+            except (CanvasAuthError, httpx.HTTPError, ValueError, TypeError, OSError, RecursionError) as error:
+                print(json.dumps({
+                    "ok": False, "error": type(error).__name__, "message": str(error),
+                }), file=sys.stderr)
+                raise SystemExit(1) from None
+            finally:
+                http_log.setLevel(previous_level)
+            print(json.dumps({"ok": True, **result}, indent=2))
         elif args.cmd == "submission-history":
             import httpx
 

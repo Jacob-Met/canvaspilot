@@ -1,0 +1,607 @@
+{
+  "format": "canvaspilot-comparison-current-composition-v1",
+  "received_parent": "6c4d5d2e7526cddc1aa6c90bfbef2d1188382ad3",
+  "publication_parent": "1bafdaa31f7789d8e561680cb6001bbe38b2da64",
+  "publication_parent_tree": "fc4c5cee949a3a15caf32111af9144cb7eb95b6d",
+  "source_delta": [
+    {
+      "path": "README.md",
+      "old": "ec4830e30ac59b7f0e02cc19e08c14475d32bedf",
+      "new": "bd0d16245c59e4a5cf4badee0e7193c0eb09fdfc",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/grade-review.md",
+      "old": null,
+      "new": "fb2947c53df49c8f934a6ea3f62f25030cd18e61",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/module-progress-export.md",
+      "old": null,
+      "new": "fa650a6b9d8cd51f134b576eb4f40975edef1a4c",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/REVIEW.md",
+      "old": null,
+      "new": "05ededc574ca76570828f0fc50a02788ca550327",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/execution.json",
+      "old": null,
+      "new": "3fb72c1b6d4247cb85e29e98157af2e63a4fa715",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/guard/sitecustomize.py",
+      "old": null,
+      "new": "5110a2e2033ed3e92e113bdb9a86905baf590752",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/manifest.json",
+      "old": null,
+      "new": "93251926fdb716b94a3286addcc19631bcf20078",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/normal-run.tool-output.txt",
+      "old": null,
+      "new": "45a53dd1d7c902c1f59df65ac279bfcfb75f31ed",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/normal/authored-cases.json",
+      "old": null,
+      "new": "6bc6d07388bf827cb7f3654a00c31ac24b65d690",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/normal/cli-containers_absent-guard.json",
+      "old": null,
+      "new": "87839538870efcbe8af0e5711ddf4d5e6c723411",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/normal/cli-containers_empty-guard.json",
+      "old": null,
+      "new": "87839538870efcbe8af0e5711ddf4d5e6c723411",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/normal/cli-containers_null-guard.json",
+      "old": null,
+      "new": "87839538870efcbe8af0e5711ddf4d5e6c723411",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/normal/cli-hidden-guard.json",
+      "old": null,
+      "new": "87839538870efcbe8af0e5711ddf4d5e6c723411",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/normal/cli-values-guard.json",
+      "old": null,
+      "new": "87839538870efcbe8af0e5711ddf4d5e6c723411",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/normal/mcp-guard.json",
+      "old": null,
+      "new": "dea9604d05073eab4aac6df69bae27ed606f1fd5",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/normal/mcp.stderr",
+      "old": null,
+      "new": "60be0d7675d15b982e4bf9c33ecacf5b912cde4f",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/normal/receipt.json",
+      "old": null,
+      "new": "373674b8ed6a27910a45a1a0872b917bd40f1228",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/optimized-run.tool-output.txt",
+      "old": null,
+      "new": "f817c5291392333f72f6fa8b3b9f9b26566ffcda",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/optimized/authored-cases.json",
+      "old": null,
+      "new": "6bc6d07388bf827cb7f3654a00c31ac24b65d690",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/optimized/cli-containers_absent-guard.json",
+      "old": null,
+      "new": "253e6a12a2f0bf6c52789bd6282923ab5a04f6e0",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/optimized/cli-containers_empty-guard.json",
+      "old": null,
+      "new": "253e6a12a2f0bf6c52789bd6282923ab5a04f6e0",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/optimized/cli-containers_null-guard.json",
+      "old": null,
+      "new": "253e6a12a2f0bf6c52789bd6282923ab5a04f6e0",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/optimized/cli-hidden-guard.json",
+      "old": null,
+      "new": "253e6a12a2f0bf6c52789bd6282923ab5a04f6e0",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/optimized/cli-values-guard.json",
+      "old": null,
+      "new": "253e6a12a2f0bf6c52789bd6282923ab5a04f6e0",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/optimized/mcp-guard.json",
+      "old": null,
+      "new": "cee762ae653c04928349640fb91e61edea2f0a74",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/optimized/mcp.stderr",
+      "old": null,
+      "new": "6739e4cc1d42914aec1d634e9345e58372ef45dd",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/optimized/receipt.json",
+      "old": null,
+      "new": "024a9f5627e72fe6911b612d9410b05578c19a5f",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/published-target.json",
+      "old": null,
+      "new": "44f31f8a6ff1661ca439f330999a93ee6d270ec0",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/source-manifest.json",
+      "old": null,
+      "new": "f48e7a0a8bb9287c63409623b64d3f2fea429987",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/grade-values-3dab-20261008/test_grade_value_receiving.py",
+      "old": null,
+      "new": "51e77a9e472f026a306e46c8095b7a72b05edc38",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-39c2b591/PUBLICATION-d15de13f.json",
+      "old": null,
+      "new": "0be27ad91cfd9650b0dcf1edd9b7bbb1c0d968e8",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-39c2b591/README.md",
+      "old": null,
+      "new": "cb68e4f08c8a3466190e13ef5fdcd0f4fccce09b",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-39c2b591/artifact-custody.json",
+      "old": null,
+      "new": "fa923dedf1b636ea0680a58e38e55de0243f7abf",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-39c2b591/author-results.json",
+      "old": null,
+      "new": "2f59ce84a540a6a4c5b84446b038fd562c77ac96",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-39c2b591/current-composition.json",
+      "old": null,
+      "new": "100f39d0a2f39a384802b5fb7ecb9beb6f9b56fe",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-39c2b591/late-current-main.json",
+      "old": null,
+      "new": "7d60d318af88a3a854e63a27137faaa21d6d5c78",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-39c2b591/root-source-review.json",
+      "old": null,
+      "new": "c67b4c6d65347f05dfc740c1a74f720e571278c0",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/ACCEPTANCE.json",
+      "old": null,
+      "new": "8e3e6edf76ec981cf7e1034ff9e0d62ee8f01e6a",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_000.b64",
+      "old": null,
+      "new": "5cdcf60b0e800a895560b4f36a73eb064c3b0286",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_001.b64",
+      "old": null,
+      "new": "5103aac1995f7cd7597d51e791e28bdda7f3c9b4",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_002.b64",
+      "old": null,
+      "new": "84429e4c1d5d6e58a0ecf10db12177dd1bde308f",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_003.b64",
+      "old": null,
+      "new": "1abd25dec6496920fa6d3c337fdd351358e80f4c",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_004.b64",
+      "old": null,
+      "new": "f4b06a1e697e37108c690f85cf591fbd2515b057",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_005.b64",
+      "old": null,
+      "new": "a3b10e61c52b40b8679dc5073e7748e8a58596a1",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_006.b64",
+      "old": null,
+      "new": "f6411d775a8b18fd7d758c34a8f4996ddc39122c",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_007.b64",
+      "old": null,
+      "new": "d513d987ef09ebbda8b5216aa5cc07ea70fb89b6",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_008.b64",
+      "old": null,
+      "new": "9f82a4ee570fa39ca53e307142ec683ded85152d",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_009.b64",
+      "old": null,
+      "new": "f5fc25b39b4c5f6f88645b309b6cebff97edfeba",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_010.b64",
+      "old": null,
+      "new": "78a9931a0d5318abd2309948a85c0d9fe7c3065e",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_011.b64",
+      "old": null,
+      "new": "bbae9fbf53f00af39d9b2f6515137d3f4b804e3f",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_012.b64",
+      "old": null,
+      "new": "173febeb6363545f4e860af3993708e8476309e2",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_013.b64",
+      "old": null,
+      "new": "6ad374f083e788125f7c6db8520d8a4f55c50efe",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_014.b64",
+      "old": null,
+      "new": "b476c9ad03d2d087b44839c3fce16b56c2ede8f4",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_015.b64",
+      "old": null,
+      "new": "2b2e61ca68854efc78cad927597f49b4df915930",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_016.b64",
+      "old": null,
+      "new": "83e8e11621371cd454155077bd19d0becc2483fa",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_017.b64",
+      "old": null,
+      "new": "bf0259239b11073af7150cf6bcbcf78188f27aa5",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_018.b64",
+      "old": null,
+      "new": "ba3cc28c75cf542cb29a5af32cd32bd5afdb4c7c",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/RAW_MANIFEST.json",
+      "old": null,
+      "new": "afdaec10ec8ea1473fbe8c1c441592e2dabb6124",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/REPLAY.md",
+      "old": null,
+      "new": "681386b8a55aac3941d0e1a8cb565f9bfa64dd85",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/REVIEW.md",
+      "old": null,
+      "new": "0c55366043ed7ebce13ef9267c9f38b348498019",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/SOURCE.json",
+      "old": null,
+      "new": "2f273c5ca9cd751861952f682193a3515003851a",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/browser_receiver_v2.mjs",
+      "old": null,
+      "new": "3aae438400b4c69f37ed59d85839d290450cbec6",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/candidate_receiver_v2.py",
+      "old": null,
+      "new": "73c596ac0a525e156e3f04a5e5e83fdfbc02e966",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/independent_fixture_v1.py",
+      "old": null,
+      "new": "c59ddb7f69f9545b87aebc81c5bb2d3e83b98e2e",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/producer_receiver_v1.py",
+      "old": null,
+      "new": "f5f2bb1d4fdfc94320fa4dc054430fef13e98dc9",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "docs/receiving/module-progress-export-independent-39c2b591/unpack-receiving.py",
+      "old": null,
+      "new": "f12facfb263b0780eac4efc57e9f6d0b590a211c",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "src/canvaspilot/api.py",
+      "old": "cd17584bed618fb4a42d7128d204b2683b889600",
+      "new": "3ec81dee60bc67d7a80d40b78e85d5c005441b99",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "src/canvaspilot/bundle.py",
+      "old": "293c02dc86520d9d11907d47d014d2f73aa56fc0",
+      "new": "c2544032a1cfcdc116725c6403ff09d7b0328f87",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "old": "226f3f7d502dd61ad03c59cd8212289d133a0190",
+      "new": "8d6644d0e1b916ca38a578147db8392a2e92d226",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "src/canvaspilot/grade_review.py",
+      "old": null,
+      "new": "24d93cb693af09cf5123f31fea90e77a589b023c",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "src/canvaspilot/mcp_server.py",
+      "old": "34e9a2fad9d361718f5a9d4f3a89a3a42537b8fc",
+      "new": "0f7130673b3a139abdacb588410edb23a01dc56d",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "src/canvaspilot/module_progress_export.py",
+      "old": null,
+      "new": "8ccb9f1262790a744418d4212e072ee43031ab88",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "tests/grade_review_fixture.py",
+      "old": null,
+      "new": "556e0df9e64a1cac9c8403e3b3ce648099e1c639",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "tests/test_grade_review.py",
+      "old": null,
+      "new": "272343a2721919d64622fbbb99967f58226c6519",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "tests/test_grade_review_process.py",
+      "old": null,
+      "new": "b699570e59cac8c573a571f1d10da8624266849f",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "tests/test_module_progress_export.py",
+      "old": null,
+      "new": "10ad56e53ecbdc7945471fe119a64a54cfd0c274",
+      "mode": "100644",
+      "type": "blob"
+    },
+    {
+      "path": "tests/test_module_progress_export_cli.py",
+      "old": null,
+      "new": "6c51c60c505bd3d76468d569f8b07e1952c47e87",
+      "mode": "100644",
+      "type": "blob"
+    }
+  ],
+  "cli_additions": {
+    "parser_sha256": "6ec0ba1a84cddf7b9a26e376b10c84e83c47de7929484da81e879737cd425b3e",
+    "dispatch_sha256": "ba732683a45fa939a269b9bf2c7de33a705d7d7a24565351b5f0aaf801c88581",
+    "removing_exact_additions_reconstructs_current_cli": true
+  },
+  "readme_addition": {
+    "sha256": "4b626965f95866ce245a6dbceaacf68df4c4ac53664fb18775e3fc13c9668402",
+    "removing_exact_addition_reconstructs_current_readme": true
+  },
+  "prepublication_anchor_refusal": "First in-memory README composition refused an anchor spanning the old MCP tool count. No source or GitHub mutation occurred. The same complete comparison line was inserted after the unique unchanged history line; removing it reconstructs the new canonical README exactly.",
+  "inherited_api_change": "@@ -171,6 +171,12 @@ def list_courses(self, *, enrollment_state: str = \"active\") -> list[dict[str, An\n             if isinstance(c, dict) and c.get(\"id\")\n         ]\n \n+    def grade_review(self, course_id: int | str) -> dict[str, Any]:\n+        \"\"\"Review only Canvas-reported current-user grades and group context.\"\"\"\n+        from canvaspilot.grade_review import grade_review\n+\n+        return grade_review(self.client, course_id)\n+\n     def list_assignments(\n         self,\n         course_id: int | str,",
+  "comparison_history_reader_unchanged": true,
+  "frozen_product_files_unchanged": true,
+  "contributions": [
+    {
+      "path": "src/canvaspilot/submission_comparison.py",
+      "sha256": "ab7445cadf2a22b31d8f8f837b816d90367d5295e90fe73615a459bc2d9101d4",
+      "git_blob": "f8e2b9bfef5bb799bd75c6c1f3c6e56366fcf9ad",
+      "bytes": 27015
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "sha256": "0dc417dd09cbb698ae87417ded5337d5b55306ebbd41eca7552a02adf118b572",
+      "git_blob": "9c7b81af8c861074649e4016bedf73a7f24968f5",
+      "bytes": 25913
+    },
+    {
+      "path": "README.md",
+      "sha256": "74ed3d5ac7975ec75cd87cf87f2d9f17bf276a42e90c5b4744e63963e6cbf1a9",
+      "git_blob": "156e09a91664317afe673520f3621a8b25774541",
+      "bytes": 24898
+    },
+    {
+      "path": "docs/submission-comparison.md",
+      "sha256": "80d83955ea364ec31442eebea1de3a769a60ee40fdfdace8f139956f8f8f2b66",
+      "git_blob": "db1a10adf0d3b23ba88f4f0717b5a201f5470883",
+      "bytes": 6580
+    },
+    {
+      "path": "tests/fixtures/submission_comparison.json",
+      "sha256": "2ffc2d6db80b8dfcfd757df80b7b34ed15ef384bfac9ee087f312cf53fe3e7f7",
+      "git_blob": "d2b1002639523ee1d54843bbab016207dfcc2d75",
+      "bytes": 3203
+    },
+    {
+      "path": "tests/test_submission_comparison.py",
+      "sha256": "72b1d9b814c38f0e198cf60210a20766c10116723b05e2fcc0b8303a0125eb21",
+      "git_blob": "d064dc3512251052d6f0005e9a4774288ed0f8d4",
+      "bytes": 14872
+    },
+    {
+      "path": "tests/test_submission_comparison_process.py",
+      "sha256": "5f4b96f4a9aa2ba296e02a23650e80bb1cd6e30a05182f6b1eb97f35cc3a0f3e",
+      "git_blob": "e06ecf06a889f587a9d17eb962d1fd6cc532342a",
+      "bytes": 8725
+    }
+  ],
+  "qualification_boundary": "Native author and independent-root receiving inputs are the frozen 6c4d5d2 composition. Publication composes the exact renderer/tests/fixture/guide and exact additive CLI/README spans on main containing grade review and offline module-progress export. Hosted CI must qualify this full publication tree.",
+  "inherited_module_export_change": "@@ -155,6 +155,16 @@ def add_common(p: argparse.ArgumentParser) -> None:\n     progress.add_argument(\"course_id\", help=\"Positive numeric Canvas course ID\")\n     progress.add_argument(\"--module-id\", default=None, help=\"Inspect one returned module ID\")\n \n+    progress_export = sub.add_parser(\n+        \"export-module-progress\", help=\"Save reported module progress to a new offline HTML file\",\n+    )\n+    add_common(progress_export)\n+    progress_export.add_argument(\"course_id\", type=_positive_int)\n+    progress_export.add_argument(\"--module-id\", type=_positive_int, default=None)\n+    progress_export.add_argument(\n+        \"--out\", required=True, type=Path, help=\"New HTML report; existing paths are protected\",\n+    )\n+\n     history = sub.add_parser(\n         \"submission-history\",\n         help=\"Read your returned submission versions and their submitted content\",\n@@ -380,6 +390,35 @@ def add_common(p: argparse.ArgumentParser) -> None:\n             finally:\n                 http_log.setLevel(previous_level)\n             print(json.dumps(result, indent=2))\n+        elif args.cmd == \"export-module-progress\":\n+            import os\n+\n+            import httpx\n+\n+            from canvaspilot.calendar_export import write_calendar\n+            from canvaspilot.client import CanvasAuthError, CanvasPaginationError\n+            from canvaspilot.module_progress_export import build_module_progress_report\n+\n+            http_log = logging.getLogger(\"httpx\")\n+            previous_level = http_log.level\n+            http_log.setLevel(max(http_log.getEffectiveLevel(), logging.WARNING))\n+            try:\n+                if os.path.lexists(args.out):\n+                    raise FileExistsError(\"Output path already exists; choose a new HTML file\")\n+                content, report = build_module_progress_report(\n+                    api, args.course_id, module_id=args.module_id,\n+                )\n+                # The existing calendar publisher writes arbitrary complete bytes\n+                # to a new file; it never replaces a path or follows its symlink.\n+                write_calendar(args.out, content)\n+            except (CanvasAuthError, CanvasPaginationError, httpx.HTTPError, ValueError, TypeError, OSError) as error:\n+                print(json.dumps({\n+                    \"ok\": False, \"error\": type(error).__name__, \"message\": str(error),\n+                }), file=sys.stderr)\n+                raise SystemExit(1) from None\n+            finally:\n+                http_log.setLevel(previous_level)\n+            print(json.dumps({\"ok\": True, \"output\": str(args.out), **report}, indent=2))\n         elif args.cmd == \"submission-history\":\n             import httpx\n ",
+  "unchanged_receiving_surface": "The history reader and its API wrapper remain unchanged. The newly inherited grade-review API method and export-module-progress CLI parser/dispatch are disjoint from the exact comparison additions."
+}

@@ -14,6 +14,7 @@ Same architecture as OpenCLI-style web agents (persistent browser session → si
 - **Agent-shaped digests** — `assignment_brief` (cleaned prompt + rubric), `sync_summary` (courses + upcoming), `submission_status`
 - **Submission feedback** — self submission comments and rubric assessments alongside current-attempt and grading metadata
 - **Submission history** — inspect returned attempts and submitted text/file metadata without assigning current grades or comments to earlier versions ([guide](docs/submission-history.md))
+- **Submission comparison** — read two explicitly selected returned records side by side in a new offline HTML report, with exact source JSON ([guide](docs/submission-comparison.md))
 - **Course grade review** — reported totals, assignment-group rules and each returned assignment's own grade/status, with hidden and unknown values kept explicit
 - **Fixture mode** — offline dict backend for tests and CI; no Canvas required
 - **40 MCP tools**, one stdio server, one env var for the host (`CANVAS_BASE_URL`) plus either a PAT or a running session broker
