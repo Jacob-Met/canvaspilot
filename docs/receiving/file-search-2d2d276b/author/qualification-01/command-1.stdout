@@ -1,0 +1,121 @@
+TRY004 Prefer `TypeError` exception for invalid type
+  --> src/canvaspilot/file_search.py:27:13
+   |
+25 |     for value in course_ids:
+26 |         if isinstance(value, bool) or not isinstance(value, (str, int)):
+27 |             raise ValueError("course IDs must contain 1 to 20 ASCII decimal digits")
+   |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+28 |         raw = str(value)
+29 |         if not 1 <= len(raw) <= 20 or not raw.isascii() or not raw.isdecimal():
+   |
+
+TRY004 Prefer `TypeError` exception for invalid type
+  --> src/canvaspilot/file_search.py:59:17
+   |
+57 |         for key, item in value.items():
+58 |             if not isinstance(key, str):
+59 |                 raise ValueError("file metadata must have string JSON object keys")
+   |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+60 |             _require_json(item)
+61 |         return
+   |
+
+TRY004 Prefer `TypeError` exception for invalid type
+  --> src/canvaspilot/file_search.py:89:13
+   |
+87 |         rows = api.list_files(course_id)
+88 |         if not isinstance(rows, list):
+89 |             raise ValueError("course file metadata must be a list")
+   |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+90 |         if len(rows) > MAX_FILES_PER_COURSE:
+91 |             raise ValueError("course file metadata exceeds 2000 returned rows")
+   |
+
+TRY004 Prefer `TypeError` exception for invalid type
+   --> src/canvaspilot/file_search.py:100:17
+    |
+ 98 |         for position, row in enumerate(rows, 1):
+ 99 |             if not isinstance(row, dict):
+100 |                 raise ValueError("each returned file metadata row must be an object")
+    |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+101 |             total_bytes += _source_size(row)
+102 |             if total_bytes > MAX_SOURCE_BYTES:
+    |
+
+I001 [*] Import block is un-sorted or un-formatted
+ --> tests/test_file_search.py:3:1
+  |
+1 |   """Maintained behavior checks for selected-course file-name search."""
+2 |
+3 | / from copy import deepcopy
+4 | | import json
+5 | |
+6 | | import pytest
+7 | |
+8 | | from canvaspilot.file_search import find_files, validate_request
+  | |________________________________________________________________^
+help: Organize imports
+  |
+2 |
+3 + import json
+4 | from copy import deepcopy
+  - import json
+5 |
+  |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> tests/test_file_search_cli.py:3:1
+   |
+ 1 |   """Actual native CLI, HTTP pagination, complete output and lifecycle checks."""
+ 2 |
+ 3 | / from contextlib import contextmanager
+ 4 | | from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+ 5 | | import json
+ 6 | | import logging
+ 7 | | import os
+ 8 | | from pathlib import Path
+ 9 | | import subprocess
+10 | | import sys
+11 | | import threading
+12 | | from urllib.parse import parse_qs, urlsplit
+13 | |
+14 | | import pytest
+15 | |
+16 | | from canvaspilot import cli
+17 | | from canvaspilot.client import CanvasClient
+   | |___________________________________________^
+18 |
+19 |   SOURCE = Path(__file__).resolve().parents[1] / "src"
+   |
+help: Organize imports
+   |
+2  |
+   - from contextlib import contextmanager
+   - from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+3  | import json
+4  | import logging
+5  | import os
+   - from pathlib import Path
+6  | import subprocess
+7  | import sys
+8  | import threading
+9  + from contextlib import contextmanager
+10 + from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+11 + from pathlib import Path
+12 | from urllib.parse import parse_qs, urlsplit
+   |
+
+PLW1510 `subprocess.run` without explicit `check` argument
+  --> tests/test_file_search_cli.py:67:12
+   |
+65 |         "HOME": str(tmp_path / "home"), "NO_PROXY": "127.0.0.1",
+66 |     })
+67 |     return subprocess.run([
+   |            ^^^^^^^^^^^^^^
+68 |         sys.executable, "-B", "-m", "canvaspilot.cli", *args,
+69 |         "--base-url", origin, "--token", "synthetic-file-search-only",
+   |
+help: Add explicit `check=False`
+
+Found 7 errors.
+[*] 2 fixable with the `--fix` option.

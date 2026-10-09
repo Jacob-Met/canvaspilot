@@ -1,0 +1,57 @@
+{
+  "schema": "hamon.canvas.file-search.root-acceptance.v1",
+  "at": "2026-10-09T01:47:39.958733+00:00",
+  "reviewer": "hamon-ultra-20261008-1657-2d2d276b/root",
+  "state": "independently_accepted_exact_native_product",
+  "repository": "Jacob-Met/canvaspilot",
+  "product": "94fb3a02a06b235dc46e25dab5c03012f202eec9",
+  "tree": "721a263dedbb1ad8a2d230eed536cbad35dbe89a",
+  "base": "56a72a2e2cee5ec04671d12ebe5bc2484afb8026",
+  "contract_sha256": "34c12b41e1f9824a1b7da1f5173bf3f5efa8f02094f560f16b35fd02a4479e57",
+  "oracle_freeze_sha256": "f996d9430ea036fbbeffabd780c97c3dc60ffa6c88b5b369e1a8ed3790193cf6",
+  "original_receiver_sha256": "25c4e1c095292e518d4554ca77e0bbcabc7435d2a70b8c5413461ea2834709da",
+  "candidate_receiver_sha256": "c657b59f5051e0c172d0e5ef25cacc63fa608484af91340df7f26d3b978e6ce4",
+  "independent_groups_passed": 18,
+  "independent_groups_failed": 0,
+  "original_real_cli_invocations": 2,
+  "candidate_real_cli_invocations": 16,
+  "source_review": {
+    "new_helper_read_in_full": true,
+    "three_additive_CLI_insertions_read_in_full": true,
+    "inverse_exactly_restores_original_CLI": true,
+    "README_append_preserves_every_original_byte": true,
+    "new_guide_read_in_full": true,
+    "all_1614_unrelated_base_leaves_preserved": true,
+    "existing_API_client_auth_pagination_and_commands_unchanged": true,
+    "admission": "Whole selected-course and literal UTF8 query preflight precedes client construction; strict JSON/budgets apply after the unchanged returned projection.",
+    "matching": "Independent casefold substrings preserve field and occurrence order; no concatenation, normalization, coercion, ranking or URL dereference.",
+    "errors": "Transport exceptions retain identity at the helper boundary; CLI preserves structured whole-result refusal, existing client close and exact caller logger level.",
+    "retention": "Matches retain complete returned dictionaries and duplicate positions; the guide distinguishes projected nulls from raw-field absence and warns against content/access/freshness inference."
+  },
+  "native_receiving": {
+    "host": "hamon-thinkpad",
+    "runtime": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+    "python": "/home/jacob/canvaspilot-enrollments-env-65ae877160f6/bin/python",
+    "source_package_files": 33,
+    "source_unchanged": true,
+    "socket_rejections": 0,
+    "owned_listener_closed": true,
+    "original_failure": "Desired find-files result fails with argparse exit2/no requests on untouched base; healthy original files control performs2 real HTTP pages.",
+    "healthy_candidate": "Three-course result preserves5 normalized rows,3 matching occurrences and unavailable-name diagnostics through4 GETs; repeated output exact."
+  },
+  "preserved_failures": [
+    "Original author module-entry mistake",
+    "Original author inherited-files-stderr expectation/lint run",
+    "Independent initial wrong-owner Git read refusal",
+    "Original absent-command desired-case failure"
+  ],
+  "boundaries": {
+    "no_candidate_receiving_reruns": true,
+    "no_oracle_revisions_after_freeze": true,
+    "no_real_Canvas_account_school_browser_model_or_download": true,
+    "no_windows_or_installed_deployment_claim": true,
+    "no_LA7_calls": true,
+    "no_GitHub_Actions_or_publication_in_this_receiver": true,
+    "publication": "Normal required/current-source gates remain separate; current Git donor older-history gap must remain explicit."
+  }
+}

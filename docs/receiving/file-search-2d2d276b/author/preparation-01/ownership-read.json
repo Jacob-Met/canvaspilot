@@ -1,0 +1,440 @@
+{
+  "source": "Read-only GitHub connector, received during native pre-claim discovery",
+  "main": {
+    "ref": "refs/heads/main",
+    "node_id": "REF_kwDOUO9kpq9yZWZzL2hlYWRzL21haW4",
+    "url": "https://api.github.com/repos/Jacob-Met/canvaspilot/git/refs/heads/main",
+    "object": {
+      "sha": "56a72a2e2cee5ec04671d12ebe5bc2484afb8026",
+      "type": "commit",
+      "url": "https://api.github.com/repos/Jacob-Met/canvaspilot/git/commits/56a72a2e2cee5ec04671d12ebe5bc2484afb8026"
+    }
+  },
+  "open_issue_and_pr_count": 25,
+  "open_rows": [
+    {
+      "number": 99,
+      "url": "https://github.com/Jacob-Met/canvaspilot/issues/99",
+      "title": "Find policy phrases across selected course syllabi",
+      "state": "open",
+      "updated_at": "2026-10-08T23:17:44Z",
+      "pull_request": false
+    },
+    {
+      "number": 98,
+      "url": "https://github.com/Jacob-Met/canvaspilot/issues/98",
+      "title": "Save one course module's readings and assignment briefs as an offline study packet",
+      "state": "open",
+      "updated_at": "2026-10-09T01:04:02Z",
+      "pull_request": false
+    },
+    {
+      "number": 97,
+      "url": "https://github.com/Jacob-Met/canvaspilot/issues/97",
+      "title": "Keep a local rubric self-check with criterion notes before submission",
+      "state": "open",
+      "updated_at": "2026-10-08T22:00:56Z",
+      "pull_request": false
+    },
+    {
+      "number": 96,
+      "url": "https://github.com/Jacob-Met/canvaspilot/issues/96",
+      "title": "Read the current user's classic quiz attempt through API, CLI and MCP",
+      "state": "open",
+      "updated_at": "2026-10-08T21:43:25Z",
+      "pull_request": false
+    },
+    {
+      "number": 95,
+      "url": "https://github.com/Jacob-Met/canvaspilot/pull/95",
+      "title": "Find literal text in course-page titles and available bodies",
+      "state": "open",
+      "updated_at": "2026-10-08T21:24:31Z",
+      "pull_request": true
+    },
+    {
+      "number": 94,
+      "url": "https://github.com/Jacob-Met/canvaspilot/issues/94",
+      "title": "Read all available activity-stream pages through API and CLI",
+      "state": "open",
+      "updated_at": "2026-10-08T21:56:35Z",
+      "pull_request": false
+    },
+    {
+      "number": 93,
+      "url": "https://github.com/Jacob-Met/canvaspilot/issues/93",
+      "title": "Find instruction text across selected-course assignments",
+      "state": "open",
+      "updated_at": "2026-10-08T21:46:11Z",
+      "pull_request": false
+    },
+    {
+      "number": 92,
+      "url": "https://github.com/Jacob-Met/canvaspilot/issues/92",
+      "title": "Find literal text in course-page titles and available bodies",
+      "state": "open",
+      "updated_at": "2026-10-08T20:41:11Z",
+      "pull_request": false
+    },
+    {
+      "number": 91,
+      "url": "https://github.com/Jacob-Met/canvaspilot/pull/91",
+      "title": "Save discussion threads with reply context for offline reading",
+      "state": "open",
+      "updated_at": "2026-10-08T23:19:22Z",
+      "pull_request": true
+    },
+    {
+      "number": 89,
+      "url": "https://github.com/Jacob-Met/canvaspilot/pull/89",
+      "title": "Test announcement-search completeness at the 40-page boundary",
+      "state": "open",
+      "updated_at": "2026-10-08T20:16:28Z",
+      "pull_request": true
+    },
+    {
+      "number": 88,
+      "url": "https://github.com/Jacob-Met/canvaspilot/issues/88",
+      "title": "Save an inbox conversation for offline reading without marking it read",
+      "state": "open",
+      "updated_at": "2026-10-09T01:09:29Z",
+      "pull_request": false
+    },
+    {
+      "number": 85,
+      "url": "https://github.com/Jacob-Met/canvaspilot/issues/85",
+      "title": "Save a discussion thread with reply context for offline reading",
+      "state": "open",
+      "updated_at": "2026-10-08T19:13:25Z",
+      "pull_request": false
+    },
+    {
+      "number": 83,
+      "url": "https://github.com/Jacob-Met/canvaspilot/issues/83",
+      "title": "Read current-user to-do items through the native CLI",
+      "state": "open",
+      "updated_at": "2026-10-09T00:28:46Z",
+      "pull_request": false
+    },
+    {
+      "number": 81,
+      "url": "https://github.com/Jacob-Met/canvaspilot/pull/81",
+      "title": "Keep long feedback headings readable on screen and paper",
+      "state": "open",
+      "updated_at": "2026-10-08T18:01:09Z",
+      "pull_request": true
+    },
+    {
+      "number": 60,
+      "url": "https://github.com/Jacob-Met/canvaspilot/pull/60",
+      "title": "Save submission feedback as a readable local HTML sheet",
+      "state": "open",
+      "updated_at": "2026-10-08T17:58:02Z",
+      "pull_request": true
+    },
+    {
+      "number": 28,
+      "url": "https://github.com/Jacob-Met/canvaspilot/pull/28",
+      "title": "T164 demo: untested lines should FAIL the diff-cover gate",
+      "state": "open",
+      "updated_at": "2026-10-07T19:37:00Z",
+      "pull_request": true
+    },
+    {
+      "number": 27,
+      "url": "https://github.com/Jacob-Met/canvaspilot/pull/27",
+      "title": "T164: diff-cover CI gate with per-file baseline (pilot)",
+      "state": "open",
+      "updated_at": "2026-10-07T19:04:17Z",
+      "pull_request": true
+    },
+    {
+      "number": 25,
+      "url": "https://github.com/Jacob-Met/canvaspilot/pull/25",
+      "title": "T156: pin pypi lockfile for mcp SDK consumers + CI freshness gate",
+      "state": "open",
+      "updated_at": "2026-10-07T03:19:29Z",
+      "pull_request": true
+    },
+    {
+      "number": 24,
+      "url": "https://github.com/Jacob-Met/canvaspilot/pull/24",
+      "title": "T158: Add SHA-pinned gitleaks secret-scan CI gate",
+      "state": "open",
+      "updated_at": "2026-10-07T01:34:40Z",
+      "pull_request": true
+    },
+    {
+      "number": 23,
+      "url": "https://github.com/Jacob-Met/canvaspilot/pull/23",
+      "title": "docs: add agent operations handbook (T133)",
+      "state": "open",
+      "updated_at": "2026-10-07T03:15:08Z",
+      "pull_request": true
+    },
+    {
+      "number": 22,
+      "url": "https://github.com/Jacob-Met/canvaspilot/issues/22",
+      "title": "[security] Full unauthenticated HTTP surface inventory \u2014 session broker (tip fa75dab5)",
+      "state": "open",
+      "updated_at": "2026-10-05T18:42:35Z",
+      "pull_request": false
+    },
+    {
+      "number": 9,
+      "url": "https://github.com/Jacob-Met/canvaspilot/pull/9",
+      "title": "[security] Shared-secret auth for session-broker localhost API (proposal for #5)",
+      "state": "open",
+      "updated_at": "2026-10-05T15:41:55Z",
+      "pull_request": true
+    },
+    {
+      "number": 8,
+      "url": "https://github.com/Jacob-Met/canvaspilot/pull/8",
+      "title": "Draft: broker shared-secret auth for localhost API (X-Broker-Token)",
+      "state": "open",
+      "updated_at": "2026-10-04T00:50:34Z",
+      "pull_request": true
+    },
+    {
+      "number": 7,
+      "url": "https://github.com/Jacob-Met/canvaspilot/pull/7",
+      "title": "broker: require shared-secret token on /fetch, /status, /shutdown",
+      "state": "open",
+      "updated_at": "2026-10-07T18:39:21Z",
+      "pull_request": true
+    },
+    {
+      "number": 5,
+      "url": "https://github.com/Jacob-Met/canvaspilot/issues/5",
+      "title": "[security] session-broker localhost API is unauthenticated \u2014 decision needed on mitigations",
+      "state": "open",
+      "updated_at": "2026-10-05T15:41:58Z",
+      "pull_request": false
+    }
+  ],
+  "open_prs": [
+    {
+      "number": 95,
+      "url": "https://github.com/Jacob-Met/canvaspilot/pull/95",
+      "title": "Find literal text in course-page titles and available bodies",
+      "state": "open",
+      "draft": true,
+      "head": "c36264e588ef7ec007d0ed5ee62a38fc5ed9b40f",
+      "base": "56a72a2e2cee5ec04671d12ebe5bc2484afb8026"
+    },
+    {
+      "number": 91,
+      "url": "https://github.com/Jacob-Met/canvaspilot/pull/91",
+      "title": "Save discussion threads with reply context for offline reading",
+      "state": "open",
+      "draft": true,
+      "head": "8548037fe4f6b9e1a640cdabdd288a0c3f8751b1",
+      "base": "b6d73588887ce57a2637ab72ee424a5eb29e543f"
+    },
+    {
+      "number": 89,
+      "url": "https://github.com/Jacob-Met/canvaspilot/pull/89",
+      "title": "Test announcement-search completeness at the 40-page boundary",
+      "state": "open",
+      "draft": false,
+      "head": "e0b9ffa52d21440107797937eb932ba0ba2cb5d4",
+      "base": "b6d73588887ce57a2637ab72ee424a5eb29e543f"
+    },
+    {
+      "number": 81,
+      "url": "https://github.com/Jacob-Met/canvaspilot/pull/81",
+      "title": "Keep long feedback headings readable on screen and paper",
+      "state": "open",
+      "draft": false,
+      "head": "de376366be88d81d80b38bb4d61e25e735ea6899",
+      "base": "8c8d3b846f3c80f19ae5f37f9f35adf51ec081fc"
+    },
+    {
+      "number": 60,
+      "url": "https://github.com/Jacob-Met/canvaspilot/pull/60",
+      "title": "Save submission feedback as a readable local HTML sheet",
+      "state": "open",
+      "draft": false,
+      "head": "8c8d3b846f3c80f19ae5f37f9f35adf51ec081fc",
+      "base": "728d2d8b67b6f0812956fecdeeb50e25ee32e979"
+    },
+    {
+      "number": 28,
+      "url": "https://github.com/Jacob-Met/canvaspilot/pull/28",
+      "title": "T164 demo: untested lines should FAIL the diff-cover gate",
+      "state": "open",
+      "draft": false,
+      "head": "0f37f89c548d0e677ae4c4ca7aa8dc20d15dae0b",
+      "base": "b0655cfc6f298c956fcdd27fbba32e3c5609516f"
+    },
+    {
+      "number": 27,
+      "url": "https://github.com/Jacob-Met/canvaspilot/pull/27",
+      "title": "T164: diff-cover CI gate with per-file baseline (pilot)",
+      "state": "open",
+      "draft": false,
+      "head": "d5462863bad2d0abab4656ad6b6ea5fe8426b936",
+      "base": "b0655cfc6f298c956fcdd27fbba32e3c5609516f"
+    },
+    {
+      "number": 25,
+      "url": "https://github.com/Jacob-Met/canvaspilot/pull/25",
+      "title": "T156: pin pypi lockfile for mcp SDK consumers + CI freshness gate",
+      "state": "open",
+      "draft": false,
+      "head": "e33e562344686664464fa30eecbd4b4c866d7543",
+      "base": "b0655cfc6f298c956fcdd27fbba32e3c5609516f"
+    },
+    {
+      "number": 24,
+      "url": "https://github.com/Jacob-Met/canvaspilot/pull/24",
+      "title": "T158: Add SHA-pinned gitleaks secret-scan CI gate",
+      "state": "open",
+      "draft": false,
+      "head": "259e62af72e1af8c1d01d98cbba05acf5bcfcd8e",
+      "base": "b0655cfc6f298c956fcdd27fbba32e3c5609516f"
+    },
+    {
+      "number": 23,
+      "url": "https://github.com/Jacob-Met/canvaspilot/pull/23",
+      "title": "docs: add agent operations handbook (T133)",
+      "state": "open",
+      "draft": false,
+      "head": "56d06e7c07b1761fa93f282f60b1d35079089ccb",
+      "base": "b0655cfc6f298c956fcdd27fbba32e3c5609516f"
+    },
+    {
+      "number": 9,
+      "url": "https://github.com/Jacob-Met/canvaspilot/pull/9",
+      "title": "[security] Shared-secret auth for session-broker localhost API (proposal for #5)",
+      "state": "open",
+      "draft": false,
+      "head": "e1a100a8e589fd65e98db1c42557eda80b00d960",
+      "base": "e5985068e64643152919f64d89540dae3dcf70e7"
+    },
+    {
+      "number": 8,
+      "url": "https://github.com/Jacob-Met/canvaspilot/pull/8",
+      "title": "Draft: broker shared-secret auth for localhost API (X-Broker-Token)",
+      "state": "open",
+      "draft": true,
+      "head": "a33769661556002489f7b105c504ba62e5e51c10",
+      "base": "e5985068e64643152919f64d89540dae3dcf70e7"
+    },
+    {
+      "number": 7,
+      "url": "https://github.com/Jacob-Met/canvaspilot/pull/7",
+      "title": "broker: require shared-secret token on /fetch, /status, /shutdown",
+      "state": "open",
+      "draft": false,
+      "head": "8aa08f7da57c2061e7e4a92b58253f8a97e3db38",
+      "base": "e5985068e64643152919f64d89540dae3dcf70e7"
+    }
+  ],
+  "all_state_files_search": [
+    {
+      "number": 88,
+      "url": "https://github.com/Jacob-Met/canvaspilot/issues/88",
+      "title": "Save an inbox conversation for offline reading without marking it read"
+    },
+    {
+      "number": 98,
+      "url": "https://github.com/Jacob-Met/canvaspilot/issues/98",
+      "title": "Save one course module's readings and assignment briefs as an offline study packet"
+    },
+    {
+      "number": 83,
+      "url": "https://github.com/Jacob-Met/canvaspilot/issues/83",
+      "title": "Read current-user to-do items through the native CLI"
+    },
+    {
+      "number": 99,
+      "url": "https://github.com/Jacob-Met/canvaspilot/issues/99",
+      "title": "Find policy phrases across selected course syllabi"
+    },
+    {
+      "number": 97,
+      "url": "https://github.com/Jacob-Met/canvaspilot/issues/97",
+      "title": "Keep a local rubric self-check with criterion notes before submission"
+    },
+    {
+      "number": 94,
+      "url": "https://github.com/Jacob-Met/canvaspilot/issues/94",
+      "title": "Read all available activity-stream pages through API and CLI"
+    },
+    {
+      "number": 93,
+      "url": "https://github.com/Jacob-Met/canvaspilot/issues/93",
+      "title": "Find instruction text across selected-course assignments"
+    },
+    {
+      "number": 96,
+      "url": "https://github.com/Jacob-Met/canvaspilot/issues/96",
+      "title": "Read the current user's classic quiz attempt through API, CLI and MCP"
+    },
+    {
+      "number": 65,
+      "url": "https://github.com/Jacob-Met/canvaspilot/issues/65",
+      "title": "Save selected course syllabi as an offline reading packet"
+    },
+    {
+      "number": 84,
+      "url": "https://github.com/Jacob-Met/canvaspilot/issues/84",
+      "title": "Save complete returned submission history as an offline reading report"
+    },
+    {
+      "number": 85,
+      "url": "https://github.com/Jacob-Met/canvaspilot/issues/85",
+      "title": "Save a discussion thread with reply context for offline reading"
+    },
+    {
+      "number": 67,
+      "url": "https://github.com/Jacob-Met/canvaspilot/issues/67",
+      "title": "Compare two returned submission records in an offline reading report"
+    },
+    {
+      "number": 76,
+      "url": "https://github.com/Jacob-Met/canvaspilot/issues/76",
+      "title": "Save Canvas-reported course grades as a readable offline report"
+    },
+    {
+      "number": 47,
+      "url": "https://github.com/Jacob-Met/canvaspilot/issues/47",
+      "title": "Review Canvas-reported course grades and assignment-group context through CLI and MCP"
+    },
+    {
+      "number": 69,
+      "url": "https://github.com/Jacob-Met/canvaspilot/issues/69",
+      "title": "Preserve course file-listing errors instead of returning a root-folder subset"
+    },
+    {
+      "number": 48,
+      "url": "https://github.com/Jacob-Met/canvaspilot/issues/48",
+      "title": "Review self-submission attempts and submitted content through CLI and MCP"
+    },
+    {
+      "number": 39,
+      "url": "https://github.com/Jacob-Met/canvaspilot/issues/39",
+      "title": "Inspect course module progress and remaining requirements through CLI and MCP"
+    },
+    {
+      "number": 38,
+      "url": "https://github.com/Jacob-Met/canvaspilot/issues/38",
+      "title": "Export selected assignment deadlines to a local calendar snapshot"
+    },
+    {
+      "number": 5,
+      "url": "https://github.com/Jacob-Met/canvaspilot/issues/5",
+      "title": "[security] session-broker localhost API is unauthenticated \u2014 decision needed on mitigations"
+    },
+    {
+      "number": 2,
+      "url": "https://github.com/Jacob-Met/canvaspilot/issues/2",
+      "title": "[ci-audit] Proposal: basic CI for canvaspilot (zero workflows; actively maintained, tests exist)"
+    }
+  ],
+  "coverage": "Completed recursive bounded native search of top/nested coordination JSON; no find-files/file_search.py/filename-search owner found. Claim created before edits. Non-exhaustive advisory ownership evidence.",
+  "search_correction": "Generic search endpoint returned422 because it required is:issue or is:pull-request. No matching result was inferred from that error; the typed repository file search and complete open inventory were received afterward.",
+  "native_save_correction": "Initial full-body command was rejected with spawn E2BIG before a process started or file was written. This compact factual ownership snapshot retains exact source ref and complete received row inventories instead."
+}

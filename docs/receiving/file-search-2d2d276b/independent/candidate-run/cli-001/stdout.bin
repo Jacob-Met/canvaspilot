@@ -1,0 +1,112 @@
+{
+  "query": "STRASSE",
+  "match_rule": "unicode_casefold_substring",
+  "searched_fields": [
+    "display_name",
+    "filename"
+  ],
+  "source": "CanvasAPI.list_files",
+  "content_searched": false,
+  "courses": [
+    {
+      "course_id": "42",
+      "returned_files": 3,
+      "searched_files": 3,
+      "matched_files": 3,
+      "unavailable_names": [
+        {
+          "source_position": 2,
+          "fields": {
+            "display_name": "null"
+          }
+        }
+      ],
+      "matches": [
+        {
+          "source_position": 1,
+          "matched_fields": [
+            "display_name",
+            "filename"
+          ],
+          "file": {
+            "id": 0,
+            "display_name": "Stra\u00dfe [lab]",
+            "filename": "STRASSE.pdf",
+            "size": 0,
+            "updated_at": null,
+            "url": "https://never-open.invalid/file?literal=<script>",
+            "content_type": "text/plain"
+          }
+        },
+        {
+          "source_position": 2,
+          "matched_fields": [
+            "filename"
+          ],
+          "file": {
+            "id": 0,
+            "display_name": null,
+            "filename": "strasse-notes.md",
+            "size": 4,
+            "updated_at": null,
+            "url": null,
+            "content_type": null
+          }
+        },
+        {
+          "source_position": 3,
+          "matched_fields": [
+            "display_name",
+            "filename"
+          ],
+          "file": {
+            "id": 0,
+            "display_name": "Stra\u00dfe [lab]",
+            "filename": "STRASSE.pdf",
+            "size": 0,
+            "updated_at": null,
+            "url": "https://never-open.invalid/file?literal=<script>",
+            "content_type": "text/plain"
+          }
+        }
+      ]
+    },
+    {
+      "course_id": "77",
+      "returned_files": 2,
+      "searched_files": 1,
+      "matched_files": 0,
+      "unavailable_names": [
+        {
+          "source_position": 1,
+          "fields": {
+            "filename": "null"
+          }
+        },
+        {
+          "source_position": 2,
+          "fields": {
+            "display_name": "null",
+            "filename": "null"
+          }
+        }
+      ],
+      "matches": []
+    },
+    {
+      "course_id": "88",
+      "returned_files": 0,
+      "searched_files": 0,
+      "matched_files": 0,
+      "unavailable_names": [],
+      "matches": []
+    }
+  ],
+  "totals": {
+    "courses": 3,
+    "returned_files": 5,
+    "searched_files": 4,
+    "matched_files": 3,
+    "rows_with_unavailable_names": 3
+  }
+}

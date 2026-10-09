@@ -1,0 +1,1 @@
+{"ok": false, "error": "CanvasPaginationError", "message": "Canvas pagination requires a valid URL on the configured Canvas origin."}

@@ -1,0 +1,804 @@
+{
+  "schema": "hamon.native-evidence-copy.v1",
+  "product_head": "94fb3a02a06b235dc46e25dab5c03012f202eec9",
+  "files": [
+    {
+      "path": "author/contract-v1.md",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/contract-v1.md",
+      "bytes": 6683,
+      "sha256": "9fe3fef43e97744771cabbc67db227e0565507e9dd851f341661130437eb0faf"
+    },
+    {
+      "path": "author/contract-v2.md",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/contract-v2.md",
+      "bytes": 7002,
+      "sha256": "34c12b41e1f9824a1b7da1f5173bf3f5efa8f02094f560f16b35fd02a4479e57"
+    },
+    {
+      "path": "author/run-qualification-01.py",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/run-qualification-01.py",
+      "bytes": 3421,
+      "sha256": "ba9130e537a57838a514b55ff86d9e87adaa64576515dc9a236d9dc06733cc79"
+    },
+    {
+      "path": "author/run-qualification-02.py",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/run-qualification-02.py",
+      "bytes": 3421,
+      "sha256": "791f3d29f97283db797f2371fb28775ebddc1f3b054cb1bb1db6618d8c3196ab"
+    },
+    {
+      "path": "author/preparation-01/baseline-source.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/preparation-01/baseline-source.json",
+      "bytes": 364,
+      "sha256": "1f81d5a93c7198cf9aff3775b02e57b2fd0c8205029b4dc10dd94c51514a5133"
+    },
+    {
+      "path": "author/preparation-01/claim-initial.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/preparation-01/claim-initial.json",
+      "bytes": 2499,
+      "sha256": "c8b354ad647181418082bc3a4766afcc9358998910ce978c8ac468f761c8f2c8"
+    },
+    {
+      "path": "author/preparation-01/command-0.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/preparation-01/command-0.json",
+      "bytes": 346,
+      "sha256": "8211282ccb832dce05c465db82cda4a944de9adb044ed775a6ab6caef2c65692"
+    },
+    {
+      "path": "author/preparation-01/command-1.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/preparation-01/command-1.json",
+      "bytes": 308,
+      "sha256": "b0179e6ddb1ef6d826234f3eb1fa94bd4c790dd39e46ee22f10d727ac14d8845"
+    },
+    {
+      "path": "author/preparation-01/ownership-read.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/preparation-01/ownership-read.json",
+      "bytes": 16333,
+      "sha256": "da378cd5b40fed86bef880928db16950828c30ebadf248c1faab51dc7c803995"
+    },
+    {
+      "path": "author/preparation-01/receipt.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/preparation-01/receipt.json",
+      "bytes": 1139,
+      "sha256": "7350ded68775ffba301d8dff85abb95ae70be09f07dab0892e43f581074b22f7"
+    },
+    {
+      "path": "author/preparation-01/source-pins.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/preparation-01/source-pins.json",
+      "bytes": 459990,
+      "sha256": "1e2c2beb61aea7fa4a31c97f8989746f11dc5fed47c6a3623b8a8bc76ac01027"
+    },
+    {
+      "path": "author/authored-01/insertions.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/authored-01/insertions.json",
+      "bytes": 13166,
+      "sha256": "8a3cf539419513daf01c37743651c5c29de203cd28176bc89d21aa4052eeab04"
+    },
+    {
+      "path": "author/authored-01/reconciliation-02.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/authored-01/reconciliation-02.json",
+      "bytes": 874,
+      "sha256": "bdae27ab82b41429eca4ddc8226704ab6de8da1f6d8dba3e84c5492f6e4eb604"
+    },
+    {
+      "path": "author/authored-01/source-write.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/authored-01/source-write.json",
+      "bytes": 739,
+      "sha256": "ed14640a2b4e40aee700697e1bf067db0d564a4ef82cdb7cc82918a431a3ae01"
+    },
+    {
+      "path": "author/source-freeze-01/commands.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/source-freeze-01/commands.json",
+      "bytes": 876,
+      "sha256": "4a18d11a837bddbca1b285ca6186c3dc242cbebd74c76e0c2394e7d48e3628dd"
+    },
+    {
+      "path": "author/source-freeze-01/receipt.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/source-freeze-01/receipt.json",
+      "bytes": 1754,
+      "sha256": "c7c8fc4478aa061621ef0f2be1df05fed1a42242e579527717031ee82baf68d5"
+    },
+    {
+      "path": "author/source-freeze-01/source-pins.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/source-freeze-01/source-pins.json",
+      "bytes": 460921,
+      "sha256": "e3a8aa65959dd96d076f8a173be7797d5cb16aaf257d7354b7896829e00bcebb"
+    },
+    {
+      "path": "author/baseline-01/command-0.stderr",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/baseline-01/command-0.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "author/baseline-01/command-0.stdout",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/baseline-01/command-0.stdout",
+      "bytes": 111,
+      "sha256": "b66928664f9ba0f9619821d9965f6324b99bd0fc3e662a13179287970384e096"
+    },
+    {
+      "path": "author/baseline-01/command-1.stderr",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/baseline-01/command-1.stderr",
+      "bytes": 162,
+      "sha256": "5c1df13ff87ed8cbd820e39b45873197a6a1a1b6ee810403ff25dec21756086f"
+    },
+    {
+      "path": "author/baseline-01/command-1.stdout",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/baseline-01/command-1.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "author/baseline-01/command-2.stderr",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/baseline-01/command-2.stderr",
+      "bytes": 162,
+      "sha256": "5c1df13ff87ed8cbd820e39b45873197a6a1a1b6ee810403ff25dec21756086f"
+    },
+    {
+      "path": "author/baseline-01/command-2.stdout",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/baseline-01/command-2.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "author/baseline-01/invocation-failure.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/baseline-01/invocation-failure.json",
+      "bytes": 846,
+      "sha256": "46c3b5ec4e42b93e69cc5fd764f2ca984381828f2edd27d3fcd49352f08b2013"
+    },
+    {
+      "path": "author/baseline-02/command-0.stderr",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/baseline-02/command-0.stderr",
+      "bytes": 975,
+      "sha256": "1fccc9c7710991158efadab2b550502c9d668032314c8b5e461a147b9bf78007"
+    },
+    {
+      "path": "author/baseline-02/command-0.stdout",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/baseline-02/command-0.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "author/baseline-02/command-1.stderr",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/baseline-02/command-1.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "author/baseline-02/command-1.stdout",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/baseline-02/command-1.stdout",
+      "bytes": 306,
+      "sha256": "179e32c9f3ce1b57898851bae1fe20a15e7716cd8e9718bc59949c8b2dc51fbc"
+    },
+    {
+      "path": "author/baseline-02/receipt.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/baseline-02/receipt.json",
+      "bytes": 2336,
+      "sha256": "385be1f5792b137b8c4f788c238c5d7b124dfd2d88a59fd0b25b50519647cbc5"
+    },
+    {
+      "path": "author/qualification-01/command-0.stderr",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/qualification-01/command-0.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "author/qualification-01/command-0.stdout",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/qualification-01/command-0.stdout",
+      "bytes": 2544,
+      "sha256": "961300d284399d01011ca274557c193c424f616ff1e9cd6256837a8175035a77"
+    },
+    {
+      "path": "author/qualification-01/command-1.stderr",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/qualification-01/command-1.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "author/qualification-01/command-1.stdout",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/qualification-01/command-1.stdout",
+      "bytes": 4164,
+      "sha256": "ee7bccd1c5a0dcdc55b31f7b9223cdf1ab4d1e46d36cbc5ffd9b6ad1f34e325e"
+    },
+    {
+      "path": "author/qualification-01/receipt.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/qualification-01/receipt.json",
+      "bytes": 9157,
+      "sha256": "9e056880c8d64f6d7b1197c7062d67137af388bbc3c3cb941960435405350fe8"
+    },
+    {
+      "path": "author/qualification-02/command-0.stderr",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/qualification-02/command-0.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "author/qualification-02/command-0.stdout",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/qualification-02/command-0.stdout",
+      "bytes": 179,
+      "sha256": "61c3867a1cd8474932a9eca641fa59974dba34d1fed22e70459c92720cf60506"
+    },
+    {
+      "path": "author/qualification-02/command-1.stderr",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/qualification-02/command-1.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "author/qualification-02/command-1.stdout",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/qualification-02/command-1.stdout",
+      "bytes": 19,
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "path": "author/qualification-02/receipt.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/qualification-02/receipt.json",
+      "bytes": 2355,
+      "sha256": "e0174d2ceb85d8b30fe3039e8af18629a63d8157a94fd755e84a2853a9dc6cb2"
+    },
+    {
+      "path": "author/delivery-preparation-01/receipt.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/delivery-preparation-01/receipt.json",
+      "bytes": 1258,
+      "sha256": "d6c1032db413185ac5537bc14484e3a30e80b3fac00dbdae2f628adf297ba895"
+    },
+    {
+      "path": "independent/claim.before-freeze.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/claim.before-freeze.json",
+      "bytes": 1263,
+      "sha256": "447139ad6a0b7d389119a419bb7f11d1d25572c4c439fa126deb514be2b8cd58"
+    },
+    {
+      "path": "independent/contract-v2.md",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/contract-v2.md",
+      "bytes": 7002,
+      "sha256": "34c12b41e1f9824a1b7da1f5173bf3f5efa8f02094f560f16b35fd02a4479e57"
+    },
+    {
+      "path": "independent/candidate-author-freeze.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-author-freeze.json",
+      "bytes": 1754,
+      "sha256": "c7c8fc4478aa061621ef0f2be1df05fed1a42242e579527717031ee82baf68d5"
+    },
+    {
+      "path": "independent/candidate-intake.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-intake.json",
+      "bytes": 8178,
+      "sha256": "e1862e3aeac67ed0d741e181cc359ff0ba89807aa3bb7b9436790e549c728a48"
+    },
+    {
+      "path": "independent/cli-child.py",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/cli-child.py",
+      "bytes": 2728,
+      "sha256": "6608d28097c6d2c49df3799208a237a810726e6ab0051abb07fb5281412d4619"
+    },
+    {
+      "path": "independent/receive.py",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/receive.py",
+      "bytes": 22122,
+      "sha256": "ec1a42170d5257965d45dd1e56eb57da9f54b8a8859b5c9d883eb0c77fbd3ddf"
+    },
+    {
+      "path": "independent/oracle-freeze.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/oracle-freeze.json",
+      "bytes": 1120,
+      "sha256": "f996d9430ea036fbbeffabd780c97c3dc60ffa6c88b5b369e1a8ed3790193cf6"
+    },
+    {
+      "path": "independent/intake.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/intake.json",
+      "bytes": 10248,
+      "sha256": "7a6df7343f34e5924f8f3344b5e5bde6ad9e066141e2ee201fb3be80bdf45957"
+    },
+    {
+      "path": "independent/intake-controller.py",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/intake-controller.py",
+      "bytes": 4137,
+      "sha256": "147fcf49dc9d6457e58ca62cd770f6c61bed2cac7389449249d47abe5d101f23"
+    },
+    {
+      "path": "independent/candidate-intake-controller.py",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-intake-controller.py",
+      "bytes": 4605,
+      "sha256": "011f41164a594a18b85fc81f1ebb323d27f203a1b18f133b71bedca417fc1268"
+    },
+    {
+      "path": "independent/candidate-run-intent.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run-intent.json",
+      "bytes": 776,
+      "sha256": "dffe99e752cba98e9188496eb315a7c5d02d92c0130b9326520a91a193fc21b4"
+    },
+    {
+      "path": "independent/expectations.txt",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/expectations.txt",
+      "bytes": 2061,
+      "sha256": "697d38e4095b782e46856b5b8f67f35ed02d57bf5ea92a2b6e9e154abf85f040"
+    },
+    {
+      "path": "independent/baseline-run/cli-001/lifecycle.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/baseline-run/cli-001/lifecycle.json",
+      "bytes": 1193,
+      "sha256": "5126cd09b4f9986691f28be12781055af7f24176c1ca4abca83c0c7b9b735dac"
+    },
+    {
+      "path": "independent/baseline-run/cli-001/receipt.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/baseline-run/cli-001/receipt.json",
+      "bytes": 1650,
+      "sha256": "a1d2a3ec27b5d5ea8e75d321409c29550fb53b0e3e2de73bc8c184825e7d20cc"
+    },
+    {
+      "path": "independent/baseline-run/cli-001/stderr.bin",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/baseline-run/cli-001/stderr.bin",
+      "bytes": 975,
+      "sha256": "1fccc9c7710991158efadab2b550502c9d668032314c8b5e461a147b9bf78007"
+    },
+    {
+      "path": "independent/baseline-run/cli-001/stdout.bin",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/baseline-run/cli-001/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "independent/baseline-run/cli-002/lifecycle.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/baseline-run/cli-002/lifecycle.json",
+      "bytes": 1283,
+      "sha256": "b18a059412699691661e9be4e0f65dee0d1a7bf05829d8a8df4ba8b63ca8d1ff"
+    },
+    {
+      "path": "independent/baseline-run/cli-002/receipt.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/baseline-run/cli-002/receipt.json",
+      "bytes": 1968,
+      "sha256": "c2d3480099b614e0feb8b1240e905aa9dfceef706db7c44fa467b2f0f2ef59ce"
+    },
+    {
+      "path": "independent/baseline-run/cli-002/stderr.bin",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/baseline-run/cli-002/stderr.bin",
+      "bytes": 213,
+      "sha256": "9fdf4e9941012e855bc9810ef6e699e7f758dc0fdb05e5f84d51eab8fe94e2dc"
+    },
+    {
+      "path": "independent/baseline-run/cli-002/stdout.bin",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/baseline-run/cli-002/stdout.bin",
+      "bytes": 626,
+      "sha256": "5b85d4bac5ce5df0c879b237c262332303fe19264b4af2f9258bf08f17baa963"
+    },
+    {
+      "path": "independent/baseline-run/legacy-files.stdout.bin",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/baseline-run/legacy-files.stdout.bin",
+      "bytes": 626,
+      "sha256": "5b85d4bac5ce5df0c879b237c262332303fe19264b4af2f9258bf08f17baa963"
+    },
+    {
+      "path": "independent/baseline-run/receipt.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/baseline-run/receipt.json",
+      "bytes": 12798,
+      "sha256": "25c4e1c095292e518d4554ca77e0bbcabc7435d2a70b8c5413461ea2834709da"
+    },
+    {
+      "path": "independent/candidate-run/accepted-success.stdout.bin",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/accepted-success.stdout.bin",
+      "bytes": 2558,
+      "sha256": "187bcca927e9e33a6e71b568a07542872ad268c150f898fb961437be2da4bff4"
+    },
+    {
+      "path": "independent/candidate-run/cli-001/lifecycle.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-001/lifecycle.json",
+      "bytes": 1573,
+      "sha256": "b1a816fc260b7251434fdd974bf0ace60e22a963ec0b83d0a67df70d05f8c141"
+    },
+    {
+      "path": "independent/candidate-run/cli-001/receipt.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-001/receipt.json",
+      "bytes": 2568,
+      "sha256": "efef120057b29609e93d27735e1ef2766959b718163948c0b1cb05d47694ed68"
+    },
+    {
+      "path": "independent/candidate-run/cli-001/stderr.bin",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-001/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "independent/candidate-run/cli-001/stdout.bin",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-001/stdout.bin",
+      "bytes": 2558,
+      "sha256": "187bcca927e9e33a6e71b568a07542872ad268c150f898fb961437be2da4bff4"
+    },
+    {
+      "path": "independent/candidate-run/cli-002/lifecycle.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-002/lifecycle.json",
+      "bytes": 1339,
+      "sha256": "4fe7fef4f4c93aa8b55447b99214512e65584cfaecdc97b9b8a66ca203f0a2e4"
+    },
+    {
+      "path": "independent/candidate-run/cli-002/receipt.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-002/receipt.json",
+      "bytes": 2024,
+      "sha256": "701f17569bc9899d37a2f4dcc9333141487f1169e81a775b7a6ad328263eb13b"
+    },
+    {
+      "path": "independent/candidate-run/cli-002/stderr.bin",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-002/stderr.bin",
+      "bytes": 213,
+      "sha256": "2134bbb1c1b4234bf52d27ec44b306584e35696c5890cc021149e41ae5e197bf"
+    },
+    {
+      "path": "independent/candidate-run/cli-002/stdout.bin",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-002/stdout.bin",
+      "bytes": 626,
+      "sha256": "5b85d4bac5ce5df0c879b237c262332303fe19264b4af2f9258bf08f17baa963"
+    },
+    {
+      "path": "independent/candidate-run/cli-003/lifecycle.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-003/lifecycle.json",
+      "bytes": 1395,
+      "sha256": "4782daed85def2d055b9e4520bd3efcb43765da53b8a00ecabae19d59735c894"
+    },
+    {
+      "path": "independent/candidate-run/cli-003/receipt.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-003/receipt.json",
+      "bytes": 1838,
+      "sha256": "a60b7155d75dd22a83697cf4b56b95423382477d90c2490a6a4fbf1bdaae2b54"
+    },
+    {
+      "path": "independent/candidate-run/cli-003/stderr.bin",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-003/stderr.bin",
+      "bytes": 528,
+      "sha256": "98535d549bb0e4da08418a50fc53020eaec9a029719e1eaf94885ec8b6ddbf76"
+    },
+    {
+      "path": "independent/candidate-run/cli-003/stdout.bin",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-003/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "independent/candidate-run/cli-004/lifecycle.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-004/lifecycle.json",
+      "bytes": 1395,
+      "sha256": "b067ee9f8c6cc2b453552f3599ec054386bda98d32a8dfc02d5eb2446ee7613c"
+    },
+    {
+      "path": "independent/candidate-run/cli-004/receipt.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-004/receipt.json",
+      "bytes": 1828,
+      "sha256": "8e6f5b3c20f43153931a2dbaadd5186c13bf1dca81fd160f880b6ca7bee70a34"
+    },
+    {
+      "path": "independent/candidate-run/cli-004/stderr.bin",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-004/stderr.bin",
+      "bytes": 516,
+      "sha256": "cdbe6e87df9aff503b2226824ada4fc1ab0431576ac7cc9b19fae33312e91277"
+    },
+    {
+      "path": "independent/candidate-run/cli-004/stdout.bin",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-004/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "independent/candidate-run/cli-005/lifecycle.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-005/lifecycle.json",
+      "bytes": 1395,
+      "sha256": "27e80cb4f2ed468df1b3d9c748c2e8fa687366b6660846100c4f6b3b2917e843"
+    },
+    {
+      "path": "independent/candidate-run/cli-005/receipt.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-005/receipt.json",
+      "bytes": 1829,
+      "sha256": "bd080d4b5628b588d7b4bf07b739767b1419617648b46cc96f090eb0b224bce9"
+    },
+    {
+      "path": "independent/candidate-run/cli-005/stderr.bin",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-005/stderr.bin",
+      "bytes": 541,
+      "sha256": "2624056e065f83bdcdbb054e84d5b491a31e0e80fecacc618f118b59eb89dbcf"
+    },
+    {
+      "path": "independent/candidate-run/cli-005/stdout.bin",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-005/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "independent/candidate-run/cli-006/lifecycle.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-006/lifecycle.json",
+      "bytes": 1395,
+      "sha256": "a8735889c41ecb72f2d589a47a931cf95a9d642c39a10509c11cf30c44cb0a7a"
+    },
+    {
+      "path": "independent/candidate-run/cli-006/receipt.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-006/receipt.json",
+      "bytes": 1848,
+      "sha256": "7d698ae65e983cccac8f112449ec5cff43033df298cb9e5346ed74615ec71d54"
+    },
+    {
+      "path": "independent/candidate-run/cli-006/stderr.bin",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-006/stderr.bin",
+      "bytes": 541,
+      "sha256": "2624056e065f83bdcdbb054e84d5b491a31e0e80fecacc618f118b59eb89dbcf"
+    },
+    {
+      "path": "independent/candidate-run/cli-006/stdout.bin",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-006/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "independent/candidate-run/cli-007/lifecycle.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-007/lifecycle.json",
+      "bytes": 1395,
+      "sha256": "93aa6dc660cdab04bd942bc95a059ca422536b745b470ef806d6b8aca235d254"
+    },
+    {
+      "path": "independent/candidate-run/cli-007/receipt.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-007/receipt.json",
+      "bytes": 1828,
+      "sha256": "44d007d6ab6998289a1ba265e046fa9c11600a6b2431d9b45f7ed249eb95d5ff"
+    },
+    {
+      "path": "independent/candidate-run/cli-007/stderr.bin",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-007/stderr.bin",
+      "bytes": 539,
+      "sha256": "8549d6169301b95a8b74e76672022189e40fdcff9e1698de2404b2950b0feed1"
+    },
+    {
+      "path": "independent/candidate-run/cli-007/stdout.bin",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-007/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "independent/candidate-run/cli-008/lifecycle.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-008/lifecycle.json",
+      "bytes": 1395,
+      "sha256": "daea295196469c82f9a3d189784079e8c4ad5ee81497928d992bd3b2c2dd2b3f"
+    },
+    {
+      "path": "independent/candidate-run/cli-008/receipt.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-008/receipt.json",
+      "bytes": 2338,
+      "sha256": "350726257b8ab6712531fbc7ecb1b7d446d96555054f0e450973939a3cdc9ef0"
+    },
+    {
+      "path": "independent/candidate-run/cli-008/stderr.bin",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-008/stderr.bin",
+      "bytes": 532,
+      "sha256": "e647ee9c150edf2f4d020a04a86e3913234744cbf5a95ce0f119ca88baadda4a"
+    },
+    {
+      "path": "independent/candidate-run/cli-008/stdout.bin",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-008/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "independent/candidate-run/cli-009/lifecycle.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-009/lifecycle.json",
+      "bytes": 1439,
+      "sha256": "c664b4cf7aafc20800a7f833448ba00a151bd2e2661079e53fb52ee33e54c26a"
+    },
+    {
+      "path": "independent/candidate-run/cli-009/receipt.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-009/receipt.json",
+      "bytes": 2020,
+      "sha256": "3ed4517cda93f4c13addc8c632b09b75e4327d29cc710d479bb43cdde7bbabc8"
+    },
+    {
+      "path": "independent/candidate-run/cli-009/stderr.bin",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-009/stderr.bin",
+      "bytes": 81,
+      "sha256": "e44b3445b5955f442d4e6614f24cb7d51fcc4a30156a898c0428c3bd321e1cca"
+    },
+    {
+      "path": "independent/candidate-run/cli-009/stdout.bin",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-009/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "independent/candidate-run/cli-010/lifecycle.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-010/lifecycle.json",
+      "bytes": 1483,
+      "sha256": "a63352725ce0d80ad03e9f0e3b228a14786bd6507ea65b7029c170f8e984c8de"
+    },
+    {
+      "path": "independent/candidate-run/cli-010/receipt.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-010/receipt.json",
+      "bytes": 2214,
+      "sha256": "9c22007dcdf2d4d6d5ee052943e85e01b26ac9a115f7fd55be640c8f3f1dbe5b"
+    },
+    {
+      "path": "independent/candidate-run/cli-010/stderr.bin",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-010/stderr.bin",
+      "bytes": 277,
+      "sha256": "86b91012a1c1714f68b243a41eff5cf76cc50d23ecad142935597a636638ae54"
+    },
+    {
+      "path": "independent/candidate-run/cli-010/stdout.bin",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-010/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "independent/candidate-run/cli-011/lifecycle.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-011/lifecycle.json",
+      "bytes": 1483,
+      "sha256": "5bd113294097089548e4fe649d66063aae983127b25da05eee6fe05f2d59b718"
+    },
+    {
+      "path": "independent/candidate-run/cli-011/receipt.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-011/receipt.json",
+      "bytes": 2217,
+      "sha256": "c5d518f99f625d9933f9c3d1a496fe0ae8f44e6f32a3eb6ae37ad9261274da78"
+    },
+    {
+      "path": "independent/candidate-run/cli-011/stderr.bin",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-011/stderr.bin",
+      "bytes": 117,
+      "sha256": "a60428587a237f8145461905b6cfda148bf81a7e24f15f001b0c750715ee6594"
+    },
+    {
+      "path": "independent/candidate-run/cli-011/stdout.bin",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-011/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "independent/candidate-run/cli-012/lifecycle.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-012/lifecycle.json",
+      "bytes": 1483,
+      "sha256": "a72407d7671fd3bcc7ca775f8d96fcee6bce89be3168c52a3fa07a9950ee28cf"
+    },
+    {
+      "path": "independent/candidate-run/cli-012/receipt.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-012/receipt.json",
+      "bytes": 2214,
+      "sha256": "8dc8847fe9020aaf5a5335fd9419016418078d70ecca393f46e5f63998ff95c0"
+    },
+    {
+      "path": "independent/candidate-run/cli-012/stderr.bin",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-012/stderr.bin",
+      "bytes": 125,
+      "sha256": "944d9b2af5b6938b93f8fc87121e1e12fc7496894da4625b2b0c0921767dc5d8"
+    },
+    {
+      "path": "independent/candidate-run/cli-012/stdout.bin",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-012/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "independent/candidate-run/cli-013/lifecycle.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-013/lifecycle.json",
+      "bytes": 1439,
+      "sha256": "9d62dff41eb311ee4327f8d6ab0298ead1453df0313ee4ca1a815b85930c8e7d"
+    },
+    {
+      "path": "independent/candidate-run/cli-013/receipt.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-013/receipt.json",
+      "bytes": 2023,
+      "sha256": "e932e486670290d740e8a3eddc0058421fca6b97dc6d41e696bbd514112531aa"
+    },
+    {
+      "path": "independent/candidate-run/cli-013/stderr.bin",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-013/stderr.bin",
+      "bytes": 134,
+      "sha256": "a74f05e83596b61bb38730d8da11efae5b5f11bb04597f1cec44b6b61cf649ff"
+    },
+    {
+      "path": "independent/candidate-run/cli-013/stdout.bin",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-013/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "independent/candidate-run/cli-014/lifecycle.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-014/lifecycle.json",
+      "bytes": 1483,
+      "sha256": "2b98377887488e342d9f20db9afce4987095d26f4fa05079781262f8dfc0fb27"
+    },
+    {
+      "path": "independent/candidate-run/cli-014/receipt.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-014/receipt.json",
+      "bytes": 2187,
+      "sha256": "e860205a01eda20202aaee73d53382738ff57c5805814c24dd3bec5ee6829db6"
+    },
+    {
+      "path": "independent/candidate-run/cli-014/stderr.bin",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-014/stderr.bin",
+      "bytes": 120,
+      "sha256": "55112d0674f13a4033739cbf06f4485bc72654c9a2054960cb8490a4ba57d92e"
+    },
+    {
+      "path": "independent/candidate-run/cli-014/stdout.bin",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-014/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "independent/candidate-run/cli-015/lifecycle.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-015/lifecycle.json",
+      "bytes": 1439,
+      "sha256": "655813e9a50ee95a723660338fab0039443b71331ad1389b135e2f6b51956344"
+    },
+    {
+      "path": "independent/candidate-run/cli-015/receipt.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-015/receipt.json",
+      "bytes": 2019,
+      "sha256": "49042a09d848f26ea3fca8cc9dac0a9cd8de85fb4c3c3954ce90490b8013e03c"
+    },
+    {
+      "path": "independent/candidate-run/cli-015/stderr.bin",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-015/stderr.bin",
+      "bytes": 99,
+      "sha256": "78d564cc711c8c8030e5370e8327296e47fd351aed6a85343d8f0b5d950e5fa3"
+    },
+    {
+      "path": "independent/candidate-run/cli-015/stdout.bin",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-015/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "independent/candidate-run/cli-016/lifecycle.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-016/lifecycle.json",
+      "bytes": 1573,
+      "sha256": "7abaecd937338ab05d86457f7f2414aef902ea8a55eb436bb394523bb9eba2c2"
+    },
+    {
+      "path": "independent/candidate-run/cli-016/receipt.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-016/receipt.json",
+      "bytes": 2568,
+      "sha256": "4df548a9dac509d40fabc31cb0feb423b1e4d05049d13c00f3ea33477e7ea9ec"
+    },
+    {
+      "path": "independent/candidate-run/cli-016/stderr.bin",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-016/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "independent/candidate-run/cli-016/stdout.bin",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/cli-016/stdout.bin",
+      "bytes": 2558,
+      "sha256": "187bcca927e9e33a6e71b568a07542872ad268c150f898fb961437be2da4bff4"
+    },
+    {
+      "path": "independent/candidate-run/legacy-files.stdout.bin",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/legacy-files.stdout.bin",
+      "bytes": 626,
+      "sha256": "5b85d4bac5ce5df0c879b237c262332303fe19264b4af2f9258bf08f17baa963"
+    },
+    {
+      "path": "independent/candidate-run/receipt.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run/receipt.json",
+      "bytes": 47139,
+      "sha256": "c657b59f5051e0c172d0e5ef25cacc63fa608484af91340df7f26d3b978e6ce4"
+    },
+    {
+      "path": "independent/root-review.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/root-review.json",
+      "bytes": 3434,
+      "sha256": "18ead7f19f453a7ea49742ccdcfd759c3bb95eeaf03349888fb7986f1d77b658"
+    },
+    {
+      "path": "independent/independent-manifest.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/independent-manifest.json",
+      "bytes": 14599,
+      "sha256": "3aaabb608c135c7abde23a2f087410b4c847bdf742a1e0dbfb47b21faadb5b3b"
+    },
+    {
+      "path": "independent/independent-receiving.zip",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/independent-receiving.zip",
+      "bytes": 70732,
+      "sha256": "f4b371cd0275f54152117a715a4d87b624516f9895f258d1d68108b7b68eaaea"
+    },
+    {
+      "path": "independent/accepted.json",
+      "origin": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/accepted.json",
+      "bytes": 867,
+      "sha256": "6b25a2873900c7373ef0976e7c33eaa6c0fe0c78debff4604f23b3835715d33b"
+    }
+  ]
+}

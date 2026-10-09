@@ -1,0 +1,38 @@
+{
+  "case": "cli-001",
+  "arguments": [
+    "find-files",
+    "042",
+    "77",
+    "88",
+    "--text",
+    "STRASSE"
+  ],
+  "scenario": "success",
+  "returncode": 2,
+  "stdout_bytes": 0,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_bytes": 975,
+  "stderr_sha256": "1fccc9c7710991158efadab2b550502c9d668032314c8b5e461a147b9bf78007",
+  "requests": [],
+  "lifecycle": {
+    "started": "2026-10-09T01:31:09.382021+00:00",
+    "client_created": 0,
+    "client_closed": 0,
+    "connects": [],
+    "blocked": [],
+    "logger_before": 17,
+    "source_modules": {
+      "canvaspilot": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/baseline/src/canvaspilot/__init__.py",
+      "canvaspilot.api": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/baseline/src/canvaspilot/api.py",
+      "canvaspilot.assignment_submission": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/baseline/src/canvaspilot/assignment_submission.py",
+      "canvaspilot.bundle": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/baseline/src/canvaspilot/bundle.py",
+      "canvaspilot.client": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/baseline/src/canvaspilot/client.py",
+      "canvaspilot.feedback": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/baseline/src/canvaspilot/feedback.py",
+      "canvaspilot.mcp_server": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/baseline/src/canvaspilot/mcp_server.py"
+    },
+    "logger_after": 17,
+    "exit": 2,
+    "finished": "2026-10-09T01:31:11.020051+00:00"
+  }
+}

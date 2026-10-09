@@ -1,0 +1,33 @@
+{
+  "schema": "hamon.canvas.file-search.independent-oracle-freeze.v1",
+  "at": "2026-10-09T01:30:41.404197+00:00",
+  "reviewer": "hamon-ultra-20261008-1657-2d2d276b/root",
+  "base": "56a72a2e2cee5ec04671d12ebe5bc2484afb8026",
+  "tree": "a07c3e941219ff80968e1ff20528a63541bb7400",
+  "candidate_exposed": false,
+  "candidate_groups": 18,
+  "manifest": {
+    "receive.py": {
+      "bytes": 22122,
+      "sha256": "ec1a42170d5257965d45dd1e56eb57da9f54b8a8859b5c9d883eb0c77fbd3ddf"
+    },
+    "cli-child.py": {
+      "bytes": 2728,
+      "sha256": "6608d28097c6d2c49df3799208a237a810726e6ab0051abb07fb5281412d4619"
+    },
+    "expectations.txt": {
+      "bytes": 2061,
+      "sha256": "697d38e4095b782e46856b5b8f67f35ed02d57bf5ea92a2b6e9e154abf85f040"
+    },
+    "contract-v2.md": {
+      "bytes": 7002,
+      "sha256": "34c12b41e1f9824a1b7da1f5173bf3f5efa8f02094f560f16b35fd02a4479e57"
+    },
+    "intake.json": {
+      "bytes": 10248,
+      "sha256": "7a6df7343f34e5924f8f3344b5e5bde6ad9e066141e2ee201fb3be80bdf45957"
+    }
+  },
+  "oracle_authored_independently": true,
+  "actual_execution": "Not yet run at this freeze"
+}

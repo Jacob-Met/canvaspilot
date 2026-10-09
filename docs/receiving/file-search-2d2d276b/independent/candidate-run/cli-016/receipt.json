@@ -1,0 +1,77 @@
+{
+  "case": "cli-016",
+  "arguments": [
+    "find-files",
+    "042",
+    "77",
+    "88",
+    "--text",
+    "STRASSE"
+  ],
+  "scenario": "success",
+  "returncode": 0,
+  "stdout_bytes": 2558,
+  "stdout_sha256": "187bcca927e9e33a6e71b568a07542872ad268c150f898fb961437be2da4bff4",
+  "stderr_bytes": 0,
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/42/files?per_page=50",
+      "synthetic_auth": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/42/files?cursor=opaque%2Bnext&keep=1&keep=2",
+      "synthetic_auth": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/77/files?per_page=50",
+      "synthetic_auth": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/88/files?per_page=50",
+      "synthetic_auth": true
+    }
+  ],
+  "lifecycle": {
+    "started": "2026-10-09T01:36:56.088777+00:00",
+    "client_created": 1,
+    "client_closed": 1,
+    "connects": [
+      [
+        "127.0.0.1",
+        41869
+      ],
+      [
+        "127.0.0.1",
+        41869
+      ],
+      [
+        "127.0.0.1",
+        41869
+      ],
+      [
+        "127.0.0.1",
+        41869
+      ]
+    ],
+    "blocked": [],
+    "logger_before": 17,
+    "source_modules": {
+      "canvaspilot": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-source/src/canvaspilot/__init__.py",
+      "canvaspilot.api": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-source/src/canvaspilot/api.py",
+      "canvaspilot.assignment_submission": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-source/src/canvaspilot/assignment_submission.py",
+      "canvaspilot.bundle": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-source/src/canvaspilot/bundle.py",
+      "canvaspilot.client": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-source/src/canvaspilot/client.py",
+      "canvaspilot.feedback": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-source/src/canvaspilot/feedback.py",
+      "canvaspilot.file_search": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-source/src/canvaspilot/file_search.py",
+      "canvaspilot.mcp_server": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-source/src/canvaspilot/mcp_server.py"
+    },
+    "logger_after": 17,
+    "exit": 0,
+    "finished": "2026-10-09T01:36:57.155047+00:00"
+  }
+}

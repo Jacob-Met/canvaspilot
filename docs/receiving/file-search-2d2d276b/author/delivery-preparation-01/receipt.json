@@ -1,0 +1,49 @@
+{
+  "at": "2026-10-09T01:37:22.244618+00:00",
+  "state": "native_delivery_preparation_reads",
+  "commands": [
+    {
+      "args": [
+        "symbolic-ref",
+        "--short",
+        "HEAD"
+      ],
+      "rc": 0,
+      "stdout": "work/2d2d276b-file-search\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "rev-list",
+        "--disk-usage",
+        "--objects",
+        "work/2d2d276b-file-search"
+      ],
+      "rc": 128,
+      "stdout": "",
+      "stderr": "error: Could not read d33d54f50266e6ab9e7d13647a006d52a0f9ffd4\nfatal: Failed to traverse parents of commit 92e9f1b500a15dd61d4c74539dedbf880afde30b\n"
+    },
+    {
+      "args": [
+        "rev-parse",
+        "--is-shallow-repository"
+      ],
+      "rc": 0,
+      "stdout": "false\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "count-objects",
+        "-vH"
+      ],
+      "rc": 0,
+      "stdout": "count: 296\nsize: 4.20 MiB\nin-pack: 2351\npacks: 2\nsize-pack: 10.06 MiB\nprune-packable: 0\ngarbage: 0\nsize-garbage: 0 bytes\n",
+      "stderr": ""
+    }
+  ],
+  "downloads_setting": "XDG_DOWNLOAD_DIR=\"$HOME/Downloads\"",
+  "target": "/home/jacob/Downloads/CanvasPilot-FileSearch-94fb3a02-20261009-2d2d276b",
+  "target_exists": false,
+  "source_behavior_reruns": 0
+}

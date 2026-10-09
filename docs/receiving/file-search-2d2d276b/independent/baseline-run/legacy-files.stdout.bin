@@ -1,0 +1,29 @@
+[
+  {
+    "id": 0,
+    "display_name": "Stra\u00dfe [lab]",
+    "filename": "STRASSE.pdf",
+    "size": 0,
+    "updated_at": null,
+    "url": "https://never-open.invalid/file?literal=<script>",
+    "content_type": "text/plain"
+  },
+  {
+    "id": 0,
+    "display_name": null,
+    "filename": "strasse-notes.md",
+    "size": 4,
+    "updated_at": null,
+    "url": null,
+    "content_type": null
+  },
+  {
+    "id": 0,
+    "display_name": "Stra\u00dfe [lab]",
+    "filename": "STRASSE.pdf",
+    "size": 0,
+    "updated_at": null,
+    "url": "https://never-open.invalid/file?literal=<script>",
+    "content_type": "text/plain"
+  }
+]

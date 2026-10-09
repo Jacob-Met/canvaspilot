@@ -1,0 +1,35 @@
+{
+  "schema": "hamon.canvas-file-search.source-freeze.v1",
+  "state": "qualified_product_frozen_ready_for_independent_intake",
+  "at": "2026-10-09T01:33:29.169710+00:00",
+  "source": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/source",
+  "base": "56a72a2e2cee5ec04671d12ebe5bc2484afb8026",
+  "head": "94fb3a02a06b235dc46e25dab5c03012f202eec9",
+  "tree": "721a263dedbb1ad8a2d230eed536cbad35dbe89a",
+  "branch": "work/2d2d276b-file-search",
+  "source_clean": true,
+  "leaves": 1620,
+  "preserved_base_leaves": 1614,
+  "changed_paths": [
+    "README.md",
+    "docs/file-search.md",
+    "src/canvaspilot/cli.py",
+    "src/canvaspilot/file_search.py",
+    "tests/test_file_search.py",
+    "tests/test_file_search_cli.py"
+  ],
+  "source_manifest": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/source-freeze-01/source-pins.json",
+  "source_manifest_sha256": "e3a8aa65959dd96d076f8a173be7797d5cb16aaf257d7354b7896829e00bcebb",
+  "contract": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/contract-v2.md",
+  "contract_sha256": "34c12b41e1f9824a1b7da1f5173bf3f5efa8f02094f560f16b35fd02a4479e57",
+  "qualification": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/qualification-02/receipt.json",
+  "qualification_sha256": "e0174d2ceb85d8b30fe3039e8af18629a63d8157a94fd755e84a2853a9dc6cb2",
+  "qualification_result": "74 native tests passed; changed-file Ruff passed",
+  "original_failures_preserved": [
+    "baseline-01 original wrong Python module entrypoint",
+    "qualification-01 73 passed/1 existing-command logging expectation failure;7 lint findings"
+  ],
+  "independent_oracle_freeze_sha256": "f996d9430ea036fbbeffabd780c97c3dc60ffa6c88b5b369e1a8ed3790193cf6",
+  "github_actions_or_source_write_effects": 0,
+  "LA7_effects": 0
+}

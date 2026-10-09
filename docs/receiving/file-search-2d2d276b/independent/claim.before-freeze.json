@@ -1,0 +1,23 @@
+{
+  "schema": "hamon.external_contribution.v1",
+  "worker_id": "hamon-ultra-20261008-1657-2d2d276b/root",
+  "actor": "chatgpt:2d2d276bbccc:root",
+  "state": "independent_canvas_file_search_receiving_reserved_before_candidate_exposure",
+  "repository": "Jacob-Met/canvaspilot",
+  "base": "56a72a2e2cee5ec04671d12ebe5bc2484afb8026",
+  "tree": "a07c3e941219ff80968e1ff20528a63541bb7400",
+  "owned_root": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent",
+  "author_claim": "/srv/hamon-estate/coord/hamon-ultra-2d2d276b-canvas-file-search.json",
+  "contract": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/contract-v2.md",
+  "contract_sha256": "34c12b41e1f9824a1b7da1f5173bf3f5efa8f02094f560f16b35fd02a4479e57",
+  "source_candidate_read": false,
+  "scope": "Independent model/CLI/real loopback client receiving of exact frozen file-search contract; no author source edits",
+  "native_goal_or_lease_claimed": false,
+  "boundaries": [
+    "No LA7 calls",
+    "No GitHub Actions or source publication in this receiving phase",
+    "No real Canvas, account, browser, model, credential or existing profile changes",
+    "Private loopback server, source copy, HOME/profile/tmp only",
+    "Preserve prior source and failed attempts"
+  ]
+}

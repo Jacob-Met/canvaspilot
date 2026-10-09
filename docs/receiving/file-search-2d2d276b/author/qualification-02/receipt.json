@@ -1,0 +1,57 @@
+{
+  "state": "focused_native_qualification_passed",
+  "started_at": "2026-10-09T01:30:28.970904+00:00",
+  "source": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/source",
+  "base": "56a72a2e2cee5ec04671d12ebe5bc2484afb8026",
+  "product_pins": {
+    "src/canvaspilot/file_search.py": "e60da0f0c574fdc81eaf67484bece7126f83e1b465422cb5a73d7398e8ae3888",
+    "src/canvaspilot/cli.py": "97d2c753942b719478ca8f2793a04c7c2432c1482113e942f5505aeabf459a93",
+    "tests/test_file_search.py": "d7e58f5fdd11249754c7ce1bd2381df4de9b31bb8ce65d5c8932cdd01b5bf6f8",
+    "tests/test_file_search_cli.py": "22fc82c3343a7203e59af94c5d9c9d8c784895919f0b03c77423acc939a655fd",
+    "docs/file-search.md": "375059cbf30f9b36836f002f7d4235b87c70b1f5e43b7d8e3c5487173dfa8d6e",
+    "README.md": "f49ac08b110626b6183d5241870c8d2c813a6c125fb7221fe07c0951fa27385f"
+  },
+  "commands": [
+    {
+      "argv": [
+        "/home/jacob/canvaspilot-enrollments-env-65ae877160f6/bin/python",
+        "-B",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_file_search.py",
+        "tests/test_file_search_cli.py",
+        "tests/test_files_completeness.py",
+        "-p",
+        "no:cacheprovider",
+        "--basetemp=/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/qualification-02/pytest-temp"
+      ],
+      "started_at": "2026-10-09T01:30:28.971001+00:00",
+      "rc": 0,
+      "stdout": "........................................................................ [ 97%]\n..                                                                       [100%]\n74 passed in 7.80s\n",
+      "stderr": "",
+      "completed_at": "2026-10-09T01:30:37.318626+00:00"
+    },
+    {
+      "argv": [
+        "/home/jacob/canvaspilot-enrollments-env-65ae877160f6/bin/python",
+        "-B",
+        "-m",
+        "ruff",
+        "check",
+        "src/canvaspilot/file_search.py",
+        "src/canvaspilot/cli.py",
+        "tests/test_file_search.py",
+        "tests/test_file_search_cli.py"
+      ],
+      "started_at": "2026-10-09T01:30:37.318756+00:00",
+      "rc": 0,
+      "stdout": "All checks passed!\n",
+      "stderr": "",
+      "completed_at": "2026-10-09T01:30:37.372729+00:00"
+    }
+  ],
+  "boundary": "Private native synthetic HTTP only; no live Canvas/profile/service/Actions/LA7.",
+  "source_pins_unchanged": true,
+  "completed_at": "2026-10-09T01:30:37.372997+00:00"
+}

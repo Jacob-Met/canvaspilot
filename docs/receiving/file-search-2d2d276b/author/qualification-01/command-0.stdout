@@ -1,0 +1,43 @@
+..............................................F......................... [ 97%]
+..                                                                       [100%]
+=================================== FAILURES ===================================
+____ test_real_cli_uses_complete_pages_selected_order_and_literal_metadata _____
+
+tmp_path = PosixPath('/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/qualification-01/pytest-temp/test_real_cli_uses_complete_pa0')
+
+    def test_real_cli_uses_complete_pages_selected_order_and_literal_metadata(tmp_path):
+        rows = [
+            {"id": 7, "display_name": "Straße.pdf", "filename": "unrelated.pdf",
+             "size": 0, "url": "https://foreign.invalid/never-fetch", "folder_id": 99},
+            {"id": 7, "display_name": None, "filename": "STRASSE.pdf",
+             "content-type": "application/pdf", "url": "javascript:literal-only"},
+        ]
+    
+        def respond(path, port):
+            parsed = urlsplit(path)
+            if parsed.path == "/api/v1/courses/77/files":
+                return 200, [], {}
+            assert parsed.path == "/api/v1/courses/42/files"
+            if "cursor" not in parse_qs(parsed.query):
+                assert parse_qs(parsed.query) == {"per_page": ["50"]}
+                return 200, rows[:1], {
+                    "Link": f'<http://127.0.0.1:{port}/api/v1/courses/42/files?cursor=second%2Bpage>; rel="next"',
+                }
+            assert parsed.query == "cursor=second%2Bpage"
+            return 200, rows[1:], {}
+    
+        with server(respond) as (origin, requests):
+            first = invoke(tmp_path, origin, ["find-files", "0042", "77", "--text", "strasse"])
+            second = invoke(tmp_path, origin, ["find-files", "0042", "77", "--text", "strasse"])
+            existing = invoke(tmp_path, origin, ["files", "42"])
+        assert first.returncode == second.returncode == existing.returncode == 0
+>       assert first.stderr == second.stderr == existing.stderr == ""
+E       assert '' == 'HTTP Request...1.0 200 OK"\n'
+E         
+E         - HTTP Request: GET http://127.0.0.1:34045/api/v1/courses/42/files?per_page=50 "HTTP/1.0 200 OK"
+E         - HTTP Request: GET http://127.0.0.1:34045/api/v1/courses/42/files?cursor=second%2Bpage "HTTP/1.0 200 OK"
+
+tests/test_file_search_cli.py:100: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_file_search_cli.py::test_real_cli_uses_complete_pages_selected_order_and_literal_metadata
+1 failed, 73 passed in 13.70s

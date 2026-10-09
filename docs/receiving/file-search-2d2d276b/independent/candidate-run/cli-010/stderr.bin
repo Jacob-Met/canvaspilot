@@ -1,0 +1,1 @@
+{"ok": false, "error": "HTTPStatusError", "message": "Server error '503 Service Unavailable' for url 'http://127.0.0.1:41869/api/v1/courses/42/files?cursor=opaque%2Bnext&keep=1&keep=2'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503"}

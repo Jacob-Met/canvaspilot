@@ -1,0 +1,26 @@
+{
+  "at": "2026-10-09T01:23:44.453317+00:00",
+  "state": "native_product_implemented_unqualified",
+  "files": [
+    {
+      "path": "src/canvaspilot/file_search.py",
+      "bytes": 6227,
+      "sha256": "45b9deee194db5b5c51e0ad9d61de9ac6b6624002c6d2c1fbacc42b87a0a5bf8"
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "bytes": 41674,
+      "sha256": "97d2c753942b719478ca8f2793a04c7c2432c1482113e942f5505aeabf459a93"
+    },
+    {
+      "path": "docs/file-search.md",
+      "bytes": 4311,
+      "sha256": "375059cbf30f9b36836f002f7d4235b87c70b1f5e43b7d8e3c5487173dfa8d6e"
+    },
+    {
+      "path": "README.md",
+      "bytes": 28710,
+      "sha256": "f49ac08b110626b6183d5241870c8d2c813a6c125fb7221fe07c0951fa27385f"
+    }
+  ]
+}

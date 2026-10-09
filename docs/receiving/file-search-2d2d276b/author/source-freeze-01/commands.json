@@ -1,0 +1,36 @@
+[
+  {
+    "args": [
+      "diff",
+      "--check"
+    ],
+    "rc": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "add",
+      "--",
+      "README.md",
+      "src/canvaspilot/cli.py",
+      "src/canvaspilot/file_search.py",
+      "tests/test_file_search.py",
+      "tests/test_file_search_cli.py",
+      "docs/file-search.md"
+    ],
+    "rc": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "commit",
+      "-m",
+      "Add literal selected-course file-name search"
+    ],
+    "rc": 0,
+    "stdout": "[work/2d2d276b-file-search 94fb3a0] Add literal selected-course file-name search\n 6 files changed, 694 insertions(+)\n create mode 100644 docs/file-search.md\n create mode 100644 src/canvaspilot/file_search.py\n create mode 100644 tests/test_file_search.py\n create mode 100644 tests/test_file_search_cli.py\n",
+    "stderr": ""
+  }
+]

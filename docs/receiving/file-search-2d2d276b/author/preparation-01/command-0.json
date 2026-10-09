@@ -1,0 +1,13 @@
+{
+  "argv": [
+    "git",
+    "clone",
+    "--no-hardlinks",
+    "--no-checkout",
+    "/srv/hamon-estate/canvaspilot-calendar-events-65ae877160f6",
+    "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/source"
+  ],
+  "rc": 0,
+  "stdout": "",
+  "stderr": "Cloning into '/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/source'...\ndone.\n"
+}

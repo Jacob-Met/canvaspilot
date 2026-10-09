@@ -1,0 +1,263 @@
+{
+  "schema": "hamon.canvas.file-search.independent-receiving.v1",
+  "at": "2026-10-09T01:31:14.208929+00:00",
+  "mode": "baseline",
+  "source": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/baseline",
+  "runtime": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "python": "/home/jacob/canvaspilot-enrollments-env-65ae877160f6/bin/python",
+  "oracle_sha256": "ec1a42170d5257965d45dd1e56eb57da9f54b8a8859b5c9d883eb0c77fbd3ddf",
+  "child_driver_sha256": "6608d28097c6d2c49df3799208a237a810726e6ab0051abb07fb5281412d4619",
+  "contract_sha256": "34c12b41e1f9824a1b7da1f5173bf3f5efa8f02094f560f16b35fd02a4479e57",
+  "groups": [
+    {
+      "name": "Real CLI selected-course pagination and exact report",
+      "passed": false,
+      "error": "AssertionError",
+      "message": "(2, \"usage: canvaspilot [-h]\\n                   {login,session,whoami,courses,sync,find-announcements,announcements,grade-review,export-grade-review,assignments,brief,feedback,inbox,conversation,discussions,discussion,files,browse-files,export-calendar,export-pages,export-study,export-syllabus,module-progress,export-module-progress,submission-history,export-submission-history,compare-submissions,agenda,quizzes,quiz,planner,export-agenda,enrollments,mcp} ...\\ncanvaspilot: error: argument cmd: invalid choice: 'find-files' (choose from login, session, whoami, courses, sync, find-announcements, announcements, grade-review, export-grade-review, assignments, brief, feedback, inbox, conversation, discussions, discussion, files, browse-files, export-calendar, export-pages, export-study, export-syllabus, module-progress, export-module-progress, submission-history, export-submission-history, compare-submissions, agenda, quizzes, quiz, planner, export-agenda, enrollments, mcp)\\n\")",
+      "traceback": "Traceback (most recent call last):\n  File \"/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/receive.py\", line 320, in group\n    details=fn()\n  File \"/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/receive.py\", line 140, in cli_success\n    assert done.returncode==0,(done.returncode,done.stderr.decode())\n           ^^^^^^^^^^^^^^^^^^\nAssertionError: (2, \"usage: canvaspilot [-h]\\n                   {login,session,whoami,courses,sync,find-announcements,announcements,grade-review,export-grade-review,assignments,brief,feedback,inbox,conversation,discussions,discussion,files,browse-files,export-calendar,export-pages,export-study,export-syllabus,module-progress,export-module-progress,submission-history,export-submission-history,compare-submissions,agenda,quizzes,quiz,planner,export-agenda,enrollments,mcp} ...\\ncanvaspilot: error: argument cmd: invalid choice: 'find-files' (choose from login, session, whoami, courses, sync, find-announcements, announcements, grade-review, export-grade-review, assignments, brief, feedback, inbox, conversation, discussions, discussion, files, browse-files, export-calendar, export-pages, export-study, export-syllabus, module-progress, export-module-progress, submission-history, export-submission-history, compare-submissions, agenda, quizzes, quiz, planner, export-agenda, enrollments, mcp)\\n\")\n",
+      "seconds": 2.083463
+    },
+    {
+      "name": "Existing files command continuity",
+      "passed": true,
+      "details": {
+        "rows": 3,
+        "requests": 2,
+        "ordinary_files_continuity": true
+      },
+      "seconds": 2.694751
+    }
+  ],
+  "passed": 1,
+  "failed": 1,
+  "invocations": [
+    {
+      "case": "cli-001",
+      "arguments": [
+        "find-files",
+        "042",
+        "77",
+        "88",
+        "--text",
+        "STRASSE"
+      ],
+      "scenario": "success",
+      "returncode": 2,
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_bytes": 975,
+      "stderr_sha256": "1fccc9c7710991158efadab2b550502c9d668032314c8b5e461a147b9bf78007",
+      "requests": [],
+      "lifecycle": {
+        "started": "2026-10-09T01:31:09.382021+00:00",
+        "client_created": 0,
+        "client_closed": 0,
+        "connects": [],
+        "blocked": [],
+        "logger_before": 17,
+        "source_modules": {
+          "canvaspilot": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/baseline/src/canvaspilot/__init__.py",
+          "canvaspilot.api": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/baseline/src/canvaspilot/api.py",
+          "canvaspilot.assignment_submission": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/baseline/src/canvaspilot/assignment_submission.py",
+          "canvaspilot.bundle": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/baseline/src/canvaspilot/bundle.py",
+          "canvaspilot.client": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/baseline/src/canvaspilot/client.py",
+          "canvaspilot.feedback": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/baseline/src/canvaspilot/feedback.py",
+          "canvaspilot.mcp_server": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/baseline/src/canvaspilot/mcp_server.py"
+        },
+        "logger_after": 17,
+        "exit": 2,
+        "finished": "2026-10-09T01:31:11.020051+00:00"
+      }
+    },
+    {
+      "case": "cli-002",
+      "arguments": [
+        "files",
+        "42"
+      ],
+      "scenario": "success",
+      "returncode": 0,
+      "stdout_bytes": 626,
+      "stdout_sha256": "5b85d4bac5ce5df0c879b237c262332303fe19264b4af2f9258bf08f17baa963",
+      "stderr_bytes": 213,
+      "stderr_sha256": "9fdf4e9941012e855bc9810ef6e699e7f758dc0fdb05e5f84d51eab8fe94e2dc",
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/files?per_page=50",
+          "synthetic_auth": true
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/files?cursor=opaque%2Bnext&keep=1&keep=2",
+          "synthetic_auth": true
+        }
+      ],
+      "lifecycle": {
+        "started": "2026-10-09T01:31:11.480003+00:00",
+        "client_created": 1,
+        "client_closed": 1,
+        "connects": [
+          [
+            "127.0.0.1",
+            40399
+          ],
+          [
+            "127.0.0.1",
+            40399
+          ]
+        ],
+        "blocked": [],
+        "logger_before": 17,
+        "source_modules": {
+          "canvaspilot": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/baseline/src/canvaspilot/__init__.py",
+          "canvaspilot.api": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/baseline/src/canvaspilot/api.py",
+          "canvaspilot.assignment_submission": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/baseline/src/canvaspilot/assignment_submission.py",
+          "canvaspilot.bundle": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/baseline/src/canvaspilot/bundle.py",
+          "canvaspilot.client": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/baseline/src/canvaspilot/client.py",
+          "canvaspilot.feedback": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/baseline/src/canvaspilot/feedback.py",
+          "canvaspilot.mcp_server": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/baseline/src/canvaspilot/mcp_server.py"
+        },
+        "logger_after": 17,
+        "exit": 0,
+        "finished": "2026-10-09T01:31:13.703831+00:00"
+      }
+    }
+  ],
+  "source_pins": {
+    "pyproject.toml": {
+      "bytes": 1353,
+      "sha256": "555ad3c7e338d38ae5feabc06c0c07503f22d9c732a9af153c7706c63d2b3c63"
+    },
+    "src/canvaspilot/__init__.py": {
+      "bytes": 561,
+      "sha256": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5"
+    },
+    "src/canvaspilot/agenda.py": {
+      "bytes": 8455,
+      "sha256": "cd9d9e027393ce21cff0b4d0a13098dca3a906af3e9803201655bca40d3c3fda"
+    },
+    "src/canvaspilot/agenda_export.py": {
+      "bytes": 15270,
+      "sha256": "4e55a0c16e76286130f01e81f04685da1a3ecd9bb5a7a0493ccbfe97c0fcd3ce"
+    },
+    "src/canvaspilot/agenda_view/controls.js": {
+      "bytes": 2823,
+      "sha256": "98474fb98fff0027e26fabd024c33a186715b5ac612979c4ef8b1d84b181d172"
+    },
+    "src/canvaspilot/agenda_view/style.css": {
+      "bytes": 7435,
+      "sha256": "ed5f86e62198a9a0b13cbcd87db0bdae9cb2e5732358bf6eb684da47f45610d0"
+    },
+    "src/canvaspilot/announcement_search.py": {
+      "bytes": 1555,
+      "sha256": "aa766157ccc10d6c3371a0e761c89ce3189d201cd9fcf5b82eec22d1c572f65e"
+    },
+    "src/canvaspilot/api.py": {
+      "bytes": 29742,
+      "sha256": "b6b770c2cdef9c9ce44a4a6aefd5b6d0876bc09e5aee29a4adb5a7c603b41c24"
+    },
+    "src/canvaspilot/assignment_submission.py": {
+      "bytes": 1296,
+      "sha256": "52fc732660b8844a2ee0801931a363f20db15b5309d148d01e3b618be487133d"
+    },
+    "src/canvaspilot/bundle.py": {
+      "bytes": 2761,
+      "sha256": "c8a1854b5c04715c1371c05f4c25ba867ec2d2daafc132b7ed8a973d3e55ddcf"
+    },
+    "src/canvaspilot/calendar_export.py": {
+      "bytes": 9950,
+      "sha256": "b92948c438063438bf9b8ef01b0b0c067802ddb06354f00e8ee18749f3c5e2fa"
+    },
+    "src/canvaspilot/cli.py": {
+      "bytes": 40011,
+      "sha256": "c703a5dad3ef54ed308fb217c4a3b0a32791ea5f9b84093669fa667bb7a3a12b"
+    },
+    "src/canvaspilot/client.py": {
+      "bytes": 18934,
+      "sha256": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797"
+    },
+    "src/canvaspilot/discussion_thread.py": {
+      "bytes": 8547,
+      "sha256": "11f955f827c29421143782518a1aaf1894d0892739c3b56c4d5e413da74555ff"
+    },
+    "src/canvaspilot/feedback.py": {
+      "bytes": 3900,
+      "sha256": "55454598effea598474a21f67e36d5bc5bea84aaefeefc18e4d8c49804ab9869"
+    },
+    "src/canvaspilot/folder_browser.py": {
+      "bytes": 6293,
+      "sha256": "c6a67229b268c539e5edb581e3320b06229460adc3fbc01d72e4964e31c0348a"
+    },
+    "src/canvaspilot/grade_review.py": {
+      "bytes": 13247,
+      "sha256": "e550752a830ca9cf4c2ef5d5b06dbf464abd9dfed3a5252d310a4acf8e2411f5"
+    },
+    "src/canvaspilot/grade_review_export.py": {
+      "bytes": 18810,
+      "sha256": "0f16c805d57bf9aa8eba09b6bde2afde033bf09fe64b4525adf22de3b248c351"
+    },
+    "src/canvaspilot/mcp_server.py": {
+      "bytes": 16291,
+      "sha256": "52cfd5cbe167438762049f4c36feec822986f5e5e63aeaf494e07907235e1c98"
+    },
+    "src/canvaspilot/module_progress.py": {
+      "bytes": 9615,
+      "sha256": "974ee31925514a2e53b899888302a7fa357e280ab5f2461b754b814473653d99"
+    },
+    "src/canvaspilot/module_progress_export.py": {
+      "bytes": 12904,
+      "sha256": "f723c06e551fae2cf50745460f9109867e6e0f9ebc3cc997d49d5e2173aa9f50"
+    },
+    "src/canvaspilot/offline_demo.py": {
+      "bytes": 4124,
+      "sha256": "2389f3ccc1b6db5995be0d90e014ea9345e3029aa5546a5b2dcf12c1197e6d4d"
+    },
+    "src/canvaspilot/page_export.py": {
+      "bytes": 17041,
+      "sha256": "8800e959ee620438273c3291fd24c51b9ed567430b28093cd3f8bef52bff5015"
+    },
+    "src/canvaspilot/session_broker.py": {
+      "bytes": 13944,
+      "sha256": "a692cd2812cbc09536f1b60c84892bc8e87d2ae984c5a5aa25a13f6537ba6da2"
+    },
+    "src/canvaspilot/study_workspace.css": {
+      "bytes": 6648,
+      "sha256": "aa77aeba7b1400eeccde7430e77eb0de0d5fd9791c4f1960c930309ba574fe2b"
+    },
+    "src/canvaspilot/study_workspace.html": {
+      "bytes": 2334,
+      "sha256": "1181415863ceef48a6238ce1588a722f1ae914be6d8125f04553fe2321110c1e"
+    },
+    "src/canvaspilot/study_workspace.js": {
+      "bytes": 16544,
+      "sha256": "62dcac599d6cf7f880a08a2297d2880c238e8a758843ec790a365b18a88bc38c"
+    },
+    "src/canvaspilot/study_workspace.py": {
+      "bytes": 11259,
+      "sha256": "fb791929a7322850d4a92fbf2a7d54a71780e2dd54a0737b84258de09abd0515"
+    },
+    "src/canvaspilot/submission_comparison.py": {
+      "bytes": 27015,
+      "sha256": "ab7445cadf2a22b31d8f8f837b816d90367d5295e90fe73615a459bc2d9101d4"
+    },
+    "src/canvaspilot/submission_history.py": {
+      "bytes": 2853,
+      "sha256": "b007234b9861a68504e36f005ae463943b36b5cd50a3d157532c1cab09fcf9da"
+    },
+    "src/canvaspilot/submission_history_export.py": {
+      "bytes": 16025,
+      "sha256": "7582f1aa2a18ace57c1ed4e0f75dc095850520853f26f578104f8fbd893da14f"
+    },
+    "src/canvaspilot/syllabus_packet.py": {
+      "bytes": 21513,
+      "sha256": "005a837c10bb185edf0bcc75c3ab50609f6afbe49d38161e841380116ab97bd7"
+    }
+  },
+  "source_unchanged": true,
+  "owned_listener_closed": true,
+  "parent_network_rejections": [],
+  "live_Canvas_browser_model_or_account": false,
+  "socket_policy": "Child real CLI execution permits only exact private loopback fixture port; DNS/connect rejections are receiving failures",
+  "state": "baseline_feature_absent_healthy_existing_control"
+}

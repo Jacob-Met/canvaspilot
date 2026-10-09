@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "git",
+    "-C",
+    "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/source",
+    "switch",
+    "-c",
+    "work/2d2d276b-file-search",
+    "56a72a2e2cee5ec04671d12ebe5bc2484afb8026"
+  ],
+  "rc": 0,
+  "stdout": "",
+  "stderr": "Switched to a new branch 'work/2d2d276b-file-search'\n"
+}

@@ -1,0 +1,43 @@
+{
+  "state": "original_missing_command_witness_preserved",
+  "at": "2026-10-09T01:21:31.159119+00:00",
+  "source_head": "56a72a2e2cee5ec04671d12ebe5bc2484afb8026",
+  "source_clean": true,
+  "commands": [
+    {
+      "argv": [
+        "/home/jacob/canvaspilot-enrollments-env-65ae877160f6/bin/python",
+        "-B",
+        "-m",
+        "canvaspilot.cli",
+        "find-files",
+        "42",
+        "77",
+        "--text",
+        "lab"
+      ],
+      "rc": 2,
+      "stdout": "",
+      "stderr": "usage: canvaspilot [-h]\n                   {login,session,whoami,courses,sync,find-announcements,announcements,grade-review,export-grade-review,assignments,brief,feedback,inbox,conversation,discussions,discussion,files,browse-files,export-calendar,export-pages,export-study,export-syllabus,module-progress,export-module-progress,submission-history,export-submission-history,compare-submissions,agenda,quizzes,quiz,planner,export-agenda,enrollments,mcp} ...\ncanvaspilot: error: argument cmd: invalid choice: 'find-files' (choose from login, session, whoami, courses, sync, find-announcements, announcements, grade-review, export-grade-review, assignments, brief, feedback, inbox, conversation, discussions, discussion, files, browse-files, export-calendar, export-pages, export-study, export-syllabus, module-progress, export-module-progress, submission-history, export-submission-history, compare-submissions, agenda, quizzes, quiz, planner, export-agenda, enrollments, mcp)\n"
+    },
+    {
+      "argv": [
+        "/home/jacob/canvaspilot-enrollments-env-65ae877160f6/bin/python",
+        "-B",
+        "-m",
+        "canvaspilot.cli",
+        "files",
+        "--help"
+      ],
+      "rc": 0,
+      "stdout": "usage: canvaspilot files [-h] [--base-url BASE_URL] [--profile PROFILE]\n                         [--token TOKEN]\n                         course_id\n\npositional arguments:\n  course_id\n\noptions:\n  -h, --help           show this help message and exit\n  --base-url BASE_URL\n  --profile PROFILE\n  --token TOKEN\n",
+      "stderr": ""
+    }
+  ],
+  "requests": 0,
+  "boundary": "Argparse exits before any Canvas client construction",
+  "contract": {
+    "path": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/contract-v2.md",
+    "sha256": "34c12b41e1f9824a1b7da1f5173bf3f5efa8f02094f560f16b35fd02a4479e57"
+  }
+}

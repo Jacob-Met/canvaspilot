@@ -1,0 +1,15 @@
+{
+  "state": "independently_accepted_exact_native_product",
+  "product": "94fb3a02a06b235dc46e25dab5c03012f202eec9",
+  "tree": "721a263dedbb1ad8a2d230eed536cbad35dbe89a",
+  "root_review": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/root-review.json",
+  "root_review_sha256": "18ead7f19f453a7ea49742ccdcfd759c3bb95eeaf03349888fb7986f1d77b658",
+  "archive": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/independent-receiving.zip",
+  "archive_bytes": 70732,
+  "archive_sha256": "f4b371cd0275f54152117a715a4d87b624516f9895f258d1d68108b7b68eaaea",
+  "manifest": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/independent-manifest.json",
+  "manifest_sha256": "3aaabb608c135c7abde23a2f087410b4c847bdf742a1e0dbfb47b21faadb5b3b",
+  "files": 87,
+  "zip_members": 88,
+  "source_and_original_evidence_preserved": true
+}

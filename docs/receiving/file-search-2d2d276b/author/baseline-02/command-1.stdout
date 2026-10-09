@@ -1,0 +1,12 @@
+usage: canvaspilot files [-h] [--base-url BASE_URL] [--profile PROFILE]
+                         [--token TOKEN]
+                         course_id
+
+positional arguments:
+  course_id
+
+options:
+  -h, --help           show this help message and exit
+  --base-url BASE_URL
+  --profile PROFILE
+  --token TOKEN

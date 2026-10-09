@@ -1,0 +1,29 @@
+{
+  "state": "contract_frozen_clean_full_native_source_ready_no_product_edits",
+  "at": "2026-10-09T01:19:18.973996+00:00",
+  "claim": "/srv/hamon-estate/coord/hamon-ultra-2d2d276b-canvas-file-search.json",
+  "claim_sha256": "c8b354ad647181418082bc3a4766afcc9358998910ce978c8ac468f761c8f2c8",
+  "contract": {
+    "path": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/contract-v1.md",
+    "sha256": "9fe3fef43e97744771cabbc67db227e0565507e9dd851f341661130437eb0faf"
+  },
+  "source": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/source",
+  "head": "56a72a2e2cee5ec04671d12ebe5bc2484afb8026",
+  "tree": "a07c3e941219ff80968e1ff20528a63541bb7400",
+  "leaves": 1616,
+  "manifest": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/preparation-01/source-pins.json",
+  "manifest_sha256": "1e2c2beb61aea7fa4a31c97f8989746f11dc5fed47c6a3623b8a8bc76ac01027",
+  "source_clean": true,
+  "runtime": "/home/jacob/canvaspilot-enrollments-env-65ae877160f6/bin/python",
+  "baseline_entrypoint": [
+    "python",
+    "-m",
+    "canvaspilot",
+    "find-files",
+    "42",
+    "77",
+    "--text",
+    "lab"
+  ],
+  "candidate_exposed": false
+}

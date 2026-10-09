@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-09T01:36:34.039614+00:00",
+  "pid": 3472225,
+  "argv": [
+    "/home/jacob/canvaspilot-enrollments-env-65ae877160f6/bin/python",
+    "-B",
+    "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/receive.py",
+    "candidate",
+    "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-source",
+    "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search-independent/candidate-run"
+  ],
+  "head": "94fb3a02a06b235dc46e25dab5c03012f202eec9",
+  "tree": "721a263dedbb1ad8a2d230eed536cbad35dbe89a",
+  "intake_sha256": "e1862e3aeac67ed0d741e181cc359ff0ba89807aa3bb7b9436790e549c728a48",
+  "oracle_sha256": "ec1a42170d5257965d45dd1e56eb57da9f54b8a8859b5c9d883eb0c77fbd3ddf",
+  "state": "one_independent_receiving_invocation_prepared"
+}

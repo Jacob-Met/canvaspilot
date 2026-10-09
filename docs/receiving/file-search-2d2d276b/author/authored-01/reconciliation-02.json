@@ -1,0 +1,12 @@
+{
+  "state": "own_test_and_lint_reconciliation",
+  "original_receipt": "qualification-01/receipt.json",
+  "preserved": "73 passed/1 failed: existing files command emits its inherited HTTPX informational stderr, unlike the new command. No existing command changed. Seven lint findings retained.",
+  "changes": [
+    "Correct only the existing-command stderr assertion; continue checking its rc and exact JSON bytes against matching search records.",
+    "Separate internal type validation from the frozen public ValueError admission boundary; no lint rule/gate or contract weakened.",
+    "Sort new test imports and explicitly mark subprocess check=False because actual exit codes are asserted."
+  ],
+  "source_before": "45b9deee194db5b5c51e0ad9d61de9ac6b6624002c6d2c1fbacc42b87a0a5bf8",
+  "source_after": "e60da0f0c574fdc81eaf67484bece7126f83e1b465422cb5a73d7398e8ae3888"
+}

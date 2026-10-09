@@ -1,0 +1,68 @@
+{
+  "schema": "hamon.external_contribution.v1",
+  "worker_id": "hamon-ultra-20261008-1657-2d2d276b/native_desktop_receiving",
+  "actor": "chatgpt:2d2d276bbccc:native_desktop_receiving",
+  "state": "claimed_contract_frozen_before_source_edits",
+  "repository": "Jacob-Met/canvaspilot",
+  "native_goal_or_lease_claimed": false,
+  "beneficiary": "Learners locating a returned course file by filename or display name across explicitly selected courses without opening every course file listing.",
+  "base_commit": "56a72a2e2cee5ec04671d12ebe5bc2484afb8026",
+  "base_tree": "a07c3e941219ff80968e1ff20528a63541bb7400",
+  "native_root": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search",
+  "scope": [
+    "src/canvaspilot/file_search.py new",
+    "src/canvaspilot/cli.py additive find-files parser/preflight/dispatch only",
+    "tests/test_file_search.py new",
+    "tests/test_file_search_cli.py new",
+    "docs/file-search.md new",
+    "README.md one additive discovery paragraph",
+    "docs/receiving/file-search-2d2d276b/** new"
+  ],
+  "excluded": [
+    "Existing API/list_files/client/broker/authentication/pagination/MCP code",
+    "File contents, downloads, folder traversal, returned-link requests or live Canvas data",
+    "All existing command bodies, other owners, dependencies, workflows, credentials, installed services and profiles",
+    "GitHub writes or any Actions trigger",
+    "LA7 calls or effects"
+  ],
+  "independent_receiver": "hamon-ultra-20261008-1657-2d2d276b/root",
+  "ownership_evidence": {
+    "current_open_issues_and_prs": 25,
+    "open_prs": 13,
+    "current_main_received_via": "GitHub connector GET git/ref/heads/main",
+    "native_top_and_nested_claim_search": "No find-files/file_search.py/filename-search matching claim in bounded native read; ongoing scan completion checked separately",
+    "preserve_issues": [
+      99,
+      98,
+      97,
+      96,
+      95,
+      94,
+      93,
+      92,
+      91,
+      89,
+      88,
+      85,
+      83,
+      81,
+      60,
+      28,
+      27,
+      25,
+      24,
+      23,
+      22,
+      9,
+      8,
+      7,
+      5
+    ],
+    "native_instructions": "No AGENTS.md, SKILL.md or CONTRIBUTING.md in complete1616-leaf base; no /AGENTS.md,/home/AGENTS.md,/home/jacob/AGENTS.md present"
+  },
+  "created_at": "2026-10-09T01:19:18.973996+00:00",
+  "contract": {
+    "path": "/home/jacob/hamon-ultra-2d2d276b-canvas-file-search/contract-v1.md",
+    "sha256": "9fe3fef43e97744771cabbc67db227e0565507e9dd851f341661130437eb0faf"
+  }
+}

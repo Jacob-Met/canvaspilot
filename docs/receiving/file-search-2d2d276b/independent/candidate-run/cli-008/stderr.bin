@@ -1,0 +1,3 @@
+usage: canvaspilot [-h]
+                   {login,session,whoami,courses,sync,find-announcements,announcements,grade-review,export-grade-review,assignments,brief,feedback,inbox,conversation,discussions,discussion,files,find-files,browse-files,export-calendar,export-pages,export-study,export-syllabus,module-progress,export-module-progress,submission-history,export-submission-history,compare-submissions,agenda,quizzes,quiz,planner,export-agenda,enrollments,mcp} ...
+canvaspilot: error: search text must be at most 512 UTF-8 bytes
