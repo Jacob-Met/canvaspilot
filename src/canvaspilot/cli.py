@@ -167,6 +167,16 @@ def main(argv: list[str] | None = None) -> None:
     add_common(files)
     files.add_argument("course_id")
 
+    find_files = sub.add_parser(
+        "find-files", help="Find literal text in selected-course file names; metadata only",
+    )
+    add_common(find_files)
+    find_files.add_argument("course_ids", nargs="+", help="1–10 unique positive course IDs")
+    find_files.add_argument(
+        "--text", required=True,
+        help="Literal Unicode case-insensitive text in display_name or filename",
+    )
+
     browse = sub.add_parser("browse-files", help="Browse one course folder; metadata only")
     add_common(browse)
     browse.add_argument("course_id", help="Positive numeric Canvas course ID")
@@ -315,6 +325,14 @@ def main(argv: list[str] | None = None) -> None:
     add_common(mcp)
 
     args = parser.parse_args(argv)
+
+    if args.cmd == "find-files":
+        from canvaspilot.file_search import validate_request
+
+        try:
+            args.course_ids, args.text = validate_request(args.course_ids, args.text)
+        except ValueError as error:
+            parser.error(str(error))
 
     if args.cmd == "login":
         _login(base_url=args.base_url, profile=args.profile)
@@ -500,6 +518,28 @@ def main(argv: list[str] | None = None) -> None:
             print(json.dumps(result, indent=2))
         elif args.cmd == "files":
             print(json.dumps(api.list_files(args.course_id), indent=2, default=str))
+        elif args.cmd == "find-files":
+            import httpx
+
+            from canvaspilot.client import CanvasAuthError, CanvasPaginationError
+            from canvaspilot.file_search import find_files as search_files
+
+            http_log = logging.getLogger("httpx")
+            previous_level = http_log.level
+            http_log.setLevel(max(http_log.getEffectiveLevel(), logging.WARNING))
+            try:
+                result = search_files(api, args.course_ids, args.text)
+            except (
+                CanvasAuthError, CanvasPaginationError, httpx.HTTPError,
+                ValueError, RecursionError,
+            ) as error:
+                print(json.dumps({
+                    "ok": False, "error": type(error).__name__, "message": str(error),
+                }), file=sys.stderr)
+                raise SystemExit(1) from None
+            finally:
+                http_log.setLevel(previous_level)
+            print(json.dumps(result, indent=2, allow_nan=False))
         elif args.cmd in ("inbox", "conversation"):
             import httpx
 

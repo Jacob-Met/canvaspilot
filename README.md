@@ -529,3 +529,11 @@ canvaspilot find-announcements 42 77 --text "room change" --start-date 2026-10-0
 
 The result preserves ordered full announcement rows and identifies which fields matched.
 See [announcement text search](docs/announcement-search.md) for matching, output, and complete-read behavior.
+
+## Find a file by name
+
+Use `canvaspilot find-files 42 77 --text "lab notes"` to search the returned
+filenames and display names across explicitly selected courses. It keeps course
+and file order, explains unavailable names and reads no file contents. See the
+[file-name search guide](docs/file-search.md) for literal Unicode matching,
+counts, selection limits and complete-result error behavior.
