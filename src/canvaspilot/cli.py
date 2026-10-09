@@ -198,6 +198,14 @@ def main(argv: list[str] | None = None) -> None:
     study.add_argument("assignment_ids", nargs="+", help="1–25 explicit assignment IDs")
     study.add_argument("--out", required=True, type=Path, help="New .html file; existing paths are protected")
 
+    module_study = sub.add_parser(
+        "export-module", help="Save one module's readings and assignment briefs as an offline HTML packet",
+    )
+    add_common(module_study)
+    module_study.add_argument("course_id", help="Positive decimal Canvas course ID")
+    module_study.add_argument("module_id", help="One explicit positive decimal module ID")
+    module_study.add_argument("--out", required=True, type=Path, help="New HTML file; existing paths are protected")
+
     syllabus = sub.add_parser(
         "export-syllabus", help="Save selected course syllabi as a new offline HTML reading packet",
     )
@@ -326,6 +334,12 @@ def main(argv: list[str] | None = None) -> None:
         from canvaspilot.mcp_server import main as mcp_main
 
         mcp_main()
+        return
+
+    if args.cmd == "export-module":
+        from canvaspilot.module_study_packet import run_export_module
+
+        run_export_module(args)
         return
 
     if args.cmd == "export-study":

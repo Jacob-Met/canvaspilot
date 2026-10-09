@@ -529,3 +529,12 @@ canvaspilot find-announcements 42 77 --text "room change" --start-date 2026-10-0
 
 The result preserves ordered full announcement rows and identifies which fields matched.
 See [announcement text search](docs/announcement-search.md) for matching, output, and complete-read behavior.
+
+## Read one module offline
+
+Use `canvaspilot export-module 42 7 --out module-7.html` to save one
+module's ordered Page readings and Assignment briefs as a passive, printable
+HTML packet. Repeated readings are fetched once while every module position
+remains present. Other types remain labeled references. The complete retained
+source JSON is downloadable. See [module reading packets](docs/module-study-packet.md)
+for selection, source boundaries, limits and unavailable-content meanings.
