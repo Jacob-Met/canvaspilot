@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/dev/shm/evaluation-69570d292200-canvas-pages/evidence/finalize-source-v2.py", line 30, in <module>
+    need(all(tag in ('equal','insert') for tag,*_ in difflib.SequenceMatcher(None,before,after,autojunk=False).get_opcodes()),'only additive source '+path)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dev/shm/evaluation-69570d292200-canvas-pages/evidence/finalize-source-v2.py", line 4, in need
+    if not x: raise AssertionError(m)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: only additive source src/canvaspilot/cli.py

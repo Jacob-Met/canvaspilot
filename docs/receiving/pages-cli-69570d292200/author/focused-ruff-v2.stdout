@@ -1,0 +1,89 @@
+PLW1510 `subprocess.run` without explicit `check` argument
+  --> tests/test_pages_cli.py:59:12
+   |
+57 | def command(base, *args, stdout=subprocess.PIPE):
+58 |     env = dict(os.environ, PYTHONPATH=str(SRC), PYTHONDONTWRITEBYTECODE="1")
+59 |     return subprocess.run(
+   |            ^^^^^^^^^^^^^^
+60 |         [sys.executable, "-B", "-m", "canvaspilot.cli", *args,
+61 |          "--base-url", base, "--token", "synthetic-pages-only"],
+   |
+help: Add explicit `check=False`
+
+B023 Function definition does not bind loop variable `payload`
+  --> tests/test_pages_cli.py:97:38
+   |
+95 |         {"url": "kept", "title": None, "published": None, "updated_at": None, "front_page": None},
+96 |     ])]:
+97 |         with canvas(lambda *_: (200, payload, {})) as (base, requests):
+   |                                      ^^^^^^^
+98 |             result = command(base, "pages", "42")
+99 |         assert result.returncode == 0, result.stderr
+   |
+
+SIM117 Use a single `with` statement with multiple contexts instead of nested `with` statements
+   --> tests/test_pages_cli.py:153:13
+    |
+151 |       with mock.patch("canvaspilot.client.CanvasClient") as constructor:
+152 |           for args in invalid:
+153 | /             with contextlib.redirect_stdout(io.StringIO()) as out:
+154 | |                 with contextlib.redirect_stderr(io.StringIO()):
+    | |_______________________________________________________________^
+155 |                       with pytest.raises(SystemExit) as error:
+156 |                           main(args)
+    |
+help: Combine `with` statements
+
+SIM117 Use a single `with` statement with multiple contexts instead of nested `with` statements
+   --> tests/test_pages_cli.py:160:13
+    |
+158 |               assert out.getvalue() == ""
+159 |           for args in (["pages", "--help"], ["page", "--help"]):
+160 | /             with contextlib.redirect_stdout(io.StringIO()) as out:
+161 | |                 with pytest.raises(SystemExit) as error:
+    | |________________________________________________________^
+162 |                       main(args)
+163 |               assert error.value.code == 0
+    |
+help: Combine `with` statements
+
+SIM117 Use a single `with` statement with multiple contexts instead of nested `with` statements
+   --> tests/test_pages_cli.py:209:17
+    |
+207 |                   client = CanvasClient(base_url=base, token="synthetic-pages-only")
+208 |                   real_close = client.close
+209 | /                 with mock.patch.object(client, "close", wraps=real_close) as close:
+210 | |                     with mock.patch("canvaspilot.client.CanvasClient", return_value=client):
+    | |____________________________________________________________________________________________^
+211 |                           with contextlib.redirect_stdout(io.StringIO()) as out:
+212 |                               with contextlib.redirect_stderr(io.StringIO()) as err:
+    |
+help: Combine `with` statements
+
+SIM117 Use a single `with` statement with multiple contexts instead of nested `with` statements
+   --> tests/test_pages_cli.py:211:25
+    |
+209 |                   with mock.patch.object(client, "close", wraps=real_close) as close:
+210 |                       with mock.patch("canvaspilot.client.CanvasClient", return_value=client):
+211 | /                         with contextlib.redirect_stdout(io.StringIO()) as out:
+212 | |                             with contextlib.redirect_stderr(io.StringIO()) as err:
+    | |__________________________________________________________________________________^
+213 |                                   if expected_exit:
+214 |                                       with pytest.raises(SystemExit) as error:
+    |
+help: Combine `with` statements
+
+SIM117 Use a single `with` statement with multiple contexts instead of nested `with` statements
+   --> tests/test_pages_cli.py:233:5
+    |
+231 |   @pytest.mark.skipif(not Path("/dev/full").exists(), reason="native /dev/full unavailable")
+232 |   def test_failed_stdout_is_nonzero_and_client_read_remains_get_only():
+233 | /     with canvas(lambda *_: (200, [], {})) as (base, requests):
+234 | |         with open("/dev/full", "w") as sink:
+    | |____________________________________________^
+235 |               result = command(base, "pages", "42", stdout=sink)
+236 |       assert result.returncode != 0
+    |
+help: Combine `with` statements
+
+Found 7 errors.

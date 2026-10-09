@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="5" skipped="0" tests="18" time="38.094" timestamp="2026-10-08T22:33:26.286742+00:00" hostname="hamon-thinkpad"><testcase classname="tests.test_pages_cli" name="test_pages_keeps_order_null_false_and_follows_opaque_link" time="3.404" /><testcase classname="tests.test_pages_cli" name="test_empty_collection_and_existing_nonobject_filtering" time="5.881" /><testcase classname="tests.test_pages_cli" name="test_page_preserves_original_html_and_existing_text_projection" time="2.585"><failure message="AssertionError: assert [{'method': 'GET', 'path': '/api/v1/courses/42/pages/reading?per_page=50'}] == [{'method': 'GET', 'path': '/api/v1/courses/42/pages/reading'}]&#10;  &#10;  At index 0 diff: {'method': 'GET', 'path': '/api/v1/courses/42/pages/reading?per_page=50'} != {'method': 'GET', 'path': '/api/v1/courses/42/pages/reading'}&#10;  &#10;  Full diff:&#10;    [&#10;        {&#10;            'method': 'GET',&#10;  -         'path': '/api/v1/courses/42/pages/reading',&#10;  +         'path': '/api/v1/courses/42/pages/reading?per_page=50',&#10;  ?                                                  ++++++++++++&#10;        },&#10;    ]">def test_page_preserves_original_html_and_existing_text_projection():
+        body = "&lt;h2&gt;Reading &amp;amp; practice&lt;/h2&gt;&lt;p&gt;Bring your notes.&lt;/p&gt;"
+        row = {"url": "reading", "title": "Today's reading", "body": body,
+               "published": False, "front_page": True}
+        with canvas(lambda *_: (200, row, {})) as (base, requests):
+            result = command(base, "page", "42", "reading")
+        assert result.returncode == 0, result.stderr
+        assert json.loads(result.stdout) == {
+            "url": "reading", "title": "Today's reading", "body_html": body,
+            "body_text": "Reading &amp; practice Bring your notes.", "published": False,
+        }
+&gt;       assert requests == [{"method": "GET", "path": "/api/v1/courses/42/pages/reading"}]
+E       AssertionError: assert [{'method': 'GET', 'path': '/api/v1/courses/42/pages/reading?per_page=50'}] == [{'method': 'GET', 'path': '/api/v1/courses/42/pages/reading'}]
+E         
+E         At index 0 diff: {'method': 'GET', 'path': '/api/v1/courses/42/pages/reading?per_page=50'} != {'method': 'GET', 'path': '/api/v1/courses/42/pages/reading'}
+E         
+E         Full diff:
+E           [
+E               {
+E                   'method': 'GET',
+E         -         'path': '/api/v1/courses/42/pages/reading',
+E         +         'path': '/api/v1/courses/42/pages/reading?per_page=50',
+E         ?                                                  ++++++++++++
+E               },
+E           ]
+
+tests/test_pages_cli.py:115: AssertionError</failure></testcase><testcase classname="tests.test_pages_cli" name="test_absent_null_empty_page_body[payload0-None]" time="2.508" /><testcase classname="tests.test_pages_cli" name="test_absent_null_empty_page_body[payload1-None]" time="1.496" /><testcase classname="tests.test_pages_cli" name="test_absent_null_empty_page_body[payload2-]" time="1.396" /><testcase classname="tests.test_pages_cli" name="test_locator_is_admitted_then_encoded_as_one_literal_segment[caf\xe9 100%?draft#one-caf%C3%A9%20100%25%3Fdraft%23one]" time="1.486"><failure message="AssertionError: assert [{'method': 'GET', 'path': '/api/v1/courses/42/pages/caf%C3%A9%20100%25%3Fdraft%23one?per_page=50'}] == [{'method': 'GET', 'path': '/api/v1/courses/42/pages/caf%C3%A9%20100%25%3Fdraft%23one'}]&#10;  &#10;  At index 0 diff: {'method': 'GET', 'path': '/api/v1/courses/42/pages/caf%C3%A9%20100%25%3Fdraft%23one?per_page=50'} != {'method': 'GET', 'path': '/api/v1/courses/42/pages/caf%C3%A9%20100%25%3Fdraft%23one'}&#10;  &#10;  Full diff:&#10;    [&#10;        {&#10;            'method': 'GET',&#10;  -         'path': '/api/v1/courses/42/pages/caf%C3%A9%20100%25%3Fdraft%23one',&#10;  +         'path': '/api/v1/courses/42/pages/caf%C3%A9%20100%25%3Fdraft%23one?per_page=50',&#10;  ?                                                                           ++++++++++++&#10;        },&#10;    ]">locator = 'café 100%?draft#one', encoded = 'caf%C3%A9%20100%25%3Fdraft%23one'
+
+    @pytest.mark.parametrize("locator,encoded", [
+        ("café 100%?draft#one", "caf%C3%A9%20100%25%3Fdraft%23one"),
+        ("page_id:00170", "page_id%3A170"),
+        ("170", "170"),
+    ])
+    def test_locator_is_admitted_then_encoded_as_one_literal_segment(locator, encoded):
+        with canvas(lambda *_: (200, {"body": "ok"}, {})) as (base, requests):
+            result = command(base, "page", "00042", locator)
+        assert result.returncode == 0, result.stderr
+&gt;       assert requests == [{"method": "GET", "path": "/api/v1/courses/42/pages/" + encoded}]
+E       AssertionError: assert [{'method': 'GET', 'path': '/api/v1/courses/42/pages/caf%C3%A9%20100%25%3Fdraft%23one?per_page=50'}] == [{'method': 'GET', 'path': '/api/v1/courses/42/pages/caf%C3%A9%20100%25%3Fdraft%23one'}]
+E         
+E         At index 0 diff: {'method': 'GET', 'path': '/api/v1/courses/42/pages/caf%C3%A9%20100%25%3Fdraft%23one?per_page=50'} != {'method': 'GET', 'path': '/api/v1/courses/42/pages/caf%C3%A9%20100%25%3Fdraft%23one'}
+E         
+E         Full diff:
+E           [
+E               {
+E                   'method': 'GET',
+E         -         'path': '/api/v1/courses/42/pages/caf%C3%A9%20100%25%3Fdraft%23one',
+E         +         'path': '/api/v1/courses/42/pages/caf%C3%A9%20100%25%3Fdraft%23one?per_page=50',
+E         ?                                                                           ++++++++++++
+E               },
+E           ]
+
+tests/test_pages_cli.py:137: AssertionError</failure></testcase><testcase classname="tests.test_pages_cli" name="test_locator_is_admitted_then_encoded_as_one_literal_segment[page_id:00170-page_id%3A170]" time="1.685"><failure message="AssertionError: assert [{'method': 'GET', 'path': '/api/v1/courses/42/pages/page_id%3A170?per_page=50'}] == [{'method': 'GET', 'path': '/api/v1/courses/42/pages/page_id%3A170'}]&#10;  &#10;  At index 0 diff: {'method': 'GET', 'path': '/api/v1/courses/42/pages/page_id%3A170?per_page=50'} != {'method': 'GET', 'path': '/api/v1/courses/42/pages/page_id%3A170'}&#10;  &#10;  Full diff:&#10;    [&#10;        {&#10;            'method': 'GET',&#10;  -         'path': '/api/v1/courses/42/pages/page_id%3A170',&#10;  +         'path': '/api/v1/courses/42/pages/page_id%3A170?per_page=50',&#10;  ?                                                        ++++++++++++&#10;        },&#10;    ]">locator = 'page_id:00170', encoded = 'page_id%3A170'
+
+    @pytest.mark.parametrize("locator,encoded", [
+        ("café 100%?draft#one", "caf%C3%A9%20100%25%3Fdraft%23one"),
+        ("page_id:00170", "page_id%3A170"),
+        ("170", "170"),
+    ])
+    def test_locator_is_admitted_then_encoded_as_one_literal_segment(locator, encoded):
+        with canvas(lambda *_: (200, {"body": "ok"}, {})) as (base, requests):
+            result = command(base, "page", "00042", locator)
+        assert result.returncode == 0, result.stderr
+&gt;       assert requests == [{"method": "GET", "path": "/api/v1/courses/42/pages/" + encoded}]
+E       AssertionError: assert [{'method': 'GET', 'path': '/api/v1/courses/42/pages/page_id%3A170?per_page=50'}] == [{'method': 'GET', 'path': '/api/v1/courses/42/pages/page_id%3A170'}]
+E         
+E         At index 0 diff: {'method': 'GET', 'path': '/api/v1/courses/42/pages/page_id%3A170?per_page=50'} != {'method': 'GET', 'path': '/api/v1/courses/42/pages/page_id%3A170'}
+E         
+E         Full diff:
+E           [
+E               {
+E                   'method': 'GET',
+E         -         'path': '/api/v1/courses/42/pages/page_id%3A170',
+E         +         'path': '/api/v1/courses/42/pages/page_id%3A170?per_page=50',
+E         ?                                                        ++++++++++++
+E               },
+E           ]
+
+tests/test_pages_cli.py:137: AssertionError</failure></testcase><testcase classname="tests.test_pages_cli" name="test_locator_is_admitted_then_encoded_as_one_literal_segment[170-170]" time="1.550"><failure message="AssertionError: assert [{'method': 'GET', 'path': '/api/v1/courses/42/pages/170?per_page=50'}] == [{'method': 'GET', 'path': '/api/v1/courses/42/pages/170'}]&#10;  &#10;  At index 0 diff: {'method': 'GET', 'path': '/api/v1/courses/42/pages/170?per_page=50'} != {'method': 'GET', 'path': '/api/v1/courses/42/pages/170'}&#10;  &#10;  Full diff:&#10;    [&#10;        {&#10;            'method': 'GET',&#10;  -         'path': '/api/v1/courses/42/pages/170',&#10;  +         'path': '/api/v1/courses/42/pages/170?per_page=50',&#10;  ?                                              ++++++++++++&#10;        },&#10;    ]">locator = '170', encoded = '170'
+
+    @pytest.mark.parametrize("locator,encoded", [
+        ("café 100%?draft#one", "caf%C3%A9%20100%25%3Fdraft%23one"),
+        ("page_id:00170", "page_id%3A170"),
+        ("170", "170"),
+    ])
+    def test_locator_is_admitted_then_encoded_as_one_literal_segment(locator, encoded):
+        with canvas(lambda *_: (200, {"body": "ok"}, {})) as (base, requests):
+            result = command(base, "page", "00042", locator)
+        assert result.returncode == 0, result.stderr
+&gt;       assert requests == [{"method": "GET", "path": "/api/v1/courses/42/pages/" + encoded}]
+E       AssertionError: assert [{'method': 'GET', 'path': '/api/v1/courses/42/pages/170?per_page=50'}] == [{'method': 'GET', 'path': '/api/v1/courses/42/pages/170'}]
+E         
+E         At index 0 diff: {'method': 'GET', 'path': '/api/v1/courses/42/pages/170?per_page=50'} != {'method': 'GET', 'path': '/api/v1/courses/42/pages/170'}
+E         
+E         Full diff:
+E           [
+E               {
+E                   'method': 'GET',
+E         -         'path': '/api/v1/courses/42/pages/170',
+E         +         'path': '/api/v1/courses/42/pages/170?per_page=50',
+E         ?                                              ++++++++++++
+E               },
+E           ]
+
+tests/test_pages_cli.py:137: AssertionError</failure></testcase><testcase classname="tests.test_pages_cli" name="test_invalid_arguments_and_help_do_not_create_client" time="0.185" /><testcase classname="tests.test_pages_cli" name="test_later_page_failure_is_not_partial_success" time="1.770" /><testcase classname="tests.test_pages_cli" name="test_read_failures_are_structured[args0-payload0-200]" time="1.635" /><testcase classname="tests.test_pages_cli" name="test_read_failures_are_structured[args1-None-200]" time="1.268" /><testcase classname="tests.test_pages_cli" name="test_read_failures_are_structured[args2-payload2-403]" time="1.369" /><testcase classname="tests.test_pages_cli" name="test_read_failures_are_structured[args3-payload3-403]" time="1.572" /><testcase classname="tests.test_pages_cli" name="test_same_process_error_then_success_restores_logger_and_closes_http_client" time="0.566" /><testcase classname="tests.test_pages_cli" name="test_failed_stdout_is_nonzero_and_client_read_remains_get_only" time="1.699" /><testcase classname="tests.test_pages_cli" name="test_existing_quiz_command_remains_unchanged" time="1.786"><failure message="AssertionError: assert [{'method': 'GET', 'path': '/api/v1/courses/42/quizzes/9?per_page=50'}] == [{'method': 'GET', 'path': '/api/v1/courses/42/quizzes/9'}]&#10;  &#10;  At index 0 diff: {'method': 'GET', 'path': '/api/v1/courses/42/quizzes/9?per_page=50'} != {'method': 'GET', 'path': '/api/v1/courses/42/quizzes/9'}&#10;  &#10;  Full diff:&#10;    [&#10;        {&#10;            'method': 'GET',&#10;  -         'path': '/api/v1/courses/42/quizzes/9',&#10;  +         'path': '/api/v1/courses/42/quizzes/9?per_page=50',&#10;  ?                                              ++++++++++++&#10;        },&#10;    ]">def test_existing_quiz_command_remains_unchanged():
+        row = {"id": 9, "title": "Existing quiz", "published": False, "extra": {"kept": True}}
+        with canvas(lambda *_: (200, row, {})) as (base, requests):
+            result = command(base, "quiz", "42", "9")
+        assert result.returncode == 0, result.stderr
+        assert json.loads(result.stdout) == row
+&gt;       assert requests == [{"method": "GET", "path": "/api/v1/courses/42/quizzes/9"}]
+E       AssertionError: assert [{'method': 'GET', 'path': '/api/v1/courses/42/quizzes/9?per_page=50'}] == [{'method': 'GET', 'path': '/api/v1/courses/42/quizzes/9'}]
+E         
+E         At index 0 diff: {'method': 'GET', 'path': '/api/v1/courses/42/quizzes/9?per_page=50'} != {'method': 'GET', 'path': '/api/v1/courses/42/quizzes/9'}
+E         
+E         Full diff:
+E           [
+E               {
+E                   'method': 'GET',
+E         -         'path': '/api/v1/courses/42/quizzes/9',
+E         +         'path': '/api/v1/courses/42/quizzes/9?per_page=50',
+E         ?                                              ++++++++++++
+E               },
+E           ]
+
+tests/test_pages_cli.py:247: AssertionError</failure></testcase></testsuite></testsuites>

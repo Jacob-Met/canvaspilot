@@ -1,0 +1,22 @@
+{
+  "stage": "author native qualification",
+  "initialRunner": {
+    "path": "run-candidate-v1.py",
+    "observedExit": 1,
+    "observedRuntimeSeconds": 186.09,
+    "error": "subprocess.TimeoutExpired: focused pytest command timed out after 180 seconds.",
+    "outputCaptureBoundary": "The initial runner used capture_output and did not persist TimeoutExpired.output. Its partial pytest stdout is unavailable; no pass/failure count inferred. Process tool retained the Python traceback. Version2 writes raw logs as the command runs and catches timeout."
+  },
+  "firstCompletedRun": {
+    "sourceUnchanged": true,
+    "baseUnchanged": true,
+    "result": "13 passed,5 failed in38.09seconds;7 Ruff test-style findings.",
+    "failures": "All five semantic failures were path assertions omitting the existing client per_page=50 query. Full result JSON assertions and successful request exits passed. Product code unchanged. Corrected expected requests keep the inherited query, matching accepted client.py _with_per_page handling."
+  },
+  "finalChange": "Only test expected path queries plus explicit check=False, bound loop value and combined context managers.",
+  "boundaries": [
+    "No upstream or shared files altered",
+    "No API/ref/Actions call",
+    "No hidden pass claim for interrupted run"
+  ]
+}

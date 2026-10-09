@@ -1,0 +1,91 @@
+{
+  "schema": "canvaspilot-pages-cli-adoption-source-review-v1",
+  "reviewer": "ultra-1b3276062063/mac",
+  "claim": "https://github.com/Jacob-Met/canvaspilot/issues/103#issuecomment-6076885387",
+  "disposition": "ACCEPT offered source and historical native receiving for current-parent composition; actual publication is independently gated.",
+  "current": {
+    "commit": "29395684139e9c0cf71d037d32d503411b1e7cd0",
+    "tree": "823cd71973bef8faf0cab92782b32c6dc6170beb",
+    "leaves": 1642
+  },
+  "offered": {
+    "source_commit": "241623fef9b138ad8bef142f3415a59098dcdf95",
+    "source_tree": "6d2bd132c4e8de5735cfeeb15ef2db35bcbbf608",
+    "evidence_commit": "84799ae481041080d5e0484b8fb3319f598b3927",
+    "evidence_tree": "3db534dd547385673126c82cabf033a2e0da4c8f",
+    "author": "69570d292200",
+    "product_leaves": [
+      {
+        "path": "src/canvaspilot/cli.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5e616006d2ed4828213b08e07fe37ca692fb1faa",
+        "bytes": 42006,
+        "sha256": "8b4902838a9d2c3271e3efdde44eea254f0beb7a07ba9469b934c27deabcb1cb"
+      },
+      {
+        "path": "README.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "720c20ac8268a38e8e7f8f95f6108087064f6420",
+        "bytes": 28728,
+        "sha256": "31cec701d3f31733db4438ce6fddcf06eafd3ac30d96fa90f3b73b9bd6bd976e"
+      },
+      {
+        "path": "tests/test_pages_cli.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a704b6f4ceed7fe66bdd43d6b0d0d69642c84dc7",
+        "bytes": 10593,
+        "sha256": "27fb614ad9b67461e2da9eee1fafd652852640f6958dbb54f5ced427553ac139"
+      },
+      {
+        "path": "docs/pages-cli.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1d65008521e58b6c8440ceb094a58baabf877725",
+        "bytes": 3114,
+        "sha256": "0de4ee43e7f608971403c23fe5dd806e39a993f509e62e4f7d15a4c8e60e80a3"
+      }
+    ],
+    "unchanged_evidence_leaves": 48,
+    "evidence_bytes": 1188635
+  },
+  "source_review": {
+    "cli": "Exactly43 inserted lines in3 spans; removing them reconstructs exact current1c29 bytes. Read complete new admission/dispatch and surrounding client cleanup; help/admission precede client creation, single complete read before JSON print, output failure nonzero and inherited close/logger restoration retained.",
+    "readme": {
+      "current_git": "8df69ec7c8f3deed9a8cd1c44deac70bd92fe1cb",
+      "offered_git": "720c20ac8268a38e8e7f8f95f6108087064f6420",
+      "current_prefix_exact": true,
+      "additive_lines": 7,
+      "append": "## Read course pages from the terminal\n\nUse `canvaspilot pages 42` to discover returned page locators, then\n`canvaspilot page 42 course-introduction` to read one page's original HTML and\nexisting cleaned text projection. The same locator can be passed to\n`export-pages`. See [terminal page reading](docs/pages-cli.md) for numeric IDs,\nfield meanings, complete-read failures and the existing API projection boundary.\n"
+    },
+    "test_and_guide": "Complete10593B test and3114B guide read; projection/locator/null/empty/current-reader boundaries agree with source. Actual /dev/full refusal is nonzero120 with interpreter flush diagnostic; no rollback or clean-stderr claim.",
+    "current_dependency": "All original dependency pins in native source inventory remain exact except API3ec81→5ae5 already merged by PR108; offeredCLI is selected5e616. Complete API AST outside cleaner constant/body is identical, so no API method is rewritten.",
+    "seam_receiving": "Actual local fileless Python3.12.14 invoked whole old/current CanvasAPI modules with explicit request-only fixture substitution, not real HTTPX or native CLI. Two get_page bodies show retained entity/Unicode projection identical and merged quoted-attribute/literal-math correction preserved. Exact raw result and driver retained."
+  },
+  "retained_native_evidence": {
+    "review": "1105755902e94092fa07ef4d425e58a264caf01c",
+    "original_receiving": "9248a47bee1b7ae9e662f3dc438ec678c0f3e611",
+    "source_only_correction": "3b812e79a66c8c9d0457bc2e8cbbe939e10df07b",
+    "author_stdout": "7bcb04cd1adf224bc23c4bc956d3b82dea1d6522",
+    "author_junit": "2a51c84d3aa4973fd280bda578d7a49b297767c0",
+    "author_18_native_tests": "Rawstdout andJUnit retained, no rerun",
+    "independent_native": "13 actual subprocesses and13 actual loopback GETs; six behavior groupsPASS; original overallFAIL for source-join TypeError retained and only that source comparison corrected",
+    "source_custody": "Original33 andcandidate35 file hashes before/after equal; full current composition retains all48 archivalevidence blobs/modes unchanged."
+  },
+  "ref_and_action_boundary": {
+    "selected_ref_event": false,
+    "tracked_workflows": "Both complete current tracked files read; no issue/comment event. This establishes only that narrow coordination event finding.",
+    "registered_workflow_inventory_attempt": "Generic connector fetch /actions/workflows refused INVALID_ARGUMENT400 URL unsupported; retained, no alternate-route retry. Integration owner uses its supported currentmetadata/eventhistory.",
+    "root_current_evidence": "Root reports has_pages=false and actual all-event runs current293956=0 at07:58:43; this report is attributed, not independently duplicated.",
+    "known_additional_dynamic": "Integration owner found historical dynamic dependabot/update-graph workflow377001830/run37775162781; no ref until applicability addressed.",
+    "no_dependency_changes": true
+  },
+  "limits": [
+    "No native or HTTPX/loopback/CLI/browser replay by this adoption lane.",
+    "No installed or live school/provider behavior claimed.",
+    "No alternate auth/host, service, settings, dependency or workflow change.",
+    "Historical18+13 qualification stays on its original source/runtime; the local2case seam check is separately labeled."
+  ]
+}
