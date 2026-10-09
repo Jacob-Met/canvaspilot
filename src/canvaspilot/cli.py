@@ -271,6 +271,15 @@ def main(argv: list[str] | None = None) -> None:
     agenda.add_argument("--start", dest="start_date", required=True, help="YYYY-MM-DD")
     agenda.add_argument("--end", dest="end_date", required=True, help="YYYY-MM-DD")
 
+    pages = sub.add_parser("pages", help="List course page locators for reading or export")
+    add_common(pages)
+    pages.add_argument("course_id", type=_positive_int, help="Positive numeric Canvas course ID")
+
+    page = sub.add_parser("page", help="Read one course page without changing it")
+    add_common(page)
+    page.add_argument("course_id", type=_positive_int, help="Positive numeric Canvas course ID")
+    page.add_argument("page_locator", help="Returned page URL locator, or page_id:ID")
+
     quizzes = sub.add_parser("quizzes", help="List classic quizzes for a course")
     add_common(quizzes)
     quizzes.add_argument("course_id", type=_positive_int, help="Positive numeric Canvas course ID")
@@ -333,6 +342,18 @@ def main(argv: list[str] | None = None) -> None:
 
         run_export_study(args)
         return
+
+    if args.cmd == "page":
+        from urllib.parse import quote
+
+        from canvaspilot.page_export import validate_page_selection
+
+        try:
+            course, locators = validate_page_selection(args.course_id, [args.page_locator])
+        except (TypeError, ValueError) as error:
+            parser.error(str(error))
+        args.course_id = course
+        args.page_locator = quote(locators[0], safe="")
 
     from canvaspilot.api import CanvasAPI
     from canvaspilot.client import CanvasClient, default_base_url, default_profile
@@ -460,6 +481,28 @@ def main(argv: list[str] | None = None) -> None:
                     default=str,
                 )
             )
+        elif args.cmd in {"pages", "page"}:
+            import httpx
+
+            from canvaspilot.client import CanvasAuthError, CanvasPaginationError
+
+            http_log = logging.getLogger("httpx")
+            previous_level = http_log.level
+            http_log.setLevel(max(http_log.getEffectiveLevel(), logging.WARNING))
+            try:
+                if args.cmd == "pages":
+                    result = api.list_pages(args.course_id)
+                else:
+                    result = api.get_page(args.course_id, args.page_locator)
+                print(json.dumps(result, indent=2, ensure_ascii=False, allow_nan=False), flush=True)
+            except (CanvasAuthError, CanvasPaginationError, httpx.HTTPError,
+                    ValueError, TypeError, AttributeError, OSError) as error:
+                print(json.dumps({
+                    "ok": False, "error": type(error).__name__, "message": str(error),
+                }), file=sys.stderr)
+                raise SystemExit(1) from None
+            finally:
+                http_log.setLevel(previous_level)
         elif args.cmd in {"quizzes", "quiz"}:
             import httpx
 

@@ -529,3 +529,10 @@ canvaspilot find-announcements 42 77 --text "room change" --start-date 2026-10-0
 
 The result preserves ordered full announcement rows and identifies which fields matched.
 See [announcement text search](docs/announcement-search.md) for matching, output, and complete-read behavior.
+## Read course pages from the terminal
+
+Use `canvaspilot pages 42` to discover returned page locators, then
+`canvaspilot page 42 course-introduction` to read one page's original HTML and
+existing cleaned text projection. The same locator can be passed to
+`export-pages`. See [terminal page reading](docs/pages-cli.md) for numeric IDs,
+field meanings, complete-read failures and the existing API projection boundary.
