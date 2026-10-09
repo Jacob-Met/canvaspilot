@@ -280,6 +280,22 @@ def main(argv: list[str] | None = None) -> None:
     page.add_argument("course_id", type=_positive_int, help="Positive numeric Canvas course ID")
     page.add_argument("page_locator", help="Returned page URL locator, or page_id:ID")
 
+    revisions = sub.add_parser(
+        "page-revisions", help="List recorded page revisions (requires Canvas page edit rights)",
+    )
+    add_common(revisions)
+    revisions.add_argument("course_id", help="Positive numeric Canvas course ID")
+    revisions.add_argument("page_url", help="Literal current page locator, or page_id:ID")
+
+    revision = sub.add_parser(
+        "page-revision", help="Read a selected historical page revision without reverting it",
+    )
+    add_common(revision)
+    revision.add_argument("course_id", help="Positive numeric Canvas course ID")
+    revision.add_argument("page_url", help="Literal current page locator, or page_id:ID")
+    revision.add_argument("revision_id", help="Positive revision ID from history, or latest")
+    revision.add_argument("--summary", action="store_true", help="Ask Canvas to omit page content")
+
     quizzes = sub.add_parser("quizzes", help="List classic quizzes for a course")
     add_common(quizzes)
     quizzes.add_argument("course_id", type=_positive_int, help="Positive numeric Canvas course ID")
@@ -354,6 +370,16 @@ def main(argv: list[str] | None = None) -> None:
             parser.error(str(error))
         args.course_id = course
         args.page_locator = quote(locators[0], safe="")
+
+    if args.cmd in {"page-revisions", "page-revision"}:
+        from canvaspilot.page_revisions import page_path, revision_selector
+
+        try:
+            page_path(args.course_id, args.page_url)
+            if args.cmd == "page-revision":
+                revision_selector(args.revision_id)
+        except (TypeError, ValueError) as error:
+            parser.error(str(error))
 
     from canvaspilot.api import CanvasAPI
     from canvaspilot.client import CanvasClient, default_base_url, default_profile
@@ -481,6 +507,31 @@ def main(argv: list[str] | None = None) -> None:
                     default=str,
                 )
             )
+        elif args.cmd in {"page-revisions", "page-revision"}:
+            import httpx
+
+            from canvaspilot.client import CanvasAuthError, CanvasPaginationError
+
+            http_log = logging.getLogger("httpx")
+            previous_level = http_log.level
+            http_log.setLevel(max(http_log.getEffectiveLevel(), logging.WARNING))
+            try:
+                if args.cmd == "page-revisions":
+                    result = api.list_page_revisions(args.course_id, args.page_url)
+                else:
+                    result = api.get_page_revision(
+                        args.course_id, args.page_url, args.revision_id, summary=args.summary,
+                    )
+                content = json.dumps(result, indent=2, ensure_ascii=False, allow_nan=False)
+                print(content, flush=True)
+            except (CanvasAuthError, CanvasPaginationError, httpx.HTTPError,
+                    ValueError, TypeError, OSError) as error:
+                print(json.dumps({
+                    "ok": False, "error": type(error).__name__, "message": str(error),
+                }), file=sys.stderr)
+                raise SystemExit(1) from None
+            finally:
+                http_log.setLevel(previous_level)
         elif args.cmd in {"pages", "page"}:
             import httpx
 

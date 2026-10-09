@@ -1,0 +1,70 @@
+{
+  "base": "6d445c68a5fd47df9368bebb879f5e3c372998ec",
+  "head": "a317417a8a2c39fb23256102904c24fba16a969a",
+  "tree": "6ccc165bf75cb27c822d19c59ea6dc126297bbc0",
+  "files": [
+    {
+      "path": "src/canvaspilot/page_revisions.py",
+      "bytes": 3670,
+      "sha256": "99feea78d430986b4619903b7c459ecbca0e3ca601c07937b55065d496bf11be",
+      "git_blob": "c5ea3fad3a61cbc82b3671a70933233127dc1a70"
+    },
+    {
+      "path": "src/canvaspilot/api.py",
+      "bytes": 31838,
+      "sha256": "7ec8d267cecacb28542970ba3e9342f7ab8a84b0e28c765c5535eedae7abf2b3",
+      "git_blob": "17e20a496edf75639e4eca6ec491f74dbe4aaafa"
+    },
+    {
+      "path": "src/canvaspilot/cli.py",
+      "bytes": 44485,
+      "sha256": "7880d94daaa03e4f5a38ba350f6b2addd8e7a53f47e5d501650fcf1e22db1b31",
+      "git_blob": "c0de5523519acb86c1983c80de3627b01d80719e"
+    },
+    {
+      "path": "src/canvaspilot/mcp_server.py",
+      "bytes": 17400,
+      "sha256": "e32144564b307e93561011a98cb808a6be45c77a351e334aaf93d595ed57a579",
+      "git_blob": "291ed614f82fea973a9671e1f5fa3898fbf7f363"
+    },
+    {
+      "path": "tests/test_page_revisions.py",
+      "bytes": 6750,
+      "sha256": "3a35f1c572692690bd938519cf39e0a95f909e2c815db52c3aeefbd041c7a6b8",
+      "git_blob": "1733cd10df706b8e32ed4db6c0576198d3406753"
+    },
+    {
+      "path": "tests/test_page_revisions_process.py",
+      "bytes": 9472,
+      "sha256": "4fa6cb885281b3080a470d6eac34d0a2b95707fc89b639cf0acb6b9fa7cf88b2",
+      "git_blob": "693537a5173c39b47dadcaf1b1e32bda445bac5a"
+    },
+    {
+      "path": "docs/page-revisions.md",
+      "bytes": 3535,
+      "sha256": "3162e234d9f2c1a0d6240699edea5e1a30136af899923e299b8dcdcd6312dd24",
+      "git_blob": "74ecaec4c7376aba00ff0a72eca0460620b4c583"
+    },
+    {
+      "path": "README.md",
+      "bytes": 29068,
+      "sha256": "2235cbd262b978a18dcf28d356efd977ad096d74446444f5d5edb696d31fc2b3",
+      "git_blob": "d28621249c7741a99e0855426de48b5771fd5fbb"
+    }
+  ],
+  "preserved_parent_leaves": 1697,
+  "changed_existing": [
+    "README.md",
+    "src/canvaspilot/api.py",
+    "src/canvaspilot/cli.py",
+    "src/canvaspilot/mcp_server.py"
+  ],
+  "new_files": [
+    "docs/page-revisions.md",
+    "src/canvaspilot/page_revisions.py",
+    "tests/test_page_revisions.py",
+    "tests/test_page_revisions_process.py"
+  ],
+  "status": "",
+  "native_only": true
+}

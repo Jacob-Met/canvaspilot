@@ -1,0 +1,144 @@
+{
+  "schema": "canvaspilot-page-revisions-qualification/1",
+  "at": "2026-10-09T10:53:40.502567+00:00",
+  "issue": "https://github.com/Jacob-Met/canvaspilot/issues/117",
+  "source": {
+    "base": "6d445c68a5fd47df9368bebb879f5e3c372998ec",
+    "head": "a317417a8a2c39fb23256102904c24fba16a969a",
+    "tree": "6ccc165bf75cb27c822d19c59ea6dc126297bbc0",
+    "files": [
+      {
+        "path": "src/canvaspilot/page_revisions.py",
+        "bytes": 3670,
+        "sha256": "99feea78d430986b4619903b7c459ecbca0e3ca601c07937b55065d496bf11be",
+        "git_blob": "c5ea3fad3a61cbc82b3671a70933233127dc1a70"
+      },
+      {
+        "path": "src/canvaspilot/api.py",
+        "bytes": 31838,
+        "sha256": "7ec8d267cecacb28542970ba3e9342f7ab8a84b0e28c765c5535eedae7abf2b3",
+        "git_blob": "17e20a496edf75639e4eca6ec491f74dbe4aaafa"
+      },
+      {
+        "path": "src/canvaspilot/cli.py",
+        "bytes": 44485,
+        "sha256": "7880d94daaa03e4f5a38ba350f6b2addd8e7a53f47e5d501650fcf1e22db1b31",
+        "git_blob": "c0de5523519acb86c1983c80de3627b01d80719e"
+      },
+      {
+        "path": "src/canvaspilot/mcp_server.py",
+        "bytes": 17400,
+        "sha256": "e32144564b307e93561011a98cb808a6be45c77a351e334aaf93d595ed57a579",
+        "git_blob": "291ed614f82fea973a9671e1f5fa3898fbf7f363"
+      },
+      {
+        "path": "tests/test_page_revisions.py",
+        "bytes": 6750,
+        "sha256": "3a35f1c572692690bd938519cf39e0a95f909e2c815db52c3aeefbd041c7a6b8",
+        "git_blob": "1733cd10df706b8e32ed4db6c0576198d3406753"
+      },
+      {
+        "path": "tests/test_page_revisions_process.py",
+        "bytes": 9472,
+        "sha256": "4fa6cb885281b3080a470d6eac34d0a2b95707fc89b639cf0acb6b9fa7cf88b2",
+        "git_blob": "693537a5173c39b47dadcaf1b1e32bda445bac5a"
+      },
+      {
+        "path": "docs/page-revisions.md",
+        "bytes": 3535,
+        "sha256": "3162e234d9f2c1a0d6240699edea5e1a30136af899923e299b8dcdcd6312dd24",
+        "git_blob": "74ecaec4c7376aba00ff0a72eca0460620b4c583"
+      },
+      {
+        "path": "README.md",
+        "bytes": 29068,
+        "sha256": "2235cbd262b978a18dcf28d356efd977ad096d74446444f5d5edb696d31fc2b3",
+        "git_blob": "d28621249c7741a99e0855426de48b5771fd5fbb"
+      }
+    ],
+    "preserved_parent_leaves": 1697,
+    "changed_existing": [
+      "README.md",
+      "src/canvaspilot/api.py",
+      "src/canvaspilot/cli.py",
+      "src/canvaspilot/mcp_server.py"
+    ],
+    "new_files": [
+      "docs/page-revisions.md",
+      "src/canvaspilot/page_revisions.py",
+      "tests/test_page_revisions.py",
+      "tests/test_page_revisions_process.py"
+    ],
+    "status": "",
+    "native_only": true
+  },
+  "userOutcome": "Authorized page editors can list recorded page revisions and read one numeric or latest historical version through GET-only API, CLI, and MCP.",
+  "originalBaseline": {
+    "pageTestsPassed": 18,
+    "bothNewCommandsAbsentExit": 2,
+    "newAPIMethodsAbsent": true
+  },
+  "author": {
+    "initialTestsPassed": 78,
+    "includesExistingPageTests": 18,
+    "initialRuffFindings": 3,
+    "finalFocusedTestsPassed": 60,
+    "finalRuffPassed": true,
+    "changesAfterInitialRun": "Two invalid-container raises aligned with TypeError and one test import order; no other product delta."
+  },
+  "wheel": {
+    "name": "canvaspilot-0.1.1-py3-none-any.whl",
+    "bytes": 130236,
+    "sha256": "83f71bd8a08bd35f4ed192c6dee5c5d25248bbd38a7b1816ad2e02a4c9eaee0a",
+    "receiptSha256": "b878891238f91a6503e3c3cda79f0dba168ab49a1dbaae987426eafd39bb9577",
+    "declaredBackend": "Hatchling",
+    "privateTarget": true,
+    "changedPayloadExact": true,
+    "installedEntryPointsAndAPIReceived": true
+  },
+  "independent": {
+    "expectationsBeforeCandidate": "4100e3a89dca0ca2b971d4457a9d420cfd5a11bcbcab0c27e9a0e6fa00d51317",
+    "actualGroupsPassed": 4,
+    "receiptSha256": "762c539f71cdaebe127b48811a4f59ac49eead8e39e0223685900054e59af884",
+    "sourceOnlyPeerSha256": "389b0c21f55c6bf3f1dd3adc303fae7aa1dd0e14cacbe2eb371b8b4d625b1459",
+    "noBlockers": true
+  },
+  "preservation": {
+    "otherParentLeavesExact": 1697,
+    "sharedFilesAdditiveOnly": 4,
+    "newProductFiles": 4,
+    "clientBrokerPaginationDependenciesWorkflowsUnchanged": true
+  },
+  "negativeHistory": [
+    "Initial unexecuted flat body_text projection replaced by an outer envelope before authored tests; original and contract addendum preserved.",
+    "R1 authored test success with three Ruff findings; final targeted rerun and lint success retained separately.",
+    "Initial source-intake inline transport E2BIG and later issue-proof inline transport E2BIG had no process execution; file-backed correction retained."
+  ],
+  "limits": [
+    "Synthetic loopback fixtures only; no live Canvas account or real course permission acceptance.",
+    "No full-repository suite, hosted CI, deployment or main integration claim.",
+    "Original pagination caps/normalization are unchanged; returned history is not certified complete or atomic.",
+    "No page edit/revert/write endpoint added.",
+    "Source retention must use fresh unchanged feature-push filters, absent associated PR and current ref proof; Actions remain forbidden."
+  ],
+  "archives": [
+    {
+      "path": "author-native.zip",
+      "bytes": 334064,
+      "sha256": "1be8ea5927a5eb501a9aec504794c317891c4d57c0e03c5479a7476a9e1f6bc0",
+      "members": 71
+    },
+    {
+      "path": "independent-native.zip",
+      "bytes": 155982,
+      "sha256": "c1c604cd677c67ff32be29e17b3344b8d98d4641b56687012ceff89ca2af91ee",
+      "members": 57
+    },
+    {
+      "path": "static-peer.zip",
+      "bytes": 20093,
+      "sha256": "50f960cda3a8251d5b41829db8929b64617a8e2edc0ab46f7c55024afa47b6d6",
+      "members": 7
+    }
+  ]
+}

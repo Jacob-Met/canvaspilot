@@ -536,3 +536,10 @@ Use `canvaspilot pages 42` to discover returned page locators, then
 existing cleaned text projection. The same locator can be passed to
 `export-pages`. See [terminal page reading](docs/pages-cli.md) for numeric IDs,
 field meanings, complete-read failures and the existing API projection boundary.
+
+### Recorded page revisions
+
+Authorized course-page editors can list recorded revisions and read an explicit
+historical version through the API, CLI and read-only MCP tools, without reverting
+the current page. See [page revision history](docs/page-revisions.md) for commands,
+required Canvas permissions and the returned-history boundary.

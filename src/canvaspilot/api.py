@@ -444,6 +444,21 @@ class CanvasAPI:
             "published": p.get("published"),
         }
 
+    def list_page_revisions(self, course_id: int | str, page_url: str) -> list[dict[str, Any]]:
+        """Read returned page history; Canvas requires existing page edit rights."""
+        from canvaspilot.page_revisions import read_page_revisions
+
+        return read_page_revisions(self.client, course_id, page_url)
+
+    def get_page_revision(
+        self, course_id: int | str, page_url: str, revision_id: int | str,
+        *, summary: bool = False,
+    ) -> dict[str, Any]:
+        """Read one historical revision without reverting the current page."""
+        from canvaspilot.page_revisions import read_page_revision
+
+        return read_page_revision(self.client, course_id, page_url, revision_id, summary=summary)
+
     def list_discussion_topics(self, course_id: int | str) -> list[dict[str, Any]]:
         rows = self.client.get_paginated(
             f"/api/v1/courses/{course_id}/discussion_topics",

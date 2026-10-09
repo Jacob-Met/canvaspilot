@@ -128,6 +128,34 @@ async def canvas_get_page(course_id: str, page_url: str) -> str:
     return _dump(_get_api().get_page(course_id, page_url))
 
 
+@mcp.tool(
+    description=(
+        "List recorded revisions of a course page. Requires existing Canvas page edit rights; "
+        "returned rows retain server order and metadata. This does not prove history completeness."
+    ),
+    annotations=ToolAnnotations(readOnlyHint=True, destructiveHint=False, idempotentHint=True),
+    structured_output=False,
+)
+async def canvas_list_page_revisions(course_id: str, page_url: str) -> str:
+    return _dump(_get_api().list_page_revisions(course_id, page_url))
+
+
+@mcp.tool(
+    description=(
+        "Read a selected numeric or latest course-page revision, including its historical body "
+        "unless summary is requested. Requires existing Canvas edit rights; never reverts a page."
+    ),
+    annotations=ToolAnnotations(readOnlyHint=True, destructiveHint=False, idempotentHint=True),
+    structured_output=False,
+)
+async def canvas_get_page_revision(
+    course_id: str, page_url: str, revision_id: str, summary: StrictBool = False,
+) -> str:
+    return _dump(_get_api().get_page_revision(
+        course_id, page_url, revision_id, summary=summary,
+    ))
+
+
 @mcp.tool(description="List discussion topics for a course.", structured_output=False)
 async def canvas_list_discussion_topics(course_id: str) -> str:
     return _dump(_get_api().list_discussion_topics(course_id))
