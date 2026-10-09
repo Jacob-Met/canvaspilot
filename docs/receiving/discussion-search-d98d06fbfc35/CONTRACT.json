@@ -1,0 +1,101 @@
+{
+  "schema": "canvaspilot.discussion-search.contract.v1",
+  "owner": "d98d06fbfc35/image_receiving_2030",
+  "repository": "Jacob-Met/canvaspilot",
+  "purpose": "A learner locates returned discussion topics by literal text in the title or complete normalized opening prompt across deliberately selected course occurrences, then uses the existing discussion reader.",
+  "baseline": {
+    "commit": "56a72a2e2cee5ec04671d12ebe5bc2484afb8026",
+    "tree": "a07c3e941219ff80968e1ff20528a63541bb7400",
+    "api_blob": "3ec81dee60bc67d7a80d40b78e85d5c005441b99",
+    "cli_blob": "1c29dd2a2a1632b7f3c27878259efe492a08fdfd",
+    "client_blob": "1db4b1135305f7e410025ae7937f9a6cd349f020",
+    "normalization": "CanvasAPI.list_discussion_topics(course_id) unchanged. Existing get_paginated GET /api/v1/courses/{course_id}/discussion_topics with order_by=recent_activity and only_announcements=False. Projection id/title/posted_at/published/message_text/html_url; strip_html removes tags before HTML entity unescaping and collapses whitespace; non-dict raw rows are skipped by this existing reader."
+  },
+  "ownership": {
+    "new": [
+      "src/canvaspilot/discussion_search.py",
+      "tests/test_discussion_search.py",
+      "docs/discussion-search.md",
+      "docs/receiving/discussion-search-d98d06fbfc35/CONTRACT.json"
+    ],
+    "additive_only": [
+      "src/canvaspilot/cli.py: one find-discussions parser and one early dispatch span"
+    ],
+    "unchanged": [
+      "Every pre-existing command body",
+      "API/client/auth/broker/pagination/MCP and package bootstrap",
+      "README and dependency/workflow files",
+      "discussion_thread.py and export owner #85",
+      "other course-page/assignment/announcement/file search owners"
+    ],
+    "no_reference_or_pr_operations": true
+  },
+  "interfaces": {
+    "cli": "canvaspilot find-discussions COURSE_ID... --text QUERY [--base-url URL] [--profile PATH] [--token TOKEN]",
+    "validate_selection": "validate_selection(course_ids, query) -> (list[str], str)",
+    "search": "search_discussions(selections, query) -> dict; selections is a list of exact-key {course_id, topics} objects, topics are complete normalized reader rows.",
+    "collect": "collect_discussions(api, course_ids, query) -> dict; validate before calling api.list_discussion_topics, call once for each selected occurrence in explicit order, then return one whole result.",
+    "serialize": "serialize_discussion_search(result) -> str; complete pretty JSON plus one LF, with a 16 MiB UTF-8 bound.",
+    "runner": "run_find_discussions(args) -> None; uses the existing CanvasAPI/CanvasClient and common CLI arguments, closes owned client and restores HTTPX logger level before complete success output."
+  },
+  "admission": {
+    "courses": "A list or tuple of 1..10 selected occurrences. Each course is an exact int (not bool) or a nonempty string of at most 20 ASCII decimal digits; positive and no more than 20 decimal digits. Normalize leading zeroes to the positive decimal string. Repeated normalized course IDs are deliberately preserved as separate selection_number occurrences and read once per occurrence; no deduplication.",
+    "query": "Exact str containing at least one non-whitespace character, at most 512 UTF-8 bytes. Preserve all meaningful whitespace exactly. Unencodable Unicode is refused.",
+    "selections": "Exact list with 1..10 exact dict selections, each containing only course_id and topics. course_id admitted identically; topics exact list. At most 1000 normalized topic rows across all occurrences, no truncation. Empty topics allowed.",
+    "rows": "Every normalized topic row is an exact dict and must include all six projected keys id, title, posted_at, published, message_text, html_url. title must be str or None; message_text must be str. Other projected and additional supplied metadata retain their JSON values without coercion. Reject non-JSON, non-string object keys, tuples/custom containers, nonfinite floats, unencodable strings, cycles or excessive recursive structure instead of silently converting. Limit nesting to 32 containers including the selections root.",
+    "total_bytes": "At most 8 MiB for JSON of the complete normalized selections with ensure_ascii=False, allow_nan=False and separators=(',',':'), encoded as UTF-8. Limit is after the existing reader has already decoded/normalized; it is not a network-byte or raw Canvas response bound.",
+    "refusal": "Validate all selected normalized data, including nonmatching later rows/courses, before returning a report. Invalid record/limit/serialization or any reader exception gives no partial successful report. Inputs are never mutated."
+  },
+  "matching": {
+    "mode": "literal_casefold",
+    "rule": "query.casefold() substring independently in each title (if str) and complete message_text.casefold(); no regex, tokenization, accent folding, Unicode normalization, joining fields, sorting, ranking, snippets or slicing.",
+    "fields": [
+      "title",
+      "message_text"
+    ],
+    "ordering": "Selections in explicit user order, topic positions in each unchanged reader result. A topic appears once per original position when either field matches; matched_fields lists title then message_text. Equal IDs/titles/content remain distinct original occurrences.",
+    "identity": "selection_number and topic_position are one-based. course_id is the normalized explicit selection, not inferred from title or embedded URL. The complete admitted normalized topic row is detached from input and preserved.",
+    "no_match": "A valid report with matches=[], matched_count=0; does not prove inaccessible, omitted raw, attachment or reply content lacks the phrase.",
+    "empty_prompt": "Count empty normalized message_text strings as empty_message_text_count; raw missing/null/media-only distinctions are unavailable after existing normalization and are not invented."
+  },
+  "output": {
+    "exact_keys": [
+      "schema",
+      "query",
+      "match_mode",
+      "topic_count",
+      "matched_count",
+      "empty_message_text_count",
+      "selections",
+      "matches",
+      "boundary"
+    ],
+    "schema": "canvaspilot.discussion-search.v1",
+    "selection_keys": [
+      "selection_number",
+      "course_id",
+      "topics_returned",
+      "empty_message_text_count"
+    ],
+    "match_keys": [
+      "selection_number",
+      "course_id",
+      "topic_position",
+      "matched_fields",
+      "topic"
+    ],
+    "boundary": "Searches only returned titles and complete normalized opening prompts from the existing topic-list reader; not replies, attachments, hidden/unavailable raw content or a freshness/completeness guarantee. The existing paginator is reused unchanged; pagination failure refuses the result, and its provider conventions/limits remain.",
+    "preserved_values": "Unknown metadata, None/False/0/empty distinctions survive in matched topic rows. Result objects share no mutable input object. No raw HTML recovery or alternative cleanup."
+  },
+  "cli_behavior": {
+    "invalid_input": "Invalid course/query/selection before client/profile construction: structured JSON stderr, exit 2, empty stdout. argparse --help/unknown/missing argument behavior stays normal and occurs before client construction.",
+    "read_or_output_failure": "CanvasAuthError, CanvasPaginationError, HTTPX HTTPError, invalid normalized data/serialization, ordinary I/O or Unicode/value delivery failure: structured stderr when possible, exit 1, no partial successful JSON; a failed/partial output delivery is not called success. No retry.",
+    "stdout": "On success output exactly one serialized result and flush; check short text writes. No logging on success stdout. HTTPX logger suppression is temporary and original level restored. Completion relies on actual runner return/CLI exit, not merely prepared JSON.",
+    "effects": "Only the unchanged selected course topic-list calls. No detail/view/thread fetch, POST, mark-read, reply, subscription, attachment/URL follow, cache/storage/file export, live token/account mutation or source change."
+  },
+  "qualification": {
+    "author": "Focused standard-library in-memory helper and actual CLI-source dispatch tests with exact source-bound fake API/client transport; original absent-command witness retained. Existing real CanvasAPI normalization is exercised in memory with a finite fake transport.",
+    "independent": "Root freezes concrete expectations before candidate exposure; independent receiving remains separate from author tests.",
+    "limits": "Source/fixture receiving is not installed package, live Canvas, token/session pagination, physical terminal/browser/account acceptance. No dependencies installed, file writes, native machine probes or Actions."
+  }
+}

@@ -1,0 +1,364 @@
+{
+  "schema": "canvaspilot.discussion-search.root-receiving-closure.v1",
+  "owner": "chatgpt-d98d06fbfc35/root",
+  "status": "Independent in-memory helper and CLI-source receiving complete; live/installed/native acceptance remains separate",
+  "claim": "https://github.com/Jacob-Met/canvaspilot/issues/105",
+  "source": {
+    "base": "56a72a2e2cee5ec04671d12ebe5bc2484afb8026",
+    "originalCommit": "9f7324c8a1097af05192caf9910be8e29bc1e01c",
+    "correctedCommit": "6d5d3c1f2f835c27890832800dd011c193f44cf0",
+    "correctedTree": "523cc165bca7360b31e27238ecbff25d2b2c3921",
+    "manifest": "dda7d09dab18fae5d5b44eb668d6daa4b4ccdf9c",
+    "helper": {
+      "bytes": 9556,
+      "sha256": "5cc5b013285638b979c16904f04a8167099d11745e48f9d326ffb5e7271be26e",
+      "git": "58d65519670dfcb2bb2110c5f4dd9648fd9ed9a0"
+    },
+    "cli": {
+      "bytes": 40531,
+      "sha256": "951987326e65325870afd472ee9c80dca056a371e05f28e02eec055dd48557e6",
+      "git": "d566332b2aed272a0bac0298234ac39c5671e544"
+    },
+    "contract": "e356ca726c95dd0c45dc97d44a236b090ae3b69c"
+  },
+  "rootTreeAdmission": {
+    "schema": "canvaspilot.discussion-search.root-tree-receiving.v1",
+    "base": "56a72a2e2cee5ec04671d12ebe5bc2484afb8026",
+    "originalCommit": "9f7324c8a1097af05192caf9910be8e29bc1e01c",
+    "correctedCommit": "6d5d3c1f2f835c27890832800dd011c193f44cf0",
+    "baseTree": "a07c3e941219ff80968e1ff20528a63541bb7400",
+    "originalTree": "905813acb84b9209b505666ba9487270a8b68e3b",
+    "correctedTree": "523cc165bca7360b31e27238ecbff25d2b2c3921",
+    "baseLeaves": 1616,
+    "finalLeaves": 1620,
+    "unownedBaseLeavesPreserved": 1615,
+    "unownedDirectoryEntriesPreserved": 218,
+    "ownedPaths": [
+      "src/canvaspilot/discussion_search.py",
+      "src/canvaspilot/cli.py",
+      "tests/test_discussion_search.py",
+      "docs/discussion-search.md",
+      "docs/receiving/discussion-search-d98d06fbfc35/CONTRACT.json"
+    ],
+    "correctionPaths": [
+      "src/canvaspilot/discussion_search.py",
+      "tests/test_discussion_search.py"
+    ],
+    "correctionOtherLeavesPreserved": 1618,
+    "exactAllModesTypes": true,
+    "exactCliTwoSpanInverse": true,
+    "exactHelperBoundaryInverse": true
+  },
+  "independentOracle": {
+    "blob": "ffb236e01d8c4bacb40c8a53afdc9a3799fab130",
+    "pin": {
+      "bytes": 48736,
+      "sha256": "0b81426af21280192f8787bfecbc8a830fbe8d3ddeebc745594d585fb94ff296",
+      "git": "ffb236e01d8c4bacb40c8a53afdc9a3799fab130"
+    },
+    "candidateBodyExposure": "After exact oracle creation/readback",
+    "authorTestsUsed": false
+  },
+  "preservedSourceFinding": {
+    "record": "beda785f8f4be71449622e5c62664145f34f388c",
+    "finding": "Original BOUNDARY differed from exact frozen literal; caught by root source review before any root candidate execution.",
+    "correction": {
+      "exactInverse": true,
+      "from": "BOUNDARY = (\n    \"Searches only returned titles and complete normalized opening prompts from \"\n    \"the existing topic-list reader; not replies, attachments, hidden/unavailable \"\n    \"raw content or a freshness/completeness guarantee. Empty normalized prompts \"\n    \"cannot distinguish raw missing, null, empty or media-only content. \"\n    \"The existing paginator is reused unchanged; its failure refuses the result \"\n    \"and its provider conventions and limits remain.\"\n)",
+      "to": "BOUNDARY = (\n    \"Searches only returned titles and complete normalized opening prompts from \"\n    \"the existing topic-list reader; not replies, attachments, hidden/unavailable \"\n    \"raw content or a freshness/completeness guarantee. The existing paginator is \"\n    \"reused unchanged; pagination failure refuses the result, and its provider \"\n    \"conventions/limits remain.\"\n)",
+      "originalBlob": "f78630e97aeabc53becfd6f2540869281d037f11",
+      "correctedBlob": "58d65519670dfcb2bb2110c5f4dd9648fd9ed9a0"
+    },
+    "originalAuthor": "19/19 on original product source; preserved, not rerun or relabeled",
+    "focusedAuthor": "One new exact contract-literal regression passed; no full20-method rerun"
+  },
+  "helperReceiving": {
+    "custody": "bd7ea9fa6b056e2c5d474a1c31d075c4525a5dbe",
+    "receiver": "26f4b176d1914cec0afc6d170c0b78d1630f3f1d",
+    "inputs": "e72e7c636d8baf0606c9c6912a76486b5604c3a1",
+    "started": "2026-10-09T03:49:07.742895+00:00",
+    "ended": "2026-10-09T03:49:09.076274+00:00",
+    "seconds": 1.3333880099962698,
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "pid": 2,
+    "uid": 0,
+    "groups": 87,
+    "passed": 87,
+    "failed": 0,
+    "actualReceiverProcessExit": 0,
+    "rootEntryInvocations": {
+      "validate_selection": 31,
+      "search_discussions": 63,
+      "collect_discussions": 5,
+      "serialize_discussion_search": 27
+    },
+    "entryCountScope": "Counts explicit receiver calls only, not nested helper function invocations.",
+    "searchExports": {
+      "encoding": "zlib+base64",
+      "count": 26,
+      "bytes": 58650,
+      "sha256": "2e93a8a3db44186a5caf54da03f66e64144d30a013549ee009e1a30ddd01faa1",
+      "compressedBytes": 3849,
+      "compressedSha256": "ef988659c44c8eb729896107676c3d6e2ee8409d2e0a6a72c00d3717b1af1a77",
+      "base64": "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"
+    },
+    "admissionCoverage": [
+      "26 literal full-result cases, manual occurrence/field/order/full topic values",
+      "27 course/query admission groups including20-digit canonical strings/int, repeated selections,512-byte boundary and unencodable text",
+      "29 complete corpus admission groups including exact container/value types, cyclic vs shared aliases,32/33 nesting,1000/1001 rows,exact8MiB/+1",
+      "4 collection groups: ordered duplicate reads, validation before calls, second-reader stop and invalid later whole-result refusal",
+      "Serializer cap: compact1,200,287B input admitted; independently measured37,802,985B pretty result refused; no truncation"
+    ]
+  },
+  "cliReceiving": {
+    "custody": "5833cff680c19df20dd458ae2df0f8748f85f05e",
+    "receiver": "0cef80a730c60048140bf86e9d0c2cd3ed18e38f",
+    "inputs": "41cdc9a25fdb545d4b42bd84f02e0051152fe46b",
+    "started": "2026-10-09T03:58:12.389324+00:00",
+    "ended": "2026-10-09T03:58:12.473990+00:00",
+    "seconds": 0.08466793200932443,
+    "groups": 13,
+    "passed": 13,
+    "failed": 0,
+    "dispatchInvocations": 14,
+    "actualReceiverProcessExit": 0,
+    "caseRecords": [
+      {
+        "case": "dispatch-success",
+        "passed": true,
+        "actual": {
+          "dispatchInvocations": 1,
+          "traceIndices": [
+            0
+          ]
+        }
+      },
+      {
+        "case": "invalid-selection-pre-auth",
+        "passed": true,
+        "actual": {
+          "dispatchInvocations": 1,
+          "traceIndices": [
+            1
+          ]
+        }
+      },
+      {
+        "case": "invalid-query-pre-auth",
+        "passed": true,
+        "actual": {
+          "dispatchInvocations": 2,
+          "traceIndices": [
+            2,
+            3
+          ]
+        }
+      },
+      {
+        "case": "missing-arguments",
+        "passed": true,
+        "actual": {
+          "dispatchInvocations": 1,
+          "traceIndices": [
+            4
+          ]
+        }
+      },
+      {
+        "case": "help",
+        "passed": true,
+        "actual": {
+          "dispatchInvocations": 1,
+          "traceIndices": [
+            5
+          ]
+        }
+      },
+      {
+        "case": "auth-refusal",
+        "passed": true,
+        "actual": {
+          "dispatchInvocations": 1,
+          "traceIndices": [
+            6
+          ]
+        }
+      },
+      {
+        "case": "pagination-refusal",
+        "passed": true,
+        "actual": {
+          "dispatchInvocations": 1,
+          "traceIndices": [
+            7
+          ]
+        }
+      },
+      {
+        "case": "http-refusal",
+        "passed": true,
+        "actual": {
+          "dispatchInvocations": 1,
+          "traceIndices": [
+            8
+          ]
+        }
+      },
+      {
+        "case": "invalid-normalized",
+        "passed": true,
+        "actual": {
+          "dispatchInvocations": 1,
+          "traceIndices": [
+            9
+          ]
+        }
+      },
+      {
+        "case": "close-refusal",
+        "passed": true,
+        "actual": {
+          "dispatchInvocations": 1,
+          "traceIndices": [
+            10
+          ]
+        }
+      },
+      {
+        "case": "short-write",
+        "passed": true,
+        "actual": {
+          "dispatchInvocations": 1,
+          "traceIndices": [
+            11
+          ]
+        }
+      },
+      {
+        "case": "flush-refusal",
+        "passed": true,
+        "actual": {
+          "dispatchInvocations": 1,
+          "traceIndices": [
+            12
+          ]
+        }
+      },
+      {
+        "case": "unicode-delivery",
+        "passed": true,
+        "actual": {
+          "dispatchInvocations": 1,
+          "traceIndices": [
+            13
+          ]
+        }
+      }
+    ],
+    "qualification": "Actual complete source cli.main/parser/helper executed with explicit API/client/default/HTTPX-exception/output doubles. Normal return and SystemExit values are observed inside14 invocations; actual whole receiver exit0 is separately observed. No installed command or real stream/provider claim.",
+    "delivery": "Client close and logger17 restoration precede complete successful one-write+flush. Positive short write retained2548characters and failed; flush failure retained full5097-character JSON and failed. Actual accepted output and structured diagnostics remain in full custody."
+  },
+  "outputCustody": {
+    "dataOnlyActual": {
+      "chunk_id": "d25f2d",
+      "wall_time_seconds": 0.000030797,
+      "exit_code": 0,
+      "original_token_count": 148,
+      "output": "{\"schema\":\"canvas-root-export-byte-custody.v1\",\"dataOnly\":true,\"productExecutions\":0,\"exportCount\":26,\"decodedPayloadBytes\":58650,\"decodedPayloadSha256\":\"2e93a8a3db44186a5caf54da03f66e64144d30a013549ee009e1a30ddd01faa1\",\"allExportByteShaGitPinsExact\":true,\"allExportValuesEqualFrozenOracle\":true,\"cliSuccessExactlyEqualsHelperNeedleBytes\":true,\"shortWriteRetainedActualPrefix\":2548,\"failedFlushRetainedCompleteButFailedDelivery\":true,\"firstExport\":{\"bytes\":5097,\"sha256\":\"7b7d441690ea82577ea63bafc91399beb09d1dbb51fc0cf2a1d0e8319b79c157\",\"git\":\"8140cc2e002b260b254103544cfe9921fe47fab5\"}}\n"
+    },
+    "source": "import sys,json,zlib,base64,hashlib\nx=json.loads(sys.argv[1]);p=x[\"exports\"];packed=base64.b64decode(p[\"base64\"],validate=True)\nh=lambda b:hashlib.sha256(b).hexdigest()\nassert len(packed)==p[\"compressedBytes\"] and h(packed)==p[\"compressedSha256\"]\nz=zlib.decompressobj();b=z.decompress(packed,p[\"bytes\"]+1)\nassert len(b)==p[\"bytes\"] and z.eof and not z.unconsumed_tail and not z.unused_data and h(b)==p[\"sha256\"]\ne=json.loads(b);o=x[\"oracle\"];assert len(e)==p[\"count\"]==len(o[\"searchCases\"])==26\npins=[]\nfor output,case in zip(e,o[\"searchCases\"]):\n text=output[\"text\"];raw=text.encode()\n pin={\"bytes\":len(raw),\"sha256\":h(raw),\"git\":hashlib.sha1(b\"blob \"+str(len(raw)).encode()+b\"\\0\"+raw).hexdigest()}\n assert pin==output[\"pin\"] and output[\"query\"]==case[\"query\"]\n expected={\"schema\":o[\"resultAssertions\"][\"schema\"],\"query\":case[\"query\"],\"match_mode\":\"literal_casefold\",\"topic_count\":15,\"matched_count\":len(case[\"expected\"]),\"empty_message_text_count\":3,\"selections\":o[\"mainFixture\"][\"expectedSelections\"],\"matches\":case[\"expected\"],\"boundary\":o[\"resultAssertions\"][\"boundary\"]}\n canonical=lambda v:json.dumps(v,ensure_ascii=False,allow_nan=False,sort_keys=True,separators=(\",\",\":\"))\n assert canonical(json.loads(text))==canonical(expected) and text.endswith(\"\\n\") and not text.endswith(\"\\n\\n\")\n pins.append(pin)\ntr=x[\"cliTraces\"];assert len(tr)==14\nsuccess=next(t for t in tr if t[\"case\"]==\"dispatch-success\")\nassert success[\"stdout\"]==e[0][\"text\"] and success[\"mappedProcessExit\"]==0 and success[\"stdoutFlushed\"]\nshort=next(t for t in tr if t[\"case\"]==\"short-write\")\nassert short[\"stdout\"]==success[\"stdout\"][:len(success[\"stdout\"])//2] and short[\"mappedProcessExit\"]==1 and not short[\"stdoutFlushed\"]\nflush=next(t for t in tr if t[\"case\"]==\"flush-refusal\")\nassert flush[\"stdout\"]==success[\"stdout\"] and flush[\"mappedProcessExit\"]==1 and not flush[\"stdoutFlushed\"]\nprint(json.dumps({\"schema\":\"canvas-root-export-byte-custody.v1\",\"dataOnly\":True,\"productExecutions\":0,\"exportCount\":26,\"decodedPayloadBytes\":len(b),\"decodedPayloadSha256\":h(b),\"allExportByteShaGitPinsExact\":True,\"allExportValuesEqualFrozenOracle\":True,\"cliSuccessExactlyEqualsHelperNeedleBytes\":True,\"shortWriteRetainedActualPrefix\":len(short[\"stdout\"]),\"failedFlushRetainedCompleteButFailedDelivery\":True,\"firstExport\":pins[0]},separators=(\",\",\":\")))\n",
+    "all26ExportBytesAndShaGitPinsRecomputed": true,
+    "all26CompleteValuesComparedToOriginalOracle": true,
+    "cliSuccessExactlyEqualsIndependentHelperNeedleBytes": true,
+    "noProductRepeat": true
+  },
+  "sourceReviews": {
+    "product": {
+      "repository": "Jacob-Met/hamon",
+      "blob": "c03931e2faff1c0cc9641823f139118bfb009303",
+      "rootReadRelevantFullFindingBody": true
+    },
+    "rootCliReceiver": {
+      "repository": "Jacob-Met/hamon",
+      "blob": "0bfeac9808469078e8ef418a98bdbf8e425fd2de",
+      "rootFullReadBeforeExecution": true
+    }
+  },
+  "preparationCorrections": {
+    "helper": {
+      "predecessor": "918ab89c15f33b9ed094e225d9afd39a4bf1659a",
+      "changes": [
+        {
+          "old": "  s=main_input();del s[-1][\"topics\"][-1][\"message_text\"]",
+          "new": "  s=main_input();s[-1][\"topics\"]=copy.deepcopy(s[-1][\"topics\"]);del s[-1][\"topics\"][-1][\"message_text\"]",
+          "why": "Make only the later selection invalid; the valid main fixture deliberately aliases selection1 and3."
+        },
+        {
+          "old": "  s=main_input();s[0][\"topics\"][0][\"extra_finite\"]=[1.25,-0.0,2]",
+          "new": "  s=main_input();s[0][\"topics\"][4][\"extra_finite\"]=[1.25,-0.0,2]",
+          "why": "Place extra finite metadata on an explicitly matched row."
+        },
+        {
+          "old": "  if case[\"id\"]==\"title-none-empty\":assert got[\"empty_message_text_count\"]==1 and got[\"matches\"]==[]",
+          "new": "  if case[\"id\"]==\"title-none-empty\":assert got[\"empty_message_text_count\"]==1 and got[\"matches\"]==[]\n  if case[\"id\"]==\"all-json-metadata\":\n   expected=result_expected(o[\"searchCases\"][0]);expected=copy.deepcopy(expected)\n   for match in expected[\"matches\"]:\n    if match[\"selection_number\"] in (1,3) and match[\"topic_position\"]==5:match[\"topic\"][\"extra_finite\"]=[1.25,-0.0,2]\n   equal(got,expected)",
+          "why": "Check exact complete matched metadata values against independently extended frozen fixture."
+        }
+      ],
+      "projectExecutionBeforeChanges": 0,
+      "oracleUnchanged": true,
+      "caseGroupsUnchanged": 87
+    },
+    "cli": {
+      "predecessor": "620e9774324e414239d8192b52f7ffae6c268987",
+      "old": "   assert t[\"stdout\"] and not t[\"stdout\"].endswith(\"\\n\") and d[\"error\"]==\"OSError\"",
+      "new": "   writes=[x for x in t[\"events\"] if x[\"event\"]==\"stdout.write\"]\n   assert len(writes)==1 and 0<len(t[\"stdout\"])<writes[0][\"characters\"] and d[\"error\"]==\"OSError\"",
+      "reason": "A failed short write may land on a newline. Test incomplete accepted character count instead of an accidental final character.",
+      "sourceOrExpectedProductBehaviorChanged": false,
+      "cliInvocationsBeforeRefinement": 0
+    },
+    "allBeforeCorrespondingProductExecution": true,
+    "oracleAndProductUnchangedDuringRootCampaigns": true
+  },
+  "workflowAdmission": {
+    "currentMain": "56a72a2e2cee5ec04671d12ebe5bc2484afb8026",
+    "completeTreeWorkflowPathsAndIdsChecked": true,
+    "fullBodiesRead": [
+      {
+        "path": ".github/workflows/agenda-view-browser.yml",
+        "blob": "a06b862c23dccc61d5da9eea99d82b76668f78c8",
+        "events": [
+          "pull_request",
+          "workflow_dispatch"
+        ]
+      },
+      {
+        "path": ".github/workflows/ci.yml",
+        "blob": "ef7bbebe192c0db55dc4467e064ba44805c13446",
+        "events": [
+          "push(main)",
+          "pull_request(main)"
+        ]
+      }
+    ],
+    "ordinaryIssueCommentSubscriber": false,
+    "sourceRefPrMergeActions": false
+  },
+  "boundary": {
+    "liveCanvas": false,
+    "installedPackage": false,
+    "realHttpxAuthSessionPagination": false,
+    "nativeTerminal": false,
+    "browser": false,
+    "providerWrites": false,
+    "rawResponseOrNetworkByteBound": false,
+    "fullText": "Only returned titles and full existing-reader normalized opening prompts; replies/attachments/hidden raw content and freshness/completeness guarantees remain outside the feature.",
+    "sourceNoChanges": [
+      "API/client/auth/broker/pagination",
+      "MCP/bootstrap",
+      "existing commands except exact additive dispatch/parser spans",
+      "dependencies/workflows",
+      "discussion-thread/export and other owners"
+    ]
+  },
+  "next": "Post exact source/in-memory receiving disposition into existing#105. Retain final detached commit and complete evidence for owner-aware integration under current no-Actions directive; no ref/PR/merge or live-account operation inferred."
+}
