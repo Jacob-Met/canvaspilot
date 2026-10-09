@@ -1,0 +1,51 @@
+{
+  "at": "2026-10-09T12:21:33.140314+00:00",
+  "contractSha256": "d60ef8e74190a08c709b95704956a9ccdc781b51463acb1b902725c0566ae342",
+  "baseHead": "a317417a8a2c39fb23256102904c24fba16a969a",
+  "sourceRoot": "/home/jacob/canvas-page-comparison-81ba1ed0179c/source",
+  "files": [
+    {
+      "path": "src/canvaspilot/cli.py",
+      "bytes": 47268,
+      "sha256": "c16493ed77be6c5deede389829f20d74b2ebd0309b9d82459291437fb1bd91c0",
+      "mode": "100644"
+    },
+    {
+      "path": "README.md",
+      "bytes": 29642,
+      "sha256": "79b24090b56bcc37c94519df82d2f8ff8a27b3c614fda0d309e236a8b5300422",
+      "mode": "100644"
+    },
+    {
+      "path": "src/canvaspilot/page_revision_comparison.py",
+      "bytes": 16359,
+      "sha256": "a64c810461600833e8805d3a0283eb3de75a9556bf86dd09f18c7aa89cbb876a",
+      "mode": "100644"
+    },
+    {
+      "path": "tests/test_page_revision_comparison.py",
+      "bytes": 11382,
+      "sha256": "866d60f440b3c57c3449c40a1ce5d5261914adf3ada51a3a314db63e8bcdc4a3",
+      "mode": "100644"
+    },
+    {
+      "path": "tests/test_page_revision_comparison_process.py",
+      "bytes": 9420,
+      "sha256": "1fd4540ae5ed0a0ca042c924bf53af15c5ab4aef147cbb8e914ee7b30d8a81b1",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/page-revision-comparison.md",
+      "bytes": 4891,
+      "sha256": "3376e498da9d38541d4049f136d5e1dbfbf12412e64c5d6a6b1eabe2ddfc1068",
+      "mode": "100644"
+    }
+  ],
+  "preservedOriginalLeaves": 1703,
+  "preservationSha256": "3aa182e1d4c8137a57720b67d90861b24cfdb367c12e470e6432bd82eb6a7598",
+  "completeDiff": {
+    "bytes": 48037,
+    "sha256": "033f2ac539946d9c677b874bd2957f2b2d1f184267c96f36de86cca0e1919422"
+  },
+  "tests": "56 cases cumulative:53 pass R1 plus only3 corrected receiving assertions R2; final Ruff passes. Earlier failure remains retained. No module correction."
+}

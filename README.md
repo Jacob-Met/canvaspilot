@@ -543,3 +543,8 @@ Authorized course-page editors can list recorded revisions and read an explicit
 historical version through the API, CLI and read-only MCP tools, without reverting
 the current page. See [page revision history](docs/page-revisions.md) for commands,
 required Canvas permissions and the returned-history boundary.
+
+## Compare explicit page revisions offline
+
+`canvaspilot compare-page-revisions COURSE_ID PAGE_LOCATOR --before 7 --after 9 --out NEW.html`
+reads two explicit recorded revisions and creates a passive offline comparison with complete source envelopes and an explicit JSON download. Existing page edit rights are required; the command never reverts a page. Before/After are your chosen direction, and the output path must be new. See [page revision comparison](docs/page-revision-comparison.md) for exact line endings, bounded comparison, permissions, and output protection.

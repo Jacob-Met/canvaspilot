@@ -1,0 +1,85 @@
+{
+  "schema": "canvaspilot.page-comparison.qualified-source.v1",
+  "at": "2026-10-09T12:43:56.306154+00:00",
+  "owner": "estate-81ba1ed0179c/estate_production_resume",
+  "sourceParent": "db9a454fff2c8cb0f186afdbcef40680c4796b29",
+  "sourceFreezeSha256": "d86096b6066c64f76162c28e434570c7290969d7eb14bbf975a42a50377373cc",
+  "newFiles": 4,
+  "additiveSharedFiles": 2,
+  "unchangedOriginalSourceLeaves": 1703,
+  "author": {
+    "uniqueCases": 56,
+    "cumulativeRuns": [
+      {
+        "passed": 53,
+        "failedReceivingAssertions": 3
+      },
+      {
+        "passed": 3,
+        "failed": 0
+      }
+    ],
+    "ruffExit": 0,
+    "browserGroups": 3,
+    "physicalDownloads": 1,
+    "downloadBytes": 1780,
+    "downloadSha256": "0e0d5a7eda49ba9b1d27aeab3012eb42e5abb414be47a85b1958e43cd9a8aa5a",
+    "clean": true
+  },
+  "independent": {
+    "groups": 6,
+    "blindFreezeSha256": "9701e984e24ef056fc411cbcbff1fe6a2399a6ccfaa427f622cdb12578d60661",
+    "finalReviewSha256": "e372928989f2777bab4801b0ccf9eea843a69b4239a21f1bee7a5b5dd211a641",
+    "physicalDownloads": 1,
+    "downloadBytes": 2253,
+    "downloadSha256": "f500f882f5fba4c3bd9c409d222536adbf4cf9b3b8f8e17270c808752d3a30ab",
+    "clean": true
+  },
+  "sourcePeer": {
+    "reviewer": "estate-81ba1ed0179c/estate_coordination AI agent",
+    "reviewSha256": "b33b728f39a0d67b97ca3fcebf528475ad6ff60a3f4136e81fe6d12784d6da82",
+    "blockers": [],
+    "productExecutions": 0
+  },
+  "artifacts": [
+    {
+      "path": "Canvas-page-comparison-independent.zip",
+      "bytes": 473626,
+      "sha256": "ddd54cfccbd1a2dc43fa95a230de395061a31e4acf3e1be1aee29a9a44251eb1",
+      "gitBlob": "e141e0297d22f5d4d1075c7e6eebd2790b742f9e"
+    },
+    {
+      "path": "Canvas-page-comparison-source-review-r1.zip",
+      "bytes": 237793,
+      "sha256": "ea50c60cdbee839e9649226f0966fdeff1b92b0f55c2c45dc1c6054a7c82f60b",
+      "gitBlob": "51741b06c7a96e2fdcad5b06f604f3ae83230da6"
+    },
+    {
+      "path": "CanvasPilot-page-comparison-author-r1.zip",
+      "bytes": 742761,
+      "sha256": "0cb21391bd24c06367eb471271a9ea592455a30a386a76a43bed5f50eb94dbb9",
+      "gitBlob": "279cd3e7dfbd447e2825acd22c7c1b7fb0c37f2c"
+    }
+  ],
+  "eventProof": {
+    "completeMainTreeEntries": 1933,
+    "completeParentTreeEntries": 1944,
+    "workflows": 2,
+    "main": "6d445c68a5fd47df9368bebb879f5e3c372998ec",
+    "lastObservedActionCount": 155,
+    "fullNativeProofSha256": "cb32904a227e3b75a19cf5341c63cfb84fb87162356cad967ed1f9452d73b1b7",
+    "immediateRecheckAndPostPublicationProofRequired": true
+  },
+  "limits": [
+    "Synthetic local data only; no live Canvas/account/permission or complete-history claim",
+    "No full project suite/CI/Actions or human approval",
+    "Direction is explicit selection; no chronology/rendered/semantic/attachment inference",
+    "Print-media only; no physical printer run"
+  ],
+  "retainedNegatives": [
+    "Author/independent query fixtures corrected to unchanged per_page50",
+    "Independent long TMP browser transport stopped before any group; short own path continuation only",
+    "Initial lint and pre-execution helper/splice errors preserved"
+  ],
+  "orchestrationNote": "A proposed source-review wording correction was withdrawn after exact readback: original CLI calls api.close(), which delegates to client.close(). The source review was already correct and remains unchanged."
+}

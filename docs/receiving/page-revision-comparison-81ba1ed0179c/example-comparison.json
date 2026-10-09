@@ -1,0 +1,83 @@
+{
+  "schema": "canvaspilot.page-revision-comparison.v1",
+  "selection": {
+    "course_id": "42",
+    "page_url": "Week / Ω?%#",
+    "before_revision": "7",
+    "after_revision": "9"
+  },
+  "before": {
+    "revision": {
+      "revision_id": "0007",
+      "title": "Brief <old> & Ω",
+      "url": "older-name",
+      "updated_at": "2099-not-a-chronology-oracle",
+      "body": "Start\r\nKeep\nGone",
+      "body_text": {
+        "server_field": "retained"
+      },
+      "unknown": {
+        "values": [
+          1,
+          1,
+          true,
+          null
+        ],
+        "literal": "<script>do not execute</script>"
+      }
+    },
+    "body_text": "Start Keep Gone"
+  },
+  "after": {
+    "revision": {
+      "revision_id": 9,
+      "title": "",
+      "url": "renamed",
+      "updated_at": null,
+      "body": "Start\r\nKeep\nAdded\n",
+      "unknown": {
+        "empty": "",
+        "nullable": null
+      }
+    },
+    "body_text": "Start Keep Added"
+  },
+  "comparison": {
+    "before_body_state": "text",
+    "after_body_state": "text",
+    "raw_equal": false,
+    "text_equal": false,
+    "line_diff": {
+      "status": "computed",
+      "reason": null,
+      "before_lines": 3,
+      "after_lines": 3,
+      "rows": [
+        {
+          "kind": "equal",
+          "before_line": 1,
+          "after_line": 1,
+          "text": "Start\r\n"
+        },
+        {
+          "kind": "equal",
+          "before_line": 2,
+          "after_line": 2,
+          "text": "Keep\n"
+        },
+        {
+          "kind": "delete",
+          "before_line": 3,
+          "after_line": null,
+          "text": "Gone"
+        },
+        {
+          "kind": "insert",
+          "before_line": null,
+          "after_line": 3,
+          "text": "Added\n"
+        }
+      ]
+    }
+  }
+}

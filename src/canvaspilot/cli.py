@@ -296,6 +296,19 @@ def main(argv: list[str] | None = None) -> None:
     revision.add_argument("revision_id", help="Positive revision ID from history, or latest")
     revision.add_argument("--summary", action="store_true", help="Ask Canvas to omit page content")
 
+    compare_revisions = sub.add_parser(
+        "compare-page-revisions",
+        help="Compare two explicit recorded page revisions in a new offline HTML report",
+    )
+    add_common(compare_revisions)
+    compare_revisions.add_argument("course_id", help="Positive numeric Canvas course ID")
+    compare_revisions.add_argument("page_url", help="Literal current page locator")
+    compare_revisions.add_argument("--before", required=True, help="Explicit numeric revision ID")
+    compare_revisions.add_argument("--after", required=True, help="Distinct explicit numeric revision ID")
+    compare_revisions.add_argument(
+        "--out", required=True, type=Path, help="New HTML file; existing paths are protected",
+    )
+
     quizzes = sub.add_parser("quizzes", help="List classic quizzes for a course")
     add_common(quizzes)
     quizzes.add_argument("course_id", type=_positive_int, help="Positive numeric Canvas course ID")
@@ -378,6 +391,14 @@ def main(argv: list[str] | None = None) -> None:
             page_path(args.course_id, args.page_url)
             if args.cmd == "page-revision":
                 revision_selector(args.revision_id)
+        except (TypeError, ValueError) as error:
+            parser.error(str(error))
+
+    if args.cmd == "compare-page-revisions":
+        from canvaspilot.page_revision_comparison import validate_revision_comparison
+
+        try:
+            validate_revision_comparison(args.course_id, args.page_url, args.before, args.after)
         except (TypeError, ValueError) as error:
             parser.error(str(error))
 
@@ -507,6 +528,42 @@ def main(argv: list[str] | None = None) -> None:
                     default=str,
                 )
             )
+        elif args.cmd == "compare-page-revisions":
+            import os
+
+            import httpx
+
+            from canvaspilot.client import CanvasAuthError, CanvasPaginationError
+            from canvaspilot.page_export import write_page_packet
+            from canvaspilot.page_revision_comparison import (
+                build_page_revision_comparison,
+            )
+
+            http_log = logging.getLogger("httpx")
+            previous_level = http_log.level
+            http_log.setLevel(max(http_log.getEffectiveLevel(), logging.WARNING))
+            try:
+                if os.path.lexists(args.out):
+                    raise FileExistsError("Output path already exists; choose a new HTML file")
+                content, report = build_page_revision_comparison(
+                    api, args.course_id, args.page_url, args.before, args.after,
+                )
+                cleanup_warning = write_page_packet(args.out, content)
+            except (CanvasAuthError, CanvasPaginationError, httpx.HTTPError,
+                    ValueError, TypeError, OSError) as error:
+                print(json.dumps({
+                    "ok": False, "error": type(error).__name__, "message": str(error),
+                }), file=sys.stderr)
+                raise SystemExit(1) from None
+            finally:
+                http_log.setLevel(previous_level)
+            result = {
+                "ok": True, "output": str(args.out), "selection": report["selection"],
+                "line_diff_status": report["comparison"]["line_diff"]["status"],
+            }
+            if cleanup_warning:
+                result["cleanup_warning"] = cleanup_warning
+            print(json.dumps(result, ensure_ascii=False, allow_nan=False))
         elif args.cmd in {"page-revisions", "page-revision"}:
             import httpx
 
