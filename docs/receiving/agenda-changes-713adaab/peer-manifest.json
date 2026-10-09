@@ -1,0 +1,181 @@
+{
+  "schema": "canvas-agenda-independent-peer-manifest/1",
+  "files": [
+    {
+      "path": "BLIND-FREEZE.json",
+      "bytes": 2586,
+      "sha256": "a8acf0a617d0ab59bdca3da6cea2c6621fc1ef6b1271b844a57266e67aeedb54",
+      "mtime_ns": "1791523962015291469"
+    },
+    {
+      "path": "EXPECTATIONS.json",
+      "bytes": 3627,
+      "sha256": "833e236fe57929726ec421eed2e1497feeb4ee64b1da42e25b2216df545f6715",
+      "mtime_ns": "1791523961979229713"
+    },
+    {
+      "path": "candidate-r1/0.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mtime_ns": "1791524590797618866"
+    },
+    {
+      "path": "candidate-r1/0.stdout",
+      "bytes": 3750,
+      "sha256": "842a23a99c951fbd8663d98c7a67a1ff9c15c09a03d5ef8784e56a006fcc7f4a",
+      "mtime_ns": "1791524590797400777"
+    },
+    {
+      "path": "candidate-r1/1.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mtime_ns": "1791524590874862537"
+    },
+    {
+      "path": "candidate-r1/1.stdout",
+      "bytes": 4993,
+      "sha256": "be31d48a13d0bf53fbb237056b2569e53b527b2e7aee77ee60507e7767e5e4f4",
+      "mtime_ns": "1791524590874722243"
+    },
+    {
+      "path": "candidate-r1/2.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mtime_ns": "1791524590942630239"
+    },
+    {
+      "path": "candidate-r1/2.stdout",
+      "bytes": 3345,
+      "sha256": "3ea5513a40904459597933f21b1eabcc790111f41aed956124091e8b400ef597",
+      "mtime_ns": "1791524590942562820"
+    },
+    {
+      "path": "candidate-r1/3.stderr",
+      "bytes": 54,
+      "sha256": "28aa232e4ac5bc78430e8efe789d8c43bf54ea8ebb1d9a056c1298328f035943",
+      "mtime_ns": "1791524591000868843"
+    },
+    {
+      "path": "candidate-r1/3.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mtime_ns": "1791524591000543627"
+    },
+    {
+      "path": "candidate-r1/report.json",
+      "bytes": 6139,
+      "sha256": "9691b926273932c7f10056c18ea7dcf8eee6f7a42b731288979fdc1a24a635f8",
+      "mtime_ns": "1791524591001523525"
+    },
+    {
+      "path": "fixtures/duplicate-after.json",
+      "bytes": 1426,
+      "sha256": "ab1344a3901606f5f008ce07f771e6d05cd11a9e2d341c9f5c9f6ce6c393547b",
+      "mtime_ns": "1791523961959642800"
+    },
+    {
+      "path": "fixtures/duplicate-before.json",
+      "bytes": 1414,
+      "sha256": "a10d38e136981d983ded72b90a85f017977ac4c455a24896f8b6311f0adb2bd2",
+      "mtime_ns": "1791523961954156422"
+    },
+    {
+      "path": "fixtures/equal-whitespace.json",
+      "bytes": 625,
+      "sha256": "7358887536afd307b47d4c5d7c469b0d1192404835aa8bc4a0f4f66ca13fac3f",
+      "mtime_ns": "1791523961964040110"
+    },
+    {
+      "path": "fixtures/invalid-after.json",
+      "bytes": 1021,
+      "sha256": "9e82c53b6a80c466324b4ff16bad1a418913cb869e2dd2fee74cda28c5a7c75f",
+      "mtime_ns": "1791523961968986975"
+    },
+    {
+      "path": "fixtures/scalar-after.json",
+      "bytes": 1005,
+      "sha256": "e09c698dbcc2d668e14dd6d0cc6c3380249a30139119e4bec5981b95d63256d4",
+      "mtime_ns": "1791523961949402311"
+    },
+    {
+      "path": "fixtures/scalar-before.json",
+      "bytes": 1010,
+      "sha256": "e2e5c609126789a0c6b82d9dbed9acbecff1ff4855da2e4513f2334178d75b08",
+      "mtime_ns": "1791523961940366851"
+    },
+    {
+      "path": "invocation-pin-refusal.json",
+      "bytes": 844,
+      "sha256": "6dca06dc1266751e4d3efb33b705ab81742a260dbc55866dcf4403ccc1b1a3bd",
+      "mtime_ns": "1791524582681456190"
+    },
+    {
+      "path": "original-contract/CONTRACT.json",
+      "bytes": 8668,
+      "sha256": "28a972a298ca4b1e6094f266fccd958651787f3d847770bc9187bb86a84f82ee",
+      "mtime_ns": "1791523961984469169"
+    },
+    {
+      "path": "original-contract/EXPECTED.json",
+      "bytes": 7122,
+      "sha256": "68a6cc3e97f439dfe68bef2ca6beec29a4b744786000db5b1381dd5d1c49cb2d",
+      "mtime_ns": "1791523961993874762"
+    },
+    {
+      "path": "original-contract/OUTPUT_SHAPE.json",
+      "bytes": 1892,
+      "sha256": "79db5acd280daf9132fabbb7d7ec55454ec3bc48292fb7ecb1299ace4a628ac1",
+      "mtime_ns": "1791523961999094634"
+    },
+    {
+      "path": "original-contract/SEMANTIC_CLARIFICATION.json",
+      "bytes": 1271,
+      "sha256": "f57923a436828f5ea61dac2f2407f0c08abe82087dc8d2a457ad5f1ac2c34adf",
+      "mtime_ns": "1791523961989242863"
+    },
+    {
+      "path": "original-contract/author-r2-receipt.json",
+      "bytes": 14064,
+      "sha256": "2079590910d43867ad4885b9a14240bf73bb201e9331e015237e6940b87c762e",
+      "mtime_ns": "1791524786505768743"
+    },
+    {
+      "path": "original-contract/fixtures/historical-complete.json",
+      "bytes": 5762,
+      "sha256": "13638a409c5d5df3908b182c03c89df439df7f6d0fe48344cf90b76d6e3f156c",
+      "mtime_ns": "1791523962009342830"
+    },
+    {
+      "path": "original-contract/fixtures/historical-empty.json",
+      "bytes": 470,
+      "sha256": "18a44bcf6698a28eedadede89519a12a1e9848aa51bbe2f3eb6158f174febdb7",
+      "mtime_ns": "1791523962004861101"
+    },
+    {
+      "path": "qualified-source/agenda_changes.py",
+      "bytes": 14682,
+      "sha256": "95c48256296d9705d27ac8f0201e0d06b22ac31b23d7e80e8d02ba6d85adf8da",
+      "mtime_ns": "1791524786495595506"
+    },
+    {
+      "path": "qualified-source/agenda_changes_cli.py",
+      "bytes": 2492,
+      "sha256": "7f94a77691c5dbb476e8db104a46f06b39d59be49f86edc26e23860cf781d1b8",
+      "mtime_ns": "1791524786500694458"
+    },
+    {
+      "path": "receive_candidate.py",
+      "bytes": 5270,
+      "sha256": "930d9d41d254bfc899a73d763c211529b61da443477acce99782574dddb9ff3c",
+      "mtime_ns": "1791523961973938882"
+    },
+    {
+      "path": "successful-tool-result.json",
+      "bytes": 550,
+      "sha256": "6aa33850b737f8b9849387de6eea0a24054acf282f6c6a3dcc20b9d198ef514f",
+      "mtime_ns": "1791524786510456227"
+    }
+  ],
+  "members": 29,
+  "payload_bytes": 94082
+}

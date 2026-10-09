@@ -1,0 +1,36 @@
+{
+  "schema": "canvas-agenda-independent-peer-acceptance/1",
+  "owner": "chatgpt:/root/production_execution",
+  "candidate_owner": "chatgpt:/root/mac_execution",
+  "blind_freeze_sha256": "a8acf0a617d0ab59bdca3da6cea2c6621fc1ef6b1271b844a57266e67aeedb54",
+  "receiver_sha256": "930d9d41d254bfc899a73d763c211529b61da443477acce99782574dddb9ff3c",
+  "report_sha256": "9691b926273932c7f10056c18ea7dcf8eee6f7a42b731288979fdc1a24a635f8",
+  "actual_calls": 4,
+  "passed_groups": 4,
+  "initial_invocation": {
+    "product_calls": 0,
+    "reason": "operator supplied wrong core pin; guard refused before product run",
+    "receipt_sha256": "6dca06dc1266751e4d3efb33b705ab81742a260dbc55866dcf4403ccc1b1a3bd",
+    "receiver_correction": false
+  },
+  "qualified": [
+    "exact typed scalar and missing/null field changes",
+    "2-to-1 duplicate ambiguity and source-index ordering",
+    "unique group/index changes do not manufacture record changes",
+    "integer and string identities remain separate",
+    "decoded equality distinct from raw input hash equality",
+    "late malformed second input refuses with no success stdout"
+  ],
+  "limits": [
+    "Direct-file offline CLI only; normal package-module dependencies remain a separate gate",
+    "No author tests read or broad suite replay",
+    "No provider/account/chronology/authenticity or browser claim",
+    "Not a source-code review of candidate implementation"
+  ],
+  "archive": {
+    "bytes": 36728,
+    "sha256": "8a74d5fd1aa8c0f9d331f84cc39c7d4045f1b772c0bebdd7f5d19170add9472f",
+    "members": 29,
+    "reopened_exact": true
+  }
+}

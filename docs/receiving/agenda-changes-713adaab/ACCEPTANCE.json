@@ -1,0 +1,111 @@
+{
+  "schema": "agenda-changes-native-acceptance/1",
+  "owner": "chatgpt:/root/mac_execution",
+  "issue": "https://github.com/Jacob-Met/canvaspilot/issues/110",
+  "base_commit": "29395684139e9c0cf71d037d32d503411b1e7cd0",
+  "base_tree": "823cd71973bef8faf0cab92782b32c6dc6170beb",
+  "final_source": {
+    "src/canvaspilot/agenda_changes.py": {
+      "bytes": 14682,
+      "sha256": "95c48256296d9705d27ac8f0201e0d06b22ac31b23d7e80e8d02ba6d85adf8da",
+      "git_blob": "e45881295f6bcb5b9dbbcc548d2cefe81024577d",
+      "mtime_ns": 1791524426482483519
+    },
+    "src/canvaspilot/agenda_changes_cli.py": {
+      "bytes": 2492,
+      "sha256": "7f94a77691c5dbb476e8db104a46f06b39d59be49f86edc26e23860cf781d1b8",
+      "git_blob": "4e3c9d3954ab82426e395f2c463998767794fbd4",
+      "mtime_ns": 1791524426484847283
+    },
+    "tests/test_agenda_changes.py": {
+      "bytes": 10249,
+      "sha256": "aae873335901d1710c56e076581cfa5507324251fc1357c50c5f360e18ee8a40",
+      "git_blob": "50bb115c966e61706dd0c19428306ad60ec30661",
+      "mtime_ns": 1791524426485237917
+    },
+    "tests/test_agenda_changes_cli.py": {
+      "bytes": 4559,
+      "sha256": "76b142bc302178acac8db357d331630359240d66de4c8abdb4d3a01afc166785",
+      "git_blob": "dc59f18b2a2138d29461327520da7aa2a1a85af8",
+      "mtime_ns": 1791524426485631218
+    },
+    "docs/agenda-changes.md": {
+      "bytes": 7136,
+      "sha256": "c3446b6da873594a5147abacc233a99742812d84c6fd4eff149cf17d2e0dcb19",
+      "git_blob": "ff9c3fddb5a0215265d79b009af619c7b39a8203",
+      "mtime_ns": 1791524426485921808
+    }
+  },
+  "author_qualification": {
+    "r1": {
+      "maintained_methods_passed": 19,
+      "ruff_exit": 1,
+      "source": "candidate-r1-source.json",
+      "retained": true
+    },
+    "r2": {
+      "maintained_methods_passed": 19,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "ruff_exit": 0,
+      "receipt": {
+        "bytes": 14064,
+        "sha256": "2079590910d43867ad4885b9a14240bf73bb201e9331e015237e6940b87c762e"
+      },
+      "runtime_AST_equal_r1": true
+    },
+    "correction": "Only runtime import wrapping, a ValueError lint explanation for external JSON, and explicit test subprocess check=False."
+  },
+  "historical_artifact_receiving": {
+    "frozen_cases_passed": 6,
+    "actual_direct_file_cli_calls": 7,
+    "receipt": {
+      "bytes": 23045,
+      "sha256": "442b5abb570e1c0bec89239bf589b6c92378984162012f3dc9ff40c819df1d7f"
+    },
+    "new_producer_calls": 0
+  },
+  "independent_receiving": {
+    "actor": "chatgpt:/root/production_execution",
+    "groups_passed": 4,
+    "actual_cli_calls": 4,
+    "blind_receiver_sha256": "930d9d41d254bfc899a73d763c211529b61da443477acce99782574dddb9ff3c",
+    "accepted_r2_core_sha256": "95c48256296d9705d27ac8f0201e0d06b22ac31b23d7e80e8d02ba6d85adf8da",
+    "archive": {
+      "bytes": 36728,
+      "sha256": "8a74d5fd1aa8c0f9d331f84cc39c7d4045f1b772c0bebdd7f5d19170add9472f"
+    },
+    "manifest": {
+      "bytes": 6030,
+      "sha256": "55ecddd71a96f36b9e329efe9d69f8c9e54484daef499cd27ca50a7f00f2958d"
+    },
+    "acceptance": {
+      "bytes": 1583,
+      "sha256": "a773ea29d574a5a6865d01e260656573f5ea08fe9033d93eeef9187c42c44fb7"
+    },
+    "initial_wrong_pin_refusal": {
+      "actual_product_calls": 0,
+      "preserved": true
+    }
+  },
+  "archive": {
+    "bytes": 241414,
+    "sha256": "164aefbdfefa10df4e9c27f7698b5ce7cb87358f5ab40753921fae80f8e0d811",
+    "members": 75,
+    "payload_bytes": 734049,
+    "reopened_exact": true
+  },
+  "manifest": {
+    "bytes": 12762,
+    "sha256": "be4fe40d39afee1f378a2adf0baaa839bf63d3e1cca5e973fb2aa7261e83965b"
+  },
+  "limits": [
+    "Normal installed package import/module invocation and full inherited suite remain held: declared Canvas dependencies are unavailable in known Mac interpreters.",
+    "No live Canvas/account/browser/production dataset used.",
+    "Historical producer artifacts are exact published retained stdout; newly authored derivatives are labelled, not producer executions.",
+    "Source/import closure is five additive files only; existing producer, client, package, CLI, viewer and overlap source is untouched.",
+    "Native custody is a partial source packet, not a complete canonical repository history.",
+    "Root source review, canonical composition and any hosted integration are separate; no Actions-triggering write occurred."
+  ]
+}
