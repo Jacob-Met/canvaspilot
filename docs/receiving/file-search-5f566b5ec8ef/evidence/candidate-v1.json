@@ -1,0 +1,17 @@
+{
+  "exit": 0,
+  "seconds": 2.490508794784546,
+  "product_pins": {
+    "src/canvaspilot/file_search.py": "c453e2855f32e67180e0a922130cd4c206f5613fb73a7e4cb76481072ff3712a",
+    "src/canvaspilot/cli.py": "c5871d90277ba7b44f4b79a73748a16e6fb54512ac7dbfd2818cda3ff1512695",
+    "tests/test_file_search.py": "392eddf65e379918d962de5f6fb46c0e7bbfea6be5b806e3b987b06da48a8bdb",
+    "tests/test_file_search_cli.py": "9555a857ea57a4c65bfadb8e28246cbf93f9e09c1c552b0d137cab8e65226220",
+    "docs/file-search.md": "20d66058efa42988d51e3220b7e5a034d9347c86152f9dbabfa7239b5367687f",
+    "README.md": "baa3b520317ff54539ec8f39233dccf67ad1c7e04c8c6c1cedb52bccf8cbd613"
+  },
+  "all_product_inputs_unchanged": true,
+  "unowned_input_count": 33,
+  "all_unowned_inputs_unchanged": true,
+  "stdout": "...................                                                      [100%]\n- generated xml file: D:\\HAMON\\canvas-file-search-5f566b5ec8ef\\evidence\\candidate-v1.xml -\n19 passed in 1.35s\n",
+  "stderr": ""
+}

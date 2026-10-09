@@ -167,6 +167,11 @@ def main(argv: list[str] | None = None) -> None:
     add_common(files)
     files.add_argument("course_id")
 
+    find_files = sub.add_parser("find-files", help="Find literal text in course file names; metadata only")
+    add_common(find_files)
+    find_files.add_argument("course_ids", nargs="+", help="1–10 unique positive decimal course IDs")
+    find_files.add_argument("--text", required=True, help="Literal case-insensitive file name text")
+
     browse = sub.add_parser("browse-files", help="Browse one course folder; metadata only")
     add_common(browse)
     browse.add_argument("course_id", help="Positive numeric Canvas course ID")
@@ -326,6 +331,12 @@ def main(argv: list[str] | None = None) -> None:
         from canvaspilot.mcp_server import main as mcp_main
 
         mcp_main()
+        return
+
+    if args.cmd == "find-files":
+        from canvaspilot.file_search import run_file_search
+
+        run_file_search(args)
         return
 
     if args.cmd == "export-study":

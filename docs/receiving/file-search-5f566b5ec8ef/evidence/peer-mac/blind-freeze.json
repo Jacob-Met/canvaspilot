@@ -1,0 +1,7 @@
+{
+  "time": "2026-10-09T01:54:16.232367+00:00",
+  "cases_sha256": "23777eb051393b692c91ff3558695ff397535d8492ec16bcc67298c8c3314905",
+  "initial_sha256": "f89aa33ab3506dc1bcbfd7bc16db79011c0f63af8ac836be4e455642a5dee6c9",
+  "correction": "Before any product/test read, preserve initial JS-serialized case and restore intended large integer literal which JS rounded. Actual test will parse with native Python arbitrary precision.",
+  "product_or_owner_tests_read": false
+}

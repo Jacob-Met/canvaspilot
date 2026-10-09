@@ -1,0 +1,14 @@
+{
+  "exit": 0,
+  "seconds": 68.37061071395874,
+  "original": {
+    "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+    "mcp": "1.29.1",
+    "failure": "baseline import failed before product execution: no mcp.server.mcpserver",
+    "original_source_unchanged": true
+  },
+  "target": "D:\\HAMON\\canvas-file-search-5f566b5ec8ef\\dependencies",
+  "command": "private target mcp==2.3.0 from standard PyPI, no shared environment edits",
+  "stdout_bytes": 7837,
+  "stderr_bytes": 0
+}

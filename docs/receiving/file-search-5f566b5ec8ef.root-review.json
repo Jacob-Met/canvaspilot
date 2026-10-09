@@ -1,0 +1,1049 @@
+{
+  "schema": "canvaspilot.file-search.root-source-review.v1",
+  "reviewer": "chatgpt:5f566b5ec8ef:root",
+  "at": "2026-10-09T02:35:37.005Z",
+  "decision": "ACCEPT_QUALIFIED_NATIVE_SOURCE_FOR_ACTIONS_FREE_BRANCH",
+  "native": {
+    "root": "D:/HAMON/canvas-file-search-5f566b5ec8ef",
+    "head": "4c50dbe9760f5b405f2a95f587404b90bdc8f709",
+    "tree": "100146692393e3c4855b5ebda8c31d81393b9931",
+    "product": "d6fcaf6b3df963599560d9e6cc91baea0f3db48e",
+    "componentBase": "91b86f971af3510d6bd803de43be7727c7fa07da",
+    "baselineInputs": 35
+  },
+  "claim": {
+    "seq": 5258,
+    "eventId": "cev_9e41f0a3b6074f51a48c1cc8",
+    "eventHash": "9f83608ce5e5022381cd4c6c31e1a79bdd95744a68ef5d2749f5e199d11b62ba"
+  },
+  "authorCheckpoint": {
+    "seq": 5278,
+    "eventId": "cev_bc0fb6f466d043a6bb140502",
+    "eventHash": "904e9c7529595486791cdbbaf944ca4e56d617cd2849f7125c888a43959b9962"
+  },
+  "canonical": {
+    "head": "56a72a2e2cee5ec04671d12ebe5bc2484afb8026",
+    "tree": "a07c3e941219ff80968e1ff20528a63541bb7400",
+    "leaves": 1616,
+    "entries": 1839,
+    "noAGENTS": true
+  },
+  "findings": [
+    "Personally read frozen20-line contract, complete161-line final helper, all120 model-test lines and141 CLI-test lines,13-line recipient guide, exact parser/early-dispatch additions and original list_files/client lifecycle/pagination bodies.",
+    "Whole selection admits1–10 distinct positive ASCII decimal identifiers, rejects leading-zero aliases before any client/profile initialization, and preserves literal UTF8 query including whitespace within512-byte bound.",
+    "Each selected course uses unchanged list_files once in requested order. display_name and filename are searched separately by Unicode casefold substring. Full normalized row occurrences retain order and duplicate IDs; detached copies preserve null/false/zero/large integer/negative-zero/Unicode metadata.",
+    "True means a known matching field; false means both names are known nonmatches; null means no known match with at least one unavailable name. Empty strings are known. Original fixed-field normalization, dropping nonobject raw rows and absent-to-null behavior are explicitly disclosed.",
+    "Bounded5,000 combined rows,4MiB compact ASCII-escaped source JSON,16 nested containers within each row and16MiB complete output are checked without truncation. These bounds apply after unchanged reader decoding; no provider inventory or wire-allocation guarantee is claimed.",
+    "CLI dispatch precedes common client creation. Constructed client closes before emitting complete stdout; later course/page/auth/admission failures emit structured stderr without a successful report. HTTPX logger level is restored and stdout failure is nonzero. No file URL is passed to a fetch operation or output file writer.",
+    "Read original actual missing-command exit2 and native HTTPX projection witness; complete actual child-process/private-loopback producer and3-result receipt; all70 lines of final lint correction; independent9-group source acceptance and exact inverse-style addendum.",
+    "Current pyproject allows mcp>=1.0.0,<3. Actual installed1.29.1 failed before product import; private2.3.0 within that unchanged range was used for real package/client/CLI receiving. That retained baseline incompatibility is not presented as repaired, nor as a new import shim.",
+    "Scoped final lint passes after two equivalent dict literals, one explanatory existing-command exception comment and three equivalent combined test contexts. Originalc453 model/process/peer evidence remains phase-pinned; final36a module has final19+lint and source-only peer delta acceptance."
+  ],
+  "qualification": {
+    "initialNativeModelCLI": {
+      "passed": 19,
+      "scope": "Complete actual package and unchanged CanvasAPI/CanvasClient with HTTPX MockTransport"
+    },
+    "actualChildProcess": {
+      "passed": 3,
+      "complete": {
+        "exit": 0,
+        "GETs": 3
+      },
+      "lateCourse": {
+        "exit": 1,
+        "GETs": 3,
+        "stdoutEmpty": true
+      },
+      "duplicateAlias": {
+        "exit": 1,
+        "requests": 0
+      },
+      "profilesCreated": false,
+      "serverClosed": true,
+      "moduleSHA256": "c453e2855f32e67180e0a922130cd4c206f5613fb73a7e4cb76481072ff3712a"
+    },
+    "independent": {
+      "passed": 9,
+      "reviewSHA256": "9b8a02cd99fd2173acc5c986f000bd37b4aca2fd86ae8d5dd73f25e579422dcc",
+      "styleAddendumSHA256": "f21b48471c252600e34365bf1c2a89bdce8d34ae6ae1eef573d6822d03427bd9"
+    },
+    "finalModelCLI": {
+      "passed": 19,
+      "seconds": 1.41,
+      "processSeconds": 2.4327213764190674
+    },
+    "finalScopedLint": {
+      "exit": 0,
+      "version": "0.16.10",
+      "seconds": 0.1297318935394287
+    },
+    "rootProductTestReplay": false,
+    "completeInheritedSuiteRun": false,
+    "ActionsRun": false,
+    "providerOrInstalledCLIDeployment": false
+  },
+  "sourceFence": {
+    "authorOwned": 68,
+    "productPaths": 6,
+    "authorPacketLeaves": 62,
+    "authorManifestSHA256": "a50d8c74933eed2efa434f35b61ad7bfe6f34de1ff77ade5fc4bbc8ec950a3a5",
+    "nativeQualificationSHA256": "17ff084f42d8938c39f7ad4972a896ba7d0f4e7923e0c3c591ee9c2350e4b423",
+    "transferSHA256": "49908fc02cafcf11c5c57cd9fb04feff1aac0699886af8ad42669ffa3e9c1b19",
+    "rootExtra": "docs/receiving/file-search-5f566b5ec8ef.root-review.json"
+  },
+  "workflowGuard": {
+    "authority": "https://github.com/Jacob-Met/hamon/issues/143#issuecomment-6067592767",
+    "authorityUpdatedAt": "2026-10-08T19:36:07Z",
+    "checkedAt": "2026-10-09T02:35:37.005Z",
+    "inventory": [
+      {
+        "path": ".github/workflows/ci.yml",
+        "sha": "ef7bbebe192c0db55dc4467e064ba44805c13446",
+        "source": "name: CI\n\non:\n  push:\n    branches: [main]\n  pull_request:\n    branches: [main]\n\npermissions:\n  contents: read\n\nconcurrency:\n  group: ci-${{ github.ref }}\n  cancel-in-progress: true\n\njobs:\n  test:\n    name: pytest (offline fixture mode)\n    runs-on: ubuntu-latest\n    timeout-minutes: 10\n    steps:\n      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1\n      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0\n        with:\n          python-version: \"3.12\"\n      - name: Install package with dev extras\n        run: pip install -e \".[dev]\"\n      - name: Lint\n        run: ruff check src tests scripts\n      - name: Run test suite\n        run: pytest -q\n",
+        "triggers": "push main; pull_request to main"
+      },
+      {
+        "path": ".github/workflows/agenda-view-browser.yml",
+        "sha": "a06b862c23dccc61d5da9eea99d82b76668f78c8",
+        "source": "name: agenda-view-browser\n\non:\n  pull_request:\n    branches: [main]\n    paths:\n      - 'src/canvaspilot/agenda_export.py'\n      - 'src/canvaspilot/agenda_view/**'\n      - 'src/canvaspilot/agenda.py'\n      - 'src/canvaspilot/api.py'\n      - 'src/canvaspilot/cli.py'\n      - 'src/canvaspilot/client.py'\n      - 'tests/test_agenda_export.py'\n      - 'tests/fixtures/agenda_view_calendar.json'\n      - 'scripts/receive_agenda_view.mjs'\n      - '.github/workflows/agenda-view-browser.yml'\n  workflow_dispatch:\n\npermissions:\n  contents: read\n\njobs:\n  installed-chrome:\n    runs-on: ubuntu-24.04\n    timeout-minutes: 8\n    steps:\n      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1\n        with:\n          fetch-depth: 0\n          persist-credentials: false\n      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0\n        with:\n          python-version: '3.12'\n      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0\n        with:\n          node-version: '22'\n      - name: Install existing declared package dependencies\n        run: pip install -e .\n      - name: Build the declared wheel and receive exact packaged agenda assets\n        run: |\n          pip wheel --no-deps --wheel-dir \"$RUNNER_TEMP/agenda-view-wheel\" .\n          python -B - \"$RUNNER_TEMP/agenda-view-wheel\" <<'PY'\n          import hashlib\n          import json\n          import sys\n          import zipfile\n          from pathlib import Path\n\n          output = Path(sys.argv[1])\n          wheels = list(output.glob(\"canvaspilot-*.whl\"))\n          assert len(wheels) == 1, wheels\n          wheel = wheels[0]\n          received = []\n          with zipfile.ZipFile(wheel) as archive:\n              assert archive.testzip() is None\n              for relative in (\n                  \"canvaspilot/agenda_export.py\",\n                  \"canvaspilot/agenda_view/style.css\",\n                  \"canvaspilot/agenda_view/controls.js\",\n              ):\n                  packaged = archive.read(relative)\n                  source = (Path(\"src\") / relative).read_bytes()\n                  assert packaged == source, relative\n                  received.append({\"path\": relative, \"bytes\": len(packaged),\n                                   \"sha256\": hashlib.sha256(packaged).hexdigest()})\n          receipt = {\"schema\": \"canvaspilot-agenda-wheel/1\", \"accepted\": True,\n                     \"wheel\": wheel.name, \"wheel_bytes\": wheel.stat().st_size,\n                     \"wheel_sha256\": hashlib.sha256(wheel.read_bytes()).hexdigest(),\n                     \"packaged_assets_equal_actual_checkout\": received}\n          (output / \"receiving.json\").write_text(json.dumps(receipt, indent=2) + \"\\n\")\n          print(json.dumps(receipt, indent=2))\n          PY\n      - name: Receive actual native saved agenda in installed Chrome\n        run: |\n          git worktree add --detach \"$RUNNER_TEMP/agenda-view-baseline\" 0480cbce421bae532e3e909899fc8fb83789e878\n          node scripts/receive_agenda_view.mjs \"$RUNNER_TEMP/agenda-view-receiving\" \"$RUNNER_TEMP/agenda-view-baseline\"\n      - name: Retain actual source, browser results, failures and rendered artifacts\n        if: always()\n        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2\n        with:\n          name: agenda-view-browser-${{ github.run_id }}-${{ github.run_attempt }}\n          path: |\n            ${{ runner.temp }}/agenda-view-receiving\n            ${{ runner.temp }}/agenda-view-wheel\n          if-no-files-found: error\n          retention-days: 14\n",
+        "triggers": "pull_request to main with path filters; explicit workflow_dispatch"
+      }
+    ],
+    "fullCurrentDefinitionsRead": true,
+    "proposedNonMainBranchWithoutPRHasNoEligibleTrigger": true,
+    "requiredGatesUnrunAndIntegrationHeld": true
+  },
+  "preservedOwners": [
+    "API/list_files/client/pagination/auth/broker/MCP/dependencies/workflows",
+    "syllabus99",
+    "assignment93",
+    "page92/95",
+    "folder-browser and other command owners"
+  ],
+  "limitations": [
+    "35-input native projection plus owned additions, not a full canonical checkout",
+    "No full inherited suite, hosted Actions, browser, installed CLI or learner-outcome claim",
+    "No provider/profile/account/credential or returned-file request",
+    "Root wrong initial module path and unavailable native rg were read-only discovery failures; corrected using observed src layout and PowerShell source search"
+  ],
+  "nativeCustody": {
+    "leaves": [
+      {
+        "path": ".github/workflows/agenda-view-browser.yml",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a06b862c23dccc61d5da9eea99d82b76668f78c8",
+        "bytes": 3575,
+        "sha256": "b37a58b588d50da8a32699696398cb16c32e58b29600b43236d7cc6fe1291e40",
+        "owned": false
+      },
+      {
+        "path": ".github/workflows/ci.yml",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ef7bbebe192c0db55dc4467e064ba44805c13446",
+        "bytes": 708,
+        "sha256": "62f17b95af03d1ff8a172f168282b405fefcab3a5f1094c70e618b44920bd0ff",
+        "owned": false
+      },
+      {
+        "path": "README.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "039e54c79ca50188214942ea0fde3212f592afa0",
+        "bytes": 28700,
+        "sha256": "baa3b520317ff54539ec8f39233dccf67ad1c7e04c8c6c1cedb52bccf8cbd613",
+        "owned": true
+      },
+      {
+        "path": "docs/file-search.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3c43479a1f8be30f2efd5c17c3d3b21b3e8993be",
+        "bytes": 2491,
+        "sha256": "20d66058efa42988d51e3220b7e5a034d9347c86152f9dbabfa7239b5367687f",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/apply-and-test.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7ad8bdceafb05e7e6aa2da24afd95129c9b79633",
+        "bytes": 1848,
+        "sha256": "b509c6de745daf73eefc106232c7f1b8a7e14c9181ccd0d994f03719163c87d0",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/apply-lint-correction.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "cc8dc5816490cf8e9c0008ecc9dce671f6a6573e",
+        "bytes": 2474,
+        "sha256": "40de6b66d971b8ca5de87ffc2ebb253f098ede36ba78d26c6577aecf3261a06f",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/baseline.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a702ccb15f694d06dc25f8b78429a7b2b0f00b50",
+        "bytes": 2254,
+        "sha256": "dcc210180a4da01cc0c646b1ed206f6d931fe77834c03a57b67d1187fddda800",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/canonical-tree.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9610ef4a4a0dbf394ddabb90b80212584f99bbcd",
+        "bytes": 528031,
+        "sha256": "54812297589e52503507b4905ad085155a7fc73d7e94c514ff4d9220bf10c015",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/additive-spans.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a6b1aa8e91f694b5568c93f5940ac753a330783d",
+        "bytes": 949,
+        "sha256": "ac9f20969f20f49cd00a8cd2b61e79fa4f8eb6fccd1675060c2b5261d89e2db7",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/baseline-environment-failure.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "053865cf1a29736d36693240991fead90bf70e42",
+        "bytes": 250,
+        "sha256": "f0cd37b017d7aea9f2431a981634e347e1e474f9b2807f4ecaf2f0a56113f9ed",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/baseline-v2-process.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "66088b595ff65e9770bc7b154cff1ab127a337ab",
+        "bytes": 679,
+        "sha256": "03c412ef5bf3ddbd8bf5677a979fdc2cc1bd537cf04c9b7a41afb5f9866d4dbe",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/baseline-v2.stderr",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c07ab4d1c7b545f065b3547f7ff0ae23d22f6bdc",
+        "bytes": 324,
+        "sha256": "70c0687467b2c6c1d9b8ea9c5718bf5133b141f2556f552b9699e0facea6ab38",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/baseline-v2.stdout",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6c1affc7899bd796cddf74a0de5e6ff38176675a",
+        "bytes": 115,
+        "sha256": "a769a2255ef8e1e0a194402b9b6b816624d83a00fb5f1e8e36a5c7fdd5355d7a",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/baseline.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f09985ce84d3440f41298c62a74f58216318d9e2",
+        "bytes": 2496,
+        "sha256": "3e3d031ce3d7f3508eac78a9a7a00d35b59190a270638a389c9b624afc08ec83",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/candidate-v1.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b669135c6a84d10c96aedf6e36c531756b280fd4",
+        "bytes": 1017,
+        "sha256": "44751837e15a1953858a5a3dc9c8ce438375b60e9799bd739eab7377137fa9d3",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/candidate-v1.stderr",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/candidate-v1.stdout",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a1985c8403bce7e5e9c05ae52801ded63a919766",
+        "bytes": 193,
+        "sha256": "91b5c47c1e95092ac3d9869cf254a3a5f64ce6079b0a6a32e86eab7ceaea1046",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/candidate-v1.xml",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "aa06ebb58d43e9066257a9c1e469b3cc2cf761c1",
+        "bytes": 2749,
+        "sha256": "4642873aff56a50df23fd78b7a5b581a042dc9c353c454ae0712789ab30a3666",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/candidate-v2-lint.stderr",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/candidate-v2-lint.stdout",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7f6ba294132e156ccce54256b2567c8763f1b628",
+        "bytes": 20,
+        "sha256": "a4443afdcfb6d7363adb285762515ccf7cf50473b1a05c20c1a50f6bed4d26b0",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/candidate-v2-tests.stderr",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/candidate-v2-tests.stdout",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9d6684a08de3278a9b326311fa2489571b75d246",
+        "bytes": 193,
+        "sha256": "dd9fed867110b987d3eaed634fe89e2823fac5f207cc1f87233018c32ee0a373",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/candidate-v2.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8cc62c59ebecbc46e79a6fe651679a60a11634c4",
+        "bytes": 1459,
+        "sha256": "4303424f25150984072ef043cc9115ab624efbda944cf30eced6906de3371a9a",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/candidate-v2.xml",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2b5e8d991b9b9eb04863353bc6c23c0bc6526015",
+        "bytes": 2749,
+        "sha256": "71b1afa54e663fc48db965913274bfafe0c82b41759c258e657577e5e2003dbc",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/dependency-install.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "fbffcd349819ac61a240628a80bbf1d7c2abd04e",
+        "bytes": 538,
+        "sha256": "122cbac795b5173197133dbacdd9a542745d99b4902249db215b81e7ca71e63c",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/dependency-install.stderr",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/dependency-install.stdout",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e71aa87899bc2a589f3ddc8560d7cbd49a47bad9",
+        "bytes": 7947,
+        "sha256": "60dce22ca55a97c8095e8e2a60449a88d58a3b58d251ec76e5c8666aa8bc0abc",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/environment.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "49a979bbc9b23dffefed6d18a4b3eb8d4178c619",
+        "bytes": 346,
+        "sha256": "8afd865bbfef414f524527e1f4ec1018b22b8d7d1313b306ef033d229d54078b",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/implementation-contract.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d5820ad677bc5b812d5180831666addd597f962e",
+        "bytes": 4386,
+        "sha256": "5e5493e79fec0062735fda159ee4d40fc81beb50331cca1ca0b6ce652cd331ea",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/intake-receipt.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5a5163e24398e6294a36d036c8795ae3d3f029ca",
+        "bytes": 9566,
+        "sha256": "129f6b446fb0cbe133c6ae03e57b4dd3bbadb151bc3ce66c48f206c519aec4c2",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/lint-correction.diff",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2ce442b90da74079f5da3b8618d7178cc3e3733f",
+        "bytes": 3963,
+        "sha256": "6f7a394e5da9af3c7f6dd359350ec8d95c00f96f896b9e423b5fda88edfe4b41",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/lint-install.stderr",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/lint-install.stdout",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a0b466b1eef32c6d93a8135b38ec2740abfdda9f",
+        "bytes": 304,
+        "sha256": "199aff99b231eabb564d6b3d482080211c9f9044767d17bf9e2e424186323f83",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/lint-settings-v1.txt",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "42847733f93cb4b29356c50ee386bf4e5d2bba1a",
+        "bytes": 38152,
+        "sha256": "f8c10cad3fcdaf9f65b1b55ab0e5ba5be403bcf86daba6c522c427c18d012462",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/lint-v1.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e5c744b3ee93061e0d12eab9d2391391779faa3c",
+        "bytes": 4665,
+        "sha256": "32965ac4b591d2e41b55adf9985b12d7c4335db5512e1c927863dbef6d9f9d54",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/lint-v2-explicit-project.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9e9ee2c0f4aef8f95e73e4fe3b81491e40fd3af5",
+        "bytes": 5089,
+        "sha256": "e519ddea157d33ea300b38fba0c2daaf19547c881a5d96cf4b566c462fe0b497",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/native-qualification.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9af7d4f46fc2fdacbda3ca46a1fd4b315ea8d420",
+        "bytes": 2263,
+        "sha256": "17ff084f42d8938c39f7ad4972a896ba7d0f4e7923e0c3c591ee9c2350e4b423",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/ownership-and-workflows.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a01f79221c15b04983ea7974bb4a380b8ce4b776",
+        "bytes": 5375,
+        "sha256": "bbeb9f83888d6053767b5b1227655b37e5176b596084a9a5f543e6aa3713d2f7",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/peer-mac/blind-freeze.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ffe8589c3159b12d693535961d5b6fd1fd80bd1d",
+        "bytes": 472,
+        "sha256": "d377181edd59ad9ee11ce7040f9828ed6b031e08746b69ec09bd07a18d9fe781",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/peer-mac/check-lint-addendum.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c54080547f003198315c6f75f12b37c0205dd162",
+        "bytes": 1991,
+        "sha256": "a2bfb7e9bf3ce2723168b5d4d6aa379ce2ac8f1808c4bcc93358b8202bec5966",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/peer-mac/contract-cases-initial-js-number.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f555c09cef517f99d572869f99416fb1577ae84c",
+        "bytes": 3690,
+        "sha256": "f89aa33ab3506dc1bcbfd7bc16db79011c0f63af8ac836be4e455642a5dee6c9",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/peer-mac/contract-cases.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "849e9c3f927d1a673265b1c56f941aa1b24bd3af",
+        "bytes": 3690,
+        "sha256": "23777eb051393b692c91ff3558695ff397535d8492ec16bcc67298c8c3314905",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/peer-mac/freeze.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e29c8c4ffeb2a6730f1e241122d1b7c5a4cb0159",
+        "bytes": 895,
+        "sha256": "cb086f79693fc869a48c56cf4ccfce5cc3295b9ff6fe66e9b6b5e2b552ee4abb",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/peer-mac/independent-review.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "54a1b69d8d8049406a50f863c03cd83830984f12",
+        "bytes": 2542,
+        "sha256": "9b8a02cd99fd2173acc5c986f000bd37b4aca2fd86ae8d5dd73f25e579422dcc",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/peer-mac/inspect-source.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4febe09756ec7351f4f4c6d55fd32ab90ad71503",
+        "bytes": 699,
+        "sha256": "ecc82f2dad80775f3039e796db44088447b49a4b2351e2c7fddada87cfd19a0f",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/peer-mac/lint-only-addendum.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0c7c5353f3d48ac852e9c026e2bd3e9083be65b6",
+        "bytes": 879,
+        "sha256": "f21b48471c252600e34365bf1c2a89bdce8d34ae6ae1eef573d6822d03427bd9",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/peer-mac/manifest.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e5cad20ac946214040f87320e593192080a71220",
+        "bytes": 1390,
+        "sha256": "2cecc781ba440d767d4e444b4f24f9d158621ba3012b58ca6fa55db05bec7fea",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/peer-mac/seal-review.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6bb55818eb852038beaeca7ce06f24abb4a842cb",
+        "bytes": 2930,
+        "sha256": "f00c980b923efb715cfed72dc4eba79d0f5f702c5bf585953c67c7f22da6f811",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/peer-mac/targeted-result.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2971738cf9ce32f5c219545e7e17550f0c37ddd9",
+        "bytes": 2480,
+        "sha256": "fb9c2d0ddba1027ac6efedc21b64a21fc3d44882fcbca8ec3ab9da13a5ea583b",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/peer-mac/targeted.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f476788c6643d5ae461b6642cbca04c6ee9c3ad6",
+        "bytes": 6128,
+        "sha256": "fb48dc902889a49f69692bd4b5b19894c0b37bb8111aebc12789eb28cdcbe0ff",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/pre-lint-file_search.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6fa571d31ddce988e37b5d20c3234cd30a1a195c",
+        "bytes": 6995,
+        "sha256": "c453e2855f32e67180e0a922130cd4c206f5613fb73a7e4cb76481072ff3712a",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/pre-lint-test_file_search.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d62e6e32dfffca8b984da17cf037a41697eed3d7",
+        "bytes": 6221,
+        "sha256": "392eddf65e379918d962de5f6fb46c0e7bbfea6be5b806e3b987b06da48a8bdb",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/process-consumer/complete.stderr",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/process-consumer/complete.stdout",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ffd438207563442a685761882107a58b138511f3",
+        "bytes": 1619,
+        "sha256": "1a04f9dbf926336f0a098723d7afd8ef199cd6605cc98060d49a1c8b890fb7fd",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/process-consumer/invalid-selection.stderr",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "044d29ef823cedf3b7a8706b90e919f3644329f7",
+        "bytes": 118,
+        "sha256": "ed2501b6386d0584db750be73077723fbe60152b67473f39f4d8f4008f165f5f",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/process-consumer/invalid-selection.stdout",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/process-consumer/later-course-error.stderr",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2f541cf6c434072dd0b00ff55981a20accb7091d",
+        "bytes": 254,
+        "sha256": "0f80987a176241c2de01ee52148f189cfe6324ac6d624e814e0792295db18dcd",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/process-consumer/later-course-error.stdout",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/evidence/process-consumer/receipt.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b87945c2497d57859fd79c53405ba1a6386d4272",
+        "bytes": 1980,
+        "sha256": "92bbd3de745fda39ddf2901957ecbbbd9387209d68f5353e50e808545a948f5e",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/hydrate.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d79eba881332274146cf65779824cab21bc16f52",
+        "bytes": 1614,
+        "sha256": "3ac993b5a1ba5e81d5cdcaf9a7d5a516474b8116949aef5b6515c916293d6a37",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/install-declared-mcp.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "cd8ff5f4067996be487a96af82491b8c4da07a7f",
+        "bytes": 1260,
+        "sha256": "acb36b64f85097fb8118b0b2ace7f9bb6f8bfc3699df6151f7dee3954e34e779",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/manifest.json",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "62f7ca243c1b2dd0250b15a1bca99c616df1a05d",
+        "bytes": 9806,
+        "sha256": "a50d8c74933eed2efa434f35b61ad7bfe6f34de1ff77ade5fc4bbc8ec950a3a5",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/process-consumer.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a8e3c3dd085e0425b5e1968008521e63786e9d8c",
+        "bytes": 3825,
+        "sha256": "8a4e67856b21ea80d892f02055426125e428d255b0de9de9d6bc255b998f7440",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/resolve-lint-config.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a2c4b401eb674f9a05cfa42226a923b528bf4706",
+        "bytes": 938,
+        "sha256": "b7fef10b4ca59d69e8d00c5eef1200b39acd3fc57d07b19b4e39a71a047a9919",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/run-baseline-v2.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "12ae112c26a03468f39d756e99f74855e1da990e",
+        "bytes": 796,
+        "sha256": "297472c2c3bea9b4bfebebabc9756eb595a98c67afa26a6d546ac2b7af627650",
+        "owned": true
+      },
+      {
+        "path": "docs/receiving/file-search-5f566b5ec8ef/scoped-lint.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "31972d02fa7a5e2efbf7000ffee5fed276c8b567",
+        "bytes": 1396,
+        "sha256": "bacea6eb0858e156fab8377273aff7ee559f093ddfe80bb4cabb99eac806d145",
+        "owned": true
+      },
+      {
+        "path": "pyproject.toml",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "76eba6d30696b4f2733539cd47df6e178bc0f585",
+        "bytes": 1353,
+        "sha256": "555ad3c7e338d38ae5feabc06c0c07503f22d9c732a9af153c7706c63d2b3c63",
+        "owned": false
+      },
+      {
+        "path": "src/canvaspilot/__init__.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "74a7a6087bf81fd7c75c15769b30408039618e0f",
+        "bytes": 561,
+        "sha256": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5",
+        "owned": false
+      },
+      {
+        "path": "src/canvaspilot/agenda.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "82ab4fa8f9b92b8d9e5d4c74962d138e1d882ebd",
+        "bytes": 8455,
+        "sha256": "cd9d9e027393ce21cff0b4d0a13098dca3a906af3e9803201655bca40d3c3fda",
+        "owned": false
+      },
+      {
+        "path": "src/canvaspilot/agenda_export.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "af25e95a1c9bf4a20784617e5c867d18584ac49a",
+        "bytes": 15270,
+        "sha256": "4e55a0c16e76286130f01e81f04685da1a3ecd9bb5a7a0493ccbfe97c0fcd3ce",
+        "owned": false
+      },
+      {
+        "path": "src/canvaspilot/agenda_view/controls.js",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "107097a5ad2379fb7497e1b38c488b3a7917e93f",
+        "bytes": 2823,
+        "sha256": "98474fb98fff0027e26fabd024c33a186715b5ac612979c4ef8b1d84b181d172",
+        "owned": false
+      },
+      {
+        "path": "src/canvaspilot/agenda_view/style.css",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "86ad5459a44c91d0fb448e77dcda78cf1d39642b",
+        "bytes": 7435,
+        "sha256": "ed5f86e62198a9a0b13cbcd87db0bdae9cb2e5732358bf6eb684da47f45610d0",
+        "owned": false
+      },
+      {
+        "path": "src/canvaspilot/announcement_search.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b2b344526b14c2f123163f6bcfd28f70e28281e8",
+        "bytes": 1555,
+        "sha256": "aa766157ccc10d6c3371a0e761c89ce3189d201cd9fcf5b82eec22d1c572f65e",
+        "owned": false
+      },
+      {
+        "path": "src/canvaspilot/api.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "3ec81dee60bc67d7a80d40b78e85d5c005441b99",
+        "bytes": 29742,
+        "sha256": "b6b770c2cdef9c9ce44a4a6aefd5b6d0876bc09e5aee29a4adb5a7c603b41c24",
+        "owned": false
+      },
+      {
+        "path": "src/canvaspilot/assignment_submission.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "95b1f19927e4eecf99fc852325737c3cfe86cd0d",
+        "bytes": 1296,
+        "sha256": "52fc732660b8844a2ee0801931a363f20db15b5309d148d01e3b618be487133d",
+        "owned": false
+      },
+      {
+        "path": "src/canvaspilot/bundle.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c2544032a1cfcdc116725c6403ff09d7b0328f87",
+        "bytes": 2761,
+        "sha256": "c8a1854b5c04715c1371c05f4c25ba867ec2d2daafc132b7ed8a973d3e55ddcf",
+        "owned": false
+      },
+      {
+        "path": "src/canvaspilot/calendar_export.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ef74cfdf50fd894327dbe45a9a9d43042953bc31",
+        "bytes": 9950,
+        "sha256": "b92948c438063438bf9b8ef01b0b0c067802ddb06354f00e8ee18749f3c5e2fa",
+        "owned": false
+      },
+      {
+        "path": "src/canvaspilot/cli.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4560e1a2cad1bae253fbea5bd4eb36bee5acd062",
+        "bytes": 40491,
+        "sha256": "c5871d90277ba7b44f4b79a73748a16e6fb54512ac7dbfd2818cda3ff1512695",
+        "owned": true
+      },
+      {
+        "path": "src/canvaspilot/client.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1db4b1135305f7e410025ae7937f9a6cd349f020",
+        "bytes": 18934,
+        "sha256": "d3473b7805908c15b276689abff9dd0dbd8d428e8691d557a26a5b2285444797",
+        "owned": false
+      },
+      {
+        "path": "src/canvaspilot/discussion_thread.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2ed658fcf5cee996a02115742935716f1d039e25",
+        "bytes": 8547,
+        "sha256": "11f955f827c29421143782518a1aaf1894d0892739c3b56c4d5e413da74555ff",
+        "owned": false
+      },
+      {
+        "path": "src/canvaspilot/feedback.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ec996f421a851d699a9ac7cb1f2a486f9ff7c4ea",
+        "bytes": 3900,
+        "sha256": "55454598effea598474a21f67e36d5bc5bea84aaefeefc18e4d8c49804ab9869",
+        "owned": false
+      },
+      {
+        "path": "src/canvaspilot/file_search.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d2b2bb924d6f2247b3abf0bd8d3ee58333c57b0b",
+        "bytes": 7079,
+        "sha256": "36a1d4a886129f44d1ba147265bbe54c433b7abdabe0f0d75ef1a495ab6eac2f",
+        "owned": true
+      },
+      {
+        "path": "src/canvaspilot/folder_browser.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "4b3078ddb00a4a34015710e49fa7b7806adebd23",
+        "bytes": 6293,
+        "sha256": "c6a67229b268c539e5edb581e3320b06229460adc3fbc01d72e4964e31c0348a",
+        "owned": false
+      },
+      {
+        "path": "src/canvaspilot/grade_review.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "24d93cb693af09cf5123f31fea90e77a589b023c",
+        "bytes": 13247,
+        "sha256": "e550752a830ca9cf4c2ef5d5b06dbf464abd9dfed3a5252d310a4acf8e2411f5",
+        "owned": false
+      },
+      {
+        "path": "src/canvaspilot/grade_review_export.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8a6281f62f99e18109f90a273a4c29da4929f3a3",
+        "bytes": 18810,
+        "sha256": "0f16c805d57bf9aa8eba09b6bde2afde033bf09fe64b4525adf22de3b248c351",
+        "owned": false
+      },
+      {
+        "path": "src/canvaspilot/mcp_server.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "0f7130673b3a139abdacb588410edb23a01dc56d",
+        "bytes": 16291,
+        "sha256": "52cfd5cbe167438762049f4c36feec822986f5e5e63aeaf494e07907235e1c98",
+        "owned": false
+      },
+      {
+        "path": "src/canvaspilot/module_progress.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "a9d3e4bbea22067f76110f03a5f31a5bc9d8de05",
+        "bytes": 9615,
+        "sha256": "974ee31925514a2e53b899888302a7fa357e280ab5f2461b754b814473653d99",
+        "owned": false
+      },
+      {
+        "path": "src/canvaspilot/module_progress_export.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8ccb9f1262790a744418d4212e072ee43031ab88",
+        "bytes": 12904,
+        "sha256": "f723c06e551fae2cf50745460f9109867e6e0f9ebc3cc997d49d5e2173aa9f50",
+        "owned": false
+      },
+      {
+        "path": "src/canvaspilot/offline_demo.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9d2cfd260d8db052b8183e3ec4fc9626a5bb2b9a",
+        "bytes": 4124,
+        "sha256": "2389f3ccc1b6db5995be0d90e014ea9345e3029aa5546a5b2dcf12c1197e6d4d",
+        "owned": false
+      },
+      {
+        "path": "src/canvaspilot/page_export.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1b46af8af07d24e24cde54aba393d9f977e77136",
+        "bytes": 17041,
+        "sha256": "8800e959ee620438273c3291fd24c51b9ed567430b28093cd3f8bef52bff5015",
+        "owned": false
+      },
+      {
+        "path": "src/canvaspilot/session_broker.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "cc706d5860489ec37cb2cf7f0b1cb4eee33b664f",
+        "bytes": 13944,
+        "sha256": "a692cd2812cbc09536f1b60c84892bc8e87d2ae984c5a5aa25a13f6537ba6da2",
+        "owned": false
+      },
+      {
+        "path": "src/canvaspilot/study_workspace.css",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "951e0416c9bf558d7fb79d2257d636654e195918",
+        "bytes": 6648,
+        "sha256": "aa77aeba7b1400eeccde7430e77eb0de0d5fd9791c4f1960c930309ba574fe2b",
+        "owned": false
+      },
+      {
+        "path": "src/canvaspilot/study_workspace.html",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9b9b94bf209fda6918979e380a1c2616118f1466",
+        "bytes": 2334,
+        "sha256": "1181415863ceef48a6238ce1588a722f1ae914be6d8125f04553fe2321110c1e",
+        "owned": false
+      },
+      {
+        "path": "src/canvaspilot/study_workspace.js",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "bed8d49493c4d4b162046e49e4545418ca131f95",
+        "bytes": 16544,
+        "sha256": "62dcac599d6cf7f880a08a2297d2880c238e8a758843ec790a365b18a88bc38c",
+        "owned": false
+      },
+      {
+        "path": "src/canvaspilot/study_workspace.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "fe3b47e2ba55463c4f016d3173f8397e281f421b",
+        "bytes": 11259,
+        "sha256": "fb791929a7322850d4a92fbf2a7d54a71780e2dd54a0737b84258de09abd0515",
+        "owned": false
+      },
+      {
+        "path": "src/canvaspilot/submission_comparison.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f8e2b9bfef5bb799bd75c6c1f3c6e56366fcf9ad",
+        "bytes": 27015,
+        "sha256": "ab7445cadf2a22b31d8f8f837b816d90367d5295e90fe73615a459bc2d9101d4",
+        "owned": false
+      },
+      {
+        "path": "src/canvaspilot/submission_history.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "9e71a0dc944bee71b0b5c61d7ff84cbb59119e1a",
+        "bytes": 2853,
+        "sha256": "b007234b9861a68504e36f005ae463943b36b5cd50a3d157532c1cab09fcf9da",
+        "owned": false
+      },
+      {
+        "path": "src/canvaspilot/submission_history_export.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "bc94606454e7d5cb880a5d281716cd7ee0dfb8ac",
+        "bytes": 16025,
+        "sha256": "7582f1aa2a18ace57c1ed4e0f75dc095850520853f26f578104f8fbd893da14f",
+        "owned": false
+      },
+      {
+        "path": "src/canvaspilot/syllabus_packet.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1faf3448c391fdb76b8cf38fe5854906614443b1",
+        "bytes": 21513,
+        "sha256": "005a837c10bb185edf0bcc75c3ab50609f6afbe49d38161e841380116ab97bd7",
+        "owned": false
+      },
+      {
+        "path": "tests/test_file_search.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "ad912638733efd406cbb643efae9c9255faabc83",
+        "bytes": 6150,
+        "sha256": "acc07ccb09cd52a42aafacca999ee495963d14f2bad16af908dce50481a01975",
+        "owned": true
+      },
+      {
+        "path": "tests/test_file_search_cli.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "5f8a2d570b078d86d12c376f023733df292c2204",
+        "bytes": 7225,
+        "sha256": "9555a857ea57a4c65bfadb8e28246cbf93f9e09c1c552b0d137cab8e65226220",
+        "owned": true
+      }
+    ],
+    "unownedInputsExact": 33,
+    "allWorkingBytesMatchGitBlobs": true,
+    "exact11LineCLIInverse": true,
+    "exactREADMEInverse": true,
+    "authorPacketVerified": 62,
+    "completeCanonicalTreeReproduced": true
+  }
+}

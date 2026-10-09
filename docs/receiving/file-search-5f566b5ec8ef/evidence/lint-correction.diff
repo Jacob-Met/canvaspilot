@@ -1,0 +1,70 @@
+diff --git a/src/canvaspilot/file_search.py b/src/canvaspilot/file_search.py
+index 6fa571d..d2b2bb9 100644
+--- a/src/canvaspilot/file_search.py
++++ b/src/canvaspilot/file_search.py
+@@ -69,7 +69,7 @@ def search_course_files(api: Any, course_ids: list[int | str], query: str) -> di
+     selected, query = validate_selection(course_ids, query)
+     needle = query.casefold()
+     courses = []
+-    totals = dict(returned=0, matched=0, nonmatching=0, unknown=0)
++    totals = {"returned": 0, "matched": 0, "nonmatching": 0, "unknown": 0}
+     source_bytes = 0
+     for course in selected:
+         rows = api.list_files(course)
+@@ -90,7 +90,7 @@ def search_course_files(api: Any, course_ids: list[int | str], query: str) -> di
+             raise ValueError("Normalized file metadata exceeds 4 MiB")
+         detached = json.loads(serialized)
+         observations = []
+-        counts = dict(returned=len(rows), matched=0, nonmatching=0, unknown=0)
++        counts = {"returned": len(rows), "matched": 0, "nonmatching": 0, "unknown": 0}
+         for index, row in enumerate(detached):
+             unavailable = [name for name in NAME_FIELDS if row.get(name) is None]
+             matched = [
+@@ -153,7 +153,7 @@ def run_file_search(args: Any) -> None:
+             client.close()
+         sys.stdout.write(output)
+         sys.stdout.flush()
+-    except Exception as error:
++    except Exception as error:  # noqa: BLE001 — structured command boundary, no automatic retry
+         print(json.dumps({"ok": False, "error": type(error).__name__, "message": str(error)}),
+               file=sys.stderr)
+         raise SystemExit(1) from None
+diff --git a/tests/test_file_search.py b/tests/test_file_search.py
+index d62e6e3..ad91263 100644
+--- a/tests/test_file_search.py
++++ b/tests/test_file_search.py
+@@ -81,18 +81,16 @@ class FileSearchTests(unittest.TestCase):
+ 
+     def test_query_admission_and_utf8_boundary(self):
+         for query in ("", " \t\n", None, 1, "\ud800", "é" * 257):
+-            with self.subTest(query=repr(query)):
+-                with self.assertRaises(ValueError):
+-                    validate_selection(["1"], query)
++            with self.subTest(query=repr(query)), self.assertRaises(ValueError):
++                validate_selection(["1"], query)
+         self.assertEqual(validate_selection(["1"], "é" * 256)[1], "é" * 256)
+ 
+     def test_malformed_reader_and_name_refuse_complete_report(self):
+         for rows in ({}, [None], [{"display_name": []}], [{"filename": False}],
+                      [{"id": float("nan")}], [{"id": {1: "a"}}],
+                      [{"id": "\ud800"}], [{"id": (1, 2)}]):
+-            with self.subTest(rows=repr(rows)):
+-                with self.assertRaises((ValueError, UnicodeError)):
+-                    search_course_files(Reader({"1": [], "2": rows}), ["1", "2"], "x")
++            with self.subTest(rows=repr(rows)), self.assertRaises((ValueError, UnicodeError)):
++                search_course_files(Reader({"1": [], "2": rows}), ["1", "2"], "x")
+ 
+     def test_late_course_failure_propagates(self):
+         api = Reader({"1": [{"display_name": "a", "filename": "a"}], "2": RuntimeError("late")})
+@@ -110,9 +108,8 @@ class FileSearchTests(unittest.TestCase):
+         row = {"display_name": "a", "filename": "", "extra": "x" * (4 * 1024 * 1024)}
+         with self.assertRaisesRegex(ValueError, "4 MiB"):
+             search_course_files(Reader({"1": [row]}), ["1"], "a")
+-        with patch("canvaspilot.file_search.MAX_OUTPUT_BYTES", 1):
+-            with self.assertRaisesRegex(ValueError, "16 MiB"):
+-                search_course_files(Reader({"1": []}), ["1"], "a")
++        with patch("canvaspilot.file_search.MAX_OUTPUT_BYTES", 1), self.assertRaisesRegex(ValueError, "16 MiB"):
++            search_course_files(Reader({"1": []}), ["1"], "a")
+ 
+     def test_nested_container_boundary(self):
+         x = "a"

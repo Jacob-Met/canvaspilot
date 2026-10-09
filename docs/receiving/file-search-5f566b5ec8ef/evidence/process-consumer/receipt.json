@@ -1,0 +1,62 @@
+{
+  "passed": 3,
+  "runs": [
+    {
+      "label": "complete",
+      "exit": 0,
+      "seconds": 1.774299144744873,
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/files?per_page=50"
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/files?cursor=opaque%2B2"
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/77/files?per_page=50"
+        }
+      ],
+      "stdout_sha256": "1a04f9dbf926336f0a098723d7afd8ef199cd6605cc98060d49a1c8b890fb7fd",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "profile_created": false
+    },
+    {
+      "label": "later-course-error",
+      "exit": 1,
+      "seconds": 1.652355432510376,
+      "requests": [
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/files?per_page=50"
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/42/files?cursor=opaque%2B2"
+        },
+        {
+          "method": "GET",
+          "path": "/api/v1/courses/88/files?per_page=50"
+        }
+      ],
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "0f80987a176241c2de01ee52148f189cfe6324ac6d624e814e0792295db18dcd",
+      "profile_created": false
+    },
+    {
+      "label": "invalid-selection",
+      "exit": 1,
+      "seconds": 1.2966985702514648,
+      "requests": [],
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "ed2501b6386d0584db750be73077723fbe60152b67473f39f4d8f4008f165f5f",
+      "profile_created": false
+    }
+  ],
+  "transport": "actual child python -m canvaspilot.cli and unchanged HTTPX client against private loopback HTTP server",
+  "product_inputs_unchanged": true,
+  "server_closed": true,
+  "no_provider_or_account_operation": true
+}

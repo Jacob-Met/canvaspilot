@@ -1,0 +1,307 @@
+[
+  {
+    "path": "apply-and-test.py",
+    "bytes": 1848,
+    "sha256": "b509c6de745daf73eefc106232c7f1b8a7e14c9181ccd0d994f03719163c87d0"
+  },
+  {
+    "path": "apply-lint-correction.py",
+    "bytes": 2474,
+    "sha256": "40de6b66d971b8ca5de87ffc2ebb253f098ede36ba78d26c6577aecf3261a06f"
+  },
+  {
+    "path": "baseline.py",
+    "bytes": 2254,
+    "sha256": "dcc210180a4da01cc0c646b1ed206f6d931fe77834c03a57b67d1187fddda800"
+  },
+  {
+    "path": "canonical-tree.json",
+    "bytes": 528031,
+    "sha256": "54812297589e52503507b4905ad085155a7fc73d7e94c514ff4d9220bf10c015"
+  },
+  {
+    "path": "evidence/additive-spans.json",
+    "bytes": 949,
+    "sha256": "ac9f20969f20f49cd00a8cd2b61e79fa4f8eb6fccd1675060c2b5261d89e2db7"
+  },
+  {
+    "path": "evidence/baseline-environment-failure.json",
+    "bytes": 250,
+    "sha256": "f0cd37b017d7aea9f2431a981634e347e1e474f9b2807f4ecaf2f0a56113f9ed"
+  },
+  {
+    "path": "evidence/baseline-v2-process.json",
+    "bytes": 679,
+    "sha256": "03c412ef5bf3ddbd8bf5677a979fdc2cc1bd537cf04c9b7a41afb5f9866d4dbe"
+  },
+  {
+    "path": "evidence/baseline-v2.stderr",
+    "bytes": 324,
+    "sha256": "70c0687467b2c6c1d9b8ea9c5718bf5133b141f2556f552b9699e0facea6ab38"
+  },
+  {
+    "path": "evidence/baseline-v2.stdout",
+    "bytes": 115,
+    "sha256": "a769a2255ef8e1e0a194402b9b6b816624d83a00fb5f1e8e36a5c7fdd5355d7a"
+  },
+  {
+    "path": "evidence/baseline.json",
+    "bytes": 2496,
+    "sha256": "3e3d031ce3d7f3508eac78a9a7a00d35b59190a270638a389c9b624afc08ec83"
+  },
+  {
+    "path": "evidence/candidate-v1.json",
+    "bytes": 1017,
+    "sha256": "44751837e15a1953858a5a3dc9c8ce438375b60e9799bd739eab7377137fa9d3"
+  },
+  {
+    "path": "evidence/candidate-v1.stderr",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "evidence/candidate-v1.stdout",
+    "bytes": 193,
+    "sha256": "91b5c47c1e95092ac3d9869cf254a3a5f64ce6079b0a6a32e86eab7ceaea1046"
+  },
+  {
+    "path": "evidence/candidate-v1.xml",
+    "bytes": 2749,
+    "sha256": "4642873aff56a50df23fd78b7a5b581a042dc9c353c454ae0712789ab30a3666"
+  },
+  {
+    "path": "evidence/candidate-v2-lint.stderr",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "evidence/candidate-v2-lint.stdout",
+    "bytes": 20,
+    "sha256": "a4443afdcfb6d7363adb285762515ccf7cf50473b1a05c20c1a50f6bed4d26b0"
+  },
+  {
+    "path": "evidence/candidate-v2-tests.stderr",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "evidence/candidate-v2-tests.stdout",
+    "bytes": 193,
+    "sha256": "dd9fed867110b987d3eaed634fe89e2823fac5f207cc1f87233018c32ee0a373"
+  },
+  {
+    "path": "evidence/candidate-v2.json",
+    "bytes": 1459,
+    "sha256": "4303424f25150984072ef043cc9115ab624efbda944cf30eced6906de3371a9a"
+  },
+  {
+    "path": "evidence/candidate-v2.xml",
+    "bytes": 2749,
+    "sha256": "71b1afa54e663fc48db965913274bfafe0c82b41759c258e657577e5e2003dbc"
+  },
+  {
+    "path": "evidence/dependency-install.json",
+    "bytes": 538,
+    "sha256": "122cbac795b5173197133dbacdd9a542745d99b4902249db215b81e7ca71e63c"
+  },
+  {
+    "path": "evidence/dependency-install.stderr",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "evidence/dependency-install.stdout",
+    "bytes": 7947,
+    "sha256": "60dce22ca55a97c8095e8e2a60449a88d58a3b58d251ec76e5c8666aa8bc0abc"
+  },
+  {
+    "path": "evidence/environment.json",
+    "bytes": 346,
+    "sha256": "8afd865bbfef414f524527e1f4ec1018b22b8d7d1313b306ef033d229d54078b"
+  },
+  {
+    "path": "evidence/implementation-contract.md",
+    "bytes": 4386,
+    "sha256": "5e5493e79fec0062735fda159ee4d40fc81beb50331cca1ca0b6ce652cd331ea"
+  },
+  {
+    "path": "evidence/intake-receipt.json",
+    "bytes": 9566,
+    "sha256": "129f6b446fb0cbe133c6ae03e57b4dd3bbadb151bc3ce66c48f206c519aec4c2"
+  },
+  {
+    "path": "evidence/lint-correction.diff",
+    "bytes": 3963,
+    "sha256": "6f7a394e5da9af3c7f6dd359350ec8d95c00f96f896b9e423b5fda88edfe4b41"
+  },
+  {
+    "path": "evidence/lint-install.stderr",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "evidence/lint-install.stdout",
+    "bytes": 304,
+    "sha256": "199aff99b231eabb564d6b3d482080211c9f9044767d17bf9e2e424186323f83"
+  },
+  {
+    "path": "evidence/lint-settings-v1.txt",
+    "bytes": 38152,
+    "sha256": "f8c10cad3fcdaf9f65b1b55ab0e5ba5be403bcf86daba6c522c427c18d012462"
+  },
+  {
+    "path": "evidence/lint-v1.json",
+    "bytes": 4665,
+    "sha256": "32965ac4b591d2e41b55adf9985b12d7c4335db5512e1c927863dbef6d9f9d54"
+  },
+  {
+    "path": "evidence/lint-v2-explicit-project.json",
+    "bytes": 5089,
+    "sha256": "e519ddea157d33ea300b38fba0c2daaf19547c881a5d96cf4b566c462fe0b497"
+  },
+  {
+    "path": "evidence/native-qualification.json",
+    "bytes": 2263,
+    "sha256": "17ff084f42d8938c39f7ad4972a896ba7d0f4e7923e0c3c591ee9c2350e4b423"
+  },
+  {
+    "path": "evidence/ownership-and-workflows.json",
+    "bytes": 5375,
+    "sha256": "bbeb9f83888d6053767b5b1227655b37e5176b596084a9a5f543e6aa3713d2f7"
+  },
+  {
+    "path": "evidence/peer-mac/blind-freeze.json",
+    "bytes": 472,
+    "sha256": "d377181edd59ad9ee11ce7040f9828ed6b031e08746b69ec09bd07a18d9fe781"
+  },
+  {
+    "path": "evidence/peer-mac/check-lint-addendum.py",
+    "bytes": 1991,
+    "sha256": "a2bfb7e9bf3ce2723168b5d4d6aa379ce2ac8f1808c4bcc93358b8202bec5966"
+  },
+  {
+    "path": "evidence/peer-mac/contract-cases-initial-js-number.json",
+    "bytes": 3690,
+    "sha256": "f89aa33ab3506dc1bcbfd7bc16db79011c0f63af8ac836be4e455642a5dee6c9"
+  },
+  {
+    "path": "evidence/peer-mac/contract-cases.json",
+    "bytes": 3690,
+    "sha256": "23777eb051393b692c91ff3558695ff397535d8492ec16bcc67298c8c3314905"
+  },
+  {
+    "path": "evidence/peer-mac/freeze.py",
+    "bytes": 895,
+    "sha256": "cb086f79693fc869a48c56cf4ccfce5cc3295b9ff6fe66e9b6b5e2b552ee4abb"
+  },
+  {
+    "path": "evidence/peer-mac/independent-review.json",
+    "bytes": 2542,
+    "sha256": "9b8a02cd99fd2173acc5c986f000bd37b4aca2fd86ae8d5dd73f25e579422dcc"
+  },
+  {
+    "path": "evidence/peer-mac/inspect-source.py",
+    "bytes": 699,
+    "sha256": "ecc82f2dad80775f3039e796db44088447b49a4b2351e2c7fddada87cfd19a0f"
+  },
+  {
+    "path": "evidence/peer-mac/lint-only-addendum.json",
+    "bytes": 879,
+    "sha256": "f21b48471c252600e34365bf1c2a89bdce8d34ae6ae1eef573d6822d03427bd9"
+  },
+  {
+    "path": "evidence/peer-mac/manifest.json",
+    "bytes": 1390,
+    "sha256": "2cecc781ba440d767d4e444b4f24f9d158621ba3012b58ca6fa55db05bec7fea"
+  },
+  {
+    "path": "evidence/peer-mac/seal-review.py",
+    "bytes": 2930,
+    "sha256": "f00c980b923efb715cfed72dc4eba79d0f5f702c5bf585953c67c7f22da6f811"
+  },
+  {
+    "path": "evidence/peer-mac/targeted-result.json",
+    "bytes": 2480,
+    "sha256": "fb9c2d0ddba1027ac6efedc21b64a21fc3d44882fcbca8ec3ab9da13a5ea583b"
+  },
+  {
+    "path": "evidence/peer-mac/targeted.py",
+    "bytes": 6128,
+    "sha256": "fb48dc902889a49f69692bd4b5b19894c0b37bb8111aebc12789eb28cdcbe0ff"
+  },
+  {
+    "path": "evidence/pre-lint-file_search.py",
+    "bytes": 6995,
+    "sha256": "c453e2855f32e67180e0a922130cd4c206f5613fb73a7e4cb76481072ff3712a"
+  },
+  {
+    "path": "evidence/pre-lint-test_file_search.py",
+    "bytes": 6221,
+    "sha256": "392eddf65e379918d962de5f6fb46c0e7bbfea6be5b806e3b987b06da48a8bdb"
+  },
+  {
+    "path": "evidence/process-consumer/complete.stderr",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "evidence/process-consumer/complete.stdout",
+    "bytes": 1619,
+    "sha256": "1a04f9dbf926336f0a098723d7afd8ef199cd6605cc98060d49a1c8b890fb7fd"
+  },
+  {
+    "path": "evidence/process-consumer/invalid-selection.stderr",
+    "bytes": 118,
+    "sha256": "ed2501b6386d0584db750be73077723fbe60152b67473f39f4d8f4008f165f5f"
+  },
+  {
+    "path": "evidence/process-consumer/invalid-selection.stdout",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "evidence/process-consumer/later-course-error.stderr",
+    "bytes": 254,
+    "sha256": "0f80987a176241c2de01ee52148f189cfe6324ac6d624e814e0792295db18dcd"
+  },
+  {
+    "path": "evidence/process-consumer/later-course-error.stdout",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "evidence/process-consumer/receipt.json",
+    "bytes": 1980,
+    "sha256": "92bbd3de745fda39ddf2901957ecbbbd9387209d68f5353e50e808545a948f5e"
+  },
+  {
+    "path": "hydrate.py",
+    "bytes": 1614,
+    "sha256": "3ac993b5a1ba5e81d5cdcaf9a7d5a516474b8116949aef5b6515c916293d6a37"
+  },
+  {
+    "path": "install-declared-mcp.py",
+    "bytes": 1260,
+    "sha256": "acb36b64f85097fb8118b0b2ace7f9bb6f8bfc3699df6151f7dee3954e34e779"
+  },
+  {
+    "path": "process-consumer.py",
+    "bytes": 3825,
+    "sha256": "8a4e67856b21ea80d892f02055426125e428d255b0de9de9d6bc255b998f7440"
+  },
+  {
+    "path": "resolve-lint-config.py",
+    "bytes": 938,
+    "sha256": "b7fef10b4ca59d69e8d00c5eef1200b39acd3fc57d07b19b4e39a71a047a9919"
+  },
+  {
+    "path": "run-baseline-v2.py",
+    "bytes": 796,
+    "sha256": "297472c2c3bea9b4bfebebabc9756eb595a98c67afa26a6d546ac2b7af627650"
+  },
+  {
+    "path": "scoped-lint.py",
+    "bytes": 1396,
+    "sha256": "bacea6eb0858e156fab8377273aff7ee559f093ddfe80bb4cabb99eac806d145"
+  }
+]

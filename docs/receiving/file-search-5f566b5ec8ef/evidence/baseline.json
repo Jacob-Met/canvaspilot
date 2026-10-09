@@ -1,0 +1,57 @@
+{
+  "missing_command": {
+    "exit": 2,
+    "stdout": "",
+    "stderr": "usage: canvaspilot [-h]\n                   {login,session,whoami,courses,sync,find-announcements,announcements,grade-review,export-grade-review,assignments,brief,feedback,inbox,conversation,discussions,discussion,files,browse-files,export-calendar,export-pages,export-study,export-syllabus,module-progress,export-module-progress,submission-history,export-submission-history,compare-submissions,agenda,quizzes,quiz,planner,export-agenda,enrollments,mcp}\n                   ...\ncanvaspilot: error: argument cmd: invalid choice: 'find-files' (choose from 'login', 'session', 'whoami', 'courses', 'sync', 'find-announcements', 'announcements', 'grade-review', 'export-grade-review', 'assignments', 'brief', 'feedback', 'inbox', 'conversation', 'discussions', 'discussion', 'files', 'browse-files', 'export-calendar', 'export-pages', 'export-study', 'export-syllabus', 'module-progress', 'export-module-progress', 'submission-history', 'export-submission-history', 'compare-submissions', 'agenda', 'quizzes', 'quiz', 'planner', 'export-agenda', 'enrollments', 'mcp')\n",
+    "client_constructions": 0
+  },
+  "actual_unchanged_reader": {
+    "requests": [
+      {
+        "method": "GET",
+        "url": "https://synthetic.invalid/api/v1/courses/42/files?per_page=50"
+      }
+    ],
+    "raw_rows": [
+      {
+        "id": 11,
+        "display_name": "Straße NOTES.pdf",
+        "filename": "notes.pdf",
+        "size": 0,
+        "content-type": "application/pdf",
+        "url": "https://unfollowed.invalid/a"
+      },
+      null,
+      {
+        "id": 11,
+        "display_name": null,
+        "filename": "Résumé 📚.txt",
+        "size": 1152921504606846976
+      }
+    ],
+    "normalized_rows": [
+      {
+        "id": 11,
+        "display_name": "Straße NOTES.pdf",
+        "filename": "notes.pdf",
+        "size": 0,
+        "updated_at": null,
+        "url": "https://unfollowed.invalid/a",
+        "content_type": "application/pdf"
+      },
+      {
+        "id": 11,
+        "display_name": null,
+        "filename": "Résumé 📚.txt",
+        "size": 1152921504606846976,
+        "updated_at": null,
+        "url": null,
+        "content_type": null
+      }
+    ],
+    "client_closed": true
+  },
+  "inputs_unchanged": 35,
+  "profile_exists": false,
+  "transport": "native HTTPX MockTransport with actual unchanged client/API; no network or account"
+}

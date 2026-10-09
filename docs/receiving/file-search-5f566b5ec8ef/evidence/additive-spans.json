@@ -1,0 +1,5 @@
+{
+  "p": "    find_files = sub.add_parser(\"find-files\", help=\"Find literal text in course file names; metadata only\")\n    add_common(find_files)\n    find_files.add_argument(\"course_ids\", nargs=\"+\", help=\"1–10 unique positive decimal course IDs\")\n    find_files.add_argument(\"--text\", required=True, help=\"Literal case-insensitive file name text\")\n\n",
+  "dispatch": "    if args.cmd == \"find-files\":\n        from canvaspilot.file_search import run_file_search\n\n        run_file_search(args)\n        return\n\n",
+  "readme": "\n## Find a file by its name\n\n`canvaspilot find-files 42 77 --text \"lab notes\"` searches literal display names and filenames across selected courses. The JSON report preserves duplicate occurrences and distinguishes unavailable names from known nonmatches. It reads metadata only and never downloads files. See [file-name search](docs/file-search.md) for limits and observation semantics.\n"
+}

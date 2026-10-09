@@ -1,0 +1,12 @@
+{
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "executable": "C:\\Users\\Veria\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+  "free_bytes": 407017209856,
+  "modules": {
+    "httpx": true,
+    "mcp": true,
+    "pytest": true,
+    "rich": true,
+    "ruff": false
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "version": "ruff 0.16.10",
+  "exit": 1,
+  "diagnostics": [
+    {
+      "cell": null,
+      "code": "C408",
+      "end_location": {
+        "column": 67,
+        "row": 72
+      },
+      "filename": "D:\\HAMON\\canvas-file-search-5f566b5ec8ef\\source\\src\\canvaspilot\\file_search.py",
+      "fix": {
+        "applicability": "unsafe",
+        "edits": [
+          {
+            "content": "{\"returned\": 0, \"matched\": 0, \"nonmatching\": 0, \"unknown\": 0}",
+            "end_location": {
+              "column": 67,
+              "row": 72
+            },
+            "location": {
+              "column": 14,
+              "row": 72
+            }
+          }
+        ],
+        "message": "Rewrite as a literal"
+      },
+      "location": {
+        "column": 14,
+        "row": 72
+      },
+      "message": "Unnecessary `dict()` call (rewrite as a literal)",
+      "name": "unnecessary-collection-call",
+      "noqa_row": 72,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/unnecessary-collection-call"
+    },
+    {
+      "cell": null,
+      "code": "C408",
+      "end_location": {
+        "column": 79,
+        "row": 93
+      },
+      "filename": "D:\\HAMON\\canvas-file-search-5f566b5ec8ef\\source\\src\\canvaspilot\\file_search.py",
+      "fix": {
+        "applicability": "unsafe",
+        "edits": [
+          {
+            "content": "{\"returned\": len(rows), \"matched\": 0, \"nonmatching\": 0, \"unknown\": 0}",
+            "end_location": {
+              "column": 79,
+              "row": 93
+            },
+            "location": {
+              "column": 18,
+              "row": 93
+            }
+          }
+        ],
+        "message": "Rewrite as a literal"
+      },
+      "location": {
+        "column": 18,
+        "row": 93
+      },
+      "message": "Unnecessary `dict()` call (rewrite as a literal)",
+      "name": "unnecessary-collection-call",
+      "noqa_row": 93,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/unnecessary-collection-call"
+    },
+    {
+      "cell": null,
+      "code": "BLE001",
+      "end_location": {
+        "column": 21,
+        "row": 156
+      },
+      "filename": "D:\\HAMON\\canvas-file-search-5f566b5ec8ef\\source\\src\\canvaspilot\\file_search.py",
+      "fix": null,
+      "location": {
+        "column": 12,
+        "row": 156
+      },
+      "message": "Do not catch blind exception: `Exception`",
+      "name": "blind-except",
+      "noqa_row": 156,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/blind-except"
+    },
+    {
+      "cell": null,
+      "code": "SIM117",
+      "end_location": {
+        "column": 52,
+        "row": 85
+      },
+      "filename": "D:\\HAMON\\canvas-file-search-5f566b5ec8ef\\source\\tests\\test_file_search.py",
+      "fix": null,
+      "location": {
+        "column": 13,
+        "row": 84
+      },
+      "message": "Use a single `with` statement with multiple contexts instead of nested `with` statements",
+      "name": "multiple-with-statements",
+      "noqa_row": 84,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/multiple-with-statements"
+    },
+    {
+      "cell": null,
+      "code": "SIM117",
+      "end_location": {
+        "column": 68,
+        "row": 94
+      },
+      "filename": "D:\\HAMON\\canvas-file-search-5f566b5ec8ef\\source\\tests\\test_file_search.py",
+      "fix": null,
+      "location": {
+        "column": 13,
+        "row": 93
+      },
+      "message": "Use a single `with` statement with multiple contexts instead of nested `with` statements",
+      "name": "multiple-with-statements",
+      "noqa_row": 93,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/multiple-with-statements"
+    },
+    {
+      "cell": null,
+      "code": "SIM117",
+      "end_location": {
+        "column": 63,
+        "row": 114
+      },
+      "filename": "D:\\HAMON\\canvas-file-search-5f566b5ec8ef\\source\\tests\\test_file_search.py",
+      "fix": null,
+      "location": {
+        "column": 9,
+        "row": 113
+      },
+      "message": "Use a single `with` statement with multiple contexts instead of nested `with` statements",
+      "name": "multiple-with-statements",
+      "noqa_row": 113,
+      "severity": "error",
+      "url": "https://docs.astral.sh/ruff/rules/multiple-with-statements"
+    }
+  ],
+  "stderr": "",
+  "elapsed_including_private_setup": 20.22782611846924,
+  "scope": "four changed Python files, unchanged native declared dev dependency range"
+}

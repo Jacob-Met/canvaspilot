@@ -1,0 +1,31 @@
+{
+  "reviewer": "chatgpt:5f566b5ec8ef:mac_continuity",
+  "at": "2026-10-09T01:57:04.458316+00:00",
+  "decision": "accepted within reviewed scope",
+  "sourcePins": {
+    "D:\\HAMON\\canvas-file-search-5f566b5ec8ef\\source\\src\\canvaspilot\\file_search.py": "c453e2855f32e67180e0a922130cd4c206f5613fb73a7e4cb76481072ff3712a",
+    "D:\\HAMON\\canvas-file-search-5f566b5ec8ef\\source\\src\\canvaspilot\\cli.py": "c5871d90277ba7b44f4b79a73748a16e6fb54512ac7dbfd2818cda3ff1512695",
+    "D:\\HAMON\\canvas-file-search-5f566b5ec8ef\\source\\src\\canvaspilot\\api.py": "b6b770c2cdef9c9ce44a4a6aefd5b6d0876bc09e5aee29a4adb5a7c603b41c24"
+  },
+  "blindContract": "Read only outcome contract, froze distinct expected cases, then inspected complete new helper and exact CLI insertions/actual list_files function. Owner tests not read.",
+  "controls": {
+    "passed": 9,
+    "total": 9,
+    "resultSha256": "fb9c2d0ddba1027ac6efedc21b64a21fc3d44882fcbca8ec3ab9da13a5ea583b"
+  },
+  "findings": [
+    "Literal casefold handles partial unavailable names honestly and does not concatenate or canonically normalize names.",
+    "Normalized row occurrences/order and arbitrarily precise integer metadata survive the detached JSON copy; later caller mutation does not alter report.",
+    "Preflight validates whole selection before any API read. CLI branch reaches run_file_search before common CanvasClient construction.",
+    "Actual unchanged CanvasAPI list_files projection drops raw nonobjects and unprojected fields; the report correctly disclaims whole provider inventory or file availability.",
+    "Complete helper has bounded row/source/output/depth admission and returns only after all selected reads succeed; later read failure returns no partial model report.",
+    "Source read of CLI wrapper confirms close in finally, HTTPX logger restoration and structured errors; no independent CLI transport/stdout execution claim."
+  ],
+  "limitations": [
+    "Nine authored in-memory helper/API projection groups, no live HTTP/provider/profile, no repeated owner suite/build.",
+    "Root/owner actual CLI transport and process/output receiving remain separate gates.",
+    "Initial blind-case JS number precision mistake was corrected before any product exposure, original initial file and correction receipt retained.",
+    "Missing evidence/source-freeze.json read was a path-discovery miss only; direct exact source SHA checks are authoritative."
+  ],
+  "changes": "No product source edits; all three exact source hashes unchanged during targeted run."
+}

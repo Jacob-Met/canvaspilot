@@ -1,0 +1,32 @@
+{
+  "at": "2026-10-09T02:03:26.715247+00:00",
+  "canonical_base": "56a72a2e2cee5ec04671d12ebe5bc2484afb8026",
+  "canonical_tree": "a07c3e941219ff80968e1ff20528a63541bb7400",
+  "native_component_base": "91b86f971af3510d6bd803de43be7727c7fa07da",
+  "original_product_head": "6164009e2915d4489e9c12640a33e8528dcf3f2d",
+  "product_head": "d6fcaf6b3df963599560d9e6cc91baea0f3db48e",
+  "owned_product_pins": {
+    "src/canvaspilot/file_search.py": "36a1d4a886129f44d1ba147265bbe54c433b7abdabe0f0d75ef1a495ab6eac2f",
+    "src/canvaspilot/cli.py": "c5871d90277ba7b44f4b79a73748a16e6fb54512ac7dbfd2818cda3ff1512695",
+    "tests/test_file_search.py": "acc07ccb09cd52a42aafacca999ee495963d14f2bad16af908dce50481a01975",
+    "tests/test_file_search_cli.py": "9555a857ea57a4c65bfadb8e28246cbf93f9e09c1c552b0d137cab8e65226220",
+    "docs/file-search.md": "20d66058efa42988d51e3220b7e5a034d9347c86152f9dbabfa7239b5367687f",
+    "README.md": "baa3b520317ff54539ec8f39233dccf67ad1c7e04c8c6c1cedb52bccf8cbd613"
+  },
+  "qualified_phases": {
+    "original_environment": "system MCP1.29.1 import fails before product; retained",
+    "corrected_environment": "private target MCP2.3.0 within unchanged declared range; baseline exact35 inputs, actual CLI missing command2 and native client projection",
+    "initial_candidate": "19 maintained tests; actual child CLI/private loopback3 groups; independent contract-first9 groups",
+    "lint_correction": "two dict literal substitutions and comment, equivalent test contexts; final19 and scoped Ruff0.16.10 pass; peer inverse-source addendum accepted"
+  },
+  "shared_cli_inverse_exact": true,
+  "readme_inverse_exact": true,
+  "unowned_native_inputs_exact": 33,
+  "canonical_unowned_metadata_leaves": 1614,
+  "limits": [
+    "35-leaf native source projection, not complete canonical checkout",
+    "No full inherited suite, hosted Actions, installed CLI, provider/account, browser or learner outcome claim",
+    "Actual loopback process3 and peer9 executed on retained initialc453; exact equivalent source delta received separately, no repeat execution claim",
+    "No source publication, PR, merge or workflow/settings change; future source branch needs fresh current composition and trigger review"
+  ]
+}

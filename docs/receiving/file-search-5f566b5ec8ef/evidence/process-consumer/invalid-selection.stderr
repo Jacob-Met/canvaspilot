@@ -1,0 +1,1 @@
+{"ok": false, "error": "ValueError", "message": "Select each course only once (leading-zero aliases are duplicates)"}

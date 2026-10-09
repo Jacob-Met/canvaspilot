@@ -1,0 +1,10 @@
+{
+  "at": "2026-10-09T02:02:14.253133+00:00",
+  "parentReviewSha256": "9b8a02cd99fd2173acc5c986f000bd37b4aca2fd86ae8d5dd73f25e579422dcc",
+  "decision": "source-only acceptance extends to lint-only final module",
+  "finalModuleSha256": "36a1d4a886129f44d1ba147265bbe54c433b7abdabe0f0d75ef1a495ab6eac2f",
+  "inverseSha256": "c453e2855f32e67180e0a922130cd4c206f5613fb73a7e4cb76481072ff3712a",
+  "findings": "Two equivalent dict-constructor replacements preserve insertion order and evaluated values; one comment explains existing broad command boundary without changing it. Independent inverse of exactly those three spans recovers previously received entire module byte-for-byte. Complete70-line provided diff also contains only three equivalent combined test context managers.",
+  "execution": "No peer9 replay, no model/CLI/browser/build operation.",
+  "sourceUnchanged": true
+}

@@ -1,0 +1,109 @@
+{
+  "reviewer": "chatgpt:5f566b5ec8ef:mac_continuity",
+  "phase": "Frozen after reading only implementation-contract.md; product and owner tests not read",
+  "contract_sha256": "5e5493e79fec0062735fda159ee4d40fc81beb50331cca1ca0b6ce652cd331ea",
+  "cases": [
+    {
+      "id": "known-partial",
+      "input": {
+        "text": "SS",
+        "row": {
+          "display_name": "Straße",
+          "filename": null,
+          "id": 9007199254740992
+        }
+      },
+      "expected": "match true, only display_name matches, filename unavailable, large ID exact; no claim of file availability"
+    },
+    {
+      "id": "canonical-distinct",
+      "input": {
+        "text": "é",
+        "row": {
+          "display_name": null,
+          "filename": "café"
+        }
+      },
+      "expected": "unknown/null, filename is known nonmatch and display_name unavailable; no Unicode canonical normalization"
+    },
+    {
+      "id": "field-separation",
+      "input": {
+        "text": "bc",
+        "row": {
+          "display_name": "ab",
+          "filename": "cd"
+        }
+      },
+      "expected": "false with two known fields; never concatenate fields"
+    },
+    {
+      "id": "whitespace-literal",
+      "input": {
+        "text": " a ",
+        "rows": [
+          {
+            "display_name": "A",
+            "filename": ""
+          },
+          {
+            "display_name": " A ",
+            "filename": null
+          }
+        ]
+      },
+      "expected": "first false, second true; preserve original query whitespace and source strings"
+    },
+    {
+      "id": "duplicates-detached",
+      "input": {
+        "text": "İ",
+        "rows": [
+          {
+            "id": 7,
+            "display_name": "İ",
+            "filename": "",
+            "extra": {
+              "null": null,
+              "false": false,
+              "zero": 0,
+              "list": [
+                "甲",
+                123
+              ]
+            }
+          },
+          {
+            "id": 7,
+            "display_name": "i",
+            "filename": null
+          }
+        ]
+      },
+      "expected": "two source occurrences in order; first true, second null; deep source metadata copy and no dedup. Mutating caller input after report must not alter report."
+    },
+    {
+      "id": "selection-preflight",
+      "input": {
+        "courses": [
+          "01",
+          1
+        ],
+        "text": "x"
+      },
+      "expected": "duplicate normalized ID refusal before API calls/client creation; same for lone-surrogate query and 513 UTF8-byte query"
+    },
+    {
+      "id": "utf8-boundary",
+      "input": {
+        "text": "😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀"
+      },
+      "expected": "512-byte query admitted exactly; adding ASCII x refused"
+    },
+    {
+      "id": "normalized-reader-boundary",
+      "expected": "Read actual unchanged list_files mapping: absent/null names become unknown; dropped raw nonobjects and unprojected unknown fields cannot be claimed searched. One later-course error refuses whole report and no partial stdout."
+    }
+  ],
+  "limits": "No live provider/profile/account/URL navigation; peer-only source/receipts; no product edits or full owner suite replay."
+}

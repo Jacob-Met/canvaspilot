@@ -1,0 +1,55 @@
+{
+  "at": "2026-10-09T01:56:27.138367+00:00",
+  "source_before": {
+    "D:\\HAMON\\canvas-file-search-5f566b5ec8ef\\source\\src\\canvaspilot\\file_search.py": "c453e2855f32e67180e0a922130cd4c206f5613fb73a7e4cb76481072ff3712a",
+    "D:\\HAMON\\canvas-file-search-5f566b5ec8ef\\source\\src\\canvaspilot\\cli.py": "c5871d90277ba7b44f4b79a73748a16e6fb54512ac7dbfd2818cda3ff1512695",
+    "D:\\HAMON\\canvas-file-search-5f566b5ec8ef\\source\\src\\canvaspilot\\api.py": "b6b770c2cdef9c9ce44a4a6aefd5b6d0876bc09e5aee29a4adb5a7c603b41c24"
+  },
+  "source_after": {
+    "D:\\HAMON\\canvas-file-search-5f566b5ec8ef\\source\\src\\canvaspilot\\file_search.py": "c453e2855f32e67180e0a922130cd4c206f5613fb73a7e4cb76481072ff3712a",
+    "D:\\HAMON\\canvas-file-search-5f566b5ec8ef\\source\\src\\canvaspilot\\cli.py": "c5871d90277ba7b44f4b79a73748a16e6fb54512ac7dbfd2818cda3ff1512695",
+    "D:\\HAMON\\canvas-file-search-5f566b5ec8ef\\source\\src\\canvaspilot\\api.py": "b6b770c2cdef9c9ce44a4a6aefd5b6d0876bc09e5aee29a4adb5a7c603b41c24"
+  },
+  "checks": [
+    {
+      "name": "Known casefold match remains true despite unavailable second name; large integer exact",
+      "passed": true
+    },
+    {
+      "name": "Canonically equivalent accents are not silently normalized and partial nonmatch stays unknown",
+      "passed": true
+    },
+    {
+      "name": "Name fields are searched separately, never concatenated",
+      "passed": true
+    },
+    {
+      "name": "Query and source whitespace preserved with empty known fields",
+      "passed": true
+    },
+    {
+      "name": "Duplicate occurrences and unknown JSON fields remain exact and deeply detached",
+      "passed": true
+    },
+    {
+      "name": "Alias/type/UTF8 admission precedes every read, exact512 bytes accepted",
+      "passed": true
+    },
+    {
+      "name": "Actual unchanged CanvasAPI projection drops raw nonobjects and keeps truthful observed metadata",
+      "passed": true
+    },
+    {
+      "name": "Later course error refuses complete result and stops remaining reads",
+      "passed": true
+    },
+    {
+      "name": "Invalid scalar/container name never hides behind other matching field",
+      "passed": true
+    }
+  ],
+  "passed": 9,
+  "total": 9,
+  "scope": "Independent contract-first helper and actual unchanged CanvasAPI projection; authored in-memory responses, no client/profile/provider call, owner tests unread.",
+  "blind_cases_sha256": "23777eb051393b692c91ff3558695ff397535d8492ec16bcc67298c8c3314905"
+}
