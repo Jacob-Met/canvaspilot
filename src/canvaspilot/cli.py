@@ -149,6 +149,13 @@ def main(argv: list[str] | None = None) -> None:
     add_common(conversation)
     conversation.add_argument("conversation_id", type=_positive_int)
 
+    find_discussions = sub.add_parser(
+        "find-discussions", help="Find literal title or opening-prompt text in selected courses",
+    )
+    add_common(find_discussions)
+    find_discussions.add_argument("course_ids", nargs="+", help="1-10 course occurrences")
+    find_discussions.add_argument("--text", required=True, help="Literal casefold query")
+
     disc = sub.add_parser("discussions", help="List discussion topics")
     add_common(disc)
     disc.add_argument("course_id")
@@ -335,6 +342,12 @@ def main(argv: list[str] | None = None) -> None:
         from canvaspilot.mcp_server import main as mcp_main
 
         mcp_main()
+        return
+
+    if args.cmd == "find-discussions":
+        from canvaspilot.discussion_search import run_find_discussions
+
+        run_find_discussions(args)
         return
 
     if args.cmd == "export-study":

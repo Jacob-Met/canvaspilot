@@ -1,0 +1,261 @@
+{
+  "schema": "canvaspilot.discussion-search.current-main-receiving.v1",
+  "owner": "chatgpt-d98d06fbfc35/root",
+  "status": "Exact compatible composition and focused current-API binding received; no installed or live Canvas claim.",
+  "base": {
+    "commit": "6d445c68a5fd47df9368bebb879f5e3c372998ec",
+    "tree": "d7ee90bca7e37f26dd7e589003cdbf60e2d52a86"
+  },
+  "retainedQualifiedSource": {
+    "commit": "6d5d3c1f2f835c27890832800dd011c193f44cf0",
+    "manifest": "dda7d09dab18fae5d5b44eb668d6daa4b4ccdf9c",
+    "rootClosure": "1423dcf74f23a9f6e9289e8b290fe2f8e7fa53dd",
+    "rootDisposition": "https://github.com/Jacob-Met/CanvasPilot/issues/105#issuecomment-6074286401"
+  },
+  "composition": {
+    "cli": {
+      "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+      "bytes": 42526,
+      "sha256": "5a86ecababd121a85ab2a7124a37cf945814522980d3ac63bbacdcdb374c89cf",
+      "git": "ab071891721397a27ce87ce21a8380691bab365f",
+      "syntax": true,
+      "available": {
+        "httpx": false,
+        "hatchling": false,
+        "ruff": false,
+        "pytest": false,
+        "pydantic": true,
+        "mcp": false
+      }
+    },
+    "exactAdditiveSpans": {
+      "ins1": "    find_discussions = sub.add_parser(\n        \"find-discussions\", help=\"Find literal title or opening-prompt text in selected courses\",\n    )\n    add_common(find_discussions)\n    find_discussions.add_argument(\"course_ids\", nargs=\"+\", help=\"1-10 course occurrences\")\n    find_discussions.add_argument(\"--text\", required=True, help=\"Literal casefold query\")\n\n",
+      "ins2": "    if args.cmd == \"find-discussions\":\n        from canvaspilot.discussion_search import run_find_discussions\n\n        run_find_discussions(args)\n        return\n\n",
+      "a": "    disc = sub.add_parser(\"discussions\", help=\"List discussion topics\")\n",
+      "b": "    if args.cmd == \"export-study\":\n"
+    },
+    "originalBasePlusTwoSpansEqualsQualifiedCli": true,
+    "currentCandidateMinusSameTwoSpansEqualsExactCurrentMain": true,
+    "currentPagesCommandSpansPreserved": true,
+    "apiHtmlTextCorrectionAndAllOtherCurrentSourcePreserved": true,
+    "unchangedOriginalFourAddedFiles": [
+      {
+        "path": "src/canvaspilot/discussion_search.py",
+        "bytes": 9556,
+        "sha256": "5cc5b013285638b979c16904f04a8167099d11745e48f9d326ffb5e7271be26e",
+        "sha": "58d65519670dfcb2bb2110c5f4dd9648fd9ed9a0",
+        "mode": "100644",
+        "type": "blob"
+      },
+      {
+        "path": "tests/test_discussion_search.py",
+        "bytes": 14425,
+        "sha256": "95583a33f8f85636900133d8010d6b8e0c5a63ce00c20611aeb1d9317c274383",
+        "sha": "2ac6f2490cae4f9d7adb1289fa1a58a69128ef08",
+        "mode": "100644",
+        "type": "blob"
+      },
+      {
+        "path": "docs/discussion-search.md",
+        "bytes": 5538,
+        "sha256": "fc21084a927a84add4ace16e27b61d2c638fe1be0d321d7f93e1dd299f6fa188",
+        "sha": "a6b897f95141da205030383505476ca3e2dd98cf",
+        "mode": "100644",
+        "type": "blob"
+      },
+      {
+        "path": "docs/receiving/discussion-search-d98d06fbfc35/CONTRACT.json",
+        "bytes": 8751,
+        "sha256": "e21a9b10f27cb9763e2cc0fceca629b9e209e9b1e902ddf646f9d87437939408",
+        "sha": "e356ca726c95dd0c45dc97d44a236b090ae3b69c",
+        "mode": "100644",
+        "type": "blob"
+      }
+    ]
+  },
+  "dataOnlySourceComparison": {
+    "separateThreeProcesses": {
+      "qualified": {
+        "chunk_id": "c0b46f",
+        "wall_time_seconds": 0.140202267,
+        "exit_code": 0,
+        "original_token_count": 337,
+        "output": "{\"left\": {\"bytes\": 40011, \"sha256\": \"c703a5dad3ef54ed308fb217c4a3b0a32791ea5f9b84093669fa667bb7a3a12b\", \"git\": \"1c29dd2a2a1632b7f3c27878259efe492a08fdfd\"}, \"right\": {\"bytes\": 40531, \"sha256\": \"951987326e65325870afd472ee9c80dca056a371e05f28e02eec055dd48557e6\", \"git\": \"d566332b2aed272a0bac0298234ac39c5671e544\"}, \"delta\": \"--- before\\n+++ after\\n@@ -149,6 +149,13 @@\\n     add_common(conversation)\\n     conversation.add_argument(\\\"conversation_id\\\", type=_positive_int)\\n \\n+    find_discussions = sub.add_parser(\\n+        \\\"find-discussions\\\", help=\\\"Find literal title or opening-prompt text in selected courses\\\",\\n+    )\\n+    add_common(find_discussions)\\n+    find_discussions.add_argument(\\\"course_ids\\\", nargs=\\\"+\\\", help=\\\"1-10 course occurrences\\\")\\n+    find_discussions.add_argument(\\\"--text\\\", required=True, help=\\\"Literal casefold query\\\")\\n+\\n     disc = sub.add_parser(\\\"discussions\\\", help=\\\"List discussion topics\\\")\\n     add_common(disc)\\n     disc.add_argument(\\\"course_id\\\")\\n@@ -326,6 +333,12 @@\\n         from canvaspilot.mcp_server import main as mcp_main\\n \\n         mcp_main()\\n+        return\\n+\\n+    if args.cmd == \\\"find-discussions\\\":\\n+        from canvaspilot.discussion_search import run_find_discussions\\n+\\n+        run_find_discussions(args)\\n         return\\n \\n     if args.cmd == \\\"export-study\\\":\\n\"}\n"
+      },
+      "current_cli": {
+        "chunk_id": "bfc23d",
+        "wall_time_seconds": 0.077095981,
+        "exit_code": 0,
+        "original_token_count": 821,
+        "output": "{\"left\": {\"bytes\": 40011, \"sha256\": \"c703a5dad3ef54ed308fb217c4a3b0a32791ea5f9b84093669fa667bb7a3a12b\", \"git\": \"1c29dd2a2a1632b7f3c27878259efe492a08fdfd\"}, \"right\": {\"bytes\": 42006, \"sha256\": \"8b4902838a9d2c3271e3efdde44eea254f0beb7a07ba9469b934c27deabcb1cb\", \"git\": \"5e616006d2ed4828213b08e07fe37ca692fb1faa\"}, \"delta\": \"--- before\\n+++ after\\n@@ -271,6 +271,15 @@\\n     agenda.add_argument(\\\"--start\\\", dest=\\\"start_date\\\", required=True, help=\\\"YYYY-MM-DD\\\")\\n     agenda.add_argument(\\\"--end\\\", dest=\\\"end_date\\\", required=True, help=\\\"YYYY-MM-DD\\\")\\n \\n+    pages = sub.add_parser(\\\"pages\\\", help=\\\"List course page locators for reading or export\\\")\\n+    add_common(pages)\\n+    pages.add_argument(\\\"course_id\\\", type=_positive_int, help=\\\"Positive numeric Canvas course ID\\\")\\n+\\n+    page = sub.add_parser(\\\"page\\\", help=\\\"Read one course page without changing it\\\")\\n+    add_common(page)\\n+    page.add_argument(\\\"course_id\\\", type=_positive_int, help=\\\"Positive numeric Canvas course ID\\\")\\n+    page.add_argument(\\\"page_locator\\\", help=\\\"Returned page URL locator, or page_id:ID\\\")\\n+\\n     quizzes = sub.add_parser(\\\"quizzes\\\", help=\\\"List classic quizzes for a course\\\")\\n     add_common(quizzes)\\n     quizzes.add_argument(\\\"course_id\\\", type=_positive_int, help=\\\"Positive numeric Canvas course ID\\\")\\n@@ -333,6 +342,18 @@\\n \\n         run_export_study(args)\\n         return\\n+\\n+    if args.cmd == \\\"page\\\":\\n+        from urllib.parse import quote\\n+\\n+        from canvaspilot.page_export import validate_page_selection\\n+\\n+        try:\\n+            course, locators = validate_page_selection(args.course_id, [args.page_locator])\\n+        except (TypeError, ValueError) as error:\\n+            parser.error(str(error))\\n+        args.course_id = course\\n+        args.page_locator = quote(locators[0], safe=\\\"\\\")\\n \\n     from canvaspilot.api import CanvasAPI\\n     from canvaspilot.client import CanvasClient, default_base_url, default_profile\\n@@ -460,6 +481,28 @@\\n                     default=str,\\n                 )\\n             )\\n+        elif args.cmd in {\\\"pages\\\", \\\"page\\\"}:\\n+            import httpx\\n+\\n+            from canvaspilot.client import CanvasAuthError, CanvasPaginationError\\n+\\n+            http_log = logging.getLogger(\\\"httpx\\\")\\n+            previous_level = http_log.level\\n+            http_log.setLevel(max(http_log.getEffectiveLevel(), logging.WARNING))\\n+            try:\\n+                if args.cmd == \\\"pages\\\":\\n+                    result = api.list_pages(args.course_id)\\n+                else:\\n+                    result = api.get_page(args.course_id, args.page_locator)\\n+                print(json.dumps(result, indent=2, ensure_ascii=False, allow_nan=False), flush=True)\\n+            except (CanvasAuthError, CanvasPaginationError, httpx.HTTPError,\\n+                    ValueError, TypeError, AttributeError, OSError) as error:\\n+                print(json.dumps({\\n+                    \\\"ok\\\": False, \\\"error\\\": type(error).__name__, \\\"message\\\": str(error),\\n+                }), file=sys.stderr)\\n+                raise SystemExit(1) from None\\n+            finally:\\n+                http_log.setLevel(previous_level)\\n         elif args.cmd in {\\\"quizzes\\\", \\\"quiz\\\"}:\\n             import httpx\\n \\n\"}\n"
+      },
+      "current_api": {
+        "chunk_id": "717810",
+        "wall_time_seconds": 0.005814367,
+        "exit_code": 0,
+        "original_token_count": 702,
+        "output": "{\"left\": {\"bytes\": 29742, \"sha256\": \"b6b770c2cdef9c9ce44a4a6aefd5b6d0876bc09e5aee29a4adb5a7c603b41c24\", \"git\": \"3ec81dee60bc67d7a80d40b78e85d5c005441b99\"}, \"right\": {\"bytes\": 31113, \"sha256\": \"2b74be6bb9903b4d4e01ac8435afba02c3afbef37a753f28a980a64d2b4ae9e5\", \"git\": \"5ae5adc71d265cfe1d6a09e6a7edec3e2bddfa45\"}, \"delta\": \"--- before\\n+++ after\\n@@ -13,7 +13,7 @@\\n from canvaspilot.client import CanvasClient\\n from canvaspilot.feedback import build_submission_feedback\\n \\n-TAG_RE = re.compile(r\\\"<[^>]+>\\\")\\n+TAG_START_RE = re.compile(r\\\"<(?:/?[A-Za-z]|!|\\\\?)\\\")\\n WS_RE = re.compile(r\\\"\\\\s+\\\")\\n \\n \\n@@ -53,11 +53,50 @@\\n def strip_html(html: str | None) -> str:\\n     if not html:\\n         return \\\"\\\"\\n-    # Remove literal markup tags BEFORE unescaping entities: text that was\\n-    # escaped (e.g. \\\"&lt;canvas&gt;\\\") must survive as text, not be mistaken\\n-    # for a tag and deleted.\\n-    text = TAG_RE.sub(\\\" \\\", html)\\n-    return WS_RE.sub(\\\" \\\", unescape(text)).strip()\\n+    parts: list[str] = []\\n+    position = 0\\n+    while match := TAG_START_RE.search(html, position):\\n+        start = match.start()\\n+        parts.append(html[position:start])\\n+        if html.startswith(\\\"<!--\\\", start):\\n+            end = html.find(\\\"-->\\\", match.end())\\n+            if end < 0:\\n+                # An unfinished token is text; do not discard its suffix.\\n+                position = start\\n+                break\\n+            end += 3\\n+        else:\\n+            end = match.end()\\n+            quote = None\\n+            complete = False\\n+            while end < len(html):\\n+                char = html[end]\\n+                if quote is not None:\\n+                    if char == quote:\\n+                        quote = None\\n+                elif char in (\\\"\\\\\\\"\\\", \\\"'\\\"):\\n+                    quote = char\\n+                elif char == \\\">\\\":\\n+                    end += 1\\n+                    complete = True\\n+                    break\\n+                elif char == \\\"<\\\":\\n+                    # Leave this unsupported prefix literal and try the next tag.\\n+                    break\\n+                end += 1\\n+            if not complete:\\n+                if end == len(html):\\n+                    position = start\\n+                    break\\n+                parts.append(html[start:end])\\n+                position = end\\n+                continue\\n+        parts.append(\\\" \\\")\\n+        position = end\\n+    parts.append(html[position:])\\n+    # Decode once after recognizing literal markup: escaped tags remain text.\\n+    # Keep raw entity spellings until this point, including unknown references.\\n+    return WS_RE.sub(\\\" \\\", unescape(\\\"\\\".join(parts))).strip()\\n \\n \\n def _brief_rubric(rubric: Any, warnings: list[str]) -> list[dict[str, Any]] | None:\\n\"}\n"
+      }
+    },
+    "initialOversizedPreparation": "exec-server rejected aggregate source-diff command with E2BIG before process creation; no source or behavioral execution occurred; split independent read-only comparisons each completed0."
+  },
+  "priorQualification": {
+    "helper": {
+      "groups": 87,
+      "actualExit": 0,
+      "custody": "bd7ea9fa6b056e2c5d474a1c31d075c4525a5dbe"
+    },
+    "cli": {
+      "groups": 13,
+      "cliInvocations": 14,
+      "actualExit": 0,
+      "custody": "5833cff680c19df20dd458ae2df0f8748f85f05e"
+    },
+    "originalAuthor19AndFocusedBoundary1Separate": true,
+    "replayed": false
+  },
+  "focusedCurrentApiBinding": {
+    "oracle": "1747763906500d5584ac1fb78523b5fdd5a8c319",
+    "originalReceiver": "8ba54beaff6043c1364820f062324351653a8c08",
+    "firstActual": {
+      "chunk_id": "5a8669",
+      "wall_time_seconds": 0.000033851,
+      "exit_code": 1,
+      "original_token_count": 63,
+      "output": "Traceback (most recent call last):\n  File \"<string>\", line 37, in <module>\n  File \"<string>\", line 36, in module\n  File \"<pinned-source:canvaspilot.api>\", line 12, in <module>\nModuleNotFoundError: No module named 'canvaspilot.assignment_submission'\n"
+    },
+    "firstOutcome": "Actual import-time receiver failure before any CLI invocation; missing assignment_submission import closure. Preserved exit1; not a product behavioral failure.",
+    "amendment": "1e988f883fbcdb6d894f8f745592112cde69cc8d",
+    "correctedReceiver": "3e2940020c9190a0429483fc5bebbe96a56d00b9",
+    "correctedActual": {
+      "chunk_id": "83c415",
+      "wall_time_seconds": 0.045657396,
+      "exit_code": 0,
+      "original_token_count": 801,
+      "output": "{\"schema\": \"canvaspilot.root.current-main-binding-receipt.v1\", \"passed\": true, \"groups\": 1, \"cliMainInvocations\": 1, \"actualCurrentApiClass\": \"canvaspilot.api\", \"oracleGit\": \"1747763906500d5584ac1fb78523b5fdd5a8c319\", \"runtime\": {\"python\": \"3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]\", \"executable\": \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3\", \"pid\": 2, \"uid\": 0}, \"startedAt\": \"2026-10-09T17:49:16.857244+00:00\", \"endedAt\": \"2026-10-09T17:49:16.911606+00:00\", \"elapsedSeconds\": 0.05437886100116884, \"sourcePins\": {\"cli\": {\"bytes\": 42526, \"sha256\": \"5a86ecababd121a85ab2a7124a37cf945814522980d3ac63bbacdcdb374c89cf\", \"git\": \"ab071891721397a27ce87ce21a8380691bab365f\"}, \"api\": {\"bytes\": 31113, \"sha256\": \"2b74be6bb9903b4d4e01ac8435afba02c3afbef37a753f28a980a64d2b4ae9e5\", \"git\": \"5ae5adc71d265cfe1d6a09e6a7edec3e2bddfa45\"}, \"helper\": {\"bytes\": 9556, \"sha256\": \"5cc5b013285638b979c16904f04a8167099d11745e48f9d326ffb5e7271be26e\", \"git\": \"58d65519670dfcb2bb2110c5f4dd9648fd9ed9a0\"}, \"assignment_submission\": {\"bytes\": 1296, \"sha256\": \"52fc732660b8844a2ee0801931a363f20db15b5309d148d01e3b618be487133d\", \"git\": \"95b1f19927e4eecf99fc852325737c3cfe86cd0d\"}, \"feedback\": {\"bytes\": 3900, \"sha256\": \"55454598effea598474a21f67e36d5bc5bea84aaefeefc18e4d8c49804ab9869\", \"git\": \"ec996f421a851d699a9ac7cb1f2a486f9ff7c4ea\"}}, \"events\": [\"construct\", \"read\", \"close\", \"write\", \"flush\"], \"calls\": [{\"path\": \"/api/v1/courses/7/discussion_topics\", \"params\": {\"order_by\": \"recent_activity\", \"only_announcements\": false}}], \"rawInputsUnchanged\": true, \"fullOutput\": \"{\\n  \\\"schema\\\": \\\"canvaspilot.discussion-search.v1\\\",\\n  \\\"query\\\": \\\"3 and 5\\\",\\n  \\\"match_mode\\\": \\\"literal_casefold\\\",\\n  \\\"topic_count\\\": 2,\\n  \\\"matched_count\\\": 1,\\n  \\\"empty_message_text_count\\\": 0,\\n  \\\"selections\\\": [\\n    {\\n      \\\"selection_number\\\": 1,\\n      \\\"course_id\\\": \\\"7\\\",\\n      \\\"topics_returned\\\": 2,\\n      \\\"empty_message_text_count\\\": 0\\n    }\\n  ],\\n  \\\"matches\\\": [\\n    {\\n      \\\"selection_number\\\": 1,\\n      \\\"course_id\\\": \\\"7\\\",\\n      \\\"topic_position\\\": 1,\\n      \\\"matched_fields\\\": [\\n        \\\"message_text\\\"\\n      ],\\n      \\\"topic\\\": {\\n        \\\"id\\\": 41,\\n        \\\"title\\\": \\\"Arithmetic\\\",\\n        \\\"posted_at\\\": null,\\n        \\\"published\\\": false,\\n        \\\"message_text\\\": \\\"Compare 2 < 3 and 5 > 4; <tag> stays.\\\",\\n        \\\"html_url\\\": \\\"https://fixture.invalid/courses/7/discussion_topics/41\\\"\\n      }\\n    }\\n  ],\\n  \\\"boundary\\\": \\\"Searches only returned titles and complete normalized opening prompts from the existing topic-list reader; not replies, attachments, hidden/unavailable raw content or a freshness/completeness guarantee. The existing paginator is reused unchanged; pagination failure refuses the result, and its provider conventions/limits remain.\\\"\\n}\\n\", \"output\": {\"bytes\": 1124, \"sha256\": \"41402812e22c6debeeab9939a462e722312ca08e37d5046063945abb6eaf7e3b\", \"git\": \"a90b52248b14e3190f18459d215a84ba89b7bcc0\"}, \"stderr\": \"\", \"doubles\": [\"client transport/constructor/defaults\", \"HTTPX exception declaration\", \"stdout/stderr capture\"], \"notRun\": [\"network\", \"native installed CLI\", \"live Canvas\", \"original87\", \"original13\", \"author tests\"]}\n"
+    },
+    "completeReceipt": {
+      "schema": "canvaspilot.root.current-main-binding-receipt.v1",
+      "passed": true,
+      "groups": 1,
+      "cliMainInvocations": 1,
+      "actualCurrentApiClass": "canvaspilot.api",
+      "oracleGit": "1747763906500d5584ac1fb78523b5fdd5a8c319",
+      "runtime": {
+        "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+        "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "pid": 2,
+        "uid": 0
+      },
+      "startedAt": "2026-10-09T17:49:16.857244+00:00",
+      "endedAt": "2026-10-09T17:49:16.911606+00:00",
+      "elapsedSeconds": 0.05437886100116884,
+      "sourcePins": {
+        "cli": {
+          "bytes": 42526,
+          "sha256": "5a86ecababd121a85ab2a7124a37cf945814522980d3ac63bbacdcdb374c89cf",
+          "git": "ab071891721397a27ce87ce21a8380691bab365f"
+        },
+        "api": {
+          "bytes": 31113,
+          "sha256": "2b74be6bb9903b4d4e01ac8435afba02c3afbef37a753f28a980a64d2b4ae9e5",
+          "git": "5ae5adc71d265cfe1d6a09e6a7edec3e2bddfa45"
+        },
+        "helper": {
+          "bytes": 9556,
+          "sha256": "5cc5b013285638b979c16904f04a8167099d11745e48f9d326ffb5e7271be26e",
+          "git": "58d65519670dfcb2bb2110c5f4dd9648fd9ed9a0"
+        },
+        "assignment_submission": {
+          "bytes": 1296,
+          "sha256": "52fc732660b8844a2ee0801931a363f20db15b5309d148d01e3b618be487133d",
+          "git": "95b1f19927e4eecf99fc852325737c3cfe86cd0d"
+        },
+        "feedback": {
+          "bytes": 3900,
+          "sha256": "55454598effea598474a21f67e36d5bc5bea84aaefeefc18e4d8c49804ab9869",
+          "git": "ec996f421a851d699a9ac7cb1f2a486f9ff7c4ea"
+        }
+      },
+      "events": [
+        "construct",
+        "read",
+        "close",
+        "write",
+        "flush"
+      ],
+      "calls": [
+        {
+          "path": "/api/v1/courses/7/discussion_topics",
+          "params": {
+            "order_by": "recent_activity",
+            "only_announcements": false
+          }
+        }
+      ],
+      "rawInputsUnchanged": true,
+      "fullOutput": "{\n  \"schema\": \"canvaspilot.discussion-search.v1\",\n  \"query\": \"3 and 5\",\n  \"match_mode\": \"literal_casefold\",\n  \"topic_count\": 2,\n  \"matched_count\": 1,\n  \"empty_message_text_count\": 0,\n  \"selections\": [\n    {\n      \"selection_number\": 1,\n      \"course_id\": \"7\",\n      \"topics_returned\": 2,\n      \"empty_message_text_count\": 0\n    }\n  ],\n  \"matches\": [\n    {\n      \"selection_number\": 1,\n      \"course_id\": \"7\",\n      \"topic_position\": 1,\n      \"matched_fields\": [\n        \"message_text\"\n      ],\n      \"topic\": {\n        \"id\": 41,\n        \"title\": \"Arithmetic\",\n        \"posted_at\": null,\n        \"published\": false,\n        \"message_text\": \"Compare 2 < 3 and 5 > 4; <tag> stays.\",\n        \"html_url\": \"https://fixture.invalid/courses/7/discussion_topics/41\"\n      }\n    }\n  ],\n  \"boundary\": \"Searches only returned titles and complete normalized opening prompts from the existing topic-list reader; not replies, attachments, hidden/unavailable raw content or a freshness/completeness guarantee. The existing paginator is reused unchanged; pagination failure refuses the result, and its provider conventions/limits remain.\"\n}\n",
+      "output": {
+        "bytes": 1124,
+        "sha256": "41402812e22c6debeeab9939a462e722312ca08e37d5046063945abb6eaf7e3b",
+        "git": "a90b52248b14e3190f18459d215a84ba89b7bcc0"
+      },
+      "stderr": "",
+      "doubles": [
+        "client transport/constructor/defaults",
+        "HTTPX exception declaration",
+        "stdout/stderr capture"
+      ],
+      "notRun": [
+        "network",
+        "native installed CLI",
+        "live Canvas",
+        "original87",
+        "original13",
+        "author tests"
+      ]
+    },
+    "groupCount": 1,
+    "unchangedOracle": true
+  },
+  "publicationPreflight": {
+    "trackedWorkflows": [
+      {
+        "path": ".github/workflows/ci.yml",
+        "git": "ef7bbebe192c0db55dc4467e064ba44805c13446",
+        "events": [
+          "push(main)",
+          "pull_request(main)"
+        ]
+      },
+      {
+        "path": ".github/workflows/agenda-view-browser.yml",
+        "git": "a06b862c23dccc61d5da9eea99d82b76668f78c8",
+        "events": [
+          "pull_request(main, filtered including cli.py)",
+          "workflow_dispatch"
+        ]
+      }
+    ],
+    "fullBodiesRead": true,
+    "hasPages": false,
+    "branchProtected": false,
+    "requiredContexts": [],
+    "rulesets": [],
+    "priorComparablePr113Head": "fece38796bed32b964fbecdd8cd22304e21c1114",
+    "priorComparableHeadActionsRunCount": 0,
+    "commitMessageInstruction": "[skip actions]",
+    "officialScope": "GitHub's documented skip instruction prevents push/pull_request workflow triggers only; it does not skip other event families.",
+    "officialSource": "https://docs.github.com/en/actions/how-tos/manage-workflow-runs/skip-workflow-runs",
+    "trackedEventEdits": false,
+    "dependencyBuildAndConfigFilesChanged": false,
+    "sourceRefsChangedByThisReceipt": false,
+    "actionsCalled": false
+  },
+  "limits": [
+    "Author/test/core campaigns are not rerun by this integration.",
+    "The focused receive uses actual current CLI/API/helper and current assignment/feedback import closure with explicit client/default/HTTPX exception/output doubles.",
+    "No full repository suite, installed native package, live account/browser or HTTP transport result is claimed.",
+    "Current branch/ruleset facts are dated preflight observations; publication must bracket current source and actual event result."
+  ]
+}
