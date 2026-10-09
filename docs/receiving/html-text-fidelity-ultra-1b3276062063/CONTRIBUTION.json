@@ -1,0 +1,153 @@
+{
+  "schema": "canvaspilot-html-fidelity-contribution-v1",
+  "repository": "Jacob-Met/canvaspilot",
+  "baseline_commit": "56a72a2e2cee5ec04671d12ebe5bc2484afb8026",
+  "baseline_tree": "a07c3e941219ff80968e1ff20528a63541bb7400",
+  "claim": "https://github.com/Jacob-Met/canvaspilot/issues/106",
+  "scope": "Only existing api.py recognizer/helper seams; new focused test/guide/evidence. Every other existing source/mode preserved.",
+  "payload_leaves_excludes_this_manifest": [
+    {
+      "path": "src/canvaspilot/api.py",
+      "git_blob": "5ae5adc71d265cfe1d6a09e6a7edec3e2bddfa45",
+      "bytes": 31113,
+      "sha256": "2b74be6bb9903b4d4e01ac8435afba02c3afbef37a753f28a980a64d2b4ae9e5"
+    },
+    {
+      "path": "tests/test_strip_html_fidelity.py",
+      "git_blob": "ca57dcf82ca2a883039787cc6ad289c5cced619f",
+      "bytes": 6559,
+      "sha256": "97a4994859051963202e4beae03de63eb9a9057f632ded35e7ed69c523ab61a8"
+    },
+    {
+      "path": "docs/html-text-projection.md",
+      "git_blob": "8ca8a79e38883f3ef83a8ce7f69cabdb69f38512",
+      "bytes": 2976,
+      "sha256": "91c2e53776c936a04a9044bb59d15aedc27a9311e970dccdc8e12bc263d34da8"
+    },
+    {
+      "path": "docs/receiving/html-text-fidelity-ultra-1b3276062063/author/original_witness.py.txt",
+      "bytes": 41404,
+      "sha256": "f66e052e7d8202fd697c92a03b852da39c0f5926929e6cfda17107bdbf3e9060"
+    },
+    {
+      "path": "docs/receiving/html-text-fidelity-ultra-1b3276062063/author/ORIGINAL_RECEIPT.json",
+      "bytes": 13026,
+      "sha256": "168ba21dec9353067f55eeadb0fc2badbd11455926ece618522d37b22d793c8d"
+    },
+    {
+      "path": "docs/receiving/html-text-fidelity-ultra-1b3276062063/author/SCOPE.json",
+      "bytes": 1731,
+      "sha256": "20ba72cf56933487d574f7743450449623f8036d3ceb3907c548d8e2607182d1"
+    },
+    {
+      "path": "docs/receiving/html-text-fidelity-ultra-1b3276062063/author/candidate_witness.py.txt",
+      "bytes": 42830,
+      "sha256": "10327bcacb17bb69d3fc8873e620f88f3649f1d69a1c11d28de5ed0440765316"
+    },
+    {
+      "path": "docs/receiving/html-text-fidelity-ultra-1b3276062063/author/CANDIDATE_WITNESS.json",
+      "bytes": 13064,
+      "sha256": "6e98ba4ec76c92338725470194435d0c39502d414a7182239e30511eff2148f2"
+    },
+    {
+      "path": "docs/receiving/html-text-fidelity-ultra-1b3276062063/author/maintained_tests.py.txt",
+      "bytes": 88173,
+      "sha256": "cfa465afdc46f16346ca28a2caff39a12ed68e9f423f8f66fba778942058e1fb"
+    },
+    {
+      "path": "docs/receiving/html-text-fidelity-ultra-1b3276062063/author/MAINTAINED_TESTS.json",
+      "bytes": 17160,
+      "sha256": "03af04f2e7074d8c2f92950de4e1b6ec0b2cc81e4154cad7d484c14dac6cdf59"
+    },
+    {
+      "path": "docs/receiving/html-text-fidelity-ultra-1b3276062063/author/CANDIDATE_FIRST_OUTPUT_TRUNCATION.json",
+      "bytes": 7443,
+      "sha256": "8e8cca3c75455937a438bb907f647e1556903a899562362787d9c3ddeecfd086"
+    },
+    {
+      "path": "docs/receiving/html-text-fidelity-ultra-1b3276062063/author/source.patch",
+      "bytes": 2392,
+      "sha256": "365c71be0bee7ac577388118fd9b7426e1557cf6ab7f9cc87f4e40890ba01207"
+    },
+    {
+      "path": "docs/receiving/html-text-fidelity-ultra-1b3276062063/author/RECEIVING.md",
+      "bytes": 1755,
+      "sha256": "22e6805e66077f185072f050e73b7148a3c138c096088e4d3737ac08e4907ced"
+    },
+    {
+      "path": "docs/receiving/html-text-fidelity-ultra-1b3276062063/independent-compatibility/REVIEW.json",
+      "bytes": 4250,
+      "sha256": "0bf31c679e6046b54a03025d38053c31b3ef3cca7c9d0bdc1556541c6a89b3f2"
+    },
+    {
+      "path": "docs/receiving/html-text-fidelity-ultra-1b3276062063/independent-compatibility/TWO_HUNK_PROOF.json",
+      "bytes": 2788,
+      "sha256": "a2b2955e11989d0317899a588c0a2f1332a6da6666bb58106194d0a7717c3dbc"
+    },
+    {
+      "path": "docs/receiving/html-text-fidelity-ultra-1b3276062063/independent-compatibility/baseline-raw-execution.json",
+      "bytes": 2447,
+      "sha256": "06731789fa3fa1d7f4660b4310a49462cefa16583ae8abc46652ca1379f24ea8"
+    },
+    {
+      "path": "docs/receiving/html-text-fidelity-ultra-1b3276062063/independent-compatibility/candidate-raw-execution.json",
+      "bytes": 2440,
+      "sha256": "6fb6651d147ee8bfe1a8f95be840179532d437b535ae6db9ea9c52c67748307f"
+    },
+    {
+      "path": "docs/receiving/html-text-fidelity-ultra-1b3276062063/independent-compatibility/baseline-result.json",
+      "bytes": 2592,
+      "sha256": "f5e33db81273ff48163dfb4913f15539af126ce9aec24982eb0e65a68d71022c"
+    },
+    {
+      "path": "docs/receiving/html-text-fidelity-ultra-1b3276062063/independent-compatibility/candidate-result.json",
+      "bytes": 2585,
+      "sha256": "52689d61195e5f2a0264cab7626b69ce3d24c0094da729f080edc890afb66717"
+    },
+    {
+      "path": "docs/receiving/html-text-fidelity-ultra-1b3276062063/independent-compatibility/COMPATIBILITY_EXPECTATIONS.json",
+      "bytes": 4019,
+      "sha256": "8380765107640b2dd9bc35af329de84c177fd56475360a7984782284d3002304"
+    },
+    {
+      "path": "docs/receiving/html-text-fidelity-ultra-1b3276062063/independent-compatibility/compatibility_controls.py.txt",
+      "bytes": 982,
+      "sha256": "708ebc0828183926cbe20023d56a67f0dc1fe5d66b6cdab5cd98a91fd313c2a7"
+    },
+    {
+      "path": "docs/receiving/html-text-fidelity-ultra-1b3276062063/integration/PREFLIGHT.json",
+      "bytes": 4508,
+      "sha256": "8eed202d6e0698d0ff89dfda772ee949c660a652a6fff1e625f9e0e88afdef7f"
+    },
+    {
+      "path": "docs/receiving/html-text-fidelity-ultra-1b3276062063/independent-consumer/ACCEPTANCE.json",
+      "bytes": 31266,
+      "sha256": "66e8a62a5935930225b81f2b0e21e6c569a7d00c71d273e5ceab61be2b51101d"
+    },
+    {
+      "path": "docs/receiving/html-text-fidelity-ultra-1b3276062063/independent-consumer/FROZEN_SOURCE_AND_BASELINE_UNKNOWN.json",
+      "bytes": 47297,
+      "sha256": "dbcd6570c14d988a3a526c042559faf2fc25813de4117229f8d0a60338bd3f15"
+    },
+    {
+      "path": "docs/receiving/html-text-fidelity-ultra-1b3276062063/independent-consumer/ORACLE.json",
+      "bytes": 3887,
+      "sha256": "df4277c31e911789258c9fef5755b460e1cef6abec2c9c50ce2b55f7e3639795"
+    },
+    {
+      "path": "docs/receiving/html-text-fidelity-ultra-1b3276062063/README.md",
+      "bytes": 2091,
+      "sha256": "86c03fe46e9f703340a23c398e9204c32c5808bff4d5a9ea7e746cb93a0cd346"
+    }
+  ],
+  "packets": {
+    "original": "a529af9cfc8afa083e1e463e396a3c4aebf8175c",
+    "author": "d77930f1ce1242d8ece306be434af6e565904868",
+    "independent_compatibility": "aaa1e0524b50312a64c40e0d54cf9ab2689d17fb",
+    "independent_consumer": "1474afd8771eb3ea0af8669ef20596a012060d66",
+    "independent_consumer_source": "1d67bad4cf6ba47d7d5d3068d8058f15178b913d",
+    "independent_consumer_oracle": "a431dcd3824ae0a745f66f886d8fd517e5a5a92a",
+    "integration_preflight": "786d0e90478a6400cc54f8c974e572aa5ca6e6a3"
+  },
+  "state": "Qualified inert composition; integration and installed/native state must be separately received. Literal [skip actions] required for ordinary future head/merge route; no override."
+}

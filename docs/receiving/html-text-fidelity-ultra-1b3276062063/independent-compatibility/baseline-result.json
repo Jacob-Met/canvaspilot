@@ -1,0 +1,97 @@
+{
+  "api_sha256": "b6b770c2cdef9c9ce44a4a6aefd5b6d0876bc09e5aee29a4adb5a7c603b41c24",
+  "cases": [
+    {
+      "actual": "&lt;canvas&gt;",
+      "expected": "&lt;canvas&gt;",
+      "id": "entity_once_named",
+      "passed": true
+    },
+    {
+      "actual": "&lt;b&gt;",
+      "expected": "&lt;b&gt;",
+      "id": "entity_once_numeric",
+      "passed": true
+    },
+    {
+      "actual": "<!-- shown -->",
+      "expected": "<!-- shown -->",
+      "id": "entity_encoded_comment",
+      "passed": true
+    },
+    {
+      "actual": "Before 5 -->After",
+      "expected": "Before After",
+      "id": "comment_complete_gt",
+      "passed": false
+    },
+    {
+      "actual": "Before After",
+      "expected": "Before After",
+      "id": "comment_complete_encoded",
+      "passed": true
+    },
+    {
+      "actual": "Before After",
+      "expected": "Before After",
+      "id": "declaration_boundary",
+      "passed": true
+    },
+    {
+      "actual": "const label = 'A & B';",
+      "expected": "const label = 'A & B';",
+      "id": "script_plain_entity",
+      "passed": true
+    },
+    {
+      "actual": "const label = '&lt;tag&gt;';",
+      "expected": "const label = '&lt;tag&gt;';",
+      "id": "script_double_entity",
+      "passed": true
+    },
+    {
+      "actual": ".label::before { content: 'A & B'; }",
+      "expected": ".label::before { content: 'A & B'; }",
+      "id": "style_plain_entity",
+      "passed": true
+    },
+    {
+      "actual": "Keep <",
+      "expected": "Keep <",
+      "id": "incomplete_less_than",
+      "passed": true
+    },
+    {
+      "actual": "Keep <em",
+      "expected": "Keep <em",
+      "id": "incomplete_tag_name",
+      "passed": true
+    },
+    {
+      "actual": "Keep <em title='unfinished",
+      "expected": "Keep <em title='unfinished",
+      "id": "incomplete_attribute",
+      "passed": true
+    },
+    {
+      "actual": "Keep this text",
+      "expected": "Keep this text",
+      "id": "unclosed_script_text",
+      "passed": true
+    },
+    {
+      "actual": "Keep this text",
+      "expected": "Keep this text",
+      "id": "unclosed_style_text",
+      "passed": true
+    }
+  ],
+  "environment": "local orchestration Python process, no estate-native/product install claim",
+  "mode": "baseline contrast; complete-comment greater-than case is an intended correction",
+  "passed": false,
+  "passed_count": 13,
+  "python": "3.12.14",
+  "schema": "canvaspilot-strip-html-independent-compatibility-result-v1",
+  "source_extraction": "only exact AST nodes TAG_RE, WS_RE, strip_html from pinned full API source; imports re/html only",
+  "total": 14
+}

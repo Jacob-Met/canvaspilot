@@ -1,0 +1,25 @@
+{
+  "schema": "canvaspilot-strip-html-two-hunk-proof-v1",
+  "before": {
+    "bytes": 29742,
+    "sha256": "b6b770c2cdef9c9ce44a4a6aefd5b6d0876bc09e5aee29a4adb5a7c603b41c24",
+    "git_blob": "3ec81dee60bc67d7a80d40b78e85d5c005441b99"
+  },
+  "after": {
+    "bytes": 31113,
+    "sha256": "2b74be6bb9903b4d4e01ac8435afba02c3afbef37a753f28a980a64d2b4ae9e5",
+    "git_blob": "5ae5adc71d265cfe1d6a09e6a7edec3e2bddfa45"
+  },
+  "exact_forward": true,
+  "exact_reverse": true,
+  "hunks": [
+    {
+      "before": "TAG_RE = re.compile(r\"<[^>]+>\")",
+      "after": "TAG_START_RE = re.compile(r\"<(?:/?[A-Za-z]|!|\\?)\")"
+    },
+    {
+      "before": "def strip_html(html: str | None) -> str:\n    if not html:\n        return \"\"\n    # Remove literal markup tags BEFORE unescaping entities: text that was\n    # escaped (e.g. \"&lt;canvas&gt;\") must survive as text, not be mistaken\n    # for a tag and deleted.\n    text = TAG_RE.sub(\" \", html)\n    return WS_RE.sub(\" \", unescape(text)).strip()\n",
+      "after": "def strip_html(html: str | None) -> str:\n    if not html:\n        return \"\"\n    parts: list[str] = []\n    position = 0\n    while match := TAG_START_RE.search(html, position):\n        start = match.start()\n        parts.append(html[position:start])\n        if html.startswith(\"<!--\", start):\n            end = html.find(\"-->\", match.end())\n            if end < 0:\n                # An unfinished token is text; do not discard its suffix.\n                position = start\n                break\n            end += 3\n        else:\n            end = match.end()\n            quote = None\n            complete = False\n            while end < len(html):\n                char = html[end]\n                if quote is not None:\n                    if char == quote:\n                        quote = None\n                elif char in (\"\\\"\", \"'\"):\n                    quote = char\n                elif char == \">\":\n                    end += 1\n                    complete = True\n                    break\n                elif char == \"<\":\n                    # Leave this unsupported prefix literal and try the next tag.\n                    break\n                end += 1\n            if not complete:\n                if end == len(html):\n                    position = start\n                    break\n                parts.append(html[start:end])\n                position = end\n                continue\n        parts.append(\" \")\n        position = end\n    parts.append(html[position:])\n    # Decode once after recognizing literal markup: escaped tags remain text.\n    # Keep raw entity spellings until this point, including unknown references.\n    return WS_RE.sub(\" \", unescape(\"\".join(parts))).strip()\n"
+    }
+  ]
+}

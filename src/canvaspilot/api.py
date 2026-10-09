@@ -13,7 +13,7 @@ from canvaspilot.assignment_submission import project_assignment_submission
 from canvaspilot.client import CanvasClient
 from canvaspilot.feedback import build_submission_feedback
 
-TAG_RE = re.compile(r"<[^>]+>")
+TAG_START_RE = re.compile(r"<(?:/?[A-Za-z]|!|\?)")
 WS_RE = re.compile(r"\s+")
 
 
@@ -53,11 +53,50 @@ def assert_canvas_api_path(path: str) -> str:
 def strip_html(html: str | None) -> str:
     if not html:
         return ""
-    # Remove literal markup tags BEFORE unescaping entities: text that was
-    # escaped (e.g. "&lt;canvas&gt;") must survive as text, not be mistaken
-    # for a tag and deleted.
-    text = TAG_RE.sub(" ", html)
-    return WS_RE.sub(" ", unescape(text)).strip()
+    parts: list[str] = []
+    position = 0
+    while match := TAG_START_RE.search(html, position):
+        start = match.start()
+        parts.append(html[position:start])
+        if html.startswith("<!--", start):
+            end = html.find("-->", match.end())
+            if end < 0:
+                # An unfinished token is text; do not discard its suffix.
+                position = start
+                break
+            end += 3
+        else:
+            end = match.end()
+            quote = None
+            complete = False
+            while end < len(html):
+                char = html[end]
+                if quote is not None:
+                    if char == quote:
+                        quote = None
+                elif char in ("\"", "'"):
+                    quote = char
+                elif char == ">":
+                    end += 1
+                    complete = True
+                    break
+                elif char == "<":
+                    # Leave this unsupported prefix literal and try the next tag.
+                    break
+                end += 1
+            if not complete:
+                if end == len(html):
+                    position = start
+                    break
+                parts.append(html[start:end])
+                position = end
+                continue
+        parts.append(" ")
+        position = end
+    parts.append(html[position:])
+    # Decode once after recognizing literal markup: escaped tags remain text.
+    # Keep raw entity spellings until this point, including unknown references.
+    return WS_RE.sub(" ", unescape("".join(parts))).strip()
 
 
 def _brief_rubric(rubric: Any, warnings: list[str]) -> list[dict[str, Any]] | None:

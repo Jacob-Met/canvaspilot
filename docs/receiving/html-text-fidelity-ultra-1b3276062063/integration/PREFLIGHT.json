@@ -1,0 +1,125 @@
+{
+  "schema": "canvaspilot-html-fidelity-integration-preflight-v1",
+  "disposition": "PREFLIGHT ONLY; candidate and source release not yet received; no ref/PR/merge mutation",
+  "reviewer": "ultra-1b3276062063/github_integration",
+  "repository": "Jacob-Met/canvaspilot",
+  "scope_issue": "https://github.com/Jacob-Met/canvaspilot/issues/106",
+  "base": "56a72a2e2cee5ec04671d12ebe5bc2484afb8026",
+  "base_tree": "a07c3e941219ff80968e1ff20528a63541bb7400",
+  "complete_tree": true,
+  "leaf_count": 1616,
+  "instructions": "Complete tree contains no applicable AGENTS.md or HALT; root pyproject/readme reviewed for test/integration context",
+  "gates": {
+    "protected": false,
+    "protection": {
+      "enabled": false,
+      "required_status_checks": {
+        "enforcement_level": "off",
+        "contexts": [],
+        "checks": []
+      }
+    },
+    "rulesets": [],
+    "claim": "Observed configuration only; must be refreshed before ordinary merge; never override a later requirement"
+  },
+  "workflows": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "git_blob": "ef7bbebe192c0db55dc4467e064ba44805c13446",
+      "body_read_complete": true,
+      "events": {
+        "push": "main",
+        "pull_request": "main"
+      },
+      "ordinary_commands": [
+        "pip install -e .[dev]",
+        "ruff check src tests scripts",
+        "pytest -q"
+      ],
+      "executed": false
+    },
+    {
+      "path": ".github/workflows/agenda-view-browser.yml",
+      "git_blob": "a06b862c23dccc61d5da9eea99d82b76668f78c8",
+      "body_read_complete": true,
+      "events": {
+        "pull_request": "main; paths include src/canvaspilot/api.py",
+        "workflow_dispatch": true
+      },
+      "executed": false
+    }
+  ],
+  "events_absent": [
+    "issues",
+    "issue_comment",
+    "create",
+    "pull_request_target",
+    "schedule",
+    "workflow_run",
+    "merge_group"
+  ],
+  "primary_skip_contract": {
+    "url": "https://docs.github.com/en/actions/how-tos/manage-workflow-runs/skip-workflow-runs",
+    "directly_opened": true,
+    "applies_only_to": [
+      "push",
+      "pull_request"
+    ],
+    "pending_required_checks_still_block": true
+  },
+  "source_fence": {
+    "modified": [
+      "src/canvaspilot/api.py markup-token/strip_html and supporting import only"
+    ],
+    "new": [
+      "tests/test_strip_html_fidelity.py",
+      "docs/html-text-projection.md",
+      "docs/receiving/html-text-fidelity-ultra-1b3276062063/**"
+    ],
+    "preserve": [
+      "all other API bodies/signatures",
+      "client",
+      "CLI",
+      "MCP",
+      "authentication/broker",
+      "pagination",
+      "search/export modules",
+      "README",
+      "dependencies",
+      "workflows"
+    ]
+  },
+  "ownership": {
+    "open_pr_count": 13,
+    "complete_file_entries": 416,
+    "all_file_pages_read": true,
+    "claimed_path_overlaps": [],
+    "existing_api_spans": [
+      {
+        "issue": 94,
+        "scope": "activity_stream method only"
+      },
+      {
+        "issue": 96,
+        "scope": "additive current_quiz_submission method"
+      }
+    ],
+    "normalizer_consumers": [
+      93,
+      98,
+      99,
+      105
+    ],
+    "owner105": "d98d06fbfc35/image_receiving_2030: discussion_search module and additive CLI; existing normalizer authoritative",
+    "no_native_lease_or_exhaustive_runtime_ownership_claim": true
+  },
+  "proposed_sequence": [
+    "Receive exact qualified candidate, independent disposition and contribution manifest.",
+    "Independently compare complete base/candidate maps and exact source seam inverses; preserve all unrelated leaves/modes and every external source owner.",
+    "Refresh actual main, complete workflow event blobs and ordinary branch/ruleset/check gate. Recompose and independently review changed intersections if base advances.",
+    "Only after source release create branch at literal [skip actions] HEAD; create reviewable ordinary PR, preserve actual unrun full-suite/native/installed limits.",
+    "Verify actual head workflow runs independently of empty statuses; ordinary merge only at expected exact head with literal [skip actions] merge message and settled gates.",
+    "Read actual merge parents/tree, current main and merge/head workflow-run queries; retain any failed or unavailable observation accurately."
+  ],
+  "qualification_limits": "This receiver ran no candidate test or native/provider/browser/installed process. Root and Mac own the frozen behavioral oracles; historical hosted/native claims do not qualify this new helper."
+}
