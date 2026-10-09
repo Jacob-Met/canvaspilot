@@ -1,0 +1,98 @@
+{
+  "schema": "canvaspilot-root-assignment-brief-text-oracle-v1",
+  "frozen_utc": "2026-10-09 03:49:16 UTC",
+  "timing": "Root read exact original helper, maintained5tests and actual get_assignment/assignment_brief before writing this oracle. Source privately investigates implementation in parallel; root has not seen candidate or candidate tests. Source-informed baseline, not a claim of blinded pre-implementation research.",
+  "baseline": {
+    "repository": "Jacob-Met/CanvasPilot",
+    "commit": "56a72a2e2cee5ec04671d12ebe5bc2484afb8026",
+    "api_git": "3ec81dee60bc67d7a80d40b78e85d5c005441b99",
+    "maintained_tests_git": "9cac253f89820d36375b364daec9b34bb2d78e25",
+    "assignment_submission_git": "95b1f19927e4eecf99fc852325737c3cfe86cd0d",
+    "feedback_git": "ec996f421a851d699a9ac7cb1f2a486f9ff7c4ea"
+  },
+  "cases": [
+    {
+      "id": "C01_empty_null",
+      "input": null,
+      "expected": ""
+    },
+    {
+      "id": "C02_empty_string",
+      "input": "",
+      "expected": ""
+    },
+    {
+      "id": "C03_numeric_comparison",
+      "input": "Solve x < 5 and y > 1.",
+      "expected": "Solve x < 5 and y > 1."
+    },
+    {
+      "id": "C04_symbolic_comparison",
+      "input": "For a < b and c > d, explain.",
+      "expected": "For a < b and c > d, explain."
+    },
+    {
+      "id": "C05_double_quoted_attribute",
+      "input": "<p title=\"a > b\">Compare x &lt; 4.</p>",
+      "expected": "Compare x < 4."
+    },
+    {
+      "id": "C06_single_quoted_attribute",
+      "input": "<p data-note='a > b'>Read <em>carefully</em>.</p>",
+      "expected": "Read carefully ."
+    },
+    {
+      "id": "C07_multiple_attributes",
+      "input": "A<a href=\"https://example.test/x?q=>1&n=2\" title=\"not > text\">B</a>C",
+      "expected": "A B C"
+    },
+    {
+      "id": "C08_escaped_markup",
+      "input": "Use &lt;img title=&quot;x&gt;y&quot;&gt; in HTML.",
+      "expected": "Use <img title=\"x>y\"> in HTML."
+    },
+    {
+      "id": "C09_decode_once",
+      "input": "<p>&amp;lt;img&amp;gt; &amp;amp;</p>",
+      "expected": "&lt;img&gt; &amp;"
+    },
+    {
+      "id": "C10_numeric_unicode",
+      "input": "2 &#60; 5 &amp;&amp; &#x3b2; &#62; 0&nbsp;done",
+      "expected": "2 < 5 && β > 0 done"
+    },
+    {
+      "id": "C11_unicode_tag_text",
+      "input": "<P>Étude 日本語 <b>λ</b></P>",
+      "expected": "Étude 日本語 λ"
+    },
+    {
+      "id": "C12_break_separation",
+      "input": "first<br/>second<hr>third",
+      "expected": "first second third"
+    },
+    {
+      "id": "C13_final_less_than",
+      "input": "Show the symbol <",
+      "expected": "Show the symbol <"
+    },
+    {
+      "id": "C14_unknown_unterminated_entity",
+      "input": "<p>A &madeup text &amp; B</p>",
+      "expected": "A &madeup text & B"
+    },
+    {
+      "id": "C15_whitespace",
+      "input": " \t<p>A&nbsp;\n B</p>\r\n",
+      "expected": "A B"
+    }
+  ],
+  "checks": [
+    "Each group calls actual complete API source strip_html and actual CanvasAPI.assignment_brief/get_assignment against an explicitly authored fixture client at CanvasClient boundary.",
+    "Exactly one GET /api/v1/courses/17/assignments/29 with include[]=submission for each assignment_brief; no write, network, token, login, HTTP/client qualification, CLI, browser or installed claim.",
+    "Assert full brief object: title/date/points/submission_types/url/course/assignment/rubric/settings/grading/warnings and prompt; fixture response remains deep-equal and rubric/settings isolated. Preserve source hash and each actual value/error rather than short-circuiting expected baseline failures.",
+    "All input strings are fictional. Existing 5 tests remain author qualification; this oracle does not replace them.",
+    "Malformed/comment/script/style semantics are delegated to independent peer review and not silently specified by these15groups."
+  ],
+  "execution": "NOT YET RUN"
+}

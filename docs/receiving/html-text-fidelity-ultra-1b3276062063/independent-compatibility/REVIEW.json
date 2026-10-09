@@ -1,0 +1,76 @@
+{
+  "schema": "canvaspilot-strip-html-independent-review-v1",
+  "reviewer": "ultra-1b3276062063-mac",
+  "reviewed_utc": "2026-10-09 03:59:10 UTC",
+  "disposition": "ACCEPT exact product/test/guide source and fourteen frozen compatibility controls",
+  "prefreeze": {
+    "git_blob": "b36ad3da53b6b44f54873cd8cfd844efeca4d265",
+    "frozen_utc": "2026-10-09 03:49:36 UTC",
+    "before_candidate_exposure": true
+  },
+  "source": {
+    "bytes": 31113,
+    "sha256": "2b74be6bb9903b4d4e01ac8435afba02c3afbef37a753f28a980a64d2b4ae9e5",
+    "git_blob": "5ae5adc71d265cfe1d6a09e6a7edec3e2bddfa45"
+  },
+  "baseline": {
+    "bytes": 29742,
+    "sha256": "b6b770c2cdef9c9ce44a4a6aefd5b6d0876bc09e5aee29a4adb5a7c603b41c24",
+    "git_blob": "3ec81dee60bc67d7a80d40b78e85d5c005441b99"
+  },
+  "scope_proof": {
+    "exact_forward": true,
+    "exact_reverse": true,
+    "changed_regions": [
+      "TAG_RE declaration replaced by TAG_START_RE declaration",
+      "strip_html function body only"
+    ],
+    "unchanged": "All imports, WS_RE, helper code, CanvasAPI methods and caller wiring byte-exact"
+  },
+  "source_findings": [
+    "Tag candidates require an ASCII letter, slash followed by ASCII letter, exclamation mark or question mark after '<'; numeric math and spaced '<' remain literal.",
+    "Complete comments consume through '-->' rather than their first greater-than sign. Incomplete comments retain their suffix.",
+    "Within a tag candidate, matching quote characters alone end quoted data; quoted greater-than/apparent-tag characters cannot close the outer tag.",
+    "Every scanning continuation advances position; a nested unquoted '<' preserves the unsupported prefix and resumes forward. EOF preserves the incomplete token exactly once.",
+    "Real tag/comment/declaration removal emits a separator, then one unchanged global html.unescape and whitespace collapse preserve the public text-projection behavior.",
+    "No input/case identifiers or frozen expected strings appear in production logic; no additional dependency, authentication, network or API request path is introduced."
+  ],
+  "execution": {
+    "environment": "Local orchestration Python 3.12.14, not estate-native or installed consumer execution",
+    "isolation": "One baseline and one candidate invocation, stdin-free fixed command arguments; Python -I -B; exact AST extraction of the production helper plus its two regex declarations; only re/html stdlib bindings injected. The frozen receiving function and all expected values remain exact.",
+    "baseline": {
+      "exit_code": 0,
+      "pass_count": 13,
+      "total": 14,
+      "failed_case": "comment_complete_gt",
+      "actual": "Before 5 -->After",
+      "expected": "Before After"
+    },
+    "candidate": {
+      "exit_code": 0,
+      "pass_count": 14,
+      "total": 14
+    },
+    "consumer_gate": "Root separately owns actual assignment_brief and full API fixture receiving; this review does not claim those as its own"
+  },
+  "limits": [
+    "Helper output is not browser-visible text, HTML sanitization or executable-content suppression.",
+    "Fourteen listed controls do not imply arbitrary malformed HTML reconstruction or complete HTML grammar support.",
+    "No native host, Canvas service, user data, install, Actions, or new product-source write was involved."
+  ],
+  "maintained_tests": {
+    "git_blob": "ca57dcf82ca2a883039787cc6ad289c5cced619f",
+    "bytes": 6559,
+    "sha256": "97a4994859051963202e4beae03de63eb9a9057f632ded35e7ed69c523ab61a8",
+    "source_read": true,
+    "methods": 10,
+    "scope": "Actual helper comparisons plus CanvasAPI.assignment_brief with explicitly authored response transport; assertions retain request, prompt, metadata and input custody. Author/root execute this separate gate; no rerun claimed here."
+  },
+  "guide": {
+    "git_blob": "8ca8a79e38883f3ef83a8ce7f69cabdb69f38512",
+    "bytes": 2976,
+    "sha256": "91c2e53776c936a04a9044bb59d15aedc27a9311e970dccdc8e12bc263d34da8",
+    "source_read": true,
+    "assessment": "Truthfully limits token grammar, one-pass decoding, incomplete suffix treatment, script/style behavior, output escaping and nonclaims. No hidden-content suppression, full malformed HTML parsing or live/installed qualification is promised."
+  }
+}

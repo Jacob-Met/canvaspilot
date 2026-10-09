@@ -1,0 +1,20 @@
+"""Frozen pre-exposure helper expectations; inject the actual strip_html callable.
+No network, package loading, filesystem access, or product source is embedded.
+The accompanying JSON is authoritative for values and pre-exposure timestamp.
+"""
+def receive(strip_html, oracle):
+    rows = []
+    for case in oracle["cases"]:
+        row = {"id": case["id"], "expected": case["expected"]}
+        try:
+            actual = strip_html(case["source"])
+            row["actual"] = actual
+            row["passed"] = type(actual) is str and actual == case["expected"]
+        except Exception as exc:
+            row["error_type"] = type(exc).__name__
+            row["error"] = str(exc)
+            row["passed"] = False
+        rows.append(row)
+    return {"schema": "canvaspilot-strip-html-independent-compatibility-result-v1",
+            "cases": rows, "passed": all(row["passed"] for row in rows),
+            "total": len(rows), "passed_count": sum(row["passed"] for row in rows)}

@@ -1,0 +1,28 @@
+{
+  "schema": "canvaspilot-text-fidelity-scope-v1",
+  "baseline": "56a72a2e2cee5ec04671d12ebe5bc2484afb8026",
+  "api_blob": "3ec81dee60bc67d7a80d40b78e85d5c005441b99",
+  "tests_blob": "9cac253f89820d36375b364daec9b34bb2d78e25",
+  "fence": [
+    "src/canvaspilot/api.py (only markup token/helper seam)",
+    "tests/test_strip_html_fidelity.py",
+    "docs/html-text-projection.md",
+    "docs/receiving/html-text-fidelity-ultra-1b3276062063/**"
+  ],
+  "contract": [
+    "Literal comparisons beginning with digit/space remain text.",
+    "Quoted > belongs to attribute until matching quote; attributes never emitted.",
+    "Complete comments are removed as one token including internal >.",
+    "Each recognized markup boundary becomes space; whitespace collapse unchanged.",
+    "Exactly one global html.unescape after token removal; raw entity spelling retained until that point.",
+    "Script/style bodies are still text, not browser-filtered; any recognized embedded markup remains subject to same helper projection.",
+    "Unsupported/incomplete tag/comment suffix remains literal; this is limited preservation, not browser parsing or sanitization."
+  ],
+  "baseline_result": "17 actual complete-API authored cases: 12pass, five prompt-fidelity failures; zero attempted external effects.",
+  "qualification": "Cloud-local CPython3.12.14 actual complete API module and stdlib deps; explicit fake CanvasClient import boundary. No real CanvasClient/HTTP/CLI/native host/installed/browser/fullsuite/lint qualification.",
+  "workflows": [
+    "ef7bbebe192c0db55dc4467e064ba44805c13446",
+    "a06b862c23dccc61d5da9eea99d82b76668f78c8"
+  ],
+  "actions": "No issue/comment/create triggers; no ref or Actions transition in this packet."
+}

@@ -1,0 +1,106 @@
+{
+  "schema": "canvaspilot-strip-html-independent-compatibility-prefreeze-v1",
+  "created_utc": "2026-10-09 03:49:36 UTC",
+  "author": "ultra-1b3276062063-mac",
+  "state": "Frozen before candidate exposure; expectations only, not executed",
+  "repository": "Jacob-Met/CanvasPilot",
+  "baseline": {
+    "commit": "56a72a2e2cee5ec04671d12ebe5bc2484afb8026",
+    "api_blob": "3ec81dee60bc67d7a80d40b78e85d5c005441b99",
+    "existing_test_blob": "9cac253f89820d36375b364daec9b34bb2d78e25",
+    "python_contract": ">=3.11"
+  },
+  "scope": "Complementary helper compatibility only; root owns actual assignment_brief consumer matrix. Complete-comment greater-than handling is an intended markup correction; other cases preserve existing text/one-pass conversion behavior.",
+  "nonclaims": [
+    "Not an HTML sanitizer, visibility engine, CSS or JavaScript executor",
+    "No arbitrary malformed-HTML reconstruction guarantee; only listed EOF cases that baseline preserves",
+    "No parser/native/dependency/network invocation in this freeze",
+    "No current candidate source has been read"
+  ],
+  "cases": [
+    {
+      "id": "entity_once_named",
+      "source": "&amp;lt;canvas&amp;gt;",
+      "expected": "&lt;canvas&gt;",
+      "basis": "baseline one-pass decoding; do not decode the newly exposed entity a second time"
+    },
+    {
+      "id": "entity_once_numeric",
+      "source": "&#38;lt;b&#38;gt;",
+      "expected": "&lt;b&gt;",
+      "basis": "numeric ampersand exposes literal entity text for this one pass"
+    },
+    {
+      "id": "entity_encoded_comment",
+      "source": "&lt;!-- shown --&gt;",
+      "expected": "<!-- shown -->",
+      "basis": "escaped markup remains text"
+    },
+    {
+      "id": "comment_complete_gt",
+      "source": "Before<!-- threshold x > 5 -->After",
+      "expected": "Before After",
+      "basis": "a complete literal comment is markup, including its internal greater-than sign"
+    },
+    {
+      "id": "comment_complete_encoded",
+      "source": "Before<!-- &lt;b&gt; -->After",
+      "expected": "Before After",
+      "basis": "comment data must not be promoted into visible text"
+    },
+    {
+      "id": "declaration_boundary",
+      "source": "Before<!DOCTYPE html>After",
+      "expected": "Before After",
+      "basis": "baseline separator at actual markup boundary"
+    },
+    {
+      "id": "script_plain_entity",
+      "source": "<script>const label = 'A &amp; B';</script>",
+      "expected": "const label = 'A & B';",
+      "basis": "baseline retains script body; helper is not a browser visibility filter"
+    },
+    {
+      "id": "script_double_entity",
+      "source": "<script>const label = '&amp;lt;tag&amp;gt;';</script>",
+      "expected": "const label = '&lt;tag&gt;';",
+      "basis": "one decode also applies inside raw script data"
+    },
+    {
+      "id": "style_plain_entity",
+      "source": "<style>.label::before { content: 'A &amp; B'; }</style>",
+      "expected": ".label::before { content: 'A & B'; }",
+      "basis": "baseline retains style body and decodes once"
+    },
+    {
+      "id": "incomplete_less_than",
+      "source": "Keep <",
+      "expected": "Keep <",
+      "basis": "literal incomplete suffix survives; do not lose buffered text at EOF"
+    },
+    {
+      "id": "incomplete_tag_name",
+      "source": "Keep <em",
+      "expected": "Keep <em",
+      "basis": "baseline incomplete markup is text"
+    },
+    {
+      "id": "incomplete_attribute",
+      "source": "Keep <em title='unfinished",
+      "expected": "Keep <em title='unfinished",
+      "basis": "baseline incomplete markup suffix is retained"
+    },
+    {
+      "id": "unclosed_script_text",
+      "source": "<script>Keep this text",
+      "expected": "Keep this text",
+      "basis": "baseline removes complete start tag but retains following body at EOF"
+    },
+    {
+      "id": "unclosed_style_text",
+      "source": "<style>Keep this text",
+      "expected": "Keep this text",
+      "basis": "same no-silent-loss requirement for raw style content at EOF"
+    }
+  ]
+}
