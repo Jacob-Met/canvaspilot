@@ -1,0 +1,8 @@
+source_scope_and_whole_tree_identity: FAIL
+help_and_rejected_admission_before_transport: PASS
+complete_pagination_projection_and_opaque_cursor: PASS
+literal_locator_and_numeric_id_request_identity: PASS
+missing_and_empty_html_preserve_api_distinction: PASS
+second_page_and_schema_failure_then_recovery_with_real_client_cleanup: PASS
+actual_native_stdout_device_failure: PASS
+{"result": "FAIL", "groups": 7, "CLI_processes": 13, "actual_GETs": 13, "source_unchanged": true}

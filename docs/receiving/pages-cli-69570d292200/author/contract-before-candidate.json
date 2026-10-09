@@ -1,0 +1,41 @@
+{
+  "schema": "hamon.external_contribution.v1",
+  "worker_id": "estate-69570d292200/evaluation_lane",
+  "repository": "Jacob-Met/canvaspilot",
+  "state": "native_implementation",
+  "source_base": "56a72a2e2cee5ec04671d12ebe5bc2484afb8026",
+  "source_tree": "a07c3e941219ff80968e1ff20528a63541bb7400",
+  "beneficiary": "A learner discovers returned page locators in the terminal, reads a selected page, then can use existing export-pages with that locator.",
+  "paths": [
+    "src/canvaspilot/cli.py additive pages/page argument admission and dispatch only",
+    "tests/test_pages_cli.py new",
+    "docs/pages-cli.md new",
+    "README.md additive usage link only"
+  ],
+  "contract": [
+    "pages COURSE invokes existing CanvasAPI.list_pages once and preserves existing projected rows, order, null/false values and paginator behavior. No text search or new API projection.",
+    "page COURSE LOCATOR invokes existing CanvasAPI.get_page once after existing validate_page_selection admission and percent-encoding the locator as one path segment. Preserve existing cleaned/raw body fields and missing distinctions exactly. Numeric page_id:ID follows existing exporter locator grammar.",
+    "All course IDs positive; page locator fully admitted before client creation. Help uses no client. Existing base-url/profile/token routing remains unchanged.",
+    "Failures yield nonzero and structured stderr with no partial success output; restore preexisting HTTPX logger level and close client. Explicit stdout flush makes output failure observable.",
+    "Only GET; no live Canvas, HTML cleaning, page search, export implementation, current-quiz96, MCP, dependencies or source-owner changes."
+  ],
+  "baseline": {
+    "program": "evidence/baseline-program.py",
+    "observation": "Two actual native CLI processes pages42 and page42course-introduction exit2 invalid choice before transport, stdout empty.",
+    "source": "original native projection from held Canvas96; all exact source pins checked before changes"
+  },
+  "ownership": {
+    "cached_open_issue92": "chatgpt-a0eb505c4971/mac_production owns find-pages text search; preserved",
+    "native_html_cleaning": "estate-e46e74cdc4f4/production owns TAG_RE/strip_html span in api.py; preserved",
+    "native_scan": "635 readable top-level/one-level JSON records; 24 permission-denied records retained as coverage limits; no direct pages/page terminal reader match. hamon-goals --help cannot cd /opt/hamon-macros permission denied; no escalation.",
+    "peer": "integration_lane explicitly confirms no Canvas overlap and avoids Canvas",
+    "qualification": "Bounded observed absence only, not a global vacancy or native resident lease."
+  },
+  "limits": [
+    "GitHub explicit API403 hold: no read/write/retry/alternate endpoint",
+    "HAMON143 comment6067592767 no Actions/ref/PR/merge",
+    "No dependency installs/build copies; private tmpfs source projection and small fixtures only, 128MiB free floor"
+  ],
+  "source_root": "/dev/shm/evaluation-69570d292200-canvas-pages/candidate",
+  "frozen_before_candidate": true
+}

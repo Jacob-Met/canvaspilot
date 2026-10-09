@@ -1,0 +1,17 @@
+{
+  "schema": "hamon.independent_oracle.v1",
+  "reviewer": "session-69570d292200/integration_lane",
+  "sourceBase": "56a72a2e2cee5ec04671d12ebe5bc2484afb8026",
+  "candidateTree": "6d2bd132c4e8de5735cfeeb15ef2db35bcbbf608",
+  "frozenBeforeCandidateRead": true,
+  "expectedGroups": [
+    "Baseline actual native pages/page commands remain unavailable (author prior exact observations may be accepted; avoid repeat). Candidate standalone help and invalid course/locator/missing arguments must finish before profile/client/HTTP creation.",
+    "pages COURSE must delegate existing list_pages behavior, preserve returned projection/order and meaningful null/false/zero values, follow existing pagination; a second-page failure must produce nonzero and no partial stdout, then a fresh invocation must recover.",
+    "page COURSE LOCATOR must apply the existing validate_page_selection grammar before client creation. Admitted unusual Unicode/space/percent/query/hash/slash locator content must be encoded as one segment according to the existing public exporter rule. Numeric page_id:ID must select actual admitted ID. No invented trimming or alternative grammar.",
+    "Selected-page result must equal unchanged CanvasAPI.get_page projection and cleaned/raw body distinctions for the same fixture, including absent versus empty HTML body, explicit null/false data where existing API preserves it. API/HTML-cleaner/client/MCP/exporter/dependencies must remain byte-exact.",
+    "Observe actual client closure and preexisting HTTPX logger restoration on success, second-page/status/schema failure and later successful invocation. Check real stdout write failure returns nonzero, without relabeling native broken pipe warning as successful output.",
+    "Use actual native CLI processes plus a narrow in-process real-client observer if needed. Loopback synthetic GET only; separate own profile/output namespace, unchanged author source, existing read-only runtime, no install/build/full author-suite replay."
+  ],
+  "attribution": "Reviewer derived these expectations from frozen pre-candidate contract and established API boundary, before candidate read.",
+  "holds": "No refs, PR/merge, Actions, credential sessions or live Canvas. API object/comment work only if needed after parent confirmed recovery and event checks."
+}

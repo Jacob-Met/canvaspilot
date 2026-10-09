@@ -1,0 +1,34 @@
+{
+  "result": "PASS",
+  "detail": {
+    "base_leaves": 1616,
+    "product_leaves": 1618,
+    "unrelated_exact": 1614,
+    "changed": [
+      "README.md",
+      "docs/pages-cli.md",
+      "src/canvaspilot/cli.py",
+      "tests/test_pages_cli.py"
+    ],
+    "both_git_tree_hashes_independently_recomputed": true,
+    "insertions": {
+      "src/canvaspilot/cli.py": {
+        "inserted_lines": 43,
+        "original_reconstructed_byte_exact": true
+      },
+      "README.md": {
+        "inserted_lines": 7,
+        "original_reconstructed_byte_exact": true
+      }
+    }
+  },
+  "original_program_sha256": "dbfed1666283e2e837804dc3ca6e1bb1a524edb335fe1de54be19d64fbcbd1d8",
+  "correction": {
+    "before": "reverse=b\"\".join(b[j:k] for tag,i,l,j,k in opcodes if tag==\"equal\")",
+    "after": "reverse=b\"\".join(line for tag,i,l,j,k in opcodes if tag==\"equal\" for line in b[j:k])",
+    "reason": "Original reviewer attempted joining list slices as bytes; flatten equal byte-lines instead.",
+    "product_changes": false,
+    "CLI_rerun": false,
+    "original_overall_result": "FAIL retained"
+  }
+}
