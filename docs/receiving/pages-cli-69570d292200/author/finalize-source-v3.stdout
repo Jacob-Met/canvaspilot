@@ -1,0 +1,55 @@
+{
+  "baseCommit": "56a72a2e2cee5ec04671d12ebe5bc2484afb8026",
+  "baseTree": "a07c3e941219ff80968e1ff20528a63541bb7400",
+  "connectorTreeResponseReference": "56a72a2e2cee5ec04671d12ebe5bc2484afb8026",
+  "productTree": "6d2bd132c4e8de5735cfeeb15ef2db35bcbbf608",
+  "baseLeaves": 1616,
+  "productLeaves": 1618,
+  "unrelatedBaseLeavesExact": 1614,
+  "maintainedPaths": [
+    {
+      "path": "src/canvaspilot/cli.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5e616006d2ed4828213b08e07fe37ca692fb1faa",
+      "bytes": 42006,
+      "sha256": "8b4902838a9d2c3271e3efdde44eea254f0beb7a07ba9469b934c27deabcb1cb"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "720c20ac8268a38e8e7f8f95f6108087064f6420",
+      "bytes": 28728,
+      "sha256": "31cec701d3f31733db4438ce6fddcf06eafd3ac30d96fa90f3b73b9bd6bd976e"
+    },
+    {
+      "path": "tests/test_pages_cli.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a704b6f4ceed7fe66bdd43d6b0d0d69642c84dc7",
+      "bytes": 10593,
+      "sha256": "27fb614ad9b67461e2da9eee1fafd652852640f6958dbb54f5ced427553ac139"
+    },
+    {
+      "path": "docs/pages-cli.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1d65008521e58b6c8440ceb094a58baabf877725",
+      "bytes": 3114,
+      "sha256": "0de4ee43e7f608971403c23fe5dd806e39a993f509e62e4f7d15a4c8e60e80a3"
+    }
+  ],
+  "nativeOriginalSourceFiles": 33,
+  "nativeUnchangedFiles": 31,
+  "focusedTests": 18,
+  "focusedRuff": "PASS",
+  "productSourceUnchangedAcrossQualification": true,
+  "boundary": "Virtual complete product tree computed from exact accepted tree plus four maintained files; native Git custody is a source/evidence projection. No remote object or ref publication, current-main refresh, live Canvas, build or dependency installation.",
+  "terminalNewlineNormalization": {
+    "beforeSha256": "a6822e318c797a0670f9a39f32b34cad7d927896d565aa4fce6e4ecf725f2a56",
+    "afterSha256": "8b4902838a9d2c3271e3efdde44eea254f0beb7a07ba9469b934c27deabcb1cb",
+    "astUnchanged": true,
+    "fullSuiteAfterNormalization": false
+  }
+}

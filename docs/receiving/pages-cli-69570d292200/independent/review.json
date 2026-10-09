@@ -1,0 +1,64 @@
+{
+  "disposition": "APPROVE_SOURCE_AND_NATIVE_RECEIVING",
+  "source_base": "56a72a2e2cee5ec04671d12ebe5bc2484afb8026",
+  "product_tree": "6d2bd132c4e8de5735cfeeb15ef2db35bcbbf608",
+  "author_custody_commit": "a7529dae5658b694925a46d46aa0476d3252d18a",
+  "author_custody_tree": "d30dbba5c73ef3660d8fcdfd572562ad55fe1257",
+  "native_review": {
+    "CLI_processes": 13,
+    "actual_GETs": 13,
+    "behavior_groups": 6,
+    "all_behavior_groups_passed": true,
+    "source_files_unchanged": {
+      "original": 33,
+      "candidate": 35
+    },
+    "no_profile_created": true,
+    "real_HTTPX_client_closed_and_logger_restored": true
+  },
+  "source_proof": {
+    "base_leaves": 1616,
+    "product_leaves": 1618,
+    "unrelated_exact": 1614,
+    "changed": [
+      "README.md",
+      "docs/pages-cli.md",
+      "src/canvaspilot/cli.py",
+      "tests/test_pages_cli.py"
+    ],
+    "both_git_tree_hashes_independently_recomputed": true,
+    "insertions": {
+      "src/canvaspilot/cli.py": {
+        "inserted_lines": 43,
+        "original_reconstructed_byte_exact": true
+      },
+      "README.md": {
+        "inserted_lines": 7,
+        "original_reconstructed_byte_exact": true
+      }
+    }
+  },
+  "original_receiver_result": "FAIL preserved exactly; reviewer bytes/list join TypeError in source comparison",
+  "adjudication": "Only the source-comparison expression was corrected and executed. Both canonical tree hashes, scope and byte-exact original-source reconstruction now pass. No product change or behavioral command rerun.",
+  "author_tests": {
+    "count": 18,
+    "all_passed": true,
+    "attribution": "Raw author JUnit and stdout/stderr hashes independently inspected; no author suite replay",
+    "final_newline": "Author final CLI newline normalization preserved AST; reviewer commands executed actual final pinned CLI blob5e616006d2ed4828213b08e07fe37ca692fb1faa."
+  },
+  "native_output_failure": {
+    "exit": 120,
+    "detail": "Actual /dev/full generated structured OSError and interpreter flush diagnostic. This proves nonzero failure, not clean stderr or rollback of partial output."
+  },
+  "raw_packet": {
+    "files": 33,
+    "bytes": 98090,
+    "sha256": "bc43f22bb3a8a4c55214f22498b40a360cadc05d21505c5f2bd445101b75be40"
+  },
+  "findings": [],
+  "limits": [
+    "Synthetic loopback native CLI receiving only; no live school account, browser profile, installed adoption, CI, release or deployment claim.",
+    "Canonical source tree is independently recomputed from retained full Git leaf manifests; source-base freshness/integration remains owner-controlled.",
+    "No dependencies installed, source bytes changed, whole suite rerun, GitHub ref/PR/merge or Actions triggered."
+  ]
+}
