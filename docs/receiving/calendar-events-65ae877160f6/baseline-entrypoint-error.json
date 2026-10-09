@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "/home/jacob/canvaspilot-enrollments-env-65ae877160f6/bin/python",
+    "-m",
+    "canvaspilot",
+    "calendar-events",
+    "--help"
+  ],
+  "base": "56a72a2e2cee5ec04671d12ebe5bc2484afb8026",
+  "cli_sha256": "c703a5dad3ef54ed308fb217c4a3b0a32791ea5f9b84093669fa667bb7a3a12b",
+  "exit": 1,
+  "stdout": "",
+  "stderr": "/home/jacob/canvaspilot-enrollments-env-65ae877160f6/bin/python: No module named canvaspilot.__main__; 'canvaspilot' is a package and cannot be directly executed\n"
+}

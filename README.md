@@ -529,3 +529,7 @@ canvaspilot find-announcements 42 77 --text "room change" --start-date 2026-10-0
 
 The result preserves ordered full announcement rows and identifies which fields matched.
 See [announcement text search](docs/announcement-search.md) for matching, output, and complete-read behavior.
+
+## Calendar events
+
+Read reported calendar events through the normal CLI with `canvaspilot calendar-events`; optional dates and repeatable context codes use the existing reader. See [calendar-event CLI usage](docs/calendar-events-cli.md).

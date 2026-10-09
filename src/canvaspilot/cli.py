@@ -311,6 +311,21 @@ def main(argv: list[str] | None = None) -> None:
         help="Native enrollment state filter (default: active); use --state= to omit the filter",
     )
 
+    calendar_events = sub.add_parser(
+        "calendar-events", help="Read calendar events using the existing Canvas filters",
+    )
+    add_common(calendar_events)
+    calendar_events.add_argument(
+        "--start-date", default=None, help="Native start_date filter; omitted uses Canvas defaults",
+    )
+    calendar_events.add_argument(
+        "--end-date", default=None, help="Native end_date filter; omitted uses Canvas defaults",
+    )
+    calendar_events.add_argument(
+        "--context-code", action="append", dest="context_codes", default=None,
+        help="Native context code, for example course_123; repeat for multiple contexts",
+    )
+
     mcp = sub.add_parser("mcp", help="Run MCP stdio server")
     add_common(mcp)
 
@@ -602,6 +617,27 @@ def main(argv: list[str] | None = None) -> None:
             http_log.setLevel(max(http_log.getEffectiveLevel(), logging.WARNING))
             try:
                 result = api.list_enrollments(state=args.state)
+            except (CanvasAuthError, CanvasPaginationError, httpx.HTTPError, ValueError) as error:
+                print(json.dumps({
+                    "ok": False, "error": type(error).__name__, "message": str(error),
+                }), file=sys.stderr)
+                raise SystemExit(1) from None
+            finally:
+                http_log.setLevel(previous_level)
+            print(json.dumps(result, indent=2, default=str))
+        elif args.cmd == "calendar-events":
+            import httpx
+
+            from canvaspilot.client import CanvasAuthError, CanvasPaginationError
+
+            http_log = logging.getLogger("httpx")
+            previous_level = http_log.level
+            http_log.setLevel(max(http_log.getEffectiveLevel(), logging.WARNING))
+            try:
+                result = api.list_calendar_events(
+                    start_date=args.start_date, end_date=args.end_date,
+                    context_codes=args.context_codes,
+                )
             except (CanvasAuthError, CanvasPaginationError, httpx.HTTPError, ValueError) as error:
                 print(json.dumps({
                     "ok": False, "error": type(error).__name__, "message": str(error),

@@ -1,0 +1,15 @@
+{
+  "argv": [
+    "/home/jacob/canvaspilot-enrollments-env-65ae877160f6/bin/python",
+    "-B",
+    "-m",
+    "canvaspilot.cli",
+    "calendar-events",
+    "--help"
+  ],
+  "base": "56a72a2e2cee5ec04671d12ebe5bc2484afb8026",
+  "cli_sha256": "c703a5dad3ef54ed308fb217c4a3b0a32791ea5f9b84093669fa667bb7a3a12b",
+  "exit": 2,
+  "stdout": "",
+  "stderr": "usage: canvaspilot [-h]\n                   {login,session,whoami,courses,sync,find-announcements,announcements,grade-review,export-grade-review,assignments,brief,feedback,inbox,conversation,discussions,discussion,files,browse-files,export-calendar,export-pages,export-study,export-syllabus,module-progress,export-module-progress,submission-history,export-submission-history,compare-submissions,agenda,quizzes,quiz,planner,export-agenda,enrollments,mcp} ...\ncanvaspilot: error: argument cmd: invalid choice: 'calendar-events' (choose from login, session, whoami, courses, sync, find-announcements, announcements, grade-review, export-grade-review, assignments, brief, feedback, inbox, conversation, discussions, discussion, files, browse-files, export-calendar, export-pages, export-study, export-syllabus, module-progress, export-module-progress, submission-history, export-submission-history, compare-submissions, agenda, quizzes, quiz, planner, export-agenda, enrollments, mcp)\n"
+}

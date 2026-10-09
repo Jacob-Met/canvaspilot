@@ -1,0 +1,29 @@
+{
+  "kind": "RDC native process readback; no repeated execution",
+  "pid": 2852696,
+  "argv": [
+    "/home/jacob/canvaspilot-enrollments-env-65ae877160f6/bin/python",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "/srv/hamon-estate/canvaspilot-calendar-events-65ae877160f6/tests/test_calendar_events_cli.py"
+  ],
+  "source_sha256": {
+    "src/canvaspilot/cli.py": "6f7df24918a007b048d324c7bd707b1c4fa3cc96e96d31c79f164a0c5a78d78c",
+    "tests/test_calendar_events_cli.py": "1580ff6d502dcd377bfc96c26bdabb8c2196706f49ede62ba24717f8829c8e86"
+  },
+  "tool_response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "[Reading 4 new lines (total: 4 lines)]\n\nWROTE cli/test/guide/README scoped changes\n.....                                                          [100%]\n5 passed, 10 subtests passed in 15.83s\n\n\u2705 Process completed with exit code 0 (runtime: 16.57s)"
+      },
+      {
+        "type": "text",
+        "text": "\n[executed on device: hamon-thinkpad (cadafaf3-4d0b-4c4f-a0d3-34a95d2cec90)]"
+      }
+    ],
+    "isError": false
+  }
+}

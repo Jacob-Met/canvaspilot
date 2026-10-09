@@ -1,0 +1,40 @@
+[
+  {
+    "name": "existing-cli-regressions",
+    "argv": [
+      "/home/jacob/canvaspilot-enrollments-env-65ae877160f6/bin/python",
+      "-B",
+      "-m",
+      "pytest",
+      "-q",
+      "/srv/hamon-estate/canvaspilot-calendar-events-65ae877160f6/tests/test_enrollments_cli.py",
+      "/srv/hamon-estate/canvaspilot-calendar-events-65ae877160f6/tests/test_course_agenda_process.py",
+      "-k",
+      "not registered_mcp"
+    ],
+    "started": "2026-10-08T23:50:46.547226+00:00",
+    "state": "completed",
+    "exit": 0,
+    "stdout": "............                                                     [100%]\n12 passed, 1 deselected, 8 subtests passed in 47.03s\n",
+    "stderr": "",
+    "ended": "2026-10-08T23:51:34.549335+00:00"
+  },
+  {
+    "name": "changed-file-lint",
+    "argv": [
+      "/home/jacob/canvaspilot-enrollments-env-65ae877160f6/bin/python",
+      "-B",
+      "-m",
+      "ruff",
+      "check",
+      "/srv/hamon-estate/canvaspilot-calendar-events-65ae877160f6/src/canvaspilot/cli.py",
+      "/srv/hamon-estate/canvaspilot-calendar-events-65ae877160f6/tests/test_calendar_events_cli.py"
+    ],
+    "started": "2026-10-08T23:51:34.552488+00:00",
+    "state": "completed",
+    "exit": 0,
+    "stdout": "All checks passed!\n",
+    "stderr": "",
+    "ended": "2026-10-08T23:51:34.672814+00:00"
+  }
+]

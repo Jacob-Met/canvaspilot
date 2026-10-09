@@ -1,0 +1,11 @@
+# Calendar-events CLI native qualification
+
+The exact current-main baseline is56a72a2e2cee5ec04671d12ebe5bc2484afb8026, treea07c3e941219ff80968e1ff20528a63541bb7400. The unchanged existing API reader accepts optional dates and repeated context codes, but its ordinary CLI had no calendar-events command. The corrected actual module entrypoint rejects that command at argument parsing with exit2 before any read.
+
+`baseline-entrypoint-error.json` preserves the first receiver mistake: `python -m canvaspilot` has no __main__ module. It is not product-negative evidence. `baseline-command-absence.json` uses the actual project entrypoint `python -m canvaspilot.cli` and establishes the missing command.
+
+The new test starts a disposable loopback HTTP server and invokes the actual CLI as a separate process with a synthetic token and unused profile. Five test methods and10 subtests pass. They preserve offset-date strings, repeated and duplicate context codes, unknown JSON fields/Unicode/line breaks, opaque continuation query, omitted/empty values, structured auth and later-page failures without partial stdout, help/option admission without reads, and an existing enrollments command. `first-focused-gate.json` retains the exact native process readback and source hashes.
+
+`regression-gates.json` separately records12 inherited CLI tests and8 subtests passing for enrollments and the course agenda, with the unrelated registered-MCP test deliberately deselected. Changed-file Ruff checks pass. No complete native suite, live account, broker/session mutation, hosted gate or GitHub Actions was run for this change. Earlier unrelated project-suite failures from the prior enrollments contribution remain in their original custody and are not relabelled.
+
+Product changes are the additive CLI parser/dispatch, new test, new guide and an additive README section. API, client, pagination, authentication, existing command spans and MCP remain exact. Native source/receiving continue under the no-new-Actions instruction at https://github.com/Jacob-Met/hamon/issues/143#issuecomment-6067592767; source publication and integration are not claimed. Independent receiving uses an oracle frozen from original API/CLI source before candidate exposure.
