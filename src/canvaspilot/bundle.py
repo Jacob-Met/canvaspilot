@@ -91,3 +91,12 @@ __all__ = [
     "strip_html",
     "tool_inventory",
 ]
+
+
+def bundle_coverage_demo(items):
+    """T164 demo: summarizes a list of bundle tool names (deliberately untested in commit 1)."""
+    counts = {}
+    for item in items:
+        counts[item] = counts.get(item, 0) + 1
+    return {"total": len(items), "unique": len(counts), "counts": counts}
+
