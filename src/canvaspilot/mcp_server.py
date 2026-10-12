@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+from pathlib import Path
 from typing import Annotated, Any
 
 from mcp.server.mcpserver import MCPServer
@@ -418,8 +419,17 @@ async def canvas_api_paginated(path: str, params_json: str = "") -> str:
     return _dump(_get_api().api_paginated(path, params=params))
 
 
-def main() -> None:
-    mcp.run()
+def main(
+    *, base_url: str | None = None, token: str | None = None, profile: Path | None = None
+) -> None:
+    global _api
+    with CanvasClient(base_url=base_url, token=token, profile=profile) as client:
+        previous_api = _api
+        try:
+            _api = CanvasAPI(client)
+            mcp.run()
+        finally:
+            _api = previous_api
 
 
 if __name__ == "__main__":
