@@ -8,6 +8,7 @@ from datetime import datetime
 from html import unescape
 from math import isfinite
 from typing import Any
+from urllib.parse import unquote
 
 from canvaspilot.assignment_submission import project_assignment_submission
 from canvaspilot.client import CanvasClient
@@ -43,10 +44,18 @@ def _sync_due_key(row: dict[str, Any]) -> tuple[int, datetime | None]:
 def assert_canvas_api_path(path: str) -> str:
     """Allow only relative Canvas REST paths under ``/api/v1`` (no absolute URLs)."""
     p = (path or "").strip()
-    if not p.startswith("/api/v1"):
-        raise ValueError("path must start with /api/v1 (Canvas REST only)")
-    if "://" in p or ".." in p or p.startswith("//"):
-        raise ValueError("absolute URLs and path traversal are not allowed")
+    resource = p.partition("?")[0]
+    if resource != "/api/v1" and not resource.startswith("/api/v1/"):
+        raise ValueError("path must be /api/v1 or start with /api/v1/")
+    # Browser URL parsing recognizes percent-encoded dot segments. Validate
+    # their decoded spelling without rewriting the caller's path or query.
+    decoded_resource = unquote(resource)
+    if (
+        "://" in p or ".." in p or ".." in decoded_resource
+        or "\\" in p or "\\" in decoded_resource or "#" in p
+        or any(ord(char) < 32 or ord(char) == 127 for text in (p, decoded_resource) for char in text)
+    ):
+        raise ValueError("absolute URLs, fragments, controls and path traversal are not allowed")
     return p
 
 
