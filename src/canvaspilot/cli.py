@@ -383,7 +383,23 @@ def main(argv: list[str] | None = None) -> None:
     api = CanvasAPI(client)
     try:
         if args.cmd == "whoami":
-            print(json.dumps(api.whoami(), indent=2, default=str))
+            import httpx
+
+            from canvaspilot.client import CanvasAuthError
+
+            http_log = logging.getLogger("httpx")
+            previous_level = http_log.level
+            http_log.setLevel(max(http_log.getEffectiveLevel(), logging.WARNING))
+            try:
+                result = api.whoami()
+            except (CanvasAuthError, httpx.HTTPError, json.JSONDecodeError) as error:
+                print(json.dumps({
+                    "ok": False, "error": type(error).__name__, "message": str(error),
+                }), file=sys.stderr)
+                raise SystemExit(1) from None
+            finally:
+                http_log.setLevel(previous_level)
+            print(json.dumps(result, indent=2, default=str))
         elif args.cmd == "courses":
             import httpx
 
