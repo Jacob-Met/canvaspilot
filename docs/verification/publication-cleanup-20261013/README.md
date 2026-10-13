@@ -77,36 +77,17 @@ installed, run:
 python -m unittest discover -s tests -p test_calendar_publication_cleanup.py -v
 ```
 
-The independent receiver takes a JSON source bundle. The source manifest below
-identifies the exact Git objects for reconstructing its shared modules and two
-variants; each source entry is `{"sha": BLOB, "content": GIT_BLOB_UTF8_TEXT}`.
-All source objects are reachable from this contribution and its parent history.
+The exact frozen comparison bundle is included as `comparison-bundle.json`.
+Its SHA-256 is
+`ad7552fb20d100b52410f59369da505e43f31f69afec415b74f9cdf2cc99fb56`.
+It includes the exact original and candidate sources with their Git blob
+identities and the unchanged real renderers. Run this independent course on
+plain Python without installing project dependencies:
 
-```json
-{
-  "shared": {
-    "grade_review_export": "8a6281f62f99e18109f90a273a4c29da4929f3a3",
-    "module_progress_export": "8ccb9f1262790a744418d4212e072ee43031ab88"
-  },
-  "variants": [
-    {
-      "label": "before",
-      "revision": "b257cdda1fbb4358d79cbefb5641b5db86b445f5",
-      "repaired": false,
-      "sources": {
-        "calendar_export": "ef74cfdf50fd894327dbe45a9a9d43042953bc31",
-        "cli": "ab071891721397a27ce87ce21a8380691bab365f"
-      }
-    },
-    {
-      "label": "after",
-      "revision": "detached-blobs-9e4c05c8-6bf38ebf",
-      "repaired": true,
-      "sources": {
-        "calendar_export": "9e4c05c88b53730414076fbc2069c9c293c64d76",
-        "cli": "6bf38ebff1f0242be07f176050be39c7fae7890b"
-      }
-    }
-  ]
-}
+```sh
+python docs/verification/publication-cleanup-20261013/independent-receiver.py docs/verification/publication-cleanup-20261013/comparison-bundle.json
 ```
+
+The receiver verifies each source blob before executing it. Its explicit
+synthetic transport boundary and qualified scope are unchanged from the retained
+acceptance receipt.
