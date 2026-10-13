@@ -465,7 +465,7 @@ def main(argv: list[str] | None = None) -> None:
                 if os.path.lexists(args.out):
                     raise FileExistsError("Output path already exists; choose a new HTML file")
                 content, report = build_grade_review_report(api, args.course_id)
-                write_calendar(args.out, content)
+                cleanup_warning = write_calendar(args.out, content)
             except (RuntimeError, httpx.HTTPError, ValueError, TypeError, OSError) as error:
                 print(json.dumps({
                     "ok": False, "error": type(error).__name__, "message": str(error),
@@ -473,6 +473,8 @@ def main(argv: list[str] | None = None) -> None:
                 raise SystemExit(1) from None
             finally:
                 http_log.setLevel(previous_level)
+            if cleanup_warning:
+                report["cleanup_warning"] = cleanup_warning
             print(json.dumps({"ok": True, "path": str(args.out), **report}, indent=2))
         elif args.cmd == "assignments":
             print(
@@ -591,12 +593,14 @@ def main(argv: list[str] | None = None) -> None:
                 if os.path.lexists(args.out):
                     raise FileExistsError("Output path already exists; choose a new .ics file")
                 content, report = build_assignment_calendar(api, args.course_ids, bucket=args.bucket)
-                write_calendar(args.out, content)
+                cleanup_warning = write_calendar(args.out, content)
             except (CanvasAuthError, CanvasPaginationError, httpx.HTTPError, ValueError, TypeError, OSError) as error:
                 print(json.dumps({
                     "ok": False, "error": type(error).__name__, "message": str(error),
                 }), file=sys.stderr)
                 raise SystemExit(1) from None
+            if cleanup_warning:
+                report["cleanup_warning"] = cleanup_warning
             print(json.dumps({"ok": True, "output": str(args.out), **report}, indent=2))
         elif args.cmd == "planner":
             import httpx
@@ -710,7 +714,7 @@ def main(argv: list[str] | None = None) -> None:
                 )
                 # The existing calendar publisher writes arbitrary complete bytes
                 # to a new file; it never replaces a path or follows its symlink.
-                write_calendar(args.out, content)
+                cleanup_warning = write_calendar(args.out, content)
             except (CanvasAuthError, CanvasPaginationError, httpx.HTTPError, ValueError, TypeError, OSError) as error:
                 print(json.dumps({
                     "ok": False, "error": type(error).__name__, "message": str(error),
@@ -718,6 +722,8 @@ def main(argv: list[str] | None = None) -> None:
                 raise SystemExit(1) from None
             finally:
                 http_log.setLevel(previous_level)
+            if cleanup_warning:
+                report["cleanup_warning"] = cleanup_warning
             print(json.dumps({"ok": True, "output": str(args.out), **report}, indent=2))
         elif args.cmd == "export-submission-history":
             import os

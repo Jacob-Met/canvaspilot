@@ -217,19 +217,39 @@ def build_assignment_calendar(
     return content, report
 
 
-def write_calendar(path: Path, content: bytes) -> None:
-    """Publish complete bytes to a new local file without replacing any entry."""
+def write_calendar(path: Path, content: bytes) -> str | None:
+    """Publish complete bytes at a new path, returning any staging-cleanup warning."""
     # Same-directory hard-link publication refuses existing files and symlinks.
     # Unsupported filesystems fail safely; no rename/replace fallback.
-    temporary = None
+    temporary: Path | None = None
+    handle = None
     try:
-        with tempfile.NamedTemporaryFile(prefix="." + path.name + ".", suffix=".tmp",
-                                         dir=path.parent, delete=False) as handle:
-            temporary = Path(handle.name)
-            handle.write(content)
-            handle.flush()
-            os.fsync(handle.fileno())
+        handle = tempfile.NamedTemporaryFile(  # noqa: SIM115 — preserve the original close failure
+            prefix="." + path.name + ".", suffix=".tmp", dir=path.parent, delete=False,
+        )
+        temporary = Path(handle.name)
+        handle.write(content)
+        handle.flush()
+        os.fsync(handle.fileno())
+        handle.close()
+        handle = None
         os.link(temporary, path)
-    finally:
+    except BaseException:
+        # Cleanup must not replace the failure that prevented publication.
+        if handle is not None:
+            try:
+                handle.close()
+            except OSError:
+                pass
         if temporary is not None:
-            temporary.unlink()
+            try:
+                temporary.unlink()
+            except OSError:
+                pass
+        raise
+    try:
+        temporary.unlink()
+    except OSError:
+        # The complete output is already published; retain success with a warning.
+        return f"Output created, but temporary source could not be removed: {temporary.name}"
+    return None
