@@ -421,6 +421,17 @@ scope choices, pagination and error behavior.
 
 Use `canvaspilot export-syllabus 42 57 --out syllabi.html` to keep explicitly selected syllabus bodies in one readable, printable offline HTML packet. Missing, unavailable and explicitly empty bodies stay distinct; linked files and media remain clearly marked external resources. The command protects existing output paths and refuses the whole file if a requested course cannot be read or validated. [Source, limits and usage](docs/syllabus-packet.md).
 
+To compare two source-text downloads you have already saved, run this standalone
+standard-library command from the checkout:
+
+```sh
+python src/canvaspilot/syllabus_source_compare.py before-source.txt after-source.txt --out new-source-review.txt
+```
+
+Choose a new output path. The [saved source comparison guide](docs/syllabus-source-comparison.md)
+explains exact source lines and endings, hashes, input limits and output protection.
+A difference in saved source bytes does not establish a policy change or same-course identity.
+
 ## Auth modes
 
 | Mode | How | When |
