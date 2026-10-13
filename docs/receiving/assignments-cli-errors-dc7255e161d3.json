@@ -1,0 +1,993 @@
+{
+  "schema": "canvaspilot.assignments-cli-errors.receiving.v1",
+  "owner": "dc7255e161d3/estate_source",
+  "issue": "https://github.com/Jacob-Met/canvaspilot/issues/155",
+  "objective": "Give expected assignment-list read failures one actionable JSON diagnostic while preserving the native successful collection and request behavior.",
+  "parent": "9cb1fc3b873f7e1f4fe15a83b9d90c030cfd573d",
+  "files": {
+    "src/canvaspilot/cli.py": {
+      "bytes": 44955,
+      "sha256": "0b098a2a5fdd679dd185f068472b14b2ae56e4eaa45ae1c1d3e44a06428bde20",
+      "git_blob": "ca7f1648954dfaae94c0eb9bbac4a97696d7e64b"
+    },
+    "tests/test_assignments_cli_errors.py": {
+      "bytes": 10457,
+      "sha256": "51ebba790bdb20074fbb11401a79a3f501ea839e960a5fbdc0ff8d53090a191f",
+      "git_blob": "ea0dc348975a7d80e0859eda4b6d5aeea3b0c3f5"
+    },
+    "docs/assignments-cli.md": {
+      "bytes": 2278,
+      "sha256": "c70b14abd64f1b45e91dc8c6b308dbe2950ffe7c0a56ea2174aa205f6143c875",
+      "git_blob": "89b7861efc7d31cefb942faddcbefb784b89deb5"
+    }
+  },
+  "original_sources": {
+    "cli": "0469bab224548dcca067d9b279cea0b6ca7ad09f",
+    "api": "de65a7012d01d20c8dda6137eff9400872b14d3c",
+    "client": "f314bdb677607d563dc8bf7c5ffb5fb6c96d1bb1",
+    "projector": "95b1f19927e4eecf99fc852325737c3cfe86cd0d"
+  },
+  "production_scope": {
+    "only": "Existing assignments command branch",
+    "caught": [
+      "CanvasAuthError",
+      "CanvasPaginationError",
+      "httpx.HTTPError"
+    ],
+    "expected_failure": {
+      "status": 1,
+      "stdout": "",
+      "stderr": "Exactly one JSON object: ok=false, actual native exception class and full str(error); no traceback."
+    },
+    "success": "Existing indented JSON list, status0, raw course_id, default/empty/custom bucket mapping, compact projection, repeated IDs/order, submission values and warnings.",
+    "logging": "Suppress routine HTTPX request logging only around the read; restore the exact previous logger.level in finally.",
+    "lifetime": "Preserve outer api.close on successful, handled and unrelated exception paths.",
+    "exclusions": [
+      "Unrelated ValueError/TypeError/RuntimeError",
+      "Output-destination failures",
+      "Course-ID or bucket validation",
+      "Retries",
+      "Projection/authentication/transport/pagination changes",
+      "Other command branches",
+      "API/client/session/MCP/dependencies/workflows"
+    ],
+    "exact_inverse_recovers_parent_cli": "0469bab224548dcca067d9b279cea0b6ca7ad09f",
+    "other_product_python_files_unchanged": 26
+  },
+  "environment": {
+    "device_id": "9ea77fe9-bb87-46e0-a5a8-8b3e25f6ff7e",
+    "platform": "Windows x64",
+    "python": "3.11.9",
+    "root": "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors",
+    "candidate": "assignments-source",
+    "original": "assignments-original-source",
+    "entrypoint": "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\venv\\Scripts\\canvaspilot.exe",
+    "versions": {
+      "canvaspilot": "0.1.1",
+      "httpx": "0.28.1",
+      "mcp": "2.3.0",
+      "pytest": "8.4.2",
+      "ruff": "0.16.10"
+    },
+    "scope": "Synthetic authored loopback only; no real Canvas endpoint/account/broker/session/browser or created profile."
+  },
+  "original_native": {
+    "path": "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\evidence\\assignments-original-6a3uv28v\\receipt.json",
+    "bytes": 42701,
+    "sha256": "070de73a4688dc0eafab85f6df6729fb419e285cbbcb777c3e735d3f70d3126a",
+    "cases": [
+      {
+        "case": "success",
+        "status": 0,
+        "stdout_sha256": "4888b6b1f16eea8fe96b7f40707b0ba2a0834a4d25a4a70199ad4c70ddd24e9c",
+        "stderr_sha256": "ac1b5083f630a4ec7a7afa5660a135a34675b8e7389cfbe61156afed812f16a4",
+        "stdout_empty": false,
+        "traceback": false,
+        "requests": [
+          {
+            "method": "GET",
+            "path": "/api/v1/courses/0042/assignments",
+            "raw_target": "/api/v1/courses/0042/assignments?order_by=due_at&include%5B%5D=submission&bucket=upcoming&per_page=50",
+            "query": {
+              "order_by": [
+                "due_at"
+              ],
+              "include[]": [
+                "submission"
+              ],
+              "bucket": [
+                "upcoming"
+              ],
+              "per_page": [
+                "50"
+              ]
+            },
+            "synthetic_token": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/v1/courses/0042/assignments",
+            "raw_target": "/api/v1/courses/0042/assignments?cursor=authored%2Fnext",
+            "query": {
+              "cursor": [
+                "authored/next"
+              ]
+            },
+            "synthetic_token": true
+          }
+        ],
+        "profile_absent": true
+      },
+      {
+        "case": "empty_success",
+        "status": 0,
+        "stdout_sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+        "stderr_sha256": "ec1ef4431d72c66b9a4370ea0e18b814fb8ba5eeca982b457749f3843df18bc3",
+        "stdout_empty": false,
+        "traceback": false,
+        "requests": [
+          {
+            "method": "GET",
+            "path": "/api/v1/courses/0042/assignments",
+            "raw_target": "/api/v1/courses/0042/assignments?order_by=due_at&include%5B%5D=submission&bucket=upcoming&per_page=50",
+            "query": {
+              "order_by": [
+                "due_at"
+              ],
+              "include[]": [
+                "submission"
+              ],
+              "bucket": [
+                "upcoming"
+              ],
+              "per_page": [
+                "50"
+              ]
+            },
+            "synthetic_token": true
+          }
+        ],
+        "profile_absent": true
+      },
+      {
+        "case": "no_bucket",
+        "status": 0,
+        "stdout_sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+        "stderr_sha256": "d4fa0964091dc38813edc4dab18e19bd0149abd822bdbbde70ab82690cbb4945",
+        "stdout_empty": false,
+        "traceback": false,
+        "requests": [
+          {
+            "method": "GET",
+            "path": "/api/v1/courses/0042/assignments",
+            "raw_target": "/api/v1/courses/0042/assignments?order_by=due_at&include%5B%5D=submission&per_page=50",
+            "query": {
+              "order_by": [
+                "due_at"
+              ],
+              "include[]": [
+                "submission"
+              ],
+              "per_page": [
+                "50"
+              ]
+            },
+            "synthetic_token": true
+          }
+        ],
+        "profile_absent": true
+      },
+      {
+        "case": "custom_bucket",
+        "status": 0,
+        "stdout_sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+        "stderr_sha256": "34cc694059757321c7b6945ccd3f7e49118353cecd506e8b9085b31551e0268e",
+        "stdout_empty": false,
+        "traceback": false,
+        "requests": [
+          {
+            "method": "GET",
+            "path": "/api/v1/courses/0042/assignments",
+            "raw_target": "/api/v1/courses/0042/assignments?order_by=due_at&include%5B%5D=submission&bucket=custom+state&per_page=50",
+            "query": {
+              "order_by": [
+                "due_at"
+              ],
+              "include[]": [
+                "submission"
+              ],
+              "bucket": [
+                "custom state"
+              ],
+              "per_page": [
+                "50"
+              ]
+            },
+            "synthetic_token": true
+          }
+        ],
+        "profile_absent": true
+      },
+      {
+        "case": "missing_setup",
+        "status": 1,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3ab5e639b8f244821133a1af1ac89f9ddd39bf2049a2e8de119ecdb7a994191",
+        "stdout_empty": true,
+        "traceback": true,
+        "requests": [
+          {
+            "method": "GET",
+            "path": "/health",
+            "raw_target": "/health",
+            "query": {},
+            "synthetic_token": false
+          }
+        ],
+        "profile_absent": true
+      },
+      {
+        "case": "auth_401",
+        "status": 1,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "185217130e94c993d890d09ee4ca16ff93ca6bfedb77f70f7c8aeebeec8d54cd",
+        "stdout_empty": true,
+        "traceback": true,
+        "requests": [
+          {
+            "method": "GET",
+            "path": "/api/v1/courses/0042/assignments",
+            "raw_target": "/api/v1/courses/0042/assignments?order_by=due_at&include%5B%5D=submission&bucket=upcoming&per_page=50",
+            "query": {
+              "order_by": [
+                "due_at"
+              ],
+              "include[]": [
+                "submission"
+              ],
+              "bucket": [
+                "upcoming"
+              ],
+              "per_page": [
+                "50"
+              ]
+            },
+            "synthetic_token": true
+          }
+        ],
+        "profile_absent": true
+      },
+      {
+        "case": "auth_403",
+        "status": 1,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "0dc6778fb44ad94deb1231a9d58be60ecaa5865aaf7511eecf55292213f2c31d",
+        "stdout_empty": true,
+        "traceback": true,
+        "requests": [
+          {
+            "method": "GET",
+            "path": "/api/v1/courses/0042/assignments",
+            "raw_target": "/api/v1/courses/0042/assignments?order_by=due_at&include%5B%5D=submission&bucket=upcoming&per_page=50",
+            "query": {
+              "order_by": [
+                "due_at"
+              ],
+              "include[]": [
+                "submission"
+              ],
+              "bucket": [
+                "upcoming"
+              ],
+              "per_page": [
+                "50"
+              ]
+            },
+            "synthetic_token": true
+          }
+        ],
+        "profile_absent": true
+      },
+      {
+        "case": "http_503",
+        "status": 1,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "8d032d3ada86d6a3dfdcaa40929281af27d40bd62f67961ef7120a75ed796a07",
+        "stdout_empty": true,
+        "traceback": true,
+        "requests": [
+          {
+            "method": "GET",
+            "path": "/api/v1/courses/0042/assignments",
+            "raw_target": "/api/v1/courses/0042/assignments?order_by=due_at&include%5B%5D=submission&bucket=upcoming&per_page=50",
+            "query": {
+              "order_by": [
+                "due_at"
+              ],
+              "include[]": [
+                "submission"
+              ],
+              "bucket": [
+                "upcoming"
+              ],
+              "per_page": [
+                "50"
+              ]
+            },
+            "synthetic_token": true
+          }
+        ],
+        "profile_absent": true
+      },
+      {
+        "case": "later_http_503",
+        "status": 1,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "3302041be9b2f03bd125ab10e90c989a40d474beed4857eff0ed73e9d17ec6ed",
+        "stdout_empty": true,
+        "traceback": true,
+        "requests": [
+          {
+            "method": "GET",
+            "path": "/api/v1/courses/0042/assignments",
+            "raw_target": "/api/v1/courses/0042/assignments?order_by=due_at&include%5B%5D=submission&bucket=upcoming&per_page=50",
+            "query": {
+              "order_by": [
+                "due_at"
+              ],
+              "include[]": [
+                "submission"
+              ],
+              "bucket": [
+                "upcoming"
+              ],
+              "per_page": [
+                "50"
+              ]
+            },
+            "synthetic_token": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/v1/courses/0042/assignments",
+            "raw_target": "/api/v1/courses/0042/assignments?cursor=authored%2Fnext",
+            "query": {
+              "cursor": [
+                "authored/next"
+              ]
+            },
+            "synthetic_token": true
+          }
+        ],
+        "profile_absent": true
+      },
+      {
+        "case": "invalid_json",
+        "status": 1,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "5176801916b96f32dc2525c25689c7c49aa54158e97d44ff42b07aeaf9f7712e",
+        "stdout_empty": true,
+        "traceback": true,
+        "requests": [
+          {
+            "method": "GET",
+            "path": "/api/v1/courses/0042/assignments",
+            "raw_target": "/api/v1/courses/0042/assignments?order_by=due_at&include%5B%5D=submission&bucket=upcoming&per_page=50",
+            "query": {
+              "order_by": [
+                "due_at"
+              ],
+              "include[]": [
+                "submission"
+              ],
+              "bucket": [
+                "upcoming"
+              ],
+              "per_page": [
+                "50"
+              ]
+            },
+            "synthetic_token": true
+          }
+        ],
+        "profile_absent": true
+      },
+      {
+        "case": "later_nonlist",
+        "status": 1,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "6b2c364680f05d9df43a19d663fc8510aba0f5157856e1e7dae49504cdcb2a91",
+        "stdout_empty": true,
+        "traceback": true,
+        "requests": [
+          {
+            "method": "GET",
+            "path": "/api/v1/courses/0042/assignments",
+            "raw_target": "/api/v1/courses/0042/assignments?order_by=due_at&include%5B%5D=submission&bucket=upcoming&per_page=50",
+            "query": {
+              "order_by": [
+                "due_at"
+              ],
+              "include[]": [
+                "submission"
+              ],
+              "bucket": [
+                "upcoming"
+              ],
+              "per_page": [
+                "50"
+              ]
+            },
+            "synthetic_token": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/v1/courses/0042/assignments",
+            "raw_target": "/api/v1/courses/0042/assignments?cursor=authored%2Fnext",
+            "query": {
+              "cursor": [
+                "authored/next"
+              ]
+            },
+            "synthetic_token": true
+          }
+        ],
+        "profile_absent": true
+      },
+      {
+        "case": "closed_response",
+        "status": 1,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "76e04551ff2540b7429539143fb814d990a778228bd56ba92f0b33c1bc3f1e4a",
+        "stdout_empty": true,
+        "traceback": true,
+        "requests": [
+          {
+            "method": "GET",
+            "path": "/api/v1/courses/0042/assignments",
+            "raw_target": "/api/v1/courses/0042/assignments?order_by=due_at&include%5B%5D=submission&bucket=upcoming&per_page=50",
+            "query": {
+              "order_by": [
+                "due_at"
+              ],
+              "include[]": [
+                "submission"
+              ],
+              "bucket": [
+                "upcoming"
+              ],
+              "per_page": [
+                "50"
+              ]
+            },
+            "synthetic_token": true
+          }
+        ],
+        "profile_absent": true
+      }
+    ],
+    "success": 4,
+    "traceback_failures": 8,
+    "wrapper_pid": 32472,
+    "wrapper_exit_observed": 0,
+    "source_preserved": true,
+    "server_closed": true,
+    "success_golden_stdout": "[\r\n  {\r\n    \"id\": 7,\r\n    \"course_id\": \"0042\",\r\n    \"name\": \"Literal <b>read</b> \\u0394\",\r\n    \"due_at\": null,\r\n    \"points_possible\": 0,\r\n    \"submission_types\": [\r\n      \"online_text_entry\"\r\n    ],\r\n    \"html_url\": \"https://example.invalid/assignment/7\",\r\n    \"has_submitted_submissions\": false,\r\n    \"submission\": {\r\n      \"workflow_state\": \"submitted\",\r\n      \"submitted_at\": null,\r\n      \"attempt\": 0,\r\n      \"late\": false,\r\n      \"missing\": false,\r\n      \"excused\": false\r\n    },\r\n    \"submission_warnings\": []\r\n  },\r\n  {\r\n    \"id\": 7,\r\n    \"course_id\": \"0042\",\r\n    \"name\": \"Repeated identity, second occurrence\",\r\n    \"due_at\": \"\",\r\n    \"points_possible\": null,\r\n    \"submission_types\": [],\r\n    \"html_url\": null,\r\n    \"has_submitted_submissions\": true,\r\n    \"submission\": {\r\n      \"missing\": false,\r\n      \"excused\": null\r\n    },\r\n    \"submission_warnings\": [\r\n      \"submission.attempt: expected nonnegative integer or null\",\r\n      \"submission.late: expected boolean or null\"\r\n    ]\r\n  }\r\n]\r\n",
+    "artifact_identity_note": "Raw evidence retained on the native device; calculated Git content identities do not imply separately uploaded raw blobs."
+  },
+  "original_receiver_history": {
+    "stage": "V1 native receiver",
+    "wrapper_pid": 17652,
+    "terminal_exit_observed": 1,
+    "seconds": 5.61,
+    "raw_directory": "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\evidence\\assignments-original-sgsvio4i",
+    "mistake": "Receiver wrongly expected an invalid boolean attempt to become null. Existing native projector correctly omitted the field and emitted a warning.",
+    "correction": "V2 changes only the receiver expectation; retains the first successful command's raw result and original driver. Product source unchanged."
+  },
+  "original_maintained": {
+    "receipt": "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\evidence\\assignments-original-maintained.json",
+    "bytes": 81661,
+    "sha256": "d4eba6f9193d1c8ffb8ee25d3f14832e936bfe6ff99d4a5fbb134d512a62b232",
+    "wrapper_pid": 21396,
+    "terminal_exit_observed": 0,
+    "pytest_exit": 1,
+    "failed": 21,
+    "passed": 12,
+    "seconds": 63.81,
+    "source_bytes_mtimes_preserved": true
+  },
+  "candidate_focused": {
+    "receipt": "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\evidence\\assignments-candidate-maintained.json",
+    "bytes": 11216,
+    "sha256": "764a763b48f1cb2405bcb767b103e4203e3c062ca05bd819e87250e78d747129",
+    "wrapper_pid": 6392,
+    "terminal_exit_observed": 0,
+    "pytest_exit": 0,
+    "passed": 33,
+    "seconds": 55.54,
+    "ruff_exit": 0,
+    "diff_check_exit": 0,
+    "source_bytes_mtimes_preserved": true,
+    "coverage": {
+      "actual_cli_refusal_cases": 8,
+      "actual_cli_success_cases": 4,
+      "logger_lifetime_propagation_cases": 21
+    },
+    "checks": [
+      {
+        "name": "pytest",
+        "argv": [
+          "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\venv\\Scripts\\python.exe",
+          "-B",
+          "-m",
+          "pytest",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "tests/test_assignments_cli_errors.py"
+        ],
+        "exit": 0,
+        "seconds": 57.375,
+        "stdout": ".................................                                        [100%]\r\n33 passed in 55.54s\r\n",
+        "stderr": ""
+      },
+      {
+        "name": "ruff",
+        "argv": [
+          "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\venv\\Scripts\\ruff.exe",
+          "check",
+          "--no-cache",
+          "src/canvaspilot/cli.py",
+          "tests/test_assignments_cli_errors.py"
+        ],
+        "exit": 0,
+        "seconds": 0.187,
+        "stdout": "All checks passed!\n",
+        "stderr": ""
+      },
+      {
+        "name": "diff_check",
+        "argv": [
+          "C:\\Program Files\\Git\\cmd\\git.exe",
+          "diff",
+          "--check"
+        ],
+        "exit": 0,
+        "seconds": 0.094,
+        "stdout": "",
+        "stderr": ""
+      }
+    ]
+  },
+  "independent_contract": {
+    "path": "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\context-assignments-expectations-v2.json",
+    "bytes": 18603,
+    "sha256": "aa7bd7d266272ffa8ef42525fa36c3d920d2e449f7d517cf332c03447bbe8cd4",
+    "calculated_git_blob": "e30c8e4c31d3c1c199d3440860b4cddf7dad6b58",
+    "status": "Frozen from original source and the actual twelve-case original witness before candidate exposure.",
+    "reviewer": "dc7255e161d3/estate_context"
+  },
+  "inherited_limits": {
+    "prior_broader_four_module_result": "48 passed /5 failed at8479a462; not a full repository suite.",
+    "prior_failure_cause": "Five original enrollment subprocess tests failed before CLI dispatch when the minimal Windows environment could not resolve Path.home.",
+    "followup": "PR154 at9cb1fc3b adds only disposable test-owned USERPROFILE and Windows SystemRoot to the enrollment helper; exact five methods/eight subtests/eleven children then passed independently. Original Path.home and first-candidate WinError10106 receipts remain retained.",
+    "followup_record": "https://github.com/Jacob-Met/canvaspilot/blob/9cb1fc3b873f7e1f4fe15a83b9d90c030cfd573d/docs/receiving/enrollments-test-windows-dc7255e161d3.json",
+    "prior_whole_repository_ruff": "Seven unrelated pristine-parent findings in test_calendar_publication_cleanup.py and test_discussion_search.py; those files remain unchanged.",
+    "current_scope": "This33-case focused pass and scoped Ruff pass do not establish a full repository suite/lint pass. No broader suite or other-platform run was added for this increment."
+  },
+  "publication": {
+    "status": "Pre-publication snapshot: exact source, maintained tests, independent source review and independent36-child native receiving accepted; ref creation follows this record.",
+    "no_actions_invoked": true,
+    "no_browser_or_account": true,
+    "no_workflow_dependency_change": true,
+    "preflight": {
+      "main": "9cb1fc3b873f7e1f4fe15a83b9d90c030cfd573d",
+      "tree": "2a63df0d4b2dd3325e40708832618826e460ab79",
+      "base_leaves": 1739,
+      "branch_protected": false,
+      "required_checks": "off; contexts/checks empty",
+      "rulesets": [],
+      "workflows": {
+        "ci.yml": "ef7bbebe192c0db55dc4467e064ba44805c13446",
+        "agenda-view-browser.yml": "a06b862c23dccc61d5da9eea99d82b76668f78c8"
+      },
+      "recent_all_event_paths": [
+        ".github/workflows/ci.yml",
+        ".github/workflows/agenda-view-browser.yml",
+        "dynamic/dependabot/dependabot-updates",
+        "dynamic/dependabot/update-graph"
+      ],
+      "newest_run": "2026-10-11T07:44:47Z",
+      "no_dynamic_pages_observed": true
+    },
+    "expected_process": "Reviewed exact four-path tree, preserved unrelated leaves/modes, fresh rules/events, skip-marked source/merge, ordinary expected-head integration and actual-parent/all-event verification."
+  },
+  "independent_review": {
+    "status": "ACCEPTED",
+    "reviewer": "dc7255e161d3/estate_context",
+    "native_directory": "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\context-assignments-native-1pkgkrr3",
+    "receipt": {
+      "path": "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\context-assignments-native-1pkgkrr3\\receipt.json",
+      "bytes": 150833,
+      "sha256": "453601a5d9870c0d99a14dbee399ad399de6c655f9ff949840a8d8d884a48151",
+      "git_blob": "2505e9f6da79fc9d0dbff9cf931eb18d11c38abb"
+    },
+    "review": {
+      "path": "REVIEW-v1.json",
+      "bytes": 15091,
+      "sha256": "b85988e68496cd4979d9baecf5e33a5083f337d14625dae13543fcc6eaa26352",
+      "calculated_git_blob": "dd1e2b1c2f4c2afb17ef2bb924f8043f65bf096a"
+    },
+    "manifest": {
+      "path": "EVIDENCE-MANIFEST-v1.json",
+      "bytes": 18019,
+      "sha256": "c475bdfcee0bab2bfdd62d4d4f6801dade4ebc34d786d0be84e86597b69e269a",
+      "calculated_git_blob": "2e2562b935468c8bda98ad982600c99e7595376c",
+      "payloads": 79,
+      "payload_bytes": 250296
+    },
+    "receiver": {
+      "path": "receive_assignments_v2.py",
+      "bytes": 15314,
+      "sha256": "481d44f4112d9e01f21f4f1860f1bf0ecf2e38951b051242a7a5106a2e5ed627",
+      "git_blob": "6b02fdd6d3b40725165a02fa2d3963e55ba291d7",
+      "independently_reviewed_by": "dc7255e161d3/estate_runtime",
+      "history": "Initial14929B template was never executed. Final v2 adds exact oracle-source Git admissions and records each completed native child before output parsing; original template remains retained."
+    },
+    "native": {
+      "wrapper_pid": 13588,
+      "terminal_exit_observed": 0,
+      "wrapper_seconds": 150.49,
+      "cases": 12,
+      "actual_child_processes": 36,
+      "success_cases": 4,
+      "expected_refused_cases": 8,
+      "all_assertions": true,
+      "log_files_verified": 72,
+      "log_hash_mismatches": 0,
+      "source_entries_verified": 56,
+      "source_byte_or_mtime_mismatches": 0,
+      "profiles_uncreated": true,
+      "server_thread_closed": true,
+      "server_socket_closed": true,
+      "source_preserved": true,
+      "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+      "started_at": "2026-10-13T11:49:18.343335+00:00",
+      "completed_at": "2026-10-13T11:51:47.885937+00:00"
+    },
+    "cases": [
+      {
+        "case": "success",
+        "accepted": true,
+        "assertions": {
+          "native_api_completed": true,
+          "native_api_source_parent": true,
+          "native_api_closed": true,
+          "native_api_hash_matches": true,
+          "requests_unchanged": true,
+          "exact_request_targets": true,
+          "profiles_uncreated": true,
+          "no_candidate_traceback": true,
+          "literal_projection_preserved": true,
+          "all_success": true,
+          "exact_stdout_parity": true,
+          "candidate_stderr_empty": true
+        },
+        "exits": {
+          "parent": 0,
+          "candidate": 0,
+          "native-api": 0
+        },
+        "requests_each": 2
+      },
+      {
+        "case": "empty_success",
+        "accepted": true,
+        "assertions": {
+          "native_api_completed": true,
+          "native_api_source_parent": true,
+          "native_api_closed": true,
+          "native_api_hash_matches": true,
+          "requests_unchanged": true,
+          "exact_request_targets": true,
+          "profiles_uncreated": true,
+          "no_candidate_traceback": true,
+          "literal_projection_preserved": true,
+          "all_success": true,
+          "exact_stdout_parity": true,
+          "candidate_stderr_empty": true
+        },
+        "exits": {
+          "parent": 0,
+          "candidate": 0,
+          "native-api": 0
+        },
+        "requests_each": 1
+      },
+      {
+        "case": "no_bucket",
+        "accepted": true,
+        "assertions": {
+          "native_api_completed": true,
+          "native_api_source_parent": true,
+          "native_api_closed": true,
+          "native_api_hash_matches": true,
+          "requests_unchanged": true,
+          "exact_request_targets": true,
+          "profiles_uncreated": true,
+          "no_candidate_traceback": true,
+          "literal_projection_preserved": true,
+          "all_success": true,
+          "exact_stdout_parity": true,
+          "candidate_stderr_empty": true
+        },
+        "exits": {
+          "parent": 0,
+          "candidate": 0,
+          "native-api": 0
+        },
+        "requests_each": 1
+      },
+      {
+        "case": "custom_bucket",
+        "accepted": true,
+        "assertions": {
+          "native_api_completed": true,
+          "native_api_source_parent": true,
+          "native_api_closed": true,
+          "native_api_hash_matches": true,
+          "requests_unchanged": true,
+          "exact_request_targets": true,
+          "profiles_uncreated": true,
+          "no_candidate_traceback": true,
+          "literal_projection_preserved": true,
+          "all_success": true,
+          "exact_stdout_parity": true,
+          "candidate_stderr_empty": true
+        },
+        "exits": {
+          "parent": 0,
+          "candidate": 0,
+          "native-api": 0
+        },
+        "requests_each": 1
+      },
+      {
+        "case": "missing_setup",
+        "accepted": true,
+        "assertions": {
+          "native_api_completed": true,
+          "native_api_source_parent": true,
+          "native_api_closed": true,
+          "native_api_hash_matches": true,
+          "requests_unchanged": true,
+          "exact_request_targets": true,
+          "profiles_uncreated": true,
+          "no_candidate_traceback": true,
+          "all_failure_statuses": true,
+          "expected_native_type": true,
+          "no_partial_stdout": true,
+          "original_traceback_witness": true,
+          "exact_native_diagnostic": true,
+          "one_stderr_json": true,
+          "original_native_message": true
+        },
+        "exits": {
+          "parent": 1,
+          "candidate": 1,
+          "native-api": 0
+        },
+        "requests_each": 1
+      },
+      {
+        "case": "auth_401",
+        "accepted": true,
+        "assertions": {
+          "native_api_completed": true,
+          "native_api_source_parent": true,
+          "native_api_closed": true,
+          "native_api_hash_matches": true,
+          "requests_unchanged": true,
+          "exact_request_targets": true,
+          "profiles_uncreated": true,
+          "no_candidate_traceback": true,
+          "all_failure_statuses": true,
+          "expected_native_type": true,
+          "no_partial_stdout": true,
+          "original_traceback_witness": true,
+          "exact_native_diagnostic": true,
+          "one_stderr_json": true,
+          "original_native_message": true
+        },
+        "exits": {
+          "parent": 1,
+          "candidate": 1,
+          "native-api": 0
+        },
+        "requests_each": 1
+      },
+      {
+        "case": "auth_403",
+        "accepted": true,
+        "assertions": {
+          "native_api_completed": true,
+          "native_api_source_parent": true,
+          "native_api_closed": true,
+          "native_api_hash_matches": true,
+          "requests_unchanged": true,
+          "exact_request_targets": true,
+          "profiles_uncreated": true,
+          "no_candidate_traceback": true,
+          "all_failure_statuses": true,
+          "expected_native_type": true,
+          "no_partial_stdout": true,
+          "original_traceback_witness": true,
+          "exact_native_diagnostic": true,
+          "one_stderr_json": true,
+          "original_native_message": true
+        },
+        "exits": {
+          "parent": 1,
+          "candidate": 1,
+          "native-api": 0
+        },
+        "requests_each": 1
+      },
+      {
+        "case": "http_503",
+        "accepted": true,
+        "assertions": {
+          "native_api_completed": true,
+          "native_api_source_parent": true,
+          "native_api_closed": true,
+          "native_api_hash_matches": true,
+          "requests_unchanged": true,
+          "exact_request_targets": true,
+          "profiles_uncreated": true,
+          "no_candidate_traceback": true,
+          "all_failure_statuses": true,
+          "expected_native_type": true,
+          "no_partial_stdout": true,
+          "original_traceback_witness": true,
+          "exact_native_diagnostic": true,
+          "one_stderr_json": true,
+          "original_native_message": true
+        },
+        "exits": {
+          "parent": 1,
+          "candidate": 1,
+          "native-api": 0
+        },
+        "requests_each": 1
+      },
+      {
+        "case": "later_http_503",
+        "accepted": true,
+        "assertions": {
+          "native_api_completed": true,
+          "native_api_source_parent": true,
+          "native_api_closed": true,
+          "native_api_hash_matches": true,
+          "requests_unchanged": true,
+          "exact_request_targets": true,
+          "profiles_uncreated": true,
+          "no_candidate_traceback": true,
+          "all_failure_statuses": true,
+          "expected_native_type": true,
+          "no_partial_stdout": true,
+          "original_traceback_witness": true,
+          "exact_native_diagnostic": true,
+          "one_stderr_json": true,
+          "original_native_message": true
+        },
+        "exits": {
+          "parent": 1,
+          "candidate": 1,
+          "native-api": 0
+        },
+        "requests_each": 2
+      },
+      {
+        "case": "invalid_json",
+        "accepted": true,
+        "assertions": {
+          "native_api_completed": true,
+          "native_api_source_parent": true,
+          "native_api_closed": true,
+          "native_api_hash_matches": true,
+          "requests_unchanged": true,
+          "exact_request_targets": true,
+          "profiles_uncreated": true,
+          "no_candidate_traceback": true,
+          "all_failure_statuses": true,
+          "expected_native_type": true,
+          "no_partial_stdout": true,
+          "original_traceback_witness": true,
+          "exact_native_diagnostic": true,
+          "one_stderr_json": true,
+          "original_native_message": true
+        },
+        "exits": {
+          "parent": 1,
+          "candidate": 1,
+          "native-api": 0
+        },
+        "requests_each": 1
+      },
+      {
+        "case": "later_nonlist",
+        "accepted": true,
+        "assertions": {
+          "native_api_completed": true,
+          "native_api_source_parent": true,
+          "native_api_closed": true,
+          "native_api_hash_matches": true,
+          "requests_unchanged": true,
+          "exact_request_targets": true,
+          "profiles_uncreated": true,
+          "no_candidate_traceback": true,
+          "all_failure_statuses": true,
+          "expected_native_type": true,
+          "no_partial_stdout": true,
+          "original_traceback_witness": true,
+          "exact_native_diagnostic": true,
+          "one_stderr_json": true,
+          "original_native_message": true
+        },
+        "exits": {
+          "parent": 1,
+          "candidate": 1,
+          "native-api": 0
+        },
+        "requests_each": 2
+      },
+      {
+        "case": "closed_response",
+        "accepted": true,
+        "assertions": {
+          "native_api_completed": true,
+          "native_api_source_parent": true,
+          "native_api_closed": true,
+          "native_api_hash_matches": true,
+          "requests_unchanged": true,
+          "exact_request_targets": true,
+          "profiles_uncreated": true,
+          "no_candidate_traceback": true,
+          "all_failure_statuses": true,
+          "expected_native_type": true,
+          "no_partial_stdout": true,
+          "original_traceback_witness": true,
+          "exact_native_diagnostic": true,
+          "one_stderr_json": true,
+          "original_native_message": true
+        },
+        "exits": {
+          "parent": 1,
+          "candidate": 1,
+          "native-api": 0
+        },
+        "requests_each": 1
+      }
+    ],
+    "native_error_serialization": "The pristine API oracle child exits0 after serializing caught native error metadata. Actual parent/candidate refused commands remain exit1; these statuses are not conflated.",
+    "observability_limits": [
+      "client_http_closed directly observes only the pristine native API oracle. Actual console close/logger restoration is supported by source and maintained tests, without independent CLI instrumentation.",
+      "Focused Windows Python3.11.9 synthetic loopback receiving only; no live account, browser, session broker, installed-service adoption, output destination or other-platform qualification.",
+      "No full-repository suite or whole-repository lint pass is inferred. Earlier unrelated failed gates retain their historical status.",
+      "The author's initial original-success receiver expected an invalid boolean attempt to become null; its failed v1 is retained. The authoritative projector omits that field and adds a warning; corrected original v2 precedes production candidate."
+    ],
+    "raw_evidence_availability": "Raw receipts and logs are retained in the native receiving directory. Their calculated Git blob identities identify content; remote Git object availability is not implied."
+  },
+  "static_review": {
+    "status": "ACCEPTED",
+    "reviewer": "dc7255e161d3/estate_runtime",
+    "git_blob": "94b8af4f227e770bf3c048b310f58ccd8bfea8aa",
+    "url": "https://api.github.com/repos/Jacob-Met/canvaspilot/git/blobs/94b8af4f227e770bf3c048b310f58ccd8bfea8aa",
+    "native_byte_inspector": {
+      "pid": 388,
+      "terminal_exit_observed": 0,
+      "tests_rerun": false
+    },
+    "findings": "All three candidate identities match; inverse restores exact original CLI and all26 other product Python files remain unchanged. Full source/test/guide and original/candidate author receipts reviewed without rerun. No blocking finding."
+  }
+}

@@ -509,13 +509,23 @@ def main(argv: list[str] | None = None) -> None:
                 report["cleanup_warning"] = cleanup_warning
             print(json.dumps({"ok": True, "path": str(args.out), **report}, indent=2))
         elif args.cmd == "assignments":
-            print(
-                json.dumps(
-                    api.list_assignments(args.course_id, bucket=args.bucket or None),
-                    indent=2,
-                    default=str,
-                )
-            )
+            import httpx
+
+            from canvaspilot.client import CanvasAuthError, CanvasPaginationError
+
+            http_log = logging.getLogger("httpx")
+            previous_level = http_log.level
+            http_log.setLevel(max(http_log.getEffectiveLevel(), logging.WARNING))
+            try:
+                result = api.list_assignments(args.course_id, bucket=args.bucket or None)
+            except (CanvasAuthError, CanvasPaginationError, httpx.HTTPError) as error:
+                print(json.dumps({
+                    "ok": False, "error": type(error).__name__, "message": str(error),
+                }), file=sys.stderr)
+                raise SystemExit(1) from None
+            finally:
+                http_log.setLevel(previous_level)
+            print(json.dumps(result, indent=2, default=str))
         elif args.cmd == "brief":
             print(
                 json.dumps(
