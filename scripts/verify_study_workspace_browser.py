@@ -140,6 +140,7 @@ class BrowserRun:
             expect(page.locator("#workspace")).to_be_hidden()
             expect(page.locator("#save-copy")).to_be_disabled()
             expect(page.locator("#download-notes")).to_be_disabled()
+            expect(page.locator("#first-unreviewed")).to_be_disabled()
             expect(page.locator("#print-copy")).to_be_disabled()
             expect(page.locator("article.assignment")).to_have_count(0)
         elif refused:
@@ -147,6 +148,7 @@ class BrowserRun:
             expect(page.locator("#workspace")).to_be_hidden()
             expect(page.locator("#save-copy")).to_be_disabled()
             expect(page.locator("#download-notes")).to_be_disabled()
+            expect(page.locator("#first-unreviewed")).to_be_disabled()
             expect(page.locator("#print-copy")).to_be_disabled()
         else:
             expect(page.locator("#workspace")).to_be_visible()
@@ -290,6 +292,43 @@ def exercise(browser, output, receipt):
     assert "```text\n" + maximum_note + "\n```\n" in maximum_markdown
     assert notes_fresh.evaluate(dirty)
     run.passed("markdown_download_literal_notes_order_review_and_working_copy_lifecycle")
+
+    navigation, _ = run.open("remaining-review-navigation", original)
+    remaining = navigation.locator("#first-unreviewed")
+    expect(remaining).to_be_enabled()
+    remaining.focus()
+    remaining.press("Enter")
+    expect(navigation.locator("#assignment-0-title")).to_be_focused()
+    assert not navigation.evaluate(dirty)
+    navigation.locator("#assignment-0-notes").fill("Keep this note while navigating.")
+    navigation.locator("#assignment-0-review").check()
+    navigation.locator("#assignment-2-review").check()
+    before_navigation = navigation.locator("#save-status").text_content()
+    remaining.click()
+    expect(navigation.locator("#assignment-1-title")).to_be_focused()
+    expect(navigation.locator("#assignment-0-notes")).to_have_value(
+        "Keep this note while navigating."
+    )
+    expect(navigation.locator("#assignment-1-review")).not_to_be_checked()
+    assert navigation.locator("#save-status").text_content() == before_navigation
+    assert navigation.evaluate(dirty)
+    navigation.locator("#assignment-1-review").check()
+    expect(remaining).to_be_disabled()
+    expect(navigation.locator("#review-progress")).to_have_text("3 of 3 reviewed locally")
+    reviewed_copy = run.save(navigation, "all-reviewed-working.html")
+    reviewed, _ = run.open("all-reviewed-reopen", reviewed_copy)
+    expect(reviewed.locator("#first-unreviewed")).to_be_disabled()
+    reviewed.locator("#assignment-0-review").uncheck()
+    expect(reviewed.locator("#first-unreviewed")).to_be_enabled()
+    reviewed.locator("#first-unreviewed").press("Space")
+    expect(reviewed.locator("#assignment-0-title")).to_be_focused()
+    expect(reviewed.locator("#assignment-0-review")).not_to_be_checked()
+    expect(reviewed.locator("#assignment-0-notes")).to_have_value(
+        "Keep this note while navigating."
+    )
+    assert reviewed.evaluate(dirty)
+    assert envelope(reviewed_copy.read_bytes())["source"] == source_before
+    run.passed("remaining_review_keyboard_focus_skip_all_reviewed_and_saved_copy")
 
     notes = (
         "Question: Which observation would change my conclusion?\n"
