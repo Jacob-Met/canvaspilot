@@ -1,0 +1,24 @@
+{
+  "schema": "canvaspilot-publication-cleanup-author/1",
+  "base_commit": "29eb015351a4614bd8b09c58a3ef943f4da3caba",
+  "qualification": "Real unchanged writer/module and filesystem execution; canvaspilot.client import is an explicit transport stub. No provider or project dependency integration is qualified.",
+  "baseline": {
+    "run": 7,
+    "failures": 3,
+    "errors": 2,
+    "passed": false,
+    "source_sha256": "b92948c438063438bf9b8ef01b0b0c067802ddb06354f00e8ee18749f3c5e2fa"
+  },
+  "candidate": {
+    "run": 7,
+    "failures": 0,
+    "errors": 0,
+    "passed": true,
+    "source_sha256": "3fbfa8c266d4cc8f03a1339c29c48fab9820e8831c308dbf44e15c1b09f2ea15"
+  },
+  "tests_sha256": "300858ce4be66c767cc8894a6e55d918e54194ff8941d7364027cf4d60af4abb",
+  "cli_sha256": "ff2dbddf91b7cddb456c235aab60a6f2199c33098f4dfdea03087ef780485ca7",
+  "cli_syntax": "parsed",
+  "python": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "success": true
+}
