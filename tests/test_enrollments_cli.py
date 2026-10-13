@@ -66,7 +66,10 @@ class EnrollmentsCLITests(unittest.TestCase):
 
     def run_cli(self, *arguments):
         env = {"PATH": os.defpath, "PYTHONPATH": str(ROOT / "src"),
+               "USERPROFILE": self.work.name,
                "PYTHONDONTWRITEBYTECODE": "1", "PYTHONHASHSEED": "0", "LANG": "C.UTF-8"}
+        if os.name == "nt":
+            env["SystemRoot"] = os.environ["SystemRoot"]
         return subprocess.run(
             [sys.executable, "-B", "-m", "canvaspilot.cli", *arguments,
              "--base-url", self.base, "--token", "synthetic-enrollments-token",

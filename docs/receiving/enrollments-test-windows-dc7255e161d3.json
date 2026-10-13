@@ -1,0 +1,347 @@
+{
+  "schema": "hamon.canvaspilot.enrollment-test-windows-receiving.v1",
+  "owner": "dc7255e161d3/estate_source",
+  "issue": "https://github.com/Jacob-Met/canvaspilot/issues/153",
+  "objective": "Allow the existing enrollment CLI regression suite to reach its unchanged assertions on Windows.",
+  "record_kind": "Observed native summary with exact retained raw receipt identities; raw local receipts are not claimed as independently published Git blobs.",
+  "parent": {
+    "commit": "fcf7a0a0390a13feed00127d8dffc6323baa99b3",
+    "tree": "9ecea08a1940701b5977b6d06ace1527d798dc10",
+    "leaves": 1738
+  },
+  "source": {
+    "path": "tests/test_enrollments_cli.py",
+    "original": {
+      "bytes": 8029,
+      "sha256": "70383f09f020cdb35adc3d69ee94ff3b16522d535e075dc89396622ab15549e5",
+      "git_blob": "44daca51b3896ab1cccf4ff0459233bea5ef3391"
+    },
+    "candidate": {
+      "bytes": 8160,
+      "sha256": "55843049108eb9cf8af8899cf483dd584727f307d81a31d5736912843614c283",
+      "git_blob": "55914d81a7e6f2674f8c15d37d0704d425afe859"
+    },
+    "additions": 3,
+    "deletions": 0,
+    "inverse_recovers_original_bytes": true,
+    "production_edits": false,
+    "preserved_product_python_files": 27
+  },
+  "change": [
+    "Set only the child USERPROFILE to the existing disposable self.work.name directory.",
+    "On Windows only, preserve the actual parent SystemRoot value in the explicitly constructed child environment.",
+    "Keep the existing PATH, PYTHONPATH, bytecode/hash/language settings, subprocess argv/cwd/timeout, fixtures, five method bodies and every assertion exact."
+  ],
+  "environment": {
+    "device": "9ea77fe9-bb87-46e0-a5a8-8b3e25f6ff7e",
+    "platform": "Windows x64",
+    "python": "3.11.9",
+    "pytest": "8.4.2",
+    "ruff": "0.16.10",
+    "httpx": "0.28.1",
+    "mcp": "2.3.0",
+    "root": "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors",
+    "candidate_directory": "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\enrollments-source",
+    "original_directory": "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\enrollments-parent-source",
+    "process_temp": "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\temp",
+    "host_environment_changes": false,
+    "live_accounts": false,
+    "browsers": false
+  },
+  "contract": {
+    "reviewer": "dc7255e161d3/estate_context",
+    "frozen_before_candidate": true,
+    "amendment": "After retained one-key candidate failure, the reviewer accepted only Windows-guarded inheritance of SystemRoot in addition to the disposable USERPROFILE; no wholesale environment copy.",
+    "expected": "All five original methods and their 11 CLI invocations retain success/refusal/request/assertion coverage; no skip, xfail, weakened expectation, Path.home patch or dispatch mock.",
+    "runtime_requirement_source": "https://docs.python.org/3.11/library/subprocess.html#subprocess.Popen",
+    "documentation_limit": "The official environment requirement supports retaining SystemRoot; it does not diagnose the precise observed WinError 10106 internals."
+  },
+  "author_runs": [
+    {
+      "stage": "pristine current parent",
+      "path": "evidence/enrollments-original-checks.json",
+      "bytes": 25483,
+      "sha256": "d356bb85af5de5dd8aed58b518b8d05a9c7dd044224afeb3b3dabf2c9e54ab71",
+      "calculated_git_blob": "b7311f2859a93ba2432d4c9b5781dc0399ceb361",
+      "pytest_exit": 1,
+      "summary": "5 failed in 3.80s",
+      "observed_failure": "RuntimeError: Could not determine home directory.",
+      "wrapper_pid": 33640,
+      "wrapper_exit": 0,
+      "wrapper_exit_observed": true,
+      "wrapper_note": "The evidence driver returned 0 because it observed the expected original failure; the maintained pytest command failed.",
+      "source_bytes_mtimes_preserved": true,
+      "selected_host_env_preserved": true
+    },
+    {
+      "stage": "retained first candidate: USERPROFILE only",
+      "path": "evidence/enrollments-candidate-checks.json",
+      "bytes": 34297,
+      "sha256": "3356acab1c6fd72e118341ffa2b9e749574f700f9dd3ef3548d54e165ea22c4d",
+      "calculated_git_blob": "741c7e006d4839cceeece9d5f58b160b83cf7628",
+      "pytest_exit": 1,
+      "summary": "5 failed in 11.49s",
+      "observed_failure": "OSError: [WinError 10106] while importing asyncio/_overlapped.",
+      "wrapper_pid": 4652,
+      "wrapper_exit": 1,
+      "wrapper_exit_observed": true,
+      "retained_test_copy": "evidence/test_enrollments_cli_candidate_v1.py",
+      "source_bytes_mtimes_preserved": true,
+      "selected_host_env_preserved": true
+    },
+    {
+      "stage": "final candidate: disposable USERPROFILE and Windows SystemRoot",
+      "path": "evidence/enrollments-candidate-v2-checks.json",
+      "bytes": 12355,
+      "sha256": "9d3a50fae65bd90e09fb19f26b49eb26babd2888b381109fb1fc4574e5b983a8",
+      "calculated_git_blob": "ef51040b4458d8a8c4d382dc4de7048ca2269a4f",
+      "pytest_exit": 0,
+      "summary": "5 passed in 51.97s",
+      "focused_ruff_exit": 0,
+      "diff_check_exit": 0,
+      "wrapper_pid": 25640,
+      "wrapper_exit": 0,
+      "wrapper_exit_observed": true,
+      "wrapper_seconds": 55.17,
+      "source_bytes_mtimes_preserved": true,
+      "selected_host_env_preserved": true,
+      "checks": [
+        {
+          "command": [
+            "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\venv\\Scripts\\python.exe",
+            "-B",
+            "-m",
+            "pytest",
+            "-q",
+            "-p",
+            "no:cacheprovider",
+            "--basetemp",
+            "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\temp\\pytest-enrollments-candidate-v2",
+            "tests/test_enrollments_cli.py"
+          ],
+          "exit": 0,
+          "seconds": 53.641,
+          "stdout_sha256": "e2784730ffd7f277ad964351419f220574ab2df671c5c85348510e6e1a4dd43b",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout": ".....                                                                    [100%]\r\n5 passed in 51.97s\r\n",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\venv\\Scripts\\python.exe",
+            "-B",
+            "-m",
+            "ruff",
+            "check",
+            "tests/test_enrollments_cli.py"
+          ],
+          "exit": 0,
+          "seconds": 0.422,
+          "stdout_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout": "All checks passed!\n",
+          "stderr": ""
+        },
+        {
+          "command": [
+            "C:\\Program Files\\Git\\cmd\\git.exe",
+            "diff",
+            "--check"
+          ],
+          "exit": 0,
+          "seconds": 0.093,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout": "",
+          "stderr": ""
+        }
+      ]
+    }
+  ],
+  "evidence_scope": {
+    "author_driver": "evidence/check-enrollments-admission-v2.py",
+    "original_driver": "evidence/check-enrollments-admission.py",
+    "source_freeze": "evidence/enrollments-source-freeze.json",
+    "raw_logs": "The separate .stdout and .stderr files named enrollments-<stage>-check-<index> are retained beside each raw receipt.",
+    "raw_integrity": "Use the recorded SHA-256 against original native bytes. Calculated Git blob identities identify content and do not assert remote object availability.",
+    "earlier_failure_receipts_preserved": true
+  },
+  "independent_review": {
+    "status": "ACCEPTED",
+    "reviewer": "dc7255e161d3/estate_context",
+    "directory": "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\context-enrollments-native-ghtcr12b",
+    "contract": "context-enrollments-expectations-v2.json",
+    "receipt": {
+      "path": "receipt.json",
+      "bytes": 81001,
+      "sha256": "080ed68efa4e6ee8e33fe128c58eff1ad07cbeeed2c64b7dd0e544e38a7a85b8",
+      "calculated_git_blob": "79a9001b27bfd070ade98a13f47331d6d23d7c46"
+    },
+    "review": {
+      "path": "REVIEW-v1.json",
+      "bytes": 4558,
+      "sha256": "29b0dd8764f75aaba3069befaf388e7d4f4482b02560b52c6ef6fc9024960ae4",
+      "calculated_git_blob": "56355c3b8b6da4014259239c4529c726fc0b3800"
+    },
+    "manifest": {
+      "path": "EVIDENCE-MANIFEST-v1.json",
+      "bytes": 5765,
+      "sha256": "2cc5f5aed2603127aef7af69d64d36f3c0baeeae5ab6b4c9a1216f893fa91a11",
+      "calculated_git_blob": "621684609456473096ed263bfe5ef4d548a89828",
+      "payloads": 26,
+      "payload_bytes": 97220
+    },
+    "driver": {
+      "bytes": 8344,
+      "calculated_git_blob": "18edf94a21d847cad792fa07f6e1e903db4048b3"
+    },
+    "native": {
+      "wrapper_pid": 31040,
+      "terminal_exit_observed": 0,
+      "wrapper_seconds": 44.02,
+      "unittest_seconds": 42.86,
+      "methods": 5,
+      "subtests": 8,
+      "actual_cli_child_processes": 11,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "log_files_verified": 22,
+      "log_hash_mismatches": 0,
+      "source_entries_verified": 56,
+      "source_byte_or_mtime_mismatches": 0,
+      "parent_environment_preserved": true,
+      "all_five_temporary_directories_removed": true,
+      "all_five_servers_threads_and_sockets_closed": true
+    },
+    "method": "Load the exact maintained test module and run its unchanged five methods through unittest. An observational wrapper forwards original argv/env unchanged to real subprocess.run, retains all child stdout/stderr and request snapshots, and checks environment/temporary-directory invariants. No CLI/client method, Path.home or command dispatch is mocked.",
+    "child_environment": {
+      "keys": [
+        "PATH",
+        "PYTHONPATH",
+        "PYTHONDONTWRITEBYTECODE",
+        "PYTHONHASHSEED",
+        "LANG",
+        "USERPROFILE",
+        "SystemRoot"
+      ],
+      "observed": "Every child uses its private existing test directory as USERPROFILE and the actual host SystemRoot value; profile remains uncreated before/after; PYTHONPATH selects exact candidate src; the only token is the declared synthetic CLI argument. No inherited Canvas/proxy/HOME/HOMEDRIVE/HOMEPATH key is present.",
+      "parent_scope": "Only this independent receiver's own TMP/TEMP are set to its private D: directory before the parent-environment snapshot. Test code changes no parent environment or host/global configuration."
+    },
+    "methods": [
+      {
+        "id": "independent_enrollments_original_oracle.EnrollmentsCLITests.test_default_empty_and_raw_state_keep_existing_api_semantics",
+        "accepted": true,
+        "temporary_directory_removed": true,
+        "server_socket_closed": true,
+        "server_thread_closed": true
+      },
+      {
+        "id": "independent_enrollments_original_oracle.EnrollmentsCLITests.test_help_and_invalid_options_finish_without_reading_or_opening_a_profile",
+        "accepted": true,
+        "temporary_directory_removed": true,
+        "server_socket_closed": true,
+        "server_thread_closed": true
+      },
+      {
+        "id": "independent_enrollments_original_oracle.EnrollmentsCLITests.test_native_failures_never_print_a_partial_success_collection",
+        "accepted": true,
+        "temporary_directory_removed": true,
+        "server_socket_closed": true,
+        "server_thread_closed": true
+      },
+      {
+        "id": "independent_enrollments_original_oracle.EnrollmentsCLITests.test_state_and_all_reported_fields_survive_native_pagination",
+        "accepted": true,
+        "temporary_directory_removed": true,
+        "server_socket_closed": true,
+        "server_thread_closed": true
+      },
+      {
+        "id": "independent_enrollments_original_oracle.EnrollmentsCLITests.test_unrelated_identity_command_keeps_its_existing_route",
+        "accepted": true,
+        "temporary_directory_removed": true,
+        "server_socket_closed": true,
+        "server_thread_closed": true
+      }
+    ],
+    "subtests": [
+      {
+        "id": "independent_enrollments_original_oracle.EnrollmentsCLITests.test_default_empty_and_raw_state_keep_existing_api_semantics (arguments=())",
+        "accepted": true
+      },
+      {
+        "id": "independent_enrollments_original_oracle.EnrollmentsCLITests.test_default_empty_and_raw_state_keep_existing_api_semantics (arguments=('--state', ''))",
+        "accepted": true
+      },
+      {
+        "id": "independent_enrollments_original_oracle.EnrollmentsCLITests.test_default_empty_and_raw_state_keep_existing_api_semantics (arguments=('--state=',))",
+        "accepted": true
+      },
+      {
+        "id": "independent_enrollments_original_oracle.EnrollmentsCLITests.test_default_empty_and_raw_state_keep_existing_api_semantics (arguments=('--state', 'custom state'))",
+        "accepted": true
+      },
+      {
+        "id": "independent_enrollments_original_oracle.EnrollmentsCLITests.test_help_and_invalid_options_finish_without_reading_or_opening_a_profile (arguments=('--state',))",
+        "accepted": true
+      },
+      {
+        "id": "independent_enrollments_original_oracle.EnrollmentsCLITests.test_help_and_invalid_options_finish_without_reading_or_opening_a_profile (arguments=('--accept',))",
+        "accepted": true
+      },
+      {
+        "id": "independent_enrollments_original_oracle.EnrollmentsCLITests.test_native_failures_never_print_a_partial_success_collection (error_type='CanvasAuthError')",
+        "accepted": true
+      },
+      {
+        "id": "independent_enrollments_original_oracle.EnrollmentsCLITests.test_native_failures_never_print_a_partial_success_collection (error_type='HTTPStatusError')",
+        "accepted": true
+      }
+    ],
+    "received_oracle": [
+      "One paginated collection, preserving all literal and unknown fields plus exact opaque continuation query",
+      "Four default/empty/raw-state variants",
+      "Two expected refused-read cases with no partial success collection",
+      "Help plus two invalid-argument calls with no HTTP or profile",
+      "One unchanged whoami identity route"
+    ],
+    "limitations": [
+      "Focused Windows Python3.11.9 synthetic loopback receiving only.",
+      "No product behavior, authentication, browser, live account, installed-service or dependency change.",
+      "No full-repository suite, whole-repository lint or other-platform pass is inferred.",
+      "Earlier source/gate failures keep their historical status; the new focused success does not relabel them."
+    ]
+  },
+  "limits": [
+    "Focused native Windows test admission only; no full-repository suite or full-repository Ruff claim.",
+    "The earlier four-module broader result of 48 passed / 5 failures remains a historical failed result, not rewritten by this focused pass.",
+    "Seven unrelated pristine-parent Ruff findings in test_calendar_publication_cleanup.py and test_discussion_search.py remain outside this change; full Ruff was not rerun.",
+    "No new Linux/macOS, installed-package adoption, live Canvas account, broker or browser qualification.",
+    "No production or existing consumer-guide behavior changes; the successful test-only correction does not establish new product behavior."
+  ],
+  "publication": {
+    "status": "Pre-publication reviewed-source receiving snapshot.",
+    "no_actions_invocation": true,
+    "workflow_or_dependencies_changed": false,
+    "expected": "Fresh ordinary gates/events, isolated skip-marked source commit, independent full-tree composition and expected-head integration without required-check bypass.",
+    "preflight": {
+      "main": "fcf7a0a0390a13feed00127d8dffc6323baa99b3",
+      "branch_protected": false,
+      "required_checks": "off; contexts/checks empty",
+      "rulesets": [],
+      "latest_all_event_run": "2026-10-11T07:44:47Z",
+      "workflow_blobs": {
+        "ci": "ef7bbebe192c0db55dc4467e064ba44805c13446",
+        "agenda": "a06b862c23dccc61d5da9eea99d82b76668f78c8"
+      },
+      "recent_paths": [
+        ".github/workflows/ci.yml",
+        ".github/workflows/agenda-view-browser.yml",
+        "dynamic/dependabot/dependabot-updates",
+        "dynamic/dependabot/update-graph"
+      ],
+      "no_dynamic_pages_observed": true
+    }
+  }
+}
