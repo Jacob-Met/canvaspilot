@@ -76,6 +76,12 @@ canvaspilot submission-history <course_id> <assignment_id>
 canvaspilot grade-review <course_id>
 ```
 
+`canvaspilot whoami` writes its existing `mode`, `base_url` and native `profile`
+values to stdout on a successful read and exits 0. Expected authentication, HTTP
+or malformed-JSON read failures exit 1 with one JSON error on stderr and no
+identity result. See [identity read error handling](docs/whoami-cli.md) for
+diagnostic fields, text/null responses and the existing setup guidance.
+
 On a successful read, `canvaspilot courses` writes the complete active-course
 list to stdout and exits 0. Expected authentication, HTTP or pagination failures
 exit 1 with one JSON error on stderr and no partial course list. See
