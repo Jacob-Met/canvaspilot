@@ -199,6 +199,10 @@ selection, source, and note-saving boundaries.
 canvaspilot mcp          # stdio
 ```
 
+The [MCP launch-options guide](docs/mcp-launch-options.md) covers `--base-url`,
+`--profile` and `--token`, environment defaults, and the client lifetime for one
+server invocation.
+
 Cursor / Claude Desktop / any MCP client:
 
 ```json
