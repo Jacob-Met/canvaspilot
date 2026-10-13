@@ -191,6 +191,7 @@
         view.reviewState.textContent = yes ? "My review marker: reviewed locally." : "My review marker: not reviewed locally.";
       }
       $("review-progress").textContent = reviewed + " of " + source.assignments.length + " reviewed locally";
+      $("first-unreviewed").disabled = reviewed === source.assignments.length;
     }
     function changed() {
       changedSinceDownload = true;
@@ -210,7 +211,7 @@
       const article = element("article", undefined, "assignment");article.id = sectionId;
       article.setAttribute("aria-labelledby", sectionId + "-title");
       article.append(element("p", "Assignment " + brief.assignment_id, "eyebrow"));
-      const heading = element("h2", title);heading.id = sectionId + "-title";article.append(heading);
+      const heading = element("h2", title);heading.id = sectionId + "-title";heading.tabIndex = -1;article.append(heading);
       const metadata = element("div", undefined, "assignment-meta");
       metadata.append(element("span", "Due (reported): " + (text(brief.due_at) || "not supplied")));
       const points = pointLabel(brief.points_possible);
@@ -253,6 +254,10 @@
     $("download-notes").disabled = false;
     $("print-copy").disabled = false;
     $("print-copy").addEventListener("click", () => window.print());
+    $("first-unreviewed").addEventListener("click", () => {
+      const index = source.assignments.findIndex((item) => !state.assignments[item.key].reviewed);
+      if (index !== -1) $("assignment-" + index + "-title").focus();
+    });
     $("download-notes").addEventListener("click", () => {
       let url = null;
       let link = null;
@@ -286,6 +291,7 @@
         copy.querySelector("#error").hidden = true;
         copy.querySelector("#save-copy").disabled = true;
         copy.querySelector("#download-notes").disabled = true;
+        copy.querySelector("#first-unreviewed").disabled = true;
         copy.querySelector("#print-copy").disabled = true;
         copy.querySelector("#selection-summary").textContent = "Opening snapshot…";
         copy.querySelector("#save-status").textContent = "Edits stay in this tab until you save a working copy.";
@@ -313,6 +319,7 @@
     $("workspace").hidden = true;
     $("save-copy").disabled = true;
     $("download-notes").disabled = true;
+    $("first-unreviewed").disabled = true;
     $("print-copy").disabled = true;
     $("error").textContent = error.message || "This workspace could not be opened. The file has not been changed.";
     $("error").hidden = false;

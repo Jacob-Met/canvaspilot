@@ -58,6 +58,21 @@ Treat it as your own local document when copying or sharing it. Opening a newer
 Canvas export does not automatically move notes to it: notes are bound to their
 exact original snapshot, course, and assignment IDs.
 
+## Continue the remaining review
+
+Use **Go to first unreviewed** beside the assignment navigation to move to the
+first assignment you have not marked reviewed, in your selected order. Keyboard
+users can activate the button with Enter or Space; focus moves to that
+assignment's title, ready to continue through its links and notes with Tab.
+
+Mark the assignment reviewed yourself when you are ready. The action uses your
+current checkboxes each time and becomes unavailable when all selected
+assignments are marked reviewed. Unchecking an assignment makes it available
+again. Reopening a saved working copy uses its retained review markers.
+
+Navigation preserves your notes, review markers, and unsaved-working-copy status.
+The checkboxes remain local study markers; they do not report Canvas completion.
+
 ## Download your notes as Markdown
 
 Select **Download notes** to download a `.md` document with each selected
