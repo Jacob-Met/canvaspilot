@@ -1,0 +1,425 @@
+{
+  "receiver": "independent_canvaspilot_export_cleanup_v1",
+  "checks_passed": 554,
+  "revisions": [
+    "b257cdda1fbb4358d79cbefb5641b5db86b445f5",
+    "detached-blobs-9e4c05c8-6bf38ebf"
+  ],
+  "environment": {
+    "host": "Mac.lan",
+    "uid": 501,
+    "python": "3.13.7",
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O"
+  },
+  "events": [
+    {
+      "case": "before:cleanup-only",
+      "published": true,
+      "raised": "PermissionError",
+      "warning": false
+    },
+    {
+      "case": "before:primary-link",
+      "raised": "PermissionError",
+      "published": false
+    },
+    {
+      "case": "before:primary-fsync",
+      "raised": "PermissionError",
+      "published": false
+    },
+    {
+      "case": "before:primary-write",
+      "raised": "PermissionError",
+      "published": false
+    },
+    {
+      "case": "before:primary-cancel",
+      "raised": "PermissionError",
+      "published": false
+    },
+    {
+      "case": "before:close-primary",
+      "raised": "PermissionError",
+      "original_primary_preserved": false
+    },
+    {
+      "case": "before:write-before-close",
+      "raised": "PermissionError",
+      "original_primary_preserved": false
+    },
+    {
+      "case": "before:export-calendar:normal",
+      "exit": 0,
+      "ok": true,
+      "output_entry_exists": true,
+      "export_published": true,
+      "warning": false
+    },
+    {
+      "case": "before:export-calendar:cleanup",
+      "exit": 1,
+      "ok": false,
+      "output_entry_exists": true,
+      "export_published": true,
+      "warning": false
+    },
+    {
+      "case": "before:export-calendar:link-failure",
+      "exit": 1,
+      "ok": false,
+      "output_entry_exists": false,
+      "export_published": false,
+      "warning": false
+    },
+    {
+      "case": "before:export-calendar:existing",
+      "exit": 1,
+      "ok": false,
+      "output_entry_exists": true,
+      "export_published": false,
+      "warning": false
+    },
+    {
+      "case": "before:export-calendar:dangling",
+      "exit": 1,
+      "ok": false,
+      "output_entry_exists": true,
+      "export_published": false,
+      "warning": false
+    },
+    {
+      "case": "before:export-calendar:race",
+      "exit": 1,
+      "ok": false,
+      "output_entry_exists": true,
+      "export_published": false,
+      "warning": false
+    },
+    {
+      "case": "before:export-calendar:race-cleanup",
+      "exit": 1,
+      "ok": false,
+      "output_entry_exists": true,
+      "export_published": false,
+      "warning": false
+    },
+    {
+      "case": "before:export-grade-review:normal",
+      "exit": 0,
+      "ok": true,
+      "output_entry_exists": true,
+      "export_published": true,
+      "warning": false
+    },
+    {
+      "case": "before:export-grade-review:cleanup",
+      "exit": 1,
+      "ok": false,
+      "output_entry_exists": true,
+      "export_published": true,
+      "warning": false
+    },
+    {
+      "case": "before:export-grade-review:link-failure",
+      "exit": 1,
+      "ok": false,
+      "output_entry_exists": false,
+      "export_published": false,
+      "warning": false
+    },
+    {
+      "case": "before:export-grade-review:existing",
+      "exit": 1,
+      "ok": false,
+      "output_entry_exists": true,
+      "export_published": false,
+      "warning": false
+    },
+    {
+      "case": "before:export-grade-review:dangling",
+      "exit": 1,
+      "ok": false,
+      "output_entry_exists": true,
+      "export_published": false,
+      "warning": false
+    },
+    {
+      "case": "before:export-grade-review:race",
+      "exit": 1,
+      "ok": false,
+      "output_entry_exists": true,
+      "export_published": false,
+      "warning": false
+    },
+    {
+      "case": "before:export-grade-review:race-cleanup",
+      "exit": 1,
+      "ok": false,
+      "output_entry_exists": true,
+      "export_published": false,
+      "warning": false
+    },
+    {
+      "case": "before:export-module-progress:normal",
+      "exit": 0,
+      "ok": true,
+      "output_entry_exists": true,
+      "export_published": true,
+      "warning": false
+    },
+    {
+      "case": "before:export-module-progress:cleanup",
+      "exit": 1,
+      "ok": false,
+      "output_entry_exists": true,
+      "export_published": true,
+      "warning": false
+    },
+    {
+      "case": "before:export-module-progress:link-failure",
+      "exit": 1,
+      "ok": false,
+      "output_entry_exists": false,
+      "export_published": false,
+      "warning": false
+    },
+    {
+      "case": "before:export-module-progress:existing",
+      "exit": 1,
+      "ok": false,
+      "output_entry_exists": true,
+      "export_published": false,
+      "warning": false
+    },
+    {
+      "case": "before:export-module-progress:dangling",
+      "exit": 1,
+      "ok": false,
+      "output_entry_exists": true,
+      "export_published": false,
+      "warning": false
+    },
+    {
+      "case": "before:export-module-progress:race",
+      "exit": 1,
+      "ok": false,
+      "output_entry_exists": true,
+      "export_published": false,
+      "warning": false
+    },
+    {
+      "case": "before:export-module-progress:race-cleanup",
+      "exit": 1,
+      "ok": false,
+      "output_entry_exists": true,
+      "export_published": false,
+      "warning": false
+    },
+    {
+      "case": "after:cleanup-only",
+      "published": true,
+      "raised": null,
+      "warning": true
+    },
+    {
+      "case": "after:primary-link",
+      "raised": "OSError",
+      "published": false
+    },
+    {
+      "case": "after:primary-fsync",
+      "raised": "OSError",
+      "published": false
+    },
+    {
+      "case": "after:primary-write",
+      "raised": "TypeError",
+      "published": false
+    },
+    {
+      "case": "after:primary-cancel",
+      "raised": "KeyboardInterrupt",
+      "published": false
+    },
+    {
+      "case": "after:close-primary",
+      "raised": "OSError",
+      "original_primary_preserved": true
+    },
+    {
+      "case": "after:write-before-close",
+      "raised": "OSError",
+      "original_primary_preserved": true
+    },
+    {
+      "case": "after:export-calendar:normal",
+      "exit": 0,
+      "ok": true,
+      "output_entry_exists": true,
+      "export_published": true,
+      "warning": false
+    },
+    {
+      "case": "after:export-calendar:cleanup",
+      "exit": 0,
+      "ok": true,
+      "output_entry_exists": true,
+      "export_published": true,
+      "warning": true
+    },
+    {
+      "case": "after:export-calendar:link-failure",
+      "exit": 1,
+      "ok": false,
+      "output_entry_exists": false,
+      "export_published": false,
+      "warning": false
+    },
+    {
+      "case": "after:export-calendar:existing",
+      "exit": 1,
+      "ok": false,
+      "output_entry_exists": true,
+      "export_published": false,
+      "warning": false
+    },
+    {
+      "case": "after:export-calendar:dangling",
+      "exit": 1,
+      "ok": false,
+      "output_entry_exists": true,
+      "export_published": false,
+      "warning": false
+    },
+    {
+      "case": "after:export-calendar:race",
+      "exit": 1,
+      "ok": false,
+      "output_entry_exists": true,
+      "export_published": false,
+      "warning": false
+    },
+    {
+      "case": "after:export-calendar:race-cleanup",
+      "exit": 1,
+      "ok": false,
+      "output_entry_exists": true,
+      "export_published": false,
+      "warning": false
+    },
+    {
+      "case": "after:export-grade-review:normal",
+      "exit": 0,
+      "ok": true,
+      "output_entry_exists": true,
+      "export_published": true,
+      "warning": false
+    },
+    {
+      "case": "after:export-grade-review:cleanup",
+      "exit": 0,
+      "ok": true,
+      "output_entry_exists": true,
+      "export_published": true,
+      "warning": true
+    },
+    {
+      "case": "after:export-grade-review:link-failure",
+      "exit": 1,
+      "ok": false,
+      "output_entry_exists": false,
+      "export_published": false,
+      "warning": false
+    },
+    {
+      "case": "after:export-grade-review:existing",
+      "exit": 1,
+      "ok": false,
+      "output_entry_exists": true,
+      "export_published": false,
+      "warning": false
+    },
+    {
+      "case": "after:export-grade-review:dangling",
+      "exit": 1,
+      "ok": false,
+      "output_entry_exists": true,
+      "export_published": false,
+      "warning": false
+    },
+    {
+      "case": "after:export-grade-review:race",
+      "exit": 1,
+      "ok": false,
+      "output_entry_exists": true,
+      "export_published": false,
+      "warning": false
+    },
+    {
+      "case": "after:export-grade-review:race-cleanup",
+      "exit": 1,
+      "ok": false,
+      "output_entry_exists": true,
+      "export_published": false,
+      "warning": false
+    },
+    {
+      "case": "after:export-module-progress:normal",
+      "exit": 0,
+      "ok": true,
+      "output_entry_exists": true,
+      "export_published": true,
+      "warning": false
+    },
+    {
+      "case": "after:export-module-progress:cleanup",
+      "exit": 0,
+      "ok": true,
+      "output_entry_exists": true,
+      "export_published": true,
+      "warning": true
+    },
+    {
+      "case": "after:export-module-progress:link-failure",
+      "exit": 1,
+      "ok": false,
+      "output_entry_exists": false,
+      "export_published": false,
+      "warning": false
+    },
+    {
+      "case": "after:export-module-progress:existing",
+      "exit": 1,
+      "ok": false,
+      "output_entry_exists": true,
+      "export_published": false,
+      "warning": false
+    },
+    {
+      "case": "after:export-module-progress:dangling",
+      "exit": 1,
+      "ok": false,
+      "output_entry_exists": true,
+      "export_published": false,
+      "warning": false
+    },
+    {
+      "case": "after:export-module-progress:race",
+      "exit": 1,
+      "ok": false,
+      "output_entry_exists": true,
+      "export_published": false,
+      "warning": false
+    },
+    {
+      "case": "after:export-module-progress:race-cleanup",
+      "exit": 1,
+      "ok": false,
+      "output_entry_exists": true,
+      "export_published": false,
+      "warning": false
+    }
+  ],
+  "scope": "Exact helper, CLI and real renderers; transport fixture only; no live Canvas or installed app mutation"
+}

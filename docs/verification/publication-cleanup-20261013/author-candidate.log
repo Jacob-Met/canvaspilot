@@ -1,0 +1,12 @@
+test_close_failure_remains_primary_and_prevents_publication (publication_tests_candidate.CalendarPublicationCleanupTests.test_close_failure_remains_primary_and_prevents_publication) ... ok
+test_existing_file_and_dangling_symlink_are_preserved (publication_tests_candidate.CalendarPublicationCleanupTests.test_existing_file_and_dangling_symlink_are_preserved) ... ok
+test_fsync_failure_prevents_publication_and_cleans_staging (publication_tests_candidate.CalendarPublicationCleanupTests.test_fsync_failure_prevents_publication_and_cleans_staging) ... ok
+test_link_failure_remains_primary_when_staging_cleanup_also_fails (publication_tests_candidate.CalendarPublicationCleanupTests.test_link_failure_remains_primary_when_staging_cleanup_also_fails) ... ok
+test_success_returns_no_warning_and_cleans_staging (publication_tests_candidate.CalendarPublicationCleanupTests.test_success_returns_no_warning_and_cleans_staging) ... ok
+test_successful_publication_with_cleanup_failure_returns_warning (publication_tests_candidate.CalendarPublicationCleanupTests.test_successful_publication_with_cleanup_failure_returns_warning) ... ok
+test_write_failure_or_interruption_survives_failed_close_and_unlink (publication_tests_candidate.CalendarPublicationCleanupTests.test_write_failure_or_interruption_survives_failed_close_and_unlink) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.005s
+
+OK

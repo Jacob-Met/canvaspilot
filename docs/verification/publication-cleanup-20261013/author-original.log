@@ -1,0 +1,111 @@
+test_close_failure_remains_primary_and_prevents_publication (publication_tests_baseline.CalendarPublicationCleanupTests.test_close_failure_remains_primary_and_prevents_publication) ... FAIL
+test_existing_file_and_dangling_symlink_are_preserved (publication_tests_baseline.CalendarPublicationCleanupTests.test_existing_file_and_dangling_symlink_are_preserved) ... ok
+test_fsync_failure_prevents_publication_and_cleans_staging (publication_tests_baseline.CalendarPublicationCleanupTests.test_fsync_failure_prevents_publication_and_cleans_staging) ... ok
+test_link_failure_remains_primary_when_staging_cleanup_also_fails (publication_tests_baseline.CalendarPublicationCleanupTests.test_link_failure_remains_primary_when_staging_cleanup_also_fails) ... FAIL
+test_success_returns_no_warning_and_cleans_staging (publication_tests_baseline.CalendarPublicationCleanupTests.test_success_returns_no_warning_and_cleans_staging) ... ok
+test_successful_publication_with_cleanup_failure_returns_warning (publication_tests_baseline.CalendarPublicationCleanupTests.test_successful_publication_with_cleanup_failure_returns_warning) ... ERROR
+test_write_failure_or_interruption_survives_failed_close_and_unlink (publication_tests_baseline.CalendarPublicationCleanupTests.test_write_failure_or_interruption_survives_failed_close_and_unlink) ... 
+  test_write_failure_or_interruption_survives_failed_close_and_unlink (publication_tests_baseline.CalendarPublicationCleanupTests.test_write_failure_or_interruption_survives_failed_close_and_unlink) (error='OSError') ... FAIL
+  test_write_failure_or_interruption_survives_failed_close_and_unlink (publication_tests_baseline.CalendarPublicationCleanupTests.test_write_failure_or_interruption_survives_failed_close_and_unlink) (error='KeyboardInterrupt') ... ERROR
+
+======================================================================
+ERROR: test_successful_publication_with_cleanup_failure_returns_warning (publication_tests_baseline.CalendarPublicationCleanupTests.test_successful_publication_with_cleanup_failure_returns_warning)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/source-delivery-canvas-cleanup-mt073k_u/baseline/test_calendar_publication_cleanup.py", line 87, in test_successful_publication_with_cleanup_failure_returns_warning
+    warning = calendar_export.write_calendar(self.output, self.content)
+  File "/private/tmp/source-delivery-canvas-cleanup-mt073k_u/baseline/canvaspilot/calendar_export.py", line 235, in write_calendar
+    temporary.unlink()
+    ~~~~~~~~~~~~~~~~^^
+  File "<string>", line 3, in unlink
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/unittest/mock.py", line 1169, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/unittest/mock.py", line 1173, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/unittest/mock.py", line 1234, in _execute_mock_call
+    result = effect(*args, **kwargs)
+  File "/private/tmp/source-delivery-canvas-cleanup-mt073k_u/baseline/test_calendar_publication_cleanup.py", line 57, in deny_staging_cleanup
+    raise PermissionError("synthetic staging cleanup denial")
+PermissionError: synthetic staging cleanup denial
+
+======================================================================
+ERROR: test_write_failure_or_interruption_survives_failed_close_and_unlink (publication_tests_baseline.CalendarPublicationCleanupTests.test_write_failure_or_interruption_survives_failed_close_and_unlink) (error='KeyboardInterrupt')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/source-delivery-canvas-cleanup-mt073k_u/baseline/canvaspilot/calendar_export.py", line 229, in write_calendar
+    handle.write(content)
+    ~~~~~~~~~~~~^^^^^^^^^
+  File "/private/tmp/source-delivery-canvas-cleanup-mt073k_u/baseline/test_calendar_publication_cleanup.py", line 30, in write
+    raise self.write_error
+KeyboardInterrupt: synthetic cancellation
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/private/tmp/source-delivery-canvas-cleanup-mt073k_u/baseline/canvaspilot/calendar_export.py", line 226, in write_calendar
+    with tempfile.NamedTemporaryFile(prefix="." + path.name + ".", suffix=".tmp",
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                     dir=path.parent, delete=False) as handle:
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/source-delivery-canvas-cleanup-mt073k_u/baseline/test_calendar_publication_cleanup.py", line 26, in __exit__
+    self.close()
+    ~~~~~~~~~~^^
+  File "/private/tmp/source-delivery-canvas-cleanup-mt073k_u/baseline/test_calendar_publication_cleanup.py", line 42, in close
+    raise self.close_error
+OSError: secondary close failure
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/private/tmp/source-delivery-canvas-cleanup-mt073k_u/baseline/test_calendar_publication_cleanup.py", line 145, in test_write_failure_or_interruption_survives_failed_close_and_unlink
+    calendar_export.write_calendar(self.output, self.content)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/source-delivery-canvas-cleanup-mt073k_u/baseline/canvaspilot/calendar_export.py", line 235, in write_calendar
+    temporary.unlink()
+    ~~~~~~~~~~~~~~~~^^
+  File "<string>", line 3, in unlink
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/unittest/mock.py", line 1169, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/unittest/mock.py", line 1173, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/unittest/mock.py", line 1234, in _execute_mock_call
+    result = effect(*args, **kwargs)
+  File "/private/tmp/source-delivery-canvas-cleanup-mt073k_u/baseline/test_calendar_publication_cleanup.py", line 57, in deny_staging_cleanup
+    raise PermissionError("synthetic staging cleanup denial")
+PermissionError: synthetic staging cleanup denial
+
+======================================================================
+FAIL: test_close_failure_remains_primary_and_prevents_publication (publication_tests_baseline.CalendarPublicationCleanupTests.test_close_failure_remains_primary_and_prevents_publication)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/source-delivery-canvas-cleanup-mt073k_u/baseline/test_calendar_publication_cleanup.py", line 127, in test_close_failure_remains_primary_and_prevents_publication
+    self.assertIs(result.exception, primary)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: PermissionError('synthetic staging cleanup denial') is not OSError('synthetic close failure')
+
+======================================================================
+FAIL: test_link_failure_remains_primary_when_staging_cleanup_also_fails (publication_tests_baseline.CalendarPublicationCleanupTests.test_link_failure_remains_primary_when_staging_cleanup_also_fails)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/source-delivery-canvas-cleanup-mt073k_u/baseline/test_calendar_publication_cleanup.py", line 102, in test_link_failure_remains_primary_when_staging_cleanup_also_fails
+    self.assertIs(result.exception, primary)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: PermissionError('synthetic staging cleanup denial') is not PermissionError('synthetic link denial')
+
+======================================================================
+FAIL: test_write_failure_or_interruption_survives_failed_close_and_unlink (publication_tests_baseline.CalendarPublicationCleanupTests.test_write_failure_or_interruption_survives_failed_close_and_unlink) (error='OSError')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/source-delivery-canvas-cleanup-mt073k_u/baseline/test_calendar_publication_cleanup.py", line 146, in test_write_failure_or_interruption_survives_failed_close_and_unlink
+    self.assertIs(result.exception, primary)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: PermissionError('synthetic staging cleanup denial') is not OSError('synthetic write failure')
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.008s
+
+FAILED (failures=3, errors=2)
