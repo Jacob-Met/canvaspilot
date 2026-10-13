@@ -214,8 +214,14 @@ class CanvasClient:
 
         http = self._ensure_http()
         params = _with_per_page(params)
-        url = path
-        r = http.request(method.upper(), url, params=params, json=json_body, data=data)
+        # HTTPX params= replaces an embedded query. Append encoded fields as
+        # the broker and paginator do, retaining original duplicates and bytes.
+        url = httpx.URL(path)
+        query = str(httpx.QueryParams(params)).encode("ascii")
+        # With no query fields on either side, retain HTTPX's empty-query marker.
+        if query or not url.query:
+            url = url.copy_with(query=url.query + (b"&" if url.query else b"") + query)
+        r = http.request(method.upper(), url, json=json_body, data=data)
         if r.status_code in (401, 403):
             raise CanvasAuthError(
                 f"Canvas auth failed ({r.status_code}) for {method} {path}. "
