@@ -341,7 +341,11 @@ def main(argv: list[str] | None = None) -> None:
     if args.cmd == "mcp":
         from canvaspilot.mcp_server import main as mcp_main
 
-        mcp_main()
+        mcp_main(
+            base_url=args.base_url,
+            token=args.token,
+            profile=Path(args.profile) if args.profile else None,
+        )
         return
 
     if args.cmd == "find-discussions":
