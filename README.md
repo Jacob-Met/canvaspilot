@@ -88,6 +88,13 @@ exit 1 with one JSON error on stderr and no partial course list. See
 [course-list error handling](docs/courses-cli.md) for diagnostic fields and the
 existing setup guidance.
 
+A completed `canvaspilot assignments <course_id>` read writes the selected
+course's compact assignment list to stdout and exits 0. The default bucket is
+`upcoming`; `--bucket=` removes that filter. Expected authentication, HTTP or
+pagination failures exit 1 with one JSON error on stderr and no partial list.
+See [assignment-list error handling](docs/assignments-cli.md) for filter,
+submission and diagnostic details.
+
 `canvaspilot sync` orders upcoming assignments by deadline across the selected
 courses. It includes up to 10 courses and 5 assignments per course by default,
 and reports omitted rows, unknown dates, and per-course read failures. Adjust
