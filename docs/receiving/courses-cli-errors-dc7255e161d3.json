@@ -1,0 +1,825 @@
+{
+  "schema": "canvaspilot.courses-cli-errors.receiving.v1",
+  "owner": "dc7255e161d3/estate_source",
+  "issue": "https://github.com/Jacob-Met/canvaspilot/issues/145",
+  "objective": "Return an actionable JSON diagnostic for expected courses CLI read failures while preserving complete successful output.",
+  "parent": "8479a462bfc4e5f080c1b4d3ca231dca9dc7bf68",
+  "files": {
+    "src/canvaspilot/cli.py": {
+      "bytes": 43694,
+      "sha256": "55c4065c9b522384357c672ef227b4e6cad3ebf9d5468f3269cf81a80b3f3c67",
+      "git_blob": "c459c9b9b41b368b35c4c2c8e687d079fbefe753"
+    },
+    "tests/test_courses_cli_errors.py": {
+      "bytes": 7738,
+      "sha256": "2c993d750033a501aac17302af9261ca9eb947403e52de707147589c4d6c82b8",
+      "git_blob": "8f6e2c342f11ebc870dfb2515e66237ff60ab12c"
+    },
+    "docs/courses-cli.md": {
+      "bytes": 2004,
+      "sha256": "a1377cefd16b60f95f5800833748d8f4af5943240f231c4b96344c06a71cea1a",
+      "git_blob": "c09e201898cbda9b74715a8b9f6c801982cb7854"
+    }
+  },
+  "production_scope": {
+    "changed": "Only the courses branch of src/canvaspilot/cli.py",
+    "caught": [
+      "CanvasAuthError",
+      "CanvasPaginationError",
+      "httpx.HTTPError"
+    ],
+    "expected_failure": {
+      "status": 1,
+      "stdout": "",
+      "stderr": "one JSON object with ok=false, native exception class and native message"
+    },
+    "success": "Exact original stdout bytes/status/order/fields retained; complete list assigned before printing.",
+    "logging": "Suppress HTTPX INFO only during the read; restore actual prior logger.level in finally.",
+    "unchanged": [
+      "API/client source",
+      "transport/authentication/pagination/request behavior",
+      "other CLI commands",
+      "client lifetime",
+      "dependencies",
+      "workflows"
+    ],
+    "limits": [
+      "Unrelated ValueError/programming errors still propagate.",
+      "stdout/stderr destination failures are not qualified.",
+      "No automatic retries, fabricated empty successes or partial lists."
+    ],
+    "exact_inverse_recovers_original_cli": true
+  },
+  "environment": {
+    "device_id": "9ea77fe9-bb87-46e0-a5a8-8b3e25f6ff7e",
+    "platform": "Windows x64",
+    "python": "3.11.9",
+    "entrypoint": "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\venv\\Scripts\\canvaspilot.exe",
+    "versions": {
+      "canvaspilot": "0.1.1",
+      "httpx": "0.28.1",
+      "mcp": "2.3.0",
+      "pytest": "8.4.2",
+      "ruff": "0.16.10"
+    },
+    "root": "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors",
+    "local_only": true,
+    "scope": "Actual editable-package console entrypoint and real HTTPX over disposable synthetic loopback servers; no account, real broker, browser or profile used."
+  },
+  "native_original": {
+    "receipt": "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\evidence\\baseline-courses.json",
+    "sha256": "2be332ac1abd5ff124fe61781bbfc5b95276977ef2d51fe895542ac2b29cbd87",
+    "cases": 9,
+    "success_controls": 2,
+    "raw_traceback_failures": 7,
+    "wrapper_exit": 0,
+    "pid": 28660,
+    "source_preserved": true,
+    "profiles_absent": true
+  },
+  "maintained_original": {
+    "receipt": "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\evidence\\original-maintained-tests.json",
+    "sha256": "c67594405114eadf1de33b91e49223de4e0f7d34d61be8cdc09071b4cf248db9",
+    "passed": 8,
+    "failed": 10,
+    "pytest_exit": 1,
+    "wrapper_exit": 0,
+    "scope": "Same new maintained tests on original production source before candidate edit."
+  },
+  "native_candidate": {
+    "receipt": "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\evidence\\candidate-courses-v2.json",
+    "sha256": "6b76485e9ffd3782bc93e8c5b3d8a0ee81b666ab29ffe62e22079dbf5aeeb01b",
+    "all_nine_native_cases_accepted": true,
+    "cases": [
+      {
+        "case": "success",
+        "command": [
+          "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\venv\\Scripts\\canvaspilot.exe",
+          "courses",
+          "--base-url",
+          "http://127.0.0.1:56774",
+          "--profile",
+          "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\temp\\uncreated-profile",
+          "--token",
+          "synthetic-offline-token"
+        ],
+        "returncode": 0,
+        "stdout": "[\r\n  {\r\n    \"id\": 42,\r\n    \"name\": \"Synthetic course one\",\r\n    \"course_code\": \"SYN-1\",\r\n    \"enrollment_term_id\": 0,\r\n    \"term\": \"Synthetic term\"\r\n  },\r\n  {\r\n    \"id\": 43,\r\n    \"name\": \"Synthetic course two\",\r\n    \"course_code\": \"\",\r\n    \"enrollment_term_id\": null,\r\n    \"term\": null\r\n  }\r\n]\r\n",
+        "stdout_sha256": "e1c3805b4943e8ea505a3dce20c526a75a3c372822b7a978bf3278bd7b03c95a",
+        "stderr": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "requests": [
+          {
+            "method": "GET",
+            "path": "/api/v1/courses",
+            "query": {
+              "enrollment_state": [
+                "active"
+              ],
+              "include[]": [
+                "term",
+                "total_scores"
+              ],
+              "per_page": [
+                "50"
+              ]
+            },
+            "synthetic_token": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/v1/courses",
+            "query": {
+              "page": [
+                "2"
+              ]
+            },
+            "synthetic_token": true
+          }
+        ],
+        "seconds": 1.562000000034459,
+        "profile_not_created": true,
+        "original_stdout_status_parity": true
+      },
+      {
+        "case": "empty",
+        "command": [
+          "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\venv\\Scripts\\canvaspilot.exe",
+          "courses",
+          "--base-url",
+          "http://127.0.0.1:56777",
+          "--profile",
+          "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\temp\\uncreated-profile",
+          "--token",
+          "synthetic-offline-token"
+        ],
+        "returncode": 0,
+        "stdout": "[]\r\n",
+        "stdout_sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+        "stderr": "",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "requests": [
+          {
+            "method": "GET",
+            "path": "/api/v1/courses",
+            "query": {
+              "enrollment_state": [
+                "active"
+              ],
+              "include[]": [
+                "term",
+                "total_scores"
+              ],
+              "per_page": [
+                "50"
+              ]
+            },
+            "synthetic_token": true
+          }
+        ],
+        "seconds": 1.4849999999860302,
+        "profile_not_created": true,
+        "original_stdout_status_parity": true
+      },
+      {
+        "case": "missing_setup",
+        "command": [
+          "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\venv\\Scripts\\canvaspilot.exe",
+          "courses",
+          "--base-url",
+          "http://127.0.0.1:56779",
+          "--profile",
+          "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\temp\\uncreated-profile"
+        ],
+        "returncode": 1,
+        "stdout": "",
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr": "{\"ok\": false, \"error\": \"CanvasAuthError\", \"message\": \"No session broker running and no CANVAS_API_TOKEN. Start: canvaspilot session start\"}\r\n",
+        "stderr_sha256": "9dd0ea7e8581696655f5564c9ff6eae6725857a6d12cd4146265fe2d9b1b7131",
+        "requests": [
+          {
+            "method": "GET",
+            "path": "/health",
+            "query": {},
+            "synthetic_token": false
+          }
+        ],
+        "seconds": 1.4679999999934807,
+        "profile_not_created": true,
+        "native_original_error_parity": true
+      },
+      {
+        "case": "auth_401",
+        "command": [
+          "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\venv\\Scripts\\canvaspilot.exe",
+          "courses",
+          "--base-url",
+          "http://127.0.0.1:56781",
+          "--profile",
+          "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\temp\\uncreated-profile",
+          "--token",
+          "synthetic-offline-token"
+        ],
+        "returncode": 1,
+        "stdout": "",
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr": "{\"ok\": false, \"error\": \"CanvasAuthError\", \"message\": \"Canvas auth failed (401)\"}\r\n",
+        "stderr_sha256": "a0780eca001380eef81fdd5677665070c70140ad5a4529bc6e72a7cd6b759991",
+        "requests": [
+          {
+            "method": "GET",
+            "path": "/api/v1/courses",
+            "query": {
+              "enrollment_state": [
+                "active"
+              ],
+              "include[]": [
+                "term",
+                "total_scores"
+              ],
+              "per_page": [
+                "50"
+              ]
+            },
+            "synthetic_token": true
+          }
+        ],
+        "seconds": 1.4849999999860302,
+        "profile_not_created": true,
+        "native_original_error_parity": true
+      },
+      {
+        "case": "auth_403",
+        "command": [
+          "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\venv\\Scripts\\canvaspilot.exe",
+          "courses",
+          "--base-url",
+          "http://127.0.0.1:64752",
+          "--profile",
+          "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\temp\\uncreated-profile",
+          "--token",
+          "synthetic-offline-token"
+        ],
+        "returncode": 1,
+        "stdout": "",
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr": "{\"ok\": false, \"error\": \"CanvasAuthError\", \"message\": \"Canvas auth failed (403)\"}\r\n",
+        "stderr_sha256": "f095ebf360d15eb4bc7f3afb2bde3c5a4bfcecad492b0cb3cfaa04c6fe4e596d",
+        "requests": [
+          {
+            "method": "GET",
+            "path": "/api/v1/courses",
+            "query": {
+              "enrollment_state": [
+                "active"
+              ],
+              "include[]": [
+                "term",
+                "total_scores"
+              ],
+              "per_page": [
+                "50"
+              ]
+            },
+            "synthetic_token": true
+          }
+        ],
+        "seconds": 1.452999999979511,
+        "profile_not_created": true,
+        "native_original_error_parity": true
+      },
+      {
+        "case": "http_503",
+        "command": [
+          "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\venv\\Scripts\\canvaspilot.exe",
+          "courses",
+          "--base-url",
+          "http://127.0.0.1:64755",
+          "--profile",
+          "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\temp\\uncreated-profile",
+          "--token",
+          "synthetic-offline-token"
+        ],
+        "returncode": 1,
+        "stdout": "",
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr": "{\"ok\": false, \"error\": \"HTTPStatusError\", \"message\": \"Server error '503 Service Unavailable' for url 'http://127.0.0.1:64755/api/v1/courses?enrollment_state=active&include%5B%5D=term&include%5B%5D=total_scores&per_page=50'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503\"}\r\n",
+        "stderr_sha256": "ed357832a074672d944b595457fec84ff27d5304ed30e7023c14b56ca7c410e5",
+        "requests": [
+          {
+            "method": "GET",
+            "path": "/api/v1/courses",
+            "query": {
+              "enrollment_state": [
+                "active"
+              ],
+              "include[]": [
+                "term",
+                "total_scores"
+              ],
+              "per_page": [
+                "50"
+              ]
+            },
+            "synthetic_token": true
+          }
+        ],
+        "seconds": 1.4849999999860302,
+        "profile_not_created": true,
+        "native_original_error_parity": true
+      },
+      {
+        "case": "late_http_503",
+        "command": [
+          "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\venv\\Scripts\\canvaspilot.exe",
+          "courses",
+          "--base-url",
+          "http://127.0.0.1:64757",
+          "--profile",
+          "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\temp\\uncreated-profile",
+          "--token",
+          "synthetic-offline-token"
+        ],
+        "returncode": 1,
+        "stdout": "",
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr": "{\"ok\": false, \"error\": \"HTTPStatusError\", \"message\": \"Server error '503 Service Unavailable' for url 'http://127.0.0.1:64757/api/v1/courses?page=2'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503\"}\r\n",
+        "stderr_sha256": "4b77255f93528034c7061526d68b77b292af62bcee2137f2620817dd77aa2566",
+        "requests": [
+          {
+            "method": "GET",
+            "path": "/api/v1/courses",
+            "query": {
+              "enrollment_state": [
+                "active"
+              ],
+              "include[]": [
+                "term",
+                "total_scores"
+              ],
+              "per_page": [
+                "50"
+              ]
+            },
+            "synthetic_token": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/v1/courses",
+            "query": {
+              "page": [
+                "2"
+              ]
+            },
+            "synthetic_token": true
+          }
+        ],
+        "seconds": 1.5,
+        "profile_not_created": true,
+        "native_original_error_parity": true
+      },
+      {
+        "case": "invalid_json",
+        "command": [
+          "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\venv\\Scripts\\canvaspilot.exe",
+          "courses",
+          "--base-url",
+          "http://127.0.0.1:64760",
+          "--profile",
+          "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\temp\\uncreated-profile",
+          "--token",
+          "synthetic-offline-token"
+        ],
+        "returncode": 1,
+        "stdout": "",
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr": "{\"ok\": false, \"error\": \"CanvasPaginationError\", \"message\": \"Canvas pagination expected a JSON page; collection incomplete.\"}\r\n",
+        "stderr_sha256": "111131ab5a27e5e819c719fde9df116369749e3866a62abc271ada2870cd0981",
+        "requests": [
+          {
+            "method": "GET",
+            "path": "/api/v1/courses",
+            "query": {
+              "enrollment_state": [
+                "active"
+              ],
+              "include[]": [
+                "term",
+                "total_scores"
+              ],
+              "per_page": [
+                "50"
+              ]
+            },
+            "synthetic_token": true
+          }
+        ],
+        "seconds": 1.452999999979511,
+        "profile_not_created": true,
+        "native_original_error_parity": true
+      },
+      {
+        "case": "later_nonlist",
+        "command": [
+          "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\venv\\Scripts\\canvaspilot.exe",
+          "courses",
+          "--base-url",
+          "http://127.0.0.1:64763",
+          "--profile",
+          "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\temp\\uncreated-profile",
+          "--token",
+          "synthetic-offline-token"
+        ],
+        "returncode": 1,
+        "stdout": "",
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr": "{\"ok\": false, \"error\": \"CanvasPaginationError\", \"message\": \"Canvas pagination returned a non-list continuing page.\"}\r\n",
+        "stderr_sha256": "dc39cdbbffb87d35b08f4de2ca8d440b0c91a80466108f23ff0601d4bd40758f",
+        "requests": [
+          {
+            "method": "GET",
+            "path": "/api/v1/courses",
+            "query": {
+              "enrollment_state": [
+                "active"
+              ],
+              "include[]": [
+                "term",
+                "total_scores"
+              ],
+              "per_page": [
+                "50"
+              ]
+            },
+            "synthetic_token": true
+          },
+          {
+            "method": "GET",
+            "path": "/api/v1/courses",
+            "query": {
+              "page": [
+                "2"
+              ]
+            },
+            "synthetic_token": true
+          }
+        ],
+        "seconds": 1.6410000000614673,
+        "profile_not_created": true,
+        "native_original_error_parity": true
+      }
+    ],
+    "source_preserved": true,
+    "unchanged_core_sha256": {
+      "src/canvaspilot/client.py": "bb8bddd21bf2a80c5bad8f92ed9ed28368008e5d29759604f9b1e7af6e264e4a",
+      "src/canvaspilot/api.py": "b1207957216ed1fa4698c6b88d825b8a93c5bf90125c723f6f85b445b86f89c5"
+    },
+    "comparison": "Native exception class/message compared with original; only original traceback CRLF rendering and ephemeral localhost port were normalized. Successful stdout comparison used exact bytes.",
+    "broader_driver_accepted": false,
+    "wrapper_exit": 1,
+    "pid": 11124,
+    "broader_pytest": {
+      "passed": 48,
+      "failed": 5,
+      "exit": 1,
+      "paths": [
+        "tests/test_courses_cli_errors.py",
+        "tests/test_bundle_api.py",
+        "tests/test_token_pagination.py",
+        "tests/test_enrollments_cli.py"
+      ]
+    },
+    "broader_ruff": {
+      "exit": 1,
+      "findings": 8,
+      "own_test_finding": "SIM114 duplicate fixture 404 branches, subsequently corrected without production/guide change.",
+      "inherited_findings": 7
+    },
+    "final_diff_check_exit": 0
+  },
+  "receiver_history": {
+    "first_candidate_driver": "receive-candidate-courses.py",
+    "first_driver_exit": 1,
+    "retained_failure": "evidence/candidate-receiver-v1-failure.json",
+    "cause": "Receiver compared LF inside native HTTPStatusError with CRLF in rendered original Windows traceback.",
+    "correction": "Comparison normalizes that rendered newline and ephemeral port; v2 retains raw evidence before assertions. Production source unchanged by this receiver correction."
+  },
+  "inherited_parent": {
+    "receipt": "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\evidence\\inherited-parent-gates.json",
+    "sha256": "5d8142f7005dde4e1a7f6766ee9ab118761fc74609e148e1ba22097c4c7f072a",
+    "parent": "8479a462bfc4e5f080c1b4d3ca231dca9dc7bf68",
+    "pristine_parent_preserved": true,
+    "wrapper_exit": 0,
+    "pid": 25388,
+    "pytest": {
+      "exit": 1,
+      "failed": 5,
+      "path": "tests/test_enrollments_cli.py",
+      "cause": "Existing subprocess environment omits Windows home variables; Path.home raises RuntimeError before command dispatch on pristine parent and candidate.",
+      "tests": [
+        "test_default_empty_and_raw_state_keep_existing_api_semantics",
+        "test_help_and_invalid_options_finish_without_reading_or_opening_a_profile",
+        "test_native_failures_never_print_a_partial_success_collection",
+        "test_state_and_all_reported_fields_survive_native_pagination",
+        "test_unrelated_identity_command_keeps_its_existing_route"
+      ]
+    },
+    "ruff": {
+      "exit": 1,
+      "findings": 7,
+      "details": [
+        {
+          "path": "tests/test_calendar_publication_cleanup.py",
+          "rules": {
+            "SIM117": [
+              98,
+              108,
+              122,
+              141
+            ],
+            "B023": [
+              138
+            ]
+          }
+        },
+        {
+          "path": "tests/test_discussion_search.py",
+          "rules": {
+            "RET501": [
+              223
+            ],
+            "PLR1711": [
+              223
+            ]
+          }
+        }
+      ]
+    },
+    "no_overlapping_files_changed": true
+  },
+  "final_candidate": {
+    "receipt": "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\evidence\\final-courses-checks.json",
+    "sha256": "8b8e8459b2152a18fdb78dbfb0fc7df90ac4986ef4ac933a50c0d8ef29a16214",
+    "wrapper_exit": 0,
+    "pid": 21656,
+    "maintained_tests": {
+      "passed": 18,
+      "failed": 0,
+      "seconds": 15.72,
+      "exit": 0
+    },
+    "changed_python_ruff_exit": 0,
+    "diff_check_exit": 0,
+    "source_hashes_preserved": true,
+    "test_only_correction": "Collapse identical 404 fixture branches to one non-course-path condition; all 18 tests rerun on exact final file. Production and guide unchanged from native candidate v2."
+  },
+  "review": {
+    "status": "ACCEPTED",
+    "reviewer": "dc7255e161d3/estate_context",
+    "root_static": "Root separately accepted the exact production span against parent8479 before publication.",
+    "production_pin": "c459c9b9b41b368b35c4c2c8e687d079fbefe753",
+    "test_pin": "8f6e2c342f11ebc870dfb2515e66237ff60ab12c",
+    "guide_pin": "c09e201898cbda9b74715a8b9f6c801982cb7854",
+    "source_review": "Final production, tests and guide accepted; no blocking source findings.",
+    "native": {
+      "directory": "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\context-native-o5ccohus",
+      "receipt": {
+        "path": "receipt.json",
+        "bytes": 118809,
+        "sha256": "77be36258126e7f8e6f8e2e982aa22a7c2c9f3f29b19d69b7b442f3e0bf9d04f",
+        "git_blob": "2b4dba7703f13bb49c70bb893d280690f65a9259"
+      },
+      "review": {
+        "path": "REVIEW-v1.json",
+        "bytes": 4850,
+        "sha256": "614556b99c9c05ec7b451a043b45e147998490370cb4caa34e1042ffe34625a6",
+        "git_blob": "862fc9b3d0eacedcf54c21ea17d489f01fbd398e"
+      },
+      "manifest": {
+        "path": "EVIDENCE-MANIFEST-v1.json",
+        "bytes": 13105,
+        "sha256": "e6972786694281456e1cf266a248b81d3dec07beac221f9f6235fa5e6001c86f",
+        "files": 57,
+        "evidence_bytes": 150764
+      },
+      "wrapper_pid": 7904,
+      "wrapper_exit": 0,
+      "terminal_exit_observed": true,
+      "seconds": 43.1,
+      "child_processes": 27,
+      "case_count": 9,
+      "started_at": "2026-10-13T07:08:52.454848+00:00",
+      "completed_at": "2026-10-13T07:09:35.142131+00:00",
+      "cases": [
+        {
+          "case": "success",
+          "accepted": true,
+          "assertions": {
+            "native_api_completed": true,
+            "native_api_source_parent": true,
+            "native_api_closed": true,
+            "requests_unchanged": true,
+            "bounded_request_count": true,
+            "profiles_uncreated": true,
+            "no_candidate_traceback": true,
+            "all_success": true,
+            "exact_stdout_parity": true,
+            "candidate_stderr_empty": true
+          }
+        },
+        {
+          "case": "empty",
+          "accepted": true,
+          "assertions": {
+            "native_api_completed": true,
+            "native_api_source_parent": true,
+            "native_api_closed": true,
+            "requests_unchanged": true,
+            "bounded_request_count": true,
+            "profiles_uncreated": true,
+            "no_candidate_traceback": true,
+            "all_success": true,
+            "exact_stdout_parity": true,
+            "candidate_stderr_empty": true
+          }
+        },
+        {
+          "case": "missing_setup",
+          "accepted": true,
+          "assertions": {
+            "native_api_completed": true,
+            "native_api_source_parent": true,
+            "native_api_closed": true,
+            "requests_unchanged": true,
+            "bounded_request_count": true,
+            "profiles_uncreated": true,
+            "no_candidate_traceback": true,
+            "all_failure_statuses": true,
+            "no_partial_stdout": true,
+            "original_traceback_witness": true,
+            "exact_native_diagnostic": true,
+            "one_stderr_json": true,
+            "original_native_message": true
+          }
+        },
+        {
+          "case": "auth_401",
+          "accepted": true,
+          "assertions": {
+            "native_api_completed": true,
+            "native_api_source_parent": true,
+            "native_api_closed": true,
+            "requests_unchanged": true,
+            "bounded_request_count": true,
+            "profiles_uncreated": true,
+            "no_candidate_traceback": true,
+            "all_failure_statuses": true,
+            "no_partial_stdout": true,
+            "original_traceback_witness": true,
+            "exact_native_diagnostic": true,
+            "one_stderr_json": true,
+            "original_native_message": true
+          }
+        },
+        {
+          "case": "auth_403",
+          "accepted": true,
+          "assertions": {
+            "native_api_completed": true,
+            "native_api_source_parent": true,
+            "native_api_closed": true,
+            "requests_unchanged": true,
+            "bounded_request_count": true,
+            "profiles_uncreated": true,
+            "no_candidate_traceback": true,
+            "all_failure_statuses": true,
+            "no_partial_stdout": true,
+            "original_traceback_witness": true,
+            "exact_native_diagnostic": true,
+            "one_stderr_json": true,
+            "original_native_message": true
+          }
+        },
+        {
+          "case": "http_503",
+          "accepted": true,
+          "assertions": {
+            "native_api_completed": true,
+            "native_api_source_parent": true,
+            "native_api_closed": true,
+            "requests_unchanged": true,
+            "bounded_request_count": true,
+            "profiles_uncreated": true,
+            "no_candidate_traceback": true,
+            "all_failure_statuses": true,
+            "no_partial_stdout": true,
+            "original_traceback_witness": true,
+            "exact_native_diagnostic": true,
+            "one_stderr_json": true,
+            "original_native_message": true
+          }
+        },
+        {
+          "case": "late_http_503",
+          "accepted": true,
+          "assertions": {
+            "native_api_completed": true,
+            "native_api_source_parent": true,
+            "native_api_closed": true,
+            "requests_unchanged": true,
+            "bounded_request_count": true,
+            "profiles_uncreated": true,
+            "no_candidate_traceback": true,
+            "all_failure_statuses": true,
+            "no_partial_stdout": true,
+            "original_traceback_witness": true,
+            "exact_native_diagnostic": true,
+            "one_stderr_json": true,
+            "original_native_message": true
+          }
+        },
+        {
+          "case": "invalid_json",
+          "accepted": true,
+          "assertions": {
+            "native_api_completed": true,
+            "native_api_source_parent": true,
+            "native_api_closed": true,
+            "requests_unchanged": true,
+            "bounded_request_count": true,
+            "profiles_uncreated": true,
+            "no_candidate_traceback": true,
+            "all_failure_statuses": true,
+            "no_partial_stdout": true,
+            "original_traceback_witness": true,
+            "exact_native_diagnostic": true,
+            "one_stderr_json": true,
+            "original_native_message": true
+          }
+        },
+        {
+          "case": "later_nonlist",
+          "accepted": true,
+          "assertions": {
+            "native_api_completed": true,
+            "native_api_source_parent": true,
+            "native_api_closed": true,
+            "requests_unchanged": true,
+            "bounded_request_count": true,
+            "profiles_uncreated": true,
+            "no_candidate_traceback": true,
+            "all_failure_statuses": true,
+            "no_partial_stdout": true,
+            "original_traceback_witness": true,
+            "exact_native_diagnostic": true,
+            "one_stderr_json": true,
+            "original_native_message": true
+          }
+        }
+      ],
+      "console_error_status": 1,
+      "oracle_wrapper_status": 0,
+      "oracle_status_explanation": "The pristine Python API oracle wrapper serializes caught native exceptions and returns0; this is not a successful course read.",
+      "raw_logs_reverified": 54,
+      "source_test_guide_entries_preserved": 66,
+      "source_bytes_and_mtimes_preserved": true,
+      "server_thread_closed": true,
+      "scope": "Pristine and candidate actual installed console plus pristine native API oracle, using only synthetic loopback responses."
+    },
+    "reviewed_author_limits": [
+      "Broader candidate48passed/5failed retained as failed.",
+      "Pristine-parent seven unrelatedRuff findings retained.",
+      "Final18tests and changed-path lint/diff checks accepted.",
+      "No full-suite, live-account, installed-service or destination-failure qualification."
+    ]
+  },
+  "qualification_limits": [
+    "Bounded Windows native receiving, not the full repository suite or Linux qualification.",
+    "The broader candidate driver remains failed because of inherited Windows enrollment behavior and unrelated lint; it is not described as green.",
+    "Real Canvas/account/session operation and installed-service adoption were not attempted.",
+    "No Actions invocation, workflow/settings change or required gate bypass. Publication checks recorded separately after immutable source creation."
+  ],
+  "publication_preflight": {
+    "base": "8479a462bfc4e5f080c1b4d3ca231dca9dc7bf68",
+    "base_tree": "9d6549265b59b90d070cc02c30afa689038e5ceb",
+    "base_leaves": 1732,
+    "branch_protected": false,
+    "required_status_checks": "off; contexts/checks empty",
+    "rulesets": [],
+    "workflow_blobs": {
+      "ci.yml": "ef7bbebe192c0db55dc4467e064ba44805c13446",
+      "agenda-view-browser.yml": "a06b862c23dccc61d5da9eea99d82b76668f78c8"
+    },
+    "events": "Checked-in workflows: main push, main pull_request, explicit workflow_dispatch; no issue/comment event.",
+    "recent_all_event_paths": [
+      ".github/workflows/ci.yml",
+      ".github/workflows/agenda-view-browser.yml",
+      "dynamic/dependabot/dependabot-updates",
+      "dynamic/dependabot/update-graph"
+    ],
+    "most_recent_run": "2026-10-11T07:44:47Z",
+    "no_dynamic_pages_observed": true,
+    "manifest_lock_workflow_changes": false,
+    "ref_publication": "Snapshot before immutable source creation: independent receiving accepted; retain skip markers and record post-publication all-event head/merge readback separately."
+  }
+}
