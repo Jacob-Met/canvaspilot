@@ -1,0 +1,64 @@
+{
+  "mode": "synthetic_offline_example",
+  "network_required": false,
+  "account_required": false,
+  "model_calls": 0,
+  "courses": [
+    {
+      "id": 101,
+      "name": "Synthetic Biology",
+      "course_code": "DEMO-BIO",
+      "enrollment_term_id": null,
+      "term": null
+    },
+    {
+      "id": 102,
+      "name": "Synthetic Computing",
+      "course_code": "DEMO-CS",
+      "enrollment_term_id": null,
+      "term": null
+    }
+  ],
+  "assignment_briefs": [
+    {
+      "title": "Read the methods",
+      "due_at": "2026-09-18T18:00:00Z",
+      "points_possible": 10,
+      "submission_types": [
+        "online_upload"
+      ],
+      "prompt": "Identify the controls and limitations.",
+      "html_url": null,
+      "course_id": 101,
+      "assignment_id": 1001,
+      "rubric": null,
+      "rubric_settings": null,
+      "use_rubric_for_grading": null,
+      "rubric_warnings": []
+    },
+    {
+      "title": "Review an algorithm",
+      "due_at": null,
+      "points_possible": 10,
+      "submission_types": [
+        "online_upload"
+      ],
+      "prompt": "Explain the time and space requirements.",
+      "html_url": null,
+      "course_id": 102,
+      "assignment_id": 1002,
+      "rubric": null,
+      "rubric_settings": null,
+      "use_rubric_for_grading": null,
+      "rubric_warnings": []
+    }
+  ],
+  "buyer_or_student_results": "Not measured; synthetic demonstration only",
+  "unknowns": [
+    {
+      "assignment_id": 1002,
+      "reason": "due_date_not_supplied"
+    }
+  ],
+  "limitations": "No live pagination, authentication, submission, or institution-policy validation."
+}

@@ -1,0 +1,1277 @@
+{
+  "checks": [
+    {
+      "details": null,
+      "name": "review directory belongs to current user",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "source blob LICENSE",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "source blob README.md",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "source blob pyproject.toml",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "source blob src/canvaspilot/__init__.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "source blob src/canvaspilot/agenda.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "source blob src/canvaspilot/agenda_export.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "source blob src/canvaspilot/agenda_view/controls.js",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "source blob src/canvaspilot/agenda_view/style.css",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "source blob src/canvaspilot/announcement_search.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "source blob src/canvaspilot/api.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "source blob src/canvaspilot/assignment_submission.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "source blob src/canvaspilot/bundle.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "source blob src/canvaspilot/calendar_export.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "source blob src/canvaspilot/cli.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "source blob src/canvaspilot/client.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "source blob src/canvaspilot/discussion_search.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "source blob src/canvaspilot/discussion_thread.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "source blob src/canvaspilot/feedback.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "source blob src/canvaspilot/folder_browser.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "source blob src/canvaspilot/grade_review.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "source blob src/canvaspilot/grade_review_export.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "source blob src/canvaspilot/mcp_server.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "source blob src/canvaspilot/module_progress.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "source blob src/canvaspilot/module_progress_export.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "source blob src/canvaspilot/offline_demo.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "source blob src/canvaspilot/page_export.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "source blob src/canvaspilot/session_broker.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "source blob src/canvaspilot/study_workspace.css",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "source blob src/canvaspilot/study_workspace.html",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "source blob src/canvaspilot/study_workspace.js",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "source blob src/canvaspilot/study_workspace.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "source blob src/canvaspilot/submission_comparison.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "source blob src/canvaspilot/submission_history.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "source blob src/canvaspilot/submission_history_export.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "source blob src/canvaspilot/syllabus_packet.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "source blob tests/test_calendar_publication_cleanup.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "wheel build exits successfully",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "one wheel produced",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "wheel includes every pinned package source and asset",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "wheel bytes src/canvaspilot/__init__.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "wheel bytes src/canvaspilot/agenda.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "wheel bytes src/canvaspilot/agenda_export.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "wheel bytes src/canvaspilot/agenda_view/controls.js",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "wheel bytes src/canvaspilot/agenda_view/style.css",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "wheel bytes src/canvaspilot/announcement_search.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "wheel bytes src/canvaspilot/api.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "wheel bytes src/canvaspilot/assignment_submission.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "wheel bytes src/canvaspilot/bundle.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "wheel bytes src/canvaspilot/calendar_export.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "wheel bytes src/canvaspilot/cli.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "wheel bytes src/canvaspilot/client.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "wheel bytes src/canvaspilot/discussion_search.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "wheel bytes src/canvaspilot/discussion_thread.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "wheel bytes src/canvaspilot/feedback.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "wheel bytes src/canvaspilot/folder_browser.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "wheel bytes src/canvaspilot/grade_review.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "wheel bytes src/canvaspilot/grade_review_export.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "wheel bytes src/canvaspilot/mcp_server.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "wheel bytes src/canvaspilot/module_progress.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "wheel bytes src/canvaspilot/module_progress_export.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "wheel bytes src/canvaspilot/offline_demo.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "wheel bytes src/canvaspilot/page_export.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "wheel bytes src/canvaspilot/session_broker.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "wheel bytes src/canvaspilot/study_workspace.css",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "wheel bytes src/canvaspilot/study_workspace.html",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "wheel bytes src/canvaspilot/study_workspace.js",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "wheel bytes src/canvaspilot/study_workspace.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "wheel bytes src/canvaspilot/submission_comparison.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "wheel bytes src/canvaspilot/submission_history.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "wheel bytes src/canvaspilot/submission_history_export.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "wheel bytes src/canvaspilot/syllabus_packet.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "offline isolated wheel install exits successfully",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "normal installed package and dependency imports succeed",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "interpreter prefix is isolated review environment",
+      "passed": true
+    },
+    {
+      "details": [],
+      "name": "installed dependency requirements are consistent",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "module imports use private site-packages",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "source checkout is absent from normal interpreter path",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "installed bytes src/canvaspilot/__init__.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "installed bytes src/canvaspilot/agenda.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "installed bytes src/canvaspilot/agenda_export.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "installed bytes src/canvaspilot/agenda_view/controls.js",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "installed bytes src/canvaspilot/agenda_view/style.css",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "installed bytes src/canvaspilot/announcement_search.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "installed bytes src/canvaspilot/api.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "installed bytes src/canvaspilot/assignment_submission.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "installed bytes src/canvaspilot/bundle.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "installed bytes src/canvaspilot/calendar_export.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "installed bytes src/canvaspilot/cli.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "installed bytes src/canvaspilot/client.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "installed bytes src/canvaspilot/discussion_search.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "installed bytes src/canvaspilot/discussion_thread.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "installed bytes src/canvaspilot/feedback.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "installed bytes src/canvaspilot/folder_browser.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "installed bytes src/canvaspilot/grade_review.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "installed bytes src/canvaspilot/grade_review_export.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "installed bytes src/canvaspilot/mcp_server.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "installed bytes src/canvaspilot/module_progress.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "installed bytes src/canvaspilot/module_progress_export.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "installed bytes src/canvaspilot/offline_demo.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "installed bytes src/canvaspilot/page_export.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "installed bytes src/canvaspilot/session_broker.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "installed bytes src/canvaspilot/study_workspace.css",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "installed bytes src/canvaspilot/study_workspace.html",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "installed bytes src/canvaspilot/study_workspace.js",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "installed bytes src/canvaspilot/study_workspace.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "installed bytes src/canvaspilot/submission_comparison.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "installed bytes src/canvaspilot/submission_history.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "installed bytes src/canvaspilot/submission_history_export.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "installed bytes src/canvaspilot/syllabus_packet.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "installed console entrypoint uses private interpreter",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "console help exits successfully",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "console exposes all three export consumers",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "module help exits successfully",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "module exposes all three export consumers",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "console and module help agree",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "built-in offline demonstration writes local JSON successfully",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "demonstration remains explicitly synthetic and account-free",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "demonstration receives its two fictional assignment briefs",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "demonstration preserves existing output",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "seven maintained writer tests pass with real package imports",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "pinned source unchanged after build and tests LICENSE",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "pinned source unchanged after build and tests README.md",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "pinned source unchanged after build and tests pyproject.toml",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "pinned source unchanged after build and tests src/canvaspilot/__init__.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "pinned source unchanged after build and tests src/canvaspilot/agenda.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "pinned source unchanged after build and tests src/canvaspilot/agenda_export.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "pinned source unchanged after build and tests src/canvaspilot/agenda_view/controls.js",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "pinned source unchanged after build and tests src/canvaspilot/agenda_view/style.css",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "pinned source unchanged after build and tests src/canvaspilot/announcement_search.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "pinned source unchanged after build and tests src/canvaspilot/api.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "pinned source unchanged after build and tests src/canvaspilot/assignment_submission.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "pinned source unchanged after build and tests src/canvaspilot/bundle.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "pinned source unchanged after build and tests src/canvaspilot/calendar_export.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "pinned source unchanged after build and tests src/canvaspilot/cli.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "pinned source unchanged after build and tests src/canvaspilot/client.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "pinned source unchanged after build and tests src/canvaspilot/discussion_search.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "pinned source unchanged after build and tests src/canvaspilot/discussion_thread.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "pinned source unchanged after build and tests src/canvaspilot/feedback.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "pinned source unchanged after build and tests src/canvaspilot/folder_browser.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "pinned source unchanged after build and tests src/canvaspilot/grade_review.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "pinned source unchanged after build and tests src/canvaspilot/grade_review_export.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "pinned source unchanged after build and tests src/canvaspilot/mcp_server.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "pinned source unchanged after build and tests src/canvaspilot/module_progress.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "pinned source unchanged after build and tests src/canvaspilot/module_progress_export.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "pinned source unchanged after build and tests src/canvaspilot/offline_demo.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "pinned source unchanged after build and tests src/canvaspilot/page_export.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "pinned source unchanged after build and tests src/canvaspilot/session_broker.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "pinned source unchanged after build and tests src/canvaspilot/study_workspace.css",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "pinned source unchanged after build and tests src/canvaspilot/study_workspace.html",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "pinned source unchanged after build and tests src/canvaspilot/study_workspace.js",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "pinned source unchanged after build and tests src/canvaspilot/study_workspace.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "pinned source unchanged after build and tests src/canvaspilot/submission_comparison.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "pinned source unchanged after build and tests src/canvaspilot/submission_history.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "pinned source unchanged after build and tests src/canvaspilot/submission_history_export.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "pinned source unchanged after build and tests src/canvaspilot/syllabus_packet.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "pinned source unchanged after build and tests tests/test_calendar_publication_cleanup.py",
+      "passed": true
+    },
+    {
+      "details": null,
+      "name": "installed writer unchanged after tests",
+      "passed": true
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "/home/jacob/canvaspilot-installed-receiver-t49tzxjs/venv/bin/python",
+        "-I",
+        "-B",
+        "-m",
+        "hatchling",
+        "build",
+        "-t",
+        "wheel",
+        "-d",
+        "/home/jacob/canvaspilot-installed-receiver-t49tzxjs/evidence/wheels"
+      ],
+      "cwd": "/home/jacob/canvaspilot-installed-receiver-t49tzxjs/source",
+      "name": "build-wheel",
+      "returncode": 0,
+      "stderr": "/home/jacob/canvaspilot-installed-receiver-t49tzxjs/evidence/wheels/canvaspilot-0.1.1-py3-none-any.whl\n",
+      "stderr_sha256": "ef8a3909532ea4087670b72aef446b05cd73f1ed67f53df97f733e583a2ac809",
+      "stdout": "",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/home/jacob/canvaspilot-installed-receiver-t49tzxjs/venv/bin/python",
+        "-I",
+        "-B",
+        "-m",
+        "pip",
+        "install",
+        "--no-cache-dir",
+        "--disable-pip-version-check",
+        "--no-index",
+        "--no-deps",
+        "--force-reinstall",
+        "--report",
+        "/home/jacob/canvaspilot-installed-receiver-t49tzxjs/evidence/wheel-install.json",
+        "/home/jacob/canvaspilot-installed-receiver-t49tzxjs/evidence/wheels/canvaspilot-0.1.1-py3-none-any.whl"
+      ],
+      "cwd": "/home/jacob/canvaspilot-installed-receiver-t49tzxjs/consumer",
+      "name": "install-wheel",
+      "returncode": 0,
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "Processing /home/jacob/canvaspilot-installed-receiver-t49tzxjs/evidence/wheels/canvaspilot-0.1.1-py3-none-any.whl\nInstalling collected packages: canvaspilot\nSuccessfully installed canvaspilot-0.1.1\n",
+      "stdout_sha256": "c4762ca099f4959470d6a1eb5d011827bc5a5ba89d2bff6b8adc33a8745b4976"
+    },
+    {
+      "argv": [
+        "/home/jacob/canvaspilot-installed-receiver-t49tzxjs/venv/bin/python",
+        "-I",
+        "-B",
+        "-c",
+        "\nimport importlib, importlib.metadata as metadata, json, pathlib, site, sys\nfrom packaging.requirements import Requirement\nfrom packaging.markers import default_environment\nwanted = (\"canvaspilot\", \"canvaspilot.client\", \"canvaspilot.api\", \"canvaspilot.cli\",\n          \"canvaspilot.calendar_export\", \"canvaspilot.grade_review_export\", \"canvaspilot.module_progress_export\",\n          \"httpx\", \"mcp\", \"pydantic\")\nloaded = {name: str(pathlib.Path(importlib.import_module(name).__file__).resolve()) for name in wanted}\ndists = list(metadata.distributions())\nversions = {d.metadata[\"Name\"]: d.version for d in dists}\nproblems = []\nmarker_env = default_environment()\nmarker_env[\"extra\"] = \"\"\nfor dist in dists:\n    for text in dist.requires or []:\n        req = Requirement(text)\n        if req.marker is not None and not req.marker.evaluate(marker_env):\n            continue\n        try:\n            actual = metadata.version(req.name)\n        except metadata.PackageNotFoundError:\n            problems.append({\"distribution\": dist.metadata[\"Name\"], \"requires\": text, \"missing\": req.name})\n            continue\n        if actual not in req.specifier:\n            problems.append({\"distribution\": dist.metadata[\"Name\"], \"requires\": text, \"actual\": actual})\ncanvas = metadata.distribution(\"canvaspilot\")\nprint(json.dumps({\n    \"python\": sys.version, \"executable\": sys.executable, \"prefix\": sys.prefix, \"base_prefix\": sys.base_prefix,\n    \"sys_path\": sys.path, \"site_packages\": site.getsitepackages(), \"modules\": loaded, \"versions\": versions,\n    \"dependency_problems\": problems, \"canvaspilot_requires\": canvas.requires,\n    \"canvaspilot_entrypoints\": [{\"name\": e.name, \"value\": e.value, \"group\": e.group} for e in canvas.entry_points],\n    \"direct_url\": canvas.read_text(\"direct_url.json\"),\n}, indent=2, sort_keys=True))\n"
+      ],
+      "cwd": "/home/jacob/canvaspilot-installed-receiver-t49tzxjs/consumer",
+      "name": "installed-imports",
+      "returncode": 0,
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "{\n  \"base_prefix\": \"/usr\",\n  \"canvaspilot_entrypoints\": [\n    {\n      \"group\": \"console_scripts\",\n      \"name\": \"canvaspilot\",\n      \"value\": \"canvaspilot.cli:main\"\n    },\n    {\n      \"group\": \"console_scripts\",\n      \"name\": \"canvaspilot-session\",\n      \"value\": \"canvaspilot.session_broker:main\"\n    }\n  ],\n  \"canvaspilot_requires\": [\n    \"httpx>=0.27\",\n    \"mcp<3,>=1.0.0\",\n    \"pydantic>=2.0\",\n    \"playwright>=1.40; extra == 'browser'\",\n    \"playwright>=1.40; extra == 'dev'\",\n    \"pytest>=8.0; extra == 'dev'\",\n    \"ruff>=0.4; extra == 'dev'\"\n  ],\n  \"dependency_problems\": [],\n  \"direct_url\": \"{\\\"archive_info\\\": {\\\"hash\\\": \\\"sha256=b40d9c4bbe01cc765784f45923ec3cc6f8a4cb49320ee59f6a9c9302c1674c54\\\", \\\"hashes\\\": {\\\"sha256\\\": \\\"b40d9c4bbe01cc765784f45923ec3cc6f8a4cb49320ee59f6a9c9302c1674c54\\\"}}, \\\"url\\\": \\\"file:///home/jacob/canvaspilot-installed-receiver-t49tzxjs/evidence/wheels/canvaspilot-0.1.1-py3-none-any.whl\\\"}\",\n  \"executable\": \"/home/jacob/canvaspilot-installed-receiver-t49tzxjs/venv/bin/python\",\n  \"modules\": {\n    \"canvaspilot\": \"/home/jacob/canvaspilot-installed-receiver-t49tzxjs/venv/lib/python3.14/site-packages/canvaspilot/__init__.py\",\n    \"canvaspilot.api\": \"/home/jacob/canvaspilot-installed-receiver-t49tzxjs/venv/lib/python3.14/site-packages/canvaspilot/api.py\",\n    \"canvaspilot.calendar_export\": \"/home/jacob/canvaspilot-installed-receiver-t49tzxjs/venv/lib/python3.14/site-packages/canvaspilot/calendar_export.py\",\n    \"canvaspilot.cli\": \"/home/jacob/canvaspilot-installed-receiver-t49tzxjs/venv/lib/python3.14/site-packages/canvaspilot/cli.py\",\n    \"canvaspilot.client\": \"/home/jacob/canvaspilot-installed-receiver-t49tzxjs/venv/lib/python3.14/site-packages/canvaspilot/client.py\",\n    \"canvaspilot.grade_review_export\": \"/home/jacob/canvaspilot-installed-receiver-t49tzxjs/venv/lib/python3.14/site-packages/canvaspilot/grade_review_export.py\",\n    \"canvaspilot.module_progress_export\": \"/home/jacob/canvaspilot-installed-receiver-t49tzxjs/venv/lib/python3.14/site-packages/canvaspilot/module_progress_export.py\",\n    \"httpx\": \"/home/jacob/canvaspilot-installed-receiver-t49tzxjs/venv/lib/python3.14/site-packages/httpx/__init__.py\",\n    \"mcp\": \"/home/jacob/canvaspilot-installed-receiver-t49tzxjs/venv/lib/python3.14/site-packages/mcp/__init__.py\",\n    \"pydantic\": \"/home/jacob/canvaspilot-installed-receiver-t49tzxjs/venv/lib/python3.14/site-packages/pydantic/__init__.py\"\n  },\n  \"prefix\": \"/home/jacob/canvaspilot-installed-receiver-t49tzxjs/venv\",\n  \"python\": \"3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]\",\n  \"site_packages\": [\n    \"/home/jacob/canvaspilot-installed-receiver-t49tzxjs/venv/lib/python3.14/site-packages\",\n    \"/home/jacob/canvaspilot-installed-receiver-t49tzxjs/venv/local/lib/python3.14/dist-packages\",\n    \"/home/jacob/canvaspilot-installed-receiver-t49tzxjs/venv/lib/python3/dist-packages\",\n    \"/home/jacob/canvaspilot-installed-receiver-t49tzxjs/venv/lib/python3.14/dist-packages\"\n  ],\n  \"sys_path\": [\n    \"/usr/lib/python314.zip\",\n    \"/usr/lib/python3.14\",\n    \"/usr/lib/python3.14/lib-dynload\",\n    \"/home/jacob/canvaspilot-installed-receiver-t49tzxjs/venv/lib/python3.14/site-packages\"\n  ],\n  \"versions\": {\n    \"PyJWT\": \"2.15.1\",\n    \"annotated-types\": \"0.8.0\",\n    \"anyio\": \"4.15.1\",\n    \"attrs\": \"26.1.0\",\n    \"canvaspilot\": \"0.1.1\",\n    \"certifi\": \"2026.7.22\",\n    \"cffi\": \"2.1.1\",\n    \"click\": \"8.5.0\",\n    \"cryptography\": \"50.0.2\",\n    \"h11\": \"0.16.0\",\n    \"hatchling\": \"1.32.4\",\n    \"httpcore\": \"1.0.9\",\n    \"httpcore2\": \"2.13.1\",\n    \"httpx\": \"0.28.1\",\n    \"httpx2\": \"2.13.1\",\n    \"idna\": \"3.20\",\n    \"jsonschema\": \"4.26.0\",\n    \"jsonschema-specifications\": \"2025.9.1\",\n    \"mcp\": \"2.3.0\",\n    \"mcp-types\": \"2.3.0\",\n    \"opentelemetry-api\": \"1.45.1\",\n    \"packaging\": \"26.3\",\n    \"pathspec\": \"1.1.1\",\n    \"pip\": \"25.1.1\",\n    \"pluggy\": \"1.6.0\",\n    \"pycparser\": \"3.11\",\n    \"pydantic\": \"2.14.1\",\n    \"pydantic_core\": \"2.50.1\",\n    \"python-multipart\": \"0.0.32\",\n    \"referencing\": \"0.37.0\",\n    \"rpds-py\": \"2026.9.1\",\n    \"sse-starlette\": \"3.5.0\",\n    \"starlette\": \"1.7.0\",\n    \"tomlkit\": \"0.15.1\",\n    \"trove-classifiers\": \"2026.9.21.13\",\n    \"truststore\": \"0.10.5\",\n    \"typing-inspection\": \"0.4.4\",\n    \"typing_extensions\": \"4.16.0\",\n    \"uvicorn\": \"0.54.0\"\n  }\n}\n",
+      "stdout_sha256": "c4189578187bed66dedc386ac58600cfe7587f751ce6275bff47256f5239b33f"
+    },
+    {
+      "argv": [
+        "/home/jacob/canvaspilot-installed-receiver-t49tzxjs/venv/bin/canvaspilot",
+        "--help"
+      ],
+      "cwd": "/home/jacob/canvaspilot-installed-receiver-t49tzxjs/consumer",
+      "name": "console-help",
+      "returncode": 0,
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "usage: canvaspilot [-h]\n                   {login,session,whoami,courses,sync,find-announcements,announcements,grade-review,export-grade-review,assignments,brief,feedback,inbox,conversation,find-discussions,discussions,discussion,files,browse-files,export-calendar,export-pages,export-study,export-syllabus,module-progress,export-module-progress,submission-history,export-submission-history,compare-submissions,agenda,pages,page,quizzes,quiz,planner,export-agenda,enrollments,mcp} ...\n\npositional arguments:\n  {login,session,whoami,courses,sync,find-announcements,announcements,grade-review,export-grade-review,assignments,brief,feedback,inbox,conversation,find-discussions,discussions,discussion,files,browse-files,export-calendar,export-pages,export-study,export-syllabus,module-progress,export-module-progress,submission-history,export-submission-history,compare-submissions,agenda,pages,page,quizzes,quiz,planner,export-agenda,enrollments,mcp}\n    login               Open headed browser for Canvas SSO (one-shot)\n    session             Stay-open session broker\n    whoami              GET /users/self/profile\n    courses             List active courses\n    sync                Courses + upcoming assignments digest\n    find-announcements  Find literal text in complete selected-course\n                        announcements\n    announcements       Read active announcements for selected courses\n    grade-review        Review Canvas-reported grades and assignment groups\n    export-grade-review\n                        Save reported course grades to a new offline HTML file\n    assignments         List assignments for a course\n    brief               Assignment brief (cleaned prompt and supplied rubric)\n    feedback            Read self submission comments, rubric feedback, and\n                        grade/attempt metadata\n    inbox               List your inbox without changing conversation state\n    conversation        Read one conversation while preserving unread state\n    find-discussions    Find literal title or opening-prompt text in selected\n                        courses\n    discussions         List discussion topics\n    discussion          Read one cached discussion; unread focus retains reply\n                        context\n    files               List course files\n    browse-files        Browse one course folder; metadata only\n    export-calendar     Save selected assignment deadlines to a new .ics file\n    export-pages        Save explicitly selected course pages to a new offline\n                        HTML reading packet\n    export-study        Save selected assignment briefs as an offline study\n                        workspace\n    export-syllabus     Save selected course syllabi as a new offline HTML\n                        reading packet\n    module-progress     Inspect reported module progress and requirements\n    export-module-progress\n                        Save reported module progress to a new offline HTML\n                        file\n    submission-history  Read your returned submission versions and their\n                        submitted content\n    export-submission-history\n                        Save returned self submission versions to a new\n                        offline HTML report\n    compare-submissions\n                        Compare two returned submission records in a new\n                        offline HTML report\n    agenda              Read selected course events and assignment deadlines\n                        together\n    pages               List course page locators for reading or export\n    page                Read one course page without changing it\n    quizzes             List classic quizzes for a course\n    quiz                Read one classic quiz without starting an attempt\n    planner             Read your planner items without changing completion or\n                        visibility\n    export-agenda       Save a selected-course agenda as a filterable,\n                        printable offline HTML view\n    enrollments         Read your enrollments and their reported roles, states\n                        and grades\n    mcp                 Run MCP stdio server\n\noptions:\n  -h, --help            show this help message and exit\n",
+      "stdout_sha256": "ea76335dda8e94548b1550af198cfd41d1833dab53af056507d534c058ce93b0"
+    },
+    {
+      "argv": [
+        "/home/jacob/canvaspilot-installed-receiver-t49tzxjs/venv/bin/python",
+        "-I",
+        "-B",
+        "-m",
+        "canvaspilot.cli",
+        "--help"
+      ],
+      "cwd": "/home/jacob/canvaspilot-installed-receiver-t49tzxjs/consumer",
+      "name": "module-help",
+      "returncode": 0,
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "usage: canvaspilot [-h]\n                   {login,session,whoami,courses,sync,find-announcements,announcements,grade-review,export-grade-review,assignments,brief,feedback,inbox,conversation,find-discussions,discussions,discussion,files,browse-files,export-calendar,export-pages,export-study,export-syllabus,module-progress,export-module-progress,submission-history,export-submission-history,compare-submissions,agenda,pages,page,quizzes,quiz,planner,export-agenda,enrollments,mcp} ...\n\npositional arguments:\n  {login,session,whoami,courses,sync,find-announcements,announcements,grade-review,export-grade-review,assignments,brief,feedback,inbox,conversation,find-discussions,discussions,discussion,files,browse-files,export-calendar,export-pages,export-study,export-syllabus,module-progress,export-module-progress,submission-history,export-submission-history,compare-submissions,agenda,pages,page,quizzes,quiz,planner,export-agenda,enrollments,mcp}\n    login               Open headed browser for Canvas SSO (one-shot)\n    session             Stay-open session broker\n    whoami              GET /users/self/profile\n    courses             List active courses\n    sync                Courses + upcoming assignments digest\n    find-announcements  Find literal text in complete selected-course\n                        announcements\n    announcements       Read active announcements for selected courses\n    grade-review        Review Canvas-reported grades and assignment groups\n    export-grade-review\n                        Save reported course grades to a new offline HTML file\n    assignments         List assignments for a course\n    brief               Assignment brief (cleaned prompt and supplied rubric)\n    feedback            Read self submission comments, rubric feedback, and\n                        grade/attempt metadata\n    inbox               List your inbox without changing conversation state\n    conversation        Read one conversation while preserving unread state\n    find-discussions    Find literal title or opening-prompt text in selected\n                        courses\n    discussions         List discussion topics\n    discussion          Read one cached discussion; unread focus retains reply\n                        context\n    files               List course files\n    browse-files        Browse one course folder; metadata only\n    export-calendar     Save selected assignment deadlines to a new .ics file\n    export-pages        Save explicitly selected course pages to a new offline\n                        HTML reading packet\n    export-study        Save selected assignment briefs as an offline study\n                        workspace\n    export-syllabus     Save selected course syllabi as a new offline HTML\n                        reading packet\n    module-progress     Inspect reported module progress and requirements\n    export-module-progress\n                        Save reported module progress to a new offline HTML\n                        file\n    submission-history  Read your returned submission versions and their\n                        submitted content\n    export-submission-history\n                        Save returned self submission versions to a new\n                        offline HTML report\n    compare-submissions\n                        Compare two returned submission records in a new\n                        offline HTML report\n    agenda              Read selected course events and assignment deadlines\n                        together\n    pages               List course page locators for reading or export\n    page                Read one course page without changing it\n    quizzes             List classic quizzes for a course\n    quiz                Read one classic quiz without starting an attempt\n    planner             Read your planner items without changing completion or\n                        visibility\n    export-agenda       Save a selected-course agenda as a filterable,\n                        printable offline HTML view\n    enrollments         Read your enrollments and their reported roles, states\n                        and grades\n    mcp                 Run MCP stdio server\n\noptions:\n  -h, --help            show this help message and exit\n",
+      "stdout_sha256": "ea76335dda8e94548b1550af198cfd41d1833dab53af056507d534c058ce93b0"
+    },
+    {
+      "argv": [
+        "/home/jacob/canvaspilot-installed-receiver-t49tzxjs/venv/bin/python",
+        "-I",
+        "-B",
+        "-m",
+        "canvaspilot.offline_demo",
+        "--out",
+        "/home/jacob/canvaspilot-installed-receiver-t49tzxjs/consumer/synthetic-review.json"
+      ],
+      "cwd": "/home/jacob/canvaspilot-installed-receiver-t49tzxjs/consumer",
+      "name": "offline-demo",
+      "returncode": 0,
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/home/jacob/canvaspilot-installed-receiver-t49tzxjs/venv/bin/python",
+        "-I",
+        "-B",
+        "-m",
+        "canvaspilot.offline_demo",
+        "--out",
+        "/home/jacob/canvaspilot-installed-receiver-t49tzxjs/consumer/synthetic-review.json"
+      ],
+      "cwd": "/home/jacob/canvaspilot-installed-receiver-t49tzxjs/consumer",
+      "name": "offline-demo-existing-path",
+      "returncode": 2,
+      "stderr": "Output not written: File exists\n",
+      "stderr_sha256": "811fc9cd2f06b78803212b8ef446efe3b97b2f2a4635f1d6170440f86e98a32d",
+      "stdout": "",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/home/jacob/canvaspilot-installed-receiver-t49tzxjs/venv/bin/python",
+        "-I",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "/home/jacob/canvaspilot-installed-receiver-t49tzxjs/source/tests",
+        "-p",
+        "test_calendar_publication_cleanup.py",
+        "-v"
+      ],
+      "cwd": "/home/jacob/canvaspilot-installed-receiver-t49tzxjs/consumer",
+      "name": "maintained-writer-tests",
+      "returncode": 0,
+      "stderr": "test_close_failure_remains_primary_and_prevents_publication (test_calendar_publication_cleanup.CalendarPublicationCleanupTests.test_close_failure_remains_primary_and_prevents_publication) ... ok\ntest_existing_file_and_dangling_symlink_are_preserved (test_calendar_publication_cleanup.CalendarPublicationCleanupTests.test_existing_file_and_dangling_symlink_are_preserved) ... ok\ntest_fsync_failure_prevents_publication_and_cleans_staging (test_calendar_publication_cleanup.CalendarPublicationCleanupTests.test_fsync_failure_prevents_publication_and_cleans_staging) ... ok\ntest_link_failure_remains_primary_when_staging_cleanup_also_fails (test_calendar_publication_cleanup.CalendarPublicationCleanupTests.test_link_failure_remains_primary_when_staging_cleanup_also_fails) ... ok\ntest_success_returns_no_warning_and_cleans_staging (test_calendar_publication_cleanup.CalendarPublicationCleanupTests.test_success_returns_no_warning_and_cleans_staging) ... ok\ntest_successful_publication_with_cleanup_failure_returns_warning (test_calendar_publication_cleanup.CalendarPublicationCleanupTests.test_successful_publication_with_cleanup_failure_returns_warning) ... ok\ntest_write_failure_or_interruption_survives_failed_close_and_unlink (test_calendar_publication_cleanup.CalendarPublicationCleanupTests.test_write_failure_or_interruption_survives_failed_close_and_unlink) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.015s\n\nOK\n",
+      "stderr_sha256": "dd01a7e260ea9aa29dbde5a3a4e42e4a2b9471a5eb5424742a0aede1de739c15",
+      "stdout": "",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "dependency_environment_origin": "Fresh private stdlib venv on hamon-thinkpad; real dependency wheel resolution recorded in evidence/dependency-install.json",
+  "dependency_install_report_sha256": "04dbdbcf44e9e88c6355e12df94665e1e95e333e7b7e0780231b244bb88372b9",
+  "device_id": "d55b2499-5e82-4805-819a-d0d7ddea1efe",
+  "environment": "/home/jacob/canvaspilot-installed-receiver-t49tzxjs/venv",
+  "environment_preparation_sha256": "77ad5d88c9f5e3d586624012fdd551d0c18d39847c39f8e9682fe48d02aa6a14",
+  "existing_environment_used": false,
+  "finished_at": "2026-10-13T02:30:40.816432+00:00",
+  "host": "hamon-thinkpad",
+  "installation_target": "/home/jacob/canvaspilot-installed-receiver-t49tzxjs/venv",
+  "installed_environment": {
+    "base_prefix": "/usr",
+    "canvaspilot_entrypoints": [
+      {
+        "group": "console_scripts",
+        "name": "canvaspilot",
+        "value": "canvaspilot.cli:main"
+      },
+      {
+        "group": "console_scripts",
+        "name": "canvaspilot-session",
+        "value": "canvaspilot.session_broker:main"
+      }
+    ],
+    "canvaspilot_requires": [
+      "httpx>=0.27",
+      "mcp<3,>=1.0.0",
+      "pydantic>=2.0",
+      "playwright>=1.40; extra == 'browser'",
+      "playwright>=1.40; extra == 'dev'",
+      "pytest>=8.0; extra == 'dev'",
+      "ruff>=0.4; extra == 'dev'"
+    ],
+    "dependency_problems": [],
+    "direct_url": "{\"archive_info\": {\"hash\": \"sha256=b40d9c4bbe01cc765784f45923ec3cc6f8a4cb49320ee59f6a9c9302c1674c54\", \"hashes\": {\"sha256\": \"b40d9c4bbe01cc765784f45923ec3cc6f8a4cb49320ee59f6a9c9302c1674c54\"}}, \"url\": \"file:///home/jacob/canvaspilot-installed-receiver-t49tzxjs/evidence/wheels/canvaspilot-0.1.1-py3-none-any.whl\"}",
+    "executable": "/home/jacob/canvaspilot-installed-receiver-t49tzxjs/venv/bin/python",
+    "modules": {
+      "canvaspilot": "/home/jacob/canvaspilot-installed-receiver-t49tzxjs/venv/lib/python3.14/site-packages/canvaspilot/__init__.py",
+      "canvaspilot.api": "/home/jacob/canvaspilot-installed-receiver-t49tzxjs/venv/lib/python3.14/site-packages/canvaspilot/api.py",
+      "canvaspilot.calendar_export": "/home/jacob/canvaspilot-installed-receiver-t49tzxjs/venv/lib/python3.14/site-packages/canvaspilot/calendar_export.py",
+      "canvaspilot.cli": "/home/jacob/canvaspilot-installed-receiver-t49tzxjs/venv/lib/python3.14/site-packages/canvaspilot/cli.py",
+      "canvaspilot.client": "/home/jacob/canvaspilot-installed-receiver-t49tzxjs/venv/lib/python3.14/site-packages/canvaspilot/client.py",
+      "canvaspilot.grade_review_export": "/home/jacob/canvaspilot-installed-receiver-t49tzxjs/venv/lib/python3.14/site-packages/canvaspilot/grade_review_export.py",
+      "canvaspilot.module_progress_export": "/home/jacob/canvaspilot-installed-receiver-t49tzxjs/venv/lib/python3.14/site-packages/canvaspilot/module_progress_export.py",
+      "httpx": "/home/jacob/canvaspilot-installed-receiver-t49tzxjs/venv/lib/python3.14/site-packages/httpx/__init__.py",
+      "mcp": "/home/jacob/canvaspilot-installed-receiver-t49tzxjs/venv/lib/python3.14/site-packages/mcp/__init__.py",
+      "pydantic": "/home/jacob/canvaspilot-installed-receiver-t49tzxjs/venv/lib/python3.14/site-packages/pydantic/__init__.py"
+    },
+    "prefix": "/home/jacob/canvaspilot-installed-receiver-t49tzxjs/venv",
+    "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+    "site_packages": [
+      "/home/jacob/canvaspilot-installed-receiver-t49tzxjs/venv/lib/python3.14/site-packages",
+      "/home/jacob/canvaspilot-installed-receiver-t49tzxjs/venv/local/lib/python3.14/dist-packages",
+      "/home/jacob/canvaspilot-installed-receiver-t49tzxjs/venv/lib/python3/dist-packages",
+      "/home/jacob/canvaspilot-installed-receiver-t49tzxjs/venv/lib/python3.14/dist-packages"
+    ],
+    "sys_path": [
+      "/usr/lib/python314.zip",
+      "/usr/lib/python3.14",
+      "/usr/lib/python3.14/lib-dynload",
+      "/home/jacob/canvaspilot-installed-receiver-t49tzxjs/venv/lib/python3.14/site-packages"
+    ],
+    "versions": {
+      "PyJWT": "2.15.1",
+      "annotated-types": "0.8.0",
+      "anyio": "4.15.1",
+      "attrs": "26.1.0",
+      "canvaspilot": "0.1.1",
+      "certifi": "2026.7.22",
+      "cffi": "2.1.1",
+      "click": "8.5.0",
+      "cryptography": "50.0.2",
+      "h11": "0.16.0",
+      "hatchling": "1.32.4",
+      "httpcore": "1.0.9",
+      "httpcore2": "2.13.1",
+      "httpx": "0.28.1",
+      "httpx2": "2.13.1",
+      "idna": "3.20",
+      "jsonschema": "4.26.0",
+      "jsonschema-specifications": "2025.9.1",
+      "mcp": "2.3.0",
+      "mcp-types": "2.3.0",
+      "opentelemetry-api": "1.45.1",
+      "packaging": "26.3",
+      "pathspec": "1.1.1",
+      "pip": "25.1.1",
+      "pluggy": "1.6.0",
+      "pycparser": "3.11",
+      "pydantic": "2.14.1",
+      "pydantic_core": "2.50.1",
+      "python-multipart": "0.0.32",
+      "referencing": "0.37.0",
+      "rpds-py": "2026.9.1",
+      "sse-starlette": "3.5.0",
+      "starlette": "1.7.0",
+      "tomlkit": "0.15.1",
+      "trove-classifiers": "2026.9.21.13",
+      "truststore": "0.10.5",
+      "typing-inspection": "0.4.4",
+      "typing_extensions": "4.16.0",
+      "uvicorn": "0.54.0"
+    }
+  },
+  "limitations": [
+    "Runtime dependencies and hatchling were freshly resolved from PyPI as recorded wheels; optional browser/dev extras were not installed.",
+    "No live Canvas, credentials, browser, session broker, or MCP transport was used.",
+    "No replay of the earlier 554 or 284 assertion courses or historical issue 111 consumer.",
+    "Qualified on the recorded Linux x86_64 ThinkPad environment, Python 3.14.4, and exact recorded dependency versions only."
+  ],
+  "maintained_tests": {
+    "errors": 0,
+    "failures": 0,
+    "import_stubs": false,
+    "run": 7,
+    "test_git_blob": "8e0c8064d7b7b06861d7611860e78ba4269869f3"
+  },
+  "metadata_correction": {
+    "behavior_or_assertion_changes": false,
+    "corrected_text": "Qualified on the recorded Linux x86_64 ThinkPad environment, Python 3.14.4, and exact recorded dependency versions only.",
+    "execution_repeated": false,
+    "field": "limitations[3]",
+    "original_text": "Qualified on this macOS arm64 environment and exact recorded dependency versions only.",
+    "raw_receipt_file": "installed-package-receipt-raw.json",
+    "raw_receipt_sha256": "6ea1f965d22fb5ee1e6e6f187dc090f4b01d174852dbd38485a0d351302de29d",
+    "reason": "A static platform label remained from the unexecuted Mac draft; the actual runtime fields, interpreter paths, dependency records, and all commands identify the Linux ThinkPad.",
+    "recorded_at": "2026-10-13T03:01:27.400409+00:00"
+  },
+  "offline_demo": {
+    "assignment_briefs": 2,
+    "bytes": 1602,
+    "course_count": 2,
+    "mode": "synthetic_offline_example",
+    "path": "/home/jacob/canvaspilot-installed-receiver-t49tzxjs/consumer/synthetic-review.json",
+    "sha256": "294ea2975951eccea943307ac60575f55f9a16c610bcd113716cda9791242810"
+  },
+  "platform": "Linux-7.0.0-34-generic-x86_64-with-glibc2.43",
+  "scope": "Normal isolated wheel installation and maintained writer tests with real dependencies",
+  "source": "/home/jacob/canvaspilot-installed-receiver-t49tzxjs/source",
+  "source_commit": "38ed900199e663386a9ac39a1ef66cfba0674745",
+  "source_files": {
+    "LICENSE": {
+      "bytes": 1075,
+      "git_blob": "49422571fde440401be167dfec1cdc46a89f62d2",
+      "sha256": "85144488dcaf127ecd6842af9b19a72a2448c7b48ab831140ace32dac8090314"
+    },
+    "README.md": {
+      "bytes": 28728,
+      "git_blob": "720c20ac8268a38e8e7f8f95f6108087064f6420",
+      "sha256": "31cec701d3f31733db4438ce6fddcf06eafd3ac30d96fa90f3b73b9bd6bd976e"
+    },
+    "pyproject.toml": {
+      "bytes": 1353,
+      "git_blob": "76eba6d30696b4f2733539cd47df6e178bc0f585",
+      "sha256": "555ad3c7e338d38ae5feabc06c0c07503f22d9c732a9af153c7706c63d2b3c63"
+    },
+    "src/canvaspilot/__init__.py": {
+      "bytes": 561,
+      "git_blob": "74a7a6087bf81fd7c75c15769b30408039618e0f",
+      "sha256": "377812a8bf90d26e31b2c8a159724e366642b90931ae761dec5d93abbfe852c5"
+    },
+    "src/canvaspilot/agenda.py": {
+      "bytes": 8455,
+      "git_blob": "82ab4fa8f9b92b8d9e5d4c74962d138e1d882ebd",
+      "sha256": "cd9d9e027393ce21cff0b4d0a13098dca3a906af3e9803201655bca40d3c3fda"
+    },
+    "src/canvaspilot/agenda_export.py": {
+      "bytes": 15270,
+      "git_blob": "af25e95a1c9bf4a20784617e5c867d18584ac49a",
+      "sha256": "4e55a0c16e76286130f01e81f04685da1a3ecd9bb5a7a0493ccbfe97c0fcd3ce"
+    },
+    "src/canvaspilot/agenda_view/controls.js": {
+      "bytes": 2823,
+      "git_blob": "107097a5ad2379fb7497e1b38c488b3a7917e93f",
+      "sha256": "98474fb98fff0027e26fabd024c33a186715b5ac612979c4ef8b1d84b181d172"
+    },
+    "src/canvaspilot/agenda_view/style.css": {
+      "bytes": 7435,
+      "git_blob": "86ad5459a44c91d0fb448e77dcda78cf1d39642b",
+      "sha256": "ed5f86e62198a9a0b13cbcd87db0bdae9cb2e5732358bf6eb684da47f45610d0"
+    },
+    "src/canvaspilot/announcement_search.py": {
+      "bytes": 1555,
+      "git_blob": "b2b344526b14c2f123163f6bcfd28f70e28281e8",
+      "sha256": "aa766157ccc10d6c3371a0e761c89ce3189d201cd9fcf5b82eec22d1c572f65e"
+    },
+    "src/canvaspilot/api.py": {
+      "bytes": 31609,
+      "git_blob": "de65a7012d01d20c8dda6137eff9400872b14d3c",
+      "sha256": "b1207957216ed1fa4698c6b88d825b8a93c5bf90125c723f6f85b445b86f89c5"
+    },
+    "src/canvaspilot/assignment_submission.py": {
+      "bytes": 1296,
+      "git_blob": "95b1f19927e4eecf99fc852325737c3cfe86cd0d",
+      "sha256": "52fc732660b8844a2ee0801931a363f20db15b5309d148d01e3b618be487133d"
+    },
+    "src/canvaspilot/bundle.py": {
+      "bytes": 2761,
+      "git_blob": "c2544032a1cfcdc116725c6403ff09d7b0328f87",
+      "sha256": "c8a1854b5c04715c1371c05f4c25ba867ec2d2daafc132b7ed8a973d3e55ddcf"
+    },
+    "src/canvaspilot/calendar_export.py": {
+      "bytes": 10601,
+      "git_blob": "9e4c05c88b53730414076fbc2069c9c293c64d76",
+      "sha256": "3fbfa8c266d4cc8f03a1339c29c48fab9820e8831c308dbf44e15c1b09f2ea15"
+    },
+    "src/canvaspilot/cli.py": {
+      "bytes": 42997,
+      "git_blob": "faf550a1c3c1ff8d1d131c4feb7867e642d749c8",
+      "sha256": "3ba35fe48cbc88d81876551cc47048df951fe3a5f82d75b97740ac9e88be5e0b"
+    },
+    "src/canvaspilot/client.py": {
+      "bytes": 19355,
+      "git_blob": "f314bdb677607d563dc8bf7c5ffb5fb6c96d1bb1",
+      "sha256": "bb8bddd21bf2a80c5bad8f92ed9ed28368008e5d29759604f9b1e7af6e264e4a"
+    },
+    "src/canvaspilot/discussion_search.py": {
+      "bytes": 9556,
+      "git_blob": "58d65519670dfcb2bb2110c5f4dd9648fd9ed9a0",
+      "sha256": "5cc5b013285638b979c16904f04a8167099d11745e48f9d326ffb5e7271be26e"
+    },
+    "src/canvaspilot/discussion_thread.py": {
+      "bytes": 8547,
+      "git_blob": "2ed658fcf5cee996a02115742935716f1d039e25",
+      "sha256": "11f955f827c29421143782518a1aaf1894d0892739c3b56c4d5e413da74555ff"
+    },
+    "src/canvaspilot/feedback.py": {
+      "bytes": 3900,
+      "git_blob": "ec996f421a851d699a9ac7cb1f2a486f9ff7c4ea",
+      "sha256": "55454598effea598474a21f67e36d5bc5bea84aaefeefc18e4d8c49804ab9869"
+    },
+    "src/canvaspilot/folder_browser.py": {
+      "bytes": 6293,
+      "git_blob": "4b3078ddb00a4a34015710e49fa7b7806adebd23",
+      "sha256": "c6a67229b268c539e5edb581e3320b06229460adc3fbc01d72e4964e31c0348a"
+    },
+    "src/canvaspilot/grade_review.py": {
+      "bytes": 13247,
+      "git_blob": "24d93cb693af09cf5123f31fea90e77a589b023c",
+      "sha256": "e550752a830ca9cf4c2ef5d5b06dbf464abd9dfed3a5252d310a4acf8e2411f5"
+    },
+    "src/canvaspilot/grade_review_export.py": {
+      "bytes": 18810,
+      "git_blob": "8a6281f62f99e18109f90a273a4c29da4929f3a3",
+      "sha256": "0f16c805d57bf9aa8eba09b6bde2afde033bf09fe64b4525adf22de3b248c351"
+    },
+    "src/canvaspilot/mcp_server.py": {
+      "bytes": 16640,
+      "git_blob": "632a6069a042289b0ce66860d6ad7cff7545a94f",
+      "sha256": "a86eb88a381e660a17dbfb830c84749c3251abf474a5d3cdd359cc458f0d1c45"
+    },
+    "src/canvaspilot/module_progress.py": {
+      "bytes": 9615,
+      "git_blob": "a9d3e4bbea22067f76110f03a5f31a5bc9d8de05",
+      "sha256": "974ee31925514a2e53b899888302a7fa357e280ab5f2461b754b814473653d99"
+    },
+    "src/canvaspilot/module_progress_export.py": {
+      "bytes": 12904,
+      "git_blob": "8ccb9f1262790a744418d4212e072ee43031ab88",
+      "sha256": "f723c06e551fae2cf50745460f9109867e6e0f9ebc3cc997d49d5e2173aa9f50"
+    },
+    "src/canvaspilot/offline_demo.py": {
+      "bytes": 4124,
+      "git_blob": "9d2cfd260d8db052b8183e3ec4fc9626a5bb2b9a",
+      "sha256": "2389f3ccc1b6db5995be0d90e014ea9345e3029aa5546a5b2dcf12c1197e6d4d"
+    },
+    "src/canvaspilot/page_export.py": {
+      "bytes": 17041,
+      "git_blob": "1b46af8af07d24e24cde54aba393d9f977e77136",
+      "sha256": "8800e959ee620438273c3291fd24c51b9ed567430b28093cd3f8bef52bff5015"
+    },
+    "src/canvaspilot/session_broker.py": {
+      "bytes": 13944,
+      "git_blob": "cc706d5860489ec37cb2cf7f0b1cb4eee33b664f",
+      "sha256": "a692cd2812cbc09536f1b60c84892bc8e87d2ae984c5a5aa25a13f6537ba6da2"
+    },
+    "src/canvaspilot/study_workspace.css": {
+      "bytes": 6648,
+      "git_blob": "951e0416c9bf558d7fb79d2257d636654e195918",
+      "sha256": "aa77aeba7b1400eeccde7430e77eb0de0d5fd9791c4f1960c930309ba574fe2b"
+    },
+    "src/canvaspilot/study_workspace.html": {
+      "bytes": 2530,
+      "git_blob": "fd2ffa093d54938f723947b4201dca11c8c20735",
+      "sha256": "23065325dffcb57cc27064cbfc61304489f92c8b609b9314df45a3fac03159b7"
+    },
+    "src/canvaspilot/study_workspace.js": {
+      "bytes": 19650,
+      "git_blob": "a0d526bcd2e83877d7c43d8d05757af22f547052",
+      "sha256": "ed9781aad73831a53e214300247373a8dd91c6b8fe124f01cc7487bbd46730c2"
+    },
+    "src/canvaspilot/study_workspace.py": {
+      "bytes": 11259,
+      "git_blob": "fe3b47e2ba55463c4f016d3173f8397e281f421b",
+      "sha256": "fb791929a7322850d4a92fbf2a7d54a71780e2dd54a0737b84258de09abd0515"
+    },
+    "src/canvaspilot/submission_comparison.py": {
+      "bytes": 27015,
+      "git_blob": "f8e2b9bfef5bb799bd75c6c1f3c6e56366fcf9ad",
+      "sha256": "ab7445cadf2a22b31d8f8f837b816d90367d5295e90fe73615a459bc2d9101d4"
+    },
+    "src/canvaspilot/submission_history.py": {
+      "bytes": 2853,
+      "git_blob": "9e71a0dc944bee71b0b5c61d7ff84cbb59119e1a",
+      "sha256": "b007234b9861a68504e36f005ae463943b36b5cd50a3d157532c1cab09fcf9da"
+    },
+    "src/canvaspilot/submission_history_export.py": {
+      "bytes": 16025,
+      "git_blob": "bc94606454e7d5cb880a5d281716cd7ee0dfb8ac",
+      "sha256": "7582f1aa2a18ace57c1ed4e0f75dc095850520853f26f578104f8fbd893da14f"
+    },
+    "src/canvaspilot/syllabus_packet.py": {
+      "bytes": 21513,
+      "git_blob": "1faf3448c391fdb76b8cf38fe5854906614443b1",
+      "sha256": "005a837c10bb185edf0bcc75c3ab50609f6afbe49d38161e841380116ab97bd7"
+    },
+    "tests/test_calendar_publication_cleanup.py": {
+      "bytes": 6896,
+      "git_blob": "8e0c8064d7b7b06861d7611860e78ba4269869f3",
+      "sha256": "300858ce4be66c767cc8894a6e55d918e54194ff8941d7364027cf4d60af4abb"
+    }
+  },
+  "source_tree": "58c812305b0d6317510b28feb744b1ead20a8dc4",
+  "started_at": "2026-10-13T02:30:37.081359+00:00",
+  "status": "passed",
+  "uid": 1000,
+  "wheel": {
+    "bytes": 132706,
+    "name": "canvaspilot-0.1.1-py3-none-any.whl",
+    "sha256": "b40d9c4bbe01cc765784f45923ec3cc6f8a4cb49320ee59f6a9c9302c1674c54"
+  },
+  "work": "/home/jacob/canvaspilot-installed-receiver-t49tzxjs"
+}

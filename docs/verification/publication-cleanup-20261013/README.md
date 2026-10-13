@@ -59,8 +59,8 @@ the candidate passed all seven methods. The test with write failure/cancellation
 also uses two subtests. These tests retain real temporary files, disk writes,
 descriptors and hard links, with explicit injected OS errors.
 
-The native environment has no installed project dependencies. Both courses
-therefore use an explicitly reported import/transport boundary stub; provider
+The earlier Mac native environment had no installed project dependencies. Both
+Mac courses therefore used an explicitly reported import/transport boundary stub; provider
 methods refuse unexpected use or return synthetic data. These results qualify
 the local publication and receipt behavior. They do not establish live Canvas,
 installed-package, full pytest/Ruff, browser, Windows or deployment acceptance.
@@ -148,3 +148,59 @@ test run. The two existing workflow files are unchanged. The merge commit uses
 `[skip ci]` and `[skip actions]` under GitHub's documented
 [skip instructions for push and pull-request events](https://docs.github.com/en/actions/how-tos/manage-workflow-runs/skip-workflow-runs).
 No workflow, repository protection or required-check setting is altered.
+
+## Installed-package qualification on Linux
+
+A separate independent course received exact source commit
+`38ed900199e663386a9ac39a1ef66cfba0674745` as a built and installed wheel.
+It passed **158 source-custody and behavior assertions**, and all **seven
+maintained writer tests** passed with actual installed package imports and
+dependencies, without import stubs. The native process exited 0 on the Linux
+x86_64 ThinkPad with Python 3.14.4 on 2026-10-13 UTC.
+
+The receiver verified all 36 source/build/test inputs against their Git blob
+identities, built the wheel, installed it in its own private virtual
+environment, and verified installed module locations, dependency requirements
+and exact product bytes. Both the console entrypoint and module help succeeded
+and agreed. The built-in offline demo wrote fictional course/assignment JSON
+and refused to overwrite that completed file. The seven maintained tests then
+ran against the installed writer. Original source and installed writer bytes
+remained unchanged.
+
+The earlier Mac review environment became unavailable before this course ran.
+The Linux course used a fresh private environment with the declared runtime
+dependencies and existing build backend resolved from PyPI as wheels. The
+retained provenance records their URLs, hashes and versions, including
+httpx 0.28.1, MCP 2.3.0, Pydantic 2.14.1 and hatchling 1.32.4. The project wheel
+build and installation then ran without fetching further dependencies.
+Optional browser/development extras were not installed.
+
+### Installed-course evidence
+
+The adjacent files retain the as-executed receiver, 36-input source manifest,
+environment/dependency/wheel installation records, fictional offline output,
+raw receipt and readable corrected receipt. The complete received wheel is
+retained under `wheels/`; no package release or existing user installation was
+changed.
+
+| Artifact | SHA-256 |
+| --- | --- |
+| [Readable receipt](installed-package-receipt.json) | `f29339a7a8d3f7cc005ede4c29f2aeb17a20f74e19492f3d463ded3ad721a095` |
+| [Unchanged raw receipt](installed-package-receipt-raw.json) | `6ea1f965d22fb5ee1e6e6f187dc090f4b01d174852dbd38485a0d351302de29d` |
+| [As-executed receiver](installed-package-receiver.py) | `388e1cd561823039a3c8e29486cc007d8ed80010d8b4a468a20c27fac6eb58e6` |
+| [Source manifest](installed-package-source-manifest.json) | `95ee51aaba23a76f396fc871374a6d1c9a7f782e8d5086df88a720b6d48e03fe` |
+| [Received wheel](wheels/canvaspilot-0.1.1-py3-none-any.whl) | `b40d9c4bbe01cc765784f45923ec3cc6f8a4cb49320ee59f6a9c9302c1674c54` |
+
+The raw receipt retained one stale static limitation label from the unexecuted
+Mac draft. Its actual platform, interpreter, device and command fields all
+identify the Linux ThinkPad. The readable receipt changes only that limitation
+label and adds an explicit correction linking the unchanged raw receipt by
+hash. No source, command, assertion or wheel changed, and no execution was
+repeated.
+
+This course qualifies the recorded installed package, CLI help, fictional
+offline consumer and writer regression tests on the recorded Linux environment.
+Live Canvas/authentication, session broker or MCP transport, browser behavior,
+Windows, the full pytest/Ruff suite and historical issue #111 remain outside its
+scope. The earlier 554-assertion comparison and 284-assertion export composition
+retain their distinct source and synthetic-transport qualifications.
