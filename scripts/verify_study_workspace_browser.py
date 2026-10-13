@@ -139,17 +139,20 @@ class BrowserRun:
         if pending:
             expect(page.locator("#workspace")).to_be_hidden()
             expect(page.locator("#save-copy")).to_be_disabled()
+            expect(page.locator("#download-notes")).to_be_disabled()
             expect(page.locator("#print-copy")).to_be_disabled()
             expect(page.locator("article.assignment")).to_have_count(0)
         elif refused:
             expect(page.locator("#error")).to_be_visible()
             expect(page.locator("#workspace")).to_be_hidden()
             expect(page.locator("#save-copy")).to_be_disabled()
+            expect(page.locator("#download-notes")).to_be_disabled()
             expect(page.locator("#print-copy")).to_be_disabled()
         else:
             expect(page.locator("#workspace")).to_be_visible()
             expect(page.locator("#error")).to_be_hidden()
             expect(page.locator("#save-copy")).to_be_enabled()
+            expect(page.locator("#download-notes")).to_be_enabled()
         evidence["file_after_open"] = digest(path)
         assert evidence["file_after_open"] == evidence["file_before"]
         return page, evidence
@@ -162,6 +165,18 @@ class BrowserRun:
         download.save_as(path)
         assert download.failure() is None
         return path
+
+    def notes(self, page, name, source_digest):
+        with page.expect_download() as event:
+            page.get_by_role("button", name="Download notes", exact=True).click()
+        download = event.value
+        assert download.suggested_filename == (
+            "canvaspilot-study-notes-17-" + source_digest[:12] + ".md"
+        )
+        path = self.output / name
+        download.save_as(path)
+        assert download.failure() is None
+        return path.read_text(encoding="utf-8")
 
     def passed(self, name, **details):
         self.receipt["cases"].append({"name": name, "passed": True, **details})
@@ -229,6 +244,52 @@ def exercise(browser, output, receipt):
     assert "UNEXPORTED_" not in page.locator("body").inner_text()
     assert page.locator("img, iframe, object").count() == 0
     run.passed("brief_and_rubric_projection_no_inferred_scores")
+
+    notes_page, _ = run.open("notes-download", original)
+    literal_notes = (
+        "Compare these examples 🧭\n```python\nprint('question')\n```\n"
+        "````\n</script><img src=x onerror=alert(1)> & _literal_\n"
+        "End of my note."
+    )
+    notes_page.locator("#assignment-0-notes").fill(literal_notes)
+    notes_page.locator("#assignment-0-review").check()
+    dirty = """() => {
+      const event = new Event('beforeunload', {cancelable:true});
+      window.dispatchEvent(event); return event.defaultPrevented;
+    }"""
+    assert notes_page.evaluate(dirty)
+    markdown = run.notes(notes_page, "study-notes.md", doc["source_sha256"])
+    assert markdown.startswith("# Assignment study notes\n\nCourse: 17\n")
+    assert "Snapshot SHA-256: " + doc["source_sha256"] in markdown
+    assert "## 1. Research plan \\& evidence map\n" in markdown
+    assert markdown.index("Assignment: 81\n") < markdown.index("Assignment: 82\n")
+    assert markdown.index("Assignment: 82\n") < markdown.index("Assignment: 83\n")
+    assert "Assignment: 81\nReviewed locally: yes\n" in markdown
+    assert "Assignment: 82\nReviewed locally: no\n" in markdown
+    assert "`````text\n" + literal_notes + "\n`````\n" in markdown
+    assert markdown.count("_No notes written._") == 2
+    assert "Literal notation: <claim>" not in markdown
+    assert "Criterion points:" not in markdown and "UNEXPORTED_" not in markdown
+    assert notes_page.evaluate(dirty)
+    expect(notes_page.locator("#save-status")).to_contain_text("Save a working copy")
+    expect(notes_page.locator("#assignment-0-notes")).to_have_value(literal_notes)
+    notes_working = run.save(notes_page, "notes-working-copy.html")
+    assert not notes_page.evaluate(dirty)
+    notes_saved = envelope(notes_working.read_bytes())
+    assert notes_saved["source"] == source_before
+    assert notes_saved["state"]["assignments"]["17:81"] == {
+        "notes": literal_notes, "reviewed": True
+    }
+    run.open("notes-working-pending", notes_working, pending=True)
+    notes_fresh, _ = run.open("notes-working-reopen", notes_working)
+    assert run.notes(notes_fresh, "reopened-notes.md", doc["source_sha256"]) == markdown
+    assert not notes_fresh.evaluate(dirty)
+    maximum_note = "x" * 49998 + "🧭"
+    notes_fresh.locator("#assignment-1-notes").fill(maximum_note)
+    maximum_markdown = run.notes(notes_fresh, "maximum-notes.md", doc["source_sha256"])
+    assert "```text\n" + maximum_note + "\n```\n" in maximum_markdown
+    assert notes_fresh.evaluate(dirty)
+    run.passed("markdown_download_literal_notes_order_review_and_working_copy_lifecycle")
 
     notes = (
         "Question: Which observation would change my conclusion?\n"
@@ -309,6 +370,8 @@ def exercise(browser, output, receipt):
     assert phone.evaluate("document.documentElement.scrollWidth <= innerWidth + 1")
     save_box = phone.locator("#save-copy").bounding_box()
     assert save_box and save_box["height"] >= 44
+    notes_box = phone.locator("#download-notes").bounding_box()
+    assert notes_box and notes_box["height"] >= 44
     phone.locator("#assignment-1-notes").fill(
         "Mobile reminder: start with the feedback diagram."
     )
@@ -429,6 +492,11 @@ def exercise(browser, output, receipt):
     expect(failing.locator("#assignment-0-notes")).to_have_value(
         "Keep this note after the controlled browser failure."
     )
+    failing.get_by_role("button", name="Download notes", exact=True).click()
+    expect(failing.locator("#save-status")).to_contain_text(
+        "The notes download could not be prepared"
+    )
+    assert failing.evaluate(dirty)
     failing.evaluate("""() => {
       window.__created = []; window.__revoked = [];
       const revoke = URL.revokeObjectURL.bind(URL);
@@ -450,7 +518,21 @@ def exercise(browser, output, receipt):
     expect(failing.locator("#assignment-0-notes")).to_have_value(
         "Keep this note after the controlled browser failure."
     )
+    failing.get_by_role("button", name="Download notes", exact=True).click()
+    expect(failing.locator("#save-status")).to_contain_text(
+        "controlled download click failure"
+    )
+    assert failing.evaluate(
+        "JSON.stringify(window.__created) === JSON.stringify(window.__revoked)"
+    )
+    assert failing.evaluate("window.__created.length") == 2
+    assert failing.locator('a[href^="blob:"]').count() == 0
+    expect(failing.locator("#assignment-0-notes")).to_have_value(
+        "Keep this note after the controlled browser failure."
+    )
+    assert failing.evaluate(dirty)
     run.passed("two_controlled_download_failures_keep_notes_and_release_resources")
+    run.passed("notes_download_failures_keep_notes_dirty_state_and_release_resources")
     run.finish()
     return original
 

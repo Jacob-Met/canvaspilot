@@ -5,7 +5,8 @@ rubrics, and keep your own study notes beside them. A local review checkbox
 helps you track what you have read. **Save working copy** downloads a new file
 with those notes and checkboxes; reopen that file to continue later. **Print**
 includes the selected briefs, rubric descriptions, your notes, and local review
-markers.
+markers. **Download notes** gives you a Markdown document for reading or copying
+your notes in a text editor.
 
 ## Export your selection
 
@@ -56,6 +57,24 @@ The working file contains its selected brief snapshot and your notes together.
 Treat it as your own local document when copying or sharing it. Opening a newer
 Canvas export does not automatically move notes to it: notes are bound to their
 exact original snapshot, course, and assignment IDs.
+
+## Download your notes as Markdown
+
+Select **Download notes** to download a `.md` document with each selected
+assignment's title, ID, local review marker, and your current notes, in selection
+order. The document includes the course ID and snapshot SHA-256 so you can match
+it to the working copy. Assignment prompts and rubric contents are omitted.
+
+Open the download in a text editor or Markdown viewer. Notes appear in literal
+text blocks, so code, Markdown punctuation, and HTML examples stay as you typed
+them. An assignment with no note is explicitly marked **No notes written**.
+The filename starts with `canvaspilot-study-notes-` and ends in `.md`.
+
+The notes document does not reopen as an editable study workspace. Keep using
+**Save working copy** when you want to resume beside the assignment briefs.
+Downloading notes leaves any unsaved-working-copy warning active; it does not
+change your notes, review markers, or saved HTML file. A failed download leaves
+your current notes in the open tab.
 
 ## Read the supplied brief faithfully
 
@@ -171,7 +190,8 @@ python scripts/verify_study_workspace_browser.py \
   --output /new/study-workspace-evidence
 ```
 
-It exercises an actual CLI export, real downloads and fresh offline reopens,
+It exercises an actual CLI export, real HTML and Markdown downloads, fresh offline
+reopens, literal notes and review markers, the unsaved-working-copy warning,
 the pending-verification boundary, print output, keyboard and 320-pixel touch
 layout, damaged or mismatched state, literal markup, and controlled download
 failures. Its receipt records the exact source inventory, page HTTP requests

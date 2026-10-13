@@ -34,6 +34,35 @@
       }
     }
   }
+  function markdownLabel(value) {
+    return text(value).replace(/[\r\n\u2028\u2029]+/g, " ")
+      .replace(/[\\`*_{}\[\]()#+.!<>|&~-]/g, "\\$&");
+  }
+  function notesMarkdown(source, digest, state) {
+    const lines = [
+      "# Assignment study notes", "",
+      "Course: " + markdownLabel(source.course_id),
+      "Snapshot SHA-256: " + digest, "",
+      "Review markers are local study notes, not Canvas completion or grades.",
+      "Keep the HTML working copy to continue editing with the assignment briefs.", "",
+    ];
+    source.assignments.forEach((item, index) => {
+      const local = state.assignments[item.key];
+      const title = text(item.brief.title) || "Assignment " + item.brief.assignment_id;
+      lines.push("## " + (index + 1) + ". " + markdownLabel(title), "",
+        "Assignment: " + markdownLabel(item.brief.assignment_id),
+        "Reviewed locally: " + (local.reviewed ? "yes" : "no"), "", "### My notes", "");
+      if (local.notes === "") {
+        lines.push("_No notes written._", "");
+      } else {
+        // A longer fence keeps any Markdown or HTML in the note literal.
+        const longest = (local.notes.match(/`+/g) || []).reduce((size, run) => Math.max(size, run.length), 0);
+        const fence = "`".repeat(Math.max(3, longest + 1));
+        lines.push(fence + "text\n" + local.notes + (local.notes.endsWith("\n") ? "" : "\n") + fence, "");
+      }
+    });
+    return lines.join("\n");
+  }
   function pointLabel(value) {
     if (typeof value === "number" && Number.isFinite(value) && Math.abs(value) <= Number.MAX_SAFE_INTEGER) {
       return String(value);
@@ -221,8 +250,27 @@
     $("workspace").hidden = false;
     $("error").hidden = true;
     $("save-copy").disabled = false;
+    $("download-notes").disabled = false;
     $("print-copy").disabled = false;
     $("print-copy").addEventListener("click", () => window.print());
+    $("download-notes").addEventListener("click", () => {
+      let url = null;
+      let link = null;
+      try {
+        checkState(state, digest, source.assignments);
+        url = URL.createObjectURL(new Blob([notesMarkdown(source, digest, state)], {type: "text/markdown;charset=utf-8"}));
+        link = element("a");
+        link.href = url;link.download = "canvaspilot-study-notes-" + source.course_id + "-" + digest.slice(0, 12) + ".md";
+        document.body.append(link);link.click();link.remove();link = null;
+        const revoke = url;setTimeout(() => URL.revokeObjectURL(revoke), 1000);url = null;
+        // Notes alone cannot reopen this editable workspace; keep its unsaved flag.
+        $("save-status").textContent = "Notes download requested. Save a working copy to continue editing this workspace later.";
+      } catch (error) {
+        if (link) link.remove();
+        if (url) URL.revokeObjectURL(url);
+        $("save-status").textContent = "The notes download could not be prepared. Your notes are still in this tab. " + error.message;
+      }
+    });
     $("save-copy").addEventListener("click", () => {
       let url = null;
       let link = null;
@@ -237,6 +285,7 @@
         copy.querySelector("#snapshot-provenance").removeAttribute("title");
         copy.querySelector("#error").hidden = true;
         copy.querySelector("#save-copy").disabled = true;
+        copy.querySelector("#download-notes").disabled = true;
         copy.querySelector("#print-copy").disabled = true;
         copy.querySelector("#selection-summary").textContent = "Opening snapshot…";
         copy.querySelector("#save-status").textContent = "Edits stay in this tab until you save a working copy.";
@@ -263,6 +312,7 @@
   openWorkspace().catch((error) => {
     $("workspace").hidden = true;
     $("save-copy").disabled = true;
+    $("download-notes").disabled = true;
     $("print-copy").disabled = true;
     $("error").textContent = error.message || "This workspace could not be opened. The file has not been changed.";
     $("error").hidden = false;
