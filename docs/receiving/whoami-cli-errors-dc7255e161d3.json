@@ -1,0 +1,747 @@
+{
+  "schema": "canvaspilot.whoami-cli-errors.receiving.v1",
+  "owner": "dc7255e161d3/estate_source",
+  "issue": "https://github.com/Jacob-Met/canvaspilot/issues/150",
+  "objective": "Give the first quick-start identity read an actionable diagnostic for observed expected read failures while preserving native success shapes.",
+  "parent": "ba26496aa3efd4088db7e8d512e1ed2fbfbfdd56",
+  "files": {
+    "src/canvaspilot/cli.py": {
+      "bytes": 44367,
+      "sha256": "84a17041dabe6beb0bafd74e492469f3c67b6ee69c4f4ec66684255cb2c33cbc",
+      "git_blob": "0469bab224548dcca067d9b279cea0b6ca7ad09f"
+    },
+    "tests/test_whoami_cli_errors.py": {
+      "bytes": 7713,
+      "sha256": "454491b2ad4afcfc0c8a1d977da6191596fa26e0ff8d23cf20d94d5c4f784c49",
+      "git_blob": "36a0b9cf96255ae75e59a8873041b1c424fdcc88"
+    },
+    "docs/whoami-cli.md": {
+      "bytes": 2168,
+      "sha256": "fced04f40a59abbf362a667ee367fe4d9c7442495d29962be869e2842278da03",
+      "git_blob": "cffead7953aea571324806af262184631efa0f68"
+    }
+  },
+  "unchanged_files": {
+    "src/canvaspilot/api.py": {
+      "bytes": 31609,
+      "sha256": "b1207957216ed1fa4698c6b88d825b8a93c5bf90125c723f6f85b445b86f89c5",
+      "git_blob": "de65a7012d01d20c8dda6137eff9400872b14d3c"
+    },
+    "src/canvaspilot/client.py": {
+      "bytes": 19355,
+      "sha256": "bb8bddd21bf2a80c5bad8f92ed9ed28368008e5d29759604f9b1e7af6e264e4a",
+      "git_blob": "f314bdb677607d563dc8bf7c5ffb5fb6c96d1bb1"
+    },
+    "tests/test_courses_cli_errors.py": {
+      "bytes": 7738,
+      "sha256": "2c993d750033a501aac17302af9261ca9eb947403e52de707147589c4d6c82b8",
+      "git_blob": "8f6e2c342f11ebc870dfb2515e66237ff60ab12c"
+    }
+  },
+  "production_scope": {
+    "only": "Existing whoami branch",
+    "caught": [
+      "CanvasAuthError",
+      "httpx.HTTPError",
+      "json.JSONDecodeError"
+    ],
+    "expected_failure": {
+      "status": 1,
+      "stdout": "",
+      "stderr": "One JSON object with ok=false, actual exception class and full native message."
+    },
+    "success": "Existing mode/base_url/profile JSON output, including object, text and null native profiles; exact stdout/status retained.",
+    "logging": "Temporarily suppress HTTPX INFO during this read and restore actual prior logger.level in finally.",
+    "lifetime": "Keep outer client.close on every path.",
+    "excluded": [
+      "Plain unrelated ValueError",
+      "UnicodeDecodeError",
+      "Programming errors",
+      "stdout/stderr destination errors"
+    ],
+    "preservation": [
+      "Courses branch byte-exact",
+      "API/client/authentication/session/MCP source",
+      "Request path/query/count and native profile projection",
+      "Every other command",
+      "Dependencies/workflows"
+    ],
+    "exact_inverse_recovers_parent_cli": "c459c9b9b41b368b35c4c2c8e687d079fbefe753"
+  },
+  "environment": {
+    "device_id": "9ea77fe9-bb87-46e0-a5a8-8b3e25f6ff7e",
+    "platform": "Windows x64",
+    "python": "3.11.9",
+    "versions": {
+      "canvaspilot": "0.1.1",
+      "httpx": "0.28.1",
+      "mcp": "2.3.0",
+      "pytest": "8.4.2",
+      "ruff": "0.16.10"
+    },
+    "root": "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors",
+    "candidate": "identity-source",
+    "original": "identity-parent-source",
+    "entrypoint": "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\venv\\Scripts\\canvaspilot.exe",
+    "scope": "Synthetic authored loopback only; no school endpoint, account, actual session broker, browser or profile."
+  },
+  "original_native": {
+    "receipt": "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\evidence\\identity-original-9ndnftmu\\receipt.json",
+    "bytes": 23710,
+    "sha256": "5da735201141957889e450e114a1c21b75e0f07da0c749c97ef6c15047784dbf",
+    "wrapper_pid": 21964,
+    "wrapper_exit": 0,
+    "terminal_exit_observed": true,
+    "seconds": 13.84,
+    "source_preserved": true,
+    "server_closed": true,
+    "cases": [
+      {
+        "case": "success",
+        "exit": 0,
+        "stdout": "{\r\n  \"mode\": \"token\",\r\n  \"base_url\": \"http://127.0.0.1:62062\",\r\n  \"profile\": {\r\n    \"id\": 7,\r\n    \"name\": \"Synthetic Reviewer\",\r\n    \"short_name\": \"\",\r\n    \"primary_email\": null,\r\n    \"opaque\": {\r\n      \"zero\": 0,\r\n      \"false\": false,\r\n      \"unicode\": \"\\u0394\"\r\n    }\r\n  }\r\n}\r\n",
+        "stdout_sha256": "665c181c33a079eee98783e679706bd5e6a1f5b8abdc393afcd56f66d1982125",
+        "stderr_sha256": "8b485dc7660a11120e6e04b07b22ff833b6db36c092f8912598d22f161313053",
+        "stderr_tail": [
+          "HTTP Request: GET http://127.0.0.1:62062/api/v1/users/self/profile?per_page=50 \"HTTP/1.0 200 OK\"\r",
+          ""
+        ],
+        "requests": [
+          {
+            "path": "/api/v1/users/self/profile",
+            "query": {
+              "per_page": [
+                "50"
+              ]
+            },
+            "synthetic_token": true
+          }
+        ],
+        "profile_absent": true
+      },
+      {
+        "case": "plain_text",
+        "exit": 0,
+        "stdout": "{\r\n  \"mode\": \"token\",\r\n  \"base_url\": \"http://127.0.0.1:62062\",\r\n  \"profile\": \"synthetic non-JSON profile\"\r\n}\r\n",
+        "stdout_sha256": "593b6155cfdbe3a6047511e8ebc40022933ff6702c970889a03c4086bd2c9365",
+        "stderr_sha256": "8b485dc7660a11120e6e04b07b22ff833b6db36c092f8912598d22f161313053",
+        "stderr_tail": [
+          "HTTP Request: GET http://127.0.0.1:62062/api/v1/users/self/profile?per_page=50 \"HTTP/1.0 200 OK\"\r",
+          ""
+        ],
+        "requests": [
+          {
+            "path": "/api/v1/users/self/profile",
+            "query": {
+              "per_page": [
+                "50"
+              ]
+            },
+            "synthetic_token": true
+          }
+        ],
+        "profile_absent": true
+      },
+      {
+        "case": "empty_body",
+        "exit": 0,
+        "stdout": "{\r\n  \"mode\": \"token\",\r\n  \"base_url\": \"http://127.0.0.1:62062\",\r\n  \"profile\": null\r\n}\r\n",
+        "stdout_sha256": "33cd773256715dc2cfe2d4006a246eb585ce7e00055c72e410a24c4107cf39d0",
+        "stderr_sha256": "8b485dc7660a11120e6e04b07b22ff833b6db36c092f8912598d22f161313053",
+        "stderr_tail": [
+          "HTTP Request: GET http://127.0.0.1:62062/api/v1/users/self/profile?per_page=50 \"HTTP/1.0 200 OK\"\r",
+          ""
+        ],
+        "requests": [
+          {
+            "path": "/api/v1/users/self/profile",
+            "query": {
+              "per_page": [
+                "50"
+              ]
+            },
+            "synthetic_token": true
+          }
+        ],
+        "profile_absent": true
+      },
+      {
+        "case": "missing_setup",
+        "exit": 1,
+        "stdout": "",
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "0a30957e1c898a78bddc9613c92bfd55052bfc36cb225fea4c0eca9001135b7d",
+        "stderr_tail": [
+          "  File \"D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\identity-source\\src\\canvaspilot\\client.py\", line 181, in _ensure_http\r",
+          "    raise CanvasAuthError(\r",
+          "canvaspilot.client.CanvasAuthError: No session broker running and no CANVAS_API_TOKEN. Start: canvaspilot session start\r",
+          ""
+        ],
+        "requests": [
+          {
+            "path": "/health",
+            "query": {},
+            "synthetic_token": false
+          }
+        ],
+        "profile_absent": true
+      },
+      {
+        "case": "auth_401",
+        "exit": 1,
+        "stdout": "",
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "92cd844b3d23ed41288c848471cb7d9ec94a2bba64d6e03d4e414547916d8015",
+        "stderr_tail": [
+          "  File \"D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\identity-source\\src\\canvaspilot\\client.py\", line 226, in request\r",
+          "    raise CanvasAuthError(\r",
+          "canvaspilot.client.CanvasAuthError: Canvas auth failed (401) for GET /api/v1/users/self/profile. Start session broker: canvaspilot session start\r",
+          ""
+        ],
+        "requests": [
+          {
+            "path": "/api/v1/users/self/profile",
+            "query": {
+              "per_page": [
+                "50"
+              ]
+            },
+            "synthetic_token": true
+          }
+        ],
+        "profile_absent": true
+      },
+      {
+        "case": "auth_403",
+        "exit": 1,
+        "stdout": "",
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "bfd34bc57a918956648e5f01a22778ebbb1fac7cb54405edbae48dc222c99934",
+        "stderr_tail": [
+          "  File \"D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\identity-source\\src\\canvaspilot\\client.py\", line 226, in request\r",
+          "    raise CanvasAuthError(\r",
+          "canvaspilot.client.CanvasAuthError: Canvas auth failed (403) for GET /api/v1/users/self/profile. Start session broker: canvaspilot session start\r",
+          ""
+        ],
+        "requests": [
+          {
+            "path": "/api/v1/users/self/profile",
+            "query": {
+              "per_page": [
+                "50"
+              ]
+            },
+            "synthetic_token": true
+          }
+        ],
+        "profile_absent": true
+      },
+      {
+        "case": "http_503",
+        "exit": 1,
+        "stdout": "",
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "453b9f4f91f65f8e665a660a6cbfee5d32a0ac30c23cce64168de975e0d83e9e",
+        "stderr_tail": [
+          "    raise HTTPStatusError(message, request=request, response=self)\r",
+          "httpx.HTTPStatusError: Server error '503 Service Unavailable' for url 'http://127.0.0.1:62062/api/v1/users/self/profile?per_page=50'\r",
+          "For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503\r",
+          ""
+        ],
+        "requests": [
+          {
+            "path": "/api/v1/users/self/profile",
+            "query": {
+              "per_page": [
+                "50"
+              ]
+            },
+            "synthetic_token": true
+          }
+        ],
+        "profile_absent": true
+      },
+      {
+        "case": "closed_response",
+        "exit": 1,
+        "stdout": "",
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "a1e2840d8ea9ca9d77ef8fd50d7df07848e215c7429f6985518b3000a619440b",
+        "stderr_tail": [
+          "  File \"D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\venv\\Lib\\site-packages\\httpx\\_transports\\default.py\", line 118, in map_httpcore_exceptions\r",
+          "    raise mapped_exc(message) from exc\r",
+          "httpx.RemoteProtocolError: Server disconnected without sending a response.\r",
+          ""
+        ],
+        "requests": [
+          {
+            "path": "/api/v1/users/self/profile",
+            "query": {
+              "per_page": [
+                "50"
+              ]
+            },
+            "synthetic_token": true
+          }
+        ],
+        "profile_absent": true
+      },
+      {
+        "case": "invalid_json",
+        "exit": 1,
+        "stdout": "",
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "6b3d27dc54d5a139608b4824c5e97dbe811f7129560d56808e79ec0c9a801846",
+        "stderr_tail": [
+          "  File \"C:\\Users\\Veria\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\json\\decoder.py\", line 355, in raw_decode\r",
+          "    raise JSONDecodeError(\"Expecting value\", s, err.value) from None\r",
+          "json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)\r",
+          ""
+        ],
+        "requests": [
+          {
+            "path": "/api/v1/users/self/profile",
+            "query": {
+              "per_page": [
+                "50"
+              ]
+            },
+            "synthetic_token": true
+          }
+        ],
+        "profile_absent": true
+      }
+    ]
+  },
+  "original_receiver_history": {
+    "driver": "evidence/receive-original-identity.py",
+    "wrapper_pid": 17992,
+    "wrapper_exit": 1,
+    "raw_directory": "evidence/identity-original-5rscm_sp",
+    "error": "Fixture intended as text/plain was mislabeled application/json, so native JSONDecodeError correctly contradicted the receiver's success assertion.",
+    "correction": "Separate legitimate text/plain success, empty-body null success and malformed application/json failure; v2 retains partial raw evidence before assertions. No product code changed."
+  },
+  "original_maintained": {
+    "receipt": "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\evidence\\identity-original-maintained-tests.json",
+    "sha256": "323d10aa4b86ac12a7e77975bdc583139493b533dbb7d46f37cd44698347e491",
+    "wrapper_pid": 21140,
+    "wrapper_exit": 0,
+    "pytest_exit": 1,
+    "failed": 15,
+    "passed": 12,
+    "seconds": 15.54,
+    "scope": "New maintained regression executed before production edit; expected diagnostic and INFO-suppression failures retained."
+  },
+  "candidate_focused": {
+    "receipt": "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\evidence\\identity-candidate-checks.json",
+    "sha256": "d1f793bf1693e602dc97244eef096e1f5835ba3c337c14ee4ec3e840ccf79610",
+    "wrapper_pid": 3284,
+    "wrapper_exit": 0,
+    "terminal_exit_observed": true,
+    "seconds": 34.36,
+    "pytest": {
+      "passed": 45,
+      "failed": 0,
+      "seconds": 30.96,
+      "identity_cases": 27,
+      "courses_cases": 18,
+      "exit": 0
+    },
+    "changed_python_ruff_exit": 0,
+    "diff_check_exit": 0,
+    "source_hashes_preserved": true,
+    "unowned_source_exact": true,
+    "checks": [
+      {
+        "command": [
+          "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\venv\\Scripts\\python.exe",
+          "-B",
+          "-m",
+          "ruff",
+          "check",
+          "src/canvaspilot/cli.py",
+          "tests/test_whoami_cli_errors.py"
+        ],
+        "exit": 0,
+        "stdout": "All checks passed!\n",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\venv\\Scripts\\python.exe",
+          "-B",
+          "-m",
+          "pytest",
+          "-q",
+          "--basetemp",
+          "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\temp\\pytest-identity-candidate",
+          "tests/test_whoami_cli_errors.py",
+          "tests/test_courses_cli_errors.py"
+        ],
+        "exit": 0,
+        "stdout": ".............................................                            [100%]\n45 passed in 30.96s\n",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "C:\\Program Files\\Git\\cmd\\git.exe",
+          "diff",
+          "--check"
+        ],
+        "exit": 0,
+        "stdout": "",
+        "stderr": ""
+      }
+    ]
+  },
+  "independent_contract": {
+    "schema": "canvaspilot.whoami.independent-expectations.v1",
+    "reviewer": "dc7255e161d3/estate_context",
+    "status": "Frozen from original source and original native witnesses before candidate source exposure",
+    "parent": "ba26496aa3efd4088db7e8d512e1ed2fbfbfdd56",
+    "original_blobs": {
+      "cli": "c459c9b9b41b368b35c4c2c8e687d079fbefe753",
+      "api": "de65a7012d01d20c8dda6137eff9400872b14d3c",
+      "client": "f314bdb677607d563dc8bf7c5ffb5fb6c96d1bb1"
+    },
+    "original_native_receipt": {
+      "path": "evidence/identity-original-9ndnftmu/receipt.json",
+      "bytes": 23710,
+      "sha256": "5da735201141957889e450e114a1c21b75e0f07da0c749c97ef6c15047784dbf",
+      "scope": "Author's nine actual original-console witnesses read independently; no rerun by this reviewer at freeze.",
+      "history": "Earlier receiver mislabeled intended text/plain as JSON; retained as a failed receiver without product edits."
+    },
+    "production_boundary": "Only the whoami command branch. Preserve the existing courses branch byte-exact, API/client/auth/transport and the outer command cleanup.",
+    "success_contract": [
+      "Retain status0 and exact original JSON stdout formatting/values for object profile, legitimate non-JSON text profile and empty-response null profile.",
+      "Preserve outer mode/base_url/profile fields, every nested profile field, null/false/zero/Unicode/empty strings, route and query values.",
+      "Do not add schema validation or turn intentionally supported text/null responses into errors. Successful HTTPX informational stderr suppression is an explicit scoped change."
+    ],
+    "failure_contract": {
+      "cases": [
+        "missing setup",
+        "401",
+        "403",
+        "503",
+        "disconnected response",
+        "malformed application/json"
+      ],
+      "status": 1,
+      "stdout": "empty",
+      "stderr": "Exactly one JSON object with ok=false, actual native exception class, and full native message; no traceback or partial identity object.",
+      "caught": [
+        "CanvasAuthError",
+        "httpx.HTTPError",
+        "json.JSONDecodeError"
+      ],
+      "native_witnesses": [
+        "CanvasAuthError",
+        "HTTPStatusError",
+        "RemoteProtocolError",
+        "JSONDecodeError"
+      ],
+      "excluded": "Unrelated ValueError, UnicodeDecodeError and programming failures retain propagation. Output destination failures are not qualified."
+    },
+    "lifecycle": [
+      "Restore exact previous HTTPX logger.level in finally on successful, handled and unrelated exception paths.",
+      "Preserve existing client close on success and every exception path.",
+      "No retry or altered request count; explicit synthetic token and loopback base/session-broker port only.",
+      "Every disposable explicit profile remains uncreated; server closes and all original/candidate source bytes and modification times remain unchanged."
+    ],
+    "independent_receiving_plan": "Compare actual original/candidate console at the same per-case loopback endpoint with a separately captured pristine native API oracle, preserving raw outputs. Do not infer native exception messages from status codes. API wrapper serialization exit0 must remain distinct from real command failure status1.",
+    "scope_limits": [
+      "No live account, real broker/session, browser/profile launch, new auth mechanism or installed-service operation.",
+      "Maintain earlier broad test/lint failures explicitly; focused acceptance does not imply a passing full suite.",
+      "Original witnesses are accepted as evidence of the narrow boundary gap, not final candidate acceptance."
+    ]
+  },
+  "independent_review": {
+    "status": "ACCEPTED",
+    "reviewer": "dc7255e161d3/estate_context",
+    "frozen_contract": "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\context-identity-contract-v1.json",
+    "native": {
+      "directory": "D:\\hamon-estate-dc7255e161d3-canvaspilot-courses-errors\\context-identity-native-s16l9b8k",
+      "receipt": {
+        "path": "receipt.json",
+        "bytes": 117455,
+        "sha256": "79c5fff141c7f590f51a8955c3c957661b0a540921536f65ecf89be20b733ba3",
+        "git_blob": "0071799c40becfd78c957f3a04577ebb07274124"
+      },
+      "review": {
+        "path": "REVIEW-v1.json",
+        "bytes": 6238,
+        "sha256": "95047ae52e9861f7d932ec3034de4ac46cdd7ff62823d002b205fc772a6c28fe",
+        "git_blob": "80290692dbdd7fac5ff3a01e2411875fac8a659e"
+      },
+      "manifest": {
+        "path": "EVIDENCE-MANIFEST-v1.json",
+        "bytes": 13128,
+        "sha256": "17e2c8b0da02f958b622a4ede177abcc99999b1e376ebe712bc3db466683bbd7",
+        "git_blob": "4aa30645368fbd1656ea8a83c2aa02a502e84ec2",
+        "payload_count": 57,
+        "payload_bytes": 153522
+      },
+      "driver": {
+        "bytes": 11760,
+        "git_blob": "e2feaff736111e4c42eb419b729a3a54ba13ce52"
+      },
+      "wrapper_pid": 32956,
+      "wrapper_exit": 0,
+      "terminal_exit_observed": true,
+      "seconds": 43.3,
+      "child_processes": 27,
+      "case_count": 9,
+      "started_at": "2026-10-13T08:45:56.035478+00:00",
+      "completed_at": "2026-10-13T08:46:38.906578+00:00",
+      "cases": [
+        {
+          "case": "success",
+          "accepted": true,
+          "assertions": {
+            "native_api_completed": true,
+            "native_api_source_parent": true,
+            "native_api_closed": true,
+            "native_api_hash_matches": true,
+            "requests_unchanged": true,
+            "bounded_request_count": true,
+            "request_shape": true,
+            "profiles_uncreated": true,
+            "no_candidate_traceback": true,
+            "literal_identity_preserved": true,
+            "all_success": true,
+            "exact_stdout_parity": true,
+            "candidate_stderr_empty": true
+          }
+        },
+        {
+          "case": "plain_text",
+          "accepted": true,
+          "assertions": {
+            "native_api_completed": true,
+            "native_api_source_parent": true,
+            "native_api_closed": true,
+            "native_api_hash_matches": true,
+            "requests_unchanged": true,
+            "bounded_request_count": true,
+            "request_shape": true,
+            "profiles_uncreated": true,
+            "no_candidate_traceback": true,
+            "literal_identity_preserved": true,
+            "all_success": true,
+            "exact_stdout_parity": true,
+            "candidate_stderr_empty": true
+          }
+        },
+        {
+          "case": "empty_body",
+          "accepted": true,
+          "assertions": {
+            "native_api_completed": true,
+            "native_api_source_parent": true,
+            "native_api_closed": true,
+            "native_api_hash_matches": true,
+            "requests_unchanged": true,
+            "bounded_request_count": true,
+            "request_shape": true,
+            "profiles_uncreated": true,
+            "no_candidate_traceback": true,
+            "literal_identity_preserved": true,
+            "all_success": true,
+            "exact_stdout_parity": true,
+            "candidate_stderr_empty": true
+          }
+        },
+        {
+          "case": "missing_setup",
+          "accepted": true,
+          "assertions": {
+            "native_api_completed": true,
+            "native_api_source_parent": true,
+            "native_api_closed": true,
+            "native_api_hash_matches": true,
+            "requests_unchanged": true,
+            "bounded_request_count": true,
+            "request_shape": true,
+            "profiles_uncreated": true,
+            "no_candidate_traceback": true,
+            "all_failure_statuses": true,
+            "no_partial_stdout": true,
+            "original_traceback_witness": true,
+            "exact_native_diagnostic": true,
+            "one_stderr_json": true,
+            "original_native_message": true
+          }
+        },
+        {
+          "case": "auth_401",
+          "accepted": true,
+          "assertions": {
+            "native_api_completed": true,
+            "native_api_source_parent": true,
+            "native_api_closed": true,
+            "native_api_hash_matches": true,
+            "requests_unchanged": true,
+            "bounded_request_count": true,
+            "request_shape": true,
+            "profiles_uncreated": true,
+            "no_candidate_traceback": true,
+            "all_failure_statuses": true,
+            "no_partial_stdout": true,
+            "original_traceback_witness": true,
+            "exact_native_diagnostic": true,
+            "one_stderr_json": true,
+            "original_native_message": true
+          }
+        },
+        {
+          "case": "auth_403",
+          "accepted": true,
+          "assertions": {
+            "native_api_completed": true,
+            "native_api_source_parent": true,
+            "native_api_closed": true,
+            "native_api_hash_matches": true,
+            "requests_unchanged": true,
+            "bounded_request_count": true,
+            "request_shape": true,
+            "profiles_uncreated": true,
+            "no_candidate_traceback": true,
+            "all_failure_statuses": true,
+            "no_partial_stdout": true,
+            "original_traceback_witness": true,
+            "exact_native_diagnostic": true,
+            "one_stderr_json": true,
+            "original_native_message": true
+          }
+        },
+        {
+          "case": "http_503",
+          "accepted": true,
+          "assertions": {
+            "native_api_completed": true,
+            "native_api_source_parent": true,
+            "native_api_closed": true,
+            "native_api_hash_matches": true,
+            "requests_unchanged": true,
+            "bounded_request_count": true,
+            "request_shape": true,
+            "profiles_uncreated": true,
+            "no_candidate_traceback": true,
+            "all_failure_statuses": true,
+            "no_partial_stdout": true,
+            "original_traceback_witness": true,
+            "exact_native_diagnostic": true,
+            "one_stderr_json": true,
+            "original_native_message": true
+          }
+        },
+        {
+          "case": "closed_response",
+          "accepted": true,
+          "assertions": {
+            "native_api_completed": true,
+            "native_api_source_parent": true,
+            "native_api_closed": true,
+            "native_api_hash_matches": true,
+            "requests_unchanged": true,
+            "bounded_request_count": true,
+            "request_shape": true,
+            "profiles_uncreated": true,
+            "no_candidate_traceback": true,
+            "all_failure_statuses": true,
+            "no_partial_stdout": true,
+            "original_traceback_witness": true,
+            "exact_native_diagnostic": true,
+            "one_stderr_json": true,
+            "original_native_message": true
+          }
+        },
+        {
+          "case": "invalid_json",
+          "accepted": true,
+          "assertions": {
+            "native_api_completed": true,
+            "native_api_source_parent": true,
+            "native_api_closed": true,
+            "native_api_hash_matches": true,
+            "requests_unchanged": true,
+            "bounded_request_count": true,
+            "request_shape": true,
+            "profiles_uncreated": true,
+            "no_candidate_traceback": true,
+            "all_failure_statuses": true,
+            "no_partial_stdout": true,
+            "original_traceback_witness": true,
+            "exact_native_diagnostic": true,
+            "one_stderr_json": true,
+            "original_native_message": true
+          }
+        }
+      ],
+      "command_error_status": 1,
+      "oracle_wrapper_status": 0,
+      "oracle_status_explanation": "Pristine API oracle serializes native errors and exits0; this does not mean the identity read succeeded.",
+      "raw_log_hashes_verified": 54,
+      "source_entries_preserved": 67,
+      "source_bytes_and_mtimes_preserved": true,
+      "explicit_profiles_absent": true,
+      "requests_unchanged": true,
+      "server_thread_closed": true,
+      "scope": "Nine finite cases, pristine-parent and candidate actual installed console plus pristine native API oracle, loopback synthetic responses only."
+    },
+    "limits": [
+      "Synthetic Windows actual-console/API receiving only.",
+      "No full-suite/full-lint, real broker, live account, browser or destination-failure qualification.",
+      "Client lifetime and logger restoration across CLI branches are supported by maintained-test and source review, not separately instrumented in actual console children."
+    ]
+  },
+  "inherited_qualification_limits": {
+    "not_rerun_for_this_increment": true,
+    "prior_source_parent": "8479a462bfc4e5f080c1b4d3ca231dca9dc7bf68",
+    "prior_receiving_record": "https://github.com/Jacob-Met/canvaspilot/blob/ad42b2e131d04bbe79c2f6bde96b4ff97b1325d9/docs/receiving/courses-cli-errors-dc7255e161d3.json",
+    "prior_broader_candidate": "48 passed /5 failed; the five unchanged enrollment subprocess tests fail before dispatch because their environment cannot resolve Windows Path.home.",
+    "prior_pristine_parent_ruff": "Seven unrelated findings in test_calendar_publication_cleanup.py and test_discussion_search.py.",
+    "current_scope": "Focused45-case result is not a full repository suite or full repository lint pass. Those unrelated files remain exact."
+  },
+  "publication": {
+    "status": "Pre-publication snapshot: reviewed source and native receiving accepted; source ref creation follows this record.",
+    "no_actions_invoked": true,
+    "no_browser_or_account": true,
+    "no_workflow_or_dependency_change": true,
+    "expected_process": "Independent review, complete-tree preservation, fresh gates/events, skip-marked commit/PR, ordinary expected-head integration and actual-parent/all-event verification.",
+    "preflight": {
+      "main": "ba26496aa3efd4088db7e8d512e1ed2fbfbfdd56",
+      "tree": "ebf9a1487bd64a55561e08eae6f61f5f7e3b2d34",
+      "base_leaves": 1735,
+      "branch_protected": false,
+      "required_checks": "off; contexts/checks empty",
+      "workflows": {
+        "ci.yml": "ef7bbebe192c0db55dc4467e064ba44805c13446",
+        "agenda-view-browser.yml": "a06b862c23dccc61d5da9eea99d82b76668f78c8"
+      },
+      "events": "Main push/PR and explicit manual dispatch; no issue/comment trigger.",
+      "recent_all_event_paths": [
+        ".github/workflows/ci.yml",
+        ".github/workflows/agenda-view-browser.yml",
+        "dynamic/dependabot/dependabot-updates",
+        "dynamic/dependabot/update-graph"
+      ],
+      "newest_run": "2026-10-11T07:44:47Z",
+      "manifest_workflow_changes": false,
+      "no_dynamic_pages_observed": true,
+      "rulesets": []
+    }
+  },
+  "static_review": {
+    "status": "ACCEPTED",
+    "reviewer": "dc7255e161d3/estate_runtime",
+    "git_blob": "c85e57a966b6aa40d3e12dc3b4bdc6abc17032fb",
+    "url": "https://api.github.com/repos/Jacob-Met/canvaspilot/git/blobs/c85e57a966b6aa40d3e12dc3b4bdc6abc17032fb",
+    "native_path": "D:\\hamon-selected-pack-receiving-dc7255e161d3\\composition-staging-v1\\canvaspilot-identity-static-review-v1.json",
+    "native_inspection_pid": 28524,
+    "native_inspection_exit": 0,
+    "source_modified": false,
+    "tests_rerun": false,
+    "findings": "Only whoami replacement; exact inverse recovers all 43,694 original CLI bytes. API/client/courses tests remain exact. Final tests and guide match the narrow native success/error/lifecycle contract. No source correction requested."
+  }
+}
