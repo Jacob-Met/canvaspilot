@@ -76,6 +76,12 @@ canvaspilot submission-history <course_id> <assignment_id>
 canvaspilot grade-review <course_id>
 ```
 
+On a successful read, `canvaspilot courses` writes the complete active-course
+list to stdout and exits 0. Expected authentication, HTTP or pagination failures
+exit 1 with one JSON error on stderr and no partial course list. See
+[course-list error handling](docs/courses-cli.md) for diagnostic fields and the
+existing setup guidance.
+
 `canvaspilot sync` orders upcoming assignments by deadline across the selected
 courses. It includes up to 10 courses and 5 assignments per course by default,
 and reports omitted rows, unknown dates, and per-course read failures. Adjust
