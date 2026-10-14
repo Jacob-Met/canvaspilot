@@ -1,0 +1,32 @@
+{
+  "drive_file_id": "1smyjSSATXmVSajg3wbJdqoXMABI1ibkJ",
+  "url": "https://drive.google.com/file/d/1smyjSSATXmVSajg3wbJdqoXMABI1ibkJ/view",
+  "utc": "2026-10-14T01:21:47.375321+00:00",
+  "status": 200,
+  "download": {
+    "bytes": 53421,
+    "sha256": "41e80d2270e2ee3a7e931d7f1cc555010d3c894fb46eb4b9706fdf6777a537c4",
+    "git_blob": "21bf76ecd328a1d8bfe94731172561adf00ea035",
+    "mode": 33188,
+    "mtime_ns": "1791940907374696916",
+    "inode": "1314127"
+  },
+  "source_before": {
+    "bytes": 53421,
+    "sha256": "41e80d2270e2ee3a7e931d7f1cc555010d3c894fb46eb4b9706fdf6777a537c4",
+    "git_blob": "21bf76ecd328a1d8bfe94731172561adf00ea035",
+    "mode": 33188,
+    "mtime_ns": "1791940839831841827",
+    "inode": "1314099"
+  },
+  "source_after": {
+    "bytes": 53421,
+    "sha256": "41e80d2270e2ee3a7e931d7f1cc555010d3c894fb46eb4b9706fdf6777a537c4",
+    "git_blob": "21bf76ecd328a1d8bfe94731172561adf00ea035",
+    "mode": 33188,
+    "mtime_ns": "1791940839831841827",
+    "inode": "1314099"
+  },
+  "whole_bytes_equal": true,
+  "source_preserved": true
+}

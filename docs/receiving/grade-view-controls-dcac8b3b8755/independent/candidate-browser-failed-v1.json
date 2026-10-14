@@ -1,0 +1,581 @@
+{
+  "mode": "candidate",
+  "utc": "2026-10-14T00:59:28Z",
+  "source": {
+    "repository": "Jacob-Met/canvaspilot",
+    "commit": "0f8a1a4a624eac3a5d9c4e26e072b99636dd5b32",
+    "tree": "bfb833849bd95143e7af8236af7e546334578433",
+    "exporter_blob": "a822dc46bc7c18e288656017147be60548664280"
+  },
+  "runtime": {
+    "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+    "host": "MSI",
+    "user": "Veria",
+    "chrome": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
+    "browser_version": "154.0.8037.97"
+  },
+  "checks": [
+    {
+      "name": "producer passed",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "producer custody",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "source producer bind",
+      "actual": "a822dc46bc7c18e288656017147be60548664280",
+      "expected": "a822dc46bc7c18e288656017147be60548664280"
+    },
+    {
+      "name": "actual exporter",
+      "actual": "a822dc46bc7c18e288656017147be60548664280",
+      "expected": "a822dc46bc7c18e288656017147be60548664280"
+    },
+    {
+      "name": "mixed page bytes",
+      "actual": "8c08aa1c5cb120d17479cdd710ed2244d702f7e5407f2ec714faec4b3798b79f",
+      "expected": "8c08aa1c5cb120d17479cdd710ed2244d702f7e5407f2ec714faec4b3798b79f"
+    },
+    {
+      "name": "hidden page bytes",
+      "actual": "e0be3ce8da00234f92562a92b0ba81367f20092fbd7513a00e4d767b3bf37949",
+      "expected": "e0be3ce8da00234f92562a92b0ba81367f20092fbd7513a00e4d767b3bf37949"
+    },
+    {
+      "name": "original baseline passed",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "baseline mode",
+      "actual": "original",
+      "expected": "original"
+    },
+    {
+      "name": "same frozen criteria",
+      "actual": "cd106ae921d476a634a2ce799054416d222ab5d2",
+      "expected": "cd106ae921d476a634a2ce799054416d222ab5d2"
+    },
+    {
+      "name": "mixed all assignment IDs",
+      "actual": [
+        "assignment-0-0",
+        "assignment-0-1",
+        "assignment-0-2",
+        "assignment-0-3",
+        "assignment-0-4",
+        "assignment-1-0",
+        "assignment-1-1",
+        "assignment-1-2",
+        "assignment-1-3",
+        "assignment-1-4"
+      ],
+      "expected": [
+        "assignment-0-0",
+        "assignment-0-1",
+        "assignment-0-2",
+        "assignment-0-3",
+        "assignment-0-4",
+        "assignment-1-0",
+        "assignment-1-1",
+        "assignment-1-2",
+        "assignment-1-3",
+        "assignment-1-4"
+      ]
+    },
+    {
+      "name": "mixed full group identities",
+      "actual": [
+        "group-0",
+        "group-1",
+        "group-2",
+        "group-3",
+        "group-4"
+      ],
+      "expected": [
+        "group-0",
+        "group-1",
+        "group-2",
+        "group-3",
+        "group-4"
+      ]
+    },
+    {
+      "name": "mixed initial closed details",
+      "actual": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "expected": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "name": "mixed inert literal markup",
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "mixed no inferred missing status",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "mixed withheld visibility notices",
+      "actual": 2,
+      "expected": 2
+    },
+    {
+      "name": "mixed stale warning",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "mixed unknown list states",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "mixed complete static content unchanged",
+      "actual": {
+        "cards": [
+          {
+            "id": "assignment-0-0",
+            "text": "Alpha <b>literal</b> \u03a9Due date as returnednullAssignment points possible0Reported submission score0Reported submission grade\"\"Only the grade fields returned by Canvas are shown.Submission contextAttemptNot returnedWorkflow stateNot returnedExcusednullMissingtrueLatefalseAll returned assignment and submission fieldsAssignmentId (id)\"9007199254740992\"Course id (course_id)42Assignment group id (assignment_group_id)3Name (name)\"Alpha <b>literal</b> \u03a9\"Assignment points possible (points_possible)0Due at (due_at)nullHtml url (html_url)\"https://school.invalid/never-follow\"Submission{\n  \"submission_state\": \"returned\",\n  \"submission\": {\n    \"grade_visibility\": \"reported_fields\",\n    \"fields\": {\n      \"assignment_id\": \"9007199254740992\",\n      \"user_id\": 7,\n      \"missing\": true,\n      \"late\": false,\n      \"excused\": null,\n      \"score\": 0,\n      \"grade\": \"\",\n      \"grade_matches_current_submission\": true\n    }\n  }\n}"
+          },
+          {
+            "id": "assignment-0-1",
+            "text": "Alpha <b>literal</b> \u03a9Due date as returnednullAssignment points possible0Submission gradeWithheld by the readerCanvas reports that this grade is not posted. Its grade fields are withheld.Whether the grade matches the current submission is unknown.Submission contextAttemptNot returnedWorkflow stateNot returnedExcusedfalseMissingfalseLatetrueAll returned assignment and submission fieldsAssignmentId (id)\"9007199254740993\"Course id (course_id)42Assignment group id (assignment_group_id)3Name (name)\"Alpha <b>literal</b> \u03a9\"Assignment points possible (points_possible)0Due at (due_at)nullHtml url (html_url)\"https://school.invalid/never-follow\"Submission{\n  \"submission_state\": \"returned\",\n  \"submission\": {\n    \"grade_visibility\": \"not_posted\",\n    \"fields\": {\n      \"assignment_id\": \"9007199254740993\",\n      \"user_id\": 7,\n      \"missing\": false,\n      \"late\": true,\n      \"excused\": false,\n      \"posted_at\": null\n    }\n  }\n}"
+          },
+          {
+            "id": "assignment-0-2",
+            "text": "Regex [a.*] Caf\u00e9Due date as returnednullAssignment points possible0Reported submission score85Reported submission grade\"B\"Only the grade fields returned by Canvas are shown.Canvas reports that this grade does not match the current submission. Do not treat it as the grade for the latest attempt.Submission contextAttempt2Workflow stateNot returnedExcusedtrueMissingnullLatefalseAll returned assignment and submission fieldsAssignmentId (id)\"0007\"Course id (course_id)42Assignment group id (assignment_group_id)3Name (name)\"Regex [a.*] Caf\u00e9\"Assignment points possible (points_possible)0Due at (due_at)nullHtml url (html_url)\"https://school.invalid/never-follow\"Submission{\n  \"submission_state\": \"returned\",\n  \"submission\": {\n    \"grade_visibility\": \"reported_fields\",\n    \"fields\": {\n      \"assignment_id\": \"0007\",\n      \"user_id\": 7,\n      \"missing\": null,\n      \"late\": false,\n      \"excused\": true,\n      \"score\": 85,\n      \"grade\": \"B\",\n      \"attempt\": 2,\n      \"grade_matches_current_submission\": false\n    }\n  }\n}"
+          },
+          {
+            "id": "assignment-0-3",
+            "text": "missing late excused wordsDue date as returnednullAssignment points possible0Submission: Not returned by Canvas. No grade or missing-work status is inferred.Submission contextAttemptNot returnedWorkflow stateNot returnedExcusedNot returnedMissingNot returnedLateNot returnedAll returned assignment and submission fieldsAssignmentId (id)\"702\"Course id (course_id)42Assignment group id (assignment_group_id)3Name (name)\"missing late excused words\"Assignment points possible (points_possible)0Due at (due_at)nullHtml url (html_url)\"https://school.invalid/never-follow\"Submission{\n  \"submission_state\": \"not_returned\",\n  \"submission\": null\n}"
+          },
+          {
+            "id": "assignment-0-4",
+            "text": "Assignment 703Due date as returnednullAssignment points possible0Submission: Canvas returned null. No grade or missing-work status is inferred.Submission contextAttemptNot returnedWorkflow stateNot returnedExcusedNot returnedMissingNot returnedLateNot returnedAll returned assignment and submission fieldsAssignmentId (id)\"703\"Course id (course_id)42Assignment group id (assignment_group_id)3Name (name)\"\"Assignment points possible (points_possible)0Due at (due_at)nullHtml url (html_url)\"https://school.invalid/never-follow\"Submission{\n  \"submission_state\": \"null\",\n  \"submission\": null\n}"
+          },
+          {
+            "id": "assignment-1-0",
+            "text": "Alpha <b>literal</b> \u03a9Due date as returnednullAssignment points possible0Reported submission scoreNot returnedReported submission gradeNot returnedOnly the grade fields returned by Canvas are shown.Whether the grade matches the current submission is unknown.Submission contextAttemptNot returnedWorkflow stateNot returnedExcusedfalseMissingfalseLatefalseAll returned assignment and submission fieldsAssignmentId (id)\"9007199254740994\"Course id (course_id)42Assignment group id (assignment_group_id)4Name (name)\"Alpha <b>literal</b> \u03a9\"Assignment points possible (points_possible)0Due at (due_at)nullHtml url (html_url)\"https://school.invalid/never-follow\"Submission{\n  \"submission_state\": \"returned\",\n  \"submission\": {\n    \"grade_visibility\": \"reported_fields\",\n    \"fields\": {\n      \"assignment_id\": \"9007199254740994\",\n      \"user_id\": 7,\n      \"missing\": false,\n      \"late\": false,\n      \"excused\": false\n    }\n  }\n}"
+          },
+          {
+            "id": "assignment-1-1",
+            "text": "Caf\u00e9 \u6771\u4eacDue date as returnednullAssignment points possible0Submission gradeWithheld by the readerCanvas marks this assignment not visible. Its grade fields are withheld.Whether the grade matches the current submission is unknown.Submission contextAttemptNot returnedWorkflow stateNot returnedExcusedtrueMissingtrueLatetrueAll returned assignment and submission fieldsAssignmentId (id)\"0042\"Course id (course_id)42Assignment group id (assignment_group_id)4Name (name)\"Caf\u00e9 \u6771\u4eac\"Assignment points possible (points_possible)0Due at (due_at)nullHtml url (html_url)\"https://school.invalid/never-follow\"Submission{\n  \"submission_state\": \"returned\",\n  \"submission\": {\n    \"grade_visibility\": \"assignment_not_visible\",\n    \"fields\": {\n      \"assignment_id\": \"0042\",\n      \"user_id\": 7,\n      \"missing\": true,\n      \"late\": true,\n      \"excused\": true,\n      \"assignment_visible\": false\n    }\n  }\n}"
+          },
+          {
+            "id": "assignment-1-2",
+            "text": "ordinaryDue date as returnednullAssignment points possible0Reported submission scoreNot returnedReported submission gradeNot returnedOnly the grade fields returned by Canvas are shown.Whether the grade matches the current submission is unknown.Submission contextAttemptNot returnedWorkflow stateNot returnedExcusedNot returnedMissingNot returnedLateNot returnedAll returned assignment and submission fieldsAssignmentId (id)704Course id (course_id)42Assignment group id (assignment_group_id)4Name (name)\"ordinary\"Assignment points possible (points_possible)0Due at (due_at)nullHtml url (html_url)\"https://school.invalid/never-follow\"Submission{\n  \"submission_state\": \"returned\",\n  \"submission\": {\n    \"grade_visibility\": \"reported_fields\",\n    \"fields\": {\n      \"assignment_id\": 704,\n      \"user_id\": 7\n    }\n  }\n}"
+          },
+          {
+            "id": "assignment-1-3",
+            "text": "Empty \"\" fieldDue date as returnednullAssignment points possible0Reported submission scoreNot returnedReported submission gradeNot returnedOnly the grade fields returned by Canvas are shown.Whether the grade matches the current submission is unknown.Submission contextAttemptNot returnedWorkflow stateNot returnedExcusednullMissingnullLatenullAll returned assignment and submission fieldsAssignmentId (id)\"705\"Course id (course_id)42Assignment group id (assignment_group_id)4Name (name)\"Empty \\\"\\\" field\"Assignment points possible (points_possible)0Due at (due_at)nullHtml url (html_url)\"https://school.invalid/never-follow\"Submission{\n  \"submission_state\": \"returned\",\n  \"submission\": {\n    \"grade_visibility\": \"reported_fields\",\n    \"fields\": {\n      \"assignment_id\": \"705\",\n      \"user_id\": 7,\n      \"missing\": null,\n      \"late\": null,\n      \"excused\": null\n    }\n  }\n}"
+          },
+          {
+            "id": "assignment-1-4",
+            "text": "Title CR\\u000dLF\nTAB\tend\\u0080Due date as returnednullAssignment points possible0Reported submission scoreNot returnedReported submission gradeNot returnedOnly the grade fields returned by Canvas are shown.Whether the grade matches the current submission is unknown.Submission contextAttemptNot returnedWorkflow stateNot returnedExcusedNot returnedMissingfalseLateNot returnedAll returned assignment and submission fieldsAssignmentId (id)706Course id (course_id)42Assignment group id (assignment_group_id)4Name (name)\"Title CR\\rLF\\nTAB\\tend\\u0080\"Assignment points possible (points_possible)0Due at (due_at)nullHtml url (html_url)\"https://school.invalid/never-follow\"Submission{\n  \"submission_state\": \"returned\",\n  \"submission\": {\n    \"grade_visibility\": \"reported_fields\",\n    \"fields\": {\n      \"assignment_id\": 706,\n      \"user_id\": 7,\n      \"missing\": false\n    }\n  }\n}"
+          }
+        ],
+        "groups": [
+          {
+            "id": "group-0",
+            "title": "Repeated lab \u03a9",
+            "facts": "Id (id)3Name (name)\"Repeated lab \u03a9\"Position (position)1Reported group weight (group_weight)40Rules (rules){\n  \"drop_lowest\": 1,\n  \"drop_highest\": 0,\n  \"never_drop\": [\n    \"0007\"\n  ]\n}Assignments state (assignments_state)\"returned\""
+          },
+          {
+            "id": "group-1",
+            "title": "Repeated lab \u03a9",
+            "facts": "Id (id)4Name (name)\"Repeated lab \u03a9\"Position (position)2Reported group weight (group_weight)60Rules (rules)nullAssignments state (assignments_state)\"returned\""
+          },
+          {
+            "id": "group-2",
+            "title": "Empty returned group",
+            "facts": "Id (id)5Name (name)\"Empty returned group\"Assignments state (assignments_state)\"returned\""
+          },
+          {
+            "id": "group-3",
+            "title": "Unknown null group",
+            "facts": "Id (id)6Name (name)\"Unknown null group\"Assignments state (assignments_state)\"null\""
+          },
+          {
+            "id": "group-4",
+            "title": "Unknown absent group",
+            "facts": "Id (id)7Name (name)\"Unknown absent group\"Assignments state (assignments_state)\"not_returned\""
+          }
+        ],
+        "totals": "Reported course totalsEach enrollment stays separate. Current, final and grading-period values retain their original Canvas field names; no enrollment is chosen for you.Returned enrollment 1Type (type)\"student\"Role (role)\"StudentEnrollment\"User id (user_id)7Enrollment state (enrollment_state)\"active\"Totals for all grading periods option (totals_for_all_grading_periods_option)falseCurrent grading period id (current_grading_period_id)5Current grading period title (current_grading_period_title)\"Autumn\"Reported totalsReported current score (computed_current_score)0Reported final score (computed_final_score)0Reported current grade (computed_current_grade)nullReported final grade (computed_final_grade)nullCurrent period: reported current score (current_period_computed_current_score)12.5Current period: reported final score (current_period_computed_final_score)null",
+        "context": "Report contextCourse and authenticated callerCourse (course){\n  \"id\": 42,\n  \"name\": \"Fictional returned-grade view \u2014 \u03a9 / \u6771\u4eac\",\n  \"course_code\": \"FIX-MATH\",\n  \"hide_final_grades\": false,\n  \"apply_assignment_group_weights\": true,\n  \"has_grading_periods\": true,\n  \"has_weighted_grading_periods\": false\n}Authenticated user id (authenticated_user_id)7Grading periodsGrading periods state (grading_periods_state)\"returned\"Grading periods (grading_periods)[\n  {\n    \"id\": 5,\n    \"title\": \"Autumn\",\n    \"start_date\": \"2026-09-01\"\n  }\n]Returned-row counts and reader boundariesTotals visibility (totals_visibility)\"reported_fields_only\"Enrollments state (enrollments_state)\"returned\"Grading periods state (grading_periods_state)\"returned\"Assignment scope (assignment_scope)\"all_returned_assignment_groups\"Counts (counts){\n  \"groups_returned\": 5,\n  \"assignments_returned\": 10,\n  \"groups_without_assignment_list\": 2,\n  \"submissions_not_returned\": 1,\n  \"submissions_null\": 1,\n  \"explicitly_not_posted\": 1,\n  \"explicitly_not_visible\": 1,\n  \"excused_true\": 2,\n  \"missing_true\": 2,\n  \"late_true\": 2,\n  \"grade_matches_current_submission_false\": 1\n}Whole collection complete (collection_complete)nullReader source (reader_source)\"CanvasClient.get_paginated\"Upstream response shape (upstream_response_shape)\"not_observed\"Reader warningsFictional optional-value warning; omitted values remain unknown.Download complete report JSONThe download preserves the complete normalized report used here. Original Canvas response pages are not included.JSON SHA-256: 18a7c12b7fa8faba821e894d5ba06afe487ed61957e953c48b7aead94b862a18"
+      },
+      "expected": {
+        "cards": [
+          {
+            "id": "assignment-0-0",
+            "text": "Alpha <b>literal</b> \u03a9Due date as returnednullAssignment points possible0Reported submission score0Reported submission grade\"\"Only the grade fields returned by Canvas are shown.Submission contextAttemptNot returnedWorkflow stateNot returnedExcusednullMissingtrueLatefalseAll returned assignment and submission fieldsAssignmentId (id)\"9007199254740992\"Course id (course_id)42Assignment group id (assignment_group_id)3Name (name)\"Alpha <b>literal</b> \u03a9\"Assignment points possible (points_possible)0Due at (due_at)nullHtml url (html_url)\"https://school.invalid/never-follow\"Submission{\n  \"submission_state\": \"returned\",\n  \"submission\": {\n    \"grade_visibility\": \"reported_fields\",\n    \"fields\": {\n      \"assignment_id\": \"9007199254740992\",\n      \"user_id\": 7,\n      \"missing\": true,\n      \"late\": false,\n      \"excused\": null,\n      \"score\": 0,\n      \"grade\": \"\",\n      \"grade_matches_current_submission\": true\n    }\n  }\n}"
+          },
+          {
+            "id": "assignment-0-1",
+            "text": "Alpha <b>literal</b> \u03a9Due date as returnednullAssignment points possible0Submission gradeWithheld by the readerCanvas reports that this grade is not posted. Its grade fields are withheld.Whether the grade matches the current submission is unknown.Submission contextAttemptNot returnedWorkflow stateNot returnedExcusedfalseMissingfalseLatetrueAll returned assignment and submission fieldsAssignmentId (id)\"9007199254740993\"Course id (course_id)42Assignment group id (assignment_group_id)3Name (name)\"Alpha <b>literal</b> \u03a9\"Assignment points possible (points_possible)0Due at (due_at)nullHtml url (html_url)\"https://school.invalid/never-follow\"Submission{\n  \"submission_state\": \"returned\",\n  \"submission\": {\n    \"grade_visibility\": \"not_posted\",\n    \"fields\": {\n      \"assignment_id\": \"9007199254740993\",\n      \"user_id\": 7,\n      \"missing\": false,\n      \"late\": true,\n      \"excused\": false,\n      \"posted_at\": null\n    }\n  }\n}"
+          },
+          {
+            "id": "assignment-0-2",
+            "text": "Regex [a.*] Caf\u00e9Due date as returnednullAssignment points possible0Reported submission score85Reported submission grade\"B\"Only the grade fields returned by Canvas are shown.Canvas reports that this grade does not match the current submission. Do not treat it as the grade for the latest attempt.Submission contextAttempt2Workflow stateNot returnedExcusedtrueMissingnullLatefalseAll returned assignment and submission fieldsAssignmentId (id)\"0007\"Course id (course_id)42Assignment group id (assignment_group_id)3Name (name)\"Regex [a.*] Caf\u00e9\"Assignment points possible (points_possible)0Due at (due_at)nullHtml url (html_url)\"https://school.invalid/never-follow\"Submission{\n  \"submission_state\": \"returned\",\n  \"submission\": {\n    \"grade_visibility\": \"reported_fields\",\n    \"fields\": {\n      \"assignment_id\": \"0007\",\n      \"user_id\": 7,\n      \"missing\": null,\n      \"late\": false,\n      \"excused\": true,\n      \"score\": 85,\n      \"grade\": \"B\",\n      \"attempt\": 2,\n      \"grade_matches_current_submission\": false\n    }\n  }\n}"
+          },
+          {
+            "id": "assignment-0-3",
+            "text": "missing late excused wordsDue date as returnednullAssignment points possible0Submission: Not returned by Canvas. No grade or missing-work status is inferred.Submission contextAttemptNot returnedWorkflow stateNot returnedExcusedNot returnedMissingNot returnedLateNot returnedAll returned assignment and submission fieldsAssignmentId (id)\"702\"Course id (course_id)42Assignment group id (assignment_group_id)3Name (name)\"missing late excused words\"Assignment points possible (points_possible)0Due at (due_at)nullHtml url (html_url)\"https://school.invalid/never-follow\"Submission{\n  \"submission_state\": \"not_returned\",\n  \"submission\": null\n}"
+          },
+          {
+            "id": "assignment-0-4",
+            "text": "Assignment 703Due date as returnednullAssignment points possible0Submission: Canvas returned null. No grade or missing-work status is inferred.Submission contextAttemptNot returnedWorkflow stateNot returnedExcusedNot returnedMissingNot returnedLateNot returnedAll returned assignment and submission fieldsAssignmentId (id)\"703\"Course id (course_id)42Assignment group id (assignment_group_id)3Name (name)\"\"Assignment points possible (points_possible)0Due at (due_at)nullHtml url (html_url)\"https://school.invalid/never-follow\"Submission{\n  \"submission_state\": \"null\",\n  \"submission\": null\n}"
+          },
+          {
+            "id": "assignment-1-0",
+            "text": "Alpha <b>literal</b> \u03a9Due date as returnednullAssignment points possible0Reported submission scoreNot returnedReported submission gradeNot returnedOnly the grade fields returned by Canvas are shown.Whether the grade matches the current submission is unknown.Submission contextAttemptNot returnedWorkflow stateNot returnedExcusedfalseMissingfalseLatefalseAll returned assignment and submission fieldsAssignmentId (id)\"9007199254740994\"Course id (course_id)42Assignment group id (assignment_group_id)4Name (name)\"Alpha <b>literal</b> \u03a9\"Assignment points possible (points_possible)0Due at (due_at)nullHtml url (html_url)\"https://school.invalid/never-follow\"Submission{\n  \"submission_state\": \"returned\",\n  \"submission\": {\n    \"grade_visibility\": \"reported_fields\",\n    \"fields\": {\n      \"assignment_id\": \"9007199254740994\",\n      \"user_id\": 7,\n      \"missing\": false,\n      \"late\": false,\n      \"excused\": false\n    }\n  }\n}"
+          },
+          {
+            "id": "assignment-1-1",
+            "text": "Caf\u00e9 \u6771\u4eacDue date as returnednullAssignment points possible0Submission gradeWithheld by the readerCanvas marks this assignment not visible. Its grade fields are withheld.Whether the grade matches the current submission is unknown.Submission contextAttemptNot returnedWorkflow stateNot returnedExcusedtrueMissingtrueLatetrueAll returned assignment and submission fieldsAssignmentId (id)\"0042\"Course id (course_id)42Assignment group id (assignment_group_id)4Name (name)\"Caf\u00e9 \u6771\u4eac\"Assignment points possible (points_possible)0Due at (due_at)nullHtml url (html_url)\"https://school.invalid/never-follow\"Submission{\n  \"submission_state\": \"returned\",\n  \"submission\": {\n    \"grade_visibility\": \"assignment_not_visible\",\n    \"fields\": {\n      \"assignment_id\": \"0042\",\n      \"user_id\": 7,\n      \"missing\": true,\n      \"late\": true,\n      \"excused\": true,\n      \"assignment_visible\": false\n    }\n  }\n}"
+          },
+          {
+            "id": "assignment-1-2",
+            "text": "ordinaryDue date as returnednullAssignment points possible0Reported submission scoreNot returnedReported submission gradeNot returnedOnly the grade fields returned by Canvas are shown.Whether the grade matches the current submission is unknown.Submission contextAttemptNot returnedWorkflow stateNot returnedExcusedNot returnedMissingNot returnedLateNot returnedAll returned assignment and submission fieldsAssignmentId (id)704Course id (course_id)42Assignment group id (assignment_group_id)4Name (name)\"ordinary\"Assignment points possible (points_possible)0Due at (due_at)nullHtml url (html_url)\"https://school.invalid/never-follow\"Submission{\n  \"submission_state\": \"returned\",\n  \"submission\": {\n    \"grade_visibility\": \"reported_fields\",\n    \"fields\": {\n      \"assignment_id\": 704,\n      \"user_id\": 7\n    }\n  }\n}"
+          },
+          {
+            "id": "assignment-1-3",
+            "text": "Empty \"\" fieldDue date as returnednullAssignment points possible0Reported submission scoreNot returnedReported submission gradeNot returnedOnly the grade fields returned by Canvas are shown.Whether the grade matches the current submission is unknown.Submission contextAttemptNot returnedWorkflow stateNot returnedExcusednullMissingnullLatenullAll returned assignment and submission fieldsAssignmentId (id)\"705\"Course id (course_id)42Assignment group id (assignment_group_id)4Name (name)\"Empty \\\"\\\" field\"Assignment points possible (points_possible)0Due at (due_at)nullHtml url (html_url)\"https://school.invalid/never-follow\"Submission{\n  \"submission_state\": \"returned\",\n  \"submission\": {\n    \"grade_visibility\": \"reported_fields\",\n    \"fields\": {\n      \"assignment_id\": \"705\",\n      \"user_id\": 7,\n      \"missing\": null,\n      \"late\": null,\n      \"excused\": null\n    }\n  }\n}"
+          },
+          {
+            "id": "assignment-1-4",
+            "text": "Title CR\\u000dLF\nTAB\tend\\u0080Due date as returnednullAssignment points possible0Reported submission scoreNot returnedReported submission gradeNot returnedOnly the grade fields returned by Canvas are shown.Whether the grade matches the current submission is unknown.Submission contextAttemptNot returnedWorkflow stateNot returnedExcusedNot returnedMissingfalseLateNot returnedAll returned assignment and submission fieldsAssignmentId (id)706Course id (course_id)42Assignment group id (assignment_group_id)4Name (name)\"Title CR\\rLF\\nTAB\\tend\\u0080\"Assignment points possible (points_possible)0Due at (due_at)nullHtml url (html_url)\"https://school.invalid/never-follow\"Submission{\n  \"submission_state\": \"returned\",\n  \"submission\": {\n    \"grade_visibility\": \"reported_fields\",\n    \"fields\": {\n      \"assignment_id\": 706,\n      \"user_id\": 7,\n      \"missing\": false\n    }\n  }\n}"
+          }
+        ],
+        "groups": [
+          {
+            "id": "group-0",
+            "title": "Repeated lab \u03a9",
+            "facts": "Id (id)3Name (name)\"Repeated lab \u03a9\"Position (position)1Reported group weight (group_weight)40Rules (rules){\n  \"drop_lowest\": 1,\n  \"drop_highest\": 0,\n  \"never_drop\": [\n    \"0007\"\n  ]\n}Assignments state (assignments_state)\"returned\""
+          },
+          {
+            "id": "group-1",
+            "title": "Repeated lab \u03a9",
+            "facts": "Id (id)4Name (name)\"Repeated lab \u03a9\"Position (position)2Reported group weight (group_weight)60Rules (rules)nullAssignments state (assignments_state)\"returned\""
+          },
+          {
+            "id": "group-2",
+            "title": "Empty returned group",
+            "facts": "Id (id)5Name (name)\"Empty returned group\"Assignments state (assignments_state)\"returned\""
+          },
+          {
+            "id": "group-3",
+            "title": "Unknown null group",
+            "facts": "Id (id)6Name (name)\"Unknown null group\"Assignments state (assignments_state)\"null\""
+          },
+          {
+            "id": "group-4",
+            "title": "Unknown absent group",
+            "facts": "Id (id)7Name (name)\"Unknown absent group\"Assignments state (assignments_state)\"not_returned\""
+          }
+        ],
+        "totals": "Reported course totalsEach enrollment stays separate. Current, final and grading-period values retain their original Canvas field names; no enrollment is chosen for you.Returned enrollment 1Type (type)\"student\"Role (role)\"StudentEnrollment\"User id (user_id)7Enrollment state (enrollment_state)\"active\"Totals for all grading periods option (totals_for_all_grading_periods_option)falseCurrent grading period id (current_grading_period_id)5Current grading period title (current_grading_period_title)\"Autumn\"Reported totalsReported current score (computed_current_score)0Reported final score (computed_final_score)0Reported current grade (computed_current_grade)nullReported final grade (computed_final_grade)nullCurrent period: reported current score (current_period_computed_current_score)12.5Current period: reported final score (current_period_computed_final_score)null",
+        "context": "Report contextCourse and authenticated callerCourse (course){\n  \"id\": 42,\n  \"name\": \"Fictional returned-grade view \u2014 \u03a9 / \u6771\u4eac\",\n  \"course_code\": \"FIX-MATH\",\n  \"hide_final_grades\": false,\n  \"apply_assignment_group_weights\": true,\n  \"has_grading_periods\": true,\n  \"has_weighted_grading_periods\": false\n}Authenticated user id (authenticated_user_id)7Grading periodsGrading periods state (grading_periods_state)\"returned\"Grading periods (grading_periods)[\n  {\n    \"id\": 5,\n    \"title\": \"Autumn\",\n    \"start_date\": \"2026-09-01\"\n  }\n]Returned-row counts and reader boundariesTotals visibility (totals_visibility)\"reported_fields_only\"Enrollments state (enrollments_state)\"returned\"Grading periods state (grading_periods_state)\"returned\"Assignment scope (assignment_scope)\"all_returned_assignment_groups\"Counts (counts){\n  \"groups_returned\": 5,\n  \"assignments_returned\": 10,\n  \"groups_without_assignment_list\": 2,\n  \"submissions_not_returned\": 1,\n  \"submissions_null\": 1,\n  \"explicitly_not_posted\": 1,\n  \"explicitly_not_visible\": 1,\n  \"excused_true\": 2,\n  \"missing_true\": 2,\n  \"late_true\": 2,\n  \"grade_matches_current_submission_false\": 1\n}Whole collection complete (collection_complete)nullReader source (reader_source)\"CanvasClient.get_paginated\"Upstream response shape (upstream_response_shape)\"not_observed\"Reader warningsFictional optional-value warning; omitted values remain unknown.Download complete report JSONThe download preserves the complete normalized report used here. Original Canvas response pages are not included.JSON SHA-256: 18a7c12b7fa8faba821e894d5ba06afe487ed61957e953c48b7aead94b862a18"
+      }
+    },
+    {
+      "name": "mixed controls visible",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "mixed labels",
+      "actual": [
+        1,
+        0,
+        0
+      ],
+      "expected": [
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "before": {
+    "baseline.json": {
+      "bytes": 99705,
+      "sha256": "6580e059f66397d4452be2fb24e031f3caad4633cb94c53fa7e30240525adc1e",
+      "git_blob": "397d57a6df7c0f46c6e25985940242bddbd450dc",
+      "mode": 33206,
+      "mtime_ns": "1791939515522286500",
+      "inode": "281474978300229"
+    },
+    "criteria.json": {
+      "bytes": 4914,
+      "sha256": "3d1b09f91d3885e90bfea8fc94dcf0396c8fc0abc77654a4edbefe47d64bd889",
+      "git_blob": "cd106ae921d476a634a2ce799054416d222ab5d2",
+      "mode": 33206,
+      "mtime_ns": "1791939514291684500",
+      "inode": "281474978300224"
+    },
+    "grade_review_export.py": {
+      "bytes": 23919,
+      "sha256": "9dad9fd886c34d92061efe79c5376f1c801af74f9e7dd8cc6729e980a8181f23",
+      "git_blob": "a822dc46bc7c18e288656017147be60548664280",
+      "mode": 33206,
+      "mtime_ns": "1791939513764588400",
+      "inode": "281474978300221"
+    },
+    "hidden.html": {
+      "bytes": 51890,
+      "sha256": "e0be3ce8da00234f92562a92b0ba81367f20092fbd7513a00e4d767b3bf37949",
+      "git_blob": "c5aadf164a43603234aa3bbd75859109022d3b5c",
+      "mode": 33206,
+      "mtime_ns": "1791939514834559100",
+      "inode": "281474978300227"
+    },
+    "hidden.json": {
+      "bytes": 8490,
+      "sha256": "faf3eadcab7535a43b19d4a94b2c3842f15e0f16d61b5ed14732c8622f27bee8",
+      "git_blob": "47d19fe2f403642ca7eb577f352c47888a16410c",
+      "mode": 33206,
+      "mtime_ns": "1791939514159641100",
+      "inode": "281474978300223"
+    },
+    "mixed.html": {
+      "bytes": 53388,
+      "sha256": "8c08aa1c5cb120d17479cdd710ed2244d702f7e5407f2ec714faec4b3798b79f",
+      "git_blob": "8726ba2da867a3a39b079f6bc5911146ffedbbb3",
+      "mode": 33206,
+      "mtime_ns": "1791939514659074100",
+      "inode": "281474978300226"
+    },
+    "mixed.json": {
+      "bytes": 8849,
+      "sha256": "8bccec4db061ad76088a498cdf1045d7f85adc57f81611a959a9c683e333b067",
+      "git_blob": "45fb058d4e92a20daa423054f32ba202f5bc6f1a",
+      "mode": 33206,
+      "mtime_ns": "1791939514021102800",
+      "inode": "281474978300222"
+    },
+    "producer.json": {
+      "bytes": 5779,
+      "sha256": "9684bdab554e6f78246b0479cb8509652f3b35be1d08fd8841caa36c8c8efa8b",
+      "git_blob": "264f0efe47df22d9249c0903edc7a79f5752e542",
+      "mode": 33206,
+      "mtime_ns": "1791939514501297800",
+      "inode": "281474978300225"
+    },
+    "receive_browser.py": {
+      "bytes": 12496,
+      "sha256": "e03a3cf834b615bafd1212ddbdd34c95928116990a0dfd4b0f419f013abd5fee",
+      "git_blob": "b90e93fea00faefc842d6539f44989c56341f699",
+      "mode": 33206,
+      "mtime_ns": "1791939515162962000",
+      "inode": "281474978300228"
+    },
+    "source.json": {
+      "bytes": 217,
+      "sha256": "bb507f77c7f504fbd32becd708063918420b5cda9cf245ecbd23cbd26b574d84",
+      "git_blob": "e393b60991a7f98728c1ab76f053f217c096fc63",
+      "mode": 33206,
+      "mtime_ns": "1791939515765278300",
+      "inode": "281474978300230"
+    }
+  },
+  "fixed": {
+    "mixed": {
+      "cards": [
+        {
+          "id": "assignment-0-0",
+          "text": "Alpha <b>literal</b> \u03a9Due date as returnednullAssignment points possible0Reported submission score0Reported submission grade\"\"Only the grade fields returned by Canvas are shown.Submission contextAttemptNot returnedWorkflow stateNot returnedExcusednullMissingtrueLatefalseAll returned assignment and submission fieldsAssignmentId (id)\"9007199254740992\"Course id (course_id)42Assignment group id (assignment_group_id)3Name (name)\"Alpha <b>literal</b> \u03a9\"Assignment points possible (points_possible)0Due at (due_at)nullHtml url (html_url)\"https://school.invalid/never-follow\"Submission{\n  \"submission_state\": \"returned\",\n  \"submission\": {\n    \"grade_visibility\": \"reported_fields\",\n    \"fields\": {\n      \"assignment_id\": \"9007199254740992\",\n      \"user_id\": 7,\n      \"missing\": true,\n      \"late\": false,\n      \"excused\": null,\n      \"score\": 0,\n      \"grade\": \"\",\n      \"grade_matches_current_submission\": true\n    }\n  }\n}"
+        },
+        {
+          "id": "assignment-0-1",
+          "text": "Alpha <b>literal</b> \u03a9Due date as returnednullAssignment points possible0Submission gradeWithheld by the readerCanvas reports that this grade is not posted. Its grade fields are withheld.Whether the grade matches the current submission is unknown.Submission contextAttemptNot returnedWorkflow stateNot returnedExcusedfalseMissingfalseLatetrueAll returned assignment and submission fieldsAssignmentId (id)\"9007199254740993\"Course id (course_id)42Assignment group id (assignment_group_id)3Name (name)\"Alpha <b>literal</b> \u03a9\"Assignment points possible (points_possible)0Due at (due_at)nullHtml url (html_url)\"https://school.invalid/never-follow\"Submission{\n  \"submission_state\": \"returned\",\n  \"submission\": {\n    \"grade_visibility\": \"not_posted\",\n    \"fields\": {\n      \"assignment_id\": \"9007199254740993\",\n      \"user_id\": 7,\n      \"missing\": false,\n      \"late\": true,\n      \"excused\": false,\n      \"posted_at\": null\n    }\n  }\n}"
+        },
+        {
+          "id": "assignment-0-2",
+          "text": "Regex [a.*] Caf\u00e9Due date as returnednullAssignment points possible0Reported submission score85Reported submission grade\"B\"Only the grade fields returned by Canvas are shown.Canvas reports that this grade does not match the current submission. Do not treat it as the grade for the latest attempt.Submission contextAttempt2Workflow stateNot returnedExcusedtrueMissingnullLatefalseAll returned assignment and submission fieldsAssignmentId (id)\"0007\"Course id (course_id)42Assignment group id (assignment_group_id)3Name (name)\"Regex [a.*] Caf\u00e9\"Assignment points possible (points_possible)0Due at (due_at)nullHtml url (html_url)\"https://school.invalid/never-follow\"Submission{\n  \"submission_state\": \"returned\",\n  \"submission\": {\n    \"grade_visibility\": \"reported_fields\",\n    \"fields\": {\n      \"assignment_id\": \"0007\",\n      \"user_id\": 7,\n      \"missing\": null,\n      \"late\": false,\n      \"excused\": true,\n      \"score\": 85,\n      \"grade\": \"B\",\n      \"attempt\": 2,\n      \"grade_matches_current_submission\": false\n    }\n  }\n}"
+        },
+        {
+          "id": "assignment-0-3",
+          "text": "missing late excused wordsDue date as returnednullAssignment points possible0Submission: Not returned by Canvas. No grade or missing-work status is inferred.Submission contextAttemptNot returnedWorkflow stateNot returnedExcusedNot returnedMissingNot returnedLateNot returnedAll returned assignment and submission fieldsAssignmentId (id)\"702\"Course id (course_id)42Assignment group id (assignment_group_id)3Name (name)\"missing late excused words\"Assignment points possible (points_possible)0Due at (due_at)nullHtml url (html_url)\"https://school.invalid/never-follow\"Submission{\n  \"submission_state\": \"not_returned\",\n  \"submission\": null\n}"
+        },
+        {
+          "id": "assignment-0-4",
+          "text": "Assignment 703Due date as returnednullAssignment points possible0Submission: Canvas returned null. No grade or missing-work status is inferred.Submission contextAttemptNot returnedWorkflow stateNot returnedExcusedNot returnedMissingNot returnedLateNot returnedAll returned assignment and submission fieldsAssignmentId (id)\"703\"Course id (course_id)42Assignment group id (assignment_group_id)3Name (name)\"\"Assignment points possible (points_possible)0Due at (due_at)nullHtml url (html_url)\"https://school.invalid/never-follow\"Submission{\n  \"submission_state\": \"null\",\n  \"submission\": null\n}"
+        },
+        {
+          "id": "assignment-1-0",
+          "text": "Alpha <b>literal</b> \u03a9Due date as returnednullAssignment points possible0Reported submission scoreNot returnedReported submission gradeNot returnedOnly the grade fields returned by Canvas are shown.Whether the grade matches the current submission is unknown.Submission contextAttemptNot returnedWorkflow stateNot returnedExcusedfalseMissingfalseLatefalseAll returned assignment and submission fieldsAssignmentId (id)\"9007199254740994\"Course id (course_id)42Assignment group id (assignment_group_id)4Name (name)\"Alpha <b>literal</b> \u03a9\"Assignment points possible (points_possible)0Due at (due_at)nullHtml url (html_url)\"https://school.invalid/never-follow\"Submission{\n  \"submission_state\": \"returned\",\n  \"submission\": {\n    \"grade_visibility\": \"reported_fields\",\n    \"fields\": {\n      \"assignment_id\": \"9007199254740994\",\n      \"user_id\": 7,\n      \"missing\": false,\n      \"late\": false,\n      \"excused\": false\n    }\n  }\n}"
+        },
+        {
+          "id": "assignment-1-1",
+          "text": "Caf\u00e9 \u6771\u4eacDue date as returnednullAssignment points possible0Submission gradeWithheld by the readerCanvas marks this assignment not visible. Its grade fields are withheld.Whether the grade matches the current submission is unknown.Submission contextAttemptNot returnedWorkflow stateNot returnedExcusedtrueMissingtrueLatetrueAll returned assignment and submission fieldsAssignmentId (id)\"0042\"Course id (course_id)42Assignment group id (assignment_group_id)4Name (name)\"Caf\u00e9 \u6771\u4eac\"Assignment points possible (points_possible)0Due at (due_at)nullHtml url (html_url)\"https://school.invalid/never-follow\"Submission{\n  \"submission_state\": \"returned\",\n  \"submission\": {\n    \"grade_visibility\": \"assignment_not_visible\",\n    \"fields\": {\n      \"assignment_id\": \"0042\",\n      \"user_id\": 7,\n      \"missing\": true,\n      \"late\": true,\n      \"excused\": true,\n      \"assignment_visible\": false\n    }\n  }\n}"
+        },
+        {
+          "id": "assignment-1-2",
+          "text": "ordinaryDue date as returnednullAssignment points possible0Reported submission scoreNot returnedReported submission gradeNot returnedOnly the grade fields returned by Canvas are shown.Whether the grade matches the current submission is unknown.Submission contextAttemptNot returnedWorkflow stateNot returnedExcusedNot returnedMissingNot returnedLateNot returnedAll returned assignment and submission fieldsAssignmentId (id)704Course id (course_id)42Assignment group id (assignment_group_id)4Name (name)\"ordinary\"Assignment points possible (points_possible)0Due at (due_at)nullHtml url (html_url)\"https://school.invalid/never-follow\"Submission{\n  \"submission_state\": \"returned\",\n  \"submission\": {\n    \"grade_visibility\": \"reported_fields\",\n    \"fields\": {\n      \"assignment_id\": 704,\n      \"user_id\": 7\n    }\n  }\n}"
+        },
+        {
+          "id": "assignment-1-3",
+          "text": "Empty \"\" fieldDue date as returnednullAssignment points possible0Reported submission scoreNot returnedReported submission gradeNot returnedOnly the grade fields returned by Canvas are shown.Whether the grade matches the current submission is unknown.Submission contextAttemptNot returnedWorkflow stateNot returnedExcusednullMissingnullLatenullAll returned assignment and submission fieldsAssignmentId (id)\"705\"Course id (course_id)42Assignment group id (assignment_group_id)4Name (name)\"Empty \\\"\\\" field\"Assignment points possible (points_possible)0Due at (due_at)nullHtml url (html_url)\"https://school.invalid/never-follow\"Submission{\n  \"submission_state\": \"returned\",\n  \"submission\": {\n    \"grade_visibility\": \"reported_fields\",\n    \"fields\": {\n      \"assignment_id\": \"705\",\n      \"user_id\": 7,\n      \"missing\": null,\n      \"late\": null,\n      \"excused\": null\n    }\n  }\n}"
+        },
+        {
+          "id": "assignment-1-4",
+          "text": "Title CR\\u000dLF\nTAB\tend\\u0080Due date as returnednullAssignment points possible0Reported submission scoreNot returnedReported submission gradeNot returnedOnly the grade fields returned by Canvas are shown.Whether the grade matches the current submission is unknown.Submission contextAttemptNot returnedWorkflow stateNot returnedExcusedNot returnedMissingfalseLateNot returnedAll returned assignment and submission fieldsAssignmentId (id)706Course id (course_id)42Assignment group id (assignment_group_id)4Name (name)\"Title CR\\rLF\\nTAB\\tend\\u0080\"Assignment points possible (points_possible)0Due at (due_at)nullHtml url (html_url)\"https://school.invalid/never-follow\"Submission{\n  \"submission_state\": \"returned\",\n  \"submission\": {\n    \"grade_visibility\": \"reported_fields\",\n    \"fields\": {\n      \"assignment_id\": 706,\n      \"user_id\": 7,\n      \"missing\": false\n    }\n  }\n}"
+        }
+      ],
+      "groups": [
+        {
+          "id": "group-0",
+          "title": "Repeated lab \u03a9",
+          "facts": "Id (id)3Name (name)\"Repeated lab \u03a9\"Position (position)1Reported group weight (group_weight)40Rules (rules){\n  \"drop_lowest\": 1,\n  \"drop_highest\": 0,\n  \"never_drop\": [\n    \"0007\"\n  ]\n}Assignments state (assignments_state)\"returned\""
+        },
+        {
+          "id": "group-1",
+          "title": "Repeated lab \u03a9",
+          "facts": "Id (id)4Name (name)\"Repeated lab \u03a9\"Position (position)2Reported group weight (group_weight)60Rules (rules)nullAssignments state (assignments_state)\"returned\""
+        },
+        {
+          "id": "group-2",
+          "title": "Empty returned group",
+          "facts": "Id (id)5Name (name)\"Empty returned group\"Assignments state (assignments_state)\"returned\""
+        },
+        {
+          "id": "group-3",
+          "title": "Unknown null group",
+          "facts": "Id (id)6Name (name)\"Unknown null group\"Assignments state (assignments_state)\"null\""
+        },
+        {
+          "id": "group-4",
+          "title": "Unknown absent group",
+          "facts": "Id (id)7Name (name)\"Unknown absent group\"Assignments state (assignments_state)\"not_returned\""
+        }
+      ],
+      "totals": "Reported course totalsEach enrollment stays separate. Current, final and grading-period values retain their original Canvas field names; no enrollment is chosen for you.Returned enrollment 1Type (type)\"student\"Role (role)\"StudentEnrollment\"User id (user_id)7Enrollment state (enrollment_state)\"active\"Totals for all grading periods option (totals_for_all_grading_periods_option)falseCurrent grading period id (current_grading_period_id)5Current grading period title (current_grading_period_title)\"Autumn\"Reported totalsReported current score (computed_current_score)0Reported final score (computed_final_score)0Reported current grade (computed_current_grade)nullReported final grade (computed_final_grade)nullCurrent period: reported current score (current_period_computed_current_score)12.5Current period: reported final score (current_period_computed_final_score)null",
+      "context": "Report contextCourse and authenticated callerCourse (course){\n  \"id\": 42,\n  \"name\": \"Fictional returned-grade view \u2014 \u03a9 / \u6771\u4eac\",\n  \"course_code\": \"FIX-MATH\",\n  \"hide_final_grades\": false,\n  \"apply_assignment_group_weights\": true,\n  \"has_grading_periods\": true,\n  \"has_weighted_grading_periods\": false\n}Authenticated user id (authenticated_user_id)7Grading periodsGrading periods state (grading_periods_state)\"returned\"Grading periods (grading_periods)[\n  {\n    \"id\": 5,\n    \"title\": \"Autumn\",\n    \"start_date\": \"2026-09-01\"\n  }\n]Returned-row counts and reader boundariesTotals visibility (totals_visibility)\"reported_fields_only\"Enrollments state (enrollments_state)\"returned\"Grading periods state (grading_periods_state)\"returned\"Assignment scope (assignment_scope)\"all_returned_assignment_groups\"Counts (counts){\n  \"groups_returned\": 5,\n  \"assignments_returned\": 10,\n  \"groups_without_assignment_list\": 2,\n  \"submissions_not_returned\": 1,\n  \"submissions_null\": 1,\n  \"explicitly_not_posted\": 1,\n  \"explicitly_not_visible\": 1,\n  \"excused_true\": 2,\n  \"missing_true\": 2,\n  \"late_true\": 2,\n  \"grade_matches_current_submission_false\": 1\n}Whole collection complete (collection_complete)nullReader source (reader_source)\"CanvasClient.get_paginated\"Upstream response shape (upstream_response_shape)\"not_observed\"Reader warningsFictional optional-value warning; omitted values remain unknown.Download complete report JSONThe download preserves the complete normalized report used here. Original Canvas response pages are not included.JSON SHA-256: 18a7c12b7fa8faba821e894d5ba06afe487ed61957e953c48b7aead94b862a18"
+    }
+  },
+  "downloads": [],
+  "requests": [
+    "file:///D:/hamon-dcac8b3b8755-canvas167-rcpu5dqz/candidate-inputs/mixed.html"
+  ],
+  "page_errors": [],
+  "snapshots": [],
+  "scope": "Saved HTML only; managed closure, print-media visibility, no browser OS-exit or physical print claim.",
+  "error": "RuntimeError('mixed labels')",
+  "traceback": "Traceback (most recent call last):\n  File \"D:\\hamon-dcac8b3b8755-canvas167-rcpu5dqz\\candidate-inputs\\receive_browser.py\", line 61, in main\n    check(name+' labels', [page.get_by_label(x,exact=True).count() for x in ['Find returned assignments','Returned group','Canvas reported flag']],[1,1,1])\n  File \"D:\\hamon-dcac8b3b8755-canvas167-rcpu5dqz\\candidate-inputs\\receive_browser.py\", line 23, in check\n    if actual!=expected:raise RuntimeError(name)\n                        ^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: mixed labels\n",
+  "context_closed": true,
+  "managed_browser_disconnected": true,
+  "playwright_stopped": true,
+  "after": {
+    "baseline.json": {
+      "bytes": 99705,
+      "sha256": "6580e059f66397d4452be2fb24e031f3caad4633cb94c53fa7e30240525adc1e",
+      "git_blob": "397d57a6df7c0f46c6e25985940242bddbd450dc",
+      "mode": 33206,
+      "mtime_ns": "1791939515522286500",
+      "inode": "281474978300229"
+    },
+    "criteria.json": {
+      "bytes": 4914,
+      "sha256": "3d1b09f91d3885e90bfea8fc94dcf0396c8fc0abc77654a4edbefe47d64bd889",
+      "git_blob": "cd106ae921d476a634a2ce799054416d222ab5d2",
+      "mode": 33206,
+      "mtime_ns": "1791939514291684500",
+      "inode": "281474978300224"
+    },
+    "grade_review_export.py": {
+      "bytes": 23919,
+      "sha256": "9dad9fd886c34d92061efe79c5376f1c801af74f9e7dd8cc6729e980a8181f23",
+      "git_blob": "a822dc46bc7c18e288656017147be60548664280",
+      "mode": 33206,
+      "mtime_ns": "1791939513764588400",
+      "inode": "281474978300221"
+    },
+    "hidden.html": {
+      "bytes": 51890,
+      "sha256": "e0be3ce8da00234f92562a92b0ba81367f20092fbd7513a00e4d767b3bf37949",
+      "git_blob": "c5aadf164a43603234aa3bbd75859109022d3b5c",
+      "mode": 33206,
+      "mtime_ns": "1791939514834559100",
+      "inode": "281474978300227"
+    },
+    "hidden.json": {
+      "bytes": 8490,
+      "sha256": "faf3eadcab7535a43b19d4a94b2c3842f15e0f16d61b5ed14732c8622f27bee8",
+      "git_blob": "47d19fe2f403642ca7eb577f352c47888a16410c",
+      "mode": 33206,
+      "mtime_ns": "1791939514159641100",
+      "inode": "281474978300223"
+    },
+    "mixed.html": {
+      "bytes": 53388,
+      "sha256": "8c08aa1c5cb120d17479cdd710ed2244d702f7e5407f2ec714faec4b3798b79f",
+      "git_blob": "8726ba2da867a3a39b079f6bc5911146ffedbbb3",
+      "mode": 33206,
+      "mtime_ns": "1791939514659074100",
+      "inode": "281474978300226"
+    },
+    "mixed.json": {
+      "bytes": 8849,
+      "sha256": "8bccec4db061ad76088a498cdf1045d7f85adc57f81611a959a9c683e333b067",
+      "git_blob": "45fb058d4e92a20daa423054f32ba202f5bc6f1a",
+      "mode": 33206,
+      "mtime_ns": "1791939514021102800",
+      "inode": "281474978300222"
+    },
+    "producer.json": {
+      "bytes": 5779,
+      "sha256": "9684bdab554e6f78246b0479cb8509652f3b35be1d08fd8841caa36c8c8efa8b",
+      "git_blob": "264f0efe47df22d9249c0903edc7a79f5752e542",
+      "mode": 33206,
+      "mtime_ns": "1791939514501297800",
+      "inode": "281474978300225"
+    },
+    "receive_browser.py": {
+      "bytes": 12496,
+      "sha256": "e03a3cf834b615bafd1212ddbdd34c95928116990a0dfd4b0f419f013abd5fee",
+      "git_blob": "b90e93fea00faefc842d6539f44989c56341f699",
+      "mode": 33206,
+      "mtime_ns": "1791939515162962000",
+      "inode": "281474978300228"
+    },
+    "source.json": {
+      "bytes": 217,
+      "sha256": "bb507f77c7f504fbd32becd708063918420b5cda9cf245ecbd23cbd26b574d84",
+      "git_blob": "e393b60991a7f98728c1ab76f053f217c096fc63",
+      "mode": 33206,
+      "mtime_ns": "1791939515765278300",
+      "inode": "281474978300230"
+    }
+  },
+  "source_inputs_preserved": true,
+  "passed": false,
+  "artifacts": {}
+}

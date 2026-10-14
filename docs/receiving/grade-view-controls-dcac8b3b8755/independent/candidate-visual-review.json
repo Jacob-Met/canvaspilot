@@ -1,0 +1,22 @@
+{
+  "scope": "Personally viewed the exact saved 390px and 1280px screenshots, no new browser run. Narrow screenshot shows readable labels, native controls, focus ring, result count and full-report notice. Desktop screenshot shows preserved capture context, unknown fields, warning, complete-JSON link and SHA. These are viewport excerpts, not full-page or physical-printer qualification.",
+  "artifacts": {
+    "mixed-390.png": {
+      "bytes": 38364,
+      "sha256": "8171d3c90213b1fbed32c7bdc8d23694e7197c4f4e41d988930b063a02b14f8f",
+      "git_blob": "abb5b1151855605bfff8fe190edb0fed072e8ced",
+      "mode": 33206,
+      "mtime_ns": "1791940563015339500",
+      "inode": "1125899908432168"
+    },
+    "mixed-desktop.png": {
+      "bytes": 62157,
+      "sha256": "0d967876dda818f3f128684965afa0ae0d66f4a6970c9d7d3c63f4e796501691",
+      "git_blob": "61582daf14afb7a1715f5a4c28249735a0f43b0c",
+      "mode": 33206,
+      "mtime_ns": "1791940566424032000",
+      "inode": "562949955010899"
+    }
+  },
+  "raw_git": "e5f5a156f4a6d09c3f95bbd78fc95eb44c9710c9"
+}

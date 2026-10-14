@@ -1,0 +1,20 @@
+[
+  {
+    "path": "fixtures/mixed.json",
+    "bytes": 8849,
+    "sha256": "8bccec4db061ad76088a498cdf1045d7f85adc57f81611a959a9c683e333b067",
+    "git_blob": "45fb058d4e92a20daa423054f32ba202f5bc6f1a"
+  },
+  {
+    "path": "fixtures/hidden.json",
+    "bytes": 8490,
+    "sha256": "faf3eadcab7535a43b19d4a94b2c3842f15e0f16d61b5ed14732c8622f27bee8",
+    "git_blob": "47d19fe2f403642ca7eb577f352c47888a16410c"
+  },
+  {
+    "path": "criteria.json",
+    "bytes": 4914,
+    "sha256": "3d1b09f91d3885e90bfea8fc94dcf0396c8fc0abc77654a4edbefe47d64bd889",
+    "git_blob": "cd106ae921d476a634a2ce799054416d222ab5d2"
+  }
+]

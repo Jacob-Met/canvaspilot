@@ -1,0 +1,57 @@
+{
+  "schema": "hamon.canvas-grade-view.label-correction/1",
+  "scope": "Derived read-only source/receipt review; no additional runtime execution.",
+  "browser_finding": {
+    "raw_git": "e047dd1c05d33907b6150b2b1548b44a3c46ba07",
+    "actual": [
+      1,
+      0,
+      0
+    ],
+    "expected": [
+      1,
+      1,
+      1
+    ],
+    "meaning": "Exact label locators found only the search input; wrapping selects in labels included their option text. Nineteen preceding checks passed; filter interactions were not reached."
+  },
+  "v1_renderer": "a822dc46bc7c18e288656017147be60548664280",
+  "v2_renderer": "9cb0aa2c6a9028eab7a4fc0e71cba3a85fd6333e",
+  "correction": "Separate explicit for/id labels from their controls inside three grid containers; no JavaScript, CSS, data, normalized payload, receipt or API behavior change.",
+  "unchanged_function_bodies": {
+    "_escape": true,
+    "_value": true,
+    "_field": true,
+    "_facts": true,
+    "_title": true,
+    "_reading": true,
+    "_assignment": true,
+    "_group": true,
+    "render_grade_review_report": true,
+    "build_grade_review_report": true
+  },
+  "tests": "Seven-method successor adds label-text capture and one label regression; all six earlier test method bodies unchanged. On v1 six pass/one expected label failure, on v2 seven pass.",
+  "courses": [
+    {
+      "course": "course-label-baseline",
+      "returncode": 1,
+      "all_identity_maps_equal": true
+    },
+    {
+      "course": "course-candidate-v2",
+      "returncode": 0,
+      "all_identity_maps_equal": true
+    }
+  ],
+  "driver_note": "The label-baseline used the exact prior driver, whose historical scope string says six although stderr records seven methods. The v2 driver changes only that scope description to remove the fixed count. Both actual raw receipts are retained unchanged.",
+  "guide": "Only focused-check count six to seven and unambiguous label coverage change after reviewed guide1acc6ee3.",
+  "complete_source_inverse_exact": true,
+  "unchanged_six_test_method_bodies": {
+    "test_complete_json_and_report_values_are_unchanged": true,
+    "test_controls_start_hidden_and_only_exact_trusted_script_is_allowed": true,
+    "test_occurrences_keep_large_text_ids_literal_names_and_exact_true_flags": true,
+    "test_duplicate_groups_unknown_lists_and_empty_lists_keep_context": true,
+    "test_markup_is_inert_and_print_retains_closed_detail_rule": true,
+    "test_empty_report_still_has_complete_download_and_truthful_context": true
+  }
+}

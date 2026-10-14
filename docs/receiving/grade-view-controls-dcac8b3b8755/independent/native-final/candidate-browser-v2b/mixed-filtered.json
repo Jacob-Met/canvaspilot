@@ -1,0 +1,315 @@
+{
+  "course": {
+    "id": 42,
+    "name": "Fictional returned-grade view \u2014 \u03a9 / \u6771\u4eac",
+    "course_code": "FIX-MATH",
+    "hide_final_grades": false,
+    "apply_assignment_group_weights": true,
+    "has_grading_periods": true,
+    "has_weighted_grading_periods": false
+  },
+  "authenticated_user_id": 7,
+  "totals_visibility": "reported_fields_only",
+  "enrollments_state": "returned",
+  "enrollments": [
+    {
+      "context": {
+        "type": "student",
+        "role": "StudentEnrollment",
+        "user_id": 7,
+        "enrollment_state": "active",
+        "totals_for_all_grading_periods_option": false,
+        "current_grading_period_id": 5,
+        "current_grading_period_title": "Autumn"
+      },
+      "reported_totals": {
+        "computed_current_score": 0,
+        "computed_final_score": 0,
+        "computed_current_grade": null,
+        "computed_final_grade": null,
+        "current_period_computed_current_score": 12.5,
+        "current_period_computed_final_score": null
+      }
+    }
+  ],
+  "grading_periods_state": "returned",
+  "grading_periods": [
+    {
+      "id": 5,
+      "title": "Autumn",
+      "start_date": "2026-09-01"
+    }
+  ],
+  "assignment_scope": "all_returned_assignment_groups",
+  "assignment_groups": [
+    {
+      "id": 3,
+      "name": "Repeated lab \u03a9",
+      "position": 1,
+      "group_weight": 40,
+      "rules": {
+        "drop_lowest": 1,
+        "drop_highest": 0,
+        "never_drop": [
+          "0007"
+        ]
+      },
+      "assignments_state": "returned",
+      "assignments": [
+        {
+          "fields": {
+            "id": "9007199254740992",
+            "course_id": 42,
+            "assignment_group_id": 3,
+            "name": "Alpha <b>literal</b> \u03a9",
+            "points_possible": 0,
+            "due_at": null,
+            "html_url": "https://school.invalid/never-follow"
+          },
+          "submission_state": "returned",
+          "submission": {
+            "grade_visibility": "reported_fields",
+            "fields": {
+              "assignment_id": "9007199254740992",
+              "user_id": 7,
+              "missing": true,
+              "late": false,
+              "excused": null,
+              "score": 0,
+              "grade": "",
+              "grade_matches_current_submission": true
+            }
+          }
+        },
+        {
+          "fields": {
+            "id": "9007199254740993",
+            "course_id": 42,
+            "assignment_group_id": 3,
+            "name": "Alpha <b>literal</b> \u03a9",
+            "points_possible": 0,
+            "due_at": null,
+            "html_url": "https://school.invalid/never-follow"
+          },
+          "submission_state": "returned",
+          "submission": {
+            "grade_visibility": "not_posted",
+            "fields": {
+              "assignment_id": "9007199254740993",
+              "user_id": 7,
+              "missing": false,
+              "late": true,
+              "excused": false,
+              "posted_at": null
+            }
+          }
+        },
+        {
+          "fields": {
+            "id": "0007",
+            "course_id": 42,
+            "assignment_group_id": 3,
+            "name": "Regex [a.*] Caf\u00e9",
+            "points_possible": 0,
+            "due_at": null,
+            "html_url": "https://school.invalid/never-follow"
+          },
+          "submission_state": "returned",
+          "submission": {
+            "grade_visibility": "reported_fields",
+            "fields": {
+              "assignment_id": "0007",
+              "user_id": 7,
+              "missing": null,
+              "late": false,
+              "excused": true,
+              "score": 85,
+              "grade": "B",
+              "attempt": 2,
+              "grade_matches_current_submission": false
+            }
+          }
+        },
+        {
+          "fields": {
+            "id": "702",
+            "course_id": 42,
+            "assignment_group_id": 3,
+            "name": "missing late excused words",
+            "points_possible": 0,
+            "due_at": null,
+            "html_url": "https://school.invalid/never-follow"
+          },
+          "submission_state": "not_returned",
+          "submission": null
+        },
+        {
+          "fields": {
+            "id": "703",
+            "course_id": 42,
+            "assignment_group_id": 3,
+            "name": "",
+            "points_possible": 0,
+            "due_at": null,
+            "html_url": "https://school.invalid/never-follow"
+          },
+          "submission_state": "null",
+          "submission": null
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Repeated lab \u03a9",
+      "position": 2,
+      "group_weight": 60,
+      "rules": null,
+      "assignments_state": "returned",
+      "assignments": [
+        {
+          "fields": {
+            "id": "9007199254740994",
+            "course_id": 42,
+            "assignment_group_id": 4,
+            "name": "Alpha <b>literal</b> \u03a9",
+            "points_possible": 0,
+            "due_at": null,
+            "html_url": "https://school.invalid/never-follow"
+          },
+          "submission_state": "returned",
+          "submission": {
+            "grade_visibility": "reported_fields",
+            "fields": {
+              "assignment_id": "9007199254740994",
+              "user_id": 7,
+              "missing": false,
+              "late": false,
+              "excused": false
+            }
+          }
+        },
+        {
+          "fields": {
+            "id": "0042",
+            "course_id": 42,
+            "assignment_group_id": 4,
+            "name": "Caf\u00e9 \u6771\u4eac",
+            "points_possible": 0,
+            "due_at": null,
+            "html_url": "https://school.invalid/never-follow"
+          },
+          "submission_state": "returned",
+          "submission": {
+            "grade_visibility": "assignment_not_visible",
+            "fields": {
+              "assignment_id": "0042",
+              "user_id": 7,
+              "missing": true,
+              "late": true,
+              "excused": true,
+              "assignment_visible": false
+            }
+          }
+        },
+        {
+          "fields": {
+            "id": 704,
+            "course_id": 42,
+            "assignment_group_id": 4,
+            "name": "ordinary",
+            "points_possible": 0,
+            "due_at": null,
+            "html_url": "https://school.invalid/never-follow"
+          },
+          "submission_state": "returned",
+          "submission": {
+            "grade_visibility": "reported_fields",
+            "fields": {
+              "assignment_id": 704,
+              "user_id": 7
+            }
+          }
+        },
+        {
+          "fields": {
+            "id": "705",
+            "course_id": 42,
+            "assignment_group_id": 4,
+            "name": "Empty \"\" field",
+            "points_possible": 0,
+            "due_at": null,
+            "html_url": "https://school.invalid/never-follow"
+          },
+          "submission_state": "returned",
+          "submission": {
+            "grade_visibility": "reported_fields",
+            "fields": {
+              "assignment_id": "705",
+              "user_id": 7,
+              "missing": null,
+              "late": null,
+              "excused": null
+            }
+          }
+        },
+        {
+          "fields": {
+            "id": 706,
+            "course_id": 42,
+            "assignment_group_id": 4,
+            "name": "Title CR\rLF\nTAB\tend\u0080",
+            "points_possible": 0,
+            "due_at": null,
+            "html_url": "https://school.invalid/never-follow"
+          },
+          "submission_state": "returned",
+          "submission": {
+            "grade_visibility": "reported_fields",
+            "fields": {
+              "assignment_id": 706,
+              "user_id": 7,
+              "missing": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Empty returned group",
+      "assignments_state": "returned",
+      "assignments": []
+    },
+    {
+      "id": 6,
+      "name": "Unknown null group",
+      "assignments_state": "null",
+      "assignments": null
+    },
+    {
+      "id": 7,
+      "name": "Unknown absent group",
+      "assignments_state": "not_returned",
+      "assignments": null
+    }
+  ],
+  "counts": {
+    "groups_returned": 5,
+    "assignments_returned": 10,
+    "groups_without_assignment_list": 2,
+    "submissions_not_returned": 1,
+    "submissions_null": 1,
+    "explicitly_not_posted": 1,
+    "explicitly_not_visible": 1,
+    "excused_true": 2,
+    "missing_true": 2,
+    "late_true": 2,
+    "grade_matches_current_submission_false": 1
+  },
+  "collection_complete": null,
+  "reader_source": "CanvasClient.get_paginated",
+  "upstream_response_shape": "not_observed",
+  "warnings": [
+    "Fictional optional-value warning; omitted values remain unknown."
+  ]
+}
