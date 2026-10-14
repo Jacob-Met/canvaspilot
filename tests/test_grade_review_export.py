@@ -139,7 +139,10 @@ def test_provider_markup_controls_and_unicode_are_literal_and_resources_inert():
     assert json.loads(page.download) == report
     assert '<script>window.injected=true</script>' in "".join(page.text)
     assert "\\u0000" in "".join(page.text) and "\\ud800" in "".join(page.text)
-    assert not {"script", "img", "iframe", "link", "form", "object"} & {tag for tag, _ in page.tags}
+    assert not {"img", "iframe", "link", "form", "object"} & {tag for tag, _ in page.tags}
+    scripts = [attrs for tag, attrs in page.tags if tag == "script"]
+    assert len(scripts) == 1 and "src" not in scripts[0]
+    assert b"<script>window.injected=true</script>" not in content
     for tag, attrs in page.tags:
         assert not any(name.startswith("on") for name in attrs)
         if tag == "a":

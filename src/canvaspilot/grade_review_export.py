@@ -38,7 +38,7 @@ pre,code { font: .88rem/1.5 ui-monospace,SFMono-Regular,Consolas,monospace; }
 pre { white-space:pre-wrap; margin:0; }
 h1,h2,h3,h4,p,li,dt,dd,pre,code,a,summary { overflow-wrap:anywhere; }
 a { color:#155b7b; text-underline-offset:.2em; }
-a:focus-visible,summary:focus-visible { outline:3px solid #155b7b; outline-offset:4px; }
+a:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,button:focus-visible { outline:3px solid #155b7b; outline-offset:4px; }
 .download { display:inline-block; border:1px solid #155b7b; border-radius:6px; padding:10px 14px; font-weight:650; }
 nav ul { padding-left:22px; }
 nav li { margin:6px 0; }
@@ -53,6 +53,16 @@ summary { cursor:pointer; color:#155b7b; font-weight:600; padding:4px 0; }
 details[open] summary { margin-bottom:12px; }
 .enrollment+.enrollment { border-top:1px solid #dbe5e9; padding-top:18px; }
 footer { color:#4a606b; font-size:.9rem; }
+#grade-view-controls { min-inline-size:0; }
+#grade-view-controls[hidden] { display:none; }
+#grade-view-controls legend { font-size:1.2rem; font-weight:700; padding:0 6px; }
+.grade-control-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
+.grade-control-grid label { display:block; font-weight:600; }
+.grade-control-grid input,.grade-control-grid select { width:100%; min-width:0; margin-top:6px; }
+#grade-view-controls input,#grade-view-controls select,#grade-view-controls button { font:inherit; color:inherit; background:white; border:1px solid #6c858f; border-radius:6px; padding:10px; }
+#grade-view-controls button { cursor:pointer; margin-top:16px; }
+#grade-view-count { margin:16px 0 0; }
+#grade-no-match { margin-top:12px; }
 @media (max-width:540px) {
  main { padding:22px 12px 36px; }
  .panel,.group { padding:16px; }
@@ -60,6 +70,7 @@ footer { color:#4a606b; font-size:.9rem; }
  .facts dt { border-bottom:0; padding-bottom:0; }
  .facts dd { padding-top:2px; }
  .assignment-summary { grid-template-columns:minmax(0,1fr); }
+ .grade-control-grid { grid-template-columns:minmax(0,1fr); }
 }
 @media print {
  :root { background:white; color:black; font-size:10pt; }
@@ -68,10 +79,52 @@ footer { color:#4a606b; font-size:.9rem; }
  h2,h3,h4,summary { break-after:avoid; }
  .reading { break-inside:avoid; }
  .download,.back { display:none; }
+ #grade-view-controls { display:none; }
+ .assignment[hidden] { display:block !important; }
  a,summary { color:black; }
  details:not([open]) > *:not(summary) { display:block !important; }
  details::details-content { content-visibility:visible !important; display:block !important; }
 }
+"""
+
+_VIEW_SCRIPT = """
+(() => {
+  const controls = document.getElementById("grade-view-controls");
+  const search = document.getElementById("grade-search");
+  const group = document.getElementById("grade-group");
+  const flag = document.getElementById("grade-flag");
+  const reset = document.getElementById("grade-reset");
+  const count = document.getElementById("grade-view-count");
+  const noMatch = document.getElementById("grade-no-match");
+  const cards = [...document.querySelectorAll("article.assignment")];
+  function apply() {
+    const term = search.value.trim().toLowerCase();
+    let shown = 0;
+    for (const card of cards) {
+      const matchesText = card.dataset.reviewName.toLowerCase().includes(term)
+        || card.dataset.reviewId.toLowerCase().includes(term);
+      const matchesGroup = !group.value || card.dataset.reviewGroup === group.value;
+      const matchesFlag = !flag.value
+        || card.getAttribute("data-review-" + flag.value) === "true";
+      card.hidden = !(matchesText && matchesGroup && matchesFlag);
+      if (!card.hidden) shown += 1;
+    }
+    count.textContent = `Showing ${shown} of ${cards.length} returned assignment cards.`;
+    noMatch.hidden = shown !== 0;
+  }
+  search.addEventListener("input", apply);
+  search.addEventListener("change", apply);
+  group.addEventListener("change", apply);
+  flag.addEventListener("change", apply);
+  reset.addEventListener("click", () => {
+    search.value = "";
+    group.value = "";
+    flag.value = "";
+    apply();
+  });
+  apply();
+  controls.hidden = false;
+})();
 """
 
 _LABELS = {
@@ -174,8 +227,14 @@ def _assignment(assignment: dict[str, Any], index: int, group_index: int) -> str
     submission = assignment["submission"]
     detail = submission["fields"] if submission is not None else {}
     title = _title(fields.get("name"), f"Assignment {fields['id']}")
+    flags = " ".join(
+        f'data-review-{key}="{str(detail.get(key) is True).lower()}"'
+        for key in ("missing", "late", "excused")
+    )
     parts = [
-        f'<article class="assignment" id="assignment-{group_index}-{index}">',
+        f'<article class="assignment" id="assignment-{group_index}-{index}" '
+        f'data-review-id="{_escape(str(fields["id"]))}" data-review-name="{title}" '
+        f'data-review-group="{group_index}" {flags}>',
         f"<h3>{title}</h3>",
         '<div class="assignment-summary">',
         _reading("Due date as returned", _field(fields, "due_at")),
@@ -286,6 +345,39 @@ def _group(group: dict[str, Any], index: int) -> str:
     return "".join(parts)
 
 
+def _view_controls(groups: list[dict[str, Any]]) -> str:
+    options = "".join(
+        f'<option data-grade-group="true" value="{index}">'
+        + f"{index + 1}. "
+        + _title(group.get("name"), f"Assignment group {group['id']}")
+        + "</option>"
+        for index, group in enumerate(groups)
+    )
+    return (
+        '<fieldset class="panel" id="grade-view-controls" hidden>'
+        "<legend>View returned assignments</legend>"
+        '<p class="muted">Search displayed names or exact textual IDs. Flag filters match '
+        "only an explicit true value returned by Canvas; unknown flags are not inferred. "
+        "Group numbers follow returned order, so repeated names stay separate.</p>"
+        '<div class="grade-control-grid"><label for="grade-search">Find returned assignments'
+        '<input id="grade-search" type="search" autocomplete="off"></label>'
+        '<label for="grade-group">Returned group<select id="grade-group">'
+        '<option value="">All groups</option>'
+        + options
+        + '</select></label><label for="grade-flag">Canvas reported flag'
+        '<select id="grade-flag"><option value="">All assignments</option>'
+        '<option value="missing">Missing: true</option><option value="late">Late: true</option>'
+        '<option value="excused">Excused: true</option></select></label></div>'
+        '<button id="grade-reset" type="button">Reset view</button>'
+        '<p id="grade-view-count" role="status" aria-live="polite"></p>'
+        '<p id="grade-no-match" class="notice" hidden>No returned assignment cards match this view. '
+        "Change the search or filters, or reset the view.</p>"
+        '<p class="muted">This changes only the visible cards. Reported totals, group context '
+        "and the complete JSON download stay unchanged. Printing includes every returned assignment, "
+        "regardless of these controls.</p></fieldset>"
+    )
+
+
 def render_grade_review_report(
     report: dict[str, Any],
     *,
@@ -306,12 +398,16 @@ def render_grade_review_report(
     course = report["course"]
     title = _title(course.get("name"), f"Course {course['id']}")
     groups = report["assignment_groups"]
+    script_hash = base64.b64encode(
+        hashlib.sha256(_VIEW_SCRIPT.encode("utf-8")).digest()
+    ).decode("ascii")
     parts = [
         '<!doctype html><html lang="en"><head><meta charset="utf-8">',
         '<meta name="viewport" content="width=device-width, initial-scale=1">',
         '<meta name="referrer" content="no-referrer">',
         (
             '<meta http-equiv="Content-Security-Policy" content="default-src \'none\'; '
+            f"script-src 'sha256-{script_hash}'; "
             "style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'\">"
         ),
         "<title>Course grade review — CanvasPilot</title><style>",
@@ -386,6 +482,7 @@ def render_grade_review_report(
             '<section class="panel"><p>No assignment groups were returned. '
             "This does not establish that the course has none.</p></section>"
         )
+    parts.append(_view_controls(groups))
     parts.extend(_group(group, index) for index, group in enumerate(groups))
     parts.extend(
         [
@@ -439,9 +536,11 @@ def render_grade_review_report(
             f'<p class="muted">JSON SHA-256: <code id="json-sha256">{payload_hash}</code></p>',
             (
                 "</section><footer>Open this file directly in a browser. Use the browser's Print command "
-                "for paper or PDF. Source links are shown as text; this report has no scripts, "
-                "remote assets or grade-editing controls.</footer></main></body></html>\n"
+                "for paper or PDF. Source links are shown as text; view controls run only in this file. "
+                "With JavaScript disabled, the complete report remains available. There are no "
+                "remote assets or grade-editing controls.</footer></main>"
             ),
+            "<script>" + _VIEW_SCRIPT + "</script></body></html>\n",
         ]
     )
     content = "".join(parts).encode("utf-8")
