@@ -40,3 +40,13 @@ Course, caller and source fields are the values supplied by the reader. The expo
 The file contains course and grade information from the selected authenticated caller. Keep or share it deliberately. The exporter uses the existing exclusive local-file writer and does not publish or upload it. Export limits are 4 MiB of normalized JSON and 16 MiB of complete HTML; an oversized report is refused rather than truncated.
 
 Python callers can use `build_grade_review_report(api, course_id)` to obtain `(html_bytes, receipt)`, or `render_grade_review_report(normalized_report)` to render an already returned normalized review. Both accept an optional timezone-aware `generated_at` for deterministic creation. They return bytes without writing a destination.
+
+## Focused view checks
+
+In the installed project environment, run the seven view-contract methods with:
+
+```sh
+python -B -m unittest discover -s tests -p test_grade_review_view.py -v
+```
+
+These use fictional normalized records to check complete JSON preservation, literal names and textual IDs, group occurrences, exact true flags, unambiguous control labels, the trusted script hash, empty/unknown lists and print rules. Actual browser filtering, keyboard navigation, no-JavaScript fallback and print-media visibility are qualified separately; these methods do not call Canvas or stand in for a browser course.

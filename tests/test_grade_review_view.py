@@ -78,20 +78,29 @@ class Page(HTMLParser):
         self.tags = []
         self.text = []
         self.script = []
+        self.labels = {}
+        self.current_label = None
         self.in_script = False
         self.feed(content.decode("utf-8"))
 
     def handle_starttag(self, tag, attrs):
         self.tags.append((tag, dict(attrs)))
+        if tag == "label":
+            self.current_label = dict(attrs).get("for")
+            self.labels[self.current_label] = ""
         if tag == "script":
             self.in_script = True
 
     def handle_endtag(self, tag):
+        if tag == "label":
+            self.current_label = None
         if tag == "script":
             self.in_script = False
 
     def handle_data(self, data):
         self.text.append(data)
+        if self.current_label is not None:
+            self.labels[self.current_label] += data
         if self.in_script:
             self.script.append(data)
 
@@ -118,6 +127,14 @@ class GradeViewTest(unittest.TestCase):
         self.assertIn("whole-course completeness remains unknown", "".join(page.text))
         self.assertIn("Withheld by the reader", "".join(page.text))
         self.assertIn("does not match the current submission", "".join(page.text))
+
+    def test_control_labels_remain_exact_without_select_option_text(self):
+        _, _, _, page = self.render()
+        self.assertEqual(page.labels, {
+            "grade-search": "Find returned assignments",
+            "grade-group": "Returned group",
+            "grade-flag": "Canvas reported flag",
+        })
 
     def test_controls_start_hidden_and_only_exact_trusted_script_is_allowed(self):
         _, _, _, page = self.render()

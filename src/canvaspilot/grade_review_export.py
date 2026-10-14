@@ -359,15 +359,15 @@ def _view_controls(groups: list[dict[str, Any]]) -> str:
         '<p class="muted">Search displayed names or exact textual IDs. Flag filters match '
         "only an explicit true value returned by Canvas; unknown flags are not inferred. "
         "Group numbers follow returned order, so repeated names stay separate.</p>"
-        '<div class="grade-control-grid"><label for="grade-search">Find returned assignments'
-        '<input id="grade-search" type="search" autocomplete="off"></label>'
-        '<label for="grade-group">Returned group<select id="grade-group">'
+        '<div class="grade-control-grid"><div><label for="grade-search">Find returned assignments</label>'
+        '<input id="grade-search" type="search" autocomplete="off"></div>'
+        '<div><label for="grade-group">Returned group</label><select id="grade-group">'
         '<option value="">All groups</option>'
         + options
-        + '</select></label><label for="grade-flag">Canvas reported flag'
+        + '</select></div><div><label for="grade-flag">Canvas reported flag</label>'
         '<select id="grade-flag"><option value="">All assignments</option>'
         '<option value="missing">Missing: true</option><option value="late">Late: true</option>'
-        '<option value="excused">Excused: true</option></select></label></div>'
+        '<option value="excused">Excused: true</option></select></div></div>'
         '<button id="grade-reset" type="button">Reset view</button>'
         '<p id="grade-view-count" role="status" aria-live="polite"></p>'
         '<p id="grade-no-match" class="notice" hidden>No returned assignment cards match this view. '
