@@ -1,0 +1,85 @@
+{
+  "schema": "hamon.canvas-grade-view.author/1",
+  "started_at": "2026-10-14T00:51:27.360984+00:00",
+  "finished_at": "2026-10-14T00:51:27.579425+00:00",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-B",
+    "/workspace/scratch/dcac8b3b8755/canvas-grade167-author/test_grade_review_view.py",
+    "-v"
+  ],
+  "returncode": 0,
+  "stdout": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "mode": "33188",
+    "mtime_ns": "1791939087570059499",
+    "inode": "1311000"
+  },
+  "stderr": {
+    "bytes": 1052,
+    "sha256": "cac9fb5d75cc11fce5d835353b319d21a15131fe62a43c65a5782603cade4ddd",
+    "git_blob": "6f1fd3cef35e5044f3386ce30692f56b54581e41",
+    "mode": "33188",
+    "mtime_ns": "1791939087577846899",
+    "inode": "1311001"
+  },
+  "before": {
+    "/workspace/scratch/dcac8b3b8755/canvas-grade167-author/candidate/grade_review_export.py": {
+      "bytes": 23919,
+      "sha256": "9dad9fd886c34d92061efe79c5376f1c801af74f9e7dd8cc6729e980a8181f23",
+      "git_blob": "a822dc46bc7c18e288656017147be60548664280",
+      "mode": "33188",
+      "mtime_ns": "1791939079970421206",
+      "inode": "1310998"
+    },
+    "/workspace/scratch/dcac8b3b8755/canvas-grade167-author/test_grade_review_view.py": {
+      "bytes": 9043,
+      "sha256": "3b163728ec089a316afee44c2183c91f06059880b302cba75fee5cec3b4df40f",
+      "git_blob": "366854be4aaebe7c6c33e6d58201981ce5296728",
+      "mode": "33188",
+      "mtime_ns": "1791938681597303738",
+      "inode": "1310952"
+    },
+    "/workspace/scratch/dcac8b3b8755/canvas-grade167-author/receive_author.py": {
+      "bytes": 2903,
+      "sha256": "6d4e911ee1c6f84e87746722b1002d248656e7ceac70e2abc0d3be218fa8b6b2",
+      "git_blob": "9b441fb106289ffbc9d927b9eb865bc39ebba5a1",
+      "mode": "33188",
+      "mtime_ns": "1791938723987291633",
+      "inode": "1310953"
+    }
+  },
+  "after": {
+    "/workspace/scratch/dcac8b3b8755/canvas-grade167-author/candidate/grade_review_export.py": {
+      "bytes": 23919,
+      "sha256": "9dad9fd886c34d92061efe79c5376f1c801af74f9e7dd8cc6729e980a8181f23",
+      "git_blob": "a822dc46bc7c18e288656017147be60548664280",
+      "mode": "33188",
+      "mtime_ns": "1791939079970421206",
+      "inode": "1310998"
+    },
+    "/workspace/scratch/dcac8b3b8755/canvas-grade167-author/test_grade_review_view.py": {
+      "bytes": 9043,
+      "sha256": "3b163728ec089a316afee44c2183c91f06059880b302cba75fee5cec3b4df40f",
+      "git_blob": "366854be4aaebe7c6c33e6d58201981ce5296728",
+      "mode": "33188",
+      "mtime_ns": "1791938681597303738",
+      "inode": "1310952"
+    },
+    "/workspace/scratch/dcac8b3b8755/canvas-grade167-author/receive_author.py": {
+      "bytes": 2903,
+      "sha256": "6d4e911ee1c6f84e87746722b1002d248656e7ceac70e2abc0d3be218fa8b6b2",
+      "git_blob": "9b441fb106289ffbc9d927b9eb865bc39ebba5a1",
+      "mode": "33188",
+      "mtime_ns": "1791938723987291633",
+      "inode": "1310953"
+    }
+  },
+  "source_and_witnesses_preserved": true,
+  "scope": "Six focused standard-library tests of the public renderer; no Canvas transport, browser, CLI service, grade calculation or prior owner course."
+}

@@ -1,0 +1,21 @@
+{
+  "schema": "hamon.canvaspilot.grade-view-static-evidence-review/1",
+  "scope": "Derived read-only source/receipt/artifact join, not another execution.",
+  "product_commit": "4935fc597956d39886258c39876e4805880d59e6",
+  "product_tree": "74b8d3786ea7fb6b1d9fee73be66adf619ab8817",
+  "final_browser_receipt": "e5f5a156f4a6d09c3f95bbd78fc95eb44c9710c9",
+  "checked": {
+    "all_actual_expected_pairs": 146,
+    "complete_before_after_inventory_equal": true,
+    "actual_download_files_joined": 3,
+    "source_pin_matches_v2": true,
+    "managed_disconnect": true,
+    "no_page_errors": true
+  },
+  "visual_scope": "Personally viewed exact final 390px controls excerpt and desktop capture-context/download excerpt. Labels, native controls, focus outline and count are readable in the former; full normalized-JSON link and SHA are readable in the latter. No full-page or physical-print claim.",
+  "qualification_limits": [
+    "Original label failure and corrected product retained separately.",
+    "Second candidate attempt failed envelope admission before any browser; correction changed only metadata key.",
+    "No inherited pytest, Canvas API/CLI, browser OS-process exit or physical printing claim."
+  ]
+}

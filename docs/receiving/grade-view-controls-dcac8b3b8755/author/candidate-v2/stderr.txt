@@ -1,0 +1,12 @@
+test_complete_json_and_report_values_are_unchanged (__main__.GradeViewTest.test_complete_json_and_report_values_are_unchanged) ... ok
+test_control_labels_remain_exact_without_select_option_text (__main__.GradeViewTest.test_control_labels_remain_exact_without_select_option_text) ... ok
+test_controls_start_hidden_and_only_exact_trusted_script_is_allowed (__main__.GradeViewTest.test_controls_start_hidden_and_only_exact_trusted_script_is_allowed) ... ok
+test_duplicate_groups_unknown_lists_and_empty_lists_keep_context (__main__.GradeViewTest.test_duplicate_groups_unknown_lists_and_empty_lists_keep_context) ... ok
+test_empty_report_still_has_complete_download_and_truthful_context (__main__.GradeViewTest.test_empty_report_still_has_complete_download_and_truthful_context) ... ok
+test_markup_is_inert_and_print_retains_closed_detail_rule (__main__.GradeViewTest.test_markup_is_inert_and_print_retains_closed_detail_rule) ... ok
+test_occurrences_keep_large_text_ids_literal_names_and_exact_true_flags (__main__.GradeViewTest.test_occurrences_keep_large_text_ids_literal_names_and_exact_true_flags) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.071s
+
+OK

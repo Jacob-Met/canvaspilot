@@ -1,0 +1,183 @@
+{
+  "source_blob": "a822dc46bc7c18e288656017147be60548664280",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "before": {
+    "source": {
+      "grade_review_export.py": {
+        "bytes": 23919,
+        "sha256": "9dad9fd886c34d92061efe79c5376f1c801af74f9e7dd8cc6729e980a8181f23",
+        "git_blob": "a822dc46bc7c18e288656017147be60548664280",
+        "mode": 33188,
+        "mtime_ns": "1791939403895103316",
+        "inode": "1311047"
+      }
+    },
+    "fixtures": {
+      "hidden.json": {
+        "bytes": 8490,
+        "sha256": "faf3eadcab7535a43b19d4a94b2c3842f15e0f16d61b5ed14732c8622f27bee8",
+        "git_blob": "47d19fe2f403642ca7eb577f352c47888a16410c",
+        "mode": 33188,
+        "mtime_ns": "1791938754581851297",
+        "inode": "1310961"
+      },
+      "mixed.json": {
+        "bytes": 8849,
+        "sha256": "8bccec4db061ad76088a498cdf1045d7f85adc57f81611a959a9c683e333b067",
+        "git_blob": "45fb058d4e92a20daa423054f32ba202f5bc6f1a",
+        "mode": 33188,
+        "mtime_ns": "1791938754529853522",
+        "inode": "1310960"
+      }
+    },
+    "criteria": {
+      "bytes": 4914,
+      "sha256": "3d1b09f91d3885e90bfea8fc94dcf0396c8fc0abc77654a4edbefe47d64bd889",
+      "git_blob": "cd106ae921d476a634a2ce799054416d222ab5d2",
+      "mode": 33188,
+      "mtime_ns": "1791938754637848901",
+      "inode": "1310962"
+    },
+    "observer": {
+      "bytes": 3363,
+      "sha256": "78109791e7d050eb44d189d3e35d704420f9585e5b77993dffbc4cda81af5d84",
+      "git_blob": "0ebcb01e48cb7080975f9b9ac0ebc3c0d00aa051",
+      "mode": 33188,
+      "mtime_ns": "1791938830038281168",
+      "inode": "1310969"
+    }
+  },
+  "checks": [
+    {
+      "name": "mixed json hash",
+      "actual": "18a7c12b7fa8faba821e894d5ba06afe487ed61957e953c48b7aead94b862a18",
+      "expected": "18a7c12b7fa8faba821e894d5ba06afe487ed61957e953c48b7aead94b862a18"
+    },
+    {
+      "name": "mixed encoded JSON present",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "mixed groups",
+      "actual": 5,
+      "expected": 5
+    },
+    {
+      "name": "mixed assignments",
+      "actual": 10,
+      "expected": 10
+    },
+    {
+      "name": "hidden json hash",
+      "actual": "a0f682718a0076a82e4229fac32db3478a25b9cc7cdc937141b2ddc4c108c47b",
+      "expected": "a0f682718a0076a82e4229fac32db3478a25b9cc7cdc937141b2ddc4c108c47b"
+    },
+    {
+      "name": "hidden encoded JSON present",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "hidden groups",
+      "actual": 5,
+      "expected": 5
+    },
+    {
+      "name": "hidden assignments",
+      "actual": 10,
+      "expected": 10
+    }
+  ],
+  "outputs": {
+    "mixed": {
+      "html": {
+        "bytes": 53388,
+        "sha256": "8c08aa1c5cb120d17479cdd710ed2244d702f7e5407f2ec714faec4b3798b79f",
+        "git_blob": "8726ba2da867a3a39b079f6bc5911146ffedbbb3",
+        "mode": 33188,
+        "mtime_ns": "1791939404600208843",
+        "inode": "1311049"
+      },
+      "render_metadata": {
+        "course_id": 42,
+        "generated_at": "2026-10-14T00:00:00Z",
+        "groups_returned": 5,
+        "assignments_returned": 10,
+        "html_bytes": 53388,
+        "sha256": "8c08aa1c5cb120d17479cdd710ed2244d702f7e5407f2ec714faec4b3798b79f",
+        "json_bytes": 8900,
+        "json_sha256": "18a7c12b7fa8faba821e894d5ba06afe487ed61957e953c48b7aead94b862a18"
+      }
+    },
+    "hidden": {
+      "html": {
+        "bytes": 51890,
+        "sha256": "e0be3ce8da00234f92562a92b0ba81367f20092fbd7513a00e4d767b3bf37949",
+        "git_blob": "c5aadf164a43603234aa3bbd75859109022d3b5c",
+        "mode": 33188,
+        "mtime_ns": "1791939404610947263",
+        "inode": "1311050"
+      },
+      "render_metadata": {
+        "course_id": 42,
+        "generated_at": "2026-10-14T00:00:00Z",
+        "groups_returned": 5,
+        "assignments_returned": 10,
+        "html_bytes": 51890,
+        "sha256": "e0be3ce8da00234f92562a92b0ba81367f20092fbd7513a00e4d767b3bf37949",
+        "json_bytes": 8541,
+        "json_sha256": "a0f682718a0076a82e4229fac32db3478a25b9cc7cdc937141b2ddc4c108c47b"
+      }
+    }
+  },
+  "scope": "Public renderer only; no API, client, authentication, grade reader or CLI call.",
+  "passed": true,
+  "after": {
+    "source": {
+      "grade_review_export.py": {
+        "bytes": 23919,
+        "sha256": "9dad9fd886c34d92061efe79c5376f1c801af74f9e7dd8cc6729e980a8181f23",
+        "git_blob": "a822dc46bc7c18e288656017147be60548664280",
+        "mode": 33188,
+        "mtime_ns": "1791939403895103316",
+        "inode": "1311047"
+      }
+    },
+    "fixtures": {
+      "hidden.json": {
+        "bytes": 8490,
+        "sha256": "faf3eadcab7535a43b19d4a94b2c3842f15e0f16d61b5ed14732c8622f27bee8",
+        "git_blob": "47d19fe2f403642ca7eb577f352c47888a16410c",
+        "mode": 33188,
+        "mtime_ns": "1791938754581851297",
+        "inode": "1310961"
+      },
+      "mixed.json": {
+        "bytes": 8849,
+        "sha256": "8bccec4db061ad76088a498cdf1045d7f85adc57f81611a959a9c683e333b067",
+        "git_blob": "45fb058d4e92a20daa423054f32ba202f5bc6f1a",
+        "mode": 33188,
+        "mtime_ns": "1791938754529853522",
+        "inode": "1310960"
+      }
+    },
+    "criteria": {
+      "bytes": 4914,
+      "sha256": "3d1b09f91d3885e90bfea8fc94dcf0396c8fc0abc77654a4edbefe47d64bd889",
+      "git_blob": "cd106ae921d476a634a2ce799054416d222ab5d2",
+      "mode": 33188,
+      "mtime_ns": "1791938754637848901",
+      "inode": "1310962"
+    },
+    "observer": {
+      "bytes": 3363,
+      "sha256": "78109791e7d050eb44d189d3e35d704420f9585e5b77993dffbc4cda81af5d84",
+      "git_blob": "0ebcb01e48cb7080975f9b9ac0ebc3c0d00aa051",
+      "mode": 33188,
+      "mtime_ns": "1791938830038281168",
+      "inode": "1310969"
+    }
+  },
+  "conserved": true
+}

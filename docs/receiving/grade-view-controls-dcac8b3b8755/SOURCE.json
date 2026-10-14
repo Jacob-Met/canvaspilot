@@ -1,0 +1,64 @@
+{
+  "schema": "hamon.canvaspilot.saved-grade-view-source/1",
+  "repository": "Jacob-Met/canvaspilot",
+  "issue": "https://github.com/Jacob-Met/canvaspilot/issues/167",
+  "default_branch": "main",
+  "base_commit": "d567702f8a328320dad7d2eac74006cbe15cf0f8",
+  "base_tree": "19d4795cf2dbb53c9d8d8874fdd156b3f8f11d03",
+  "qualified_product_commit": "4935fc597956d39886258c39876e4805880d59e6",
+  "qualified_product_tree": "74b8d3786ea7fb6b1d9fee73be66adf619ab8817",
+  "earlier_candidate_commit": "0f8a1a4a624eac3a5d9c4e26e072b99636dd5b32",
+  "earlier_candidate_tree": "bfb833849bd95143e7af8236af7e546334578433",
+  "runtime_boundary": "Only src/canvaspilot/grade_review_export.py changes. The documented public render_grade_review_report entry point was called with fictional normalized dictionaries; no API, client, broker, authentication, grade-reader or CLI operation occurred in these courses.",
+  "runtime_projection_files": 1,
+  "unchanged_normalized_reader": "24d93cb693af09cf5123f31fea90e77a589b023c",
+  "unchanged_reader_guide": "fb2947c53df49c8f934a6ea3f62f25030cd18e61",
+  "paths": [
+    {
+      "path": "src/canvaspilot/grade_review_export.py",
+      "before": "8a6281f62f99e18109f90a273a4c29da4929f3a3",
+      "v1": "a822dc46bc7c18e288656017147be60548664280",
+      "after": "9cb0aa2c6a9028eab7a4fc0e71cba3a85fd6333e"
+    },
+    {
+      "path": "tests/test_grade_review_export.py",
+      "before": "4fee10812dfaf1a5d3f2f34c29e3c6f7ca323441",
+      "after": "9c5fd83a0011210dfe967e23f07598c74baf372b",
+      "qualification": "Narrow existing script-policy assertion correction read independently; full inherited pytest module not run in primary environment."
+    },
+    {
+      "path": "tests/test_grade_review_view.py",
+      "before": null,
+      "v1": "366854be4aaebe7c6c33e6d58201981ce5296728",
+      "after": "4c60e1fe4ea8ae2eecb13f0562db6112c31c03c1"
+    },
+    {
+      "path": "docs/grade-review-export.md",
+      "before": "50d4cba920a2a1d4ca05c5adc23c9688a50f7d15",
+      "after": "7b825bcf09ca2297632166fff1687715ec249052"
+    }
+  ],
+  "product_tree_conservation": {
+    "base_terminal_entries": 1745,
+    "product_terminal_entries": 1746,
+    "unrelated_terminal_tuples_preserved": 1742,
+    "modified": 3,
+    "added": 1,
+    "removed": 0,
+    "tuple_fields": [
+      "path",
+      "mode",
+      "type",
+      "sha"
+    ]
+  },
+  "boundaries": [
+    "No grade recalculation, hidden-value recovery or changes to normalizer decisions.",
+    "Search applies to displayed literal names/textual IDs; group selection is returned occurrence; flags match exact true only.",
+    "Only card visibility/count/no-match change; group context, totals, warnings, all complete JSON bytes and print content remain.",
+    "Existing native details.open state is never assigned by the view script.",
+    "One trusted inline script is hash-bound by CSP; provider text is never inserted into JavaScript. No network or browser storage.",
+    "No new dependencies, workflows, API/CLI commands or adjacent comparison/worksheet owner edits."
+  ],
+  "no_actions": "Both existing workflow bodies were read. Source commits carry skip directives; final branch/PR all-event workflow-run readback is a separate publication check. No workflow/settings/gate changes."
+}

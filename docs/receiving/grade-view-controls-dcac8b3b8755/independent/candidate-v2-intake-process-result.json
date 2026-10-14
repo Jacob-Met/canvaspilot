@@ -1,0 +1,13 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "[Reading 2 new lines (total: 2 lines)]\n\n{\"passed\": false, \"mode\": \"candidate\", \"checks\": 2, \"downloads\": 0, \"managed_browser_disconnected\": null, \"output\": \"D:\\\\hamon-dcac8b3b8755-canvas167-rcpu5dqz\\\\candidate-browser-v2\"}\r\n\n✅ Process completed with exit code 1 (runtime: 24.94s)"
+    },
+    {
+      "type": "text",
+      "text": "\n[executed on device: MSI (9ea77fe9-bb87-46e0-a5a8-8b3e25f6ff7e)]"
+    }
+  ],
+  "isError": false
+}

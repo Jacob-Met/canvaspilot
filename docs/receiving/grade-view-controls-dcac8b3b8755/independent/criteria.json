@@ -1,0 +1,195 @@
+{
+  "schema": "canvaspilot.returned-grade-view-independent/1",
+  "repository": "Jacob-Met/canvaspilot",
+  "original_commit": "d567702f8a328320dad7d2eac74006cbe15cf0f8",
+  "original_exporter_blob": "8a6281f62f99e18109f90a273a4c29da4929f3a3",
+  "historical_fixture_blob": "09c05a32482dfdc09163e16870cfc6da0700852b",
+  "generated_at": "2026-10-14T00:00:00+00:00",
+  "scope": "Fictional normalized derivatives; public render method only, no reader/API/CLI/account/provider operation.",
+  "all_cards": [
+    "assignment-0-0",
+    "assignment-0-1",
+    "assignment-0-2",
+    "assignment-0-3",
+    "assignment-0-4",
+    "assignment-1-0",
+    "assignment-1-1",
+    "assignment-1-2",
+    "assignment-1-3",
+    "assignment-1-4"
+  ],
+  "group_ids": [
+    "group-0",
+    "group-1",
+    "group-2",
+    "group-3",
+    "group-4"
+  ],
+  "cases": [
+    {
+      "name": "initial",
+      "search": "",
+      "group": "",
+      "flag": "",
+      "expected": [
+        "assignment-0-0",
+        "assignment-0-1",
+        "assignment-0-2",
+        "assignment-0-3",
+        "assignment-0-4",
+        "assignment-1-0",
+        "assignment-1-1",
+        "assignment-1-2",
+        "assignment-1-3",
+        "assignment-1-4"
+      ]
+    },
+    {
+      "name": "literal markup and case",
+      "search": " ALPHA <b>literal</b> ",
+      "group": "",
+      "flag": "",
+      "expected": [
+        "assignment-0-0",
+        "assignment-0-1",
+        "assignment-1-0"
+      ]
+    },
+    {
+      "name": "literal regex punctuation",
+      "search": "[a.*]",
+      "group": "",
+      "flag": "",
+      "expected": [
+        "assignment-0-2"
+      ]
+    },
+    {
+      "name": "adjacent large ID A",
+      "search": "9007199254740992",
+      "group": "",
+      "flag": "",
+      "expected": [
+        "assignment-0-0"
+      ]
+    },
+    {
+      "name": "adjacent large ID B",
+      "search": "9007199254740993",
+      "group": "",
+      "flag": "",
+      "expected": [
+        "assignment-0-1"
+      ]
+    },
+    {
+      "name": "leading zeros",
+      "search": "0007",
+      "group": "",
+      "flag": "",
+      "expected": [
+        "assignment-0-2"
+      ]
+    },
+    {
+      "name": "displayed fallback title",
+      "search": "assignment 703",
+      "group": "",
+      "flag": "",
+      "expected": [
+        "assignment-0-4"
+      ]
+    },
+    {
+      "name": "first repeated group occurrence",
+      "search": "",
+      "group": "0",
+      "flag": "",
+      "expected": [
+        "assignment-0-0",
+        "assignment-0-1",
+        "assignment-0-2",
+        "assignment-0-3",
+        "assignment-0-4"
+      ]
+    },
+    {
+      "name": "second repeated group occurrence",
+      "search": "",
+      "group": "1",
+      "flag": "",
+      "expected": [
+        "assignment-1-0",
+        "assignment-1-1",
+        "assignment-1-2",
+        "assignment-1-3",
+        "assignment-1-4"
+      ]
+    },
+    {
+      "name": "explicit missing only",
+      "search": "",
+      "group": "",
+      "flag": "missing",
+      "expected": [
+        "assignment-0-0",
+        "assignment-1-1"
+      ]
+    },
+    {
+      "name": "explicit late only",
+      "search": "",
+      "group": "",
+      "flag": "late",
+      "expected": [
+        "assignment-0-1",
+        "assignment-1-1"
+      ]
+    },
+    {
+      "name": "explicit excused only",
+      "search": "",
+      "group": "",
+      "flag": "excused",
+      "expected": [
+        "assignment-0-2",
+        "assignment-1-1"
+      ]
+    },
+    {
+      "name": "combined literal group flag",
+      "search": "café",
+      "group": "1",
+      "flag": "missing",
+      "expected": [
+        "assignment-1-1"
+      ]
+    },
+    {
+      "name": "no inferred flag from words",
+      "search": "missing late",
+      "group": "",
+      "flag": "missing",
+      "expected": []
+    },
+    {
+      "name": "empty group",
+      "search": "",
+      "group": "2",
+      "flag": "",
+      "expected": []
+    },
+    {
+      "name": "unknown group",
+      "search": "",
+      "group": "3",
+      "flag": "",
+      "expected": []
+    }
+  ],
+  "original": "All cards/full report/exact JSON; filter controls absent. Freeze native original before candidate exposure.",
+  "candidate": "Default full; combined cases above; manual details.open preserved through filter/reset; no-match explanatory; reset full; hidden grade and full JSON stable.",
+  "browser": "Existing Chrome, isolated nonpersistent profile/context; actual JSON download, real Tab/Enter reset, 390px no horizontal document overflow, no external requests/storage/errors; managed cleanup before success.",
+  "no_js_print": "JavaScript-disabled complete report with no unusable controls; print media restores all cards and closed-detail content; no physical print or PDF glyph claim.",
+  "conservation": "Exact source/fixture/page path sets and bytes/SHA/mode/mtime/inode before and after; earlier epochs retained; no source/course replay on observer correction."
+}

@@ -1,0 +1,22 @@
+{
+  "schema": "hamon.canvas-grade-view.source-review/1",
+  "scope": "Derived static source comparison and read-only raw author receipt join; no new renderer/browser/test execution.",
+  "base_commit": "d567702f8a328320dad7d2eac74006cbe15cf0f8",
+  "original_renderer": "8a6281f62f99e18109f90a273a4c29da4929f3a3",
+  "candidate_renderer": "a822dc46bc7c18e288656017147be60548664280",
+  "unchanged_function_bodies": {
+    "_escape": true,
+    "_value": true,
+    "_field": true,
+    "_facts": true,
+    "_title": true,
+    "_reading": true,
+    "_group": true,
+    "build_grade_review_report": true
+  },
+  "author_original": "Six methods: two passes, two missing-capability assertion failures, two absent-control/attribute errors.",
+  "author_candidate": "Same six methods passed on CPython3.12.14; exact source/witness path sets and byte/mode/mtime/inode identities conserved.",
+  "existing_pytest_adjustment": "Only the closed original renderer test blanket-script prohibition is narrowed: forbid all prior resource tags, require one local script without src, and forbid the literal provider script. Full new script hash/inert markup is covered by focused methods.",
+  "existing_pytest_execution": "Not run: primary environment has no pytest/httpx installation. No substitute package or fake runner used.",
+  "qualification_order": "Candidate renderer and new test were frozen for the six-method course; guide and inherited-test policy adjustment were prepared after that course. Production and the six focused test bytes are unchanged."
+}

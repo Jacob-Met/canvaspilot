@@ -1,0 +1,203 @@
+{
+  "mode": "candidate",
+  "utc": "2026-10-14T01:12:44Z",
+  "source": {
+    "repository": "Jacob-Met/canvaspilot",
+    "commit": "4935fc597956d39886258c39876e4805880d59e6",
+    "tree": "74b8d3786ea7fb6b1d9fee73be66adf619ab8817",
+    "renderer": "9cb0aa2c6a9028eab7a4fc0e71cba3a85fd6333e"
+  },
+  "runtime": {
+    "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+    "host": "MSI",
+    "user": "Veria",
+    "chrome": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
+  },
+  "checks": [
+    {
+      "name": "producer passed",
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "producer custody",
+      "actual": true,
+      "expected": true
+    }
+  ],
+  "before": {
+    "baseline.json": {
+      "bytes": 99705,
+      "sha256": "6580e059f66397d4452be2fb24e031f3caad4633cb94c53fa7e30240525adc1e",
+      "git_blob": "397d57a6df7c0f46c6e25985940242bddbd450dc",
+      "mode": 33206,
+      "mtime_ns": "1791940326439130100",
+      "inode": "1970324838563620"
+    },
+    "criteria.json": {
+      "bytes": 4914,
+      "sha256": "3d1b09f91d3885e90bfea8fc94dcf0396c8fc0abc77654a4edbefe47d64bd889",
+      "git_blob": "cd106ae921d476a634a2ce799054416d222ab5d2",
+      "mode": 33206,
+      "mtime_ns": "1791940325410808600",
+      "inode": "1688849861852958"
+    },
+    "grade_review_export.py": {
+      "bytes": 23952,
+      "sha256": "f1ffad52d4fef2cbd78464d5cd5b8446ff593c1e44d33b0fd575a6fccaf236ff",
+      "git_blob": "9cb0aa2c6a9028eab7a4fc0e71cba3a85fd6333e",
+      "mode": 33206,
+      "mtime_ns": "1791940324662605400",
+      "inode": "1688849861852955"
+    },
+    "hidden.html": {
+      "bytes": 51923,
+      "sha256": "9e5b0cb02b1a545c207681c10b20190ff9e01074be660c9708bd27eaa20f2659",
+      "git_blob": "1fab58fe9823d3e71a71536cce5de6a1e86503b0",
+      "mode": 33206,
+      "mtime_ns": "1791940326111543900",
+      "inode": "1688849861852962"
+    },
+    "hidden.json": {
+      "bytes": 8490,
+      "sha256": "faf3eadcab7535a43b19d4a94b2c3842f15e0f16d61b5ed14732c8622f27bee8",
+      "git_blob": "47d19fe2f403642ca7eb577f352c47888a16410c",
+      "mode": 33206,
+      "mtime_ns": "1791940325194018300",
+      "inode": "1688849861852957"
+    },
+    "mixed.html": {
+      "bytes": 53421,
+      "sha256": "41e80d2270e2ee3a7e931d7f1cc555010d3c894fb46eb4b9706fdf6777a537c4",
+      "git_blob": "21bf76ecd328a1d8bfe94731172561adf00ea035",
+      "mode": 33206,
+      "mtime_ns": "1791940325929933300",
+      "inode": "1688849861852960"
+    },
+    "mixed.json": {
+      "bytes": 8849,
+      "sha256": "8bccec4db061ad76088a498cdf1045d7f85adc57f81611a959a9c683e333b067",
+      "git_blob": "45fb058d4e92a20daa423054f32ba202f5bc6f1a",
+      "mode": 33206,
+      "mtime_ns": "1791940324889621700",
+      "inode": "1688849861852956"
+    },
+    "producer.json": {
+      "bytes": 5779,
+      "sha256": "531ec92aff985718a0489b7ef38e81c9162cbf11d4d52f609a33bb2f33928fa0",
+      "git_blob": "9b1c6e201121a74428507a5aa991bc81ebbba9e7",
+      "mode": 33206,
+      "mtime_ns": "1791940325598691100",
+      "inode": "1688849861852959"
+    },
+    "receive_browser.py": {
+      "bytes": 12496,
+      "sha256": "e03a3cf834b615bafd1212ddbdd34c95928116990a0dfd4b0f419f013abd5fee",
+      "git_blob": "b90e93fea00faefc842d6539f44989c56341f699",
+      "mode": 33206,
+      "mtime_ns": "1791940326413667700",
+      "inode": "1688849861852963"
+    },
+    "source.json": {
+      "bytes": 212,
+      "sha256": "6f09069bc374313da50e8dc8373bb9c2f4c16acf1f32a867f96be96d2ab4b630",
+      "git_blob": "a7895724b09c3f6d73c3b6850aee38a78d2d58bb",
+      "mode": 33206,
+      "mtime_ns": "1791940326693189700",
+      "inode": "1407374885142311"
+    }
+  },
+  "fixed": {},
+  "downloads": [],
+  "requests": [],
+  "page_errors": [],
+  "snapshots": [],
+  "scope": "Saved HTML only; managed closure, print-media visibility, no browser OS-exit or physical print claim.",
+  "error": "KeyError('exporter_blob')",
+  "traceback": "Traceback (most recent call last):\n  File \"D:\\hamon-dcac8b3b8755-canvas167-rcpu5dqz\\candidate-v2-inputs\\receive_browser.py\", line 38, in main\n    check('source producer bind',prod['source_blob'],source['exporter_blob']);check('actual exporter',ident(src/'grade_review_export.py')['git_blob'],source['exporter_blob'])\n                                                     ~~~~~~^^^^^^^^^^^^^^^^^\nKeyError: 'exporter_blob'\n",
+  "after": {
+    "baseline.json": {
+      "bytes": 99705,
+      "sha256": "6580e059f66397d4452be2fb24e031f3caad4633cb94c53fa7e30240525adc1e",
+      "git_blob": "397d57a6df7c0f46c6e25985940242bddbd450dc",
+      "mode": 33206,
+      "mtime_ns": "1791940326439130100",
+      "inode": "1970324838563620"
+    },
+    "criteria.json": {
+      "bytes": 4914,
+      "sha256": "3d1b09f91d3885e90bfea8fc94dcf0396c8fc0abc77654a4edbefe47d64bd889",
+      "git_blob": "cd106ae921d476a634a2ce799054416d222ab5d2",
+      "mode": 33206,
+      "mtime_ns": "1791940325410808600",
+      "inode": "1688849861852958"
+    },
+    "grade_review_export.py": {
+      "bytes": 23952,
+      "sha256": "f1ffad52d4fef2cbd78464d5cd5b8446ff593c1e44d33b0fd575a6fccaf236ff",
+      "git_blob": "9cb0aa2c6a9028eab7a4fc0e71cba3a85fd6333e",
+      "mode": 33206,
+      "mtime_ns": "1791940324662605400",
+      "inode": "1688849861852955"
+    },
+    "hidden.html": {
+      "bytes": 51923,
+      "sha256": "9e5b0cb02b1a545c207681c10b20190ff9e01074be660c9708bd27eaa20f2659",
+      "git_blob": "1fab58fe9823d3e71a71536cce5de6a1e86503b0",
+      "mode": 33206,
+      "mtime_ns": "1791940326111543900",
+      "inode": "1688849861852962"
+    },
+    "hidden.json": {
+      "bytes": 8490,
+      "sha256": "faf3eadcab7535a43b19d4a94b2c3842f15e0f16d61b5ed14732c8622f27bee8",
+      "git_blob": "47d19fe2f403642ca7eb577f352c47888a16410c",
+      "mode": 33206,
+      "mtime_ns": "1791940325194018300",
+      "inode": "1688849861852957"
+    },
+    "mixed.html": {
+      "bytes": 53421,
+      "sha256": "41e80d2270e2ee3a7e931d7f1cc555010d3c894fb46eb4b9706fdf6777a537c4",
+      "git_blob": "21bf76ecd328a1d8bfe94731172561adf00ea035",
+      "mode": 33206,
+      "mtime_ns": "1791940325929933300",
+      "inode": "1688849861852960"
+    },
+    "mixed.json": {
+      "bytes": 8849,
+      "sha256": "8bccec4db061ad76088a498cdf1045d7f85adc57f81611a959a9c683e333b067",
+      "git_blob": "45fb058d4e92a20daa423054f32ba202f5bc6f1a",
+      "mode": 33206,
+      "mtime_ns": "1791940324889621700",
+      "inode": "1688849861852956"
+    },
+    "producer.json": {
+      "bytes": 5779,
+      "sha256": "531ec92aff985718a0489b7ef38e81c9162cbf11d4d52f609a33bb2f33928fa0",
+      "git_blob": "9b1c6e201121a74428507a5aa991bc81ebbba9e7",
+      "mode": 33206,
+      "mtime_ns": "1791940325598691100",
+      "inode": "1688849861852959"
+    },
+    "receive_browser.py": {
+      "bytes": 12496,
+      "sha256": "e03a3cf834b615bafd1212ddbdd34c95928116990a0dfd4b0f419f013abd5fee",
+      "git_blob": "b90e93fea00faefc842d6539f44989c56341f699",
+      "mode": 33206,
+      "mtime_ns": "1791940326413667700",
+      "inode": "1688849861852963"
+    },
+    "source.json": {
+      "bytes": 212,
+      "sha256": "6f09069bc374313da50e8dc8373bb9c2f4c16acf1f32a867f96be96d2ab4b630",
+      "git_blob": "a7895724b09c3f6d73c3b6850aee38a78d2d58bb",
+      "mode": 33206,
+      "mtime_ns": "1791940326693189700",
+      "inode": "1407374885142311"
+    }
+  },
+  "source_inputs_preserved": true,
+  "passed": false,
+  "artifacts": {}
+}

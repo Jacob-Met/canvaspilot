@@ -1,0 +1,13 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "[Reading 2 new lines (total: 2 lines)]\n\n{\"passed\": true, \"prior_preserved\": true, \"new_source\": {\"bytes\": 217, \"sha256\": \"484926283724523dc02918f9ef2dace159c0b47b315551de7e4f6adddaa0a9f3\", \"git_blob\": \"d5660e7ba0f0997d2df4d566843f02c0eccb8591\", \"mode\": 33206, \"mtime_ns\": \"1791940471424244300\", \"inode\": \"1125899908431702\"}, \"source\": {\"repository\": \"Jacob-Met/canvaspilot\", \"commit\": \"4935fc597956d39886258c39876e4805880d59e6\", \"tree\": \"74b8d3786ea7fb6b1d9fee73be66adf619ab8817\", \"exporter_blob\": \"9cb0aa2c6a9028eab7a4fc0e71cba3a85fd6333e\"}}\r\n\n✅ Process completed with exit code 0 (runtime: 22.11s)"
+    },
+    {
+      "type": "text",
+      "text": "\n[executed on device: MSI (9ea77fe9-bb87-46e0-a5a8-8b3e25f6ff7e)]"
+    }
+  ],
+  "isError": false
+}
