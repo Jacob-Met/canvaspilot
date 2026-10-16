@@ -291,6 +291,13 @@ def main(argv: list[str] | None = None) -> None:
     add_common(quizzes)
     quizzes.add_argument("course_id", type=_positive_int, help="Positive numeric Canvas course ID")
 
+    quiz_search = sub.add_parser(
+        "find-quizzes", help="Find classic quizzes by literal title or instruction text",
+    )
+    add_common(quiz_search)
+    quiz_search.add_argument("course_ids", nargs="+", help="Positive numeric Canvas course IDs")
+    quiz_search.add_argument("--text", required=True, help="Literal case-insensitive text to find")
+
     quiz = sub.add_parser("quiz", help="Read one classic quiz without starting an attempt")
     add_common(quiz)
     quiz.add_argument("course_id", type=_positive_int, help="Positive numeric Canvas course ID")
@@ -346,6 +353,12 @@ def main(argv: list[str] | None = None) -> None:
             token=args.token,
             profile=Path(args.profile) if args.profile else None,
         )
+        return
+
+    if args.cmd == "find-quizzes":
+        from canvaspilot.quiz_search import run_find_quizzes
+
+        run_find_quizzes(args)
         return
 
     if args.cmd == "find-discussions":
