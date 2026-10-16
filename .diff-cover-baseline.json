@@ -1,0 +1,17 @@
+{
+  "baseline_commit": "b0655cfc6f298c956fcdd27fbba32e3c5609516f",
+  "generated": "2026-10-06T22:55:00-07:00",
+  "generator": "T164-owner (attempt 3) via pytest --cov on main tip, 59 passed",
+  "default_fail_under": 80,
+  "notes": "Per-file TOTAL coverage at baseline commit. Gate compares each PR's DIFF coverage against these floors: no touched file may drop below its baseline percent. Overall PR diff coverage must be >= default_fail_under.",
+  "files": {
+    "src/canvaspilot/__init__.py": 100.0,
+    "src/canvaspilot/api.py": 46.8,
+    "src/canvaspilot/bundle.py": 100.0,
+    "src/canvaspilot/cli.py": 0.0,
+    "src/canvaspilot/client.py": 51.9,
+    "src/canvaspilot/mcp_server.py": 63.9,
+    "src/canvaspilot/offline_demo.py": 97.8,
+    "src/canvaspilot/session_broker.py": 54.0
+  }
+}
