@@ -213,3 +213,44 @@ failures. Its receipt records the exact source inventory, page HTTP requests
 and errors, and output hashes. This is synthetic software qualification;
 school authentication, student outcomes, and institution-specific behavior
 are not claimed.
+
+
+## Exact unsaved changes (source offer for issue 177)
+
+This reviewed source offer changes the local departure warning to reflect the
+current notes and review markers. If you edit a note and restore its exact prior
+text, or toggle a review marker and restore it, that assignment no longer has an
+unsaved change. A different assignment's remaining edit still keeps the warning
+active. Spaces, line breaks and Unicode text are compared exactly.
+
+The reference state starts with the notes and markers in the file you opened.
+After **Save working copy** successfully requests its download, the exact state
+put into that requested copy becomes the new reference. Later edits are compared
+with that state. A failed preparation or request keeps the preceding reference
+and your current edits. As before, a download request does not prove that the
+browser or operating system saved the file: confirm the downloaded copy yourself.
+
+**Download notes**, **Print**, and assignment navigation preserve the editable
+working-copy reference. The source snapshot, saved envelope, note limit, review
+progress and Canvas behavior are unchanged. The browser decides whether it
+displays or honors a departure prompt.
+
+The focused source-only check is:
+
+```bash
+node --test --test-reporter=spec tests/test_study_workspace_state.mjs
+```
+
+It runs the complete controller in a controlled DOM protocol with literal
+independent lifecycle expectations and real Blob contents. It does not render a
+browser, observe a native departure dialog, or confirm a disk save. The existing
+native browser receiver above remains a separate qualification. The selected
+five-group course passed all five groups with no failures or skips. The original
+632-byte stdout and empty stderr are retained; source and fixture bytes were
+conserved throughout that single run.
+
+This offer is isolated from main: no PR, main update, GitHub Actions, workflow or
+repository-setting change is included. Apply the three reviewed paths to an
+appropriate checkout when composing this offer. Existing exported HTML files
+retain their embedded earlier script; a newly generated workspace includes the
+selected script and its updated content-security hash.

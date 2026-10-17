@@ -180,7 +180,17 @@
     nav.replaceChildren();
     main.replaceChildren();
     const localViews = new Map();
-    let changedSinceDownload = false;
+    let savedAssignments = JSON.parse(JSON.stringify(state.assignments));
+    const changedAssignments = new Set();
+    function updateChangedAssignment(key) {
+      const current = state.assignments[key];
+      const saved = savedAssignments[key];
+      if (current.notes === saved.notes && current.reviewed === saved.reviewed) {
+        changedAssignments.delete(key);
+      } else {
+        changedAssignments.add(key);
+      }
+    }
     function updateReviewProgress() {
       let reviewed = 0;
       for (const item of source.assignments) {
@@ -193,9 +203,11 @@
       $("review-progress").textContent = reviewed + " of " + source.assignments.length + " reviewed locally";
       $("first-unreviewed").disabled = reviewed === source.assignments.length;
     }
-    function changed() {
-      changedSinceDownload = true;
-      $("save-status").textContent = "You have edits in this tab. Save a working copy to keep them.";
+    function changed(key) {
+      updateChangedAssignment(key);
+      $("save-status").textContent = changedAssignments.size
+        ? "You have edits in this tab. Save a working copy to keep them."
+        : "Your notes and review markers have no unsaved changes.";
     }
     source.assignments.forEach((item, index) => {
       const brief = item.brief;
@@ -240,8 +252,8 @@
       const reviewState = element("p", "", "review-state");
       notes.append(label, help, textarea, printNotes, toggleLabel, reviewState);article.append(notes);main.append(article);
       localViews.set(item.key, {navState, reviewState});
-      textarea.addEventListener("input", () => {local.notes = textarea.value;printNotes.textContent = local.notes || "No study notes entered.";changed();});
-      checkbox.addEventListener("change", () => {local.reviewed = checkbox.checked;changed();updateReviewProgress();});
+      textarea.addEventListener("input", () => {local.notes = textarea.value;printNotes.textContent = local.notes || "No study notes entered.";changed(item.key);});
+      checkbox.addEventListener("change", () => {local.reviewed = checkbox.checked;changed(item.key);updateReviewProgress();});
     });
     updateReviewProgress();
     $("selection-summary").textContent = "Course " + source.course_id + " · " + source.assignments.length + " selected assignment" + (source.assignments.length === 1 ? "" : "s");
@@ -281,6 +293,7 @@
       let link = null;
       try {
         checkState(state, digest, source.assignments);
+        const requestedState = JSON.parse(JSON.stringify(state));
         const copy = document.documentElement.cloneNode(true);
         // Every downloaded copy starts closed until its source and notes verify.
         copy.querySelector("#workspace").hidden = true;
@@ -296,14 +309,16 @@
         copy.querySelector("#selection-summary").textContent = "Opening snapshot…";
         copy.querySelector("#save-status").textContent = "Edits stay in this tab until you save a working copy.";
         copy.querySelector("#workspace-data").textContent = escapedJSON({
-          schema_id: SCHEMA, source: envelope.source, source_sha256: digest, state,
+          schema_id: SCHEMA, source: envelope.source, source_sha256: digest, state: requestedState,
         });
         url = URL.createObjectURL(new Blob(["<!doctype html>\n" + copy.outerHTML], {type: "text/html;charset=utf-8"}));
         link = element("a");
         link.href = url;link.download = "canvaspilot-study-" + source.course_id + "-" + digest.slice(0, 12) + "-working.html";
         document.body.append(link);link.click();link.remove();link = null;
         const revoke = url;setTimeout(() => URL.revokeObjectURL(revoke), 1000);url = null;
-        changedSinceDownload = false;
+        savedAssignments = requestedState.assignments;
+        changedAssignments.clear();
+        for (const item of source.assignments) updateChangedAssignment(item.key);
         $("save-status").textContent = "Download requested. Keep the downloaded working copy and reopen it to continue later.";
       } catch (error) {
         if (link) link.remove();
@@ -312,7 +327,7 @@
       }
     });
     window.addEventListener("beforeunload", (event) => {
-      if (changedSinceDownload) {event.preventDefault();event.returnValue = "";}
+      if (changedAssignments.size) {event.preventDefault();event.returnValue = "";}
     });
   }
   openWorkspace().catch((error) => {
