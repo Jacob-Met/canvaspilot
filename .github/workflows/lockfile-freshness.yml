@@ -1,0 +1,39 @@
+# T156 (2026-10-06): gate CI on pypi lockfile freshness.
+# The mcp SDK (4 HIGH 2025-2026 advisories, window <1.28.1) is consumed here
+# via a floating spec range; requirements.lock pins the resolved closure
+# (mcp==2.3.0 at generation) with hashes. This job regenerates the lockfile
+# from requirements.in and fails when the committed lockfile is stale.
+name: lockfile-freshness
+
+on:
+  pull_request:
+    paths:
+      - "requirements.in"
+      - "requirements.lock"
+      - "pyproject.toml"
+  push:
+    branches: [main]
+    paths:
+      - "requirements.in"
+      - "requirements.lock"
+      - "pyproject.toml"
+
+jobs:
+  freshness:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.12"
+      - name: Regenerate lockfile and verify freshness
+        run: |
+          set -euo pipefail
+          pip install "pip-tools==7.4.1"
+          pip-compile --generate-hashes --resolver=backtracking \
+            --output-file=/tmp/fresh-requirements.lock requirements.in
+          diff -u requirements.lock /tmp/fresh-requirements.lock \
+            || { echo "::error::requirements.lock is stale — run: pip-compile --generate-hashes --resolver=backtracking requirements.in"; exit 1; }
+          echo "requirements.lock is fresh"

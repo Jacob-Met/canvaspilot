@@ -1,0 +1,7 @@
+# canvaspilot runtime deps, mirrored from pyproject.toml [project] dependencies.
+# Regenerate: pip-compile --generate-hashes --resolver=backtracking requirements.in
+# CI gate (.github/workflows/lockfile-freshness.yml) fails the build when
+# requirements.lock is stale relative to this file.
+httpx>=0.27
+mcp>=1.0.0,<3
+pydantic>=2.0
